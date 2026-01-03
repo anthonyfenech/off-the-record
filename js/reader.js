@@ -2,6 +2,7 @@
 
 import { CHAPTERS, calculateReadingTime } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
+import { mediaModal } from './mediaModal.js';
 
 class Reader {
     constructor() {
@@ -26,6 +27,9 @@ class Reader {
 
     // Initialize reader
     init() {
+        // Initialize media modal
+        mediaModal.init();
+
         // Load saved progress
         const progress = getProgress();
         this.currentChapter = progress.currentChapter || 1;
@@ -87,6 +91,9 @@ class Reader {
 
         this.chapterBody.innerHTML = paragraphs;
 
+        // Attach click handlers to media emojis
+        this.attachMediaEmojiHandlers();
+
         // Update URL hash
         this.updateHash(chapterId);
 
@@ -106,6 +113,21 @@ class Reader {
         window.dispatchEvent(new CustomEvent('chapterLoaded', {
             detail: { chapterId, chapter }
         }));
+    }
+
+    // Attach click handlers to media emojis
+    attachMediaEmojiHandlers() {
+        const mediaEmojis = this.chapterBody.querySelectorAll('.media-emoji');
+
+        mediaEmojis.forEach(emoji => {
+            emoji.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mediaId = emoji.getAttribute('data-media-id');
+                if (mediaId) {
+                    mediaModal.open(mediaId);
+                }
+            });
+        });
     }
 
     // Handle scroll events

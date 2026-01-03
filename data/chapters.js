@@ -14,7 +14,7 @@ My editor at the Detroit Free Press had sent me down to cover spring training—
 
 Sparky Anderson was already a legend. Two World Series titles with the Big Red Machine in Cincinnati, now three years into rebuilding the Tigers after their magical '84 championship. He didn't suffer fools, and I was about to prove myself the biggest fool in Lakeland.
 
-I approached him after practice, notebook in hand, recorder dangling from my neck like some kind of press credential. He was sitting on a folding chair outside the clubhouse, smoking a cigarette and watching the minor leaguers take batting practice.
+I approached him after practice, notebook in hand <span class="media-emoji" data-media-id="notes-1">📝</span>, recorder dangling from my neck like some kind of press credential <span class="media-emoji" data-media-id="audio-1">⏺</span>. He was sitting on a folding chair outside the clubhouse, smoking a cigarette and watching the minor leaguers take batting practice <span class="media-emoji" data-media-id="photo-1">📷</span>.
 
 "Mr. Anderson," I started, my voice cracking slightly. "I'm from the Free Press. I was hoping to ask you about the rotation."
 
@@ -49,15 +49,15 @@ This is where it all began.`,
         title: "Chapter 2: The Double Play Twins",
         subtitle: "Lou and Sweet Lou, 1988",
         teaser: "There's a rhythm to a perfect double play that transcends the mere mechanics of baseball.",
-        content: `There's a rhythm to a perfect double play that transcends the mere mechanics of baseball. It's poetry in motion—the shortstop gliding to his right, barehandng the grounder, the pivot at second base, the throw to first arriving just ahead of the runner. Six-four-three in the scorebook. Perfection on paper.
+        content: `There's a rhythm to a perfect double play that transcends the mere mechanics of baseball <span class="media-emoji" data-media-id="baseball-1">⚾</span>. It's poetry in motion—the shortstop gliding to his right, barehandng the grounder, the pivot at second base, the throw to first arriving just ahead of the runner. Six-four-three in the scorebook. Perfection on paper.
 
-Lou Whitaker and Alan Trammell executed this dance better than anyone in baseball history. For nineteen seasons, they were the heartbeat of the Detroit Tigers, so in sync that they seemed to communicate through some kind of baseball telepathy.
+Lou Whitaker and Alan Trammell executed this dance better than anyone in baseball history <span class="media-emoji" data-media-id="photo-2">📸</span>. For nineteen seasons, they were the heartbeat of the Detroit Tigers, so in sync that they seemed to communicate through some kind of baseball telepathy.
 
-"We don't need to talk," Trammell told me in 1988, before a game against the Red Sox. "I know where Lou's going to be. He knows where I'm going to be. We've done this a million times."
+"We don't need to talk," Trammell told me in 1988, before a game against the Red Sox <span class="media-emoji" data-media-id="interview-1">🎤</span>. "I know where Lou's going to be. He knows where I'm going to be. We've done this a million times."
 
 A million times. Maybe that wasn't even an exaggeration.
 
-I remember a game in July of '88—a humid Tuesday night at Tiger Stadium, the kind of night where the air is so thick it feels like you're breathing water. The Yankees had runners on first and third with one out in the seventh inning. Tigers were up by one. The whole season seemed to hang on this moment.
+I remember a game in July of '88—a humid Tuesday night at Tiger Stadium, the kind of night where the air is so thick it feels like you're breathing water. The Yankees had runners on first and third with one out in the seventh inning. Tigers were up by one. The whole season seemed to hang on this moment <span class="media-emoji" data-media-id="video-1">🎬</span>.
 
 Don Mattingly stepped to the plate. Mattingly was hitting .330 that season, already had three hits that night. Jack Morris was on the mound, and you could see the fatigue in his eyes. One more batter, maybe two, and Sparky would have to go to the bullpen.
 
@@ -81,9 +81,9 @@ He looked at me with those steady eyes, the eyes of a man who had been underesti
 
 That was Lou Whitaker. No flash, no self-promotion, just excellence. Night after night, year after year, he and Trammell showed up and did their jobs at a level that should have made them first-ballot Hall of Famers. But because they played in Detroit, because they weren't loud or controversial, because they just quietly went about being great, they were overlooked.
 
-It's one of baseball's greatest injustices that Lou Whitaker isn't in Cooperstown. Nineteen years, all with the Tigers. Five All-Star teams. Four Silver Sluggers. Three Gold Gloves. But more than the awards, there was the consistency, the professionalism, the quiet dignity with which he played the game.
+It's one of baseball's greatest injustices that Lou Whitaker isn't in Cooperstown <span class="media-emoji" data-media-id="miss-1">❌</span>. Nineteen years, all with the Tigers. Five All-Star teams. Four Silver Sluggers. Three Gold Gloves <span class="media-emoji" data-media-id="award-1">🏆</span>. But more than the awards, there was the consistency, the professionalism, the quiet dignity with which he played the game.
 
-And there was Trammell, his partner, his friend, his other half on the diamond. If baseball were fair, they would have gone into the Hall of Fame together, the way they did everything else—as a pair, inseparable, complete.
+And there was Trammell, his partner, his friend, his other half on the diamond. If baseball were fair, they would have gone into the Hall of Fame together, the way they did everything else—as a pair, inseparable, complete <span class="media-emoji" data-media-id="scoop-1">🍦</span>.
 
 But baseball isn't fair. It's just beautiful.
 
@@ -175,15 +175,15 @@ I was watching, Jack. I saw it all. And I'll never forget.`,
         title: "Chapter 4: The Kid from Cass Tech",
         subtitle: "Cecil Fielder and the Power of Belief, 1990",
         teaser: "Cecil Fielder came back from Japan like a man on a mission.",
-        content: `Cecil Fielder came back from Japan like a man on a mission. The Tigers signed him before the 1990 season for $1 million—a bargain that would look more ridiculous with every towering home run.
+        content: `Cecil Fielder came back from Japan like a man on a mission. The Tigers signed him before the 1990 season for $1 million—a bargain that would look more ridiculous with every towering home run <span class="media-emoji" data-media-id="receipt-1">🧾</span>.
 
 Nobody expected what happened next. Nobody.
 
 Fielder had washed out of the majors once before, playing for Toronto, unable to get regular playing time. So he went to Japan, played for the Hanshin Tigers, and discovered something about himself: he could hit for power. Real power. The kind that makes people stop what they're doing and watch the ball disappear.
 
-When he came back to Detroit, he told anyone who would listen: "I'm going to hit 50 home runs."
+When he came back to Detroit, he told anyone who would listen: "I'm going to hit 50 home runs." <span class="media-emoji" data-media-id="radio-1">📻</span>
 
-We smiled politely. We wrote it down in our notebooks. We didn't believe him.
+We smiled politely. We wrote it down in our notebooks <span class="media-emoji" data-media-id="duck-1">🦆</span>. We didn't believe him.
 
 In 1990, Cecil Fielder became the first player since George Foster in 1977 to hit 50 home runs in a season. He hit 51. He drove in 132 runs. He made the All-Star team. He finished eighth in MVP voting. And he made all of us who doubted him look like fools.
 
@@ -203,9 +203,9 @@ But the home runs were only part of the story. The real story was about belief. 
 
 There was no bitterness in his voice. Just statement of fact. Cecil Fielder wasn't angry at the doubters—he was grateful for the opportunity to prove them wrong.
 
-He hit home run number 50 in October, on the second-to-last day of the season, against the Yankees. The ball landed in the left field upper deck, naturally. When he rounded third base, the crowd at Tiger Stadium—a sparse crowd, because the team was terrible—gave him a standing ovation that lasted five minutes.
+He hit home run number 50 in October, on the second-to-last day of the season, against the Yankees <span class="media-emoji" data-media-id="tv-local-1">📺</span>. The ball landed in the left field upper deck, naturally. When he rounded third base, the crowd at Tiger Stadium—a sparse crowd, because the team was terrible—gave him a standing ovation that lasted five minutes.
 
-I was in the press box, and I'll admit it: I got choked up. There's something about witnessing history that transcends the daily grind of sports journalism. For one moment, the deadlines and the word counts and the cynicism all fell away, and there was just pure joy.
+I was in the press box, and I'll admit it: I got choked up. There's something about witnessing history that transcends the daily grind of sports journalism <span class="media-emoji" data-media-id="newspaper-1">📰</span>. For one moment, the deadlines and the word counts and the cynicism all fell away, and there was just pure joy.
 
 Cecil Fielder did the impossible. He brought power back to baseball in an era when the game was starting to get small, when managers were bunting and stealing and playing for one run. Fielder said: forget all that. I'm hitting home runs.
 
