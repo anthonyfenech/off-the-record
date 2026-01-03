@@ -3,6 +3,7 @@
 import { reader } from './reader.js';
 import { navigation } from './navigation.js';
 import { pwa } from './pwa.js';
+import { photoGallery } from './photoGallery.js';
 
 class App {
     constructor() {
@@ -28,6 +29,7 @@ class App {
             reader.init();
             navigation.init();
             pwa.init();
+            photoGallery.init();
 
             this.isReady = true;
             console.log('OFF-THE-RECORD: Ready');

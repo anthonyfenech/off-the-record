@@ -3,6 +3,8 @@
 import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete, calculateOverallProgress } from './storage.js';
+import { photoGallery } from './photoGallery.js';
+import { getAllGalleries } from '../data/photos.js';
 
 class Navigation {
     constructor() {
@@ -212,15 +214,22 @@ class Navigation {
             sectionHeader.appendChild(sectionIcon);
             sectionHeader.appendChild(sectionTitle);
 
-            // Section content (coming soon message)
+            // Section content
             const sectionContent = document.createElement('div');
             sectionContent.className = 'toc-section-content collapsed';
+            sectionContent.id = `toc-section-${section.id}`;
 
-            const comingSoon = document.createElement('div');
-            comingSoon.className = 'coming-soon';
-            comingSoon.textContent = 'Coming Soon';
-
-            sectionContent.appendChild(comingSoon);
+            // Photo section gets special treatment - render gallery
+            if (section.id === 'photo') {
+                // Content will be rendered when section is first expanded
+                sectionContent.dataset.needsInit = 'true';
+            } else {
+                // Other sections show "Coming Soon"
+                const comingSoon = document.createElement('div');
+                comingSoon.className = 'coming-soon';
+                comingSoon.textContent = 'Coming Soon';
+                sectionContent.appendChild(comingSoon);
+            }
 
             // Click handler for header
             sectionHeader.addEventListener('click', () => {
@@ -245,7 +254,29 @@ class Navigation {
             // Expand
             this.expandedSections.add(sectionId);
             sectionContent.classList.remove('collapsed');
+
+            // Initialize photo gallery if needed
+            if (sectionId === 'photo' && sectionContent.dataset.needsInit === 'true') {
+                this.initializePhotoGallery(sectionContent);
+                delete sectionContent.dataset.needsInit;
+            }
         }
+    }
+
+    // Initialize photo gallery in the sidebar
+    initializePhotoGallery(container) {
+        const galleries = getAllGalleries();
+
+        // Render each gallery
+        galleries.forEach(gallery => {
+            const galleryContainer = document.createElement('div');
+            galleryContainer.id = `gallery-${gallery.id}`;
+            galleryContainer.className = 'gallery-container';
+            container.appendChild(galleryContainer);
+
+            // Use photoGallery component to render the grid
+            photoGallery.renderGalleryGrid(gallery.id, `gallery-${gallery.id}`);
+        });
     }
 
     // Update TOC state (active chapter, completion)
