@@ -1,0 +1,448 @@
+/* UI Components */
+
+/* Continue Reading Banner */
+.continue-reading {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    padding: var(--space-lg) var(--padding-mobile);
+    border-bottom: 2px solid var(--color-accent);
+    z-index: 85;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.continue-reading:hover {
+    background-color: var(--color-text-secondary);
+}
+
+.continue-reading-content {
+    max-width: var(--max-width-reader);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.continue-reading-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.continue-reading-chapter {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+}
+
+/* Scene Break */
+.scene-break {
+    text-align: center;
+    margin: var(--space-3xl) 0;
+    position: relative;
+}
+
+.scene-break span {
+    font-family: var(--font-mono);
+    color: var(--color-text-tertiary);
+    letter-spacing: 0.5em;
+}
+
+/* Year-based TOC Sections */
+.toc-year-section {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.toc-year-header {
+    padding: var(--space-lg) var(--padding-mobile);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--color-background);
+    transition: background-color var(--transition-fast);
+    position: relative;
+}
+
+.toc-year-header:hover {
+    background-color: var(--color-accent-light);
+}
+
+.toc-year-header::after {
+    content: '▼';
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    margin-left: var(--space-sm);
+    transition: transform var(--transition-fast);
+}
+
+.toc-year-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.toc-year-count {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.toc-year-chapters {
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+}
+
+.toc-year-chapters.collapsed {
+    max-height: 0;
+}
+
+/* Divider between chapters and content sections */
+.toc-divider {
+    height: 2px;
+    background-color: var(--color-border);
+    margin: var(--space-lg) 0;
+}
+
+/* Content Sections (Blog, Podcast, etc.) */
+.toc-content-section {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.toc-section-header {
+    padding: var(--space-xl) var(--padding-mobile);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    cursor: pointer;
+    background-color: var(--color-accent-light);
+    transition: background-color var(--transition-fast);
+    position: relative;
+}
+
+.toc-section-header:hover {
+    background-color: var(--color-border);
+}
+
+.toc-section-header::after {
+    content: '▼';
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    margin-left: auto;
+    transition: transform var(--transition-fast);
+}
+
+.toc-section-icon {
+    font-size: var(--font-size-lg);
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+.toc-section-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.toc-section-content {
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+}
+
+.toc-section-content.collapsed {
+    max-height: 0;
+}
+
+.coming-soon {
+    padding: var(--space-xl) var(--padding-mobile);
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Chapter list items in TOC */
+.toc-chapter {
+    padding: var(--space-lg) var(--padding-mobile) var(--space-lg) var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    min-height: var(--min-touch-target);
+    position: relative;
+    background-color: var(--color-background);
+}
+
+.toc-chapter:hover {
+    background-color: var(--color-accent-light);
+}
+
+.toc-chapter.active {
+    background-color: var(--color-accent-light);
+    border-left: 3px solid var(--color-accent);
+}
+
+.toc-chapter.completed {
+    opacity: 0.6;
+}
+
+.toc-chapter-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+}
+
+.toc-read-time {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.toc-chapter-teaser {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-top: var(--space-xs);
+}
+
+/* Chapter icon/indicator */
+.chapter-indicator {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.chapter-indicator svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-success);
+}
+
+.chapter-indicator.current {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+/* Chapter info in TOC */
+.toc-chapter-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.toc-chapter-title {
+    margin-bottom: var(--space-xs);
+}
+
+.toc-chapter-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.word-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error state */
+.error {
+    padding: var(--space-lg);
+    background-color: #ffebee;
+    border: 1px solid #ef5350;
+    border-radius: 4px;
+    color: #c62828;
+    text-align: center;
+}
+
+/* Install prompt (PWA) */
+.install-prompt {
+    position: fixed;
+    bottom: 80px;
+    left: var(--padding-mobile);
+    right: var(--padding-mobile);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    padding: var(--space-lg);
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    z-index: 80;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.install-prompt.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.install-prompt-text {
+    flex: 1;
+    font-size: var(--font-size-sm);
+}
+
+.install-btn {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    padding: var(--space-sm) var(--space-lg);
+    border: 1px solid var(--color-accent);
+    font-weight: bold;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+    transition: all var(--transition-fast);
+}
+
+.install-btn:hover {
+    background-color: var(--color-background);
+    color: var(--color-accent);
+}
+
+.dismiss-install {
+    color: var(--color-text-secondary);
+    padding: var(--space-sm);
+}
+
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 100px;
+    right: var(--padding-mobile);
+    width: var(--min-touch-target);
+    height: var(--min-touch-target);
+    background-color: var(--color-background);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 0;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 80;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+}
+
+/* Touch feedback */
+@media (hover: none) {
+    .nav-btn:active,
+    .toc-chapter:active,
+    .install-btn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Accessibility: Focus styles */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Hide scrollbar but keep functionality */
+.toc-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.toc-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.toc-content::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+
+.toc-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-secondary);
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+    .install-prompt {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(20px);
+        max-width: var(--max-width-reader);
+    }
+
+    .install-prompt.show {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .scroll-top {
+        right: var(--padding-tablet);
+    }
+}

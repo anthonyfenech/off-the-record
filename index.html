@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="OFF-THE-RECORD: A Baseball Memoir - 15 years covering the Detroit Tigers">
+    <meta name="theme-color" content="#0d47a1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OFF-THE-RECORD">
+
+    <title>OFF-THE-RECORD: A Baseball Memoir</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <h1 class="header-title">OFF-THE-RECORD</h1>
+            <div class="header-progress" id="headerProgress">
+                <span class="progress-text">0%</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Continue Reading Button -->
+    <div class="continue-reading" id="continueReading" style="display: none;">
+        <div class="continue-reading-content">
+            <span class="continue-reading-label">Continue Reading</span>
+            <span class="continue-reading-chapter" id="continueChapter"></span>
+        </div>
+    </div>
+
+    <!-- Main Reading Area -->
+    <main class="reader" id="reader">
+        <article class="chapter" id="chapterContent">
+            <header class="chapter-header">
+                <h2 class="chapter-title" id="chapterTitle">Loading...</h2>
+                <p class="chapter-subtitle" id="chapterSubtitle"></p>
+                <p class="chapter-meta" id="chapterMeta"></p>
+            </header>
+            <div class="chapter-body" id="chapterBody">
+                <p>Loading chapter content...</p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Chapter Navigation Footer -->
+    <nav class="nav-footer" id="navFooter">
+        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span>Previous</span>
+        </button>
+        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
+            <span>Next</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <h2>Chapters</h2>
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <div class="toc-footer">
+            <p class="overall-progress" id="overallProgress">Overall Progress: 0%</p>
+        </div>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="/data/chapters.js"></script>
+    <script type="module" src="/js/storage.js"></script>
+    <script type="module" src="/js/reader.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/pwa.js"></script>
+    <script type="module" src="/js/app.js"></script>
+</body>
+</html>

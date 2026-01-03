@@ -1,0 +1,139 @@
+/* Typography System - Typewriter Aesthetic */
+
+body {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+}
+
+/* Reading-optimized body text */
+.chapter-body {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+}
+
+.chapter-body p {
+    margin-bottom: var(--space-lg);
+}
+
+.chapter-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Prevent orphans and improve text rendering */
+.chapter-body p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Chapter titles - Typewriter style with uppercase and letter-spacing */
+.chapter-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.chapter-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.chapter-meta {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    margin-bottom: 0;
+}
+
+/* Header typography */
+.header-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Progress text */
+.progress-text {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    font-weight: normal;
+}
+
+/* Navigation buttons */
+.nav-btn {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Table of Contents */
+.toc-header h2 {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.toc-chapter-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+}
+
+.toc-chapter-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.overall-progress {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+    .chapter-body {
+        font-size: var(--font-size-md);
+    }
+
+    .chapter-title {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .chapter-body {
+        font-size: var(--font-size-md);
+    }
+}

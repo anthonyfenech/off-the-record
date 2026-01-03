@@ -1,0 +1,393 @@
+// Navigation - Chapter navigation and Table of Contents
+
+import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime } from '../data/chapters.js';
+import { reader } from './reader.js';
+import { isChapterComplete, calculateOverallProgress } from './storage.js';
+
+class Navigation {
+    constructor() {
+        // DOM elements
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.menuBtn = document.getElementById('menuBtn');
+        this.closeTocBtn = document.getElementById('closeTocBtn');
+        this.tocSidebar = document.getElementById('tocSidebar');
+        this.overlay = document.getElementById('overlay');
+        this.tocContent = document.getElementById('tocContent');
+        this.overallProgress = document.getElementById('overallProgress');
+
+        // State
+        this.currentChapterId = 1;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.expandedYears = new Set(); // Track which years are expanded
+        this.expandedSections = new Set(); // Track which content sections are expanded
+    }
+
+    // Initialize navigation
+    init() {
+        // Build TOC with chapters
+        this.buildTOC();
+
+        // Build additional content sections
+        this.buildContentSections();
+
+        // Set up event listeners
+        this.prevBtn.addEventListener('click', () => this.goToPreviousChapter());
+        this.nextBtn.addEventListener('click', () => this.goToNextChapter());
+        this.menuBtn.addEventListener('click', () => this.openTOC());
+        this.closeTocBtn.addEventListener('click', () => this.closeTOC());
+        this.overlay.addEventListener('click', () => this.closeTOC());
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+
+        // Listen for chapter changes
+        window.addEventListener('chapterLoaded', (e) => {
+            this.currentChapterId = e.detail.chapterId;
+            this.updateNavigationState();
+            this.updateTOCState();
+        });
+
+        // Listen for chapter completion
+        window.addEventListener('chapterCompleted', () => {
+            this.updateTOCState();
+        });
+
+        // Touch gestures for swipe navigation
+        this.setupSwipeGestures();
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', () => {
+            const chapterId = reader.getChapterFromHash();
+            if (chapterId) {
+                reader.loadChapter(chapterId);
+            }
+        });
+
+        // Initial state
+        this.updateNavigationState();
+    }
+
+    // Build Table of Contents - Year-based collapsible sections
+    buildTOC() {
+        const fragment = document.createDocumentFragment();
+        const chaptersByYear = getChaptersByYear();
+        const years = Object.keys(chaptersByYear).sort();
+
+        years.forEach(year => {
+            const chapters = chaptersByYear[year];
+
+            // Create year section
+            const yearSection = document.createElement('div');
+            yearSection.className = 'toc-year-section';
+            yearSection.dataset.year = year;
+
+            // Year header (clickable to expand/collapse)
+            const yearHeader = document.createElement('div');
+            yearHeader.className = 'toc-year-header';
+
+            const yearTitle = document.createElement('h3');
+            yearTitle.className = 'toc-year-title';
+            yearTitle.textContent = year;
+
+            const yearCount = document.createElement('span');
+            yearCount.className = 'toc-year-count';
+            yearCount.textContent = `(${chapters.length} ${chapters.length === 1 ? 'chapter' : 'chapters'})`;
+
+            yearHeader.appendChild(yearTitle);
+            yearHeader.appendChild(yearCount);
+
+            // Year chapters container
+            const chaptersContainer = document.createElement('div');
+            chaptersContainer.className = 'toc-year-chapters collapsed';
+
+            // Build chapter items
+            chapters.forEach(chapter => {
+                const item = document.createElement('div');
+                item.className = 'toc-chapter';
+                item.dataset.chapterId = chapter.id;
+
+                const indicator = document.createElement('div');
+                indicator.className = 'chapter-indicator';
+
+                const info = document.createElement('div');
+                info.className = 'toc-chapter-info';
+
+                const titleRow = document.createElement('div');
+                titleRow.className = 'toc-chapter-title-row';
+
+                const title = document.createElement('span');
+                title.className = 'toc-chapter-title';
+                title.textContent = chapter.title;
+
+                const readTime = document.createElement('span');
+                readTime.className = 'toc-read-time';
+                const minutes = calculateReadingTime(chapter.wordCount);
+                readTime.textContent = `${minutes} min`;
+
+                titleRow.appendChild(title);
+                titleRow.appendChild(readTime);
+
+                const teaser = document.createElement('div');
+                teaser.className = 'toc-chapter-teaser';
+                teaser.textContent = chapter.teaser;
+
+                info.appendChild(titleRow);
+                info.appendChild(teaser);
+
+                item.appendChild(indicator);
+                item.appendChild(info);
+
+                // Click handler
+                item.addEventListener('click', () => {
+                    reader.loadChapter(chapter.id);
+                    this.closeTOC();
+                });
+
+                chaptersContainer.appendChild(item);
+            });
+
+            // Year header click handler
+            yearHeader.addEventListener('click', () => {
+                this.toggleYear(year, chaptersContainer);
+            });
+
+            yearSection.appendChild(yearHeader);
+            yearSection.appendChild(chaptersContainer);
+            fragment.appendChild(yearSection);
+        });
+
+        this.tocContent.appendChild(fragment);
+
+        // Add a divider between chapters and other content sections
+        const divider = document.createElement('div');
+        divider.className = 'toc-divider';
+        this.tocContent.appendChild(divider);
+    }
+
+    // Toggle year section
+    toggleYear(year, chaptersContainer) {
+        if (this.expandedYears.has(year)) {
+            // Collapse
+            this.expandedYears.delete(year);
+            chaptersContainer.classList.add('collapsed');
+        } else {
+            // Expand
+            this.expandedYears.add(year);
+            chaptersContainer.classList.remove('collapsed');
+        }
+    }
+
+    // Build additional content sections (Blog, Podcast, etc.)
+    buildContentSections() {
+        const sections = [
+            { id: 'blog', label: 'BLOG', icon: '📝' },
+            { id: 'podcast', label: 'PODCAST', icon: '🎙️' },
+            { id: 'audio', label: 'AUDIO', icon: '🔊' },
+            { id: 'video', label: 'VIDEO', icon: '🎬' },
+            { id: 'photo', label: 'PHOTO', icon: '📷' }
+        ];
+
+        const fragment = document.createDocumentFragment();
+
+        sections.forEach(section => {
+            // Create section wrapper
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'toc-content-section';
+            sectionDiv.dataset.section = section.id;
+
+            // Section header (clickable to expand/collapse)
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'toc-section-header';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-section-title';
+            sectionTitle.textContent = section.label;
+
+            const sectionIcon = document.createElement('span');
+            sectionIcon.className = 'toc-section-icon';
+            sectionIcon.textContent = section.icon;
+
+            sectionHeader.appendChild(sectionIcon);
+            sectionHeader.appendChild(sectionTitle);
+
+            // Section content (coming soon message)
+            const sectionContent = document.createElement('div');
+            sectionContent.className = 'toc-section-content collapsed';
+
+            const comingSoon = document.createElement('div');
+            comingSoon.className = 'coming-soon';
+            comingSoon.textContent = 'Coming Soon';
+
+            sectionContent.appendChild(comingSoon);
+
+            // Click handler for header
+            sectionHeader.addEventListener('click', () => {
+                this.toggleSection(section.id, sectionContent);
+            });
+
+            sectionDiv.appendChild(sectionHeader);
+            sectionDiv.appendChild(sectionContent);
+            fragment.appendChild(sectionDiv);
+        });
+
+        this.tocContent.appendChild(fragment);
+    }
+
+    // Toggle content section
+    toggleSection(sectionId, sectionContent) {
+        if (this.expandedSections.has(sectionId)) {
+            // Collapse
+            this.expandedSections.delete(sectionId);
+            sectionContent.classList.add('collapsed');
+        } else {
+            // Expand
+            this.expandedSections.add(sectionId);
+            sectionContent.classList.remove('collapsed');
+        }
+    }
+
+    // Update TOC state (active chapter, completion)
+    updateTOCState() {
+        const items = this.tocContent.querySelectorAll('.toc-chapter');
+
+        items.forEach(item => {
+            const chapterId = parseInt(item.dataset.chapterId);
+            const indicator = item.querySelector('.chapter-indicator');
+
+            // Remove all classes
+            item.classList.remove('active', 'completed');
+            indicator.innerHTML = '';
+
+            // Add current chapter indicator
+            if (chapterId === this.currentChapterId) {
+                item.classList.add('active');
+                indicator.classList.add('current');
+                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+
+                // Auto-expand the year containing current chapter
+                const chapter = CHAPTERS.find(c => c.id === chapterId);
+                if (chapter) {
+                    const yearSection = this.tocContent.querySelector(`[data-year="${chapter.year}"]`);
+                    if (yearSection) {
+                        const chaptersContainer = yearSection.querySelector('.toc-year-chapters');
+                        if (chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
+                            this.toggleYear(chapter.year.toString(), chaptersContainer);
+                        }
+                    }
+                }
+            }
+            // Add completion checkmark
+            else if (isChapterComplete(chapterId)) {
+                item.classList.add('completed');
+                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+            }
+        });
+
+        // Update overall progress
+        const progress = calculateOverallProgress(getChapterCount());
+        this.overallProgress.textContent = `Overall Progress: ${progress}%`;
+    }
+
+    // Update navigation button states
+    updateNavigationState() {
+        // Disable prev button on first chapter
+        if (this.currentChapterId <= 1) {
+            this.prevBtn.disabled = true;
+        } else {
+            this.prevBtn.disabled = false;
+        }
+
+        // Disable next button on last chapter
+        if (this.currentChapterId >= getChapterCount()) {
+            this.nextBtn.disabled = true;
+        } else {
+            this.nextBtn.disabled = false;
+        }
+    }
+
+    // Navigation actions
+    goToPreviousChapter() {
+        if (this.currentChapterId > 1) {
+            reader.loadChapter(this.currentChapterId - 1);
+        }
+    }
+
+    goToNextChapter() {
+        if (this.currentChapterId < getChapterCount()) {
+            reader.loadChapter(this.currentChapterId + 1);
+        }
+    }
+
+    // TOC actions
+    openTOC() {
+        this.tocSidebar.classList.add('open');
+        this.overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeTOC() {
+        this.tocSidebar.classList.remove('open');
+        this.overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Keyboard navigation
+    handleKeyPress(e) {
+        // Ignore if TOC is open or user is typing
+        if (this.tocSidebar.classList.contains('open') ||
+            e.target.tagName === 'INPUT' ||
+            e.target.tagName === 'TEXTAREA') {
+            return;
+        }
+
+        switch(e.key) {
+            case 'ArrowLeft':
+            case 'h':
+                e.preventDefault();
+                this.goToPreviousChapter();
+                break;
+            case 'ArrowRight':
+            case 'l':
+                e.preventDefault();
+                this.goToNextChapter();
+                break;
+            case 'Escape':
+                e.preventDefault();
+                this.closeTOC();
+                break;
+        }
+    }
+
+    // Swipe gestures for mobile
+    setupSwipeGestures() {
+        const reader = document.getElementById('reader');
+
+        reader.addEventListener('touchstart', (e) => {
+            this.touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        reader.addEventListener('touchend', (e) => {
+            this.touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe();
+        }, { passive: true });
+    }
+
+    handleSwipe() {
+        const swipeThreshold = 100; // Minimum distance for swipe
+        const diff = this.touchStartX - this.touchEndX;
+
+        // Swipe left = next chapter
+        if (diff > swipeThreshold) {
+            this.goToNextChapter();
+        }
+        // Swipe right = previous chapter
+        else if (diff < -swipeThreshold) {
+            this.goToPreviousChapter();
+        }
+    }
+}
+
+// Export single instance
+export const navigation = new Navigation();
