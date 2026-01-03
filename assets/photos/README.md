@@ -2,28 +2,50 @@
 
 This directory contains photos for the OFF-THE-RECORD memoir photo galleries.
 
+## Photo Galleries
+
+### Active Galleries (Ready for Photos)
+
+#### 2015 Season (31 photos)
+- Files: `IMG_5011.JPG` through `IMG_5041.JPG`
+- Location: `2015-season/`
+- Thumbnails: `2015-season/thumbs/`
+
+#### 2016 Season (28 photos)
+- Files: `IMG_5073.JPG` through `IMG_5100.JPG`
+- Location: `2016-season/`
+- Thumbnails: `2016-season/thumbs/`
+
+### Coming Soon Galleries
+
+The following galleries are placeholders and will be activated when ready:
+- 2017 Season
+- 2018 Season
+- 2019 Season
+- 2020 Season
+- All of the Lights (night games)
+- Batting Practice
+- From the Dugout
+
 ## Adding Photos
 
-### 2015 Season Gallery
-
-To add photos to the 2015 season gallery:
-
-1. Place your IMG_50*.jpg files in `2015-season/` directory
-2. The system expects 10 photos: IMG_5001.jpg through IMG_5010.jpg
-3. Optional: Create thumbnails in `2015-season/thumbs/` for faster loading
+1. Place your .JPG files in the appropriate season directory
+2. The system expects specific filenames (see above)
+3. Optional: Create thumbnails in `thumbs/` subdirectory for faster loading
    - Thumbnails should be ~200px square
-   - Same filename as the original
+   - Use same filename as the original
 
-### Updating Photo Data
+## Updating Photo Data
 
-After adding images, update `data/photos.js`:
+After adding images, update `data/photos.js` to mark photos as active:
 
 ```javascript
+// In the generatePhotoPlaceholders function call, or manually update:
 {
-    id: 'img-5001',
-    filename: 'IMG_5001.jpg',
-    src: '/assets/photos/2015-season/IMG_5001.jpg',
-    thumbnail: '/assets/photos/2015-season/thumbs/IMG_5001.jpg',
+    id: 'img-5011',
+    filename: 'IMG_5011.JPG',
+    src: '/assets/photos/2015-season/IMG_5011.JPG',
+    thumbnail: '/assets/photos/2015-season/thumbs/IMG_5011.JPG',
     caption: 'Update this caption',
     date: '2015-04-15',
     location: 'Comerica Park, Detroit',
@@ -31,18 +53,24 @@ After adding images, update `data/photos.js`:
 }
 ```
 
-### Directory Structure
+## Directory Structure
 
 ```
 assets/photos/
 ├── README.md
-└── 2015-season/
-    ├── IMG_5001.jpg
-    ├── IMG_5002.jpg
-    ├── ...
+├── 2015-season/
+│   ├── IMG_5011.JPG
+│   ├── IMG_5012.JPG
+│   ├── ... (through IMG_5041.JPG)
+│   └── thumbs/
+│       ├── IMG_5011.JPG
+│       └── ...
+└── 2016-season/
+    ├── IMG_5073.JPG
+    ├── IMG_5074.JPG
+    ├── ... (through IMG_5100.JPG)
     └── thumbs/
-        ├── IMG_5001.jpg
-        ├── IMG_5002.jpg
+        ├── IMG_5073.JPG
         └── ...
 ```
 

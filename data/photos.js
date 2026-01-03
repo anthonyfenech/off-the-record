@@ -1,5 +1,25 @@
 // Photo galleries for OFF-THE-RECORD memoir
-// Organized by season/year
+// Organized by season/year and theme
+
+// Helper to generate photo placeholders
+const generatePhotoPlaceholders = (startNum, endNum, year, season) => {
+    const photos = [];
+    for (let i = startNum; i <= endNum; i++) {
+        const filename = `IMG_${i}.JPG`;
+        const photoNum = i - startNum + 1;
+        photos.push({
+            id: `img-${i}`,
+            filename: filename,
+            src: `/assets/photos/${season}/IMG_${i}.JPG`,
+            thumbnail: `/assets/photos/${season}/thumbs/IMG_${i}.JPG`,
+            caption: `${year} season - Photo ${photoNum}`,
+            date: `${year}-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
+            location: 'Comerica Park, Detroit',
+            hasImage: false
+        });
+    }
+    return photos;
+};
 
 export const PHOTO_GALLERIES = [
     {
@@ -7,109 +27,81 @@ export const PHOTO_GALLERIES = [
         title: '2015 Season',
         year: 2015,
         description: 'Behind the scenes coverage of the Detroit Tigers 2015 season',
-        coverPhoto: '/assets/photos/2015-season/IMG_5001.jpg',
-        photos: [
-            {
-                id: 'img-5001',
-                filename: 'IMG_5001.jpg',
-                src: '/assets/photos/2015-season/IMG_5001.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5001.jpg',
-                caption: 'Pre-game warmups at Comerica Park',
-                date: '2015-04-15',
-                location: 'Comerica Park, Detroit',
-                hasImage: false // Set to true when actual image is added
-            },
-            {
-                id: 'img-5002',
-                filename: 'IMG_5002.jpg',
-                src: '/assets/photos/2015-season/IMG_5002.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5002.jpg',
-                caption: 'Press box view before first pitch',
-                date: '2015-04-15',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5003',
-                filename: 'IMG_5003.jpg',
-                src: '/assets/photos/2015-season/IMG_5003.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5003.jpg',
-                caption: 'Batting practice from the dugout',
-                date: '2015-05-10',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5004',
-                filename: 'IMG_5004.jpg',
-                src: '/assets/photos/2015-season/IMG_5004.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5004.jpg',
-                caption: 'Clubhouse access during media availability',
-                date: '2015-05-12',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5005',
-                filename: 'IMG_5005.jpg',
-                src: '/assets/photos/2015-season/IMG_5005.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5005.jpg',
-                caption: 'Game day atmosphere in the stands',
-                date: '2015-06-20',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5006',
-                filename: 'IMG_5006.jpg',
-                src: '/assets/photos/2015-season/IMG_5006.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5006.jpg',
-                caption: 'Night game under the lights',
-                date: '2015-07-04',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5007',
-                filename: 'IMG_5007.jpg',
-                src: '/assets/photos/2015-season/IMG_5007.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5007.jpg',
-                caption: 'Post-game interview session',
-                date: '2015-07-15',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5008',
-                filename: 'IMG_5008.jpg',
-                src: '/assets/photos/2015-season/IMG_5008.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5008.jpg',
-                caption: 'Press credentials and access badge',
-                date: '2015-08-01',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5009',
-                filename: 'IMG_5009.jpg',
-                src: '/assets/photos/2015-season/IMG_5009.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5009.jpg',
-                caption: 'Stadium exterior on game day',
-                date: '2015-08-20',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            },
-            {
-                id: 'img-5010',
-                filename: 'IMG_5010.jpg',
-                src: '/assets/photos/2015-season/IMG_5010.jpg',
-                thumbnail: '/assets/photos/2015-season/thumbs/IMG_5010.jpg',
-                caption: 'Final home game of the season',
-                date: '2015-09-27',
-                location: 'Comerica Park, Detroit',
-                hasImage: false
-            }
-        ]
+        coverPhoto: '/assets/photos/2015-season/IMG_5011.JPG',
+        photos: generatePhotoPlaceholders(5011, 5041, 2015, '2015-season'),
+        comingSoon: false
+    },
+    {
+        id: '2016-season',
+        title: '2016 Season',
+        year: 2016,
+        description: 'Behind the scenes coverage of the Detroit Tigers 2016 season',
+        coverPhoto: '/assets/photos/2016-season/IMG_5073.JPG',
+        photos: generatePhotoPlaceholders(5073, 5100, 2016, '2016-season'),
+        comingSoon: false
+    },
+    {
+        id: '2017-season',
+        title: '2017 Season',
+        year: 2017,
+        description: 'Behind the scenes coverage of the Detroit Tigers 2017 season',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
+    },
+    {
+        id: '2018-season',
+        title: '2018 Season',
+        year: 2018,
+        description: 'Behind the scenes coverage of the Detroit Tigers 2018 season',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
+    },
+    {
+        id: '2019-season',
+        title: '2019 Season',
+        year: 2019,
+        description: 'Behind the scenes coverage of the Detroit Tigers 2019 season',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
+    },
+    {
+        id: '2020-season',
+        title: '2020 Season',
+        year: 2020,
+        description: 'Behind the scenes coverage of the Detroit Tigers 2020 season',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
+    },
+    {
+        id: 'all-of-the-lights',
+        title: 'All of the Lights',
+        year: null,
+        description: 'Night games under the stadium lights',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
+    },
+    {
+        id: 'batting-practice',
+        title: 'Batting Practice',
+        year: null,
+        description: 'Pre-game warmups and batting practice sessions',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
+    },
+    {
+        id: 'from-the-dugout',
+        title: 'From the Dugout',
+        year: null,
+        description: 'Exclusive dugout access and player perspectives',
+        coverPhoto: null,
+        photos: [],
+        comingSoon: true
     }
 ];
 
@@ -120,6 +112,14 @@ export const getGalleryById = (id) => {
 
 export const getAllGalleries = () => {
     return PHOTO_GALLERIES;
+};
+
+export const getActiveGalleries = () => {
+    return PHOTO_GALLERIES.filter(gallery => !gallery.comingSoon);
+};
+
+export const getComingSoonGalleries = () => {
+    return PHOTO_GALLERIES.filter(gallery => gallery.comingSoon);
 };
 
 export const getPhotoById = (galleryId, photoId) => {

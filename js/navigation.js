@@ -266,17 +266,81 @@ class Navigation {
     // Initialize photo gallery in the sidebar
     initializePhotoGallery(container) {
         const galleries = getAllGalleries();
+        this.expandedGalleries = new Set(); // Track expanded galleries
 
-        // Render each gallery
+        // Render each gallery with collapsible header
         galleries.forEach(gallery => {
-            const galleryContainer = document.createElement('div');
-            galleryContainer.id = `gallery-${gallery.id}`;
-            galleryContainer.className = 'gallery-container';
-            container.appendChild(galleryContainer);
+            const gallerySection = document.createElement('div');
+            gallerySection.className = 'gallery-section';
+            gallerySection.dataset.galleryId = gallery.id;
 
-            // Use photoGallery component to render the grid
-            photoGallery.renderGalleryGrid(gallery.id, `gallery-${gallery.id}`);
+            // Gallery header (clickable to expand/collapse)
+            const galleryHeader = document.createElement('div');
+            galleryHeader.className = 'gallery-section-header';
+
+            const galleryInfo = document.createElement('div');
+            galleryInfo.className = 'gallery-section-info';
+
+            const galleryTitle = document.createElement('h4');
+            galleryTitle.className = 'gallery-section-title';
+            galleryTitle.textContent = gallery.title.toUpperCase();
+
+            const galleryCount = document.createElement('span');
+            galleryCount.className = 'gallery-section-count';
+
+            if (gallery.comingSoon) {
+                galleryCount.textContent = 'Coming Soon';
+                galleryCount.classList.add('coming-soon-badge');
+            } else {
+                galleryCount.textContent = `${gallery.photos.length} photos`;
+            }
+
+            galleryInfo.appendChild(galleryTitle);
+            galleryInfo.appendChild(galleryCount);
+            galleryHeader.appendChild(galleryInfo);
+
+            // Gallery content container
+            const galleryContent = document.createElement('div');
+            galleryContent.className = 'gallery-section-content collapsed';
+            galleryContent.id = `gallery-content-${gallery.id}`;
+
+            // Only add click handler if gallery has photos
+            if (!gallery.comingSoon) {
+                // Click handler for header
+                galleryHeader.addEventListener('click', () => {
+                    this.toggleGallery(gallery.id, galleryContent);
+                });
+                galleryHeader.style.cursor = 'pointer';
+            } else {
+                // Disable interaction for coming soon galleries
+                galleryHeader.classList.add('disabled');
+            }
+
+            gallerySection.appendChild(galleryHeader);
+            gallerySection.appendChild(galleryContent);
+            container.appendChild(gallerySection);
         });
+    }
+
+    // Toggle gallery expansion
+    toggleGallery(galleryId, galleryContent) {
+        const isExpanded = this.expandedGalleries.has(galleryId);
+
+        if (isExpanded) {
+            // Collapse
+            this.expandedGalleries.delete(galleryId);
+            galleryContent.classList.add('collapsed');
+        } else {
+            // Expand
+            this.expandedGalleries.add(galleryId);
+            galleryContent.classList.remove('collapsed');
+
+            // Render gallery grid if not already rendered
+            if (!galleryContent.dataset.rendered) {
+                photoGallery.renderGalleryGrid(galleryId, `gallery-content-${galleryId}`);
+                galleryContent.dataset.rendered = 'true';
+            }
+        }
     }
 
     // Update TOC state (active chapter, completion)
