@@ -185,7 +185,7 @@ body.paginated .chapter-body {
     top: 0;
     right: -100%;
     width: 70%;
-    max-width: 240px;
+    max-width: 280px;
     height: 100vh;
     background-color: var(--color-background);
     box-shadow: var(--shadow-md);
@@ -279,7 +279,7 @@ body.paginated .chapter-body {
     }
 
     .toc-sidebar {
-        width: 240px;
+        width: 280px;
     }
 }
 
