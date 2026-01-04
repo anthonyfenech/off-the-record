@@ -59,7 +59,7 @@
 }
 
 .toc-year-header {
-    padding: var(--space-lg) var(--padding-mobile);
+    padding: var(--space-sm) var(--padding-mobile);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,7 +118,7 @@
 }
 
 .toc-section-header {
-    padding: var(--space-xl) var(--padding-mobile);
+    padding: var(--space-sm) var(--padding-mobile);
     display: flex;
     align-items: center;
     gap: var(--space-md);
@@ -154,6 +154,8 @@
     margin: 0;
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-normal);
+    display: flex;
+    align-items: center;
 }
 
 .toc-section-content {
@@ -726,7 +728,7 @@ button:focus-visible {
 }
 
 .gallery-section-header {
-    padding: var(--space-lg) var(--padding-mobile);
+    padding: var(--space-sm) var(--padding-mobile);
     background-color: var(--color-background);
     transition: background-color var(--transition-fast);
     position: relative;

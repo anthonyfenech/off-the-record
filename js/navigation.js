@@ -184,10 +184,10 @@ class Navigation {
     // Build additional content sections (Blog, Podcast, etc.)
     buildContentSections() {
         const sections = [
-            { id: 'blog', label: 'BLOG', icon: '📝' },
-            { id: 'podcast', label: 'PODCAST', icon: '🎙️' },
-            { id: 'audio', label: 'AUDIO', icon: '🔊' },
-            { id: 'video', label: 'VIDEO', icon: '🎬' },
+            { id: 'blog', label: 'BL<span class="record-btn" aria-label="O"></span>G', icon: '📝' },
+            { id: 'podcast', label: 'P<span class="record-btn" aria-label="O"></span>DCAST', icon: '🎙️' },
+            { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>', icon: '🔊' },
+            { id: 'video', label: 'VIDE<span class="record-btn" aria-label="O"></span>', icon: '🎬' },
             { id: 'photo', label: 'PHOTO', icon: '📷' }
         ];
 
@@ -205,7 +205,7 @@ class Navigation {
 
             const sectionTitle = document.createElement('h3');
             sectionTitle.className = 'toc-section-title';
-            sectionTitle.textContent = section.label;
+            sectionTitle.innerHTML = section.label;
 
             const sectionIcon = document.createElement('span');
             sectionIcon.className = 'toc-section-icon';

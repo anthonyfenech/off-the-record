@@ -4,9 +4,9 @@
 export const CHAPTERS = [
     {
         id: 1,
-        year: 1987,
+        year: 2014,
         title: "Chapter 1: The First Pitch",
-        subtitle: "Spring Training, 1987",
+        subtitle: "Spring Training, 2014",
         teaser: "The Florida sun beat down on the makeshift press box at Marchant Stadium in Lakeland.",
         content: `The Florida sun beat down on the makeshift press box at Marchant Stadium in Lakeland. I was twenty-three years old, fresh out of journalism school, and convinced I knew everything about baseball. I knew nothing.
 
@@ -45,9 +45,9 @@ This is where it all began.`,
     },
     {
         id: 2,
-        year: 1988,
+        year: 2014,
         title: "Chapter 2: The Double Play Twins",
-        subtitle: "Lou and Sweet Lou, 1988",
+        subtitle: "Lou and Sweet Lou, 2014",
         teaser: "There's a rhythm to a perfect double play that transcends the mere mechanics of baseball.",
         content: `There's a rhythm to a perfect double play that transcends the mere mechanics of baseball <span class="media-emoji" data-media-id="baseball-1">⚾</span>. It's poetry in motion—the shortstop gliding to his right, barehandng the grounder, the pivot at second base, the throw to first arriving just ahead of the runner. Six-four-three in the scorebook. Perfection on paper.
 
@@ -102,9 +102,9 @@ That's not opinion. That's fact. And if the Hall of Fame doesn't recognize it, t
     },
     {
         id: 3,
-        year: 1989,
+        year: 2015,
         title: "Chapter 3: The Pitcher's Mound",
-        subtitle: "Jack Morris and the Art of Competition, 1989",
+        subtitle: "Jack Morris and the Art of Competition, 2015",
         teaser: "Jack Morris threw baseballs like he was trying to settle a personal grudge.",
         content: `Jack Morris threw baseballs like he was trying to settle a personal grudge. Every pitch, every inning, every game was a battle, and Morris never met a battle he didn't want to win.
 
@@ -171,9 +171,9 @@ I was watching, Jack. I saw it all. And I'll never forget.`,
     },
     {
         id: 4,
-        year: 1990,
+        year: 2015,
         title: "Chapter 4: The Kid from Cass Tech",
-        subtitle: "Cecil Fielder and the Power of Belief, 1990",
+        subtitle: "Cecil Fielder and the Power of Belief, 2015",
         teaser: "Cecil Fielder came back from Japan like a man on a mission.",
         content: `Cecil Fielder came back from Japan like a man on a mission. The Tigers signed him before the 1990 season for $1 million—a bargain that would look more ridiculous with every towering home run <span class="media-emoji" data-media-id="receipt-1">🧾</span>.
 
@@ -232,9 +232,9 @@ Because sometimes, the impossible is just what's about to happen.`,
     },
     {
         id: 5,
-        year: 1991,
+        year: 2016,
         title: "Chapter 5: The Long Decline",
-        subtitle: "Watching Excellence Fade, 1991-1993",
+        subtitle: "Watching Excellence Fade, 2016",
         teaser: "There's a moment in every athlete's career when you can see it happening.",
         content: `There's a moment in every athlete's career when you can see it happening. The decline. The fall from excellence to competence, from competence to struggle. If you watch closely enough, you can see the exact moment when their body betrays them.
 
@@ -287,9 +287,9 @@ I'm grateful I got to witness it, even if watching excellence fade is one of the
     },
     {
         id: 6,
-        year: 1994,
+        year: 2016,
         title: "Chapter 6: The Rebuild Years",
-        subtitle: "Hope, Patience, and Prospects, 1994-1996",
+        subtitle: "Hope, Patience, and Prospects, 2016",
         teaser: "The 1994 strike killed baseball for a lot of people.",
         content: `The 1994 strike killed baseball for a lot of people. The World Series was cancelled for the first time since 1904, and fans—already frustrated by rising ticket prices and millionaire players complaining about money—walked away in droves.
 
@@ -356,14 +356,14 @@ Because what else can you do?`,
 // For now, adding abbreviated placeholder chapters to complete the 18-chapter structure
 
 for (let i = 7; i <= 18; i++) {
-    const year = 1996 + (i - 7);
+    const year = 2017 + Math.floor((i - 7) / 3);
     CHAPTERS.push({
         id: i,
         year: year,
         title: `Chapter ${i}: [Title Coming Soon]`,
         subtitle: "To be written",
         teaser: `This chapter covers the ${year} season and key moments in Detroit Tigers baseball.`,
-        content: `This chapter is part of the ongoing memoir covering the ${i === 7 ? 'late 1990s' : i <= 12 ? 'early 2000s' : 'final years'} of Detroit Tigers baseball.
+        content: `This chapter is part of the ongoing memoir covering the ${year} Detroit Tigers baseball season.
 
 Content will detail the pivotal moments, unforgettable players, and behind-the-scenes stories that defined this era of Tigers baseball.
 
