@@ -8,27 +8,26 @@ body {
     background-color: var(--color-background);
 }
 
-/* Reading-optimized body text */
+/* Reading-optimized body text - Traditional book formatting */
 .chapter-body {
     font-family: var(--font-serif);
     font-size: var(--font-size-base);
-    line-height: 1.7;
+    line-height: 1.3;
     color: var(--color-text-primary);
+    text-align: justify;
 }
 
 .chapter-body p {
-    margin-bottom: var(--space-lg);
-}
-
-.chapter-body p:last-child {
     margin-bottom: 0;
-}
-
-/* Prevent orphans and improve text rendering */
-.chapter-body p {
+    text-indent: 2em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* First paragraph after chapter header - no indent (book convention) */
+.chapter-body p:first-child {
+    text-indent: 0;
 }
 
 /* Chapter titles - Typewriter style with uppercase and letter-spacing */
