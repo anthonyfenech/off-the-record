@@ -349,12 +349,7 @@ class Navigation {
         titleRow.appendChild(title);
         titleRow.appendChild(readTime);
 
-        const teaser = document.createElement('div');
-        teaser.className = 'toc-chapter-teaser';
-        teaser.textContent = chapter.teaser;
-
         info.appendChild(titleRow);
-        info.appendChild(teaser);
 
         item.appendChild(indicator);
         item.appendChild(info);

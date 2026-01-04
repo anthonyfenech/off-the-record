@@ -207,12 +207,12 @@
 
 /* Chapter list items in TOC */
 .toc-chapter {
-    padding: var(--space-lg) var(--padding-mobile) var(--space-lg) var(--space-2xl);
+    padding: var(--space-sm) var(--padding-mobile) var(--space-sm) var(--space-2xl);
     border-bottom: 1px solid var(--color-border);
     cursor: pointer;
     transition: all var(--transition-fast);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-md);
     min-height: var(--min-touch-target);
     position: relative;
@@ -242,9 +242,8 @@
 .toc-chapter-title-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     gap: var(--space-md);
-    margin-bottom: var(--space-xs);
 }
 
 .toc-read-time {
@@ -253,15 +252,6 @@
     color: var(--color-text-tertiary);
     white-space: nowrap;
     flex-shrink: 0;
-}
-
-.toc-chapter-teaser {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    line-height: var(--line-height-normal);
-    color: var(--color-text-secondary);
-    font-style: italic;
-    margin-top: var(--space-xs);
 }
 
 /* Chapter icon/indicator */
