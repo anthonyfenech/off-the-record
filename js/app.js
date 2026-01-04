@@ -38,6 +38,9 @@ class App {
             // Initialize bookmark button
             this.initBookmarkButton();
 
+            // Initialize home link
+            this.initHomeLink();
+
             this.isReady = true;
             console.log('OFF-THE-RECORD: Ready');
 
@@ -47,6 +50,19 @@ class App {
             console.error('Failed to initialize app:', error);
             this.showError('Failed to load the app. Please refresh the page.');
         }
+    }
+
+    // Initialize home link click handler
+    initHomeLink() {
+        const homeLink = document.getElementById('homeLink');
+        if (!homeLink) return;
+
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Clear hash and navigate to home
+            history.pushState(null, null, window.location.pathname);
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
     }
 
     // Initialize bookmark button functionality

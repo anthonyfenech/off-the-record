@@ -35,25 +35,87 @@ class Reader {
         this.currentChapter = progress.currentChapter || 1;
         this.scrollPosition = progress.scrollPosition || 0;
 
-        // Show continue reading button if returning user
-        if (progress.lastUpdated && progress.currentChapter > 1) {
-            this.showContinueReading(progress.currentChapter);
-        }
-
-        // Load chapter from URL hash or saved progress
+        // Check if we should show home page or a chapter
         const hashChapter = this.getChapterFromHash();
-        if (hashChapter) {
-            this.currentChapter = hashChapter;
-            this.hideContinueReading();
-        }
+        const isHomePage = !window.location.hash || window.location.hash === '#' || window.location.hash === '#home';
 
-        this.loadChapter(this.currentChapter);
+        if (isHomePage) {
+            // Show home page
+            this.showHomePage();
+            // Show continue reading if user has progress
+            if (progress.lastUpdated && progress.currentChapter >= 1) {
+                this.showContinueReading(progress.currentChapter);
+            }
+        } else if (hashChapter) {
+            this.currentChapter = hashChapter;
+            this.loadChapter(this.currentChapter);
+            this.hideContinueReading();
+        } else {
+            // Invalid hash, show home
+            this.showHomePage();
+        }
 
         // Set up scroll listener
         window.addEventListener('scroll', this.handleScroll);
 
+        // Listen for hash changes
+        window.addEventListener('hashchange', () => this.handleHashChange());
+
         // Start auto-save
         this.startAutoSave();
+    }
+
+    // Handle hash changes (for back/forward navigation)
+    handleHashChange() {
+        const hashChapter = this.getChapterFromHash();
+        const isHomePage = !window.location.hash || window.location.hash === '#' || window.location.hash === '#home';
+
+        if (isHomePage) {
+            this.showHomePage();
+        } else if (hashChapter) {
+            this.loadChapter(hashChapter);
+        }
+    }
+
+    // Show the home page
+    showHomePage() {
+        this.chapterTitle.textContent = 'OFF-THE-RECORD';
+        this.chapterSubtitle.textContent = 'A Baseball Memoir';
+        this.chapterMeta.textContent = '15 years covering the Detroit Tigers';
+
+        this.chapterBody.innerHTML = `
+            <div class="home-content">
+                <p class="home-intro">Welcome to <strong>OFF-THE-RECORD</strong>, a memoir about covering Major League Baseball for the Detroit Free Press.</p>
+
+                <p class="home-description">This is the story of fifteen seasons on the Tigers beat—the clubhouse drama, the late-night deadlines, the sources, the scoops, and everything they never taught you in journalism school.</p>
+
+                <div class="home-cta">
+                    <button class="start-reading-btn" id="startReadingBtn">Start Reading</button>
+                </div>
+            </div>
+        `;
+
+        // Add click handler for start reading button
+        const startBtn = document.getElementById('startReadingBtn');
+        if (startBtn) {
+            startBtn.addEventListener('click', () => {
+                this.loadChapter(1);
+                this.hideContinueReading();
+            });
+        }
+
+        // Update progress bar to 0
+        this.progressFill.style.width = '0%';
+        const progressText = document.querySelector('.progress-text');
+        if (progressText) {
+            progressText.textContent = '';
+        }
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        // Dispatch event
+        window.dispatchEvent(new CustomEvent('homePageLoaded'));
     }
 
     // Load a specific chapter
