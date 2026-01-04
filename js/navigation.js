@@ -553,33 +553,56 @@ class Navigation {
 
     // Update navigation button states
     updateNavigationState() {
-        // Disable PREVIOUS if on first page of first chapter
-        const isFirstChapter = this.currentChapterId <= 1;
-        const isFirstPage = reader.isFirstPage();
-        this.prevBtn.disabled = isFirstChapter && isFirstPage;
+        const mode = window.readingModeManager?.getMode() || 'scroll';
 
-        // Disable NEXT if on last page of last chapter
-        const isLastChapter = this.currentChapterId >= getChapterCount();
-        const isLastPage = reader.isLastPage();
-        this.nextBtn.disabled = isLastChapter && isLastPage;
+        if (mode === 'page') {
+            // Page mode: disable based on pages
+            const isFirstChapter = this.currentChapterId <= 1;
+            const isFirstPage = reader.isFirstPage ? reader.isFirstPage() : true;
+            this.prevBtn.disabled = isFirstChapter && isFirstPage;
+
+            const isLastChapter = this.currentChapterId >= getChapterCount();
+            const isLastPage = reader.isLastPage ? reader.isLastPage() : false;
+            this.nextBtn.disabled = isLastChapter && isLastPage;
+        } else {
+            // Scroll mode: disable based on chapters only
+            this.prevBtn.disabled = this.currentChapterId <= 1;
+            this.nextBtn.disabled = this.currentChapterId >= getChapterCount();
+        }
     }
 
     // Navigate to previous page or chapter
     goToPrevious() {
-        // Try to go to previous page first
-        if (!reader.prevPage()) {
-            // No more pages, go to previous chapter (last page)
+        const mode = window.readingModeManager?.getMode() || 'scroll';
+
+        if (mode === 'page') {
+            // Page mode: go to previous page, then previous chapter
+            if (!reader.prevPage()) {
+                if (this.currentChapterId > 1) {
+                    reader.loadChapter(this.currentChapterId - 1, 999);
+                }
+            }
+        } else {
+            // Scroll mode: go to previous chapter only
             if (this.currentChapterId > 1) {
-                reader.loadChapter(this.currentChapterId - 1, 999); // 999 will be clamped to last page
+                reader.loadChapter(this.currentChapterId - 1, 0);
             }
         }
     }
 
     // Navigate to next page or chapter
     goToNext() {
-        // Try to go to next page first
-        if (!reader.nextPage()) {
-            // No more pages, go to next chapter (first page)
+        const mode = window.readingModeManager?.getMode() || 'scroll';
+
+        if (mode === 'page') {
+            // Page mode: go to next page, then next chapter
+            if (!reader.nextPage()) {
+                if (this.currentChapterId < getChapterCount()) {
+                    reader.loadChapter(this.currentChapterId + 1, 0);
+                }
+            }
+        } else {
+            // Scroll mode: go to next chapter only
             if (this.currentChapterId < getChapterCount()) {
                 reader.loadChapter(this.currentChapterId + 1, 0);
             }

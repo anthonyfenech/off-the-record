@@ -3,6 +3,7 @@
 import { CHAPTERS, calculateReadingTime } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
+import { readingModeManager } from './reading-mode.js';
 
 class Reader {
     constructor() {
@@ -25,12 +26,21 @@ class Reader {
 
         // Bind methods
         this.handleResize = this.debounce(this.onResize.bind(this), 250);
+        this.handleScroll = this.throttle(this.onScroll.bind(this), 100);
+        this.scrollThreshold = 0.9; // 90% scroll = chapter complete
     }
 
     // Initialize reader
     init() {
         // Initialize media modal
         mediaModal.init();
+
+        // Initialize reading mode manager
+        readingModeManager.init();
+
+        // Expose reader instance globally for other modules
+        window.readerInstance = this;
+        window.currentChapterId = this.currentChapter;
 
         // Load saved progress
         const progress = getProgress();
@@ -137,10 +147,20 @@ class Reader {
             chapterHeader.style.display = '';
         }
 
-        // Add paginated class to body
-        document.body.classList.add('paginated');
+        // Check reading mode
+        const mode = readingModeManager.getMode();
+
+        // Apply appropriate body class based on mode
+        if (mode === 'page') {
+            document.body.classList.add('paginated');
+            document.body.classList.remove('scrolling');
+        } else {
+            document.body.classList.add('scrolling');
+            document.body.classList.remove('paginated');
+        }
 
         this.currentChapter = chapterId;
+        window.currentChapterId = chapterId;
 
         // Update DOM
         this.chapterTitle.textContent = chapter.title;
@@ -168,26 +188,47 @@ class Reader {
         // Update URL hash
         this.updateHash(chapterId);
 
-        // Calculate pages after DOM is ready
+        // Handle based on reading mode
         requestAnimationFrame(() => {
-            this.calculatePages();
+            if (mode === 'page') {
+                // Page mode - calculate and show pages
+                this.calculatePages();
 
-            // Restore page or start at beginning
-            if (startPage !== null) {
-                this.currentPage = Math.min(startPage, this.totalPages - 1);
-            } else if (chapterId === getProgress().currentChapter) {
-                const savedPage = getProgress().currentPage || 0;
-                this.currentPage = Math.min(savedPage, this.totalPages - 1);
+                // Restore page or start at beginning
+                if (startPage !== null) {
+                    this.currentPage = Math.min(startPage, this.totalPages - 1);
+                } else if (chapterId === getProgress().currentChapter) {
+                    const savedPage = getProgress().currentPage || 0;
+                    this.currentPage = Math.min(savedPage, this.totalPages - 1);
+                } else {
+                    this.currentPage = 0;
+                }
+
+                this.showPage(this.currentPage);
+                this.updateProgressIndicators();
+
+                // Remove scroll listener in page mode
+                window.removeEventListener('scroll', this.handleScroll);
             } else {
-                this.currentPage = 0;
-            }
+                // Scroll mode - show all content, enable scrolling
+                this.paragraphElements.forEach(el => {
+                    el.style.display = '';
+                });
 
-            this.showPage(this.currentPage);
-            this.updateProgressIndicators();
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'instant' });
+
+                // Add scroll listener for progress
+                window.removeEventListener('scroll', this.handleScroll);
+                window.addEventListener('scroll', this.handleScroll);
+
+                // Update progress for scroll mode
+                this.updateScrollProgress();
+            }
 
             // Dispatch event for other components
             window.dispatchEvent(new CustomEvent('chapterLoaded', {
-                detail: { chapterId, chapter, totalPages: this.totalPages }
+                detail: { chapterId, chapter, totalPages: this.totalPages, mode }
             }));
         });
     }
@@ -367,12 +408,81 @@ class Reader {
 
     // Handle window resize
     onResize() {
-        if (this.paragraphElements.length > 0 && document.body.classList.contains('paginated')) {
+        const mode = readingModeManager.getMode();
+        if (this.paragraphElements.length > 0 && mode === 'page') {
             const savedPage = this.currentPage;
             this.calculatePages();
             this.currentPage = Math.min(savedPage, this.totalPages - 1);
             this.showPage(this.currentPage);
         }
+    }
+
+    // Handle scroll events (for scroll mode)
+    onScroll() {
+        if (readingModeManager.getMode() !== 'scroll') return;
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+
+        // Update progress bar
+        this.progressFill.style.width = `${scrollPercent * 100}%`;
+
+        // Update header progress
+        const progressText = document.querySelector('.progress-text');
+        if (progressText) {
+            progressText.textContent = `${Math.round(scrollPercent * 100)}%`;
+        }
+
+        // Mark chapter as complete if scrolled to bottom
+        if (scrollPercent >= this.scrollThreshold && !isChapterComplete(this.currentChapter)) {
+            markChapterComplete(this.currentChapter);
+            window.dispatchEvent(new CustomEvent('chapterCompleted', {
+                detail: { chapterId: this.currentChapter }
+            }));
+        }
+    }
+
+    // Update scroll progress (initial call)
+    updateScrollProgress() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+        // Update header progress
+        const progressText = document.querySelector('.progress-text');
+        if (progressText) {
+            progressText.textContent = `${Math.round(scrollPercent)}%`;
+        }
+
+        // Update progress bar
+        this.progressFill.style.width = `${scrollPercent}%`;
+    }
+
+    // Throttle utility function
+    throttle(func, wait) {
+        let timeout = null;
+        let previous = 0;
+
+        return (...args) => {
+            const now = Date.now();
+            const remaining = wait - (now - previous);
+
+            if (remaining <= 0 || remaining > wait) {
+                if (timeout) {
+                    clearTimeout(timeout);
+                    timeout = null;
+                }
+                previous = now;
+                func.apply(this, args);
+            } else if (!timeout) {
+                timeout = setTimeout(() => {
+                    previous = Date.now();
+                    timeout = null;
+                    func.apply(this, args);
+                }, remaining);
+            }
+        };
     }
 
     // Attach click handlers to media emojis
