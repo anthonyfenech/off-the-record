@@ -23,7 +23,7 @@ export function getProgress() {
     if (!isLocalStorageAvailable()) {
         return {
             currentChapter: 1,
-            scrollPosition: 0,
+            currentPage: 0,
             lastUpdated: null,
             completionPercentage: 0
         };
@@ -34,17 +34,22 @@ export function getProgress() {
         if (!data) {
             return {
                 currentChapter: 1,
-                scrollPosition: 0,
+                currentPage: 0,
                 lastUpdated: null,
                 completionPercentage: 0
             };
         }
-        return JSON.parse(data);
+        const parsed = JSON.parse(data);
+        // Backwards compatibility: convert scrollPosition to currentPage if needed
+        if (parsed.scrollPosition !== undefined && parsed.currentPage === undefined) {
+            parsed.currentPage = 0;
+        }
+        return parsed;
     } catch (error) {
         console.error('Error reading progress:', error);
         return {
             currentChapter: 1,
-            scrollPosition: 0,
+            currentPage: 0,
             lastUpdated: null,
             completionPercentage: 0
         };
@@ -52,7 +57,7 @@ export function getProgress() {
 }
 
 // Save reading progress
-export function saveProgress(currentChapter, scrollPosition, completionPercentage) {
+export function saveProgress(currentChapter, currentPage, completionPercentage) {
     if (!isLocalStorageAvailable()) {
         console.warn('localStorage not available');
         return false;
@@ -61,7 +66,7 @@ export function saveProgress(currentChapter, scrollPosition, completionPercentag
     try {
         const data = {
             currentChapter,
-            scrollPosition,
+            currentPage,
             lastUpdated: new Date().toISOString(),
             completionPercentage
         };

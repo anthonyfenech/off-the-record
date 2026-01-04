@@ -34,9 +34,9 @@ class Navigation {
         // Build TOC with all sections
         this.buildTOC();
 
-        // Set up event listeners
-        this.prevBtn.addEventListener('click', () => this.goToPreviousChapter());
-        this.nextBtn.addEventListener('click', () => this.goToNextChapter());
+        // Set up event listeners - now for page navigation
+        this.prevBtn.addEventListener('click', () => this.goToPrevious());
+        this.nextBtn.addEventListener('click', () => this.goToNext());
         this.menuBtn.addEventListener('click', () => this.openTOC());
         this.closeTocBtn.addEventListener('click', () => this.closeTOC());
         this.overlay.addEventListener('click', () => this.closeTOC());
@@ -49,6 +49,11 @@ class Navigation {
             this.currentChapterId = e.detail.chapterId;
             this.updateNavigationState();
             this.updateTOCState();
+        });
+
+        // Listen for page changes
+        window.addEventListener('pageChanged', () => {
+            this.updateNavigationState();
         });
 
         // Listen for chapter completion
@@ -548,29 +553,36 @@ class Navigation {
 
     // Update navigation button states
     updateNavigationState() {
-        if (this.currentChapterId <= 1) {
-            this.prevBtn.disabled = true;
-        } else {
-            this.prevBtn.disabled = false;
-        }
+        // Disable PREVIOUS if on first page of first chapter
+        const isFirstChapter = this.currentChapterId <= 1;
+        const isFirstPage = reader.isFirstPage();
+        this.prevBtn.disabled = isFirstChapter && isFirstPage;
 
-        if (this.currentChapterId >= getChapterCount()) {
-            this.nextBtn.disabled = true;
-        } else {
-            this.nextBtn.disabled = false;
+        // Disable NEXT if on last page of last chapter
+        const isLastChapter = this.currentChapterId >= getChapterCount();
+        const isLastPage = reader.isLastPage();
+        this.nextBtn.disabled = isLastChapter && isLastPage;
+    }
+
+    // Navigate to previous page or chapter
+    goToPrevious() {
+        // Try to go to previous page first
+        if (!reader.prevPage()) {
+            // No more pages, go to previous chapter (last page)
+            if (this.currentChapterId > 1) {
+                reader.loadChapter(this.currentChapterId - 1, 999); // 999 will be clamped to last page
+            }
         }
     }
 
-    // Navigation actions
-    goToPreviousChapter() {
-        if (this.currentChapterId > 1) {
-            reader.loadChapter(this.currentChapterId - 1);
-        }
-    }
-
-    goToNextChapter() {
-        if (this.currentChapterId < getChapterCount()) {
-            reader.loadChapter(this.currentChapterId + 1);
+    // Navigate to next page or chapter
+    goToNext() {
+        // Try to go to next page first
+        if (!reader.nextPage()) {
+            // No more pages, go to next chapter (first page)
+            if (this.currentChapterId < getChapterCount()) {
+                reader.loadChapter(this.currentChapterId + 1, 0);
+            }
         }
     }
 
@@ -599,12 +611,12 @@ class Navigation {
             case 'ArrowLeft':
             case 'h':
                 e.preventDefault();
-                this.goToPreviousChapter();
+                this.goToPrevious();
                 break;
             case 'ArrowRight':
             case 'l':
                 e.preventDefault();
-                this.goToNextChapter();
+                this.goToNext();
                 break;
             case 'Escape':
                 e.preventDefault();
@@ -632,9 +644,9 @@ class Navigation {
         const diff = this.touchStartX - this.touchEndX;
 
         if (diff > swipeThreshold) {
-            this.goToNextChapter();
+            this.goToNext();
         } else if (diff < -swipeThreshold) {
-            this.goToPreviousChapter();
+            this.goToPrevious();
         }
     }
 }
