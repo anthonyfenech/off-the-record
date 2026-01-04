@@ -83,7 +83,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-55%, -65%);
     width: 0.2em;
     height: 0.2em;
     background-color: #e74c3c;
