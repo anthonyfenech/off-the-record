@@ -368,8 +368,8 @@ class Navigation {
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             { id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' },
-            { id: 'comments', label: 'C<span class="record-o"></span>MMENTS', type: 'link', url: './guestbook.html' },
-            { id: 'contact', label: 'C<span class="record-o"></span>NTACT', type: 'link', comingSoon: true }
+            { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
+            { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true }
         ];
 
         bottomSections.forEach(section => {
