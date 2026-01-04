@@ -42,10 +42,6 @@ class Reader {
         if (isHomePage) {
             // Show home page
             this.showHomePage();
-            // Show continue reading if user has progress
-            if (progress.lastUpdated && progress.currentChapter >= 1) {
-                this.showContinueReading(progress.currentChapter);
-            }
         } else if (hashChapter) {
             this.currentChapter = hashChapter;
             this.loadChapter(this.currentChapter);
