@@ -441,11 +441,7 @@
 }
 
 .toc-read-time {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-    white-space: nowrap;
-    flex-shrink: 0;
+    display: none;
 }
 
 /* Chapter icon/indicator */
