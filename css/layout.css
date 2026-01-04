@@ -189,7 +189,9 @@ body {
 }
 
 .toc-header-icon {
+    font-family: var(--font-mono);
     font-size: 1.5rem;
+    font-weight: bold;
     margin: 0 auto;
 }
 

@@ -78,7 +78,7 @@ class Navigation {
 
         // 1. Add INTRO section (collapsible dropdown)
         const introChapters = getIntroChapters();
-        fragment.appendChild(this.createCollapsibleSection('intro', 'INTR<span class="record-btn" aria-label="O"></span>', introChapters));
+        fragment.appendChild(this.createCollapsibleSection('intro', 'INTR<span class="record-o">O</span>', introChapters));
 
         // 2. Add year sections with nested chapters
         const chaptersByYear = getChaptersByYear();
@@ -136,7 +136,7 @@ class Navigation {
 
         // 3. Add POSTSCRIPT section (collapsible dropdown)
         const postscriptChapters = getPostscriptChapters();
-        fragment.appendChild(this.createCollapsibleSection('postscript', 'P<span class="record-btn" aria-label="O"></span>STSCRIPT', postscriptChapters));
+        fragment.appendChild(this.createCollapsibleSection('postscript', 'P<span class="record-o">O</span>STSCRIPT', postscriptChapters));
 
         this.tocContent.appendChild(fragment);
 
@@ -303,14 +303,14 @@ class Navigation {
     // Build additional content sections (Blog, About, etc.)
     buildContentSections() {
         const sections = [
-            { id: 'blog', label: 'BL<span class="record-btn" aria-label="O"></span>G' },
-            { id: 'about', label: 'AB<span class="record-btn" aria-label="O"></span>UT' },
-            { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>' },
-            { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S' },
-            { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT' },
-            { id: 'contact', label: 'C<span class="record-btn" aria-label="O"></span>NTACT' },
-            { id: 'gooff', label: 'G<span class="record-btn" aria-label="O"></span> <span class="record-btn" aria-label="O"></span>FF' },
-            { id: 'cutroom', label: 'CUT R<span class="record-btn" aria-label="O"></span><span class="record-btn" aria-label="O"></span>M' }
+            { id: 'blog', label: 'BL<span class="record-o">O</span>G' },
+            { id: 'about', label: 'AB<span class="record-o">O</span>UT' },
+            { id: 'audio', label: 'AUDI<span class="record-o">O</span>' },
+            { id: 'photo', label: 'PH<span class="record-o">O</span>T<span class="record-o">O</span>S' },
+            { id: 'support', label: 'SUPP<span class="record-o">O</span>RT' },
+            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT' },
+            { id: 'gooff', label: 'G<span class="record-o">O</span> <span class="record-o">O</span>FF' },
+            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span><span class="record-o">O</span>M' }
         ];
 
         const fragment = document.createDocumentFragment();

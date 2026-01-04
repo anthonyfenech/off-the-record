@@ -72,28 +72,23 @@ body {
     justify-content: center;
 }
 
-/* Record button O replacement - matches Courier New "O" exactly */
-.record-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 0.65em;
-    height: 0.75em;
-    border: 0.12em solid var(--color-text-primary);
-    border-radius: 50%;
-    margin: 0;
-    vertical-align: baseline;
+/* Record O - Uses actual letter O with red dot overlay */
+.record-o {
     position: relative;
-    top: 0.02em;
-    box-sizing: border-box;
+    display: inline;
 }
 
-.record-btn::after {
+.record-o::after {
     content: '';
-    width: 42%;
-    height: 42%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.25em;
+    height: 0.25em;
     background-color: #e74c3c;
     border-radius: 50%;
+    pointer-events: none;
 }
 
 /* Progress text */
