@@ -308,6 +308,7 @@ class Navigation {
             { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>' },
             { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S' },
             { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT' },
+            { id: 'contact', label: 'C<span class="record-btn" aria-label="O"></span>NTACT' },
             { id: 'gooff', label: 'G<span class="record-btn" aria-label="O"></span> <span class="record-btn" aria-label="O"></span>FF' },
             { id: 'cutroom', label: 'CUT R<span class="record-btn" aria-label="O"></span><span class="record-btn" aria-label="O"></span>M' }
         ];
