@@ -1,6 +1,6 @@
 // Navigation - Chapter navigation and Table of Contents
 
-import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
+import { CHAPTERS, getChapterCount, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete, calculateOverallProgress } from './storage.js';
 import { photoGallery } from './photoGallery.js';
@@ -251,13 +251,7 @@ class Navigation {
         title.className = 'toc-chapter-title';
         title.textContent = chapter.title;
 
-        const readTime = document.createElement('span');
-        readTime.className = 'toc-read-time';
-        const minutes = calculateReadingTime(chapter.wordCount);
-        readTime.textContent = `${minutes} min`;
-
         titleRow.appendChild(title);
-        titleRow.appendChild(readTime);
         info.appendChild(titleRow);
 
         item.appendChild(indicator);
