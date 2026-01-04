@@ -300,13 +300,12 @@ class Navigation {
         }
     }
 
-    // Build additional content sections (Blog, Podcast, etc.)
+    // Build additional content sections (Blog, About, etc.)
     buildContentSections() {
         const sections = [
             { id: 'blog', label: 'BL<span class="record-btn" aria-label="O"></span>G' },
-            { id: 'podcast', label: 'P<span class="record-btn" aria-label="O"></span>DCAST' },
+            { id: 'about', label: 'AB<span class="record-btn" aria-label="O"></span>UT' },
             { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>' },
-            { id: 'video', label: 'VIDE<span class="record-btn" aria-label="O"></span>' },
             { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S' },
             { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT' },
             { id: 'gooff', label: 'G<span class="record-btn" aria-label="O"></span> <span class="record-btn" aria-label="O"></span>FF' },
