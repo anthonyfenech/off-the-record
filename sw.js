@@ -1,25 +1,25 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v4';
-const STATIC_CACHE = 'off-the-record-static-v4';
-const CONTENT_CACHE = 'off-the-record-content-v4';
+const CACHE_VERSION = 'v5';
+const STATIC_CACHE = 'off-the-record-static-v5';
+const CONTENT_CACHE = 'off-the-record-content-v5';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
-    '/',
-    '/index.html',
-    '/manifest.json',
-    '/css/reset.css',
-    '/css/variables.css',
-    '/css/typography.css',
-    '/css/layout.css',
-    '/css/components.css',
-    '/js/app.js',
-    '/js/reader.js',
-    '/js/navigation.js',
-    '/js/storage.js',
-    '/js/pwa.js',
-    '/data/chapters.js'
+    './',
+    './index.html',
+    './manifest.json',
+    './css/reset.css',
+    './css/variables.css',
+    './css/typography.css',
+    './css/layout.css',
+    './css/components.css',
+    './js/app.js',
+    './js/reader.js',
+    './js/navigation.js',
+    './js/storage.js',
+    './js/pwa.js',
+    './data/chapters.js'
 ];
 
 // Install event - cache static assets
@@ -141,7 +141,7 @@ async function networkFirst(request) {
 
         // If HTML request and not cached, return offline page
         if (isHTMLRequest(request)) {
-            return caches.match('/index.html');
+            return caches.match('./index.html');
         }
 
         throw error;

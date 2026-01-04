@@ -10,8 +10,8 @@ const generatePhotoPlaceholders = (startNum, endNum, year, season) => {
         photos.push({
             id: `img-${i}`,
             filename: filename,
-            src: `/assets/photos/${season}/IMG_${i}.JPG`,
-            thumbnail: `/assets/photos/${season}/thumbs/IMG_${i}.JPG`,
+            src: `./assets/photos/${season}/IMG_${i}.JPG`,
+            thumbnail: `./assets/photos/${season}/thumbs/IMG_${i}.JPG`,
             caption: `${year} season - Photo ${photoNum}`,
             date: `${year}-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
             location: 'Comerica Park, Detroit',
@@ -27,7 +27,7 @@ export const PHOTO_GALLERIES = [
         title: '2015 Season',
         year: 2015,
         description: 'Behind the scenes coverage of the Detroit Tigers 2015 season',
-        coverPhoto: '/assets/photos/2015-season/IMG_5011.JPG',
+        coverPhoto: './assets/photos/2015-season/IMG_5011.JPG',
         photos: generatePhotoPlaceholders(5011, 5041, 2015, '2015-season'),
         comingSoon: false
     },
@@ -36,7 +36,7 @@ export const PHOTO_GALLERIES = [
         title: '2016 Season',
         year: 2016,
         description: 'Behind the scenes coverage of the Detroit Tigers 2016 season',
-        coverPhoto: '/assets/photos/2016-season/IMG_5073.JPG',
+        coverPhoto: './assets/photos/2016-season/IMG_5073.JPG',
         photos: generatePhotoPlaceholders(5073, 5100, 2016, '2016-season'),
         comingSoon: false
     },
