@@ -79,7 +79,7 @@ class Navigation {
 
         // 1. Add INTRO section (collapsible dropdown)
         const introChapters = getIntroChapters();
-        fragment.appendChild(this.createCollapsibleSection('intro', 'INTR<span class="record-o">O</span>', introChapters));
+        fragment.appendChild(this.createCollapsibleSection('intro', 'INTRO', introChapters));
 
         // 2. Add year sections with nested chapters
         const chaptersByYear = getChaptersByYear();
@@ -137,7 +137,7 @@ class Navigation {
 
         // 3. Add POSTSCRIPT section (collapsible dropdown)
         const postscriptChapters = getPostscriptChapters();
-        fragment.appendChild(this.createCollapsibleSection('postscript', 'P<span class="record-o">O</span>STSCRIPT', postscriptChapters));
+        fragment.appendChild(this.createCollapsibleSection('postscript', 'POSTSCRIPT', postscriptChapters));
 
         this.tocContent.appendChild(fragment);
 
