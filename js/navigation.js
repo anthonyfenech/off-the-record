@@ -1,793 +1,460 @@
-// Navigation - Chapter navigation and Table of Contents
-
-import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
-import { reader } from './reader.js';
-import { isChapterComplete, calculateOverallProgress } from './storage.js';
-import { photoGallery } from './photoGallery.js';
-import { getAllGalleries } from '../data/photos.js';
-import { blogService } from './blog.js';
-import { guestbook } from './guestbook.js';
-import { bookmarks } from './bookmarks.js';
+// Navigation.js - Handles menu and chapter navigation
 
 class Navigation {
     constructor() {
-        // DOM elements
-        this.prevBtn = document.getElementById('prevBtn');
-        this.nextBtn = document.getElementById('nextBtn');
-        this.menuBtn = document.getElementById('menuBtn');
-        this.closeTocBtn = document.getElementById('closeTocBtn');
-        this.tocSidebar = document.getElementById('tocSidebar');
-        this.overlay = document.getElementById('overlay');
-        this.tocContent = document.getElementById('tocContent');
-        this.overallProgress = document.getElementById('overallProgress');
-
-        // State
-        this.currentChapterId = 1;
-        this.touchStartX = 0;
-        this.touchEndX = 0;
-        this.expandedYears = new Set(); // Track which years are expanded
-        this.expandedSections = new Set(); // Track which content sections are expanded
+        this.currentChapter = null;
+        this.menuOpen = false;
+        this.init();
     }
 
-    // Initialize navigation
     init() {
-        // Build TOC with chapters
-        this.buildTOC();
-
-        // Build additional content sections
-        this.buildContentSections();
-
-        // Set up event listeners
-        this.prevBtn.addEventListener('click', () => this.goToPreviousChapter());
-        this.nextBtn.addEventListener('click', () => this.goToNextChapter());
-        this.menuBtn.addEventListener('click', () => this.openTOC());
-        this.closeTocBtn.addEventListener('click', () => this.closeTOC());
-        this.overlay.addEventListener('click', () => this.closeTOC());
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => this.handleKeyPress(e));
-
-        // Listen for chapter changes
-        window.addEventListener('chapterLoaded', (e) => {
-            this.currentChapterId = e.detail.chapterId;
-            this.updateNavigationState();
-            this.updateTOCState();
-        });
-
-        // Listen for chapter completion
-        window.addEventListener('chapterCompleted', () => {
-            this.updateTOCState();
-        });
-
-        // Touch gestures for swipe navigation
-        this.setupSwipeGestures();
-
-        // Handle browser back/forward
-        window.addEventListener('popstate', () => {
-            const chapterId = reader.getChapterFromHash();
-            if (chapterId) {
-                reader.loadChapter(chapterId);
-            }
-        });
-
-        // Initial state
-        this.updateNavigationState();
+        this.createNavigation();
+        this.attachEventListeners();
+        this.loadLastChapter();
     }
 
-    // Build Table of Contents with INTRO, year sections, and POSTSCRIPT as collapsible dropdowns
-    buildTOC() {
-        const fragment = document.createDocumentFragment();
-
-        // 1. Add INTRO section (collapsible dropdown)
-        const introChapters = getIntroChapters();
-        fragment.appendChild(this.createCollapsibleSection('intro', 'INTRO', introChapters));
-
-        // 2. Add year sections with nested chapters
-        const chaptersByYear = getChaptersByYear();
-        const years = getSortedYears();
-
-        years.forEach(year => {
-            const chapters = chaptersByYear[year] || [];
-
-            // Create year section
-            const yearSection = document.createElement('div');
-            yearSection.className = 'toc-year-section';
-            yearSection.dataset.year = year;
-
-            // Year header (clickable to expand/collapse)
-            const yearHeader = document.createElement('div');
-            yearHeader.className = 'toc-year-header';
-
-            const yearTitle = document.createElement('h3');
-            yearTitle.className = 'toc-year-title';
-            yearTitle.textContent = `${year} SEASON`;
-
-            yearHeader.appendChild(yearTitle);
-
-            // Year chapters container
-            const chaptersContainer = document.createElement('div');
-            chaptersContainer.className = 'toc-year-chapters collapsed';
-
-            // Build chapter items (if any)
-            chapters.forEach(chapter => {
-                const item = this.createNestedChapterItem(chapter);
-                chaptersContainer.appendChild(item);
+    createNavigation() {
+        const nav = document.getElementById('navigation');
+        
+        // TOP SECTION - LARGER FONT
+        // BOOK section (collapsible with all chapters inside)
+        this.createCollapsibleSection(nav, 'BOOK', 'book-section', true, () => {
+            const bookContent = document.createElement('div');
+            bookContent.className = 'nested-content';
+            
+            // INTRO
+            this.createCollapsibleSection(bookContent, 'INTRO', 'intro', false, () => {
+                return this.createChapterList([1, 2, 3, 4]);
             });
-
-            // Year header click handler (only if has chapters)
-            if (chapters.length > 0) {
-                yearHeader.addEventListener('click', () => {
-                    this.toggleYear(year, yearHeader, chaptersContainer);
-                });
-            } else {
-                yearHeader.classList.add('disabled');
-            }
-
-            yearSection.appendChild(yearHeader);
-            yearSection.appendChild(chaptersContainer);
-            fragment.appendChild(yearSection);
+            
+            // 2015 SEASON
+            this.createCollapsibleSection(bookContent, '2015 SEASON', '2015', false, () => {
+                return this.createChapterList([5, 6, 7, 8, 9]);
+            });
+            
+            // 2016 SEASON
+            this.createCollapsibleSection(bookContent, '2016 SEASON', '2016', false, () => {
+                return this.createChapterList([10, 11, 12, 13, 14]);
+            });
+            
+            // 2017 SEASON
+            this.createCollapsibleSection(bookContent, '2017 SEASON', '2017', false, () => {
+                return this.createChapterList([15, 16, 17, 18, 19]);
+            });
+            
+            // 2018 SEASON
+            this.createCollapsibleSection(bookContent, '2018 SEASON', '2018', false, () => {
+                return this.createChapterList([20, 21, 22, 23, 24]);
+            });
+            
+            // 2019 SEASON
+            this.createCollapsibleSection(bookContent, '2019 SEASON', '2019', false, () => {
+                return this.createChapterList([25, 26, 27, 28, 29, 30]);
+            });
+            
+            // 2020 SEASON (empty for now)
+            const season2020 = document.createElement('div');
+            season2020.className = 'nav-item nested-item disabled';
+            season2020.textContent = '2020 SEASON';
+            bookContent.appendChild(season2020);
+            
+            // POSTSCRIPT
+            this.createCollapsibleSection(bookContent, 'POSTSCRIPT', 'postscript', false, () => {
+                return this.createChapterList([31, 32]);
+            });
+            
+            return bookContent;
         });
+        
+        // BLOG
+        this.createMediaSection(nav, 'BLOG', 'blog', true);
+        
+        // ABOUT
+        this.createMediaSection(nav, 'ABOUT', 'about', true);
+        
+        // AUDIO
+        this.createMediaSection(nav, 'AUDIO', 'audio', true);
+        
+        // PHOTOS
+        this.createMediaSection(nav, 'PHOTOS', 'photos', true);
 
-        // 3. Add POSTSCRIPT section (collapsible dropdown)
-        const postscriptChapters = getPostscriptChapters();
-        fragment.appendChild(this.createCollapsibleSection('postscript', 'POSTSCRIPT', postscriptChapters));
-
-        this.tocContent.appendChild(fragment);
-
-        // Add a divider between chapters and other content sections
+        // Divider
         const divider = document.createElement('div');
-        divider.className = 'toc-divider';
-        this.tocContent.appendChild(divider);
+        divider.className = 'nav-divider';
+        nav.appendChild(divider);
+
+        // BOTTOM SECTION - SMALLER FONT
+        // COMMENTS (guestbook)
+        this.createCollapsibleSection(nav, 'COMMENTS', 'comments', false, () => {
+            return this.createGuestbookSection();
+        }, 'small');
+        
+        // CONTACT
+        this.createMediaSection(nav, 'CONTACT', 'contact', false);
     }
 
-    // Create a collapsible section (INTRO or POSTSCRIPT)
-    createCollapsibleSection(sectionId, labelHtml, chapters) {
+    createCollapsibleSection(parent, title, id, isLargeFont, contentGenerator, sizeClass = '') {
         const section = document.createElement('div');
-        section.className = 'toc-year-section';
-        section.dataset.section = sectionId;
-
-        // Section header (clickable to expand/collapse)
-        const sectionHeader = document.createElement('div');
-        sectionHeader.className = 'toc-year-header';
-
-        const sectionTitle = document.createElement('h3');
-        sectionTitle.className = 'toc-year-title';
-        sectionTitle.innerHTML = labelHtml;
-
-        sectionHeader.appendChild(sectionTitle);
-
-        // Chapters container
-        const chaptersContainer = document.createElement('div');
-        chaptersContainer.className = 'toc-year-chapters collapsed';
-
-        // Build chapter items
-        chapters.forEach(chapter => {
-            const item = this.createNestedChapterItem(chapter);
-            chaptersContainer.appendChild(item);
-        });
-
-        // Click handler
-        sectionHeader.addEventListener('click', () => {
-            this.toggleCollapsibleSection(sectionId, sectionHeader, chaptersContainer);
-        });
-
-        section.appendChild(sectionHeader);
-        section.appendChild(chaptersContainer);
-
-        return section;
-    }
-
-    // Create BOOKMARKS section
-    createBookmarksSection() {
-        const section = document.createElement('div');
-        section.className = 'toc-year-section bookmarks-section';
-        section.dataset.section = 'bookmarks';
-
-        // Section header
-        const sectionHeader = document.createElement('div');
-        sectionHeader.className = 'toc-year-header';
-
-        const sectionTitle = document.createElement('h3');
-        sectionTitle.className = 'toc-year-title';
-        sectionTitle.innerHTML = 'B<span class="record-o">O</span><span class="record-o">O</span>KMARKS';
-
-        const countBadge = document.createElement('span');
-        countBadge.className = 'bookmarks-count';
-        countBadge.id = 'bookmarksCount';
-        const count = bookmarks.getCount();
-        countBadge.textContent = count > 0 ? `(${count})` : '';
-
-        sectionHeader.appendChild(sectionTitle);
-        sectionHeader.appendChild(countBadge);
-
-        // Bookmarks container
-        const bookmarksContainer = document.createElement('div');
-        bookmarksContainer.className = 'toc-year-chapters collapsed';
-        bookmarksContainer.id = 'bookmarksContainer';
-
-        // Click handler
-        sectionHeader.addEventListener('click', () => {
-            this.toggleBookmarksSection(sectionHeader, bookmarksContainer);
-        });
-
-        // Listen for bookmark changes
-        window.addEventListener('bookmarksChanged', () => {
-            this.updateBookmarksCount();
-            if (this.expandedSections.has('bookmarks')) {
-                this.renderBookmarks(bookmarksContainer);
-            }
-        });
-
-        section.appendChild(sectionHeader);
-        section.appendChild(bookmarksContainer);
-
-        return section;
-    }
-
-    // Toggle bookmarks section
-    toggleBookmarksSection(sectionHeader, bookmarksContainer) {
-        if (this.expandedSections.has('bookmarks')) {
-            this.expandedSections.delete('bookmarks');
-            bookmarksContainer.classList.add('collapsed');
-            sectionHeader.classList.remove('expanded');
-        } else {
-            this.expandedSections.add('bookmarks');
-            bookmarksContainer.classList.remove('collapsed');
-            sectionHeader.classList.add('expanded');
-            this.renderBookmarks(bookmarksContainer);
-        }
-    }
-
-    // Render bookmarks list
-    renderBookmarks(container) {
-        bookmarks.renderBookmarksList(container, (chapterId) => {
-            reader.loadChapter(chapterId);
-            this.closeTOC();
-        });
-    }
-
-    // Update bookmarks count badge
-    updateBookmarksCount() {
-        const countBadge = document.getElementById('bookmarksCount');
-        if (countBadge) {
-            const count = bookmarks.getCount();
-            countBadge.textContent = count > 0 ? `(${count})` : '';
-        }
-    }
-
-    // Toggle collapsible section (INTRO/POSTSCRIPT)
-    toggleCollapsibleSection(sectionId, sectionHeader, chaptersContainer) {
-        if (this.expandedSections.has(sectionId)) {
-            // Collapse
-            this.expandedSections.delete(sectionId);
-            chaptersContainer.classList.add('collapsed');
-            sectionHeader.classList.remove('expanded');
-        } else {
-            // Expand
-            this.expandedSections.add(sectionId);
-            chaptersContainer.classList.remove('collapsed');
-            sectionHeader.classList.add('expanded');
-        }
-    }
-
-    // Create a standalone chapter item (for opening/closing chapters)
-    createStandaloneChapterItem(chapter) {
-        const item = document.createElement('div');
-        item.className = 'toc-chapter toc-chapter-standalone';
-        item.dataset.chapterId = chapter.id;
-
-        const indicator = document.createElement('div');
-        indicator.className = 'chapter-indicator';
-
-        const info = document.createElement('div');
-        info.className = 'toc-chapter-info';
-
-        const titleRow = document.createElement('div');
-        titleRow.className = 'toc-chapter-title-row';
-
-        const title = document.createElement('span');
-        title.className = 'toc-chapter-title';
-        title.textContent = chapter.title;
-
-        const readTime = document.createElement('span');
-        readTime.className = 'toc-read-time';
-        const minutes = calculateReadingTime(chapter.wordCount);
-        readTime.textContent = `${minutes} min`;
-
-        titleRow.appendChild(title);
-        titleRow.appendChild(readTime);
-
-        info.appendChild(titleRow);
-
-        item.appendChild(indicator);
-        item.appendChild(info);
-
-        // Click handler
-        item.addEventListener('click', () => {
-            reader.loadChapter(chapter.id);
-            this.closeTOC();
-        });
-
-        return item;
-    }
-
-    // Create a nested chapter item (for year sections)
-    createNestedChapterItem(chapter) {
-        const item = document.createElement('div');
-        item.className = 'toc-chapter';
-        item.dataset.chapterId = chapter.id;
-
-        const indicator = document.createElement('div');
-        indicator.className = 'chapter-indicator';
-
-        const info = document.createElement('div');
-        info.className = 'toc-chapter-info';
-
-        const titleRow = document.createElement('div');
-        titleRow.className = 'toc-chapter-title-row';
-
-        const title = document.createElement('span');
-        title.className = 'toc-chapter-title';
-        title.textContent = chapter.title;
-
-        const readTime = document.createElement('span');
-        readTime.className = 'toc-read-time';
-        const minutes = calculateReadingTime(chapter.wordCount);
-        readTime.textContent = `${minutes} min`;
-
-        titleRow.appendChild(title);
-        titleRow.appendChild(readTime);
-
-        info.appendChild(titleRow);
-
-        item.appendChild(indicator);
-        item.appendChild(info);
-
-        // Click handler
-        item.addEventListener('click', () => {
-            reader.loadChapter(chapter.id);
-            this.closeTOC();
-        });
-
-        return item;
-    }
-
-    // Toggle year section
-    toggleYear(year, yearHeader, chaptersContainer) {
-        if (this.expandedYears.has(year)) {
-            // Collapse
-            this.expandedYears.delete(year);
-            chaptersContainer.classList.add('collapsed');
-            yearHeader.classList.remove('expanded');
-        } else {
-            // Expand
-            this.expandedYears.add(year);
-            chaptersContainer.classList.remove('collapsed');
-            yearHeader.classList.add('expanded');
-        }
-    }
-
-    // Build additional content sections (Blog, About, etc.)
-    buildContentSections() {
-        // Sections with type: 'dropdown' expand in place, 'link' navigates to page
-        const sections = [
-            { id: 'blog', label: 'BL<span class="record-o">O</span>G', type: 'link', url: 'https://anthonyfenech.substack.com' },
-            { id: 'about', label: 'AB<span class="record-o">O</span>UT', type: 'link', comingSoon: true },
-            { id: 'audio', label: 'AUDI<span class="record-o">O</span>', type: 'link', comingSoon: true },
-            { id: 'photo', label: 'PH<span class="record-o">O</span>TOS', type: 'dropdown' },
-            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
-            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true },
-            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM', type: 'link', comingSoon: true }
-        ];
-
-        const fragment = document.createDocumentFragment();
-
-        sections.forEach(section => {
-            // Create section wrapper
-            const sectionDiv = document.createElement('div');
-            sectionDiv.className = 'toc-content-section';
-            sectionDiv.dataset.section = section.id;
-
-            // Section header
-            const sectionHeader = document.createElement('div');
-            sectionHeader.className = section.type === 'dropdown' ? 'toc-section-header' : 'toc-section-header toc-section-link';
-
-            const sectionTitle = document.createElement('h3');
-            sectionTitle.className = 'toc-section-title';
-            sectionTitle.innerHTML = section.label;
-
-            sectionHeader.appendChild(sectionTitle);
-
-            if (section.type === 'dropdown') {
-                // Dropdown section with expandable content
-                const sectionContent = document.createElement('div');
-                sectionContent.className = 'toc-section-content collapsed';
-                sectionContent.id = `toc-section-${section.id}`;
-
-                if (section.id === 'photo' || section.id === 'comments') {
-                    sectionContent.dataset.needsInit = 'true';
-                }
-
-                sectionHeader.addEventListener('click', () => {
-                    this.toggleSection(section.id, sectionHeader, sectionContent);
-                });
-
-                sectionDiv.appendChild(sectionHeader);
-                sectionDiv.appendChild(sectionContent);
-            } else {
-                // Link section - navigates to page or shows coming soon
-                sectionHeader.addEventListener('click', () => {
-                    if (section.url) {
-                        window.open(section.url, '_blank', 'noopener,noreferrer');
-                    } else if (section.comingSoon) {
-                        // Could navigate to a coming soon page in the future
-                        alert('Coming Soon');
-                    }
-                    this.closeTOC();
-                });
-
-                sectionDiv.appendChild(sectionHeader);
-            }
-
-            fragment.appendChild(sectionDiv);
-        });
-
-        this.tocContent.appendChild(fragment);
-    }
-
-    // Toggle content section
-    toggleSection(sectionId, sectionHeader, sectionContent) {
-        if (this.expandedSections.has(sectionId)) {
-            // Collapse
-            this.expandedSections.delete(sectionId);
-            sectionContent.classList.add('collapsed');
-            sectionHeader.classList.remove('expanded');
-        } else {
-            // Expand
-            this.expandedSections.add(sectionId);
-            sectionContent.classList.remove('collapsed');
-            sectionHeader.classList.add('expanded');
-
-            // Initialize photo gallery if needed
-            if (sectionId === 'photo' && sectionContent.dataset.needsInit === 'true') {
-                this.initializePhotoGallery(sectionContent);
-                delete sectionContent.dataset.needsInit;
-            }
-
-            // Initialize blog if needed
-            if (sectionId === 'blog' && sectionContent.dataset.needsInit === 'true') {
-                this.initializeBlog(sectionContent);
-                delete sectionContent.dataset.needsInit;
-            }
-
-            // Initialize guestbook if needed
-            if (sectionId === 'comments' && sectionContent.dataset.needsInit === 'true') {
-                guestbook.render(sectionContent);
-                delete sectionContent.dataset.needsInit;
-            }
-        }
-    }
-
-    // Initialize blog posts in the sidebar
-    async initializeBlog(container) {
-        try {
-            const posts = await blogService.fetchPosts();
-
-            // Clear loading state
-            container.innerHTML = '';
-
-            if (posts.length === 0) {
-                // Show empty state with subscribe form
-                this.renderBlogEmptyState(container);
-            } else {
-                // Render blog posts
-                this.renderBlogPosts(container, posts);
-            }
-        } catch (error) {
-            console.error('Error loading blog:', error);
-            container.innerHTML = '';
-            this.renderBlogEmptyState(container);
-        }
-    }
-
-    // Render blog posts
-    renderBlogPosts(container, posts) {
-        const blogContainer = document.createElement('div');
-        blogContainer.className = 'blog-posts-container';
-
-        posts.forEach(post => {
-            const postCard = document.createElement('article');
-            postCard.className = 'blog-post-card';
-
-            const postTitle = document.createElement('h4');
-            postTitle.className = 'blog-post-title';
-            postTitle.textContent = post.title;
-
-            const postDate = document.createElement('time');
-            postDate.className = 'blog-post-date';
-            postDate.textContent = post.pubDateFormatted;
-            postDate.dateTime = post.pubDate.toISOString();
-
-            const postExcerpt = document.createElement('p');
-            postExcerpt.className = 'blog-post-excerpt';
-            postExcerpt.textContent = post.excerpt;
-
-            const postLink = document.createElement('a');
-            postLink.className = 'blog-post-link';
-            postLink.href = post.link;
-            postLink.target = '_blank';
-            postLink.rel = 'noopener noreferrer';
-            postLink.innerHTML = 'Read on Substack <span class="arrow">→</span>';
-
-            postCard.appendChild(postTitle);
-            postCard.appendChild(postDate);
-            postCard.appendChild(postExcerpt);
-            postCard.appendChild(postLink);
-
-            // Make whole card clickable
-            postCard.addEventListener('click', (e) => {
-                if (e.target !== postLink) {
-                    window.open(post.link, '_blank', 'noopener,noreferrer');
-                }
-            });
-
-            blogContainer.appendChild(postCard);
-        });
-
-        // Add subscribe link at bottom
-        const subscribeSection = document.createElement('div');
-        subscribeSection.className = 'blog-subscribe-link';
-        subscribeSection.innerHTML = `
-            <a href="https://anthonyfenech.substack.com" target="_blank" rel="noopener noreferrer">
-                Subscribe on Substack →
-            </a>
+        section.className = 'nav-section';
+        
+        const header = document.createElement('div');
+        header.className = `nav-item collapsible ${sizeClass}`;
+        if (isLargeFont) header.classList.add('large-font');
+        header.innerHTML = `
+            ${this.addRecordDots(title)}
+            <span class="collapse-arrow">▼</span>
         `;
-
-        container.appendChild(blogContainer);
-        container.appendChild(subscribeSection);
+        
+        const content = document.createElement('div');
+        content.className = 'collapsible-content';
+        content.style.display = 'none';
+        
+        header.addEventListener('click', () => {
+            this.toggleCollapsibleSection(header, content);
+        });
+        
+        section.appendChild(header);
+        
+        if (contentGenerator) {
+            const generatedContent = contentGenerator();
+            content.appendChild(generatedContent);
+        }
+        
+        section.appendChild(content);
+        parent.appendChild(section);
+        
+        return section;
     }
 
-    // Render empty state for blog
-    renderBlogEmptyState(container) {
-        const emptyState = document.createElement('div');
-        emptyState.className = 'blog-empty-state';
-
-        const message = document.createElement('p');
-        message.className = 'blog-empty-message';
-        message.textContent = 'New posts coming soon';
-
-        const subscribeFrame = document.createElement('iframe');
-        subscribeFrame.className = 'blog-subscribe-embed';
-        subscribeFrame.src = 'https://anthonyfenech.substack.com/embed';
-        subscribeFrame.width = '100%';
-        subscribeFrame.height = '150';
-        subscribeFrame.frameBorder = '0';
-        subscribeFrame.scrolling = 'no';
-
-        emptyState.appendChild(message);
-        emptyState.appendChild(subscribeFrame);
-        container.appendChild(emptyState);
+    toggleCollapsibleSection(header, content) {
+        const isOpen = content.style.display !== 'none';
+        
+        if (isOpen) {
+            content.style.display = 'none';
+            header.querySelector('.collapse-arrow').textContent = '▼';
+        } else {
+            content.style.display = 'block';
+            header.querySelector('.collapse-arrow').textContent = '▲';
+        }
     }
 
-    // Initialize photo gallery in the sidebar
-    initializePhotoGallery(container) {
-        const galleries = getAllGalleries();
-        this.expandedGalleries = new Set(); // Track expanded galleries
-
-        // Render each gallery with collapsible header
-        galleries.forEach(gallery => {
-            const gallerySection = document.createElement('div');
-            gallerySection.className = 'gallery-section';
-            gallerySection.dataset.galleryId = gallery.id;
-
-            // Gallery header (clickable to expand/collapse)
-            const galleryHeader = document.createElement('div');
-            galleryHeader.className = 'gallery-section-header';
-
-            const galleryTitle = document.createElement('h4');
-            galleryTitle.className = 'gallery-section-title';
-            galleryTitle.textContent = gallery.title.toUpperCase();
-
-            galleryHeader.appendChild(galleryTitle);
-
-            // Gallery content container
-            const galleryContent = document.createElement('div');
-            galleryContent.className = 'gallery-section-content collapsed';
-            galleryContent.id = `gallery-content-${gallery.id}`;
-
-            // Only add click handler if gallery has photos
-            if (!gallery.comingSoon) {
-                galleryHeader.addEventListener('click', () => {
-                    this.toggleGallery(gallery.id, galleryHeader, galleryContent);
+    createChapterList(chapterNumbers) {
+        const container = document.createElement('div');
+        container.className = 'chapter-list';
+        
+        chapterNumbers.forEach(num => {
+            const chapter = window.chapters.find(c => c.id === num);
+            if (chapter) {
+                const item = document.createElement('div');
+                item.className = 'nav-item chapter-item';
+                item.textContent = chapter.title;
+                item.addEventListener('click', () => {
+                    this.loadChapter(num);
+                    this.closeMenu();
                 });
-                galleryHeader.style.cursor = 'pointer';
-            } else {
-                galleryHeader.classList.add('disabled');
-            }
-
-            gallerySection.appendChild(galleryHeader);
-            gallerySection.appendChild(galleryContent);
-            container.appendChild(gallerySection);
-        });
-    }
-
-    // Toggle gallery expansion
-    toggleGallery(galleryId, galleryHeader, galleryContent) {
-        const isExpanded = this.expandedGalleries.has(galleryId);
-
-        if (isExpanded) {
-            // Collapse
-            this.expandedGalleries.delete(galleryId);
-            galleryContent.classList.add('collapsed');
-            galleryHeader.classList.remove('expanded');
-        } else {
-            // Expand
-            this.expandedGalleries.add(galleryId);
-            galleryContent.classList.remove('collapsed');
-            galleryHeader.classList.add('expanded');
-
-            // Render gallery grid if not already rendered
-            if (!galleryContent.dataset.rendered) {
-                photoGallery.renderGalleryGrid(galleryId, `gallery-content-${galleryId}`);
-                galleryContent.dataset.rendered = 'true';
-            }
-        }
-    }
-
-    // Update TOC state (active chapter, completion)
-    updateTOCState() {
-        const items = this.tocContent.querySelectorAll('.toc-chapter');
-
-        items.forEach(item => {
-            const chapterId = parseInt(item.dataset.chapterId);
-            const indicator = item.querySelector('.chapter-indicator');
-
-            // Remove all classes
-            item.classList.remove('active', 'completed');
-            indicator.innerHTML = '';
-
-            // Add current chapter indicator
-            if (chapterId === this.currentChapterId) {
-                item.classList.add('active');
-                indicator.classList.add('current');
-                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
-
-                // Auto-expand the section containing current chapter
-                const chapter = CHAPTERS.find(c => c.id === chapterId);
-                if (chapter) {
-                    if (chapter.year) {
-                        // Year section
-                        const yearSection = this.tocContent.querySelector(`[data-year="${chapter.year}"]`);
-                        if (yearSection) {
-                            const yearHeader = yearSection.querySelector('.toc-year-header');
-                            const chaptersContainer = yearSection.querySelector('.toc-year-chapters');
-                            if (yearHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
-                                this.toggleYear(chapter.year.toString(), yearHeader, chaptersContainer);
-                            }
-                        }
-                    } else if (chapter.section === 'intro' || chapter.section === 'postscript') {
-                        // INTRO or POSTSCRIPT section
-                        const section = this.tocContent.querySelector(`[data-section="${chapter.section}"]`);
-                        if (section) {
-                            const sectionHeader = section.querySelector('.toc-year-header');
-                            const chaptersContainer = section.querySelector('.toc-year-chapters');
-                            if (sectionHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
-                                this.toggleCollapsibleSection(chapter.section, sectionHeader, chaptersContainer);
-                            }
-                        }
-                    }
-                }
-            }
-            // Add completion checkmark
-            else if (isChapterComplete(chapterId)) {
-                item.classList.add('completed');
-                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                container.appendChild(item);
             }
         });
-
-        // Update overall progress
-        const progress = calculateOverallProgress(getChapterCount());
-        this.overallProgress.textContent = `Overall Progress: ${progress}%`;
+        
+        return container;
     }
 
-    // Update navigation button states
-    updateNavigationState() {
-        // Disable prev button on first chapter
-        if (this.currentChapterId <= 1) {
-            this.prevBtn.disabled = true;
-        } else {
-            this.prevBtn.disabled = false;
-        }
-
-        // Disable next button on last chapter
-        if (this.currentChapterId >= getChapterCount()) {
-            this.nextBtn.disabled = true;
-        } else {
-            this.nextBtn.disabled = false;
-        }
+    createMediaSection(parent, title, id, isLargeFont) {
+        const item = document.createElement('div');
+        item.className = 'nav-item';
+        if (isLargeFont) item.classList.add('large-font');
+        item.innerHTML = this.addRecordDots(title);
+        item.addEventListener('click', () => {
+            this.loadMediaSection(id);
+            this.closeMenu();
+        });
+        parent.appendChild(item);
     }
 
-    // Navigation actions
-    goToPreviousChapter() {
-        if (this.currentChapterId > 1) {
-            reader.loadChapter(this.currentChapterId - 1);
-        }
+    createGuestbookSection() {
+        const container = document.createElement('div');
+        container.className = 'guestbook-container';
+        
+        // Header
+        const header = document.createElement('div');
+        header.className = 'guestbook-header';
+        header.textContent = 'Sign the guestbook. Let us know you stopped by.';
+        container.appendChild(header);
+        
+        // Form
+        const form = document.createElement('form');
+        form.className = 'guestbook-form';
+        form.innerHTML = `
+            <input type="text" id="guestName" placeholder="Name *" required>
+            <input type="email" id="guestEmail" placeholder="Email *" required>
+            <input type="text" id="guestHometown" placeholder="Hometown (e.g., Detroit, MI)">
+            <textarea id="guestComments" placeholder="Comments" rows="4"></textarea>
+            <button type="submit" class="guestbook-submit">Sign the Guestbook</button>
+        `;
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.submitGuestbookEntry();
+        });
+        
+        container.appendChild(form);
+        
+        // Entries
+        const entriesContainer = document.createElement('div');
+        entriesContainer.className = 'guestbook-entries';
+        entriesContainer.id = 'guestbookEntries';
+        container.appendChild(entriesContainer);
+        
+        this.loadGuestbookEntries();
+        
+        return container;
     }
 
-    goToNextChapter() {
-        if (this.currentChapterId < getChapterCount()) {
-            reader.loadChapter(this.currentChapterId + 1);
-        }
+    submitGuestbookEntry() {
+        const name = document.getElementById('guestName').value;
+        const email = document.getElementById('guestEmail').value;
+        const hometown = document.getElementById('guestHometown').value;
+        const comments = document.getElementById('guestComments').value;
+        
+        const entry = {
+            name,
+            email,
+            hometown,
+            comments,
+            timestamp: new Date().toISOString()
+        };
+        
+        // Get existing entries
+        let entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+        entries.unshift(entry); // Add to beginning
+        entries = entries.slice(0, 20); // Keep only 20 most recent
+        
+        localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+        
+        // Clear form
+        document.getElementById('guestName').value = '';
+        document.getElementById('guestEmail').value = '';
+        document.getElementById('guestHometown').value = '';
+        document.getElementById('guestComments').value = '';
+        
+        // Reload entries
+        this.loadGuestbookEntries();
+        
+        alert('Thanks for signing!');
     }
 
-    // TOC actions
-    openTOC() {
-        this.tocSidebar.classList.add('open');
-        this.overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    closeTOC() {
-        this.tocSidebar.classList.remove('open');
-        this.overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // Keyboard navigation
-    handleKeyPress(e) {
-        // Ignore if TOC is open or user is typing
-        if (this.tocSidebar.classList.contains('open') ||
-            e.target.tagName === 'INPUT' ||
-            e.target.tagName === 'TEXTAREA') {
+    loadGuestbookEntries() {
+        const container = document.getElementById('guestbookEntries');
+        if (!container) return;
+        
+        const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+        
+        if (entries.length === 0) {
+            container.innerHTML = '<p class="no-entries">No entries yet. Be the first!</p>';
             return;
         }
+        
+        container.innerHTML = entries.map(entry => `
+            <div class="guestbook-entry">
+                <div class="entry-header">
+                    <strong>${this.escapeHtml(entry.name)}</strong>
+                    ${entry.hometown ? ` - ${this.escapeHtml(entry.hometown)}` : ''}
+                </div>
+                ${entry.comments ? `<div class="entry-comments">"${this.escapeHtml(entry.comments)}"</div>` : ''}
+            </div>
+        `).join('');
+    }
 
-        switch(e.key) {
-            case 'ArrowLeft':
-            case 'h':
-                e.preventDefault();
-                this.goToPreviousChapter();
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    addRecordDots(text) {
+        // Add red dots to O's in specific sections
+        const shouldHaveDots = ['BOOK', 'BLOG', 'ABOUT', 'AUDIO', 'PHOTOS', 'COMMENTS', 'CONTACT'].includes(text);
+        
+        if (!shouldHaveDots) {
+            return text;
+        }
+        
+        return text.split('').map(char => {
+            if (char === 'O') {
+                return '<span class="record-button">O</span>';
+            }
+            return char;
+        }).join('');
+    }
+
+    loadChapter(id) {
+        const chapter = window.chapters.find(c => c.id === id);
+        if (!chapter) return;
+        
+        this.currentChapter = id;
+        localStorage.setItem('lastChapter', id);
+        
+        const content = document.getElementById('content');
+        content.innerHTML = `
+            <div class="chapter-header">
+                <h2>${chapter.title}</h2>
+            </div>
+            <div class="chapter-body">
+                ${chapter.content}
+            </div>
+            <div class="chapter-navigation">
+                <button class="nav-button prev" ${id === 1 ? 'disabled' : ''} onclick="navigation.previousChapter()">
+                    PREVIOUS
+                </button>
+                <button class="nav-button next" ${id === 32 ? 'disabled' : ''} onclick="navigation.nextChapter()">
+                    NEXT
+                </button>
+            </div>
+        `;
+        
+        this.updateProgress();
+    }
+
+    loadMediaSection(sectionId) {
+        const content = document.getElementById('content');
+        
+        switch(sectionId) {
+            case 'blog':
+                content.innerHTML = '<div class="media-section"><h2>BLOG</h2><p>Coming soon...</p></div>';
                 break;
-            case 'ArrowRight':
-            case 'l':
-                e.preventDefault();
-                this.goToNextChapter();
+            case 'about':
+                content.innerHTML = '<div class="media-section"><h2>ABOUT</h2><p>Book information coming soon...</p></div>';
                 break;
-            case 'Escape':
-                e.preventDefault();
-                this.closeTOC();
+            case 'audio':
+                content.innerHTML = '<div class="media-section"><h2>AUDIO</h2><p>Audiobook content coming soon...</p></div>';
                 break;
+            case 'photos':
+                this.loadPhotos();
+                break;
+            case 'contact':
+                content.innerHTML = '<div class="media-section"><h2>CONTACT</h2><p>Contact information coming soon...</p></div>';
+                break;
+        }
+        
+        this.currentChapter = null;
+    }
+
+    loadPhotos() {
+        const content = document.getElementById('content');
+        content.innerHTML = `
+            <div class="media-section">
+                <h2>PHOTOS</h2>
+                <div class="photo-grid" id="photoGrid"></div>
+            </div>
+        `;
+        
+        const grid = document.getElementById('photoGrid');
+        
+        if (!window.photos || window.photos.length === 0) {
+            grid.innerHTML = '<p>No photos available yet.</p>';
+            return;
+        }
+        
+        window.photos.forEach(photo => {
+            const item = document.createElement('div');
+            item.className = 'photo-item';
+            item.innerHTML = `
+                <img src="${photo.thumb || photo.url}" alt="${photo.caption}" 
+                     onclick="navigation.viewPhoto('${photo.url}', '${photo.caption}')">
+                <p>${photo.caption}</p>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    viewPhoto(url, caption) {
+        const modal = document.createElement('div');
+        modal.className = 'photo-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                <img src="${url}" alt="${caption}">
+                <p>${caption}</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+    }
+
+    loadLastChapter() {
+        const lastChapter = localStorage.getItem('lastChapter');
+        if (lastChapter) {
+            this.loadChapter(parseInt(lastChapter));
+        } else {
+            this.loadChapter(1);
         }
     }
 
-    // Swipe gestures for mobile
-    setupSwipeGestures() {
-        const reader = document.getElementById('reader');
-
-        reader.addEventListener('touchstart', (e) => {
-            this.touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        reader.addEventListener('touchend', (e) => {
-            this.touchEndX = e.changedTouches[0].screenX;
-            this.handleSwipe();
-        }, { passive: true });
+    previousChapter() {
+        if (this.currentChapter > 1) {
+            this.loadChapter(this.currentChapter - 1);
+            window.scrollTo(0, 0);
+        }
     }
 
-    handleSwipe() {
-        const swipeThreshold = 100; // Minimum distance for swipe
-        const diff = this.touchStartX - this.touchEndX;
+    nextChapter() {
+        if (this.currentChapter < 32) {
+            this.loadChapter(this.currentChapter + 1);
+            window.scrollTo(0, 0);
+        }
+    }
 
-        // Swipe left = next chapter
-        if (diff > swipeThreshold) {
-            this.goToNextChapter();
-        }
-        // Swipe right = previous chapter
-        else if (diff < -swipeThreshold) {
-            this.goToPreviousChapter();
-        }
+    attachEventListeners() {
+        document.getElementById('menuButton').addEventListener('click', () => {
+            this.toggleMenu();
+        });
+        
+        document.getElementById('closeMenu').addEventListener('click', () => {
+            this.closeMenu();
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('menu');
+            const menuButton = document.getElementById('menuButton');
+            
+            if (this.menuOpen && !menu.contains(e.target) && !menuButton.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        const menu = document.getElementById('menu');
+        this.menuOpen = !this.menuOpen;
+        menu.classList.toggle('open', this.menuOpen);
+    }
+
+    closeMenu() {
+        const menu = document.getElementById('menu');
+        this.menuOpen = false;
+        menu.classList.remove('open');
+    }
+
+    updateProgress() {
+        const totalChapters = 32;
+        const chaptersRead = new Set(
+            Object.keys(localStorage)
+                .filter(key => key.startsWith('chapter_') && localStorage[key] === 'read')
+                .map(key => parseInt(key.replace('chapter_', '')))
+        ).size;
+        
+        const percentage = Math.round((chaptersRead / totalChapters) * 100);
+        document.getElementById('progressBar').textContent = `Overall Progress: ${percentage}%`;
     }
 }
 
-// Export single instance
-export const navigation = new Navigation();
+// Initialize navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.navigation = new Navigation();
+});
