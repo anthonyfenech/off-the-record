@@ -98,6 +98,10 @@
     transition: transform var(--transition-fast);
 }
 
+.toc-year-header.expanded::after {
+    transform: rotate(180deg);
+}
+
 .toc-year-title {
     font-family: var(--font-mono);
     font-size: var(--font-size-base);
@@ -155,6 +159,10 @@
     color: var(--color-text-secondary);
     margin-left: auto;
     transition: transform var(--transition-fast);
+}
+
+.toc-section-header.expanded::after {
+    transform: rotate(180deg);
 }
 
 .toc-section-icon {
@@ -780,6 +788,10 @@ button:focus-visible {
 
 .gallery-section-header.disabled::after {
     content: '';
+}
+
+.gallery-section-header.expanded::after {
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .gallery-section-info {

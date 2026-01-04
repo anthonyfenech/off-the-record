@@ -127,7 +127,7 @@ class Navigation {
             // Year header click handler (only if has chapters)
             if (chapters.length > 0) {
                 yearHeader.addEventListener('click', () => {
-                    this.toggleYear(year, chaptersContainer);
+                    this.toggleYear(year, yearHeader, chaptersContainer);
                 });
             } else {
                 yearHeader.classList.add('disabled');
@@ -240,15 +240,17 @@ class Navigation {
     }
 
     // Toggle year section
-    toggleYear(year, chaptersContainer) {
+    toggleYear(year, yearHeader, chaptersContainer) {
         if (this.expandedYears.has(year)) {
             // Collapse
             this.expandedYears.delete(year);
             chaptersContainer.classList.add('collapsed');
+            yearHeader.classList.remove('expanded');
         } else {
             // Expand
             this.expandedYears.add(year);
             chaptersContainer.classList.remove('collapsed');
+            yearHeader.classList.add('expanded');
         }
     }
 
@@ -310,7 +312,7 @@ class Navigation {
 
             // Click handler for header
             sectionHeader.addEventListener('click', () => {
-                this.toggleSection(section.id, sectionContent);
+                this.toggleSection(section.id, sectionHeader, sectionContent);
             });
 
             sectionDiv.appendChild(sectionHeader);
@@ -322,15 +324,17 @@ class Navigation {
     }
 
     // Toggle content section
-    toggleSection(sectionId, sectionContent) {
+    toggleSection(sectionId, sectionHeader, sectionContent) {
         if (this.expandedSections.has(sectionId)) {
             // Collapse
             this.expandedSections.delete(sectionId);
             sectionContent.classList.add('collapsed');
+            sectionHeader.classList.remove('expanded');
         } else {
             // Expand
             this.expandedSections.add(sectionId);
             sectionContent.classList.remove('collapsed');
+            sectionHeader.classList.add('expanded');
 
             // Initialize photo gallery if needed
             if (sectionId === 'photo' && sectionContent.dataset.needsInit === 'true') {
@@ -492,7 +496,7 @@ class Navigation {
             if (!gallery.comingSoon) {
                 // Click handler for header
                 galleryHeader.addEventListener('click', () => {
-                    this.toggleGallery(gallery.id, galleryContent);
+                    this.toggleGallery(gallery.id, galleryHeader, galleryContent);
                 });
                 galleryHeader.style.cursor = 'pointer';
             } else {
@@ -507,17 +511,19 @@ class Navigation {
     }
 
     // Toggle gallery expansion
-    toggleGallery(galleryId, galleryContent) {
+    toggleGallery(galleryId, galleryHeader, galleryContent) {
         const isExpanded = this.expandedGalleries.has(galleryId);
 
         if (isExpanded) {
             // Collapse
             this.expandedGalleries.delete(galleryId);
             galleryContent.classList.add('collapsed');
+            galleryHeader.classList.remove('expanded');
         } else {
             // Expand
             this.expandedGalleries.add(galleryId);
             galleryContent.classList.remove('collapsed');
+            galleryHeader.classList.add('expanded');
 
             // Render gallery grid if not already rendered
             if (!galleryContent.dataset.rendered) {
@@ -547,12 +553,13 @@ class Navigation {
 
                 // Auto-expand the year containing current chapter
                 const chapter = CHAPTERS.find(c => c.id === chapterId);
-                if (chapter) {
+                if (chapter && chapter.year) {
                     const yearSection = this.tocContent.querySelector(`[data-year="${chapter.year}"]`);
                     if (yearSection) {
+                        const yearHeader = yearSection.querySelector('.toc-year-header');
                         const chaptersContainer = yearSection.querySelector('.toc-year-chapters');
-                        if (chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
-                            this.toggleYear(chapter.year.toString(), chaptersContainer);
+                        if (yearHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
+                            this.toggleYear(chapter.year.toString(), yearHeader, chaptersContainer);
                         }
                     }
                 }
