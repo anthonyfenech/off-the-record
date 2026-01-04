@@ -5,6 +5,7 @@ import { reader } from './reader.js';
 import { isChapterComplete, calculateOverallProgress } from './storage.js';
 import { photoGallery } from './photoGallery.js';
 import { getAllGalleries } from '../data/photos.js';
+import { blogService } from './blog.js';
 
 class Navigation {
     constructor() {
@@ -293,6 +294,14 @@ class Navigation {
             if (section.id === 'photo') {
                 // Content will be rendered when section is first expanded
                 sectionContent.dataset.needsInit = 'true';
+            } else if (section.id === 'blog') {
+                // Blog section - content will be loaded when expanded
+                sectionContent.dataset.needsInit = 'true';
+                // Show loading state initially
+                const loading = document.createElement('div');
+                loading.className = 'blog-loading';
+                loading.textContent = 'Loading posts...';
+                sectionContent.appendChild(loading);
             } else {
                 // Other sections show "Coming Soon"
                 const comingSoon = document.createElement('div');
@@ -330,7 +339,114 @@ class Navigation {
                 this.initializePhotoGallery(sectionContent);
                 delete sectionContent.dataset.needsInit;
             }
+
+            // Initialize blog if needed
+            if (sectionId === 'blog' && sectionContent.dataset.needsInit === 'true') {
+                this.initializeBlog(sectionContent);
+                delete sectionContent.dataset.needsInit;
+            }
         }
+    }
+
+    // Initialize blog posts in the sidebar
+    async initializeBlog(container) {
+        try {
+            const posts = await blogService.fetchPosts();
+
+            // Clear loading state
+            container.innerHTML = '';
+
+            if (posts.length === 0) {
+                // Show empty state with subscribe form
+                this.renderBlogEmptyState(container);
+            } else {
+                // Render blog posts
+                this.renderBlogPosts(container, posts);
+            }
+        } catch (error) {
+            console.error('Error loading blog:', error);
+            container.innerHTML = '';
+            this.renderBlogEmptyState(container);
+        }
+    }
+
+    // Render blog posts
+    renderBlogPosts(container, posts) {
+        const blogContainer = document.createElement('div');
+        blogContainer.className = 'blog-posts-container';
+
+        posts.forEach(post => {
+            const postCard = document.createElement('article');
+            postCard.className = 'blog-post-card';
+
+            const postTitle = document.createElement('h4');
+            postTitle.className = 'blog-post-title';
+            postTitle.textContent = post.title;
+
+            const postDate = document.createElement('time');
+            postDate.className = 'blog-post-date';
+            postDate.textContent = post.pubDateFormatted;
+            postDate.dateTime = post.pubDate.toISOString();
+
+            const postExcerpt = document.createElement('p');
+            postExcerpt.className = 'blog-post-excerpt';
+            postExcerpt.textContent = post.excerpt;
+
+            const postLink = document.createElement('a');
+            postLink.className = 'blog-post-link';
+            postLink.href = post.link;
+            postLink.target = '_blank';
+            postLink.rel = 'noopener noreferrer';
+            postLink.innerHTML = 'Read on Substack <span class="arrow">→</span>';
+
+            postCard.appendChild(postTitle);
+            postCard.appendChild(postDate);
+            postCard.appendChild(postExcerpt);
+            postCard.appendChild(postLink);
+
+            // Make whole card clickable
+            postCard.addEventListener('click', (e) => {
+                if (e.target !== postLink) {
+                    window.open(post.link, '_blank', 'noopener,noreferrer');
+                }
+            });
+
+            blogContainer.appendChild(postCard);
+        });
+
+        // Add subscribe link at bottom
+        const subscribeSection = document.createElement('div');
+        subscribeSection.className = 'blog-subscribe-link';
+        subscribeSection.innerHTML = `
+            <a href="https://anthonyfenech.substack.com" target="_blank" rel="noopener noreferrer">
+                Subscribe on Substack →
+            </a>
+        `;
+
+        container.appendChild(blogContainer);
+        container.appendChild(subscribeSection);
+    }
+
+    // Render empty state for blog
+    renderBlogEmptyState(container) {
+        const emptyState = document.createElement('div');
+        emptyState.className = 'blog-empty-state';
+
+        const message = document.createElement('p');
+        message.className = 'blog-empty-message';
+        message.textContent = 'New posts coming soon';
+
+        const subscribeFrame = document.createElement('iframe');
+        subscribeFrame.className = 'blog-subscribe-embed';
+        subscribeFrame.src = 'https://anthonyfenech.substack.com/embed';
+        subscribeFrame.width = '100%';
+        subscribeFrame.height = '150';
+        subscribeFrame.frameBorder = '0';
+        subscribeFrame.scrolling = 'no';
+
+        emptyState.appendChild(message);
+        emptyState.appendChild(subscribeFrame);
+        container.appendChild(emptyState);
     }
 
     // Initialize photo gallery in the sidebar
