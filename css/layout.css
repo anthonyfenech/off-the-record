@@ -113,9 +113,8 @@ body.paginated .chapter-body {
     border-top: 1px solid var(--color-border);
     padding: var(--space-xs) var(--padding-mobile);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-sm);
+    justify-content: center;
+    gap: var(--space-2xl);
     max-width: var(--max-width-reader);
     margin: 0 auto;
     left: 50%;
@@ -125,17 +124,28 @@ body.paginated .chapter-body {
 .nav-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: var(--space-xs);
-    min-width: 36px;
-    min-height: 36px;
+    gap: var(--space-xs);
+    padding: 2px 0;
+    min-height: 24px;
     border-radius: 0;
-    color: var(--color-text-primary);
+    position: relative;
     transition: all var(--transition-fast);
 }
 
-.nav-btn:hover {
-    opacity: 0.7;
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: var(--space-sm);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+}
+
+.nav-btn:hover::after {
+    transform: scaleX(1);
 }
 
 .nav-btn:disabled {
@@ -143,46 +153,12 @@ body.paginated .chapter-body {
     cursor: not-allowed;
 }
 
-/* Nav controls group (search, bookmark, theme) */
-.nav-controls {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
+.nav-btn:disabled::after {
+    display: none;
 }
 
-.nav-icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    color: var(--color-text-primary);
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: opacity var(--transition-fast);
-}
-
-.nav-icon-btn:hover {
-    opacity: 0.7;
-}
-
-.nav-icon-btn.active svg {
-    fill: var(--color-text-primary);
-}
-
-/* Theme toggle in nav footer */
-.nav-footer .theme-toggle {
-    display: flex;
-    gap: 0;
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.nav-footer .theme-btn {
-    padding: 6px 6px;
+.nav-btn:disabled:hover {
+    background-color: transparent;
 }
 
 /* Progress bar */
