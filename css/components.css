@@ -369,7 +369,7 @@
 
 .toc-section-title {
     font-family: var(--font-mono);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     font-weight: bold;
     color: var(--color-text-secondary);
     margin: 0;
