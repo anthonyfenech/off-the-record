@@ -1,6 +1,6 @@
 // Navigation - Chapter navigation and Table of Contents
 
-import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, sortYearKeys } from '../data/chapters.js';
+import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, getOpeningChapters, getClosingChapters, getSortedYears } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete, calculateOverallProgress } from './storage.js';
 import { photoGallery } from './photoGallery.js';
@@ -71,14 +71,22 @@ class Navigation {
         this.updateNavigationState();
     }
 
-    // Build Table of Contents - Year-based collapsible sections
+    // Build Table of Contents with opening chapters, year sections, and closing chapters
     buildTOC() {
         const fragment = document.createDocumentFragment();
+
+        // 1. Add opening chapters (standalone, not nested)
+        const openingChapters = getOpeningChapters();
+        openingChapters.forEach(chapter => {
+            fragment.appendChild(this.createStandaloneChapterItem(chapter));
+        });
+
+        // 2. Add year sections with nested chapters
         const chaptersByYear = getChaptersByYear();
-        const years = sortYearKeys(Object.keys(chaptersByYear));
+        const years = getSortedYears();
 
         years.forEach(year => {
-            const chapters = chaptersByYear[year];
+            const chapters = chaptersByYear[year] || [];
 
             // Create year section
             const yearSection = document.createElement('div');
@@ -91,11 +99,16 @@ class Navigation {
 
             const yearTitle = document.createElement('h3');
             yearTitle.className = 'toc-year-title';
-            yearTitle.textContent = year;
+            yearTitle.textContent = `${year} SEASON`;
 
             const yearCount = document.createElement('span');
             yearCount.className = 'toc-year-count';
-            yearCount.textContent = `(${chapters.length} ${chapters.length === 1 ? 'chapter' : 'chapters'})`;
+            if (chapters.length === 0) {
+                yearCount.textContent = '(coming soon)';
+                yearCount.classList.add('coming-soon-text');
+            } else {
+                yearCount.textContent = `(${chapters.length} ${chapters.length === 1 ? 'chapter' : 'chapters'})`;
+            }
 
             yearHeader.appendChild(yearTitle);
             yearHeader.appendChild(yearCount);
@@ -104,60 +117,30 @@ class Navigation {
             const chaptersContainer = document.createElement('div');
             chaptersContainer.className = 'toc-year-chapters collapsed';
 
-            // Build chapter items
+            // Build chapter items (if any)
             chapters.forEach(chapter => {
-                const item = document.createElement('div');
-                item.className = 'toc-chapter';
-                item.dataset.chapterId = chapter.id;
-
-                const indicator = document.createElement('div');
-                indicator.className = 'chapter-indicator';
-
-                const info = document.createElement('div');
-                info.className = 'toc-chapter-info';
-
-                const titleRow = document.createElement('div');
-                titleRow.className = 'toc-chapter-title-row';
-
-                const title = document.createElement('span');
-                title.className = 'toc-chapter-title';
-                title.textContent = chapter.title;
-
-                const readTime = document.createElement('span');
-                readTime.className = 'toc-read-time';
-                const minutes = calculateReadingTime(chapter.wordCount);
-                readTime.textContent = `${minutes} min`;
-
-                titleRow.appendChild(title);
-                titleRow.appendChild(readTime);
-
-                const teaser = document.createElement('div');
-                teaser.className = 'toc-chapter-teaser';
-                teaser.textContent = chapter.teaser;
-
-                info.appendChild(titleRow);
-                info.appendChild(teaser);
-
-                item.appendChild(indicator);
-                item.appendChild(info);
-
-                // Click handler
-                item.addEventListener('click', () => {
-                    reader.loadChapter(chapter.id);
-                    this.closeTOC();
-                });
-
+                const item = this.createNestedChapterItem(chapter);
                 chaptersContainer.appendChild(item);
             });
 
-            // Year header click handler
-            yearHeader.addEventListener('click', () => {
-                this.toggleYear(year, chaptersContainer);
-            });
+            // Year header click handler (only if has chapters)
+            if (chapters.length > 0) {
+                yearHeader.addEventListener('click', () => {
+                    this.toggleYear(year, chaptersContainer);
+                });
+            } else {
+                yearHeader.classList.add('disabled');
+            }
 
             yearSection.appendChild(yearHeader);
             yearSection.appendChild(chaptersContainer);
             fragment.appendChild(yearSection);
+        });
+
+        // 3. Add closing chapters (standalone, not nested)
+        const closingChapters = getClosingChapters();
+        closingChapters.forEach(chapter => {
+            fragment.appendChild(this.createStandaloneChapterItem(chapter));
         });
 
         this.tocContent.appendChild(fragment);
@@ -166,6 +149,93 @@ class Navigation {
         const divider = document.createElement('div');
         divider.className = 'toc-divider';
         this.tocContent.appendChild(divider);
+    }
+
+    // Create a standalone chapter item (for opening/closing chapters)
+    createStandaloneChapterItem(chapter) {
+        const item = document.createElement('div');
+        item.className = 'toc-chapter toc-chapter-standalone';
+        item.dataset.chapterId = chapter.id;
+
+        const indicator = document.createElement('div');
+        indicator.className = 'chapter-indicator';
+
+        const info = document.createElement('div');
+        info.className = 'toc-chapter-info';
+
+        const titleRow = document.createElement('div');
+        titleRow.className = 'toc-chapter-title-row';
+
+        const title = document.createElement('span');
+        title.className = 'toc-chapter-title';
+        title.textContent = chapter.title;
+
+        const readTime = document.createElement('span');
+        readTime.className = 'toc-read-time';
+        const minutes = calculateReadingTime(chapter.wordCount);
+        readTime.textContent = `${minutes} min`;
+
+        titleRow.appendChild(title);
+        titleRow.appendChild(readTime);
+
+        info.appendChild(titleRow);
+
+        item.appendChild(indicator);
+        item.appendChild(info);
+
+        // Click handler
+        item.addEventListener('click', () => {
+            reader.loadChapter(chapter.id);
+            this.closeTOC();
+        });
+
+        return item;
+    }
+
+    // Create a nested chapter item (for year sections)
+    createNestedChapterItem(chapter) {
+        const item = document.createElement('div');
+        item.className = 'toc-chapter';
+        item.dataset.chapterId = chapter.id;
+
+        const indicator = document.createElement('div');
+        indicator.className = 'chapter-indicator';
+
+        const info = document.createElement('div');
+        info.className = 'toc-chapter-info';
+
+        const titleRow = document.createElement('div');
+        titleRow.className = 'toc-chapter-title-row';
+
+        const title = document.createElement('span');
+        title.className = 'toc-chapter-title';
+        title.textContent = chapter.title;
+
+        const readTime = document.createElement('span');
+        readTime.className = 'toc-read-time';
+        const minutes = calculateReadingTime(chapter.wordCount);
+        readTime.textContent = `${minutes} min`;
+
+        titleRow.appendChild(title);
+        titleRow.appendChild(readTime);
+
+        const teaser = document.createElement('div');
+        teaser.className = 'toc-chapter-teaser';
+        teaser.textContent = chapter.teaser;
+
+        info.appendChild(titleRow);
+        info.appendChild(teaser);
+
+        item.appendChild(indicator);
+        item.appendChild(info);
+
+        // Click handler
+        item.addEventListener('click', () => {
+            reader.loadChapter(chapter.id);
+            this.closeTOC();
+        });
+
+        return item;
     }
 
     // Toggle year section
