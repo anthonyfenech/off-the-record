@@ -260,7 +260,9 @@ class Navigation {
             { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>', icon: '🔊' },
             { id: 'video', label: 'VIDE<span class="record-btn" aria-label="O"></span>', icon: '🎬' },
             { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S', icon: '📷' },
-            { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT', icon: '💝' }
+            { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT', icon: '💝' },
+            { id: 'gooff', label: 'G<span class="record-btn" aria-label="O"></span> <span class="record-btn" aria-label="O"></span>FF', icon: '🔥' },
+            { id: 'cutroom', label: 'CUT R<span class="record-btn" aria-label="O"></span><span class="record-btn" aria-label="O"></span>M', icon: '✂️' }
         ];
 
         const fragment = document.createDocumentFragment();
