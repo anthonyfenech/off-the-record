@@ -24,7 +24,7 @@ const generatePhotoPlaceholders = (startNum, endNum, year, season) => {
 export const PHOTO_GALLERIES = [
     {
         id: '2015-season',
-        title: '2015 Season',
+        title: '2015',
         year: 2015,
         description: 'Behind the scenes coverage of the Detroit Tigers 2015 season',
         coverPhoto: './assets/photos/2015-season/IMG_5011.JPG',
@@ -33,7 +33,7 @@ export const PHOTO_GALLERIES = [
     },
     {
         id: '2016-season',
-        title: '2016 Season',
+        title: '2016',
         year: 2016,
         description: 'Behind the scenes coverage of the Detroit Tigers 2016 season',
         coverPhoto: './assets/photos/2016-season/IMG_5073.JPG',
@@ -42,7 +42,7 @@ export const PHOTO_GALLERIES = [
     },
     {
         id: '2017-season',
-        title: '2017 Season',
+        title: '2017',
         year: 2017,
         description: 'Behind the scenes coverage of the Detroit Tigers 2017 season',
         coverPhoto: null,
@@ -51,7 +51,7 @@ export const PHOTO_GALLERIES = [
     },
     {
         id: '2018-season',
-        title: '2018 Season',
+        title: '2018',
         year: 2018,
         description: 'Behind the scenes coverage of the Detroit Tigers 2018 season',
         coverPhoto: null,
@@ -60,7 +60,7 @@ export const PHOTO_GALLERIES = [
     },
     {
         id: '2019-season',
-        title: '2019 Season',
+        title: '2019',
         year: 2019,
         description: 'Behind the scenes coverage of the Detroit Tigers 2019 season',
         coverPhoto: null,
@@ -69,7 +69,7 @@ export const PHOTO_GALLERIES = [
     },
     {
         id: '2020-season',
-        title: '2020 Season',
+        title: '2020',
         year: 2020,
         description: 'Behind the scenes coverage of the Detroit Tigers 2020 season',
         coverPhoto: null,

@@ -946,8 +946,8 @@ button:focus-visible {
 }
 
 .gallery-section-header {
-    padding: var(--space-sm) var(--padding-mobile);
-    background-color: var(--color-background);
+    padding: var(--space-sm) var(--padding-mobile) var(--space-sm) var(--space-2xl);
+    background-color: var(--color-accent-light);
     transition: background-color var(--transition-fast);
     position: relative;
     display: flex;
@@ -955,7 +955,7 @@ button:focus-visible {
 }
 
 .gallery-section-header:not(.disabled):hover {
-    background-color: var(--color-accent-light);
+    background-color: var(--color-border);
 }
 
 .gallery-section-header.disabled {
