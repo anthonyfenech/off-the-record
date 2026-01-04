@@ -27,9 +27,7 @@ export const CHAPTERS = [
         title: "SUMMER 2017",
         subtitle: "Where our story begins",
         teaser: "Where our story begins.",
-        content: `<p class="section-header">CHICAGO, August 27</p>
-
-<p>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man's bald head. The last scene before the elevator door closes.</p>
+        content: `<p class="has-dateline"><span class="dateline">CHICAGO, August 27—</span>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man's bald head. The last scene before the elevator door closes.</p>
 
 <p>I am on the South Side at U.S. Cellular Field, home of the Chicago White Sox, and we are slowly descending from the third floor. The skyline is covered in gray. Walls are gray. Everything is gray.</p>
 
@@ -103,17 +101,13 @@ export const CHAPTERS = [
 
 <p>"I apologize for that," he says. "Have a good trip to Denver. Great ballpark and cool city."</p>
 
-<p class="section-header">DENVER, August 29</p>
-
-<p>Still catching up on sleep. The Tigers are here playing the Colorado Rockies. I stay downtown after tonight's game and go to this guy's apartment.</p>
+<p class="has-dateline"><span class="dateline">DENVER, August 29—</span>Still catching up on sleep. The Tigers are here playing the Colorado Rockies. I stay downtown after tonight's game and go to this guy's apartment.</p>
 
 <p>I met the guy a couple of weeks ago at a wedding in Cancún, and here we are, sitting outside on his seventh-floor patio with another couple. I'm wearing shirt-tie-jacket and a work bag, an easy way to introduce myself—hi, I'm Anthony Fenech—I'm a sports writer, I cover the Detroit Tigers baseball team for the Detroit Free Press.</p>
 
 <p>Basically, I fly around the country nine months every year writing about baseball. The job is never-ending, like a machine you can't beat. How, sitting here thinking about it, it's rather ridiculous that I'm writing and tweeting about these millionaires playing baseball. A game.</p>
 
-<p class="section-header">August 30</p>
-
-<p>The next day comes fast. Clubhouse opens at 9:30 for day games and today is what they call Getaway Day. Justin Verlander is pitching today. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, thirty-four, a perennial All-Star with Hall of Fame credentials, wants no part of the long rebuild in store for the Tigers next season.</p>
+<p class="has-dateline"><span class="dateline">August 30—</span>The next day comes fast. Clubhouse opens at 9:30 for day games and today is what they call Getaway Day. Justin Verlander is pitching today. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, thirty-four, a perennial All-Star with Hall of Fame credentials, wants no part of the long rebuild in store for the Tigers next season.</p>
 
 <p>Problem is that the team is paying him big bucks for a long time. This year, Verlander is making $28 million—he's owed $117 million through 2020, thanks to a contract extension signed in his prime. The Tigers, meanwhile, have fallen on tough times: After years of competing for championships with high-payroll rosters, they stink now and have little choice but to enter a rebuild phase, where they'll essentially tank for a few seasons, trading their established players for top prospects and attempt to improve through the draft.</p>
 
@@ -155,9 +149,7 @@ export const CHAPTERS = [
 
 <p>Nothing else, no eye contact. PR calls for last question. There are none. Verlander flees the scene.</p>
 
-<p class="section-header">August 31</p>
-
-<p>Live from the Denver airport, it's the trade deadline.</p>
+<p class="has-dateline"><span class="dateline">August 31—</span>Live from the Denver airport, it's the trade deadline.</p>
 
 <p>Slow day thus far. Wasn't my best move booking a two-leg return trip, but the end of the season is fast approaching. I'm short of where I need to be for Gold Medallion status, so sacrifices must be made.</p>
 
@@ -201,9 +193,7 @@ export const CHAPTERS = [
 
 <p>A Houston source says if they're in on Verlander, only the GM and owner know. Another's so paranoid about their tech-savvy front office, he offers his personal email instead of texting on his team phone.</p>
 
-<p class="section-header">DETROIT</p>
-
-<p>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
+<p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
 
 <p>I get back home after 10 on the evening of the trade deadline. Midnight approaches. We have less than three hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome home pour.</p>
 
