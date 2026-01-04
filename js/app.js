@@ -5,6 +5,7 @@ import { navigation } from './navigation.js';
 import { pwa } from './pwa.js';
 import { photoGallery } from './photoGallery.js';
 import { bookmarks } from './bookmarks.js';
+import { themeManager } from './reading-mode.js';
 import { CHAPTERS } from '../data/chapters.js';
 
 class App {
@@ -41,6 +42,9 @@ class App {
             // Initialize home link
             this.initHomeLink();
 
+            // Initialize header theme toggle
+            this.initThemeToggle();
+
             this.isReady = true;
             console.log('OFF-THE-RECORD: Ready');
 
@@ -62,6 +66,17 @@ class App {
             // Clear hash and navigate to home
             history.pushState(null, null, window.location.pathname);
             window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    }
+
+    // Initialize header theme toggle
+    initThemeToggle() {
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        if (!themeToggleBtn) return;
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = themeManager.getTheme();
+            themeManager.switchTheme(currentTheme === 'light' ? 'dark' : 'light');
         });
     }
 
