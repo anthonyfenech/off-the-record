@@ -96,10 +96,10 @@ class Navigation {
 
         // 2. Other top sections as links/dropdowns
         const topSections = [
-            { id: 'blog', label: 'BL<span class="record-o">O</span>G', type: 'link', url: 'https://anthonyfenech.substack.com' },
-            { id: 'about', label: 'AB<span class="record-o">O</span>UT', type: 'link', comingSoon: true },
-            { id: 'audio', label: 'AUDI<span class="record-o">O</span>', type: 'link', comingSoon: true },
-            { id: 'photo', label: 'PH<span class="record-o">O</span>T<span class="record-o">O</span>S', type: 'dropdown' }
+            { id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' },
+            { id: 'about', label: 'ABOUT', type: 'link', comingSoon: true },
+            { id: 'audio', label: 'AUDIO', type: 'link', comingSoon: true },
+            { id: 'photo', label: 'PHOTOS', type: 'dropdown' }
         ];
 
         topSections.forEach(section => {
@@ -119,7 +119,7 @@ class Navigation {
 
         const sectionTitle = document.createElement('h3');
         sectionTitle.className = 'toc-top-title';
-        sectionTitle.innerHTML = 'B<span class="record-o">O</span><span class="record-o">O</span>K';
+        sectionTitle.textContent = 'BOOK';
 
         sectionHeader.appendChild(sectionTitle);
 
@@ -309,7 +309,7 @@ class Navigation {
 
         const sectionTitle = document.createElement('h3');
         sectionTitle.className = 'toc-top-title';
-        sectionTitle.innerHTML = section.label;
+        sectionTitle.textContent = section.label;
 
         sectionHeader.appendChild(sectionTitle);
 
