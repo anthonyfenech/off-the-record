@@ -387,7 +387,6 @@ class Navigation {
             { id: 'photo', label: 'PH<span class="record-o">O</span>TOS' },
             { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT' },
-            { id: 'gooff', label: 'G<span class="record-o">O</span> OFF' },
             { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM' }
         ];
 
