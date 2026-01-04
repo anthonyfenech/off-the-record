@@ -1,6 +1,8 @@
 // Reading Mode Manager
 // Lets users switch between scroll and pagination modes
 
+import { CONFIG } from './config.js';
+
 class ReadingModeManager {
     constructor() {
         this.currentMode = this.loadMode();
@@ -9,6 +11,13 @@ class ReadingModeManager {
     init() {
         // Apply initial mode
         this.applyMode(this.currentMode, false);
+
+        // Check if toggle should be shown
+        const toggle = document.getElementById('readingModeToggle');
+        if (!CONFIG.showReadingModeToggle && toggle) {
+            toggle.style.display = 'none';
+            return;
+        }
 
         // Set up toggle buttons
         const toggleButtons = document.querySelectorAll('.mode-btn');
@@ -30,8 +39,8 @@ class ReadingModeManager {
     loadMode() {
         // Load saved preference from localStorage
         const saved = localStorage.getItem('readingMode');
-        // Default to scroll mode for new users
-        return saved || 'scroll';
+        // Default to config setting for new users
+        return saved || CONFIG.defaultReadingMode || 'scroll';
     }
 
     saveMode(mode) {
@@ -115,12 +124,21 @@ class ThemeManager {
         // Apply initial theme immediately (before page renders)
         this.applyTheme(this.currentTheme);
 
+        // Check if toggle should be shown
+        const toggle = document.getElementById('themeToggle');
+        if (!CONFIG.showDarkModeToggle && toggle) {
+            toggle.style.display = 'none';
+            return;
+        }
+
         // Set up toggle buttons
         const toggleButtons = document.querySelectorAll('.theme-btn');
         toggleButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const theme = e.target.dataset.theme;
-                if (theme !== this.currentTheme) {
+                // Use currentTarget to get the button, not the SVG inside it
+                const button = e.currentTarget;
+                const theme = button.dataset.theme;
+                if (theme && theme !== this.currentTheme) {
                     this.switchTheme(theme);
                 }
             });
@@ -136,11 +154,18 @@ class ThemeManager {
         const saved = localStorage.getItem('theme');
         if (saved) return saved;
 
-        // Default to system preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
+        // Check config default
+        const configDefault = CONFIG.defaultTheme || 'auto';
+
+        if (configDefault === 'auto') {
+            // Default to system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark';
+            }
+            return 'light';
         }
-        return 'light';
+
+        return configDefault;
     }
 
     saveTheme(theme) {
