@@ -255,14 +255,14 @@ class Navigation {
     // Build additional content sections (Blog, Podcast, etc.)
     buildContentSections() {
         const sections = [
-            { id: 'blog', label: 'BL<span class="record-btn" aria-label="O"></span>G', icon: '📝' },
-            { id: 'podcast', label: 'P<span class="record-btn" aria-label="O"></span>DCAST', icon: '🎙️' },
-            { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>', icon: '🔊' },
-            { id: 'video', label: 'VIDE<span class="record-btn" aria-label="O"></span>', icon: '🎬' },
-            { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S', icon: '📷' },
-            { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT', icon: '💝' },
-            { id: 'gooff', label: 'G<span class="record-btn" aria-label="O"></span> <span class="record-btn" aria-label="O"></span>FF', icon: '🔥' },
-            { id: 'cutroom', label: 'CUT R<span class="record-btn" aria-label="O"></span><span class="record-btn" aria-label="O"></span>M', icon: '✂️' }
+            { id: 'blog', label: 'BL<span class="record-btn" aria-label="O"></span>G' },
+            { id: 'podcast', label: 'P<span class="record-btn" aria-label="O"></span>DCAST' },
+            { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>' },
+            { id: 'video', label: 'VIDE<span class="record-btn" aria-label="O"></span>' },
+            { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S' },
+            { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT' },
+            { id: 'gooff', label: 'G<span class="record-btn" aria-label="O"></span> <span class="record-btn" aria-label="O"></span>FF' },
+            { id: 'cutroom', label: 'CUT R<span class="record-btn" aria-label="O"></span><span class="record-btn" aria-label="O"></span>M' }
         ];
 
         const fragment = document.createDocumentFragment();
@@ -281,11 +281,6 @@ class Navigation {
             sectionTitle.className = 'toc-section-title';
             sectionTitle.innerHTML = section.label;
 
-            const sectionIcon = document.createElement('span');
-            sectionIcon.className = 'toc-section-icon';
-            sectionIcon.textContent = section.icon;
-
-            sectionHeader.appendChild(sectionIcon);
             sectionHeader.appendChild(sectionTitle);
 
             // Section content
