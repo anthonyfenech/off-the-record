@@ -375,7 +375,7 @@ class Navigation {
             { id: 'about', label: 'AB<span class="record-o">O</span>UT', type: 'link', comingSoon: true },
             { id: 'audio', label: 'AUDI<span class="record-o">O</span>', type: 'link', comingSoon: true },
             { id: 'photo', label: 'PH<span class="record-o">O</span>TOS', type: 'dropdown' },
-            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'link', comingSoon: true },
+            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true },
             { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM', type: 'link', comingSoon: true }
         ];
@@ -404,7 +404,7 @@ class Navigation {
                 sectionContent.className = 'toc-section-content collapsed';
                 sectionContent.id = `toc-section-${section.id}`;
 
-                if (section.id === 'photo') {
+                if (section.id === 'photo' || section.id === 'comments') {
                     sectionContent.dataset.needsInit = 'true';
                 }
 

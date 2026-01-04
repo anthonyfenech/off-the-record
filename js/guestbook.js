@@ -1,4 +1,4 @@
-// Guestbook - Sign the guestbook
+// Guestbook - Press box style sign-in sheet
 
 const STORAGE_KEY = 'otr_guestbook_entries';
 const MAX_DISPLAY_ENTRIES = 20;
@@ -29,13 +29,13 @@ class Guestbook {
     }
 
     // Add a new entry
-    addEntry(name, email, hometown, comment) {
+    addEntry(name, email, publication, message) {
         const entry = {
             id: Date.now(),
             name: name.trim(),
             email: email.trim(),
-            hometown: hometown ? hometown.trim() : null,
-            comment: comment ? comment.trim() : null,
+            publication: publication ? publication.trim() : null,
+            message: message ? message.trim().substring(0, 280) : null,
             timestamp: new Date().toISOString()
         };
 
@@ -67,6 +67,9 @@ class Guestbook {
         // Intro text
         wrapper.appendChild(this.createIntro());
 
+        // Social share section
+        wrapper.appendChild(this.createShareSection());
+
         // Sign-in form
         wrapper.appendChild(this.createForm());
 
@@ -84,10 +87,63 @@ class Guestbook {
         return intro;
     }
 
+    // Create social share section
+    createShareSection() {
+        const section = document.createElement('div');
+        section.className = 'guestbook-share';
+
+        const heading = document.createElement('div');
+        heading.className = 'guestbook-share-heading';
+        heading.textContent = 'SPREAD THE WORD';
+
+        const buttons = document.createElement('div');
+        buttons.className = 'guestbook-share-buttons';
+
+        const shareUrl = encodeURIComponent('https://anthonyfenech.com/off-the-record/');
+        const shareText = encodeURIComponent('OFF-THE-RECORD: A Baseball Memoir by Anthony Fenech - 15 years covering the Detroit Tigers');
+
+        // Twitter/X
+        const twitter = document.createElement('a');
+        twitter.className = 'share-btn';
+        twitter.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+        twitter.target = '_blank';
+        twitter.rel = 'noopener noreferrer';
+        twitter.textContent = 'X / TWITTER';
+
+        // LinkedIn
+        const linkedin = document.createElement('a');
+        linkedin.className = 'share-btn';
+        linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+        linkedin.target = '_blank';
+        linkedin.rel = 'noopener noreferrer';
+        linkedin.textContent = 'LINKEDIN';
+
+        // Facebook
+        const facebook = document.createElement('a');
+        facebook.className = 'share-btn';
+        facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+        facebook.target = '_blank';
+        facebook.rel = 'noopener noreferrer';
+        facebook.textContent = 'FACEBOOK';
+
+        buttons.appendChild(twitter);
+        buttons.appendChild(linkedin);
+        buttons.appendChild(facebook);
+
+        section.appendChild(heading);
+        section.appendChild(buttons);
+
+        return section;
+    }
+
     // Create the sign-in form
     createForm() {
         const formSection = document.createElement('div');
         formSection.className = 'guestbook-form-section';
+
+        const heading = document.createElement('div');
+        heading.className = 'guestbook-form-heading';
+        heading.textContent = 'SIGN THE GUESTBOOK';
 
         const form = document.createElement('form');
         form.className = 'guestbook-form';
@@ -99,33 +155,44 @@ class Guestbook {
         // Email field
         const emailGroup = this.createFormGroup('email', 'Email', 'email', true, 'your@email.com');
 
-        // Hometown field
-        const hometownGroup = this.createFormGroup('hometown', 'Hometown', 'text', false, 'Detroit, MI');
+        // Publication field
+        const pubGroup = this.createFormGroup('publication', 'Publication / Outlet', 'text', false, 'ESPN, Freelance, etc.');
 
-        // Comment field
-        const commentGroup = document.createElement('div');
-        commentGroup.className = 'form-group';
+        // Message field
+        const messageGroup = document.createElement('div');
+        messageGroup.className = 'form-group';
 
-        const commentLabel = document.createElement('label');
-        commentLabel.className = 'form-label';
-        commentLabel.htmlFor = 'comment';
-        commentLabel.textContent = 'Comments';
+        const messageLabel = document.createElement('label');
+        messageLabel.className = 'form-label';
+        messageLabel.htmlFor = 'message';
+        messageLabel.textContent = 'Message (280 chars max)';
 
-        const commentTextarea = document.createElement('textarea');
-        commentTextarea.className = 'form-textarea';
-        commentTextarea.id = 'comment';
-        commentTextarea.name = 'comment';
-        commentTextarea.rows = 4;
-        commentTextarea.placeholder = 'Leave a comment...';
+        const messageTextarea = document.createElement('textarea');
+        messageTextarea.className = 'form-textarea';
+        messageTextarea.id = 'message';
+        messageTextarea.name = 'message';
+        messageTextarea.maxLength = 280;
+        messageTextarea.rows = 3;
+        messageTextarea.placeholder = 'Leave a short message...';
 
-        commentGroup.appendChild(commentLabel);
-        commentGroup.appendChild(commentTextarea);
+        const charCount = document.createElement('div');
+        charCount.className = 'char-count';
+        charCount.id = 'charCount';
+        charCount.textContent = '0 / 280';
+
+        messageTextarea.addEventListener('input', () => {
+            charCount.textContent = `${messageTextarea.value.length} / 280`;
+        });
+
+        messageGroup.appendChild(messageLabel);
+        messageGroup.appendChild(messageTextarea);
+        messageGroup.appendChild(charCount);
 
         // Submit button
         const submitBtn = document.createElement('button');
         submitBtn.type = 'submit';
         submitBtn.className = 'guestbook-submit';
-        submitBtn.textContent = 'SIGN THE GUESTBOOK';
+        submitBtn.textContent = 'SIGN IN';
 
         // Success message (hidden initially)
         const successMsg = document.createElement('div');
@@ -136,14 +203,15 @@ class Guestbook {
 
         form.appendChild(nameGroup);
         form.appendChild(emailGroup);
-        form.appendChild(hometownGroup);
-        form.appendChild(commentGroup);
+        form.appendChild(pubGroup);
+        form.appendChild(messageGroup);
         form.appendChild(submitBtn);
         form.appendChild(successMsg);
 
         // Form submission handler
         form.addEventListener('submit', (e) => this.handleSubmit(e));
 
+        formSection.appendChild(heading);
         formSection.appendChild(form);
 
         return formSection;
@@ -180,11 +248,11 @@ class Guestbook {
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
-        const hometown = form.hometown.value;
-        const comment = form.comment.value;
+        const publication = form.publication.value;
+        const message = form.message.value;
 
         // Add entry
-        this.addEntry(name, email, hometown, comment);
+        this.addEntry(name, email, publication, message);
 
         // Show success message
         const successMsg = document.getElementById('guestbookSuccess');
@@ -192,6 +260,7 @@ class Guestbook {
 
         // Reset form
         form.reset();
+        document.getElementById('charCount').textContent = '0 / 280';
 
         // Update entries list
         const entriesSection = document.querySelector('.guestbook-entries');
@@ -226,7 +295,7 @@ class Guestbook {
 
         const heading = document.createElement('div');
         heading.className = 'guestbook-entries-heading';
-        heading.textContent = 'RECENT ENTRIES';
+        heading.textContent = 'RECENT SIGN-INS';
 
         const list = document.createElement('div');
         list.className = 'guestbook-entries-list';
@@ -255,24 +324,24 @@ class Guestbook {
         const item = document.createElement('div');
         item.className = 'guestbook-entry';
 
-        // Name and hometown line
+        // Name and publication line
         const header = document.createElement('div');
         header.className = 'guestbook-entry-header';
 
         let headerText = entry.name;
-        if (entry.hometown) {
-            headerText += ` - ${entry.hometown}`;
+        if (entry.publication) {
+            headerText += ` - ${entry.publication}`;
         }
         header.textContent = headerText;
 
         item.appendChild(header);
 
-        // Comment in quotes
-        if (entry.comment) {
-            const comment = document.createElement('div');
-            comment.className = 'guestbook-entry-comment';
-            comment.textContent = `"${entry.comment}"`;
-            item.appendChild(comment);
+        // Message in quotes
+        if (entry.message) {
+            const message = document.createElement('div');
+            message.className = 'guestbook-entry-comment';
+            message.textContent = `"${entry.message}"`;
+            item.appendChild(message);
         }
 
         return item;
