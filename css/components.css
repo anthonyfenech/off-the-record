@@ -1394,6 +1394,120 @@ button:focus-visible {
     padding: var(--space-xl);
 }
 
+/* Bookmark Button (Header) */
+.bookmark-btn {
+    width: var(--min-touch-target);
+    height: var(--min-touch-target);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+}
+
+.bookmark-btn:hover {
+    opacity: 0.7;
+}
+
+.bookmark-btn.active svg {
+    fill: var(--color-text-primary);
+}
+
+/* Bookmarks Section in Navigation */
+.bookmarks-section {
+    background-color: var(--color-accent-light);
+}
+
+.bookmarks-count {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    margin-left: var(--space-sm);
+}
+
+/* Bookmarks List */
+.bookmarks-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.bookmarks-empty {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    text-align: center;
+    padding: var(--space-xl) var(--padding-mobile);
+    line-height: var(--line-height-normal);
+}
+
+.bookmark-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--padding-mobile) var(--space-md) var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    transition: background-color var(--transition-fast);
+}
+
+.bookmark-item:hover {
+    background-color: var(--color-accent-light);
+}
+
+.bookmark-item:last-child {
+    border-bottom: none;
+}
+
+.bookmark-info {
+    flex: 1;
+    cursor: pointer;
+    min-width: 0;
+}
+
+.bookmark-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    font-weight: bold;
+    margin-bottom: var(--space-xs);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bookmark-date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+}
+
+.bookmark-remove {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: var(--space-md);
+    transition: all var(--transition-fast);
+}
+
+.bookmark-remove:hover {
+    background-color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-background);
+}
+
 /* Tablet and up */
 @media (min-width: 640px) {
     .install-prompt {

@@ -7,6 +7,7 @@ import { photoGallery } from './photoGallery.js';
 import { getAllGalleries } from '../data/photos.js';
 import { blogService } from './blog.js';
 import { guestbook } from './guestbook.js';
+import { bookmarks } from './bookmarks.js';
 
 class Navigation {
     constructor() {
@@ -76,6 +77,9 @@ class Navigation {
     // Build Table of Contents with INTRO, year sections, and POSTSCRIPT as collapsible dropdowns
     buildTOC() {
         const fragment = document.createDocumentFragment();
+
+        // 0. Add BOOKMARKS section at the top
+        fragment.appendChild(this.createBookmarksSection());
 
         // 1. Add INTRO section (collapsible dropdown)
         const introChapters = getIntroChapters();
@@ -182,6 +186,84 @@ class Navigation {
         section.appendChild(chaptersContainer);
 
         return section;
+    }
+
+    // Create BOOKMARKS section
+    createBookmarksSection() {
+        const section = document.createElement('div');
+        section.className = 'toc-year-section bookmarks-section';
+        section.dataset.section = 'bookmarks';
+
+        // Section header
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'toc-year-header';
+
+        const sectionTitle = document.createElement('h3');
+        sectionTitle.className = 'toc-year-title';
+        sectionTitle.innerHTML = 'B<span class="record-o">O</span><span class="record-o">O</span>KMARKS';
+
+        const countBadge = document.createElement('span');
+        countBadge.className = 'bookmarks-count';
+        countBadge.id = 'bookmarksCount';
+        const count = bookmarks.getCount();
+        countBadge.textContent = count > 0 ? `(${count})` : '';
+
+        sectionHeader.appendChild(sectionTitle);
+        sectionHeader.appendChild(countBadge);
+
+        // Bookmarks container
+        const bookmarksContainer = document.createElement('div');
+        bookmarksContainer.className = 'toc-year-chapters collapsed';
+        bookmarksContainer.id = 'bookmarksContainer';
+
+        // Click handler
+        sectionHeader.addEventListener('click', () => {
+            this.toggleBookmarksSection(sectionHeader, bookmarksContainer);
+        });
+
+        // Listen for bookmark changes
+        window.addEventListener('bookmarksChanged', () => {
+            this.updateBookmarksCount();
+            if (this.expandedSections.has('bookmarks')) {
+                this.renderBookmarks(bookmarksContainer);
+            }
+        });
+
+        section.appendChild(sectionHeader);
+        section.appendChild(bookmarksContainer);
+
+        return section;
+    }
+
+    // Toggle bookmarks section
+    toggleBookmarksSection(sectionHeader, bookmarksContainer) {
+        if (this.expandedSections.has('bookmarks')) {
+            this.expandedSections.delete('bookmarks');
+            bookmarksContainer.classList.add('collapsed');
+            sectionHeader.classList.remove('expanded');
+        } else {
+            this.expandedSections.add('bookmarks');
+            bookmarksContainer.classList.remove('collapsed');
+            sectionHeader.classList.add('expanded');
+            this.renderBookmarks(bookmarksContainer);
+        }
+    }
+
+    // Render bookmarks list
+    renderBookmarks(container) {
+        bookmarks.renderBookmarksList(container, (chapterId) => {
+            reader.loadChapter(chapterId);
+            this.closeTOC();
+        });
+    }
+
+    // Update bookmarks count badge
+    updateBookmarksCount() {
+        const countBadge = document.getElementById('bookmarksCount');
+        if (countBadge) {
+            const count = bookmarks.getCount();
+            countBadge.textContent = count > 0 ? `(${count})` : '';
+        }
     }
 
     // Toggle collapsible section (INTRO/POSTSCRIPT)

@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v30';
-const STATIC_CACHE = 'off-the-record-static-v30';
-const CONTENT_CACHE = 'off-the-record-content-v30';
+const CACHE_VERSION = 'v31';
+const STATIC_CACHE = 'off-the-record-static-v31';
+const CONTENT_CACHE = 'off-the-record-content-v31';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -21,6 +21,7 @@ const STATIC_ASSETS = [
     './js/pwa.js',
     './js/blog.js',
     './js/guestbook.js',
+    './js/bookmarks.js',
     './data/chapters.js'
 ];
 
