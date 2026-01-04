@@ -125,7 +125,7 @@ class Navigation {
 
         const sectionTitle = document.createElement('h3');
         sectionTitle.className = 'toc-top-title';
-        sectionTitle.textContent = 'OFF-THE-RECORD';
+        sectionTitle.innerHTML = 'OFF-THE-REC<svg class="record-o" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="12"/><circle cx="50" cy="50" r="20" fill="#FF3B30"/></svg>RD';
 
         sectionHeader.appendChild(sectionTitle);
 
@@ -368,8 +368,8 @@ class Navigation {
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             { id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' },
-            { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
-            { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true }
+            { id: 'comments', label: 'C<svg class="record-o" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="12"/><circle cx="50" cy="50" r="20" fill="#FF3B30"/></svg>MMENTS', type: 'link', url: './guestbook.html' },
+            { id: 'contact', label: 'C<svg class="record-o" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="12"/><circle cx="50" cy="50" r="20" fill="#FF3B30"/></svg>NTACT', type: 'link', comingSoon: true }
         ];
 
         bottomSections.forEach(section => {
