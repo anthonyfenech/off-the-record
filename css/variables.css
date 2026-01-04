@@ -14,7 +14,7 @@
 
     /* Typography - Monospace typewriter style */
     --font-mono: 'Courier New', Courier, monospace;
-    --font-serif: 'Courier New', Courier, monospace;
+    --font-serif: 'Times New Roman', Times, Georgia, serif;
     --font-sans: 'Courier New', Courier, monospace;
 
     --font-size-xs: 0.8125rem;   /* 13px */
