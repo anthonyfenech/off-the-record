@@ -565,12 +565,6 @@ class Navigation {
         } else {
             this.nextBtn.disabled = false;
         }
-
-        // Update NEXT button text with random message
-        const nextBtnText = this.nextBtn.querySelector('span');
-        if (nextBtnText && window.getRandomButtonMessage) {
-            nextBtnText.textContent = window.getRandomButtonMessage();
-        }
     }
 
     // Navigation actions
