@@ -365,6 +365,7 @@ class Navigation {
     // Build bottom navigation sections (smaller font)
     buildBottomSections(fragment) {
         const bottomSections = [
+            { id: 'bookmarks', label: 'B<span class="record-o">O</span><span class="record-o">O</span>KMARKS', type: 'dropdown' },
             { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true }
         ];
@@ -430,6 +431,14 @@ class Navigation {
             if (sectionId === 'comments' && sectionContent.dataset.needsInit === 'true') {
                 guestbook.render(sectionContent);
                 delete sectionContent.dataset.needsInit;
+            }
+
+            // Render bookmarks if needed
+            if (sectionId === 'bookmarks') {
+                bookmarks.renderBookmarksList(sectionContent, (chapterId) => {
+                    this.loadChapter(chapterId);
+                    this.closeTOC();
+                });
             }
         }
     }
