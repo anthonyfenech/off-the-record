@@ -1,35 +1,12 @@
-// Navigation - Chapter navigation and Table of Contents
-
-import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
-import { reader } from './reader.js';
-import { isChapterComplete, calculateOverallProgress } from './storage.js';
-import { photoGallery } from './photoGallery.js';
-import { getAllGalleries } from '../data/photos.js';
-import { blogService } from './blog.js';
-import { guestbook } from './guestbook.js';
-import { bookmarks } from './bookmarks.js';
+// Navigation.js - Handles menu and chapter navigation
 
 class Navigation {
     constructor() {
-        // DOM elements
-        this.prevBtn = document.getElementById('prevBtn');
-        this.nextBtn = document.getElementById('nextBtn');
-        this.menuBtn = document.getElementById('menuBtn');
-        this.closeTocBtn = document.getElementById('closeTocBtn');
-        this.tocSidebar = document.getElementById('tocSidebar');
-        this.overlay = document.getElementById('overlay');
-        this.tocContent = document.getElementById('tocContent');
-        this.overallProgress = document.getElementById('overallProgress');
-
-        // State
-        this.currentChapterId = 1;
-        this.touchStartX = 0;
-        this.touchEndX = 0;
-        this.expandedYears = new Set(); // Track which years are expanded
-        this.expandedSections = new Set(); // Track which content sections are expanded
+        this.currentChapter = null;
+        this.menuOpen = false;
+        this.init();
     }
 
-    // Initialize navigation
     init() {
         // Build TOC with all sections
         this.buildTOC();
@@ -156,6 +133,18 @@ class Navigation {
             const chapters = chaptersByYear[year] || [];
             container.appendChild(this.createNestedYearSection(year, chapters));
         });
+        
+        // BLOG
+        this.createMediaSection(nav, 'BLOG', 'blog', true);
+        
+        // ABOUT
+        this.createMediaSection(nav, 'ABOUT', 'about', true);
+        
+        // AUDIO
+        this.createMediaSection(nav, 'AUDIO', 'audio', true);
+        
+        // PHOTOS
+        this.createMediaSection(nav, 'PHOTOS', 'photos', true);
 
         // 3. POSTSCRIPT section
         const postscriptChapters = getPostscriptChapters();
@@ -363,8 +352,7 @@ class Navigation {
         });
     }
 
-    // Create a collapsible section (INTRO or POSTSCRIPT)
-    createCollapsibleSection(sectionId, labelHtml, chapters) {
+    createCollapsibleSection(parent, title, id, isLargeFont, contentGenerator, sizeClass = '') {
         const section = document.createElement('div');
         section.className = 'toc-year-section';
         section.dataset.section = sectionId;
@@ -698,63 +686,53 @@ class Navigation {
                 Subscribe on Substack →
             </a>
         `;
-
-        container.appendChild(blogContainer);
-        container.appendChild(subscribeSection);
+        
+        const content = document.createElement('div');
+        content.className = 'collapsible-content';
+        content.style.display = 'none';
+        
+        header.addEventListener('click', () => {
+            this.toggleCollapsibleSection(header, content);
+        });
+        
+        section.appendChild(header);
+        
+        if (contentGenerator) {
+            const generatedContent = contentGenerator();
+            content.appendChild(generatedContent);
+        }
+        
+        section.appendChild(content);
+        parent.appendChild(section);
+        
+        return section;
     }
 
-    // Render empty state for blog
-    renderBlogEmptyState(container) {
-        const emptyState = document.createElement('div');
-        emptyState.className = 'blog-empty-state';
-
-        const message = document.createElement('p');
-        message.className = 'blog-empty-message';
-        message.textContent = 'New posts coming soon';
-
-        const subscribeFrame = document.createElement('iframe');
-        subscribeFrame.className = 'blog-subscribe-embed';
-        subscribeFrame.src = 'https://anthonyfenech.substack.com/embed';
-        subscribeFrame.width = '100%';
-        subscribeFrame.height = '150';
-        subscribeFrame.frameBorder = '0';
-        subscribeFrame.scrolling = 'no';
-
-        emptyState.appendChild(message);
-        emptyState.appendChild(subscribeFrame);
-        container.appendChild(emptyState);
+    toggleCollapsibleSection(header, content) {
+        const isOpen = content.style.display !== 'none';
+        
+        if (isOpen) {
+            content.style.display = 'none';
+            header.querySelector('.collapse-arrow').textContent = '▼';
+        } else {
+            content.style.display = 'block';
+            header.querySelector('.collapse-arrow').textContent = '▲';
+        }
     }
 
-    // Initialize photo gallery in the sidebar
-    initializePhotoGallery(container) {
-        const galleries = getAllGalleries();
-        this.expandedGalleries = new Set(); // Track expanded galleries
-
-        // Render each gallery with collapsible header
-        galleries.forEach(gallery => {
-            const gallerySection = document.createElement('div');
-            gallerySection.className = 'gallery-section';
-            gallerySection.dataset.galleryId = gallery.id;
-
-            // Gallery header (clickable to expand/collapse)
-            const galleryHeader = document.createElement('div');
-            galleryHeader.className = 'gallery-section-header';
-
-            const galleryTitle = document.createElement('h4');
-            galleryTitle.className = 'gallery-section-title';
-            galleryTitle.textContent = gallery.title.toUpperCase();
-
-            galleryHeader.appendChild(galleryTitle);
-
-            // Gallery content container
-            const galleryContent = document.createElement('div');
-            galleryContent.className = 'gallery-section-content collapsed';
-            galleryContent.id = `gallery-content-${gallery.id}`;
-
-            // Only add click handler if gallery has photos
-            if (!gallery.comingSoon) {
-                galleryHeader.addEventListener('click', () => {
-                    this.toggleGallery(gallery.id, galleryHeader, galleryContent);
+    createChapterList(chapterNumbers) {
+        const container = document.createElement('div');
+        container.className = 'chapter-list';
+        
+        chapterNumbers.forEach(num => {
+            const chapter = window.chapters.find(c => c.id === num);
+            if (chapter) {
+                const item = document.createElement('div');
+                item.className = 'nav-item chapter-item';
+                item.textContent = chapter.title;
+                item.addEventListener('click', () => {
+                    this.loadChapter(num);
+                    this.closeMenu();
                 });
                 galleryHeader.style.cursor = 'pointer';
             } else {
@@ -850,110 +828,306 @@ class Navigation {
                 indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
             }
         });
-
-        // Update overall progress
-        const progress = calculateOverallProgress(getChapterCount());
-        this.overallProgress.textContent = `Overall Progress: ${progress}%`;
+        
+        return container;
     }
 
-    // Update navigation button states
-    updateNavigationState() {
-        // Disable prev button on first chapter
-        if (this.currentChapterId <= 1) {
-            this.prevBtn.disabled = true;
-        } else {
-            this.prevBtn.disabled = false;
-        }
-
-        // Disable next button on last chapter
-        if (this.currentChapterId >= getChapterCount()) {
-            this.nextBtn.disabled = true;
-        } else {
-            this.nextBtn.disabled = false;
-        }
+    createMediaSection(parent, title, id, isLargeFont) {
+        const item = document.createElement('div');
+        item.className = 'nav-item';
+        if (isLargeFont) item.classList.add('large-font');
+        item.innerHTML = this.addRecordDots(title);
+        item.addEventListener('click', () => {
+            this.loadMediaSection(id);
+            this.closeMenu();
+        });
+        parent.appendChild(item);
     }
 
-    // Navigation actions
-    goToPreviousChapter() {
-        if (this.currentChapterId > 1) {
-            reader.loadChapter(this.currentChapterId - 1);
-        }
+    createGuestbookSection() {
+        const container = document.createElement('div');
+        container.className = 'guestbook-container';
+        
+        // Header
+        const header = document.createElement('div');
+        header.className = 'guestbook-header';
+        header.textContent = 'Sign the guestbook. Let us know you stopped by.';
+        container.appendChild(header);
+        
+        // Form
+        const form = document.createElement('form');
+        form.className = 'guestbook-form';
+        form.innerHTML = `
+            <input type="text" id="guestName" placeholder="Name *" required>
+            <input type="email" id="guestEmail" placeholder="Email *" required>
+            <input type="text" id="guestHometown" placeholder="Hometown (e.g., Detroit, MI)">
+            <textarea id="guestComments" placeholder="Comments" rows="4"></textarea>
+            <button type="submit" class="guestbook-submit">Sign the Guestbook</button>
+        `;
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.submitGuestbookEntry();
+        });
+        
+        container.appendChild(form);
+        
+        // Entries
+        const entriesContainer = document.createElement('div');
+        entriesContainer.className = 'guestbook-entries';
+        entriesContainer.id = 'guestbookEntries';
+        container.appendChild(entriesContainer);
+        
+        this.loadGuestbookEntries();
+        
+        return container;
     }
 
-    goToNextChapter() {
-        if (this.currentChapterId < getChapterCount()) {
-            reader.loadChapter(this.currentChapterId + 1);
-        }
+    submitGuestbookEntry() {
+        const name = document.getElementById('guestName').value;
+        const email = document.getElementById('guestEmail').value;
+        const hometown = document.getElementById('guestHometown').value;
+        const comments = document.getElementById('guestComments').value;
+        
+        const entry = {
+            name,
+            email,
+            hometown,
+            comments,
+            timestamp: new Date().toISOString()
+        };
+        
+        // Get existing entries
+        let entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+        entries.unshift(entry); // Add to beginning
+        entries = entries.slice(0, 20); // Keep only 20 most recent
+        
+        localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+        
+        // Clear form
+        document.getElementById('guestName').value = '';
+        document.getElementById('guestEmail').value = '';
+        document.getElementById('guestHometown').value = '';
+        document.getElementById('guestComments').value = '';
+        
+        // Reload entries
+        this.loadGuestbookEntries();
+        
+        alert('Thanks for signing!');
     }
 
-    // TOC actions
-    openTOC() {
-        this.tocSidebar.classList.add('open');
-        this.overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    closeTOC() {
-        this.tocSidebar.classList.remove('open');
-        this.overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // Keyboard navigation
-    handleKeyPress(e) {
-        // Ignore if TOC is open or user is typing
-        if (this.tocSidebar.classList.contains('open') ||
-            e.target.tagName === 'INPUT' ||
-            e.target.tagName === 'TEXTAREA') {
+    loadGuestbookEntries() {
+        const container = document.getElementById('guestbookEntries');
+        if (!container) return;
+        
+        const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+        
+        if (entries.length === 0) {
+            container.innerHTML = '<p class="no-entries">No entries yet. Be the first!</p>';
             return;
         }
+        
+        container.innerHTML = entries.map(entry => `
+            <div class="guestbook-entry">
+                <div class="entry-header">
+                    <strong>${this.escapeHtml(entry.name)}</strong>
+                    ${entry.hometown ? ` - ${this.escapeHtml(entry.hometown)}` : ''}
+                </div>
+                ${entry.comments ? `<div class="entry-comments">"${this.escapeHtml(entry.comments)}"</div>` : ''}
+            </div>
+        `).join('');
+    }
 
-        switch(e.key) {
-            case 'ArrowLeft':
-            case 'h':
-                e.preventDefault();
-                this.goToPreviousChapter();
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    addRecordDots(text) {
+        // Add red dots to O's in specific sections
+        const shouldHaveDots = ['BOOK', 'BLOG', 'ABOUT', 'AUDIO', 'PHOTOS', 'COMMENTS', 'CONTACT'].includes(text);
+        
+        if (!shouldHaveDots) {
+            return text;
+        }
+        
+        return text.split('').map(char => {
+            if (char === 'O') {
+                return '<span class="record-button">O</span>';
+            }
+            return char;
+        }).join('');
+    }
+
+    loadChapter(id) {
+        const chapter = window.chapters.find(c => c.id === id);
+        if (!chapter) return;
+        
+        this.currentChapter = id;
+        localStorage.setItem('lastChapter', id);
+        
+        const content = document.getElementById('content');
+        content.innerHTML = `
+            <div class="chapter-header">
+                <h2>${chapter.title}</h2>
+            </div>
+            <div class="chapter-body">
+                ${chapter.content}
+            </div>
+            <div class="chapter-navigation">
+                <button class="nav-button prev" ${id === 1 ? 'disabled' : ''} onclick="navigation.previousChapter()">
+                    PREVIOUS
+                </button>
+                <button class="nav-button next" ${id === 32 ? 'disabled' : ''} onclick="navigation.nextChapter()">
+                    NEXT
+                </button>
+            </div>
+        `;
+        
+        this.updateProgress();
+    }
+
+    loadMediaSection(sectionId) {
+        const content = document.getElementById('content');
+        
+        switch(sectionId) {
+            case 'blog':
+                content.innerHTML = '<div class="media-section"><h2>BLOG</h2><p>Coming soon...</p></div>';
                 break;
-            case 'ArrowRight':
-            case 'l':
-                e.preventDefault();
-                this.goToNextChapter();
+            case 'about':
+                content.innerHTML = '<div class="media-section"><h2>ABOUT</h2><p>Book information coming soon...</p></div>';
                 break;
-            case 'Escape':
-                e.preventDefault();
-                this.closeTOC();
+            case 'audio':
+                content.innerHTML = '<div class="media-section"><h2>AUDIO</h2><p>Audiobook content coming soon...</p></div>';
                 break;
+            case 'photos':
+                this.loadPhotos();
+                break;
+            case 'contact':
+                content.innerHTML = '<div class="media-section"><h2>CONTACT</h2><p>Contact information coming soon...</p></div>';
+                break;
+        }
+        
+        this.currentChapter = null;
+    }
+
+    loadPhotos() {
+        const content = document.getElementById('content');
+        content.innerHTML = `
+            <div class="media-section">
+                <h2>PHOTOS</h2>
+                <div class="photo-grid" id="photoGrid"></div>
+            </div>
+        `;
+        
+        const grid = document.getElementById('photoGrid');
+        
+        if (!window.photos || window.photos.length === 0) {
+            grid.innerHTML = '<p>No photos available yet.</p>';
+            return;
+        }
+        
+        window.photos.forEach(photo => {
+            const item = document.createElement('div');
+            item.className = 'photo-item';
+            item.innerHTML = `
+                <img src="${photo.thumb || photo.url}" alt="${photo.caption}" 
+                     onclick="navigation.viewPhoto('${photo.url}', '${photo.caption}')">
+                <p>${photo.caption}</p>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    viewPhoto(url, caption) {
+        const modal = document.createElement('div');
+        modal.className = 'photo-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                <img src="${url}" alt="${caption}">
+                <p>${caption}</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+    }
+
+    loadLastChapter() {
+        const lastChapter = localStorage.getItem('lastChapter');
+        if (lastChapter) {
+            this.loadChapter(parseInt(lastChapter));
+        } else {
+            this.loadChapter(1);
         }
     }
 
-    // Swipe gestures for mobile
-    setupSwipeGestures() {
-        const reader = document.getElementById('reader');
-
-        reader.addEventListener('touchstart', (e) => {
-            this.touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        reader.addEventListener('touchend', (e) => {
-            this.touchEndX = e.changedTouches[0].screenX;
-            this.handleSwipe();
-        }, { passive: true });
+    previousChapter() {
+        if (this.currentChapter > 1) {
+            this.loadChapter(this.currentChapter - 1);
+            window.scrollTo(0, 0);
+        }
     }
 
-    handleSwipe() {
-        const swipeThreshold = 100; // Minimum distance for swipe
-        const diff = this.touchStartX - this.touchEndX;
+    nextChapter() {
+        if (this.currentChapter < 32) {
+            this.loadChapter(this.currentChapter + 1);
+            window.scrollTo(0, 0);
+        }
+    }
 
-        // Swipe left = next chapter
-        if (diff > swipeThreshold) {
-            this.goToNextChapter();
-        }
-        // Swipe right = previous chapter
-        else if (diff < -swipeThreshold) {
-            this.goToPreviousChapter();
-        }
+    attachEventListeners() {
+        document.getElementById('menuButton').addEventListener('click', () => {
+            this.toggleMenu();
+        });
+        
+        document.getElementById('closeMenu').addEventListener('click', () => {
+            this.closeMenu();
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('menu');
+            const menuButton = document.getElementById('menuButton');
+            
+            if (this.menuOpen && !menu.contains(e.target) && !menuButton.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        const menu = document.getElementById('menu');
+        this.menuOpen = !this.menuOpen;
+        menu.classList.toggle('open', this.menuOpen);
+    }
+
+    closeMenu() {
+        const menu = document.getElementById('menu');
+        this.menuOpen = false;
+        menu.classList.remove('open');
+    }
+
+    updateProgress() {
+        const totalChapters = 32;
+        const chaptersRead = new Set(
+            Object.keys(localStorage)
+                .filter(key => key.startsWith('chapter_') && localStorage[key] === 'read')
+                .map(key => parseInt(key.replace('chapter_', '')))
+        ).size;
+        
+        const percentage = Math.round((chaptersRead / totalChapters) * 100);
+        document.getElementById('progressBar').textContent = `Overall Progress: ${percentage}%`;
     }
 }
 
-// Export single instance
-export const navigation = new Navigation();
+// Initialize navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.navigation = new Navigation();
+});
