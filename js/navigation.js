@@ -8,6 +8,7 @@ import { getAllGalleries } from '../data/photos.js';
 import { blogService } from './blog.js';
 import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
+import { readingModeManager, themeManager } from './reading-mode.js';
 
 class Navigation {
     constructor() {
@@ -365,6 +366,7 @@ class Navigation {
     // Build bottom navigation sections (smaller font)
     buildBottomSections(fragment) {
         const bottomSections = [
+            { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             { id: 'bookmarks', label: 'B<span class="record-o">O</span><span class="record-o">O</span>KMARKS', type: 'dropdown' },
             { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true }
@@ -433,6 +435,11 @@ class Navigation {
                 delete sectionContent.dataset.needsInit;
             }
 
+            // Render settings if needed
+            if (sectionId === 'settings') {
+                this.renderSettings(sectionContent);
+            }
+
             // Render bookmarks if needed
             if (sectionId === 'bookmarks') {
                 bookmarks.renderBookmarksList(sectionContent, (chapterId) => {
@@ -441,6 +448,100 @@ class Navigation {
                 });
             }
         }
+    }
+
+    // Render settings panel
+    renderSettings(container) {
+        container.innerHTML = '';
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'settings-wrapper';
+
+        // Reading Mode Setting
+        const readingModeRow = document.createElement('div');
+        readingModeRow.className = 'settings-row';
+
+        const readingModeLabel = document.createElement('span');
+        readingModeLabel.className = 'settings-label';
+        readingModeLabel.textContent = 'Reading Mode';
+
+        const readingModeToggle = document.createElement('div');
+        readingModeToggle.className = 'reading-mode-toggle';
+        readingModeToggle.id = 'readingModeToggle';
+
+        const scrollBtn = document.createElement('button');
+        scrollBtn.className = 'mode-btn' + (readingModeManager.isScrollMode() ? ' active' : '');
+        scrollBtn.dataset.mode = 'scroll';
+        scrollBtn.textContent = 'Scroll';
+        scrollBtn.addEventListener('click', () => {
+            if (readingModeManager.getMode() !== 'scroll') {
+                readingModeManager.switchMode('scroll');
+                scrollBtn.classList.add('active');
+                pagesBtn.classList.remove('active');
+            }
+        });
+
+        const pagesBtn = document.createElement('button');
+        pagesBtn.className = 'mode-btn' + (readingModeManager.isPageMode() ? ' active' : '');
+        pagesBtn.dataset.mode = 'page';
+        pagesBtn.textContent = 'Pages';
+        pagesBtn.addEventListener('click', () => {
+            if (readingModeManager.getMode() !== 'page') {
+                readingModeManager.switchMode('page');
+                pagesBtn.classList.add('active');
+                scrollBtn.classList.remove('active');
+            }
+        });
+
+        readingModeToggle.appendChild(scrollBtn);
+        readingModeToggle.appendChild(pagesBtn);
+        readingModeRow.appendChild(readingModeLabel);
+        readingModeRow.appendChild(readingModeToggle);
+
+        // Theme Setting
+        const themeRow = document.createElement('div');
+        themeRow.className = 'settings-row';
+
+        const themeLabel = document.createElement('span');
+        themeLabel.className = 'settings-label';
+        themeLabel.textContent = 'Theme';
+
+        const themeToggle = document.createElement('div');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.id = 'themeToggle';
+
+        const lightBtn = document.createElement('button');
+        lightBtn.className = 'theme-btn' + (themeManager.isLight() ? ' active' : '');
+        lightBtn.dataset.theme = 'light';
+        lightBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+        lightBtn.addEventListener('click', () => {
+            if (themeManager.getTheme() !== 'light') {
+                themeManager.switchTheme('light');
+                lightBtn.classList.add('active');
+                darkBtn.classList.remove('active');
+            }
+        });
+
+        const darkBtn = document.createElement('button');
+        darkBtn.className = 'theme-btn' + (themeManager.isDark() ? ' active' : '');
+        darkBtn.dataset.theme = 'dark';
+        darkBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+        darkBtn.addEventListener('click', () => {
+            if (themeManager.getTheme() !== 'dark') {
+                themeManager.switchTheme('dark');
+                darkBtn.classList.add('active');
+                lightBtn.classList.remove('active');
+            }
+        });
+
+        themeToggle.appendChild(lightBtn);
+        themeToggle.appendChild(darkBtn);
+        themeRow.appendChild(themeLabel);
+        themeRow.appendChild(themeToggle);
+
+        wrapper.appendChild(readingModeRow);
+        wrapper.appendChild(themeRow);
+        container.appendChild(wrapper);
     }
 
     // Initialize photo gallery in the sidebar
