@@ -73,23 +73,26 @@ body {
     justify-content: center;
 }
 
-/* Record button O replacement */
+/* Record button O replacement - matches Courier New "O" exactly */
 .record-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 0.95em;
-    height: 0.95em;
-    background-color: var(--color-text-primary);
+    width: 0.65em;
+    height: 0.75em;
+    border: 0.12em solid var(--color-text-primary);
     border-radius: 50%;
-    margin: 0 0.05em;
-    vertical-align: middle;
+    margin: 0;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.02em;
+    box-sizing: border-box;
 }
 
 .record-btn::after {
     content: '';
-    width: 55%;
-    height: 55%;
+    width: 42%;
+    height: 42%;
     background-color: #e74c3c;
     border-radius: 50%;
 }
