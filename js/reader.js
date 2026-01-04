@@ -20,8 +20,6 @@ class Reader {
         this.chapterSubtitle = document.getElementById('chapterSubtitle');
         this.chapterMeta = document.getElementById('chapterMeta');
         this.chapterBody = document.getElementById('chapterBody');
-        this.progressFill = document.getElementById('progressFill');
-        this.headerProgress = document.getElementById('headerProgress');
         this.continueReading = document.getElementById('continueReading');
         this.continueChapter = document.getElementById('continueChapter');
 
@@ -128,13 +126,6 @@ class Reader {
                 this.loadChapter(savedChapter);
                 this.hideContinueReading();
             });
-        }
-
-        // Update progress bar to 0
-        this.progressFill.style.width = '0%';
-        const progressText = document.querySelector('.progress-text');
-        if (progressText) {
-            progressText.textContent = '';
         }
 
         // Dispatch event
@@ -325,17 +316,15 @@ class Reader {
         const header = document.querySelector('.header');
         const chapterHeader = document.querySelector('.chapter-header');
         const navFooter = document.querySelector('.nav-footer');
-        const progressBar = document.querySelector('.progress-bar');
 
         const headerHeight = header ? header.offsetHeight : 70;
         const chapterHeaderHeight = chapterHeader ? chapterHeader.offsetHeight : 0;
         const footerHeight = navFooter ? navFooter.offsetHeight : 40;
-        const progressBarHeight = progressBar ? progressBar.offsetHeight : 2;
 
         // Add some padding
         const padding = 40;
 
-        return viewportHeight - headerHeight - chapterHeaderHeight - footerHeight - progressBarHeight - padding;
+        return viewportHeight - headerHeight - chapterHeaderHeight - footerHeight - padding;
     }
 
     // Show a specific page
@@ -434,15 +423,6 @@ class Reader {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
 
-        // Update progress bar
-        this.progressFill.style.width = `${scrollPercent * 100}%`;
-
-        // Update header progress
-        const progressText = document.querySelector('.progress-text');
-        if (progressText) {
-            progressText.textContent = `${Math.round(scrollPercent * 100)}%`;
-        }
-
         // Mark chapter as complete if scrolled to bottom
         if (scrollPercent >= this.scrollThreshold && !isChapterComplete(this.currentChapter)) {
             markChapterComplete(this.currentChapter);
@@ -452,20 +432,9 @@ class Reader {
         }
     }
 
-    // Update scroll progress (initial call)
+    // Update scroll progress (no-op, progress display removed)
     updateScrollProgress() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-
-        // Update header progress
-        const progressText = document.querySelector('.progress-text');
-        if (progressText) {
-            progressText.textContent = `${Math.round(scrollPercent)}%`;
-        }
-
-        // Update progress bar
-        this.progressFill.style.width = `${scrollPercent}%`;
+        // Progress display removed
     }
 
     // Throttle utility function
@@ -509,20 +478,9 @@ class Reader {
         });
     }
 
-    // Update progress indicators
+    // Update progress indicators (no-op, progress display removed)
     updateProgressIndicators() {
-        const pageProgress = this.totalPages > 1
-            ? (this.currentPage / (this.totalPages - 1)) * 100
-            : 100;
-
-        // Update header progress with page indicator
-        const progressText = document.querySelector('.progress-text');
-        if (progressText) {
-            progressText.textContent = `${this.currentPage + 1}/${this.totalPages}`;
-        }
-
-        // Update progress bar
-        this.progressFill.style.width = `${pageProgress}%`;
+        // Progress display removed
     }
 
     // Auto-save progress

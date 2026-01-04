@@ -2,7 +2,7 @@
 
 import { CHAPTERS, getChapterCount, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
 import { reader } from './reader.js';
-import { isChapterComplete, calculateOverallProgress } from './storage.js';
+import { isChapterComplete } from './storage.js';
 import { photoGallery } from './photoGallery.js';
 import { getAllGalleries } from '../data/photos.js';
 import { blogService } from './blog.js';
@@ -21,7 +21,6 @@ class Navigation {
         this.tocSidebar = document.getElementById('tocSidebar');
         this.overlay = document.getElementById('overlay');
         this.tocContent = document.getElementById('tocContent');
-        this.overallProgress = document.getElementById('overallProgress');
 
         // State
         this.currentChapterId = 1;
@@ -714,9 +713,6 @@ class Navigation {
                 indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
             }
         });
-
-        const progress = calculateOverallProgress(getChapterCount());
-        this.overallProgress.textContent = `Overall Progress: ${progress}%`;
     }
 
     // Update navigation button states
