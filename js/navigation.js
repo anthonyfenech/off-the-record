@@ -78,9 +78,6 @@ class Navigation {
     buildTOC() {
         const fragment = document.createDocumentFragment();
 
-        // 0. Add BOOKMARKS section at the top
-        fragment.appendChild(this.createBookmarksSection());
-
         // 1. Add INTRO section (collapsible dropdown)
         const introChapters = getIntroChapters();
         fragment.appendChild(this.createCollapsibleSection('intro', 'INTRO', introChapters));
