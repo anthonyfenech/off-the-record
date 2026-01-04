@@ -1,6 +1,6 @@
 // Navigation - Chapter navigation and Table of Contents
 
-import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime } from '../data/chapters.js';
+import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, sortYearKeys } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete, calculateOverallProgress } from './storage.js';
 import { photoGallery } from './photoGallery.js';
@@ -75,7 +75,7 @@ class Navigation {
     buildTOC() {
         const fragment = document.createDocumentFragment();
         const chaptersByYear = getChaptersByYear();
-        const years = Object.keys(chaptersByYear).sort();
+        const years = sortYearKeys(Object.keys(chaptersByYear));
 
         years.forEach(year => {
             const chapters = chaptersByYear[year];
