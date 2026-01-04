@@ -100,17 +100,15 @@ class Navigation {
             yearTitle.className = 'toc-year-title';
             yearTitle.textContent = `${year} SEASON`;
 
-            const yearCount = document.createElement('span');
-            yearCount.className = 'toc-year-count';
-            if (chapters.length === 0) {
-                yearCount.textContent = '(coming soon)';
-                yearCount.classList.add('coming-soon-text');
-            } else {
-                yearCount.textContent = `(${chapters.length} ${chapters.length === 1 ? 'chapter' : 'chapters'})`;
-            }
-
             yearHeader.appendChild(yearTitle);
-            yearHeader.appendChild(yearCount);
+
+            // Only show "coming soon" for empty years (like 2020)
+            if (chapters.length === 0) {
+                const yearCount = document.createElement('span');
+                yearCount.className = 'toc-year-count coming-soon-text';
+                yearCount.textContent = '(coming soon)';
+                yearHeader.appendChild(yearCount);
+            }
 
             // Year chapters container
             const chaptersContainer = document.createElement('div');
@@ -162,12 +160,7 @@ class Navigation {
         sectionTitle.className = 'toc-year-title';
         sectionTitle.innerHTML = labelHtml;
 
-        const chapterCount = document.createElement('span');
-        chapterCount.className = 'toc-year-count';
-        chapterCount.textContent = `(${chapters.length} ${chapters.length === 1 ? 'chapter' : 'chapters'})`;
-
         sectionHeader.appendChild(sectionTitle);
-        sectionHeader.appendChild(chapterCount);
 
         // Chapters container
         const chaptersContainer = document.createElement('div');
