@@ -3,7 +3,8 @@
 /* Home Page */
 .home-content {
     text-align: center;
-    padding: var(--space-xl) var(--padding-mobile);
+    padding: 0 var(--padding-mobile);
+    margin-top: calc(-1 * var(--space-2xl));
     display: flex;
     justify-content: center;
     align-items: flex-start;
