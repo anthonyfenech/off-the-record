@@ -9,6 +9,26 @@ body {
     padding-bottom: 50px; /* Account for fixed footer + progress bar */
 }
 
+/* Paginated mode - prevent scrolling */
+body.paginated {
+    overflow: hidden;
+    height: 100vh;
+}
+
+body.paginated .reader {
+    overflow: hidden;
+}
+
+body.paginated .chapter-body {
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+}
+
+/* Page container for paginated content */
+.page-container {
+    width: 100%;
+}
+
 /* Header */
 .header {
     position: fixed;
