@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     padding-top: 70px; /* Account for fixed header */
-    padding-bottom: 50px; /* Account for fixed footer + progress bar */
+    padding-bottom: 48px; /* Account for fixed footer */
 }
 
 /* Paginated mode - prevent scrolling */
@@ -105,7 +105,7 @@ body.paginated .chapter-body {
 /* Navigation footer */
 .nav-footer {
     position: fixed;
-    bottom: 2px; /* Leave room for progress bar */
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: var(--z-nav-footer);
@@ -159,24 +159,6 @@ body.paginated .chapter-body {
 
 .nav-btn:disabled:hover {
     background-color: transparent;
-}
-
-/* Progress bar */
-.progress-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--color-border);
-    z-index: var(--z-progress-bar);
-}
-
-.progress-fill {
-    height: 100%;
-    background-color: var(--color-accent);
-    width: 0%;
-    transition: width var(--transition-fast);
 }
 
 /* Table of Contents Sidebar */
@@ -387,7 +369,6 @@ body.scrolling .page-container .scene-break {
 @media print {
     .header,
     .nav-footer,
-    .progress-bar,
     .toc-sidebar,
     .overlay,
     .reading-mode-toggle {
