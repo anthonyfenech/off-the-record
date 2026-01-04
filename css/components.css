@@ -186,7 +186,7 @@
 }
 
 .toc-section-content {
-    max-height: 200px;
+    max-height: 2000px;
     overflow: hidden;
     transition: max-height var(--transition-normal);
 }
@@ -1172,6 +1172,226 @@ button:focus-visible {
     border: 1px solid var(--color-border);
     background-color: var(--color-background);
     max-width: 100%;
+}
+
+/* Guestbook / Comments Section */
+.guestbook-wrapper {
+    padding: var(--space-lg) var(--padding-mobile);
+}
+
+/* Social Share Section */
+.guestbook-share {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.guestbook-share-heading {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    margin-bottom: var(--space-md);
+}
+
+.guestbook-share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.share-btn {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+    transition: all var(--transition-fast);
+}
+
+.share-btn:hover {
+    background-color: var(--color-accent-light);
+    border-color: var(--color-text-primary);
+}
+
+/* Guestbook Form */
+.guestbook-form-section {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.guestbook-form-heading {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    margin-bottom: var(--space-md);
+}
+
+.guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.form-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.form-input,
+.form-textarea {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.char-count {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-text-tertiary);
+    text-align: right;
+}
+
+.guestbook-submit {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    color: var(--color-background);
+    background-color: var(--color-text-primary);
+    border: 1px solid var(--color-text-primary);
+    padding: var(--space-md) var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-top: var(--space-sm);
+}
+
+.guestbook-submit:hover {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.guestbook-success {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-success);
+    text-align: center;
+    padding: var(--space-md);
+    background-color: rgba(39, 174, 96, 0.1);
+    border: 1px solid var(--color-success);
+    margin-top: var(--space-md);
+}
+
+/* Recent Entries */
+.guestbook-entries {
+    margin-bottom: var(--space-lg);
+}
+
+.guestbook-entries-heading {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    margin-bottom: var(--space-md);
+}
+
+.guestbook-entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.guestbook-entry {
+    padding: var(--space-md);
+    background-color: var(--color-accent-light);
+    border-left: 2px solid var(--color-border);
+}
+
+.guestbook-entry-header {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.guestbook-entry-name {
+    font-weight: bold;
+}
+
+.guestbook-entry-publication {
+    color: var(--color-text-secondary);
+}
+
+.guestbook-entry-date {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-xs);
+}
+
+.guestbook-entry-message {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    line-height: var(--line-height-normal);
+}
+
+.guestbook-empty {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    text-align: center;
+    padding: var(--space-xl);
 }
 
 /* Tablet and up */

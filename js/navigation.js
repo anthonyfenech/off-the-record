@@ -6,6 +6,7 @@ import { isChapterComplete, calculateOverallProgress } from './storage.js';
 import { photoGallery } from './photoGallery.js';
 import { getAllGalleries } from '../data/photos.js';
 import { blogService } from './blog.js';
+import { guestbook } from './guestbook.js';
 
 class Navigation {
     constructor() {
@@ -307,7 +308,7 @@ class Navigation {
             { id: 'about', label: 'AB<span class="record-o">O</span>UT' },
             { id: 'audio', label: 'AUDI<span class="record-o">O</span>' },
             { id: 'photo', label: 'PH<span class="record-o">O</span>TOS' },
-            { id: 'support', label: 'SUPP<span class="record-o">O</span>RT' },
+            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT' },
             { id: 'gooff', label: 'G<span class="record-o">O</span> OFF' },
             { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM' }
@@ -348,6 +349,9 @@ class Navigation {
                 loading.className = 'blog-loading';
                 loading.textContent = 'Loading posts...';
                 sectionContent.appendChild(loading);
+            } else if (section.id === 'comments') {
+                // Comments/Guestbook section - render when expanded
+                sectionContent.dataset.needsInit = 'true';
             } else {
                 // Other sections show "Coming Soon"
                 const comingSoon = document.createElement('div');
@@ -391,6 +395,12 @@ class Navigation {
             // Initialize blog if needed
             if (sectionId === 'blog' && sectionContent.dataset.needsInit === 'true') {
                 this.initializeBlog(sectionContent);
+                delete sectionContent.dataset.needsInit;
+            }
+
+            // Initialize guestbook if needed
+            if (sectionId === 'comments' && sectionContent.dataset.needsInit === 'true') {
+                guestbook.render(sectionContent);
                 delete sectionContent.dataset.needsInit;
             }
         }
