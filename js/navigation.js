@@ -119,7 +119,7 @@ class Navigation {
 
         const sectionTitle = document.createElement('h3');
         sectionTitle.className = 'toc-top-title';
-        sectionTitle.textContent = 'BOOK';
+        sectionTitle.textContent = 'OFF-THE-RECORD';
 
         sectionHeader.appendChild(sectionTitle);
 
