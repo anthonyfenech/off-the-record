@@ -78,19 +78,6 @@ body {
     opacity: 0.8;
 }
 
-/* Record O - Record button logo that scales with text */
-.record-o {
-    display: inline-block;
-    width: 0.7em;
-    height: 0.7em;
-    background-image: url('../images/O_LOGO_SMALL_16PX.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    position: relative;
-    top: -0.05em;
-}
-
 /* Progress text */
 .progress-text {
     font-family: var(--font-mono);
