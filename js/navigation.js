@@ -1,6 +1,6 @@
 // Navigation - Chapter navigation and Table of Contents
 
-import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, getOpeningChapters, getClosingChapters, getSortedYears } from '../data/chapters.js';
+import { CHAPTERS, getChapterCount, getChaptersByYear, calculateReadingTime, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete, calculateOverallProgress } from './storage.js';
 import { photoGallery } from './photoGallery.js';
@@ -72,15 +72,13 @@ class Navigation {
         this.updateNavigationState();
     }
 
-    // Build Table of Contents with opening chapters, year sections, and closing chapters
+    // Build Table of Contents with INTRO, year sections, and POSTSCRIPT as collapsible dropdowns
     buildTOC() {
         const fragment = document.createDocumentFragment();
 
-        // 1. Add opening chapters (standalone, not nested)
-        const openingChapters = getOpeningChapters();
-        openingChapters.forEach(chapter => {
-            fragment.appendChild(this.createStandaloneChapterItem(chapter));
-        });
+        // 1. Add INTRO section (collapsible dropdown)
+        const introChapters = getIntroChapters();
+        fragment.appendChild(this.createCollapsibleSection('intro', 'INTR<span class="record-btn" aria-label="O"></span>', introChapters));
 
         // 2. Add year sections with nested chapters
         const chaptersByYear = getChaptersByYear();
@@ -138,11 +136,9 @@ class Navigation {
             fragment.appendChild(yearSection);
         });
 
-        // 3. Add closing chapters (standalone, not nested)
-        const closingChapters = getClosingChapters();
-        closingChapters.forEach(chapter => {
-            fragment.appendChild(this.createStandaloneChapterItem(chapter));
-        });
+        // 3. Add POSTSCRIPT section (collapsible dropdown)
+        const postscriptChapters = getPostscriptChapters();
+        fragment.appendChild(this.createCollapsibleSection('postscript', 'P<span class="record-btn" aria-label="O"></span>STSCRIPT', postscriptChapters));
 
         this.tocContent.appendChild(fragment);
 
@@ -150,6 +146,63 @@ class Navigation {
         const divider = document.createElement('div');
         divider.className = 'toc-divider';
         this.tocContent.appendChild(divider);
+    }
+
+    // Create a collapsible section (INTRO or POSTSCRIPT)
+    createCollapsibleSection(sectionId, labelHtml, chapters) {
+        const section = document.createElement('div');
+        section.className = 'toc-year-section';
+        section.dataset.section = sectionId;
+
+        // Section header (clickable to expand/collapse)
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'toc-year-header';
+
+        const sectionTitle = document.createElement('h3');
+        sectionTitle.className = 'toc-year-title';
+        sectionTitle.innerHTML = labelHtml;
+
+        const chapterCount = document.createElement('span');
+        chapterCount.className = 'toc-year-count';
+        chapterCount.textContent = `(${chapters.length} ${chapters.length === 1 ? 'chapter' : 'chapters'})`;
+
+        sectionHeader.appendChild(sectionTitle);
+        sectionHeader.appendChild(chapterCount);
+
+        // Chapters container
+        const chaptersContainer = document.createElement('div');
+        chaptersContainer.className = 'toc-year-chapters collapsed';
+
+        // Build chapter items
+        chapters.forEach(chapter => {
+            const item = this.createNestedChapterItem(chapter);
+            chaptersContainer.appendChild(item);
+        });
+
+        // Click handler
+        sectionHeader.addEventListener('click', () => {
+            this.toggleCollapsibleSection(sectionId, sectionHeader, chaptersContainer);
+        });
+
+        section.appendChild(sectionHeader);
+        section.appendChild(chaptersContainer);
+
+        return section;
+    }
+
+    // Toggle collapsible section (INTRO/POSTSCRIPT)
+    toggleCollapsibleSection(sectionId, sectionHeader, chaptersContainer) {
+        if (this.expandedSections.has(sectionId)) {
+            // Collapse
+            this.expandedSections.delete(sectionId);
+            chaptersContainer.classList.add('collapsed');
+            sectionHeader.classList.remove('expanded');
+        } else {
+            // Expand
+            this.expandedSections.add(sectionId);
+            chaptersContainer.classList.remove('collapsed');
+            sectionHeader.classList.add('expanded');
+        }
     }
 
     // Create a standalone chapter item (for opening/closing chapters)
@@ -551,15 +604,28 @@ class Navigation {
                 indicator.classList.add('current');
                 indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
 
-                // Auto-expand the year containing current chapter
+                // Auto-expand the section containing current chapter
                 const chapter = CHAPTERS.find(c => c.id === chapterId);
-                if (chapter && chapter.year) {
-                    const yearSection = this.tocContent.querySelector(`[data-year="${chapter.year}"]`);
-                    if (yearSection) {
-                        const yearHeader = yearSection.querySelector('.toc-year-header');
-                        const chaptersContainer = yearSection.querySelector('.toc-year-chapters');
-                        if (yearHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
-                            this.toggleYear(chapter.year.toString(), yearHeader, chaptersContainer);
+                if (chapter) {
+                    if (chapter.year) {
+                        // Year section
+                        const yearSection = this.tocContent.querySelector(`[data-year="${chapter.year}"]`);
+                        if (yearSection) {
+                            const yearHeader = yearSection.querySelector('.toc-year-header');
+                            const chaptersContainer = yearSection.querySelector('.toc-year-chapters');
+                            if (yearHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
+                                this.toggleYear(chapter.year.toString(), yearHeader, chaptersContainer);
+                            }
+                        }
+                    } else if (chapter.section === 'intro' || chapter.section === 'postscript') {
+                        // INTRO or POSTSCRIPT section
+                        const section = this.tocContent.querySelector(`[data-section="${chapter.section}"]`);
+                        if (section) {
+                            const sectionHeader = section.querySelector('.toc-year-header');
+                            const chaptersContainer = section.querySelector('.toc-year-chapters');
+                            if (sectionHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
+                                this.toggleCollapsibleSection(chapter.section, sectionHeader, chaptersContainer);
+                            }
                         }
                     }
                 }

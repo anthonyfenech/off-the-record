@@ -9,11 +9,11 @@ The full manuscript is being prepared. Each chapter explores a different aspect 
 This is placeholder text that will be replaced with the actual memoir content.`.repeat(3);
 
 export const CHAPTERS = [
-    // OPENING CHAPTERS (1-4) - Standalone, not nested under any year
+    // INTRO CHAPTERS (1-4) - Nested under INTRO dropdown
     {
         id: 1,
         year: null,
-        section: 'opening',
+        section: 'intro',
         title: "AUTHOR'S NOTE",
         subtitle: "To be written",
         teaser: "An introduction to this baseball memoir.",
@@ -23,7 +23,7 @@ export const CHAPTERS = [
     {
         id: 2,
         year: null,
-        section: 'opening',
+        section: 'intro',
         title: "SUMMER 2017",
         subtitle: "To be written",
         teaser: "Where our story begins.",
@@ -33,7 +33,7 @@ export const CHAPTERS = [
     {
         id: 3,
         year: null,
-        section: 'opening',
+        section: 'intro',
         title: "DREAM JOB",
         subtitle: "To be written",
         teaser: "Landing the position of a lifetime.",
@@ -43,7 +43,7 @@ export const CHAPTERS = [
     {
         id: 4,
         year: null,
-        section: 'opening',
+        section: 'intro',
         title: "SCANDAL!",
         subtitle: "To be written",
         teaser: "When everything changed.",
@@ -323,11 +323,11 @@ export const CHAPTERS = [
 
     // 2020 SEASON - No chapters, just the year header (handled in navigation)
 
-    // CLOSING CHAPTERS (31-32) - Standalone, not nested under 2020
+    // POSTSCRIPT CHAPTERS (31-32) - Nested under POSTSCRIPT dropdown
     {
         id: 31,
         year: null,
-        section: 'closing',
+        section: 'postscript',
         title: "POSTSCRIPT",
         subtitle: "To be written",
         teaser: "Reflections on the journey.",
@@ -337,7 +337,7 @@ export const CHAPTERS = [
     {
         id: 32,
         year: null,
-        section: 'closing',
+        section: 'postscript',
         title: "DEDICATION",
         subtitle: "To be written",
         teaser: "To those who made this possible.",
@@ -360,14 +360,14 @@ export const calculateReadingTime = (wordCount) => {
     return minutes;
 };
 
-// Get opening chapters (standalone at top)
-export const getOpeningChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'opening');
+// Get intro chapters (nested under INTRO dropdown)
+export const getIntroChapters = () => {
+    return CHAPTERS.filter(c => c.section === 'intro');
 };
 
-// Get closing chapters (standalone at bottom)
-export const getClosingChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'closing');
+// Get postscript chapters (nested under POSTSCRIPT dropdown)
+export const getPostscriptChapters = () => {
+    return CHAPTERS.filter(c => c.section === 'postscript');
 };
 
 // Get chapters grouped by year (only year-section chapters)
