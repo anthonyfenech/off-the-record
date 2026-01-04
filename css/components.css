@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    /* Offset to align with header title (compensate for toggles being wider than menu btn) */
+    transform: translateX(-60px);
 }
 
 .start-reading-btn {
