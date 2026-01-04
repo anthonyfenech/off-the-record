@@ -3,21 +3,20 @@
 /* Home Page */
 .home-content {
     text-align: center;
-    padding: 0;
+    padding: var(--space-xl) var(--padding-mobile);
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 30vh;
+    align-items: flex-start;
 }
 
 .start-reading-btn {
     font-family: var(--font-mono);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-sm);
     font-weight: bold;
     color: var(--color-background);
     background-color: var(--color-text-primary);
     border: 2px solid var(--color-text-primary);
-    padding: var(--space-xl) var(--space-3xl);
+    padding: var(--space-md) var(--space-xl);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wide);
     cursor: pointer;
