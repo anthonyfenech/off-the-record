@@ -39,6 +39,12 @@
             </button>
             <a href="./" class="header-title" id="homeLink">OFF-THE-REC<span class="record-o">O</span>RD</a>
             <div class="header-toggles">
+                <button class="search-btn" id="searchBtn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
                 <div class="theme-toggle" id="themeToggle">
                     <button class="theme-btn" data-theme="light" aria-pressed="true" aria-label="Light mode">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -131,6 +137,29 @@
     <!-- Overlay for TOC -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-header">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search chapters..." autocomplete="off">
+                <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <button class="search-close-btn" id="searchCloseBtn" aria-label="Close search">Cancel</button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <p class="search-hint">Type to search through all chapters</p>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script type="module" src="./js/config.js"></script>
     <script type="module" src="./data/chapters.js"></script>
@@ -143,6 +172,7 @@
     <script type="module" src="./js/guestbook.js"></script>
     <script type="module" src="./js/bookmarks.js"></script>
     <script type="module" src="./js/reading-mode.js"></script>
+    <script type="module" src="./js/search.js"></script>
     <script type="module" src="./js/reader.js"></script>
     <script src="./js/random-buttons.js"></script>
     <script type="module" src="./js/navigation.js"></script>
