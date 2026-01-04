@@ -291,10 +291,17 @@ body.paginated .chapter-body {
 }
 
 /* ============================================
-   READING MODE TOGGLE
+   HEADER TOGGLES (Reading Mode + Theme)
    ============================================ */
 
-.reading-mode-toggle {
+.header-toggles {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.reading-mode-toggle,
+.theme-toggle {
     display: flex;
     gap: 0;
     background: var(--color-background);
@@ -326,6 +333,34 @@ body.paginated .chapter-body {
     background: var(--color-text-primary);
     color: var(--color-background);
     font-weight: bold;
+}
+
+/* Theme toggle buttons */
+.theme-btn {
+    padding: 6px 8px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    background: var(--color-accent-light);
+    color: var(--color-text-primary);
+}
+
+.theme-btn.active {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+.theme-btn svg {
+    width: 14px;
+    height: 14px;
 }
 
 /* Scrolling mode specific styles */
