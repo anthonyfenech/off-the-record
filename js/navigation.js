@@ -104,14 +104,6 @@ class Navigation {
 
             yearHeader.appendChild(yearTitle);
 
-            // Only show "coming soon" for empty years (like 2020)
-            if (chapters.length === 0) {
-                const yearCount = document.createElement('span');
-                yearCount.className = 'toc-year-count coming-soon-text';
-                yearCount.textContent = '(coming soon)';
-                yearHeader.appendChild(yearCount);
-            }
-
             // Year chapters container
             const chaptersContainer = document.createElement('div');
             chaptersContainer.className = 'toc-year-chapters collapsed';

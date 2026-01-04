@@ -76,17 +76,16 @@ body {
 .record-o {
     position: relative;
     display: inline-block;
-    text-align: center;
 }
 
 .record-o::after {
     content: '';
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0.25em;
-    height: 0.25em;
+    transform: translate(-50%, -55%);
+    width: 0.22em;
+    height: 0.22em;
     background-color: #e74c3c;
     border-radius: 50%;
     pointer-events: none;
