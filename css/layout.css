@@ -191,7 +191,7 @@ body {
 
 .toc-header-icon {
     font-family: var(--font-mono);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-xl);
     font-weight: bold;
     margin: 0 auto;
 }

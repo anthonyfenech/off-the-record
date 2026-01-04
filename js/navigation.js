@@ -31,11 +31,8 @@ class Navigation {
 
     // Initialize navigation
     init() {
-        // Build TOC with chapters
+        // Build TOC with all sections
         this.buildTOC();
-
-        // Build additional content sections
-        this.buildContentSections();
 
         // Set up event listeners
         this.prevBtn.addEventListener('click', () => this.goToPreviousChapter());
@@ -74,70 +71,296 @@ class Navigation {
         this.updateNavigationState();
     }
 
-    // Build Table of Contents with INTRO, year sections, and POSTSCRIPT as collapsible dropdowns
+    // Build Table of Contents with new structure: BOOK contains all chapters
     buildTOC() {
         const fragment = document.createDocumentFragment();
 
-        // 1. Add INTRO section (collapsible dropdown)
-        const introChapters = getIntroChapters();
-        fragment.appendChild(this.createCollapsibleSection('intro', 'INTRO', introChapters));
+        // Build top sections (larger font): BOOK, BLOG, ABOUT, AUDIO, PHOTOS
+        this.buildTopSections(fragment);
 
-        // 2. Add year sections with nested chapters
+        // Add a divider between top and bottom sections
+        const divider = document.createElement('div');
+        divider.className = 'toc-divider';
+        fragment.appendChild(divider);
+
+        // Build bottom sections (smaller font): COMMENTS, CONTACT
+        this.buildBottomSections(fragment);
+
+        this.tocContent.appendChild(fragment);
+    }
+
+    // Build top navigation sections (larger font)
+    buildTopSections(fragment) {
+        // 1. BOOK section - contains all chapters
+        fragment.appendChild(this.createBookSection());
+
+        // 2. Other top sections as links/dropdowns
+        const topSections = [
+            { id: 'blog', label: 'BL<span class="record-o">O</span>G', type: 'link', url: 'https://anthonyfenech.substack.com' },
+            { id: 'about', label: 'AB<span class="record-o">O</span>UT', type: 'link', comingSoon: true },
+            { id: 'audio', label: 'AUDI<span class="record-o">O</span>', type: 'link', comingSoon: true },
+            { id: 'photo', label: 'PH<span class="record-o">O</span>T<span class="record-o">O</span>S', type: 'dropdown' }
+        ];
+
+        topSections.forEach(section => {
+            fragment.appendChild(this.createTopSection(section));
+        });
+    }
+
+    // Create the BOOK section with all nested chapter content
+    createBookSection() {
+        const section = document.createElement('div');
+        section.className = 'toc-top-section';
+        section.dataset.section = 'book';
+
+        // Section header
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'toc-top-header';
+
+        const sectionTitle = document.createElement('h3');
+        sectionTitle.className = 'toc-top-title';
+        sectionTitle.innerHTML = 'B<span class="record-o">O</span><span class="record-o">O</span>K';
+
+        sectionHeader.appendChild(sectionTitle);
+
+        // Book content container (contains all chapter sections)
+        const bookContent = document.createElement('div');
+        bookContent.className = 'toc-book-content collapsed';
+        bookContent.id = 'toc-book-content';
+
+        // Build nested chapter sections inside book
+        this.buildBookContent(bookContent);
+
+        // Click handler
+        sectionHeader.addEventListener('click', () => {
+            this.toggleTopSection('book', sectionHeader, bookContent);
+        });
+
+        section.appendChild(sectionHeader);
+        section.appendChild(bookContent);
+
+        return section;
+    }
+
+    // Build the content inside BOOK (INTRO, years, POSTSCRIPT)
+    buildBookContent(container) {
+        // 1. INTRO section
+        const introChapters = getIntroChapters();
+        container.appendChild(this.createNestedCollapsibleSection('intro', 'INTRO', introChapters));
+
+        // 2. Year sections
         const chaptersByYear = getChaptersByYear();
         const years = getSortedYears();
 
         years.forEach(year => {
             const chapters = chaptersByYear[year] || [];
-
-            // Create year section
-            const yearSection = document.createElement('div');
-            yearSection.className = 'toc-year-section';
-            yearSection.dataset.year = year;
-
-            // Year header (clickable to expand/collapse)
-            const yearHeader = document.createElement('div');
-            yearHeader.className = 'toc-year-header';
-
-            const yearTitle = document.createElement('h3');
-            yearTitle.className = 'toc-year-title';
-            yearTitle.textContent = `${year} SEASON`;
-
-            yearHeader.appendChild(yearTitle);
-
-            // Year chapters container
-            const chaptersContainer = document.createElement('div');
-            chaptersContainer.className = 'toc-year-chapters collapsed';
-
-            // Build chapter items (if any)
-            chapters.forEach(chapter => {
-                const item = this.createNestedChapterItem(chapter);
-                chaptersContainer.appendChild(item);
-            });
-
-            // Year header click handler (only if has chapters)
-            if (chapters.length > 0) {
-                yearHeader.addEventListener('click', () => {
-                    this.toggleYear(year, yearHeader, chaptersContainer);
-                });
-            } else {
-                yearHeader.classList.add('disabled');
-            }
-
-            yearSection.appendChild(yearHeader);
-            yearSection.appendChild(chaptersContainer);
-            fragment.appendChild(yearSection);
+            container.appendChild(this.createNestedYearSection(year, chapters));
         });
 
-        // 3. Add POSTSCRIPT section (collapsible dropdown)
+        // 3. POSTSCRIPT section
         const postscriptChapters = getPostscriptChapters();
-        fragment.appendChild(this.createCollapsibleSection('postscript', 'POSTSCRIPT', postscriptChapters));
+        container.appendChild(this.createNestedCollapsibleSection('postscript', 'POSTSCRIPT', postscriptChapters));
+    }
 
-        this.tocContent.appendChild(fragment);
+    // Create a nested collapsible section inside BOOK (for INTRO, POSTSCRIPT)
+    createNestedCollapsibleSection(sectionId, labelHtml, chapters) {
+        const section = document.createElement('div');
+        section.className = 'toc-nested-section';
+        section.dataset.section = sectionId;
 
-        // Add a divider between chapters and other content sections
-        const divider = document.createElement('div');
-        divider.className = 'toc-divider';
-        this.tocContent.appendChild(divider);
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'toc-nested-header';
+
+        const sectionTitle = document.createElement('h4');
+        sectionTitle.className = 'toc-nested-title';
+        sectionTitle.innerHTML = labelHtml;
+
+        sectionHeader.appendChild(sectionTitle);
+
+        const chaptersContainer = document.createElement('div');
+        chaptersContainer.className = 'toc-nested-chapters collapsed';
+
+        chapters.forEach(chapter => {
+            chaptersContainer.appendChild(this.createNestedChapterItem(chapter));
+        });
+
+        sectionHeader.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleNestedSection(sectionId, sectionHeader, chaptersContainer);
+        });
+
+        section.appendChild(sectionHeader);
+        section.appendChild(chaptersContainer);
+
+        return section;
+    }
+
+    // Create a nested year section inside BOOK
+    createNestedYearSection(year, chapters) {
+        const section = document.createElement('div');
+        section.className = 'toc-nested-section';
+        section.dataset.year = year;
+
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'toc-nested-header';
+
+        const sectionTitle = document.createElement('h4');
+        sectionTitle.className = 'toc-nested-title';
+        sectionTitle.textContent = `${year} SEASON`;
+
+        sectionHeader.appendChild(sectionTitle);
+
+        const chaptersContainer = document.createElement('div');
+        chaptersContainer.className = 'toc-nested-chapters collapsed';
+
+        chapters.forEach(chapter => {
+            chaptersContainer.appendChild(this.createNestedChapterItem(chapter));
+        });
+
+        if (chapters.length > 0) {
+            sectionHeader.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleYear(year, sectionHeader, chaptersContainer);
+            });
+        } else {
+            sectionHeader.classList.add('disabled');
+        }
+
+        section.appendChild(sectionHeader);
+        section.appendChild(chaptersContainer);
+
+        return section;
+    }
+
+    // Toggle nested section (INTRO/POSTSCRIPT inside BOOK)
+    toggleNestedSection(sectionId, sectionHeader, chaptersContainer) {
+        if (this.expandedSections.has(sectionId)) {
+            this.expandedSections.delete(sectionId);
+            chaptersContainer.classList.add('collapsed');
+            sectionHeader.classList.remove('expanded');
+        } else {
+            this.expandedSections.add(sectionId);
+            chaptersContainer.classList.remove('collapsed');
+            sectionHeader.classList.add('expanded');
+        }
+    }
+
+    // Create a top section (BLOG, ABOUT, AUDIO, PHOTOS)
+    createTopSection(section) {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.className = 'toc-top-section';
+        sectionDiv.dataset.section = section.id;
+
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = section.type === 'dropdown' ? 'toc-top-header' : 'toc-top-header toc-top-link';
+
+        const sectionTitle = document.createElement('h3');
+        sectionTitle.className = 'toc-top-title';
+        sectionTitle.innerHTML = section.label;
+
+        sectionHeader.appendChild(sectionTitle);
+
+        if (section.type === 'dropdown') {
+            const sectionContent = document.createElement('div');
+            sectionContent.className = 'toc-top-content collapsed';
+            sectionContent.id = `toc-section-${section.id}`;
+
+            if (section.id === 'photo') {
+                sectionContent.dataset.needsInit = 'true';
+            }
+
+            sectionHeader.addEventListener('click', () => {
+                this.toggleTopSection(section.id, sectionHeader, sectionContent);
+            });
+
+            sectionDiv.appendChild(sectionHeader);
+            sectionDiv.appendChild(sectionContent);
+        } else {
+            sectionHeader.addEventListener('click', () => {
+                if (section.url) {
+                    window.open(section.url, '_blank', 'noopener,noreferrer');
+                } else if (section.comingSoon) {
+                    alert('Coming Soon');
+                }
+                this.closeTOC();
+            });
+
+            sectionDiv.appendChild(sectionHeader);
+        }
+
+        return sectionDiv;
+    }
+
+    // Toggle top section (BOOK, PHOTOS)
+    toggleTopSection(sectionId, sectionHeader, sectionContent) {
+        if (this.expandedSections.has(sectionId)) {
+            this.expandedSections.delete(sectionId);
+            sectionContent.classList.add('collapsed');
+            sectionHeader.classList.remove('expanded');
+        } else {
+            this.expandedSections.add(sectionId);
+            sectionContent.classList.remove('collapsed');
+            sectionHeader.classList.add('expanded');
+
+            // Initialize photo gallery if needed
+            if (sectionId === 'photo' && sectionContent.dataset.needsInit === 'true') {
+                this.initializePhotoGallery(sectionContent);
+                delete sectionContent.dataset.needsInit;
+            }
+        }
+    }
+
+    // Build bottom navigation sections (smaller font)
+    buildBottomSections(fragment) {
+        const bottomSections = [
+            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
+            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true }
+        ];
+
+        bottomSections.forEach(section => {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'toc-content-section';
+            sectionDiv.dataset.section = section.id;
+
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = section.type === 'dropdown' ? 'toc-section-header' : 'toc-section-header toc-section-link';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-section-title';
+            sectionTitle.innerHTML = section.label;
+
+            sectionHeader.appendChild(sectionTitle);
+
+            if (section.type === 'dropdown') {
+                const sectionContent = document.createElement('div');
+                sectionContent.className = 'toc-section-content collapsed';
+                sectionContent.id = `toc-section-${section.id}`;
+
+                if (section.id === 'comments') {
+                    sectionContent.dataset.needsInit = 'true';
+                }
+
+                sectionHeader.addEventListener('click', () => {
+                    this.toggleSection(section.id, sectionHeader, sectionContent);
+                });
+
+                sectionDiv.appendChild(sectionHeader);
+                sectionDiv.appendChild(sectionContent);
+            } else {
+                sectionHeader.addEventListener('click', () => {
+                    if (section.url) {
+                        window.open(section.url, '_blank', 'noopener,noreferrer');
+                    } else if (section.comingSoon) {
+                        alert('Coming Soon');
+                    }
+                    this.closeTOC();
+                });
+
+                sectionDiv.appendChild(sectionHeader);
+            }
+
+            fragment.appendChild(sectionDiv);
+        });
     }
 
     // Create a collapsible section (INTRO or POSTSCRIPT)
@@ -367,73 +590,6 @@ class Navigation {
         }
     }
 
-    // Build additional content sections (Blog, About, etc.)
-    buildContentSections() {
-        // Sections with type: 'dropdown' expand in place, 'link' navigates to page
-        const sections = [
-            { id: 'blog', label: 'BL<span class="record-o">O</span>G', type: 'link', url: 'https://anthonyfenech.substack.com' },
-            { id: 'about', label: 'AB<span class="record-o">O</span>UT', type: 'link', comingSoon: true },
-            { id: 'audio', label: 'AUDI<span class="record-o">O</span>', type: 'link', comingSoon: true },
-            { id: 'photo', label: 'PH<span class="record-o">O</span>TOS', type: 'dropdown' },
-            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
-            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true },
-            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM', type: 'link', comingSoon: true }
-        ];
-
-        const fragment = document.createDocumentFragment();
-
-        sections.forEach(section => {
-            // Create section wrapper
-            const sectionDiv = document.createElement('div');
-            sectionDiv.className = 'toc-content-section';
-            sectionDiv.dataset.section = section.id;
-
-            // Section header
-            const sectionHeader = document.createElement('div');
-            sectionHeader.className = section.type === 'dropdown' ? 'toc-section-header' : 'toc-section-header toc-section-link';
-
-            const sectionTitle = document.createElement('h3');
-            sectionTitle.className = 'toc-section-title';
-            sectionTitle.innerHTML = section.label;
-
-            sectionHeader.appendChild(sectionTitle);
-
-            if (section.type === 'dropdown') {
-                // Dropdown section with expandable content
-                const sectionContent = document.createElement('div');
-                sectionContent.className = 'toc-section-content collapsed';
-                sectionContent.id = `toc-section-${section.id}`;
-
-                if (section.id === 'photo' || section.id === 'comments') {
-                    sectionContent.dataset.needsInit = 'true';
-                }
-
-                sectionHeader.addEventListener('click', () => {
-                    this.toggleSection(section.id, sectionHeader, sectionContent);
-                });
-
-                sectionDiv.appendChild(sectionHeader);
-                sectionDiv.appendChild(sectionContent);
-            } else {
-                // Link section - navigates to page or shows coming soon
-                sectionHeader.addEventListener('click', () => {
-                    if (section.url) {
-                        window.open(section.url, '_blank', 'noopener,noreferrer');
-                    } else if (section.comingSoon) {
-                        // Could navigate to a coming soon page in the future
-                        alert('Coming Soon');
-                    }
-                    this.closeTOC();
-                });
-
-                sectionDiv.appendChild(sectionHeader);
-            }
-
-            fragment.appendChild(sectionDiv);
-        });
-
-        this.tocContent.appendChild(fragment);
-    }
 
     // Toggle content section
     toggleSection(sectionId, sectionHeader, sectionContent) {
@@ -652,27 +808,37 @@ class Navigation {
                 indicator.classList.add('current');
                 indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
 
-                // Auto-expand the section containing current chapter
+                // Auto-expand the BOOK section and the section containing current chapter
                 const chapter = CHAPTERS.find(c => c.id === chapterId);
                 if (chapter) {
+                    // First, expand BOOK section
+                    const bookSection = this.tocContent.querySelector('[data-section="book"]');
+                    if (bookSection) {
+                        const bookHeader = bookSection.querySelector('.toc-top-header');
+                        const bookContent = bookSection.querySelector('.toc-book-content');
+                        if (bookHeader && bookContent && bookContent.classList.contains('collapsed')) {
+                            this.toggleTopSection('book', bookHeader, bookContent);
+                        }
+                    }
+
                     if (chapter.year) {
-                        // Year section
+                        // Year section (nested inside BOOK)
                         const yearSection = this.tocContent.querySelector(`[data-year="${chapter.year}"]`);
                         if (yearSection) {
-                            const yearHeader = yearSection.querySelector('.toc-year-header');
-                            const chaptersContainer = yearSection.querySelector('.toc-year-chapters');
+                            const yearHeader = yearSection.querySelector('.toc-nested-header');
+                            const chaptersContainer = yearSection.querySelector('.toc-nested-chapters');
                             if (yearHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
                                 this.toggleYear(chapter.year.toString(), yearHeader, chaptersContainer);
                             }
                         }
                     } else if (chapter.section === 'intro' || chapter.section === 'postscript') {
-                        // INTRO or POSTSCRIPT section
-                        const section = this.tocContent.querySelector(`[data-section="${chapter.section}"]`);
+                        // INTRO or POSTSCRIPT section (nested inside BOOK)
+                        const section = this.tocContent.querySelector(`.toc-nested-section[data-section="${chapter.section}"]`);
                         if (section) {
-                            const sectionHeader = section.querySelector('.toc-year-header');
-                            const chaptersContainer = section.querySelector('.toc-year-chapters');
+                            const sectionHeader = section.querySelector('.toc-nested-header');
+                            const chaptersContainer = section.querySelector('.toc-nested-chapters');
                             if (sectionHeader && chaptersContainer && chaptersContainer.classList.contains('collapsed')) {
-                                this.toggleCollapsibleSection(chapter.section, sectionHeader, chaptersContainer);
+                                this.toggleNestedSection(chapter.section, sectionHeader, chaptersContainer);
                             }
                         }
                     }

@@ -53,6 +53,167 @@
     letter-spacing: 0.5em;
 }
 
+/* Section Headers (datelines within chapters) */
+.section-header {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    margin: var(--space-2xl) 0 var(--space-lg) 0;
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+    text-indent: 0 !important;
+}
+
+.section-header:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* ============================================
+   TOP SECTIONS (BOOK, BLOG, ABOUT, AUDIO, PHOTOS)
+   Larger font size
+   ============================================ */
+.toc-top-section {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.toc-top-header {
+    padding: var(--space-md) var(--padding-mobile);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--color-background);
+    transition: background-color var(--transition-fast);
+    position: relative;
+}
+
+.toc-top-header:hover {
+    background-color: var(--color-accent-light);
+}
+
+.toc-top-header::after {
+    content: '▼';
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-left: var(--space-sm);
+    transition: transform var(--transition-fast);
+}
+
+.toc-top-header.expanded::after {
+    transform: rotate(180deg);
+}
+
+/* Link sections - no dropdown arrow */
+.toc-top-link::after {
+    content: none;
+}
+
+.toc-top-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.toc-top-content,
+.toc-book-content {
+    max-height: 5000px;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+}
+
+.toc-top-content.collapsed,
+.toc-book-content.collapsed {
+    max-height: 0;
+}
+
+/* ============================================
+   NESTED SECTIONS (inside BOOK: INTRO, years, POSTSCRIPT)
+   ============================================ */
+.toc-nested-section {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.toc-nested-section:last-child {
+    border-bottom: none;
+}
+
+.toc-nested-header {
+    padding: var(--space-sm) var(--padding-mobile) var(--space-sm) var(--space-2xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--color-accent-light);
+    transition: background-color var(--transition-fast);
+    position: relative;
+}
+
+.toc-nested-header:hover {
+    background-color: var(--color-border);
+}
+
+.toc-nested-header.disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.toc-nested-header.disabled:hover {
+    background-color: var(--color-accent-light);
+}
+
+.toc-nested-header.disabled::after {
+    content: none;
+}
+
+.toc-nested-header::after {
+    content: '▼';
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    margin-left: var(--space-sm);
+    transition: transform var(--transition-fast);
+}
+
+.toc-nested-header.expanded::after {
+    transform: rotate(180deg);
+}
+
+.toc-nested-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.toc-nested-chapters {
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+}
+
+.toc-nested-chapters.collapsed {
+    max-height: 0;
+}
+
+/* Chapter items inside nested sections (deeper indentation) */
+.toc-nested-chapters .toc-chapter {
+    padding-left: calc(var(--space-2xl) + var(--space-lg));
+}
+
+/* ============================================
+   LEGACY: Year-based TOC Sections (kept for compatibility)
+   ============================================ */
 /* Year-based TOC Sections */
 .toc-year-section {
     border-bottom: 1px solid var(--color-border);
