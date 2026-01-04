@@ -213,7 +213,7 @@ body {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: var(--space-md) 0;
+    padding: 0;
 }
 
 .toc-footer {
