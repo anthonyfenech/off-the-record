@@ -79,9 +79,11 @@ class Reader {
 
     // Show the home page
     showHomePage() {
-        this.chapterTitle.textContent = '';
-        this.chapterSubtitle.textContent = '';
-        this.chapterMeta.textContent = '';
+        // Hide chapter header on home page
+        const chapterHeader = document.querySelector('.chapter-header');
+        if (chapterHeader) {
+            chapterHeader.style.display = 'none';
+        }
 
         // Get saved progress
         const progress = getProgress();
@@ -129,6 +131,12 @@ class Reader {
         if (!chapter) {
             this.showError(`Chapter ${chapterId} not found`);
             return;
+        }
+
+        // Show chapter header (may be hidden from home page)
+        const chapterHeader = document.querySelector('.chapter-header');
+        if (chapterHeader) {
+            chapterHeader.style.display = '';
         }
 
         this.currentChapter = chapterId;
