@@ -105,7 +105,7 @@ class Navigation {
             { id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' },
             { id: 'about', label: 'ABOUT', type: 'link', comingSoon: true },
             { id: 'audio', label: 'AUDIO', type: 'link', comingSoon: true },
-            { id: 'photo', label: 'PHOTOS', type: 'dropdown' }
+            { id: 'photo', label: 'PHOTOS', type: 'link', url: './photos.html' }
         ];
 
         topSections.forEach(section => {

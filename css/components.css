@@ -2195,3 +2195,43 @@ button:focus-visible {
     color: var(--color-text-tertiary);
     font-style: italic;
 }
+
+/* ============================================
+   PHOTOS PAGE
+   ============================================ */
+
+.photos-page {
+    padding-bottom: var(--space-3xl);
+}
+
+.gallery-page-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.gallery-page-section:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-page-header {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-lg);
+}
+
+.gallery-page-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    margin: 0;
+}
+
+.gallery-coming-soon {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    padding: var(--space-lg) 0;
+}
