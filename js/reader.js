@@ -79,19 +79,13 @@ class Reader {
 
     // Show the home page
     showHomePage() {
-        this.chapterTitle.textContent = 'OFF-THE-RECORD';
-        this.chapterSubtitle.textContent = 'A Baseball Memoir';
-        this.chapterMeta.textContent = '15 years covering the Detroit Tigers';
+        this.chapterTitle.textContent = '';
+        this.chapterSubtitle.textContent = '';
+        this.chapterMeta.textContent = '';
 
         this.chapterBody.innerHTML = `
             <div class="home-content">
-                <p class="home-intro">Welcome to <strong>OFF-THE-RECORD</strong>, a memoir about covering Major League Baseball for the Detroit Free Press.</p>
-
-                <p class="home-description">This is the story of fifteen seasons on the Tigers beat—the clubhouse drama, the late-night deadlines, the sources, the scoops, and everything they never taught you in journalism school.</p>
-
-                <div class="home-cta">
-                    <button class="start-reading-btn" id="startReadingBtn">Start Reading</button>
-                </div>
+                <button class="start-reading-btn" id="startReadingBtn">Start Reading</button>
             </div>
         `;
 
