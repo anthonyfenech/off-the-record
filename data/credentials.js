@@ -3,10 +3,23 @@
 // Each entry is just the filename - the path is handled automatically
 
 export const CREDENTIALS = [
-    // Add credentials here as you scan them, e.g.:
-    // 'tigers-2015-spring.jpg',
-    // 'world-series-2012.jpg',
-    // 'all-star-game-2014.jpg',
+    '20260104165941_0004.jpg',
+    '20260104170022_0004.jpg',
+    '20260104170022_0006.jpg',
+    '20260104170022_0008.jpg',
+    '20260104170022_0010.jpg',
+    '20260104170022_0012.jpg',
+    '20260104170059_0002.jpg',
+    '20260104170059_0004.jpg',
+    '20260104170059_0006.jpg',
+    '20260104170059_0008.jpg',
+    '20260104170059_0010.jpg',
+    '20260104170115_0002.jpg',
+    '20260104171607_0002.jpg',
+    '20260104171607_0004.jpg',
+    '20260104171647_0002.jpg',
+    '20260104171647_0004.jpg',
+    '20260104171724_0002.jpg',
 ];
 
 // Get a random credential
