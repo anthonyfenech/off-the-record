@@ -595,26 +595,11 @@ class Navigation {
             const galleryHeader = document.createElement('div');
             galleryHeader.className = 'gallery-section-header';
 
-            const galleryInfo = document.createElement('div');
-            galleryInfo.className = 'gallery-section-info';
-
             const galleryTitle = document.createElement('h4');
             galleryTitle.className = 'gallery-section-title';
             galleryTitle.textContent = gallery.title.toUpperCase();
 
-            const galleryCount = document.createElement('span');
-            galleryCount.className = 'gallery-section-count';
-
-            if (gallery.comingSoon) {
-                galleryCount.textContent = 'Coming Soon';
-                galleryCount.classList.add('coming-soon-badge');
-            } else {
-                galleryCount.textContent = `${gallery.photos.length} photos`;
-            }
-
-            galleryInfo.appendChild(galleryTitle);
-            galleryInfo.appendChild(galleryCount);
-            galleryHeader.appendChild(galleryInfo);
+            galleryHeader.appendChild(galleryTitle);
 
             // Gallery content container
             const galleryContent = document.createElement('div');
@@ -623,13 +608,11 @@ class Navigation {
 
             // Only add click handler if gallery has photos
             if (!gallery.comingSoon) {
-                // Click handler for header
                 galleryHeader.addEventListener('click', () => {
                     this.toggleGallery(gallery.id, galleryHeader, galleryContent);
                 });
                 galleryHeader.style.cursor = 'pointer';
             } else {
-                // Disable interaction for coming soon galleries
                 galleryHeader.classList.add('disabled');
             }
 

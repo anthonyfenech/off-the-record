@@ -756,6 +756,8 @@ button:focus-visible {
     background-color: var(--color-background);
     transition: background-color var(--transition-fast);
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .gallery-section-header:not(.disabled):hover {
@@ -787,12 +789,6 @@ button:focus-visible {
     transform: translateY(-50%) rotate(180deg);
 }
 
-.gallery-section-info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-}
-
 .gallery-section-title {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
@@ -800,17 +796,6 @@ button:focus-visible {
     color: var(--color-text-primary);
     margin: 0;
     letter-spacing: var(--letter-spacing-tight);
-}
-
-.gallery-section-count {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    color: var(--color-text-tertiary);
-}
-
-.gallery-section-count.coming-soon-badge {
-    color: var(--color-text-secondary);
-    font-style: italic;
 }
 
 .gallery-section-content {
