@@ -5,6 +5,7 @@ import { getProgress, saveProgress, markChapterComplete, isChapterComplete } fro
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager, themeManager } from './reading-mode.js';
 import { CONFIG } from './config.js';
+import { getRandomCredential, getCredentialPath } from '../data/credentials.js';
 
 class Reader {
     constructor() {
@@ -112,11 +113,27 @@ class Reader {
             buttonText = window.getRandomButtonMessage();
         }
 
-        this.chapterBody.innerHTML = `
-            <div class="home-content">
-                <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
-            </div>
-        `;
+        // Check for credential to display
+        const credential = getRandomCredential();
+
+        if (credential) {
+            // Show credential as the clickable button
+            const credentialPath = getCredentialPath(credential);
+            this.chapterBody.innerHTML = `
+                <div class="home-content">
+                    <button class="credential-btn" id="startReadingBtn" aria-label="Tap credential to continue reading">
+                        <img src="${credentialPath}" alt="Press credential" class="credential-img">
+                    </button>
+                </div>
+            `;
+        } else {
+            // Fallback to text button when no credentials
+            this.chapterBody.innerHTML = `
+                <div class="home-content">
+                    <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
+                </div>
+            `;
+        }
 
         // Add click handler for start reading button
         const startBtn = document.getElementById('startReadingBtn');
