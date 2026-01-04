@@ -53,24 +53,23 @@
     letter-spacing: 0.5em;
 }
 
-/* Section Headers (datelines within chapters) */
-.section-header {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-base);
-    font-weight: bold;
-    color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-normal);
-    margin: var(--space-2xl) 0 var(--space-lg) 0;
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--color-border);
+/* Datelines (inline within chapters - italic, not bold) */
+.dateline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Paragraphs starting with datelines - no text-indent */
+.has-dateline {
     text-indent: 0 !important;
 }
 
-.section-header:first-child {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
+/* Scene/section breaks (for major transitions) */
+.section-break {
+    margin: var(--space-2xl) 0;
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
 }
 
 /* ============================================
