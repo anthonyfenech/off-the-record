@@ -1,5 +1,5 @@
 // Simple Search
-// Basic search through chapter content
+// Basic search through chapter content in sidebar
 
 import { CHAPTERS } from '../data/chapters.js';
 import { CONFIG } from './config.js';
@@ -7,24 +7,23 @@ import { CONFIG } from './config.js';
 class SearchManager {
     constructor() {
         this.searchIndex = [];
-        this.dropdown = null;
         this.input = null;
         this.results = null;
-        this.isOpen = false;
     }
 
     init() {
-        const searchBtn = document.getElementById('searchBtn');
-        if (!CONFIG.showSearchButton && searchBtn) {
-            searchBtn.style.display = 'none';
+        if (!CONFIG.showSearchButton) {
+            const searchContainer = document.getElementById('sidebarSearch');
+            if (searchContainer) {
+                searchContainer.style.display = 'none';
+            }
             return;
         }
 
-        this.dropdown = document.getElementById('searchDropdown');
-        this.input = document.getElementById('searchInput');
-        this.results = document.getElementById('searchResults');
+        this.input = document.getElementById('sidebarSearchInput');
+        this.results = document.getElementById('sidebarSearchResults');
 
-        if (!this.dropdown || !this.input || !this.results) {
+        if (!this.input || !this.results) {
             return;
         }
 
@@ -69,61 +68,18 @@ class SearchManager {
     }
 
     setupEventListeners() {
-        const searchBtn = document.getElementById('searchBtn');
-        if (searchBtn) {
-            searchBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.toggle();
-            });
-        }
-
         this.input.addEventListener('input', (e) => {
             this.search(e.target.value);
         });
 
-        // Close on click outside
-        document.addEventListener('click', (e) => {
-            if (this.isOpen && !this.dropdown.contains(e.target) && e.target !== searchBtn) {
-                this.close();
-            }
-        });
-
-        // Close on escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.isOpen) {
-                this.close();
-            }
-        });
-
         // Handle result clicks
         this.results.addEventListener('click', (e) => {
-            const item = e.target.closest('.search-result-item');
+            const item = e.target.closest('.sidebar-search-result');
             if (item) {
                 const chapterId = parseInt(item.dataset.chapterId);
                 this.navigateToResult(chapterId);
             }
         });
-    }
-
-    toggle() {
-        if (this.isOpen) {
-            this.close();
-        } else {
-            this.open();
-        }
-    }
-
-    open() {
-        this.isOpen = true;
-        this.dropdown.classList.add('open');
-        this.input.focus();
-    }
-
-    close() {
-        this.isOpen = false;
-        this.dropdown.classList.remove('open');
-        this.input.value = '';
-        this.results.innerHTML = '';
     }
 
     search(query) {
@@ -155,19 +111,30 @@ class SearchManager {
 
     displayResults(matches, query) {
         if (matches.length === 0) {
-            this.results.innerHTML = '<div class="search-no-results">No results</div>';
+            this.results.innerHTML = '<div class="sidebar-search-empty">No results</div>';
             return;
         }
 
         const html = matches.map(match => {
-            return `<div class="search-result-item" data-chapter-id="${match.chapterId}">${match.title}</div>`;
+            return `<div class="sidebar-search-result" data-chapter-id="${match.chapterId}">${match.title}</div>`;
         }).join('');
 
         this.results.innerHTML = html;
     }
 
     navigateToResult(chapterId) {
-        this.close();
+        // Clear search
+        this.input.value = '';
+        this.results.innerHTML = '';
+
+        // Close sidebar
+        const sidebar = document.getElementById('tocSidebar');
+        const overlay = document.getElementById('overlay');
+        if (sidebar) sidebar.classList.remove('open');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Navigate
         window.location.hash = `chapter-${chapterId}`;
     }
 }
