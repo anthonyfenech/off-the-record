@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Sign the guestbook - OFF-THE-RECORD: A Baseball Memoir">
+    <meta name="theme-color" content="#0d47a1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OFF-THE-RECORD">
+
+    <title>Comments - OFF-THE-RECORD</title>
+
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+
+    <!-- Google Fonts - Literata for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <a href="./" class="back-link" aria-label="Back to book">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+            <a href="./" class="header-title" id="homeLink">OFF-THE-REC<span class="record-o">O</span>RD</a>
+            <div style="width: 44px;"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="reader" id="reader">
+        <article class="chapter">
+            <header class="chapter-header">
+                <h2 class="chapter-title">C<span class="record-o">O</span>MMENTS</h2>
+            </header>
+            <div class="guestbook-page" id="guestbookContainer">
+                <!-- Guestbook content rendered by JS -->
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { guestbook } from './js/guestbook.js';
+
+        // Initialize guestbook on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('guestbookContainer');
+            if (container) {
+                guestbook.render(container);
+            }
+        });
+    </script>
+</body>
+</html>
