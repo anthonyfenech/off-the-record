@@ -75,7 +75,7 @@ body {
 /* Record O - Uses actual letter O with red dot overlay */
 .record-o {
     position: relative;
-    display: inline;
+    display: inline-block;
 }
 
 .record-o::after {
@@ -84,8 +84,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0.25em;
-    height: 0.25em;
+    width: 0.3em;
+    height: 0.3em;
     background-color: #e74c3c;
     border-radius: 50%;
     pointer-events: none;

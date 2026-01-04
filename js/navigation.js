@@ -306,11 +306,11 @@ class Navigation {
             { id: 'blog', label: 'BL<span class="record-o">O</span>G' },
             { id: 'about', label: 'AB<span class="record-o">O</span>UT' },
             { id: 'audio', label: 'AUDI<span class="record-o">O</span>' },
-            { id: 'photo', label: 'PH<span class="record-o">O</span>T<span class="record-o">O</span>S' },
+            { id: 'photo', label: 'PH<span class="record-o">O</span>TOS' },
             { id: 'support', label: 'SUPP<span class="record-o">O</span>RT' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT' },
-            { id: 'gooff', label: 'G<span class="record-o">O</span> <span class="record-o">O</span>FF' },
-            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span><span class="record-o">O</span>M' }
+            { id: 'gooff', label: 'G<span class="record-o">O</span> OFF' },
+            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM' }
         ];
 
         const fragment = document.createDocumentFragment();
