@@ -256,7 +256,7 @@
 
 /* Chapter items inside nested sections (deeper indentation) */
 .toc-nested-chapters .toc-chapter {
-    padding-left: calc(var(--space-2xl) + var(--space-lg));
+    padding-left: var(--space-xl);
 }
 
 /* ============================================
