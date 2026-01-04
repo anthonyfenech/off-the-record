@@ -18,6 +18,11 @@ const CONFIG = {
     // Lets readers switch between light and dark themes
     showDarkModeToggle: true,
 
+    // SEARCH BUTTON
+    // Shows magnifying glass icon in header
+    // Lets readers search through all chapter content
+    showSearchButton: true,
+
     // RANDOM BUTTON MESSAGES
     // Shows random messages on the home page button
     // Instead of just "Continue Reading"
