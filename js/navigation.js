@@ -377,14 +377,15 @@ class Navigation {
 
     // Build additional content sections (Blog, About, etc.)
     buildContentSections() {
+        // Sections with type: 'dropdown' expand in place, 'link' navigates to page
         const sections = [
-            { id: 'blog', label: 'BL<span class="record-o">O</span>G' },
-            { id: 'about', label: 'AB<span class="record-o">O</span>UT' },
-            { id: 'audio', label: 'AUDI<span class="record-o">O</span>' },
-            { id: 'photo', label: 'PH<span class="record-o">O</span>TOS' },
-            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS' },
-            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT' },
-            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM' }
+            { id: 'blog', label: 'BL<span class="record-o">O</span>G', type: 'link', url: 'https://anthonyfenech.substack.com' },
+            { id: 'about', label: 'AB<span class="record-o">O</span>UT', type: 'link', comingSoon: true },
+            { id: 'audio', label: 'AUDI<span class="record-o">O</span>', type: 'link', comingSoon: true },
+            { id: 'photo', label: 'PH<span class="record-o">O</span>TOS', type: 'dropdown' },
+            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'link', comingSoon: true },
+            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true },
+            { id: 'cutroom', label: 'CUT R<span class="record-o">O</span>OM', type: 'link', comingSoon: true }
         ];
 
         const fragment = document.createDocumentFragment();
@@ -395,9 +396,9 @@ class Navigation {
             sectionDiv.className = 'toc-content-section';
             sectionDiv.dataset.section = section.id;
 
-            // Section header (clickable to expand/collapse)
+            // Section header
             const sectionHeader = document.createElement('div');
-            sectionHeader.className = 'toc-section-header';
+            sectionHeader.className = section.type === 'dropdown' ? 'toc-section-header' : 'toc-section-header toc-section-link';
 
             const sectionTitle = document.createElement('h3');
             sectionTitle.className = 'toc-section-title';
@@ -405,41 +406,37 @@ class Navigation {
 
             sectionHeader.appendChild(sectionTitle);
 
-            // Section content
-            const sectionContent = document.createElement('div');
-            sectionContent.className = 'toc-section-content collapsed';
-            sectionContent.id = `toc-section-${section.id}`;
+            if (section.type === 'dropdown') {
+                // Dropdown section with expandable content
+                const sectionContent = document.createElement('div');
+                sectionContent.className = 'toc-section-content collapsed';
+                sectionContent.id = `toc-section-${section.id}`;
 
-            // Photo section gets special treatment - render gallery
-            if (section.id === 'photo') {
-                // Content will be rendered when section is first expanded
-                sectionContent.dataset.needsInit = 'true';
-            } else if (section.id === 'blog') {
-                // Blog section - content will be loaded when expanded
-                sectionContent.dataset.needsInit = 'true';
-                // Show loading state initially
-                const loading = document.createElement('div');
-                loading.className = 'blog-loading';
-                loading.textContent = 'Loading posts...';
-                sectionContent.appendChild(loading);
-            } else if (section.id === 'comments') {
-                // Comments/Guestbook section - render when expanded
-                sectionContent.dataset.needsInit = 'true';
+                if (section.id === 'photo') {
+                    sectionContent.dataset.needsInit = 'true';
+                }
+
+                sectionHeader.addEventListener('click', () => {
+                    this.toggleSection(section.id, sectionHeader, sectionContent);
+                });
+
+                sectionDiv.appendChild(sectionHeader);
+                sectionDiv.appendChild(sectionContent);
             } else {
-                // Other sections show "Coming Soon"
-                const comingSoon = document.createElement('div');
-                comingSoon.className = 'coming-soon';
-                comingSoon.textContent = 'Coming Soon';
-                sectionContent.appendChild(comingSoon);
+                // Link section - navigates to page or shows coming soon
+                sectionHeader.addEventListener('click', () => {
+                    if (section.url) {
+                        window.open(section.url, '_blank', 'noopener,noreferrer');
+                    } else if (section.comingSoon) {
+                        // Could navigate to a coming soon page in the future
+                        alert('Coming Soon');
+                    }
+                    this.closeTOC();
+                });
+
+                sectionDiv.appendChild(sectionHeader);
             }
 
-            // Click handler for header
-            sectionHeader.addEventListener('click', () => {
-                this.toggleSection(section.id, sectionHeader, sectionContent);
-            });
-
-            sectionDiv.appendChild(sectionHeader);
-            sectionDiv.appendChild(sectionContent);
             fragment.appendChild(sectionDiv);
         });
 

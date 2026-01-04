@@ -167,6 +167,11 @@
     transform: rotate(180deg);
 }
 
+/* Link sections - no dropdown arrow */
+.toc-section-link::after {
+    content: none;
+}
+
 .toc-section-icon {
     font-size: var(--font-size-lg);
     filter: grayscale(100%);
