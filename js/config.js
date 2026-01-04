@@ -31,7 +31,7 @@ const CONFIG = {
     // PAGE NUMBERS IN HEADER
     // Shows "1/8" page indicator in header (page mode)
     // Shows "45%" progress in header (scroll mode)
-    showProgressIndicator: true,
+    showProgressIndicator: false,
 
     // NAVIGATION FOOTER
     // Shows PREVIOUS/NEXT buttons at bottom
