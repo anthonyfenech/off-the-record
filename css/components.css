@@ -1969,3 +1969,36 @@ button:focus-visible {
     width: 14px;
     height: 14px;
 }
+
+/* Font size toggle in settings */
+.settings-wrapper .font-size-toggle {
+    display: flex;
+    gap: 0;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.settings-wrapper .font-btn {
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-width: 32px;
+}
+
+.settings-wrapper .font-btn:hover {
+    background: var(--color-accent-light);
+    color: var(--color-text-primary);
+}
+
+.settings-wrapper .font-btn.active {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+    font-weight: bold;
+}

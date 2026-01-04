@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v89';
-const STATIC_CACHE = 'off-the-record-static-v89';
-const CONTENT_CACHE = 'off-the-record-content-v89';
+const CACHE_VERSION = 'v90';
+const STATIC_CACHE = 'off-the-record-static-v90';
+const CONTENT_CACHE = 'off-the-record-content-v90';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -24,6 +24,7 @@ const STATIC_ASSETS = [
     './js/bookmarks.js',
     './js/random-buttons.js',
     './js/reading-mode.js',
+    './js/font-size.js',
     './js/search.js',
     './js/config.js',
     './data/chapters.js'

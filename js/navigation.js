@@ -9,6 +9,7 @@ import { blogService } from './blog.js';
 import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
 import { readingModeManager, themeManager } from './reading-mode.js';
+import { fontSizeManager } from './font-size.js';
 
 class Navigation {
     constructor() {
@@ -539,8 +540,65 @@ class Navigation {
         themeRow.appendChild(themeLabel);
         themeRow.appendChild(themeToggle);
 
+        // Font Size Setting
+        const fontSizeRow = document.createElement('div');
+        fontSizeRow.className = 'settings-row';
+
+        const fontSizeLabel = document.createElement('span');
+        fontSizeLabel.className = 'settings-label';
+        fontSizeLabel.textContent = 'Text Size';
+
+        const fontSizeToggle = document.createElement('div');
+        fontSizeToggle.className = 'font-size-toggle';
+
+        const smallBtn = document.createElement('button');
+        smallBtn.className = 'font-btn' + (fontSizeManager.isSmall() ? ' active' : '');
+        smallBtn.dataset.size = 'small';
+        smallBtn.textContent = 'A-';
+        smallBtn.setAttribute('aria-label', 'Small text');
+
+        const mediumBtn = document.createElement('button');
+        mediumBtn.className = 'font-btn' + (fontSizeManager.isMedium() ? ' active' : '');
+        mediumBtn.dataset.size = 'medium';
+        mediumBtn.textContent = 'A';
+        mediumBtn.setAttribute('aria-label', 'Medium text');
+
+        const largeBtn = document.createElement('button');
+        largeBtn.className = 'font-btn' + (fontSizeManager.isLarge() ? ' active' : '');
+        largeBtn.dataset.size = 'large';
+        largeBtn.textContent = 'A+';
+        largeBtn.setAttribute('aria-label', 'Large text');
+
+        const updateFontButtons = () => {
+            smallBtn.classList.toggle('active', fontSizeManager.isSmall());
+            mediumBtn.classList.toggle('active', fontSizeManager.isMedium());
+            largeBtn.classList.toggle('active', fontSizeManager.isLarge());
+        };
+
+        smallBtn.addEventListener('click', () => {
+            fontSizeManager.changeSize('small');
+            updateFontButtons();
+        });
+
+        mediumBtn.addEventListener('click', () => {
+            fontSizeManager.changeSize('medium');
+            updateFontButtons();
+        });
+
+        largeBtn.addEventListener('click', () => {
+            fontSizeManager.changeSize('large');
+            updateFontButtons();
+        });
+
+        fontSizeToggle.appendChild(smallBtn);
+        fontSizeToggle.appendChild(mediumBtn);
+        fontSizeToggle.appendChild(largeBtn);
+        fontSizeRow.appendChild(fontSizeLabel);
+        fontSizeRow.appendChild(fontSizeToggle);
+
         wrapper.appendChild(readingModeRow);
         wrapper.appendChild(themeRow);
+        wrapper.appendChild(fontSizeRow);
         container.appendChild(wrapper);
     }
 
