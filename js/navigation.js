@@ -369,7 +369,7 @@ class Navigation {
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             { id: 'bookmarks', label: 'B<span class="record-o">O</span><span class="record-o">O</span>KMARKS', type: 'dropdown' },
-            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'dropdown' },
+            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'link', url: './guestbook.html' },
             { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true }
         ];
 
