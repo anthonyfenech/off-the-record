@@ -110,7 +110,7 @@
 }
 
 .toc-top-header {
-    padding: var(--space-md) var(--padding-mobile);
+    padding: var(--space-md) var(--space-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -176,7 +176,7 @@
 }
 
 .toc-nested-header {
-    padding: var(--space-sm) var(--padding-mobile) var(--space-sm) var(--space-2xl);
+    padding: var(--space-sm) var(--space-md) var(--space-sm) var(--space-lg);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -236,7 +236,7 @@
 
 /* Chapter items inside nested sections (deeper indentation) */
 .toc-nested-chapters .toc-chapter {
-    padding-left: var(--space-xl);
+    padding-left: var(--space-lg);
 }
 
 /* ============================================
@@ -329,7 +329,7 @@
 }
 
 .toc-section-header {
-    padding: var(--space-sm) var(--padding-mobile);
+    padding: var(--space-sm) var(--space-md);
     display: flex;
     align-items: center;
     gap: var(--space-md);
@@ -401,7 +401,7 @@
 
 /* Chapter list items in TOC */
 .toc-chapter {
-    padding: var(--space-sm) var(--padding-mobile) var(--space-sm) var(--space-2xl);
+    padding: var(--space-sm) var(--space-md) var(--space-sm) var(--space-lg);
     border-bottom: 1px solid var(--color-border);
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -415,7 +415,7 @@
 
 /* Standalone chapters (opening/closing) - not nested */
 .toc-chapter-standalone {
-    padding-left: var(--padding-mobile);
+    padding-left: var(--space-md);
     background-color: var(--color-accent-light);
     border-bottom: 1px solid var(--color-border);
 }
@@ -946,7 +946,7 @@ button:focus-visible {
 }
 
 .gallery-section-header {
-    padding: var(--space-sm) var(--padding-mobile) var(--space-sm) var(--space-2xl);
+    padding: var(--space-sm) var(--space-md) var(--space-sm) var(--space-lg);
     background-color: var(--color-accent-light);
     transition: background-color var(--transition-fast);
     position: relative;
@@ -967,7 +967,7 @@ button:focus-visible {
     content: '▼';
     display: inline-block;
     position: absolute;
-    right: var(--padding-mobile);
+    right: var(--space-md);
     top: 50%;
     transform: translateY(-50%);
     font-size: var(--font-size-xs);
