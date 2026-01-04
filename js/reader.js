@@ -86,8 +86,11 @@ class Reader {
         const savedChapter = progress.currentChapter || 1;
         const savedScroll = progress.scrollPosition || 0;
 
-        // Button text changes based on whether user has progress
-        const buttonText = progress.lastUpdated ? 'Continue Reading' : 'Start Reading';
+        // Button text - use random message if available, otherwise default
+        let buttonText = progress.lastUpdated ? 'Continue Reading' : 'Start Reading';
+        if (window.getRandomButtonMessage) {
+            buttonText = window.getRandomButtonMessage();
+        }
 
         this.chapterBody.innerHTML = `
             <div class="home-content">
