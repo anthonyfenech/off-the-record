@@ -103,11 +103,107 @@ class ReadingModeManager {
     }
 }
 
-// Create singleton instance
+// Theme Manager
+// Handles light/dark mode switching
+
+class ThemeManager {
+    constructor() {
+        this.currentTheme = this.loadTheme();
+    }
+
+    init() {
+        // Apply initial theme immediately (before page renders)
+        this.applyTheme(this.currentTheme);
+
+        // Set up toggle buttons
+        const toggleButtons = document.querySelectorAll('.theme-btn');
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const theme = e.target.dataset.theme;
+                if (theme !== this.currentTheme) {
+                    this.switchTheme(theme);
+                }
+            });
+        });
+
+        // Update UI
+        this.updateToggleUI();
+
+        console.log(`Theme initialized: ${this.currentTheme}`);
+    }
+
+    loadTheme() {
+        const saved = localStorage.getItem('theme');
+        if (saved) return saved;
+
+        // Default to system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    }
+
+    saveTheme(theme) {
+        localStorage.setItem('theme', theme);
+    }
+
+    switchTheme(newTheme) {
+        this.currentTheme = newTheme;
+        this.saveTheme(newTheme);
+        this.applyTheme(newTheme);
+        this.updateToggleUI();
+
+        window.dispatchEvent(new CustomEvent('themeChanged', {
+            detail: { theme: newTheme }
+        }));
+
+        console.log(`Switched to ${newTheme} theme`);
+    }
+
+    applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+    }
+
+    updateToggleUI() {
+        const buttons = document.querySelectorAll('.theme-btn');
+        buttons.forEach(btn => {
+            if (btn.dataset.theme === this.currentTheme) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+            } else {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            }
+        });
+    }
+
+    getTheme() {
+        return this.currentTheme;
+    }
+
+    isDark() {
+        return this.currentTheme === 'dark';
+    }
+
+    isLight() {
+        return this.currentTheme === 'light';
+    }
+
+    toggle() {
+        this.switchTheme(this.currentTheme === 'dark' ? 'light' : 'dark');
+    }
+}
+
+// Create singleton instances
 const readingModeManager = new ReadingModeManager();
+const themeManager = new ThemeManager();
+
+// Apply theme immediately to prevent flash
+themeManager.applyTheme(themeManager.currentTheme);
 
 // Export for use in other modules
-export { readingModeManager };
+export { readingModeManager, themeManager };
 
 // Also expose globally for non-module scripts
 window.readingModeManager = readingModeManager;
+window.themeManager = themeManager;
