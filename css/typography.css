@@ -127,7 +127,7 @@ body {
 
 .toc-chapter-title {
     font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     line-height: var(--line-height-normal);
     color: var(--color-text-primary);
 }
