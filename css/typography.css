@@ -78,16 +78,6 @@ body {
     opacity: 0.8;
 }
 
-/* Record O - red dot inside O, scales with text */
-.record-o {
-    display: inline-block;
-    width: 0.75em;
-    height: 0.75em;
-    vertical-align: baseline;
-    position: relative;
-    top: 0.05em;
-}
-
 /* Progress text */
 .progress-text {
     font-family: var(--font-mono);
