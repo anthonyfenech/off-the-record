@@ -83,9 +83,17 @@ class Reader {
         this.chapterSubtitle.textContent = '';
         this.chapterMeta.textContent = '';
 
+        // Get saved progress
+        const progress = getProgress();
+        const savedChapter = progress.currentChapter || 1;
+        const savedScroll = progress.scrollPosition || 0;
+
+        // Button text changes based on whether user has progress
+        const buttonText = progress.lastUpdated ? 'Continue Reading' : 'Start Reading';
+
         this.chapterBody.innerHTML = `
             <div class="home-content">
-                <button class="start-reading-btn" id="startReadingBtn">Start Reading</button>
+                <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
             </div>
         `;
 
@@ -93,7 +101,9 @@ class Reader {
         const startBtn = document.getElementById('startReadingBtn');
         if (startBtn) {
             startBtn.addEventListener('click', () => {
-                this.loadChapter(1);
+                // Store scroll position to restore after loading
+                this.scrollPosition = savedScroll;
+                this.loadChapter(savedChapter);
                 this.hideContinueReading();
             });
         }
