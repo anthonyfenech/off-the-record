@@ -38,11 +38,14 @@
                 </svg>
             </button>
             <a href="./" class="header-title" id="homeLink">OFF-THE-REC<span class="record-o">O</span>RD</a>
-            <button class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmark chapter">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </button>
+            <div class="reading-mode-toggle" id="readingModeToggle">
+                <button class="mode-btn" data-mode="scroll" aria-pressed="true" aria-label="Scroll mode">
+                    Scroll
+                </button>
+                <button class="mode-btn" data-mode="page" aria-pressed="false" aria-label="Page mode">
+                    Pages
+                </button>
+            </div>
             <div class="header-progress" id="headerProgress">
                 <span class="progress-text">0%</span>
             </div>
@@ -116,6 +119,7 @@
     <script type="module" src="./js/blog.js"></script>
     <script type="module" src="./js/guestbook.js"></script>
     <script type="module" src="./js/bookmarks.js"></script>
+    <script type="module" src="./js/reading-mode.js"></script>
     <script type="module" src="./js/reader.js"></script>
     <script src="./js/random-buttons.js"></script>
     <script type="module" src="./js/navigation.js"></script>
