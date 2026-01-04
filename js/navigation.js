@@ -367,9 +367,9 @@ class Navigation {
     buildBottomSections(fragment) {
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
-            { id: 'bookmarks', label: 'B<span class="record-o">O</span><span class="record-o">O</span>KMARKS', type: 'dropdown' },
-            { id: 'comments', label: 'C<span class="record-o">O</span>MMENTS', type: 'link', url: './guestbook.html' },
-            { id: 'contact', label: 'C<span class="record-o">O</span>NTACT', type: 'link', comingSoon: true }
+            { id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' },
+            { id: 'comments', label: 'C<span class="record-o"></span>MMENTS', type: 'link', url: './guestbook.html' },
+            { id: 'contact', label: 'C<span class="record-o"></span>NTACT', type: 'link', comingSoon: true }
         ];
 
         bottomSections.forEach(section => {
