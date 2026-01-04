@@ -215,7 +215,7 @@
 
 .toc-read-time {
     font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
+    font-size: 0.75rem;
     color: var(--color-text-tertiary);
     white-space: nowrap;
     flex-shrink: 0;
