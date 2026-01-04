@@ -1169,46 +1169,15 @@ button:focus-visible {
     padding: var(--space-lg) var(--padding-mobile);
 }
 
-/* Social Share Section */
-.guestbook-share {
+/* Guestbook Intro */
+.guestbook-intro {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
     margin-bottom: var(--space-xl);
     padding-bottom: var(--space-lg);
     border-bottom: 1px solid var(--color-border);
-}
-
-.guestbook-share-heading {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    font-weight: bold;
-    color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-normal);
-    margin-bottom: var(--space-md);
-}
-
-.guestbook-share-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-}
-
-.share-btn {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    font-weight: bold;
-    color: var(--color-text-primary);
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
-    padding: var(--space-sm) var(--space-md);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-tight);
-    transition: all var(--transition-fast);
-}
-
-.share-btn:hover {
-    background-color: var(--color-accent-light);
-    border-color: var(--color-text-primary);
 }
 
 /* Guestbook Form */
@@ -1216,16 +1185,6 @@ button:focus-visible {
     margin-bottom: var(--space-xl);
     padding-bottom: var(--space-lg);
     border-bottom: 1px solid var(--color-border);
-}
-
-.guestbook-form-heading {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    font-weight: bold;
-    color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-normal);
-    margin-bottom: var(--space-md);
 }
 
 .guestbook-form {
@@ -1347,32 +1306,17 @@ button:focus-visible {
 .guestbook-entry-header {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-xs);
-}
-
-.guestbook-entry-name {
     font-weight: bold;
+    color: var(--color-text-primary);
 }
 
-.guestbook-entry-publication {
-    color: var(--color-text-secondary);
-}
-
-.guestbook-entry-date {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--color-text-tertiary);
-    margin-bottom: var(--space-xs);
-}
-
-.guestbook-entry-message {
+.guestbook-entry-comment {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
     font-style: italic;
     line-height: var(--line-height-normal);
+    margin-top: var(--space-xs);
 }
 
 .guestbook-empty {
