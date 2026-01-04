@@ -259,7 +259,8 @@ class Navigation {
             { id: 'podcast', label: 'P<span class="record-btn" aria-label="O"></span>DCAST', icon: '🎙️' },
             { id: 'audio', label: 'AUDI<span class="record-btn" aria-label="O"></span>', icon: '🔊' },
             { id: 'video', label: 'VIDE<span class="record-btn" aria-label="O"></span>', icon: '🎬' },
-            { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S', icon: '📷' }
+            { id: 'photo', label: 'PH<span class="record-btn" aria-label="O"></span>T<span class="record-btn" aria-label="O"></span>S', icon: '📷' },
+            { id: 'support', label: 'SUPP<span class="record-btn" aria-label="O"></span>RT', icon: '💝' }
         ];
 
         const fragment = document.createDocumentFragment();
