@@ -274,16 +274,6 @@ class PhotoGallery {
         // Clear container
         container.innerHTML = '';
 
-        // Create gallery header
-        const header = document.createElement('div');
-        header.className = 'gallery-header';
-        header.innerHTML = `
-            <h3 class="gallery-title">${gallery.title}</h3>
-            <p class="gallery-description">${gallery.description}</p>
-            <p class="gallery-count">${gallery.photos.length} photos</p>
-        `;
-        container.appendChild(header);
-
         // Create photo grid
         const grid = document.createElement('div');
         grid.className = 'photo-grid';
