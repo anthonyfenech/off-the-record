@@ -92,6 +92,7 @@
 
 .toc-year-header::after {
     content: '▼';
+    display: inline-block;
     font-size: var(--font-size-xs);
     color: var(--color-text-secondary);
     margin-left: var(--space-sm);
@@ -155,6 +156,7 @@
 
 .toc-section-header::after {
     content: '▼';
+    display: inline-block;
     font-size: var(--font-size-xs);
     color: var(--color-text-secondary);
     margin-left: auto;
@@ -777,6 +779,7 @@ button:focus-visible {
 
 .gallery-section-header::after {
     content: '▼';
+    display: inline-block;
     position: absolute;
     right: var(--padding-mobile);
     top: 50%;
