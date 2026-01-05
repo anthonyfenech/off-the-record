@@ -62,8 +62,9 @@ body {
 /* Header typography */
 .header-title {
     font-family: var(--font-mono);
-    font-size: var(--font-size-xl);
+    font-size: 1.25rem;
     font-weight: bold;
+    
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-normal);
