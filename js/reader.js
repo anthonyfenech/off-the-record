@@ -117,23 +117,22 @@ class Reader {
         const credential = getRandomCredential();
 
         if (credential) {
-            // Show credential as the clickable button
-            const credentialPath = getCredentialPath(credential);
-            this.chapterBody.innerHTML = `
-                <div class="home-content">
-                    <button class="credential-btn" id="startReadingBtn" aria-label="Tap credential to continue reading">
-                        <img src="${credentialPath}" alt="Press credential" class="credential-img">
-                    </button>
-                </div>
-            `;
-        } else {
-            // Fallback to text button when no credentials
-            this.chapterBody.innerHTML = `
-                <div class="home-content">
-                    <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
-                </div>
-            `;
-        }
+          // Show credential image with button below
+          const credentialPath = getCredentialPath(credential);
+          this.chapterBody.innerHTML = `
+              <div class="home-content">
+                  <img src="${credentialPath}" alt="Press credential" class="credential-img">
+                  <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
+              </div>
+          `;
+      } else {
+          // Fallback to text button when no credentials
+          this.chapterBody.innerHTML = `
+              <div class="home-content">
+                  <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
+              </div>
+          `;
+      }
 
         // Add click handler for start reading button
         const startBtn = document.getElementById('startReadingBtn');
