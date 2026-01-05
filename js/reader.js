@@ -1,4 +1,4 @@
-// Reader - Core reading interface logic with pagination
+xf// Reader - Core reading interface logic with pagination
 
 import { CHAPTERS, calculateReadingTime } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
@@ -107,11 +107,8 @@ class Reader {
         const savedChapter = progress.currentChapter || 1;
         const savedPage = progress.currentPage || 0;
 
-        // Button text - use random message if available, otherwise default
-        let buttonText = progress.lastUpdated ? 'Continue Reading' : 'Start Reading';
-        if (window.getRandomButtonMessage) {
-            buttonText = window.getRandomButtonMessage();
-        }
+          // Button text
+      let buttonText = progress.lastUpdated ? 'Continue Reading' : 'Start Reading';
 
         // Check for credential to display
         const credential = getRandomCredential();
