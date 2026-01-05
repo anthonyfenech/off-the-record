@@ -61,7 +61,7 @@ const CONFIG = {
     defaultReadingMode: 'scroll',
 
     // Default theme: 'light', 'dark', or 'auto' (system preference)
-    defaultTheme: 'auto',
+    defaultTheme: 'light',
 
 };
 
