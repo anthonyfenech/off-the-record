@@ -2,13 +2,15 @@
 
 /* Home Page */
 .home-content {
-    text-align: center;
-    padding: 0 var(--padding-mobile);
-    margin-top: calc(-1 * var(--space-2xl));
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
+      text-align: center;
+      padding: 0 var(--padding-mobile);
+      margin-top: calc(-1 * var(--space-2xl));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-lg);
+  }
 
 .start-reading-btn {
     font-family: var(--font-mono);
