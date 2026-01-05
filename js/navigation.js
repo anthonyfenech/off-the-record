@@ -148,25 +148,31 @@ class Navigation {
         return section;
     }
 
-    // Build the content inside BOOK (INTRO, years, POSTSCRIPT)
-    buildBookContent(container) {
-        // 1. INTRO section
-        const introChapters = getIntroChapters();
-        container.appendChild(this.createNestedCollapsibleSection('intro', 'INTRO', introChapters));
+    // Build the content inside BOOK (all chapters flat)
+      buildBookContent(container) {
+          const introChapters = getIntroChapters();
+          const chaptersByYear = getChaptersByYear();
+          const years = getSortedYears();
+          const postscriptChapters = getPostscriptChapters();
 
-        // 2. Year sections
-        const chaptersByYear = getChaptersByYear();
-        const years = getSortedYears();
+          // Add intro chapters directly
+          introChapters.forEach(chapter => {
+              container.appendChild(this.createChapterItem(chapter));
+          });
 
-        years.forEach(year => {
-            const chapters = chaptersByYear[year] || [];
-            container.appendChild(this.createNestedYearSection(year, chapters));
-        });
+          // Add year chapters directly
+          years.forEach(year => {
+              const chapters = chaptersByYear[year] || [];
+              chapters.forEach(chapter => {
+                  container.appendChild(this.createChapterItem(chapter));
+              });
+          });
 
-        // 3. POSTSCRIPT section
-        const postscriptChapters = getPostscriptChapters();
-        container.appendChild(this.createNestedCollapsibleSection('postscript', 'POSTSCRIPT', postscriptChapters));
-    }
+          // Add postscript chapters directly
+          postscriptChapters.forEach(chapter => {
+              container.appendChild(this.createChapterItem(chapter));
+          });
+      }
 
     // Create a nested collapsible section inside BOOK (for INTRO, POSTSCRIPT)
     createNestedCollapsibleSection(sectionId, labelHtml, chapters) {
