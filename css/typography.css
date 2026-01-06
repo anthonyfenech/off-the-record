@@ -26,14 +26,14 @@ body {
 }
 
 /* No indent for first paragraph of chapter */
-.chapter-body p:first-child,
 .chapter-body .page-container > p:first-child {
     text-indent: 0;
 }
 
-/* No indent for dateline paragraphs or paragraphs following section breaks */
+/* No indent for dateline paragraphs, block quotes, or paragraphs following section breaks */
 .chapter-body p.has-dateline,
 .chapter-body p.no-indent,
+.chapter-body p.block-quote,
 .chapter-body .scene-break + p,
 .chapter-body .block-quote + p {
     text-indent: 0;
