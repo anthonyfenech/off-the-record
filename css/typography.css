@@ -129,6 +129,12 @@ body {
     text-align: center;
 }
 
+/* Small caps - for headlines/tickers within text */
+.small-caps {
+    font-size: 0.85em;
+    letter-spacing: 0.02em;
+}
+
 /* Mobile - smaller header to prevent wrapping */
 @media (max-width: 599px) {
     .header-title {
