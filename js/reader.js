@@ -1,11 +1,10 @@
-xf// Reader - Core reading interface logic with pagination
+// Reader - Core reading interface logic with pagination
 
 import { CHAPTERS, calculateReadingTime } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager, themeManager } from './reading-mode.js';
 import { CONFIG } from './config.js';
-import { getRandomCredential, getCredentialPath } from '../data/credentials.js';
 
 class Reader {
     constructor() {
@@ -107,17 +106,14 @@ class Reader {
         const savedChapter = progress.currentChapter || 1;
         const savedPage = progress.currentPage || 0;
 
-          // Button text
-      let buttonText = progress.lastUpdated ? 'Continue Reading' : 'Start Reading';
+        // Button text - simple "CONTINUE READING" or "START READING"
+        let buttonText = progress.lastUpdated ? 'CONTINUE READING' : 'START READING';
 
-        // Check for credential to display
-        const credential = getRandomCredential();
-
-      this.chapterBody.innerHTML = `
-          <div class="home-content">
-              <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
-          </div>
-      `;
+        this.chapterBody.innerHTML = `
+            <div class="home-content">
+                <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
+            </div>
+        `;
 
         // Add click handler for start reading button
         const startBtn = document.getElementById('startReadingBtn');
