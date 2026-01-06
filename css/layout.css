@@ -126,9 +126,9 @@ body.paginated .chapter-body {
 }
 
 .chapter-header {
-    margin-bottom: var(--space-3xl);
-    padding-bottom: var(--space-xl);
-    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 4em;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .chapter-body {
