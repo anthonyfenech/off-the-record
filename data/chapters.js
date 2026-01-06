@@ -57,7 +57,7 @@ export const CHAPTERS = [
 
 <p>The first colleague I told about OFF-THE-RECORD appears to have ghosted me—he hasn't responded in almost two years. Another guy sounded shocked that anyone would write something as dangerous as a behind-the-scenes book about the sports writing life. "I wouldn't want people coming after me."</p>
 
-<p>Which brings us to the other, more complicated problem: Losing my identity.</p>
+<p>Which brings us to the other, more complicated problem: <em>Losing my identity.</em></p>
 
 <p>I had worked in sports media for my entire adult life before moving to Malta. Having your byline posted and printed from a major metropolitan newsroom comes with a certain kind of attention. Your phone is always lighting up with editors and sources and others. Your mailbox is always full of readers emailing to compliment/complain/criticize your work.</p>
 
