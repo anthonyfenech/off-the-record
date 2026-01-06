@@ -129,6 +129,14 @@ body {
     text-align: center;
 }
 
+/* Mobile - smaller header to prevent wrapping */
+@media (max-width: 599px) {
+    .header-title {
+        font-size: var(--font-size-lg);
+        letter-spacing: 1px;
+    }
+}
+
 /* Tablet and up */
 @media (min-width: 600px) {
     .chapter-title {
