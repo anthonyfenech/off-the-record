@@ -1,6 +1,6 @@
 // Reader - Core reading interface logic with pagination
 
-import { CHAPTERS, calculateReadingTime } from '../data/chapters.js';
+import { CHAPTERS } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager, themeManager } from './reading-mode.js';
@@ -159,13 +159,8 @@ class Reader {
         this.currentChapter = chapterId;
         window.currentChapterId = chapterId;
 
-        // Update DOM
+        // Update DOM - just the title, no subtitle or reading time
         this.chapterTitle.textContent = chapter.title;
-        this.chapterSubtitle.textContent = chapter.subtitle;
-
-        // Display reading time
-        const readTime = calculateReadingTime(chapter.wordCount);
-        this.chapterMeta.textContent = `${readTime} min read`;
 
         // Parse content into paragraph data
         const paragraphData = chapter.content
