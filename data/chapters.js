@@ -429,9 +429,9 @@ export const CHAPTERS = [
 
 <p>Tomorrow, I receive a flood of congratulations from my colleagues. I am finally a sports writer, unchained from the web desk—a <em>Ball Writer</em>, the Tigers' beat writer, can you believe it?</p>
 
-<p><strong>From:</strong> Myers, Gene<br/>
-<strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">P.M.</span><br/>
-<strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
+<p><strong>From:</strong> Myers, Gene</p>
+<p><strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">P.M.</span></p>
+<p><strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
 
 <p><em>"After more than seven years, in essence, in the </em>Free Press'<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
 
