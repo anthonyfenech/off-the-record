@@ -29,8 +29,12 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: var(--color-bg);
+            background: #fff;
             border-bottom: 1px solid var(--color-border);
+        }
+
+        [data-theme="dark"] .header {
+            background: #1a1a1a;
         }
 
         .header-content {
@@ -157,9 +161,24 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 20px;
-            background: var(--color-bg);
+            background: #fff;
             border-top: 1px solid var(--color-border);
             z-index: 100;
+        }
+
+        [data-theme="dark"] .nav-footer {
+            background: #1a1a1a;
+        }
+
+        .bookmark-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav-btn {
@@ -224,7 +243,11 @@
             </svg>
             <span>Previous</span>
         </button>
-        <span class="chapter-indicator" id="chapterIndicator">1 / 26</span>
+        <button class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmark chapter">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
         <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
             <span>Next</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -269,13 +292,11 @@
         // Chapter navigation
         const chapters = document.querySelectorAll('.chapter-section');
         const totalChapters = chapters.length;
-        const indicator = document.getElementById('chapterIndicator');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         let currentChapter = 0;
 
-        function updateIndicator() {
-            indicator.textContent = `${currentChapter + 1} / ${totalChapters}`;
+        function updateNav() {
             prevBtn.disabled = currentChapter === 0;
             nextBtn.disabled = currentChapter === totalChapters - 1;
         }
@@ -284,7 +305,7 @@
             if (index >= 0 && index < totalChapters) {
                 currentChapter = index;
                 chapters[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                updateIndicator();
+                updateNav();
             }
         }
 
@@ -293,7 +314,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     currentChapter = parseInt(entry.target.dataset.chapter);
-                    updateIndicator();
+                    updateNav();
                 }
             });
         }, { rootMargin: '-80px 0px -50% 0px', threshold: 0 });
@@ -303,7 +324,7 @@
         prevBtn.addEventListener('click', () => scrollToChapter(currentChapter - 1));
         nextBtn.addEventListener('click', () => scrollToChapter(currentChapter + 1));
 
-        updateIndicator();
+        updateNav();
 
         // Initialize media modal for emoji triggers
         mediaModal.init();
