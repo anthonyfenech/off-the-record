@@ -153,6 +153,16 @@ body {
     letter-spacing: 0.02em;
 }
 
+/* Headline blocks - centered bold text with spacing */
+.headline-block {
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 1.5em 0;
+    text-indent: 0 !important;
+}
+
 /* Mobile - smaller header to prevent wrapping */
 @media (max-width: 599px) {
     .header-title {
