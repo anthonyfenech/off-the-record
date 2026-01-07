@@ -8,7 +8,7 @@ import { getAllGalleries } from '../data/photos.js';
 import { blogService } from './blog.js';
 import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
-import { readingModeManager, themeManager } from './reading-mode.js';
+import { readingModeManager } from './reading-mode.js';
 import { fontSizeManager } from './font-size.js';
 
 class Navigation {
@@ -105,7 +105,7 @@ class Navigation {
             { id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' },
             { id: 'about', label: 'ABOUT', type: 'link', comingSoon: true },
             { id: 'audio', label: 'AUDIO', type: 'link', comingSoon: true },
-            { id: 'photo', label: 'PHOTOS', type: 'link', url: './photos.html' }
+            { id: 'full-book', label: 'GO OFF', type: 'link', url: './full-book.html' }
         ];
 
         topSections.forEach(section => {
@@ -323,11 +323,12 @@ class Navigation {
         // Check if bookmarks are allowed
         const allowBookmarks = localStorage.getItem('admin_allowBookmarks') !== 'false';
 
+        const allowComments = localStorage.getItem('admin_allowComments') !== 'false';
+
         const bottomSections = [
-            { id: 'full-book', label: 'GO OFF', type: 'link', url: './full-book.html', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>' },
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(allowBookmarks ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
-            { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
+            ...(allowComments ? [{ id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' }] : []),
             { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true },
             { id: 'admin', label: 'ADMIN', type: 'link', url: './admin.html' }
         ];
