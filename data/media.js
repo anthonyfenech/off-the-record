@@ -11,6 +11,30 @@ export const MEDIA_CONTENT = {
         src: './assets/24-road-to-omaha/mike trade deadline.mp3',
         placeholder: false
     },
+    'first-on-tv': {
+        type: 'video',
+        emoji: '📺',
+        label: 'Video',
+        caption: 'First time on MLB Network',
+        src: './assets/27-postscript/FIRST ON TV.MOV.mov',
+        placeholder: false
+    },
+    'high-heat-hot-seat': {
+        type: 'photo',
+        emoji: '📺',
+        label: 'Screenshot',
+        caption: 'MLB Network High Heat - Hot Seat Discussion',
+        src: './assets/27-postscript/HIGH HEAT HOT SEAT.png',
+        placeholder: false
+    },
+    'victor-barking-dog': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Victor Martinez - Spring Training 2016',
+        src: './assets/27-postscript/VICTOR BARKING DOG 2017.png',
+        placeholder: false
+    },
     'espn-push-alert': {
         type: 'photo',
         emoji: '📷',

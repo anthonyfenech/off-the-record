@@ -6,9 +6,14 @@
             var theme = localStorage.getItem('theme');
             var bg = theme === 'dark' ? '#1a1a1a' : '#fefefe';
             document.documentElement.style.backgroundColor = bg;
+            document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
             if (theme) document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
+    <style>
+        html, body { background-color: var(--color-background, #fefefe); }
+        [data-theme="dark"] html, [data-theme="dark"] body { background-color: #1a1a1a; }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFF-THE-RECORD</title>
