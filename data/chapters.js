@@ -2172,31 +2172,21 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<div class="locked-content">
-<div class="lock-overlay">
-<span class="lock-icon">🔒</span>
-<span class="lock-text">Subscribe to unlock</span>
-</div>
 <p class="has-dateline no-indent"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
-<p>Last week, he sent word that the suits wanted a Tigers take out story: "1A is interested in a story about How The Tigers Saved Their Season. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. This assumes the Tigers are still doing well and don't get swept in Seattle."</p>
+<p>Last week, he sent word that the suits wanted a Tigers take out story: "1A is interested in a story about How The Tigers Saved Their Season. I think it's something you can start reporting now. Can definitely take us back to that road trip in Baltimore where we thought Ausmus was close to being fired. This assumes the Tigers are still doing well and don't get swept in Seattle."</p>
 
-<p>Well, they did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in that upbeat story. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>
-</div>`,
-        wordCount: 2400
-    },
-    {
-        id: 12,
-        year: 2016,
-        section: 'year',
-        title: "UNCENSORED",
-        subtitle: "Detroit",
-        teaser: "When a superstar crosses the line—and so does the beat writer.",
-        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>August 20</em>—</span>Thanks to a colossal scheduling mishap, I'm back at the ballpark on an off day I had requested weeks in advance. My backup is on vacation, and I'm stuck covering pregame. I have plans tonight.</p>
+<p>Well, they did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in that upbeat story. But Detroit is still seven games above .500 and well within reach—1½ games behind the wild-card.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>August 20</em>—</span>Thanks to a colossal scheduling mishap, I'm back at the ballpark on an off day I had requested weeks in advance. My backup is on vacation, and I'm stuck covering pregame. I have plans tonight.</p>
 
 <p>My goal is to get in, get done, and get out. Attend the pregame manager's session, get some quotes, and knock out two stories. Be out of the ballpark no later than 6:15.</p>
 
-<p>During Ausmus' session, I ask about Red Sox slugger David Ortiz, playing his final series at Comerica Park. Ortiz, forty, is retiring after the season and has tormented Detroit over the years. A hall of fame-caliber offensive player who starred at the height of the steroid era.</p>
+<p>During Ausmus' session, I ask about Red Sox slugger David Ortiz, playing his final series at Comerica Park. Ortiz, forty, is retiring after the season and has tormented Detroit over the years.</p>
+
+<p>A hall of fame-caliber offensive player who starred at the height of the steroid era.</p>
 
 <p>Ortiz becomes the obvious choice for my second story. I'll ask Miggy about him.</p>
 
@@ -2255,10 +2245,10 @@ export const CHAPTERS = [
 <p>"I feel you."</p>
 
 <p>We bring it in. Bygones be bygones. Miggy never messed with me again.</p>`,
-        wordCount: 500
+        wordCount: 3200
     },
     {
-        id: 13,
+        id: 12,
         year: 2016,
         section: 'year',
         title: "PENNANT RACE",
@@ -2386,7 +2376,7 @@ export const CHAPTERS = [
         wordCount: 1200
     },
     {
-        id: 14,
+        id: 13,
         year: 2016,
         section: 'year',
         title: "WAKE-UP CALL",
@@ -2798,7 +2788,7 @@ export const CHAPTERS = [
 
     // 2017 SEASON CHAPTERS (15-19)
     {
-        id: 15,
+        id: 14,
         year: 2017,
         section: 'year',
         title: "PRIME-TIME",
@@ -3030,7 +3020,7 @@ export const CHAPTERS = [
         wordCount: 2700
     },
     {
-        id: 16,
+        id: 15,
         year: 2017,
         section: 'year',
         title: "FIREWORKS",
@@ -3406,7 +3396,7 @@ export const CHAPTERS = [
         wordCount: 3200
     },
     {
-        id: 17,
+        id: 16,
         year: 2017,
         section: 'year',
         title: "SUMMER 2017",
@@ -3620,7 +3610,7 @@ export const CHAPTERS = [
         wordCount: 3650
     },
     {
-        id: 18,
+        id: 17,
         year: 2017,
         section: 'year',
         title: "FLASHBACK",
@@ -3686,7 +3676,7 @@ export const CHAPTERS = [
         wordCount: 1400
     },
     {
-        id: 19,
+        id: 18,
         year: 2017,
         section: 'year',
         title: "WORLD SERIES",
@@ -3962,7 +3952,7 @@ export const CHAPTERS = [
 
     // 2018 SEASON CHAPTERS (20-24)
     {
-        id: 20,
+        id: 19,
         year: 2018,
         section: 'year',
         title: "AWARDS SEASON",
@@ -4101,7 +4091,7 @@ export const CHAPTERS = [
         wordCount: 2900
     },
     {
-        id: 21,
+        id: 20,
         year: 2018,
         section: 'year',
         title: "DRAFT DAY",
@@ -4267,7 +4257,7 @@ export const CHAPTERS = [
         wordCount: 3200
     },
     {
-        id: 22,
+        id: 21,
         year: 2018,
         section: 'year',
         title: "COOPERSTOWN",
@@ -4461,7 +4451,7 @@ export const CHAPTERS = [
         wordCount: 3700
     },
     {
-        id: 23,
+        id: 22,
         year: 2018,
         section: 'year',
         title: "BURN OUT",
@@ -4665,7 +4655,7 @@ export const CHAPTERS = [
         wordCount: 3800
     },
     {
-        id: 24,
+        id: 23,
         year: 2018,
         section: 'year',
         title: "VIVA LAS VEGAS",
@@ -4913,7 +4903,7 @@ export const CHAPTERS = [
 
     // 2019 SEASON CHAPTERS (25-30)
     {
-        id: 25,
+        id: 24,
         year: 2019,
         section: 'year',
         title: "GLOBETROTTING",
@@ -5052,7 +5042,7 @@ export const CHAPTERS = [
         wordCount: 2700
     },
     {
-        id: 26,
+        id: 25,
         year: 2019,
         section: 'year',
         title: "ROAD TO OMAHA",
@@ -5211,7 +5201,7 @@ export const CHAPTERS = [
         wordCount: 3100
     },
     {
-        id: 27,
+        id: 26,
         year: 2019,
         section: 'year',
         title: "A LETTER TO THE EDITOR",
@@ -5408,7 +5398,7 @@ export const CHAPTERS = [
         wordCount: 3500
     },
     {
-        id: 28,
+        id: 27,
         year: 2019,
         section: 'year',
         title: "CONTROVERSY!",
@@ -6055,7 +6045,7 @@ export const CHAPTERS = [
         wordCount: 8350
     },
     {
-        id: 29,
+        id: 28,
         year: 2020,
         section: 'year',
         title: "BOTTOM NINE",
@@ -6605,9 +6595,9 @@ export const CHAPTERS = [
 
     // 2020 SEASON - No chapters, just the year header (handled in navigation)
 
-    // POSTSCRIPT CHAPTERS (30-31) - Nested under POSTSCRIPT dropdown
+    // POSTSCRIPT CHAPTERS (29-30) - Nested under POSTSCRIPT dropdown
     {
-        id: 30,
+        id: 29,
         year: null,
         section: 'postscript',
         title: "POSTSCRIPT",
@@ -6901,7 +6891,7 @@ export const CHAPTERS = [
         wordCount: 4550
     },
     {
-        id: 31,
+        id: 30,
         year: null,
         section: 'postscript',
         title: "DEDICATION",
