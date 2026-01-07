@@ -71,6 +71,35 @@
             margin-bottom: 10px;
         }
 
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+        }
+
+        .stat-emoji {
+            font-size: 14px;
+        }
+
+        .stat-count {
+            font-weight: bold;
+        }
+
+        .stat-total {
+            grid-column: 1 / -1;
+            padding-top: 8px;
+            margin-top: 4px;
+            border-top: 1px solid #eee;
+            font-weight: bold;
+        }
+
         .toggle-group {
             margin-bottom: 15px;
             padding: 12px;
@@ -1060,13 +1089,13 @@
 
             <div class="extra-panels">
                 <div class="control-panel">
-                    <div class="control-panel-title">Media Popup</div>
-                    <div class="toggle-row">
-                        <span class="toggle-label">Coming soon...</span>
+                    <div class="control-panel-title">Media Stats</div>
+                    <div class="stats-grid" id="mediaStats">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
                 <div class="control-panel">
-                    <div class="control-panel-title">Analytics</div>
+                    <div class="control-panel-title">Quick Actions</div>
                     <div class="toggle-row">
                         <span class="toggle-label">Coming soon...</span>
                     </div>
@@ -1480,6 +1509,34 @@
         legendBtn.addEventListener('click', () => {
             legendDropdown.classList.toggle('show');
         });
+
+        // Populate media stats
+        const statsContainer = document.getElementById('mediaStats');
+        const typeCounts = {};
+        let totalMedia = 0;
+        let liveCount = 0;
+
+        allMedia.forEach(item => {
+            const emoji = item.icon;
+            typeCounts[emoji] = (typeCounts[emoji] || 0) + 1;
+            totalMedia++;
+            if (item.status === '🟢') liveCount++;
+        });
+
+        const statsHTML = Object.entries(typeCounts)
+            .sort((a, b) => b[1] - a[1])
+            .map(([emoji, count]) => `
+                <div class="stat-item">
+                    <span class="stat-emoji">${emoji}</span>
+                    <span class="stat-count">${count}</span>
+                </div>
+            `).join('') + `
+            <div class="stat-item stat-total">
+                <span>Total: ${totalMedia}</span>
+                <span style="margin-left:auto;">Live: ${liveCount}</span>
+            </div>`;
+
+        statsContainer.innerHTML = statsHTML;
 
         // Populate inline chapter dropdown
         const inlineChapterSelect = document.getElementById('inlineChapter');
