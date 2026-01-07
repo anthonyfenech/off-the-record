@@ -3680,274 +3680,572 @@ export const CHAPTERS = [
         year: 2017,
         section: 'year',
         title: "WORLD SERIES",
-        subtitle: "Fall 2017",
-        teaser: "Verlander finally wins it all.",
-        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>September 21, 2017</em>—</span>Ten years later, plans change in a hurry. It's Friday afternoon and I'm ironing my suit jacket, getting ready for a wedding when I get a text.</p>
-            <p>3:33 <span class="small-caps">P.M.</span>—"What's going to happen at Comerica today?"</p>
-            <p>Nothing that concerns me. The Tigers host the Twins—but I'm off.</p>
-            <p>"Picture Day?" (The day where everyone arrives early for the official team photo.)</p>
-            <p>"Between us, the Tigers called us to make sure we send someone down for pregame sound. I didn't tell you."</p>
-            <p>That doesn't sound like Picture Day. It sounds like an alarm.</p>
-            <p>"What's this presser about?" I text manager Brad Ausmus.</p>
-            <p>"How did the beat writer from the paper of record get no heads up on a press conference?" I text Ron Colangelo.</p>
-            <p>"Just get here."</p>
-            <p>I apologize to my friend: "I'm really sorry but not gonna be able to make it tonight… breaking news."</p>
-            <p>Deep Throat reaches out—he has my back. I listen, thank him, text the GM.</p>
-            <p>"I got a tip Brad isn't coming back and I'm going to go with it after I shower."</p>
-            <p>The Highest Source In The Land urges me to shower quickly.</p>
-            <p>I've already found out. Besides Deep Throat, I have a source on the coaching staff saying, "Looks that way, but not 100 percent certain."</p>
-            <p>Teammate George Sipple is at the stadium—PR has called a presser inside the dugout.</p>
-            <p>4:10 <span class="small-caps">P.M.</span>—On my way to the stadium, I'm navigating a school zone when I hit send—The Tigers will not extend Brad Ausmus' contract beyond this season, I'm told."</p>
-            <p>I pump my fist—I've got the scoop.</p>
-            <p>Ausmus and Avila take questions. I listen on the car's radio with my tape recorder riding shotgun. Al told Brad two nights ago the Tigers weren't going to exercise his option for 2018.</p>
-            <p>"I told him if he'd have walked in and offered me a contract, I probably wouldn't have come back… Because the team and this organization are starting over and need a new voice."</p>
-            <p>4:32 <span class="small-caps">P.M.</span>—Arriving late but victorious, I walk onto the field. Particularly peeved to see me is Katie Strang, who had a bead on the news since before I was tipped off. Strang walks to the opposite end of the dugout when I arrive.</p>
-            <p>Seven hours ago, I was getting ready for a wedding. Now, I bleed out a blowout loss.</p>
-            <p>I use the time to write a column. I consider calling Brad but figure he's all talked out. The sports desk's headline goes live: <span class="small-caps">TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE</span>.</p>
-            <p>"<em>Ausmus, a player's manager to a fault, was not the right fit for a team that needed more conviction than comfort from a leader. In talking with Tigers people, that notion was repeated.</em></p>
-            <p>"<em>And, so, the immediate reaction to the unsurprising news is that it had been a long time coming. But it should have come much sooner.</em>"</p>
+        subtitle: "2007-2008, Fall 2017",
+        teaser: "The origin story, and Verlander finally wins it all.",
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It’s my first week at the <em>Free Press</em>.</p>
 
-            <p>&nbsp;</p>
+<p>When I arrive, the security guard asks me to sign-in and calls up to Sports. When the prep sports editor arrives, he tells the guard I’m new on the Prep Crew and I’ll need a badge.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">KANSAS CITY, Mo., <em>September 26</em>—</span>When the final road trip of the season begins, the Tigers rest comfortably in free-fall mode, losers of seven straight. Between the lines and behind closed doors, players can't wait for the season to mercifully end.</p>
-            <p>After Ausmus' perfunctory pregame remarks, I pop my head back into his office—much the way I did a month ago in Chicago. That time, I needed to question him on the chemistry that evaporated beneath the surface of his underperforming veteran team.</p>
-            <p>This time, I want to clear the air. Taking a seat across from Ausmus in the empty office, I ask if he read my column.</p>
-            <p>"Yeah, I did."</p>
-            <p>"I guess, what are your thoughts on it?"</p>
-            <p>"I don't really have many. I'm a little surprised you didn't reach out to me."</p>
-            <p>The comment hits home. I wince.</p>
-            <p>I did consider calling him the night of the announcement, postgame. But I didn't want to bug him into talking again about the bad news of losing his job. What I wrote wasn't personal—I was just calling it like I saw it.</p>
-            <p>"I could've given you my side of things. I think I've helped you out in the past…"</p>
-            <p>"And I appreciate that."</p>
-            <p>Ausmus thought I was piling on with the column. That wasn't my intention—but I wish I'd called him. If I had, he likely would have provided me background information to balance the column.</p>
-            <p>He picks up his phone and starts scrolling.</p>
-            <p>"The other day, I got this text from a baseball writer. I won't say who, but he said about your story—he said, 'That piece is the problem with our industry these days.'"</p>
-            <p>I'm charged with playing Monday Morning Quarterback, joining the vocal majority, jumping on someone by public demand when they're down. If I'm guilty of anything—and I am—it's not doing my due diligence in reporting the story. I should've called Ausmus before writing that column—which is why I slinked into his office today.</p>
-            <p>Ausmus, forty-eight, has been in professional baseball longer than I've been alive. He was drafted by the Yankees in the 48th round of the 1987 draft. He's caught more games than all but six catchers in history. And now he's sitting across from a third-year Ball Writer who just wrote that he should've been fired two years ago.</p>
-            <p>"Quite frankly, you're not qualified for your job."</p>
-            <p>It's a dagger delivered to me in private. My column was delivered to 400,000 <em>Free Press</em> readers. Wince again.</p>
-            <p>"Compared to a guy like John Lowe—no, I'm not qualified for my job… But I've been doing this for a while. I know how to write. I know baseball…"</p>
-            <p>"No, you don't. You don't know baseball."</p>
-            <p>What's a third-year Ball Writer to say?</p>
-            <p>"I guess you're right."</p>
-            <p>I take my medicine. We shake hands and I leave feeling a little bit better—but still sour that I didn't call.</p>
+<p>Say cheese!</p>
 
-            <p>&nbsp;</p>
+<p>I’m nineteen and finishing my second year at community college. I didn’t really apply myself in high school and got a 2.8 GPA. The plan was to get good grades and transfer to a big journalism school, but school has never been my thing.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline"><em>October 1</em>—</span>The Tigers have just wrapped up a last-place season (64-98) with a lopsided loss to Minnesota.</p>
-            <p>When reporters entered the clubhouse, Cabrera sat visibly emotional in front of his locker with a towel draped over his head. Hitting coach Lloyd McClendon consoled him.</p>
-            <p>But after disappearing for a minute, Miggy re-appears with a big smile, smells like booze and sways our way.</p>
-            <p>He comes closer and says louder, "Lloyd McClendon… Fredi González… Ozzie Guillén."</p>
-            <p>This was Cabrera's way of relaying his preferences for the Tigers' open managerial seat. Before I can establish an on- or off-the-record discussion, he's gently led away by the team's Spanish translator.</p>
-            <p>I wasn't the only Ball Writer who heard Miggy's endorsements. Neither of us wrote about it.</p>
-            <p>I circle back to Cabrera on the way out.</p>
-            <p>"Have a good offseason."</p>
-            <p>"Later, bro."</p>
-            <p>Outside the clubhouse, I wait for the Highest Source In The Land. Al Avila walks out with a phone to his ear.</p>
-            <p>"Just checking my voicemail."</p>
-            <p>"I just wanted to say thank you."</p>
-            <p>When we bring it in for a handshake and a hug, I see <em>Fredi González</em> on his screen.</p>
-            <p>"Fredi González, huh?"</p>
-            <p>"You motherfucker."</p>
+<p>So, I’m diving headfirst into sports journalism. I worked an unpaid internship at Detroit’s sports radio station last year, and I still write blogs for the show’s website sometimes.</p>
 
-            <p>&nbsp;</p>
+<p>Inside a back room on the newsroom’s third floor, I receive my first taste of sports writing, answering phones as coaches call in to report scores and statistics. I put ‘em in a text file and send ‘em to an editor before deadline.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline"><em>October 19</em>—</span>For the second year in a row, my birthday is interrupted by breaking news.</p>
-            <p>Last year, starting pitcher Daniel Norris revealed he'd been diagnosed with thyroid cancer. This year, the Tigers have hired a manager. In no surprise, general manager Al Avila has opted for a veteran—Ron Gardenhire, longtime Minnesota Twins skipper.</p>
-            <p>To my chagrin, I'm caught off-guard by the news, broken by Katie Strang and Ken Rosenthal. I'm furious with Gardenhire's agent, John Boggs.</p>
-            <p>I was so out of touch with the Tigers' search that I was texting players earlier about support for hitting coach Lloyd McClendon, who was promised an interview.</p>
-            <p>To Boggs: "Is this accurate about Gardenhire?"</p>
-            <p>"Anthony, I do not have anything to report at this time."</p>
-            <p>"John, the National Guys have this. What gives?"</p>
-            <p>"Anthony, don't know what the National Guys have—only can tell you that I don't have anything to report at this time. Hope you can respect that."</p>
-            <p>Biting my tongue: "Yes, I do. Thank you for getting back to me."</p>
+<p>&nbsp;</p>
 
-            <p>&nbsp;</p>
+<p class="has-dateline no-indent"><span class="dateline"><em>August 31, 2007</em>—</span>Sports writing is going great so far.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">LOS ANGELES, <em>October 31</em>—</span>At the airport again. I get a text from Alex Avila, who says he's in Italy. I reached out to Alex once my flight was booked: "I have to write a story on Verlander. Is there anything behind the scenes you might know, any possible angles, etc.?"</p>
-            <p>I've been sent to L.A. on last-minute notice. Yesterday, my sports editor called and asked if I'd fly here to cover the rest of the World Series—they're interested in the Verlander angle. The Astros lead the series, 3-2, one win away from winning it all. Game 6 is tonight at Dodger Stadium—Justin is on the mound.</p>
-            <p>It's another chance to drop in on my favorite player growing up.</p>
-            <p>Credentialed in the auxiliary press box for Game 6. I sit at a World Series game, texting Gator, who's at the airport in Miami getting ready to fly to Italy for Verlander's wedding on the Amalfi Coast.</p>
-            <p>In his first-ever chance to win the World Series, Verlander pitches well but allows the Dodgers two fateful runs—Houston scores only once and they lose.</p>
-            <p>I prepare for the potential worst-case scenario—a pissed-off postgame Verlander who previously swore to never answer one of my questions again… popping out from the pack of reporters… a prime chance to embarrass me in front of the National Guys.</p>
-            <p>I don't know what to expect.</p>
-            <p>I stand around his locker two guys back—tall enough to see straight at him. Verlander's session has begun. He's a few questions deep, scanning the scrum while answering a question.</p>
-            <p>I'm startled when he spots me and stops.</p>
-            <p>"Oh, Anthony. Hey."</p>
-            <p>He says it friendly, like, '<em>Hello, Old Pal</em>!'</p>
-            <p>"Where was I? Oh, yes…"</p>
-            <p>Now I have to ask a question. To Verlander's left, the Astros PR guy sends a warning. "Last couple, guys."</p>
-            <p>At the buzzer, I lob my question.</p>
-            <p>He answers. I'm relieved.</p>
-            <p>As the crowd disperses, celebrity news breaker Jon Heyman walks by.</p>
-            <p>"He seemed happy to see you. He must like you."</p>
+<p>I’ve earned a bunch of “contributing” bylines for writing short game recaps. I find these stories easily when coaches call in with a close score. I gauge the game’s worthiness by asking, “Was it a good game?”</p>
 
-            <p>&nbsp;</p>
+<p>If they answer convincingly, I ask for details and write a short story. Mom cuts them out of the paper as mementos.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline"><em>November 1</em>—</span>In Game 7, Houston ambushes the Dodgers in the first inning. George Springer jumps a Yu Darvish fastball for a lead-off double and scores on a throwing error. The Astros score twice before Darvish records an out.</p>
-            <p>The next inning, Springer. Again. He homers on a hanging slider. 5-0, Houston. It's an anti-climactic series finale from there.</p>
-            <p>Verlander isn't needed for duty. He watches the final out from the bullpen, streaming onto the field in a celebratory sprint with the rest of his mates.</p>
-            <p>Inside the clubhouse after the Astros win the World Series, I awkwardly hover with my tape recorder stretched behind a cameraman while Ken Rosenthal interviews him on FOX.</p>
-            <p>Even after yesterday's friendly display, even after Houston wins, I'm not sure if Justin will stonewall me. I'm not the only reporter stalking him when he leaves the TV interview. A pair of entertainment reporters charge his way. I cozy up alongside as a small scrum starts to form. Opposite is a woman from <em>E! News</em>, who wastes no time asking about the reported wedding.</p>
-            <p>"Is it true that you and Kate Upton are getting married on Saturday?"</p>
-            <p>Verlander doesn't say no.</p>
-            <p>"I'm not going to speak on the details… I'm just happy we won."</p>
-            <p>She's intrepid, though. She asks if the wedding is in Italy.</p>
-            <p>"I'm just glad we won the World Series."</p>
-            <p>Asked if he has a message for his fans back in Detroit, Verlander says, "Thank you for everything over the years, thank you for recognizing all the hard work that I put in, thank you for recognizing how hard of a decision this was for me. Thank you from the bottom of my heart."</p>
-            <p>We shake hands and we go our separate ways—Old Pals once again.</p>
-            <p>When I leave the clubhouse, I walk past Verlander family members on their way in—his mom, his dad, his soon-to-be wife (sunglasses off) and his little brother.</p>
-            <p>They are moving fast, ready to celebrate. One of them sees me and offers a quick wave of acknowledgment as they hurry past.</p>
-            <p>I write the stuffing out of that story—it takes until the sun comes up.</p>
-            <p>"<em>Verlander wore an Astros shirt. A backwards hat with a certain accomplishment in his eyes.</em></p>
-            <p>"'<em>I can't even put it into words; This experience is everything I dreamed it would be.'</em></p>
-            <p>"<em>But for so long, his dream came true in Detroit. A city he considers home, with teammates he considers family, for the only fans he's known. And damned if he didn't try. But when he finally won the World Series, the thought was not far behind.</em></p>
-            <p>"'<em>Yes,' he felt the support of the city this postseason, he said, trying to wipe away the winning burn that ultimately brought him here. 'I absolutely did.'</em></p>
-            <p>"'<em>I'm never going to forget my time in Detroit… It's a special place for me.'</em></p>
-            <p>"<em>After a few hugs and a kiss from a teammate, eyes still burning and Budweiser in hand, Verlander reached for his cell phone. It was sitting on a toiletry bag in his locker.</em></p>
-            <p>"<em>The bag had the Olde English 'D' on it.</em>"</p>
-            <p>The next day, I hear from Verlander's dad, who shared the story on his Facebook page. I even get a message from Tigers legal guy John Westhoff, who never texts me.</p>
-            <p>"Nice article about J.V."</p>
-            <p>"Thanks. See you at the GM Meetings."</p>
+<p>Last month, I got the chance to cover my first game—a Little League matchup for the state championship. The local team’s victory landed my story in the community section of the Sunday Paper!</p>
 
-            <p>&nbsp;</p>
+<p>The Prep Crew is packed to the gills during high school football season: Six guys every Friday night. Sounds like a call center. One person handles the score list: it’s important to get as many scores into the early editions as possible.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">ORLANDO, Fla., <em>November 14</em>—</span>I begin the GM meetings with a bang.</p>
-            <p>"Mark Montgomery has a minor league deal in place with the Tigers," an agent source alerts. "MLB invite. Say from a source."</p>
-            <p>Montgomery is a journeyman reliever. His signing may not move the needle—minor-league deals are the shrimp in a sea of scoops. But it feels good to get one out of the way early.</p>
-            <p>First night at the lobby bar, I'm talking to a New York scribe when two Tigers Guys walk up—Alan Avila and Sam Menzin.</p>
-            <p>Avila is assistant legal counsel. Menzin is the pro scouting director.</p>
-            <p>I get on well with Avila, the oldest of Al's two sons. He is much more cut from his father's cloth than younger brother Alex, the team's longtime catcher.</p>
-            <p>Menzin, meanwhile, has been a cold case. I last spoke with him two years ago, when he stonewalled me after his promotion.</p>
-            <p>"I don't talk to the media," Menzin said then.</p>
-            <p>With drinks flowing steadily, Avila and Menzin mesh easily with us. The New York writer talks with Menzin and exchanges cards with him—something I've been trying for years.</p>
-            <p>"Wow! You'll give <em>him</em> your card, but not <em>me</em>? Just when I thought we were making strides, Sam."</p>
-            <p>"I was younger then… I didn't know what to do. I'll give you my number. What's yours?"</p>
+<p>We have an eclectic mix on the Prep Crew. Some will carve out impressive careers: Jon Machota will one day cover the Dallas Cowboys. Marty Dobek is a future steward for the Detroit Sports Commission.</p>
 
-            <p>&nbsp;</p>
+<p>But many have no sports writing ambitions. Corey moonlights as rapper Leaf Erikson. Matt is going to business school. Charlie is a musician. Nobody knows what James does, or if it’s legal. From the back room where the Prep Crew sits, I look over my shoulder at a Sports Department powerhouse: cubicles filled, editors by the dozen and a roster of writers covering everything under the sun.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">ORLANDO, Fla., <em>December 10</em>—</span>Back in Orlando for the winter meetings. I'm a seasoned vet—it's my fourth meetings.</p>
-            <p>Opening night isn't laid back this year—two legendary Tigers are up for election to the Baseball Hall of Fame, with the announcement in a couple hours.</p>
-            <p>Starting pitcher Jack Morris and shortstop Alan Trammell are part of this year's Veterans' Committee ballot for players not elected by the Baseball Writers' Association of America.</p>
-            <p>I await the Veterans' Committee decision in my room, writing up four different stories to cover all bases—one if both players get in, one if neither gets in, one each if only one gets in.</p>
-            <p>The official word comes shortly after 6 <span class="small-caps">P.M.</span>—the Tiger teammates are headed to Cooperstown. Morris was selected on fourteen of sixteen, Trammell on thirteen. After media teleconferences, Trammell speaks with the Tiger Beat downstairs.</p>
-            <p>"I'm not usually at a loss for words, but it's overwhelming."</p>
-            <p>After the scrum, I rush up to the room. I upload the video from Trammell's interview and send it to the web desk. I text with Deep Throat. I phone Kirk Gibson: "About time."</p>
-            <p>General manager Al Avila shares a video from dinner at Shula's Steak House."</p>
-            <p>"We gave Tram a standing ovation. Toasted him. Jack is not here yet."</p>
-            <p>In the video, Tram is welcomed to the private room at the restaurant. The roster of dinner attendees is deep in Detroit baseball lore—Mr. Tiger Al Kaline, Willie Horton, Jim Leyland—along with manager Ron Gardenhire and the rest of the front office.</p>
-            <p>"Great moment. Thanks for sharing."</p>
-            <p>"Yes! What a great night."</p>
-            <p>"Let me know if you want to have a cigar after your meeting, before things get crazy."</p>
-            <p>"I didn't bring any. Have one for me."</p>
-            <p>"I'm offering you one… Got three."</p>
+<p>In 2007, Freep Sports has a staff of 44, including 24 folks manning the desk and 18 sports writers covering Detroit’s pro and Big Ten teams, columnists and general assignment reporters. We’ve even got writers for outdoor sports, motorsports and prep sports.</p>
 
-            <p>&nbsp;</p>
+<p>&nbsp;</p>
 
-            <p class="has-dateline no-indent"><span class="dateline"><em>December 11</em>—</span>On the first afternoon of the winter meetings, tension simmers inside the Tigers' suite. I'm sitting at the opposite end of the row from Katie Strang, who strikes fear in the room.</p>
-            <p>Last week, Detroit signed catcher Derek Norris to a minor-league deal. Norris served a season-ending suspension for domestic violence and was fined $100,000. He put his ex-fiancée in a chokehold and grabbed her by the hair when she tried to get away.</p>
-            <p>Instead of immediately questioning Avila over the phone, I held off, trying to curry favor—with the winter meetings a few days away, I'd have the opportunity to ask him in person.</p>
-            <p>Strang jumps right in. Her questions soon have Tigers' officials tongue-tied. They point at each other, using the commissioner's office as a shield.</p>
-            <p>"The main thing you should know is we called the commissioner's office… they felt we certainly should sign the guy."</p>
-            <p>Avila looks to legal counsel John Westhoff for guidance.</p>
-            <p>"Obviously, all of these things are serious, but it was the mildest…"</p>
-            <p>Avila finishes Westhoff's thought. "The mildest of the seriousness that you can get. Let's put it that way."</p>
-            <p>Mild? A season-ending suspension and $100,000 fine?</p>
-            <p>In one breath, Avila says the team is confident Norris' behavior is in the rearview mirror. In the next breath, Avila says he's never talked to Norris.</p>
-            <p>I ask for the Detroit Tigers' stance on domestic violence.</p>
-            <p>"Obviously, we don't tolerate it. Obviously, if there's a domestic violence situation, it will be investigated."</p>
-            <p>Asked by Strang how the team could be so confident in signing him, assistant GM David Chadd says, "I've known him since he was eight years old… what we did was go to the commissioner's office and get their take on what happened."</p>
-            <p>Strang also went to the commissioner's office. She reached out to the victim, his agent, and the Players' Association. In a statement to the <em>Athletic</em>, MLB said, "The Tigers asked if there were any issues with signing Mr. Norris. We let them know that he had completed his suspension and was eligible to sign with any club."</p>
-            <p>Norris never returned to the majors, with the Tigers or anyone else.</p>
+<p class="has-dateline no-indent"><span class="dateline"><em>September 5, 2007</em>—</span>Today is my first Tigers game as a member of the media. I’m official. I’ve got a credential with my name and affiliation: <em>Detroit Free Press</em>.</p>
 
-            <p>&nbsp;</p>
+<p>I’m tagging along with longtime Tigers beat reporter John Lowe, who obliged when asked to shadow him at a game. I want to see what a beat writer <em>does</em>. Lowe is an institution.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline"><em>December 13</em>—</span>The Tigers have pushed back today's media session. I've been holed up in my room pestering people like Al Avila about Kinsler.</p>
-            <p>"Checking in on Kinsler."</p>
-            <p>Waiting for an elevator, I thumb through breaking news. Shohei Ohtani has a bum pitching elbow, according to <em>Yahoo! Sports</em>' Jeff Passan.</p>
-            <p>When the elevator arrives, it opens to the National Guy responsible for breaking the news.</p>
-            <p>"Nice scoop with the Ohtani story."</p>
-            <p>I head to the lobby bar and bring two whiskeys back—it could be a long night.</p>
-            <p>An hour later, I text agent Jay Franklin: "Checking in on Kinsler, sorry to bug."</p>
-            <p>He answers. "Get back with ya here soon, buddy."</p>
-            <p>6:59 <span class="small-caps">P.M.</span>—Ken Rosenthal reports the Angels are in serious discussions to acquire Kinsler. A few minutes later, Rosenthal goes all the way. "Kinsler to Angels."</p>
-            <p>The small difference in attribution indicates the source behind Rosenthal's scoop—my "buddy."</p>
-            <p>In The Room sources tell me no deal is imminent. The truth between what those sources say and what Rosenthal reported is semantics.</p>
-            <p>Behind the scenes, Kinsler's camp has brilliantly leveraged his no-trade protection. It's Anaheim or bust, he tells Avila.</p>
-            <p>While the baseball world waits, ESPN's Buster Olney throws cold water on the trade: "Tigers do not have an Ian Kinsler deal with the Angels yet, according to sources."</p>
-            <p>Rosenthal can't resist: "Any delay on Kinsler likely would be due to his no-trade. Again, my understanding is deal will happen."</p>
-            <p>Meanwhile, I haven't heard back from Jay Franklin. "Soon, buddy" was an hour ago.</p>
-            <p>8:47 <span class="small-caps">P.M.</span>—I get confirmation from an L.A. scout, but I can't go with only a scout. I use it to confirm the deal, then quickly report the players Detroit receives in return.</p>
-            <p>Soon after, the feeling is downright funereal inside the Tigers' suite. Team execs arrived envisioning a sweepstakes for Kinsler. Four teams were interested initially. Then Kinsler unplugged the game, and Detroit had to settle for what little the Angels offered.</p>
-            <p>"It's very frustrating," Al Avila says.</p>
-            <p>11:44 <span class="small-caps">P.M.</span>—At the lobby bar, I see a couple guys from the agency that represents Justin Upton. Reuniting with Upton weighed heavily on Kinsler's decision.</p>
-            <p>The trade took time because Avila held out false hope that Kinsler would budge. Kinsler phoned Avila with the bad news.</p>
-            <p>"I don't know what to tell ya, buddy, but I'm only going to the Angels."</p>
+<p>In the press box, John pulls a thick book from his bag. “Don’t let me forget. I have something I want you to read.”</p>
 
-            <p>&nbsp;</p>
+<p>Inside the clubhouse, I stand feet away from guys I grew up idolizing.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>January 8, 2018</em>—</span>Nothing to report. It's a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents—including mega-stars Bryce Harper and Manny Machado—are still on the market. Former Tiger J.D. Martinez, too.</p>
-            <p>Meanwhile, I'm not getting many scoops. The Tigers are entering the first year of a tear-it-down rebuild. They did sign veteran righty Mike Fiers (my scoop), but otherwise, just minor-league signings.</p>
-            <p>They are essentially tanking, shedding expensive salaries and accruing prospects. The Tigers will stink for a few years—the worse they are, the higher the draft pick.</p>
-            <p>The lack of scoops is either due to the Tigers rebuild—or it's me.</p>
-            <p>Maybe I'm <em>still</em> not persistent enough. Over the past year, more kid reporters have popped up—college-age guys who are breaking more news than me. I picture them glued to their phones, constantly texting sources.</p>
-            <p>I don't know if I have it in me to be that obsessed all the time. To be honest, I don't know if I <em>want</em> to. Serving the 24/7 Internet and printed newspaper deadlines makes my dream job harder each year. As a kid, I grew up wanting to be Mitch Albom. My end goal remains to be a columnist, which better suits my writing style.</p>
-            <p>I became a Ball Writer to <em>write</em>—not stenograph seven web updates a day.</p>
-            <p>Since our newest sports editor hopped in the driver's seat last year and set the cruise to 150 mph, I've been snagging speed from a network of folks just to keep up—a former roommate, a guy I met in the locker room at LA Fitness, a lady I see at the Anchor Bar, a contact on the Tigers' business side.</p>
-            <p>Morning web updates. Midday web updates. Pregame, in-game and postgame web updates. Videos, podcasts, tweets. Live chats and awkward questions.</p>
-            <p>So, I take another pill. I reach out to sources, begging around for more and more morsels of information.</p>
-            <p>I also realize I'm caring less and less.</p>
+<p>In the manager’s office, Tigers skipper Jim Leyland is lying on a couch in a tank top, smoking a cigarette. He’s asked about tonight’s rain forecast.</p>
 
-            <p>&nbsp;</p>
+<p>“I had a rule in A-ball… They get on the bus, and I say, ‘If you fuckers look up at the clouds, I’m fining the shit out of you.’” Uproarious laughter.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">LAKELAND, Fla., <em>February 1</em>—</span>In TigerTown early to report on top prospects.</p>
-            <p>At night, I search for front office guys to go out with. It comes as no surprise that I spy Al Avila. Tigers GM is at Chili's for happy hour.</p>
-            <p>We decide on Fish City Grill, smack dab in the center of a nearby outdoor mall.</p>
-            <p>"6:30 cocktails, 7:00 dinner. You're paying. That big newspaper expense account."</p>
-            <p>In the future, when I look back on my Ball Writing life, I'll look back on tonight as high tide. At the moment, everything is working in harmony. Anthony Fenech and the Tigers are getting along quite well. We're setting up stories together, talking on the phone and texting, busting each other's chops. Even Sam Menzin answers my calls these days.</p>
-            <p>With the rebuild underway, the pressure to win is put on the backburner. The Tigers are relaxed. Going into my fourth year on the beat, my relationships are in bloom.</p>
-            <p>We sit outside. Drinks and a cigar. During dinner, Avila comments how my bosses must love him—for the info he shares with me.</p>
-            <p>"They should be more worried I'm getting too close with you."</p>
-            <p>After dinner, we head to a beer-only bar across the street and order soft pretzel bites. Al talks about his early years in baseball. He tears up talking about how tough it was traveling with the Marlins for years, leaving a young wife and two sons at home.</p>
-            <p>Avila also lets me in on a blockbuster trade that never happened: Last summer, the Tigers could have traded young righty Michael Fulmer to the Cubs for star shortstop Javier Báez and two prospects—Albert Almora and Víctor Caratini. But the Tigers viewed Fulmer as a rotation anchor—too high a price.</p>
-            <p>Sitting at the bar, Al is not the Tigers GM. I'm not a Ball Writer. Here, I'm a drinking buddy. A friend.</p>
-            <p>I realize that our relationship will always be rooted transactionally, in a game of give-and-take. But for the moment, our unlikely friendship is triumphing over the competing interests meant to keep it at bay.</p>
-            <p>Still… I'm a Ball Writer. When I get back to my hotel, I immediately write notes on what Avila told me. There might come a day.</p>
+<p>Leaving Leyland’s office, I’m sold on sports writing.</p>
 
-            <p>&nbsp;</p>
+<p>John looks at me. “That is what the Mona Lisa of baseball managers looks like. They’re not all made like that.”</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>February 6</em>—</span>Things are going so well, the Tigers let me throw luggage onto their 18-wheeler of baseball equipment, training supplies and other cargo soon headed to Florida for spring training. I'll realize later that this is a convenience afforded to everyone on the Tiger Beat—I'm not that special.</p>
-            <p>I park my car in the garage back home, where it'll stay for the next six weeks, and give Mom a big hug at departures—it's off to spring training once again.</p>
+<p>Back in the clubhouse, I do what any 19-year-old would his very first time here—I walk up to my favorite player, Justin Verlander, last year’s American League Rookie of the Year. Earlier this year, I nearly drove my car off the freeway when he threw a no-hitter. It was my grandma’s funeral that day, which I think was a message from heaven.</p>
 
-            <p>&nbsp;</p>
+<p>I introduce myself as a <em>Free Press</em> intern and ask: “What do you chew?”</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">SECAUCUS, N.J., <em>February 7</em>—</span>Making my annual pit stop at MLB Network. This year, I'm a panelist on the network's afternoon show.</p>
-            <p>I arrive five hours early. We're opening with the ongoing free-agent saga of J.D. Martinez.</p>
-            <p>After the Tigers traded Martinez to Arizona last summer, he mashed 29 home runs in 62 games, powering the Diamondbacks to the postseason. He hit the free agent market as one of the most feared hitters in baseball.</p>
-            <p>But in November, J.D. ditched longtime agent Bob Garber for Scott Boras.</p>
-            <p>Posting up in a shared office, Ken Rosenthal sticks his head in to say hello. Today is his last appearance for a while—he will soon undergo back surgery.</p>
-            <p>"Six-to-eight weeks," he says.</p>
-            <p>Overnight, J.D. Martinez finds his name at the head of rumors, due to the latest from National Guy Jon Heyman: "Martinez is telling people in Miami that he's willing to hold out until he gets his price."</p>
-            <p>Rosenthal matches Heyman's report and adds that Martinez is "telling people that he is fed up with the Red Sox's inflexibility and would rather sign with another club."</p>
-            <p>With the spotlight on Martinez's situation and three years' experience covering him, I better bring something to the stage. I text J.D.: "I'm in New York to go on MLB Network show and we're going to be talking about you. Is there anything you would like me to get out there, message-wise?"</p>
-            <p>"I said you don't seem like the kinda guy that's gonna be pissed at any specific team for an offer."</p>
-            <p>"Haha I never said those things about being pissed off. Lol I don't know where people get this shit. I just laugh about it. Nowadays people can write anything, and everyone believes anything. What time you going on?"</p>
-            <p>Before I can answer, J.D. calls me.</p>
-            <p>"Look, Anthony: If Boston wants me to become a full-time DH, they're going to have to pay a little bit more, you know?"</p>
-            <p>Martinez tells me not to say this on TV, but he's got two offers—Arizona and Boston.</p>
-            <p>I want to look good. The benefits of sitting on stage are big when you recognize how they can boost your relationships. Pretty much everyone gets back to you when you're on TV. Ken Rosenthal benefits from this every day. He doesn't <em>have</em> to text sources—they text him. He's got the platform to spin their intel for favors in return.</p>
-            <p>Seconds from live, I hear the show's intro, producers in my ear, and we're off…</p>
-            <p>Scott Braun, anchor: "This, the latest from Ken Rosenthal, on the five-year, $125 million offer from the Red Sox. Ken said, 'He is telling people in Miami he is willing to hold out until he gets his price…"</p>
-            <p>"Anthony. Do you think that happens? You covered J.D. for quite a few years…"</p>
-            <p>"Well, first of all, the notion that he's fed up—far be it from me to contradict any reporting otherwise—but people close to J.D. have said that's kind of laughable. This is a guy I've covered for a few years, and it would be very out of character if he's walking around pouting about $100 million.</p>
-            <p>"I think the big thing is that he wants to play right field, not be a designated hitter. Boston already has a right fielder, so if they want him as a DH, they're going to have to pay premium for that."</p>
-            <p>Got the first segment under my belt and the rest was a blur. Positive reviews.</p>
-            <p>Shuttling back to the train station, it's J.D.</p>
-            <p>"Hey man thanks so much for that I just saw the interview."</p>
-            <p>He'll remain unsigned for two more weeks, until Dave Dombrowski wins the staring contest with Scott Boras. Martinez signs with Boston for five years and $110 million.</p>
-            <p>The news is broken by who else but Pedro Gomez.</p>
-            <p>He shares his source—J.D. Martinez.</p>`,
-        wordCount: 4800
+<p>“Oh. Dip… Copenhagen straight.”</p>
+
+<p>I’m one numb-skull question away from Verlander calling security.</p>
+
+<p>During the game, John has me track Kenny Rogers’ pitch velocity. After I transcribe Leyland quotes, he passes me the book.</p>
+
+<p>Leaving the ballpark, I’m hooked. I fear I’ve been drugged by this life.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>February 10, 2008</em>—</span>I’m about to meet another legend today, after picking John Lowe’s brain all winter. We’d meet up at bookstores and Ram’s Horn. I keep notes, so I don’t lose the wisdom he shares.</p>
+
+<p>I turned twenty last fall, so I need all the guidance I can get. Seamhead was already a Ball Writer at my age. I’m still answering phones.</p>
+
+<p>But I did end up helping cover five Tigers games last year—and now I’m hanging out with Tigers’ broadcasting legend Ernie Harwell.</p>
+
+<p>I’m at Harwell’s retirement complex for his surprise 90th birthday party. One of his friends invited me, and here I am sitting with Ernie and his wife Lulu.</p>
+
+<p>Me and Ernie, shooting the breeze—my dad’s gonna think this is so cool.</p>
+
+<p>I did my research, so I know what to ask. “Who were your favorite performers?”</p>
+
+<p>“The big bands, that’s the era I liked.”</p>
+
+<p>He talks about Bing Crosby and Frank Sinatra. Brings up B.J. Thomas.</p>
+
+<p>“I don’t know if you remember him or not.”</p>
+
+<p>“I can’t even grow facial hair… I don’t remember a lot of those guys.” I tell Ernie I want to be a sports writer.</p>
+
+<p>“Freelance writer is a tough job. When I got out of school my senior year, I planned to be a newspaper man, and I couldn’t get a job. So, I’m really a failed sports writer.” Ernie laughs.</p>
+
+<p>I ask for his favorite sports writers.</p>
+
+<p>“I think the sports writers today are a lot better than they used to be… They’re better trained on the literary side. When sports writing first started, the sports editors were the guys that had the good contacts. They really couldn’t write much, but they hung around the pool, and they knew the gamblers—so they could get information.</p>
+
+<p>“And it’s developed now where guys can really write, they can put a phrase together.” Ernie praises Detroit sports writers—Mitch Albom, Drew Sharp, John Lowe. One day, I hope to be mentioned in the same breath.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>September 21, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
+
+<p>3:33 <span class="small-caps">P.M.</span>—"What’s going to happen at Comerica today?”</p>
+
+<p>Nothing that concerns me. The Tigers host the Twins—but I’m off.</p>
+
+<p>“Picture Day?” (The day where everyone arrives early for the official team photo.)</p>
+
+<p>“Between us, the Tigers called us to make sure we send someone down for pregame sound.</p>
+
+<p>I didn’t tell you.”</p>
+
+<p>That doesn’t sound like Picture Day. It sounds like an alarm.</p>
+
+<p>“What’s this presser about?” I text manager Brad Ausmus.</p>
+
+<p>“How did the beat writer from the paper of record get no heads up on a press conference?” I text Ron Colangelo.</p>
+
+<p>“Just get here.”</p>
+
+<p>I apologize to my friend: “I’m really sorry but not gonna be able to make it tonight… breaking news.”</p>
+
+<p>Deep Throat reaches out—he has my back. I listen, thank him, text the GM. “I got a tip Brad isn’t coming back and I’m going to go with it after I shower.” The Highest Source In The Land urges me to shower quickly.</p>
+
+<p>I’ve already found out. Besides Deep Throat, I have a source on the coaching staff saying,</p>
+
+<p>“Looks that way, but not 100 percent certain.”</p>
+
+<p>Teammate George Sipple is at the stadium—PR has called a presser inside the dugout.</p>
+
+<p>4:10 <span class="small-caps">P.M.</span>—On my way to the stadium, I’m navigating a school zone when I hit send—The</p>
+
+<p>Tigers will not extend Brad Ausmus’ contract beyond this season, I’m told.” I pump my fist—I’ve got the scoop.</p>
+
+<p>Ausmus and Avila take questions. I listen on the car’s radio with my tape recorder riding shotgun. Al told Brad two nights ago the Tigers weren’t going to exercise his option for 2018.</p>
+
+<p>“I told him if he’d have walked in and offered me a contract, I probably wouldn’t have come back… Because the team and this organization are starting over and need a new voice.”</p>
+
+<p>4:32 <span class="small-caps">P.M.</span>—Arriving late but victorious, I walk onto the field. Particularly peeved to see me is Katie Strang, who had a bead on the news since before I was tipped off. Strang walks to the opposite end of the dugout when I arrive.</p>
+
+<p>Seven hours ago, I was getting ready for a wedding. Now, I bleed out a blowout loss.</p>
+
+<p>I use the time to write a column. I consider calling Brad but figure he’s all talked out. The sports desk’s headline goes live: <span class="small-caps">TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE</span>.</p>
+
+<p>“<em>Ausmus, a player’s manager to a fault, was not the right fit for a team that needed more conviction than comfort from a leader. In talking with Tigers people, that notion was repeated.</em> “<em>And, so, the immediate reaction to the unsurprising news is that it had been a long time coming. But it should have come much sooner.</em>”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 26</em>—</span>When the final road trip of the season begins, the Tigers rest comfortably in free-fall mode, losers of seven straight. Between the lines and behind closed doors, players can’t wait for the season to mercifully end.</p>
+
+<p>After Ausmus’ perfunctory pregame remarks, I pop my head back into his office—much the way I did a month ago in Chicago. That time, I needed to question him on the chemistry that evaporated beneath the surface of his underperforming veteran team.</p>
+
+<p>This time, I want to clear the air. Taking a seat across from Ausmus in the empty office, I ask if he read my column.</p>
+
+<p>“Yeah, I did.”</p>
+
+<p>“I guess, what are your thoughts on it?”</p>
+
+<p>“I don’t really have many. I’m a little surprised you didn’t reach out to me.” The comment hits home. I wince.</p>
+
+<p>I did consider calling him the night of the announcement, postgame. But I didn’t want to bug him into talking again about the bad news of losing his job. What I wrote wasn’t personal—I was just calling it like I saw it.</p>
+
+<p>“I could’ve given you my side of things. I think I’ve helped you out in the past…”</p>
+
+<p>“And I appreciate that.”</p>
+
+<p>Ausmus thought I was piling on with the column. That wasn’t my intention—but I wish I’d called him. If I had, he likely would have provided me background information to balance the column.</p>
+
+<p>He picks up his phone and starts scrolling.</p>
+
+<p>“The other day, I got this text from a baseball writer. I won’t say who, but he said about your story—he said, ‘That piece is the problem with our industry these days.’”</p>
+
+<p>I’m charged with playing Monday Morning Quarterback, joining the vocal majority, jumping on someone by public demand when they’re down. If I’m guilty of anything—and I am— it’s not doing my due diligence in reporting the story. I should’ve called Ausmus before writing that column—which is why I slinked into his office today.</p>
+
+<p>Ausmus, forty-eight, has been in professional baseball longer than I’ve been alive. He was drafted by the Yankees in the 48th round of the 1987 draft. He’s caught more games than all but six catchers in history. And now he’s sitting across from a third-year Ball Writer who just wrote that he should’ve been fired two years ago.</p>
+
+<p>“Quite frankly, you’re not qualified for your job.”</p>
+
+<p>It’s a dagger delivered to me in private. My column was delivered to 400,000 <em>Free Press</em> readers. Wince again.</p>
+
+<p>“Compared to a guy like John Lowe—no, I’m not qualified for my job… But I’ve been doing this for a while. I know how to write. I know baseball…” “No, you don’t. You don’t know baseball.” What’s a third-year Ball Writer to say?</p>
+
+<p>“I guess you’re right.”</p>
+
+<p>I take my medicine. We shake hands and I leave feeling a little bit better—but still sour that I didn’t call.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>October 1</em>—</span>The Tigers have just wrapped up a last-place season (64-98) with a lopsided loss to Minnesota.</p>
+
+<p>When reporters entered the clubhouse, Cabrera sat visibly emotional in front of his locker with a towel draped over his head. Hitting coach Lloyd McClendon consoled him.</p>
+
+<p>But after disappearing for a minute, Miggy re-appears with a big smile, smells like booze and sways our way.</p>
+
+<p>He comes closer and says louder, “Lloyd McClendon… Fredi González… Ozzie Guillén.” This was Cabrera’s way of relaying his preferences for the Tigers’ open managerial seat. Before I can establish an on- or off-the-record discussion, he’s gently led away by the team’s Spanish translator.</p>
+
+<p>I wasn’t the only Ball Writer who heard Miggy’s endorsements. Neither of us wrote about</p>
+
+<p>it.</p>
+
+<p>I circle back to Cabrera on the way out.</p>
+
+<p>“Have a good offseason.”</p>
+
+<p>“Later, bro.”</p>
+
+<p>Outside the clubhouse, I wait for the Highest Source In The Land. Al Avila walks out with a phone to his ear.</p>
+
+<p>“Just checking my voicemail.”</p>
+
+<p>“I just wanted to say thank you.”</p>
+
+<p>When we bring it in for a handshake and a hug, I see <em>Fredi González</em> on his screen.</p>
+
+<p>“Fredi González, huh?”</p>
+
+<p>“You motherfucker.”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>October 19</em>—</span>For the second year in a row, my birthday is interrupted by breaking news.</p>
+
+<p>Last year, starting pitcher Daniel Norris revealed he’d been diagnosed with thyroid cancer. This year, the Tigers have hired a manager. In no surprise, general manager Al Avila has opted for a veteran—Ron Gardenhire, longtime Minnesota Twins skipper.</p>
+
+<p>To my chagrin, I’m caught off-guard by the news, broken by Katie Strang and Ken Rosenthal. I’m furious with Gardenhire’s agent, John Boggs.</p>
+
+<p>I was so out of touch with the Tigers’ search that I was texting players earlier about support for hitting coach Lloyd McClendon, who was promised an interview.</p>
+
+<p>To Boggs: “Is this accurate about Gardenhire?”</p>
+
+<p>“Anthony, I do not have anything to report at this time.”</p>
+
+<p>“John, the National Guys have this. What gives?”</p>
+
+<p>“Anthony, don’t know what the National Guys have—only can tell you that I don’t have anything to report at this time. Hope you can respect that.”</p>
+
+<p>Biting my tongue: “Yes, I do. Thank you for getting back to me.”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">LOS ANGELES, <em>October 31</em>—</span>At the airport again. I get a text from Alex Avila, who says he’s in Italy. I reached out to Alex once my flight was booked: “I have to write a story on Verlander. Is there anything behind the scenes you might know, any possible angles, etc.?”</p>
+
+<p>I’ve been sent to L.A. on last-minute notice. Yesterday, my sports editor called and asked if I’d fly here to cover the rest of the World Series—they’re interested in the Verlander angle. The Astros lead the series, 3-2, one win away from winning it all. Game 6 is tonight at Dodger Stadium—Justin is on the mound.</p>
+
+<p>It’s another chance to drop in on my favorite player growing up.</p>
+
+<p>Credentialed in the auxiliary press box for Game 6. I sit at a World Series game, texting Gator, who’s at the airport in Miami getting ready to fly to Italy for Verlander’s wedding on the Amalfi Coast.</p>
+
+<p>In his first-ever chance to win the World Series, Verlander pitches well but allows the Dodgers two fateful runs—Houston scores only once and they lose.</p>
+
+<p>I prepare for the potential worst-case scenario—a pissed-off postgame Verlander who previously swore to never answer one of my questions again… popping out from the pack of reporters… a prime chance to embarrass me in front of the National Guys.</p>
+
+<p>I don’t know what to expect.</p>
+
+<p>I stand around his locker two guys back—tall enough to see straight at him. Verlander’s session has begun. He’s a few questions deep, scanning the scrum while answering a question. I’m startled when he spots me and stops.</p>
+
+<p>“Oh, Anthony. Hey.”</p>
+
+<p>He says it friendly, like, ‘<em>Hello, Old Pal</em>!’</p>
+
+<p>“Where was I? Oh, yes…”</p>
+
+<p>Now I have to ask a question. To Verlander’s left, the Astros PR guy sends a warning.</p>
+
+<p>“Last couple, guys.”</p>
+
+<p>At the buzzer, I lob my question.</p>
+
+<p>He answers. I’m relieved.</p>
+
+<p>As the crowd disperses, celebrity news breaker Jon Heyman walks by. “He seemed happy to see you. He must like you.”</p>
+
+<p><em> </em></p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>November 1</em>—</span>In Game 7, Houston ambushes the Dodgers in the first inning. George Springer jumps a Yu Darvish fastball for a lead-off double and scores on a throwing error. The Astros score twice before Darvish records an out.</p>
+
+<p>The next inning, Springer. Again. He homers on a hanging slider. 5-0, Houston. It’s an anti-climactic series finale from there.</p>
+
+<p>Verlander isn’t needed for duty. He watches the final out from the bullpen, streaming onto the field in a celebratory sprint with the rest of his mates.</p>
+
+<p>Inside the clubhouse after the Astros win the World Series, I awkwardly hover with my tape recorder stretched behind a cameraman while Ken Rosenthal interviews him on FOX.</p>
+
+<p>Even after yesterday’s friendly display, even after Houston wins, I’m not sure if Justin will stonewall me. I’m not the only reporter stalking him when he leaves the TV interview. A pair of entertainment reporters charge his way. I cozy up alongside as a small scrum starts to form.</p>
+
+<p>Opposite is a woman from<em> E! News</em>, who wastes no time asking about the reported wedding. “Is it true that you and Kate Upton are getting married on Saturday?” Verlander doesn’t say no.</p>
+
+<p>“I’m not going to speak on the details… I’m just happy we won.” She’s intrepid, though. She asks if the wedding is in Italy.</p>
+
+<p>“I’m just glad we won the World Series.”</p>
+
+<p>Asked if he has a message for his fans back in Detroit, Verlander says, “Thank you for everything over the years, thank you for recognizing all the hard work that I put in, thank you for recognizing how hard of a decision this was for me. Thank you from the bottom of my heart.” We shake hands and we go our separate ways—Old Pals once again.</p>
+
+<p>When I leave the clubhouse, I walk past Verlander family members on their way in—his mom, his dad, his soon-to-be wife (sunglasses off) and his little brother.</p>
+
+<p>They are moving fast, ready to celebrate. One of them sees me and offers a quick wave of acknowledgment as they hurry past.</p>
+
+<p>I write the stuffing out of that story—it takes until the sun comes up.</p>
+
+<p>“<em>Verlander wore an Astros shirt. A backwards hat with a certain accomplishment in his eyes.</em></p>
+
+<p>“‘<em>I can’t even put it into words; This experience is everything I dreamed it would be.’</em></p>
+
+<p>“<em>But for so long, his dream came true in Detroit. A city he considers home, with teammates he considers family, for the only fans he’s known. And damned if he didn’t try. But when he finally won the World Series, the thought was not far behind.</em></p>
+
+<p>“‘<em>Yes,’ he felt the support of the city this postseason, he said, trying to wipe away the winning burn that ultimately brought him here. ‘I absolutely did.’</em></p>
+
+<p>“‘<em>I’m never going to forget my time in Detroit… It’s a special place for me.’</em></p>
+
+<p>“<em>After a few hugs and a kiss from a teammate, eyes still burning and Budweiser in hand, Verlander reached for his cell phone. It was sitting on a toiletry bag in his locker.</em></p>
+
+<p>“<em>The bag had the Olde English ‘D’ on it.</em>”</p>
+
+<p>The next day, I hear from Verlander’s dad, who shared the story on his Facebook page. I even get a message from Tigers legal guy John Westhoff, who never texts me.</p>
+
+<p>“Nice article about J.V.”</p>
+
+<p>“Thanks. See you at the GM Meetings.”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">ORLANDO, Fla., <em>November 14</em>—</span>I begin the GM meetings with a bang.</p>
+
+<p>“Mark Montgomery has a minor league deal in place with the Tigers,” an agent source alerts. “MLB invite. Say from a source.”</p>
+
+<p>Montgomery is a journeyman reliever. His signing may not move the needle—minor-league deals are the shrimp in a sea of scoops. But it feels good to get one out of the way early.</p>
+
+<p>First night at the lobby bar, I’m talking to a New York scribe when two Tigers Guys walk up—Alan Avila and Sam Menzin.</p>
+
+<p>Avila is assistant legal counsel. Menzin is the pro scouting director.</p>
+
+<p>I get on well with Avila, the oldest of Al’s two sons. He is much more cut from his father’s cloth than younger brother Alex, the team’s longtime catcher.</p>
+
+<p>Menzin, meanwhile, has been a cold case. I last spoke with him two years ago, when he stonewalled me after his promotion.</p>
+
+<p>“I don’t talk to the media,” Menzin said then.</p>
+
+<p>With drinks flowing steadily, Avila and Menzin mesh easily with us. The New York writer talks with Menzin and exchanges cards with him—something I’ve been trying for years.</p>
+
+<p>“Wow! You’ll give <em>him</em> your card, but not <em>me</em>? Just when I thought we were making strides, Sam.”</p>
+
+<p>“I was younger then… I didn’t know what to do. I’ll give you my number. What’s yours?”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">ORLANDO, Fla., <em>December 10</em>—</span>Back in Orlando for the winter meetings. I’m a seasoned vet— it’s my fourth meetings.</p>
+
+<p>Opening night isn’t laid back this year—two legendary Tigers are up for election to the Baseball Hall of Fame, with the announcement in a couple hours.</p>
+
+<p>Starting pitcher Jack Morris and shortstop Alan Trammell are part of this year’s Veterans’ Committee ballot for players not elected by the Baseball Writers’ Association of America.</p>
+
+<p>I await the Veterans’ Committee decision in my room, writing up four different stories to cover all bases—one if both players get in, one if neither gets in, one each if only one gets in.</p>
+
+<p>The official word comes shortly after 6 <span class="small-caps">P.M.</span>—the Tiger teammates are headed to Cooperstown. Morris was selected on fourteen of sixteen, Trammell on thirteen. After media teleconferences, Trammell speaks with the Tiger Beat downstairs.</p>
+
+<p>“I’m not usually at a loss for words, but it’s overwhelming.”</p>
+
+<p>After the scrum, I rush up to the room. I upload the video from Trammell’s interview and send it to the web desk. I text with Deep Throat. I phone Kirk Gibson: “About time.”</p>
+
+<p>General manager Al Avila shares a video from dinner at Shula’s Steak House.”</p>
+
+<p>“We gave Tram a standing ovation. Toasted him. Jack is not here yet.”</p>
+
+<p>In the video, Tram is welcomed to the private room at the restaurant. The roster of dinner attendees is deep in Detroit baseball lore—Mr. Tiger Al Kaline, Willie Horton, Jim Leyland— along with manager Ron Gardenhire and the rest of the front office.</p>
+
+<p>“Great moment. Thanks for sharing.”</p>
+
+<p>“Yes! What a great night.”</p>
+
+<p>“Let me know if you want to have a cigar after your meeting, before things get crazy.”</p>
+
+<p>“I didn’t bring any. Have one for me.”</p>
+
+<p>“I’m offering you one… Got three.”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>December 11</em>—</span>On the first afternoon of the winter meetings, tension simmers inside the Tigers’ suite. I’m sitting at the opposite end of the row from Katie Strang, who strikes fear in the room.</p>
+
+<p>Last week, Detroit signed catcher Derek Norris to a minor-league deal. Norris served a season-ending suspension for domestic violence and was fined $100,000. He put his ex-fiancée in a chokehold and grabbed her by the hair when she tried to get away.</p>
+
+<p>Instead of immediately questioning Avila over the phone, I held off, trying to curry favor— with the winter meetings a few days away, I’d have the opportunity to ask him in person.</p>
+
+<p>Strang jumps right in. Her questions soon have Tigers’ officials tongue-tied. They point at each other, using the commissioner’s office as a shield.</p>
+
+<p>“The main thing you should know is we called the commissioner’s office… they felt we certainly should sign the guy.”</p>
+
+<p>Avila looks to legal counsel John Westhoff for guidance.</p>
+
+<p>“Obviously, all of these things are serious, but it was the mildest…”</p>
+
+<p>Avila finishes Westhoff’s thought. “The mildest of the seriousness that you can get. Let’s put it that way.”</p>
+
+<p>Mild? A season-ending suspension and $100,000 fine?</p>
+
+<p>In one breath, Avila says the team is confident Norris’ behavior is in the rearview mirror.</p>
+
+<p>In the next breath, Avila says he’s never talked to Norris.</p>
+
+<p>I ask for the Detroit Tigers’ stance on domestic violence.</p>
+
+<p>“Obviously, we don’t tolerate it. Obviously, if there’s a domestic violence situation, it will be investigated.”</p>
+
+<p>Asked by Strang how the team could be so confident in signing him, assistant GM David Chadd says, “I’ve known him since he was eight years old… what we did was go to the commissioner’s office and get their take on what happened.”</p>
+
+<p>Strang also went to the commissioner’s office. She reached out to the victim, his agent, and the Players’ Association. In a statement to the <em>Athletic</em>, MLB said, “The Tigers asked if there were any issues with signing Mr. Norris. We let them know that he had completed his suspension and was eligible to sign with any club.”</p>
+
+<p>Norris never returned to the majors, with the Tigers or anyone else.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>December 13</em>—</span>The Tigers have pushed back today’s media session. I’ve been holed up in my room pestering people like Al Avila about Kinsler.</p>
+
+<p>“Checking in on Kinsler.”</p>
+
+<p>Waiting for an elevator, I thumb through breaking news. Shohei Ohtani has a bum pitching elbow, according to <em>Yahoo! Sports</em>’ Jeff Passan.</p>
+
+<p>When the elevator arrives, it opens to the National Guy responsible for breaking the news.</p>
+
+<p>“Nice scoop with the Ohtani story.”</p>
+
+<p>I head to the lobby bar and bring two whiskeys back—it could be a long night.</p>
+
+<p>An hour later, I text agent Jay Franklin: “Checking in on Kinsler, sorry to bug.”</p>
+
+<p>He answers. “Get back with ya here soon, buddy.”</p>
+
+<p>6:59 <span class="small-caps">P.M.</span>—Ken Rosenthal reports the Angels are in serious discussions to acquire Kinsler.</p>
+
+<p>A few minutes later, Rosenthal goes all the way. “Kinsler to Angels.”</p>
+
+<p>The small difference in attribution indicates the source behind Rosenthal’s scoop—my</p>
+
+<p>“buddy.”</p>
+
+<p>In The Room sources tell me no deal is imminent. The truth between what those sources say and what Rosenthal reported is semantics.</p>
+
+<p>Behind the scenes, Kinsler’s camp has brilliantly leveraged his no-trade protection. It’s Anaheim or bust, he tells Avila.</p>
+
+<p>While the baseball world waits, ESPN’s Buster Olney throws cold water on the trade:</p>
+
+<p>“Tigers do not have an Ian Kinsler deal with the Angels yet, according to sources.”</p>
+
+<p>Rosenthal can’t resist: “Any delay on Kinsler likely would be due to his no-trade. Again, my understanding is deal will happen.”</p>
+
+<p>Meanwhile, I haven’t heard back from Jay Franklin. “Soon, buddy” was an hour ago.</p>
+
+<p>8:47 <span class="small-caps">P.M.</span>—I get confirmation from an L.A. scout, but I can’t go with only a scout. I use it to confirm the deal, then quickly report the players Detroit receives in return.</p>
+
+<p>Soon after, the feeling is downright funereal inside the Tigers’ suite. Team execs arrived envisioning a sweepstakes for Kinsler. Four teams were interested initially. Then Kinsler unplugged the game, and Detroit had to settle for what little the Angels offered.</p>
+
+<p>“It’s very frustrating,” Al Avila says.</p>
+
+<p>11:44 <span class="small-caps">P.M.</span>—At the lobby bar, I see a couple guys from the agency that represents Justin Upton. Reuniting with Upton weighed heavily on Kinsler’s decision.</p>
+
+<p>The trade took time because Avila held out false hope that Kinsler would budge. Kinsler phoned Avila with the bad news.</p>
+
+<p>“I don’t know what to tell ya, buddy, but I’m only going to the Angels.”</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>January 8, 2018</em>—</span>Nothing to report. It’s a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents—including mega-stars Bryce Harper and Manny Machado—are still on the market. Former Tiger J.D. Martinez, too.</p>
+
+<p>Meanwhile, I’m not getting many scoops. The Tigers are entering the first year of a tear-it-down rebuild. They did sign veteran righty Mike Fiers (my scoop), but otherwise, just minor-league signings.</p>
+
+<p>They are essentially tanking, shedding expensive salaries and accruing prospects. The Tigers will stink for a few years—the worse they are, the higher the draft pick.</p>
+
+<p>The lack of scoops is either due to the Tigers rebuild—or it’s me.</p>
+
+<p>Maybe I’m <em>still</em> not persistent enough. Over the past year, more kid reporters have popped up—college-age guys who are breaking more news than me. I picture them glued to their phones, constantly texting sources.</p>
+
+<p>I don’t know if I have it in me to be that obsessed all the time. To be honest, I don’t know if I <em>want</em> to. Serving the 24/7 Internet and printed newspaper deadlines makes my dream job harder each year. As a kid, I grew up wanting to be Mitch Albom. My end goal remains to be a columnist, which better suits my writing style.</p>
+
+<p>I became a Ball Writer to <em>write</em>—not stenograph seven web updates a day.</p>
+
+<p>Since our newest sports editor hopped in the driver’s seat last year and set the cruise to 150 mph, I’ve been snagging speed from a network of folks just to keep up—a former roommate, a guy I met in the locker room at LA Fitness, a lady I see at the Anchor Bar, a contact on the Tigers’ business side.</p>
+
+<p>Morning web updates. Midday web updates. Pregame, in-game and postgame web updates. Videos, podcasts, tweets. Live chats and awkward questions.</p>
+
+<p>So, I take another pill. I reach out to sources, begging around for more and more morsels of information.</p>
+
+<p>I also realize I’m caring less and less.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 1</em>—</span>In TigerTown early to report on top prospects.</p>
+
+<p>At night, I search for front office guys to go out with. It comes as no surprise that I spy Al Avila. Tigers GM is at Chili’s for happy hour.</p>
+
+<p>We decide on Fish City Grill, smack dab in the center of a nearby outdoor mall.</p>
+
+<p>“6:30 cocktails, 7:00 dinner. You’re paying. That big newspaper expense account.”</p>
+
+<p>In the future, when I look back on my Ball Writing life, I’ll look back on tonight as high tide. At the moment, everything is working in harmony. Anthony Fenech and the Tigers are getting along quite well. We’re setting up stories together, talking on the phone and texting, busting each other’s chops. Even Sam Menzin answers my calls these days.</p>
+
+<p>With the rebuild underway, the pressure to win is put on the backburner. The Tigers are relaxed. Going into my fourth year on the beat, my relationships are in bloom.</p>
+
+<p>We sit outside. Drinks and a cigar. During dinner, Avila comments how my bosses must love him—for the info he shares with me.</p>
+
+<p>“They should be more worried I’m getting too close with you.”</p>
+
+<p>After dinner, we head to a beer-only bar across the street and order soft pretzel bites. Al talks about his early years in baseball. He tears up talking about how tough it was traveling with the Marlins for years, leaving a young wife and two sons at home.</p>
+
+<p>Avila also lets me in on a blockbuster trade that never happened: Last summer, the Tigers could have traded young righty Michael Fulmer to the Cubs for star shortstop Javier Báez and two prospects—Albert Almora and Víctor Caratini. But the Tigers viewed Fulmer as a rotation anchor—too high a price.</p>
+
+<p>Sitting at the bar, Al is not the Tigers GM. I’m not a Ball Writer. Here, I’m a drinking buddy. A friend.</p>
+
+<p>I realize that our relationship will always be rooted transactionally, in a game of give-and-take. But for the moment, our unlikely friendship is triumphing over the competing interests meant to keep it at bay.</p>
+
+<p>Still… I’m a Ball Writer. When I get back to my hotel, I immediately write notes on what Avila told me. There might come a day.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>February 6</em>—</span>Things are going so well, the Tigers let me throw luggage onto their 18-wheeler of baseball equipment, training supplies and other cargo soon headed to Florida for spring training. I’ll realize later that this is a convenience afforded to everyone on the Tiger Beat—I’m not that special.</p>
+
+<p>I park my car in the garage back home, where it’ll stay for the next six weeks, and give Mom a big hug at departures—it’s off to spring training once again.</p>
+
+<p>&nbsp;</p>
+
+<p class="has-dateline"><span class="dateline">SECAUCUS, N.J., <em>February 7</em>—</span>Making my annual pit stop at MLB Network. This year, I’m a panelist on the network’s afternoon show.</p>
+
+<p>I arrive five hours early. We’re opening with the ongoing free-agent saga of J.D. Martinez.</p>
+
+<p>After the Tigers traded Martinez to Arizona last summer, he mashed 29 home runs in 62 games, powering the Diamondbacks to the postseason. He hit the free agent market as one of the most feared hitters in baseball.</p>
+
+<p>But in November, J.D. ditched longtime agent Bob Garber for Scott Boras.</p>
+
+<p>Posting up in a shared office, Ken Rosenthal sticks his head in to say hello. Today is his last appearance for a while—he will soon undergo back surgery.</p>
+
+<p>“Six-to-eight weeks,” he says.</p>
+
+<p>Overnight, J.D. Martinez finds his name at the head of rumors, due to the latest from National Guy Jon Heyman: “Martinez is telling people in Miami that he’s willing to hold out until he gets his price.”</p>
+
+<p>Rosenthal matches Heyman’s report and adds that Martinez is “telling people that he is fed up with the Red Sox’s inflexibility and would rather sign with another club.”</p>
+
+<p>With the spotlight on Martinez’s situation and three years’ experience covering him, I better bring something to the stage. I text J.D.: “I’m in New York to go on MLB Network show and we’re going to be talking about you. Is there anything you would like me to get out there, message-wise?”</p>
+
+<p>“I said you don’t seem like the kinda guy that’s gonna be pissed at any specific team for an offer.”</p>
+
+<p>“Haha I never said those things about being pissed off. Lol I don’t know where people get this shit. I just laugh about it. Nowadays people can write anything, and everyone believes anything. What time you going on?”</p>
+
+<p>Before I can answer, J.D. calls me.</p>
+
+<p>“Look, Anthony: If Boston wants me to become a full-time DH, they’re going to have to pay a little bit more, you know?”</p>
+
+<p>Martinez tells me not to say this on TV, but he’s got two offers—Arizona and Boston.</p>
+
+<p>I want to look good. The benefits of sitting on stage are big when you recognize how they can boost your relationships. Pretty much everyone gets back to you when you’re on TV. Ken Rosenthal benefits from this every day. He doesn’t <em>have</em> to text sources—they text him. He’s got the platform to spin their intel for favors in return.</p>
+
+<p>Seconds from live, I hear the show’s intro, producers in my ear, and we’re off…</p>
+
+<p>Scott Braun, anchor: “This, the latest from Ken Rosenthal, on the five-year, $125 million offer from the Red Sox. Ken said, ‘He is telling people in Miami he is willing to hold out until he gets his price…”</p>
+
+<p>“Anthony. Do you think that happens? You covered J.D. for quite a few years…”</p>
+
+<p>“Well, first of all, the notion that he’s fed up—far be it from me to contradict any reporting otherwise—but people close to J.D. have said that’s kind of laughable. This is a guy I’ve covered for a few years, and it would be very out of character if he’s walking around pouting about $100 million.</p>
+
+<p>“I think the big thing is that he wants to play right field, not be a designated hitter. Boston already has a right fielder, so if they want him as a DH, they’re going to have to pay premium for that.”</p>
+
+<p>Got the first segment under my belt and the rest was a blur. Positive reviews.</p>
+
+<p>Shuttling back to the train station, it’s J.D.</p>
+
+<p>“Hey man thanks so much for that I just saw the interview.”</p>
+
+<p>He’ll remain unsigned for two more weeks, until Dave Dombrowski wins the staring contest with Scott Boras. Martinez signs with Boston for five years and $110 million.</p>
+
+<p>The news is broken by who else but Pedro Gomez.</p>
+
+<p>He shares his source—J.D. Martinez.</p>`,
+        wordCount: 5500
     },
 
     // 2018 SEASON CHAPTERS (20-24)
