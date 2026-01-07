@@ -77,6 +77,17 @@
             padding: var(--space-lg) 0;
         }
 
+        /* Hide emoji icon in modal header */
+        .media-modal-icon {
+            display: none;
+        }
+
+        /* Smaller images in modal */
+        .media-image {
+            max-height: 400px;
+            width: auto;
+        }
+
         @media print {
             body { padding: 0; }
             .chapter-section { page-break-after: always; }
