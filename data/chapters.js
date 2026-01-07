@@ -3613,72 +3613,6 @@ export const CHAPTERS = [
         id: 17,
         year: 2017,
         section: 'year',
-        title: "FLASHBACK",
-        subtitle: "2007–2008",
-        teaser: "How I got started.",
-        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It's my first week at the <em>Free Press</em>.</p>
-            <p>When I arrive, the security guard asks me to sign-in and calls up to Sports. When the prep sports editor arrives, he tells the guard I'm new on the Prep Crew and I'll need a badge.</p>
-            <p>Say cheese!</p>
-            <p>I'm nineteen and finishing my second year at community college. I didn't really apply myself in high school and got a 2.8 GPA. The plan was to get good grades and transfer to a big journalism school, but school has never been my thing.</p>
-            <p>So, I'm diving headfirst into sports journalism. I worked an unpaid internship at Detroit's sports radio station last year, and I still write blogs for the show's website sometimes.</p>
-            <p>Inside a back room on the newsroom's third floor, I receive my first taste of sports writing, answering phones as coaches call in to report scores and statistics. I put 'em in a text file and send 'em to an editor before deadline.</p>
-
-            <p>&nbsp;</p>
-
-<p class="has-dateline no-indent"><span class="dateline"><em>August 31, 2007</em>—</span>Sports writing is going great so far.</p>
-            <p>I've earned a bunch of "contributing" bylines for writing short game recaps. I find these stories easily when coaches call in with a close score. I gauge the game's worthiness by asking, "Was it a good game?"</p>
-            <p>If they answer convincingly, I ask for details and write a short story. Mom cuts them out of the paper as mementos.</p>
-            <p>Last month, I got the chance to cover my first game—a Little League matchup for the state championship. The local team's victory landed my story in the community section of the Sunday Paper!</p>
-            <p>The Prep Crew is packed to the gills during high school football season: Six guys every Friday night. Sounds like a call center. One person handles the score list: it's important to get as many scores into the early editions as possible.</p>
-            <p>We have an eclectic mix on the Prep Crew. Some will carve out impressive careers: Jon Machota will one day cover the Dallas Cowboys. Marty Dobek is a future steward for the Detroit Sports Commission.</p>
-            <p>But many have no sports writing ambitions. Corey moonlights as rapper Leaf Erikson. Matt is going to business school. Charlie is a musician. Nobody knows what James does, or if it's legal.</p>
-            <p>From the back room where the Prep Crew sits, I look over my shoulder at a Sports Department powerhouse: cubicles filled, editors by the dozen and a roster of writers covering everything under the sun.</p>
-            <p>In 2007, Freep Sports has a staff of 44, including 24 folks manning the desk and 18 sports writers covering Detroit's pro and Big Ten teams, columnists and general assignment reporters. We've even got writers for outdoor sports, motorsports and prep sports.</p>
-
-            <p>&nbsp;</p>
-
-<p class="has-dateline no-indent"><span class="dateline"><em>September 5, 2007</em>—</span>Today is my first Tigers game as a member of the media. I'm official. I've got a credential with my name and affiliation: <em>Detroit Free Press</em>.</p>
-            <p>I'm tagging along with longtime Tigers beat reporter John Lowe, who obliged when asked to shadow him at a game. I want to see what a beat writer <em>does</em>. Lowe is an institution.</p>
-            <p>In the press box, John pulls a thick book from his bag. "Don't let me forget. I have something I want you to read."</p>
-            <p>Inside the clubhouse, I stand feet away from guys I grew up idolizing.</p>
-            <p>In the manager's office, Tigers skipper Jim Leyland is lying on a couch in a tank top, smoking a cigarette. He's asked about tonight's rain forecast.</p>
-            <p>"I had a rule in A-ball… They get on the bus, and I say, 'If you fuckers look up at the clouds, I'm fining the shit out of you.'"</p>
-            <p>Uproarious laughter.</p>
-            <p>Leaving Leyland's office, I'm sold on sports writing.</p>
-            <p>John looks at me. "That is what the Mona Lisa of baseball managers looks like. They're not all made like that."</p>
-            <p>Back in the clubhouse, I do what any 19-year-old would his very first time here—I walk up to my favorite player, Justin Verlander, last year's American League Rookie of the Year. Earlier this year, I nearly drove my car off the freeway when he threw a no-hitter. It was my grandma's funeral that day, which I think was a message from heaven.</p>
-            <p>I introduce myself as a <em>Free Press</em> intern and ask: "What do you chew?"</p>
-            <p>"Oh. Dip… Copenhagen straight."</p>
-            <p>I'm one numb-skull question away from Verlander calling security.</p>
-            <p>During the game, John has me track Kenny Rogers' pitch velocity. After I transcribe Leyland quotes, he passes me the book.</p>
-            <p>Leaving the ballpark, I'm hooked. I fear I've been drugged by this life.</p>
-
-            <p>&nbsp;</p>
-
-<p class="has-dateline no-indent"><span class="dateline"><em>February 10, 2008</em>—</span>I'm about to meet another legend today, after picking John Lowe's brain all winter. We'd meet up at bookstores and Ram's Horn. I keep notes, so I don't lose the wisdom he shares.</p>
-            <p>I turned twenty last fall, so I need all the guidance I can get. Seamhead was already a Ball Writer at my age. I'm still answering phones.</p>
-            <p>But I did end up helping cover five Tigers games last year—and now I'm hanging out with Tigers' broadcasting legend Ernie Harwell.</p>
-            <p>I'm at Harwell's retirement complex for his surprise 90th birthday party. One of his friends invited me, and here I am sitting with Ernie and his wife Lulu.</p>
-            <p>Me and Ernie, shooting the breeze—my dad's gonna think this is so cool.</p>
-            <p>I did my research, so I know what to ask. "Who were your favorite performers?"</p>
-            <p>"The big bands, that's the era I liked."</p>
-            <p>He talks about Bing Crosby and Frank Sinatra. Brings up B.J. Thomas.</p>
-            <p>"I don't know if you remember him or not."</p>
-            <p>"I can't even grow facial hair… I don't remember a lot of those guys."</p>
-            <p>I tell Ernie I want to be a sports writer.</p>
-            <p>"Freelance writer is a tough job. When I got out of school my senior year, I planned to be a newspaper man, and I couldn't get a job. So, I'm really a failed sports writer."</p>
-            <p>Ernie laughs.</p>
-            <p>I ask for his favorite sports writers.</p>
-            <p>"I think the sports writers today are a lot better than they used to be… They're better trained on the literary side. When sports writing first started, the sports editors were the guys that had the good contacts. They really couldn't write much, but they hung around the pool, and they knew the gamblers—so they could get information.</p>
-            <p>"And it's developed now where guys can really write, they can put a phrase together."</p>
-            <p>Ernie praises Detroit sports writers—Mitch Albom, Drew Sharp, John Lowe.</p>
-            <p>One day, I hope to be mentioned in the same breath.</p>`,
-        wordCount: 1400
-    },
-    {
-        id: 18,
-        year: 2017,
-        section: 'year',
         title: "WORLD SERIES",
         subtitle: "2007-2008, Fall 2017",
         teaser: "The origin story, and Verlander finally wins it all.",
@@ -4248,9 +4182,9 @@ export const CHAPTERS = [
         wordCount: 5500
     },
 
-    // 2018 SEASON CHAPTERS (20-24)
+    // 2018 SEASON CHAPTERS (18-22)
     {
-        id: 19,
+        id: 18,
         year: 2018,
         section: 'year',
         title: "AWARDS SEASON",
@@ -4389,7 +4323,7 @@ export const CHAPTERS = [
         wordCount: 2900
     },
     {
-        id: 20,
+        id: 19,
         year: 2018,
         section: 'year',
         title: "DRAFT DAY",
@@ -4555,7 +4489,7 @@ export const CHAPTERS = [
         wordCount: 3200
     },
     {
-        id: 21,
+        id: 20,
         year: 2018,
         section: 'year',
         title: "COOPERSTOWN",
@@ -4749,7 +4683,7 @@ export const CHAPTERS = [
         wordCount: 3700
     },
     {
-        id: 22,
+        id: 21,
         year: 2018,
         section: 'year',
         title: "BURN OUT",
@@ -4953,7 +4887,7 @@ export const CHAPTERS = [
         wordCount: 3800
     },
     {
-        id: 23,
+        id: 22,
         year: 2018,
         section: 'year',
         title: "VIVA LAS VEGAS",
@@ -5199,9 +5133,9 @@ export const CHAPTERS = [
         wordCount: 4100
     },
 
-    // 2019 SEASON CHAPTERS (25-30)
+    // 2019 SEASON CHAPTERS (23-27)
     {
-        id: 24,
+        id: 23,
         year: 2019,
         section: 'year',
         title: "GLOBETROTTING",
@@ -5340,7 +5274,7 @@ export const CHAPTERS = [
         wordCount: 2700
     },
     {
-        id: 25,
+        id: 24,
         year: 2019,
         section: 'year',
         title: "ROAD TO OMAHA",
@@ -5499,7 +5433,7 @@ export const CHAPTERS = [
         wordCount: 3100
     },
     {
-        id: 26,
+        id: 25,
         year: 2019,
         section: 'year',
         title: "A LETTER TO THE EDITOR",
@@ -5696,7 +5630,7 @@ export const CHAPTERS = [
         wordCount: 3500
     },
     {
-        id: 27,
+        id: 26,
         year: 2019,
         section: 'year',
         title: "CONTROVERSY!",
@@ -6343,7 +6277,7 @@ export const CHAPTERS = [
         wordCount: 8350
     },
     {
-        id: 28,
+        id: 27,
         year: 2020,
         section: 'year',
         title: "BOTTOM NINE",
@@ -6893,9 +6827,9 @@ export const CHAPTERS = [
 
     // 2020 SEASON - No chapters, just the year header (handled in navigation)
 
-    // POSTSCRIPT CHAPTERS (29-30) - Nested under POSTSCRIPT dropdown
+    // POSTSCRIPT CHAPTERS (28-29) - Nested under POSTSCRIPT dropdown
     {
-        id: 29,
+        id: 28,
         year: null,
         section: 'postscript',
         title: "POSTSCRIPT",
@@ -7189,7 +7123,7 @@ export const CHAPTERS = [
         wordCount: 4550
     },
     {
-        id: 30,
+        id: 29,
         year: null,
         section: 'postscript',
         title: "DEDICATION",
