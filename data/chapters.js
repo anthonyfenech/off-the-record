@@ -4649,7 +4649,7 @@ export const CHAPTERS = [
             <p>"You alive?"</p>
             <p>I click over to email. More messages from the sports desk and Tigers PR. A headline on Freep.com. The Tigers have traded Mike Fiers after all—you'll never believe where.</p>
 
-            <p class="no-indent" style="text-align: center;"><strong>TIGERS ACQUIRE TWO PLAYERS TO BE NAMED LATER OR CASH CONSIDERATIONS FROM OAKLAND IN EXCHANGE FOR MIKE FIERS</strong></p>
+            <p class="headline-block">TIGERS ACQUIRE TWO PLAYERS TO BE NAMED LATER OR CASH CONSIDERATIONS FROM OAKLAND IN EXCHANGE FOR MIKE FIERS</p>
 
             <p class="no-indent">How could this happen? Because the major-league trade deadline is not really a deadline. It's just that after July, players must pass through waivers and could be claimed by another team. Fiers passed through, and here we are.</p>
             <p>Walking through the terminal at John Wayne Airport, I dial into the call with Avila and join the reporters asking questions through a moderator.</p>
