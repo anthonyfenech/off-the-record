@@ -543,6 +543,61 @@
             color: #fff;
         }
 
+        .install-options {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .mini-form-group {
+            margin-bottom: 8px;
+        }
+
+        .mini-form-group label {
+            display: block;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .mini-form-group input {
+            width: 100%;
+            padding: 5px 8px;
+            font-family: inherit;
+            font-size: 11px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .mini-form-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .mini-form-row .mini-form-group {
+            flex: 1;
+        }
+
+        .install-stats {
+            margin-top: 10px;
+            padding: 8px 10px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .stat-label {
+            color: #666;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
         @media (max-width: 800px) {
             .container {
                 flex-direction: column;
@@ -643,8 +698,39 @@
 
                 <div class="toggle-subheader">Install Prompt</div>
                 <div class="toggle-row">
+                    <span class="toggle-label">Enabled</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="installPromptEnabled">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
                     <span class="toggle-label">User dismissed</span>
                     <button class="reset-btn" id="resetInstallPrompt">Reset</button>
+                </div>
+                <div class="install-options" id="installOptions">
+                    <div class="mini-form-group">
+                        <label>Message</label>
+                        <input type="text" id="installMessage" placeholder="Install message...">
+                    </div>
+                    <div class="mini-form-group">
+                        <label>Button</label>
+                        <input type="text" id="installButton" placeholder="Button text...">
+                    </div>
+                    <div class="mini-form-row">
+                        <div class="mini-form-group">
+                            <label>Delay (sec)</label>
+                            <input type="number" id="installDelay" min="0" max="60" value="1">
+                        </div>
+                        <div class="mini-form-group">
+                            <label>Auto-hide (sec)</label>
+                            <input type="number" id="installAutoHide" min="0" max="120" value="0" placeholder="0=never">
+                        </div>
+                    </div>
+                </div>
+                <div class="install-stats" id="installStats">
+                    <span class="stat-label">Installs:</span>
+                    <span class="stat-value" id="installCount">0</span>
                 </div>
             </div>
 
@@ -934,7 +1020,13 @@
                 allowComments: localStorage.getItem('admin_allowComments') !== 'false',
                 twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
-                credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true'
+                credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true',
+                installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
+                installMessage: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
+                installButton: localStorage.getItem('admin_installButton') || 'Install',
+                installDelay: parseInt(localStorage.getItem('admin_installDelay') || '1'),
+                installAutoHide: parseInt(localStorage.getItem('admin_installAutoHide') || '0'),
+                installCount: parseInt(localStorage.getItem('admin_installCount') || '0')
             };
         }
 
@@ -955,15 +1047,35 @@
             document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
             document.getElementById('randomButtonText').checked = settings.randomButtonText;
             document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
+            document.getElementById('installPromptEnabled').checked = settings.installPromptEnabled;
+            document.getElementById('installMessage').value = settings.installMessage;
+            document.getElementById('installButton').value = settings.installButton;
+            document.getElementById('installDelay').value = settings.installDelay;
+            document.getElementById('installAutoHide').value = settings.installAutoHide;
+            document.getElementById('installCount').textContent = settings.installCount;
 
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize', 'allowBookmarks', 'allowComments',
-                           'twitterEmbeds', 'randomButtonText', 'credentialCarousel'];
+                           'twitterEmbeds', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
                     saveSetting(id, e.target.checked);
+                });
+            });
+
+            // Install prompt text inputs
+            ['installMessage', 'installButton'].forEach(id => {
+                document.getElementById(id).addEventListener('input', (e) => {
+                    saveSetting(id, e.target.value);
+                });
+            });
+
+            // Install prompt number inputs
+            ['installDelay', 'installAutoHide'].forEach(id => {
+                document.getElementById(id).addEventListener('change', (e) => {
+                    saveSetting(id, e.target.value);
                 });
             });
 

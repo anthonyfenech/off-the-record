@@ -4,6 +4,25 @@ class PWA {
     constructor() {
         this.deferredPrompt = null;
         this.isInstalled = false;
+        this.autoHideTimer = null;
+    }
+
+    // Get install prompt settings from admin panel
+    getSettings() {
+        return {
+            enabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
+            message: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
+            buttonText: localStorage.getItem('admin_installButton') || 'Install',
+            delay: parseInt(localStorage.getItem('admin_installDelay') || '1') * 1000, // convert to ms
+            autoHide: parseInt(localStorage.getItem('admin_installAutoHide') || '0') * 1000 // convert to ms
+        };
+    }
+
+    // Track install count
+    trackInstall() {
+        const currentCount = parseInt(localStorage.getItem('admin_installCount') || '0');
+        localStorage.setItem('admin_installCount', currentCount + 1);
+        console.log(`Install tracked! Total installs: ${currentCount + 1}`);
     }
 
     // Initialize PWA features
@@ -34,6 +53,7 @@ class PWA {
         window.addEventListener('appinstalled', () => {
             console.log('PWA installed successfully');
             this.isInstalled = true;
+            this.trackInstall();
             this.hideInstallPrompt();
         });
     }
@@ -85,6 +105,13 @@ class PWA {
 
     // Show install prompt
     showInstallPrompt() {
+        const settings = this.getSettings();
+
+        // Check if install prompt is enabled in admin
+        if (!settings.enabled) {
+            return;
+        }
+
         // Check if user has dismissed before - never show again
         if (localStorage.getItem('installPromptDismissed') === 'true') {
             return;
@@ -96,18 +123,25 @@ class PWA {
         prompt.id = 'installPrompt';
         prompt.innerHTML = `
             <div class="install-prompt-text">
-                Install OFF-THE-RECORD for easy access and offline reading
+                ${settings.message}
             </div>
-            <button class="install-btn" id="installBtn">Install</button>
+            <button class="install-btn" id="installBtn">${settings.buttonText}</button>
             <button class="dismiss-install" id="dismissInstall" aria-label="Dismiss">✕</button>
         `;
 
         document.body.appendChild(prompt);
 
-        // Show with animation
+        // Show with animation after configured delay
         setTimeout(() => {
             prompt.classList.add('show');
-        }, 1000);
+
+            // Auto-hide if configured (0 = never)
+            if (settings.autoHide > 0) {
+                this.autoHideTimer = setTimeout(() => {
+                    this.hideInstallPrompt();
+                }, settings.autoHide);
+            }
+        }, settings.delay);
 
         // Install button click
         document.getElementById('installBtn').addEventListener('click', () => {
@@ -135,6 +169,12 @@ class PWA {
 
         console.log(`User ${outcome} the install prompt`);
 
+        // If accepted, track will happen via appinstalled event
+        // If dismissed, just hide the prompt
+        if (outcome === 'dismissed') {
+            localStorage.setItem('installPromptDismissed', 'true');
+        }
+
         // Clear deferred prompt
         this.deferredPrompt = null;
 
@@ -144,6 +184,12 @@ class PWA {
 
     // Hide install prompt
     hideInstallPrompt() {
+        // Clear auto-hide timer if set
+        if (this.autoHideTimer) {
+            clearTimeout(this.autoHideTimer);
+            this.autoHideTimer = null;
+        }
+
         const prompt = document.getElementById('installPrompt');
         if (prompt) {
             prompt.classList.remove('show');
