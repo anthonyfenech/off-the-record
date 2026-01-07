@@ -43,8 +43,13 @@
         }
 
         .header-logo-img {
-            height: 16px;
+            height: 28px;
             width: auto;
+        }
+
+        /* Dark mode logo invert */
+        [data-theme="dark"] .header-logo-img {
+            filter: invert(1) hue-rotate(180deg);
         }
 
         .theme-btn-header,
