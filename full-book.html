@@ -82,10 +82,17 @@
             display: none;
         }
 
-        /* Smaller images in modal */
+        /* Smaller images in modal - desktop */
         .media-image {
-            max-height: 400px;
+            max-height: 450px;
             width: auto;
+        }
+
+        /* Smaller images on mobile */
+        @media (max-width: 600px) {
+            .media-image {
+                max-height: 280px;
+            }
         }
 
         @media print {
