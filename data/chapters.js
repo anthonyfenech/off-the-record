@@ -2592,20 +2592,582 @@ export const CHAPTERS = [
         year: 2017,
         section: 'year',
         title: "PRIME-TIME",
-        subtitle: "To be written",
-        teaser: "Under the national spotlight.",
-        content: placeholderContent,
-        wordCount: 500
+        subtitle: "Tampa, Lakeland, Chicago, Oakland, Anaheim, Kansas City",
+        teaser: "Year three on the beat—and a death threat to start the season.",
+        content: `<p class="has-dateline"><span class="dateline">TAMPA, Fla., <em>February 12, 2017</em>—</span>The calendar begins when I arrive to spring training. Still thinking about what Pedro Gomez said earlier, what he's been saying for the past two years.</p>
+
+<p>I texted him on the way to the airport.</p>
+
+<p>"Thinking about what you told me about three years on beat."</p>
+
+<p>"Third year is the defining moment," he replied. "You now OWN the beat."</p>
+
+<p>I land in Tampa feeling like it. My third year begins with the first apparent death threat I've received. I come across it while strolling through my Twitter mentions in the rental car line.</p>
+
+<p>Courtesy of one Twitter troll: user @d159program: "I hope next headline is 'FL bound plane crashes, Fenech burns'… I don't think we'll need dental records but maybe, because I think Fenech is all burnt up."</p>
+
+<p>I feel only mildly creeped out. Not quite a death threat but impressed nonetheless by garnering that kind of hatred in the first place. I am a <em>Ball Writer</em>—I write about <em>baseball</em>.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">LAKELAND, Fla., <em>February 13</em>—</span>Nothing much is happening in TigerTown, twenty-four hours before pitchers and catchers officially report. Catchers take batting practice and pitchers throw long toss. Clubhouses are closed, and the manager doesn't talk until tomorrow.</p>
+
+<p>I was in-and-out by noon, bringing to mind something Pittsburgh writer Bill Brink once said: "I would love to see the look on our editors' faces if they found out what we do early in spring training."</p>
+
+<p>The routine is always the same early in spring training. Arrive at 8 <span class="small-caps">A.M.</span> and gather 'round the Tigers' infield practice area. Watch pitchers and catchers play catch. Half throw bullpen sessions, then they go back into the clubhouse. We follow 'em, get fifteen minutes of clubhouse time and file out half past noon.</p>
+
+<p>I stick around after the other reporters leave, wandering the back fields. A few pitchers come out of the complex.</p>
+
+<p>"What's up, Anthony!"</p>
+
+<p>I hear it clearly from way over here. Justin Verlander raises his right arm.</p>
+
+<p>"What's up, man?"</p>
+
+<p>After long toss, I ask: Couple questions on the way out?</p>
+
+<p>"No problem."</p>
+
+<p>Five minutes becomes thirty becomes an hour. At least I'll have a good sunburn.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>February 15</em>—</span>This morning, we're allowed into the brand-new clubhouse for the first time.</p>
+
+<p>Joker Marchant Stadium has undergone a massive renovation. The venture cost upwards of $40 million, transforming what were previously among the worst facilities in baseball.</p>
+
+<p>The formerly cramped clubhouse, where players and reporters would literally bump into each other, is now a spacious rival to their Detroit digs. There's enough space for established stars to have two lockers and the kitchen is staffed round-the-clock by chefs. I smell omelets.</p>
+
+<p>This is my new domain as a Ball Writer. The clubhouse is where we do our most important work—reporting, sourcing, relationship-building. Find nooks where you can line up one-on-one interviews. Identify "hot spots," where you're friendly with a cluster of players—and the "badlands," where players who have a problem with you board up.</p>
+
+<p>But old or new, all clubhouses are alike. As Kristie Ackert says: "The clubhouse is a lot like the kindergarten classroom—you truly have to deal with every child differently."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>February 16</em>—</span>Justin Verlander likes my tweet this morning, a picture of the waffle machine.</p>
+
+<p>"Good morning, beautiful."</p>
+
+<p>I awoke early to start this spring's sourcing round. From opposing teams' media guides, I came up with a few front office execs for each team, plus scouts and advance scouts. Before our teams' cross paths this spring, I'll try to initiate meetups.</p>
+
+<p>This year, I'm targeting younger front-office staffers in line for promotions in years to come.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>March 15</em>—</span>HSITL invites me to his spring abode, where we share a smoke on the balcony. Avila is staying at Grasslands, a gated community with a golf and country club. Apparently, Verlander has a place here, too.</p>
+
+<p>Avila's place is a second-story flat. David Chadd and longtime Tigers executive Mike Healy is watching the WBC semifinals—Venezuela against Team USA in San Diego. Healy's official title is VP of park operations—the guy for anything stadium-related.</p>
+
+<p>They don't seem to bat an eye when I arrive, like it's the most normal thing in the world that the beat writer is here drinking with the GM. But I'm harangued when I choose a coffee mug from the cabinet to drink a cocktail.</p>
+
+<p>Avila's drink of choice is Grey Goose with just a splash of tonic. He pours two of them. We get some space and head outside for cigars. He puts the music on.</p>
+
+<p>For the next hour and a half, we smoke, drink and talk. Nothing about the team—<em>anything</em> but the team. We're just two guys getting to know each other, making a personal connection.</p>
+
+<p>For me, the bottom line about building relationships is this—you want people to see you for more than the malevolent media you represent. You want them to know you. You want them to like you.</p>
+
+<p>As if on cue, Avila asks, "You know why I like you?"</p>
+
+<p>"Because I'm cool?"</p>
+
+<p>"It's because of your dad."</p>
+
+<p>As Avila's story goes, one day my father approached him near the entrance of the prestigious Detroit Athletic Club. My Dad works the door there. Avila was arriving for an event. Dad, a born Detroiter, is a compassionate man and cares about his three sons a lot. That day, he couldn't help himself: He introduced himself to Avila and asked him to be good to me.</p>
+
+<p>"And I'll never forget that."</p>
+
+<p>Avila himself is a father of three. A devout Catholic. An all-around good guy. He dips the cigar into his drink. "I could tell your dad is a good man." The best, I say. Avila tells stories about his climb up the scouting ranks and how he met his wife. He refills our drinks twice.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>March 28</em>—</span>With Opening Day only seventy-two hours away and the Tigers' roster not finalized, I wake up on high alert.</p>
+
+<p>"You hear anything?"</p>
+
+<p>"Nope."</p>
+
+<p>Agent Gene Mato represents veteran righty Aníbal Sánchez, who is locked in a battle with young lefty Matthew Boyd for the fifth rotation spot. Sánchez, thirty-three, has been a mainstay since joining Detroit in 2012, but his performance has slipped along with velocity on his fastball.</p>
+
+<p>When the clubhouse opens to reporters, I stay out of the dressing room, instead observing the comings-and-goings from the hallway—there's more information to be had out there.</p>
+
+<p>I notice the shades in Ausmus' office are drawn. Sánchez walks in.</p>
+
+<p>"He's in there talking with Dubee and Brad."</p>
+
+<p>Before he walks out, the clubhouse closes.</p>
+
+<p>"Let me know."</p>
+
+<p>"I was right," Mato responds.</p>
+
+<p>I don't actually know what he's right about. I <em>think</em> I know but need to be sure.</p>
+
+<p>Deep Throat keeps me busy while I wait for answers.</p>
+
+<p>"What's the scoop?"</p>
+
+<p>"Boyd rotation. But I can't go with it yet."</p>
+
+<p>"Why not?"</p>
+
+<p>"Because Al and Brad aren't answering."</p>
+
+<p>"You're soft."</p>
+
+<p>Mato confirms Sánchez will begin the season in the bullpen.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">CHICAGO, <em>April 4</em>—</span>After a rainout, Opening Day finally arrives. Clouds continue to cake the sky, sprinkles drop off-and-on, and the gloomy gray U.S. Cellular Field looks as ugly as ever.</p>
+
+<p>I'm in my third year of making the Opening Day clubhouse rounds, offering up a handshake and, "good luck, good health."</p>
+
+<p>This year, I add the training staff to the mix. Trainers, like coaches and scouts, love being treated as being part of the team—because they very much are. They are about to win or lose ninety games, too.</p>
+
+<p>As I stand in the clubhouse pregame, seeking out any strays I'd missed, closer Shane Greene shouts to me from his seat along the wall. I've grown increasingly comfortable with Greene over the past year.</p>
+
+<p>"Hey Anthony. Come here."</p>
+
+<p>Greene thumbs through his phone.</p>
+
+<p>"Remember when you asked if you could see my blister last year and I said 'hell no' or something like that? Well, here's what it looked like."</p>
+
+<p>He turns the phone to me, showing the kind of multi-colored, oozing blood blister that would put a pitcher on the disabled list—the kind of blister I hope to never in my life see again.</p>
+
+<p>But finally getting a look at Shane Greene's epic blister is proof of why I walk around the dressing room shaking hands on Opening Day every year. Why do I spend so many days inside a major-league clubhouse every year? That's the payoff, right there.</p>
+
+<p>Outside in the dugout, there's an industrial-strength propane heater at one end, blowing fire. I sit mostly by my lonesome, on the top seat where the manager would.</p>
+
+<p>I'm wearing a red knit winter hat. Wind bounces around the stadium, which is silent but for the symphonic melody of the grounds crew's equipment tinkering with the tundra. A pair of bundled-up pitchers walk onto the field and out toward the bullpen. As I start to follow their trail, I feel a hand on my left shoulder.</p>
+
+<p>It's Al Avila, who has come to receive his good-luck handshake. We bring it in for a warm hug instead.</p>
+
+<p>And, despite conditions, the game is played. Verlander wins on Opening Day.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>April 18</em>—</span>Standing in front of the visitor's dugout, staring into the camera, hand shaking a bit as I hold the microphone. Jordan Zimmermann walks by, as close as one can without touching me. I'm waiting for today's MLB Network spot to begin.</p>
+
+<p>"Face for radio if I've ever seen one."</p>
+
+<p>Zimmermann's dry humor is appreciated—I'm still more than a tinge nervous for the red light, and he loosens me up. The veteran righty starter is a pretty solid guy, I've found—the Wisconsinite out of Division III University of Wisconsin-Stevens Point comes with more normal qualities than most hundred-millionaires.</p>
+
+<p>Like his first two starts this season, Zimmermann's debut last year in Detroit was a mixed bag. We exchanged numbers at the end of the season. Our subsequent offseason exchanges were entertaining, with Zimmermann either acting like he doesn't have my number or saying something sarcastically stupid. This is to say—I like him.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">OAKLAND, Calif., <em>May 7</em>—</span>Two minutes into today's pregame media session, the manager has a question for this Ball Writer.</p>
+
+<p>"Are those the same pants you had on yesterday?" Brad Ausmus asks.</p>
+
+<p>"Yeah, they are. Thanks for noticing that. I got nine different shirts for this road trip, and you call me out on the pants. Tough crowd."</p>
+
+<p>Ausmus is more interested in his tablet than the Tiger Beat gathering round. Asked if his right fielder, Nick Castellanos, is going through a little bit of a slump right now: "Not really. He's actually hitting the shit out of the ball."</p>
+
+<p>Ausmus is following the real-time GameCast data of Class A Lakeland's matinee. Now batting J.D. Martinez, the Tigers' rehabilitating slugger who could return within the week—Martinez has been out with a foot strain since stumbling over a sprinkler in the spring.</p>
+
+<p>"What did J.D. just do?" Ausmus waits for the screen to load. "He hit a home run."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">ANAHEIM, Calif., <em>May 11</em>—</span>Waiting for my luggage at John Wayne Airport, itching for a scoop, I decide to give Martinez a try.</p>
+
+<p>"You know when you're joining the team yet?"</p>
+
+<p>We're in Disneyland this week, which has been far from The Happiest Place on Earth for the Tigers—Detroit hasn't won a series here since 2009. They have been trudging along, bobbing over and under the .500 mark for the past month. Martinez's impending return should give the starting lineup a boost—he homers again today, this time for Triple-A Toledo. He doesn't text back.</p>
+
+<p>Powered by seven sterling innings from reigning rookie of the year Michael Fulmer, they take the opener. Fulmer picks up the victory and lowers his ERA to 2.54 in seven starts.</p>
+
+<p>Martinez rejoins the team tomorrow. He singles in his first at-bat, then hits two homers the next night. After the game, I opt against writing from the awkward press box at Angel Stadium, heading back to the hotel instead. In the parking lot, I come across first base coach Omar Vizquel and his teenage son, Nico.</p>
+
+<p>Vizquel off-handedly asks for a ride. I don't know if he's joking.</p>
+
+<p>"I'm looking for the Uber lot."</p>
+
+<p>"I don't know where the Uber lot is, but I can give you a ride."</p>
+
+<p>I drive them to the team hotel in Newport Beach.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">CHICAGO, <em>May 26</em>—</span>Halfway through the longest road trip of the season—11 games in 12 days—I land at O'Hare around 2:30 <span class="small-caps">A.M.</span> and check into my room past four. I set an alarm for 9:30 and shut the curtains.</p>
+
+<p>Stepping into the hotel gym, I'm smacked by breaking news while scrolling Twitter.</p>
+
+<p>It's National Guy Jon Morosi, who says, "If Tigers are still under .500 by end of June, sources say… all veterans will be available in trade."</p>
+
+<p>I head up to the room and write a story, summarizing Morosi's report. It's clearly coming from someone In The Room. I don't return to the gym.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 27</em>—</span>I write a column decoding Morosi's reporting for the readers.</p>
+
+<p>"<em>Within that message—a wholly unsurprising one, given the Tigers' current play and future state—was a message from the front office to the team. That message was clear: You guys need to start playing better, and soon.</em>"</p>
+
+<p>The words drive Avila berserk—he's booming through my phone between the doubleheader, taking exception to the notion he'd be communicating through the press.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">KANSAS CITY, Mo., <em>May 29</em>—</span>Avila accepts my apology, messaging early Memorial Day: "I read your stuff. Now we can kiss and make up."</p>
+
+<p>I arrive early to the stadium and hop on MLB Network in a suit while Brad Ausmus completes his workout routine around the field. I sweat through my suit in only five minutes on the field. Afterwards, I squat in front of an industrial fan inside the visitor's dugout to dry off.</p>
+
+<p>Standing alongside MLB.com's Jason Beck in the clubhouse, I scan the large throwback baseball cards displayed above players' lockers, easily identifying the stadiums the photos were taken in. I acquired this talent rummaging through boxes of my dad's baseball cards in the basement.</p>
+
+<p>"Impressive," Beck nods.</p>
+
+<p>Justin Verlander must think so, too. Momentarily, he walks up with a kind smile on his face, bearing gifts.</p>
+
+<p>"Anthony," pinning a red poppy onto my baby blue blazer.</p>
+
+<p>"Jason," pinning a red poppy onto Beck.</p>
+
+<p>Verlander is active in the veteran's community and established the Wins For Warriors foundation to support Iraq and Afghanistan war vets.</p>
+
+<p>I do my part to further Verlander's philanthropic endeavors by writing a piece on the red poppy.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 30</em>—</span>The charitable, cheery feeling in this corner of the clubhouse does not last.</p>
+
+<p>The next day, as I'm standing in the same spot with Beck, Francisco Rodríguez walks up. K-Rod does not seem happy. Earlier this month, after blowing back-to-back saves in Oakland, Rodríguez lost a grip on the Tigers' closer role. Last night, he blew another save—his fifth in twelve tries this season, ballooning his ERA to 7.79. Looks like he simply doesn't have it anymore.</p>
+
+<p>Rodríguez comes this way with a badly bruised ego. He can't get anyone out and could soon be cut. Making matters worse, he read what I wrote in the paper. By <em>what I wrote</em>, I mean <em>what the manager said</em>: "We have to find out if he can pitch with the game on the line, quite frankly."</p>
+
+<p>This distinction makes no difference to Rodríguez, who holds his phone and waves me closer. On the screen, his career stats are proudly shown—spanning sixteen seasons and 437 saves, fourth-most all-time. I recently sat with him for a feature story on his flame-throwing glory days, so Rodríguez feels comfortable enough to call me out.</p>
+
+<p>"You see these? How many saves? Is that good?"</p>
+
+<p>"Yes, it's very good… Borderline Hall of Fame good."</p>
+
+<p>"You think that's mop-up? I can't pitch in close games?"</p>
+
+<p>Before I can explain to K-Rod the difference between what I wrote and what the manager said, he shakes his head and walks away.</p>`,
+        wordCount: 2700
     },
     {
         id: 16,
         year: 2017,
         section: 'year',
         title: "FIREWORKS",
-        subtitle: "To be written",
-        teaser: "Explosive moments on and off the field.",
-        content: placeholderContent,
-        wordCount: 500
+        subtitle: "Detroit, Up North, Kansas City, Arlington",
+        teaser: "Trade deadline chaos, the Kinsler-Hernández rant, and the solar eclipse blowup.",
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>July 2</em>—</span>Pulling into the parking lot yesterday, I got a ping from Top Scout—"Are you here tomorrow?"</p>
+
+<p>Sure am. He sits across from me inside the auxiliary media dining room, recapping his recent travel. Been on the road for almost three weeks. Flew in yesterday, flying out today, so he's rooting for a quick game.</p>
+
+<p>Top Scout is a special-assignment guy—handling the highest priorities. He's a trusted advisor for the Cubs front office, who sent him here to watch Verlander face the Indians today.</p>
+
+<p>The Tigers are reeling as trade deadline season kicks into gear, all but dead in the water since losing eight straight recently. At the halfway point, Detroit is 36-44. Inconsistent offense, subpar pitching, aging roster. Their fortunes began fading when J.D. Martinez stumbled over a sprinkler head in spring training. Now, their fate seems clear: barring an unlikely midsummer surge, they're shaping up as sellers—with big-name players available.</p>
+
+<p>None bigger than Verlander, who wants no part of a rebuild.</p>
+
+<p>Top Scout asks what I think.</p>
+
+<p>Give him the 411: Verlander is well-respected in the clubhouse, but more superstar and less leader. On the mound, Verlander is still good. I predict someone will get a nice payoff trading for him. I assure him that Verlander wants out. "Definitely… He might <em>need</em> to get out."</p>
+
+<p>While I'd get retweets and new followers by mentioning Top Scout's presence, I hold off—with a month until the trade deadline, I'm not risking today's relationship gains with rumor-mongering tweets. My goal is strengthening the relationship for the possibility of an actual trade.</p>
+
+<p>I <em>do</em> share the Cubs' scouting mission with Verlander's agent, Mike Milchin, fulfilling my role to provide information (give) for future considerations (take).</p>
+
+<p>"FYI: Cubs sent one of their special assistants here to watch Justin."</p>
+
+<p>It's a disastrous day for Verlander, who is clubbed by Cleveland so badly that my scout can watch the final innings from the airport bar.</p>
+
+<p>Verlander is pulled with one out in the fourth inning. He allows seven runs on nine hits and three walks. For the first time in his career, he strikes out nobody.</p>
+
+<p>Top Scout leaves town unimpressed.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">UP NORTH, Mich., <em>July 5</em>—</span>Although I promised not to be on my phone this holiday weekend, here I am—scrolling underneath sunsetting skies, still cursing National Guy Jon Morosi to the heavens.</p>
+
+<p>Morosi is one of the nicest guys you'll ever hate. Yesterday, he blew my cover. First, he shared my inside information on Twitter: "Cubs inquired to Tigers on availability of Justin Verlander and Alex Avila, sources say, but sides have not engaged in trade negotiations." Then he called out my source, telling everyone that a "top Chicago scout" was at yesterday's game.</p>
+
+<p>Still thinking about it a day later, since I abandoned the plan of spending vacation without a phone glued to my hand.</p>
+
+<p>"That's all I'm asking," my girlfriend said.</p>
+
+<p>Yet here I am, sneaking swipes at Twitter every ten minutes. Tonight, I sit at a campfire on a sweater-weather summer evening—fireworks, stars, all that jazz—after a day I strove to stay off the phone. An off day. I see the progress I've made—1 hour and 27 minutes on Twitter—a 43 percent decrease from yesterday.</p>
+
+<p>I'm on the beat. That's every day from February to October. These are workhorse sports-writing roles—the first thing you think about in the morning and the last thing you think about at night. Your life is dictated by your job. You're diving out of luggage, usually alone and married to the game.</p>
+
+<p>Soon going overboard, taking a full-blown phone call from work: "I have to take this call… I'm sorry."</p>
+
+<p>It's not my fire, but my beloved <em>Free Press</em> sports department is starting to smolder. Beat mate George Sipple just called to say Mark Snyder, our machine-like Michigan beat writer, is leaving the paper. Snyder has covered U-M for the past twelve years.</p>
+
+<p>Snyder is a consistently tireless sports writer with strong sourcing and scoops to prove it. He's also under-appreciated. The final straw comes when Snyder is denied a chance to cover Michigan Football's preseason camp in Italy while a columnist gets the kush gig.</p>
+
+<p>"They drove Mark out," George says.</p>
+
+<p>Nobody seems safe. Beat writers are in the crosshairs, fighting off aggregators, influencers and hot-take artists. Many left on their own. It felt personal, watching the hardest working reporter walk away.</p>
+
+<p>I soon get a text message from an unfamiliar number.</p>
+
+<p>"This is my new number. Hope you stay in touch—Mark Snyder."</p>
+
+<p>I think about something Perry Farrell once said. Farrell, a longtime <em>Free Press</em> preps and general assignment sports writer, quipped: "They'll burn you all out. I feel sorry for you and Mark."</p>
+
+<p>It will get worse in a hurry. Nine days from now, Kevin Bull resigns, citing "an even more important and involved job… one that centers on my two kids." He served as sports editor since January 2016, leaving the <em>Freep</em> after eleven years—and newspapers altogether.</p>
+
+<p>When I became a full-timer in September 2011, the Freep Sports schedule listed thirty-seven names, including fifteen writers. Now, we're down to sixteen names, with nine writers. No sports editor or assistant sports editor, but we did end up hiring a sports content coach and let me tell you.</p>
+
+<p>But even as the newspaper industry and the <em>Freep</em> have been buffeted, the beat remains. My job is to cover a team with its own accelerating change—none of it good.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>July 5</em>—</span>I get a message from Mitch Albom—he's looking for his Baseball Writers' Card.</p>
+
+<p>"Do you or someone have my baseball writers pass? Trying to track it down."</p>
+
+<p>I have been safe keeping his card since the chapter chair handed 'em out. The Tigers haven't been good enough to get Mitch out to the yard, save an Opening Day here or there.</p>
+
+<p>He needs the badge for a pregame on-field promotion for his theater play.</p>
+
+<p>Before becoming famous for writing heart-tugging, Hallmark-worthy fiction, Albom won the yearly top sports column contest thirteen times. Only one other columnist has won it twice. Mitch influenced a generation of sports writers, many of whom were introduced to him not via print but on TV—watching <em>The Sports Reporters</em> on Sunday mornings on ESPN. He made being a sports writer cool and became something of the first sports writer talking head.</p>
+
+<p>Mitch was on ESPN2 when it went live on October 1, 1993, sitting alongside Suzy Kolber and Keith Olbermann, who wore a leather vest and said, "Good evening, and welcome to the end of our careers."</p>
+
+<p>Albom paved the way for sports writers to become multimedia celebrities. In the mid-nineties, he wrote for the <em>Free Press</em>, hosted a radio show and appeared regularly on TV. He was awarded the Red Smith Award in 2010—the sports writing equivalent of the Hall of Fame.</p>
+
+<p>"I'll be at Hockeytown Cafe in the theater. Can you drop it by?"</p>
+
+<p>Of course, I can—it's not every day you get a chance to DoorDash your idol.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">KANSAS CITY, Mo., <em>July 17</em>—</span>With the trade deadline two weeks away, I'm on special assignment, sort of like Top Scout.</p>
+
+<p>I'm accompanying teammate George Sipple to Kansas City—a good old fashioned fire sale could begin flaming soon, we don't want to be caught flat-footed.</p>
+
+<p>Inside the clubhouse, players admit to hearing their names.</p>
+
+<p>"It's definitely getting down to it and you're hearing it a lot more," outfielder J.D. Martinez says before the series opener against the Royals. "Every time you look at the TV, MLB Network or whatever, you're constantly seeing it. But I think it's more for a guy like Justin (Wilson) than me, right now."</p>
+
+<p>Martinez, the slugging outfielder, and Wilson, the lefty reliever, are two of the Tigers' popular trade pieces. Despite emerging from the All-Star break with a series win over Toronto (and manager Brad Ausmus still at the helm), Detroit's front office has decided to break up the band.</p>
+
+<p>Martinez is a month shy of his thirtieth birthday and will be a free agent after this season. Since returning from his spring training injury, he's been one of baseball's most feared hitters</p>
+
+<p>Facing a roster reset, Avila is all but certain to trade Martinez soon—so suspicions arise when he's pulled late in the opener against the Royals. The Tigers are ahead by seven runs and Martinez doesn't return to the field for the sixth. Injury? Trade? Playing it safe? Someone online says Víctor Robles, a top prospect center fielder in the Washington Nationals system, has been removed from his game. Related?</p>
+
+<p>I text a Nats' Top Scout: "Tigers want a young CF. Anything there?"</p>
+
+<p>With Martinez's status up in the air, sources come to the Ball Writer for info. A Dodgers guy asks: "Whatcha got?"</p>
+
+<p>I text him back <em>before</em> I put it on Twitter: "Lower back tightness."</p>
+
+<p>Not what the front office wants to hear—Avila had been discussing a Martinez trade with Arizona throughout the day. After the game, J.D. terms his exit "precautionary." He thinks dehydration may be to blame—it was ninety-two degrees at game time.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>July 18</em>—</span>This evening, it's ninety degrees at Kauffman Stadium—but decidedly cooler inside the air-conditioned press box, where news breaks an hour before the game. Martinez, hitting fifth and starting in right field, is "close" to being traded to the Diamondbacks.</p>
+
+<p>"Close" is quickly becoming sports writing's accepted way of couching the scoop. A lot can happen between "close" and "done." Three minutes later, after one National Guy is credited with the "close" report, another National Guy swoops in to close the gap.</p>
+
+<p>It's "done," Jeff Passan says—J.D. Martinez to the D-backs.</p>
+
+<p>Good thing they've got me here: I'm officially beaten on the story. I forget chasing for confirmation and focus on what the Tigers are getting in return. I text nine sources, some of them part of the traveling front office party, currently huddled in a suite at the team hotel in Country Club Plaza. The trade is announced before I can get anything more.</p>
+
+<p>We're called down to the visitor's dugout for parting thoughts from J.D. He walks up with teary-red eyes and hops onto the high seat.</p>
+
+<p>"I grew up a lot here. I love this team, I love this organization, I love everything Detroit—that's home for me. This is the organization that believed in me when no one else did."</p>
+
+<p>After reconstructing his swing, the Astros' cast-off reclaimed his career with Detroit in 2014. He's turned a minor-league deal into $21.5 million and counting.</p>
+
+<p>J.D. is one of my favorites. We've come a long way since early friction, when I wanted to talk with the Mysterious Hitting Guru—a testament to how relationships can be strengthened along the way.</p>
+
+<p>Not everyone is melancholy about the trade.</p>
+
+<p>"That sucks about J.D.," I remark to a veteran pitcher in passing.</p>
+
+<p>"Why? He sucks in the outfield."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">KANSAS CITY, Mo., <em>July 20</em>—</span>With trade deadline season in full swing (eleven days away), things are starting to pick up. I wake up to a tip from Jordan Zimmermann, who sent a pair of texts my way at 1:50 <span class="small-caps">A.M.</span></p>
+
+<p>"Got breaking news!… More breaking news!!!!!!!!!!!!!!"</p>
+
+<p>After breakfast, more substantial rumors need to be chased—a National Guy throws Justin Verlander's name into the wind, saying the Houston Astros are interested in both Verlander and lefty reliever Justin Wilson. Poking around, I don't hear much about that one.</p>
+
+<p>"Going on MLB Net later," I text a source. "I've gathered HOU interest in Verlander is overblown, would that be accurate?"</p>
+
+<p>"Yes it is. Probably won't happen."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>July 24</em>—</span>Like an elephant, Mike Moustakas doesn't forget.</p>
+
+<p>Walking through the Royals clubhouse this afternoon, minding my business, Moustakas calls me out.</p>
+
+<p>"Hey, there's the guy that said we were a beatable team. Who's beatable now?"</p>
+
+<p><em>When did I say that</em>? A month ago, I went on MLB Network and said time was ripe for the Tigers to make a move: "Beginning with the Royals, they have some winnable games coming up."</p>
+
+<p>Kansas City puts 'em in the casket: The Tigers are swept, outscored 24-6 in the series and fully humiliated at home—utilityman Andrew Romine recorded more outs than malcontent Bruce Rondon, who was ejected for throwing beanballs in the 16-2 loss.</p>
+
+<p>Rondon incited the Royals, former champions, which led to this scene in the clubhouse, many minutes after the lopsided win.</p>
+
+<p>Someone screaming in the showers, half-naked with a full smile walking out.</p>
+
+<p>"I love this fucking team!"</p>
+
+<p>After he dresses, I introduce myself to Moustakas.</p>
+
+<p>"You guys really shoved it up my ass."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>July 29</em>—</span>I've decided to write a column blasting the Tigers for their lack of competitiveness, calling them soft for how the team of high-priced veterans were bulldozed by the Royals.</p>
+
+<p>I know my angle and what I'm going to write. Today, I don't see either Miguel Cabrera or Víctor Martínez—some players tend to hide when things aren't going well.</p>
+
+<p>I stay late and wait for second baseman Ian Kinsler.</p>
+
+<p>Kinsler, thirty-five, is a four-time All-Star in his twelfth season.</p>
+
+<p>"Leadership… Is there anything this team is lacking besides players? Who are the lead–"</p>
+
+<p>He cuts me off.</p>
+
+<p>Kinsler has been doing this long enough to know what reporters are writing about by the questions they ask. He can be an intimidatingly straight shooter.</p>
+
+<p>The clubhouse is emptying. "You already know what you're going to write. Just write it."</p>
+
+<p>He provides his logic for passing on the leadership question.</p>
+
+<p>"Why would it make sense for me to talk about leadership? Because that would portray me as the leader of the team, and then this issue falls on my shoulders."</p>
+
+<p>Kinsler sits between Cabrera and Martínez's empty lockers—the two players publicly portrayed as team leaders. He shrugs his shoulders and points at each side.</p>
+
+<p>"What can I do? What can I say to those guys?"</p>
+
+<p>Soon, the conversation becomes off-the-record. The kind that builds trust.</p>
+
+<p>Kinsler says many things without really saying them. When I bring up the manager, he says the problems start above him.</p>
+
+<p>"It starts at the top. At the top."</p>
+
+<p>Out of the corner of my eye, I see the grim reaper. It's PR, cutting off the conversation.</p>
+
+<p>"The clubhouse is closed."</p>
+
+<p>About ten minutes later, I see Kinsler on the field. He's walking my way with a bat in one hand and another hand extended. We shake hands.</p>
+
+<p>"Thanks for the chat earlier."</p>
+
+<p>"Same here. I enjoyed it."</p>
+
+<p>I decide to let him know what I know.</p>
+
+<p>"Say… I know about what happened last year."</p>
+
+<p>"What?"</p>
+
+<p>"The fight with Víctor."</p>
+
+<p>Kinsler looks back at me differently, in acknowledgment of what I said—knowing the damage it could do.</p>
+
+<p>"Are you going to write it?"</p>
+
+<p>I won't write it just to write it—bringing up past clubhouse incidents without current relevance feels like tabloid territory.</p>
+
+<p>Kinsler messages later. "Good talk today. Excuse me for being so guarded. I think… I'm not trying to blow anyone up."</p>
+
+<p>"Same here. I know it's a sensitive situation… I'm not trying to blow anyone up, either, but it comes with the territory sometimes."</p>
+
+<p>"I guess. I think this will take care of itself and you will have plenty to write about."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">ARLINGTON, Texas, <em>August 14</em>—</span>On my first day back on the beat after attending a wedding in Cancún, I head to Ian Kinsler's corner. It's become something of a comfort area, after our conversations last month. Kinsler's locker is closest to the showers with an empty stall next door—respect shown to a veteran and former Texas Ranger.</p>
+
+<p>I mention how tired I am from traveling—Cancún to Chicago to Fort Worth.</p>
+
+<p>"Come on, man… You were in Cancún."</p>
+
+<p>Tonight, Kinsler is ejected in the fourth inning by home plate umpire Ángel Hernández for arguing balls and strikes. After a poor strike call on the first pitch of the at-bat, Kinsler sends a sarcastic remark back to Hernández following a ball outside— "How about that one?"</p>
+
+<p>Hernández promptly tosses Kinsler, leading to one of the most memorable interviews of a Ball Writer's life.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>August 15</em>—</span><span class="small-caps">WHAT'S SAID IN HERE, STAYS IN HERE</span>.</p>
+
+<p>A big banner hangs on the wall in the visitor's clubhouse here, above where Ian Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández. Hernández ejected Kinsler last night for arguing balls and strikes.</p>
+
+<p>"He's messing with baseball games. Blatantly. It's not just like a borderline call here or there… I didn't even cuss at him. I just said you need to re-evaluate your life, man… I'm just saying it's pretty obvious that he needs to stop ruining baseball games… He needs to find another job… If I get fined for saying the truth, then so be it… He's that bad. I'm not mad at him for being bad. He just has to go away."</p>
+
+<p>At the risk of spoiling the fun, I speak up.</p>
+
+<p>"So, is this fair game? I'm just looking for clarity because you're being very candid."</p>
+
+<p>"I don't care. I'll get fined, I guess. Candidly, leave the game. No one wants you behind the plate anymore. No one… None of the players."</p>
+
+<p>Kinsler talks for nearly twenty minutes.</p>
+
+<p>"Write what you want. Just keep the cuss words out of it."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>August 16</em>—</span>Brad Ausmus says Kinsler has indeed been fined by the commissioner's office—it's by far the highest fine he's seen in his career.</p>
+
+<p>He won't disclose the amount. Years later, Kinsler will—revealing it was $10,000, roughly eighteen percent of my yearly salary at that time.</p>
+
+<p>Verlander pitches the series finale against Texas and loses, allowing five runs in six innings. Afterward, he seems to welcome questions about his future.</p>
+
+<p>The July 31st trade deadline came and went with no takers.</p>
+
+<p>"Right now, I'm looking around the locker room and Miguel will be back here, I'll be back here, Kinsler will be back here, Justin Upton will be back here and a lot of other guys. That's a pretty good core of guys. There's a brighter side to look at."</p>
+
+<p>"Is there anything specific in your mind that needs to change?"</p>
+
+<p>Verlander knows where I'm going—the guy who sets the tone in the clubhouse and fills out the lineup card every day. I needn't say names.</p>
+
+<p>Verlander pauses. He utters an unconvincing "no" instead.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>August 22</em>—</span>The commissioner is on the scene.</p>
+
+<p>Making his annual trip around the circuit, Rob Manfred is at Comerica Park. With the coast clear and the commish in town, I have an easy excuse for conversation with Justin Verlander.</p>
+
+<p>I stroll up. "So, Manfred is here today…"</p>
+
+<p>Verlander is one of the first pitchers to complain publicly about how MLB manipulates the baseballs—making them easier to hit harder and farther.</p>
+
+<p>"Do you have any questions you want me to ask him for you?"</p>
+
+<p>Verlander can't help himself. "Ask him why they keep changing the balls."</p>
+
+<p>He spirals into a mini rant, then stops.</p>
+
+<p>"I gotta throw… But you know what the worst part might be? That it's going to impact the history books."</p>
+
+<p>He points to Al Kaline's locker. "Guys like him, their numbers get shit on now. He's got three thousand hits… How many home runs did he hit?"</p>
+
+<p>"399."</p>
+
+<p>"Exactly. He'll get passed by guys nowadays—because of these baseballs—guys who couldn't hold his jock strap."</p>
+
+<p>In divine intervention, Kaline walks this way. Justin turns back at me, as if to say—<em>We were just talking about him</em>. Verlander and Kaline stop to chat, and I join them. They're talking about the solar eclipse. Apparently, Verlander flew to Nashville to watch the eclipse from inside the path of totality.</p>
+
+<p>He describes how the sky went completely dark—so dark the streetlights went on. How everybody screamed, and some cried.</p>
+
+<p>"It was the most beautiful thing I've ever seen in my life."</p>
+
+<p>"So, you're kind of a dork, huh?"</p>
+
+<p>Verlander, the alpha ace pitcher, is absolutely not a dork.</p>
+
+<p>"No. I'm not a dork."</p>
+
+<p>"No, no… I'm not saying it in a mean way. I'm a dork, too."</p>
+
+<p>"I like astronomy."</p>
+
+<p>"That's interesting. I didn't know that. I like space and science, too."</p>
+
+<p>I figure: If I don't know that, then the public definitely doesn't know that—and fans will think it's just as cool as I do.</p>
+
+<p>I walk down the tunnel to the dugout and send two tweets:</p>
+
+<p><em>Justin Verlander watched the solar eclipse from the Path of Totality. "It was the most beautiful thing I've seen in my life," he said.</em></p>
+
+<p><em>Verlander, an admitted astronomy enthusiast, traveled to Nashville to watch the eclipse in its fullest totality, he said.</em></p>
+
+<p>I was trying to humanize the guy. Instead, Verlander is inflamed. A team PR official comes up to me during dinner in the press box and says, "JV didn't like your tweets. He said he was in a private conversation with Al Kaline."</p>
+
+<p>Verlander isn't at his locker postgame.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>August 23</em>—</span>Same time as yesterday, just before batting practice.</p>
+
+<p>I'm sitting in the dugout next to Omar Vizquel when I see Justin out of the corner of my eye.</p>
+
+<p>He walks up the dugout steps behind us. I look back.</p>
+
+<p>"Really? Really?"</p>
+
+<p>This proves to be the wrong approach.</p>
+
+<p>Verlander returns serve with verbal rage, quickly going 0-to-100. He says this is horseshit and that is horseshit and I'm horseshit. I stand up and trail him out of the dugout.</p>
+
+<p>"Justin, this isn't very professional. Do you want to talk about this?"</p>
+
+<p>"Unprofessional? You know what's unprofessional? Do you know who that was? That's Al Kaline, a baseball legend!"</p>
+
+<p>He's loud, demonstrative, and doesn't listen. "Calm down. Let's talk."</p>
+
+<p>Verlander walks onto the field. I follow.</p>
+
+<p>"Get the fuck away from me!"</p>
+
+<p>He walks to the pitchers' stretching circle in left field, shaking his head and waving his glove. He tells the other pitchers how I hijacked his private conversation with Mr. Tiger. Back inside the clubhouse, he shows the tweet around.</p>
+
+<p>My up-and-down relationship with Justin has crashed again.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>August 24</em>—</span>On the tarmac at DTW for a short flight to Chicago, watching highlights of today's base-brawl between the Tigers and Yankees.</p>
+
+<p>TV cameras also catch an argument between Víctor Martínez and Justin Verlander, and it's galloping across the Internet. It's unusual for two veteran teammates to go at it like they do—screaming in each other's faces—especially a starting pitcher and designated hitter, who locker at opposite ends of the room.</p>
+
+<p>But more than anything, it's the first open sign of player discontent with Martínez inside the clubhouse. What was once a private issue has now gone public. By take-off, I know the time for the Very Serious Story has come. Before landing, I've decided on a plan.</p>
+
+<p>A crew member comes over the speakers.</p>
+
+<p>"Buckle up. Midway runways are short, and landings can be quite aggressive—make sure your seatbelt is tight."</p>`,
+        wordCount: 3200
     },
     {
         id: 17,
