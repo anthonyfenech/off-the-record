@@ -1858,19 +1858,225 @@ export const CHAPTERS = [
         year: 2016,
         section: 'year',
         title: "HOT SEAT",
-        subtitle: "To be written",
-        teaser: "When the pressure mounts.",
-        content: placeholderContent,
-        wordCount: 500
+        subtitle: "Washington, Baltimore, Anaheim, Blue Springs, San Diego, Detroit, Chicago, Arlington",
+        teaser: "Manager Brad Ausmus fights to save his job as the Tigers stumble.",
+        content: `<p class="has-dateline"><span class="dateline">WASHINGTON, <em>May 8</em>—</span>By the time I check into my hotel room, there's a wild rumor circulating and an urgent alert from the web desk to chase it.</p>
+
+<p>The rumor was originated by Internet Stalker's longtime sidekick—a wannabe somebody who minors in trolling me online. We'll call him Internet Scrub. Tonight, Scrub proclaims big news: "Jim Leyland is expected to be formally offered the job as Tigers manager tonight. Mike Ilitch bypassing his GM, calling personally." Scrub is "100 percent sure." Despite protesting his lack of credibility and telling my boss I don't want to bug the Highest Source In The Land with this bunk, I follow marching orders.</p>
+
+<p>On a Sunday night, no less. HSITL has asked me to never call him on Sundays.</p>
+
+<p>I text instead after 10:20: "I know it's a Sunday night, but I gotta reach out about this… There is a report out there that Mr. Ilitch is calling or called Jim to offer him the job tonight. On the record, can you say if that is true?"</p>
+
+<p>"No. That's preposterous. Anthony, I am already in bed now buddy."</p>
+
+<p>"Ok, I apologize. So, if I'm forced to write something, can I use your denial?"</p>
+
+<p>He must've fallen asleep.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 9</em>—</span>After posting a winning record in April, Detroit is nose-diving in May. They arrive in D.C. on a six-game losing streak. Five weeks into the season, the $200 million team is under .500 and struggling to show life. Ausmus has lost fan support.</p>
+
+<p>On MLB Network, Mad Dog asks if Ausmus is on the hot seat.</p>
+
+<p>"There's only so much a manager can do. At some point, the players have to perform."</p>
+
+<p>As a beat writer, it's risky business to put the manager in the crosshairs—traditionally, it's not in the job description to opine on such matters and doing so could make for uncomfortable quarters going forward.</p>
+
+<p>In the clubhouse afterwards, quality control coach Matt Martin pulls me aside.</p>
+
+<p>"Good job on TV today. Brad saw it, too, and he appreciated it."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 11</em>—</span>Caught in a downpour walking to the ballpark. Absolutely soaked. Víctor Martínez does me a solid, offering a spray of fine cologne.</p>
+
+<p>The losing streak was snapped last night, but tonight the Tigers face Max Scherzer.</p>
+
+<p>It was not the night.</p>
+
+<p>Scherzer goes berserk, striking out twenty batters in a complete game win over his former team—the fifth 20-K game in baseball history. He's the story, so I go to the service-level press conference room for his comments. Scherzer soon walks on stage, ice wrapped around his right arm. The rest of the media members are still inside the clubhouse, and etiquette says we can't start until they arrive.</p>
+
+<p>Waiting awkwardly for the others, someone in the back snaps the silence, asking Scherzer if he thought he had a chance at twenty strikeouts.</p>
+
+<p>"I <em>knew</em> I had a chance."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 12</em>—</span>Running late to the train, I'm cold-cocked with a call from my sports editor, who says a top prospect is coming up—can you write about it? I'm in a cab, but sure, and start pecking away on my phone.</p>
+
+<p>I ping a sports writing pal who recently graduated from the beat grind to a fancy features job at some magazine. "If you ever hear of a job like yours, let me know… I'm burning out."</p>
+
+<p>It's my second season.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">BALTIMORE, <em>May 13</em>—</span>The Tigers are shut out again tonight, and experienced reporters are starting to read the tea leaves. Walking out of the clubhouse after the loss, ESPN.com's Katie Strang asks if I heard what Ian Kinsler said.</p>
+
+<p>I don't know what she means at first. Kinsler answered questions short and serious, like he does. When asked about Ausmus' job status, he said, "I don't think about that. I don't care about that. I don't care about anything except getting a win."</p>
+
+<p>That's Strang's point. Kinsler, an eleven-year veteran, knows the weight his words carry. He could've given Ausmus a <em>vote of confidence</em>, put the blame on the players or said it's not the manager's fault.</p>
+
+<p>"He said nothing."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 14</em>—</span>The roller coaster continues. Detroit has dropped three straight and nine of the last eleven. A Tiger Beat colleague shares a scoop of his own—he's stepping down from his spot and out of sports writing entirely. His marriage is still intact, and he wants to spend more time with his wife and kids, maybe play some more poker.</p>
+
+<p>The baseball beat is often referred to as the Divorce Beat and by now, I trust you see why. A great job for a guy who is single or wants to be. I try not to think about this: I am falling rapidly into a long-distance relationship with a woman in Washington, D.C.</p>
+
+<p>In the press box at Oriole Park at Camden Yards, writers brave the most dangerous working conditions in sports journalism, threatened by high-speed foul balls at a second's notice.</p>
+
+<p>Yesterday, Strang—who is pregnant—became the latest victim. She heads right back to her front-row seat tonight.</p>
+
+<p>I sit as far back as possible. As a bonus, I'm next to an In The Room source—Tigers legal counsel John Westhoff is the front office liaison this trip. He shares a story tip, pointing at the friends and family seating section. "Over there is Warwick Saupold's mom."</p>
+
+<p>Saupold is a rookie reliever from Australia. His mom mad-dashed here to see his debut—twenty-seven hours from Perth to Baltimore.</p>
+
+<p>"Now that's a great story," Westhoff says.</p>
+
+<p>I take him up on it, fishing her out of the family area after the game. I say hello to Justin's parents while waiting for the media elevator.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>May 15</em>—</span>Another loss last night, and with all apologies to Westhoff's idea and Saupold's mother, there is a more pressing story. Ever since Internet Scrub put out that 100 percent wrong information, my sports editor has been all over me, asking for a pre-written story in case Ausmus gets canned.</p>
+
+<p>Instead, I went out drinking by myself. Late again to the press box today, I look down and see Katie Strang sitting in the dugout. I drop my things and head downstairs, practically sprinting through the concourse and hurdling the railing to crash her party.</p>
+
+<p>With the manager on the hot seat, Strang arrived early and stationed herself here. As players and coaches stream past, bullpen coach Mick Billmeyer walks by.</p>
+
+<p>"I don't have a good feeling about this week, guys. I just don't."</p>
+
+<p>Tigers trail in the fifth when I wave Westhoff over to my computer. Making a mockery of journalistic integrity, I ask if he wants to edit my story. He slides his chair closer, squints at the screen and looks back in horror as I crack up: It's the pre-written story my boss asked for.</p>
+
+<p>"Jerk."</p>
+
+<p>Try as we may (again), the <em>Free Press</em> can't fire Brad Ausmus. Miguel Cabrera and J.D. Martinez go back-to-back in the eighth and the Tigers leave town with a managerial-saving win.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">ANAHEIM, Calif., <em>May 31</em>—</span>Although I joke about it, this whole Internet Stalker thing is starting to take its toll. When I'm out with friends in Detroit, I feel under surveillance, carefully looking around. I don't text people back. I watch my surroundings before I speak.</p>
+
+<p>It's a relief to get back on the road, this far from home. We're near Disneyland, where dreams come true. My dream has come true—I cover the Detroit Tigers. Yet I can't help thinking, more and more, be careful what you wish for.</p>
+
+<p>Today, my dream has taken me into the visitor's clubhouse at Angel Stadium, where I'm in Miguel Cabrera's corner. Miggy sits at his locker.</p>
+
+<p>Miggy, I have come to realize in proximity, is a man child. Signed out of Venezuela for $1.8 million at sixteen, he reached unspeakable wealth by his mid-twenties. He's been hailed for his generational hitting ability and handled accordingly since then—he's never done wrong, and nobody feels comfortable telling him otherwise.</p>
+
+<p>Today when I stand in front of Cabrera, our roles are reversed. He is the interviewer. We have a small audience—reliever Francisco "K-Rod" Rodríguez is a few lockers to the left, Víctor Martínez is to the right and Jarrod Saltalamacchia is somewhere in between.</p>
+
+<p>Cabrera asks something so inappropriate that it stops the conversation cold.</p>
+
+<p>"No," I say immediately.</p>
+
+<p>K-Rod, a fifteen-year veteran, shakes his head at Cabrera's behavior. Martínez stays silent, but Saltalamacchia makes an equally inappropriate comment encouraging the situation.</p>
+
+<p>I offer Cabrera an editorial comment I know he'll understand. I point at myself. "Me—Grande," I say, pointing to him. "You—Pequeño."</p>
+
+<p>PR calls the writers into Ausmus' office. I walk away, pretending to be unflustered. I look back and blow Miggy a kiss.</p>
+
+<p>Livin' the dream.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">BLUE SPRINGS, Mo., <em>June 15</em>—</span>Back on the Jim Harbaugh beat.</p>
+
+<p>I'm assigned to arrive early in Kansas City this week—half an hour into the suburbs for one of Harbaugh's controversial satellite camps for high-school football players. Today, the Michigan football coach continues to expose a loophole in NCAA rules, which allow schools to host paid-for football camps across the country. These camps are angering rival coaches, who decry them as a sneaky scheme for additional in-person recruiting visits.</p>
+
+<p>Harbaugh's wife is from Blue Springs, and I get in touch with her brother, John Feuerborn, one of Harbaugh's "trusted agents." He owns a couple bars in the area and speaks with a pinch of tobacco in his lip. During the camp, we hit it off. Afterwards, Harbaugh swims around questions from a radio reporter, who's fishing for a soundbite on the camp controversy.</p>
+
+<p>I note Harbaugh's antsy answers, asking a leading question instead.</p>
+
+<p>Harbaugh's eyes light up. Finally, a question he likes.</p>
+
+<p>"Man, how much do you love football? You can just tell how much you love it out there."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">SAN DIEGO, <em>July 11</em>—</span>I come to this year's all-star festivities strictly for the airline miles. I meet my long-distance relationship love interest here and skip the futures game and the home-run derby. We go for dinner in the Gaslamp District. But I can't skip the All-Star Game itself—Miguel Cabrera's appearance is the reason the company spent thousands of dollars in travel to send me here.</p>
+
+<p>I'm pleased to see Cabrera in a good mood during media time—we've been getting on well enough since his weird question. He welcomes my presence inside the American League clubhouse before the game, stepping out of a conversation with fellow stars to answer a few questions.</p>
+
+<p>The two days off have done him good.</p>
+
+<p>"Even one day off in the regular season helps a lot. I think four days will help a lot."</p>
+
+<p>Miggy proudly shows off his custom Louis Vuitton cleats.</p>
+
+<p>"Sweet, huh?"</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>July 15</em>—</span>When the regular season restarts after the All-Star break, the Tigers are in the thick of things. They begin the second half at 46-43, within striking distance of the division lead and two games behind a playoff spot.</p>
+
+<p>Brad Ausmus has not been fired—the day after the Tigers hit back-to-back homers to beat Baltimore in mid-May, Ausmus was ejected for an uncharacteristic temper tantrum that he punctuated by throwing his hoodie on home plate. The team went on a run, winning eight of nine games to get back into the race.</p>
+
+<p>After a few shaky starts, rookie righty Michael Fulmer has emerged as a potential top-of-the-rotation arm alongside Verlander. Fulmer, acquired from the Mets last year, has skyrocketed in value, becoming the midseason favorite for Rookie of the Year. Only twenty-three years old, Fulmer entered the break on a heater—in his last nine starts, he's 7-1 with an 0.63 ERA, limiting opponents to a batting average of .145.</p>
+
+<p>Outside of a recent injury to Jordan Zimmermann, who was sidelined with a right neck strain on July 4, the veteran rotation has managed to stay relatively healthy. Justin Verlander has largely picked up where he left off last season, eating up quality innings and slinging upper-nineties fastballs late in the game.</p>
+
+<p>Verlander opens the second half in the win column, dominating the Royals over seven innings at Comerica Park. Verlander strikes out ten batters, allowing one unearned run on four hits. July ends on an eight-game winning streak.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>July 25</em>—</span>At the <em>Free Press</em>, we're all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, I'm staying another day in Chicago, complying with my sports editor's request to cover the Michigan football coach.</p>
+
+<p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
+
+<p>Last week, he sent word that the suits wanted a Tigers take out story: "1A is interested in a story about How The Tigers Saved Their Season. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. This assumes the Tigers are still doing well and don't get swept in Seattle."</p>
+
+<p>Well, they did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in that upbeat story. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>`,
+        wordCount: 2400
     },
     {
         id: 12,
         year: 2016,
         section: 'year',
         title: "UNCENSORED",
-        subtitle: "To be written",
-        teaser: "The stories that couldn't be told... until now.",
-        content: placeholderContent,
+        subtitle: "Detroit",
+        teaser: "When a superstar crosses the line—and so does the beat writer.",
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>August 20</em>—</span>Thanks to a colossal scheduling mishap, I'm back at the ballpark on an off day I had requested weeks in advance. My backup is on vacation, and I'm stuck covering pregame. I have plans tonight.</p>
+
+<p>My goal is to get in, get done, and get out. Attend the pregame manager's session, get some quotes, and knock out two stories. Be out of the ballpark no later than 6:15.</p>
+
+<p>During Ausmus' session, I ask about Red Sox slugger David Ortiz, playing his final series at Comerica Park. Ortiz, forty, is retiring after the season and has tormented Detroit over the years. A hall of fame-caliber offensive player who starred at the height of the steroid era.</p>
+
+<p>Ortiz becomes the obvious choice for my second story. I'll ask Miggy about him.</p>
+
+<p>Me and Miggy have lived in harmony since last month's All-Star Game. When he appears at his locker, I give him a certain distance, waiting until he sits down before making a move. He's fiddling with his cleats.</p>
+
+<p>I crouch down so we're eye level. Immediately, I sense his combativeness.</p>
+
+<p>"I want to ask you about David Ortiz."</p>
+
+<p>"What about him?"</p>
+
+<p>"You're probably friends, right? What kind of guy is he? What's your relationship like with him?"</p>
+
+<p>"Ask him."</p>
+
+<p>"Well, what do you think of Ortiz as a player? Is there anything that stands out from his swing…"</p>
+
+<p>"He's a lefty hitter. I swing righty."</p>
+
+<p>I crouch lower, trying for eye contact. He's still looking down at his shoes.</p>
+
+<p>"You mean, you can't tell me anything—<em>anything</em>—about David Ortiz?"</p>
+
+<p>"Don't talk to <em>me</em> like that."</p>
+
+<p>Instead of diffusing the situation, I choose escalation.</p>
+
+<p>"Don't talk to me like that."</p>
+
+<p>"Fuck you," Cabrera says.</p>
+
+<p>"Fuck you," I say.</p>
+
+<p>"Fuck <em>you</em>!"</p>
+
+<p>"No, fuck <em>you</em>!"</p>
+
+<p>Walking out of the clubhouse, I turn around and see a National Guy who witnessed the whole thing, the nicest guy you'll meet, face flushed crimson.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>August 21</em>—</span>On this beat, there's only one way to get over things.</p>
+
+<p>Postgame the next day, PR is on high alert. I see Cabrera at his locker—first one to the right. Walking by, I wait for eye contact. When Miggy sees me, I apologize.</p>
+
+<p>"I'm sorry for what I said."</p>
+
+<p>To my surprise, Miggy apologizes, too.</p>
+
+<p>"Look, man. I like you. But sometimes, you can take it too far."</p>
+
+<p>"I get what you're saying, but I wasn't trying to be like that."</p>
+
+<p>"But you were like that."</p>
+
+<p>"I feel you."</p>
+
+<p>We bring it in. Bygones be bygones. Miggy never messed with me again.</p>`,
         wordCount: 500
     },
     {
