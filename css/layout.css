@@ -145,15 +145,15 @@ body.paginated .chapter-body {
 }
 
 .chapter-header {
-    margin-top: 4em;
-    margin-bottom: 3em;
-    padding-bottom: 4em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-bottom: 1.5em;
     border-bottom: 1px solid var(--color-border);
 }
 
 .chapter-body {
     margin-bottom: var(--space-2xl);
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-lg);
 }
 
 /* Navigation footer */
