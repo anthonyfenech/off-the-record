@@ -513,48 +513,57 @@
                     </tr>
                 </thead>
                 <tbody id="catalogBody">
-                    <tr>
-                        <td class="emoji-cell">📰</td>
-                        <td>dombrowski-extension</td>
-                        <td>FIRE DRILL</td>
-                        <td>newspaper</td>
-                    </tr>
-                    <tr>
-                        <td class="emoji-cell">🔗</td>
-                        <td>k-rod-stats</td>
-                        <td>PRIME-TIME</td>
-                        <td>link</td>
-                    </tr>
-                    <tr>
-                        <td class="emoji-cell">📰</td>
-                        <td>fantasy-camp</td>
-                        <td>BURN OUT</td>
-                        <td>newspaper</td>
-                    </tr>
-                    <tr>
-                        <td class="emoji-cell">📷</td>
-                        <td>july-2019</td>
-                        <td>ROAD TO OMAHA</td>
-                        <td>photo</td>
-                    </tr>
-                    <tr>
-                        <td class="emoji-cell">📷</td>
-                        <td>tale-of-tape</td>
-                        <td>UNETHICAL</td>
-                        <td>photo</td>
-                    </tr>
-                    <tr>
-                        <td class="emoji-cell">📷</td>
-                        <td>espn-bottomline</td>
-                        <td>UNETHICAL</td>
-                        <td>photo</td>
-                    </tr>
+                    <!-- Populated dynamically from media.js -->
                 </tbody>
             </table>
         </div>
     </div>
 
-    <script>
+    <script type="module">
+        import { MEDIA_CONTENT } from './data/media.js';
+        import { CHAPTERS } from './data/chapters.js';
+
+        // Chapter titles for lookups
+        const chapterTitles = CHAPTERS.map(ch => ch.title);
+
+        // Populate catalog table from media.js
+        const catalogBody = document.getElementById('catalogBody');
+
+        // Filter to only show non-placeholder media that's actually used
+        const activeMedia = Object.entries(MEDIA_CONTENT)
+            .filter(([id, media]) => !media.placeholder && media.src)
+            .map(([id, media]) => ({
+                id,
+                icon: media.emoji || '📷',
+                type: media.type,
+                chapter: media.chapter ? chapterTitles[media.chapter - 1] : findChapterForMedia(id),
+                caption: media.caption
+            }));
+
+        // Find which chapter a media ID is used in (by searching chapter content)
+        function findChapterForMedia(mediaId) {
+            for (let i = 0; i < CHAPTERS.length; i++) {
+                if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
+                    return chapterTitles[i];
+                }
+            }
+            return '—';
+        }
+
+        // Render table
+        function renderTable(data) {
+            catalogBody.innerHTML = data.map(item => `
+                <tr>
+                    <td class="emoji-cell">${item.icon}</td>
+                    <td>${item.id}</td>
+                    <td>${item.chapter || '—'}</td>
+                    <td>${item.type}</td>
+                </tr>
+            `).join('');
+        }
+
+        renderTable(activeMedia);
+
         // Toggle functionality
         function loadSettings() {
             return {
@@ -687,14 +696,16 @@
 
         // Table sorting
         const table = document.getElementById('catalogTable');
-        const tbody = document.getElementById('catalogBody');
         const headers = table.querySelectorAll('th[data-sort]');
         let sortDir = {};
+        let currentData = [...activeMedia];
+
+        const sortKeys = { icon: 'icon', id: 'id', chapter: 'chapter', type: 'type' };
 
         headers.forEach(th => {
             th.addEventListener('click', () => {
                 const col = th.dataset.sort;
-                const colIndex = Array.from(headers).indexOf(th);
+                const key = sortKeys[col];
 
                 // Toggle direction
                 sortDir[col] = sortDir[col] === 'asc' ? 'desc' : 'asc';
@@ -708,17 +719,16 @@
                 th.classList.add('sorted');
                 th.querySelector('.sort-arrow').textContent = dir === 'asc' ? '↑' : '↓';
 
-                // Sort rows
-                const rows = Array.from(tbody.querySelectorAll('tr'));
-                rows.sort((a, b) => {
-                    const aVal = a.cells[colIndex].textContent.trim();
-                    const bVal = b.cells[colIndex].textContent.trim();
+                // Sort data
+                currentData.sort((a, b) => {
+                    const aVal = (a[key] || '').toString();
+                    const bVal = (b[key] || '').toString();
                     const cmp = aVal.localeCompare(bVal);
                     return dir === 'asc' ? cmp : -cmp;
                 });
 
-                // Re-append sorted rows
-                rows.forEach(row => tbody.appendChild(row));
+                // Re-render
+                renderTable(currentData);
             });
         });
 
