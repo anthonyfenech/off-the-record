@@ -8,7 +8,7 @@ export const MEDIA_CONTENT = {
         emoji: '📰',
         label: 'Newspaper Clipping',
         caption: 'Fantasy Camp Story',
-        src: './assets/ch24-fantasy-camp-story.jpg',
+        src: './assets/24-road-to-omaha-fantasy-camp-story.jpg',
         placeholder: false
     },
     'july-2019': {
@@ -16,7 +16,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'July 31, 2019',
-        src: './assets/ch26-trade-deadline-dugout.jpg',
+        src: './assets/26-unethical-trade-deadline-dugout.jpg',
         placeholder: false
     },
     'tale-of-tape': {
@@ -24,7 +24,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Tale of the Tape: Fenech vs. Verlander',
-        src: './assets/ch12-verlander-tale-of-tape.jpg',
+        src: './assets/12-pennant-race-verlander-tale-of-tape.jpg',
         placeholder: false
     },
     'dombrowski-extension': {
@@ -32,7 +32,7 @@ export const MEDIA_CONTENT = {
         emoji: '📰',
         label: 'Newspaper',
         caption: 'Detroit Free Press, August 4, 2015',
-        src: './assets/ch08-dombrowski-extension.jpg',
+        src: './assets/08-trade-deadline-dombrowski-extension.jpg',
         placeholder: false
     },
     'espn-bottomline': {
@@ -40,7 +40,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'ESPN BottomLine: Verlander incident',
-        src: './assets/ch12-espn-bottomline.png',
+        src: './assets/12-pennant-race-espn-bottomline.png',
         placeholder: false
     },
     'k-rod-stats': {
