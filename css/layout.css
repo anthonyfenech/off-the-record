@@ -146,9 +146,9 @@ body.paginated .chapter-body {
 
 .chapter-header {
     margin-top: 3em;
-    margin-bottom: 4em;
-    padding-bottom: 0;
-    border-bottom: none;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .chapter-body {
@@ -162,12 +162,9 @@ body.paginated .chapter-body {
     bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 760px;
     z-index: var(--z-nav-footer);
     background-color: var(--color-background);
-    border: 1px solid var(--color-border);
-    padding: var(--space-sm) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     display: flex;
     justify-content: center;
     gap: var(--space-2xl);
@@ -309,7 +306,7 @@ body.paginated .chapter-body {
     }
 
     .nav-footer {
-        padding: var(--space-xs) var(--padding-tablet);
+        padding: var(--space-sm) var(--space-lg);
     }
 
     .toc-sidebar {
