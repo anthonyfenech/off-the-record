@@ -1058,10 +1058,230 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "TRADE DEADLINE",
-        subtitle: "To be written",
+        subtitle: "St. Petersburg, Baltimore, Houston, Chicago, Kansas City",
         teaser: "When rosters get shuffled and careers change.",
-        content: placeholderContent,
-        wordCount: 500
+        content: `<p class="has-dateline"><span class="dateline">ST. PETERSBURG, Fla., <em>July 27</em>—</span>It's raining when we land. I get a taxi and check into my room at a Hampton Inn, way too far from Tropicana Field.</p>
+
+<p>Only positive of the place is they've got a shuttle to downtown St. Pete, where the dome is located. While waiting for the van, I scroll past a ruckus on Twitter—Tigers outfielder Rajai Davis has followed a bunch of St. Louis Cardinals accounts.</p>
+
+<p>Someone notices. Fans pay attention to which accounts players follow on social media. Davis' activity raises a red flag and gains traction on social media. Soon, a blog is posted, connecting the dots—is Davis involved in a trade?</p>
+
+<p>I treat this Internet Rumor like any dogged reporter would. I chase it down, emailing the Cardinals GM: "There is some buzz about Rajai Davis—he apparently followed a few Cardinals-related accounts. If there is anything to this, let me know."</p>
+
+<p>When the clubhouse opens today, reporters quickly approach Davis' locker. With his back turned, Davis can't keep it together—he starts laughing and so do teammates nearby. They were pulling a prank on us—it's trade deadline season in the social media age; players oftentimes follow official accounts and new teammates when traded.</p>
+
+<p>Well, they got me bad. I never followed up with Mozeliak after that—even though others were fooled, I knew my fate with St. Louis' head honcho was sealed as the guy who fell for the Rajai Davis Internet Rumor.</p>
+
+<p>The Tigers enter the series on the outskirts of the pennant race. They lose the first two games—the bullpen taking the loss both times. Heading into the series, I had written they should "buy" at the trade deadline. After last night's walk-off loss, I wrote that they should "sell." Now, I'm getting torched online—they're calling me Flip-Floppin' Fen.</p>
+
+<p class="has-dateline"><span class="dateline"><em>July 29</em>—</span>They avoid the sweep with a win on Getaway Day. In the clubhouse afterwards—two days until the trade deadline—the players try to put a positive spin on things. Verlander hopes his performance (eight innings, one run, 10 strikeouts) helps the front office believe there's a chance. I linger after the scrum and comment on his suede jacket, trying to get on his good side.</p>
+
+<p>"Nice jacket."</p>
+
+<p>"Thanks."</p>
+
+<p>Leaving the clubhouse, we walk past Dave Dombrowski—a front office assistant at his side.</p>
+
+<p>The veteran of the crew, Lynn Henning of the <em>Detroit News</em> stops Dombrowski to ask if he has a reaction to tonight's Twitter report, which says the Tigers are selling.</p>
+
+<p>"I don't, no."</p>
+
+<p>Waiting for the press elevator to arrive, Aileen tells the writers to come back.</p>
+
+<p>"Dave is going to talk."</p>
+
+<p>Dombrowski now has something to say: "We are going to be prepared to listen to offers on our players." The report is true—they're sellers.</p>
+
+<p>This is now a four-alarm fire, a scramble.</p>
+
+<p>I start by rushing up to the press box and tweeting out Dombrowski's quotes. Then I have to write up a story about that and rewrite the game story—and I gotta do it by 5 <span class="small-caps">P.M.</span> at the latest because I have a 7:20 flight to Baltimore.</p>
+
+<p class="has-dateline"><span class="dateline">BALTIMORE, <em>July 30</em>—</span>News breaks that the Tigers' fire sale has begun: They are trading David Price to the Toronto Blue Jays, according to a National Guy. It takes me a bit—and my Internet Haters are taunting me online because of it—but I finally get it confirmed with a Toronto source (pro scout). It was an hour late, but any kind of confirmation feels like a win.</p>
+
+<p>PR tells the writers to meet in the ballroom of the downtown Baltimore hotel they're staying in—Dave Dombrowski is going to talk at 3 <span class="small-caps">P.M.</span></p>
+
+<p>In exchange for Price, who will hit free agency this offseason, they received a package of three pitching prospects. Two lefty starters, Matthew Boyd and Daniel Norris, are currently pitching at Triple-A.</p>
+
+<p>"It makes a big difference if you can get players who are close to the big leagues and ready to contribute. We're rebooting, not rebuilding, so you can go into next year and identify on the free agent and trade market what you want to pursue to still be really good."</p>
+
+<p>I ask Dombrowski if, after years of buying at the trade deadline, it's "fun" to sell for a change.</p>
+
+<p>"I wouldn't use the word 'fun.' It's a situation where you never want to be in a spot where you're doing what we're doing. I would much rather be acquiring than I would be trading. But it's just where we are at this point."</p>
+
+<p>Across the harbor at the ballpark, David Price is packing up his stuff. For the second straight year, he's been dealt at the trade deadline. Price, twenty-nine, has posted stellar numbers once again this season (9-4, 2.53 ERA). After Tampa Bay traded him, this time isn't nearly as tough.</p>
+
+<p>"I think everybody kind of envisions themselves playing for one team their entire career. That's not the way it happens."</p>
+
+<p>Asked to sum up his time in Detroit, he says, "It was fun. The city took me in very well."</p>
+
+<p>Before Price makes his exit, I approach him to say good luck. In just half a season, our professional relationship had ups and downs. It finishes with a handshake and healthy respect.</p>
+
+<p>He throws on a backpack, hops on a bicycle and heads to Toronto.</p>
+
+<p class="has-dateline"><span class="dateline"><em>July 31</em>—</span>It's the trade deadline. Detroit still has two veteran players they'd like to move: outfielder Yoenis Céspedes and closer Joakim Soria, both of whom are hitting free agency.</p>
+
+<p>It's a night game. Clubhouse opens at 3:05 <span class="small-caps">P.M.</span>, and it's obscenely hot when it does. There are no windows in the press box.</p>
+
+<p>Inside the visitor's clubhouse at Oriole Park, there is an MLB emblem on the wall to the right, signed by a collection of the greatest players who have come through here, names like Brooks Robinson, Cal Ripken, Jr. and Baltimore native Al Kaline, Mr. Tiger. The signed emblem is the most valuable artifact in any big-league clubhouse.</p>
+
+<p>When the clubhouse opens, the trade deadline clock ticks down to 4. Rumors swirl. Ball Writers must know their way around the clubhouse, and I know my way around this one: They have been posting the lineup card outside the locker room, in the tunnel heading to the dugout.</p>
+
+<p>Knowing my target and sensing nobody else does, I disappear into the tunnel and find the lineup card.</p>
+
+<p>Céspedes is currently on it, playing left field and hitting fifth. I tweet out the news, walk back into the clubhouse and watch as the others look in vain for the card.</p>
+
+<p>But the lineup is subject to change. Back in the clubhouse, there's breaking news on Twitter: The New York Mets are close to acquiring Céspedes from the Tigers. I have but one In The Room source I've made progress with—and I put the pressure on. With the deal already reported on Twitter, I try for a small piece of the pie.</p>
+
+<p>The Tigers' return for the star has yet to be reported and fans are wondering if young righty Zack Wheeler, currently rehabbing from elbow surgery, is involved.</p>
+
+<p>"Is Wheeler in the deal?"</p>
+
+<p>I pester. "Come on, give me something."</p>
+
+<p>"No."</p>
+
+<p>I tweet out the tidbit. It's all the news I'll break at the deadline, but at least it's something.</p>
+
+<p>Dealin' Dave Dombrowski isn't done, though. By the time the writers are ushered out of the clubhouse, he's reportedly striking another deal, this time sending closer Joakim Soria to Pittsburgh.</p>
+
+<p class="has-dateline"><span class="dateline">WASHINGTON, <em>August 3</em>—</span>I take the train from Baltimore after today's series finale to see my little brother in D.C. for the day, having written a column saying Dombrowski should receive a contract extension. It expires at year's end. My argument is twofold: you can't find a better general manager than Dombrowski, and he's already made trades with an eye for the future.</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>August 4</em>—</span>I see a newsstand in the airport, today's <em>Free Press</em> and the banner on Page 1A. <span class="small-caps">JOB 1: EXTEND DOMBROWSKI</span>. Underneath: <span class="small-caps">KEEPING TIGERS GM IS CRUCIAL TO REBOOTING, REJUVENATING THE TEAM—ANTHONY FENECH, 1B</span></p>
+
+<p>Already dressed for work, I go straight to the stadium. The press box is empty—everyone's downstairs, waiting for the clubhouse to open in a few minutes.</p>
+
+<p>When I grab my notebook and recorder, out of the corner of my eye, I notice that Dombrowski is on the field, calling for his son. Landon, fourteen, is running in from center field, where he's been playing with Little Víctor Martínez and trainer Kevin Rand's sons.</p>
+
+<p>After a newsworthy road trip, the local media is well-represented—Ball Writers, columnists, sports radio reporters, cameras and anchors for each of Detroit's TV stations are waiting outside the clubhouse.</p>
+
+<p>I don't wait with them—I head for the tunnel behind home plate, a quiet place for my radio interview. On the phone, I spot Gene Mato, Aníbal Sánchez's agent, sitting front-row down the third-base line. Sánchez is talking to Royals catcher Salvador Perez in the outfield nearby. After the radio hit, I say hello.</p>
+
+<p>"I'm surprised Dombrowski did it. I didn't think he would sell. The team seems on edge."</p>
+
+<p>I'm late for clubhouse: "Gotta get in there. I'll be in touch."</p>
+
+<p>It's 3:34 <span class="small-caps">P.M.</span> The clubhouse must be open by now, so I take the back way. Through the dugout, up the stairs and past a player. I open the double doors, see a lineup card taped on the back, and that's when I hear PR.</p>
+
+<p>"Anthony, no!" It's Aileen Villarreal from down the hall. "The clubhouse is closed."</p>
+
+<p>I'm confused.</p>
+
+<p>"So, when is Brad talking?"</p>
+
+<p>"We'll let you know."</p>
+
+<p>Outside clubhouse walls, reporters are restless. I share my inside view: "I was just in there. They were freaking out, telling me to get out, that the clubhouse was closed."</p>
+
+<p>Bernie Smilovitz pulls me aside. The longtime Channel 4 sports anchor thought my column today was spot on. In fact, he talked with Dave Dombrowski at a charity event last night.</p>
+
+<p>"I wanted to ask him about his contract. I said, 'Hey, what's going on with your stuff?' He was dodgy about it. He said, 'Everything will work out, all right?' I've known Dave for years. I haven't seen him like that. He just seemed off."</p>
+
+<p>I reach out to my two sources, again and again.</p>
+
+<p>"The clubhouse is still closed. Seems like something is up."</p>
+
+<p>Not until Landon Dombrowski walks out of the clubhouse do we know what. Landon is in tears, consoled by his father, Dave, who has been fired after fifteen years as general manager of the Tigers.</p>
+
+<p>The press release hits everyone's phones.</p>
+
+<p>Dave Dombrowski is gone. Al Avila promoted to GM. Press conference soon.</p>
+
+<p>Avila has worked under Dombrowski since joining Detroit. He's been next-in-line, the highest-paid assistant GM, and up for other GM jobs. Now, Avila finally has the keys. He received the good news at a car dealership, while returning a lease.</p>
+
+<p>The news isn't as good for me. Avila has answered exactly none of seven messages since we exchanged numbers in spring training. What else would you expect from a guy who has worked under Dave Dombrowski for the past quarter-century.</p>
+
+<p>Along with Avila's appointment, the Tigers make more promotions: scouting director David Chadd becomes assistant GM, Dave Littlefield is director of player development, and Sam Menzin is director of baseball operations.</p>
+
+<p>We're standing in line together, shoulder-to-shoulder for the last pork chops in the pan.</p>
+
+<p>I congratulate him on the new job.</p>
+
+<p>"Now that you're promoted, here's my card."</p>
+
+<p>Before I can pull it out, Sam says no, recoiling at the business card in fear.</p>
+
+<p>"I can't take that. I don't speak to the media."</p>
+
+<p>Mhmmm. That's what they all say.</p>
+
+<p>After skirting questions about his contract in the presser, Avila's terms have leaked. Five-year deal, according to the Tiger Beat competitor two seats down.</p>
+
+<p>I have nothing. Not even Gator can save me. With the desk getting anxious and nobody else to count on, I pray the eighth time is the charm with Avila."</p>
+
+<p>"It's being reported that your deal is five years after this one, is that true?"</p>
+
+<p>"Yes."</p>
+
+<p>"Thanks. Just wanted to say congrats. So, congrats."</p>
+
+<p>"I appreciate it. I am sure we will work well together."</p>
+
+<p class="has-dateline"><span class="dateline">ROUND ROCK, Texas, <em>August 13</em>—</span>I fly to Texas a day before the Tigers, taking a pit stop in suburban Austin to spend the afternoon at Seamhead's retirement digs. The place is very John Lowe—many bookshelves, minimal decor—down to the Wi-Fi password: 18741874, signifying Sir Winston Churchill's birth year.</p>
+
+<p>Seamhead is a Churchill enthusiast. He introduced me to him years ago.</p>
+
+<p>There are two bookcases and a small flatscreen. On the TV, a recent documentary on Buck Showalter's baseball life is paused.</p>
+
+<p>We watch portions of that show, and John shares his favorite Showalter stories. He still talks to baseball's most-tenured managers, both active and retired—Francona, Gardenhire, Leyland, even Showalter. Such conversations should be preserved for Cooperstown one day.</p>
+
+<p>Grabbing lunch at the world-renowned Salt Lick BBQ, he gives this piece of advice while I wolf down mac and cheese: He suggests I place a call to Dave Dombrowski.</p>
+
+<p>John notes Dombrowski's stature in baseball. But his suggestion is not only because of who Dombrowski is—he explains that it stands for any source, be it general manager, area scout or clubhouse guy. It's an opportunity to further your working relationship with a personal touch—after years of calling this person for information, now you are reaching out in non-transactional fashion.</p>
+
+<p>Hitting the road to Houston, I heed Seamhead's advice and call Dave. Just calling to check in. See how you're doing. We chit-chat for five minutes, rekindling our relationship.</p>
+
+<p>"Thanks for the call, Anthony."</p>
+
+<p>"I'll keep in touch, Dave."</p>
+
+<p class="has-dateline"><span class="dateline">HOUSTON, <em>August 15</em>—</span>It's my first free continental breakfast as a Hilton Honors Gold Member, an achievement I've been chasing since the spring. I pick up a copy of the <em>Houston Chronicle</em>, but the sports section is missing.</p>
+
+<p>At the park, I introduce myself to Matt Boyd, one of the pitchers received in return for David Price, and I pick marijuana as common ground. Boyd hails from Seattle, where weed is legal. I break the ice talking about my favorite place—Uncle Ike's Pot Shop.</p>
+
+<p>Boyd doesn't give much of a reaction, but later he tells Tigers PR.</p>
+
+<p>I don't find this out until the offseason, when I met with my assistant sports editor, after he met for an annual coffee with communications VP Ron Colangelo and media relations director Aileen Villarreal.</p>
+
+<p>Apparently, it made Boyd uncomfortable.</p>
+
+<p>In retrospect, it was an unnecessary icebreaker. But I am who I am, and Matthew Boyd is who he is—someone I'll come to learn has never smoked weed in his life.</p>
+
+<p class="has-dateline"><span class="dateline">CHICAGO, <em>August 18</em>—</span>First time at historic Wrigley Field, which opened in 1914 and presents horrible working conditions for Ball Writers.</p>
+
+<p>The second-oldest stadium in baseball has no air-conditioning in the press box, which is the smallest in baseball. The closet-sized restroom has one urinal and one stall. There is one elevator, way out in left field. At Wrigley, we fight crowds walking down from the press box to the clubhouses. Everything is small and congested. It's a beloved stadium with ivy on the outfield walls, but it's a nightmare for the working press.</p>
+
+<p>In the opener of a two-game set against the Chicago Cubs, the wind blows out to left field, toward Lake Michigan. There have been twice as many home runs (4) as innings played (2) when Big News drops from Boston. Dave Dombrowski has a new job.</p>
+
+<p>A couple innings later, I scurry out of the press box—Dombrowski is calling. I scribble quotes from the Red Sox president on the back of a print-out scorecard.</p>
+
+<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 1</em>—</span>Let me formally introduce my competitors on the Tiger Beat. There's Rival Cohort Chris McCosky from the <em>Detroit News</em>, Jason Beck from MLB.com, James Schmehl from MLive.com and most recently, Katie Strang from ESPN.com.</p>
+
+<p>I was told to watch out for Rival Cohort, but we've held up without animosity so far. Beck, in his twelfth year covering the team, is a soft speaker who is very punctual. I get along particularly well with Schmehl, who is closest in age.</p>
+
+<p>Strang joined us last month, moving from the National Hockey League beat to baseball while ESPN goes through a hyperlocal journalism phase, trying to build sites for every major sports market. She comes to the party with 75,000 Twitter followers. I only have 7,329.</p>
+
+<p>We went out for beers downtown last night. Strang isn't moving from hockey to baseball by choice, so she might not be here long. But she's good at her job, and I'm not thrilled with that, to be honest.</p>
+
+<p class="has-dateline"><span class="dateline"><em>September 2</em>—</span>I am starting to build a relationship with Royals players.</p>
+
+<p>Early in the year, I bugged Martínez to introduce me to catcher Salvador Perez—one of my favorite players, despite being forbidden as a Ball Writer to have favorite players or teams. One day, I saw them on the field talking, hovering closer and closer until Víctor had to introduce me. I check-in with Salvy each series now—he's also the captain of my fantasy baseball team.</p>
+
+<p>I've talked to Eric Hosmer a couple times, Mike Moustakas and now, veteran outfielder Johnny Gomes. After talking with Salvy, I re-introduce myself to Gomes.</p>
+
+<p>"I got a story for you…"</p>
+
+<p>Back in 2013, I was sent to help cover Game 5 of the American League Championship Series. I loitered in the empty Boston dugout with Gomes and teammate Shane Víctorino when Gomes put a fat wad of chew into his cheek. He looked at me, holding the pouch: "You want one?"</p>
+
+<p>By now, you know I'm not one to say no. So, I grabbed a pinch, stuffed it in my cheek and started slowly chewing it into place. As I did this, a mega-sized postseason media throng gathered in the dugout for interviews.</p>
+
+<p>I felt the tobacco spread, quickly pooling on the floor of my mouth, leaking down my throat—and I felt a buzz. I remember I saw them walking out of the tunnel as the buzz intensified. There was way too much juice in my mouth. I needed to spit—but where?</p>
+
+<p>Split seconds before barfing on the dugout steps in front of everyone, I jumped out of my seat, grabbed a cup off the Gatorade cart and spit as controlled as I could into the cup. I plucked the rest of the chew from my mouth and flicked it into the trash. Couldn't find a napkin to wipe my fingers, so I wiped them on my pants instead.</p>
+
+<p>"I was literally about to puke out there."</p>
+
+<p>Gomes is laughing.</p>`,
+        wordCount: 3200
     },
     {
         id: 9,
