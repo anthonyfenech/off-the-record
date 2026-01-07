@@ -100,7 +100,7 @@ class Guestbook {
         buttons.className = 'guestbook-share-buttons';
 
         const shareUrl = encodeURIComponent('https://anthonyfenech.com/off-the-record/');
-        const shareText = encodeURIComponent('OFF-THE-RECORD: A Baseball Memoir by Anthony Fenech - 15 years covering the Detroit Tigers');
+        const shareText = encodeURIComponent('OFF-THE-RECORD by Anthony Fenech - 15 years covering the Detroit Tigers');
 
         // Twitter/X
         const twitter = document.createElement('a');

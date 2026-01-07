@@ -1,7 +1,7 @@
 {
-  "name": "OFF-THE-RECORD: The Mixtape",
+  "name": "OFF-THE-RECORD",
   "short_name": "OTR",
-  "description": "A mobile reading experience - 15 years covering the Detroit Tigers",
+  "description": "15 years covering the Detroit Tigers",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#1a1a1a",

@@ -1,4 +1,4 @@
-// Photo galleries for OFF-THE-RECORD memoir
+// Photo galleries for OFF-THE-RECORD
 // Organized by season/year and theme
 
 // Helper to generate photo placeholders

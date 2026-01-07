@@ -398,10 +398,8 @@
         }
 
         .chapter-lock-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(10, auto);
-            grid-auto-flow: column;
+            display: flex;
+            flex-wrap: wrap;
             gap: 6px;
             margin-bottom: 20px;
             padding: 10px;
@@ -412,50 +410,68 @@
         .chapter-lock-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 10px;
-            background: #f9f9f9;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: #f0f0f0;
             border-radius: 4px;
             font-size: 12px;
+            font-weight: bold;
             cursor: pointer;
-            transition: background 0.15s;
+            transition: all 0.15s;
+            position: relative;
+            color: #333;
         }
 
         .chapter-lock-item:hover {
-            background: #eee;
+            background: #e0e0e0;
         }
 
         .chapter-lock-item.locked {
-            background: #ffe5e5;
+            background: #ffcccc;
+            color: #990000;
         }
 
         .chapter-lock-item input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
+            display: none;
         }
 
         .chapter-lock-item .chapter-num {
             font-weight: bold;
-            color: #666;
-            min-width: 24px;
         }
 
         .chapter-lock-item .chapter-title {
-            flex: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            display: none;
         }
 
-        .chapter-lock-item .chapter-title a {
-            color: inherit;
-            text-decoration: none;
+        .chapter-lock-item .lock-icon {
+            display: none;
         }
 
-        .chapter-lock-item .chapter-title a:hover {
-            text-decoration: underline;
-            color: #0066cc;
+        .chapter-lock-item.locked::after {
+            content: '🔒';
+            position: absolute;
+            font-size: 8px;
+            bottom: 2px;
+            right: 2px;
+        }
+
+        .collapsible-header {
+            cursor: pointer;
+        }
+
+        .collapse-arrow {
+            font-size: 10px;
+            margin-left: 6px;
+            transition: transform 0.2s;
+        }
+
+        .chapter-lock-list.collapsed {
+            display: none;
+        }
+
+        .collapse-arrow.rotated {
+            transform: rotate(-90deg);
         }
 
         .save-indicator {
@@ -586,8 +602,8 @@
 
         <div class="right-panel">
             <!-- Chapter Locking Section -->
-            <div class="catalog-header">
-                <span class="catalog-title">Chapter Locking</span>
+            <div class="catalog-header collapsible-header" id="chapterLockHeader">
+                <span class="catalog-title">Chapter Locking <span class="collapse-arrow" id="chapterLockArrow">▼</span></span>
                 <div class="lock-actions">
                     <span class="save-indicator" id="saveIndicator">Saved!</span>
                     <button class="lock-btn" id="lockAllBtn">Lock All</button>
@@ -595,7 +611,7 @@
                 </div>
             </div>
 
-            <div class="chapter-lock-list" id="chapterLockList">
+            <div class="chapter-lock-list collapsed" id="chapterLockList">
                 <!-- Populated dynamically -->
             </div>
 
@@ -718,11 +734,9 @@
                 const chapterId = chapter.id;
                 const isLocked = lockedChapters.includes(chapterId);
                 return `
-                    <label class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-chapter-id="${chapterId}">
+                    <label class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-chapter-id="${chapterId}" title="${chapterId}. ${chapter.title}">
                         <input type="checkbox" ${isLocked ? 'checked' : ''}>
                         <span class="chapter-num">${chapterId}</span>
-                        <span class="chapter-title"><a href="./full-book.html#chapter-${chapterId}" target="_blank">${chapter.title}</a></span>
-                        <span class="lock-icon">🔒</span>
                     </label>
                 `;
             }).join('');
@@ -765,6 +779,15 @@
         // Initial render
         renderChapterLockList();
 
+        // Collapse toggle for chapter locking
+        const chapterLockHeader = document.getElementById('chapterLockHeader');
+        const chapterLockArrow = document.getElementById('chapterLockArrow');
+        chapterLockHeader.addEventListener('click', (e) => {
+            if (e.target.closest('.lock-btn')) return; // Don't toggle when clicking buttons
+            chapterLockList.classList.toggle('collapsed');
+            chapterLockArrow.classList.toggle('rotated');
+        });
+
         // Populate catalog table from media.js
         const catalogBody = document.getElementById('catalogBody');
 
@@ -778,11 +801,11 @@
             return false;
         }
 
-        // Find which chapter a media ID is used in
+        // Find which chapter a media ID is used in (returns "# TITLE" format)
         function findChapterForMedia(mediaId) {
             for (let i = 0; i < CHAPTERS.length; i++) {
                 if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
-                    return chapterTitles[i];
+                    return `${CHAPTERS[i].id}. ${chapterTitles[i]}`;
                 }
             }
             return '—';
