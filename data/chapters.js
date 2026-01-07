@@ -662,10 +662,144 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "ROOKIE YEAR",
-        subtitle: "To be written",
+        subtitle: "Lakeland, Dunedin, Clearwater",
         teaser: "Learning the ropes on the Tigers beat.",
-        content: placeholderContent,
-        wordCount: 500
+        content: `<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 16</em>—</span>Walk downstairs for breakfast and see Tigers chief legal counsel John Westhoff, sipping cereal and reading a newspaper. I smile. He nods knowingly from behind his glasses.</p>
+
+<p>Today is the first day of school—pitchers and catchers reporting day.</p>
+
+<p class="has-dateline"><span class="dateline"><em>February 24</em>—</span>Awakened by news that Joba Chamberlain, a big boy reliever with a bushy beard, has been spotted in TigerTown. This was reported by Ken Rosenthal on Twitter at 6:44 <span class="small-caps">A.M.</span>, while I was fast asleep.</p>
+
+<p>It's been more than three months now and still I have few sources. PR, nothing. Dave Dombrowski, nothing. Today, I'll even bother Jim Leyland, who currently serves Dombrowski as a special assistant, and almost assuredly does not have the information I'm seeking.</p>
+
+<p>"Do you know anything about this Joba signing?"</p>
+
+<p>"No."</p>
+
+<p>During Chamberlain's return, as I offer my recorder into the scrum, I look past the player and lock onto a guy standing near the clubhouse entrance. The guy is talking to a pitcher I can't quite recognize. Backwards hat, baggy-ish clothes and beams like a guy I should know—a guy who might know a thing or two.</p>
+
+<p>I may have seen this guy once or twice earlier in the spring, but now it seems like I'm noticing him here every day. Afterwards, I make it a point to introduce myself and—as my intuition would have it—we vibe like I figured we would.</p>
+
+<p>We exchange numbers. Of course he can get me some, just let him know. Introducing my new favorite friend—we'll call him Gator.</p>
+
+<p class="has-dateline"><span class="dateline"><em>February 25</em>—</span>Big News out of camp: Brad Ausmus is on Twitter.</p>
+
+<p>"Twenty-first century, gotta move on. Can't be stuck in the stone age."</p>
+
+<p>Ausmus, entering his second season as manager, appears very much at ease. Last fall, a year after taking over this expensive roster, they sputtered in the playoffs, swept by Baltimore in the Division Series. Was last season's failure a team problem—or the inexperienced manager?</p>
+
+<p>At forty-five, Ausmus was viewed as a managing wunderkind when Detroit hired him to succeed Jim Leyland after the 2013 season. But unfortunately for him, last year's successes are considered the baseline around TigerTown. Time is ticking. The Tigers have big names with big contracts—Cabrera, Verlander, Price, J.D. and Víctor Martínez.</p>
+
+<p>Team owner Mike Ilitch turned eighty-five last week. His dying wish is for his beloved baseball team to win the World Series.</p>
+
+<p>Ausmus's daily briefings drip with dry wit. Lots of sarcasm and laughter.</p>
+
+<p>"You're not going to have a ghostwriter, are you?" someone asks.</p>
+
+<p>Nope—everything will come straight from the source. He may use the platform to "refute articles written by media members."</p>
+
+<p>We get along fine, Brad and me. Today, these relations—the back-and-forth we're starting to establish—are on full display.</p>
+
+<p>"The message to the team—between you and the team, right?"</p>
+
+<p class="has-dateline"><span class="dateline"><em>February 26</em>—</span>On the back fields, I get a text message from someone at MLB Network, asking if I have time to come on television today. Immediately, I head back to the hotel to change into a shirt, tie and jacket. I've never been on TV like this, and I'm certifiably nervous—so I take swigs of apple-flavored whiskey when I get back.</p>
+
+<p>It is sweltering as I stand on camera—mid-eighties, and my right hand is sweating so much the microphone keeps slipping to the side. The on-site producer must turn it straight twice. I stumble over words badly at least once, but overall, I survive. MLB Network… hey, now!</p>
+
+<p>I go back into the clubhouse—shirt and tie and jacket and still sweating, scrambling to get some last-second quotes for my newspaper day job, but also probably to let 'em know I was just on MLB Network. I apologize to one player for staying late to answer questions—catcher Alex Avila, whose dad, Al, is Detroit's assistant general manager.</p>
+
+<p>Soon enough, back field activities will conclude with a couple days of live batting practice. Future scout friends from opposing teams will start trickling in, starting their season-long coverage from this sea of gravel stones.</p>
+
+<p>In live BP, hitters and pitchers face off for the first time. The customary batting practice cage around home plate remains. Live BP is the last step of a player's thawing out process before the real baseball begins. It is also the most hated, despised universally—but by hitters especially.</p>
+
+<p>Consider: These guys haven't faced a real-life pitcher for five months. They all throw in the mid-nineties these days, and the guys they're facing are teammates. Those guys aren't used to confrontations like this, facing live pitching from inside the cage. With early camp rosters comes a very assorted mix of talent, age and experience, adding an uneasy unpredictability.</p>
+
+<p>But live batting practice is a necessary evil. Pitchers can now throw semi-competitive pitches. Hitters largely use these offerings to re-train their eyes.</p>
+
+<p>There is adrenaline, excitement and pressure to impress the team's decision makers, who are always watching, always evaluating. A few of them, including Dave Dombrowski, look on from the tower.</p>
+
+<p class="has-dateline"><span class="dateline"><em>March 18</em>—</span>Working hard at spring training again, lounging around with the Tiger Beat at a picnic table outside the clubhouse. We're waiting for the manager to arrive for his media session when an unmistakable voice hollers out from above.</p>
+
+<p>"Hey, Frenchy…"</p>
+
+<p>Nobody calls me Frenchy except Leyland. He is standing on the balcony above, leaning over the railing and smoking a cigarette outside of Dombrowski's office. Leyland is wearing shorts, shoes and no socks.</p>
+
+<p>"Hey Frenchy. Looks like it's time for some new undies… whaddaya say, Frenchy?"</p>
+
+<p>Even at seventy, from that faraway view, can't get nothing past the ol' skipper. Leyland can spot the big hole in the back of my boxers, bunched up and visible to the masses as I sit hunched over at the table.</p>
+
+<p>After the session, Leyland comes down to join us before today's workouts begin. Soon, the Most Popular Boy of Perrysburg, Ohio's 1962 senior class is holding court again.</p>
+
+<p class="has-dateline"><span class="dateline"><em>March 20</em>—</span>The Opening Day starter is revealed.</p>
+
+<p>And it surprises not just the writers when Ausmus tabs David Price—not longtime franchise ace Justin Verlander, snapping his seven-year streak of Opening Day starts</p>
+
+<p>Given his stellar 2014 and exemplary clubhouse leadership, Price is a worthy choice. But although Price may have been the better option on paper, Ausmus' decision was wrought with unnecessary overthinking. Verlander made 30 starts last season while hampered by injuries that led to offseason surgery.</p>
+
+<p>Verlander is the team's most tenured superstar—a homegrown talent who has risen to superstardom over the past decade. If Verlander's right arm is attached, he starts Opening Day for Detroit—or so it was thought.</p>
+
+<p>This spring, Price has looked more comfortable in the clubhouse. And so far, the Tigers' two star pitchers seem to be coalescing far better than the previous two.</p>
+
+<p>Max Scherzer and Justin Verlander are different personalities cut from the same alpha dog cloth. When asked earlier in the spring if he had talked to Scherzer after signing a record-setting deal with Washington, he hadn't.</p>
+
+<p>Price and Verlander have gotten on so well, I've tried coaxing them into co-starring for season preview feature story. The idea: Tagging along during a round of golf.</p>
+
+<p>I try Verlander first.</p>
+
+<p>He's non-committal. I chalk up as a win.</p>
+
+<p>Next time, I try them together.</p>
+
+<p>"Golfing is our personal time," Verlander says. "Plus, we don't golf that much, anyways."</p>
+
+<p>They let me down easy.</p>
+
+<p>"We'll think about it."</p>
+
+<p>I hand a business card to both of 'em. The answer will be the same as it's ever been: No.</p>
+
+<p>Onto Plan B I go—a profile piece on Dave Dombrowski.</p>
+
+<p>Detroit enters 2015 as the four-time defending division champions. But even with all that, Dombrowski still finds himself in a peculiar position—he's a lame duck, his contract expires after the year. I am still far too fresh to recognize any of this, years away from realizing how rare of a position I'm in. A GM in his situation needs the media. For once, I have leverage.</p>
+
+<p class="has-dateline"><span class="dateline">DUNEDIN, Fla., <em>March 27</em>—</span>Panic at the ballpark when Justin Verlander leaves the game after the second inning.</p>
+
+<p>Verlander was scheduled to throw four innings in his second-to-last spring outing.</p>
+
+<p>The team announces right triceps discomfort. Expected to make next start. Afterwards, Verlander chalks it up as no biggie. He wonders if it wasn't the coffee he drank before. (It wasn't.)</p>
+
+<p>Verlander won't make his next start—he doesn't pitch again until June.</p>
+
+<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 28</em>—</span>I arrive to the clubhouse, taking up surveillance. One eye on Verlander's locker at all times.</p>
+
+<p>When he shows up, I give it a second or two—then pounce.</p>
+
+<p>How's he's feeling?</p>
+
+<p>"Can you let me get dressed?"</p>
+
+<p class="has-dateline"><span class="dateline">CLEARWATER, Fla., <em>March 29</em>—</span>Standing in the hallway of the visitors' clubhouse when head trainer Kevin Rand calls me over.</p>
+
+<p>"Can I offer you some advice?"</p>
+
+<p>When a player is coming into the clubhouse, especially if they're dealing with an injury, don't walk up to them right away with questions about it.</p>
+
+<p>Obviously, I knew what Rand was talking about. I just knew a potential injury to Verlander was a big deal, and I didn't want to get beat on it.</p>
+
+<p>"I'm not trying to be mean about it. I'm just looking out for you."</p>
+
+<p>Regardless, all I did was my job. I walked up to the team's star pitcher and asked him how he was feeling after an injury forced him to leave the game yesterday.</p>
+
+<p class="has-dateline"><span class="dateline"><em>April 3</em>—</span>In the chaotic aftermath of the spring finale, with attendants and staffers and players ready for departure—opportunity knocks me over while collecting postgame quotes.</p>
+
+<p>Careening out of the coaches' room, assistant GM Al Avila bowls into me while texting.</p>
+
+<p>I try to use it to my advantage.</p>
+
+<p>"I've been meaning to ask you. Can I get your number?"</p>
+
+<p>"You better not bother me," Avila says.</p>`,
+        wordCount: 1900
     },
     {
         id: 6,
