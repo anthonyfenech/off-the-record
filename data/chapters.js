@@ -4904,6 +4904,8 @@ export const CHAPTERS = [
             <p>I end up standing near the end of a long line of media waiting to gain entry to the Astros' clubhouse, anxiously scrolling through my phone. I know what's going to happen next.</p>
             <p>Pedro reminds me: "Take notes of everything. Detail everything. Document it. Make sure you have it."</p>
 
+            <p>&nbsp;</p>
+
             <p class="has-dateline no-indent"><span class="dateline">9:27 <span class="small-caps">P.M.</span>—</span>Trying to get social media attention, the <em>Freep</em> Twitter account sends a cute breaking news tweet, extra-cheeky and factually incorrect, linking to my game story:</p>
             <p><em>#BREAKING: Justin Verlander once again pitches Detroit Tigers to victory, 2-1 in Houston.</em></p>
             <p>The sports editor texts me: "Hey, that headline was intentional, I'm told… I can change if you want, given touchiness of everything."</p>
