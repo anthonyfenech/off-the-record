@@ -627,9 +627,15 @@ button:focus-visible {
 /* Tappable Media Emojis */
 .media-emoji {
     display: inline-block;
-    font-size: 1.15em;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+    font-size: 1em;
     line-height: 1;
-    letter-spacing: normal;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    text-transform: none !important;
+    font-variant: normal !important;
+    font-style: normal !important;
+    font-weight: normal !important;
     cursor: pointer;
     padding: 2px 4px;
     margin: 0 2px;
@@ -637,7 +643,7 @@ button:focus-visible {
     background-color: var(--color-accent-light);
     transition: all var(--transition-fast);
     position: relative;
-    vertical-align: baseline;
+    vertical-align: middle;
 }
 
 .media-emoji:hover {
@@ -713,6 +719,7 @@ button:focus-visible {
 }
 
 .media-modal-label {
+    display: none;
     font-family: var(--font-mono);
     font-size: var(--font-size-base);
     font-weight: bold;
@@ -753,8 +760,9 @@ button:focus-visible {
     margin: 0 auto;
 }
 
-/* Modal Caption */
+/* Modal Caption - hidden by default, shown when captions enabled */
 .media-modal-caption {
+    display: none;
     padding: var(--space-lg) var(--space-xl);
     border-top: 2px solid var(--color-border);
     background-color: var(--color-accent-light);
@@ -763,6 +771,10 @@ button:focus-visible {
     color: var(--color-text-secondary);
     font-style: italic;
     text-align: center;
+}
+
+body.show-captions .media-modal-caption {
+    display: block;
 }
 
 /* Media Content Containers */
