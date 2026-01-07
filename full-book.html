@@ -62,16 +62,19 @@
             background-color: transparent;
         }
 
-        /* Hide scene breaks (***) */
+        /* Scene breaks (***) - centered with spacing */
         .scene-break {
-            display: none;
+            text-align: center;
+            margin: 0;
+            padding: var(--space-lg) 0;
         }
 
         /* Make flashback header bigger - match nav size */
         .flashback-header {
             font-size: 1.25rem;
             letter-spacing: 3px;
-            margin: var(--space-xl) 0 var(--space-lg) 0;
+            margin: 0;
+            padding: var(--space-lg) 0;
         }
 
         @media print {
