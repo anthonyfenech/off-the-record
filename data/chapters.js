@@ -848,7 +848,7 @@ export const CHAPTERS = [
 
 <p class="scene-break"><span>***</span></p>
 
-<p class="no-indent" style="text-align: center;">EMBARRASSING FLASHBACK</p>
+<p class="flashback-header">EMBARRASSING FLASHBACK</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a BBWAA member. After the Tigers beat the Yankees, I head to the visitor's clubhouse—the quiet, losing side.</p>
 

@@ -109,13 +109,23 @@
 .scene-break {
     text-align: center;
     margin: var(--space-3xl) 0;
+    padding: var(--space-lg) 0;
     position: relative;
 }
 
 .scene-break span {
-    font-family: var(--font-mono);
+    font-family: var(--font-serif);
     color: var(--color-text-tertiary);
     letter-spacing: 0.5em;
+}
+
+/* Flashback Header */
+.flashback-header {
+    font-family: var(--font-mono);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-indent: 0;
 }
 
 /* Block Quote (emails, letters, documents) */
