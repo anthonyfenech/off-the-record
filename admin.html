@@ -875,15 +875,14 @@
 
             const mediaCode = `    '${id}': {
         type: '${type}',
-        icon: '${icon}',
+        emoji: '${icon}',
         label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
         caption: '${caption}',
         src: './assets/${filename}',
-        chapter: ${chapter},
         placeholder: false
     },`;
 
-            const spanCode = `<span class="media-icon" data-media-id="${id}">${icon}</span>`;
+            const spanCode = `<span class="media-emoji" data-media-id="${id}">${icon}</span>`;
 
             mediaCodeEl.textContent = mediaCode;
             spanCodeEl.textContent = spanCode;
