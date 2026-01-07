@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     padding-top: 70px; /* Account for fixed header */
-    padding-bottom: 48px; /* Account for fixed footer */
+    padding-bottom: 70px; /* Account for floating footer */
 }
 
 /* Paginated mode - prevent scrolling */
