@@ -95,6 +95,15 @@
             }
         }
 
+        /* Chapter end separator */
+        .chapter-end {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--color-text-tertiary);
+            letter-spacing: 0.5em;
+            font-size: 1.25rem;
+        }
+
         @media print {
             body { padding: 0; }
             .chapter-section { page-break-after: always; }
@@ -121,6 +130,7 @@
                     <h2 class="chapter-title">${ch.title}</h2>
                 </header>
                 <div class="chapter-body">${ch.content}</div>
+                <div class="chapter-end">◆ ◆ ◆</div>
             </article>
         `).join('');
 
