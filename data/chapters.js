@@ -429,12 +429,15 @@ export const CHAPTERS = [
 
 <p>Tomorrow, I receive a flood of congratulations from my colleagues. I am finally a sports writer, unchained from the web desk—a <em>Ball Writer</em>, the Tigers' beat writer, can you believe it?</p>
 
-<p class="block-quote"><strong>From:</strong> Myers, Gene<br/>
+<p><strong>From:</strong> Myers, Gene<br/>
 <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">P.M.</span><br/>
-<strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT<br/><br/>
-<em>"After more than seven years, in essence, in the </em>Free Press'<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em><br/><br/>
-<em>"This has been Anthony's path to The Show: He started on the Prep Crew and He did stringing work while at Central Michigan. He blogged countless games for Freep.com while interning in Las Vegas, Pittsburgh and Phoenix. He became a </em>Freep<em> intern and officially hired. Since then, he usually has staffed the overnight sports web shift but covered enough baseball to earn his Baseball Writers' Association of America card before the 2013 season. When it arrived, it was one of the happiest days of his life.</em><br/><br/>
-<em>"John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: 'A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call 'interrupted a nap in my car.'"</em></p>
+<strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
+
+<p><em>"After more than seven years, in essence, in the </em>Free Press'<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
+
+<p><em>"This has been Anthony's path to The Show: He started on the Prep Crew and He did stringing work while at Central Michigan. He blogged countless games for Freep.com while interning in Las Vegas, Pittsburgh and Phoenix. He became a </em>Freep<em> intern and officially hired. Since then, he usually has staffed the overnight sports web shift but covered enough baseball to earn his Baseball Writers' Association of America card before the 2013 season. When it arrived, it was one of the happiest days of his life.</em></p>
+
+<p><em>"John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: 'A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call 'interrupted a nap in my car.'"</em></p>
 
 <p>&nbsp;</p>
 
@@ -1638,7 +1641,7 @@ export const CHAPTERS = [
 
 <p>He bought the Tigers in 1992, months after typing this return letter to a local youngster, who at age four already had his future planned out. With help, I wrote in crayon to Ilitch that I wanted to be a hockey player.</p>
 
-<p class="block-quote"><em>"Dear Anthony: I have read your letter and must tell you what a good printer you are. You can start getting ready to be a hockey player (Red Wing) by 1. Eat good food, get exercise, and get a lot of sleep, because hockey players have to be healthy. 2. Listen to mom and dad, because hockey players need discipline. 3. Study hard when you go to school, because hockey players have to be smart. 4. Learn to skate and practice a lot, because hockey players need to be excellent skaters. You do all of the things I listed above and then write me another letter and let me know how you're doing when you start playing with a Mites or Squirt team. Thank you for your letter. Sincerely yours, Michael Ilitch."</em></p>
+<p><em>"Dear Anthony: I have read your letter and must tell you what a good printer you are. You can start getting ready to be a hockey player (Red Wing) by 1. Eat good food, get exercise, and get a lot of sleep, because hockey players have to be healthy. 2. Listen to mom and dad, because hockey players need discipline. 3. Study hard when you go to school, because hockey players have to be smart. 4. Learn to skate and practice a lot, because hockey players need to be excellent skaters. You do all of the things I listed above and then write me another letter and let me know how you're doing when you start playing with a Mites or Squirt team. Thank you for your letter. Sincerely yours, Michael Ilitch."</em></p>
 
 <p>&nbsp;</p>
 
@@ -4756,7 +4759,11 @@ export const CHAPTERS = [
 
             <p class="has-dateline no-indent"><span class="dateline"><em>September 6</em>—</span>By dawn, it's out. Another reporter was on the case—Katie Strang, of course—and her scoop is racing across the Internet: <span class="small-caps">TIGERS BROADCASTERS INVOLVED IN PHYSICAL ALTERCATION</span>.</p>
             <p>A month later, FOX Sports Detroit parts ways with the broadcasting pair. I'll write an inside look on what happened:</p>
-            <p class="block-quote"><em>"The fight started over a chair. Allen arrived to find Impemba in the booth—what began as a request for the comfortable chair ended in an argument. The conversation turned heated about Allen not showing up early for a scheduled interview. Tensions simmered during the broadcast and boiled over postgame.<br><br>"The argument centered on Allen's frustration with Impemba questioning his professionalism. It continued with Impemba's finger in Allen's face and ended after Allen put his arms above Impemba's shoulder, below his chin, and pushed Impemba against the wall before they were separated by a freelance TV producer.<br><br>"'It was not a chokehold,' Allen's agent Tom Shaer said—a claim confirmed by two other persons with knowledge of the situation."</em></p>
+            <p><em>"The fight started over a chair. Allen arrived to find Impemba in the booth—what began as a request for the comfortable chair ended in an argument. The conversation turned heated about Allen not showing up early for a scheduled interview. Tensions simmered during the broadcast and boiled over postgame.</em></p>
+
+<p><em>"The argument centered on Allen's frustration with Impemba questioning his professionalism. It continued with Impemba's finger in Allen's face and ended after Allen put his arms above Impemba's shoulder, below his chin, and pushed Impemba against the wall before they were separated by a freelance TV producer.</em></p>
+
+<p><em>"'It was not a chokehold,' Allen's agent Tom Shaer said—a claim confirmed by two other persons with knowledge of the situation."</em></p>
 
             <p>&nbsp;</p>
 
@@ -5182,7 +5189,11 @@ export const CHAPTERS = [
 
             <p class="has-dateline no-indent"><span class="dateline">BOSTON, <em>April 22</em>—</span>Inside the press box at Fenway Park, there's a framed picture of the <em>Boston Globe</em> sports front on October 22, 1975—the day after Carlton Fisk hit one of the most famous home runs in baseball history.</p>
             <p>On the page is the greatest lede in Ball Writing history, penned by Peter Gammons:</p>
-            <p class="block-quote"><em>"And all of a sudden the ball was there, like the Mystic River Bridge, suspended out in the black of the morning.<br><br>"When it finally crashed off the mesh attached to the left field foul pole, one step after another the reaction unfurled: from Carlton Fisk's convulsive leap to John Kiley's booming of the 'Hallelujah Chorus' to the wearing off of the numbness to the outcry that echoed across the cold New England morning.<br><br>"At 12:34 <span class="small-caps">A.M.</span>, in the 12th inning, Fisk's histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series."</em></p>
+            <p><em>"And all of a sudden the ball was there, like the Mystic River Bridge, suspended out in the black of the morning.</em></p>
+
+<p><em>"When it finally crashed off the mesh attached to the left field foul pole, one step after another the reaction unfurled: from Carlton Fisk's convulsive leap to John Kiley's booming of the 'Hallelujah Chorus' to the wearing off of the numbness to the outcry that echoed across the cold New England morning.</em></p>
+
+<p><em>"At 12:34 <span class="small-caps">A.M.</span>, in the 12th inning, Fisk's histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series."</em></p>
             <p>It can give you chills.</p>
             <p>Today's game gets rained out. Doubleheader tomorrow—bad news for anyone who has an interview at the <em>Boston Globe</em>.</p>
 
