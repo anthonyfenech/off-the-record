@@ -301,6 +301,16 @@
             white-space: nowrap;
         }
 
+        .id-cell a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+        }
+
+        .id-cell a:hover {
+            border-bottom-color: #333;
+        }
+
         .chapter-num-cell {
             text-align: center;
             width: 28px;
@@ -1177,6 +1187,7 @@
                     id,
                     icon: media.emoji || '📷',
                     type: media.type,
+                    src: media.src,
                     chapterNum: chapter.num,
                     chapterName: chapter.name,
                     caption: media.caption,
@@ -1196,11 +1207,14 @@
                 const chapterNumBox = item.chapterNum
                     ? `<span class="ch-num">${item.chapterNum}</span>`
                     : '—';
+                const idLink = item.src
+                    ? `<a href="${item.src}" target="_blank" title="Open ${item.id}">${item.id}</a>`
+                    : item.id;
                 return `
                 <tr>
                     <td class="status-cell" title="${item.statusLabel}">${item.status}</td>
                     <td class="emoji-cell">${item.icon}</td>
-                    <td class="id-cell" title="${item.id}">${item.id}</td>
+                    <td class="id-cell" title="${item.id}">${idLink}</td>
                     <td class="chapter-num-cell">${chapterNumBox}</td>
                     <td class="chapter-name-cell">${chapterLink}</td>
                     <td class="time-cell">${item.time}</td>
