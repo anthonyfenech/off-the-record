@@ -68,9 +68,11 @@
 
     <script type="module">
         import { CHAPTERS } from './data/chapters.js';
+        import { MEDIA_ITEMS } from './data/media.js';
+        import { mediaModal } from './js/mediaModal.js';
 
+        // Render chapters
         const container = document.getElementById('content');
-
         container.innerHTML = CHAPTERS.map(ch => `
             <article class="chapter-section">
                 <header class="chapter-header">
@@ -79,6 +81,9 @@
                 <div class="chapter-body">${ch.content}</div>
             </article>
         `).join('');
+
+        // Initialize media modal for emoji triggers
+        mediaModal.init();
     </script>
 </body>
 </html>
