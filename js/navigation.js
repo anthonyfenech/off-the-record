@@ -328,7 +328,8 @@ class Navigation {
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(allowBookmarks ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
-            { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true }
+            { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true },
+            { id: 'admin', label: 'ADMIN', type: 'link', url: './admin.html' }
         ];
 
         bottomSections.forEach(section => {
