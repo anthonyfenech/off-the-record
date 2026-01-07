@@ -9,6 +9,7 @@ export const MEDIA_CONTENT = {
         label: 'Audio',
         caption: '97.1 The Ticket / 96.1 The Game - Trade Deadline Discussion',
         src: './assets/24-road-to-omaha/mike trade deadline.mp3',
+        duration: '2:34',
         placeholder: false
     },
     'first-on-tv': {
@@ -17,6 +18,7 @@ export const MEDIA_CONTENT = {
         label: 'Video',
         caption: 'First time on MLB Network',
         src: './assets/27-postscript/FIRST ON TV.MOV.mov',
+        duration: '1:45',
         placeholder: false
     },
     'high-heat-hot-seat': {
@@ -89,6 +91,14 @@ export const MEDIA_CONTENT = {
         label: 'Baseball Reference',
         caption: 'Francisco Rodríguez Career Stats',
         url: 'https://www.baseball-reference.com/players/r/rodrifr03.shtml',
+        placeholder: false
+    },
+    'morosi-cubs-tweet': {
+        type: 'tweet',
+        emoji: '🐦',
+        label: 'Tweet',
+        caption: 'Jon Morosi tweet about Cubs-Tigers negotiations',
+        url: 'https://x.com/jonmorosi/status/882039692824281088',
         placeholder: false
     },
     'joe-nathan-story': {
@@ -360,6 +370,7 @@ export const MEDIA_TYPES = {
     pdf: { emoji: '📄', label: 'PDF Document' },
     attachment: { emoji: '📎', label: 'Attachment' },
     link: { emoji: '🔗', label: 'Link' },
+    tweet: { emoji: '🐦', label: 'Tweet' },
     email: { emoji: '✉️', label: 'E-mail' },
     text: { emoji: '💬', label: 'Text Message' },
     selfie: { emoji: '🤳', label: 'Selfie' },

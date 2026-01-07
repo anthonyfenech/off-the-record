@@ -2816,6 +2816,8 @@ export const CHAPTERS = [
 
 <p>I feel only mildly creeped out. Not quite a death threat but impressed nonetheless by garnering that kind of hatred in the first place. I am a <em>Ball Writer</em>—I write about <em>baseball</em>.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline">LAKELAND, Fla., <em>February 13</em>—</span>Nothing much is happening in TigerTown, twenty-four hours before pitchers and catchers officially report. Catchers take batting practice and pitchers throw long toss. Clubhouses are closed, and the manager doesn't talk until tomorrow.</p>
 
 <p>I was in-and-out by noon, bringing to mind something Pittsburgh writer Bill Brink once said: "I would love to see the look on our editors' faces if they found out what we do early in spring training."</p>
@@ -2836,6 +2838,8 @@ export const CHAPTERS = [
 
 <p>Five minutes becomes thirty becomes an hour. At least I'll have a good sunburn.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline"><em>February 15</em>—</span>This morning, we're allowed into the brand-new clubhouse for the first time.</p>
 
 <p>Joker Marchant Stadium has undergone a massive renovation. The venture cost upwards of $40 million, transforming what were previously among the worst facilities in baseball.</p>
@@ -2846,6 +2850,8 @@ export const CHAPTERS = [
 
 <p>But old or new, all clubhouses are alike. As Kristie Ackert says: "The clubhouse is a lot like the kindergarten classroom—you truly have to deal with every child differently."</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline"><em>February 16</em>—</span>Justin Verlander likes my tweet this morning, a picture of the waffle machine.</p>
 
 <p>"Good morning, beautiful."</p>
@@ -2853,6 +2859,8 @@ export const CHAPTERS = [
 <p>I awoke early to start this spring's sourcing round. From opposing teams' media guides, I came up with a few front office execs for each team, plus scouts and advance scouts. Before our teams' cross paths this spring, I'll try to initiate meetups.</p>
 
 <p>This year, I'm targeting younger front-office staffers in line for promotions in years to come.</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline"><em>March 15</em>—</span>HSITL invites me to his spring abode, where we share a smoke on the balcony. Avila is staying at Grasslands, a gated community with a golf and country club. Apparently, Verlander has a place here, too.</p>
 
@@ -2877,6 +2885,8 @@ export const CHAPTERS = [
 <p>"And I'll never forget that."</p>
 
 <p>Avila himself is a father of three. A devout Catholic. An all-around good guy. He dips the cigar into his drink. "I could tell your dad is a good man." The best, I say. Avila tells stories about his climb up the scouting ranks and how he met his wife. He refills our drinks twice.</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline"><em>March 28</em>—</span>With Opening Day only seventy-two hours away and the Tigers' roster not finalized, I wake up on high alert.</p>
 
@@ -2914,6 +2924,8 @@ export const CHAPTERS = [
 
 <p>Mato confirms Sánchez will begin the season in the bullpen.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline">CHICAGO, <em>April 4</em>—</span>After a rainout, Opening Day finally arrives. Clouds continue to cake the sky, sprinkles drop off-and-on, and the gloomy gray U.S. Cellular Field looks as ugly as ever.</p>
 
 <p>I'm in my third year of making the Opening Day clubhouse rounds, offering up a handshake and, "good luck, good health."</p>
@@ -2940,6 +2952,8 @@ export const CHAPTERS = [
 
 <p>And, despite conditions, the game is played. Verlander wins on Opening Day.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline"><em>April 18</em>—</span>Standing in front of the visitor's dugout, staring into the camera, hand shaking a bit as I hold the microphone. Jordan Zimmermann walks by, as close as one can without touching me. I'm waiting for today's MLB Network spot to begin.</p>
 
 <p>"Face for radio if I've ever seen one."</p>
@@ -2962,6 +2976,8 @@ export const CHAPTERS = [
 
 <p>"What did J.D. just do?" Ausmus waits for the screen to load. "He hit a home run."</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline">ANAHEIM, Calif., <em>May 11</em>—</span>Waiting for my luggage at John Wayne Airport, itching for a scoop, I decide to give Martinez a try.</p>
 
 <p>"You know when you're joining the team yet?"</p>
@@ -2980,6 +2996,8 @@ export const CHAPTERS = [
 
 <p>I drive them to the team hotel in Newport Beach.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline">CHICAGO, <em>May 26</em>—</span>Halfway through the longest road trip of the season—11 games in 12 days—I land at O'Hare around 2:30 <span class="small-caps">A.M.</span> and check into my room past four. I set an alarm for 9:30 and shut the curtains.</p>
 
 <p>Stepping into the hotel gym, I'm smacked by breaking news while scrolling Twitter.</p>
@@ -2988,11 +3006,15 @@ export const CHAPTERS = [
 
 <p>I head up to the room and write a story, summarizing Morosi's report. It's clearly coming from someone In The Room. I don't return to the gym.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline no-indent"><span class="dateline"><em>May 27</em>—</span>I write a column decoding Morosi's reporting for the readers.</p>
 
 <p>"<em>Within that message—a wholly unsurprising one, given the Tigers' current play and future state—was a message from the front office to the team. That message was clear: You guys need to start playing better, and soon.</em>"</p>
 
 <p>The words drive Avila berserk—he's booming through my phone between the doubleheader, taking exception to the notion he'd be communicating through the press.</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline">KANSAS CITY, Mo., <em>May 29</em>—</span>Avila accepts my apology, messaging early Memorial Day: "I read your stuff. Now we can kiss and make up."</p>
 
@@ -3011,6 +3033,8 @@ export const CHAPTERS = [
 <p>Verlander is active in the veteran's community and established the Wins For Warriors foundation to support Iraq and Afghanistan war vets.</p>
 
 <p>I do my part to further Verlander's philanthropic endeavors by writing a piece on the red poppy.</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline"><em>May 30</em>—</span>The charitable, cheery feeling in this corner of the clubhouse does not last.</p>
 
@@ -3066,7 +3090,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">UP NORTH, Mich., <em>July 5</em>—</span>Although I promised not to be on my phone this holiday weekend, here I am—scrolling underneath sunsetting skies, still cursing National Guy Jon Morosi to the heavens.</p>
 
-<p>Morosi is one of the nicest guys you'll ever hate. Yesterday, he blew my cover. First, he shared my inside information on Twitter: "Cubs inquired to Tigers on availability of Justin Verlander and Alex Avila, sources say, but sides have not engaged in trade negotiations." Then he called out my source, telling everyone that a "top Chicago scout" was at yesterday's game.</p>
+<p>Morosi is one of the nicest guys you'll ever hate. Yesterday, he blew my cover. First, he shared my inside information on Twitter: "Cubs inquired to Tigers on availability of Justin Verlander and Alex Avila, sources say, but sides have not engaged in trade negotiations." <span class="media-emoji" data-media-id="morosi-cubs-tweet">🐦</span> Then he called out my source, telling everyone that a "top Chicago scout" was at yesterday's game.</p>
 
 <p>Still thinking about it a day later, since I abandoned the plan of spending vacation without a phone glued to my hand.</p>
 
