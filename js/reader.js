@@ -98,6 +98,12 @@ class Reader {
             chapterHeader.style.display = 'none';
         }
 
+        // Hide nav footer on home page
+        const navFooter = document.querySelector('.nav-footer');
+        if (navFooter) {
+            navFooter.style.display = 'none';
+        }
+
         // Remove paginated class
         document.body.classList.remove('paginated');
 
@@ -142,6 +148,12 @@ class Reader {
         const chapterHeader = document.querySelector('.chapter-header');
         if (chapterHeader) {
             chapterHeader.style.display = '';
+        }
+
+        // Show nav footer (may be hidden from home page)
+        const navFooter = document.querySelector('.nav-footer');
+        if (navFooter) {
+            navFooter.style.display = '';
         }
 
         // Check reading mode
