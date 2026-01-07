@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,23 +19,54 @@
 
     <style>
         body {
-            padding: 60px 20px 100px;
+            padding: 80px 20px 100px;
         }
 
-        .book {
-            max-width: 680px;
+        /* Sticky header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .book-title {
-            text-align: center;
-            margin-bottom: 80px;
+        .header-logo-img {
+            height: 16px;
+            width: auto;
         }
 
-        .book-title img {
-            height: 20px;
-            width: auto;
-            display: block;
+        .theme-btn-header,
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dark mode icon visibility */
+        .sun-icon { display: block; }
+        .moon-icon { display: none; }
+        [data-theme="dark"] .sun-icon { display: none; }
+        [data-theme="dark"] .moon-icon { display: block; }
+
+        .book {
+            max-width: 680px;
             margin: 0 auto;
         }
 
@@ -118,16 +149,48 @@
     </style>
 </head>
 <body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="theme-btn-header" id="themeToggleBtn" aria-label="Toggle dark mode">
+                <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <a href="./" class="header-logo"><img src="./assets/TITLE O.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
     <main class="book">
-        <header class="book-title">
-            <img src="./assets/TITLE O.png" alt="OFF-THE-RECORD">
-        </header>
         <div id="content"></div>
     </main>
 
     <script type="module">
         import { CHAPTERS } from './data/chapters.js';
         import { mediaModal } from './js/mediaModal.js';
+
+        // Dark mode toggle
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        themeBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // Menu button - go back to main reader
+        document.getElementById('menuBtn').addEventListener('click', () => {
+            window.location.href = './';
+        });
 
         // Render chapters
         const container = document.getElementById('content');
