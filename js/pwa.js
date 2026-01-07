@@ -85,6 +85,11 @@ class PWA {
 
     // Show install prompt
     showInstallPrompt() {
+        // Check if user has dismissed before - never show again
+        if (localStorage.getItem('installPromptDismissed') === 'true') {
+            return;
+        }
+
         // Create install prompt element
         const prompt = document.createElement('div');
         prompt.className = 'install-prompt';
@@ -109,8 +114,9 @@ class PWA {
             this.handleInstallClick();
         });
 
-        // Dismiss button click
+        // Dismiss button click - remember dismissal forever
         document.getElementById('dismissInstall').addEventListener('click', () => {
+            localStorage.setItem('installPromptDismissed', 'true');
             this.hideInstallPrompt();
         });
     }

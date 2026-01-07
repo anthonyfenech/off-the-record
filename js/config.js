@@ -12,10 +12,6 @@ const CONFIG = {
     // Shows "Scroll" and "Pages" buttons in settings
     showReadingModeToggle: true,
 
-    // DARK MODE TOGGLE
-    // Shows sun/moon icons in header
-    showDarkModeToggle: true,
-
     // SEARCH BUTTON
     // Shows magnifying glass icon in header
     showSearchButton: true,
@@ -26,9 +22,6 @@ const CONFIG = {
 
     // Default reading mode: 'scroll' or 'page'
     defaultReadingMode: 'scroll',
-
-    // Default theme: 'light', 'dark', or 'auto' (system preference)
-    defaultTheme: 'light',
 
 };
 

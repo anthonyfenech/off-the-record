@@ -3,7 +3,7 @@
 import { CHAPTERS } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
-import { readingModeManager, themeManager } from './reading-mode.js';
+import { readingModeManager } from './reading-mode.js';
 import { CONFIG } from './config.js';
 
 class Reader {
@@ -42,9 +42,6 @@ class Reader {
 
         // Initialize reading mode manager
         readingModeManager.init();
-
-        // Initialize theme manager
-        themeManager.init();
 
         // Hide progress indicator if disabled in config
         if (!CONFIG.showProgressIndicator && this.headerProgress) {

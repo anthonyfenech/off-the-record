@@ -328,7 +328,7 @@ class MediaModal {
             if (container && window.twttr) {
                 container.innerHTML = '';
                 window.twttr.widgets.createTweet(tweetId, container, {
-                    theme: document.body.classList.contains('dark-mode') ? 'dark' : 'light',
+                    theme: 'light',
                     dnt: true // Do Not Track
                 }).then((el) => {
                     if (!el) {

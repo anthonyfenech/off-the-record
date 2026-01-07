@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        (function() {
-            var theme = localStorage.getItem('theme');
-            var bg = theme === 'dark' ? '#1a1a1a' : '#fefefe';
-            document.documentElement.style.backgroundColor = bg;
-            document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
-            if (theme) document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-    <style>
-        html, body { background-color: var(--color-background, #fefefe); }
-        [data-theme="dark"] html, [data-theme="dark"] body { background-color: #1a1a1a; }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFF-THE-RECORD</title>
@@ -46,10 +33,6 @@
             border-bottom: 1px solid var(--color-border);
         }
 
-        [data-theme="dark"] .header {
-            background: #1a1a1a;
-        }
-
         .header-content {
             display: flex;
             align-items: center;
@@ -63,11 +46,6 @@
         .header-logo-img {
             height: 28px;
             width: auto;
-        }
-
-        /* Dark mode logo invert */
-        [data-theme="dark"] .header-logo-img {
-            filter: invert(1) hue-rotate(180deg);
         }
 
         .back-to-reader {
@@ -84,22 +62,6 @@
             opacity: 0.7;
         }
 
-        .theme-btn-header {
-            width: 44px;
-            height: 44px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--color-text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-btn-header:hover {
-            opacity: 0.7;
-        }
-
         .menu-btn {
             background: none;
             border: none;
@@ -110,12 +72,6 @@
             align-items: center;
             justify-content: center;
         }
-
-        /* Dark mode icon visibility */
-        .sun-icon { display: block; }
-        .moon-icon { display: none; }
-        [data-theme="dark"] .sun-icon { display: none; }
-        [data-theme="dark"] .moon-icon { display: block; }
 
         .book {
             max-width: 680px;
@@ -267,10 +223,7 @@
                 </svg>
             </a>
             <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
-            <button class="theme-btn-header" id="themeToggleBtn" aria-label="Toggle dark mode">
-                <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </button>
+            <div style="width:44px;"></div>
         </div>
     </header>
 
@@ -299,25 +252,9 @@
         </button>
     </nav>
 
-    <!-- Apply saved theme immediately to prevent flash -->
-    <script>
-        (function() {
-            const saved = localStorage.getItem('theme');
-            if (saved) {
-                document.documentElement.setAttribute('data-theme', saved);
-            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
-
     <script type="module">
         import { CHAPTERS } from './data/chapters.js';
         import { mediaModal } from './js/mediaModal.js';
-        import { themeManager } from './js/reading-mode.js';
-
-        // Initialize theme toggle
-        themeManager.init();
 
         // Render chapters
         const container = document.getElementById('content');
