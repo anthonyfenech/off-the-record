@@ -186,7 +186,7 @@
             max-height: 400px;
             overflow-y: auto;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 4px 4px 0 0;
         }
 
         .catalog-table {
@@ -261,6 +261,95 @@
             width: 50px;
             font-size: 11px;
             color: #666;
+        }
+
+        .chapter-num-cell {
+            text-align: center;
+            width: 35px;
+            font-weight: bold;
+        }
+
+        .chapter-name-cell a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+        }
+
+        .chapter-name-cell a:hover {
+            border-bottom-color: #333;
+        }
+
+        /* Inline Add Form */
+        .inline-add-form {
+            padding: 8px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .inline-form-row {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .inline-status,
+        .inline-emoji {
+            width: 50px;
+            padding: 6px 4px;
+            font-family: inherit;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .inline-id {
+            flex: 1;
+            min-width: 100px;
+            padding: 6px 8px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .inline-chapter {
+            width: 200px;
+            padding: 6px 8px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .inline-time {
+            width: 60px;
+            padding: 6px 8px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .inline-add-btn {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            font-size: 18px;
+            font-weight: bold;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .inline-add-btn:hover {
+            background: #555;
         }
 
         /* Add Media Form */
@@ -823,8 +912,8 @@
                             <th data-sort="status" title="🟢 Live (in chapter) | 🟡 Pending (placeholder) | 🔴 Cut (unused)">● <span class="sort-arrow">↕</span></th>
                             <th data-sort="icon">⬡ <span class="sort-arrow">↕</span></th>
                             <th data-sort="id">Media ID <span class="sort-arrow">↕</span></th>
-                            <th data-sort="chapter">Chapter <span class="sort-arrow">↕</span></th>
-                            <th data-sort="type">Type <span class="sort-arrow">↕</span></th>
+                            <th data-sort="chapterNum"># <span class="sort-arrow">↕</span></th>
+                            <th data-sort="chapterName">Chapter <span class="sort-arrow">↕</span></th>
                             <th data-sort="time">Time <span class="sort-arrow">↕</span></th>
                         </tr>
                     </thead>
@@ -832,6 +921,33 @@
                         <!-- Populated dynamically from media.js -->
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Inline Add Form -->
+            <div class="inline-add-form" id="inlineAddForm">
+                <div class="inline-form-row">
+                    <select class="inline-status" id="inlineStatus" title="Status">
+                        <option value="green">🟢</option>
+                        <option value="yellow">🟡</option>
+                        <option value="red">🔴</option>
+                    </select>
+                    <select class="inline-emoji" id="inlineEmoji" title="Type">
+                        <option value="📷">📷</option>
+                        <option value="📰">📰</option>
+                        <option value="🔗">🔗</option>
+                        <option value="🐦">🐦</option>
+                        <option value="✉️">✉️</option>
+                        <option value="💬">💬</option>
+                        <option value="🎬">🎬</option>
+                        <option value="🎙️">🎙️</option>
+                    </select>
+                    <input type="text" class="inline-id" id="inlineId" placeholder="Media ID">
+                    <select class="inline-chapter" id="inlineChapter" title="Chapter">
+                        <option value="">—</option>
+                    </select>
+                    <input type="text" class="inline-time" id="inlineTime" placeholder="Time">
+                    <button class="inline-add-btn" id="inlineAddBtn">+</button>
+                </div>
             </div>
             <div class="status-legend">
                 <span>🟢 Live (in chapter)</span>
@@ -949,14 +1065,18 @@
             return false;
         }
 
-        // Find which chapter a media ID is used in (returns "# TITLE" format)
+        // Find which chapter a media ID is used in (returns object with num and name)
         function findChapterForMedia(mediaId) {
             for (let i = 0; i < CHAPTERS.length; i++) {
                 if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
-                    return `${CHAPTERS[i].id}. ${chapterTitles[i]}`;
+                    return {
+                        num: CHAPTERS[i].id,
+                        name: chapterTitles[i],
+                        full: `${CHAPTERS[i].id}. ${chapterTitles[i]}`
+                    };
                 }
             }
-            return '—';
+            return { num: null, name: null, full: '—' };
         }
 
         // Get status: 🟢 Live (in use), 🟡 Pending (placeholder), 🔴 Cut (unused)
@@ -979,11 +1099,13 @@
         const allMedia = Object.entries(MEDIA_CONTENT)
             .map(([id, media]) => {
                 const status = getStatus(id, media);
+                const chapter = findChapterForMedia(id);
                 return {
                     id,
                     icon: media.emoji || '📷',
                     type: media.type,
-                    chapter: findChapterForMedia(id),
+                    chapterNum: chapter.num,
+                    chapterName: chapter.name,
                     caption: media.caption,
                     status: status.icon,
                     statusLabel: status.label,
@@ -994,16 +1116,21 @@
 
         // Render table
         function renderTable(data) {
-            catalogBody.innerHTML = data.map(item => `
+            catalogBody.innerHTML = data.map(item => {
+                const chapterLink = item.chapterNum
+                    ? `<a href="./full-book.html#chapter-${item.chapterNum}" target="_blank">${item.chapterName}</a>`
+                    : '—';
+                return `
                 <tr>
                     <td class="status-cell" title="${item.statusLabel}">${item.status}</td>
                     <td class="emoji-cell">${item.icon}</td>
                     <td>${item.id}</td>
-                    <td>${item.chapter || '—'}</td>
-                    <td>${item.type}</td>
+                    <td class="chapter-num-cell">${item.chapterNum || '—'}</td>
+                    <td class="chapter-name-cell">${chapterLink}</td>
                     <td class="time-cell">${item.time}</td>
                 </tr>
-            `).join('');
+            `;
+            }).join('');
         }
 
         renderTable(allMedia);
@@ -1184,7 +1311,7 @@
         let sortDir = {};
         let currentData = [...allMedia];
 
-        const sortKeys = { status: 'statusSort', icon: 'icon', id: 'id', chapter: 'chapter', type: 'type', time: 'time' };
+        const sortKeys = { status: 'statusSort', icon: 'icon', id: 'id', chapterNum: 'chapterNum', chapterName: 'chapterName', time: 'time' };
 
         headers.forEach(th => {
             th.addEventListener('click', () => {
@@ -1217,6 +1344,72 @@
         });
 
         init();
+
+        // Populate inline chapter dropdown
+        const inlineChapterSelect = document.getElementById('inlineChapter');
+        CHAPTERS.forEach((ch, i) => {
+            const opt = document.createElement('option');
+            opt.value = ch.id;
+            opt.textContent = `${ch.id}. ${ch.title}`;
+            inlineChapterSelect.appendChild(opt);
+        });
+
+        // Inline add form handler
+        const inlineAddBtn = document.getElementById('inlineAddBtn');
+        inlineAddBtn.addEventListener('click', () => {
+            const status = document.getElementById('inlineStatus').value;
+            const emoji = document.getElementById('inlineEmoji').value;
+            const mediaId = document.getElementById('inlineId').value.trim();
+            const chapterVal = document.getElementById('inlineChapter').value;
+            const time = document.getElementById('inlineTime').value.trim();
+
+            if (!mediaId) {
+                alert('Please enter a Media ID');
+                return;
+            }
+
+            // Get chapter info
+            const chapterNum = chapterVal ? parseInt(chapterVal) : null;
+            const chapterName = chapterNum ? CHAPTERS.find(c => c.id === chapterNum)?.title : null;
+
+            // Determine status emoji
+            const statusEmoji = status === 'green' ? '🟢' : status === 'yellow' ? '🟡' : '🔴';
+
+            // Generate media.js code
+            const placeholder = status === 'yellow';
+            const typeMap = {
+                '📷': 'photo',
+                '📰': 'newspaper',
+                '🔗': 'link',
+                '🐦': 'tweet',
+                '✉️': 'email',
+                '💬': 'text',
+                '🎬': 'video',
+                '🎙️': 'audio'
+            };
+            const type = typeMap[emoji] || 'photo';
+
+            const mediaCode = `    '${mediaId}': {
+        type: '${type}',
+        emoji: '${emoji}',
+        label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
+        caption: '',
+        src: './assets/${mediaId}',${time ? `\n        duration: '${time}',` : ''}
+        placeholder: ${placeholder}
+    },`;
+
+            const spanCode = `<span class="media-emoji" data-media-id="${mediaId}">${emoji}</span>`;
+
+            // Show the output in the existing modal form
+            document.getElementById('mediaCode').textContent = mediaCode;
+            document.getElementById('spanCode').textContent = spanCode;
+            document.getElementById('addForm').classList.add('active');
+            document.getElementById('outputSection').style.display = 'block';
+
+            // Clear inline form
+            document.getElementById('inlineId').value = '';
+            document.getElementById('inlineTime').value = '';
+        });
     </script>
 </body>
 </html>
