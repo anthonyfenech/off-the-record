@@ -57,6 +57,7 @@ body {
     margin-bottom: var(--space-md);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wide);
+    text-align: center;
 }
 
 .chapter-subtitle {
