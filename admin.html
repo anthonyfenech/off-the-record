@@ -466,6 +466,13 @@
             <div class="toggle-group">
                 <div class="toggle-header">Features</div>
                 <div class="toggle-row">
+                    <span class="toggle-label">Media Captions</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="showCaptions">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
                     <span class="toggle-label">Dark Mode</span>
                     <label class="toggle-switch">
                         <input type="checkbox" id="allowDarkMode" checked>
@@ -732,6 +739,7 @@
             return {
                 showOverload: localStorage.getItem('admin_showOverload') === 'true',
                 showLockedPreviews: localStorage.getItem('admin_showLockedPreviews') === 'true',
+                showCaptions: localStorage.getItem('admin_showCaptions') === 'true',
                 allowDarkMode: localStorage.getItem('admin_allowDarkMode') !== 'false',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
@@ -750,6 +758,7 @@
 
             document.getElementById('showOverload').checked = settings.showOverload;
             document.getElementById('showLockedPreviews').checked = settings.showLockedPreviews;
+            document.getElementById('showCaptions').checked = settings.showCaptions;
             document.getElementById('allowDarkMode').checked = settings.allowDarkMode;
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
@@ -758,7 +767,7 @@
             document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
 
             // Add listeners for all toggles
-            const toggles = ['showOverload', 'showLockedPreviews', 'allowDarkMode',
+            const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions', 'allowDarkMode',
                            'allowPageMode', 'allowFontSize', 'allowBookmarks', 'randomButtonText', 'credentialCarousel'];
 
             toggles.forEach(id => {
