@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0d47a1">
+
+    <title>OFF-THE-RECORD - Full Book</title>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+
+        .full-book-container {
+            max-width: var(--max-width-reader);
+            margin: 0 auto;
+            padding: 0 var(--padding-mobile);
+        }
+
+        .full-book-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .full-book-title {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .full-book-subtitle {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .chapter-section {
+            margin-bottom: 80px;
+            page-break-after: always;
+        }
+
+        .chapter-section:last-child {
+            margin-bottom: 40px;
+        }
+
+        .chapter-title-full {
+            font-family: var(--font-mono);
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .chapter-content-full {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .chapter-content-full p {
+            margin-bottom: 1.5em;
+            text-indent: 1.5em;
+        }
+
+        .chapter-content-full p:first-child,
+        .chapter-content-full p.has-dateline,
+        .chapter-content-full .scene-break + p {
+            text-indent: 0;
+        }
+
+        .back-to-site {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            text-decoration: underline;
+            background: var(--color-background);
+            padding: 10px 15px;
+            border: 1px solid var(--color-border);
+        }
+
+        .back-to-site:hover {
+            color: var(--color-text-primary);
+        }
+
+        .loading-message {
+            text-align: center;
+            padding: 60px 20px;
+            font-family: var(--font-mono);
+            color: var(--color-text-secondary);
+        }
+
+        /* Print styles */
+        @media print {
+            .back-to-site {
+                display: none;
+            }
+
+            body {
+                padding: 0;
+            }
+
+            .chapter-section {
+                page-break-after: always;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .full-book-container {
+                padding: 0 var(--padding-tablet);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="full-book-container">
+        <header class="full-book-header">
+            <h1 class="full-book-title">OFF-THE-RECORD</h1>
+            <p class="full-book-subtitle">Complete Edition</p>
+        </header>
+
+        <main id="bookContent">
+            <p class="loading-message">Loading chapters...</p>
+        </main>
+    </div>
+
+    <a href="./" class="back-to-site">Back to site</a>
+
+    <script type="module">
+        import { CHAPTERS } from './data/chapters.js';
+
+        function renderFullBook() {
+            const container = document.getElementById('bookContent');
+            let html = '';
+
+            CHAPTERS.forEach(chapter => {
+                // Parse content - handle scene breaks
+                let content = chapter.content;
+
+                // Replace scene break markers with styled divs
+                content = content.replace(/\n\n---\n\n|\n\n\*\*\*\n\n|\n\n\* \* \*\n\n/g,
+                    '<div class="scene-break"><span>* * *</span></div>');
+
+                html += `
+                    <section class="chapter-section">
+                        <h2 class="chapter-title-full">${chapter.title}</h2>
+                        <div class="chapter-content-full">
+                            ${content}
+                        </div>
+                    </section>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Render when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderFullBook);
+        } else {
+            renderFullBook();
+        }
+    </script>
+</body>
+</html>
