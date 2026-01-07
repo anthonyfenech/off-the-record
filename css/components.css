@@ -355,6 +355,7 @@
     letter-spacing: var(--letter-spacing-normal);
     display: flex;
     align-items: center;
+    gap: var(--space-sm);
 }
 
 .toc-section-content {
@@ -628,6 +629,7 @@ button:focus-visible {
     display: inline-block;
     font-size: 1.15em;
     line-height: 1;
+    letter-spacing: normal;
     cursor: pointer;
     padding: 2px 4px;
     margin: 0 2px;

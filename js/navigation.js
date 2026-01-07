@@ -180,9 +180,9 @@ class Navigation {
         item.className = 'toc-chapter';
         item.dataset.chapterId = chapter.id;
 
-        // Check if chapter locking is enabled via admin panel
-        const lockingEnabled = localStorage.getItem('admin_lockChapters') === 'true';
-        const isLocked = lockingEnabled && chapter.id > 1;
+        // Check if this specific chapter is locked via admin panel
+        const lockedChapters = JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
+        const isLocked = lockedChapters.includes(chapter.id);
 
         if (isLocked) {
             item.classList.add('toc-chapter-locked');
@@ -324,7 +324,7 @@ class Navigation {
         const allowBookmarks = localStorage.getItem('admin_allowBookmarks') !== 'false';
 
         const bottomSections = [
-            { id: 'full-book', label: 'GO OFF', type: 'link', url: './full-book.html' },
+            { id: 'full-book', label: 'GO OFF', type: 'link', url: './full-book.html', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>' },
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(allowBookmarks ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
@@ -341,7 +341,7 @@ class Navigation {
 
             const sectionTitle = document.createElement('h3');
             sectionTitle.className = 'toc-section-title';
-            sectionTitle.innerHTML = section.label;
+            sectionTitle.innerHTML = (section.icon ? section.icon + ' ' : '') + section.label;
 
             sectionHeader.appendChild(sectionTitle);
 
