@@ -46,7 +46,7 @@
         }
 
         .catalog-panel {
-            width: 520px;
+            width: 600px;
             flex-shrink: 0;
         }
 
@@ -155,10 +155,34 @@
             flex-wrap: wrap;
         }
 
-        .quick-links a {
+        .quick-links a,
+        .quick-links .legend-btn {
             color: #333;
             text-decoration: underline;
             font-size: 11px;
+        }
+
+        .quick-links .legend-btn {
+            cursor: pointer;
+        }
+
+        .quick-links .legend-btn:hover {
+            color: #666;
+        }
+
+        .legend-dropdown {
+            display: none;
+            margin-top: 8px;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #f9f9f9;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .legend-dropdown.show {
+            display: block;
         }
 
         .toggle-subheader {
@@ -191,27 +215,6 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        .info-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 16px;
-            height: 16px;
-            font-size: 10px;
-            font-weight: bold;
-            background: #ddd;
-            color: #666;
-            border-radius: 50%;
-            cursor: help;
-            margin-left: 6px;
-            vertical-align: middle;
-        }
-
-        .info-btn:hover {
-            background: #333;
-            color: #fff;
         }
 
         .add-btn {
@@ -870,8 +873,10 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
+            </div>
 
-                <div class="toggle-subheader">Install Prompt</div>
+            <div class="toggle-group">
+                <div class="toggle-header">Install Prompt</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Enabled</span>
                     <label class="toggle-switch">
@@ -880,7 +885,7 @@
                     </label>
                 </div>
                 <div class="toggle-row">
-                    <span class="toggle-label">User dismissed</span>
+                    <span class="toggle-label">Dismissed</span>
                     <button class="reset-btn" id="resetInstallPrompt">Reset</button>
                 </div>
                 <div class="install-options" id="installOptions">
@@ -913,6 +918,13 @@
                 <a href="./">Site</a>
                 <a href="./full-book.html">Full Book</a>
                 <a href="https://github.com/anthonyfenech/off-the-record" target="_blank">GitHub</a>
+                <span class="legend-btn" id="legendBtn">Legend</span>
+            </div>
+
+            <div class="legend-dropdown" id="legendDropdown">
+                <div>🟢 Live (in chapter)</div>
+                <div>🟡 Pending (placeholder)</div>
+                <div>🔴 Cut (unused)</div>
             </div>
         </div>
 
@@ -935,7 +947,7 @@
             <div style="margin: 30px 0; border-top: 2px solid #333;"></div>
 
             <div class="catalog-header">
-                <span class="catalog-title">Media Catalog <span class="info-btn" title="🟢 Live (in chapter)&#10;🟡 Pending (placeholder)&#10;🔴 Cut (unused)">?</span></span>
+                <span class="catalog-title">Media Catalog</span>
                 <button class="add-btn" id="addMediaBtn">+ Add</button>
             </div>
 
@@ -1452,6 +1464,13 @@
         });
 
         init();
+
+        // Legend toggle
+        const legendBtn = document.getElementById('legendBtn');
+        const legendDropdown = document.getElementById('legendDropdown');
+        legendBtn.addEventListener('click', () => {
+            legendDropdown.classList.toggle('show');
+        });
 
         // Populate inline chapter dropdown
         const inlineChapterSelect = document.getElementById('inlineChapter');
