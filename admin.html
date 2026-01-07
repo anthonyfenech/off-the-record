@@ -181,6 +181,21 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 11px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .catalog-table th:hover {
+            background: #f5f5f5;
+        }
+
+        .catalog-table th .sort-arrow {
+            margin-left: 4px;
+            opacity: 0.3;
+        }
+
+        .catalog-table th.sorted .sort-arrow {
+            opacity: 1;
         }
 
         .catalog-table td {
@@ -488,13 +503,13 @@
                 </div>
             </div>
 
-            <table class="catalog-table">
+            <table class="catalog-table" id="catalogTable">
                 <thead>
                     <tr>
-                        <th>Icon</th>
-                        <th>Media ID</th>
-                        <th>Chapter</th>
-                        <th>Type</th>
+                        <th data-sort="icon">Icon <span class="sort-arrow">↕</span></th>
+                        <th data-sort="id">Media ID <span class="sort-arrow">↕</span></th>
+                        <th data-sort="chapter">Chapter <span class="sort-arrow">↕</span></th>
+                        <th data-sort="type">Type <span class="sort-arrow">↕</span></th>
                     </tr>
                 </thead>
                 <tbody id="catalogBody">
@@ -667,6 +682,43 @@
                 navigator.clipboard.writeText(target.textContent);
                 btn.textContent = 'Copied!';
                 setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        });
+
+        // Table sorting
+        const table = document.getElementById('catalogTable');
+        const tbody = document.getElementById('catalogBody');
+        const headers = table.querySelectorAll('th[data-sort]');
+        let sortDir = {};
+
+        headers.forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.dataset.sort;
+                const colIndex = Array.from(headers).indexOf(th);
+
+                // Toggle direction
+                sortDir[col] = sortDir[col] === 'asc' ? 'desc' : 'asc';
+                const dir = sortDir[col];
+
+                // Update arrows
+                headers.forEach(h => {
+                    h.classList.remove('sorted');
+                    h.querySelector('.sort-arrow').textContent = '↕';
+                });
+                th.classList.add('sorted');
+                th.querySelector('.sort-arrow').textContent = dir === 'asc' ? '↑' : '↓';
+
+                // Sort rows
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                rows.sort((a, b) => {
+                    const aVal = a.cells[colIndex].textContent.trim();
+                    const bVal = b.cells[colIndex].textContent.trim();
+                    const cmp = aVal.localeCompare(bVal);
+                    return dir === 'asc' ? cmp : -cmp;
+                });
+
+                // Re-append sorted rows
+                rows.forEach(row => tbody.appendChild(row));
             });
         });
 
