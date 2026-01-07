@@ -129,6 +129,10 @@ class MediaModal {
         // Clear previous content
         body.innerHTML = '';
 
+        // Add audio-modal class for compact audio styling
+        const isAudio = ['audio', 'radio', 'interview', 'mic', 'phone', 'record'].includes(media.type);
+        this.modal.classList.toggle('audio-modal', isAudio);
+
         // Render based on type
         if (media.placeholder) {
             body.innerHTML = this.renderPlaceholder(media);

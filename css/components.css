@@ -827,17 +827,31 @@ body.show-captions .media-modal-caption {
     height: auto;
 }
 
-/* Audio Container */
+/* Audio Container - compact styling */
 .media-audio-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-2xl) 0;
+    padding: var(--space-sm) 0;
 }
 
 .media-audio {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
+}
+
+/* Compact modal for audio */
+.media-modal.audio-modal {
+    max-width: 450px;
+}
+
+.media-modal.audio-modal .media-modal-header {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.media-modal.audio-modal .media-modal-body {
+    padding: var(--space-md);
+    min-height: auto;
 }
 
 /* Text Container */
