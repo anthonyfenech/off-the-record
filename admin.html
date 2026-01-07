@@ -911,45 +911,6 @@
                 </div>
             </div>
 
-            <div class="toggle-group">
-                <div class="toggle-header">Install Prompt</div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Enabled</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="installPromptEnabled">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Dismissed</span>
-                    <button class="reset-btn" id="resetInstallPrompt">Reset</button>
-                </div>
-                <div class="install-options" id="installOptions">
-                    <div class="mini-form-group">
-                        <label>Message</label>
-                        <input type="text" id="installMessage" placeholder="Install message...">
-                    </div>
-                    <div class="mini-form-group">
-                        <label>Button</label>
-                        <input type="text" id="installButton" placeholder="Button text...">
-                    </div>
-                    <div class="mini-form-row">
-                        <div class="mini-form-group">
-                            <label>Delay (sec)</label>
-                            <input type="number" id="installDelay" min="0" max="60" value="1">
-                        </div>
-                        <div class="mini-form-group">
-                            <label>Auto-hide (sec)</label>
-                            <input type="number" id="installAutoHide" min="0" max="120" value="0" placeholder="0=never">
-                        </div>
-                    </div>
-                </div>
-                <div class="install-stats" id="installStats">
-                    <span class="stat-label">Installs:</span>
-                    <span class="stat-value" id="installCount">0</span>
-                </div>
-            </div>
-
             <div class="quick-links">
                 <a href="./">Site</a>
                 <a href="./full-book.html">Full Book</a>
@@ -1089,15 +1050,47 @@
 
             <div class="extra-panels">
                 <div class="control-panel">
-                    <div class="control-panel-title">Media Stats</div>
-                    <div class="stats-grid" id="mediaStats">
-                        <!-- Populated by JS -->
+                    <div class="control-panel-title">Install Prompt</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Enabled</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="installPromptEnabled">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Dismissed</span>
+                        <button class="reset-btn" id="resetInstallPrompt">Reset</button>
+                    </div>
+                    <div class="install-options">
+                        <div class="mini-form-group">
+                            <label>Message</label>
+                            <input type="text" id="installMessage" placeholder="Install message...">
+                        </div>
+                        <div class="mini-form-group">
+                            <label>Button</label>
+                            <input type="text" id="installButton" placeholder="Button text...">
+                        </div>
+                        <div class="mini-form-row">
+                            <div class="mini-form-group">
+                                <label>Delay (sec)</label>
+                                <input type="number" id="installDelay" min="0" max="60" value="1">
+                            </div>
+                            <div class="mini-form-group">
+                                <label>Auto-hide (sec)</label>
+                                <input type="number" id="installAutoHide" min="0" max="120" value="0" placeholder="0=never">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="install-stats">
+                        <span class="stat-label">Installs:</span>
+                        <span class="stat-value" id="installCount">0</span>
                     </div>
                 </div>
                 <div class="control-panel">
-                    <div class="control-panel-title">Quick Actions</div>
-                    <div class="toggle-row">
-                        <span class="toggle-label">Coming soon...</span>
+                    <div class="control-panel-title">Media Stats</div>
+                    <div class="stats-grid" id="mediaStats">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
             </div>
