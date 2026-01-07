@@ -5469,17 +5469,11 @@ export const CHAPTERS = [
 
             <p class="has-dateline no-indent"><span class="dateline">1:05 <span class="small-caps">P.M.</span>—</span>MLB releases a statement: "Per our Club-Media Regulations, the reporter should have been allowed to enter the clubhouse postgame at the same time as the other members of the media. We have communicated this to the Astros."</p>
             <p>Messages arrive from everywhere. "You're Big News on the radio," a local radio host says. "People backing you."</p>
-            <p>I'm jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news <span class="small-caps">(…$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS</span> • <span class="small-caps">NEW POLL PUTS TRUMP APPROVAL RATING AT</span>…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>`,
-        wordCount: 1400
-    },
-    {
-        id: 29,
-        year: 2019,
-        section: 'year',
-        title: "AIRPLANE MODE",
-        subtitle: "Chicago • Detroit • London • Malta",
-        teaser: "The aftermath of the Verlander incident and a crisis of identity.",
-        content: `<p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
+            <p>I'm jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news <span class="small-caps">(…$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS</span> • <span class="small-caps">NEW POLL PUTS TRUMP APPROVAL RATING AT</span>…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>
+
+<p class="scene-break">***</p>
+
+<p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
 
 <p>BBWAA President: Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
 
@@ -6058,10 +6052,10 @@ export const CHAPTERS = [
 <p>After nearly two hours, he passes over a folder of hitting strategies and an email report he sent directly to the Highest Source In The Land. Before I go, I'm introduced to one of his daughters.</p>
 
 <p>I message my closest work confidante: "On the day they told me they didn't want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house."</p>`,
-        wordCount: 6950
+        wordCount: 8350
     },
     {
-        id: 30,
+        id: 29,
         year: 2020,
         section: 'year',
         title: "BOTTOM NINE",
@@ -6611,9 +6605,9 @@ export const CHAPTERS = [
 
     // 2020 SEASON - No chapters, just the year header (handled in navigation)
 
-    // POSTSCRIPT CHAPTERS (31-32) - Nested under POSTSCRIPT dropdown
+    // POSTSCRIPT CHAPTERS (30-31) - Nested under POSTSCRIPT dropdown
     {
-        id: 31,
+        id: 30,
         year: null,
         section: 'postscript',
         title: "POSTSCRIPT",
@@ -6907,7 +6901,7 @@ export const CHAPTERS = [
         wordCount: 4550
     },
     {
-        id: 32,
+        id: 31,
         year: null,
         section: 'postscript',
         title: "DEDICATION",
