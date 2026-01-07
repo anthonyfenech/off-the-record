@@ -3,6 +3,14 @@
 
 export const MEDIA_CONTENT = {
     // Photos
+    'espn-push-alert': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'ESPN Push Alert: Verlander incident',
+        src: './assets/26-unethical/Verlander incident ESPN push alert.png',
+        placeholder: false
+    },
     'fantasy-camp': {
         type: 'newspaper',
         emoji: '📰',
