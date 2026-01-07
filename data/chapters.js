@@ -2084,20 +2084,506 @@ export const CHAPTERS = [
         year: 2016,
         section: 'year',
         title: "PENNANT RACE",
-        subtitle: "To be written",
-        teaser: "The stretch run toward October.",
-        content: placeholderContent,
-        wordCount: 500
+        subtitle: "Minneapolis, Atlanta",
+        teaser: "The Tigers' final push for the playoffs—and a Cy Young vote as currency.",
+        content: `<p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>September 20</em>—</span>Justin Verlander seeks a buyer for his car.</p>
+
+<p>Standing a few feet away from his locker when TV broadcaster Rod Allen walks by.</p>
+
+<p>"Hey Rod. You wanna buy my Aston Martin?"</p>
+
+<p>"Too pricey for me."</p>
+
+<p>I'm offended.</p>
+
+<p>"Why didn't you ask me?"</p>
+
+<p>"You got that much?"</p>
+
+<p>"No… But I do have a Cy Young vote this year."</p>
+
+<p>That'll get his attention.</p>
+
+<p>"Oh yeah?"</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>September 21</em>—</span>Per usual, Verlander speaks with reporters the day before his start.</p>
+
+<p>Afterwards, I tell him, "You really know how to fill up the notebook," explaining its old journalism slang for providing plenty of material. He's not fluent in newspaper-speak—and really, who is? I explain what a "notebook" is—a side-car story that touches on multiple topics.</p>
+
+<p>With the rest of the writers' pack scattered, I stand between Verlander and Víctor Martínez.</p>
+
+<p>"Back in the day, didn't writers and players travel together?" Verlander asks.</p>
+
+<p>"Yeah. Writers used to ride trains and fly with teams. Some even hung out together."</p>
+
+<p>Víctor doesn't believe it. I tell them how writers and players were friends but maintained professional boundaries—they'd travel together, even drink together, but certain things couldn't be written about. Peter Gammons used to shag flies with Red Sox players.</p>
+
+<p>The amicable relationship between writers and players dates to long train rides in the forties. The writers observed the code because they cherished their jobs and considered themselves immensely privileged.</p>
+
+<p>How could they not?</p>
+
+<p>I turn to Víctor: "We should hang out sometime."</p>
+
+<p>They laugh. What a ridiculous concept.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">ATLANTA, <em>September 30</em>—</span>For the first time in my career, it's a real pennant race. Detroit arrives 1½ games back.</p>
+
+<p>Inside the clubhouse, chatting up lefty reliever Ian Krol when I'm startled by loud screams. I turn to see two clubhouse attendants, still shaking from opening the red cooler—players taped a rubber snake underneath the lid.</p>
+
+<p>"Hey Anthony," Verlander hollers at me. "Are there any Red Bulls in there?"</p>
+
+<p>He wants me to open it. I stare and laugh.</p>
+
+<p>Justin chuckles after his prank falls flat in front of teammates. He couldn't get me.</p>
+
+<p>Before batting practice, I sit with Al Avila in the dugout. He's one winning weekend away from taking the Tigers back to the playoffs in his first full season as general manager.</p>
+
+<p>"We're going to watch Zimmermann carefully. As far as his role in the playoffs, we'll deal with that once we get there."</p>
+
+<p>I ask if he's nervous about postseason hopes hanging in the balance.</p>
+
+<p>"No. This is baseball. It's all just a game."</p>
+
+<p>The Tigers explode early—three runs in the first inning. I spend the rest of the game booking postseason travel. Cabrera hits his 38th home run. Upton homers too. Daniel Norris spins a gem.</p>
+
+<p>Half a game out. Two to go.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>October 1</em>—</span>After blocking Justin's prank attempt yesterday, I come bearing gifts today.</p>
+
+<p>He is starting the season finale tomorrow. After a late surge, Verlander is considered a top Cy Young candidate—he's 16-7 with a 3.10 ERA and 246 strikeouts in 220 innings.</p>
+
+<p>I baked a fresh batch of brownie points. Bad luck had inflated his numbers, and I thought he'd like to know.</p>
+
+<p>His eyes light up: "Good to know."</p>
+
+<p>Against my protest, the <em>Freep</em> wants a column on manager Brad Ausmus' status next year. I say it's awkward timing and not my job as the beat reporter. My sports editor says it's what the readers want.</p>
+
+<p>Ian Kinsler sits at his locker, unbothered before I walk up and mention this story. Do you think Ausmus should be back next year?</p>
+
+<p>"Not answering that. Not my call."</p>
+
+<p>"How much of a difference-maker has Brad been this year?"</p>
+
+<p>"It sounds like you already know what you're writing. What are you writing?"</p>
+
+<p>"I'm writing that Al should bring Brad back… I think you guys have done a good job this year given the injuries, and he deserves another year."</p>
+
+<p>"So, write that. Write exactly that. Why do you need my quotes for that?"</p>
+
+<p>"I'm trying to get a player's perspective."</p>
+
+<p>"I'm not the team voice on Brad. I haven't asked a single guy in here about that."</p>
+
+<p>It's not wise for Ball Writers to take public stances on managers. We deal with them daily, natural bias can emerge, and we risk losing them as trusted sources.</p>
+
+<p>I play it safe and write that Avila should bring Ausmus back. My primary motivation—the playoff race is still undecided, and I don't want to cause ill-timed, distracting headlines.</p>
+
+<p>Detroit enters Game 160 trailing the Blue Jays for the last wild-card spot.</p>
+
+<p>Their last stand comes in the eighth: Bases loaded for Miguel Cabrera, J.D. Martinez up next. Cabrera strikes out and Martinez hits a rocket into the hole at shortstop—Dansby Swanson stabs it, starting an inning-ending double play.</p>
+
+<p>Players watch Toronto's game inside the silent clubhouse. Ausmus hopes for the best.</p>
+
+<p>"In a perfect world, Boston can win this, and we still control our own destiny."</p>
+
+<p>By the time the media is kicked out, Jays win.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>October 2</em>—</span>There were still scenarios in which the Tigers could play another day, but each required help. Both teams ahead in the standings won, and the season finale was rendered without suspense—they were shut out.</p>
+
+<p>Verlander struck out eight batters over seven innings. For the second straight year, I got a first-name farewell. I didn't have many phone numbers to gather, and I was surprised Cameron Maybin shut me down. "Hell naw." Not even his email.</p>
+
+<p>I was less emotional in the clubhouse this year. More assured, more one of the guys, still just an Idiot Reporter. I've enjoyed covering Maybin and getting to better know the young pitchers—Norris, Boyd, and Fulmer.</p>
+
+<p>I moved forward with Miggy this year in a topsy-turvy but not insignificant way—and the rest of the Tigers' superstars on less dramatic scale. I feel eye-to-eye with most everyone else in here.</p>
+
+<p>The players will soon scatter on charters for the winter. I'm flying commercial, with an upgrade. It was a good season—it's too bad the book won't happen. Maybe next year.</p>`,
+        wordCount: 1200
     },
     {
         id: 14,
         year: 2016,
         section: 'year',
         title: "WAKE-UP CALL",
-        subtitle: "To be written",
-        teaser: "A moment of reckoning.",
-        content: placeholderContent,
-        wordCount: 500
+        subtitle: "Detroit, Scottsdale, Oxon Hill, Secaucus, Washington",
+        teaser: "The offseason grind—from Cy Young heartbreak to Mike Ilitch's death.",
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>October 3</em>—</span>Not even bloody seven o'clock on the first morning of the offseason and my phone is ringing. Deep Throat is fuming about my Ausmus column.</p>
+
+<p>"I can't talk for long, but look, Brad is part of the problem. A big part of it."</p>
+
+<p>He asks if I remember the August 27 game where everyone got ejected.</p>
+
+<p>"I was on vacation. I remember reading about it."</p>
+
+<p>"That night, after Víctor got thrown out, he left the stadium."</p>
+
+<p>When the Tigers returned to the clubhouse, Martínez was gone. Andrew Romine pointed this out to teammates. Jose Iglesias must have told Víctor what Romine said.</p>
+
+<p>"The next day, all hell broke loose."</p>
+
+<p>Martínez confronted Romine, charging at him in a physical altercation that teammates broke up.</p>
+
+<p>"Everyone in there had Romine's back."</p>
+
+<p>Martínez then went after Ausmus, upset he didn't have his back the previous night.</p>
+
+<p>"It ruined the room. Víctor became more detached as the season wore on. Brad will be back, I guarantee it. And Wally won't be back as hitting coach—I guarantee that, too."</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>October 4</em>—</span>After scores of unanswered emails and unreturned voicemails— "Just trying to open a line of communication," I'd say—it's Mike Milchin himself showing up in my texts.</p>
+
+<p>Milchin is Justin Verlander's agent and has been since Verlander was drafted in 2004. Today, Mike Milchin wants to boost his client's Cy Young chances.</p>
+
+<p>"We need a campaign for my boy Verlander and the Cy! Voters vote today! Leads baseball in WHIP, K's, Opponent average, opponents on base %, WAR! 2nd in ERA and innings pitched."</p>
+
+<p>I've been reaching out to Milchin since I got the beat. Since Verlander gave me Milchin's cell number after the season finale last year, I've tried reaching him directly with no response.</p>
+
+<p>I call Mike Milchin's BS.</p>
+
+<p>"Man, I have called and texted you so many times, no response."</p>
+
+<p>"I am VERY low key, Anthony, and never put myself in front of players, which is why I am always silent. This situation w/JV is so important that I cannot sit idle on this. No disrespect intended, I just never talk."</p>
+
+<p>"No worries. I get it."</p>
+
+<p>I'm going to give Milchin something (write a story), in exchange for a <em>take</em> in the future (inside information, accessibility).</p>
+
+<p>"Just trying to have an open line of communication. Let me see what I can do—I have a vote, so it's kind of tricky."</p>
+
+<p>"Understood. I will work to be more accessible in the future."</p>
+
+<p>That's all I'm looking for—an understanding that we're playing by traditional give-and-take rules here.</p>
+
+<p>"Even better since you have a vote. JV was hosed when Price won it a few years back. Maybe this year the tables will turn?"</p>
+
+<p>"Trust me. I've heard all about that, lol."</p>
+
+<p>Walking the tightrope, I write an article on the historical perspective I know Verlander wants. By winning a second Cy Young, his ticket to Cooperstown would be all but punched.</p>
+
+<p>When the story is live, I send Milchin the link.</p>
+
+<p>"Awesome! Thanks for sharing and writing."</p>
+
+<p>An hour later, Milchin again.</p>
+
+<p>"JV wanted me to send you a thank you for your article and work. He appreciated it very much."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>October 21</em>—</span>Some sad news to share today.</p>
+
+<p>Longtime <em>Free Press</em> sports columnist Drew Sharp died yesterday. I met Sharp eleven years ago, fresh out of high school working my first internship at Detroit's AM-dial sports station. Sharp occasionally filled in as co-host. During commercial breaks I'd ask Sharp about sports writing. More recently, he was my co-host on the Talkin' Tigers podcast.</p>
+
+<p>By then, the native Detroiter had become quite comfortable as a local lightning rod, often taking the pessimist perspective, toying with fans' fragile feelings. I know—I hated Sharp. I crossed Xs through his column sig. But I always found myself reading what he wrote—and underlining words I didn't know.</p>
+
+<p>When I got to work with him, I instantly became fond of Drew—not for his provocative columns, but for how good a teammate he was. Drew Sharp never considered himself bigger than me, or any writer. Never bigger than anyone on the Sports desk.</p>
+
+<p>Yet he was high-profile, a recurring guest on Jim Rome's national sports-talk TV show. To succeed as a Black man, media personality and columnist in contrarian cross hairs took thick skin. How thick? I found out one night by accident.</p>
+
+<p>I had worked late, met a friend for a drink—and then we decided to go exploring in the deserted <em>Freep</em> garage. Down in the basement, in a dark corner, we stumbled across two white cardboard boxes, stacked to the brim with letters.</p>
+
+<p>Many of those letters were sent to Drew Sharp. In crooked capital letters, letter writers called him a nigger. They told Uncle Tom to take his sports opinions elsewhere, lest they should be so lucky to see him on the street one day.</p>
+
+<p>The <em>Free Press</em> family turns out for the funeral. Michigan State basketball coach Tom Izzo speaks. Sharp covered Izzo before he became a household name.</p>
+
+<p>"I never felt guarded with him. Drew is the kind of friend everyone needs. He was not afraid to tell you what was on his mind, and he was not afraid to disagree with you. In this day and age, we tell everybody what they want to hear instead of what they need to hear. He was refreshing, to me, in that respect."</p>
+
+<p>Izzo speaking at Drew's funeral says volumes about him. As Izzo's voice booms through the church, I think about my Internet Haters. About how I'd be remembered if I didn't wake up tomorrow.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">SCOTTSDALE, Ariz., <em>November 7</em>—</span>Up and at 'em for breakfast, a man jogs past. Navy blue pullover, red shorts, crew socks. Dave Dombrowski, out for his morning run.</p>
+
+<p>"Hi, Anthony!"</p>
+
+<p>Welcome to the GM meetings, presented this year at a posh Phoenix property where guests don't stay in rooms—they stay in villas. This week, executives and agents will bandy about potential collaborations, tilling the ground for free agent negotiations this winter.</p>
+
+<p>What was once a baker's dozen of writers, mostly National Guys, is now a cadre large enough to fill a ballroom. The event is designed to whet fans' appetites before next month's winter meetings—the more rumors, the better.</p>
+
+<p>I've come to Scottsdale this week strapped with ScoopSheet, the reporting database I've been building for the past month. It tells me when I last talked to a source and when I'm talking to them next. How many kids they have, which players agents represent, which organizations scouts cover.</p>
+
+<p>I'm hoping to connect with new agents here. As much as they can get on my nerves, agents do provide reporters with more than just information—they also provide access to players, which I receive in spades while reporting for an upcoming profile on rookie righty Michael Fulmer.</p>
+
+<p>Fulmer is the frontrunner for Rookie of the Year. My access comes via his agent, Jay Franklin. The story angle came from an innocent question.</p>
+
+<p>"Anything unique I should know?"</p>
+
+<p>"Did you know that he's a plumber in the offseason?"</p>
+
+<p>That kind of tidbit is worth its weight in gold—picture the Tigers' hotshot pitcher craning his neck underneath a sink cabinet, fixing a leaky faucet. When it's published, my Fulmer plumbing story gets aggregated to death by dinnertime.</p>
+
+<p>Al Avila and his traveling contingent appear. Flight was delayed. He's still gotta check-into his room, get to a meeting, then dinner…</p>
+
+<p>"One question each. Better make 'em good."</p>
+
+<p>At night, action happens in the courtyard. I get the lucky draw of pulling up an empty seat next to longtime agent Adam Katz. Instead of bombarding him with baseball questions, I filter the conversation through his girlfriend, a lovely lady we'll call "Miss V." I get his number afterwards. We'll talk shop another time.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>November 8</em>—</span>I get to the gym at 7:25 on Election Day, and I'm disgusted to see Ken Rosenthal already sweating on the elliptical. When I walk over to the weights area, I'm even more disgusted to see Rival Cohort in a cut-off shirt.</p>
+
+<p>We share an 8x10 workout mat, two adjustable benches and a small-scale dumbbell rack. Before I can pick a weight up, my colleague bursts.</p>
+
+<p>"Your column, man," shaking his head. "I don't know why you write stuff like that."</p>
+
+<p>"What?"</p>
+
+<p>"Al isn't going to talk to us anymore if you keep writing like that."</p>
+
+<p>"What did I write?"</p>
+
+<p>"You know what you wrote."</p>
+
+<p>I'm genuinely confused. I wrote a fair and balanced column today: "<em>Al Avila arrived late at the GM meetings, his flight from Detroit delayed an hour or so. The delay wasn't his fault… But it's a problem Avila contributed to with wild spending last winter that couldn't deliver enough wins.</em>"</p>
+
+<p>Afternoons, reporters line up like anxious cattle for a free-for-all with general managers. I stay huddled next to Al Avila from start-to-finish, asking every question there is to ask about the Tigers' off-season plans.</p>
+
+<p>Avila is an open book. During the half-hour, he frequently flips between on and off-the-record, rambling about this or that. He's my kind of guy—a Ball Writer's kind of guy.</p>
+
+<p>It's almost dark when I walk to the lobby bar tonight. Around the lobby bar, a mostly liberal collective looks at the electoral scoreboard with increasing anxiety. When I squeeze to the front for a beer, someone with a phone exclaims, "We got Michigan!"</p>
+
+<p>Within the hour, it becomes clear that Donald J. Trump may very well win the presidency tonight. Like our Ausmus reporting, the <em>Freep</em>'s projection is proven wrong when Trump overtakes Clinton late.</p>
+
+<p>Heading back to my villa, I stroll slowly past a fire pit, side-eying until I can confirm who the man in the white shirt is—Al Avila, surrounded by Tigers' execs. Loud, laughing and drinking. In the villa, I break into the mini-fridge and shoot a whiskey, socially lubricating for the unexpected opportunity.</p>
+
+<p>I return to the fire pit with one objective—to find my way amongst the Tigers' front officers. When nothing happens, I stop and say, "Hey."</p>
+
+<p>Avila doesn't recognize me at first but once he does, "Boy, do I have a bone to pick with you." He is seated in an Adirondack chair. I lean over a rope that might as well represent the separation of church and state we live by.</p>
+
+<p>"You know what. Why don't you come up here?"</p>
+
+<p>Objective accomplished.</p>
+
+<p>For the next hour and a half, the Highest Source In The Land holds court—Grey Goose in one hand, Cuban cigar in the other. Legal counsel John Westhoff goads Avila on. Assistant GM David Chadd sits to my right.</p>
+
+<p>Avila airs his grievance.</p>
+
+<p>"It's bullshit what you wrote in the paper, saying I showed up late. I wasn't late! What if my owner reads that?"</p>
+
+<p>I play defense, pulling up the article.</p>
+
+<p>"I literally wrote 'it wasn't Avila's fault.'"</p>
+
+<p>"I wasn't late!"</p>
+
+<p>Feeling on the outside of an inside joke, I concede.</p>
+
+<p>"Technically, you weren't late."</p>
+
+<p>"Thank you. Now get him a drink."</p>
+
+<p>HSITL includes me in upcoming rounds, bantering loudly, unbothered by the Ball Writer who has infiltrated the scene.</p>
+
+<p>Avila basks at the numbers. He voted for Trump not once, but twice, he proudly explains—sending absentee ballots in both Michigan and Florida, his two states of residence.</p>
+
+<p>Brad Ausmus arrives, fresh off a flight from San Diego. Analytics manager Sam Menzin plays waiter, shuttling drinks from the open bar.</p>
+
+<p>By the second drink, I'm too comfortable here. My foreign presence provides an easy target. <em>Watch what you're saying when Fenech's around</em>… <em>The Fake News Media</em>… <em>Earmuffs, Anthony</em>!</p>
+
+<p>They josh, asking me to reveal my sources. I joke back, shining what I intend to be a light-hearted spotlight on David Chadd.</p>
+
+<p>"David Chadd's my source. You guys know that."</p>
+
+<p>"Oh, no, Anthony. No, no, no."</p>
+
+<p>"C'mon. You know I get all the info from him."</p>
+
+<p>"Better watch yourself, Anthony."</p>
+
+<p>I laugh it off. I'm kidding. Obviously.</p>
+
+<p>"Seriously. I'm just kidding."</p>
+
+<p>I've made a Jack and Coke-fueled mistake. David Chadd is my longest-standing relationship In The Room—he was a source, and joking or not, I just outed him in front of his coworkers.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>November 16</em>—</span>All those famous people I rub shoulders with daily? Scott, Justin, Kate… you don't call your friends by their full name, do you?</p>
+
+<p>But true friends follow you on Twitter, right? Toiling for some relationship-cultivating catnip, I take an informal poll of Cy Young voters.</p>
+
+<p>"Every voter I've talked to had him first," one guy says. "A bunch of others, too."</p>
+
+<p>I tweet my findings and hook the big fish himself. With sky-high hopes, Verlander likes the tweet and follows me on Twitter.</p>
+
+<p>Kate leaves me hanging. She will, however, be very active later tonight.</p>
+
+<p>Shortly after 8 <span class="small-caps">P.M.</span>, with my pre-written story declaring Verlander victorious ready for publication, BBWAA secretary Jack O'Connell opens the envelope on another election stunner:</p>
+
+<p>Verlander finishes runner-up again, behind former teammate Rick Porcello in the second-closest vote ever. Verlander was victimized in both votes—five points short of Porcello this year and four points short of David Price in 2012.</p>
+
+<p>Porcello won largely because Verlander was left off two ballots altogether—both writers in the Tampa Bay chapter. They didn't have Verlander anywhere in their top five.</p>
+
+<p>While I'm mad scrambling to rewrite the story, Mike Milchin calls on Line 1.</p>
+
+<p>"It is my hope that this debacle creates transparency and change," Milchin says, stately and solemnly. "Thank you for your time on this earlier."</p>
+
+<p>"First pitcher in AL history to get the most first-place votes and lose… How he was left off two ballots is beyond me."</p>
+
+<p>"Do we know who left him off?"</p>
+
+<p>"Two guys from Tampa," I tell Verlander's agent.</p>
+
+<p>"Wow. How's that possible? Isn't that a reckless and irresponsible way to handle a vote?"</p>
+
+<p>One of the Tampa voters, MLB.com's Bill Chastain, tells the <em>New York Daily News</em> he sent in his ballot with about a week remaining in the regular season, perhaps even before Verlander's two final starts.</p>
+
+<p>"Justin struck out sixty-five more guys with a .207 batting average against, by far the lowest among starters," I tell Milchin. "Still surprised."</p>
+
+<p>Meanwhile, somewhere along the Amalfi Coast, nobody is more surprised than Kate: "Hey @MLB I thought I was the only person allowed to fuck @JustinVerlander?! What two writers didn't have him on their ballot?"</p>
+
+<p>Upton's 2 <span class="small-caps">A.M.</span> tweet in Italy has the web desk thinking hits.</p>
+
+<p>"Check her out on Twitter. Might be worth writing up."</p>
+
+<p>I would rather write my obituary.</p>
+
+<p>I've successfully navigated seven years as a Freep Sports staffer without having my byline linked to celebrity clickbait. I'm a sports writer, not a <em>TMZ</em> voyeur. An official BBWAA card-carrying citizen who voted Justin Verlander for Cy Young. I didn't think it was close, and my reporting shows that. Kate Upton obviously agrees.</p>
+
+<p>In the aftermath of her attention-grabbing tweet, I receive a late-night interview request.</p>
+
+<p>It's Channel 4's Bernie Smilovitz, wondering if I could come into the studio for a quick hit on the Cy Young vote. I should say no, but Bernie is my mom's favorite sportscaster.</p>
+
+<p>In the newsroom, Bernie asks a couple quick-hitters about the vote and then sticks me with the <em>Entertainment Tonight</em> question I feared—asking for my reaction to Upton's tweets.</p>
+
+<p>"I'm just glad that I voted for Verlander so Kate Upton can't come at me."</p>
+
+<p class="has-dateline no-indent"><span class="dateline">OXON HILL, Md., <em>December 4</em>—</span>It's a stress-free cab ride to this year's winter meetings from D.C. Walking into the resort, the first recognizable face I see is Jim Leyland. He's on the phone, wearing loafers with no socks.</p>
+
+<p>I send in a quick story when I get to my room—while checking on a few players on the ride here, I learned from Jarrod Saltalamacchia's agent that they're not bringing him back.</p>
+
+<p>You can tell a lot about Ball Writers based on who they hang with at the lobby bar. I bounce from fresh faces with new perspectives to baseball lifers with the wisdom of experience.</p>
+
+<p>Tonight, the festivities open alongside Kristie Ackert from the <em>New York Daily News</em> and Mets manager Terry Collins. Ackert covers the miserable Mets beat; she's quickly become one of my better friends since we met last year. Collins is a Michigan native and Eastern Michigan alum.</p>
+
+<p>The crowd is classic nu skool/old school mix. I move from baseball lifers like Collins to a table with two college-aged kids named Jake Mintz and Jordan Shusterman, who started a blog called Céspedes' Family BBQ. Currently, they have 41,000 on Twitter and will become a mainstay on the baseball media landscape. They're a breath of fresh air. We bond over video games.</p>
+
+<p>Throughout the week, I use the lobby bar to take my relationship with newly minted sources to the next level. In October, I conducted a 150-person sourcing round—adding five new people per team to the ScoopSheet. I followed up with them a few days before the GM meetings.</p>
+
+<p>The goal is to advance the conversation past emails as quickly as possible. I met a few sources in person in Scottsdale last month and a couple guys from San Diego on the opening night here.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>December 5</em>—</span>I start the winter meetings hot, getting the first scoop out of the way early. Working remotely from my twelfth-floor hotel room, I text Ian Kinsler.</p>
+
+<p>"Are you playing for Team USA in the World Baseball Classic?"</p>
+
+<p>"I believe so. The union asked me, Leyland asked me… why?"</p>
+
+<p>"Trying to get a scoop, lol."</p>
+
+<p>To pitching coach Jeff Jones. "Is Justin pitching in the WBC?"</p>
+
+<p>"Not that I'm aware of."</p>
+
+<p>To Brad Ausmus: "A couple things I've heard: Kinsler playing in WBC, Verlander no."</p>
+
+<p>"I haven't confirmed it with either of them. Pretty sure Kins is playing. Haven't talked to Ver about it yet."</p>
+
+<p>After lunch, my scoop scrolls across the TV: <span class="small-caps">KINSLER TO PLAY FOR TEAM USA</span>.</p>
+
+<p>I work remotely in my room so my competitors can't see the color-coded ScoopSheet on my screen. I arrange rendezvous with sources, then take the elevators down to meet 'em on the main floor. The Gaylord National Resort and Conference Center is the center point of this year's shindig, sitting along the Potomac encased in glass scaffolding reminiscent of modern stadiums.</p>
+
+<p>Between two giant banks of luxury hotel rooms, each nineteen floors high, the main floor transforms this week into a baseball-themed winter wonderland. Snowflakes stream from the ceiling, and a large Christmas tree overlooks the water. Criss-crossing the indoor city beneath the glass, baseball executives, scouts, agents, plenty of media and sometimes even the players themselves make their way through the constant hum of industry chatter.</p>
+
+<p>I join the afternoon action at a press conference inside a walled-off ballroom on the main floor. Today, Major League Baseball released a list of thirty players who will participate in next spring's World Baseball Classic. Jim Leyland is coming out of retirement to manage Team USA.</p>
+
+<p>While Leyland speaks with reporters, his phone rings in clear view of those close to him.</p>
+
+<p>"JV" is calling.</p>
+
+<p>"This is Verlander. Maybe we got him."</p>
+
+<p>Based on my reporting, that's not happening.</p>
+
+<p>Ron Colangelo reaches out around dinner: "Leyland wants to connect with you."</p>
+
+<p>When we do, Leyland is leaving an instant replay meeting—he's worked closely with the commissioner's office while serving as a special assistant since retiring in 2013.</p>
+
+<p>Leyland, seventy-one, still reads the newspaper every day. And he's read fan comments enough to know how fans will react if Verlander passes up Team USA.</p>
+
+<p>I ask Leyland: "Verlander not pitching—is that true?"</p>
+
+<p>"Probably not pitching… Great talk with him today."</p>
+
+<p>The longtime manager is trying to protect his former player. He's getting in front of the story.</p>
+
+<p>"We had a great conversation, and after we talked about everything, I just felt that maybe it was best for him to skip it. He was into it. He wanted to do it. He was positive about it, but we talked about a lot of different circumstances, and we just felt—particularly, me—that it was probably best for him."</p>
+
+<p>By taking ownership of the decision, Leyland shields Verlander. Fans can't blame him for not playing for his country—it was <em>Leyland</em>'s decision. A savvy, selfless move by the skipper.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>December 6</em>—</span>I finally meet Mike Milchin in the flesh. He stands more unassuming than most agents. Glasses, red sweater, black leather jacket.</p>
+
+<p>Milchin is punctual, arriving early at our meet-up point.</p>
+
+<p>"I'm here. Upstairs standing next to the concierge."</p>
+
+<p>He holds a legal pad, crossing off a list of folks to see as the day wears on.</p>
+
+<p>I keep our face-to-face introduction quick. We chit-chat about Verlander not playing in the WBC. Milchin has a few free agents but says Detroit isn't in. He represents reliever Jesse Crain, second baseman Kelly Johnson and first baseman Adam LaRoche—all veterans looking for a job—so he's got better places to be. Firm handshake and a fond farewell. Milchin surprises me—I think we might get along.</p>
+
+<p>Back up in the room, I highlight Milchin's name in teal.</p>
+
+<p class="has-dateline no-indent"><span class="dateline"><em>December 7</em>—</span>Another sourcing milestone, flagging down agent Jay Franklin. After playing phone tag for three days, I pinned him down Wednesday afternoon at a resort watering hole.</p>
+
+<p>Franklin, forty-eight, is the head of BBI Sports Group. He represents both Kinsler and Rookie of the Year Michael Fulmer. Franklin has been agenting since the late nineties.</p>
+
+<p>He's the older brother of reliever Ryan Franklin, who pitched twelve seasons in the 2000s. Both Franklins account for a pinch of tobacco behind their lower lip.</p>
+
+<p>I'd been working on Jay Franklin for two years, cold calling and leaving voicemails. I've scared off others with far less, I'm sure. I salute Franklin with a shot of whiskey. One of the more important persons in my life, so it's good to finally highlight his name.</p>
+
+<p>By tonight's media session, a news desert is making the Tiger Beat desperate for crumbs of information. Every time I ask a question I feel like Oliver, pleading for more porridge.</p>
+
+<p>I look hard for things not meant to be seen. Sitting close to Avila's table, I see his phone flash. Afterwards, I text a Houston scout:</p>
+
+<p>"(Astros GM) Jeff Luhnow just called Avila."</p>
+
+<p>"About?"</p>
+
+<p>"That's what you need to find out."</p>
+
+<p>My guy theorizes it could regard Justin Wilson. The lefty reliever is the Tigers' most talked-about trade chip. Avila acquired Wilson at last year's winter meetings. At twenty-nine, he has emerged as one of the league's most reliable lefties out of the pen. Wilson as trade bait makes sense.</p>
+
+<p>I've been texting Al Avila at the same time every day out of pure entertainment, to see how long he can ignore me.</p>
+
+<p>"You got <em>anything</em> cooking?"</p>
+
+<p>No answer—again.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>January 27, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed "Freep Forward," top editors introduce new Gannett gobbledygook.</p>
+
+<p>My job hasn't changed, but others have—general assignment reporters are now "storytelling writers," editors are "directors," and assistant editors are "planners." The photo/video desk is now the "consumer product team."</p>
+
+<p>Every department has a mission statement, except two of them: The copy desk and print team mission statements say only, <em>Need mission statement…</em></p>
+
+<p>According to the document, we still have a (whoops!) music &amp; entertainmnet reporter and a (whoops!) restaurnts reporter. So much for the copy desk.</p>
+
+<p>In Sports, my boss (sports editor) Kevin Bull is now "senior planner/digital." There's also an "OPEN POSITION" for "sports content coach."</p>
+
+<p>Odds are this position will never get filled.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">SECAUCUS, N.J., <em>February 9</em>—</span>Visiting MLB Network's studios, I peel the visitor's badge and stuff it in my coat. I'm going on the morning show, sitting across from <em>Sports Illustrated</em>'s Tom Verducci, still one of the best Ball Writers around.</p>
+
+<p>Ken Rosenthal is behind the glass. The segment goes as well as it should—we spent six minutes discussing the Tigers' uneventful off-season and I got off the stage without getting scooped</p>
+
+<p>"What the Tigers are counting on is avoiding the injuries from last year. That's what they're banking on to get them back to the postseason."</p>
+
+<p>With time to kill, I message Tim Baratta, a boutique agent who lives nearby in Jersey—the first agent to call me back when I started cold-calling. He calls me "Big Time" over lunch and mentions Tigers owner Mike Ilitch, whose health has been declining.</p>
+
+<p>Ilitch, eighty-seven, hasn't made a public appearance in more than a year—not even for the team picture last year.</p>
+
+<p>"What's going to happen to the team when he's gone?"</p>
+
+<p>Baratta drops me at the train station, and I begin to retrace my steps—New Jersey Transit to Grand Central to D.C.</p>
+
+<p>Thirty minutes outside of Union Station, things change.</p>
+
+<p>Michael Ilitch Sr., the patriarch of one of the most powerful families in Michigan, a self-made multi-billionaire who started Little Caesars Pizza and owned two of Detroit's storied professional sports teams, has died.</p>
+
+<p class="has-dateline no-indent"><span class="dateline">WASHINGTON—</span>Though the <em>Free Press</em> has reporters in other departments pulling together information, my first job is to get another independent confirmation.</p>
+
+<p>I text agents who can help me reach players. No luck with most. I do talk to Scott Boras, though.</p>
+
+<p>That I'm speaking with a baseball agent about the death of a team owner is crazy enough in itself. Boras made a lot of money off Ilitch—over $350 million in contracts since 2004, when he first got Ilitch's ear by convincing him to sign All-Star catcher Pudge Rodriguez.</p>
+
+<p>Boras sold Ilitch on a bigger dream by explaining baseball's big-spending reality. He convinced Ilitch that Detroit was a below-the-radar baseball hotbed. Boras knew what Ilitch wanted more than anything: a World Series title.</p>
+
+<p>"The best way to get it," Boras told him, "is to buy the best players."</p>
+
+<p>What Ilitch bought was damn near the dream Boras sold him: The Tigers went on a 10-year run, winning divisions and making deep postseason runs.</p>
+
+<p>Boras sounds unusually emotional. "In the end, what made Mike Ilitch a winner was his passion. Because he really, really studied the game. These weren't business decisions. This was something very close to his heart."</p>
+
+<p>That's the thing about a five-alarm news story: It's a mad rush to get critical information, then build on it with as many sources as you can as quickly as you can. The truest test of reporting—your sourcing network, interviewing skills and deadline stamina under pressure.</p>`,
+        wordCount: 3800
     },
 
     // 2017 SEASON CHAPTERS (15-19)
