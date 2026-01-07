@@ -1,5 +1,42 @@
 ================================================================================
-OFF-THE-RECORD: HOW TO ADD MEDIA POP-UPS
+OFF-THE-RECORD: EDITING GUIDE
+================================================================================
+
+================================================================================
+HOW TO EDIT CHAPTER TEXT
+================================================================================
+
+All chapter content lives in: data/chapters.js
+
+STEP 1: OPEN data/chapters.js
+-----------------------------
+Find the chapter you want to edit by searching for its title, e.g.:
+  - Search for "AUTHOR'S NOTE" to find Chapter 1
+  - Search for "THE HOT SEAT" to find that chapter
+
+STEP 2: EDIT THE TEXT
+---------------------
+The content is inside the `content:` field, wrapped in backticks (`).
+It uses HTML tags:
+
+  <p>Regular paragraph text</p>
+  <p><em>Italic text</em></p>
+  <p><strong>Bold text</strong></p>
+  <p class="has-dateline"><span class="dateline">DETROIT—</span>Text after dateline</p>
+
+Scene breaks look like:
+  <div class="scene-break"><span>* * *</span></div>
+
+STEP 3: BUMP CACHE VERSION IN sw.js
+-----------------------------------
+Change all three version numbers (e.g., v167 -> v168)
+
+STEP 4: PUSH & TEST
+-------------------
+Push to GitHub, clear browser cache, refresh.
+
+================================================================================
+HOW TO ADD MEDIA POP-UPS
 ================================================================================
 
 This guide explains how to add clickable emoji icons in your chapters that
