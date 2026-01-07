@@ -17,13 +17,13 @@ export const CHAPTERS = [
         title: "AUTHOR'S NOTE",
         subtitle: "St. Paul's Bay, Malta",
         teaser: "A love letter to sports writing, a lesson on craft, and a story full of intense, fascinating characters.",
-        content: `<p class="has-dateline"><span class="dateline">ST. PAUL'S BAY, Malta—</span>Dawn is coming up over the Mediterranean now. 7:12 A.M. I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived.</p>
+        content: `<p class="has-dateline"><span class="dateline">ST. PAUL'S BAY, Malta—</span>Dawn is coming up over the Mediterranean now. 7:12 <span class="small-caps">A.M.</span> I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived.</p>
 
 <p>From my desk, I can see the hazy light of a new day. A man casts a fishing line from a dock while his dog lies patiently on the pavement. A shopkeeper brooms the steps of a bodega.</p>
 
 <p>After a week-long windstorm, palm trees barely flicker this morning as I watch the past five years float away in calm, rhythmic ripples toward St. Paul's Shipwreck Island—a rock where Paul the Apostle purportedly crashed in 60 AD on the way to Rome, to be tried for sharing publicly the ridiculous thoughts in his mind. Some of them are carved into the walls of a nearby church.</p>
 
-<p class="block-quote">I HAVE FAITH IN GOD THAT IT WILL BE EXACTLY AS I HAVE BEEN TOLD.</p>
+<p class="block-quote"><em>I HAVE FAITH IN GOD THAT IT WILL BE EXACTLY AS I HAVE BEEN TOLD.</em></p>
 
 <p>Five years ago, a similar blind faith led me here, to a speck on the map underneath Sicily, a place with three hundred days of sunshine, homemade pasta and, most importantly, a place where nobody knew my name.</p>
 
@@ -93,7 +93,7 @@ export const CHAPTERS = [
 
 <p>It's a reflection of what I've seen and felt while covering baseball for a living, which has provided me with the story of a lifetime, too good not to share.</p>
 
-<p class="signature">—Anthony Fenech<br/>April 20, 2025<br/>Portobello Flats, Malta</p>`,
+<p class="signature"><em>—Anthony Fenech<br/>April 20, 2025<br/>Portobello Flats, Malta</em></p>`,
         wordCount: 1850
     },
     {
