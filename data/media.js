@@ -3,6 +3,14 @@
 
 export const MEDIA_CONTENT = {
     // Photos
+    'mike-trade-deadline': {
+        type: 'audio',
+        emoji: '🎙️',
+        label: 'Audio',
+        caption: '97.1 The Ticket / 96.1 The Game - Trade Deadline Discussion',
+        src: './assets/24-road-to-omaha/mike trade deadline.mp3',
+        placeholder: false
+    },
     'espn-push-alert': {
         type: 'photo',
         emoji: '📷',
