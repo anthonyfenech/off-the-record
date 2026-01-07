@@ -40,7 +40,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'ESPN BottomLine: Verlander incident',
-        src: './assets/12-pennant-race-espn-bottomline.png',
+        src: './assets/26-unethical/12-pennant-race-espn-bottomline.png',
         placeholder: false
     },
     'k-rod-stats': {
@@ -49,6 +49,14 @@ export const MEDIA_CONTENT = {
         label: 'Baseball Reference',
         caption: 'Francisco Rodríguez Career Stats',
         url: 'https://www.baseball-reference.com/players/r/rodrifr03.shtml',
+        placeholder: false
+    },
+    'joe-nathan-story': {
+        type: 'link',
+        emoji: '🔗',
+        label: 'Detroit Free Press',
+        caption: 'Joe Nathan feature story',
+        url: 'https://www.freep.com/story/sports/mlb/tigers/2015/02/15/joe-nathan-detroit-tigers/23446431/',
         placeholder: false
     },
     'photo-1': {
