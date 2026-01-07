@@ -5433,7 +5433,7 @@ export const CHAPTERS = [
             <p>&nbsp;</p>
 
             <p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>August 5</em>—</span>Back home after twelve days on the road, more Tiger Beat drama.</p>
-            <p>They're talking about the exposé on 97.1 The Ticket in Detroit and 96.1 The Game in Grand Rapids.</p>
+            <p>They're talking about the exposé on 97.1 The Ticket in Detroit and 96.1 The Game in Grand Rapids. <span class="media-emoji" data-media-id="mike-trade-deadline">🎙️</span></p>
             <p>"I'll tell you right now, this piece that Fenech wrote today. Find me the last time someone wrote something this impactful. This thing's picked up by every outlet out there—because it says something. Because it calls Avila and this organization out for what they are. You got a beat writer putting his balls on the block."</p>
             <p>Across the state, a friend checks in.</p>
             <p>"Someone called you a hero."</p>
