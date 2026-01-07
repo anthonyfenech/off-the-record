@@ -126,6 +126,7 @@ body.paginated .chapter-body {
 }
 
 .chapter-header {
+    margin-top: 3em;
     margin-bottom: 4em;
     padding-bottom: 0;
     border-bottom: none;
