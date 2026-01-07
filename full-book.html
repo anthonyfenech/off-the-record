@@ -2,19 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0d47a1">
-
-    <title>OFF-THE-RECORD - Full Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFF-THE-RECORD</title>
 
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets - Same as main site -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/typography.css">
@@ -22,145 +18,67 @@
     <link rel="stylesheet" href="./css/components.css">
 
     <style>
-        /* Override body padding for this page */
         body {
-            padding-top: 40px;
-            padding-bottom: 80px;
+            padding: 60px 20px 100px;
         }
 
-        .full-book-header {
+        .book {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .book-title {
             text-align: center;
             margin-bottom: 80px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--color-border);
         }
 
-        .full-book-title {
-            font-family: var(--font-mono);
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
+        .book-title img {
+            height: 20px;
+            width: auto;
         }
 
-        .full-book-subtitle {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            color: var(--color-text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Chapter sections use same styling as main site */
         .chapter-section {
-            margin-bottom: 0;
+            margin-bottom: 80px;
         }
 
         .chapter-section .chapter-header {
-            margin-top: 4em;
-            margin-bottom: 3em;
-            padding-bottom: 2em;
+            margin-top: 0;
+            margin-bottom: 2em;
+            padding-bottom: 1.5em;
             border-bottom: 1px solid var(--color-border);
         }
 
-        .chapter-section:first-child .chapter-header {
-            margin-top: 0;
-        }
-
         .chapter-section .chapter-body {
-            margin-bottom: 4em;
+            margin: 0;
         }
 
-        .back-to-site {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-text-secondary);
-            text-decoration: underline;
-            background: var(--color-background);
-            padding: 10px 15px;
-            border: 1px solid var(--color-border);
-        }
-
-        .back-to-site:hover {
-            color: var(--color-text-primary);
-        }
-
-        .loading-message {
-            text-align: center;
-            padding: 60px 20px;
-            font-family: var(--font-mono);
-            color: var(--color-text-secondary);
-        }
-
-        /* Print styles */
         @media print {
-            .back-to-site {
-                display: none;
-            }
-
-            body {
-                padding: 0;
-            }
-
-            .chapter-section {
-                page-break-after: always;
-            }
+            body { padding: 0; }
+            .chapter-section { page-break-after: always; }
         }
     </style>
 </head>
 <body>
-    <!-- Main Reading Area - Same structure as main site -->
-    <main class="reader" id="reader">
-        <header class="full-book-header">
-            <h1 class="full-book-title">OFF-THE-RECORD</h1>
-            <p class="full-book-subtitle">Complete Edition</p>
+    <main class="book">
+        <header class="book-title">
+            <img src="./assets/TITLE O.png" alt="OFF-THE-RECORD">
         </header>
-
-        <div id="bookContent">
-            <p class="loading-message">Loading chapters...</p>
-        </div>
+        <div id="content"></div>
     </main>
-
-    <a href="./" class="back-to-site">Back to site</a>
 
     <script type="module">
         import { CHAPTERS } from './data/chapters.js';
 
-        function renderFullBook() {
-            const container = document.getElementById('bookContent');
-            let html = '';
+        const container = document.getElementById('content');
 
-            CHAPTERS.forEach((chapter, index) => {
-                // Content comes directly from chapters.js - already has HTML formatting
-                let content = chapter.content;
-
-                html += `
-                    <article class="chapter-section">
-                        <header class="chapter-header">
-                            <h2 class="chapter-title">${chapter.title}</h2>
-                        </header>
-                        <div class="chapter-body">
-                            ${content}
-                        </div>
-                    </article>
-                `;
-            });
-
-            container.innerHTML = html;
-        }
-
-        // Render when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', renderFullBook);
-        } else {
-            renderFullBook();
-        }
+        container.innerHTML = CHAPTERS.map(ch => `
+            <article class="chapter-section">
+                <header class="chapter-header">
+                    <h2 class="chapter-title">${ch.title}</h2>
+                </header>
+                <div class="chapter-body">${ch.content}</div>
+            </article>
+        `).join('');
     </script>
 </body>
 </html>
