@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0d47a1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OFF-THE-RECORD">
+
+    <title>OFF-THE-RECORD</title>
+
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+    <!-- Google Fonts - Literata for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" disabled style="opacity: 0.3; cursor: default;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="header-logo"><img src="./assets/TITLE O.png" alt="OFF-THE-RECORD" class="header-logo-img"></div>
+            <div class="header-progress">
+                <button class="bookmark-btn" aria-label="Bookmark" disabled style="opacity: 0.3; cursor: default;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Reading Area -->
+    <main class="reader" id="reader">
+        <article class="chapter" id="chapterContent">
+            <header class="chapter-header">
+                <h2 class="chapter-title">LOADING...</h2>
+            </header>
+            <div class="chapter-body">
+                <p>Loading chapter content...</p>
+            </div>
+        </article>
+    </main>
+
+    <!-- No nav footer on maintenance page -->
+</body>
+</html>
