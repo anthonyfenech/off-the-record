@@ -40,16 +40,19 @@ function addMedia(mediaId, type, caption, src, chapter) {
     const closingBrace = searchSection.lastIndexOf('};');
     const insertPoint = mediaContentStart + closingBrace;
 
-    // Get emoji based on type
-    const emojiMap = {
+    // Get icon based on type
+    const iconMap = {
         'image': '📷',
         'photo': '📷',
         'video': '🎬',
         'audio': '⏺',
         'newspaper': '📰',
-        'link': '🔗'
+        'link': '🔗',
+        'tweet': '🐦',
+        'email': '✉️',
+        'text': '💬'
     };
-    const emoji = emojiMap[type] || '📷';
+    const icon = iconMap[type] || '📷';
 
     // Find the last } before }; and add comma after it
     const beforeClose = mediaContent.substring(0, insertPoint);
@@ -62,7 +65,7 @@ function addMedia(mediaId, type, caption, src, chapter) {
     // Create new entry
     const newEntry = `    '${mediaId}': {
         type: '${type}',
-        emoji: '${emoji}',
+        icon: '${icon}',
         label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
         caption: '${caption.replace(/'/g, "\\'")}',
         src: '${src}',
@@ -84,7 +87,7 @@ function addMedia(mediaId, type, caption, src, chapter) {
     console.log('\n✓ Added to data/media.js');
 
     // Generate span code
-    const spanCode = `<span class="media-emoji" data-media-id="${mediaId}">${emoji}</span>`;
+    const spanCode = `<span class="media-icon" data-media-id="${mediaId}">${icon}</span>`;
 
     console.log('\n=== COPY THIS INTO CHAPTER ' + chapter + ' ===\n');
     console.log(spanCode);
@@ -105,7 +108,7 @@ function interactive() {
         console.log('\n=== ADD NEW MEDIA ===\n');
 
         const mediaId = await ask('Media ID (e.g., ch5-photo-1): ');
-        const type = await ask('Type (image/photo/video/audio/newspaper/link): ');
+        const type = await ask('Type (photo/newspaper/link/tweet/email/text/video/audio): ');
         const caption = await ask('Caption: ');
         const src = await ask('Source path (e.g., ./assets/photos/myimage.jpg): ');
         const chapter = await ask('Chapter number: ');
