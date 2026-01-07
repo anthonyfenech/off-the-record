@@ -806,10 +806,124 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "OPENING DAY",
-        subtitle: "To be written",
+        subtitle: "Detroit, Pittsburgh, Oakland",
         teaser: "The magic of Opening Day at Comerica Park.",
-        content: placeholderContent,
-        wordCount: 500
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time. Here was mine.</p>
+
+<p>Driving to the ballpark in the fast lane, a car speeds up from behind—black, fancy and fast. I move over and let the guy pass. He takes the same exit as I do but parks in a different garage.</p>
+
+<p>It's Opening Day—a local holiday—and not too bad. Forty-two degrees and cloudy. Dressed dangerously, wearing a navy-blue jacket with a baby blue shirt. Gray slacks and brown wingtips.</p>
+
+<p>Standing in the clubhouse before the game, Justin Verlander walks by. I ask if he was driving a fast black car this morning. He was, indeed. What kind? An Aston Martin. "I think you passed me on the freeway."</p>
+
+<p>"Probably."</p>
+
+<p>He asks what kind of car I drive.</p>
+
+<p>My tongue twists. I say I drive a Ford Focus, which is embarrassing because really, I drive a Ford <em>Fusion</em>—big difference.</p>
+
+<p>Miguel Cabrera sits at his locker in the clubhouse, eyeing me pregame. He looks at Ron Colangelo, points at me, "I like this guy. Look at him, he dresses nice."</p>
+
+<p class="has-dateline"><span class="dateline">PITTSBURGH, <em>April 13</em>—</span>First away series and I'm road tripping with my buddy on the Ohio Turnpike. We're staying at the team hotel. I forgot to book; the traveling secretary bailed me out.</p>
+
+<p>Sports editor says it's fine to stay there, but not at the team rate. He doesn't want the <em>Freep</em> taking favors from the team. He'll let it slide this time but don't do it again.</p>
+
+<p>The first night, we go to dinner at Hyde Park. The Tigers' coaching staff is in the back room having dinner. I feel vaguely like a stalker when they filter out.</p>
+
+<p>Brad Ausmus is first.</p>
+
+<p>"How ya doing, Anthony?" A pat on the back. Buddy is impressed.</p>
+
+<p>We go up to Mt. Washington for a couple of beers, a neighborhood far above the Pittsburgh skyline—so far it takes an incline to get straight up the cliffside. We're still that high when we get back to the team hotel and run into players waiting at the elevator bank. It's awkward as you'd imagine. Let's just say nothing and pretend like it didn't happen.</p>
+
+<p class="has-dateline"><span class="dateline"><em>April 15</em>—</span>At the park early today, where Justin Verlander is throwing a simulated game—he's even simulating the national anthem, standing with his hat over his heart.</p>
+
+<p>Today is also Jackie Robinson Day.</p>
+
+<p>We talk to David Price about the dwindling number of black players in MLB. Price believes we're only here talking to him about it because it's Jackie Robinson Day.</p>
+
+<p>"Won't hear about this again until next year."</p>
+
+<p>He's not wrong.</p>
+
+<p class="scene-break"><span>***</span></p>
+
+<p class="no-indent" style="text-align: center;">EMBARRASSING FLASHBACK</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a BBWAA member. After the Tigers beat the Yankees, I head to the visitor's clubhouse—the quiet, losing side.</p>
+
+<p>The New York media surrounds lefty reliever Boone Logan. Poking a tape recorder into a pack of reporters, the Taylor Swift Pandora on my phone goes off.</p>
+
+<p>It's the pop-guitar riff from her latest hit song "I thought you were trouble."</p>
+
+<p><em>Once upon a time</em>…</p>
+
+<p>Clawing furiously at my pocket, trying to pull my phone out, to silence it. To stop this nightmare.</p>
+
+<p><em>A few mistakes ago…</em></p>
+
+<p>Pressing power, squeezing the phone, turning red as a light.</p>
+
+<p>Afterwards, veteran outfielder Vernon Wells lets me know.</p>
+
+<p>"My 9-year-old daughter listens to that, man."</p>
+
+<p>Players laugh. Reporters, too. It's my first game as a BBWAA member—I don't know how I'll recover from this.</p>
+
+<p class="scene-break"><span>***</span></p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
+
+<p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only ten pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>
+
+<p>Ever the rookie, I ask another stupid question.</p>
+
+<p>"Can I text him asking, 'What happened?' or is that like, insensitive to the situation?"</p>
+
+<p>Marly Rivera explains: "No, the opposite—text him and ask him how he is feeling. It's not insensitive—you ask like you do care. Be open about it, something like, 'Heard you had to leave your rehab start'—then ask him how he feels."</p>
+
+<p>Nathan doesn't respond.</p>
+
+<p class="has-dateline"><span class="dateline"><em>April 23</em>—</span>Bad news arrives the next day.</p>
+
+<p>Nathan's season is over—he's set to undergo elbow ligament reconstruction (Tommy John surgery) Speaking red-eyed in front of reporters, Nathan describes the elbow "pop" he felt on his final pitch last night and defiantly declares he'll be back.</p>
+
+<p>"This won't be easy. It's gonna be a long road. I've always enjoyed the work…"</p>
+
+<p>His voice cracks. At forty, Nathan has 377 career saves, eighth-most all-time.</p>
+
+<p>"I will rehab and do everything I'm supposed to as if I'm coming back to be a major league pitcher. That is my goal—to come back and pitch again."</p>
+
+<p>Back in the press box, I receive a call from Scott Boras. I step outside to call back. He wants to talk about Rafael Soriano, an unsigned righty relief client of his. Boras is calling by way of Nathan's injury, with a scoop: Detroit has interest in Soriano.</p>
+
+<p>I phone my sports editor for next steps. Get something from the team—in case Boras is using me again.</p>
+
+<p>I try a couple of sources— "I heard you guys are talking with Soriano, is that true?"</p>
+
+<p>Director of baseball operations Mike Smith puts a stop to further inquiries: "I'm never going to be able to confirm or deny rumors like this for you, sorry."</p>
+
+<p>The other source—assistant general manager Al Avila—still hasn't responded.</p>
+
+<p>Back in the press box, I write three stories: A game story, a sidebar on Nathan's injury and an opinion piece about why it would be wise to pursue Soriano—a favor for Scott Boras.</p>
+
+<p class="has-dateline"><span class="dateline">OAKLAND, Calif., <em>May 27</em>—</span>The best part about Gator's friendship isn't the breaking news tips, but his bead on the clubhouse.</p>
+
+<p>About one player. "He's soft. Got a Charley Horse on his thigh and he's been out for a week. A lot of guys have been upset with him."</p>
+
+<p>Gator might not have In The Room information, but he's got guys on the inside. He says the Tigers might go with a spot starter. Probable pitcher Kyle Ryan remains in transit.</p>
+
+<p>Gator again. "I heard Ryan just showed up."</p>
+
+<p>He's standing at his locker when the clubhouse opens.</p>
+
+<p>After the game, I meet visiting New York writers for a drink, including Seamhead George King of the <em>New York Post</em>. King is in his 26th year—it's his 14th season covering the Yankees for the <em>Post</em>. John Lowe regales stories of King on the beat.</p>
+
+<p>"One year, the Yankees played in the Boston Marathon game (traditionally played at 11 <span class="small-caps">A.M.</span>) on Patriots' Day Monday. But, of course, ESPN wants <em>Sunday Night Baseball</em> the night before. So, it's Red Sox-Yankees at 8 <span class="small-caps">P.M.</span> on Sunday night, so that means the Yankees clubhouse opens at 7:30 Monday morning. And Joe Torre got there at 7:25 and George is standing there at the clubhouse, waiting for it to open at 7:30, and Torre says, 'What are you doing here this early?' And George says, 'My job is to be here when that door opens.'"</p>
+
+<p>He spends at least three hours on the phone every day. Not texting or Twittering or Facebooking. No, George King is actually <em>on the phone</em>, talking to people.</p>
+
+<p>Ball Writing rules to live by.</p>`,
+        wordCount: 1400
     },
     {
         id: 7,
