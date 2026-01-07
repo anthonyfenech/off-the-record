@@ -85,6 +85,13 @@ class App {
         this.bookmarkBtn = document.getElementById('bookmarkBtn');
         if (!this.bookmarkBtn) return;
 
+        // Check if bookmarks are disabled via admin panel
+        const bookmarksDisabled = localStorage.getItem('admin_allowBookmarks') === 'false';
+        if (bookmarksDisabled) {
+            this.bookmarkBtn.style.display = 'none';
+            return;
+        }
+
         // Click handler
         this.bookmarkBtn.addEventListener('click', () => {
             const chapter = CHAPTERS.find(c => c.id === this.currentChapterId);

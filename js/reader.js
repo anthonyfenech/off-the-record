@@ -118,11 +118,47 @@ class Reader {
         const savedChapter = progress.currentChapter || 1;
         const savedPage = progress.currentPage || 0;
 
-        // Button text - simple "CONTINUE READING" or "START READING"
+        // Button text - check admin setting for random text
         let buttonText = progress.lastUpdated ? 'CONTINUE READING' : 'START READING';
+
+        const useRandomText = localStorage.getItem('admin_randomButtonText') === 'true';
+        if (useRandomText) {
+            const randomTexts = [
+                'START READING',
+                'BEGIN',
+                'ENTER',
+                'DIVE IN',
+                'LET\'S GO',
+                'OPEN BOOK',
+                'READ NOW',
+                'GO',
+                'START',
+                'PRESS START'
+            ];
+            buttonText = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+        }
+
+        // Check if credential carousel is enabled
+        const showCarousel = localStorage.getItem('admin_credentialCarousel') === 'true';
+        const credentialImages = [
+            './assets/credential-1.png',
+            './assets/credential-2.png',
+            './assets/credential-3.png'
+        ];
+
+        let carouselHTML = '';
+        if (showCarousel) {
+            const randomCredential = credentialImages[Math.floor(Math.random() * credentialImages.length)];
+            carouselHTML = `
+                <div class="credential-carousel">
+                    <img src="${randomCredential}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
+                </div>
+            `;
+        }
 
         this.chapterBody.innerHTML = `
             <div class="home-content">
+                ${carouselHTML}
                 <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
             </div>
         `;
