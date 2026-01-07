@@ -119,21 +119,35 @@
 
         .quick-links {
             margin-top: 15px;
-            padding: 12px;
+            padding: 10px 12px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .quick-links a {
-            display: block;
-            margin-bottom: 6px;
             color: #333;
             text-decoration: underline;
-            font-size: 12px;
+            font-size: 11px;
         }
 
-        .quick-links a:last-child {
-            margin-bottom: 0;
+        .toggle-subheader {
+            font-size: 10px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 12px;
+            margin-bottom: 8px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .toggle-subheader:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
         }
 
         /* Right Panel - Media Catalog */
@@ -210,7 +224,20 @@
         .emoji-cell {
             font-size: 16px;
             text-align: center;
+            width: 40px;
+        }
+
+        .status-cell {
+            text-align: center;
+            width: 30px;
+            font-size: 10px;
+        }
+
+        .time-cell {
+            text-align: center;
             width: 50px;
+            font-size: 11px;
+            color: #666;
         }
 
         /* Add Media Form */
@@ -372,13 +399,11 @@
 
         .chapter-lock-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(15, auto);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(10, auto);
             grid-auto-flow: column;
-            gap: 8px;
+            gap: 6px;
             margin-bottom: 20px;
-            max-height: 400px;
-            overflow-y: auto;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -471,7 +496,9 @@
     <div class="container">
         <div class="left-panel">
             <div class="toggle-group">
-                <div class="toggle-header">Toggles</div>
+                <div class="toggle-header">Settings</div>
+
+                <div class="toggle-subheader">Site</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Maintenance Mode</span>
                     <label class="toggle-switch">
@@ -486,17 +513,8 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
-            </div>
 
-            <div class="toggle-group">
-                <div class="toggle-header">Features</div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Media Captions</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="showCaptions">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
+                <div class="toggle-subheader">Reader</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Dark Mode</span>
                     <label class="toggle-switch">
@@ -525,10 +543,24 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
-            </div>
 
-            <div class="toggle-group">
-                <div class="toggle-header">Home Page</div>
+                <div class="toggle-subheader">Media</div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Captions</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="showCaptions">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Twitter Embeds</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="twitterEmbeds">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-subheader">Home</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Random Button</span>
                     <label class="toggle-switch">
@@ -546,10 +578,9 @@
             </div>
 
             <div class="quick-links">
-                <div class="toggle-header">Quick Links</div>
                 <a href="./full-book.html">Full Book</a>
-                <a href="./maintenance.html">Maintenance Page</a>
-                <a href="./">Back to Site</a>
+                <a href="./maintenance.html">Maintenance</a>
+                <a href="./">Site</a>
             </div>
         </div>
 
@@ -631,10 +662,12 @@
             <table class="catalog-table" id="catalogTable">
                 <thead>
                     <tr>
-                        <th data-sort="icon">Icon <span class="sort-arrow">↕</span></th>
+                        <th data-sort="status" title="Status: 🟢 Live | 🟡 Pending | 🔴 Cut">● <span class="sort-arrow">↕</span></th>
+                        <th data-sort="icon">⬡ <span class="sort-arrow">↕</span></th>
                         <th data-sort="id">Media ID <span class="sort-arrow">↕</span></th>
                         <th data-sort="chapter">Chapter <span class="sort-arrow">↕</span></th>
                         <th data-sort="type">Type <span class="sort-arrow">↕</span></th>
+                        <th data-sort="time">Time <span class="sort-arrow">↕</span></th>
                     </tr>
                 </thead>
                 <tbody id="catalogBody">
@@ -735,18 +768,17 @@
         // Populate catalog table from media.js
         const catalogBody = document.getElementById('catalogBody');
 
-        // Filter to only show non-placeholder media that's actually used
-        const activeMedia = Object.entries(MEDIA_CONTENT)
-            .filter(([id, media]) => !media.placeholder && media.src)
-            .map(([id, media]) => ({
-                id,
-                icon: media.emoji || '📷',
-                type: media.type,
-                chapter: media.chapter ? chapterTitles[media.chapter - 1] : findChapterForMedia(id),
-                caption: media.caption
-            }));
+        // Check if media is used in any chapter
+        function isMediaInUse(mediaId) {
+            for (let i = 0; i < CHAPTERS.length; i++) {
+                if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-        // Find which chapter a media ID is used in (by searching chapter content)
+        // Find which chapter a media ID is used in
         function findChapterForMedia(mediaId) {
             for (let i = 0; i < CHAPTERS.length; i++) {
                 if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
@@ -756,19 +788,54 @@
             return '—';
         }
 
+        // Get status: 🟢 Live (in use), 🟡 Pending (placeholder), 🔴 Cut (unused)
+        function getStatus(id, media) {
+            if (media.placeholder) return { icon: '🟡', label: 'Pending', sort: 2 };
+            if (isMediaInUse(id)) return { icon: '🟢', label: 'Live', sort: 1 };
+            return { icon: '🔴', label: 'Cut', sort: 3 };
+        }
+
+        // Format duration (expects seconds or "mm:ss" string)
+        function formatDuration(duration) {
+            if (!duration) return '—';
+            if (typeof duration === 'string') return duration;
+            const mins = Math.floor(duration / 60);
+            const secs = duration % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Build media list - show ALL media, not just active
+        const allMedia = Object.entries(MEDIA_CONTENT)
+            .map(([id, media]) => {
+                const status = getStatus(id, media);
+                return {
+                    id,
+                    icon: media.emoji || '📷',
+                    type: media.type,
+                    chapter: findChapterForMedia(id),
+                    caption: media.caption,
+                    status: status.icon,
+                    statusLabel: status.label,
+                    statusSort: status.sort,
+                    time: formatDuration(media.duration)
+                };
+            });
+
         // Render table
         function renderTable(data) {
             catalogBody.innerHTML = data.map(item => `
                 <tr>
+                    <td class="status-cell" title="${item.statusLabel}">${item.status}</td>
                     <td class="emoji-cell">${item.icon}</td>
                     <td>${item.id}</td>
                     <td>${item.chapter || '—'}</td>
                     <td>${item.type}</td>
+                    <td class="time-cell">${item.time}</td>
                 </tr>
             `).join('');
         }
 
-        renderTable(activeMedia);
+        renderTable(allMedia);
 
         // Toggle functionality
         function loadSettings() {
@@ -780,6 +847,7 @@
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
                 allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false',
+                twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
                 credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true'
             };
@@ -799,12 +867,13 @@
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
             document.getElementById('allowBookmarks').checked = settings.allowBookmarks;
+            document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
             document.getElementById('randomButtonText').checked = settings.randomButtonText;
             document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
 
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions', 'allowDarkMode',
-                           'allowPageMode', 'allowFontSize', 'allowBookmarks', 'randomButtonText', 'credentialCarousel'];
+                           'allowPageMode', 'allowFontSize', 'allowBookmarks', 'twitterEmbeds', 'randomButtonText', 'credentialCarousel'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
@@ -903,9 +972,9 @@
         const table = document.getElementById('catalogTable');
         const headers = table.querySelectorAll('th[data-sort]');
         let sortDir = {};
-        let currentData = [...activeMedia];
+        let currentData = [...allMedia];
 
-        const sortKeys = { icon: 'icon', id: 'id', chapter: 'chapter', type: 'type' };
+        const sortKeys = { status: 'statusSort', icon: 'icon', id: 'id', chapter: 'chapter', type: 'type', time: 'time' };
 
         headers.forEach(th => {
             th.addEventListener('click', () => {

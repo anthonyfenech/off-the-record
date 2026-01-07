@@ -901,6 +901,32 @@ body.show-captions .media-modal-caption {
     transition: all var(--transition-fast);
 }
 
+/* Tweet embed container */
+.media-tweet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    min-height: 200px;
+}
+
+.tweet-loading {
+    font-family: var(--font-mono);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-sm);
+}
+
+.tweet-error {
+    font-family: var(--font-mono);
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.tweet-error p {
+    margin-bottom: var(--space-md);
+}
+
 .media-link:hover {
     background-color: var(--color-accent);
     color: var(--color-background);
