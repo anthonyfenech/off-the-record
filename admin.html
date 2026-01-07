@@ -291,6 +291,38 @@
             border-radius: 4px;
         }
 
+        .output-section {
+            margin-top: 20px;
+        }
+
+        .step-box {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .step-label {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .step-box .output-code {
+            display: block;
+            margin: 0;
+            padding: 12px;
+            font-size: 12px;
+        }
+
+        .step-box .copy-btn {
+            margin-top: 8px;
+        }
+
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -406,8 +438,10 @@
             <div class="add-form" id="addForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Media ID</label>
-                        <input type="text" id="mediaId" placeholder="e.g., my-photo-2024">
+                        <label>Chapter</label>
+                        <select id="mediaChapter">
+                            <option value="">Select chapter...</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Type</label>
@@ -422,20 +456,33 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Caption</label>
-                        <input type="text" id="mediaCaption" placeholder="Description of the media">
+                        <label>Caption (what shows when clicked)</label>
+                        <input type="text" id="mediaCaption" placeholder="e.g., Tigers dugout, 2019">
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group">
-                        <label>Source Path</label>
-                        <input type="text" id="mediaSrc" placeholder="./assets/filename.jpg">
+                        <label>File Name (in assets folder)</label>
+                        <input type="text" id="mediaSrc" placeholder="e.g., dugout-photo.jpg">
                     </div>
                 </div>
                 <div class="form-actions">
                     <button class="btn-generate" id="generateBtn">Generate Code</button>
                     <button class="btn-cancel" id="cancelBtn">Cancel</button>
                 </div>
-                <div class="output-code" id="outputCode"></div>
-                <button class="copy-btn" id="copyBtn" style="display:none;">Copy to Clipboard</button>
+
+                <div class="output-section" id="outputSection" style="display:none;">
+                    <div class="step-box">
+                        <div class="step-label">STEP 1: Add to data/media.js</div>
+                        <div class="output-code" id="mediaCode"></div>
+                        <button class="copy-btn" data-target="mediaCode">Copy</button>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-label">STEP 2: Paste in chapter text where you want the emoji</div>
+                        <div class="output-code" id="spanCode"></div>
+                        <button class="copy-btn" data-target="spanCode">Copy</button>
+                    </div>
+                </div>
             </div>
 
             <table class="catalog-table">
@@ -538,8 +585,29 @@
         const addForm = document.getElementById('addForm');
         const cancelBtn = document.getElementById('cancelBtn');
         const generateBtn = document.getElementById('generateBtn');
-        const outputCode = document.getElementById('outputCode');
-        const copyBtn = document.getElementById('copyBtn');
+        const outputSection = document.getElementById('outputSection');
+        const mediaCodeEl = document.getElementById('mediaCode');
+        const spanCodeEl = document.getElementById('spanCode');
+        const chapterSelect = document.getElementById('mediaChapter');
+
+        // Chapter titles for dropdown
+        const chapters = [
+            'TRUST THE PROCESS', 'GRAPEFRUIT', 'EARNING IT', 'A CAGED TIGER',
+            'THE BIGS', 'HITTERS COUNT', 'THE HOT STOVE', 'FIRE DRILL',
+            'PRIME-TIME', 'GLOBETROTTING', 'THE OTHER SHOE', 'UNETHICAL',
+            'CHANGE OF SCENERY', 'ENEMY LINES', 'A LETTER TO THE EDITOR',
+            'TURNING POINT', 'OPENING DAY', 'MAGIC NUMBER', 'OCTOBER',
+            'HOT COFFEE', 'THE FUTURE', 'THE WHITE FLAG', 'INSIDE BASEBALL',
+            'BURN OUT', 'THE BIG ONE', 'ROAD TO OMAHA'
+        ];
+
+        // Populate chapter dropdown
+        chapters.forEach((title, i) => {
+            const opt = document.createElement('option');
+            opt.value = i + 1;
+            opt.textContent = `${i + 1}. ${title}`;
+            chapterSelect.appendChild(opt);
+        });
 
         const emojiMap = {
             photo: '📷',
@@ -555,39 +623,45 @@
 
         cancelBtn.addEventListener('click', () => {
             addForm.classList.remove('active');
-            outputCode.classList.remove('active');
-            copyBtn.style.display = 'none';
+            outputSection.style.display = 'none';
         });
 
         generateBtn.addEventListener('click', () => {
-            const id = document.getElementById('mediaId').value;
+            const chapter = chapterSelect.value;
+            const chapterTitle = chapterSelect.options[chapterSelect.selectedIndex].text;
             const type = document.getElementById('mediaType').value;
             const caption = document.getElementById('mediaCaption').value;
-            const src = document.getElementById('mediaSrc').value;
+            const filename = document.getElementById('mediaSrc').value;
             const emoji = emojiMap[type] || '📷';
 
-            const mediaCode = `'${id}': {
-    type: '${type}',
-    emoji: '${emoji}',
-    label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
-    caption: '${caption}',
-    src: '${src}',
-    placeholder: false
-},`;
+            // Generate a simple ID from chapter and type
+            const id = `ch${chapter}-${type}-${Date.now().toString().slice(-4)}`;
+
+            const mediaCode = `    '${id}': {
+        type: '${type}',
+        emoji: '${emoji}',
+        label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
+        caption: '${caption}',
+        src: './assets/${filename}',
+        chapter: ${chapter},
+        placeholder: false
+    },`;
 
             const spanCode = `<span class="media-emoji" data-media-id="${id}">${emoji}</span>`;
 
-            outputCode.innerHTML = `// Add to data/media.js:\n${mediaCode}\n\n// Add to chapter text:\n${spanCode}`;
-            outputCode.classList.add('active');
-            copyBtn.style.display = 'inline-block';
+            mediaCodeEl.textContent = mediaCode;
+            spanCodeEl.textContent = spanCode;
+            outputSection.style.display = 'block';
         });
 
-        copyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(outputCode.textContent);
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => {
-                copyBtn.textContent = 'Copy to Clipboard';
-            }, 2000);
+        // Copy buttons
+        document.querySelectorAll('.copy-btn[data-target]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = document.getElementById(btn.dataset.target);
+                navigator.clipboard.writeText(target.textContent);
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
         });
 
         init();
