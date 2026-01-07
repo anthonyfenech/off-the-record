@@ -626,7 +626,12 @@ button:focus-visible {
 
 /* Tappable Media Emojis */
 .media-emoji {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
     font-size: 1em;
     line-height: 1;
@@ -636,14 +641,15 @@ button:focus-visible {
     font-variant: normal !important;
     font-style: normal !important;
     font-weight: normal !important;
+    text-align: center !important;
     cursor: pointer;
-    padding: 2px 4px;
-    margin: 0 2px;
+    margin: 0 4px;
     border-radius: 4px;
     background-color: var(--color-accent-light);
     transition: all var(--transition-fast);
     position: relative;
     vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .media-emoji:hover {
