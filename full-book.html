@@ -19,7 +19,7 @@
 
     <style>
         body {
-            padding: 90px 20px 100px;
+            padding: 90px 20px 40px;
         }
 
         /* Sticky header */
@@ -57,7 +57,10 @@
             filter: invert(1) hue-rotate(180deg);
         }
 
-        .theme-btn-header,
+        .theme-btn-header {
+            display: none;
+        }
+
         .menu-btn {
             background: none;
             border: none;
@@ -152,24 +155,9 @@
             font-size: 1.25rem;
         }
 
-        /* Navigation footer */
+        /* Navigation footer - hidden on full book */
         .nav-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-            padding: 0 20px;
-            background-color: #ffffff !important;
-            border-top: 1px solid var(--color-border);
-            z-index: 100;
-        }
-
-        [data-theme="dark"] .nav-footer {
-            background-color: #1a1a1a !important;
+            display: none;
         }
 
         .bookmark-btn {
@@ -262,17 +250,8 @@
         import { CHAPTERS } from './data/chapters.js';
         import { mediaModal } from './js/mediaModal.js';
 
-        // Dark mode toggle
-        const themeBtn = document.getElementById('themeToggleBtn');
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-
-        themeBtn.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
+        // Force light mode only on full book page
+        document.documentElement.setAttribute('data-theme', 'light');
 
         // Menu button - go back to main reader
         document.getElementById('menuBtn').addEventListener('click', () => {
