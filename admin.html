@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - OFF-THE-RECORD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #fefefe;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 40px;
+        }
+
+        .toggle-group {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .toggle-header {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .toggle-description {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toggle-label {
+            font-size: 14px;
+        }
+
+        /* Toggle switch */
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #333;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        .status {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .status-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #333;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 11px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Admin Panel</h1>
+    <p class="subtitle">Hidden controls for OFF-THE-RECORD</p>
+
+    <div class="toggle-group">
+        <div class="toggle-header">Chapter Locking</div>
+        <div class="toggle-description">Lock all chapters except Chapter 1 (Author's Note). Locked chapters show a 🔒 and can't be opened.</div>
+        <div class="toggle-row">
+            <span class="toggle-label">Lock Chapters</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="lockChapters">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="toggle-group">
+        <div class="toggle-header">Maintenance Mode</div>
+        <div class="toggle-description">Replace the home page with a "server overloaded" error message. Makes it look like the site is down due to high traffic.</div>
+        <div class="toggle-row">
+            <span class="toggle-label">Show Overload Page</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="showOverload">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+        <div class="warning" id="overloadWarning" style="display: none;">
+            ⚠️ Overload page is ON. Visitors will see an error message instead of the book.
+        </div>
+    </div>
+
+    <div class="toggle-group">
+        <div class="toggle-header">Content Preview</div>
+        <div class="toggle-description">Show blurred locked content sections within chapters (like a paywall preview).</div>
+        <div class="toggle-row">
+            <span class="toggle-label">Show Locked Previews</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="showLockedPreviews">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="status">
+        <div class="status-title">Current Settings</div>
+        <div id="statusDisplay">Loading...</div>
+    </div>
+
+    <a href="./" class="back-link">← Back to site</a>
+
+    <script>
+        // Load saved settings
+        function loadSettings() {
+            return {
+                lockChapters: localStorage.getItem('admin_lockChapters') === 'true',
+                showOverload: localStorage.getItem('admin_showOverload') === 'true',
+                showLockedPreviews: localStorage.getItem('admin_showLockedPreviews') === 'true'
+            };
+        }
+
+        // Save setting
+        function saveSetting(key, value) {
+            localStorage.setItem('admin_' + key, value);
+            updateStatus();
+        }
+
+        // Update status display
+        function updateStatus() {
+            const settings = loadSettings();
+            const statusEl = document.getElementById('statusDisplay');
+            const warningEl = document.getElementById('overloadWarning');
+
+            statusEl.innerHTML = `
+                Lock Chapters: <strong>${settings.lockChapters ? 'ON' : 'OFF'}</strong><br>
+                Overload Page: <strong>${settings.showOverload ? 'ON' : 'OFF'}</strong><br>
+                Locked Previews: <strong>${settings.showLockedPreviews ? 'ON' : 'OFF'}</strong>
+            `;
+
+            warningEl.style.display = settings.showOverload ? 'block' : 'none';
+        }
+
+        // Initialize toggles
+        function init() {
+            const settings = loadSettings();
+
+            // Set initial states
+            document.getElementById('lockChapters').checked = settings.lockChapters;
+            document.getElementById('showOverload').checked = settings.showOverload;
+            document.getElementById('showLockedPreviews').checked = settings.showLockedPreviews;
+
+            // Add listeners
+            document.getElementById('lockChapters').addEventListener('change', (e) => {
+                saveSetting('lockChapters', e.target.checked);
+            });
+
+            document.getElementById('showOverload').addEventListener('change', (e) => {
+                saveSetting('showOverload', e.target.checked);
+            });
+
+            document.getElementById('showLockedPreviews').addEventListener('change', (e) => {
+                saveSetting('showLockedPreviews', e.target.checked);
+            });
+
+            updateStatus();
+        }
+
+        init();
+    </script>
+</body>
+</html>

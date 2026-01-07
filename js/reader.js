@@ -31,6 +31,12 @@ class Reader {
 
     // Initialize reader
     init() {
+        // Check if overload mode is enabled via admin panel
+        if (localStorage.getItem('admin_showOverload') === 'true') {
+            this.showOverloadPage();
+            return;
+        }
+
         // Initialize media modal
         mediaModal.init();
 
@@ -133,6 +139,39 @@ class Reader {
 
         // Dispatch event
         window.dispatchEvent(new CustomEvent('homePageLoaded'));
+    }
+
+    // Show server overload error page
+    showOverloadPage() {
+        // Hide header
+        const header = document.querySelector('.header');
+        if (header) {
+            header.style.display = 'none';
+        }
+
+        // Hide nav footer
+        const navFooter = document.querySelector('.nav-footer');
+        if (navFooter) {
+            navFooter.style.display = 'none';
+        }
+
+        // Hide chapter header
+        const chapterHeader = document.querySelector('.chapter-header');
+        if (chapterHeader) {
+            chapterHeader.style.display = 'none';
+        }
+
+        // Show error message
+        this.chapterBody.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; font-family: 'Courier New', monospace;">
+                <h1 style="font-size: 48px; margin-bottom: 20px;">503</h1>
+                <h2 style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">Service Temporarily Unavailable</h2>
+                <p style="color: #666; max-width: 400px; margin: 0 auto 20px; line-height: 1.6;">
+                    The server is currently unable to handle the request due to high traffic. Please try again later.
+                </p>
+                <p style="color: #999; font-size: 12px;">Error Code: SERVER_OVERLOADED</p>
+            </div>
+        `;
     }
 
     // Load a specific chapter

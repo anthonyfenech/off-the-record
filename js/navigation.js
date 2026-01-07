@@ -180,8 +180,9 @@ class Navigation {
         item.className = 'toc-chapter';
         item.dataset.chapterId = chapter.id;
 
-        // Check if chapter is locked (all except chapter 1 for testing)
-        const isLocked = chapter.id > 1;
+        // Check if chapter locking is enabled via admin panel
+        const lockingEnabled = localStorage.getItem('admin_lockChapters') === 'true';
+        const isLocked = lockingEnabled && chapter.id > 1;
 
         if (isLocked) {
             item.classList.add('toc-chapter-locked');
