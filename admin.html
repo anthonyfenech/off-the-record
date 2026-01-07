@@ -185,6 +185,58 @@
         </div>
     </div>
 
+    <div class="toggle-group">
+        <div class="toggle-header">Feature Toggles</div>
+        <div class="toggle-description">Disable specific features for all visitors.</div>
+        <div class="toggle-row" style="margin-bottom: 12px;">
+            <span class="toggle-label">Allow Dark Mode</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="allowDarkMode" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+        <div class="toggle-row" style="margin-bottom: 12px;">
+            <span class="toggle-label">Allow Page Mode</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="allowPageMode" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+        <div class="toggle-row" style="margin-bottom: 12px;">
+            <span class="toggle-label">Allow Font Size</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="allowFontSize" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+        <div class="toggle-row">
+            <span class="toggle-label">Allow Bookmarks</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="allowBookmarks" checked>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="toggle-group">
+        <div class="toggle-header">Home Page Options</div>
+        <div class="toggle-description">Control home page variations.</div>
+        <div class="toggle-row" style="margin-bottom: 12px;">
+            <span class="toggle-label">Random Button Text</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="randomButtonText">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+        <div class="toggle-row">
+            <span class="toggle-label">Credential Carousel</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="credentialCarousel">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </div>
+
     <div class="status">
         <div class="status-title">Current Settings</div>
         <div id="statusDisplay">Loading...</div>
@@ -198,7 +250,15 @@
             return {
                 lockChapters: localStorage.getItem('admin_lockChapters') === 'true',
                 showOverload: localStorage.getItem('admin_showOverload') === 'true',
-                showLockedPreviews: localStorage.getItem('admin_showLockedPreviews') === 'true'
+                showLockedPreviews: localStorage.getItem('admin_showLockedPreviews') === 'true',
+                // Feature toggles default to true (allowed) if not set
+                allowDarkMode: localStorage.getItem('admin_allowDarkMode') !== 'false',
+                allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
+                allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
+                allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false',
+                // Home page options
+                randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
+                credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true'
             };
         }
 
@@ -216,8 +276,16 @@
 
             statusEl.innerHTML = `
                 Lock Chapters: <strong>${settings.lockChapters ? 'ON' : 'OFF'}</strong><br>
-                Overload Page: <strong>${settings.showOverload ? 'ON' : 'OFF'}</strong><br>
-                Locked Previews: <strong>${settings.showLockedPreviews ? 'ON' : 'OFF'}</strong>
+                Maintenance Mode: <strong>${settings.showOverload ? 'ON' : 'OFF'}</strong><br>
+                Locked Previews: <strong>${settings.showLockedPreviews ? 'ON' : 'OFF'}</strong><br>
+                <br>
+                Dark Mode: <strong>${settings.allowDarkMode ? 'Allowed' : 'Disabled'}</strong><br>
+                Page Mode: <strong>${settings.allowPageMode ? 'Allowed' : 'Disabled'}</strong><br>
+                Font Size: <strong>${settings.allowFontSize ? 'Allowed' : 'Disabled'}</strong><br>
+                Bookmarks: <strong>${settings.allowBookmarks ? 'Allowed' : 'Disabled'}</strong><br>
+                <br>
+                Random Button Text: <strong>${settings.randomButtonText ? 'ON' : 'OFF'}</strong><br>
+                Credential Carousel: <strong>${settings.credentialCarousel ? 'ON' : 'OFF'}</strong>
             `;
 
             warningEl.style.display = settings.showOverload ? 'block' : 'none';
@@ -231,6 +299,12 @@
             document.getElementById('lockChapters').checked = settings.lockChapters;
             document.getElementById('showOverload').checked = settings.showOverload;
             document.getElementById('showLockedPreviews').checked = settings.showLockedPreviews;
+            document.getElementById('allowDarkMode').checked = settings.allowDarkMode;
+            document.getElementById('allowPageMode').checked = settings.allowPageMode;
+            document.getElementById('allowFontSize').checked = settings.allowFontSize;
+            document.getElementById('allowBookmarks').checked = settings.allowBookmarks;
+            document.getElementById('randomButtonText').checked = settings.randomButtonText;
+            document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
 
             // Add listeners
             document.getElementById('lockChapters').addEventListener('change', (e) => {
@@ -243,6 +317,30 @@
 
             document.getElementById('showLockedPreviews').addEventListener('change', (e) => {
                 saveSetting('showLockedPreviews', e.target.checked);
+            });
+
+            document.getElementById('allowDarkMode').addEventListener('change', (e) => {
+                saveSetting('allowDarkMode', e.target.checked);
+            });
+
+            document.getElementById('allowPageMode').addEventListener('change', (e) => {
+                saveSetting('allowPageMode', e.target.checked);
+            });
+
+            document.getElementById('allowFontSize').addEventListener('change', (e) => {
+                saveSetting('allowFontSize', e.target.checked);
+            });
+
+            document.getElementById('allowBookmarks').addEventListener('change', (e) => {
+                saveSetting('allowBookmarks', e.target.checked);
+            });
+
+            document.getElementById('randomButtonText').addEventListener('change', (e) => {
+                saveSetting('randomButtonText', e.target.checked);
+            });
+
+            document.getElementById('credentialCarousel').addEventListener('change', (e) => {
+                saveSetting('credentialCarousel', e.target.checked);
             });
 
             updateStatus();

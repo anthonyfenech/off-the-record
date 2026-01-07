@@ -124,6 +124,24 @@ class ThemeManager {
         // Apply initial theme immediately (before page renders)
         this.applyTheme(this.currentTheme);
 
+        // Check if dark mode is disabled via admin panel
+        const darkModeDisabled = localStorage.getItem('admin_allowDarkMode') === 'false';
+        const headerToggle = document.getElementById('themeToggleBtn');
+        if (darkModeDisabled) {
+            // Force light mode and hide toggle
+            this.currentTheme = 'light';
+            this.applyTheme('light');
+            if (headerToggle) headerToggle.style.display = 'none';
+            return;
+        }
+
+        // Set up header theme toggle button (click to toggle)
+        if (headerToggle) {
+            headerToggle.addEventListener('click', () => {
+                this.toggle();
+            });
+        }
+
         // Check if toggle should be shown
         const toggle = document.getElementById('themeToggle');
         if (!CONFIG.showDarkModeToggle && toggle) {

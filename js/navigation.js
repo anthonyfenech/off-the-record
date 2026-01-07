@@ -320,9 +320,12 @@ class Navigation {
 
     // Build bottom navigation sections (smaller font)
     buildBottomSections(fragment) {
+        // Check if bookmarks are allowed
+        const allowBookmarks = localStorage.getItem('admin_allowBookmarks') !== 'false';
+
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
-            { id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' },
+            ...(allowBookmarks ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
             { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true }
         ];
@@ -412,9 +415,21 @@ class Navigation {
         const wrapper = document.createElement('div');
         wrapper.className = 'settings-wrapper';
 
-        // Reading Mode Setting
+        // Check admin settings
+        const allowPageMode = localStorage.getItem('admin_allowPageMode') !== 'false';
+        const allowFontSize = localStorage.getItem('admin_allowFontSize') !== 'false';
+
+        // Reading Mode Setting (only if allowed)
+        if (!allowPageMode) {
+            // Force scroll mode
+            if (readingModeManager.getMode() !== 'scroll') {
+                readingModeManager.switchMode('scroll');
+            }
+        }
+
         const readingModeRow = document.createElement('div');
         readingModeRow.className = 'settings-row';
+        if (!allowPageMode) readingModeRow.style.display = 'none';
 
         const readingModeLabel = document.createElement('span');
         readingModeLabel.className = 'settings-label';
@@ -453,9 +468,10 @@ class Navigation {
         readingModeRow.appendChild(readingModeLabel);
         readingModeRow.appendChild(readingModeToggle);
 
-        // Font Size Setting
+        // Font Size Setting (only if allowed)
         const fontSizeRow = document.createElement('div');
         fontSizeRow.className = 'settings-row';
+        if (!allowFontSize) fontSizeRow.style.display = 'none';
 
         const fontSizeLabel = document.createElement('span');
         fontSizeLabel.className = 'settings-label';
