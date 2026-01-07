@@ -1,12 +1,12 @@
-// Chapter data for OFF-THE-RECORD memoir
+// Chapter data for OFF-THE-RECORD
 
-const placeholderContent = `This chapter is part of the OFF-THE-RECORD memoir covering Detroit Tigers baseball.
+const placeholderContent = `This chapter is part of OFF-THE-RECORD, covering Detroit Tigers baseball.
 
 Content will detail the pivotal moments, unforgettable players, and behind-the-scenes stories that defined this era of Tigers baseball.
 
 The full manuscript is being prepared. Each chapter explores a different aspect of covering Major League Baseball, from the intimate moments in the clubhouse to the dramatic finishes under the lights at Comerica Park.
 
-This is placeholder text that will be replaced with the actual memoir content.`.repeat(3);
+This is placeholder text that will be replaced with the actual content.`.repeat(3);
 
 export const CHAPTERS = [
     // INTRO CHAPTERS (1-4) - Nested under INTRO dropdown
