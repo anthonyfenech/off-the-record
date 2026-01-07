@@ -50,7 +50,7 @@ body {
 /* Chapter titles - Typewriter style with uppercase and letter-spacing */
 .chapter-title {
     font-family: var(--font-mono);
-    font-size: var(--font-size-xl);
+    font-size: 1.875rem;
     line-height: var(--line-height-tight);
     font-weight: bold;
     color: var(--color-text-primary);
