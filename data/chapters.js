@@ -748,7 +748,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline"><span class="dateline"><em>February 26</em>—</span>On the back fields, I get a text message from someone at MLB Network, asking if I have time to come on television today. Immediately, I head back to the hotel to change into a shirt, tie and jacket. I've never been on TV like this, and I'm certifiably nervous—so I take swigs of apple-flavored whiskey when I get back.</p>
 
-<p>It is sweltering as I stand on camera—mid-eighties, and my right hand is sweating so much the microphone keeps slipping to the side. The on-site producer must turn it straight twice. I stumble over words badly at least once, but overall, I survive. MLB Network… hey, now!</p>
+<p>It is sweltering as I stand on camera—mid-eighties, and my right hand is sweating so much the microphone keeps slipping to the side. The on-site producer must turn it straight twice. I stumble over words badly at least once, but overall, I survive. MLB Network… hey, now! <span class="media-emoji" data-media-id="first-on-tv">📺</span></p>
 
 <p>I go back into the clubhouse—shirt and tie and jacket and still sweating, scrambling to get some last-second quotes for my newspaper day job, but also probably to let 'em know I was just on MLB Network. I apologize to one player for staying late to answer questions—catcher Alex Avila, whose dad, Al, is Detroit's assistant general manager.</p>
 
@@ -1850,7 +1850,7 @@ export const CHAPTERS = [
 
 <p>The sound becomes more familiar the closer I get—Víctor Martínez is in the batting cage.</p>
 
-<p>Martínez walks out afterward: Towel on shoulder, bats in hand, sweat-soaked face. Walks straight by me. No eye contact. Something is wrong. I trail happy-go-luckily along, and Martínez becomes a barking dog.</p>
+<p>Martínez walks out afterward: Towel on shoulder, bats in hand, sweat-soaked face. Walks straight by me. No eye contact. Something is wrong. I trail happy-go-luckily along, and Martínez becomes a barking dog. <span class="media-emoji" data-media-id="victor-barking-dog">📷</span></p>
 
 <p>"Go away! Go! Go!"</p>
 
@@ -2032,7 +2032,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>May 9</em>—</span>After posting a winning record in April, Detroit is nose-diving in May. They arrive in D.C. on a six-game losing streak. Five weeks into the season, the $200 million team is under .500 and struggling to show life. Ausmus has lost fan support.</p>
 
-<p>On MLB Network, Mad Dog asks if Ausmus is on the hot seat.</p>
+<p>On MLB Network, Mad Dog asks if Ausmus is on the hot seat. <span class="media-emoji" data-media-id="high-heat-hot-seat">📺</span></p>
 
 <p>"There's only so much a manager can do. At some point, the players have to perform."</p>
 
