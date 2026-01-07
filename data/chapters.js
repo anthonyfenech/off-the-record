@@ -5440,10 +5440,14 @@ export const CHAPTERS = [
             <p><strong>Subject:</strong> Tigers today</p>
             <p><em>Might be worth asking J.V. about if Bregman had been traded to Detroit, would things have been different. If he's got access. Would tie in nicely if we end up getting Bregman.</em></p>
 
+            <p>&nbsp;</p>
+
             <p><strong>To:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 <span class="small-caps">P.M.</span></p>
             <p><strong>Subject:</strong> RE: Tigers today</p>
             <p><em>I apologize if I'm coming off a certain way, but I just need to make a couple points here: There is a very minimal chance I will be asking Justin Verlander anything. Why? Because I was the only person to ask him last year—at my editor's request—about his injury misdiagnosis claims. I understood then that it would harm my future relations with him, but I did it anyways.</em></p>
             <p><em>So, if I'm in the Astros clubhouse looking for Bregman and a scrum appears, sure, I'll go over there, once again putting myself in a situation that will almost assuredly result in Verlander ignoring my questions or taking the opportunity to publicly bully me.</em></p>
+
+            <p>&nbsp;</p>
 
             <p><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 <span class="small-caps">P.M.</span></p>
             <p><strong>Subject:</strong> RE: Tigers today</p>
