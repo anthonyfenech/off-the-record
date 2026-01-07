@@ -851,6 +851,13 @@
 
                 <div class="toggle-subheader">Home</div>
                 <div class="toggle-row">
+                    <span class="toggle-label">Maintenance Mode</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="maintenanceMode">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
                     <span class="toggle-label">Random Button</span>
                     <label class="toggle-switch">
                         <input type="checkbox" id="randomButtonText">
@@ -1266,6 +1273,7 @@
                 allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false',
                 allowComments: localStorage.getItem('admin_allowComments') !== 'false',
                 twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
+                maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
                 credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true',
                 installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
@@ -1292,6 +1300,7 @@
             document.getElementById('allowBookmarks').checked = settings.allowBookmarks;
             document.getElementById('allowComments').checked = settings.allowComments;
             document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
+            document.getElementById('maintenanceMode').checked = settings.maintenanceMode;
             document.getElementById('randomButtonText').checked = settings.randomButtonText;
             document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
             document.getElementById('installPromptEnabled').checked = settings.installPromptEnabled;
@@ -1304,7 +1313,7 @@
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize', 'allowBookmarks', 'allowComments',
-                           'twitterEmbeds', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled'];
+                           'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
