@@ -884,6 +884,8 @@ export const CHAPTERS = [
 
 <p>Nathan doesn't respond.</p>
 
+<p>&nbsp;</p>
+
 <p class="has-dateline"><span class="dateline"><em>April 23</em>—</span>Bad news arrives the next day.</p>
 
 <p>Nathan's season is over—he's set to undergo elbow ligament reconstruction (Tommy John surgery) Speaking red-eyed in front of reporters, Nathan describes the elbow "pop" he felt on his final pitch last night and defiantly declares he'll be back.</p>
@@ -905,6 +907,8 @@ export const CHAPTERS = [
 <p>The other source—assistant general manager Al Avila—still hasn't responded.</p>
 
 <p>Back in the press box, I write three stories: A game story, a sidebar on Nathan's injury and an opinion piece about why it would be wise to pursue Soriano—a favor for Scott Boras.</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline"><span class="dateline">OAKLAND, Calif., <em>May 27</em>—</span>The best part about Gator's friendship isn't the breaking news tips, but his bead on the clubhouse.</p>
 
