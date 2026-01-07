@@ -96,7 +96,17 @@ class App {
         this.bookmarkBtn.addEventListener('click', () => {
             const chapter = CHAPTERS.find(c => c.id === this.currentChapterId);
             if (chapter) {
-                const isNowBookmarked = bookmarks.toggleBookmark(chapter.id, chapter.title);
+                // Get page info if in page mode
+                let pageNumber = null;
+                let totalPages = null;
+                if (window.readerInstance) {
+                    const pageInfo = window.readerInstance.getPaginationInfo();
+                    if (pageInfo.totalPages > 0) {
+                        pageNumber = pageInfo.currentPage;
+                        totalPages = pageInfo.totalPages;
+                    }
+                }
+                const isNowBookmarked = bookmarks.toggleBookmark(chapter.id, chapter.title, pageNumber, totalPages);
                 this.updateBookmarkButtonState(isNowBookmarked);
             }
         });

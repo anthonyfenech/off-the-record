@@ -317,7 +317,7 @@
         // Render chapters
         const container = document.getElementById('content');
         container.innerHTML = CHAPTERS.map((ch, i) => `
-            <article class="chapter-section" data-chapter="${i}">
+            <article class="chapter-section" id="chapter-${ch.id}" data-chapter="${i}">
                 <header class="chapter-header">
                     <h2 class="chapter-title">${ch.title}</h2>
                 </header>
@@ -325,6 +325,14 @@
                 <div class="chapter-end">***</div>
             </article>
         `).join('');
+
+        // Handle hash navigation on load
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                setTimeout(() => target.scrollIntoView(), 100);
+            }
+        }
 
         // Chapter navigation
         const chapters = document.querySelectorAll('.chapter-section');
