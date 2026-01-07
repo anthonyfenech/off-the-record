@@ -429,7 +429,7 @@ export const CHAPTERS = [
 
 <p>Tomorrow, I receive a flood of congratulations from my colleagues. I am finally a sports writer, unchained from the web desk—a <em>Ball Writer</em>, the Tigers' beat writer, can you believe it?</p>
 
-<p><strong>From:</strong> Myers, Gene &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">P.M.</span><br/>
+<p class="no-indent"><strong>From:</strong> Myers, Gene &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">P.M.</span><br/>
 <strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
 
 <p><em>"After more than seven years, in essence, in the </em>Free Press'<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
@@ -536,7 +536,7 @@ export const CHAPTERS = [
 
 <p>Embarrassingly, I don't remember our conversation from last night. We talk a bit more.</p>
 
-<p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans' trust. I suggest I could visit Nathan while training for the season. Pepe buys in.</p>
+<p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans' trust. I suggest I could visit Nathan while training for the season. Pepe buys in. <span class="media-emoji" data-media-id="joe-nathan-story">🔗</span></p>
 
 <p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject. Put another way: Heading into my first year as beat writer of the team, it's pretty much guaranteed I'm going to write a good story about Nathan, who is one of the team's respected veterans.</p>
 
@@ -2947,6 +2947,8 @@ export const CHAPTERS = [
 <p>Zimmermann's dry humor is appreciated—I'm still more than a tinge nervous for the red light, and he loosens me up. The veteran righty starter is a pretty solid guy, I've found—the Wisconsinite out of Division III University of Wisconsin-Stevens Point comes with more normal qualities than most hundred-millionaires.</p>
 
 <p>Like his first two starts this season, Zimmermann's debut last year in Detroit was a mixed bag. We exchanged numbers at the end of the season. Our subsequent offseason exchanges were entertaining, with Zimmermann either acting like he doesn't have my number or saying something sarcastically stupid. This is to say—I like him.</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline">OAKLAND, Calif., <em>May 7</em>—</span>Two minutes into today's pregame media session, the manager has a question for this Ball Writer.</p>
 
@@ -5758,6 +5760,8 @@ export const CHAPTERS = [
 <p>Mom: Omg. Call when you can.</p>
 
 <p class="scene-break">***</p>
+
+<p class="scene-break" style="font-family: 'Courier New', monospace; font-weight: bold;">AIRPLANE MODE</p>
 
 <p class="has-dateline no-indent"><span class="dateline">2:44 <span class="small-caps">P.M.</span>—</span>The barrage of messages continues when I return to reality.</p>
 

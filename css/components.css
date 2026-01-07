@@ -745,6 +745,14 @@ button:focus-visible {
     min-height: 200px;
 }
 
+.media-modal-body img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Modal Caption */
 .media-modal-caption {
     padding: var(--space-lg) var(--space-xl);
