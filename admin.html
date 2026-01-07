@@ -46,7 +46,7 @@
         }
 
         .catalog-panel {
-            width: 420px;
+            width: 520px;
             flex-shrink: 0;
         }
 
@@ -291,6 +291,14 @@
             width: 40px;
             font-size: 10px;
             color: #666;
+        }
+
+        .date-cell {
+            text-align: center;
+            width: 65px;
+            font-size: 10px;
+            color: #666;
+            white-space: nowrap;
         }
 
         .id-cell {
@@ -981,6 +989,7 @@
                             <th data-sort="id">Media ID <span class="sort-arrow">↕</span></th>
                             <th data-sort="chapterNum"># <span class="sort-arrow">↕</span></th>
                             <th data-sort="chapterName">Chapter <span class="sort-arrow">↕</span></th>
+                            <th data-sort="date">Date <span class="sort-arrow">↕</span></th>
                             <th data-sort="time">Time <span class="sort-arrow">↕</span></th>
                         </tr>
                     </thead>
@@ -1194,6 +1203,7 @@
                     status: status.icon,
                     statusLabel: status.label,
                     statusSort: status.sort,
+                    date: media.date || '—',
                     time: formatDuration(media.duration)
                 };
             });
@@ -1217,6 +1227,7 @@
                     <td class="id-cell" title="${item.id}">${idLink}</td>
                     <td class="chapter-num-cell">${chapterNumBox}</td>
                     <td class="chapter-name-cell">${chapterLink}</td>
+                    <td class="date-cell">${item.date}</td>
                     <td class="time-cell">${item.time}</td>
                 </tr>
             `;
@@ -1401,7 +1412,7 @@
         let sortDir = {};
         let currentData = [...allMedia];
 
-        const sortKeys = { status: 'statusSort', icon: 'icon', id: 'id', chapterNum: 'chapterNum', chapterName: 'chapterName', time: 'time' };
+        const sortKeys = { status: 'statusSort', icon: 'icon', id: 'id', chapterNum: 'chapterNum', chapterName: 'chapterName', date: 'date', time: 'time' };
 
         headers.forEach(th => {
             th.addEventListener('click', () => {
