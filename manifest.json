@@ -1,11 +1,11 @@
 {
-  "name": "OFF-THE-RECORD: A Baseball Memoir",
-  "short_name": "OFF-THE-RECORD",
-  "description": "A mobile reading experience for a baseball memoir covering 15 years as Detroit Tigers beat writer",
+  "name": "OFF-THE-RECORD: The Mixtape",
+  "short_name": "OTR",
+  "description": "A mobile reading experience - 15 years covering the Detroit Tigers",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0d47a1",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
   "orientation": "portrait-primary",
   "scope": "./",
   "icons": [
@@ -59,7 +59,6 @@
     }
   ],
   "categories": ["books", "sports", "entertainment"],
-  "screenshots": [],
   "shortcuts": [
     {
       "name": "Continue Reading",
