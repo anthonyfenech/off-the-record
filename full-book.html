@@ -84,6 +84,17 @@
 
         // Initialize media modal for emoji triggers
         mediaModal.init();
+
+        // Attach click handlers to media emojis
+        document.querySelectorAll('.media-emoji').forEach(emoji => {
+            emoji.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mediaId = emoji.getAttribute('data-media-id');
+                if (mediaId) {
+                    mediaModal.open(mediaId);
+                }
+            });
+        });
     </script>
 </body>
 </html>
