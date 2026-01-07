@@ -685,10 +685,128 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "MIDSEASON",
-        subtitle: "To be written",
+        subtitle: "Detroit, Seattle, Minneapolis",
         teaser: "The dog days of summer baseball.",
-        content: placeholderContent,
-        wordCount: 500
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>July 2</em>—</span>Halfway through my rookie year, my best source isn't in the front office, the clubhouse, the press box or affiliated with the team at all. I have yet to figure out what Gator does for a living or why he hangs out with baseball players—but I don't particularly care.</p>
+
+<p>He's at his friend's place drinking beers today, asking about the vibe in the clubhouse. His friend, an injured player, is wondering.</p>
+
+<p>Gator is my best source. With the team at .500 (39-39) and slipping in the standings, roster moves are afoot. Ausmus gives reporters a hint—a reliever is coming up.</p>
+
+<p>My source network is finally paying off. Even if I don't have anybody who can tell me things, I have enough folks who hear 'em.</p>
+
+<p>Last month, I started squeezing information out of Ángel Nesbitt, a young Venezuelan reliever. After making the team with a terrific spring, Nesbitt's early struggles earned him a ticket to Triple-A.</p>
+
+<p>I kept in touch, and soon, he was tipping me off with roster moves.</p>
+
+<p>Gator and I work as a tag team: I text one guy and Gator texts his guys.</p>
+
+<p>Neither of my two tries—assistant general manager, farm director—get back to me. It is just after 2 <span class="small-caps">P.M.</span> on an off day. Soon, the Comerica Park clubhouse will open to the media, and the remaining roster moves in question officially announced.</p>
+
+<p>Waiting to hear back, I am beaten by a blogger. The news blindsides Gator, triggering a flurry of texts: Reliever Joba Chamberlain, a big part of the clubhouse, is being sent out.</p>
+
+<p>Gator is on Line 1. A different player just called, and yep, Joba Chamberlain is gone. Tom Gorzelanny, too.</p>
+
+<p>It was a better day for the beat writer. I got four-of-six roster moves. But my scoops amount to second-hand rumors—if I don't find some real sources, I'm bound to get burned.</p>
+
+<p class="has-dateline"><span class="dateline">SEATTLE, <em>July 8</em>—</span>I sit in the dugout today with J.D. Martinez for a feature story to chronicle his breakout year. I explain my angle—I want to highlight the work his personal hitting coach has done with him, but I want to keep the coach anonymous. I'll call him the Mysterious Hitting Guru.</p>
+
+<p>J.D. says he doesn't want to say anything about him until he gets paid and doesn't want to rub his hitting coaches the wrong way by potentially giving someone else credit for his success.</p>
+
+<p>He didn't explicitly say do not talk to this guy.</p>
+
+<p>I am equal parts inexperienced and undeterred. Before taking off in Seattle, I ask one of Boras' guys about the Mysterious Hitting Guru.</p>
+
+<p>"Ask Scott… see if he's got any ideas."</p>
+
+<p>By the time I land in Minneapolis, the search is over.</p>
+
+<p>"Scott said try Craig Wallenbrock."</p>
+
+<p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>July 9</em>—</span>I got through to Wallenbrock and gave him the spiel. Feature story on J.D. l'll conceal your identity—the Mysterious Hitting Guru.</p>
+
+<p>He gives no promises, but says he'll talk to Martinez. Up to him. I was actually feeling pretty good about it until I got to the stadium and was summoned for a chat with Tigers PR.</p>
+
+<p>Now I've got a disgruntled subject, and the story is up in the air.</p>
+
+<p>"J.D. doesn't want to talk to you," media relations manager Aileen Villarreal said. "He told you not to talk to that guy."</p>
+
+<p>I try to clarify, but it doesn't get far—Martinez didn't say <em>not</em> to talk to Wallenbrock, he said he didn't <em>want</em> me to talk to him. We're soon arguing semantics. Yes, I understand. But I'm a journalist: talking to people who others don't want us talking to is part of the job.</p>
+
+<p>Martinez sits down to finish the interview but doesn't change his tune.</p>
+
+<p>"I still think it's bullshit."</p>
+
+<p>We agree to disagree.</p>
+
+<p class="has-dateline"><span class="dateline"><em>July 10</em>—</span>Tigers lead Twins, 6-1. Bottom of the ninth.</p>
+
+<p>Forty-eight hours until the All-Star break and the Tigers still don't know who they are. A winning team? Contender? Third place? They have struggled to stay above .500 all season. Flaws are obvious—unathletic roster, one-dimensional offense, subpar defense—but the team's biggest hole remains in the bullpen.</p>
+
+<p>As the Royals showed last year, riding a three-headed monster of late-inning relievers within a win of the World Series, baseball has begun prioritizing bullpen usage. For whatever reason, the Tigers have not.</p>
+
+<p>Tonight, they're up five runs with three outs to go.</p>
+
+<p>By the time they get the first, activity in the press box: Writers clawing at keyboards. Two men on. A hit. Pitching change. Walk. Another hit. Typetypetypetype</p>
+
+<p>What seemed excessive mere minutes ago—rewriting the lede, reworking the game story, reading bottom-to-top for stray mentions of the wrong score—is now necessary.</p>
+
+<p>At the start of the inning, our stories were resting comfortably, ready to be sent immediately after the final pitch—and at least one poor soul has already filed.</p>
+
+<p>Now, as the final pitch is hit into the left field seats, the stories we're scrambling to rewrite are very different. Somehow, the Tigers lose.</p>
+
+<p>Back in the press box, the TV is on mute. Apparently, Pedro Martinez has the scoop.</p>
+
+<p>Martinez says on TBS that Detroit is signing veteran reliever Neftali Feliz. We hear about the report on Twitter.</p>
+
+<p>One colleague has had enough: "Fuck this job."</p>
+
+<p>I leave the press box past eleven. As if the drama and the game and the postgame signing wasn't enough fun, I still have the feature story I haven't started.</p>
+
+<p>I meet up with scouts at the bar instead. A drink turns into three and I end up doing it the old-fashioned way, staying up all bloody night on coffee and tobacco.</p>
+
+<p>The sun comes up. Day game today.</p>
+
+<p class="has-dateline"><span class="dateline"><em>July 11</em>—</span>In the first inning, straight out of the You Couldn't Make This Up If You Tried files, disaster is coming.</p>
+
+<p>J.D. Martinez just fouled off a pitch.</p>
+
+<p>It is fast approaching, upwards of eighty-five mph, spinning like a programmed missile. It is a sneak attack, a foul ball I never see coming, not until it—<em>SMACK!</em>—makes a direct hit, causing a first-row explosion of Mountain Dew and popcorn.</p>
+
+<p>The crowd gasps. Pop everywhere, popcorn all over the carpet. My computer is a casualty, screen spider-webbed, currently sitting in a box of rice—the laptop that might've saved my life.</p>
+
+<p>On the FOX Sports 1 broadcast, the analyst provides play-by-play.</p>
+
+<p>"If you're wondering what the crowd was reacting to—that ball went into the press box, and I believe it was Anthony Fenech from the <em>Free Press</em> on the Tigers beat who had the bad end of that ball.</p>
+
+<p>"I don't know if he caught it or not. I don't know if it knocked him down. He isn't in his seat anymore—he has since left the third row. So, I guess we'll find out soon enough."</p>
+
+<p>Dave Dombrowski passes me in the hallway.</p>
+
+<p>"I heard J.D. was upset with you."</p>
+
+<p>I try and fail at lobbying Martinez to buy me a new laptop.</p>
+
+<p>"That's what you get, bro."</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>July 17</em>—</span>Back from the All-Star break, I get an email from a guy with the Christopher "Mad Dog" Russo radio show, asking for availability to talk Tigers.</p>
+
+<p>Soon, I'll be on SiriusXM Channel 144 with the Mad Dog—one of the most notorious loudmouths on the national sports talk scene. Russo worked for New York's WFAN for nearly twenty years before making the full-time jump to baseball, where he currently hosts a daily show, <em>High Heat</em>, on MLB Network.</p>
+
+<p>But as the interview wears on, things get weird.</p>
+
+<p>"I'm also reading that you got drunk and ran your car into another, into a PT Cruiser, is that correct, and flipped it over. I mean, how do you flip—Anthony, how do you flip a PT Cruiser? Is that true?"</p>
+
+<p>My jaw drops. I am on satellite radio with Mad Dog, and he just hit me with that?</p>
+
+<p>Hanging up, I realize I've been hood-winked. It won't take long for Internet Stalker's sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now.</p>
+
+<p class="has-dateline"><span class="dateline"><em>July 19</em>—</span>Redemption is mine. A week after I got punk'd by Internet Stalker, I get an email from an ESPN producer, inviting me onto <em>SportsCenter</em> today.</p>
+
+<p>No, it's not another prank—that's what I thought at first, too. Email address checked out; I found the producer on LinkedIn.</p>
+
+<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>`,
+        wordCount: 1650
     },
     {
         id: 8,
