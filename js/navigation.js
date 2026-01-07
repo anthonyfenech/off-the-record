@@ -324,6 +324,7 @@ class Navigation {
         const allowBookmarks = localStorage.getItem('admin_allowBookmarks') !== 'false';
 
         const bottomSections = [
+            { id: 'full-book', label: 'GO OFF', type: 'link', url: './full-book.html' },
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(allowBookmarks ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             { id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' },
