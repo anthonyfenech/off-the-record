@@ -180,6 +180,13 @@ class Navigation {
         item.className = 'toc-chapter';
         item.dataset.chapterId = chapter.id;
 
+        // Check if chapter is locked (all except chapter 1 for testing)
+        const isLocked = chapter.id > 1;
+
+        if (isLocked) {
+            item.classList.add('toc-chapter-locked');
+        }
+
         const indicator = document.createElement('div');
         indicator.className = 'chapter-indicator';
 
@@ -194,15 +201,26 @@ class Navigation {
         title.textContent = chapter.title;
 
         titleRow.appendChild(title);
+
+        // Add lock icon if locked
+        if (isLocked) {
+            const lockIcon = document.createElement('span');
+            lockIcon.className = 'toc-lock-icon';
+            lockIcon.textContent = '🔒';
+            titleRow.appendChild(lockIcon);
+        }
+
         info.appendChild(titleRow);
 
         item.appendChild(indicator);
         item.appendChild(info);
 
-        // Click handler
+        // Click handler - only works if not locked
         item.addEventListener('click', () => {
-            reader.loadChapter(chapter.id);
-            this.closeTOC();
+            if (!isLocked) {
+                reader.loadChapter(chapter.id);
+                this.closeTOC();
+            }
         });
 
         return item;
