@@ -6177,6 +6177,18 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
+<p class="scene-break"><span>***</span></p>
+
+<p>&nbsp;</p>
+
+<p class="flashback-header">AIRPLANE MODE</p>
+
+<p>&nbsp;</p>
+
+<p class="scene-break"><span>***</span></p>
+
+<p>&nbsp;</p>
+
 <p class="has-dateline"><span class="dateline">DETROIT, <em>October 4</em>—</span>After spending the past month in an emotional spin cycle, I'm holed up with enough supply to fend off even the most intrusive self-loathing thoughts.</p>
 
 <p>I won't sleep for days, burrowing into cardboard boxes, notebooks and old tape recorders. Receipts rubber-banded and piled by month and year. Receipts everywhere. Hundreds, maybe a thousand. Organized by time and date, work and personal. Finding much more than items and purchases—it's like my Ball Writing life is unfolding in front of my eyes.</p>
