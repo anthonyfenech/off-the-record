@@ -471,10 +471,192 @@ export const CHAPTERS = [
         year: null,
         section: 'intro',
         title: "SCANDAL!",
-        subtitle: "To be written",
+        subtitle: "",
         teaser: "When everything changed.",
-        content: placeholderContent,
-        wordCount: 500
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>December 5</em>—</span>Something bad has happened. I have an Internet Stalker. There's this guy who runs a blog with more than 15,000 followers on Twitter, and he's trying to ruin my career.</p>
+
+<p>For reasons unclear, I've become his new whipping boy. I've never met him, never interacted with him, nothing—haven't even blocked him.</p>
+
+<p>He's got a loyal army of followers who are tweeting at me, too. He's emailing me and my sports editor and tweeting at the sports department's Twitter account—this is not good.</p>
+
+<p class="no-indent"><em>"I am contacting you to find out why you chose Anthony Fenech on the Tigers beat? My sources have told me that Mr. Fenech has at least one DUI conviction. I am told there was another incident that I am still trying to dig up.</em></p>
+
+<p class="no-indent"><em>"My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writers job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made."</em></p>
+
+<p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. He's digging up Facebook messages from college and posting them, too.</p>
+
+<p>So let me come clean: Months away from my twenty-first birthday, I got a DUI after flipping my PT Cruiser on the freeway. I was drinking on an empty stomach, changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
+
+<p>Almost forgotten until now, when it's currently online. Twelve RTs and counting.</p>
+
+<p>I did more than a few things I now regret when I was younger. I would like to apologize for everything dumb that I did or said back then—this is extremely embarrassing to share publicly but I feel explaining it is necessary to move forward, in case you Google my name and read about it online one day.</p>
+
+<p>So yeah. That's basically what's happened, and I don't know what's going to happen from here, but I think the plan is just to ignore the noise and move on. Don't respond, don't interact—and no phone interviews without clearing it first.</p>
+
+<p>So far, we have. Ignore and move on. Don't read the comments.</p>
+
+<p>A news editor reaches out: "I'm sorry because it has to suck. Hang in there."</p>
+
+<p>I started praying again, which seems to have worked. Still employed, I arrive at the airport for my first road trip—the winter meetings are this week.</p>
+
+<p>At the gate, I cannot stop making inadvertent eye contact with this older gentleman on the same flight—gray hair parted to the side, glasses, looks like Stephen King in a slightly more friendly way.</p>
+
+<p>Has he read Internet Stalker's stuff? I feel like I'm living my own horror story.</p>
+
+<p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>At the winter meetings, hundreds of reporters gather in hotel ballrooms chasing scoops. We're usually cooped up in the media room, with a main stage where press conferences are held, trades announced, and newly inducted Hall of Famers talk about being speechless.</p>
+
+<p>I walk with a purpose, pretending I am a somebody. I stop Ken Rosenthal, as short in person as advertised on Twitter (5-foot-4½), introducing myself. Nice guy.</p>
+
+<p>Each evening, the beat writers are summoned for a media session with the general manager, held in the team's suite. There are five of us, sitting in chairs, while general manager Dave Dombrowski sits at a high-top table on the other side of the room, flanked by assistant Al Avila. Ron Colangelo and Aileen Villarreal (Tigers PR) stand around with on-site executives and scouts.</p>
+
+<p>I'm startled when I see the gray-haired guy from the flight here. We make eye contact again.</p>
+
+<p>After the session, I realize in horror that I didn't turn my recorder on before I placed it on the table—I have no audio. My competitors have pity, sharing their tape so I'm able to write my stories.</p>
+
+<p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers' suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout.</p>
+
+<p>Embarrassingly, I don't remember our conversation from last night. We talk a bit more.</p>
+
+<p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans' trust. I suggest I could visit Nathan while training for the season. Pepe buys in.</p>
+
+<p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject. Put another way: Heading into my first year as beat writer of the team, it's pretty much guaranteed I'm going to write a good story about Nathan, who is one of the team's respected veterans.</p>
+
+<p class="has-dateline"><span class="dateline"><em>December 11</em>—</span>My mouth is dry when I wake up.</p>
+
+<p>I get a glass of water and check Twitter. Calamity! My team is close to a trade, reportedly sending a prospect shortstop to the Cincinnati Reds for righty starter Alfredo Simon.</p>
+
+<p>Dave Dombrowski is known for making trades. And by the time I'm nearly finished whipping up a story for the first trade, Dombrowski is reportedly close to making another one—and this one is bigger.</p>
+
+<p>According to Twitter, Detroit is landing star outfielder Yoenis Céspedes from the Boston Red Sox. Helpless, I communicate with the sports desk, Should I re-do the first story or write a whole new story? Soon, an alert for an impending press conference.</p>
+
+<p>My sports editor sends an urgent message. Apparently one of the players Detroit dealt for has a domestic violence charge against him—I need to ask Dombrowski.</p>
+
+<p>This morning has been a total mess. I barely slept after partying too hard at the lobby bar, and my head throbs with dehydration. The presser begins in ten minutes, and I can't risk not being there—I need to ask him that question—so I pass on dress clothes and go down in a white T-shirt and jeans, embarrassingly underdressed.</p>
+
+<p>I call for the mic. I'm a little bit anxious about it—that I might stutter and sound like a scaredy cat—but I ask Dombrowski if the team considered the domestic violence charge.</p>
+
+<p>"We're totally aware of the situations. I can't talk about his legal scenarios, but we're aware of it and comfortable with where it stands at this point."</p>
+
+<p>I don't follow up, but I'm proud of myself. In a white t-shirt and jeans, no less. A New York Ball Writer emails: "Good question to Dombrowski on the legal issues. Keep showing balls like that and you'll do well."</p>
+
+<p>Hurry back up to my room and write a new story. Put a dress shirt over the white tee and a jacket. Feeling quite hungover, I go to the front desk and check out.</p>
+
+<p>I didn't travel lightly and probably look like a newbie. Large garment bag, rolling carry-on luggage and struggling to keep my work bag on my shoulder when I walk through the elastic markers of the valet line.</p>
+
+<p>Standing right in front of me, within an arm's length, is Scott Boras—the biggest agent in baseball, arguably the most powerful person in the sport. Boras reps a lot of Tigers. When he turns around, I extend my hand and say, "I should introduce myself…"</p>
+
+<p>Boras is wearing a black fleece pullover with his company's logo on it. Jeans, shiny black shoes, thinning hair.</p>
+
+<p>Stretching small talk, mustering up the nerve to make a move, Boras' ride pulls up. He's not waiting on cab to the airport. A sleek, black Mercedes convertible rolls into the valet. Newport Beach is only an hour and a half up the coast with light traffic.</p>
+
+<p>The moment is fleeting, but I meet it. I pull out my wallet, suggest we exchange cards, and shake Scott Boras' hand.</p>
+
+<p>"Call my assistant," he says.</p>
+
+<p>He writes her name on the back of the card in blue ink: RACHEL—EXT. 149.</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>December 21</em>—</span>Haven't smoked in forever when I go to my buddies to watch football tonight. A week after the winter meetings—fifteen-day clean streak. No more.</p>
+
+<p>It's Christmas time and already dark outside when my phone lights up. <em>Unknown</em> is calling. I don't answer <em>Unknown</em>, especially not with Internet Stalker following me around.</p>
+
+<p>A couple minutes later, another call—<em>Unknown</em> again.</p>
+
+<p>Sorry, man—you must have the right number, but I'm not biting.</p>
+
+<p>Then I receive a text message from a 949 number.</p>
+
+<p>"Anthony, this is Scott Boras. Give me a call."</p>
+
+<p>Remember: I'm high as a kite, through the roof, hovering a thousand feet in the air. I pick up the phone and Scott Boras is telling me to call him.</p>
+
+<p>I ask one of my buddies to smack me. I scream each time and call Boras back.</p>
+
+<p>He got my number from Dylan.</p>
+
+<p>"Dylan Hernández," Boras says. "A man of mystery."</p>
+
+<p>Boras is calling to chat about client Max Scherzer, the ace righty starter, who is a free agent after five seasons with the Tigers. He's greasing my wheels, working his angles, essentially providing me with reasons why they should be in on Scherzer, to keep him with the team.</p>
+
+<p>Scherzer, thirty, won the Cy Young Award two years ago and became one of baseball's best pitchers in Detroit, a workhorse who logs 200-plus innings yearly. Still stunned I'm talking to Scott Boras; my early objective becomes clear—keep him on the phone as long as I can.</p>
+
+<p>We talk for 26 minutes. I call Ball Writer Dylan Hernández for translation—Boras wants me to write something about the Tigers pursuing Scherzer, to stir up the market.</p>
+
+<p>A couple days later, I write a column about how they should be aggressive in pursuing Scherzer. I push Boras' agenda under the guise of my opinion. I'm being used. It feels good.</p>
+
+<p class="has-dateline"><span class="dateline"><em>December 19</em>—</span>Still swinging for the fences, trying to find feature stories. A colleague passes along an email address for Justin Verlander's parents. I message them, introducing myself.</p>
+
+<p>"I'm writing to see if you could reach out to Justin and see if he would consider letting me spend some time with him this winter and sit in on a workout or bullpen to write a behind-the-scenes kind of story.</p>
+
+<p>"His story is an important one to this year's team and I'd like to share it with our readers."</p>
+
+<p>Verlander's dad, Richard, responds.</p>
+
+<p>"We're happy to talk with you but any interviews with Justin should go through normal channels with the Tigers. Happy Holidays."</p>
+
+<p>His agent hasn't answered my two introductory voicemails, the email I sent last week, or another call today about it.</p>
+
+<p class="has-dateline"><span class="dateline"><em>December 23</em>—</span>Enjoying my newfound access to Scott Boras perhaps a bit too much, I call him on my drive into the newsroom tonight. I ask when he's going to get me in touch with Tigers owner Mike Ilitch.</p>
+
+<p>"If you're any good at your job, you would have gotten the number by now."</p>
+
+<p>I'm covering the Red Wings game. Ilitch, a multi-billionaire, owns the local National Hockey League team, too—an Original Six franchise. I stop in the newsroom for expenses and stroll a few blocks to Joe Louis Arena for the game.</p>
+
+<p>In the media dining room, I spot longtime Red Wings general manager Ken Holland at a nearby table. Holland has been in charge since 1998—he'd have Ilitch's number.</p>
+
+<p>Determined to prove my worth to Boras, I walk up to Holland and introduce myself. I ask if he can pass along Ilitch's number. Sorry, but no. Worth a shot.</p>
+
+<p class="has-dateline"><span class="dateline"><em>December 31</em>—</span>Today is my Mitch Albom Birthday. I am 27 years, 2 months and 12 days old today—exactly how old Albom was on August 5, 1985, the day he debuted as a sports columnist. We measure our careers in Mitch Time around here: From the moment you walk into the <em>Free Press</em> sports department, you are measured by the cardboard cutout of Mitch in the corner, holding up one finger, <em>Voted #1 sports columnist in the country—again!</em></p>
+
+<p>I am five years behind Mitch Time, but I remain undeterred. When I landed in Detroit after the winter meetings, I ran into University of Michigan football coach Jim Harbaugh at baggage claim and introduced myself as Anthony Fenech, future <em>Free Press</em> columnist.</p>
+
+<p>Which leads to my latest big idea: In an effort to make up some time, what if I wrote a behind-the-scenes book of my rookie year on the beat? I could write about almost getting canceled by an Internet Stalker and getting blasted at the winter meetings and running into Scott Boras in the valet line.</p>
+
+<p class="has-dateline"><span class="dateline">WASHINGTON, <em>January 18, 2015</em>—</span>Working from a standing desk inside Reagan Airport when news breaks of Max Scherzer's impending signing. It's a National Guy with the scoop—Scherzer to the Washington Nationals for seven years and $210 million. In the past couple years, the term "mystery team" has been popularized—national insiders floating out unnamed teams to further a player's market value as a favor to the agent.</p>
+
+<p>So, I chase down the mystery team—despite Dombrowski's insistence all winter, the Tigers were not a serious player to re-sign Scherzer.</p>
+
+<p>I treat this two-alarm fire like a four. I text Dombrowski after I fasten my seatbelt on the plane, asking indirectly if they were the mystery team: "Was the team engaged in talks with Scherzer at the end?" I send a text message and an email: "Doubling up via email because I'm taking off for a flight soon." There is adrenaline. He gets back to me while we taxi the runway—"No"—and I tweet it out while we hit the air.</p>
+
+<p>The extra effort pays off: When I get onto Wi-Fi, I see that Ken Rosenthal retweeted me.</p>
+
+<p>When I land, I pick my car up from short-term parking and I stop at my buddy's house to hang with him and his pops for a bit. We're watching late-nite TV when I get a tip, a direct message on Twitter from a guy who used to work with my mom and apparently knows one of the player's wives, who posted on Facebook that longtime fan-favorite utilityman Don Kelly has signed with the Miami Marlins.</p>
+
+<p>I know Kelly. I have his number. To my scoopin' surprise, he confirms it's true. I ask if I can use his name. Yep, to that, too. This is easy.</p>
+
+<p class="has-dateline"><span class="dateline"><em>January 22</em>—</span>The team's annual winter caravan begins with a media free-for-all—players scattered around tables in the stadium's beer garden. The goal is to talk to as many guys as possible so you can skip the actual bus tour stops.</p>
+
+<p>As a rookie beat writer, I'm trying to get face time with key figures like Justin Verlander, who, I'll admit, was my favorite player growing up. I wore a tan glove in high school because he did. Now, I've gotta flush all that and cover him like an unbiased reporter.</p>
+
+<p>I haven't even started this job in earnest, but already in my young journalism career, I miss being a fan. Enjoying a baseball game. Rooting for players and having a favorite one. I wish I didn't know that some can display real jerk tendencies at times—just wait until you hear about the time I met Miguel Cabrera last year.</p>
+
+<p>Anyways, Verlander. He's a big car guy. Got a garage full of exotics—Aston Martins, Lamborghinis, Porsches, you name it. My car—a 2000 Ford Taurus with nearly 200,000 miles—died a couple days ago.</p>
+
+<p>Breaking the ice, I ask Justin, "Are you pissed off?"</p>
+
+<p>He's in a good mood. The boys are back in town. Baseball around the corner.</p>
+
+<p>"Yeah, of course," he deadpans. "Are you?"</p>
+
+<p>"Kinda. My car died."</p>
+
+<p>What kind of car, he asks.</p>
+
+<p>"A Taurus."</p>
+
+<p>Verlander laughs.</p>
+
+<p>"Dude!"</p>
+
+<p class="has-dateline"><span class="dateline"><em>January 24</em>—</span>The frigid streets around the stadium are full of fans. They've come early, standing in double-file lines waiting for the doors to open. It's TigerFest—a winter extravaganza that promises up close and personal looks, autograph opportunities and plenty of fun.</p>
+
+<p>Today, I can properly receive my due credit for writing that killer feature on Víctor Martínez and his American family last year—I haven't seen Víctor since the story came out.</p>
+
+<p>At TigerFest, an elevator door opens, and Víctor walks out. I say hi but Martínez pays no attention. He chuckles, continuing, and I can't believe this.</p>
+
+<p>"Did you read the story?"</p>
+
+<p>"Yeah," over his back shoulder. "It was shit."</p>`,
+        wordCount: 4200
     },
 
     // 2015 SEASON CHAPTERS (5-9)

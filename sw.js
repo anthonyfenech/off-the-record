@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v123';
-const STATIC_CACHE = 'off-the-record-static-v123';
-const CONTENT_CACHE = 'off-the-record-content-v123';
+const CACHE_VERSION = 'v124';
+const STATIC_CACHE = 'off-the-record-static-v124';
+const CONTENT_CACHE = 'off-the-record-content-v124';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
