@@ -45,7 +45,8 @@ body.paginated .chapter-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-lg) var(--padding-mobile);
+    height: 69px;
+    padding: 0 var(--padding-mobile);
     max-width: var(--max-width-reader);
     margin: 0 auto;
 }
