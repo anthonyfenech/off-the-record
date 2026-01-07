@@ -1,0 +1,295 @@
+================================================================================
+OFF-THE-RECORD: HOW TO ADD MEDIA POP-UPS
+================================================================================
+
+This guide explains how to add clickable emoji icons in your chapters that
+open photos, videos, audio, newspaper clippings, or external links.
+
+================================================================================
+OVERVIEW
+================================================================================
+
+There are TWO types of media:
+
+1. FILES (photos, videos, audio) - Must be uploaded to assets/ folder
+2. LINKS (external URLs) - No file needed, just the URL
+
+================================================================================
+FILE NAMING CONVENTION
+================================================================================
+
+Format: ch##-short-description.ext
+
+Examples:
+  ch08-dombrowski-extension.jpg
+  ch12-verlander-tale-of-tape.jpg
+  ch19-verlander-trade-audio.mp3
+  ch24-fantasy-camp-story.jpg
+
+This keeps files organized and sortable by chapter.
+
+================================================================================
+AVAILABLE EMOJIS & TYPES
+================================================================================
+
+PHOTOS & IMAGES:
+  Type: 'photo'         Emoji: 📷  (camera)
+  Type: 'photo'         Emoji: 📸  (camera with flash)
+  Type: 'selfie'        Emoji: 🤳  (selfie)
+  Type: 'newspaper'     Emoji: 📰  (newspaper)
+  Type: 'newspaper'     Emoji: 🗞   (rolled newspaper)
+
+VIDEO:
+  Type: 'video'         Emoji: 🎬  (clapperboard)
+  Type: 'tv-local'      Emoji: 📺  (television)
+  Type: 'tv-network'    Emoji: 📡  (satellite)
+
+AUDIO:
+  Type: 'audio'         Emoji: 🎤  (microphone)
+  Type: 'radio'         Emoji: 📻  (radio)
+  Type: 'phone'         Emoji: 📞  (phone)
+  Type: 'interview'     Emoji: 🎙   (studio mic)
+
+DOCUMENTS:
+  Type: 'notes'         Emoji: 📝  (memo)
+  Type: 'receipt'       Emoji: 🧾  (receipt)
+  Type: 'pdf'           Emoji: 📄  (document)
+  Type: 'email'         Emoji: ✉️   (envelope)
+  Type: 'text'          Emoji: 💬  (speech bubble)
+
+LINKS:
+  Type: 'link'          Emoji: 🔗  (link)
+
+SPECIAL:
+  Type: 'scoop'         Emoji: 🍦  (ice cream - exclusive story)
+  Type: 'award'         Emoji: 🏆  (trophy)
+  Type: 'stats'         Emoji: 📊  (chart)
+  Type: 'baseball'      Emoji: ⚾  (baseball)
+
+================================================================================
+STEP-BY-STEP: ADDING A PHOTO/VIDEO/AUDIO
+================================================================================
+
+STEP 1: PREPARE YOUR FILE
+-------------------------
+- Compress images to under 200KB using https://squoosh.app
+  Settings: MozJPEG, Quality 70-75, Resize width 1200px max
+- Name the file: ch##-short-description.jpg
+- Save to: /assets/ folder in your project
+- Push to GitHub or copy locally
+
+STEP 2: ADD ENTRY TO data/media.js
+----------------------------------
+Open data/media.js and add your entry inside MEDIA_CONTENT = { }
+
+Example for a photo:
+
+    'my-photo-id': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Description that appears below the image',
+        src: './assets/ch12-my-photo.jpg',
+        placeholder: false
+    },
+
+Example for a video:
+
+    'my-video-id': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'Description of the video',
+        src: './assets/ch15-my-video.mp4',
+        placeholder: false
+    },
+
+Example for audio:
+
+    'my-audio-id': {
+        type: 'audio',
+        emoji: '🎤',
+        label: 'Audio Recording',
+        caption: 'Description of the audio',
+        src: './assets/ch19-interview.mp3',
+        placeholder: false
+    },
+
+STEP 3: ADD EMOJI TRIGGER TO data/chapters.js
+---------------------------------------------
+Find the sentence where you want the emoji to appear.
+Add this code right after the sentence (before </p>):
+
+    <span class="media-emoji" data-media-id="my-photo-id">📷</span>
+
+IMPORTANT: The data-media-id MUST match the ID you used in media.js
+
+Full example in context:
+
+    BEFORE:
+    <p>The phone rings. It's Al Avila with big news.</p>
+
+    AFTER:
+    <p>The phone rings. It's Al Avila with big news. <span class="media-emoji" data-media-id="al-avila-call">📞</span></p>
+
+STEP 4: BUMP CACHE VERSION IN sw.js
+-----------------------------------
+Open sw.js and change all three version numbers:
+
+    const CACHE_VERSION = 'v151';
+    const STATIC_CACHE = 'off-the-record-static-v151';
+    const CONTENT_CACHE = 'off-the-record-content-v151';
+
+Increment the number each time you make changes (v150 -> v151 -> v152...)
+
+STEP 5: TEST
+------------
+- Clear browser cache (DevTools > Application > Clear site data)
+- Or: DevTools > Application > Service Workers > Update on reload
+- Refresh the page
+- Navigate to your chapter
+- Tap the emoji - your media should pop up!
+
+================================================================================
+STEP-BY-STEP: ADDING AN EXTERNAL LINK
+================================================================================
+
+Links don't need a file - just the URL.
+
+STEP 1: ADD ENTRY TO data/media.js
+----------------------------------
+Add your entry inside MEDIA_CONTENT = { }
+
+Example:
+
+    'player-stats': {
+        type: 'link',
+        emoji: '🔗',
+        label: 'Baseball Reference',
+        caption: 'Miguel Cabrera Career Statistics',
+        url: 'https://www.baseball-reference.com/players/c/cabremi01.shtml',
+        placeholder: false
+    },
+
+Note: Use 'url' instead of 'src' for links!
+
+STEP 2: ADD EMOJI TRIGGER TO data/chapters.js
+---------------------------------------------
+Same as photos - add after your sentence:
+
+    <span class="media-emoji" data-media-id="player-stats">🔗</span>
+
+STEP 3: BUMP CACHE VERSION
+--------------------------
+Same as above - increment version in sw.js
+
+STEP 4: TEST
+------------
+Tap the link emoji - it should open the URL in a new tab.
+
+================================================================================
+QUICK REFERENCE: COPY-PASTE TEMPLATES
+================================================================================
+
+PHOTO TEMPLATE (for media.js):
+------------------------------
+    'CHANGE-THIS-ID': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'CHANGE THIS CAPTION',
+        src: './assets/CHANGE-THIS-FILENAME.jpg',
+        placeholder: false
+    },
+
+NEWSPAPER TEMPLATE (for media.js):
+----------------------------------
+    'CHANGE-THIS-ID': {
+        type: 'newspaper',
+        emoji: '📰',
+        label: 'Newspaper',
+        caption: 'CHANGE THIS CAPTION',
+        src: './assets/CHANGE-THIS-FILENAME.jpg',
+        placeholder: false
+    },
+
+VIDEO TEMPLATE (for media.js):
+------------------------------
+    'CHANGE-THIS-ID': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'CHANGE THIS CAPTION',
+        src: './assets/CHANGE-THIS-FILENAME.mp4',
+        placeholder: false
+    },
+
+AUDIO TEMPLATE (for media.js):
+------------------------------
+    'CHANGE-THIS-ID': {
+        type: 'audio',
+        emoji: '🎤',
+        label: 'Audio',
+        caption: 'CHANGE THIS CAPTION',
+        src: './assets/CHANGE-THIS-FILENAME.mp3',
+        placeholder: false
+    },
+
+LINK TEMPLATE (for media.js):
+-----------------------------
+    'CHANGE-THIS-ID': {
+        type: 'link',
+        emoji: '🔗',
+        label: 'External Link',
+        caption: 'CHANGE THIS CAPTION',
+        url: 'https://CHANGE-THIS-URL.com',
+        placeholder: false
+    },
+
+EMOJI TRIGGER TEMPLATE (for chapters.js):
+-----------------------------------------
+    <span class="media-emoji" data-media-id="CHANGE-THIS-ID">EMOJI</span>
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+EMOJI NOT CLICKABLE:
+- Check that data-media-id matches exactly (case-sensitive)
+- Make sure the ID exists in media.js
+
+IMAGE NOT LOADING:
+- Check the file path in src is correct
+- Make sure file is in assets/ folder
+- Check for typos in filename
+
+CHANGES NOT SHOWING:
+- Clear browser cache
+- Check that you bumped the version in sw.js
+- Try incognito/private window
+
+================================================================================
+FILE INVENTORY (Current)
+================================================================================
+
+ASSIGNED (in use):
+  ch08-dombrowski-extension.jpg     -> TRADE DEADLINE chapter
+  ch12-verlander-tale-of-tape.jpg   -> UNCENSORED chapter
+  ch12-espn-bottomline.png          -> UNCENSORED chapter
+  ch24-fantasy-camp-story.jpg       -> VIVA LAS VEGAS chapter
+  ch26-trade-deadline-dugout.jpg    -> ROAD TO OMAHA chapter
+
+UNASSIGNED (ready to use):
+  ch19-al-avila-verlander-trade.jpg
+  2017-04-27-screenshot.jpg
+  2017-07-20-screenshot.jpg
+  2017-07-31-screenshot.jpg
+  2017-08-02-screenshot.jpg
+  2017-09-05-screenshot.jpg
+  12-18-17-tweet.jpg
+  3-10-17 leyland managing usa.jpg
+  Talkin' Tigers me and Drew.jpg
+  2017:09:15 5-17-28 AM.PNG
+  2020:10:12 3-43-41 PM.mov
+
+================================================================================

@@ -39,6 +39,14 @@ body {
     text-indent: 0;
 }
 
+/* Signature block - right aligned with spacing */
+.chapter-body .signature {
+    text-align: right;
+    text-indent: 0;
+    margin-top: var(--space-xl);
+    font-style: italic;
+}
+
 /* Chapter titles - Typewriter style with uppercase and letter-spacing */
 .chapter-title {
     font-family: var(--font-mono);

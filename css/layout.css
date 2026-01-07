@@ -105,6 +105,24 @@ body.paginated .chapter-body {
     margin: 0 var(--space-sm);
 }
 
+.header-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 var(--space-sm);
+}
+
+.header-logo-img {
+    height: 22px;
+    width: auto;
+}
+
+/* Invert logo in dark mode */
+[data-theme="dark"] .header-logo-img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
 .header-progress {
     width: var(--min-touch-target);
     display: flex;

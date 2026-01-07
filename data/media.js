@@ -3,6 +3,54 @@
 
 export const MEDIA_CONTENT = {
     // Photos
+    'fantasy-camp': {
+        type: 'newspaper',
+        emoji: '📰',
+        label: 'Newspaper Clipping',
+        caption: 'Fantasy Camp Story',
+        src: './assets/ch24-fantasy-camp-story.jpg',
+        placeholder: false
+    },
+    'july-2019': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'July 31, 2019',
+        src: './assets/ch26-trade-deadline-dugout.jpg',
+        placeholder: false
+    },
+    'tale-of-tape': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Tale of the Tape: Fenech vs. Verlander',
+        src: './assets/ch12-verlander-tale-of-tape.jpg',
+        placeholder: false
+    },
+    'dombrowski-extension': {
+        type: 'newspaper',
+        emoji: '📰',
+        label: 'Newspaper',
+        caption: 'Detroit Free Press, August 4, 2015',
+        src: './assets/ch08-dombrowski-extension.jpg',
+        placeholder: false
+    },
+    'espn-bottomline': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'ESPN BottomLine: Verlander incident',
+        src: './assets/ch12-espn-bottomline.png',
+        placeholder: false
+    },
+    'k-rod-stats': {
+        type: 'link',
+        emoji: '🔗',
+        label: 'Baseball Reference',
+        caption: 'Francisco Rodríguez Career Stats',
+        url: 'https://www.baseball-reference.com/players/r/rodrifr03.shtml',
+        placeholder: false
+    },
     'photo-1': {
         type: 'photo',
         emoji: '📷',
