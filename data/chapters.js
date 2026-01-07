@@ -4857,6 +4857,8 @@ export const CHAPTERS = [
             <p>In lieu of moonshine, I meet up with my Blue Jays buddy at a downtown tap house. I give him the backstory. About the solar eclipse tweets, the injury misdiagnosis questions, how Old Pal blew me off earlier and what I tweeted postgame: "Asked how he thinks Verlander is going to pitch him, Cabrera said a bunch of stuff I'm not posting on Twitter because Verlander checks my feed obsessively when he plays the Tigers, no doubt."</p>
             <p>It's satire, obviously. Like Justin Verlander would ever read my tweets.</p>
 
+            <p>&nbsp;</p>
+
             <p class="has-dateline no-indent"><span class="dateline"><em>August 21</em>—</span>Standing next to an Astros PR guy at the urinal.</p>
             <p>"You think Gene (Dias) is going to be pissed when I go ask Verlander questions after the game?"</p>
             <p>He laughs uncomfortably and returns to his front-row seat along Dias. The Astros' VP of media relations is in his mid-fifties. Been with the team for ten years. He spent twenty years with the Phillies before that. The message I let slip is delivered. Dias glances at the third row. He gets up and gestures to join him for a chat. Here we go again.</p>
