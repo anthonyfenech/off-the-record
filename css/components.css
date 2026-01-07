@@ -2142,3 +2142,22 @@ button:focus-visible {
     letter-spacing: var(--letter-spacing-wide);
     color: var(--color-text-secondary);
 }
+
+/* Locked chapters in TOC */
+.toc-chapter-locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.toc-chapter-locked:hover {
+    background-color: transparent;
+}
+
+.toc-chapter-locked .toc-chapter-title {
+    color: var(--color-text-tertiary);
+}
+
+.toc-lock-icon {
+    margin-left: var(--space-sm);
+    font-size: 12px;
+}
