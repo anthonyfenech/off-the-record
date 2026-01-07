@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
+    <!-- Stylesheets - Same as main site -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/typography.css">
@@ -22,27 +22,22 @@
     <link rel="stylesheet" href="./css/components.css">
 
     <style>
+        /* Override body padding for this page */
         body {
-            padding-top: 20px;
-            padding-bottom: 60px;
-        }
-
-        .full-book-container {
-            max-width: var(--max-width-reader);
-            margin: 0 auto;
-            padding: 0 var(--padding-mobile);
+            padding-top: 40px;
+            padding-bottom: 80px;
         }
 
         .full-book-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
             padding-bottom: 40px;
-            border-bottom: 2px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
         }
 
         .full-book-title {
             font-family: var(--font-mono);
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -51,47 +46,30 @@
 
         .full-book-subtitle {
             font-family: var(--font-mono);
-            font-size: 12px;
+            font-size: 11px;
             color: var(--color-text-secondary);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
+        /* Chapter sections use same styling as main site */
         .chapter-section {
-            margin-bottom: 80px;
-            page-break-after: always;
+            margin-bottom: 0;
         }
 
-        .chapter-section:last-child {
-            margin-bottom: 40px;
-        }
-
-        .chapter-title-full {
-            font-family: var(--font-mono);
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+        .chapter-section .chapter-header {
+            margin-top: 4em;
+            margin-bottom: 3em;
+            padding-bottom: 2em;
             border-bottom: 1px solid var(--color-border);
         }
 
-        .chapter-content-full {
-            font-family: var(--font-serif);
-            font-size: var(--font-size-base);
-            line-height: var(--line-height-relaxed);
+        .chapter-section:first-child .chapter-header {
+            margin-top: 0;
         }
 
-        .chapter-content-full p {
-            margin-bottom: 1.5em;
-            text-indent: 1.5em;
-        }
-
-        .chapter-content-full p:first-child,
-        .chapter-content-full p.has-dateline,
-        .chapter-content-full .scene-break + p {
-            text-indent: 0;
+        .chapter-section .chapter-body {
+            margin-bottom: 4em;
         }
 
         .back-to-site {
@@ -99,7 +77,9 @@
             bottom: 20px;
             right: 20px;
             font-family: var(--font-mono);
-            font-size: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: var(--color-text-secondary);
             text-decoration: underline;
             background: var(--color-background);
@@ -132,25 +112,20 @@
                 page-break-after: always;
             }
         }
-
-        @media (min-width: 600px) {
-            .full-book-container {
-                padding: 0 var(--padding-tablet);
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="full-book-container">
+    <!-- Main Reading Area - Same structure as main site -->
+    <main class="reader" id="reader">
         <header class="full-book-header">
             <h1 class="full-book-title">OFF-THE-RECORD</h1>
             <p class="full-book-subtitle">Complete Edition</p>
         </header>
 
-        <main id="bookContent">
+        <div id="bookContent">
             <p class="loading-message">Loading chapters...</p>
-        </main>
-    </div>
+        </div>
+    </main>
 
     <a href="./" class="back-to-site">Back to site</a>
 
@@ -161,21 +136,19 @@
             const container = document.getElementById('bookContent');
             let html = '';
 
-            CHAPTERS.forEach(chapter => {
-                // Parse content - handle scene breaks
+            CHAPTERS.forEach((chapter, index) => {
+                // Content comes directly from chapters.js - already has HTML formatting
                 let content = chapter.content;
 
-                // Replace scene break markers with styled divs
-                content = content.replace(/\n\n---\n\n|\n\n\*\*\*\n\n|\n\n\* \* \*\n\n/g,
-                    '<div class="scene-break"><span>* * *</span></div>');
-
                 html += `
-                    <section class="chapter-section">
-                        <h2 class="chapter-title-full">${chapter.title}</h2>
-                        <div class="chapter-content-full">
+                    <article class="chapter-section">
+                        <header class="chapter-header">
+                            <h2 class="chapter-title">${chapter.title}</h2>
+                        </header>
+                        <div class="chapter-body">
                             ${content}
                         </div>
-                    </section>
+                    </article>
                 `;
             });
 
