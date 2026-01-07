@@ -2002,11 +2002,17 @@ export const CHAPTERS = [
 
 <p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town.</p>
 
+<div class="locked-content">
+<div class="lock-overlay">
+<span class="lock-icon">🔒</span>
+<span class="lock-text">Subscribe to unlock</span>
+</div>
 <p class="has-dateline no-indent"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
 <p>Last week, he sent word that the suits wanted a Tigers take out story: "1A is interested in a story about How The Tigers Saved Their Season. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. This assumes the Tigers are still doing well and don't get swept in Seattle."</p>
 
-<p>Well, they did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in that upbeat story. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>`,
+<p>Well, they did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in that upbeat story. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>
+</div>`,
         wordCount: 2400
     },
     {

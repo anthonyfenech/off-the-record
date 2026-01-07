@@ -2088,3 +2088,57 @@ button:focus-visible {
     font-style: italic;
     padding: var(--space-lg) 0;
 }
+
+/* Locked/Gated Content */
+.locked-content {
+    position: relative;
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.locked-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+        rgba(128, 128, 128, 0.1) 0%,
+        rgba(128, 128, 128, 0.3) 50%,
+        rgba(128, 128, 128, 0.1) 100%);
+    z-index: 1;
+}
+
+.locked-content p {
+    color: var(--color-text-tertiary);
+    filter: blur(3px);
+    user-select: none;
+}
+
+.locked-content .lock-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.locked-content .lock-icon {
+    font-size: 32px;
+    opacity: 0.7;
+}
+
+.locked-content .lock-text {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    color: var(--color-text-secondary);
+}
