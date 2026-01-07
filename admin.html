@@ -15,28 +15,37 @@
             font-family: 'Courier New', monospace;
             background-color: #fefefe;
             color: #333;
-            line-height: 1.6;
-            padding: 40px 20px;
-            max-width: 600px;
-            margin: 0 auto;
+            line-height: 1.4;
+            padding: 30px;
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .subtitle {
-            color: #888;
-            font-size: 12px;
-            margin-bottom: 40px;
+        .container {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-panel {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        .right-panel {
+            flex: 1;
+            min-width: 0;
         }
 
         .toggle-group {
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 15px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
@@ -45,31 +54,29 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 11px;
             margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .toggle-description {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 15px;
         }
 
         .toggle-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .toggle-row:last-child {
+            margin-bottom: 0;
         }
 
         .toggle-label {
-            font-size: 14px;
+            font-size: 12px;
         }
 
-        /* Toggle switch */
         .toggle-switch {
             position: relative;
-            width: 50px;
-            height: 26px;
+            width: 40px;
+            height: 22px;
         }
 
         .toggle-switch input {
@@ -87,14 +94,14 @@
             bottom: 0;
             background-color: #ccc;
             transition: 0.3s;
-            border-radius: 26px;
+            border-radius: 22px;
         }
 
         .toggle-slider:before {
             position: absolute;
             content: "";
-            height: 20px;
-            width: 20px;
+            height: 16px;
+            width: 16px;
             left: 3px;
             bottom: 3px;
             background-color: white;
@@ -107,204 +114,404 @@
         }
 
         input:checked + .toggle-slider:before {
-            transform: translateX(24px);
+            transform: translateX(18px);
         }
 
-        .status {
-            margin-top: 30px;
-            padding: 15px;
-            background: #f5f5f5;
+        .quick-links {
+            margin-top: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
             border-radius: 4px;
+        }
+
+        .quick-links a {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            text-decoration: underline;
             font-size: 12px;
         }
 
-        .status-title {
+        .quick-links a:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Right Panel - Media Catalog */
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .catalog-title {
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .add-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            font-family: inherit;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-btn:hover {
+            background: #555;
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .catalog-table th {
+            text-align: left;
+            padding: 10px 8px;
+            border-bottom: 2px solid #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 11px;
+        }
+
+        .catalog-table td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .catalog-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .emoji-cell {
+            font-size: 16px;
+            text-align: center;
+            width: 50px;
+        }
+
+        /* Add Media Form */
+        .add-form {
+            display: none;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .add-form.active {
+            display: block;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .form-actions button {
+            padding: 8px 16px;
+            font-family: inherit;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid #333;
+        }
+
+        .btn-generate {
+            background: #333;
+            color: #fff;
+        }
+
+        .btn-cancel {
+            background: #fff;
+            color: #333;
+        }
+
+        .output-code {
+            margin-top: 15px;
+            padding: 15px;
+            background: #1a1a1a;
+            color: #0f0;
+            font-size: 11px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            display: none;
+        }
+
+        .output-code.active {
+            display: block;
+        }
+
+        .copy-btn {
+            margin-top: 10px;
+            padding: 6px 12px;
+            font-size: 11px;
+            cursor: pointer;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
         }
 
         .back-link {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 20px;
             color: #333;
             text-decoration: underline;
-            font-size: 14px;
+            font-size: 12px;
         }
 
-        .warning {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 11px;
-            border-radius: 4px;
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-panel {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>🔧 Admin Panel</h1>
-    <p class="subtitle">Hidden controls for OFF-THE-RECORD</p>
+    <h1>Admin Panel</h1>
 
-    <div class="toggle-group">
-        <div class="toggle-header">Chapter Locking</div>
-        <div class="toggle-description">Lock all chapters except Chapter 1 (Author's Note). Locked chapters show a 🔒 and can't be opened.</div>
-        <div class="toggle-row">
-            <span class="toggle-label">Lock Chapters</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="lockChapters">
-                <span class="toggle-slider"></span>
-            </label>
+    <div class="container">
+        <div class="left-panel">
+            <div class="toggle-group">
+                <div class="toggle-header">Toggles</div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Lock Chapters</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="lockChapters">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Maintenance Mode</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="showOverload">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Locked Previews</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="showLockedPreviews">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="toggle-group">
+                <div class="toggle-header">Features</div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Dark Mode</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="allowDarkMode" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Page Mode</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="allowPageMode" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Font Size</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="allowFontSize" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Bookmarks</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="allowBookmarks" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="toggle-group">
+                <div class="toggle-header">Home Page</div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Random Button</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="randomButtonText">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Credential Carousel</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="credentialCarousel">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="quick-links">
+                <div class="toggle-header">Quick Links</div>
+                <a href="./full-book.html">Full Book</a>
+                <a href="./maintenance.html">Maintenance Page</a>
+                <a href="./">Back to Site</a>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="catalog-header">
+                <span class="catalog-title">Media Catalog</span>
+                <button class="add-btn" id="addMediaBtn">+ Add Media</button>
+            </div>
+
+            <div class="add-form" id="addForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Media ID</label>
+                        <input type="text" id="mediaId" placeholder="e.g., my-photo-2024">
+                    </div>
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select id="mediaType">
+                            <option value="photo">Photo</option>
+                            <option value="newspaper">Newspaper</option>
+                            <option value="link">Link</option>
+                            <option value="video">Video</option>
+                            <option value="audio">Audio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Caption</label>
+                        <input type="text" id="mediaCaption" placeholder="Description of the media">
+                    </div>
+                    <div class="form-group">
+                        <label>Source Path</label>
+                        <input type="text" id="mediaSrc" placeholder="./assets/filename.jpg">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-generate" id="generateBtn">Generate Code</button>
+                    <button class="btn-cancel" id="cancelBtn">Cancel</button>
+                </div>
+                <div class="output-code" id="outputCode"></div>
+                <button class="copy-btn" id="copyBtn" style="display:none;">Copy to Clipboard</button>
+            </div>
+
+            <table class="catalog-table">
+                <thead>
+                    <tr>
+                        <th>Emoji</th>
+                        <th>Media ID</th>
+                        <th>Chapter</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody id="catalogBody">
+                    <tr>
+                        <td class="emoji-cell">📰</td>
+                        <td>dombrowski-extension</td>
+                        <td>FIRE DRILL</td>
+                        <td>newspaper</td>
+                    </tr>
+                    <tr>
+                        <td class="emoji-cell">🔗</td>
+                        <td>k-rod-stats</td>
+                        <td>PRIME-TIME</td>
+                        <td>link</td>
+                    </tr>
+                    <tr>
+                        <td class="emoji-cell">📰</td>
+                        <td>fantasy-camp</td>
+                        <td>BURN OUT</td>
+                        <td>newspaper</td>
+                    </tr>
+                    <tr>
+                        <td class="emoji-cell">📷</td>
+                        <td>july-2019</td>
+                        <td>ROAD TO OMAHA</td>
+                        <td>photo</td>
+                    </tr>
+                    <tr>
+                        <td class="emoji-cell">📷</td>
+                        <td>tale-of-tape</td>
+                        <td>UNETHICAL</td>
+                        <td>photo</td>
+                    </tr>
+                    <tr>
+                        <td class="emoji-cell">📷</td>
+                        <td>espn-bottomline</td>
+                        <td>UNETHICAL</td>
+                        <td>photo</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <div class="toggle-group">
-        <div class="toggle-header">Maintenance Mode</div>
-        <div class="toggle-description">Redirect visitors to the maintenance page (LOADING... screen). Makes it look like the site is still loading.</div>
-        <div class="toggle-row">
-            <span class="toggle-label">Enable Maintenance Mode</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="showOverload">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-        <div class="warning" id="overloadWarning" style="display: none;">
-            ⚠️ Overload page is ON. Visitors will see an error message instead of the book.
-        </div>
-    </div>
-
-    <div class="toggle-group">
-        <div class="toggle-header">Content Preview</div>
-        <div class="toggle-description">Show blurred locked content sections within chapters (like a paywall preview).</div>
-        <div class="toggle-row">
-            <span class="toggle-label">Show Locked Previews</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="showLockedPreviews">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-    </div>
-
-    <div class="toggle-group">
-        <div class="toggle-header">Feature Toggles</div>
-        <div class="toggle-description">Disable specific features for all visitors.</div>
-        <div class="toggle-row" style="margin-bottom: 12px;">
-            <span class="toggle-label">Allow Dark Mode</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="allowDarkMode" checked>
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-        <div class="toggle-row" style="margin-bottom: 12px;">
-            <span class="toggle-label">Allow Page Mode</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="allowPageMode" checked>
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-        <div class="toggle-row" style="margin-bottom: 12px;">
-            <span class="toggle-label">Allow Font Size</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="allowFontSize" checked>
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-        <div class="toggle-row">
-            <span class="toggle-label">Allow Bookmarks</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="allowBookmarks" checked>
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-    </div>
-
-    <div class="toggle-group">
-        <div class="toggle-header">Home Page Options</div>
-        <div class="toggle-description">Control home page variations.</div>
-        <div class="toggle-row" style="margin-bottom: 12px;">
-            <span class="toggle-label">Random Button Text</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="randomButtonText">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-        <div class="toggle-row">
-            <span class="toggle-label">Credential Carousel</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="credentialCarousel">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-    </div>
-
-    <div class="status">
-        <div class="status-title">Current Settings</div>
-        <div id="statusDisplay">Loading...</div>
-    </div>
-
-    <div class="toggle-group">
-        <div class="toggle-header">Quick Links</div>
-        <div class="toggle-description">Hidden pages only accessible via direct link.</div>
-        <div style="margin-top: 10px;">
-            <a href="./full-book.html" style="display: block; margin-bottom: 8px; color: #333; text-decoration: underline; font-size: 14px;">Full Book (Single Page)</a>
-            <a href="./maintenance.html" style="display: block; color: #333; text-decoration: underline; font-size: 14px;">Maintenance Page Preview</a>
-        </div>
-    </div>
-
-    <a href="./" class="back-link">← Back to site</a>
 
     <script>
-        // Load saved settings
+        // Toggle functionality
         function loadSettings() {
             return {
                 lockChapters: localStorage.getItem('admin_lockChapters') === 'true',
                 showOverload: localStorage.getItem('admin_showOverload') === 'true',
                 showLockedPreviews: localStorage.getItem('admin_showLockedPreviews') === 'true',
-                // Feature toggles default to true (allowed) if not set
                 allowDarkMode: localStorage.getItem('admin_allowDarkMode') !== 'false',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
                 allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false',
-                // Home page options
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
                 credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true'
             };
         }
 
-        // Save setting
         function saveSetting(key, value) {
             localStorage.setItem('admin_' + key, value);
-            updateStatus();
         }
 
-        // Update status display
-        function updateStatus() {
-            const settings = loadSettings();
-            const statusEl = document.getElementById('statusDisplay');
-            const warningEl = document.getElementById('overloadWarning');
-
-            statusEl.innerHTML = `
-                Lock Chapters: <strong>${settings.lockChapters ? 'ON' : 'OFF'}</strong><br>
-                Maintenance Mode: <strong>${settings.showOverload ? 'ON' : 'OFF'}</strong><br>
-                Locked Previews: <strong>${settings.showLockedPreviews ? 'ON' : 'OFF'}</strong><br>
-                <br>
-                Dark Mode: <strong>${settings.allowDarkMode ? 'Allowed' : 'Disabled'}</strong><br>
-                Page Mode: <strong>${settings.allowPageMode ? 'Allowed' : 'Disabled'}</strong><br>
-                Font Size: <strong>${settings.allowFontSize ? 'Allowed' : 'Disabled'}</strong><br>
-                Bookmarks: <strong>${settings.allowBookmarks ? 'Allowed' : 'Disabled'}</strong><br>
-                <br>
-                Random Button Text: <strong>${settings.randomButtonText ? 'ON' : 'OFF'}</strong><br>
-                Credential Carousel: <strong>${settings.credentialCarousel ? 'ON' : 'OFF'}</strong>
-            `;
-
-            warningEl.style.display = settings.showOverload ? 'block' : 'none';
-        }
-
-        // Initialize toggles
         function init() {
             const settings = loadSettings();
 
-            // Set initial states
             document.getElementById('lockChapters').checked = settings.lockChapters;
             document.getElementById('showOverload').checked = settings.showOverload;
             document.getElementById('showLockedPreviews').checked = settings.showLockedPreviews;
@@ -315,45 +522,73 @@
             document.getElementById('randomButtonText').checked = settings.randomButtonText;
             document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
 
-            // Add listeners
-            document.getElementById('lockChapters').addEventListener('change', (e) => {
-                saveSetting('lockChapters', e.target.checked);
-            });
+            // Add listeners for all toggles
+            const toggles = ['lockChapters', 'showOverload', 'showLockedPreviews', 'allowDarkMode',
+                           'allowPageMode', 'allowFontSize', 'allowBookmarks', 'randomButtonText', 'credentialCarousel'];
 
-            document.getElementById('showOverload').addEventListener('change', (e) => {
-                saveSetting('showOverload', e.target.checked);
+            toggles.forEach(id => {
+                document.getElementById(id).addEventListener('change', (e) => {
+                    saveSetting(id, e.target.checked);
+                });
             });
-
-            document.getElementById('showLockedPreviews').addEventListener('change', (e) => {
-                saveSetting('showLockedPreviews', e.target.checked);
-            });
-
-            document.getElementById('allowDarkMode').addEventListener('change', (e) => {
-                saveSetting('allowDarkMode', e.target.checked);
-            });
-
-            document.getElementById('allowPageMode').addEventListener('change', (e) => {
-                saveSetting('allowPageMode', e.target.checked);
-            });
-
-            document.getElementById('allowFontSize').addEventListener('change', (e) => {
-                saveSetting('allowFontSize', e.target.checked);
-            });
-
-            document.getElementById('allowBookmarks').addEventListener('change', (e) => {
-                saveSetting('allowBookmarks', e.target.checked);
-            });
-
-            document.getElementById('randomButtonText').addEventListener('change', (e) => {
-                saveSetting('randomButtonText', e.target.checked);
-            });
-
-            document.getElementById('credentialCarousel').addEventListener('change', (e) => {
-                saveSetting('credentialCarousel', e.target.checked);
-            });
-
-            updateStatus();
         }
+
+        // Media form functionality
+        const addBtn = document.getElementById('addMediaBtn');
+        const addForm = document.getElementById('addForm');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const generateBtn = document.getElementById('generateBtn');
+        const outputCode = document.getElementById('outputCode');
+        const copyBtn = document.getElementById('copyBtn');
+
+        const emojiMap = {
+            photo: '📷',
+            newspaper: '📰',
+            link: '🔗',
+            video: '🎬',
+            audio: '🎙️'
+        };
+
+        addBtn.addEventListener('click', () => {
+            addForm.classList.add('active');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            addForm.classList.remove('active');
+            outputCode.classList.remove('active');
+            copyBtn.style.display = 'none';
+        });
+
+        generateBtn.addEventListener('click', () => {
+            const id = document.getElementById('mediaId').value;
+            const type = document.getElementById('mediaType').value;
+            const caption = document.getElementById('mediaCaption').value;
+            const src = document.getElementById('mediaSrc').value;
+            const emoji = emojiMap[type] || '📷';
+
+            const mediaCode = `'${id}': {
+    type: '${type}',
+    emoji: '${emoji}',
+    label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
+    caption: '${caption}',
+    src: '${src}',
+    placeholder: false
+},`;
+
+            const spanCode = `<span class="media-emoji" data-media-id="${id}">${emoji}</span>`;
+
+            outputCode.innerHTML = `// Add to data/media.js:\n${mediaCode}\n\n// Add to chapter text:\n${spanCode}`;
+            outputCode.classList.add('active');
+            copyBtn.style.display = 'inline-block';
+        });
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(outputCode.textContent);
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy to Clipboard';
+            }, 2000);
+        });
 
         init();
     </script>
