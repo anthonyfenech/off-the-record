@@ -635,8 +635,12 @@ button:focus-visible {
     font-variant: normal !important;
     font-style: normal !important;
     font-weight: normal !important;
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     cursor: pointer;
-    transition: opacity var(--transition-fast);
 }
 
 .media-emoji:hover {
