@@ -401,8 +401,8 @@ class Navigation {
 
             // Render bookmarks if needed
             if (sectionId === 'bookmarks') {
-                bookmarks.renderBookmarksList(sectionContent, (chapterId) => {
-                    this.loadChapter(chapterId);
+                bookmarks.renderBookmarksList(sectionContent, (chapterId, pageNumber) => {
+                    reader.loadChapter(chapterId, pageNumber);
                     this.closeTOC();
                 });
             }

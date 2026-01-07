@@ -372,10 +372,12 @@
 
         .chapter-lock-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(15, auto);
+            grid-auto-flow: column;
             gap: 8px;
             margin-bottom: 20px;
-            max-height: 300px;
+            max-height: 400px;
             overflow-y: auto;
             padding: 10px;
             border: 1px solid #ddd;
@@ -419,6 +421,29 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        .chapter-lock-item .chapter-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .chapter-lock-item .chapter-title a:hover {
+            text-decoration: underline;
+            color: #0066cc;
+        }
+
+        .save-indicator {
+            color: #28a745;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .save-indicator.show {
+            opacity: 1;
         }
 
         .chapter-lock-item .lock-icon {
@@ -533,6 +558,7 @@
             <div class="catalog-header">
                 <span class="catalog-title">Chapter Locking</span>
                 <div class="lock-actions">
+                    <span class="save-indicator" id="saveIndicator">Saved!</span>
                     <button class="lock-btn" id="lockAllBtn">Lock All</button>
                     <button class="lock-btn" id="unlockAllBtn">Unlock All</button>
                 </div>
@@ -639,6 +665,16 @@
         // Save locked chapters to localStorage
         function saveLockedChapters(lockedIds) {
             localStorage.setItem('admin_lockedChapters', JSON.stringify(lockedIds));
+            showSaveIndicator();
+        }
+
+        // Show save indicator briefly
+        function showSaveIndicator() {
+            const indicator = document.getElementById('saveIndicator');
+            if (indicator) {
+                indicator.classList.add('show');
+                setTimeout(() => indicator.classList.remove('show'), 1500);
+            }
         }
 
         // Render chapter lock list
@@ -652,7 +688,7 @@
                     <label class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-chapter-id="${chapterId}">
                         <input type="checkbox" ${isLocked ? 'checked' : ''}>
                         <span class="chapter-num">${chapterId}</span>
-                        <span class="chapter-title">${chapter.title}</span>
+                        <span class="chapter-title"><a href="./full-book.html#chapter-${chapterId}" target="_blank">${chapter.title}</a></span>
                         <span class="lock-icon">🔒</span>
                     </label>
                 `;

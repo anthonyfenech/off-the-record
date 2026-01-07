@@ -33,7 +33,7 @@ class Bookmarks {
     }
 
     // Add a bookmark
-    addBookmark(chapterId, chapterTitle) {
+    addBookmark(chapterId, chapterTitle, pageNumber = null, totalPages = null) {
         if (this.isBookmarked(chapterId)) {
             return false; // Already bookmarked
         }
@@ -41,6 +41,8 @@ class Bookmarks {
         const bookmark = {
             chapterId: chapterId,
             chapterTitle: chapterTitle,
+            pageNumber: pageNumber,
+            totalPages: totalPages,
             timestamp: new Date().toISOString()
         };
 
@@ -63,12 +65,12 @@ class Bookmarks {
     }
 
     // Toggle bookmark state
-    toggleBookmark(chapterId, chapterTitle) {
+    toggleBookmark(chapterId, chapterTitle, pageNumber = null, totalPages = null) {
         if (this.isBookmarked(chapterId)) {
             this.removeBookmark(chapterId);
             return false; // Now unbookmarked
         } else {
-            this.addBookmark(chapterId, chapterTitle);
+            this.addBookmark(chapterId, chapterTitle, pageNumber, totalPages);
             return true; // Now bookmarked
         }
     }
@@ -76,6 +78,11 @@ class Bookmarks {
     // Get all bookmarks
     getAllBookmarks() {
         return this.bookmarks;
+    }
+
+    // Get bookmark by chapter ID
+    getBookmark(chapterId) {
+        return this.bookmarks.find(b => b.chapterId === chapterId) || null;
     }
 
     // Get bookmark count
@@ -120,7 +127,7 @@ class Bookmarks {
             info.className = 'bookmark-info';
             info.addEventListener('click', () => {
                 if (onChapterClick) {
-                    onChapterClick(bookmark.chapterId);
+                    onChapterClick(bookmark.chapterId, bookmark.pageNumber);
                 }
             });
 
@@ -130,7 +137,11 @@ class Bookmarks {
 
             const date = document.createElement('div');
             date.className = 'bookmark-date';
-            date.textContent = `Saved ${this.formatDate(bookmark.timestamp)}`;
+            let dateText = `Saved ${this.formatDate(bookmark.timestamp)}`;
+            if (bookmark.pageNumber !== null && bookmark.totalPages !== null) {
+                dateText += ` · Page ${bookmark.pageNumber + 1} of ${bookmark.totalPages}`;
+            }
+            date.textContent = dateText;
 
             info.appendChild(title);
             info.appendChild(date);
