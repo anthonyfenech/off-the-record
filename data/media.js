@@ -552,6 +552,56 @@ export const MEDIA_CONTENT = {
         caption: 'Where Is Anthony Fenech',
         src: './assets/27-postscript/where-is-anthony-fenech.png',
         placeholder: false
+    },
+
+    // Additional files found
+    'internet-stalker-typo': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Screenshot',
+        caption: 'Internet Stalker Website Suspended (alt)',
+        src: './assets/04-scandal/INTERNET STARLKER WEBSITEWebsite Suspended.png',
+        placeholder: false
+    },
+    'dombrowski-extension-alt': {
+        type: 'newspaper',
+        emoji: '📰',
+        label: 'Newspaper',
+        caption: 'Dombrowski Extension',
+        src: './assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.jpg',
+        placeholder: false
+    },
+    'talkin-tigers-alt': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Talkin Tigers - Me and Drew (alt)',
+        src: './assets/12-pennant-race/Talkin\' Tigers me and Drew.jpg',
+        placeholder: false
+    },
+    'fantasy-camp-alt': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Fantasy Camp Story (alt)',
+        src: './assets/22-viva-las-vegas/24-road-to-omaha-fantasy-camp-story.jpg',
+        placeholder: false
+    },
+    'verlander-tale-of-tape-alt': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Verlander Tale of Tape (alt)',
+        src: './assets/26-unethical/12-pennant-race-verlander-tale-of-tape.jpg',
+        placeholder: false
+    },
+    'trade-deadline-dugout-alt': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Trade Deadline Dugout (alt)',
+        src: './assets/26-unethical/26-unethical-trade-deadline-dugout.jpg',
+        placeholder: false
     }
 };
 
