@@ -45,6 +45,32 @@
             color: #fff;
         }
 
+        .admin-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-nav a {
+            padding: 8px 16px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #666;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.15s ease;
+        }
+
+        .admin-nav a:hover {
+            background: #333;
+            border-color: #333;
+            color: #fff;
+        }
+
         h1 {
             font-size: 20px;
             margin: 0;
@@ -836,6 +862,14 @@
         <h1>Admin Panel</h1>
     </header>
 
+    <nav class="admin-nav">
+        <a href="./">Home</a>
+        <a href="./?chapter=1">Chapters</a>
+        <a href="./guestbook.html">Blog</a>
+        <a href="./full-book.html">Full Book</a>
+        <a href="./photos.html">Photos</a>
+    </nav>
+
     <div class="container">
         <div class="left-panel">
             <div class="toggle-group">
@@ -917,6 +951,29 @@
                     <span class="toggle-label">Comments</span>
                     <label class="toggle-switch">
                         <input type="checkbox" id="allowComments" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-subheader">Full Book</div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Clean Read</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="fullBookCleanRead">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Show Progress</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="fullBookProgress" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Chapter Breaks</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="fullBookChapterBreaks" checked>
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
@@ -1340,7 +1397,10 @@
                 installButton: localStorage.getItem('admin_installButton') || 'Install',
                 installDelay: parseInt(localStorage.getItem('admin_installDelay') || '1'),
                 installAutoHide: parseInt(localStorage.getItem('admin_installAutoHide') || '0'),
-                installCount: parseInt(localStorage.getItem('admin_installCount') || '0')
+                installCount: parseInt(localStorage.getItem('admin_installCount') || '0'),
+                fullBookCleanRead: localStorage.getItem('admin_fullBookCleanRead') === 'true',
+                fullBookProgress: localStorage.getItem('admin_fullBookProgress') !== 'false',
+                fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false'
             };
         }
 
@@ -1368,11 +1428,15 @@
             document.getElementById('installDelay').value = settings.installDelay;
             document.getElementById('installAutoHide').value = settings.installAutoHide;
             document.getElementById('installCount').textContent = settings.installCount;
+            document.getElementById('fullBookCleanRead').checked = settings.fullBookCleanRead;
+            document.getElementById('fullBookProgress').checked = settings.fullBookProgress;
+            document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
 
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize', 'allowBookmarks', 'allowComments',
-                           'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled'];
+                           'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
+                           'fullBookCleanRead', 'fullBookProgress', 'fullBookChapterBreaks'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
