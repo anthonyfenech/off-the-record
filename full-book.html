@@ -238,6 +238,38 @@
         body.clean-read .media-emoji {
             display: none !important;
         }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 69px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-border);
+            z-index: 99;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--color-text-primary);
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Hide progress when disabled */
+        body.hide-progress .progress-bar {
+            display: none;
+        }
+
+        /* Hide chapter breaks when disabled */
+        body.hide-chapter-breaks .chapter-header {
+            display: none;
+        }
+
+        body.hide-chapter-breaks .chapter-end {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -245,6 +277,15 @@
         // Apply admin settings immediately
         if (localStorage.getItem('admin_showCaptions') === 'true') {
             document.body.classList.add('show-captions');
+        }
+        if (localStorage.getItem('admin_fullBookCleanRead') === 'true') {
+            document.body.classList.add('clean-read');
+        }
+        if (localStorage.getItem('admin_fullBookProgress') === 'false') {
+            document.body.classList.add('hide-progress');
+        }
+        if (localStorage.getItem('admin_fullBookChapterBreaks') === 'false') {
+            document.body.classList.add('hide-chapter-breaks');
         }
     </script>
     <!-- Header Navigation -->
@@ -260,6 +301,10 @@
             <button class="clean-toggle" id="cleanToggle" title="Toggle media icons">Clean</button>
         </div>
     </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <main class="book">
         <div id="content"></div>
@@ -375,6 +420,15 @@
             document.body.classList.toggle('clean-read');
             cleanToggle.classList.toggle('active');
             localStorage.setItem(cleanKey, document.body.classList.contains('clean-read'));
+        });
+
+        // Progress bar
+        const progressFill = document.getElementById('progressFill');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressFill.style.width = progress + '%';
         });
     </script>
 </body>
