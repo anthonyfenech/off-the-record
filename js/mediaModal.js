@@ -244,16 +244,99 @@ class MediaModal {
         `;
     }
 
-    // Render audio content
+    // Render audio content with slim custom player
     renderAudio(media) {
+        const playerId = 'slimPlayer_' + Date.now();
+
+        // Set up player after render
+        setTimeout(() => this.initSlimPlayer(playerId), 0);
+
         return `
-            <div class="media-audio-container">
-                <audio controls class="media-audio">
+            <div class="slim-player" id="${playerId}">
+                <audio class="slim-player-audio">
                     <source src="${media.src}" type="audio/mpeg">
-                    Your browser does not support audio playback.
                 </audio>
+                <button class="slim-player-btn" aria-label="Play">
+                    <svg class="slim-player-icon play" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg class="slim-player-icon pause" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z"/>
+                    </svg>
+                </button>
+                <div class="slim-player-progress">
+                    <div class="slim-player-bar">
+                        <div class="slim-player-fill"></div>
+                        <div class="slim-player-handle"></div>
+                    </div>
+                </div>
+                <span class="slim-player-time">0:00</span>
             </div>
         `;
+    }
+
+    // Initialize slim player controls
+    initSlimPlayer(playerId) {
+        const player = document.getElementById(playerId);
+        if (!player) return;
+
+        const audio = player.querySelector('.slim-player-audio');
+        const btn = player.querySelector('.slim-player-btn');
+        const bar = player.querySelector('.slim-player-bar');
+        const fill = player.querySelector('.slim-player-fill');
+        const handle = player.querySelector('.slim-player-handle');
+        const time = player.querySelector('.slim-player-time');
+
+        // Format time as m:ss
+        const formatTime = (secs) => {
+            const m = Math.floor(secs / 60);
+            const s = Math.floor(secs % 60);
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        };
+
+        // Play/pause toggle
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+
+        // Update UI on play/pause
+        audio.addEventListener('play', () => player.classList.add('playing'));
+        audio.addEventListener('pause', () => player.classList.remove('playing'));
+
+        // Update progress bar
+        audio.addEventListener('timeupdate', () => {
+            const pct = (audio.currentTime / audio.duration) * 100 || 0;
+            fill.style.width = pct + '%';
+            handle.style.left = pct + '%';
+            time.textContent = formatTime(audio.currentTime);
+        });
+
+        // Show duration when loaded
+        audio.addEventListener('loadedmetadata', () => {
+            time.textContent = formatTime(audio.duration);
+        });
+
+        // Seek on click
+        bar.addEventListener('click', (e) => {
+            const rect = bar.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * audio.duration;
+        });
+
+        // Drag to seek
+        let dragging = false;
+        handle.addEventListener('mousedown', () => dragging = true);
+        document.addEventListener('mouseup', () => dragging = false);
+        document.addEventListener('mousemove', (e) => {
+            if (!dragging) return;
+            const rect = bar.getBoundingClientRect();
+            const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+            audio.currentTime = pct * audio.duration;
+        });
     }
 
     // Render text content
