@@ -571,14 +571,6 @@ export const MEDIA_CONTENT = {
         src: './assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.jpg',
         placeholder: false
     },
-    'talkin-tigers-alt': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: 'Talkin Tigers - Me and Drew (alt)',
-        src: './assets/12-pennant-race/Talkin\' Tigers me and Drew.jpg',
-        placeholder: false
-    },
     'fantasy-camp-alt': {
         type: 'photo',
         emoji: '📷',
