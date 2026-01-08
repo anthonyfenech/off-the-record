@@ -51,8 +51,8 @@
 
 .credential-carousel {
     position: relative;
-    width: 280px;
-    height: 400px;
+    width: 350px;
+    height: 580px;
     margin: 0 auto;
 }
 
@@ -75,8 +75,8 @@
 
 @media (max-width: 480px) {
     .credential-carousel {
-        width: 220px;
-        height: 320px;
+        width: 280px;
+        height: 460px;
     }
 }
 
