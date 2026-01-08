@@ -138,17 +138,41 @@ class Reader {
         // Check if credential carousel is enabled
         const showCarousel = localStorage.getItem('admin_credentialCarousel') === 'true';
         const credentialImages = [
-            './assets/credential-1.png',
-            './assets/credential-2.png',
-            './assets/credential-3.png'
+            'credentials_01_002.jpg', 'credentials_01_004.jpg', 'credentials_01_006.jpg', 'credentials_01_008.jpg',
+            'credentials_01_010.jpg', 'credentials_01_012.jpg', 'credentials_01_014.jpg', 'credentials_01_016.jpg',
+            'credentials_01_018.jpg', 'credentials_01_020.jpg', 'credentials_01_022.jpg', 'credentials_01_024.jpg',
+            'credentials_01_026.jpg', 'credentials_01_028.jpg', 'credentials_01_030.jpg', 'credentials_01_032.jpg',
+            'credentials_01_034.jpg', 'credentials_01_036.jpg', 'credentials_01_038.jpg', 'credentials_01_040.jpg',
+            'credentials_01_042.jpg', 'credentials_01_044.jpg', 'credentials_01_046.jpg', 'credentials_01_048.jpg',
+            'credentials_01_050.jpg', 'credentials_01_052.jpg', 'credentials_01_054.jpg', 'credentials_01_056.jpg',
+            'credentials_01_057.jpg', 'credentials_01_059.jpg', 'credentials_01_061.jpg', 'credentials_01_063.jpg',
+            'credentials_01_064.jpg', 'credentials_01_066.jpg', 'credentials_01_068.jpg', 'credentials_01_070.jpg',
+            'credentials_01_072.jpg', 'credentials_01_074.jpg', 'credentials_01_076.jpg', 'credentials_01_078.jpg',
+            'credentials_01_080.jpg', 'credentials_01_082.jpg', 'credentials_01_084.jpg', 'credentials_01_086.jpg',
+            'credentials_01_088.jpg', 'credentials_01_090.jpg', 'credentials_01_092.jpg', 'credentials_01_094.jpg',
+            'credentials_01_096.jpg', 'credentials_01_098.jpg', 'credentials_01_100.jpg', 'credentials_01_102.jpg',
+            'credentials_01_104.jpg', 'credentials_01_106.jpg', 'credentials_01_108.jpg', 'credentials_01_113.jpg',
+            'credentials_01_115.jpg', 'credentials_01_117.jpg', 'credentials_01_119.jpg', 'credentials_01_121.jpg',
+            'credentials_01_123.jpg', 'credentials_01_125.jpg', 'credentials_01_127.jpg', 'credentials_01_129.jpg',
+            'credentials_01_131.jpg', 'credentials_01_133.jpg', 'credentials_01_135.jpg', 'credentials_01_137.jpg',
+            'credentials_01_139.jpg', 'credentials_01_141.jpg', 'credentials_01_143.jpg', 'credentials_01_147.jpg',
+            'credentials_01_149.jpg', 'credentials_01_155.jpg', 'credentials_01_157.jpg', 'credentials_01_159.jpg',
+            'credentials_01_161.jpg', 'credentials_01_163.jpg', 'credentials_01_165.jpg', 'credentials_01_167.jpg',
+            'credentials_01_168.jpg', 'credentials_01_169.jpg', 'credentials_01_171.jpg', 'credentials_01_173.jpg',
+            'credentials_01_175.jpg', 'credentials_01_177.jpg', 'credentials_01_179.jpg', 'credentials_01_181.jpg',
+            'credentials_01_183.jpg', 'credentials_01_185.jpg', 'credentials_01_187.jpg', 'credentials_01_189.jpg',
+            'credentials_01_191.jpg', 'credentials_01_193.jpg', 'credentials_01_195.jpg', 'credentials_01_197.jpg',
+            'credentials_01_199.jpg', 'credentials_01_201.jpg'
         ];
 
         let carouselHTML = '';
         if (showCarousel) {
-            const randomCredential = credentialImages[Math.floor(Math.random() * credentialImages.length)];
+            // Shuffle array for random order
+            const shuffled = [...credentialImages].sort(() => Math.random() - 0.5);
             carouselHTML = `
-                <div class="credential-carousel">
-                    <img src="${randomCredential}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
+                <div class="credential-carousel" data-images='${JSON.stringify(shuffled)}'>
+                    <img src="./assets/credentials/${shuffled[0]}" alt="Press Credential" class="credential-img active" onerror="this.style.display='none'">
+                    <img src="./assets/credentials/${shuffled[1]}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
                 </div>
             `;
         }
@@ -164,10 +188,43 @@ class Reader {
         const startBtn = document.getElementById('startReadingBtn');
         if (startBtn) {
             startBtn.addEventListener('click', () => {
+                // Stop carousel when leaving home
+                if (this.carouselInterval) {
+                    clearInterval(this.carouselInterval);
+                    this.carouselInterval = null;
+                }
                 this.currentPage = savedPage;
                 this.loadChapter(savedChapter);
                 this.hideContinueReading();
             });
+        }
+
+        // Start credential carousel rotation
+        if (showCarousel) {
+            const carousel = document.querySelector('.credential-carousel');
+            if (carousel) {
+                const images = JSON.parse(carousel.dataset.images);
+                const imgs = carousel.querySelectorAll('.credential-img');
+                let currentIndex = 0;
+
+                this.carouselInterval = setInterval(() => {
+                    // Fade out current
+                    imgs[0].classList.remove('active');
+                    imgs[1].classList.add('active');
+
+                    // After transition, swap and preload next
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % images.length;
+                        const nextIndex = (currentIndex + 1) % images.length;
+
+                        // Swap: move img[1] to img[0] position, load next into img[1]
+                        imgs[0].src = imgs[1].src;
+                        imgs[0].classList.add('active');
+                        imgs[1].classList.remove('active');
+                        imgs[1].src = `./assets/credentials/${images[nextIndex]}`;
+                    }, 500);
+                }, 4000);
+            }
         }
 
         // Dispatch event
