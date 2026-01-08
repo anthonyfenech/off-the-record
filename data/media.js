@@ -334,6 +334,224 @@ export const MEDIA_CONTENT = {
         caption: 'What we still don\'t know',
         content: 'Content coming soon - Some questions never get answered.',
         placeholder: true
+    },
+
+    // === AUTO-ADDED FROM ASSETS SCAN ===
+
+    // Chapter 4 - Scandal
+    'internet-stalker-website': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Screenshot',
+        caption: 'Internet Stalker Website Suspended',
+        src: './assets/04-scandal/internet-stalker-website-suspended.png',
+        placeholder: false
+    },
+    'dui-report': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Document',
+        caption: 'DUI Report',
+        src: './assets/04-scandal/dui-report.jpg',
+        placeholder: false
+    },
+
+    // Chapter 8 - Trade Deadline
+    'email-mozeliak': {
+        type: 'photo',
+        emoji: '✉️',
+        label: 'Email',
+        caption: 'Email to Mozeliak - July 27, 2015',
+        src: './assets/08-trade-deadline/7:27:15 EMAIL MOZELIAK.jpg',
+        placeholder: false
+    },
+
+    // Chapter 9 - Fire Drill
+    'pepper-voicemail': {
+        type: 'audio',
+        emoji: '📞',
+        label: 'Voicemail',
+        caption: 'Pepper Voicemail',
+        src: './assets/09-fire-drill/pepper-voicemail.m4a',
+        placeholder: false
+    },
+
+    // Chapter 12 - Pennant Race
+    'talkin-tigers-drew': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Talkin Tigers - Me and Drew',
+        src: './assets/12-pennant-race/Talkin\' Tigers me and Drew.jpg',
+        placeholder: false
+    },
+    'european-vacation': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'European Vacation',
+        src: './assets/12-pennant-race/feneuropeanvacation.jpg',
+        placeholder: false
+    },
+
+    // Chapter 13 - Wake Up Call
+    'middle-finger': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Middle Finger - November 6, 2016',
+        src: './assets/13-wake-up-call/IS-middle-finger-11-6-16.jpg',
+        placeholder: false
+    },
+
+    // Chapter 14 - Prime Time
+    'journalism-day-2017': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: '2017 Journalism Day',
+        src: './assets/14-prime-time/2017-journalism-day.jpg',
+        placeholder: false
+    },
+    'leyland-managing-usa': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Leyland Managing USA - March 10, 2017',
+        src: './assets/14-prime-time/3-10-17 leyland managing usa.jpg',
+        placeholder: false
+    },
+    'dsr-bracket': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Screenshot',
+        caption: 'DSR Worst Sports Media Personality Bracket',
+        src: './assets/14-prime-time/DSR worst sports media personality title bracket.jpg',
+        placeholder: false
+    },
+    'kc-heat-wave': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'KC Heat Wave',
+        src: './assets/14-prime-time/kc-heat-wave.jpg',
+        placeholder: false
+    },
+
+    // Chapter 16 - Summer 2017 II
+    'avila-verlander-trade': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Al Avila - Verlander Trade',
+        src: './assets/16-summer-2017-ii/19-draft-day-al-avila-verlander-trade.jpg',
+        placeholder: false
+    },
+
+    // Chapter 19 - Draft Day
+    'foleys-signed-ball': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Foley\'s Signed Ball',
+        src: './assets/19-draft-day/foleys-signed-ball.jpg',
+        placeholder: false
+    },
+
+    // Chapter 22 - Viva Las Vegas
+    'zimmermann-tweet-vid': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'Zimmermann Tweet Video',
+        src: './assets/22-viva-las-vegas/zimmermann tweet:vid.mov',
+        placeholder: false
+    },
+
+    // Chapter 23 - Globetrotting
+    'globetrotting-video': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'Globetrotting Video',
+        src: './assets/23-globetrotting/2020:10:12 3-43-41 PM.mov',
+        placeholder: false
+    },
+    'george-king-scorecard': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Scorecard',
+        caption: 'George King Scorecard',
+        src: './assets/23-globetrotting/george-king-scorecard.jpg',
+        placeholder: false
+    },
+
+    // Chapter 26 - Unethical
+    'messages-after-verlander': {
+        type: 'photo',
+        emoji: '💬',
+        label: 'Messages',
+        caption: 'Messages After Verlander',
+        src: './assets/26-unethical/messages after verlander.JPG',
+        placeholder: false
+    },
+    'security-guards-clubhouse': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Security Guards Clubhouse',
+        src: './assets/26-unethical/security guards clubhouse.JPG',
+        placeholder: false
+    },
+    'tito-big-series': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Tito Big Series',
+        src: './assets/26-unethical/tito-big-series.jpg',
+        placeholder: false
+    },
+    'angels-luggage': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Angels Luggage',
+        src: './assets/26-unethical/unethical - angels luggages.JPG',
+        placeholder: false
+    },
+    'jack-daniels': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Jack Daniels',
+        src: './assets/26-unethical/unethical jack daniels.JPG',
+        placeholder: false
+    },
+    'zero-fox-given': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Zero Fox Given',
+        src: './assets/26-unethical/zero fox given.JPG',
+        placeholder: false
+    },
+
+    // Chapter 27 - Postscript
+    'tito-big-series-2019': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Tito Big Series - August 27, 2019',
+        src: './assets/27-postscript/2019:08:27 TITO BIG SERIES.JPG',
+        placeholder: false
+    },
+    'where-is-anthony-fenech': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Screenshot',
+        caption: 'Where Is Anthony Fenech',
+        src: './assets/27-postscript/where-is-anthony-fenech.png',
+        placeholder: false
     }
 };
 
