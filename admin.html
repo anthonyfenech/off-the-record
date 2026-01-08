@@ -964,13 +964,6 @@
                     </label>
                 </div>
                 <div class="toggle-row">
-                    <span class="toggle-label">Show Progress</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="fullBookProgress" checked>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="toggle-row">
                     <span class="toggle-label">Chapter Breaks</span>
                     <label class="toggle-switch">
                         <input type="checkbox" id="fullBookChapterBreaks" checked>
@@ -1399,7 +1392,6 @@
                 installAutoHide: parseInt(localStorage.getItem('admin_installAutoHide') || '0'),
                 installCount: parseInt(localStorage.getItem('admin_installCount') || '0'),
                 fullBookCleanRead: localStorage.getItem('admin_fullBookCleanRead') === 'true',
-                fullBookProgress: localStorage.getItem('admin_fullBookProgress') !== 'false',
                 fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false'
             };
         }
@@ -1429,14 +1421,13 @@
             document.getElementById('installAutoHide').value = settings.installAutoHide;
             document.getElementById('installCount').textContent = settings.installCount;
             document.getElementById('fullBookCleanRead').checked = settings.fullBookCleanRead;
-            document.getElementById('fullBookProgress').checked = settings.fullBookProgress;
             document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
 
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize', 'allowBookmarks', 'allowComments',
                            'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
-                           'fullBookCleanRead', 'fullBookProgress', 'fullBookChapterBreaks'];
+                           'fullBookCleanRead', 'fullBookChapterBreaks'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
