@@ -1,0 +1,5 @@
+find_text,media_id,emoji,label,caption,type,src
+"EXAMPLE: I called Dombrowski's office",dombrowski-call-1,📞,Phone Call,Calling the GM's office,phone,
+"EXAMPLE: the press box at Comerica",comerica-pressbox,📷,Photo,View from the Comerica press box,photo,./assets/05-chapter/pressbox.jpg
+"EXAMPLE: heard it on the radio",radio-interview-1,🎙️,Audio,Radio interview excerpt,audio,./assets/06-chapter/interview.mp3
+"EXAMPLE: tweeted about the trade",trade-tweet-1,🐦,Tweet,Breaking the trade news,tweet,https://x.com/anthonyfenech/status/123456789
