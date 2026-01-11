@@ -81,7 +81,6 @@ class MediaModal {
         closeBtn.addEventListener('click', () => this.close());
 
         header.appendChild(headerContent);
-        header.appendChild(closeBtn);
 
         // Create modal body
         const body = document.createElement('div');
@@ -93,7 +92,8 @@ class MediaModal {
         caption.className = 'media-modal-caption';
         caption.id = 'mediaModalCaption';
 
-        // Assemble modal
+        // Assemble modal - close button directly on modal for overlay positioning
+        this.modal.appendChild(closeBtn);
         this.modal.appendChild(header);
         this.modal.appendChild(body);
         this.modal.appendChild(caption);

@@ -692,78 +692,72 @@ body.clean-read .media-emoji {
 .media-modal {
     background-color: var(--color-background);
     border: 2px solid var(--color-accent);
-    max-width: 800px;
-    width: 100%;
+    max-width: 500px;
+    width: auto;
     max-height: 90vh;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-md);
     transform: scale(0.9);
     transition: transform var(--transition-normal);
+    position: relative;
 }
 
 .media-modal-overlay.active .media-modal {
     transform: scale(1);
 }
 
-/* Modal Header */
+/* Modal Header - hidden, only used for accessibility */
 .media-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-lg) var(--space-xl);
-    border-bottom: 2px solid var(--color-border);
-    background-color: var(--color-accent-light);
+    display: none;
 }
 
 .media-modal-header-content {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    flex: 1;
+    display: none;
 }
 
 .media-modal-icon {
-    font-size: var(--font-size-xl);
-    line-height: 1;
+    display: none;
 }
 
 .media-modal-label {
     display: none;
-    font-family: var(--font-mono);
-    font-size: var(--font-size-base);
-    font-weight: bold;
-    color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-normal);
 }
 
+/* Close button - positioned over content */
 .media-modal-close {
-    background: none;
-    border: none;
-    color: var(--color-text-secondary);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text-primary);
     cursor: pointer;
-    padding: var(--space-sm);
+    padding: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
+    z-index: 10;
+    width: 32px;
+    height: 32px;
 }
 
 .media-modal-close:hover {
-    color: var(--color-accent);
+    background: var(--color-text-primary);
+    color: var(--color-background);
 }
 
 /* Modal Body */
 .media-modal-body {
     flex: 1;
     overflow-y: auto;
-    padding: var(--space-xl);
-    min-height: 200px;
+    padding: var(--space-md);
+    min-height: 100px;
 }
 
 .media-modal-body img {
-    width: 500px;
     max-width: 100%;
     max-height: 70vh;
     height: auto;
