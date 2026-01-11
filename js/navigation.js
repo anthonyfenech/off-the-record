@@ -286,7 +286,12 @@ class Navigation {
         } else {
             sectionHeader.addEventListener('click', () => {
                 if (section.url) {
-                    window.open(section.url, '_blank', 'noopener,noreferrer');
+                    // Use location.href for internal links to stay within PWA
+                    if (section.url.startsWith('./') || section.url.startsWith('/')) {
+                        window.location.href = section.url;
+                    } else {
+                        window.open(section.url, '_blank', 'noopener,noreferrer');
+                    }
                 } else if (section.comingSoon) {
                     alert('Coming Soon');
                 }
@@ -365,7 +370,12 @@ class Navigation {
             } else {
                 sectionHeader.addEventListener('click', () => {
                     if (section.url) {
-                        window.open(section.url, '_blank', 'noopener,noreferrer');
+                        // Use location.href for internal links to stay within PWA
+                        if (section.url.startsWith('./') || section.url.startsWith('/')) {
+                            window.location.href = section.url;
+                        } else {
+                            window.open(section.url, '_blank', 'noopener,noreferrer');
+                        }
                     } else if (section.comingSoon) {
                         alert('Coming Soon');
                     }
