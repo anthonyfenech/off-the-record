@@ -340,12 +340,13 @@ class Navigation {
         // Check draft settings
         const bookmarksEnabled = localStorage.getItem('admin_draftBookmarks') === 'true';
         const commentsEnabled = localStorage.getItem('admin_draftComments') === 'true';
+        const contactEnabled = localStorage.getItem('admin_draftContact') === 'true';
 
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             ...(commentsEnabled ? [{ id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' }] : []),
-            { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true },
+            ...(contactEnabled ? [{ id: 'contact', label: 'CONTACT', type: 'link', url: './contact.html' }] : []),
             { id: 'admin', label: 'ADMIN', type: 'link', url: './admin.html' }
         ];
 

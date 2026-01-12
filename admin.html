@@ -1161,6 +1161,20 @@
                         <a href="./drafts/comments.html" class="draft-edit-link">Edit →</a>
                     </div>
                 </div>
+
+                <div class="draft-item">
+                    <div class="draft-row">
+                        <span class="toggle-label">Contact</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="draftContact">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="draft-meta">
+                        <span class="draft-destinations">Sidebar</span>
+                        <a href="./drafts/contact.html" class="draft-edit-link">Edit →</a>
+                    </div>
+                </div>
             </div>
 
             <div class="legend-dropdown" id="legendDropdown">
@@ -1564,6 +1578,7 @@
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
                 draftComments: localStorage.getItem('admin_draftComments') === 'true',
+                draftContact: localStorage.getItem('admin_draftContact') === 'true',
                 draftBlog: localStorage.getItem('admin_draftBlog') === 'true',
                 draftAbout: localStorage.getItem('admin_draftAbout') === 'true',
                 draftAudio: localStorage.getItem('admin_draftAudio') === 'true',
@@ -1597,6 +1612,7 @@
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
             document.getElementById('draftComments').checked = settings.draftComments;
+            document.getElementById('draftContact').checked = settings.draftContact;
             document.getElementById('draftBlog').checked = settings.draftBlog;
             document.getElementById('draftAbout').checked = settings.draftAbout;
             document.getElementById('draftAudio').checked = settings.draftAudio;
@@ -1618,7 +1634,7 @@
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
-                           'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments',
+                           'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments', 'draftContact',
                            'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks'];
 

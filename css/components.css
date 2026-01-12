@@ -652,6 +652,37 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
     text-align: center;
 }
 
+/* Locked chapter state */
+.locked-chapter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: var(--space-2xl);
+    text-align: center;
+}
+
+.locked-chapter .locked-icon {
+    font-size: 4rem;
+    margin-bottom: var(--space-lg);
+    opacity: 0.6;
+}
+
+.locked-chapter .locked-message {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.locked-chapter .locked-hint {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
 /* Install prompt (PWA) */
 .install-prompt {
     position: fixed;

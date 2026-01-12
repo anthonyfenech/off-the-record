@@ -201,12 +201,24 @@ class Reader {
         window.dispatchEvent(new CustomEvent('homePageLoaded'));
     }
 
+    // Check if a chapter is locked
+    isChapterLocked(chapterId) {
+        const lockedChapters = JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
+        return lockedChapters.includes(chapterId);
+    }
+
     // Load a specific chapter
     loadChapter(chapterId, startPage = null) {
         const chapter = CHAPTERS.find(c => c.id === chapterId);
 
         if (!chapter) {
             this.showError(`Chapter ${chapterId} not found`);
+            return;
+        }
+
+        // Check if chapter is locked
+        if (this.isChapterLocked(chapterId)) {
+            this.showLockedChapter(chapter);
             return;
         }
 
@@ -593,6 +605,42 @@ class Reader {
     // Show error message
     showError(message) {
         this.chapterBody.innerHTML = `<div class="error">${message}</div>`;
+    }
+
+    // Show locked chapter placeholder
+    showLockedChapter(chapter) {
+        // Show chapter header
+        const chapterHeader = document.querySelector('.chapter-header');
+        if (chapterHeader) {
+            chapterHeader.style.display = '';
+        }
+
+        // Show nav footer
+        const navFooter = document.querySelector('.nav-footer');
+        if (navFooter) {
+            navFooter.style.display = '';
+        }
+
+        this.currentChapter = chapter.id;
+        window.currentChapterId = chapter.id;
+        this.chapterTitle.textContent = chapter.title;
+
+        // Show locked placeholder
+        this.chapterBody.innerHTML = `
+            <div class="locked-chapter">
+                <div class="locked-icon">🔒</div>
+                <p class="locked-message">This chapter is currently locked.</p>
+                <p class="locked-hint">Check back soon or contact the author for access.</p>
+            </div>
+        `;
+
+        // Update URL hash
+        this.updateHash(chapter.id);
+
+        // Dispatch event for navigation state
+        window.dispatchEvent(new CustomEvent('chapterLoaded', {
+            detail: { chapterId: chapter.id, chapter, totalPages: 1, mode: 'scroll', locked: true }
+        }));
     }
 
     // Utility: Debounce function

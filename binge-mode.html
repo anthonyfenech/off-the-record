@@ -273,16 +273,33 @@
         import { mediaModal } from './js/mediaModal.js';
         import { markChapterComplete, isChapterComplete } from './js/storage.js';
 
+        // Get locked chapters from admin settings
+        const lockedChapters = JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
+        function isChapterLocked(chapterId) {
+            return lockedChapters.includes(chapterId);
+        }
+
         // Render chapters
         const container = document.getElementById('content');
         container.innerHTML = CHAPTERS.map((ch, i) => {
             // Hide header and stars for title page and TOC (like normal reader)
             const isSpecial = ch.section === 'title' || ch.section === 'toc';
+            const isLocked = isChapterLocked(ch.id);
+
+            // Show locked placeholder for locked chapters
+            const chapterContent = isLocked
+                ? `<div class="locked-chapter">
+                       <div class="locked-icon">🔒</div>
+                       <p class="locked-message">This chapter is currently locked.</p>
+                       <p class="locked-hint">Check back soon or contact the author for access.</p>
+                   </div>`
+                : ch.content;
+
             return `
-            <article class="chapter-section${isSpecial ? ' special-page' : ''}" id="chapter-${ch.id}" data-chapter="${i}">
-                ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}</h2></header>` : ''}
-                <div class="chapter-body">${ch.content}</div>
-                ${!isSpecial ? '<div class="chapter-end">***</div>' : ''}
+            <article class="chapter-section${isSpecial ? ' special-page' : ''}${isLocked ? ' locked' : ''}" id="chapter-${ch.id}" data-chapter="${i}">
+                ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}${isLocked ? ' 🔒' : ''}</h2></header>` : ''}
+                <div class="chapter-body">${chapterContent}</div>
+                ${!isSpecial && !isLocked ? '<div class="chapter-end">***</div>' : ''}
             </article>
         `}).join('');
 
@@ -333,7 +350,8 @@
                 if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
                     const chapterIndex = parseInt(entry.target.dataset.chapter);
                     const chapterId = CHAPTERS[chapterIndex]?.id;
-                    if (chapterId && chapterId > 0) { // Skip title page (-1) and TOC (0)
+                    // Skip title page (-1), TOC (0), and locked chapters
+                    if (chapterId && chapterId > 0 && !isChapterLocked(chapterId)) {
                         markChapterComplete(chapterId);
                     }
                 }
