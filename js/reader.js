@@ -112,11 +112,12 @@ class Reader {
 
         // Get saved progress
         const progress = getProgress();
-        const savedChapter = progress.currentChapter || 1;
+        const savedChapter = progress.currentChapter || -1; // Default to title page
         const savedPage = progress.currentPage || 0;
+        const isNewReader = !progress.lastUpdated;
 
         // Button text - check admin setting for random text
-        let buttonText = progress.lastUpdated ? 'CONTINUE READING' : 'START READING';
+        let buttonText = isNewReader ? 'START READING' : 'CONTINUE READING';
 
         const useRandomText = localStorage.getItem('admin_randomButtonText') === 'true';
         if (useRandomText) {
