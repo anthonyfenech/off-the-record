@@ -14,7 +14,7 @@ export const CHAPTERS = [
         id: -1,
         year: null,
         section: 'title',
-        title: "TITLE PAGE",
+        title: "",
         subtitle: "",
         teaser: "",
         content: `<div class="title-page">
