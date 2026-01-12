@@ -496,12 +496,14 @@
     padding: var(--space-2xl) 0;
 }
 
-/* Hide chapter header border on title page */
-.chapter-body:has(.title-page) {
+/* Hide chapter header border on title page and TOC */
+.chapter-body:has(.title-page),
+.chapter-body:has(.toc-page) {
     margin-top: 0;
 }
 
-.chapter:has(.title-page) .chapter-header {
+.chapter:has(.title-page) .chapter-header,
+.chapter:has(.toc-page) .chapter-header {
     display: none;
 }
 
@@ -563,23 +565,24 @@
    ============================================ */
 
 .toc-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
     padding: var(--space-lg) 0;
 }
 
 .toc-entry {
     margin: 0;
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.toc-entry:first-child {
-    border-top: 1px solid var(--color-border);
+    padding: var(--space-xs) 0;
 }
 
 .toc-link {
     display: block;
-    font-family: var(--font-body);
-    font-size: var(--font-size-base);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--color-text-primary);
     text-decoration: none;
     transition: color var(--transition-fast);
