@@ -271,6 +271,7 @@
     <script type="module">
         import { CHAPTERS } from './data/chapters.js';
         import { mediaModal } from './js/mediaModal.js';
+        import { markChapterComplete, isChapterComplete } from './js/storage.js';
 
         // Render chapters
         const container = document.getElementById('content');
@@ -323,6 +324,22 @@
         }, { rootMargin: '-80px 0px -50% 0px', threshold: 0 });
 
         chapters.forEach(ch => observer.observe(ch));
+
+        // Mark chapters as complete when scrolled past (syncs to main reader)
+        const completionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // When chapter leaves viewport going up (user scrolled past it)
+                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                    const chapterIndex = parseInt(entry.target.dataset.chapter);
+                    const chapterId = CHAPTERS[chapterIndex]?.id;
+                    if (chapterId && chapterId > 0) { // Skip title page (-1) and TOC (0)
+                        markChapterComplete(chapterId);
+                    }
+                }
+            });
+        }, { threshold: 0 });
+
+        chapters.forEach(ch => completionObserver.observe(ch));
 
         prevBtn.addEventListener('click', () => scrollToChapter(currentChapter - 1));
         nextBtn.addEventListener('click', () => scrollToChapter(currentChapter + 1));

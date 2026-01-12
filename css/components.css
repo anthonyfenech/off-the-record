@@ -450,14 +450,18 @@
 }
 
 .chapter-indicator svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: var(--color-success);
 }
 
 .chapter-indicator.current {
-    color: var(--color-accent);
-    font-weight: bold;
+    color: var(--color-text-primary);
+}
+
+.chapter-indicator .current-chapter-logo {
+    width: 18px;
+    height: 18px;
 }
 
 /* Chapter info in TOC */

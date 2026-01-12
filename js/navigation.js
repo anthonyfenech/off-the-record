@@ -626,7 +626,7 @@ class Navigation {
             if (chapterId === this.currentChapterId) {
                 item.classList.add('active');
                 indicator.classList.add('current');
-                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+                indicator.innerHTML = '<svg viewBox="0 0 100 100" class="current-chapter-logo"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="50" cy="50" r="24" fill="#FF3B30"/></svg>';
 
                 // Auto-expand the BOOK section and the section containing current chapter
                 const chapter = CHAPTERS.find(c => c.id === chapterId);
