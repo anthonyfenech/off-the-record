@@ -509,6 +509,15 @@ body:has(.toc-page) .clean-toggle {
     visibility: hidden;
 }
 
+/* Hide bookmarks (temporarily disabled) */
+.bookmark-btn {
+    display: none;
+}
+
+.toc-top-section[data-section="bookmarks"] {
+    display: none;
+}
+
 .chapter:has(.title-page) .chapter-header,
 .chapter:has(.toc-page) .chapter-header {
     display: none;
