@@ -221,7 +221,7 @@ body.paginated .chapter-body {
     color: var(--color-text-primary);
     transition: opacity var(--transition-fast);
     margin-left: auto;
-    margin-right: calc(-1 * var(--padding-mobile) + var(--space-md));
+    margin-right: -12px;
 }
 
 .close-btn:hover {
