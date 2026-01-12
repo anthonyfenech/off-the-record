@@ -339,12 +339,12 @@ class Navigation {
     buildBottomSections(fragment) {
         // Check draft settings
         const bookmarksEnabled = localStorage.getItem('admin_draftBookmarks') === 'true';
-        const allowComments = localStorage.getItem('admin_allowComments') !== 'false';
+        const commentsEnabled = localStorage.getItem('admin_draftComments') === 'true';
 
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
-            ...(allowComments ? [{ id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' }] : []),
+            ...(commentsEnabled ? [{ id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' }] : []),
             { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true },
             { id: 'admin', label: 'ADMIN', type: 'link', url: './admin.html' }
         ];

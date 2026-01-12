@@ -204,6 +204,14 @@
             transform: translateX(18px);
         }
 
+        .size-select {
+            padding: 4px 8px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+
         .quick-links {
             margin-top: 15px;
             padding: 10px 12px;
@@ -998,15 +1006,16 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Credential Size</span>
+                    <select id="credentialSize" class="size-select">
+                        <option value="lg">Large (350px)</option>
+                        <option value="md">Medium (250px)</option>
+                        <option value="sm">Small (175px)</option>
+                    </select>
+                </div>
 
                 <div class="toggle-subheader">Navigation</div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Comments</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="allowComments" checked>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
 
                 <div class="toggle-subheader">Full Book</div>
                 <div class="toggle-row">
@@ -1088,6 +1097,20 @@
                     <div class="draft-meta">
                         <span class="draft-destinations">Nav bar · Sidebar</span>
                         <a href="./drafts/bookmarks.html" class="draft-edit-link">Edit →</a>
+                    </div>
+                </div>
+
+                <div class="draft-item">
+                    <div class="draft-row">
+                        <span class="toggle-label">Comments</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="draftComments">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="draft-meta">
+                        <span class="draft-destinations">Sidebar</span>
+                        <a href="./drafts/comments.html" class="draft-edit-link">Edit →</a>
                     </div>
                 </div>
             </div>
@@ -1492,7 +1515,7 @@
                 showCaptions: localStorage.getItem('admin_showCaptions') === 'true',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
-                allowComments: localStorage.getItem('admin_allowComments') !== 'false',
+                draftComments: localStorage.getItem('admin_draftComments') === 'true',
                 draftBlog: localStorage.getItem('admin_draftBlog') === 'true',
                 draftAbout: localStorage.getItem('admin_draftAbout') === 'true',
                 draftAudio: localStorage.getItem('admin_draftAudio') === 'true',
@@ -1501,6 +1524,7 @@
                 maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
                 credentialCarousel: localStorage.getItem('admin_credentialCarousel') !== 'false',
+                credentialSize: localStorage.getItem('admin_credentialSize') || 'lg',
                 installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
                 installMessage: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
                 installButton: localStorage.getItem('admin_installButton') || 'Install',
@@ -1524,7 +1548,7 @@
             document.getElementById('showCaptions').checked = settings.showCaptions;
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
-            document.getElementById('allowComments').checked = settings.allowComments;
+            document.getElementById('draftComments').checked = settings.draftComments;
             document.getElementById('draftBlog').checked = settings.draftBlog;
             document.getElementById('draftAbout').checked = settings.draftAbout;
             document.getElementById('draftAudio').checked = settings.draftAudio;
@@ -1533,6 +1557,7 @@
             document.getElementById('maintenanceMode').checked = settings.maintenanceMode;
             document.getElementById('randomButtonText').checked = settings.randomButtonText;
             document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
+            document.getElementById('credentialSize').value = settings.credentialSize;
             document.getElementById('installPromptEnabled').checked = settings.installPromptEnabled;
             document.getElementById('installMessage').value = settings.installMessage;
             document.getElementById('installButton').value = settings.installButton;
@@ -1544,8 +1569,8 @@
 
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
-                           'allowPageMode', 'allowFontSize', 'allowComments',
-                           'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks',
+                           'allowPageMode', 'allowFontSize',
+                           'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments',
                            'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks'];
 
@@ -1567,6 +1592,11 @@
                 document.getElementById(id).addEventListener('change', (e) => {
                     saveSetting(id, e.target.value);
                 });
+            });
+
+            // Credential size select
+            document.getElementById('credentialSize').addEventListener('change', (e) => {
+                saveSetting('credentialSize', e.target.value);
             });
 
             // Reset install prompt button

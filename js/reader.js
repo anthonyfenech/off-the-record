@@ -170,9 +170,12 @@ class Reader {
         if (showCarousel) {
             // Pick one random credential
             const randomCredential = credentialImages[Math.floor(Math.random() * credentialImages.length)];
+            // Get size setting (lg, md, sm)
+            const credentialSize = localStorage.getItem('admin_credentialSize') || 'lg';
+            const sizeFolder = credentialSize === 'lg' ? 'credentials' : `credentials-${credentialSize}`;
             credentialHTML = `
-                <div class="credential-display">
-                    <img src="./assets/credentials/${randomCredential}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
+                <div class="credential-display credential-${credentialSize}">
+                    <img src="./assets/${sizeFolder}/${randomCredential}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
                 </div>
             `;
         }

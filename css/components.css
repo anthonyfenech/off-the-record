@@ -50,8 +50,19 @@
 }
 
 .credential-display {
-    width: 350px;
     margin: 0 auto;
+}
+
+.credential-display.credential-lg {
+    width: 350px;
+}
+
+.credential-display.credential-md {
+    width: 250px;
+}
+
+.credential-display.credential-sm {
+    width: 175px;
 }
 
 .credential-img {
@@ -62,8 +73,14 @@
 }
 
 @media (max-width: 480px) {
-    .credential-display {
+    .credential-display.credential-lg {
         width: 280px;
+    }
+    .credential-display.credential-md {
+        width: 200px;
+    }
+    .credential-display.credential-sm {
+        width: 140px;
     }
 }
 
