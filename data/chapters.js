@@ -34,6 +34,7 @@ export const CHAPTERS = [
         subtitle: "",
         teaser: "Navigate to any chapter",
         content: `<div class="toc-page">
+<h2 class="toc-page-title">TABLE OF CONTENTS</h2>
 <p class="toc-entry"><a href="#chapter-1" class="toc-link">Author's Note</a></p>
 <p class="toc-entry"><a href="#chapter-2" class="toc-link">Summer 2017</a></p>
 <p class="toc-entry"><a href="#chapter-3" class="toc-link">Dream Job</a></p>
@@ -7312,6 +7313,26 @@ export const getTotalWordCount = () => {
 
 // Export chapter count
 export const getChapterCount = () => CHAPTERS.length;
+
+// Get first chapter ID
+export const getFirstChapterId = () => CHAPTERS[0]?.id ?? 1;
+
+// Get last chapter ID
+export const getLastChapterId = () => CHAPTERS[CHAPTERS.length - 1]?.id ?? 1;
+
+// Get previous chapter ID (returns null if at first chapter)
+export const getPreviousChapterId = (currentId) => {
+    const currentIndex = CHAPTERS.findIndex(c => c.id === currentId);
+    if (currentIndex <= 0) return null;
+    return CHAPTERS[currentIndex - 1].id;
+};
+
+// Get next chapter ID (returns null if at last chapter)
+export const getNextChapterId = (currentId) => {
+    const currentIndex = CHAPTERS.findIndex(c => c.id === currentId);
+    if (currentIndex < 0 || currentIndex >= CHAPTERS.length - 1) return null;
+    return CHAPTERS[currentIndex + 1].id;
+};
 
 // Calculate reading time (words per minute = 200)
 export const calculateReadingTime = (wordCount) => {

@@ -1,6 +1,6 @@
 // Navigation - Chapter navigation and Table of Contents
 
-import { CHAPTERS, getChapterCount, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
+import { CHAPTERS, getChapterCount, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears, getFirstChapterId, getLastChapterId, getPreviousChapterId, getNextChapterId } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete } from './storage.js';
 import { photoGallery } from './photoGallery.js';
@@ -667,38 +667,41 @@ class Navigation {
     // Update navigation button states
     updateNavigationState() {
         const mode = window.readingModeManager?.getMode() || 'scroll';
+        const prevChapterId = getPreviousChapterId(this.currentChapterId);
+        const nextChapterId = getNextChapterId(this.currentChapterId);
 
         if (mode === 'page') {
             // Page mode: disable based on pages
-            const isFirstChapter = this.currentChapterId <= 1;
+            const isFirstChapter = prevChapterId === null;
             const isFirstPage = reader.isFirstPage ? reader.isFirstPage() : true;
             this.prevBtn.disabled = isFirstChapter && isFirstPage;
 
-            const isLastChapter = this.currentChapterId >= getChapterCount();
+            const isLastChapter = nextChapterId === null;
             const isLastPage = reader.isLastPage ? reader.isLastPage() : false;
             this.nextBtn.disabled = isLastChapter && isLastPage;
         } else {
             // Scroll mode: disable based on chapters only
-            this.prevBtn.disabled = this.currentChapterId <= 1;
-            this.nextBtn.disabled = this.currentChapterId >= getChapterCount();
+            this.prevBtn.disabled = prevChapterId === null;
+            this.nextBtn.disabled = nextChapterId === null;
         }
     }
 
     // Navigate to previous page or chapter
     goToPrevious() {
         const mode = window.readingModeManager?.getMode() || 'scroll';
+        const prevChapterId = getPreviousChapterId(this.currentChapterId);
 
         if (mode === 'page') {
             // Page mode: go to previous page, then previous chapter
             if (!reader.prevPage()) {
-                if (this.currentChapterId > 1) {
-                    reader.loadChapter(this.currentChapterId - 1, 999);
+                if (prevChapterId !== null) {
+                    reader.loadChapter(prevChapterId, 999);
                 }
             }
         } else {
             // Scroll mode: go to previous chapter only
-            if (this.currentChapterId > 1) {
-                reader.loadChapter(this.currentChapterId - 1, 0);
+            if (prevChapterId !== null) {
+                reader.loadChapter(prevChapterId, 0);
             }
         }
     }
@@ -706,18 +709,19 @@ class Navigation {
     // Navigate to next page or chapter
     goToNext() {
         const mode = window.readingModeManager?.getMode() || 'scroll';
+        const nextChapterId = getNextChapterId(this.currentChapterId);
 
         if (mode === 'page') {
             // Page mode: go to next page, then next chapter
             if (!reader.nextPage()) {
-                if (this.currentChapterId < getChapterCount()) {
-                    reader.loadChapter(this.currentChapterId + 1, 0);
+                if (nextChapterId !== null) {
+                    reader.loadChapter(nextChapterId, 0);
                 }
             }
         } else {
             // Scroll mode: go to next chapter only
-            if (this.currentChapterId < getChapterCount()) {
-                reader.loadChapter(this.currentChapterId + 1, 0);
+            if (nextChapterId !== null) {
+                reader.loadChapter(nextChapterId, 0);
             }
         }
     }
