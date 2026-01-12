@@ -1500,7 +1500,7 @@
                 twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
                 maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
-                credentialCarousel: localStorage.getItem('admin_credentialCarousel') === 'true',
+                credentialCarousel: localStorage.getItem('admin_credentialCarousel') !== 'false',
                 installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
                 installMessage: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
                 installButton: localStorage.getItem('admin_installButton') || 'Install',

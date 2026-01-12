@@ -136,8 +136,8 @@ class Reader {
             buttonText = randomTexts[Math.floor(Math.random() * randomTexts.length)];
         }
 
-        // Check if credential carousel is enabled
-        const showCarousel = localStorage.getItem('admin_credentialCarousel') === 'true';
+        // Check if credential carousel is enabled (default: ON)
+        const showCarousel = localStorage.getItem('admin_credentialCarousel') !== 'false';
         const credentialImages = [
             'credentials_01_002.jpg', 'credentials_01_004.jpg', 'credentials_01_006.jpg', 'credentials_01_008.jpg',
             'credentials_01_010.jpg', 'credentials_01_012.jpg', 'credentials_01_014.jpg', 'credentials_01_016.jpg',
