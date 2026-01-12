@@ -30,9 +30,9 @@ export const CHAPTERS = [
         id: 0,
         year: null,
         section: 'toc',
-        title: "TABLE OF CONTENTS",
+        title: "",
         subtitle: "",
-        teaser: "Navigate to any chapter",
+        teaser: "",
         content: `<div class="toc-page">
 <h2 class="toc-page-title">TABLE OF CONTENTS</h2>
 <p class="toc-entry"><a href="#chapter-1" class="toc-link">Author's Note</a></p>
