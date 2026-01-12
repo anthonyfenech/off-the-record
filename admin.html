@@ -1034,6 +1034,49 @@
 
             <div class="toggle-group" style="margin-top: 20px;">
                 <div class="toggle-header">Drafts</div>
+
+                <div class="draft-item">
+                    <div class="draft-row">
+                        <span class="toggle-label">Blog</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="draftBlog">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="draft-meta">
+                        <span class="draft-destinations">Sidebar</span>
+                        <a href="https://anthonyfenech.substack.com" target="_blank" class="draft-edit-link">Substack →</a>
+                    </div>
+                </div>
+
+                <div class="draft-item">
+                    <div class="draft-row">
+                        <span class="toggle-label">About</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="draftAbout">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="draft-meta">
+                        <span class="draft-destinations">Sidebar</span>
+                        <a href="./drafts/about.html" class="draft-edit-link">Edit →</a>
+                    </div>
+                </div>
+
+                <div class="draft-item">
+                    <div class="draft-row">
+                        <span class="toggle-label">Audio</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="draftAudio">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="draft-meta">
+                        <span class="draft-destinations">Sidebar</span>
+                        <a href="./drafts/audio.html" class="draft-edit-link">Edit →</a>
+                    </div>
+                </div>
+
                 <div class="draft-item">
                     <div class="draft-row">
                         <span class="toggle-label">Bookmarks</span>
@@ -1450,6 +1493,9 @@
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
                 allowComments: localStorage.getItem('admin_allowComments') !== 'false',
+                draftBlog: localStorage.getItem('admin_draftBlog') === 'true',
+                draftAbout: localStorage.getItem('admin_draftAbout') === 'true',
+                draftAudio: localStorage.getItem('admin_draftAudio') === 'true',
                 draftBookmarks: localStorage.getItem('admin_draftBookmarks') === 'true',
                 twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
                 maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
@@ -1479,6 +1525,9 @@
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
             document.getElementById('allowComments').checked = settings.allowComments;
+            document.getElementById('draftBlog').checked = settings.draftBlog;
+            document.getElementById('draftAbout').checked = settings.draftAbout;
+            document.getElementById('draftAudio').checked = settings.draftAudio;
             document.getElementById('draftBookmarks').checked = settings.draftBookmarks;
             document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
             document.getElementById('maintenanceMode').checked = settings.maintenanceMode;
@@ -1496,7 +1545,7 @@
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize', 'allowComments',
-                           'draftBookmarks',
+                           'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks',
                            'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks'];
 

@@ -100,11 +100,16 @@ class Navigation {
         // 1. BOOK section - contains all chapters
         fragment.appendChild(this.createBookSection());
 
-        // 2. Other top sections as links/dropdowns
+        // 2. Check draft settings for optional sections
+        const blogEnabled = localStorage.getItem('admin_draftBlog') === 'true';
+        const aboutEnabled = localStorage.getItem('admin_draftAbout') === 'true';
+        const audioEnabled = localStorage.getItem('admin_draftAudio') === 'true';
+
+        // 3. Build sections based on draft settings
         const topSections = [
-            { id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' },
-            { id: 'about', label: 'ABOUT', type: 'link', comingSoon: true },
-            { id: 'audio', label: 'AUDIO', type: 'link', comingSoon: true },
+            ...(blogEnabled ? [{ id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' }] : []),
+            ...(aboutEnabled ? [{ id: 'about', label: 'ABOUT', type: 'link', url: './about.html' }] : []),
+            ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
             { id: 'full-book', label: 'GO OFF', type: 'link', url: './full-book.html' }
         ];
 
