@@ -237,6 +237,36 @@
             color: #666;
         }
 
+        .cache-actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .cache-btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: 500;
+            border: 1px solid #333;
+            background: #fff;
+            color: #333;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .cache-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        .cache-btn.success {
+            background: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+
         .legend-dropdown {
             display: none;
             margin-top: 8px;
@@ -1041,6 +1071,11 @@
                 <span class="legend-btn" id="legendBtn">Legend</span>
             </div>
 
+            <div class="cache-actions">
+                <button class="cache-btn" id="clearCacheBtn">Clear Cache</button>
+                <button class="cache-btn" id="hardRefreshBtn">Hard Refresh</button>
+            </div>
+
             <div class="toggle-group" style="margin-top: 20px;">
                 <div class="toggle-header">Drafts</div>
 
@@ -1609,6 +1644,41 @@
                     resetBtn.textContent = 'Reset';
                     resetBtn.classList.remove('done');
                 }, 2000);
+            });
+
+            // Clear Cache button
+            const clearCacheBtn = document.getElementById('clearCacheBtn');
+            clearCacheBtn.addEventListener('click', async () => {
+                try {
+                    // Clear all caches
+                    const cacheNames = await caches.keys();
+                    await Promise.all(cacheNames.map(name => caches.delete(name)));
+
+                    // Tell service worker to clear cache
+                    if (navigator.serviceWorker.controller) {
+                        navigator.serviceWorker.controller.postMessage({ type: 'CLEAR_CACHE' });
+                    }
+
+                    clearCacheBtn.textContent = 'Cleared!';
+                    clearCacheBtn.classList.add('success');
+                    setTimeout(() => {
+                        clearCacheBtn.textContent = 'Clear Cache';
+                        clearCacheBtn.classList.remove('success');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to clear cache:', err);
+                    clearCacheBtn.textContent = 'Error';
+                    setTimeout(() => {
+                        clearCacheBtn.textContent = 'Clear Cache';
+                    }, 2000);
+                }
+            });
+
+            // Hard Refresh button
+            const hardRefreshBtn = document.getElementById('hardRefreshBtn');
+            hardRefreshBtn.addEventListener('click', () => {
+                // Force reload bypassing cache
+                location.reload(true);
             });
         }
 
