@@ -509,13 +509,22 @@ body:has(.toc-page) .clean-toggle {
     visibility: hidden;
 }
 
-/* Hide bookmarks (temporarily disabled) */
+/* Bookmarks - hidden by default, shown when enabled via Drafts toggle */
 .bookmark-btn {
+    display: none !important;
+}
+
+.toc-content-section[data-section="bookmarks"] {
     display: none;
 }
 
-.toc-top-section[data-section="bookmarks"] {
-    display: none;
+/* Show bookmarks when enabled */
+body.bookmarks-enabled .bookmark-btn {
+    display: flex !important;
+}
+
+body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
+    display: block;
 }
 
 .chapter:has(.title-page) .chapter-header,

@@ -807,6 +807,47 @@
             background: #e5e5e5;
         }
 
+        .draft-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .draft-item:last-child {
+            border-bottom: none;
+        }
+
+        .draft-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .draft-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
+            padding-left: 2px;
+        }
+
+        .draft-destinations {
+            font-size: 10px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .draft-edit-link {
+            font-size: 10px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .draft-edit-link:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+
         .install-options {
             margin-top: 10px;
             padding: 10px;
@@ -919,14 +960,6 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Bookmarks</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="allowBookmarks" checked>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-
                 <div class="toggle-subheader">Media</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Captions</span>
@@ -1001,8 +1034,18 @@
 
             <div class="toggle-group" style="margin-top: 20px;">
                 <div class="toggle-header">Drafts</div>
-                <div class="drafts-list">
-                    <a href="./drafts/bookmarks.html" class="draft-link">Bookmarks</a>
+                <div class="draft-item">
+                    <div class="draft-row">
+                        <span class="toggle-label">Bookmarks</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="draftBookmarks">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="draft-meta">
+                        <span class="draft-destinations">Nav bar · Sidebar</span>
+                        <a href="./drafts/bookmarks.html" class="draft-edit-link">Edit →</a>
+                    </div>
                 </div>
             </div>
 
@@ -1406,8 +1449,8 @@
                 showCaptions: localStorage.getItem('admin_showCaptions') === 'true',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
-                allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false',
                 allowComments: localStorage.getItem('admin_allowComments') !== 'false',
+                draftBookmarks: localStorage.getItem('admin_draftBookmarks') === 'true',
                 twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
                 maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
                 randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
@@ -1435,8 +1478,8 @@
             document.getElementById('showCaptions').checked = settings.showCaptions;
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
-            document.getElementById('allowBookmarks').checked = settings.allowBookmarks;
             document.getElementById('allowComments').checked = settings.allowComments;
+            document.getElementById('draftBookmarks').checked = settings.draftBookmarks;
             document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
             document.getElementById('maintenanceMode').checked = settings.maintenanceMode;
             document.getElementById('randomButtonText').checked = settings.randomButtonText;
@@ -1452,7 +1495,8 @@
 
             // Add listeners for all toggles
             const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
-                           'allowPageMode', 'allowFontSize', 'allowBookmarks', 'allowComments',
+                           'allowPageMode', 'allowFontSize', 'allowComments',
+                           'draftBookmarks',
                            'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks'];
 

@@ -332,14 +332,13 @@ class Navigation {
 
     // Build bottom navigation sections (smaller font)
     buildBottomSections(fragment) {
-        // Check if bookmarks are allowed
-        const allowBookmarks = localStorage.getItem('admin_allowBookmarks') !== 'false';
-
+        // Check draft settings
+        const bookmarksEnabled = localStorage.getItem('admin_draftBookmarks') === 'true';
         const allowComments = localStorage.getItem('admin_allowComments') !== 'false';
 
         const bottomSections = [
             { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
-            ...(allowBookmarks ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
+            ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             ...(allowComments ? [{ id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' }] : []),
             { id: 'contact', label: 'CONTACT', type: 'link', comingSoon: true },
             { id: 'admin', label: 'ADMIN', type: 'link', url: './admin.html' }

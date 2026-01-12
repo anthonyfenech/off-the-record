@@ -39,6 +39,10 @@
         if (localStorage.getItem('admin_showCaptions') === 'true') {
             document.body.classList.add('show-captions');
         }
+        // Drafts: Bookmarks
+        if (localStorage.getItem('admin_draftBookmarks') === 'true') {
+            document.body.classList.add('bookmarks-enabled');
+        }
     </script>
     <!-- Header Navigation -->
     <header class="header" id="header">
