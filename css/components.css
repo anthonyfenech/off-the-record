@@ -482,6 +482,41 @@
     color: var(--color-text-tertiary);
 }
 
+/* ============================================
+   TABLE OF CONTENTS PAGE (Chapter 0)
+   ============================================ */
+
+.toc-page {
+    padding: var(--space-lg) 0;
+}
+
+.toc-entry {
+    margin: 0;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.toc-entry:first-child {
+    border-top: 1px solid var(--color-border);
+}
+
+.toc-link {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.toc-link:hover {
+    color: var(--color-accent);
+}
+
+.toc-link:active {
+    opacity: 0.7;
+}
+
 /* Loading state */
 .loading {
     display: flex;
