@@ -787,6 +787,26 @@
             color: #fff;
         }
 
+        .drafts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .draft-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 6px 10px;
+            background: #f5f5f5;
+            border-radius: 3px;
+            transition: background 0.15s;
+        }
+
+        .draft-link:hover {
+            background: #e5e5e5;
+        }
+
         .install-options {
             margin-top: 10px;
             padding: 10px;
@@ -977,6 +997,13 @@
                 <a href="./full-book.html">Full Book</a>
                 <a href="https://github.com/anthonyfenech/off-the-record" target="_blank">GitHub</a>
                 <span class="legend-btn" id="legendBtn">Legend</span>
+            </div>
+
+            <div class="toggle-group" style="margin-top: 20px;">
+                <div class="toggle-header">Drafts</div>
+                <div class="drafts-list">
+                    <a href="./drafts/bookmarks.html" class="draft-link">Bookmarks</a>
+                </div>
             </div>
 
             <div class="legend-dropdown" id="legendDropdown">
