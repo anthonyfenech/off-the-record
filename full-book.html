@@ -275,15 +275,16 @@
 
         // Render chapters
         const container = document.getElementById('content');
-        container.innerHTML = CHAPTERS.map((ch, i) => `
-            <article class="chapter-section" id="chapter-${ch.id}" data-chapter="${i}">
-                <header class="chapter-header">
-                    <h2 class="chapter-title">${ch.title}</h2>
-                </header>
+        container.innerHTML = CHAPTERS.map((ch, i) => {
+            // Hide header and stars for title page and TOC (like normal reader)
+            const isSpecial = ch.section === 'title' || ch.section === 'toc';
+            return `
+            <article class="chapter-section${isSpecial ? ' special-page' : ''}" id="chapter-${ch.id}" data-chapter="${i}">
+                ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}</h2></header>` : ''}
                 <div class="chapter-body">${ch.content}</div>
-                <div class="chapter-end">***</div>
+                ${!isSpecial ? '<div class="chapter-end">***</div>' : ''}
             </article>
-        `).join('');
+        `}).join('');
 
         // Handle hash navigation on load
         if (window.location.hash) {

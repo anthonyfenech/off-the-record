@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v264';
-const STATIC_CACHE = 'off-the-record-static-v264';
-const CONTENT_CACHE = 'off-the-record-content-v264';
+const CACHE_VERSION = 'v265';
+const STATIC_CACHE = 'off-the-record-static-v265';
+const CONTENT_CACHE = 'off-the-record-content-v265';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
