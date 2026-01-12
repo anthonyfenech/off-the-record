@@ -9,6 +9,26 @@ The full manuscript is being prepared. Each chapter explores a different aspect 
 This is placeholder text that will be replaced with the actual content.`.repeat(3);
 
 export const CHAPTERS = [
+    // TITLE PAGE
+    {
+        id: -1,
+        year: null,
+        section: 'title',
+        title: "",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="title-page">
+<div class="title-page-content">
+<h1 class="title-page-title">OFF-THE-RECORD</h1>
+</div>
+<div class="parental-advisory">
+<div class="pa-top">PARENTAL</div>
+<div class="pa-middle">ADVISORY</div>
+<div class="pa-bottom">EXPLICIT CONTENT</div>
+</div>
+</div>`,
+        wordCount: 0
+    },
     // TABLE OF CONTENTS
     {
         id: 0,
