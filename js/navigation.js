@@ -150,10 +150,17 @@ class Navigation {
 
     // Build the content inside BOOK (all chapters flat)
       buildBookContent(container) {
+          // Get front matter (title page, TOC)
+          const frontMatter = CHAPTERS.filter(c => c.section === 'title' || c.section === 'toc');
           const introChapters = getIntroChapters();
           const chaptersByYear = getChaptersByYear();
           const years = getSortedYears();
           const postscriptChapters = getPostscriptChapters();
+
+          // Add front matter (title page, TOC) first
+          frontMatter.forEach(chapter => {
+              container.appendChild(this.createChapterItem(chapter));
+          });
 
           // Add intro chapters directly
           introChapters.forEach(chapter => {
