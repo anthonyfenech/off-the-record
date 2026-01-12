@@ -496,6 +496,15 @@
     padding: var(--space-2xl) 0;
 }
 
+/* Hide chapter header border on title page */
+.chapter-body:has(.title-page) {
+    margin-top: 0;
+}
+
+.chapter:has(.title-page) .chapter-header {
+    display: none;
+}
+
 .title-page-content {
     flex: 1;
     display: flex;
@@ -514,7 +523,7 @@
 
 .parental-advisory {
     position: absolute;
-    bottom: var(--space-xl);
+    bottom: 90px;
     right: 0;
     width: 70px;
     border: 2px solid var(--color-text-primary);
