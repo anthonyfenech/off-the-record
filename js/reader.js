@@ -11,14 +11,12 @@ class Reader {
         this.currentChapter = 1;
         this.currentPage = 0;
         this.totalPages = 0;
-        this.pages = []; // Array of arrays, each containing paragraph elements for that page
+        this.pages = []; // Array of paragraph indices for each page
         this.paragraphElements = []; // All paragraph elements
         this.autoSaveInterval = null;
 
         // DOM elements
         this.chapterTitle = document.getElementById('chapterTitle');
-        this.chapterSubtitle = document.getElementById('chapterSubtitle');
-        this.chapterMeta = document.getElementById('chapterMeta');
         this.chapterBody = document.getElementById('chapterBody');
         this.continueReading = document.getElementById('continueReading');
         this.continueChapter = document.getElementById('continueChapter');
@@ -42,11 +40,6 @@ class Reader {
 
         // Initialize reading mode manager
         readingModeManager.init();
-
-        // Hide progress indicator if disabled in config
-        if (!CONFIG.showProgressIndicator && this.headerProgress) {
-            this.headerProgress.style.display = 'none';
-        }
 
         // Expose reader instance globally for other modules
         window.readerInstance = this;
@@ -287,7 +280,6 @@ class Reader {
                 }
 
                 this.showPage(this.currentPage);
-                this.updateProgressIndicators();
 
                 // Remove scroll listener in page mode
                 window.removeEventListener('scroll', this.handleScroll);
@@ -300,12 +292,9 @@ class Reader {
                 // Scroll to top
                 window.scrollTo({ top: 0, behavior: 'instant' });
 
-                // Add scroll listener for progress
+                // Add scroll listener for completion tracking
                 window.removeEventListener('scroll', this.handleScroll);
                 window.addEventListener('scroll', this.handleScroll);
-
-                // Update progress for scroll mode
-                this.updateScrollProgress();
             }
 
             // Dispatch event for other components
@@ -428,9 +417,6 @@ class Reader {
         // Scroll to top of content area
         window.scrollTo({ top: 0, behavior: 'instant' });
 
-        // Update progress
-        this.updateProgressIndicators();
-
         // Check for chapter completion
         if (pageIndex >= this.totalPages - 1 && !isChapterComplete(this.currentChapter)) {
             markChapterComplete(this.currentChapter);
@@ -514,11 +500,6 @@ class Reader {
         }
     }
 
-    // Update scroll progress (no-op, progress display removed)
-    updateScrollProgress() {
-        // Progress display removed
-    }
-
     // Throttle utility function
     throttle(func, wait) {
         let timeout = null;
@@ -558,11 +539,6 @@ class Reader {
                 }
             });
         });
-    }
-
-    // Update progress indicators (no-op, progress display removed)
-    updateProgressIndicators() {
-        // Progress display removed
     }
 
     // Auto-save progress

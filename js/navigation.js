@@ -1,11 +1,10 @@
 // Navigation - Chapter navigation and Table of Contents
 
-import { CHAPTERS, getChapterCount, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears, getFirstChapterId, getLastChapterId, getPreviousChapterId, getNextChapterId } from '../data/chapters.js';
+import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears, getPreviousChapterId, getNextChapterId } from '../data/chapters.js';
 import { reader } from './reader.js';
 import { isChapterComplete } from './storage.js';
 import { photoGallery } from './photoGallery.js';
 import { getAllGalleries } from '../data/photos.js';
-import { blogService } from './blog.js';
 import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
 import { readingModeManager } from './reading-mode.js';

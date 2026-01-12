@@ -411,13 +411,6 @@
     background-color: var(--color-background);
 }
 
-/* Standalone chapters (opening/closing) - not nested */
-.toc-chapter-standalone {
-    padding-left: var(--space-md);
-    background-color: var(--color-accent-light);
-    border-bottom: 1px solid var(--color-border);
-}
-
 .toc-chapter:hover {
     background-color: var(--color-accent-light);
 }
@@ -436,10 +429,6 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--space-md);
-}
-
-.toc-read-time {
-    display: none;
 }
 
 /* Chapter icon/indicator */
@@ -483,11 +472,6 @@
     align-items: center;
     gap: var(--space-md);
     flex-wrap: wrap;
-}
-
-.word-count {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-tertiary);
 }
 
 /* ============================================
