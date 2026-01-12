@@ -499,7 +499,7 @@
 /* Hide chapter header border on title page and TOC */
 .chapter-body:has(.title-page),
 .chapter-body:has(.toc-page) {
-    margin-top: 0;
+    margin-top: -20px;
 }
 
 .chapter:has(.title-page) .chapter-header,
