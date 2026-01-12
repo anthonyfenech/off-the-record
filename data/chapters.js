@@ -38,35 +38,35 @@ export const CHAPTERS = [
         subtitle: "",
         teaser: "Navigate to any chapter",
         content: `<div class="toc-page">
-<p class="toc-entry"><a href="./?chapter=1" class="toc-link">Author's Note</a></p>
-<p class="toc-entry"><a href="./?chapter=2" class="toc-link">Summer 2017</a></p>
-<p class="toc-entry"><a href="./?chapter=3" class="toc-link">Dream Job</a></p>
-<p class="toc-entry"><a href="./?chapter=4" class="toc-link">Scandal!</a></p>
-<p class="toc-entry"><a href="./?chapter=5" class="toc-link">Rookie Year</a></p>
-<p class="toc-entry"><a href="./?chapter=6" class="toc-link">Opening Day</a></p>
-<p class="toc-entry"><a href="./?chapter=7" class="toc-link">Midseason</a></p>
-<p class="toc-entry"><a href="./?chapter=8" class="toc-link">Trade Deadline</a></p>
-<p class="toc-entry"><a href="./?chapter=9" class="toc-link">Fire Drill</a></p>
-<p class="toc-entry"><a href="./?chapter=10" class="toc-link">Spring Training</a></p>
-<p class="toc-entry"><a href="./?chapter=11" class="toc-link">Hot Seat</a></p>
-<p class="toc-entry"><a href="./?chapter=12" class="toc-link">Pennant Race</a></p>
-<p class="toc-entry"><a href="./?chapter=13" class="toc-link">Wake-Up Call</a></p>
-<p class="toc-entry"><a href="./?chapter=14" class="toc-link">Prime-Time</a></p>
-<p class="toc-entry"><a href="./?chapter=15" class="toc-link">Fireworks</a></p>
-<p class="toc-entry"><a href="./?chapter=16" class="toc-link">Summer 2017, Part II</a></p>
-<p class="toc-entry"><a href="./?chapter=17" class="toc-link">World Series</a></p>
-<p class="toc-entry"><a href="./?chapter=18" class="toc-link">Awards Season</a></p>
-<p class="toc-entry"><a href="./?chapter=19" class="toc-link">Draft Day</a></p>
-<p class="toc-entry"><a href="./?chapter=20" class="toc-link">Cooperstown</a></p>
-<p class="toc-entry"><a href="./?chapter=21" class="toc-link">Burn Out</a></p>
-<p class="toc-entry"><a href="./?chapter=22" class="toc-link">Viva Las Vegas</a></p>
-<p class="toc-entry"><a href="./?chapter=23" class="toc-link">Globetrotting</a></p>
-<p class="toc-entry"><a href="./?chapter=24" class="toc-link">Road to Omaha</a></p>
-<p class="toc-entry"><a href="./?chapter=25" class="toc-link">A Letter to the Editor</a></p>
-<p class="toc-entry"><a href="./?chapter=26" class="toc-link">Unethical</a></p>
-<p class="toc-entry"><a href="./?chapter=27" class="toc-link">Bottom Nine</a></p>
-<p class="toc-entry"><a href="./?chapter=28" class="toc-link">Postscript</a></p>
-<p class="toc-entry"><a href="./?chapter=29" class="toc-link">Dedication</a></p>
+<p class="toc-entry"><a href="#chapter-1" class="toc-link">Author's Note</a></p>
+<p class="toc-entry"><a href="#chapter-2" class="toc-link">Summer 2017</a></p>
+<p class="toc-entry"><a href="#chapter-3" class="toc-link">Dream Job</a></p>
+<p class="toc-entry"><a href="#chapter-4" class="toc-link">Scandal!</a></p>
+<p class="toc-entry"><a href="#chapter-5" class="toc-link">Rookie Year</a></p>
+<p class="toc-entry"><a href="#chapter-6" class="toc-link">Opening Day</a></p>
+<p class="toc-entry"><a href="#chapter-7" class="toc-link">Midseason</a></p>
+<p class="toc-entry"><a href="#chapter-8" class="toc-link">Trade Deadline</a></p>
+<p class="toc-entry"><a href="#chapter-9" class="toc-link">Fire Drill</a></p>
+<p class="toc-entry"><a href="#chapter-10" class="toc-link">Spring Training</a></p>
+<p class="toc-entry"><a href="#chapter-11" class="toc-link">Hot Seat</a></p>
+<p class="toc-entry"><a href="#chapter-12" class="toc-link">Pennant Race</a></p>
+<p class="toc-entry"><a href="#chapter-13" class="toc-link">Wake-Up Call</a></p>
+<p class="toc-entry"><a href="#chapter-14" class="toc-link">Prime-Time</a></p>
+<p class="toc-entry"><a href="#chapter-15" class="toc-link">Fireworks</a></p>
+<p class="toc-entry"><a href="#chapter-16" class="toc-link">Summer 2017, Part II</a></p>
+<p class="toc-entry"><a href="#chapter-17" class="toc-link">World Series</a></p>
+<p class="toc-entry"><a href="#chapter-18" class="toc-link">Awards Season</a></p>
+<p class="toc-entry"><a href="#chapter-19" class="toc-link">Draft Day</a></p>
+<p class="toc-entry"><a href="#chapter-20" class="toc-link">Cooperstown</a></p>
+<p class="toc-entry"><a href="#chapter-21" class="toc-link">Burn Out</a></p>
+<p class="toc-entry"><a href="#chapter-22" class="toc-link">Viva Las Vegas</a></p>
+<p class="toc-entry"><a href="#chapter-23" class="toc-link">Globetrotting</a></p>
+<p class="toc-entry"><a href="#chapter-24" class="toc-link">Road to Omaha</a></p>
+<p class="toc-entry"><a href="#chapter-25" class="toc-link">A Letter to the Editor</a></p>
+<p class="toc-entry"><a href="#chapter-26" class="toc-link">Unethical</a></p>
+<p class="toc-entry"><a href="#chapter-27" class="toc-link">Bottom Nine</a></p>
+<p class="toc-entry"><a href="#chapter-28" class="toc-link">Postscript</a></p>
+<p class="toc-entry"><a href="#chapter-29" class="toc-link">Dedication</a></p>
 </div>`,
         wordCount: 0
     },

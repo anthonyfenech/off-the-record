@@ -607,7 +607,10 @@ class Reader {
     getChapterFromHash() {
         const hash = window.location.hash.replace('#chapter-', '');
         const chapterId = parseInt(hash);
-        return chapterId && chapterId >= 1 && chapterId <= CHAPTERS.length ? chapterId : null;
+        // Allow all valid chapter IDs (including -1 for title, 0 for TOC)
+        if (isNaN(chapterId)) return null;
+        const validIds = CHAPTERS.map(c => c.id);
+        return validIds.includes(chapterId) ? chapterId : null;
     }
 
     // Update URL hash
