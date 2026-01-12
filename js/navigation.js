@@ -110,7 +110,7 @@ class Navigation {
             ...(blogEnabled ? [{ id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' }] : []),
             ...(aboutEnabled ? [{ id: 'about', label: 'ABOUT', type: 'link', url: './about.html' }] : []),
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
-            { id: 'full-book', label: 'GO OFF', type: 'link', url: './binge-mode.html' }
+            { id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html' }
         ];
 
         topSections.forEach(section => {
