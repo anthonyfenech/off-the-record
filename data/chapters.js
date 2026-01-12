@@ -30,7 +30,7 @@ export const CHAPTERS = [
         id: 0,
         year: null,
         section: 'toc',
-        title: "",
+        title: "TABLE OF CONTENTS",
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
