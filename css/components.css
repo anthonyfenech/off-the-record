@@ -497,9 +497,12 @@
 }
 
 /* Hide chapter header border on title page and TOC */
-.chapter-body:has(.title-page),
-.chapter-body:has(.toc-page) {
+.chapter-body:has(.title-page) {
     margin-top: -20px;
+}
+
+.chapter-body:has(.toc-page) {
+    margin-top: -40px;
 }
 
 /* Hide clean toggle on homepage, title page, and TOC */
@@ -539,7 +542,7 @@ body:has(.toc-page) .clean-toggle {
 
 .parental-advisory {
     position: absolute;
-    bottom: 55px;
+    bottom: 45px;
     right: 0;
     width: 80px;
     height: auto;
