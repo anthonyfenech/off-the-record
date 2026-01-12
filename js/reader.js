@@ -166,21 +166,20 @@ class Reader {
             'credentials_01_199.jpg', 'credentials_01_201.jpg'
         ];
 
-        let carouselHTML = '';
+        let credentialHTML = '';
         if (showCarousel) {
-            // Shuffle array for random order
-            const shuffled = [...credentialImages].sort(() => Math.random() - 0.5);
-            carouselHTML = `
-                <div class="credential-carousel" data-images='${JSON.stringify(shuffled)}'>
-                    <img src="./assets/credentials/${shuffled[0]}" alt="Press Credential" class="credential-img active" onerror="this.style.display='none'">
-                    <img src="./assets/credentials/${shuffled[1]}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
+            // Pick one random credential
+            const randomCredential = credentialImages[Math.floor(Math.random() * credentialImages.length)];
+            credentialHTML = `
+                <div class="credential-display">
+                    <img src="./assets/credentials/${randomCredential}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
                 </div>
             `;
         }
 
         this.chapterBody.innerHTML = `
             <div class="home-content">
-                ${carouselHTML}
+                ${credentialHTML}
                 <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
             </div>
         `;
@@ -189,43 +188,10 @@ class Reader {
         const startBtn = document.getElementById('startReadingBtn');
         if (startBtn) {
             startBtn.addEventListener('click', () => {
-                // Stop carousel when leaving home
-                if (this.carouselInterval) {
-                    clearInterval(this.carouselInterval);
-                    this.carouselInterval = null;
-                }
                 this.currentPage = savedPage;
                 this.loadChapter(savedChapter);
                 this.hideContinueReading();
             });
-        }
-
-        // Start credential carousel rotation
-        if (showCarousel) {
-            const carousel = document.querySelector('.credential-carousel');
-            if (carousel) {
-                const images = JSON.parse(carousel.dataset.images);
-                const imgs = carousel.querySelectorAll('.credential-img');
-                let currentIndex = 0;
-
-                this.carouselInterval = setInterval(() => {
-                    // Fade out current
-                    imgs[0].classList.remove('active');
-                    imgs[1].classList.add('active');
-
-                    // After transition, swap and preload next
-                    setTimeout(() => {
-                        currentIndex = (currentIndex + 1) % images.length;
-                        const nextIndex = (currentIndex + 1) % images.length;
-
-                        // Swap: move img[1] to img[0] position, load next into img[1]
-                        imgs[0].src = imgs[1].src;
-                        imgs[0].classList.add('active');
-                        imgs[1].classList.remove('active');
-                        imgs[1].src = `./assets/credentials/${images[nextIndex]}`;
-                    }, 500);
-                }, 4000);
-            }
         }
 
         // Dispatch event
