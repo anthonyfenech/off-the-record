@@ -502,6 +502,13 @@
     margin-top: -20px;
 }
 
+/* Hide clean toggle on homepage, title page, and TOC */
+body:has(.home-content) .clean-toggle,
+body:has(.title-page) .clean-toggle,
+body:has(.toc-page) .clean-toggle {
+    visibility: hidden;
+}
+
 .chapter:has(.title-page) .chapter-header,
 .chapter:has(.toc-page) .chapter-header {
     display: none;
