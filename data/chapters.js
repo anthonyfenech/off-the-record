@@ -50,7 +50,7 @@ export const CHAPTERS = [
 <p class="toc-entry"><a href="#chapter-13" class="toc-link">Wake-Up Call</a></p>
 <p class="toc-entry"><a href="#chapter-14" class="toc-link">Prime-Time</a></p>
 <p class="toc-entry"><a href="#chapter-15" class="toc-link">Fireworks</a></p>
-<p class="toc-entry"><a href="#chapter-16" class="toc-link">Summer 2017, Part II</a></p>
+<p class="toc-entry"><a href="#chapter-16" class="toc-link">Summer 2017</a></p>
 <p class="toc-entry"><a href="#chapter-17" class="toc-link">World Series</a></p>
 <p class="toc-entry"><a href="#chapter-18" class="toc-link">Awards Season</a></p>
 <p class="toc-entry"><a href="#chapter-19" class="toc-link">Draft Day</a></p>
