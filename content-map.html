@@ -388,6 +388,13 @@
       margin-top: 4px;
     }
 
+    .floor-item-edition {
+      font-size: 9px;
+      color: #90caf9;
+      margin-top: 3px;
+      font-style: italic;
+    }
+
     .floor-item-delete {
       position: absolute;
       top: 5px;
@@ -574,23 +581,20 @@
       margin-bottom: 18px;
     }
 
-    .detail-stat {
-      background: #f5f5f5;
-      padding: 12px;
-      border-radius: 6px;
+    .detail-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .detail-field-half {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .detail-field input[type="number"] {
       text-align: center;
-    }
-
-    .detail-stat-value {
-      font-size: 20px;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .detail-stat-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      color: #666;
+      font-weight: 600;
     }
 
     .detail-actions {
@@ -776,14 +780,24 @@
       <input type="text" id="detailTitle">
     </div>
 
-    <div class="detail-stats">
-      <div class="detail-stat">
-        <div class="detail-stat-value" id="detailWords">0</div>
-        <div class="detail-stat-label">Words</div>
+    <div class="detail-row">
+      <div class="detail-field detail-field-half">
+        <label>Word Count</label>
+        <input type="number" id="detailWords" min="0" placeholder="0">
       </div>
-      <div class="detail-stat">
-        <div class="detail-stat-value" id="detailChars">0</div>
-        <div class="detail-stat-label">Characters</div>
+      <div class="detail-field detail-field-half">
+        <label>Edition</label>
+        <select id="detailEdition">
+          <option value="">— Select —</option>
+          <option value="original">Original Manuscript</option>
+          <option value="hardcover">Hardcover Edition</option>
+          <option value="paperback">Paperback Edition</option>
+          <option value="ebook">E-Book Edition</option>
+          <option value="audiobook">Audiobook Edition</option>
+          <option value="serialized">Serialized/Web</option>
+          <option value="directors-cut">Director's Cut</option>
+          <option value="new">New Material</option>
+        </select>
       </div>
     </div>
 
@@ -837,6 +851,26 @@
         <option value="off-topic">🚫 Off-Topic</option>
         <option value="save-later">🔄 Save for Later</option>
       </select>
+    </div>
+
+    <div id="editionField">
+      <label>Edition (optional)</label>
+      <select id="inputEdition">
+        <option value="">— None —</option>
+        <option value="original">Original Manuscript</option>
+        <option value="hardcover">Hardcover Edition</option>
+        <option value="paperback">Paperback Edition</option>
+        <option value="ebook">E-Book Edition</option>
+        <option value="audiobook">Audiobook Edition</option>
+        <option value="serialized">Serialized/Web</option>
+        <option value="directors-cut">Director's Cut</option>
+        <option value="new">New Material</option>
+      </select>
+    </div>
+
+    <div id="wordsField">
+      <label>Word Count</label>
+      <input type="number" id="inputWords" min="0" placeholder="0">
     </div>
 
     <div class="modal-buttons">
@@ -924,11 +958,11 @@ const DEMO_DATA = [
 ];
 
 const DEMO_FLOOR = [
-  { id: 100, title: 'Verlander rant (too personal)', category: 'needs-work', words: 890 },
-  { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long', words: 3400 },
-  { id: 102, title: 'Personal fishing trip', category: 'off-topic', words: 1200 },
-  { id: 103, title: 'Scherzer thank you letter', category: 'save-later', words: 450 },
-  { id: 104, title: 'Victor Martinez retirement', category: 'save-later', words: 1890 },
+  { id: 100, title: 'Verlander rant (too personal)', category: 'needs-work', words: 890, edition: 'original' },
+  { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long', words: 3400, edition: 'hardcover' },
+  { id: 102, title: 'Personal fishing trip', category: 'off-topic', words: 1200, edition: '' },
+  { id: 103, title: 'Scherzer thank you letter', category: 'save-later', words: 450, edition: 'directors-cut' },
+  { id: 104, title: 'Victor Martinez retirement', category: 'save-later', words: 1890, edition: 'paperback' },
 ];
 
 // ══════════════════════════════════════════════════════════
@@ -1042,6 +1076,17 @@ function renderFloor() {
     return;
   }
 
+  const editionLabels = {
+    'original': 'Original Manuscript',
+    'hardcover': 'Hardcover',
+    'paperback': 'Paperback',
+    'ebook': 'E-Book',
+    'audiobook': 'Audiobook',
+    'serialized': 'Serialized/Web',
+    'directors-cut': "Director's Cut",
+    'new': 'New Material'
+  };
+
   list.innerHTML = filtered.map(item => `
     <div class="floor-item" data-id="${item.id}" data-source="floor" draggable="true">
       <div class="floor-item-category ${item.category}">
@@ -1049,6 +1094,7 @@ function renderFloor() {
       </div>
       <div class="floor-item-title">${item.title}</div>
       <div class="floor-item-meta">${(item.words || 0).toLocaleString()} words</div>
+      ${item.edition ? `<div class="floor-item-edition">From: ${editionLabels[item.edition] || item.edition}</div>` : ''}
       <button class="floor-item-delete" data-action="delete-floor" title="Delete permanently">×</button>
     </div>
   `).join('');
@@ -1106,8 +1152,8 @@ function openDetail(id) {
   document.getElementById('detailTitle').value = item.title;
   document.getElementById('detailContent').value = item.content || '';
   document.getElementById('detailNotes').value = item.notes || '';
-  document.getElementById('detailWords').textContent = (item.words || 0).toLocaleString();
-  document.getElementById('detailChars').textContent = ((item.content || '').length).toLocaleString();
+  document.getElementById('detailWords').value = item.words || 0;
+  document.getElementById('detailEdition').value = item.edition || '';
 
   updatePaidToggle(item.paid);
 
@@ -1142,7 +1188,8 @@ function saveDetail() {
   item.title = document.getElementById('detailTitle').value.trim() || 'Untitled';
   item.content = document.getElementById('detailContent').value;
   item.notes = document.getElementById('detailNotes').value;
-  item.words = item.content.split(/\s+/).filter(w => w).length;
+  item.words = parseInt(document.getElementById('detailWords').value) || 0;
+  item.edition = document.getElementById('detailEdition').value;
 
   closeDetail();
   render();
@@ -1164,7 +1211,8 @@ function cutFromDetail() {
     category: 'save-later',
     words: item.words || 0,
     content: item.content,
-    notes: item.notes
+    notes: item.notes,
+    edition: item.edition
   });
 
   closeDetail();
@@ -1290,7 +1338,8 @@ document.addEventListener('drop', e => {
         category: 'save-later',
         words: item.words || 0,
         content: item.content,
-        notes: item.notes
+        notes: item.notes,
+        edition: item.edition
       });
     }
   }
@@ -1308,7 +1357,8 @@ document.addEventListener('drop', e => {
       paid: false,
       words: item.words || 0,
       content: item.content,
-      notes: item.notes
+      notes: item.notes,
+      edition: item.edition
     };
 
     if (targetItem && targetItem.dataset.source === 'book') {
@@ -1359,7 +1409,8 @@ document.addEventListener('click', e => {
           category: 'save-later',
           words: item.words || 0,
           content: item.content,
-          notes: item.notes
+          notes: item.notes,
+          edition: item.edition
         });
         render();
         showToast('Moved to Cutting Room Floor');
@@ -1430,9 +1481,13 @@ document.getElementById('addSectionBtn').addEventListener('click', () => {
   modalMode = 'section';
   document.getElementById('modalTitle').textContent = 'Add Section';
   document.getElementById('categoryField').style.display = 'none';
+  document.getElementById('editionField').style.display = 'block';
+  document.getElementById('wordsField').style.display = 'block';
   document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
   document.getElementById('inputContent').value = '';
+  document.getElementById('inputEdition').value = '';
+  document.getElementById('inputWords').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
 });
@@ -1441,6 +1496,8 @@ document.getElementById('addBreakBtn').addEventListener('click', () => {
   modalMode = 'break';
   document.getElementById('modalTitle').textContent = 'Add Chapter Break';
   document.getElementById('categoryField').style.display = 'none';
+  document.getElementById('editionField').style.display = 'none';
+  document.getElementById('wordsField').style.display = 'none';
   document.getElementById('contentField').style.display = 'none';
   document.getElementById('inputTitle').value = '';
   document.getElementById('modal').classList.add('open');
@@ -1451,9 +1508,13 @@ document.getElementById('addFloorBtn').addEventListener('click', () => {
   modalMode = 'floor';
   document.getElementById('modalTitle').textContent = 'Add to Cutting Room Floor';
   document.getElementById('categoryField').style.display = 'block';
+  document.getElementById('editionField').style.display = 'block';
+  document.getElementById('wordsField').style.display = 'block';
   document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
   document.getElementById('inputContent').value = '';
+  document.getElementById('inputEdition').value = '';
+  document.getElementById('inputWords').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
 });
@@ -1475,15 +1536,17 @@ document.getElementById('modalSave').addEventListener('click', () => {
   ) + 1;
 
   const content = document.getElementById('inputContent')?.value || '';
-  const words = content.split(/\s+/).filter(w => w).length;
+  const edition = document.getElementById('inputEdition')?.value || '';
+  const manualWords = parseInt(document.getElementById('inputWords')?.value) || 0;
+  const words = manualWords || content.split(/\s+/).filter(w => w).length;
 
   if (modalMode === 'section') {
-    bookItems.push({ id: maxId, type: 'section', title, paid: false, words, content });
+    bookItems.push({ id: maxId, type: 'section', title, paid: false, words, content, edition });
   } else if (modalMode === 'break') {
     bookItems.push({ id: maxId, type: 'break', title });
   } else if (modalMode === 'floor') {
     const category = document.getElementById('inputCategory').value;
-    floorItems.push({ id: maxId, title, category, words, content });
+    floorItems.push({ id: maxId, title, category, words, content, edition });
   }
 
   document.getElementById('modal').classList.remove('open');
