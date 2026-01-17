@@ -285,6 +285,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.freep.com/story/sports/mlb/tigers/2016/04/01/detroit-tigers-justin-verlander-kate-upton/82514894/',
         placeholder: false
     },
+    'verlander-kate-bingo': {
+        type: 'link',
+        emoji: '📰',
+        label: 'Article',
+        caption: 'Justin Verlander\'s happiness away from baseball includes girlfriend Kate Upton (Detroit Free Press)',
+        url: 'https://www.freep.com/story/sports/mlb/tigers/2016/04/03/detroit-tigers-justin-verlander/82578802/',
+        placeholder: false
+    },
     'ernie-harwell-talk': {
         type: 'audio',
         emoji: '🔴',
@@ -569,14 +577,6 @@ export const MEDIA_CONTENT = {
     },
 
     // Chapter 12 - Pennant Race
-    'talkin-tigers-drew': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: 'Talkin Tigers - Me and Drew',
-        src: './assets/12-pennant-race/Talkin\' Tigers me and Drew.jpg',
-        placeholder: false
-    },
     'european-vacation': {
         type: 'photo',
         emoji: '📷',

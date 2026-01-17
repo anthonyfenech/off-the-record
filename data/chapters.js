@@ -1908,7 +1908,7 @@ export const CHAPTERS = [
 
 <p>The sound becomes more familiar the closer I get—Víctor Martínez is in the batting cage.</p>
 
-<p>Martínez walks out afterward: Towel on shoulder, bats in hand, sweat-soaked face. Walks straight by me. No eye contact. Something is wrong. I trail happy-go-luckily along, and Martínez becomes a barking dog. <span class="media-emoji" data-media-id="victor-barking-dog">📷</span></p>
+<p>Martínez walks out afterward: Towel on shoulder, bats in hand, sweat-soaked face. Walks straight by me. No eye contact. Something is wrong. I trail happy-go-luckily along, and Martínez becomes a barking dog.</p>
 
 <p>"Go away! Go! Go!"</p>
 
@@ -1916,7 +1916,7 @@ export const CHAPTERS = [
 
 <p>"I saw what you were saying on TV. No power, nothing this, nothing that. Always talking shit."</p>
 
-<p>Over the winter, I went on MLB Network and was asked whether the Tigers could count on his power swing returning after he hit only eleven home runs last season. "No, they can't," I said. "Víctor is about to be thirty-seven, and he's shown signs of decline. While they can count on Víctor hitting for a high average, I'm not sure the power will return."</p>
+<p>Over the winter, I went on MLB Network and was asked whether the Tigers could count on his power swing returning after he hit only eleven home runs last season. <span class="media-emoji" data-media-id="victor-barking-dog">📷</span> "No, they can't," I said. "Víctor is about to be thirty-seven, and he's shown signs of decline. While they can count on Víctor hitting for a high average, I'm not sure the power will return."</p>
 
 <p>Martínez isn't in the mood for my defense. "Away!" he shouts. As Víctor walks off, a security guard runs up.</p>
 
@@ -1998,7 +1998,7 @@ export const CHAPTERS = [
 
 <p>"Sounds good," his father says. "How about tomorrow morning?"</p>
 
-<p>When I talk to his parents around the corner of the clubhouse during batting practice the next day, I ask them what story about him hasn't been told. Soon enough, they're talking about how he's happier these days, how the biggest difference in his life has been his girlfriend, and I'm calling out bingo.</p>
+<p>When I talk to his parents around the corner of the clubhouse during batting practice the next day, I ask them what story about him hasn't been told. Soon enough, they're talking about how he's happier these days, how the biggest difference in his life has been his girlfriend, and I'm calling out bingo. <span class="media-emoji" data-media-id="verlander-kate-bingo">📰</span></p>
 
 <p>&nbsp;</p>
 
