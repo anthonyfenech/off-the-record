@@ -205,6 +205,13 @@
     .box-meta {
       font-size: 10px;
       color: #999;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .box-meta span {
+      white-space: nowrap;
     }
 
     .box-delete {
@@ -592,9 +599,18 @@
       margin-bottom: 0;
     }
 
+    .detail-field-third {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
     .detail-field input[type="number"] {
       text-align: center;
       font-weight: 600;
+    }
+
+    .detail-field input[type="date"] {
+      font-size: 13px;
     }
 
     .detail-actions {
@@ -781,11 +797,15 @@
     </div>
 
     <div class="detail-row">
-      <div class="detail-field detail-field-half">
+      <div class="detail-field detail-field-third">
         <label>Word Count</label>
         <input type="number" id="detailWords" min="0" placeholder="0">
       </div>
-      <div class="detail-field detail-field-half">
+      <div class="detail-field detail-field-third">
+        <label>Date</label>
+        <input type="date" id="detailDate">
+      </div>
+      <div class="detail-field detail-field-third">
         <label>Edition</label>
         <select id="detailEdition">
           <option value="">— Select —</option>
@@ -873,6 +893,11 @@
       <input type="number" id="inputWords" min="0" placeholder="0">
     </div>
 
+    <div id="dateField">
+      <label>Date</label>
+      <input type="date" id="inputDate">
+    </div>
+
     <div class="modal-buttons">
       <button class="btn btn-secondary" id="modalCancel">Cancel</button>
       <button class="btn btn-section" id="modalSave">Add</button>
@@ -898,15 +923,15 @@ let currentDetailId = null;
 const DEMO_DATA = [
   // Chapter 1
   { id: 1, type: 'break', title: 'Chapter 1: The Interview' },
-  { id: 2, type: 'section', title: 'First Meeting with Dombrowski', paid: false, words: 1240, content: 'The hallway smelled like fresh paint and anxiety...' },
-  { id: 3, type: 'section', title: 'Leyland\'s Office', paid: false, words: 890, content: 'Jim Leyland sat behind a desk cluttered with...' },
-  { id: 4, type: 'section', title: 'The Job Offer', paid: true, words: 1560, content: 'Three weeks later, my phone rang at 6am...' },
+  { id: 2, type: 'section', title: 'First Meeting with Dombrowski', paid: false, words: 1240, date: '2014-11-15', content: 'The hallway smelled like fresh paint and anxiety...' },
+  { id: 3, type: 'section', title: 'Leyland\'s Office', paid: false, words: 890, date: '2014-11-15', content: 'Jim Leyland sat behind a desk cluttered with...' },
+  { id: 4, type: 'section', title: 'The Job Offer', paid: true, words: 1560, date: '2014-12-03', content: 'Three weeks later, my phone rang at 6am...' },
 
   // Chapter 2
   { id: 5, type: 'break', title: 'Chapter 2: Rookie Year' },
-  { id: 6, type: 'section', title: 'First Day in the Press Box', paid: false, words: 1120, content: 'Comerica Park looked different from up here...' },
-  { id: 7, type: 'section', title: 'Cabrera\'s Batting Practice', paid: false, words: 980, content: 'The sound of Miguel\'s bat was different...' },
-  { id: 8, type: 'section', title: 'Verlander\'s Cold Shoulder', paid: true, words: 1340, content: 'Justin didn\'t acknowledge my existence for three weeks...' },
+  { id: 6, type: 'section', title: 'First Day in the Press Box', paid: false, words: 1120, date: '2015-04-06', content: 'Comerica Park looked different from up here...' },
+  { id: 7, type: 'section', title: 'Cabrera\'s Batting Practice', paid: false, words: 980, date: '2015-04-07', content: 'The sound of Miguel\'s bat was different...' },
+  { id: 8, type: 'section', title: 'Verlander\'s Cold Shoulder', paid: true, words: 1340, date: '2015-04-20', content: 'Justin didn\'t acknowledge my existence for three weeks...' },
 
   // Chapter 3
   { id: 9, type: 'break', title: 'Chapter 3: Spring Training' },
@@ -958,12 +983,23 @@ const DEMO_DATA = [
 ];
 
 const DEMO_FLOOR = [
-  { id: 100, title: 'Verlander rant (too personal)', category: 'needs-work', words: 890, edition: 'original' },
-  { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long', words: 3400, edition: 'hardcover' },
+  { id: 100, title: 'Verlander rant (too personal)', category: 'needs-work', words: 890, date: '2019-08-23', edition: 'original' },
+  { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long', words: 3400, date: '2021-08-15', edition: 'hardcover' },
   { id: 102, title: 'Personal fishing trip', category: 'off-topic', words: 1200, edition: '' },
-  { id: 103, title: 'Scherzer thank you letter', category: 'save-later', words: 450, edition: 'directors-cut' },
-  { id: 104, title: 'Victor Martinez retirement', category: 'save-later', words: 1890, edition: 'paperback' },
+  { id: 103, title: 'Scherzer thank you letter', category: 'save-later', words: 450, date: '2014-07-30', edition: 'directors-cut' },
+  { id: 104, title: 'Victor Martinez retirement', category: 'save-later', words: 1890, date: '2018-09-22', edition: 'paperback' },
 ];
+
+// ══════════════════════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════════════════════
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+}
 
 // ══════════════════════════════════════════════════════════
 // LOAD / SAVE
@@ -1041,6 +1077,7 @@ function renderBook() {
     } else {
       sectionNum++;
       const words = item.words || 0;
+      const dateStr = item.date ? formatDate(item.date) : '';
       return `
         <div class="box ${item.paid ? 'paid' : ''}" data-id="${item.id}" data-source="book" draggable="true">
           <div class="box-header">
@@ -1048,7 +1085,10 @@ function renderBook() {
             <span class="box-lock">${item.paid ? '🔒' : '🔓'}</span>
           </div>
           <div class="box-title">${item.title}</div>
-          <div class="box-meta">${words.toLocaleString()} words</div>
+          <div class="box-meta">
+            <span>${words.toLocaleString()} words</span>
+            ${dateStr ? `<span>📅 ${dateStr}</span>` : ''}
+          </div>
           <button class="box-delete" data-action="cut" title="Send to Cutting Room">✂️</button>
         </div>
       `;
@@ -1087,17 +1127,19 @@ function renderFloor() {
     'new': 'New Material'
   };
 
-  list.innerHTML = filtered.map(item => `
+  list.innerHTML = filtered.map(item => {
+    const dateStr = item.date ? formatDate(item.date) : '';
+    return `
     <div class="floor-item" data-id="${item.id}" data-source="floor" draggable="true">
       <div class="floor-item-category ${item.category}">
         ${categoryIcons[item.category] || ''} ${item.category.replace('-', ' ')}
       </div>
       <div class="floor-item-title">${item.title}</div>
-      <div class="floor-item-meta">${(item.words || 0).toLocaleString()} words</div>
+      <div class="floor-item-meta">${(item.words || 0).toLocaleString()} words${dateStr ? ` · ${dateStr}` : ''}</div>
       ${item.edition ? `<div class="floor-item-edition">From: ${editionLabels[item.edition] || item.edition}</div>` : ''}
       <button class="floor-item-delete" data-action="delete-floor" title="Delete permanently">×</button>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 function updateStats() {
@@ -1153,6 +1195,7 @@ function openDetail(id) {
   document.getElementById('detailContent').value = item.content || '';
   document.getElementById('detailNotes').value = item.notes || '';
   document.getElementById('detailWords').value = item.words || 0;
+  document.getElementById('detailDate').value = item.date || '';
   document.getElementById('detailEdition').value = item.edition || '';
 
   updatePaidToggle(item.paid);
@@ -1189,6 +1232,7 @@ function saveDetail() {
   item.content = document.getElementById('detailContent').value;
   item.notes = document.getElementById('detailNotes').value;
   item.words = parseInt(document.getElementById('detailWords').value) || 0;
+  item.date = document.getElementById('detailDate').value;
   item.edition = document.getElementById('detailEdition').value;
 
   closeDetail();
@@ -1210,6 +1254,7 @@ function cutFromDetail() {
     title: item.title,
     category: 'save-later',
     words: item.words || 0,
+    date: item.date,
     content: item.content,
     notes: item.notes,
     edition: item.edition
@@ -1337,6 +1382,7 @@ document.addEventListener('drop', e => {
         title: item.title,
         category: 'save-later',
         words: item.words || 0,
+        date: item.date,
         content: item.content,
         notes: item.notes,
         edition: item.edition
@@ -1356,6 +1402,7 @@ document.addEventListener('drop', e => {
       title: item.title,
       paid: false,
       words: item.words || 0,
+      date: item.date,
       content: item.content,
       notes: item.notes,
       edition: item.edition
@@ -1408,6 +1455,7 @@ document.addEventListener('click', e => {
           title: item.title,
           category: 'save-later',
           words: item.words || 0,
+          date: item.date,
           content: item.content,
           notes: item.notes,
           edition: item.edition
@@ -1483,11 +1531,13 @@ document.getElementById('addSectionBtn').addEventListener('click', () => {
   document.getElementById('categoryField').style.display = 'none';
   document.getElementById('editionField').style.display = 'block';
   document.getElementById('wordsField').style.display = 'block';
+  document.getElementById('dateField').style.display = 'block';
   document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
   document.getElementById('inputContent').value = '';
   document.getElementById('inputEdition').value = '';
   document.getElementById('inputWords').value = '';
+  document.getElementById('inputDate').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
 });
@@ -1498,6 +1548,7 @@ document.getElementById('addBreakBtn').addEventListener('click', () => {
   document.getElementById('categoryField').style.display = 'none';
   document.getElementById('editionField').style.display = 'none';
   document.getElementById('wordsField').style.display = 'none';
+  document.getElementById('dateField').style.display = 'none';
   document.getElementById('contentField').style.display = 'none';
   document.getElementById('inputTitle').value = '';
   document.getElementById('modal').classList.add('open');
@@ -1510,11 +1561,13 @@ document.getElementById('addFloorBtn').addEventListener('click', () => {
   document.getElementById('categoryField').style.display = 'block';
   document.getElementById('editionField').style.display = 'block';
   document.getElementById('wordsField').style.display = 'block';
+  document.getElementById('dateField').style.display = 'block';
   document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
   document.getElementById('inputContent').value = '';
   document.getElementById('inputEdition').value = '';
   document.getElementById('inputWords').value = '';
+  document.getElementById('inputDate').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
 });
@@ -1537,16 +1590,17 @@ document.getElementById('modalSave').addEventListener('click', () => {
 
   const content = document.getElementById('inputContent')?.value || '';
   const edition = document.getElementById('inputEdition')?.value || '';
+  const date = document.getElementById('inputDate')?.value || '';
   const manualWords = parseInt(document.getElementById('inputWords')?.value) || 0;
   const words = manualWords || content.split(/\s+/).filter(w => w).length;
 
   if (modalMode === 'section') {
-    bookItems.push({ id: maxId, type: 'section', title, paid: false, words, content, edition });
+    bookItems.push({ id: maxId, type: 'section', title, paid: false, words, date, content, edition });
   } else if (modalMode === 'break') {
     bookItems.push({ id: maxId, type: 'break', title });
   } else if (modalMode === 'floor') {
     const category = document.getElementById('inputCategory').value;
-    floorItems.push({ id: maxId, title, category, words, content, edition });
+    floorItems.push({ id: maxId, title, category, words, date, content, edition });
   }
 
   document.getElementById('modal').classList.remove('open');
