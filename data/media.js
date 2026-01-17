@@ -673,7 +673,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'We were chillen right before - February 21, 2018',
-        src: './assets/nu-get-images/2-21-18 we were chillen right before.jpg',
+        src: './assets/18-awards-season/2-21-18 we were chillen right before.jpg',
         placeholder: false
     },
     'only-in-tiger-town-2-24-18': {
@@ -681,7 +681,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Only in Tiger Town - February 24, 2018',
-        src: './assets/nu-get-images/2-24-18 only in tiger town.jpg',
+        src: './assets/18-awards-season/2-24-18 only in tiger town.jpg',
         placeholder: false
     },
     'have-to-be-better-5-25-15': {
@@ -793,7 +793,7 @@ export const MEDIA_CONTENT = {
         emoji: '🏆',
         label: 'Award',
         caption: 'APSE Top 10',
-        src: './assets/nu-get-images/APSE Top 10.jpg',
+        src: './assets/18-awards-season/APSE Top 10.jpg',
         placeholder: false
     },
     'andrew-cab-2020': {
