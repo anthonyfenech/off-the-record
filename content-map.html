@@ -19,8 +19,7 @@
        ════════════════════════════════════════════════════ */
 
     .layout {
-      display: grid;
-      grid-template-columns: 300px 1fr;
+      display: block;
       min-height: 100vh;
     }
 
@@ -40,6 +39,36 @@
       margin-bottom: 15px;
       padding-bottom: 15px;
       border-bottom: 2px solid #333;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .hamburger:hover {
+      background: #ddd;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #333;
+      border-radius: 1px;
     }
 
     .header h1 {
@@ -314,15 +343,44 @@
     }
 
     /* ════════════════════════════════════════════════════
-       CUTTING ROOM FLOOR (Right Sidebar)
+       CUTTING ROOM FLOOR (Slide-out Sidebar)
        ════════════════════════════════════════════════════ */
 
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+      z-index: 998;
+    }
+
+    .sidebar-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
     .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 100%;
       background: #263238;
       color: white;
       padding: 15px;
       overflow-y: auto;
-      border-right: 3px solid #37474f;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      z-index: 999;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
     }
 
     .sidebar-header {
@@ -338,6 +396,23 @@
       font-size: 14px;
       letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    .sidebar-close {
+      background: none;
+      border: none;
+      color: #90a4ae;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .sidebar-close:hover {
+      background: rgba(255,255,255,0.1);
+      color: white;
     }
 
     /* Category Filter */
@@ -788,37 +863,48 @@
 </head>
 <body>
 
-<div class="layout">
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <!-- CUTTING ROOM FLOOR SIDEBAR -->
-  <div class="sidebar">
-    <div class="sidebar-header">
-      <h2>✂️ Cutting Room</h2>
-    </div>
-
-    <div class="category-filter">
-      <select id="floorFilter">
-        <option value="all">All Categories</option>
-        <option value="needs-work">⚠️ Needs Work</option>
-        <option value="too-long">📏 Too Long</option>
-        <option value="off-topic">🚫 Off-Topic</option>
-        <option value="save-later">🔄 Save for Later</option>
-      </select>
-    </div>
-
-    <div class="floor-list" id="floorList"></div>
-
-    <button class="btn-add-floor" id="addFloorBtn">+ Add to Floor</button>
-
-    <div class="floor-stats">
-      <span>Floor items: <strong id="floorCount">0</strong></span>
-    </div>
+<!-- CUTTING ROOM FLOOR SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>✂️ Cutting Room</h2>
+    <button class="sidebar-close" id="sidebarClose">×</button>
   </div>
+
+  <div class="category-filter">
+    <select id="floorFilter">
+      <option value="all">All Categories</option>
+      <option value="needs-work">⚠️ Needs Work</option>
+      <option value="too-long">📏 Too Long</option>
+      <option value="off-topic">🚫 Off-Topic</option>
+      <option value="save-later">🔄 Save for Later</option>
+    </select>
+  </div>
+
+  <div class="floor-list" id="floorList"></div>
+
+  <button class="btn-add-floor" id="addFloorBtn">+ Add to Floor</button>
+
+  <div class="floor-stats">
+    <span>Floor items: <strong id="floorCount">0</strong></span>
+  </div>
+</div>
+
+<div class="layout">
 
   <!-- MAIN PANEL -->
   <div class="main-panel">
     <div class="header">
-      <h1>CONTENT MAP</h1>
+      <div class="header-left">
+        <button class="hamburger" id="hamburgerBtn" title="Cutting Room">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h1>CONTENT MAP</h1>
+      </div>
       <div class="header-buttons">
         <button class="btn btn-undo" id="undoBtn" disabled title="Undo (Ctrl+Z)">↩</button>
         <button class="btn btn-save" id="saveBtn" disabled title="Save (Ctrl+S)">💾 SAVE</button>
@@ -2054,6 +2140,24 @@ window.onbeforeunload = () => hasChanges ? true : null;
 // ══════════════════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════
+// SIDEBAR TOGGLE
+// ══════════════════════════════════════════════════════════
+
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+document.getElementById('hamburgerBtn').addEventListener('click', openSidebar);
+document.getElementById('sidebarClose').addEventListener('click', closeSidebar);
+document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
 
 loadData();
 </script>
