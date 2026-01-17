@@ -761,7 +761,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'April 17, 2019',
-        src: './assets/nu-get-images/2019:04:17 6-24-19 PM.JPG',
+        src: './assets/23-globetrotting/2019:04:17 6-24-19 PM.JPG',
         placeholder: false
     },
     'photo-2019-04-24': {
@@ -769,7 +769,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'April 24, 2019',
-        src: './assets/nu-get-images/2019:04:24 10-10-31 AM.JPG',
+        src: './assets/23-globetrotting/2019:04:24 10-10-31 AM.JPG',
         placeholder: false
     },
     'photo-2019-08-21': {
