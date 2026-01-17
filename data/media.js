@@ -617,7 +617,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎙️',
         label: 'Audio',
         caption: 'Verlander Injury Discussion - September 12, 2018',
-        src: './assets/audio-clips/verlander-injury-9-12-18.mp3',
+        src: './assets/21-burn-out/verlander-injury-9-12-18.mp3',
         placeholder: false
     },
     'verlander-blow-off-8-20-19': {
