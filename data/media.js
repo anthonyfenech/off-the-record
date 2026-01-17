@@ -165,6 +165,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.latimes.com/sports/angels/story/2023-07-31/bubba-harkins-defamation-lawsuit-angels-mlb-settled',
         placeholder: false
     },
+    'talkin-tigers-drew': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Talkin\' Tigers podcast with Drew Sharp',
+        src: './assets/13-wake-up-call/Talkin\' Tigers me and Drew.jpg',
+        placeholder: false
+    },
     'winter-meetings-2014': {
         type: 'photo',
         emoji: '📷',

@@ -2518,7 +2518,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>October 21</em>—</span>Some sad news to share today.</p>
 
-<p>Longtime <em>Free Press</em> sports columnist Drew Sharp died yesterday. I met Sharp eleven years ago, fresh out of high school working my first internship at Detroit's AM-dial sports station. Sharp occasionally filled in as co-host. During commercial breaks I'd ask Sharp about sports writing. More recently, he was my co-host on the Talkin' Tigers podcast.</p>
+<p>Longtime <em>Free Press</em> sports columnist Drew Sharp died yesterday. I met Sharp eleven years ago, fresh out of high school working my first internship at Detroit's AM-dial sports station. Sharp occasionally filled in as co-host. During commercial breaks I'd ask Sharp about sports writing. More recently, he was my co-host on the Talkin' Tigers podcast. <span class="media-emoji" data-media-id="talkin-tigers-drew">📷</span></p>
 
 <p>By then, the native Detroiter had become quite comfortable as a local lightning rod, often taking the pessimist perspective, toying with fans' fragile feelings. I know—I hated Sharp. I crossed Xs through his column sig. But I always found myself reading what he wrote—and underlining words I didn't know.</p>
 
