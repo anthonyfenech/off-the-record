@@ -201,7 +201,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Anthony Fenech',
+        caption: 'Internet Stalker article: Anthony Fenech is a Fucking Moron',
         src: './assets/04-scandal/anthony-fenech-moron.jpg',
         placeholder: false
     },
