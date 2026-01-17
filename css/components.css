@@ -501,7 +501,7 @@
 /* Hide chapter header border on title page and TOC */
 .chapter-body:has(.title-page),
 .chapter-body:has(.toc-page) {
-    margin-top: -20px;
+    margin-top: -60px;
 }
 
 /* Hide clean toggle on homepage, title page, and TOC */
