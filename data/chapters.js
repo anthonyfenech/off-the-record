@@ -556,9 +556,7 @@ export const CHAPTERS = [
 
 <p class="no-indent"><em>"My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writers job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made."</em></p>
 
-<p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. He's digging up Facebook messages from college and posting them, too.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span></p>
+<p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. He's digging up Facebook messages from college and posting them, too. <span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span></p>
 
 <p>So let me come clean: Months away from my twenty-first birthday, I got a DUI after flipping my PT Cruiser on the freeway. I was drinking on an empty stomach, changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
 
@@ -1194,9 +1192,7 @@ export const CHAPTERS = [
 
 <p>No, it's not another prank—that's what I thought at first, too. Email address checked out; I found the producer on LinkedIn.</p>
 
-<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="sportscenter-studio">📷</span></p>`,
+<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>! <span class="media-emoji" data-media-id="sportscenter-studio">📷</span></p>`,
         wordCount: 1650
     },
     {
@@ -2914,9 +2910,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline"><em>February 16</em>—</span>Justin Verlander likes my tweet this morning, a picture of the waffle machine.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="verlander-likes-waffles">📷</span></p>
+<p class="has-dateline no-indent"><span class="dateline"><em>February 16</em>—</span>Justin Verlander likes my tweet this morning, a picture of the waffle machine. <span class="media-emoji" data-media-id="verlander-likes-waffles">📷</span></p>
 
 <p>"Good morning, beautiful."</p>
 
@@ -3689,9 +3683,7 @@ export const CHAPTERS = [
             <p>"Is it done?"</p>
             <p>"Yes, the deal is done."</p>
             <p>"Thank you," and nothing more.</p>
-            <p>The call lasts eleven seconds. I click here and WIN.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="avila-verlander-trade">📷</span></p>
+            <p>The call lasts eleven seconds. I click here and WIN. <span class="media-emoji" data-media-id="avila-verlander-trade">📷</span></p>
 
             <p>My name crawls across the bright red breaking news bar on the TV screen. According to Anthony Fenech.</p>
 
@@ -5289,9 +5281,7 @@ export const CHAPTERS = [
 
 <p><em>"When it finally crashed off the mesh attached to the left field foul pole, one step after another the reaction unfurled: from Carlton Fisk's convulsive leap to John Kiley's booming of the 'Hallelujah Chorus' to the wearing off of the numbness to the outcry that echoed across the cold New England morning.</em></p>
 
-<p><em>"At 12:34 <span class="small-caps">A.M.</span>, in the 12th inning, Fisk's histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series."</em></p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="gammons-fisk-lede">📰</span></p>
+<p><em>"At 12:34 <span class="small-caps">A.M.</span>, in the 12th inning, Fisk's histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series."</em> <span class="media-emoji" data-media-id="gammons-fisk-lede">📰</span></p>
 
             <p>It can give you chills.</p>
             <p>Today's game gets rained out. Doubleheader tomorrow—bad news for anyone who has an interview at the <em>Boston Globe</em>.</p>
