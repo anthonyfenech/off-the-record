@@ -121,8 +121,8 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'July 31, 2019',
-        src: './assets/26-unethical/26-unethical-trade-deadline-dugout.jpg',
+        caption: 'July 31, 2019 - Tigers dugout at Angel Stadium',
+        src: './assets/to-go/july-31-2019-angel-stadium.jpg',
         placeholder: false
     },
     'tale-of-tape': {
