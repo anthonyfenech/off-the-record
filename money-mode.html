@@ -22,7 +22,6 @@
             padding: 90px 20px 40px;
         }
 
-        /* Sticky header */
         .header {
             position: fixed;
             top: 0;
@@ -36,7 +35,7 @@
         .header-content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             height: 69px;
             padding: 0 20px;
             max-width: 800px;
@@ -46,20 +45,6 @@
         .header-logo-img {
             height: 28px;
             width: auto;
-        }
-
-        .back-to-reader {
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text-primary);
-            transition: opacity 0.15s ease;
-        }
-
-        .back-to-reader:hover {
-            opacity: 0.7;
         }
 
         .book {
@@ -74,188 +59,130 @@
             border-bottom: 1px solid var(--color-border);
         }
 
-        /* Status badge */
-        .status-badge {
-            font-family: 'Courier New', monospace;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .status-badge.locked {
-            background: #333;
-            color: #fff;
-        }
-
-        .status-badge.unlocked {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: #fff;
-        }
-
-        /* ====== INLINE LOCKED SECTIONS ====== */
-
-        .locked-section {
-            position: relative;
-            margin: 1.5em 0;
-            padding: 1.5em;
-            background: #f5f5f5;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        /* Locked state - content blurred with lock icon */
-        body.locked .locked-section {
-            color: transparent;
-            text-shadow: 0 0 8px rgba(0,0,0,0.3);
-            user-select: none;
-            cursor: not-allowed;
-        }
-
-        body.locked .locked-section::before {
-            content: '🔒';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            z-index: 2;
-            opacity: 0.7;
-        }
-
-        body.locked .locked-section p {
-            filter: blur(4px);
-        }
-
-        /* Unlocked state - normal display */
-        body.unlocked .locked-section {
-            background: #f0fff4;
-            border-left: 3px solid #38ef7d;
-        }
-
-        body.unlocked .locked-section::before {
-            content: none;
-        }
-
-        body.unlocked .locked-section p {
-            filter: none;
-        }
-
-        /* Demo content styling */
-        .demo-content p {
+        /* Content styling */
+        .content p {
             text-indent: 1.5em;
             margin-bottom: 0;
             text-align: justify;
         }
 
-        .demo-content p:first-child {
+        .content p:first-child,
+        .content .locked-section + p {
             text-indent: 0;
+        }
+
+        /* ====== LOCKED SECTIONS ====== */
+        .locked-section {
+            position: relative;
+            margin: 1.5em 0;
+            padding: 2em 1.5em;
+            background: #2a2a2a;
+            border-radius: 4px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .locked-section .lock-icon {
+            font-size: 20px;
+            opacity: 0.6;
         }
     </style>
 </head>
-<body class="locked">
-    <!-- Header -->
+<body>
     <header class="header">
         <div class="header-content">
-            <a href="./" class="back-to-reader" aria-label="Back to reader">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </a>
             <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
-            <span class="status-badge locked" id="statusBadge">Locked</span>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="book">
         <article class="chapter-section">
             <header class="chapter-header">
-                <h2 class="chapter-title">DEMO: INLINE LOCKED SECTIONS</h2>
+                <h2 class="chapter-title">THE WINTER MEETINGS</h2>
             </header>
 
-            <div class="demo-content">
+            <div class="content">
                 <p>SAN DIEGO, <em>December 8</em>—At the winter meetings, hundreds of reporters gather in hotel ballrooms chasing scoops. We're usually cooped up in the media room, with a main stage where press conferences are held, trades announced, and newly inducted Hall of Famers talk about being speechless.</p>
 
                 <p>I walk with a purpose, pretending I am a somebody. I stop Ken Rosenthal, as short in person as advertised on Twitter (5-foot-4½), introducing myself. Nice guy.</p>
 
-                <p>Each evening, the beat writers are summoned for a media session with the general manager, held in the team's suite. There are five of us, sitting in chairs, while general manager Dave Dombrowski sits at a high-top table on the other side of the room, flanked by assistant Al Avila.</p>
+                <p>Each evening, the beat writers are summoned for a media session with the general manager, held in the team's suite. There are five of us, sitting in chairs, while general manager Dave Dombrowski sits at a high-top table on the other side of the room, flanked by assistant Al Avila. Ron Colangelo and Aileen Villarreal (Tigers PR) stand around with on-site executives and scouts.</p>
 
-                <!-- LOCKED SECTION -->
                 <div class="locked-section">
-                    <p><em>December 10</em>—Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers' suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout.</p>
-                    <p>Embarrassingly, I don't remember our conversation from last night. We talk a bit more.</p>
-                    <p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan.</p>
+                    <span class="lock-icon">🔒</span>
                 </div>
 
                 <p>I'm startled when I see the gray-haired guy from the flight here. We make eye contact again.</p>
 
                 <p>After the session, I realize in horror that I didn't turn my recorder on before I placed it on the table—I have no audio. My competitors have pity, sharing their tape so I'm able to write my stories.</p>
 
-                <!-- ANOTHER LOCKED SECTION -->
+                <p><em>December 10</em>—Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers' suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout.</p>
+
+                <p>Embarrassingly, I don't remember our conversation from last night. We talk a bit more.</p>
+
                 <div class="locked-section">
-                    <p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject.</p>
-                    <p>Put another way: Heading into my first year as beat writer of the team, it's pretty much guaranteed I'm going to write a good story about Nathan, who is one of the team's respected veterans.</p>
+                    <span class="lock-icon">🔒</span>
+                </div>
+
+                <p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan.</p>
+
+                <p>I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans' trust. I suggest I could visit Nathan while training for the season. Pepe buys in.</p>
+
+                <p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject.</p>
+
+                <div class="locked-section">
+                    <span class="lock-icon">🔒</span>
                 </div>
 
                 <p><em>December 11</em>—My mouth is dry when I wake up. I get a glass of water and check Twitter. Calamity! My team is close to a trade, reportedly sending a prospect shortstop to the Cincinnati Reds for righty starter Alfredo Simon.</p>
 
                 <p>Dave Dombrowski is known for making trades. And by the time I'm nearly finished whipping up a story for the first trade, Dombrowski is reportedly close to making another one—and this one is bigger.</p>
 
-                <!-- ANOTHER LOCKED SECTION -->
+                <p>According to Twitter, the Tigers are acquiring outfielder Yoenis Céspedes from the Boston Red Sox. Helplessly, I communicate with the sports desk. Should I re-do the first story to include both trades?</p>
+
+                <p>I file the Simon story and start on the Céspedes story. But then I hear about a third trade: the Tigers are sending starting pitcher Rick Porcello to Boston in exchange for Céspedes. I don't know what to make of this.</p>
+
                 <div class="locked-section">
-                    <p>This is where some cutting room floor content would go. Maybe a story that didn't make the final cut, or some additional context that adds depth to the narrative.</p>
-                    <p>These locked sections can be sprinkled throughout each chapter, adding premium value for readers who want the full uncut experience.</p>
+                    <span class="lock-icon">🔒</span>
                 </div>
 
-                <p>According to Twitter, the Tigers are acquiring outfielder Yoenis Céspedes from the Boston Red Sox. Helplessly, I communicate with the sports desk. Should I re-do the first story to include both trades?</p>
+                <p>I rush downstairs to the media workroom, where a press conference is scheduled. Dombrowski addresses the media, explaining his rationale. I'm in the front row taking notes, trying not to look like I'm about to pass out from the hangover.</p>
+
+                <p>The rest of the week goes similarly. More trades, more press conferences, more late nights at the hotel bar. By the time I fly home, I'm exhausted but exhilarated. This is what I signed up for.</p>
+
+                <div class="locked-section">
+                    <span class="lock-icon">🔒</span>
+                </div>
+
+                <p>Back in Detroit, I start preparing for spring training. There's still months to go, but there's always something to write about—contract negotiations, injury updates, front office moves. The offseason is never really an offseason.</p>
+
+                <p>I spend Christmas with my family, trying to explain what I do for a living. My grandmother still doesn't understand why I can't just write about the Lions instead. "They're more popular," she says. I don't have the heart to tell her that's exactly why I chose baseball.</p>
+
+                <p>New Year's Eve comes and goes. I'm on my couch, watching the ball drop, thinking about the season ahead. In a few weeks, pitchers and catchers report. The real work begins.</p>
+
+                <div class="locked-section">
+                    <span class="lock-icon">🔒</span>
+                </div>
+
+                <p>January is quiet. I write a few feature stories, make some phone calls, start planning my spring training schedule. Lakeland, Florida, awaits. I've never been, but everyone tells me it's like stepping back in time—a small town where the Tigers have trained since 1934.</p>
+
+                <p>I book my flights, reserve a rental car, find a cheap hotel. The newspaper's travel budget is modest, so I'll be sharing a room with another reporter for part of the trip. It's not glamorous, but it's the job.</p>
+
+                <p>The weeks crawl by. I check Twitter obsessively, hoping for news. A minor signing here, a roster move there. Nothing earth-shattering. The hot stove has cooled.</p>
+
+                <div class="locked-section">
+                    <span class="lock-icon">🔒</span>
+                </div>
+
+                <p>Finally, in mid-February, I pack my bags. Notebooks, pens, laptop, recorder, chargers, sunscreen. I'm ready. Or at least I think I am. Nothing can really prepare you for your first spring training as a beat writer.</p>
+
+                <p>The flight to Tampa is uneventful. I rent a car and drive east across the state, through orange groves and past billboards advertising personal injury lawyers. Florida is exactly what I expected and nothing like it at the same time.</p>
+
+                <p>I pull into Lakeland as the sun is setting. The town is small, quiet, unremarkable. But somewhere nearby, a ballpark is waiting. Tomorrow, baseball begins again.</p>
             </div>
         </article>
     </main>
-
-    <script>
-        // Simple lock/unlock toggle
-        const isUnlocked = localStorage.getItem('moneyMode_unlocked') === 'true';
-        const statusBadge = document.getElementById('statusBadge');
-
-        function setUnlocked(unlocked) {
-            localStorage.setItem('moneyMode_unlocked', unlocked);
-            if (unlocked) {
-                document.body.classList.remove('locked');
-                document.body.classList.add('unlocked');
-                statusBadge.textContent = 'Unlocked';
-                statusBadge.classList.remove('locked');
-                statusBadge.classList.add('unlocked');
-            } else {
-                document.body.classList.remove('unlocked');
-                document.body.classList.add('locked');
-                statusBadge.textContent = 'Locked';
-                statusBadge.classList.remove('unlocked');
-                statusBadge.classList.add('locked');
-            }
-        }
-
-        // Initialize
-        setUnlocked(isUnlocked);
-
-        // Toggle on badge click
-        statusBadge.addEventListener('click', () => {
-            setUnlocked(!document.body.classList.contains('unlocked'));
-        });
-
-        // Ctrl+U to toggle
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'u') {
-                e.preventDefault();
-                setUnlocked(!document.body.classList.contains('unlocked'));
-            }
-        });
-    </script>
 </body>
 </html>
