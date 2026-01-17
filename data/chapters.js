@@ -594,7 +594,7 @@ export const CHAPTERS = [
 
 <p>Embarrassingly, I don't remember our conversation from last night. We talk a bit more.</p>
 
-<p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans' trust. I suggest I could visit Nathan while training for the season. Pepe buys in. <span class="media-emoji" data-media-id="joe-nathan-story">🔗</span></p>
+<p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans' trust. I suggest I could visit Nathan while training for the season. Pepe buys in. <span class="media-emoji" data-media-id="joe-nathan-story">📰</span></p>
 
 <p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject. Put another way: Heading into my first year as beat writer of the team, it's pretty much guaranteed I'm going to write a good story about Nathan, who is one of the team's respected veterans.</p>
 
