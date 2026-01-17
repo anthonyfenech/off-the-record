@@ -117,8 +117,8 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
       min-height: 200px;
       padding: 10px;
       background: #f5f5f5;
@@ -140,8 +140,8 @@
       background: white;
       border: 2px solid #ddd;
       border-radius: 6px;
-      padding: 10px;
-      min-height: 90px;
+      padding: 8px;
+      min-height: 75px;
       position: relative;
       cursor: grab;
       transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
@@ -272,15 +272,14 @@
        ════════════════════════════════════════════════════ */
 
     .box.chapter-break {
-      grid-column: span 3;
       background: #37474f;
       border-color: #263238;
       color: white;
-      min-height: 45px;
+      min-height: 75px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 30px;
+      padding: 8px;
     }
 
     .box.chapter-break .box-header { display: none; }
@@ -289,10 +288,14 @@
     .box.chapter-break .box-title {
       color: white;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: 10px;
       margin: 0;
+      text-align: center;
+      line-height: 1.4;
+      white-space: normal;
+      overflow: visible;
     }
 
     .box.chapter-break .box-delete {
@@ -743,6 +746,12 @@
        RESPONSIVE
        ════════════════════════════════════════════════════ */
 
+    @media (max-width: 1100px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 900px) {
       .layout {
         grid-template-columns: 1fr;
@@ -756,19 +765,11 @@
       .grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .box.chapter-break {
-        grid-column: span 2;
-      }
     }
 
     @media (max-width: 500px) {
       .grid {
         grid-template-columns: 1fr;
-      }
-
-      .box.chapter-break {
-        grid-column: span 1;
       }
     }
   </style>
@@ -1161,7 +1162,7 @@ function renderBook() {
     if (item.type === 'break') {
       return `
         <div class="box chapter-break" data-id="${item.id}" data-source="book" draggable="true">
-          <div class="box-title">═══ ${title} ═══</div>
+          <div class="box-title">${title}</div>
           <button class="box-delete" data-action="delete" title="Remove">×</button>
         </div>
       `;
