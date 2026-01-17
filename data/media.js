@@ -572,6 +572,24 @@ export const MEDIA_CONTENT = {
         placeholder: false
     },
 
+    // Chapter 7 - Midseason
+    'laptop-busted': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'My laptop after the foul ball - screen spider-webbed',
+        src: './assets/07-midseason/laptop-busted.jpg',
+        placeholder: false
+    },
+    'foul-ball-fox-commentary': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'FOX Sports 1 broadcast - Foul ball play-by-play',
+        src: './assets/07-midseason/foul-ball-fox-commentary.mp4',
+        placeholder: false
+    },
+
     // Chapter 8 - Trade Deadline
     'email-mozeliak': {
         type: 'photo',
@@ -646,6 +664,16 @@ export const MEDIA_CONTENT = {
         placeholder: false
     },
 
+    // Chapter 11 - Hot Seat
+    'max-after-20': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Max Scherzer at press conference after 20-strikeout game',
+        src: './assets/11-hot-seat/max-after-20.jpg',
+        placeholder: false
+    },
+
     // Chapter 16 - Summer 2017 II
     'avila-verlander-trade': {
         type: 'photo',
@@ -653,6 +681,14 @@ export const MEDIA_CONTENT = {
         label: 'Photo',
         caption: 'Al Avila - Verlander Trade',
         src: './assets/16-summer-2017-ii/19-draft-day-al-avila-verlander-trade.jpg',
+        placeholder: false
+    },
+    'first-time-ever': {
+        type: 'audio',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: 'Jim Leyland - First time in a clubhouse recording',
+        src: './assets/16-summer-2017-ii/first-time-ever.mp3',
         placeholder: false
     },
 
