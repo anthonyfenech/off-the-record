@@ -1162,7 +1162,7 @@ export const CHAPTERS = [
 
 <p>"If you're wondering what the crowd was reacting to—that ball went into the press box, and I believe it was Anthony Fenech from the <em>Free Press</em> on the Tigers beat who had the bad end of that ball.</p>
 
-<p>"I don't know if he caught it or not. I don't know if it knocked him down. He isn't in his seat anymore—he has since left the third row. So, I guess we'll find out soon enough."</p>
+<p>"I don't know if he caught it or not. I don't know if it knocked him down. He isn't in his seat anymore—he has since left the third row. So, I guess we'll find out soon enough." <span class="media-emoji" data-media-id="foul-ball-fox-commentary">🎬</span></p>
 
 <p>Dave Dombrowski passes me in the hallway.</p>
 
