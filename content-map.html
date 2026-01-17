@@ -149,7 +149,7 @@
       display: grid;
       grid-template-rows: repeat(50, auto);
       grid-auto-flow: column;
-      grid-auto-columns: 180px;
+      grid-auto-columns: 150px;
       gap: 4px;
       min-height: 200px;
       padding: 6px;
@@ -1461,6 +1461,21 @@ function formatDate(dateStr) {
   return `${month}/${day}/${year}`;
 }
 
+function abbreviateMonths(str) {
+  return str
+    .replace(/\bJANUARY\b/gi, 'JAN')
+    .replace(/\bFEBRUARY\b/gi, 'FEB')
+    .replace(/\bMARCH\b/gi, 'MAR')
+    .replace(/\bAPRIL\b/gi, 'APR')
+    .replace(/\bJUNE\b/gi, 'JUN')
+    .replace(/\bJULY\b/gi, 'JUL')
+    .replace(/\bAUGUST\b/gi, 'AUG')
+    .replace(/\bSEPTEMBER\b/gi, 'SEP')
+    .replace(/\bOCTOBER\b/gi, 'OCT')
+    .replace(/\bNOVEMBER\b/gi, 'NOV')
+    .replace(/\bDECEMBER\b/gi, 'DEC');
+}
+
 // ══════════════════════════════════════════════════════════
 // LOAD / SAVE
 // ══════════════════════════════════════════════════════════
@@ -1552,13 +1567,14 @@ function renderBook() {
       `;
     } else {
       // Section box
+      const shortTitle = abbreviateMonths(title);
       return `
         <div class="box ${item.paid ? 'paid' : ''}" data-id="${item.id}" data-source="book" draggable="true">
           ${item.excerpt ? '<span class="box-excerpt-badge">Excerpt</span>' : ''}
           <div class="box-header">
             <div class="box-title-row">
               <span class="box-number">${itemNum}</span>
-              <span class="box-title">${title}</span>
+              <span class="box-title">${shortTitle}</span>
             </div>
             ${item.paid ? '<span class="box-lock">🔒</span>' : ''}
           </div>
