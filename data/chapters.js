@@ -1938,7 +1938,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>February 23</em>—</span>There is a lighter feel in Lakeland this spring. Although Al Avila worked alongside Dave Dombrowski for almost two decades, in his first spring training on the job, Avila is running his ship in stark contrast to the past. Under Dombrowski, the front-office staff was buttoned up—working diligently but not without fear. He was the boss, not a friend, and club-media relations were separated by a thick black line.</p>
 
-<p>Tonight, Avila invites the Tiger Beat to a barbeque. We arrive at a huge house and find out the living room is half of a basketball court. <span class="media-emoji" data-media-id="avila-house-zillow">📷</span> Wood floors, lines on the court and a professional-grade hoop suspended from the ceiling. The court opens into the kitchen, where there are plenty of finger foods, drinks of all kinds, and a huge party sub from Publix.</p>
+<p>Tonight, Avila invites the Tiger Beat to a barbeque. We arrive at a huge house and find out the living room is half of a basketball court. <span class="media-emoji" data-media-id="lakeland-bbq">📷</span> Wood floors, lines on the court and a professional-grade hoop suspended from the ceiling. The court opens into the kitchen, where there are plenty of finger foods, drinks of all kinds, and a huge party sub from Publix.</p>
 
 <p>Ball Writers, front officers and PR. Breaking bread, boozing and playing basketball under the same roof. A three-on-three game begins. I'm not playing. I'm sitting at the table with two Tigers Guys, texting beat mate George Sipple: "They're having a BBQ. It's one big social experiment. Awkward as hell. But it might just be me, though."</p>
 
@@ -7147,7 +7147,7 @@ export const CHAPTERS = [
 
 <p>"This is where I grew up. Where I really established myself as a major leaguer and really taking it to the next level with all the guys here, and that's what happens when you win, It makes you want to find everything you can do for the team. Winning's the ultimate motivator."</p>
 
-<p>Scherzer thanked former pitching coach Jeff Jones for teaching him a curveball and credited the Tigers' winning atmosphere for cultivating his drive. When Scherzer left town in January 2015, the righty and his wife Erica May-Scherzer took out a full-page advertisement in the <em>Free Press</em>, saying, "Thank you to Mr. Ilitch and the Tigers organization, teammates and most of all the Detroit fans."</p>
+<p>Scherzer thanked former pitching coach Jeff Jones for teaching him a curveball and credited the Tigers' winning atmosphere for cultivating his drive. When Scherzer left town in January 2015, the righty and his wife Erica May-Scherzer took out a full-page advertisement in the <em>Free Press</em>, saying, "Thank you to Mr. Ilitch and the Tigers organization, teammates and most of all the Detroit fans." <span class="media-emoji" data-media-id="scherzer-thank-you">📷</span></p>
 
 <p>The Tigers had acquired Scherzer from Arizona in 2009, three years after the Diamondbacks selected him in the first round.</p>
 

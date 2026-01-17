@@ -628,6 +628,16 @@ export const MEDIA_CONTENT = {
         placeholder: false
     },
 
+    // Chapter 10 - Spring Training
+    'lakeland-bbq': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Al Avila\'s Lakeland house - basketball court living room',
+        src: './assets/10-spring-training/lakeland-bbq.png',
+        placeholder: false
+    },
+
     // Chapter 12 - Pennant Race
     'european-vacation': {
         type: 'photo',
@@ -799,6 +809,14 @@ export const MEDIA_CONTENT = {
     },
 
     // Chapter 27 - Postscript
+    'scherzer-thank-you': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Max Scherzer thank you ad in the Detroit Free Press',
+        src: './assets/27-postscript/scherzer-thank-you.png',
+        placeholder: false
+    },
     'tito-big-series-2019': {
         type: 'photo',
         emoji: '📷',
