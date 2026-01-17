@@ -801,7 +801,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Andrew Cab 2020',
-        src: './assets/nu-get-images/Andrew Cab 2020.png',
+        src: './assets/27-postscript/Andrew Cab 2020.png',
         placeholder: false
     },
     'andrew-cab-2020-2': {
@@ -809,7 +809,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Andrew Cab 2020 (2)',
-        src: './assets/nu-get-images/Andrew Cab 2020 2.png',
+        src: './assets/27-postscript/Andrew Cab 2020 2.png',
         placeholder: false
     },
     'andrew-cab-2020-3': {
@@ -817,7 +817,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Andrew Cab 2020 (3)',
-        src: './assets/nu-get-images/Andrew Cab 2020 3.png',
+        src: './assets/27-postscript/Andrew Cab 2020 3.png',
         placeholder: false
     },
     'april-2-2019': {
