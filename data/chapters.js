@@ -1156,7 +1156,7 @@ export const CHAPTERS = [
 
 <p>It is fast approaching, upwards of eighty-five mph, spinning like a programmed missile. It is a sneak attack, a foul ball I never see coming, not until it—<em>SMACK!</em>—makes a direct hit, causing a first-row explosion of Mountain Dew and popcorn.</p>
 
-<p>The crowd gasps. Pop everywhere, popcorn all over the carpet. My computer is a casualty, screen spider-webbed, currently sitting in a box of rice—the laptop that might've saved my life.</p>
+<p>The crowd gasps. Pop everywhere, popcorn all over the carpet. My computer is a casualty, screen spider-webbed, currently sitting in a box of rice—the laptop that might've saved my life. <span class="media-emoji" data-media-id="laptop-busted">📷</span></p>
 
 <p>On the FOX Sports 1 broadcast, the analyst provides play-by-play.</p>
 
