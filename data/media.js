@@ -881,7 +881,7 @@ export const MEDIA_CONTENT = {
         emoji: '🐦',
         label: 'Tweet',
         caption: 'Verlander Trade Tweet',
-        src: './assets/nu-get-images/verlander trade tweet.jpg',
+        src: './assets/16-summer-2017-ii/verlander trade tweet.jpg',
         placeholder: false
     }
 };
