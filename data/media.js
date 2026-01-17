@@ -865,7 +865,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Fenech Middle Finger',
-        src: './assets/nu-get-images/fenech middle finger.jpeg',
+        src: './assets/13-wake-up-call/fenech middle finger.jpeg',
         placeholder: false
     },
     'minnesota-selfie-zimm': {
