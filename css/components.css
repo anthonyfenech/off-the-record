@@ -821,7 +821,7 @@ body.clean-read .media-emoji {
     padding: var(--padding-mobile);
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    transition: opacity 150ms ease, visibility 150ms ease;
 }
 
 .media-modal-overlay.active {
@@ -839,8 +839,8 @@ body.clean-read .media-emoji {
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-md);
-    transform: scale(0.9);
-    transition: transform var(--transition-normal);
+    transform: scale(0.95);
+    transition: transform 150ms ease;
     position: relative;
 }
 
@@ -1348,7 +1348,7 @@ body.show-captions .media-modal-caption {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    transition: opacity 150ms ease, visibility 150ms ease;
 }
 
 .photo-modal-overlay.active {
