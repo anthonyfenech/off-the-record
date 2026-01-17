@@ -29,6 +29,14 @@ export const MEDIA_CONTENT = {
         src: './assets/27-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
         placeholder: false
     },
+    'fantasy-camp-scrum': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'Fantasy Camp Scrum',
+        src: './assets/27-postscript/FANTASY CAMP SCRUM.mp4',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',
