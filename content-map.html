@@ -1534,12 +1534,13 @@ function renderBook() {
 
     if (item.type === 'break') {
       // Chapter box - same structure as section, inverted colors
+      const chapterTitle = title.replace(/^Chapter\s+\d+:\s*/i, '');
       return `
         <div class="box chapter-break" data-id="${item.id}" data-source="book" draggable="true">
           <div class="box-header">
             <div class="box-title-row">
               <span class="box-number">${itemNum}</span>
-              <span class="box-title">${title}</span>
+              <span class="box-title">${chapterTitle}</span>
             </div>
           </div>
           <div class="box-meta">
