@@ -125,6 +125,22 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/july-31-2019-angel-stadium.jpg',
         placeholder: false
     },
+    'winter-meetings-2014': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Winter Meetings - December 7, 2014',
+        src: './assets/to-go/12-7-14 winter meetings.jpg',
+        placeholder: false
+    },
+    'anthony-fenech-moron': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Anthony Fenech',
+        src: './assets/to-go/anthony-fenech-moron.jpg',
+        placeholder: false
+    },
     'tale-of-tape': {
         type: 'photo',
         emoji: '📷',
