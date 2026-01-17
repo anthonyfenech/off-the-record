@@ -805,6 +805,7 @@ button:focus-visible {
     cursor: pointer;
     font-family: var(--font-mono);
     font-size: 10px;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #000;
