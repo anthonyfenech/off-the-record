@@ -1184,7 +1184,7 @@ export const CHAPTERS = [
 
 <p>My jaw drops. I am on satellite radio with Mad Dog, and he just hit me with that?</p>
 
-<p>Hanging up, I realize I've been hood-winked. It won't take long for Internet Stalker's sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now.</p>
+<p>Hanging up, I realize I've been hood-winked. It won't take long for Internet Stalker's sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now. <span class="media-emoji" data-media-id="">🔴</span></p>
 
 <p>&nbsp;</p>
 
