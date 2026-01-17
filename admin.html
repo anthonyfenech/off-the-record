@@ -1015,6 +1015,13 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">Boss Button</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="allowBossButton" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
                 <div class="toggle-subheader">Media</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Captions</span>
@@ -1576,6 +1583,7 @@
                 showCaptions: localStorage.getItem('admin_showCaptions') === 'true',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
+                allowBossButton: localStorage.getItem('admin_disableBossButton') !== 'true',
                 draftComments: localStorage.getItem('admin_draftComments') === 'true',
                 draftContact: localStorage.getItem('admin_draftContact') === 'true',
                 draftBlog: localStorage.getItem('admin_draftBlog') === 'true',
@@ -1610,6 +1618,7 @@
             document.getElementById('showCaptions').checked = settings.showCaptions;
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
+            document.getElementById('allowBossButton').checked = settings.allowBossButton;
             document.getElementById('draftComments').checked = settings.draftComments;
             document.getElementById('draftContact').checked = settings.draftContact;
             document.getElementById('draftBlog').checked = settings.draftBlog;
@@ -1641,6 +1650,11 @@
                 document.getElementById(id).addEventListener('change', (e) => {
                     saveSetting(id, e.target.checked);
                 });
+            });
+
+            // Boss Button toggle (inverted logic: checked=enabled, unchecked=disabled)
+            document.getElementById('allowBossButton').addEventListener('change', (e) => {
+                localStorage.setItem('admin_disableBossButton', !e.target.checked);
             });
 
             // Install prompt text inputs

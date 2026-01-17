@@ -43,6 +43,10 @@
         if (localStorage.getItem('admin_draftBookmarks') === 'true') {
             document.body.classList.add('bookmarks-enabled');
         }
+        // Boss Button: Enable by default (can be disabled via admin)
+        if (localStorage.getItem('admin_disableBossButton') !== 'true') {
+            document.body.classList.add('boss-button-enabled');
+        }
     </script>
     <!-- Header Navigation -->
     <header class="header" id="header">
@@ -56,6 +60,10 @@
             </button>
             <a href="./" class="header-logo" id="homeLink"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
             <button class="clean-toggle" id="cleanToggle" title="Toggle media icons">Clean</button>
+            <button class="boss-btn" id="bossBtn" aria-label="Boss Button - Press ESC to hide content" title="Press ESC or click to hide (Boss Button)">
+                <span class="boss-btn-icon">📊</span>
+                <span>Boss</span>
+            </button>
         </div>
     </header>
 
@@ -108,6 +116,279 @@
     <!-- Overlay for TOC -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- Mobile Boss Button -->
+    <button class="boss-btn-mobile" id="bossBtnMobile" aria-label="Boss Button - Tap to hide content" title="Tap to hide (Boss Button)">
+        📊
+    </button>
+
+    <!-- Fake Screens for Boss Button -->
+    <!-- Work Mode: Detroit Tigers Analytics Dashboard -->
+    <div id="fake-screen-work" class="fake-screen fake-screen-work">
+        <div class="fake-screen-content">
+            <h2>Detroit Tigers 2019 Season Performance Analysis</h2>
+            <h3>Q3 Performance Review - Sports Division</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>AVG</th>
+                        <th>HR</th>
+                        <th>RBI</th>
+                        <th>OPS</th>
+                        <th>WAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Miguel Cabrera</td>
+                        <td>.282</td>
+                        <td>12</td>
+                        <td>59</td>
+                        <td>.728</td>
+                        <td>0.3</td>
+                    </tr>
+                    <tr>
+                        <td>Nicholas Castellanos</td>
+                        <td>.273</td>
+                        <td>11</td>
+                        <td>37</td>
+                        <td>.773</td>
+                        <td>1.2</td>
+                    </tr>
+                    <tr>
+                        <td>Brandon Dixon</td>
+                        <td>.248</td>
+                        <td>7</td>
+                        <td>23</td>
+                        <td>.705</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr>
+                        <td>Jeimer Candelario</td>
+                        <td>.203</td>
+                        <td>8</td>
+                        <td>32</td>
+                        <td>.612</td>
+                        <td>-0.4</td>
+                    </tr>
+                    <tr>
+                        <td>Niko Goodrum</td>
+                        <td>.248</td>
+                        <td>12</td>
+                        <td>45</td>
+                        <td>.715</td>
+                        <td>1.0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Win/Loss Projection Model</h4>
+            <p>
+                Based on current performance metrics and historical data analysis, the Tigers' projected
+                win total for the 2019 season ranges between 45-50 games. Key factors influencing this
+                projection include:
+            </p>
+            <ul>
+                <li>Pitching staff ERA trending at 5.12 (ranked 28th in MLB)</li>
+                <li>Team batting average of .243 (ranked 24th in MLB)</li>
+                <li>Run differential of -142 through 100 games</li>
+                <li>Bullpen reliability index at 42% (league average: 58%)</li>
+            </ul>
+
+            <h4 style="margin-top: 30px;">Attendance & Revenue Metrics</h4>
+            <p>
+                Average attendance per game: 18,456 (capacity 41,083)<br>
+                Q3 revenue projections: $42.3M (down 8% YoY)<br>
+                Season ticket renewals: 67% (down from 74% previous season)
+            </p>
+
+            <h4 style="margin-top: 30px;">Pitching Staff Analysis</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pitcher</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>ERA</th>
+                        <th>IP</th>
+                        <th>K</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matthew Boyd</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>4.56</td>
+                        <td>185.1</td>
+                        <td>238</td>
+                    </tr>
+                    <tr>
+                        <td>Spencer Turnbull</td>
+                        <td>3</td>
+                        <td>14</td>
+                        <td>4.61</td>
+                        <td>148.1</td>
+                        <td>146</td>
+                    </tr>
+                    <tr>
+                        <td>Daniel Norris</td>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>4.49</td>
+                        <td>144.2</td>
+                        <td>125</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Journalism Mode: Media Ethics Research -->
+    <div id="fake-screen-journalism" class="fake-screen fake-screen-journalism">
+        <div class="fake-screen-content" style="max-width: 800px;">
+            <h2>Professional Development - Sports Media Standards</h2>
+            <h3>Media Ethics in Sports Journalism - Research Notes</h3>
+
+            <h4>Key Principles of Sports Beat Reporting</h4>
+            <ul>
+                <li><strong>Objectivity and Independence:</strong> Maintaining critical distance from teams and athletes covered</li>
+                <li><strong>Source Protection:</strong> Safeguarding confidential sources and honoring off-the-record agreements</li>
+                <li><strong>Attribution Standards:</strong> Proper sourcing and verification of information before publication</li>
+                <li><strong>Conflict of Interest:</strong> Avoiding personal relationships that compromise reporting integrity</li>
+                <li><strong>Social Media Ethics:</strong> Professional conduct on platforms while maintaining journalistic standards</li>
+                <li><strong>Access vs. Independence:</strong> Balancing team access needs with editorial independence</li>
+            </ul>
+
+            <div class="callout-box">
+                <h4>AP Style Considerations for Sports Writing</h4>
+                <ul>
+                    <li>Game scores: Home team listed second (Tigers 5, Yankees 3)</li>
+                    <li>Player statistics formatting in game stories</li>
+                    <li>Use of quotes vs. paraphrasing in feature stories</li>
+                    <li>Dateline conventions for road game coverage</li>
+                    <li>Capitalization rules for team names and positions</li>
+                </ul>
+            </div>
+
+            <h4>Essential Reading & Citations</h4>
+            <p class="citations">
+                • Society of Professional Journalists Code of Ethics (2014 revision)<br>
+                • "Sports Journalism: A Practical Introduction" by Phil Andrews (2nd Edition)<br>
+                • APSE (Associated Press Sports Editors) Best Practices Guidelines<br>
+                • "Field of Vision: A Manual for Sports Journalism" by Kelvin MacKenzie<br>
+                • Poynter Institute: "Covering Sports in the Digital Age" (online course materials)<br>
+                • Columbia Journalism Review: "The State of Sports Media" (March 2019)<br>
+                • Reynolds Journalism Institute: Beat Reporting Standards
+            </p>
+
+            <h4>Beat Reporter Responsibilities</h4>
+            <ul>
+                <li>Daily game coverage and analysis</li>
+                <li>Feature story development and pitching</li>
+                <li>Source cultivation and relationship management</li>
+                <li>Breaking news and transaction coverage</li>
+                <li>Social media engagement within organizational guidelines</li>
+                <li>Podcast and multimedia content creation</li>
+            </ul>
+
+            <p class="footer-note">
+                Notes compiled for continuing education requirement - Professional Journalism Certificate Program
+            </p>
+        </div>
+    </div>
+
+    <!-- MLB Mode: Standings Page -->
+    <div id="fake-screen-mlb" class="fake-screen fake-screen-mlb">
+        <div class="mlb-header">
+            <h1>MLB.com</h1>
+            <p>The Official Site of Major League Baseball</p>
+        </div>
+
+        <div class="mlb-content">
+            <h2>American League Central Standings</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>PCT</th>
+                        <th>GB</th>
+                        <th>STRK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Minnesota Twins</td>
+                        <td>65</td>
+                        <td>35</td>
+                        <td>.650</td>
+                        <td>-</td>
+                        <td>W3</td>
+                    </tr>
+                    <tr>
+                        <td>Cleveland Indians</td>
+                        <td>55</td>
+                        <td>45</td>
+                        <td>.550</td>
+                        <td>10.0</td>
+                        <td>L1</td>
+                    </tr>
+                    <tr>
+                        <td>Chicago White Sox</td>
+                        <td>45</td>
+                        <td>55</td>
+                        <td>.450</td>
+                        <td>20.0</td>
+                        <td>W2</td>
+                    </tr>
+                    <tr>
+                        <td>Kansas City Royals</td>
+                        <td>35</td>
+                        <td>65</td>
+                        <td>.350</td>
+                        <td>30.0</td>
+                        <td>L5</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>Detroit Tigers</td>
+                        <td>28</td>
+                        <td>72</td>
+                        <td>.280</td>
+                        <td>37.0</td>
+                        <td>L2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Today's Games</h3>
+            <div class="games-box">
+                <p><strong>DET @ NYY</strong> - 7:05 PM ET</p>
+                <p><strong>MIN @ CLE</strong> - 7:10 PM ET</p>
+                <p><strong>CWS @ KC</strong> - 8:15 PM ET</p>
+            </div>
+
+            <h3>Latest News</h3>
+            <div class="news-section">
+                <p>
+                    <strong>Trade Deadline Approaches:</strong> Teams finalizing rosters ahead of July 31st deadline.
+                    Several AL Central teams expected to be sellers as playoff hopes fade.
+                </p>
+                <p>
+                    <strong>All-Star Voting Update:</strong> Final voting results to be announced this week.
+                    Multiple Twins players in contention for starting positions.
+                </p>
+                <p>
+                    <strong>Injury Report:</strong> Tigers place OF on 10-day IL with hamstring strain.
+                    Expected return after All-Star break.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script type="module" src="./js/config.js"></script>
     <script type="module" src="./data/chapters.js"></script>
@@ -125,6 +406,7 @@
     <script type="module" src="./js/reader.js"></script>
     <script type="module" src="./js/navigation.js"></script>
     <script type="module" src="./js/pwa.js"></script>
+    <script type="module" src="./js/boss-button.js"></script>
     <script type="module" src="./js/app.js"></script>
 
     <!-- Clean/Emoji Toggle -->
