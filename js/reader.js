@@ -165,7 +165,7 @@ class Reader {
             // Pick one random credential
             const randomCredential = credentialImages[Math.floor(Math.random() * credentialImages.length)];
             // Get size setting (lg, md, sm)
-            const credentialSize = localStorage.getItem('admin_credentialSize') || 'lg';
+            const credentialSize = localStorage.getItem('admin_credentialSize') || 'md';
             const sizeFolder = credentialSize === 'lg' ? 'credentials' : `credentials-${credentialSize}`;
             credentialHTML = `
                 <div class="credential-display credential-${credentialSize}">
