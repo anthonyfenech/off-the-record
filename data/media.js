@@ -641,7 +641,7 @@ export const MEDIA_CONTENT = {
         emoji: '📞',
         label: 'Phone Call',
         caption: 'Jeff Moss Prank Call',
-        src: './assets/audio-clips/jeff-moss-prank-call.mp3',
+        src: './assets/07-midseason/jeff-moss-prank-call.mp3',
         placeholder: false
     },
     'kinsler-angel': {
