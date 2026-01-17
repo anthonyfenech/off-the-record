@@ -1870,7 +1870,7 @@
             catalogBody.innerHTML = data.map(item => {
                 const isDeleted = deletedItems.includes(item.id);
                 const chapterLink = item.chapterNum
-                    ? `<a href="./binge-mode.html#chapter-${item.chapterNum}" target="_blank">${item.chapterName}</a>`
+                    ? `<a href="./?chapter=${item.chapterNum}" target="_blank">${item.chapterName}</a>`
                     : '—';
                 const chapterNumBox = item.chapterNum
                     ? `<span class="ch-num">${item.chapterNum}</span>`
