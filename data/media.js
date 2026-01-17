@@ -689,7 +689,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'I have to be better - May 25, 2015',
-        src: './assets/nu-get-images/5-25-15 i have to be better.jpg',
+        src: './assets/06-opening-day/5-25-15 i have to be better.jpg',
         placeholder: false
     },
     'greatest-assignment-7-3-18': {
@@ -857,7 +857,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Screenshot',
         caption: 'Screenshot - November 13, 2024',
-        src: './assets/nu-get-images/Screenshot 2024-11-13 at 11.28.33 PM.png',
+        src: './assets/26-unethical/Screenshot 2024-11-13 at 11.28.33 PM.png',
         placeholder: false
     },
     'fenech-middle-finger': {
