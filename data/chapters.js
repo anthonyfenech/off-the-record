@@ -1208,7 +1208,7 @@ export const CHAPTERS = [
 
 <p>Someone notices. Fans pay attention to which accounts players follow on social media. Davis' activity raises a red flag and gains traction on social media. Soon, a blog is posted, connecting the dots—is Davis involved in a trade?</p>
 
-<p>I treat this Internet Rumor like any dogged reporter would. I chase it down, emailing the Cardinals GM: "There is some buzz about Rajai Davis—he apparently followed a few Cardinals-related accounts. If there is anything to this, let me know."</p>
+<p>I treat this Internet Rumor like any dogged reporter would. I chase it down, emailing the Cardinals GM: "There is some buzz about Rajai Davis—he apparently followed a few Cardinals-related accounts. If there is anything to this, let me know." <span class="media-emoji" data-media-id="email-mozeliak">📧</span></p>
 
 <p>When the clubhouse opens today, reporters quickly approach Davis' locker. With his back turned, Davis can't keep it together—he starts laughing and so do teammates nearby. They were pulling a prank on us—it's trade deadline season in the social media age; players oftentimes follow official accounts and new teammates when traded.</p>
 
