@@ -558,6 +558,8 @@ export const CHAPTERS = [
 
 <p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. He's digging up Facebook messages from college and posting them, too.</p>
 
+<p class="media-embed"><span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span></p>
+
 <p>So let me come clean: Months away from my twenty-first birthday, I got a DUI after flipping my PT Cruiser on the freeway. I was drinking on an empty stomach, changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
 
 <p>Almost forgotten until now, when it's currently online. Twelve RTs and counting.</p>
