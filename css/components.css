@@ -854,7 +854,7 @@ body.clean-read .media-emoji {
 /* Media Modal */
 .media-modal {
     background-color: var(--color-background);
-    border: 2px solid var(--color-accent);
+    border: 1px solid var(--color-accent);
     max-width: 500px;
     width: auto;
     max-height: 90vh;
@@ -916,7 +916,7 @@ body.clean-read .media-emoji {
 .media-modal-body {
     flex: 1;
     overflow-y: auto;
-    padding: var(--space-md);
+    padding: 8px;
     min-height: 100px;
 }
 
