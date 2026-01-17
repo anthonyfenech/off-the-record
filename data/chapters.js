@@ -7165,7 +7165,7 @@ export const CHAPTERS = [
 
 <p>According to a June 2021 interview with <em>Sports Illustrated</em>, Harkins said the substance was developed by All-Star closer Troy Percival, who saved 316 games in ten seasons with the Angels from 1995-2004. Harkins said he wasn't asked to produce the goo until 2005, when Percival signed with the Tigers.</p>
 
-<p>From <em>Sports Illustrated</em>: "A year or two later, with Percival gone, then-Detroit ace Justin Verlander approached Harkins during a road trip: 'He said, 'Hey, we had Troy Percival on our team last year, and he shared the stuff that he was using and we started using it—and we called him and said, 'We would like to get some; what do we need to do?' He said, 'Well, talk to Bubba.'"</p>
+<p>From <em>Sports Illustrated</em>: "A year or two later, with Percival gone, then-Detroit ace Justin Verlander approached Harkins during a road trip: 'He said, 'Hey, we had Troy Percival on our team last year, and he shared the stuff that he was using and we started using it—and we called him and said, 'We would like to get some; what do we need to do?' He said, 'Well, talk to Bubba.'" <span class="media-emoji" data-media-id="sticky-stuff-si">📰</span></p>
 
 <p>In court filings, Harkins said Verlander texted him after the Angels fired him: "Bubba, it's JV. Firstly, I'm so sorry to hear about this. Please give me a shout whenever you can." In their subsequent phone conversation, Verlander said 'the league has let this go on for 100 hundred years,' and that it was '(expletive).'"</p>
 

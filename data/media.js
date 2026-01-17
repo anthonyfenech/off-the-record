@@ -141,6 +141,14 @@ export const MEDIA_CONTENT = {
         url: 'https://nypost.com/2023/08/12/justin-verlanders-diva-attitude-didnt-sit-well-with-max-scherzer-and-some-mets/',
         placeholder: false
     },
+    'sticky-stuff-si': {
+        type: 'link',
+        emoji: '📰',
+        label: 'Sports Illustrated',
+        caption: 'Sticky Stuff: Bubba Harkins Speaking Out',
+        url: 'https://www.si.com/mlb/2021/06/14/sticky-stuff-bubba-harkins-speaking-out-daily-cover',
+        placeholder: false
+    },
     'photo-1': {
         type: 'photo',
         emoji: '📷',
