@@ -301,6 +301,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.zillow.com/homedetails/2827-Medinah-Cir-Lakeland-FL-33803/66197962_zpid/',
         placeholder: false
     },
+    'gammons-stories': {
+        type: 'audio',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: 'Peter Gammons stories',
+        src: '',
+        placeholder: true
+    },
     'ernie-harwell-talk': {
         type: 'audio',
         emoji: '🔴',

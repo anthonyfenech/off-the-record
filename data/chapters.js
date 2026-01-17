@@ -1972,7 +1972,7 @@ export const CHAPTERS = [
 
 <p>"If you could, they'd take it apart on the street anyways."</p>
 
-<p>Chauffeured by Ron Colangelo, Gammons is a runaway waterspout of stories. He is a BBWAA Hall of Famer with a blind spot for the Red Sox. Saltalamacchia played four seasons in Boston. Ausmus grew up in New Haven, Connecticut reading Gammons, who made his name at the <em>Boston Globe</em> before becoming the first Ball Writer to bound head-first into television. He joined ESPN in 1989 and has become an institution there.</p>
+<p>Chauffeured by Ron Colangelo, Gammons is a runaway waterspout of stories. He is a BBWAA Hall of Famer with a blind spot for the Red Sox. <span class="media-emoji" data-media-id="gammons-stories">🔴</span> Saltalamacchia played four seasons in Boston. Ausmus grew up in New Haven, Connecticut reading Gammons, who made his name at the <em>Boston Globe</em> before becoming the first Ball Writer to bound head-first into television. He joined ESPN in 1989 and has become an institution there.</p>
 
 <p>I don't get intimidated much anymore, but my usually talkative self has been following along silently with my tape recorder running, like a cameraman on a reality TV show.</p>
 
