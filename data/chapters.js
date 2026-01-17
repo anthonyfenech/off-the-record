@@ -556,7 +556,7 @@ export const CHAPTERS = [
 
 <p class="no-indent"><em>"My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writers job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made."</em></p>
 
-<p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. He's digging up Facebook messages from college and posting them, too. <span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span></p>
+<p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. <span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span> He's digging up Facebook messages from college and posting them, too.</p>
 
 <p>So let me come clean: Months away from my twenty-first birthday, I got a DUI after flipping my PT Cruiser on the freeway. I was drinking on an empty stomach, changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
 
