@@ -85,6 +85,30 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/7-25-16 stayed in chi to stalk harbaugh.jpg',
         placeholder: false
     },
+    'cabrera-big-star': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Miguel Cabrera is a big star',
+        src: './assets/to-go/7-11-16 cabrera is a big star.jpg',
+        placeholder: false
+    },
+    'rainbow-new-york': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Rainbow over New York',
+        src: './assets/to-go/7-11-16 rainbow over new york.jpg',
+        placeholder: false
+    },
+    'waiting-for-harbaugh': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Waiting for Harbaugh',
+        src: './assets/to-go/7-25-16 waiting for harbaugh.jpg',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',

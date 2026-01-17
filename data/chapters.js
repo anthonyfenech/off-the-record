@@ -2214,7 +2214,11 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">SAN DIEGO, <em>July 11</em>—</span>I come to this year's all-star festivities strictly for the airline miles. I meet my long-distance relationship love interest here and skip the futures game and the home-run derby. We go for dinner in the Gaslamp District. But I can't skip the All-Star Game itself—Miguel Cabrera's appearance is the reason the company spent thousands of dollars in travel to send me here.</p>
 
+<p class="media-embed"><span class="media-emoji" data-media-id="rainbow-new-york">📷</span></p>
+
 <p>I'm pleased to see Cabrera in a good mood during media time—we've been getting on well enough since his weird question. He welcomes my presence inside the American League clubhouse before the game, stepping out of a conversation with fellow stars to answer a few questions.</p>
+
+<p class="media-embed"><span class="media-emoji" data-media-id="cabrera-big-star">📷</span></p>
 
 <p>The two days off have done him good.</p>
 
@@ -2244,7 +2248,7 @@ export const CHAPTERS = [
 
 <p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town.</p>
 
-<p class="media-embed"><span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span></p>
+<p class="media-embed"><span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span> <span class="media-emoji" data-media-id="waiting-for-harbaugh">📷</span></p>
 
 <p>&nbsp;</p>
 
