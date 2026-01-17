@@ -2108,7 +2108,7 @@ export const CHAPTERS = [
 
 <p>It was not the night.</p>
 
-<p>Scherzer goes berserk, striking out twenty batters in a complete game win over his former team—the fifth 20-K game in baseball history. He's the story, so I go to the service-level press conference room for his comments. Scherzer soon walks on stage, ice wrapped around his right arm. The rest of the media members are still inside the clubhouse, and etiquette says we can't start until they arrive.</p>
+<p>Scherzer goes berserk, striking out twenty batters in a complete game win over his former team—the fifth 20-K game in baseball history. He's the story, so I go to the service-level press conference room for his comments. Scherzer soon walks on stage, ice wrapped around his right arm. <span class="media-emoji" data-media-id="max-after-20">📷</span> The rest of the media members are still inside the clubhouse, and etiquette says we can't start until they arrive.</p>
 
 <p>Waiting awkwardly for the others, someone in the back snaps the silence, asking Scherzer if he thought he had a chance at twenty strikeouts.</p>
 
