@@ -10,15 +10,11 @@ class BossButton {
         this.screenModes = ['outlook', 'gmail', 'gdocs', 'slack', 'teams', 'wikipedia'];
         this.currentMode = null;
         this.lastActivated = null;
-        this.button = null;
-        this.mobileButton = null;
         this.fakeScreens = {};
     }
 
     init() {
         // Cache DOM elements for performance
-        this.button = document.getElementById('bossBtn');
-        this.mobileButton = document.getElementById('bossBtnMobile');
         this.reader = document.getElementById('reader');
         this.header = document.getElementById('header');
         this.navFooter = document.getElementById('navFooter');
@@ -30,24 +26,17 @@ class BossButton {
             this.fakeScreens[mode] = document.getElementById(`fake-screen-${mode}`);
         });
 
-        // Set up ESC key listener ALWAYS (even if button not found)
+        // Set up ESC key listener
         this.setupEscListener();
-
-        if (!this.button) {
-            console.warn('Boss Button: Button element not found, ESC key still active');
-        } else {
-            // Set up button click listeners
-            this.setupButtonListeners();
-        }
 
         // Set up fake screen click listeners
         this.setupFakeScreenListeners();
 
-        console.log('Boss Button: Initialized with', this.screenModes.length, 'rotating screens');
+        console.log('Boss Button: Initialized with', this.screenModes.length, 'rotating screens (ESC key only)');
     }
 
     setupEscListener() {
-        // ESC key listener - highest priority, capture phase, ALWAYS active
+        // ESC key listener - highest priority, capture phase
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 e.preventDefault();
@@ -55,26 +44,6 @@ class BossButton {
                 this.toggle();
             }
         }, { capture: true, passive: false });
-    }
-
-    setupButtonListeners() {
-        // Desktop button click
-        if (this.button) {
-            this.button.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.toggle();
-            });
-        }
-
-        // Mobile button click
-        if (this.mobileButton) {
-            this.mobileButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.toggle();
-            });
-        }
     }
 
     setupFakeScreenListeners() {
@@ -120,10 +89,6 @@ class BossButton {
         this.isHidden = true;
         this.lastActivated = Date.now();
 
-        // Update button states
-        if (this.button) this.button.classList.add('active');
-        if (this.mobileButton) this.mobileButton.style.display = 'none';
-
         // Add body class for any additional styling
         document.body.classList.add('boss-mode-active');
 
@@ -160,10 +125,6 @@ class BossButton {
 
         // Update state
         this.isHidden = false;
-
-        // Update button states
-        if (this.button) this.button.classList.remove('active');
-        if (this.mobileButton) this.mobileButton.style.display = '';
 
         // Remove body class
         document.body.classList.remove('boss-mode-active');
