@@ -293,6 +293,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.freep.com/story/sports/mlb/tigers/2016/04/03/detroit-tigers-justin-verlander/82578802/',
         placeholder: false
     },
+    'avila-house-zillow': {
+        type: 'link',
+        emoji: '📷',
+        label: 'Zillow',
+        caption: 'Alex Avila\'s Lakeland house with basketball court',
+        url: 'https://www.zillow.com/homedetails/2827-Medinah-Cir-Lakeland-FL-33803/66197962_zpid/',
+        placeholder: false
+    },
     'ernie-harwell-talk': {
         type: 'audio',
         emoji: '🔴',
