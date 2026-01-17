@@ -125,6 +125,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.freep.com/story/sports/mlb/tigers/2015/02/15/joe-nathan-detroit-tigers/23446431/',
         placeholder: false
     },
+    'katzenstein-ringer': {
+        type: 'link',
+        emoji: '📰',
+        label: 'The Ringer',
+        caption: 'Sportswriting Year in Review',
+        url: 'https://www.theringer.com/2019/12/20/year-in-review/sportswriting-new-orleans-times-picayune-saints-josh-katzenstein',
+        placeholder: false
+    },
     'photo-1': {
         type: 'photo',
         emoji: '📷',

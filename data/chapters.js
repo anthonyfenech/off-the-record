@@ -6645,7 +6645,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>December 20</em>—</span>One of my sports writing friends is in the news. Josh Katzenstein, former Lions beat writer, got laid off from the <em>New Orleans Times-Picayune</em>.</p>
 
-<p>Katzenstein left the industry to sell CBD products. His story is featured in the <em>Ringer</em>: "He used to be a beat writer, and when he sells CBD products to vape shops, he still acts like one. 'The skills,' said Katzenstein, 'are super-transferrable.'"</p>
+<p>Katzenstein left the industry to sell CBD products. His story is featured in the <em>Ringer</em>: "He used to be a beat writer, and when he sells CBD products to vape shops, he still acts like one. 'The skills,' said Katzenstein, 'are super-transferrable.'" <span class="media-emoji" data-media-id="katzenstein-ringer">📰</span></p>
 
 <p>The <em>Ringer</em> was created by Bill Simmons, who earned his spot on sports writing's Mount Rushmore the hard way. After getting rejected by traditional outlets, Simmons started blogging while bar backing, eventually building a media empire.</p>
 
