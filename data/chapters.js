@@ -1192,7 +1192,9 @@ export const CHAPTERS = [
 
 <p>No, it's not another prank—that's what I thought at first, too. Email address checked out; I found the producer on LinkedIn.</p>
 
-<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>`,
+<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>
+
+<p class="media-embed"><span class="media-emoji" data-media-id="sportscenter-studio">📷</span></p>`,
         wordCount: 1650
     },
     {

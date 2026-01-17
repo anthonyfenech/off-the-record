@@ -69,6 +69,14 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/verlander likes waffles.PNG',
         placeholder: false
     },
+    'sportscenter-studio': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'SportsCenter studio in Detroit',
+        src: './assets/to-go/sportscenter-7-17-15.jpg',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',
