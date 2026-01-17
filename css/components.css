@@ -161,6 +161,11 @@
     padding-left: 0;
 }
 
+/* Messages list (text messages, no indent) */
+.messages p {
+    text-indent: 0 !important;
+}
+
 /* Datelines (inline within chapters - italic, not bold) */
 .dateline {
     font-family: var(--font-serif);

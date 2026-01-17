@@ -5797,6 +5797,7 @@ export const CHAPTERS = [
 
 <p class="flashback-header">AIRPLANE MODE</p>
 
+<div class="messages">
 <p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
 
 <p>BBWAA President: Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
@@ -5842,6 +5843,7 @@ export const CHAPTERS = [
 <p>Orioles Scout: Just read your name in ESPN. That's great. Getting your name out there!</p>
 
 <p>Mom: Omg. Call when you can.</p>
+</div>
 
 <p class="scene-break">***</p>
 
