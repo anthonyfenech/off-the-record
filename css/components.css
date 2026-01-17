@@ -3441,6 +3441,10 @@ body.home-page .boss-btn-mobile {
         min-height: 44px;
         margin: -10px -8px;
         padding: 10px 8px;
+        /* Re-enforce emoji rendering for mobile Chrome */
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif !important;
+        text-rendering: auto !important;
+        -webkit-font-smoothing: auto !important;
     }
 
     /* Video sizing on mobile */
