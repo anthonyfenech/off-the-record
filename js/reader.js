@@ -344,14 +344,6 @@ class Reader {
 
         this.chapterBody.appendChild(pageContainer);
 
-        // Add parental advisory sticker on title page (chapter -1)
-        if (this.currentChapter === -1) {
-            const advisory = document.createElement('div');
-            advisory.className = 'parental-advisory';
-            advisory.innerHTML = '<img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory: Explicit Content">';
-            this.chapterBody.appendChild(advisory);
-        }
-
         // Attach click handlers to media emojis
         this.attachMediaEmojiHandlers();
     }
