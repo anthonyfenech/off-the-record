@@ -1012,6 +1012,132 @@
             font-size: 14px;
             color: #666;
         }
+
+        /* Action buttons */
+        .action-col {
+            width: 50px;
+        }
+        .action-cell {
+            text-align: center;
+            white-space: nowrap;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 2px 4px;
+            font-size: 10px;
+            opacity: 0.5;
+            transition: opacity 0.15s;
+        }
+        .action-btn:hover {
+            opacity: 1;
+        }
+        .action-btn.delete-btn:hover {
+            color: #dc3545;
+        }
+        .action-btn.edit-btn:hover {
+            color: #007bff;
+        }
+        tr.deleted-row {
+            display: none;
+        }
+        tr.deleted-row td {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        tr.deleted-row .action-cell {
+            text-decoration: none;
+        }
+        tr.deleted-row .action-btn.delete-btn {
+            font-size: 0;
+        }
+        tr.deleted-row .action-btn.delete-btn::after {
+            content: '↩';
+            font-size: 12px;
+        }
+
+        /* Edit Modal */
+        .edit-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+        }
+        .edit-modal-overlay.active {
+            display: flex;
+        }
+        .edit-modal {
+            background: #fff;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 90vw;
+            padding: 20px;
+        }
+        .edit-modal h3 {
+            margin: 0 0 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .edit-modal .form-group {
+            margin-bottom: 12px;
+        }
+        .edit-modal .form-group label {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: #666;
+        }
+        .edit-modal .form-group input,
+        .edit-modal .form-group select {
+            width: 100%;
+            padding: 8px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .edit-modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .edit-modal-actions button {
+            flex: 1;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .edit-modal-actions .save-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+        }
+        .edit-modal-actions .cancel-btn {
+            background: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
+        .edit-modal-actions .delete-modal-btn {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            flex: 0 0 auto;
+            padding: 10px 15px;
+        }
     </style>
 </head>
 <body>
@@ -1256,7 +1382,12 @@
 
             <div class="catalog-header">
                 <span class="catalog-title">Media Catalog</span>
-                <button class="add-btn" id="addMediaBtn">+ Add</button>
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <label style="font-size:11px; display:flex; align-items:center; gap:4px; cursor:pointer;">
+                        <input type="checkbox" id="showDeletedToggle"> Show deleted
+                    </label>
+                    <button class="add-btn" id="addMediaBtn">+ Add</button>
+                </div>
             </div>
 
             <div class="add-form" id="addForm">
@@ -1323,6 +1454,7 @@
                             <th data-sort="chapterName">Chapter <span class="sort-arrow">↕</span></th>
                             <th data-sort="date">Date <span class="sort-arrow">↕</span></th>
                             <th data-sort="time">Time <span class="sort-arrow">↕</span></th>
+                            <th class="action-col"></th>
                         </tr>
                     </thead>
                     <tbody id="catalogBody">
@@ -1398,6 +1530,48 @@
                         <span class="stat-value" id="installCount">0</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal-overlay" id="editModalOverlay">
+        <div class="edit-modal">
+            <h3>Edit Media Entry</h3>
+            <input type="hidden" id="editMediaId">
+            <div class="form-group">
+                <label>Media ID</label>
+                <input type="text" id="editId" readonly style="background:#f5f5f5;">
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <select id="editType">
+                    <option value="photo">📷 Photo</option>
+                    <option value="newspaper">📰 Newspaper</option>
+                    <option value="link">🔗 Link</option>
+                    <option value="tweet">🐦 Tweet</option>
+                    <option value="email">✉️ Email</option>
+                    <option value="text">💬 Text</option>
+                    <option value="video">🎬 Video</option>
+                    <option value="audio">🎙️ Audio</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Caption</label>
+                <input type="text" id="editCaption" placeholder="Caption text...">
+            </div>
+            <div class="form-group">
+                <label>Source Path</label>
+                <input type="text" id="editSrc" placeholder="./assets/...">
+            </div>
+            <div class="form-group">
+                <label>Duration (for audio/video)</label>
+                <input type="text" id="editDuration" placeholder="e.g., 2:30">
+            </div>
+            <div class="edit-modal-actions">
+                <button class="delete-modal-btn" id="editDeleteBtn">🗑</button>
+                <button class="cancel-btn" id="editCancelBtn">Cancel</button>
+                <button class="save-btn" id="editSaveBtn">Save</button>
             </div>
         </div>
     </div>
@@ -1568,9 +1742,17 @@
                 };
             });
 
+        // Get deleted items from localStorage
+        function getDeletedItems() {
+            const stored = localStorage.getItem('admin_deletedMedia');
+            return stored ? JSON.parse(stored) : [];
+        }
+
         // Render table
         function renderTable(data) {
+            const deletedItems = getDeletedItems();
             catalogBody.innerHTML = data.map(item => {
+                const isDeleted = deletedItems.includes(item.id);
                 const chapterLink = item.chapterNum
                     ? `<a href="./binge-mode.html#chapter-${item.chapterNum}" target="_blank">${item.chapterName}</a>`
                     : '—';
@@ -1581,7 +1763,7 @@
                     ? `<a href="#" class="media-preview-link" data-media-id="${item.id}" data-src="${item.src}" data-type="${item.type}" data-caption="${item.caption || ''}" title="Preview ${item.id}">${item.id}</a>`
                     : item.id;
                 return `
-                <tr>
+                <tr class="${isDeleted ? 'deleted-row' : ''}" data-media-id="${item.id}">
                     <td class="status-cell" data-id="${item.id}" title="${item.statusLabel} - Click to change">${item.status}</td>
                     <td class="emoji-cell">${item.icon}</td>
                     <td class="id-cell" title="${item.id}">${idLink}</td>
@@ -1589,6 +1771,10 @@
                     <td class="chapter-name-cell">${chapterLink}</td>
                     <td class="date-cell">${item.date}</td>
                     <td class="time-cell">${item.time}</td>
+                    <td class="action-cell">
+                        <button class="action-btn edit-btn" data-id="${item.id}" title="Edit">✏️</button>
+                        <button class="action-btn delete-btn" data-id="${item.id}" title="Delete">✕</button>
+                    </td>
                 </tr>
             `;
             }).join('');
@@ -1984,6 +2170,134 @@
                 previewBody.innerHTML = content;
                 previewCaption.textContent = caption || mediaId;
                 previewModal.classList.add('active');
+            }
+        });
+
+        // ====== DELETE FUNCTIONALITY ======
+        function deleteMediaItem(mediaId) {
+            const deleted = getDeletedItems();
+            if (!deleted.includes(mediaId)) {
+                deleted.push(mediaId);
+                localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+            }
+            // Hide the row
+            const row = document.querySelector(`tr[data-media-id="${mediaId}"]`);
+            if (row) row.classList.add('deleted-row');
+        }
+
+        // Delete/Restore button click handler
+        document.getElementById('catalogBody').addEventListener('click', (e) => {
+            const deleteBtn = e.target.closest('.delete-btn');
+            if (deleteBtn) {
+                e.stopPropagation();
+                const mediaId = deleteBtn.dataset.id;
+                const row = deleteBtn.closest('tr');
+                const isDeleted = row.classList.contains('deleted-row');
+
+                if (isDeleted) {
+                    // Restore
+                    let deleted = getDeletedItems();
+                    deleted = deleted.filter(id => id !== mediaId);
+                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+                    row.classList.remove('deleted-row');
+                } else {
+                    // Delete
+                    if (confirm(`Delete "${mediaId}" from the catalog?\n\nNote: This hides it from this view. To permanently remove, delete the entry from data/media.js`)) {
+                        deleteMediaItem(mediaId);
+                    }
+                }
+            }
+        });
+
+        // ====== EDIT FUNCTIONALITY ======
+        const editModal = document.getElementById('editModalOverlay');
+        const editCancelBtn = document.getElementById('editCancelBtn');
+        const editSaveBtn = document.getElementById('editSaveBtn');
+        const editDeleteBtn = document.getElementById('editDeleteBtn');
+
+        // Close edit modal
+        editCancelBtn.addEventListener('click', () => editModal.classList.remove('active'));
+        editModal.addEventListener('click', (e) => {
+            if (e.target === editModal) editModal.classList.remove('active');
+        });
+
+        // Open edit modal
+        document.getElementById('catalogBody').addEventListener('click', (e) => {
+            const editBtn = e.target.closest('.edit-btn');
+            if (editBtn) {
+                e.stopPropagation();
+                const mediaId = editBtn.dataset.id;
+                const media = MEDIA_CONTENT[mediaId];
+
+                if (media) {
+                    document.getElementById('editMediaId').value = mediaId;
+                    document.getElementById('editId').value = mediaId;
+                    document.getElementById('editType').value = media.type || 'photo';
+                    document.getElementById('editCaption').value = media.caption || '';
+                    document.getElementById('editSrc').value = media.src || '';
+                    document.getElementById('editDuration').value = media.duration || '';
+                    editModal.classList.add('active');
+                }
+            }
+        });
+
+        // Save edit - generates code to copy
+        editSaveBtn.addEventListener('click', () => {
+            const mediaId = document.getElementById('editMediaId').value;
+            const type = document.getElementById('editType').value;
+            const caption = document.getElementById('editCaption').value;
+            const src = document.getElementById('editSrc').value;
+            const duration = document.getElementById('editDuration').value;
+
+            const emojiMap = {
+                photo: '📷', newspaper: '📰', link: '🔗', tweet: '🐦',
+                email: '✉️', text: '💬', video: '🎬', audio: '🎙️'
+            };
+
+            const code = `    '${mediaId}': {
+        type: '${type}',
+        emoji: '${emojiMap[type] || '📷'}',
+        label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
+        caption: '${caption.replace(/'/g, "\\'")}',
+        src: '${src}',${duration ? `\n        duration: '${duration}',` : ''}
+        placeholder: false
+    },`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(code).then(() => {
+                alert(`Updated code copied to clipboard!\n\nReplace the entry in data/media.js with:\n\n${code}`);
+                editModal.classList.remove('active');
+            });
+        });
+
+        // Delete from edit modal
+        editDeleteBtn.addEventListener('click', () => {
+            const mediaId = document.getElementById('editMediaId').value;
+            if (confirm(`Delete "${mediaId}"?`)) {
+                deleteMediaItem(mediaId);
+                editModal.classList.remove('active');
+            }
+        });
+
+        // ====== SHOW DELETED TOGGLE ======
+        const showDeletedToggle = document.getElementById('showDeletedToggle');
+        showDeletedToggle.addEventListener('change', () => {
+            document.querySelectorAll('.deleted-row').forEach(row => {
+                row.style.display = showDeletedToggle.checked ? '' : 'none';
+            });
+        });
+
+        // ====== RESTORE DELETED ======
+        document.getElementById('catalogBody').addEventListener('dblclick', (e) => {
+            const row = e.target.closest('tr.deleted-row');
+            if (row && showDeletedToggle.checked) {
+                const mediaId = row.dataset.mediaId;
+                if (confirm(`Restore "${mediaId}"?`)) {
+                    let deleted = getDeletedItems();
+                    deleted = deleted.filter(id => id !== mediaId);
+                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+                    row.classList.remove('deleted-row');
+                }
             }
         });
     </script>
