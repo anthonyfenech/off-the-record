@@ -146,7 +146,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'July 31, 2019 - Tigers dugout at Angel Stadium',
-        src: './assets/to-go/july-31-2019-angel-stadium.jpg',
+        src: './assets/24-road-to-omaha/july-31-2019-angel-stadium.jpg',
         placeholder: false
     },
     'winter-meetings-2014': {
