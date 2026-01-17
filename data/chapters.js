@@ -3480,7 +3480,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline"><em>August 24</em>—</span>On the tarmac at DTW for a short flight to Chicago, watching highlights of today's base-brawl between the Tigers and Yankees.</p>
+<p class="has-dateline no-indent"><span class="dateline"><em>August 24</em>—</span>On the tarmac at DTW for a short flight to Chicago, watching highlights of today's base-brawl between the Tigers and Yankees. <a href="https://www.mlb.com/video/tensions-flare-in-detroit-c1766582883" target="_blank" class="media-emoji">🎬</a></p>
 
 <p>TV cameras also catch an argument between Víctor Martínez and Justin Verlander, and it's galloping across the Internet. It's unusual for two veteran teammates to go at it like they do—screaming in each other's faces—especially a starting pitcher and designated hitter, who locker at opposite ends of the room.</p>
 
