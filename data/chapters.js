@@ -5090,7 +5090,7 @@ export const CHAPTERS = [
             <p>Video of my performance circulates online, shared on Twitter by Jordan Zimmermann, who is participating in fantasy beat writer camp. He reports my pitching line: <em>@anthonyfenech line vs Tigers Fantasy Camp: 2/3 IP, 2 H, 5 BB, 5 ER, or, not very good</em>.</p>
             <p>I sit at my locker scrolling through the ridicule, lucky the video culprits didn't stick around. I actually went back out for <em>another</em> inning and moved up five feet, like it was coach pitch.</p>
             <p>Everyone shacks up at the Ramada Inn, fantasy campers and coaches alike—even real-life ones. I walk past Tigers' third-base coach Ramon Santiago with an ice pack on my knee. "Now you know how it feels, <em>An-tony</em>."</p>
-            <p>Is the pain worth it? I've been receiving comments from all over: Ball Writers, readers, sources—even players are getting into it.</p>
+            <p>Is the pain worth it? I've been receiving comments from all over: Ball Writers, readers, sources—even players are getting into it. <span class="media-emoji" data-media-id="fantasy-camp-scrum">🎬</span></p>
 
             <p>&nbsp;</p>
 
