@@ -26,7 +26,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎬',
         label: 'Video',
         caption: 'Miguel Cabrera - Batting Practice During COVID',
-        src: './assets/27-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
+        src: './assets/28-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
         placeholder: false
     },
     'fantasy-camp-scrum': {
@@ -547,7 +547,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Max Scherzer thank you ad in the Detroit Free Press',
-        src: './assets/27-postscript/scherzer-thank-you.png',
+        src: './assets/28-postscript/scherzer-thank-you.png',
         placeholder: false
     },
     'tito-big-series-2019': {
@@ -563,7 +563,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Screenshot',
         caption: 'Where Is Anthony Fenech',
-        src: './assets/27-postscript/where-is-anthony-fenech.png',
+        src: './assets/28-postscript/where-is-anthony-fenech.png',
         placeholder: false
     },
 
@@ -633,7 +633,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎙️',
         label: 'Audio',
         caption: 'Winter Meetings Media Availability - December 10, 2019',
-        src: './assets/bottom-line/winter-meetings-12-10-19.mp3',
+        src: './assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
         placeholder: false
     },
     'jeff-moss-prank-call': {
@@ -801,7 +801,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Andrew Cab 2020',
-        src: './assets/27-postscript/Andrew Cab 2020.png',
+        src: './assets/28-postscript/Andrew Cab 2020.png',
         placeholder: false
     },
     'andrew-cab-2020-2': {
@@ -809,7 +809,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Andrew Cab 2020 (2)',
-        src: './assets/27-postscript/Andrew Cab 2020 2.png',
+        src: './assets/28-postscript/Andrew Cab 2020 2.png',
         placeholder: false
     },
     'andrew-cab-2020-3': {
@@ -817,7 +817,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Andrew Cab 2020 (3)',
-        src: './assets/27-postscript/Andrew Cab 2020 3.png',
+        src: './assets/28-postscript/Andrew Cab 2020 3.png',
         placeholder: false
     },
     'april-2-2019': {
