@@ -127,8 +127,8 @@
 /* Scene Break */
 .scene-break {
     text-align: center;
-    margin: var(--space-3xl) 0;
-    padding: var(--space-lg) 0;
+    margin: 2.5rem 0;
+    padding: 0;
     position: relative;
 }
 
