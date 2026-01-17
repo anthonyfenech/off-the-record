@@ -796,6 +796,109 @@
             opacity: 1;
         }
 
+        /* Chapter Audit Styles */
+        .chapter-audit-list {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .chapter-audit-list.collapsed {
+            display: none;
+        }
+        .audit-stats {
+            font-size: 11px;
+            color: #666;
+            margin-right: 10px;
+        }
+        .audit-stats.has-issues {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .audit-summary {
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .audit-summary.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .audit-summary.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .audit-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            font-size: 11px;
+            background: #fff;
+        }
+        .audit-item.mismatch {
+            border-color: #ffc107;
+            background: #fffbeb;
+        }
+        .audit-item.missing {
+            border-color: #dc3545;
+            background: #fff5f5;
+        }
+        .audit-item-info {
+            flex: 1;
+        }
+        .audit-item-id {
+            font-weight: bold;
+            color: #333;
+        }
+        .audit-item-detail {
+            color: #666;
+            margin-top: 2px;
+        }
+        .audit-item-detail code {
+            background: #f0f0f0;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 10px;
+        }
+        .audit-fix-btn {
+            padding: 4px 10px;
+            font-size: 10px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .audit-fix-btn:hover {
+            background: #218838;
+        }
+        .audit-fix-all-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 12px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .audit-fix-all-btn:hover {
+            background: #000;
+        }
+
         .chapter-lock-item .lock-icon {
             font-size: 14px;
             opacity: 0;
@@ -1105,6 +1208,38 @@
             font-size: 12px;
             border: 1px solid #ddd;
             border-radius: 4px;
+        }
+        .edit-modal .input-with-button {
+            display: flex;
+            gap: 6px;
+        }
+        .edit-modal .input-with-button input {
+            flex: 1;
+        }
+        .edit-modal .detect-btn {
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .edit-modal .detect-btn:hover {
+            background: #333;
+            border-color: #333;
+            filter: grayscale(1) brightness(3);
+        }
+        .detect-status {
+            font-size: 10px;
+            font-weight: normal;
+            margin-left: 8px;
+        }
+        .detect-status.success {
+            color: #28a745;
+        }
+        .detect-status.error {
+            color: #dc3545;
         }
         .edit-modal-actions {
             display: flex;
@@ -1490,6 +1625,24 @@
 
             <div style="margin: 30px 0; border-top: 2px solid #333;"></div>
 
+            <!-- Chapter Audit Section -->
+            <div class="catalog-header collapsible-header" id="chapterAuditHeader">
+                <span class="catalog-title">Chapter Audit <span class="collapse-arrow" id="chapterAuditArrow">▶</span></span>
+                <div class="lock-actions">
+                    <span class="audit-stats" id="auditStats"></span>
+                    <button class="lock-btn" id="runAuditBtn">Run Audit</button>
+                </div>
+            </div>
+
+            <div class="chapter-audit-list collapsed" id="chapterAuditList">
+                <div class="audit-summary" id="auditSummary">
+                    <p>Click "Run Audit" to check media chapter classifications against source paths.</p>
+                </div>
+                <div class="audit-results" id="auditResults"></div>
+            </div>
+
+            <div style="margin: 30px 0; border-top: 2px solid #333;"></div>
+
             <div class="catalog-header">
                 <span class="catalog-title">Media Catalog</span>
                 <div style="display:flex; gap:8px; align-items:center;">
@@ -1672,14 +1825,17 @@
             </div>
             <div class="form-group">
                 <label>Source Path</label>
-                <input type="text" id="editSrc" placeholder="./assets/...">
+                <div class="input-with-button">
+                    <input type="text" id="editSrc" placeholder="./assets/...">
+                    <button type="button" id="autoDetectChapterBtn" class="detect-btn" title="Auto-detect chapter from path">🔍</button>
+                </div>
             </div>
             <div class="form-group">
                 <label>Duration (for audio/video)</label>
                 <input type="text" id="editDuration" placeholder="e.g., 2:30">
             </div>
             <div class="form-group">
-                <label>Chapter</label>
+                <label>Chapter <span id="chapterDetectStatus" class="detect-status"></span></label>
                 <select id="editChapter">
                     <option value="">-- Unassigned --</option>
                 </select>
@@ -1807,11 +1963,53 @@
                     return {
                         num: CHAPTERS[i].id,
                         name: chapterTitles[i],
-                        full: `${CHAPTERS[i].id}. ${chapterTitles[i]}`
+                        full: `${CHAPTERS[i].id}. ${chapterTitles[i]}`,
+                        source: 'content'
                     };
                 }
             }
-            return { num: null, name: null, full: '—' };
+            // Fallback: try to detect from source path
+            const media = MEDIA_CONTENT[mediaId];
+            if (media && media.src) {
+                const detected = detectChapterFromPath(media.src);
+                if (detected) {
+                    return {
+                        num: detected.num,
+                        name: detected.name,
+                        full: `${detected.num}. ${detected.name}`,
+                        source: 'path'
+                    };
+                }
+            }
+            return { num: null, name: null, full: '—', source: null };
+        }
+
+        // Detect chapter from source path (e.g., ./assets/12-pennant-race/photo.jpg → chapter 12)
+        function detectChapterFromPath(sourcePath) {
+            if (!sourcePath) return null;
+
+            // Match pattern: ./assets/XX-chapter-name/ where XX is chapter number
+            const match = sourcePath.match(/\.\/assets\/(\d{2})-([^\/]+)\//);
+            if (!match) return null;
+
+            const chapterNum = parseInt(match[1], 10);
+            const folderName = match[2];
+
+            // Find matching chapter
+            const chapter = CHAPTERS.find(ch => ch.id === chapterNum);
+            if (chapter) {
+                return {
+                    num: chapterNum,
+                    name: chapter.title,
+                    folder: `${match[1]}-${folderName}`
+                };
+            }
+
+            return {
+                num: chapterNum,
+                name: folderName.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                folder: `${match[1]}-${folderName}`
+            };
         }
 
         // Get status: 🟢 Live (in use), 🟡 Pending (placeholder), 🔴 Cut (unused)
@@ -2473,6 +2671,48 @@
             if (e.target === editModal) editModal.classList.remove('active');
         });
 
+        // Auto-detect chapter from source path
+        const autoDetectChapterBtn = document.getElementById('autoDetectChapterBtn');
+        const editSrcInput = document.getElementById('editSrc');
+        const chapterDetectStatus = document.getElementById('chapterDetectStatus');
+
+        function autoDetectAndSetChapter() {
+            const sourcePath = editSrcInput.value;
+            const detected = detectChapterFromPath(sourcePath);
+            const chapterSelect = document.getElementById('editChapter');
+
+            if (detected) {
+                chapterSelect.value = detected.num;
+                chapterDetectStatus.textContent = `✓ Detected: Ch. ${detected.num}`;
+                chapterDetectStatus.className = 'detect-status success';
+                // Flash the select to show change
+                chapterSelect.style.background = '#d4edda';
+                setTimeout(() => { chapterSelect.style.background = ''; }, 1000);
+            } else {
+                chapterDetectStatus.textContent = '⚠ Could not detect';
+                chapterDetectStatus.className = 'detect-status error';
+            }
+            // Clear status after 3 seconds
+            setTimeout(() => {
+                chapterDetectStatus.textContent = '';
+                chapterDetectStatus.className = 'detect-status';
+            }, 3000);
+        }
+
+        autoDetectChapterBtn.addEventListener('click', autoDetectAndSetChapter);
+
+        // Auto-detect on source path change (with debounce)
+        let detectTimeout;
+        editSrcInput.addEventListener('input', () => {
+            clearTimeout(detectTimeout);
+            detectTimeout = setTimeout(() => {
+                const sourcePath = editSrcInput.value;
+                if (sourcePath.includes('./assets/') && sourcePath.includes('/')) {
+                    autoDetectAndSetChapter();
+                }
+            }, 500);
+        });
+
         // Save edit - updates in-memory data AND generates code to copy
         editSaveBtn.addEventListener('click', () => {
             const mediaId = document.getElementById('editMediaId').value;
@@ -2560,6 +2800,173 @@
             document.querySelectorAll('.deleted-row').forEach(row => {
                 row.style.display = showDeletedToggle.checked ? '' : 'none';
             });
+        });
+
+        // ====== CHAPTER AUDIT ======
+        const chapterAuditHeader = document.getElementById('chapterAuditHeader');
+        const chapterAuditList = document.getElementById('chapterAuditList');
+        const chapterAuditArrow = document.getElementById('chapterAuditArrow');
+        const runAuditBtn = document.getElementById('runAuditBtn');
+        const auditStats = document.getElementById('auditStats');
+        const auditSummary = document.getElementById('auditSummary');
+        const auditResults = document.getElementById('auditResults');
+
+        // Toggle audit panel
+        chapterAuditHeader.addEventListener('click', (e) => {
+            if (e.target.closest('button')) return;
+            chapterAuditList.classList.toggle('collapsed');
+            chapterAuditArrow.textContent = chapterAuditList.classList.contains('collapsed') ? '▶' : '▼';
+        });
+
+        // Run chapter audit
+        function runChapterAudit() {
+            const issues = {
+                mismatch: [], // Content says X, path says Y
+                missing: [],  // No content reference, but has path
+                noPath: []    // Can't detect from path
+            };
+
+            let correctCount = 0;
+
+            Object.entries(MEDIA_CONTENT).forEach(([id, media]) => {
+                const contentChapter = findChapterForMedia(id);
+                const pathChapter = detectChapterFromPath(media.src);
+
+                // If has content reference
+                if (contentChapter.source === 'content') {
+                    // Check if path matches content
+                    if (pathChapter && pathChapter.num !== contentChapter.num) {
+                        issues.mismatch.push({
+                            id,
+                            src: media.src,
+                            contentChapter: contentChapter.num,
+                            pathChapter: pathChapter.num,
+                            pathChapterName: pathChapter.name
+                        });
+                    } else {
+                        correctCount++;
+                    }
+                } else if (pathChapter) {
+                    // No content reference, but has detectable path
+                    issues.missing.push({
+                        id,
+                        src: media.src,
+                        detectedChapter: pathChapter.num,
+                        detectedChapterName: pathChapter.name
+                    });
+                } else {
+                    // Can't detect from path
+                    issues.noPath.push({
+                        id,
+                        src: media.src
+                    });
+                }
+            });
+
+            const totalIssues = issues.mismatch.length + issues.missing.length;
+
+            // Update stats
+            if (totalIssues > 0) {
+                auditStats.textContent = `${totalIssues} issues found`;
+                auditStats.className = 'audit-stats has-issues';
+            } else {
+                auditStats.textContent = 'All OK ✓';
+                auditStats.className = 'audit-stats';
+            }
+
+            // Update summary
+            auditSummary.innerHTML = `
+                <strong>Audit Results:</strong><br>
+                ✓ Correct: ${correctCount}<br>
+                ⚠ Mismatched: ${issues.mismatch.length}<br>
+                ❓ Not in chapters: ${issues.missing.length}<br>
+                ❌ No detectable path: ${issues.noPath.length}
+            `;
+            auditSummary.className = totalIssues > 0 ? 'audit-summary warning' : 'audit-summary success';
+
+            // Render issues
+            let html = '';
+
+            if (issues.mismatch.length > 0) {
+                html += '<div style="font-weight:bold; margin:15px 0 8px; font-size:12px;">⚠ Chapter Mismatch (in chapter content but path suggests different)</div>';
+                issues.mismatch.forEach(issue => {
+                    html += `
+                        <div class="audit-item mismatch" data-id="${issue.id}">
+                            <div class="audit-item-info">
+                                <div class="audit-item-id">${issue.id}</div>
+                                <div class="audit-item-detail">
+                                    Content: Ch. ${issue.contentChapter} → Path suggests: <strong>Ch. ${issue.pathChapter}</strong> (${issue.pathChapterName})
+                                </div>
+                                <div class="audit-item-detail"><code>${issue.src}</code></div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            if (issues.missing.length > 0) {
+                html += '<div style="font-weight:bold; margin:15px 0 8px; font-size:12px;">❓ Not Referenced in Chapters (detected from path)</div>';
+                issues.missing.forEach(issue => {
+                    html += `
+                        <div class="audit-item missing" data-id="${issue.id}">
+                            <div class="audit-item-info">
+                                <div class="audit-item-id">${issue.id}</div>
+                                <div class="audit-item-detail">
+                                    Path suggests: <strong>Ch. ${issue.detectedChapter}</strong> (${issue.detectedChapterName})
+                                </div>
+                                <div class="audit-item-detail"><code>${issue.src}</code></div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            if (issues.noPath.length > 0) {
+                html += '<div style="font-weight:bold; margin:15px 0 8px; font-size:12px;">❌ No Detectable Path</div>';
+                issues.noPath.forEach(issue => {
+                    html += `
+                        <div class="audit-item" data-id="${issue.id}">
+                            <div class="audit-item-info">
+                                <div class="audit-item-id">${issue.id}</div>
+                                <div class="audit-item-detail"><code>${issue.src || 'No source path'}</code></div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            if (totalIssues === 0 && issues.noPath.length === 0) {
+                html = '<div style="text-align:center; padding:20px; color:#155724;">✓ All media items are correctly classified!</div>';
+            }
+
+            auditResults.innerHTML = html;
+
+            // Expand panel if collapsed
+            if (chapterAuditList.classList.contains('collapsed')) {
+                chapterAuditList.classList.remove('collapsed');
+                chapterAuditArrow.textContent = '▼';
+            }
+        }
+
+        runAuditBtn.addEventListener('click', runChapterAudit);
+
+        // Click on audit item to open edit modal
+        auditResults.addEventListener('click', (e) => {
+            const item = e.target.closest('.audit-item');
+            if (item) {
+                const mediaId = item.dataset.id;
+                const mediaItem = allMedia.find(m => m.id === mediaId);
+                if (mediaItem) {
+                    const media = MEDIA_CONTENT[mediaId];
+                    document.getElementById('editMediaId').value = mediaId;
+                    document.getElementById('editType').value = media.type || 'photo';
+                    document.getElementById('editCaption').value = media.caption || '';
+                    document.getElementById('editSrc').value = media.src || '';
+                    document.getElementById('editDuration').value = media.duration || '';
+                    document.getElementById('editChapter').value = mediaItem?.chapterNum || '';
+                    document.getElementById('editModalOverlay').classList.add('active');
+                }
+            }
         });
     </script>
 </body>
