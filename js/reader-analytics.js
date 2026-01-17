@@ -30,7 +30,6 @@ class ReaderAnalytics {
     init() {
         // Check if analytics is enabled
         if (localStorage.getItem('admin_analyticsEnabled') === 'false') {
-            console.log('Analytics disabled');
             return;
         }
 
@@ -54,8 +53,6 @@ class ReaderAnalytics {
 
         // Update live reader count
         this.updateLiveCount(true);
-
-        console.log('Reader Analytics initialized', { sessionId: this.sessionId, readerId: this.readerId });
     }
 
     // Generate or retrieve session ID (new each visit)
@@ -311,8 +308,6 @@ class ReaderAnalytics {
             this.localQueue.push(event);
             localStorage.setItem('analytics_queue', JSON.stringify(this.localQueue));
         }
-
-        console.log('Analytics event:', eventType, data);
     }
 
     // Send data to Google Sheets

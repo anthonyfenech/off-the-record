@@ -27,7 +27,6 @@ class SurveySystem {
     init() {
         // Check if surveys are enabled
         if (localStorage.getItem('admin_surveysEnabled') === 'false') {
-            console.log('Surveys disabled');
             return;
         }
 
@@ -52,8 +51,6 @@ class SurveySystem {
             const randomDelay = Math.random() * 180000 + 60000; // 1-4 minutes
             setTimeout(() => this.maybeShowPricingSurvey(), randomDelay);
         }
-
-        console.log('Survey System initialized');
     }
 
     // Create modal container

@@ -22,7 +22,6 @@ class PWA {
     trackInstall() {
         const currentCount = parseInt(localStorage.getItem('admin_installCount') || '0');
         localStorage.setItem('admin_installCount', currentCount + 1);
-        console.log(`Install tracked! Total installs: ${currentCount + 1}`);
     }
 
     // Initialize PWA features
@@ -51,7 +50,6 @@ class PWA {
 
         // Listen for successful installation
         window.addEventListener('appinstalled', () => {
-            console.log('PWA installed successfully');
             this.isInstalled = true;
             this.trackInstall();
             this.hideInstallPrompt();
@@ -63,8 +61,6 @@ class PWA {
         try {
             const registration = await navigator.serviceWorker.register('./sw.js');
 
-            console.log('Service Worker registered:', registration.scope);
-
             // Check for updates
             registration.addEventListener('updatefound', () => {
                 const newWorker = registration.installing;
@@ -72,7 +68,6 @@ class PWA {
                 newWorker.addEventListener('statechange', () => {
                     if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                         // New service worker available
-                        console.log('New version available');
                         this.showUpdateNotification();
                     }
                 });
@@ -166,8 +161,6 @@ class PWA {
 
         // Wait for user choice
         const { outcome } = await this.deferredPrompt.userChoice;
-
-        console.log(`User ${outcome} the install prompt`);
 
         // If accepted, track will happen via appinstalled event
         // If dismissed, just hide the prompt
