@@ -42,7 +42,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Jim Harbaugh at satellite camp in Blue Springs, Mo.',
-        src: './assets/to-go/6-15-16 harbaugh likes me.jpg',
+        src: './assets/11-hot-seat/6-15-16 harbaugh likes me.jpg',
         placeholder: false
     },
     'cabreras-kicks': {
@@ -50,7 +50,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Miguel Cabrera\'s custom Louis Vuitton cleats',
-        src: './assets/to-go/7-12-16 cabrera\'s kicks.jpg',
+        src: './assets/11-hot-seat/7-12-16 cabrera\'s kicks.jpg',
         placeholder: false
     },
     'gammons-fisk-lede': {
@@ -82,7 +82,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Harbaugh Watch at Big Ten Media Days in Chicago',
-        src: './assets/to-go/7-25-16 stayed in chi to stalk harbaugh.jpg',
+        src: './assets/11-hot-seat/7-25-16 stayed in chi to stalk harbaugh.jpg',
         placeholder: false
     },
     'cabrera-big-star': {
@@ -90,7 +90,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Miguel Cabrera is a big star',
-        src: './assets/to-go/7-11-16 cabrera is a big star.jpg',
+        src: './assets/11-hot-seat/7-11-16 cabrera is a big star.jpg',
         placeholder: false
     },
     'rainbow-new-york': {
@@ -98,7 +98,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Rainbow over New York',
-        src: './assets/to-go/7-11-16 rainbow over new york.jpg',
+        src: './assets/11-hot-seat/7-11-16 rainbow over new york.jpg',
         placeholder: false
     },
     'waiting-for-harbaugh': {
@@ -106,7 +106,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Waiting for Harbaugh',
-        src: './assets/to-go/7-25-16 waiting for harbaugh.jpg',
+        src: './assets/11-hot-seat/7-25-16 waiting for harbaugh.jpg',
         placeholder: false
     },
     'high-heat-hot-seat': {
@@ -154,7 +154,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Winter Meetings - December 7, 2014',
-        src: './assets/to-go/12-7-14 winter meetings.jpg',
+        src: './assets/04-scandal/12-7-14 winter meetings.jpg',
         placeholder: false
     },
     'anthony-fenech-moron': {
