@@ -130,8 +130,8 @@ class Reader {
             buttonText = randomTexts[Math.floor(Math.random() * randomTexts.length)];
         }
 
-        // Check if credential carousel is enabled (default: ON)
-        const showCarousel = localStorage.getItem('admin_credentialCarousel') !== 'false';
+        // Check if credential carousel is enabled (default: OFF)
+        const showCarousel = localStorage.getItem('admin_credentialCarousel') === 'true';
         const credentialImages = [
             'credentials_01_002.jpg', 'credentials_01_004.jpg', 'credentials_01_006.jpg', 'credentials_01_008.jpg',
             'credentials_01_010.jpg', 'credentials_01_012.jpg', 'credentials_01_014.jpg', 'credentials_01_016.jpg',
@@ -175,19 +175,21 @@ class Reader {
             `;
         }
 
-        // Parental advisory only shows when credential mode is OFF (home page styled like title page)
-        const advisoryHTML = !showCarousel ? `
-            <div class="parental-advisory">
-                <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory: Explicit Content">
+        // Title page style HTML when credential mode is OFF
+        const titleHTML = !showCarousel ? `
+            <div class="title-page">
+                <div class="title-page-content">
+                    <h1 class="title-page-title">OFF-THE-RECORD</h1>
+                </div>
+                <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="parental-advisory">
             </div>
         ` : '';
 
         this.chapterBody.innerHTML = `
             <div class="home-content">
-                ${credentialHTML}
+                ${showCarousel ? credentialHTML : titleHTML}
                 <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
             </div>
-            ${advisoryHTML}
         `;
 
         // Add click handler for start reading button

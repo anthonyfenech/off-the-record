@@ -12,28 +12,14 @@
       gap: var(--space-lg);
   }
 
-/* Parental Advisory Sticker */
-.parental-advisory {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 50;
+/* When home-content contains title-page, reset margin and adjust layout */
+.home-content:has(.title-page) {
+    margin-top: 0;
+    gap: var(--space-xl);
 }
 
-.parental-advisory img {
-    width: 80px;
-    height: auto;
-    opacity: 0.9;
-}
-
-@media (max-width: 480px) {
-    .parental-advisory {
-        bottom: 15px;
-        right: 15px;
-    }
-    .parental-advisory img {
-        width: 60px;
-    }
+.home-content .title-page {
+    min-height: 60vh;
 }
 
 .start-reading-btn {
