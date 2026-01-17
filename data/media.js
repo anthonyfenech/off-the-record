@@ -825,7 +825,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'April 2, 2019',
-        src: './assets/nu-get-images/April 2 2019 at 01.09 AM.JPG',
+        src: './assets/23-globetrotting/April 2 2019 at 01.09 AM.JPG',
         placeholder: false
     },
     'april-4-2019': {
@@ -833,7 +833,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'April 4, 2019',
-        src: './assets/nu-get-images/April 4 2019 at 12.24 PM.JPG',
+        src: './assets/23-globetrotting/April 4 2019 at 12.24 PM.JPG',
         placeholder: false
     },
     'bregman-nah-false': {
