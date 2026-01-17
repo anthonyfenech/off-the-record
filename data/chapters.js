@@ -5281,6 +5281,9 @@ export const CHAPTERS = [
 <p><em>"When it finally crashed off the mesh attached to the left field foul pole, one step after another the reaction unfurled: from Carlton Fisk's convulsive leap to John Kiley's booming of the 'Hallelujah Chorus' to the wearing off of the numbness to the outcry that echoed across the cold New England morning.</em></p>
 
 <p><em>"At 12:34 <span class="small-caps">A.M.</span>, in the 12th inning, Fisk's histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series."</em></p>
+
+<p class="media-embed"><span class="media-emoji" data-media-id="gammons-fisk-lede">📰</span></p>
+
             <p>It can give you chills.</p>
             <p>Today's game gets rained out. Doubleheader tomorrow—bad news for anyone who has an interview at the <em>Boston Globe</em>.</p>
 

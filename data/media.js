@@ -53,6 +53,14 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/7-12-16 cabrera\'s kicks.jpg',
         placeholder: false
     },
+    'gammons-fisk-lede': {
+        type: 'newspaper',
+        emoji: '📰',
+        label: 'Article',
+        caption: 'Peter Gammons\' lede from the 1975 World Series Game 6',
+        src: './assets/to-go/gammons-fisk-lede.JPG',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',
