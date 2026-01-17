@@ -849,7 +849,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'February 19, 2018',
-        src: './assets/nu-get-images/February 19 2018 at 13.47 PM.JPG',
+        src: './assets/18-awards-season/February 19 2018 at 13.47 PM.JPG',
         placeholder: false
     },
     'screenshot-2024-11-13': {
