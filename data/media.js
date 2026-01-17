@@ -58,7 +58,7 @@ export const MEDIA_CONTENT = {
         emoji: '📰',
         label: 'Article',
         caption: 'Peter Gammons\' lede from the 1975 World Series Game 6',
-        src: './assets/to-go/gammons-fisk-lede.JPG',
+        src: './assets/23-globetrotting/gammons-fisk-lede.JPG',
         placeholder: false
     },
     'verlander-likes-waffles': {
@@ -74,7 +74,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'SportsCenter studio in Detroit',
-        src: './assets/to-go/sportscenter-7-17-15.jpg',
+        src: './assets/07-midseason/sportscenter-7-17-15.jpg',
         placeholder: false
     },
     'harbaugh-watch-chicago': {
@@ -162,7 +162,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Anthony Fenech',
-        src: './assets/to-go/anthony-fenech-moron.jpg',
+        src: './assets/04-scandal/anthony-fenech-moron.jpg',
         placeholder: false
     },
     'tale-of-tape': {
