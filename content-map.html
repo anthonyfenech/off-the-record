@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Map - Admin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #e8e8e8;
+      min-height: 100vh;
+    }
+
+    /* ════════════════════════════════════════════════════
+       LAYOUT
+       ════════════════════════════════════════════════════ */
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      min-height: 100vh;
+    }
+
+    /* ════════════════════════════════════════════════════
+       MAIN PANEL (Left)
+       ════════════════════════════════════════════════════ */
+
+    .main-panel {
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #333;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-section { background: #4CAF50; color: white; }
+    .btn-break { background: #666; color: white; }
+    .btn-undo { background: #9c27b0; color: white; }
+    .btn-save { background: #2196F3; color: white; }
+
+    .btn-save:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-save.has-changes {
+      background: #ff9800;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,152,0,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(255,152,0,0); }
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .stats strong { color: #333; }
+
+    .unsaved-badge {
+      background: #ff9800;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: auto;
+      display: none;
+    }
+
+    .unsaved-badge.visible { display: inline-block; }
+
+    /* ════════════════════════════════════════════════════
+       CONTENT GRID
+       ════════════════════════════════════════════════════ */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      min-height: 200px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      border: 2px dashed transparent;
+      transition: all 0.2s;
+    }
+
+    .grid.drag-target {
+      border-color: #4CAF50;
+      background: #e8f5e9;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SECTION BOX
+       ════════════════════════════════════════════════════ */
+
+    .box {
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      min-height: 80px;
+      position: relative;
+      cursor: grab;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      user-select: none;
+    }
+
+    .box:hover {
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+
+    .box.dragging {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    .box.drag-over {
+      border-color: #2196F3;
+      background: #e3f2fd;
+      transform: scale(1.02);
+    }
+
+    /* PAID = Yellow */
+    .box.paid {
+      background: #fffde7;
+      border-color: #fbc02d;
+    }
+
+    .box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .box-number {
+      background: #333;
+      color: white;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .box.paid .box-number { background: #f9a825; }
+
+    .box-lock {
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.15s;
+    }
+
+    .box-lock:hover { transform: scale(1.3); }
+
+    .box-title {
+      font-size: 12px;
+      line-height: 1.3;
+      color: #333;
+    }
+
+    .box-delete {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background: none;
+      border: none;
+      color: #bbb;
+      cursor: pointer;
+      font-size: 16px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.15s;
+    }
+
+    .box-delete:hover {
+      background: #ffebee;
+      color: #e53935;
+    }
+
+    /* ════════════════════════════════════════════════════
+       CHAPTER BREAK
+       ════════════════════════════════════════════════════ */
+
+    .box.chapter-break {
+      grid-column: span 3;
+      background: #37474f;
+      border-color: #263238;
+      color: white;
+      min-height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 30px;
+    }
+
+    .box.chapter-break .box-header { display: none; }
+
+    .box.chapter-break .box-title {
+      color: white;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .box.chapter-break .box-delete {
+      color: #78909c;
+    }
+
+    .box.chapter-break .box-delete:hover {
+      background: rgba(255,255,255,0.1);
+      color: #ef5350;
+    }
+
+    /* Add buttons */
+    .add-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    /* ════════════════════════════════════════════════════
+       CUTTING ROOM FLOOR (Right Sidebar)
+       ════════════════════════════════════════════════════ */
+
+    .sidebar {
+      background: #263238;
+      color: white;
+      padding: 15px;
+      overflow-y: auto;
+      border-left: 3px solid #37474f;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #455a64;
+    }
+
+    .sidebar-header h2 {
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .sidebar-toggle {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* Category Filter */
+    .category-filter {
+      margin-bottom: 15px;
+    }
+
+    .category-filter select {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background: #455a64;
+      color: white;
+      font-size: 13px;
+    }
+
+    /* Floor List */
+    .floor-list {
+      min-height: 100px;
+      padding: 10px;
+      background: #1e272c;
+      border-radius: 6px;
+      border: 2px dashed transparent;
+      transition: all 0.2s;
+    }
+
+    .floor-list.drag-target {
+      border-color: #ff9800;
+      background: #3e2723;
+    }
+
+    /* Floor Item */
+    .floor-item {
+      background: #37474f;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 8px;
+      cursor: grab;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .floor-item:hover {
+      background: #455a64;
+    }
+
+    .floor-item.dragging {
+      opacity: 0.3;
+    }
+
+    .floor-item.drag-over {
+      background: #4e342e;
+      transform: scale(1.02);
+    }
+
+    .floor-item-category {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .floor-item-category.needs-work { color: #ffb74d; }
+    .floor-item-category.too-long { color: #e57373; }
+    .floor-item-category.off-topic { color: #90a4ae; }
+    .floor-item-category.save-later { color: #81c784; }
+
+    .floor-item-title {
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .floor-item-delete {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: none;
+      border: none;
+      color: #78909c;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .floor-item-delete:hover {
+      color: #ef5350;
+    }
+
+    /* Add to floor button */
+    .btn-add-floor {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background: #455a64;
+      color: white;
+      border: 2px dashed #607d8b;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .btn-add-floor:hover {
+      background: #546e7a;
+    }
+
+    /* Floor stats */
+    .floor-stats {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #455a64;
+      font-size: 11px;
+      color: #90a4ae;
+    }
+
+    /* ════════════════════════════════════════════════════
+       EDIT MODAL
+       ════════════════════════════════════════════════════ */
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal.open { display: flex; }
+
+    .modal-content {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 15px;
+    }
+
+    .modal-content label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 5px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .modal-content input,
+    .modal-content select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* ════════════════════════════════════════════════════
+       RESPONSIVE
+       ════════════════════════════════════════════════════ */
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-left: none;
+        border-top: 3px solid #37474f;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .box.chapter-break {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .box.chapter-break {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ════════════════════════════════════════════════════
+       MAIN PANEL
+       ════════════════════════════════════════════════════ -->
+
+  <div class="main-panel">
+    <div class="header">
+      <h1>CONTENT MAP</h1>
+      <div class="header-buttons">
+        <button class="btn btn-undo" id="undoBtn" disabled title="Undo (Ctrl+Z)">↩</button>
+        <button class="btn btn-save" id="saveBtn" disabled title="Save (Ctrl+S)">💾 SAVE</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <span>Sections: <strong id="sectionCount">0</strong></span>
+      <span>Free: <strong id="freeCount">0</strong></span>
+      <span>Paid: <strong id="paidCount">0</strong></span>
+      <span class="unsaved-badge" id="unsavedBadge">UNSAVED</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="add-buttons">
+      <button class="btn btn-section" id="addSectionBtn">+ Section</button>
+      <button class="btn btn-break" id="addBreakBtn">+ Break</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════
+       CUTTING ROOM FLOOR SIDEBAR
+       ════════════════════════════════════════════════════ -->
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>✂️ Cutting Room</h2>
+    </div>
+
+    <div class="category-filter">
+      <select id="floorFilter">
+        <option value="all">All Categories</option>
+        <option value="needs-work">⚠️ Needs Work</option>
+        <option value="too-long">📏 Too Long</option>
+        <option value="off-topic">🚫 Off-Topic</option>
+        <option value="save-later">🔄 Save for Later</option>
+      </select>
+    </div>
+
+    <div class="floor-list" id="floorList"></div>
+
+    <button class="btn-add-floor" id="addFloorBtn">+ Add to Floor</button>
+
+    <div class="floor-stats">
+      <span>Floor items: <strong id="floorCount">0</strong></span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     MODAL
+     ════════════════════════════════════════════════════ -->
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3 id="modalTitle">Add Section</h3>
+
+    <label>Title</label>
+    <input type="text" id="inputTitle" placeholder="Section title...">
+
+    <div id="categoryField">
+      <label>Category</label>
+      <select id="inputCategory">
+        <option value="needs-work">⚠️ Needs Work</option>
+        <option value="too-long">📏 Too Long</option>
+        <option value="off-topic">🚫 Off-Topic</option>
+        <option value="save-later">🔄 Save for Later</option>
+      </select>
+    </div>
+
+    <div class="modal-buttons">
+      <button class="btn" style="background:#eee;color:#333" id="modalCancel">Cancel</button>
+      <button class="btn btn-section" id="modalSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════
+
+let bookItems = [];      // Items in the book
+let floorItems = [];     // Items in cutting room floor
+let history = [];        // For undo
+let hasChanges = false;
+
+// ══════════════════════════════════════════════════════════
+// LOAD / SAVE
+// ══════════════════════════════════════════════════════════
+
+function loadData() {
+  const savedBook = localStorage.getItem('contentMap_book');
+  const savedFloor = localStorage.getItem('contentMap_floor');
+
+  if (savedBook) {
+    bookItems = JSON.parse(savedBook);
+  } else {
+    bookItems = [
+      { id: 1, type: 'section', title: 'Soresy Galarraga Repertoire', paid: false },
+      { id: 2, type: 'section', title: 'Leyland Sleep Card', paid: true },
+      { id: 3, type: 'section', title: 'Knapp First Replay', paid: false },
+      { id: 4, type: 'break', title: 'Chapter 2: 2016' },
+      { id: 5, type: 'section', title: 'Donald No-Stretch', paid: false },
+    ];
+  }
+
+  if (savedFloor) {
+    floorItems = JSON.parse(savedFloor);
+  } else {
+    floorItems = [
+      { id: 100, title: 'Verlander rant (too angry)', category: 'needs-work' },
+      { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long' },
+      { id: 102, title: 'Personal fishing trip story', category: 'off-topic' },
+    ];
+  }
+
+  render();
+}
+
+function saveData() {
+  localStorage.setItem('contentMap_book', JSON.stringify(bookItems));
+  localStorage.setItem('contentMap_floor', JSON.stringify(floorItems));
+  hasChanges = false;
+  updateUI();
+  showToast('Saved!');
+}
+
+function saveState() {
+  history.push({
+    book: JSON.parse(JSON.stringify(bookItems)),
+    floor: JSON.parse(JSON.stringify(floorItems))
+  });
+  if (history.length > 20) history.shift();
+  hasChanges = true;
+  updateUI();
+}
+
+function undo() {
+  if (history.length === 0) return;
+  const prev = history.pop();
+  bookItems = prev.book;
+  floorItems = prev.floor;
+  hasChanges = true;
+  updateUI();
+  render();
+}
+
+// ══════════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════════
+
+function render() {
+  renderBook();
+  renderFloor();
+  updateStats();
+}
+
+function renderBook() {
+  const grid = document.getElementById('grid');
+  let sectionNum = 0;
+
+  grid.innerHTML = bookItems.map(item => {
+    if (item.type === 'break') {
+      return `
+        <div class="box chapter-break" data-id="${item.id}" data-source="book" draggable="true">
+          <div class="box-title">═══ ${item.title} ═══</div>
+          <button class="box-delete" data-action="delete">×</button>
+        </div>
+      `;
+    } else {
+      sectionNum++;
+      return `
+        <div class="box ${item.paid ? 'paid' : ''}" data-id="${item.id}" data-source="book" draggable="true">
+          <div class="box-header">
+            <span class="box-number">${sectionNum}</span>
+            <span class="box-lock" data-action="toggle">${item.paid ? '🔒' : '🔓'}</span>
+          </div>
+          <div class="box-title">${item.title}</div>
+          <button class="box-delete" data-action="delete">×</button>
+        </div>
+      `;
+    }
+  }).join('');
+}
+
+function renderFloor() {
+  const list = document.getElementById('floorList');
+  const filter = document.getElementById('floorFilter').value;
+
+  const categoryIcons = {
+    'needs-work': '⚠️',
+    'too-long': '📏',
+    'off-topic': '🚫',
+    'save-later': '🔄'
+  };
+
+  const filtered = filter === 'all'
+    ? floorItems
+    : floorItems.filter(i => i.category === filter);
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div style="color:#78909c;font-size:12px;text-align:center;padding:20px;">Drag sections here</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(item => `
+    <div class="floor-item" data-id="${item.id}" data-source="floor" draggable="true">
+      <div class="floor-item-category ${item.category}">
+        ${categoryIcons[item.category] || ''} ${item.category.replace('-', ' ')}
+      </div>
+      <div class="floor-item-title">${item.title}</div>
+      <button class="floor-item-delete" data-action="delete-floor">×</button>
+    </div>
+  `).join('');
+}
+
+function updateStats() {
+  const sections = bookItems.filter(i => i.type === 'section');
+  document.getElementById('sectionCount').textContent = sections.length;
+  document.getElementById('freeCount').textContent = sections.filter(s => !s.paid).length;
+  document.getElementById('paidCount').textContent = sections.filter(s => s.paid).length;
+  document.getElementById('floorCount').textContent = floorItems.length;
+}
+
+function updateUI() {
+  const saveBtn = document.getElementById('saveBtn');
+  const undoBtn = document.getElementById('undoBtn');
+  const badge = document.getElementById('unsavedBadge');
+
+  saveBtn.disabled = !hasChanges;
+  saveBtn.classList.toggle('has-changes', hasChanges);
+  undoBtn.disabled = history.length === 0;
+  badge.classList.toggle('visible', hasChanges);
+}
+
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#333;color:white;padding:10px 20px;border-radius:5px;z-index:9999;';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2000);
+}
+
+// ══════════════════════════════════════════════════════════
+// DRAG AND DROP (Event Delegation - Efficient)
+// ══════════════════════════════════════════════════════════
+
+let dragData = null;
+
+document.addEventListener('dragstart', e => {
+  const item = e.target.closest('[draggable="true"]');
+  if (!item) return;
+
+  dragData = {
+    id: parseInt(item.dataset.id),
+    source: item.dataset.source
+  };
+
+  item.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+
+  requestAnimationFrame(() => {
+    item.style.opacity = '0.4';
+  });
+});
+
+document.addEventListener('dragend', e => {
+  const item = e.target.closest('[draggable="true"]');
+  if (item) {
+    item.classList.remove('dragging');
+    item.style.opacity = '';
+  }
+
+  document.querySelectorAll('.drag-over, .drag-target').forEach(el => {
+    el.classList.remove('drag-over', 'drag-target');
+  });
+
+  dragData = null;
+});
+
+document.addEventListener('dragover', e => {
+  e.preventDefault();
+
+  const grid = document.getElementById('grid');
+  const floorList = document.getElementById('floorList');
+
+  if (grid.contains(e.target) || e.target === grid) {
+    grid.classList.add('drag-target');
+    floorList.classList.remove('drag-target');
+  } else if (floorList.contains(e.target) || e.target === floorList) {
+    floorList.classList.add('drag-target');
+    grid.classList.remove('drag-target');
+  }
+
+  const item = e.target.closest('.box, .floor-item');
+  if (item && parseInt(item.dataset.id) !== dragData?.id) {
+    document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+    item.classList.add('drag-over');
+  }
+});
+
+document.addEventListener('dragleave', e => {
+  const item = e.target.closest('.box, .floor-item');
+  if (item) item.classList.remove('drag-over');
+});
+
+document.addEventListener('drop', e => {
+  e.preventDefault();
+  if (!dragData) return;
+
+  const grid = document.getElementById('grid');
+  const floorList = document.getElementById('floorList');
+
+  const targetItem = e.target.closest('.box, .floor-item');
+  const droppedOnGrid = grid.contains(e.target) || e.target === grid;
+  const droppedOnFloor = floorList.contains(e.target) || e.target === floorList;
+
+  saveState();
+
+  // CASE 1: Moving within book
+  if (dragData.source === 'book' && droppedOnGrid) {
+    if (targetItem && targetItem.dataset.source === 'book') {
+      const fromIdx = bookItems.findIndex(i => i.id === dragData.id);
+      const toIdx = bookItems.findIndex(i => i.id === parseInt(targetItem.dataset.id));
+      const [moved] = bookItems.splice(fromIdx, 1);
+      bookItems.splice(toIdx, 0, moved);
+    }
+  }
+
+  // CASE 2: Moving from book to floor
+  else if (dragData.source === 'book' && droppedOnFloor) {
+    const idx = bookItems.findIndex(i => i.id === dragData.id);
+    const item = bookItems[idx];
+    if (item.type === 'section') {
+      bookItems.splice(idx, 1);
+      floorItems.push({
+        id: item.id,
+        title: item.title,
+        category: 'save-later'
+      });
+    }
+  }
+
+  // CASE 3: Moving from floor to book
+  else if (dragData.source === 'floor' && droppedOnGrid) {
+    const idx = floorItems.findIndex(i => i.id === dragData.id);
+    const item = floorItems[idx];
+    floorItems.splice(idx, 1);
+
+    const newItem = {
+      id: item.id,
+      type: 'section',
+      title: item.title,
+      paid: false
+    };
+
+    if (targetItem && targetItem.dataset.source === 'book') {
+      const toIdx = bookItems.findIndex(i => i.id === parseInt(targetItem.dataset.id));
+      bookItems.splice(toIdx, 0, newItem);
+    } else {
+      bookItems.push(newItem);
+    }
+  }
+
+  // CASE 4: Reordering within floor
+  else if (dragData.source === 'floor' && droppedOnFloor && targetItem) {
+    const fromIdx = floorItems.findIndex(i => i.id === dragData.id);
+    const toIdx = floorItems.findIndex(i => i.id === parseInt(targetItem.dataset.id));
+    const [moved] = floorItems.splice(fromIdx, 1);
+    floorItems.splice(toIdx, 0, moved);
+  }
+
+  document.querySelectorAll('.drag-over, .drag-target').forEach(el => {
+    el.classList.remove('drag-over', 'drag-target');
+  });
+
+  render();
+});
+
+// ══════════════════════════════════════════════════════════
+// CLICK HANDLERS (Event Delegation)
+// ══════════════════════════════════════════════════════════
+
+document.addEventListener('click', e => {
+  const action = e.target.dataset.action;
+  if (!action) return;
+
+  const box = e.target.closest('.box, .floor-item');
+  const id = box ? parseInt(box.dataset.id) : null;
+
+  if (action === 'toggle' && id) {
+    saveState();
+    const item = bookItems.find(i => i.id === id);
+    if (item) item.paid = !item.paid;
+    render();
+  }
+
+  if (action === 'delete' && id) {
+    if (confirm('Delete this item?')) {
+      saveState();
+      bookItems = bookItems.filter(i => i.id !== id);
+      render();
+    }
+  }
+
+  if (action === 'delete-floor' && id) {
+    if (confirm('Permanently delete from cutting room floor?')) {
+      saveState();
+      floorItems = floorItems.filter(i => i.id !== id);
+      render();
+    }
+  }
+});
+
+// Double-click to edit
+document.addEventListener('dblclick', e => {
+  const box = e.target.closest('.box');
+  if (!box || e.target.closest('button')) return;
+
+  const id = parseInt(box.dataset.id);
+  const item = bookItems.find(i => i.id === id);
+  if (!item) return;
+
+  const newTitle = prompt('Edit title:', item.title);
+  if (newTitle && newTitle.trim()) {
+    saveState();
+    item.title = newTitle.trim();
+    render();
+  }
+});
+
+// ══════════════════════════════════════════════════════════
+// MODAL
+// ══════════════════════════════════════════════════════════
+
+let modalMode = null;
+
+document.getElementById('addSectionBtn').addEventListener('click', () => {
+  modalMode = 'section';
+  document.getElementById('modalTitle').textContent = 'Add Section';
+  document.getElementById('categoryField').style.display = 'none';
+  document.getElementById('inputTitle').value = '';
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('inputTitle').focus();
+});
+
+document.getElementById('addBreakBtn').addEventListener('click', () => {
+  modalMode = 'break';
+  document.getElementById('modalTitle').textContent = 'Add Chapter Break';
+  document.getElementById('categoryField').style.display = 'none';
+  document.getElementById('inputTitle').value = '';
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('inputTitle').focus();
+});
+
+document.getElementById('addFloorBtn').addEventListener('click', () => {
+  modalMode = 'floor';
+  document.getElementById('modalTitle').textContent = 'Add to Cutting Room Floor';
+  document.getElementById('categoryField').style.display = 'block';
+  document.getElementById('inputTitle').value = '';
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('inputTitle').focus();
+});
+
+document.getElementById('modalCancel').addEventListener('click', () => {
+  document.getElementById('modal').classList.remove('open');
+});
+
+document.getElementById('modalSave').addEventListener('click', () => {
+  const title = document.getElementById('inputTitle').value.trim();
+  if (!title) return alert('Enter a title');
+
+  saveState();
+
+  const maxId = Math.max(
+    ...bookItems.map(i => i.id),
+    ...floorItems.map(i => i.id),
+    0
+  ) + 1;
+
+  if (modalMode === 'section') {
+    bookItems.push({ id: maxId, type: 'section', title, paid: false });
+  } else if (modalMode === 'break') {
+    bookItems.push({ id: maxId, type: 'break', title });
+  } else if (modalMode === 'floor') {
+    const category = document.getElementById('inputCategory').value;
+    floorItems.push({ id: maxId, title, category });
+  }
+
+  document.getElementById('modal').classList.remove('open');
+  render();
+});
+
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') {
+    document.getElementById('modal').classList.remove('open');
+  }
+});
+
+// ══════════════════════════════════════════════════════════
+// KEYBOARD SHORTCUTS
+// ══════════════════════════════════════════════════════════
+
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && e.key === 's') {
+    e.preventDefault();
+    if (hasChanges) saveData();
+  }
+
+  if (e.ctrlKey && e.key === 'z') {
+    e.preventDefault();
+    undo();
+  }
+
+  if (e.key === 'Escape') {
+    document.getElementById('modal').classList.remove('open');
+  }
+});
+
+// ══════════════════════════════════════════════════════════
+// FILTER
+// ══════════════════════════════════════════════════════════
+
+document.getElementById('floorFilter').addEventListener('change', renderFloor);
+
+// ══════════════════════════════════════════════════════════
+// BUTTON HANDLERS
+// ══════════════════════════════════════════════════════════
+
+document.getElementById('saveBtn').addEventListener('click', saveData);
+document.getElementById('undoBtn').addEventListener('click', undo);
+
+// ══════════════════════════════════════════════════════════
+// WARN BEFORE LEAVING
+// ══════════════════════════════════════════════════════════
+
+window.onbeforeunload = () => hasChanges ? true : null;
+
+// ══════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════
+
+loadData();
+</script>
+
+</body>
+</html>
