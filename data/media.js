@@ -173,6 +173,14 @@ export const MEDIA_CONTENT = {
         src: './assets/13-wake-up-call/Talkin\' Tigers me and Drew.jpg',
         placeholder: false
     },
+    'kinsler-team-usa': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Kinsler to play for Team USA - TV screenshot',
+        src: '',
+        placeholder: true
+    },
     'winter-meetings-2014': {
         type: 'photo',
         emoji: '📷',

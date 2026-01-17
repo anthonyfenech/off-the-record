@@ -2728,7 +2728,7 @@ export const CHAPTERS = [
 
 <p>"I haven't confirmed it with either of them. Pretty sure Kins is playing. Haven't talked to Ver about it yet."</p>
 
-<p>After lunch, my scoop scrolls across the TV: <span class="small-caps">KINSLER TO PLAY FOR TEAM USA</span>.</p>
+<p>After lunch, my scoop scrolls across the TV: <span class="small-caps">KINSLER TO PLAY FOR TEAM USA</span>. <span class="media-emoji" data-media-id="kinsler-team-usa">📷</span></p>
 
 <p>I work remotely in my room so my competitors can't see the color-coded ScoopSheet on my screen. I arrange rendezvous with sources, then take the elevators down to meet 'em on the main floor. The Gaylord National Resort and Conference Center is the center point of this year's shindig, sitting along the Potomac encased in glass scaffolding reminiscent of modern stadiums.</p>
 
