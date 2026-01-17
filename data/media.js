@@ -157,6 +157,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.reddit.com/r/baseball/comments/6vtvfg/verlander_flipped_off_victor_martinez_in_dugout/',
         placeholder: false
     },
+    'harkins-settlement-latimes': {
+        type: 'link',
+        emoji: '📰',
+        label: 'Article',
+        caption: 'Bubba Harkins defamation lawsuit settled (LA Times)',
+        url: 'https://www.latimes.com/sports/angels/story/2023-07-31/bubba-harkins-defamation-lawsuit-angels-mlb-settled',
+        placeholder: false
+    },
     'winter-meetings-2014': {
         type: 'photo',
         emoji: '📷',

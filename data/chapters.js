@@ -7195,7 +7195,7 @@ export const CHAPTERS = [
 
 <p>In court filings, Harkins said Verlander texted him after the Angels fired him: "Bubba, it's JV. Firstly, I'm so sorry to hear about this. Please give me a shout whenever you can." In their subsequent phone conversation, Verlander said 'the league has let this go on for 100 hundred years,' and that it was '(expletive).'"</p>
 
-<p>Harkins' defamation suit was settled confidentially in July 2023, hours before the case was scheduled to go to trial.</p>
+<p>Harkins' defamation suit was settled confidentially in July 2023, hours before the case was scheduled to go to trial. <span class="media-emoji" data-media-id="harkins-settlement-latimes">📰</span></p>
 
 <p class="scene-break">***</p>
 
