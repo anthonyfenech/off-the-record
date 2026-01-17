@@ -873,7 +873,7 @@ export const MEDIA_CONTENT = {
         emoji: '🤳',
         label: 'Selfie',
         caption: 'Minnesota Selfie with Zimm',
-        src: './assets/nu-get-images/minnesota selfie zimm.jpeg',
+        src: './assets/12-pennant-race/minnesota selfie zimm.jpeg',
         placeholder: false
     },
     'verlander-trade-tweet': {
