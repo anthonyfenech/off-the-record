@@ -19,7 +19,7 @@ class BossButton {
         this.header = document.getElementById('header');
         this.navFooter = document.getElementById('navFooter');
         this.tocSidebar = document.getElementById('tocSidebar');
-        this.overlay = document.getElementById('overlay');
+        // Note: We don't manage the overlay - it has its own visibility via .active class
 
         // Cache fake screens
         this.screenModes.forEach(mode => {
@@ -69,7 +69,6 @@ class BossButton {
         if (this.header) this.header.style.visibility = 'hidden';
         if (this.navFooter) this.navFooter.style.visibility = 'hidden';
         if (this.tocSidebar) this.tocSidebar.style.visibility = 'hidden';
-        if (this.overlay) this.overlay.style.visibility = 'hidden';
 
         // Randomly select a fake screen
         this.currentMode = this.screenModes[Math.floor(Math.random() * this.screenModes.length)];
@@ -118,7 +117,6 @@ class BossButton {
         if (this.header) this.header.style.visibility = 'visible';
         if (this.navFooter) this.navFooter.style.visibility = 'visible';
         if (this.tocSidebar) this.tocSidebar.style.visibility = 'visible';
-        if (this.overlay) this.overlay.style.visibility = 'visible';
 
         // Restore EXACT scroll position
         window.scrollTo(this.savedScrollX, this.savedScrollY);
