@@ -1,0 +1,2837 @@
+{
+  "1": [
+    {
+      "index": 0,
+      "type": "CITY-ONLY",
+      "display": "ST. PAUL'S BAY, Malta",
+      "city": "ST. PAUL'S BAY, Malta",
+      "date": null,
+      "time": null,
+      "resolved_city": "ST. PAUL'S BAY, Malta"
+    }
+  ],
+  "2": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "CHICAGO, August 27",
+      "city": "CHICAGO",
+      "date": "August 27",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "DENVER, August 29",
+      "city": "DENVER",
+      "date": "August 29",
+      "time": null,
+      "resolved_city": "DENVER"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "August 30",
+      "city": null,
+      "date": "August 30",
+      "time": null,
+      "resolved_city": "DENVER"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "August 31",
+      "city": null,
+      "date": "August 31",
+      "time": null,
+      "resolved_city": "DENVER"
+    },
+    {
+      "index": 4,
+      "type": "CITY-ONLY",
+      "display": "DETROIT",
+      "city": "DETROIT",
+      "date": null,
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "3": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, October 21, 2014",
+      "city": "DETROIT",
+      "date": "October 21, 2014",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "DETROIT, October 27",
+      "city": "DETROIT",
+      "date": "October 27",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "October 31",
+      "city": null,
+      "date": "October 31",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "November 11",
+      "city": null,
+      "date": "November 11",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "November 12",
+      "city": null,
+      "date": "November 12",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "4": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, December 5",
+      "city": "DETROIT",
+      "date": "December 5",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "SAN DIEGO, December 8",
+      "city": "SAN DIEGO",
+      "date": "December 8",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "December 10",
+      "city": null,
+      "date": "December 10",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "December 11",
+      "city": null,
+      "date": "December 11",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "DETROIT, December 21",
+      "city": "DETROIT",
+      "date": "December 21",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "December 19",
+      "city": null,
+      "date": "December 19",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "December 23",
+      "city": null,
+      "date": "December 23",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "December 31",
+      "city": null,
+      "date": "December 31",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "WASHINGTON, January 18, 2015",
+      "city": "WASHINGTON",
+      "date": "January 18, 2015",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "January 22",
+      "city": null,
+      "date": "January 22",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "January 24",
+      "city": null,
+      "date": "January 24",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    }
+  ],
+  "5": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., February 16",
+      "city": "LAKELAND, Fla.",
+      "date": "February 16",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "February 24",
+      "city": null,
+      "date": "February 24",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "February 25",
+      "city": null,
+      "date": "February 25",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "February 26",
+      "city": null,
+      "date": "February 26",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "March 18",
+      "city": null,
+      "date": "March 18",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "March 20",
+      "city": null,
+      "date": "March 20",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "DUNEDIN, Fla., March 27",
+      "city": "DUNEDIN, Fla.",
+      "date": "March 27",
+      "time": null,
+      "resolved_city": "DUNEDIN, Fla."
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., March 28",
+      "city": "LAKELAND, Fla.",
+      "date": "March 28",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "CLEARWATER, Fla., March 29",
+      "city": "CLEARWATER, Fla.",
+      "date": "March 29",
+      "time": null,
+      "resolved_city": "CLEARWATER, Fla."
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "April 3",
+      "city": null,
+      "date": "April 3",
+      "time": null,
+      "resolved_city": "CLEARWATER, Fla."
+    }
+  ],
+  "6": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, April 6",
+      "city": "DETROIT",
+      "date": "April 6",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "PITTSBURGH, April 13",
+      "city": "PITTSBURGH",
+      "date": "April 13",
+      "time": null,
+      "resolved_city": "PITTSBURGH"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "April 15",
+      "city": null,
+      "date": "April 15",
+      "time": null,
+      "resolved_city": "PITTSBURGH"
+    },
+    {
+      "index": 3,
+      "type": "FULL",
+      "display": "DETROIT, April 5, 2013",
+      "city": "DETROIT",
+      "date": "April 5, 2013",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "DETROIT, April 22, 2015",
+      "city": "DETROIT",
+      "date": "April 22, 2015",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "April 23",
+      "city": null,
+      "date": "April 23",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "OAKLAND, Calif., May 27",
+      "city": "OAKLAND, Calif.",
+      "date": "May 27",
+      "time": null,
+      "resolved_city": "OAKLAND, Calif."
+    }
+  ],
+  "7": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, July 2",
+      "city": "DETROIT",
+      "date": "July 2",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "SEATTLE, July 8",
+      "city": "SEATTLE",
+      "date": "July 8",
+      "time": null,
+      "resolved_city": "SEATTLE"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "MINNEAPOLIS, July 9",
+      "city": "MINNEAPOLIS",
+      "date": "July 9",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "July 10",
+      "city": null,
+      "date": "July 10",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "July 11",
+      "city": null,
+      "date": "July 11",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "DETROIT, July 17",
+      "city": "DETROIT",
+      "date": "July 17",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "July 19",
+      "city": null,
+      "date": "July 19",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "8": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "ST. PETERSBURG, Fla., July 27",
+      "city": "ST. PETERSBURG, Fla.",
+      "date": "July 27",
+      "time": null,
+      "resolved_city": "ST. PETERSBURG, Fla."
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "July 29",
+      "city": null,
+      "date": "July 29",
+      "time": null,
+      "resolved_city": "ST. PETERSBURG, Fla."
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "BALTIMORE, July 30",
+      "city": "BALTIMORE",
+      "date": "July 30",
+      "time": null,
+      "resolved_city": "BALTIMORE"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "July 31",
+      "city": null,
+      "date": "July 31",
+      "time": null,
+      "resolved_city": "BALTIMORE"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "WASHINGTON, August 3",
+      "city": "WASHINGTON",
+      "date": "August 3",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "DETROIT, August 4",
+      "city": "DETROIT",
+      "date": "August 4",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "ROUND ROCK, Texas, August 13",
+      "city": "ROUND ROCK, Texas",
+      "date": "August 13",
+      "time": null,
+      "resolved_city": "ROUND ROCK, Texas"
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "HOUSTON, August 15",
+      "city": "HOUSTON",
+      "date": "August 15",
+      "time": null,
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "CHICAGO, August 18",
+      "city": "CHICAGO",
+      "date": "August 18",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 9,
+      "type": "FULL",
+      "display": "KANSAS CITY, Mo., September 1",
+      "city": "KANSAS CITY, Mo.",
+      "date": "September 1",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "September 2",
+      "city": null,
+      "date": "September 2",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    }
+  ],
+  "9": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, September 10",
+      "city": "DETROIT",
+      "date": "September 10",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "CLEVELAND, September 11",
+      "city": "CLEVELAND",
+      "date": "September 11",
+      "time": null,
+      "resolved_city": "CLEVELAND"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "ARLINGTON, Texas, September 27",
+      "city": "ARLINGTON, Texas",
+      "date": "September 27",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "September 29",
+      "city": null,
+      "date": "September 29",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "CHICAGO, October 4",
+      "city": "CHICAGO",
+      "date": "October 4",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "BOCA RATON, Fla., November 9",
+      "city": "BOCA RATON, Fla.",
+      "date": "November 9",
+      "time": null,
+      "resolved_city": "BOCA RATON, Fla."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "DETROIT, November 18",
+      "city": "DETROIT",
+      "date": "November 18",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "November 29",
+      "city": null,
+      "date": "November 29",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "NASHVILLE, December 6",
+      "city": "NASHVILLE",
+      "date": "December 6",
+      "time": null,
+      "resolved_city": "NASHVILLE"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "December 7",
+      "city": null,
+      "date": "December 7",
+      "time": null,
+      "resolved_city": "NASHVILLE"
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "December 8",
+      "city": null,
+      "date": "December 8",
+      "time": null,
+      "resolved_city": "NASHVILLE"
+    },
+    {
+      "index": 11,
+      "type": "DATE-ONLY",
+      "display": "December 9",
+      "city": null,
+      "date": "December 9",
+      "time": null,
+      "resolved_city": "NASHVILLE"
+    },
+    {
+      "index": 12,
+      "type": "FULL",
+      "display": "ZZYZX, Calif., January 15, 2016",
+      "city": "ZZYZX, Calif.",
+      "date": "January 15, 2016",
+      "time": null,
+      "resolved_city": "ZZYZX, Calif."
+    },
+    {
+      "index": 13,
+      "type": "FULL",
+      "display": "TORONTO, January 18",
+      "city": "TORONTO",
+      "date": "January 18",
+      "time": null,
+      "resolved_city": "TORONTO"
+    },
+    {
+      "index": 14,
+      "type": "FULL",
+      "display": "DETROIT, January 20",
+      "city": "DETROIT",
+      "date": "January 20",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 15,
+      "type": "DATE-ONLY",
+      "display": "January 21",
+      "city": null,
+      "date": "January 21",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 16,
+      "type": "FULL",
+      "display": "SECAUCUS, N.J., February 12",
+      "city": "SECAUCUS, N.J.",
+      "date": "February 12",
+      "time": null,
+      "resolved_city": "SECAUCUS, N.J."
+    }
+  ],
+  "10": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., February 18",
+      "city": "LAKELAND, Fla.",
+      "date": "February 18",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "February 21",
+      "city": null,
+      "date": "February 21",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "February 22",
+      "city": null,
+      "date": "February 22",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "February 23",
+      "city": null,
+      "date": "February 23",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "February 29",
+      "city": null,
+      "date": "February 29",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "March 13",
+      "city": null,
+      "date": "March 13",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "March 26",
+      "city": null,
+      "date": "March 26",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "March 28",
+      "city": null,
+      "date": "March 28",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., March 31",
+      "city": "LAKELAND, Fla.",
+      "date": "March 31",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    }
+  ],
+  "11": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "WASHINGTON, May 8",
+      "city": "WASHINGTON",
+      "date": "May 8",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "May 9",
+      "city": null,
+      "date": "May 9",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "May 11",
+      "city": null,
+      "date": "May 11",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "May 12",
+      "city": null,
+      "date": "May 12",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "BALTIMORE, May 13",
+      "city": "BALTIMORE",
+      "date": "May 13",
+      "time": null,
+      "resolved_city": "BALTIMORE"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "May 14",
+      "city": null,
+      "date": "May 14",
+      "time": null,
+      "resolved_city": "BALTIMORE"
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "May 15",
+      "city": null,
+      "date": "May 15",
+      "time": null,
+      "resolved_city": "BALTIMORE"
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "ANAHEIM, Calif., May 31",
+      "city": "ANAHEIM, Calif.",
+      "date": "May 31",
+      "time": null,
+      "resolved_city": "ANAHEIM, Calif."
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "BLUE SPRINGS, Mo., June 15",
+      "city": "BLUE SPRINGS, Mo.",
+      "date": "June 15",
+      "time": null,
+      "resolved_city": "BLUE SPRINGS, Mo."
+    },
+    {
+      "index": 9,
+      "type": "FULL",
+      "display": "SAN DIEGO, July 11",
+      "city": "SAN DIEGO",
+      "date": "July 11",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 10,
+      "type": "FULL",
+      "display": "DETROIT, July 15",
+      "city": "DETROIT",
+      "date": "July 15",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 11,
+      "type": "DATE-ONLY",
+      "display": "July 25",
+      "city": null,
+      "date": "July 25",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 12,
+      "type": "FULL",
+      "display": "ARLINGTON, Texas, August 12",
+      "city": "ARLINGTON, Texas",
+      "date": "August 12",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 13,
+      "type": "FULL",
+      "display": "DETROIT, August 20",
+      "city": "DETROIT",
+      "date": "August 20",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 14,
+      "type": "DATE-ONLY",
+      "display": "August 21",
+      "city": null,
+      "date": "August 21",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "12": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "MINNEAPOLIS, September 20",
+      "city": "MINNEAPOLIS",
+      "date": "September 20",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "September 21",
+      "city": null,
+      "date": "September 21",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "ATLANTA, September 30",
+      "city": "ATLANTA",
+      "date": "September 30",
+      "time": null,
+      "resolved_city": "ATLANTA"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "October 1",
+      "city": null,
+      "date": "October 1",
+      "time": null,
+      "resolved_city": "ATLANTA"
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "October 2",
+      "city": null,
+      "date": "October 2",
+      "time": null,
+      "resolved_city": "ATLANTA"
+    }
+  ],
+  "13": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, October 3",
+      "city": "DETROIT",
+      "date": "October 3",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "October 4",
+      "city": null,
+      "date": "October 4",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "DETROIT, October 21",
+      "city": "DETROIT",
+      "date": "October 21",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "FULL",
+      "display": "SCOTTSDALE, Ariz., November 7",
+      "city": "SCOTTSDALE, Ariz.",
+      "date": "November 7",
+      "time": null,
+      "resolved_city": "SCOTTSDALE, Ariz."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "November 8",
+      "city": null,
+      "date": "November 8",
+      "time": null,
+      "resolved_city": "SCOTTSDALE, Ariz."
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "DETROIT, November 16",
+      "city": "DETROIT",
+      "date": "November 16",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "OXON HILL, Md., December 4",
+      "city": "OXON HILL, Md.",
+      "date": "December 4",
+      "time": null,
+      "resolved_city": "OXON HILL, Md."
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "December 5",
+      "city": null,
+      "date": "December 5",
+      "time": null,
+      "resolved_city": "OXON HILL, Md."
+    },
+    {
+      "index": 8,
+      "type": "DATE-ONLY",
+      "display": "December 6",
+      "city": null,
+      "date": "December 6",
+      "time": null,
+      "resolved_city": "OXON HILL, Md."
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "December 7",
+      "city": null,
+      "date": "December 7",
+      "time": null,
+      "resolved_city": "OXON HILL, Md."
+    },
+    {
+      "index": 10,
+      "type": "FULL",
+      "display": "DETROIT, January 27, 2017",
+      "city": "DETROIT",
+      "date": "January 27, 2017",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 11,
+      "type": "FULL",
+      "display": "SECAUCUS, N.J., February 9",
+      "city": "SECAUCUS, N.J.",
+      "date": "February 9",
+      "time": null,
+      "resolved_city": "SECAUCUS, N.J."
+    },
+    {
+      "index": 12,
+      "type": "CITY-ONLY",
+      "display": "WASHINGTON",
+      "city": "WASHINGTON",
+      "date": null,
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    }
+  ],
+  "14": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "TAMPA, Fla., February 12, 2017",
+      "city": "TAMPA, Fla.",
+      "date": "February 12, 2017",
+      "time": null,
+      "resolved_city": "TAMPA, Fla."
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., February 13",
+      "city": "LAKELAND, Fla.",
+      "date": "February 13",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "February 15",
+      "city": null,
+      "date": "February 15",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "February 16",
+      "city": null,
+      "date": "February 16",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "March 15",
+      "city": null,
+      "date": "March 15",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "March 28",
+      "city": null,
+      "date": "March 28",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "CHICAGO, April 4",
+      "city": "CHICAGO",
+      "date": "April 4",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "April 18",
+      "city": null,
+      "date": "April 18",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "OAKLAND, Calif., May 7",
+      "city": "OAKLAND, Calif.",
+      "date": "May 7",
+      "time": null,
+      "resolved_city": "OAKLAND, Calif."
+    },
+    {
+      "index": 9,
+      "type": "FULL",
+      "display": "ANAHEIM, Calif., May 11",
+      "city": "ANAHEIM, Calif.",
+      "date": "May 11",
+      "time": null,
+      "resolved_city": "ANAHEIM, Calif."
+    },
+    {
+      "index": 10,
+      "type": "FULL",
+      "display": "CHICAGO, May 26",
+      "city": "CHICAGO",
+      "date": "May 26",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 11,
+      "type": "DATE-ONLY",
+      "display": "May 27",
+      "city": null,
+      "date": "May 27",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 12,
+      "type": "FULL",
+      "display": "KANSAS CITY, Mo., May 29",
+      "city": "KANSAS CITY, Mo.",
+      "date": "May 29",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 13,
+      "type": "DATE-ONLY",
+      "display": "May 30",
+      "city": null,
+      "date": "May 30",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    }
+  ],
+  "15": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, July 2",
+      "city": "DETROIT",
+      "date": "July 2",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "UP NORTH, Mich., July 5",
+      "city": "UP NORTH, Mich.",
+      "date": "July 5",
+      "time": null,
+      "resolved_city": "UP NORTH, Mich."
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "DETROIT, July 5",
+      "city": "DETROIT",
+      "date": "July 5",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "FULL",
+      "display": "KANSAS CITY, Mo., July 17",
+      "city": "KANSAS CITY, Mo.",
+      "date": "July 17",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "July 18",
+      "city": null,
+      "date": "July 18",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "KANSAS CITY, Mo., July 20",
+      "city": "KANSAS CITY, Mo.",
+      "date": "July 20",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "DETROIT, July 24",
+      "city": "DETROIT",
+      "date": "July 24",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "July 29",
+      "city": null,
+      "date": "July 29",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "ARLINGTON, Texas, August 14",
+      "city": "ARLINGTON, Texas",
+      "date": "August 14",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "August 15",
+      "city": null,
+      "date": "August 15",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "August 16",
+      "city": null,
+      "date": "August 16",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 11,
+      "type": "FULL",
+      "display": "DETROIT, August 22",
+      "city": "DETROIT",
+      "date": "August 22",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 12,
+      "type": "DATE-ONLY",
+      "display": "August 23",
+      "city": null,
+      "date": "August 23",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 13,
+      "type": "DATE-ONLY",
+      "display": "August 24",
+      "city": null,
+      "date": "August 24",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "16": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "CHICAGO, August 24",
+      "city": "CHICAGO",
+      "date": "August 24",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "August 25",
+      "city": null,
+      "date": "August 25",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "August 26",
+      "city": null,
+      "date": "August 26",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "August 27",
+      "city": null,
+      "date": "August 27",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "DENVER, August 30",
+      "city": "DENVER",
+      "date": "August 30",
+      "time": null,
+      "resolved_city": "DENVER"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "August 31",
+      "city": null,
+      "date": "August 31",
+      "time": null,
+      "resolved_city": "DENVER"
+    },
+    {
+      "index": 6,
+      "type": "CITY-ONLY",
+      "display": "DETROIT",
+      "city": "DETROIT",
+      "date": null,
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "September 1",
+      "city": null,
+      "date": "September 1",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "17": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "DETROIT, May 22, 2007",
+      "city": "DETROIT",
+      "date": "May 22, 2007",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "August 31, 2007",
+      "city": null,
+      "date": "August 31, 2007",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "September 5, 2007",
+      "city": null,
+      "date": "September 5, 2007",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "February 10, 2008",
+      "city": null,
+      "date": "February 10, 2008",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "DETROIT, September 21, 2017",
+      "city": "DETROIT",
+      "date": "September 21, 2017",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "KANSAS CITY, Mo., September 26",
+      "city": "KANSAS CITY, Mo.",
+      "date": "September 26",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "October 1",
+      "city": null,
+      "date": "October 1",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "October 19",
+      "city": null,
+      "date": "October 19",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "LOS ANGELES, October 31",
+      "city": "LOS ANGELES",
+      "date": "October 31",
+      "time": null,
+      "resolved_city": "LOS ANGELES"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "November 1",
+      "city": null,
+      "date": "November 1",
+      "time": null,
+      "resolved_city": "LOS ANGELES"
+    },
+    {
+      "index": 10,
+      "type": "FULL",
+      "display": "ORLANDO, Fla., November 14",
+      "city": "ORLANDO, Fla.",
+      "date": "November 14",
+      "time": null,
+      "resolved_city": "ORLANDO, Fla."
+    },
+    {
+      "index": 11,
+      "type": "FULL",
+      "display": "ORLANDO, Fla., December 10",
+      "city": "ORLANDO, Fla.",
+      "date": "December 10",
+      "time": null,
+      "resolved_city": "ORLANDO, Fla."
+    },
+    {
+      "index": 12,
+      "type": "DATE-ONLY",
+      "display": "December 11",
+      "city": null,
+      "date": "December 11",
+      "time": null,
+      "resolved_city": "ORLANDO, Fla."
+    },
+    {
+      "index": 13,
+      "type": "DATE-ONLY",
+      "display": "December 13",
+      "city": null,
+      "date": "December 13",
+      "time": null,
+      "resolved_city": "ORLANDO, Fla."
+    },
+    {
+      "index": 14,
+      "type": "FULL",
+      "display": "DETROIT, January 8, 2018",
+      "city": "DETROIT",
+      "date": "January 8, 2018",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 15,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., February 1",
+      "city": "LAKELAND, Fla.",
+      "date": "February 1",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 16,
+      "type": "FULL",
+      "display": "DETROIT, February 6",
+      "city": "DETROIT",
+      "date": "February 6",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 17,
+      "type": "FULL",
+      "display": "SECAUCUS, N.J., February 7",
+      "city": "SECAUCUS, N.J.",
+      "date": "February 7",
+      "time": null,
+      "resolved_city": "SECAUCUS, N.J."
+    }
+  ],
+  "18": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., February 13",
+      "city": "LAKELAND, Fla.",
+      "date": "February 13",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "February 18",
+      "city": null,
+      "date": "February 18",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 2,
+      "type": "CITY-ONLY",
+      "display": "There's a new sheriff in town.",
+      "city": "There's a new sheriff in town.",
+      "date": null,
+      "time": null,
+      "resolved_city": "There's a new sheriff in town."
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "February 20",
+      "city": null,
+      "date": "February 20",
+      "time": null,
+      "resolved_city": "There's a new sheriff in town."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "February 25",
+      "city": null,
+      "date": "February 25",
+      "time": null,
+      "resolved_city": "There's a new sheriff in town."
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "SARASOTA, Fla., February 26",
+      "city": "SARASOTA, Fla.",
+      "date": "February 26",
+      "time": null,
+      "resolved_city": "SARASOTA, Fla."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "WEST PALM BEACH, Fla., March 4",
+      "city": "WEST PALM BEACH, Fla.",
+      "date": "March 4",
+      "time": null,
+      "resolved_city": "WEST PALM BEACH, Fla."
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "DETROIT, April 13",
+      "city": "DETROIT",
+      "date": "April 13",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 8,
+      "type": "DATE-ONLY",
+      "display": "April 22",
+      "city": null,
+      "date": "April 22",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "19": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "BOSTON, June 5",
+      "city": "BOSTON",
+      "date": "June 5",
+      "time": null,
+      "resolved_city": "BOSTON"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "June 6",
+      "city": null,
+      "date": "June 6",
+      "time": null,
+      "resolved_city": "BOSTON"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "DETROIT, June 13",
+      "city": "DETROIT",
+      "date": "June 13",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "FULL",
+      "display": "CLEVELAND, June 24",
+      "city": "CLEVELAND",
+      "date": "June 24",
+      "time": null,
+      "resolved_city": "CLEVELAND"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "DETROIT, June 26",
+      "city": "DETROIT",
+      "date": "June 26",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "June 27",
+      "city": null,
+      "date": "June 27",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "TAMPA, Fla., July 12",
+      "city": "TAMPA, Fla.",
+      "date": "July 12",
+      "time": null,
+      "resolved_city": "TAMPA, Fla."
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "HOUSTON, July 15",
+      "city": "HOUSTON",
+      "date": "July 15",
+      "time": null,
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "WASHINGTON, July 16",
+      "city": "WASHINGTON",
+      "date": "July 16",
+      "time": null,
+      "resolved_city": "WASHINGTON"
+    },
+    {
+      "index": 9,
+      "type": "FULL",
+      "display": "DETROIT, July 20",
+      "city": "DETROIT",
+      "date": "July 20",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "July 25",
+      "city": null,
+      "date": "July 25",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "20": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "COOPERSTOWN, N.Y., July 27",
+      "city": "COOPERSTOWN, N.Y.",
+      "date": "July 27",
+      "time": null,
+      "resolved_city": "COOPERSTOWN, N.Y."
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "July 28",
+      "city": null,
+      "date": "July 28",
+      "time": null,
+      "resolved_city": "COOPERSTOWN, N.Y."
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "DETROIT, July 30",
+      "city": "DETROIT",
+      "date": "July 30",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "August 1",
+      "city": null,
+      "date": "August 1",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "OAKLAND, Calif., August 4",
+      "city": "OAKLAND, Calif.",
+      "date": "August 4",
+      "time": null,
+      "resolved_city": "OAKLAND, Calif."
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "ANAHEIM, Calif., August 6",
+      "city": "ANAHEIM, Calif.",
+      "date": "August 6",
+      "time": null,
+      "resolved_city": "ANAHEIM, Calif."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "SALT LAKE CITY, August 9",
+      "city": "SALT LAKE CITY",
+      "date": "August 9",
+      "time": null,
+      "resolved_city": "SALT LAKE CITY"
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "DETROIT, August 10",
+      "city": "DETROIT",
+      "date": "August 10",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "21": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "MINNEAPOLIS, August 16",
+      "city": "MINNEAPOLIS",
+      "date": "August 16",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "August 18",
+      "city": null,
+      "date": "August 18",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "DETROIT, August 23",
+      "city": "DETROIT",
+      "date": "August 23",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "August 30",
+      "city": null,
+      "date": "August 30",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "September 5",
+      "city": null,
+      "date": "September 5",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "September 6",
+      "city": null,
+      "date": "September 6",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "September 11",
+      "city": null,
+      "date": "September 11",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "September 12",
+      "city": null,
+      "date": "September 12",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "MILWAUKEE, September 28",
+      "city": "MILWAUKEE",
+      "date": "September 28",
+      "time": null,
+      "resolved_city": "MILWAUKEE"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "September 29",
+      "city": null,
+      "date": "September 29",
+      "time": null,
+      "resolved_city": "MILWAUKEE"
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "September 30",
+      "city": null,
+      "date": "September 30",
+      "time": null,
+      "resolved_city": "MILWAUKEE"
+    },
+    {
+      "index": 11,
+      "type": "FULL",
+      "display": "DETROIT, October 1",
+      "city": "DETROIT",
+      "date": "October 1",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "22": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "LAS VEGAS, December 9",
+      "city": "LAS VEGAS",
+      "date": "December 9",
+      "time": null,
+      "resolved_city": "LAS VEGAS"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "December 10",
+      "city": null,
+      "date": "December 10",
+      "time": null,
+      "resolved_city": "LAS VEGAS"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "December 14",
+      "city": null,
+      "date": "December 14",
+      "time": null,
+      "resolved_city": "LAS VEGAS"
+    },
+    {
+      "index": 3,
+      "type": "FULL",
+      "display": "DETROIT, January 4, 2019",
+      "city": "DETROIT",
+      "date": "January 4, 2019",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "January 15",
+      "city": null,
+      "date": "January 15",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 5,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., January 28",
+      "city": "LAKELAND, Fla.",
+      "date": "January 28",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "January 29",
+      "city": null,
+      "date": "January 29",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "February 12",
+      "city": null,
+      "date": "February 12",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 8,
+      "type": "DATE-ONLY",
+      "display": "February 19",
+      "city": null,
+      "date": "February 19",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 9,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., March 1",
+      "city": "LAKELAND, Fla.",
+      "date": "March 1",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "March 4",
+      "city": null,
+      "date": "March 4",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 11,
+      "type": "FULL",
+      "display": "LAKE BUENA VISTA, Fla., March 6",
+      "city": "LAKE BUENA VISTA, Fla.",
+      "date": "March 6",
+      "time": null,
+      "resolved_city": "LAKE BUENA VISTA, Fla."
+    },
+    {
+      "index": 12,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., March 7",
+      "city": "LAKELAND, Fla.",
+      "date": "March 7",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 13,
+      "type": "DATE-ONLY",
+      "display": "March 8",
+      "city": null,
+      "date": "March 8",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 14,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., March 9",
+      "city": "LAKELAND, Fla.",
+      "date": "March 9",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 15,
+      "type": "FULL",
+      "display": "FORT MYERS, Fla., March 10",
+      "city": "FORT MYERS, Fla.",
+      "date": "March 10",
+      "time": null,
+      "resolved_city": "FORT MYERS, Fla."
+    },
+    {
+      "index": 16,
+      "type": "FULL",
+      "display": "ATLANTA, March 19",
+      "city": "ATLANTA",
+      "date": "March 19",
+      "time": null,
+      "resolved_city": "ATLANTA"
+    }
+  ],
+  "23": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "TORONTO, March 28",
+      "city": "TORONTO",
+      "date": "March 28",
+      "time": null,
+      "resolved_city": "TORONTO"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "March 29",
+      "city": null,
+      "date": "March 29",
+      "time": null,
+      "resolved_city": "TORONTO"
+    },
+    {
+      "index": 2,
+      "type": "FULL",
+      "display": "NEW YORK, April 3",
+      "city": "NEW YORK",
+      "date": "April 3",
+      "time": null,
+      "resolved_city": "NEW YORK"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "April 20",
+      "city": null,
+      "date": "April 20",
+      "time": null,
+      "resolved_city": "NEW YORK"
+    },
+    {
+      "index": 4,
+      "type": "FULL",
+      "display": "BOSTON, April 22",
+      "city": "BOSTON",
+      "date": "April 22",
+      "time": null,
+      "resolved_city": "BOSTON"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "April 24",
+      "city": null,
+      "date": "April 24",
+      "time": null,
+      "resolved_city": "BOSTON"
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "CHICAGO, April 26",
+      "city": "CHICAGO",
+      "date": "April 26",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "MINNEAPOLIS, May 12",
+      "city": "MINNEAPOLIS",
+      "date": "May 12",
+      "time": null,
+      "resolved_city": "MINNEAPOLIS"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "DETROIT, May 13",
+      "city": "DETROIT",
+      "date": "May 13",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "May 18",
+      "city": null,
+      "date": "May 18",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 10,
+      "type": "FULL",
+      "display": "NEW YORK, May 24",
+      "city": "NEW YORK",
+      "date": "May 24",
+      "time": null,
+      "resolved_city": "NEW YORK"
+    },
+    {
+      "index": 11,
+      "type": "DATE-ONLY",
+      "display": "May 26",
+      "city": null,
+      "date": "May 26",
+      "time": null,
+      "resolved_city": "NEW YORK"
+    },
+    {
+      "index": 12,
+      "type": "FULL",
+      "display": "BALTIMORE, May 27",
+      "city": "BALTIMORE",
+      "date": "May 27",
+      "time": null,
+      "resolved_city": "BALTIMORE"
+    }
+  ],
+  "24": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "KANSAS CITY, Mo., June 12",
+      "city": "KANSAS CITY, Mo.",
+      "date": "June 12",
+      "time": null,
+      "resolved_city": "KANSAS CITY, Mo."
+    },
+    {
+      "index": 1,
+      "type": "FULL",
+      "display": "OMAHA, Neb., June 13",
+      "city": "OMAHA, Neb.",
+      "date": "June 13",
+      "time": null,
+      "resolved_city": "OMAHA, Neb."
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "June 17",
+      "city": null,
+      "date": "June 17",
+      "time": null,
+      "resolved_city": "OMAHA, Neb."
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "June 19",
+      "city": null,
+      "date": "June 19",
+      "time": null,
+      "resolved_city": "OMAHA, Neb."
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "June 21",
+      "city": null,
+      "date": "June 21",
+      "time": null,
+      "resolved_city": "OMAHA, Neb."
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "June 26",
+      "city": null,
+      "date": "June 26",
+      "time": null,
+      "resolved_city": "OMAHA, Neb."
+    },
+    {
+      "index": 6,
+      "type": "FULL",
+      "display": "DETROIT, July 4",
+      "city": "DETROIT",
+      "date": "July 4",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 7,
+      "type": "FULL",
+      "display": "DETROIT, July 23",
+      "city": "DETROIT",
+      "date": "July 23",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 8,
+      "type": "FULL",
+      "display": "ANAHEIM, Calif., July 31",
+      "city": "ANAHEIM, Calif.",
+      "date": "July 31",
+      "time": null,
+      "resolved_city": "ANAHEIM, Calif."
+    },
+    {
+      "index": 9,
+      "type": "FULL",
+      "display": "ARLINGTON, Texas, August 3",
+      "city": "ARLINGTON, Texas",
+      "date": "August 3",
+      "time": null,
+      "resolved_city": "ARLINGTON, Texas"
+    },
+    {
+      "index": 10,
+      "type": "FULL",
+      "display": "DETROIT, August 5",
+      "city": "DETROIT",
+      "date": "August 5",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "25": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "HOUSTON, August 20",
+      "city": "HOUSTON",
+      "date": "August 20",
+      "time": null,
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "August 21",
+      "city": null,
+      "date": "August 21",
+      "time": null,
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 2,
+      "type": "TIME",
+      "display": "9:27 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:27 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 3,
+      "type": "TIME",
+      "display": "9:30 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:30 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 4,
+      "type": "TIME",
+      "display": "9:33 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:33 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 5,
+      "type": "TIME",
+      "display": "9:35 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:35 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 6,
+      "type": "TIME",
+      "display": "9:36 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:36 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 7,
+      "type": "TIME",
+      "display": "9:39 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:39 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 8,
+      "type": "TIME",
+      "display": "9:41 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:41 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 9,
+      "type": "TIME",
+      "display": "9:44 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:44 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 10,
+      "type": "TIME",
+      "display": "9:46 P.M.",
+      "city": null,
+      "date": null,
+      "time": "9:46 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 11,
+      "type": "TIME",
+      "display": "10:30 P.M.",
+      "city": null,
+      "date": null,
+      "time": "10:30 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 12,
+      "type": "TIME",
+      "display": "3:04 A.M.",
+      "city": null,
+      "date": null,
+      "time": "3:04 A.M.",
+      "resolved_city": "HOUSTON"
+    }
+  ],
+  "26": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "HOUSTON, August 22",
+      "city": "HOUSTON",
+      "date": "August 22",
+      "time": null,
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 1,
+      "type": "TIME",
+      "display": "10:32 A.M.",
+      "city": null,
+      "date": null,
+      "time": "10:32 A.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 2,
+      "type": "TIME",
+      "display": "10:57 A.M.",
+      "city": null,
+      "date": null,
+      "time": "10:57 A.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 3,
+      "type": "TIME",
+      "display": "11:03 A.M.",
+      "city": null,
+      "date": null,
+      "time": "11:03 A.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 4,
+      "type": "TIME",
+      "display": "11:27 A.M.",
+      "city": null,
+      "date": null,
+      "time": "11:27 A.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 5,
+      "type": "TIME",
+      "display": "1:05 P.M.",
+      "city": null,
+      "date": null,
+      "time": "1:05 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 6,
+      "type": "TIME",
+      "display": "2:44 P.M.",
+      "city": null,
+      "date": null,
+      "time": "2:44 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 7,
+      "type": "TIME",
+      "display": "3:17 P.M.",
+      "city": null,
+      "date": null,
+      "time": "3:17 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 8,
+      "type": "TIME",
+      "display": "3:46 P.M.",
+      "city": null,
+      "date": null,
+      "time": "3:46 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 9,
+      "type": "TIME",
+      "display": "3:49 P.M.",
+      "city": null,
+      "date": null,
+      "time": "3:49 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 10,
+      "type": "TIME",
+      "display": "3:53 P.M.",
+      "city": null,
+      "date": null,
+      "time": "3:53 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 11,
+      "type": "TIME",
+      "display": "4:09 P.M.",
+      "city": null,
+      "date": null,
+      "time": "4:09 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 12,
+      "type": "TIME",
+      "display": "4:28 P.M.",
+      "city": null,
+      "date": null,
+      "time": "4:28 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 13,
+      "type": "TIME",
+      "display": "7:28 P.M.",
+      "city": null,
+      "date": null,
+      "time": "7:28 P.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 14,
+      "type": "TIME",
+      "display": "12:08 A.M.",
+      "city": null,
+      "date": null,
+      "time": "12:08 A.M.",
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 15,
+      "type": "DATE-ONLY",
+      "display": "August 23",
+      "city": null,
+      "date": "August 23",
+      "time": null,
+      "resolved_city": "HOUSTON"
+    },
+    {
+      "index": 16,
+      "type": "FULL",
+      "display": "DETROIT, August 24",
+      "city": "DETROIT",
+      "date": "August 24",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 17,
+      "type": "DATE-ONLY",
+      "display": "September 11",
+      "city": null,
+      "date": "September 11",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 18,
+      "type": "DATE-ONLY",
+      "display": "September 13",
+      "city": null,
+      "date": "September 13",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 19,
+      "type": "DATE-ONLY",
+      "display": "September 20",
+      "city": null,
+      "date": "September 20",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 20,
+      "type": "DATE-ONLY",
+      "display": "September 25",
+      "city": null,
+      "date": "September 25",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 21,
+      "type": "FULL",
+      "display": "CHICAGO, September 27",
+      "city": "CHICAGO",
+      "date": "September 27",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 22,
+      "type": "DATE-ONLY",
+      "display": "September 29",
+      "city": null,
+      "date": "September 29",
+      "time": null,
+      "resolved_city": "CHICAGO"
+    },
+    {
+      "index": 23,
+      "type": "FULL",
+      "display": "DETROIT, October 4",
+      "city": "DETROIT",
+      "date": "October 4",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 24,
+      "type": "FULL",
+      "display": "LONDON, November 14",
+      "city": "LONDON",
+      "date": "November 14",
+      "time": null,
+      "resolved_city": "LONDON"
+    },
+    {
+      "index": 25,
+      "type": "FULL",
+      "display": "DETROIT, November 22",
+      "city": "DETROIT",
+      "date": "November 22",
+      "time": null,
+      "resolved_city": "DETROIT"
+    },
+    {
+      "index": 26,
+      "type": "DATE-ONLY",
+      "display": "November 25",
+      "city": null,
+      "date": "November 25",
+      "time": null,
+      "resolved_city": "DETROIT"
+    }
+  ],
+  "27": [
+    {
+      "index": 0,
+      "type": "FULL",
+      "display": "SAN DIEGO, December 8",
+      "city": "SAN DIEGO",
+      "date": "December 8",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 1,
+      "type": "DATE-ONLY",
+      "display": "December 9",
+      "city": null,
+      "date": "December 9",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 2,
+      "type": "DATE-ONLY",
+      "display": "December 10",
+      "city": null,
+      "date": "December 10",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 3,
+      "type": "DATE-ONLY",
+      "display": "December 11",
+      "city": null,
+      "date": "December 11",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 4,
+      "type": "DATE-ONLY",
+      "display": "December 12",
+      "city": null,
+      "date": "December 12",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 5,
+      "type": "DATE-ONLY",
+      "display": "December 16",
+      "city": null,
+      "date": "December 16",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 6,
+      "type": "DATE-ONLY",
+      "display": "December 20",
+      "city": null,
+      "date": "December 20",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 7,
+      "type": "DATE-ONLY",
+      "display": "December 21",
+      "city": null,
+      "date": "December 21",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 8,
+      "type": "DATE-ONLY",
+      "display": "December 23",
+      "city": null,
+      "date": "December 23",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 9,
+      "type": "DATE-ONLY",
+      "display": "December 25",
+      "city": null,
+      "date": "December 25",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 10,
+      "type": "DATE-ONLY",
+      "display": "December 26",
+      "city": null,
+      "date": "December 26",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 11,
+      "type": "DATE-ONLY",
+      "display": "December 31",
+      "city": null,
+      "date": "December 31",
+      "time": null,
+      "resolved_city": "SAN DIEGO"
+    },
+    {
+      "index": 12,
+      "type": "FULL",
+      "display": "SAN PEDRO de MACORIS, Dominican Republic, March 10, 2020",
+      "city": "SAN PEDRO de MACORIS, Dominican Republic",
+      "date": "March 10, 2020",
+      "time": null,
+      "resolved_city": "SAN PEDRO de MACORIS, Dominican Republic"
+    },
+    {
+      "index": 13,
+      "type": "FULL",
+      "display": "SANTO DOMINGO, Dominican Republic, March 11",
+      "city": "SANTO DOMINGO, Dominican Republic",
+      "date": "March 11",
+      "time": null,
+      "resolved_city": "SANTO DOMINGO, Dominican Republic"
+    },
+    {
+      "index": 14,
+      "type": "CITY-ONLY",
+      "display": "ATLANTA",
+      "city": "ATLANTA",
+      "date": null,
+      "time": null,
+      "resolved_city": "ATLANTA"
+    },
+    {
+      "index": 15,
+      "type": "CITY-ONLY",
+      "display": "TAMPA, Fla.",
+      "city": "TAMPA, Fla.",
+      "date": null,
+      "time": null,
+      "resolved_city": "TAMPA, Fla."
+    },
+    {
+      "index": 16,
+      "type": "FULL",
+      "display": "LAKELAND, Fla., March 12",
+      "city": "LAKELAND, Fla.",
+      "date": "March 12",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    },
+    {
+      "index": 17,
+      "type": "DATE-ONLY",
+      "display": "March 13",
+      "city": null,
+      "date": "March 13",
+      "time": null,
+      "resolved_city": "LAKELAND, Fla."
+    }
+  ]
+}

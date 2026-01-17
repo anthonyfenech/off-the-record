@@ -120,9 +120,9 @@
       grid-template-rows: repeat(10, auto);
       grid-auto-flow: column;
       grid-auto-columns: 1fr;
-      gap: 8px;
+      gap: 6px;
       min-height: 200px;
-      padding: 10px;
+      padding: 8px;
       background: #f5f5f5;
       border-radius: 8px;
       border: 2px dashed transparent;
@@ -141,9 +141,9 @@
     .box {
       background: white;
       border: 2px solid #ddd;
-      border-radius: 6px;
-      padding: 8px;
-      min-height: 75px;
+      border-radius: 5px;
+      padding: 6px 8px;
+      min-height: 58px;
       position: relative;
       cursor: grab;
       transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
@@ -175,13 +175,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .box-title-row {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       flex: 1;
       min-width: 0;
     }
@@ -189,13 +189,13 @@
     .box-number {
       background: #333;
       color: white;
-      min-width: 22px;
-      height: 22px;
+      min-width: 18px;
+      height: 18px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       flex-shrink: 0;
     }
@@ -203,30 +203,30 @@
     .box.paid .box-number { background: #f9a825; }
 
     .box-lock {
-      font-size: 14px;
+      font-size: 12px;
       flex-shrink: 0;
     }
 
     .box-excerpt-badge {
       position: absolute;
-      top: -6px;
-      right: 30px;
+      top: -5px;
+      right: 24px;
       background: #2196F3;
       color: white;
-      font-size: 8px;
+      font-size: 7px;
       font-weight: 700;
-      padding: 2px 5px;
+      padding: 2px 4px;
       border-radius: 3px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .box-title {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.3px;
-      line-height: 1.3;
+      line-height: 1.2;
       color: #333;
       white-space: nowrap;
       overflow: hidden;
@@ -234,11 +234,11 @@
     }
 
     .box-meta {
-      font-size: 10px;
+      font-size: 9px;
       color: #888;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 1px;
       margin-top: 2px;
     }
 
@@ -248,15 +248,15 @@
 
     .box-delete {
       position: absolute;
-      bottom: 5px;
-      right: 5px;
+      bottom: 4px;
+      right: 4px;
       background: none;
       border: none;
       color: #bbb;
       cursor: pointer;
-      font-size: 14px;
-      width: 22px;
-      height: 22px;
+      font-size: 12px;
+      width: 18px;
+      height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -277,11 +277,11 @@
       background: #37474f;
       border-color: #263238;
       color: white;
-      min-height: 75px;
+      min-height: 58px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
+      padding: 6px 8px;
     }
 
     .box.chapter-break .box-header { display: none; }
@@ -361,7 +361,7 @@
     /* Floor List */
     .floor-list {
       min-height: 150px;
-      padding: 10px;
+      padding: 8px;
       background: #1e272c;
       border-radius: 6px;
       border: 2px dashed transparent;
@@ -380,12 +380,14 @@
       padding: 30px 10px;
     }
 
-    /* Floor Item */
+    /* Floor Item - matches .box style */
     .floor-item {
       background: #37474f;
+      border: 2px solid #263238;
       border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 8px;
+      padding: 6px 8px;
+      min-height: 58px;
+      margin-bottom: 6px;
       cursor: grab;
       transition: all 0.15s;
       position: relative;
@@ -405,13 +407,13 @@
     }
 
     .floor-item-category {
-      font-size: 10px;
+      font-size: 8px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 3px;
     }
 
     .floor-item-category.needs-work { color: #ffb74d; }
@@ -420,35 +422,50 @@
     .floor-item-category.save-later { color: #81c784; }
 
     .floor-item-title {
-      font-size: 12px;
-      line-height: 1.3;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 16px;
     }
 
     .floor-item-meta {
-      font-size: 10px;
-      color: #78909c;
-      margin-top: 4px;
+      font-size: 9px;
+      color: #90a4ae;
+      margin-top: 2px;
     }
 
     .floor-item-edition {
-      font-size: 9px;
+      font-size: 8px;
       color: #90caf9;
-      margin-top: 3px;
+      margin-top: 1px;
       font-style: italic;
     }
 
     .floor-item-delete {
       position: absolute;
-      top: 5px;
-      right: 5px;
+      top: 4px;
+      right: 4px;
       background: none;
       border: none;
-      color: #78909c;
+      color: #607d8b;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 12px;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
     }
 
     .floor-item-delete:hover {
+      background: rgba(255,255,255,0.1);
       color: #ef5350;
     }
 
@@ -976,78 +993,376 @@ let hasChanges = false;
 let currentDetailId = null;
 
 // ══════════════════════════════════════════════════════════
-// DEMO DATA - 10 CHAPTERS
+// REAL DATA - 27 CHAPTERS, 309 DATELINE SECTIONS
 // ══════════════════════════════════════════════════════════
 
-const DEMO_DATA = [
-  // Chapter 1
-  { id: 1, type: 'break', title: 'Chapter 1: The Interview' },
-  { id: 2, type: 'section', title: 'First Meeting with Dombrowski', paid: false, words: 1240, date: '2014-11-15', content: 'The hallway smelled like fresh paint and anxiety...' },
-  { id: 3, type: 'section', title: 'Leyland\'s Office', paid: false, words: 890, date: '2014-11-15', content: 'Jim Leyland sat behind a desk cluttered with...' },
-  { id: 4, type: 'section', title: 'The Job Offer', paid: true, words: 1560, date: '2014-12-03', content: 'Three weeks later, my phone rang at 6am...', excerpt: true },
-
-  // Chapter 2
-  { id: 5, type: 'break', title: 'Chapter 2: Rookie Year' },
-  { id: 6, type: 'section', title: 'First Day in the Press Box', paid: false, words: 1120, date: '2015-04-06', content: 'Comerica Park looked different from up here...' },
-  { id: 7, type: 'section', title: 'Cabrera\'s Batting Practice', paid: false, words: 980, date: '2015-04-07', content: 'The sound of Miguel\'s bat was different...' },
-  { id: 8, type: 'section', title: 'Verlander\'s Cold Shoulder', paid: true, words: 1340, date: '2015-04-20', content: 'Justin didn\'t acknowledge my existence for three weeks...', excerpt: true },
-
-  // Chapter 3
-  { id: 9, type: 'break', title: 'Chapter 3: Spring Training' },
-  { id: 10, type: 'section', title: 'Lakeland Arrival', paid: false, words: 1050, content: 'The drive from Tampa took longer than expected...' },
-  { id: 11, type: 'section', title: 'Soresy\'s Galarraga Story', paid: false, words: 1890, content: 'Armando Galarraga was throwing in the bullpen...' },
-  { id: 12, type: 'section', title: 'The Clubhouse Hierarchy', paid: true, words: 2100, content: 'Every clubhouse has unwritten rules...' },
-
-  // Chapter 4
-  { id: 13, type: 'break', title: 'Chapter 4: The Scandal' },
-  { id: 14, type: 'section', title: 'Internet Stalker Discovery', paid: false, words: 1670, content: 'The email came at 11pm on a Tuesday...' },
-  { id: 15, type: 'section', title: 'DUI Report Surfaces', paid: true, words: 2340, content: 'My editor called me into his office...' },
-  { id: 16, type: 'section', title: 'The Confrontation', paid: true, words: 1780, content: 'I found him in the parking lot after the game...' },
-
-  // Chapter 5
-  { id: 17, type: 'break', title: 'Chapter 5: Midseason' },
-  { id: 18, type: 'section', title: 'All-Star Break Blues', paid: false, words: 920, content: 'Four days without baseball felt like a month...' },
-  { id: 19, type: 'section', title: 'Trade Deadline Chaos', paid: false, words: 1450, content: 'Dombrowski was working three phones at once...' },
-  { id: 20, type: 'section', title: 'The Céspedes Deal', paid: true, words: 1890, content: 'Nobody saw this one coming...' },
-
-  // Chapter 6
-  { id: 21, type: 'break', title: 'Chapter 6: Pennant Race' },
-  { id: 22, type: 'section', title: 'September Pressure', paid: false, words: 1340, content: 'The magic number was 12...' },
-  { id: 23, type: 'section', title: 'Clinching Night', paid: false, words: 1560, content: 'The champagne burned my eyes...' },
-  { id: 24, type: 'section', title: 'Verlander\'s Confession', paid: true, words: 2450, content: 'He pulled me aside after the celebration...' },
-
-  // Chapter 7
-  { id: 25, type: 'break', title: 'Chapter 7: Postseason' },
-  { id: 26, type: 'section', title: 'ALDS Game 1', paid: false, words: 1120, content: 'October baseball hits different...' },
-  { id: 27, type: 'section', title: 'The Controversial Call', paid: true, words: 1780, content: 'Everyone in the press box saw it...' },
-  { id: 28, type: 'section', title: 'Series Loss', paid: false, words: 1230, content: 'The clubhouse was silent...' },
-
-  // Chapter 8
-  { id: 29, type: 'break', title: 'Chapter 8: Hot Seat' },
-  { id: 30, type: 'section', title: 'Ausmus Under Fire', paid: false, words: 1450, content: 'The fans wanted blood...' },
-  { id: 31, type: 'section', title: 'High Heat Interview', paid: true, words: 1670, content: 'Chris Russo didn\'t pull any punches...' },
-  { id: 32, type: 'section', title: 'Harbaugh Stalking', paid: true, words: 2100, content: 'I waited outside the hotel for four hours...' },
-
-  // Chapter 9
-  { id: 33, type: 'break', title: 'Chapter 9: The Rebuild' },
-  { id: 34, type: 'section', title: 'Verlander Trade Rumors', paid: false, words: 1340, content: 'Every reporter had a different source...' },
-  { id: 35, type: 'section', title: 'The Houston Deal', paid: true, words: 2890, content: 'August 31st, 11:58pm...' },
-  { id: 36, type: 'section', title: 'Saying Goodbye', paid: false, words: 1120, content: 'The clubhouse felt empty...' },
-
-  // Chapter 10
-  { id: 37, type: 'break', title: 'Chapter 10: The Incident' },
-  { id: 38, type: 'section', title: 'Houston Reunion', paid: false, words: 1560, content: 'I hadn\'t seen Justin in two years...' },
-  { id: 39, type: 'section', title: 'The Confrontation (Part 2)', paid: true, words: 3200, content: 'He was waiting for me outside the clubhouse...' },
-  { id: 40, type: 'section', title: 'Aftermath', paid: true, words: 2450, content: 'The ESPN alert came 45 minutes later...' },
+const REAL_DATA = [
+  // Chapter 1: AUTHOR'S NOTE (1 section)
+  { id: 1, type: 'break', title: "Chapter 1: AUTHOR'S NOTE" },
+  { id: 2, type: 'section', title: "ST. PAUL'S BAY, Malta", datelineType: 'CITY-ONLY', resolvedCity: "ST. PAUL'S BAY, Malta", paid: false },
+  // Chapter 2: SUMMER 2017 (5 sections)
+  { id: 3, type: 'break', title: 'Chapter 2: SUMMER 2017' },
+  { id: 4, type: 'section', title: 'CHICAGO, August 27', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 5, type: 'section', title: 'DENVER, August 29', datelineType: 'FULL', resolvedCity: 'DENVER', paid: false },
+  { id: 6, type: 'section', title: 'August 30', datelineType: 'DATE-ONLY', resolvedCity: 'DENVER', paid: false },
+  { id: 7, type: 'section', title: 'August 31', datelineType: 'DATE-ONLY', resolvedCity: 'DENVER', paid: false },
+  { id: 8, type: 'section', title: 'DETROIT', datelineType: 'CITY-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 3: DREAM JOB (5 sections)
+  { id: 9, type: 'break', title: 'Chapter 3: DREAM JOB' },
+  { id: 10, type: 'section', title: 'DETROIT, October 21, 2014', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 11, type: 'section', title: 'DETROIT, October 27', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 12, type: 'section', title: 'October 31', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 13, type: 'section', title: 'November 11', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 14, type: 'section', title: 'November 12', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 4: SCANDAL! (11 sections)
+  { id: 15, type: 'break', title: 'Chapter 4: SCANDAL!' },
+  { id: 16, type: 'section', title: 'DETROIT, December 5', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 17, type: 'section', title: 'SAN DIEGO, December 8', datelineType: 'FULL', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 18, type: 'section', title: 'December 10', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 19, type: 'section', title: 'December 11', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 20, type: 'section', title: 'DETROIT, December 21', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 21, type: 'section', title: 'December 19', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 22, type: 'section', title: 'December 23', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 23, type: 'section', title: 'December 31', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 24, type: 'section', title: 'WASHINGTON, January 18, 2015', datelineType: 'FULL', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 25, type: 'section', title: 'January 22', datelineType: 'DATE-ONLY', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 26, type: 'section', title: 'January 24', datelineType: 'DATE-ONLY', resolvedCity: 'WASHINGTON', paid: false },
+  // Chapter 5: ROOKIE YEAR (10 sections)
+  { id: 27, type: 'break', title: 'Chapter 5: ROOKIE YEAR' },
+  { id: 28, type: 'section', title: 'LAKELAND, Fla., February 16', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 29, type: 'section', title: 'February 24', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 30, type: 'section', title: 'February 25', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 31, type: 'section', title: 'February 26', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 32, type: 'section', title: 'March 18', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 33, type: 'section', title: 'March 20', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 34, type: 'section', title: 'DUNEDIN, Fla., March 27', datelineType: 'FULL', resolvedCity: 'DUNEDIN, Fla.', paid: false },
+  { id: 35, type: 'section', title: 'LAKELAND, Fla., March 28', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 36, type: 'section', title: 'CLEARWATER, Fla., March 29', datelineType: 'FULL', resolvedCity: 'CLEARWATER, Fla.', paid: false },
+  { id: 37, type: 'section', title: 'April 3', datelineType: 'DATE-ONLY', resolvedCity: 'CLEARWATER, Fla.', paid: false },
+  // Chapter 6: OPENING DAY (7 sections)
+  { id: 38, type: 'break', title: 'Chapter 6: OPENING DAY' },
+  { id: 39, type: 'section', title: 'DETROIT, April 6', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 40, type: 'section', title: 'PITTSBURGH, April 13', datelineType: 'FULL', resolvedCity: 'PITTSBURGH', paid: false },
+  { id: 41, type: 'section', title: 'April 15', datelineType: 'DATE-ONLY', resolvedCity: 'PITTSBURGH', paid: false },
+  { id: 42, type: 'section', title: 'DETROIT, April 5, 2013', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 43, type: 'section', title: 'DETROIT, April 22, 2015', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 44, type: 'section', title: 'April 23', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 45, type: 'section', title: 'OAKLAND, Calif., May 27', datelineType: 'FULL', resolvedCity: 'OAKLAND, Calif.', paid: false },
+  // Chapter 7: MIDSEASON (7 sections)
+  { id: 46, type: 'break', title: 'Chapter 7: MIDSEASON' },
+  { id: 47, type: 'section', title: 'DETROIT, July 2', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 48, type: 'section', title: 'SEATTLE, July 8', datelineType: 'FULL', resolvedCity: 'SEATTLE', paid: false },
+  { id: 49, type: 'section', title: 'MINNEAPOLIS, July 9', datelineType: 'FULL', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 50, type: 'section', title: 'July 10', datelineType: 'DATE-ONLY', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 51, type: 'section', title: 'July 11', datelineType: 'DATE-ONLY', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 52, type: 'section', title: 'DETROIT, July 17', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 53, type: 'section', title: 'July 19', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 8: TRADE DEADLINE (11 sections)
+  { id: 54, type: 'break', title: 'Chapter 8: TRADE DEADLINE' },
+  { id: 55, type: 'section', title: 'ST. PETERSBURG, Fla., July 27', datelineType: 'FULL', resolvedCity: 'ST. PETERSBURG, Fla.', paid: false },
+  { id: 56, type: 'section', title: 'July 29', datelineType: 'DATE-ONLY', resolvedCity: 'ST. PETERSBURG, Fla.', paid: false },
+  { id: 57, type: 'section', title: 'BALTIMORE, July 30', datelineType: 'FULL', resolvedCity: 'BALTIMORE', paid: false },
+  { id: 58, type: 'section', title: 'July 31', datelineType: 'DATE-ONLY', resolvedCity: 'BALTIMORE', paid: false },
+  { id: 59, type: 'section', title: 'WASHINGTON, August 3', datelineType: 'FULL', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 60, type: 'section', title: 'DETROIT, August 4', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 61, type: 'section', title: 'ROUND ROCK, Texas, August 13', datelineType: 'FULL', resolvedCity: 'ROUND ROCK, Texas', paid: false },
+  { id: 62, type: 'section', title: 'HOUSTON, August 15', datelineType: 'FULL', resolvedCity: 'HOUSTON', paid: false },
+  { id: 63, type: 'section', title: 'CHICAGO, August 18', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 64, type: 'section', title: 'KANSAS CITY, Mo., September 1', datelineType: 'FULL', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 65, type: 'section', title: 'September 2', datelineType: 'DATE-ONLY', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  // Chapter 9: FIRE DRILL (17 sections)
+  { id: 66, type: 'break', title: 'Chapter 9: FIRE DRILL' },
+  { id: 67, type: 'section', title: 'DETROIT, September 10', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 68, type: 'section', title: 'CLEVELAND, September 11', datelineType: 'FULL', resolvedCity: 'CLEVELAND', paid: false },
+  { id: 69, type: 'section', title: 'ARLINGTON, Texas, September 27', datelineType: 'FULL', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 70, type: 'section', title: 'September 29', datelineType: 'DATE-ONLY', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 71, type: 'section', title: 'CHICAGO, October 4', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 72, type: 'section', title: 'BOCA RATON, Fla., November 9', datelineType: 'FULL', resolvedCity: 'BOCA RATON, Fla.', paid: false },
+  { id: 73, type: 'section', title: 'DETROIT, November 18', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 74, type: 'section', title: 'November 29', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 75, type: 'section', title: 'NASHVILLE, December 6', datelineType: 'FULL', resolvedCity: 'NASHVILLE', paid: false },
+  { id: 76, type: 'section', title: 'December 7', datelineType: 'DATE-ONLY', resolvedCity: 'NASHVILLE', paid: false },
+  { id: 77, type: 'section', title: 'December 8', datelineType: 'DATE-ONLY', resolvedCity: 'NASHVILLE', paid: false },
+  { id: 78, type: 'section', title: 'December 9', datelineType: 'DATE-ONLY', resolvedCity: 'NASHVILLE', paid: false },
+  { id: 79, type: 'section', title: 'ZZYZX, Calif., January 15, 2016', datelineType: 'FULL', resolvedCity: 'ZZYZX, Calif.', paid: false },
+  { id: 80, type: 'section', title: 'TORONTO, January 18', datelineType: 'FULL', resolvedCity: 'TORONTO', paid: false },
+  { id: 81, type: 'section', title: 'DETROIT, January 20', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 82, type: 'section', title: 'January 21', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 83, type: 'section', title: 'SECAUCUS, N.J., February 12', datelineType: 'FULL', resolvedCity: 'SECAUCUS, N.J.', paid: false },
+  // Chapter 10: SPRING TRAINING (9 sections)
+  { id: 84, type: 'break', title: 'Chapter 10: SPRING TRAINING' },
+  { id: 85, type: 'section', title: 'LAKELAND, Fla., February 18', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 86, type: 'section', title: 'February 21', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 87, type: 'section', title: 'February 22', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 88, type: 'section', title: 'February 23', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 89, type: 'section', title: 'February 29', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 90, type: 'section', title: 'March 13', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 91, type: 'section', title: 'March 26', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 92, type: 'section', title: 'March 28', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 93, type: 'section', title: 'LAKELAND, Fla., March 31', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  // Chapter 11: HOT SEAT (15 sections)
+  { id: 94, type: 'break', title: 'Chapter 11: HOT SEAT' },
+  { id: 95, type: 'section', title: 'WASHINGTON, May 8', datelineType: 'FULL', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 96, type: 'section', title: 'May 9', datelineType: 'DATE-ONLY', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 97, type: 'section', title: 'May 11', datelineType: 'DATE-ONLY', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 98, type: 'section', title: 'May 12', datelineType: 'DATE-ONLY', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 99, type: 'section', title: 'BALTIMORE, May 13', datelineType: 'FULL', resolvedCity: 'BALTIMORE', paid: false },
+  { id: 100, type: 'section', title: 'May 14', datelineType: 'DATE-ONLY', resolvedCity: 'BALTIMORE', paid: false },
+  { id: 101, type: 'section', title: 'May 15', datelineType: 'DATE-ONLY', resolvedCity: 'BALTIMORE', paid: false },
+  { id: 102, type: 'section', title: 'ANAHEIM, Calif., May 31', datelineType: 'FULL', resolvedCity: 'ANAHEIM, Calif.', paid: false },
+  { id: 103, type: 'section', title: 'BLUE SPRINGS, Mo., June 15', datelineType: 'FULL', resolvedCity: 'BLUE SPRINGS, Mo.', paid: false },
+  { id: 104, type: 'section', title: 'SAN DIEGO, July 11', datelineType: 'FULL', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 105, type: 'section', title: 'DETROIT, July 15', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 106, type: 'section', title: 'July 25', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 107, type: 'section', title: 'ARLINGTON, Texas, August 12', datelineType: 'FULL', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 108, type: 'section', title: 'DETROIT, August 20', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 109, type: 'section', title: 'August 21', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 12: PENNANT RACE (5 sections)
+  { id: 110, type: 'break', title: 'Chapter 12: PENNANT RACE' },
+  { id: 111, type: 'section', title: 'MINNEAPOLIS, September 20', datelineType: 'FULL', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 112, type: 'section', title: 'September 21', datelineType: 'DATE-ONLY', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 113, type: 'section', title: 'ATLANTA, September 30', datelineType: 'FULL', resolvedCity: 'ATLANTA', paid: false },
+  { id: 114, type: 'section', title: 'October 1', datelineType: 'DATE-ONLY', resolvedCity: 'ATLANTA', paid: false },
+  { id: 115, type: 'section', title: 'October 2', datelineType: 'DATE-ONLY', resolvedCity: 'ATLANTA', paid: false },
+  // Chapter 13: WAKE-UP CALL (13 sections)
+  { id: 116, type: 'break', title: 'Chapter 13: WAKE-UP CALL' },
+  { id: 117, type: 'section', title: 'DETROIT, October 3', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 118, type: 'section', title: 'October 4', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 119, type: 'section', title: 'DETROIT, October 21', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 120, type: 'section', title: 'SCOTTSDALE, Ariz., November 7', datelineType: 'FULL', resolvedCity: 'SCOTTSDALE, Ariz.', paid: false },
+  { id: 121, type: 'section', title: 'November 8', datelineType: 'DATE-ONLY', resolvedCity: 'SCOTTSDALE, Ariz.', paid: false },
+  { id: 122, type: 'section', title: 'DETROIT, November 16', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 123, type: 'section', title: 'OXON HILL, Md., December 4', datelineType: 'FULL', resolvedCity: 'OXON HILL, Md.', paid: false },
+  { id: 124, type: 'section', title: 'December 5', datelineType: 'DATE-ONLY', resolvedCity: 'OXON HILL, Md.', paid: false },
+  { id: 125, type: 'section', title: 'December 6', datelineType: 'DATE-ONLY', resolvedCity: 'OXON HILL, Md.', paid: false },
+  { id: 126, type: 'section', title: 'December 7', datelineType: 'DATE-ONLY', resolvedCity: 'OXON HILL, Md.', paid: false },
+  { id: 127, type: 'section', title: 'DETROIT, January 27, 2017', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 128, type: 'section', title: 'SECAUCUS, N.J., February 9', datelineType: 'FULL', resolvedCity: 'SECAUCUS, N.J.', paid: false },
+  { id: 129, type: 'section', title: 'WASHINGTON', datelineType: 'CITY-ONLY', resolvedCity: 'WASHINGTON', paid: false },
+  // Chapter 14: PRIME-TIME (14 sections)
+  { id: 130, type: 'break', title: 'Chapter 14: PRIME-TIME' },
+  { id: 131, type: 'section', title: 'TAMPA, Fla., February 12, 2017', datelineType: 'FULL', resolvedCity: 'TAMPA, Fla.', paid: false },
+  { id: 132, type: 'section', title: 'LAKELAND, Fla., February 13', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 133, type: 'section', title: 'February 15', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 134, type: 'section', title: 'February 16', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 135, type: 'section', title: 'March 15', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 136, type: 'section', title: 'March 28', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 137, type: 'section', title: 'CHICAGO, April 4', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 138, type: 'section', title: 'April 18', datelineType: 'DATE-ONLY', resolvedCity: 'CHICAGO', paid: false },
+  { id: 139, type: 'section', title: 'OAKLAND, Calif., May 7', datelineType: 'FULL', resolvedCity: 'OAKLAND, Calif.', paid: false },
+  { id: 140, type: 'section', title: 'ANAHEIM, Calif., May 11', datelineType: 'FULL', resolvedCity: 'ANAHEIM, Calif.', paid: false },
+  { id: 141, type: 'section', title: 'CHICAGO, May 26', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 142, type: 'section', title: 'May 27', datelineType: 'DATE-ONLY', resolvedCity: 'CHICAGO', paid: false },
+  { id: 143, type: 'section', title: 'KANSAS CITY, Mo., May 29', datelineType: 'FULL', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 144, type: 'section', title: 'May 30', datelineType: 'DATE-ONLY', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  // Chapter 15: FIREWORKS (14 sections)
+  { id: 145, type: 'break', title: 'Chapter 15: FIREWORKS' },
+  { id: 146, type: 'section', title: 'DETROIT, July 2', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 147, type: 'section', title: 'UP NORTH, Mich., July 5', datelineType: 'FULL', resolvedCity: 'UP NORTH, Mich.', paid: false },
+  { id: 148, type: 'section', title: 'DETROIT, July 5', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 149, type: 'section', title: 'KANSAS CITY, Mo., July 17', datelineType: 'FULL', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 150, type: 'section', title: 'July 18', datelineType: 'DATE-ONLY', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 151, type: 'section', title: 'KANSAS CITY, Mo., July 20', datelineType: 'FULL', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 152, type: 'section', title: 'DETROIT, July 24', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 153, type: 'section', title: 'July 29', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 154, type: 'section', title: 'ARLINGTON, Texas, August 14', datelineType: 'FULL', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 155, type: 'section', title: 'August 15', datelineType: 'DATE-ONLY', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 156, type: 'section', title: 'August 16', datelineType: 'DATE-ONLY', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 157, type: 'section', title: 'DETROIT, August 22', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 158, type: 'section', title: 'August 23', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 159, type: 'section', title: 'August 24', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 16: SUMMER 2017 (8 sections)
+  { id: 160, type: 'break', title: 'Chapter 16: SUMMER 2017' },
+  { id: 161, type: 'section', title: 'CHICAGO, August 24', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 162, type: 'section', title: 'August 25', datelineType: 'DATE-ONLY', resolvedCity: 'CHICAGO', paid: false },
+  { id: 163, type: 'section', title: 'August 26', datelineType: 'DATE-ONLY', resolvedCity: 'CHICAGO', paid: false },
+  { id: 164, type: 'section', title: 'August 27', datelineType: 'DATE-ONLY', resolvedCity: 'CHICAGO', paid: false },
+  { id: 165, type: 'section', title: 'DENVER, August 30', datelineType: 'FULL', resolvedCity: 'DENVER', paid: false },
+  { id: 166, type: 'section', title: 'August 31', datelineType: 'DATE-ONLY', resolvedCity: 'DENVER', paid: false },
+  { id: 167, type: 'section', title: 'DETROIT', datelineType: 'CITY-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 168, type: 'section', title: 'September 1', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 17: WORLD SERIES (18 sections)
+  { id: 169, type: 'break', title: 'Chapter 17: WORLD SERIES' },
+  { id: 170, type: 'section', title: 'DETROIT, May 22, 2007', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 171, type: 'section', title: 'August 31, 2007', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 172, type: 'section', title: 'September 5, 2007', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 173, type: 'section', title: 'February 10, 2008', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 174, type: 'section', title: 'DETROIT, September 21, 2017', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 175, type: 'section', title: 'KANSAS CITY, Mo., September 26', datelineType: 'FULL', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 176, type: 'section', title: 'October 1', datelineType: 'DATE-ONLY', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 177, type: 'section', title: 'October 19', datelineType: 'DATE-ONLY', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 178, type: 'section', title: 'LOS ANGELES, October 31', datelineType: 'FULL', resolvedCity: 'LOS ANGELES', paid: false },
+  { id: 179, type: 'section', title: 'November 1', datelineType: 'DATE-ONLY', resolvedCity: 'LOS ANGELES', paid: false },
+  { id: 180, type: 'section', title: 'ORLANDO, Fla., November 14', datelineType: 'FULL', resolvedCity: 'ORLANDO, Fla.', paid: false },
+  { id: 181, type: 'section', title: 'ORLANDO, Fla., December 10', datelineType: 'FULL', resolvedCity: 'ORLANDO, Fla.', paid: false },
+  { id: 182, type: 'section', title: 'December 11', datelineType: 'DATE-ONLY', resolvedCity: 'ORLANDO, Fla.', paid: false },
+  { id: 183, type: 'section', title: 'December 13', datelineType: 'DATE-ONLY', resolvedCity: 'ORLANDO, Fla.', paid: false },
+  { id: 184, type: 'section', title: 'DETROIT, January 8, 2018', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 185, type: 'section', title: 'LAKELAND, Fla., February 1', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 186, type: 'section', title: 'DETROIT, February 6', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 187, type: 'section', title: 'SECAUCUS, N.J., February 7', datelineType: 'FULL', resolvedCity: 'SECAUCUS, N.J.', paid: false },
+  // Chapter 18: AWARDS SEASON (9 sections)
+  { id: 188, type: 'break', title: 'Chapter 18: AWARDS SEASON' },
+  { id: 189, type: 'section', title: 'LAKELAND, Fla., February 13', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 190, type: 'section', title: 'February 18', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 191, type: 'section', title: "There's a new sheriff in town.", datelineType: 'CITY-ONLY', resolvedCity: "There's a new sheriff in town.", paid: false },
+  { id: 192, type: 'section', title: 'February 20', datelineType: 'DATE-ONLY', resolvedCity: "There's a new sheriff in town.", paid: false },
+  { id: 193, type: 'section', title: 'February 25', datelineType: 'DATE-ONLY', resolvedCity: "There's a new sheriff in town.", paid: false },
+  { id: 194, type: 'section', title: 'SARASOTA, Fla., February 26', datelineType: 'FULL', resolvedCity: 'SARASOTA, Fla.', paid: false },
+  { id: 195, type: 'section', title: 'WEST PALM BEACH, Fla., March 4', datelineType: 'FULL', resolvedCity: 'WEST PALM BEACH, Fla.', paid: false },
+  { id: 196, type: 'section', title: 'DETROIT, April 13', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 197, type: 'section', title: 'April 22', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 19: DRAFT DAY (11 sections)
+  { id: 198, type: 'break', title: 'Chapter 19: DRAFT DAY' },
+  { id: 199, type: 'section', title: 'BOSTON, June 5', datelineType: 'FULL', resolvedCity: 'BOSTON', paid: false },
+  { id: 200, type: 'section', title: 'June 6', datelineType: 'DATE-ONLY', resolvedCity: 'BOSTON', paid: false },
+  { id: 201, type: 'section', title: 'DETROIT, June 13', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 202, type: 'section', title: 'CLEVELAND, June 24', datelineType: 'FULL', resolvedCity: 'CLEVELAND', paid: false },
+  { id: 203, type: 'section', title: 'DETROIT, June 26', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 204, type: 'section', title: 'June 27', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 205, type: 'section', title: 'TAMPA, Fla., July 12', datelineType: 'FULL', resolvedCity: 'TAMPA, Fla.', paid: false },
+  { id: 206, type: 'section', title: 'HOUSTON, July 15', datelineType: 'FULL', resolvedCity: 'HOUSTON', paid: false },
+  { id: 207, type: 'section', title: 'WASHINGTON, July 16', datelineType: 'FULL', resolvedCity: 'WASHINGTON', paid: false },
+  { id: 208, type: 'section', title: 'DETROIT, July 20', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 209, type: 'section', title: 'July 25', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 20: COOPERSTOWN (8 sections)
+  { id: 210, type: 'break', title: 'Chapter 20: COOPERSTOWN' },
+  { id: 211, type: 'section', title: 'COOPERSTOWN, N.Y., July 27', datelineType: 'FULL', resolvedCity: 'COOPERSTOWN, N.Y.', paid: false },
+  { id: 212, type: 'section', title: 'July 28', datelineType: 'DATE-ONLY', resolvedCity: 'COOPERSTOWN, N.Y.', paid: false },
+  { id: 213, type: 'section', title: 'DETROIT, July 30', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 214, type: 'section', title: 'August 1', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 215, type: 'section', title: 'OAKLAND, Calif., August 4', datelineType: 'FULL', resolvedCity: 'OAKLAND, Calif.', paid: false },
+  { id: 216, type: 'section', title: 'ANAHEIM, Calif., August 6', datelineType: 'FULL', resolvedCity: 'ANAHEIM, Calif.', paid: false },
+  { id: 217, type: 'section', title: 'SALT LAKE CITY, August 9', datelineType: 'FULL', resolvedCity: 'SALT LAKE CITY', paid: false },
+  { id: 218, type: 'section', title: 'DETROIT, August 10', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 21: BURN OUT (12 sections)
+  { id: 219, type: 'break', title: 'Chapter 21: BURN OUT' },
+  { id: 220, type: 'section', title: 'MINNEAPOLIS, August 16', datelineType: 'FULL', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 221, type: 'section', title: 'August 18', datelineType: 'DATE-ONLY', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 222, type: 'section', title: 'DETROIT, August 23', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 223, type: 'section', title: 'August 30', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 224, type: 'section', title: 'September 5', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 225, type: 'section', title: 'September 6', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 226, type: 'section', title: 'September 11', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 227, type: 'section', title: 'September 12', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 228, type: 'section', title: 'MILWAUKEE, September 28', datelineType: 'FULL', resolvedCity: 'MILWAUKEE', paid: false },
+  { id: 229, type: 'section', title: 'September 29', datelineType: 'DATE-ONLY', resolvedCity: 'MILWAUKEE', paid: false },
+  { id: 230, type: 'section', title: 'September 30', datelineType: 'DATE-ONLY', resolvedCity: 'MILWAUKEE', paid: false },
+  { id: 231, type: 'section', title: 'DETROIT, October 1', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 22: VIVA LAS VEGAS (17 sections)
+  { id: 232, type: 'break', title: 'Chapter 22: VIVA LAS VEGAS' },
+  { id: 233, type: 'section', title: 'LAS VEGAS, December 9', datelineType: 'FULL', resolvedCity: 'LAS VEGAS', paid: false },
+  { id: 234, type: 'section', title: 'December 10', datelineType: 'DATE-ONLY', resolvedCity: 'LAS VEGAS', paid: false },
+  { id: 235, type: 'section', title: 'December 14', datelineType: 'DATE-ONLY', resolvedCity: 'LAS VEGAS', paid: false },
+  { id: 236, type: 'section', title: 'DETROIT, January 4, 2019', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 237, type: 'section', title: 'January 15', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 238, type: 'section', title: 'LAKELAND, Fla., January 28', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 239, type: 'section', title: 'January 29', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 240, type: 'section', title: 'February 12', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 241, type: 'section', title: 'February 19', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 242, type: 'section', title: 'LAKELAND, Fla., March 1', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 243, type: 'section', title: 'March 4', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 244, type: 'section', title: 'LAKE BUENA VISTA, Fla., March 6', datelineType: 'FULL', resolvedCity: 'LAKE BUENA VISTA, Fla.', paid: false },
+  { id: 245, type: 'section', title: 'LAKELAND, Fla., March 7', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 246, type: 'section', title: 'March 8', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 247, type: 'section', title: 'LAKELAND, Fla., March 9', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 248, type: 'section', title: 'FORT MYERS, Fla., March 10', datelineType: 'FULL', resolvedCity: 'FORT MYERS, Fla.', paid: false },
+  { id: 249, type: 'section', title: 'ATLANTA, March 19', datelineType: 'FULL', resolvedCity: 'ATLANTA', paid: false },
+  // Chapter 23: GLOBETROTTING (13 sections)
+  { id: 250, type: 'break', title: 'Chapter 23: GLOBETROTTING' },
+  { id: 251, type: 'section', title: 'TORONTO, March 28', datelineType: 'FULL', resolvedCity: 'TORONTO', paid: false },
+  { id: 252, type: 'section', title: 'March 29', datelineType: 'DATE-ONLY', resolvedCity: 'TORONTO', paid: false },
+  { id: 253, type: 'section', title: 'NEW YORK, April 3', datelineType: 'FULL', resolvedCity: 'NEW YORK', paid: false },
+  { id: 254, type: 'section', title: 'April 20', datelineType: 'DATE-ONLY', resolvedCity: 'NEW YORK', paid: false },
+  { id: 255, type: 'section', title: 'BOSTON, April 22', datelineType: 'FULL', resolvedCity: 'BOSTON', paid: false },
+  { id: 256, type: 'section', title: 'April 24', datelineType: 'DATE-ONLY', resolvedCity: 'BOSTON', paid: false },
+  { id: 257, type: 'section', title: 'CHICAGO, April 26', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 258, type: 'section', title: 'MINNEAPOLIS, May 12', datelineType: 'FULL', resolvedCity: 'MINNEAPOLIS', paid: false },
+  { id: 259, type: 'section', title: 'DETROIT, May 13', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 260, type: 'section', title: 'May 18', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 261, type: 'section', title: 'NEW YORK, May 24', datelineType: 'FULL', resolvedCity: 'NEW YORK', paid: false },
+  { id: 262, type: 'section', title: 'May 26', datelineType: 'DATE-ONLY', resolvedCity: 'NEW YORK', paid: false },
+  { id: 263, type: 'section', title: 'BALTIMORE, May 27', datelineType: 'FULL', resolvedCity: 'BALTIMORE', paid: false },
+  // Chapter 24: ROAD TO OMAHA (11 sections)
+  { id: 264, type: 'break', title: 'Chapter 24: ROAD TO OMAHA' },
+  { id: 265, type: 'section', title: 'KANSAS CITY, Mo., June 12', datelineType: 'FULL', resolvedCity: 'KANSAS CITY, Mo.', paid: false },
+  { id: 266, type: 'section', title: 'OMAHA, Neb., June 13', datelineType: 'FULL', resolvedCity: 'OMAHA, Neb.', paid: false },
+  { id: 267, type: 'section', title: 'June 17', datelineType: 'DATE-ONLY', resolvedCity: 'OMAHA, Neb.', paid: false },
+  { id: 268, type: 'section', title: 'June 19', datelineType: 'DATE-ONLY', resolvedCity: 'OMAHA, Neb.', paid: false },
+  { id: 269, type: 'section', title: 'June 21', datelineType: 'DATE-ONLY', resolvedCity: 'OMAHA, Neb.', paid: false },
+  { id: 270, type: 'section', title: 'June 26', datelineType: 'DATE-ONLY', resolvedCity: 'OMAHA, Neb.', paid: false },
+  { id: 271, type: 'section', title: 'DETROIT, July 4', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 272, type: 'section', title: 'DETROIT, July 23', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 273, type: 'section', title: 'ANAHEIM, Calif., July 31', datelineType: 'FULL', resolvedCity: 'ANAHEIM, Calif.', paid: false },
+  { id: 274, type: 'section', title: 'ARLINGTON, Texas, August 3', datelineType: 'FULL', resolvedCity: 'ARLINGTON, Texas', paid: false },
+  { id: 275, type: 'section', title: 'DETROIT, August 5', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 25: A LETTER TO THE EDITOR (13 sections - includes TIME datelines)
+  { id: 276, type: 'break', title: 'Chapter 25: A LETTER TO THE EDITOR' },
+  { id: 277, type: 'section', title: 'HOUSTON, August 20', datelineType: 'FULL', resolvedCity: 'HOUSTON', paid: false },
+  { id: 278, type: 'section', title: 'August 21', datelineType: 'DATE-ONLY', resolvedCity: 'HOUSTON', paid: false },
+  { id: 279, type: 'section', title: '9:27 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 280, type: 'section', title: '9:30 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 281, type: 'section', title: '9:33 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 282, type: 'section', title: '9:35 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 283, type: 'section', title: '9:36 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 284, type: 'section', title: '9:39 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 285, type: 'section', title: '9:41 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 286, type: 'section', title: '9:44 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 287, type: 'section', title: '9:46 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 288, type: 'section', title: '10:30 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 289, type: 'section', title: '3:04 A.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  // Chapter 26: UNETHICAL (27 sections - includes TIME datelines)
+  { id: 290, type: 'break', title: 'Chapter 26: UNETHICAL' },
+  { id: 291, type: 'section', title: 'HOUSTON, August 22', datelineType: 'FULL', resolvedCity: 'HOUSTON', paid: false },
+  { id: 292, type: 'section', title: '10:32 A.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 293, type: 'section', title: '10:57 A.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 294, type: 'section', title: '11:03 A.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 295, type: 'section', title: '11:27 A.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 296, type: 'section', title: '1:05 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 297, type: 'section', title: '2:44 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 298, type: 'section', title: '3:17 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 299, type: 'section', title: '3:46 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 300, type: 'section', title: '3:49 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 301, type: 'section', title: '3:53 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 302, type: 'section', title: '4:09 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 303, type: 'section', title: '4:28 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 304, type: 'section', title: '7:28 P.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 305, type: 'section', title: '12:08 A.M.', datelineType: 'TIME', resolvedCity: 'HOUSTON', paid: false },
+  { id: 306, type: 'section', title: 'August 23', datelineType: 'DATE-ONLY', resolvedCity: 'HOUSTON', paid: false },
+  { id: 307, type: 'section', title: 'DETROIT, August 24', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 308, type: 'section', title: 'September 11', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 309, type: 'section', title: 'September 13', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 310, type: 'section', title: 'September 20', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 311, type: 'section', title: 'September 25', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  { id: 312, type: 'section', title: 'CHICAGO, September 27', datelineType: 'FULL', resolvedCity: 'CHICAGO', paid: false },
+  { id: 313, type: 'section', title: 'September 29', datelineType: 'DATE-ONLY', resolvedCity: 'CHICAGO', paid: false },
+  { id: 314, type: 'section', title: 'DETROIT, October 4', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 315, type: 'section', title: 'LONDON, November 14', datelineType: 'FULL', resolvedCity: 'LONDON', paid: false },
+  { id: 316, type: 'section', title: 'DETROIT, November 22', datelineType: 'FULL', resolvedCity: 'DETROIT', paid: false },
+  { id: 317, type: 'section', title: 'November 25', datelineType: 'DATE-ONLY', resolvedCity: 'DETROIT', paid: false },
+  // Chapter 27: POSTSCRIPT (18 sections)
+  { id: 318, type: 'break', title: 'Chapter 27: POSTSCRIPT' },
+  { id: 319, type: 'section', title: 'SAN DIEGO, December 8', datelineType: 'FULL', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 320, type: 'section', title: 'December 9', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 321, type: 'section', title: 'December 10', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 322, type: 'section', title: 'December 11', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 323, type: 'section', title: 'December 12', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 324, type: 'section', title: 'December 16', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 325, type: 'section', title: 'December 20', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 326, type: 'section', title: 'December 21', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 327, type: 'section', title: 'December 23', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 328, type: 'section', title: 'December 25', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 329, type: 'section', title: 'December 26', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 330, type: 'section', title: 'December 31', datelineType: 'DATE-ONLY', resolvedCity: 'SAN DIEGO', paid: false },
+  { id: 331, type: 'section', title: 'SAN PEDRO de MACORIS, Dominican Republic, March 10, 2020', datelineType: 'FULL', resolvedCity: 'SAN PEDRO de MACORIS, Dominican Republic', paid: false },
+  { id: 332, type: 'section', title: 'SANTO DOMINGO, Dominican Republic, March 11', datelineType: 'FULL', resolvedCity: 'SANTO DOMINGO, Dominican Republic', paid: false },
+  { id: 333, type: 'section', title: 'ATLANTA', datelineType: 'CITY-ONLY', resolvedCity: 'ATLANTA', paid: false },
+  { id: 334, type: 'section', title: 'TAMPA, Fla.', datelineType: 'CITY-ONLY', resolvedCity: 'TAMPA, Fla.', paid: false },
+  { id: 335, type: 'section', title: 'LAKELAND, Fla., March 12', datelineType: 'FULL', resolvedCity: 'LAKELAND, Fla.', paid: false },
+  { id: 336, type: 'section', title: 'March 13', datelineType: 'DATE-ONLY', resolvedCity: 'LAKELAND, Fla.', paid: false },
 ];
 
-const DEMO_FLOOR = [
-  { id: 100, title: 'Verlander rant (too personal)', category: 'needs-work', words: 890, date: '2019-08-23', edition: 'original' },
-  { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long', words: 3400, date: '2021-08-15', edition: 'hardcover' },
-  { id: 102, title: 'Personal fishing trip', category: 'off-topic', words: 1200, edition: '' },
-  { id: 103, title: 'Scherzer thank you letter', category: 'save-later', words: 450, date: '2014-07-30', edition: 'directors-cut' },
-  { id: 104, title: 'Victor Martinez retirement', category: 'save-later', words: 1890, date: '2018-09-22', edition: 'paperback' },
-];
+const REAL_FLOOR = [];
 
 // ══════════════════════════════════════════════════════════
 // CONSTANTS
@@ -1101,13 +1416,13 @@ function loadData() {
   if (savedBook) {
     bookItems = JSON.parse(savedBook);
   } else {
-    bookItems = JSON.parse(JSON.stringify(DEMO_DATA));
+    bookItems = JSON.parse(JSON.stringify(REAL_DATA));
   }
 
   if (savedFloor) {
     floorItems = JSON.parse(savedFloor);
   } else {
-    floorItems = JSON.parse(JSON.stringify(DEMO_FLOOR));
+    floorItems = JSON.parse(JSON.stringify(REAL_FLOOR));
   }
 
   render();
@@ -1176,7 +1491,7 @@ function renderBook() {
               <span class="box-number">${sectionNum}</span>
               <span class="box-title">${title}</span>
             </div>
-            <span class="box-lock">${item.paid ? '🔒' : '🔓'}</span>
+            ${item.paid ? '<span class="box-lock">🔒</span>' : ''}
           </div>
           <div class="box-meta">
             ${dateStr ? `<span>${dateStr}</span>` : '<span>—</span>'}
