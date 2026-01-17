@@ -155,6 +155,12 @@
     text-indent: 0 !important;
 }
 
+.block-quote p {
+    text-indent: 0 !important;
+    margin-left: 0;
+    padding-left: 0;
+}
+
 /* Datelines (inline within chapters - italic, not bold) */
 .dateline {
     font-family: var(--font-serif);
