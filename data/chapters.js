@@ -2242,6 +2242,8 @@ export const CHAPTERS = [
 
 <p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town.</p>
 
+<p class="media-embed"><span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span></p>
+
 <p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>

@@ -77,6 +77,14 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/sportscenter-7-17-15.jpg',
         placeholder: false
     },
+    'harbaugh-watch-chicago': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Harbaugh Watch at Big Ten Media Days in Chicago',
+        src: './assets/to-go/7-25-16 stayed in chi to stalk harbaugh.jpg',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',
