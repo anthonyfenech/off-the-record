@@ -1922,6 +1922,34 @@
 
         renderTable(allMedia);
 
+        // ====== PREVIEW MODAL SETUP (must be before click handler) ======
+        const previewModal = document.createElement('div');
+        previewModal.className = 'preview-modal-overlay';
+        previewModal.innerHTML = `
+            <div class="preview-modal">
+                <button class="preview-modal-close">&times;</button>
+                <div class="preview-modal-body"></div>
+                <div class="preview-modal-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(previewModal);
+
+        const previewBody = previewModal.querySelector('.preview-modal-body');
+        const previewCaption = previewModal.querySelector('.preview-modal-caption');
+        const previewClose = previewModal.querySelector('.preview-modal-close');
+
+        // Close modal handlers
+        previewClose.addEventListener('click', () => previewModal.classList.remove('active'));
+        previewModal.addEventListener('click', (e) => {
+            if (e.target === previewModal) previewModal.classList.remove('active');
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                previewModal.classList.remove('active');
+                document.getElementById('editModalOverlay').classList.remove('active');
+            }
+        });
+
         // ====== CONSOLIDATED CLICK HANDLER FOR CATALOG ======
         // Handles: status toggle, edit button, delete button, row expansion
         document.getElementById('catalogBody').addEventListener('click', (e) => {
@@ -2386,31 +2414,6 @@
             // Clear inline form
             document.getElementById('inlineId').value = '';
             document.getElementById('inlineTime').value = '';
-        });
-
-        // Media Preview Modal
-        const previewModal = document.createElement('div');
-        previewModal.className = 'preview-modal-overlay';
-        previewModal.innerHTML = `
-            <div class="preview-modal">
-                <button class="preview-modal-close">&times;</button>
-                <div class="preview-modal-body"></div>
-                <div class="preview-modal-caption"></div>
-            </div>
-        `;
-        document.body.appendChild(previewModal);
-
-        const previewBody = previewModal.querySelector('.preview-modal-body');
-        const previewCaption = previewModal.querySelector('.preview-modal-caption');
-        const previewClose = previewModal.querySelector('.preview-modal-close');
-
-        // Close modal
-        previewClose.addEventListener('click', () => previewModal.classList.remove('active'));
-        previewModal.addEventListener('click', (e) => {
-            if (e.target === previewModal) previewModal.classList.remove('active');
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') previewModal.classList.remove('active');
         });
 
         // ====== DELETE FUNCTIONALITY ======
