@@ -2196,6 +2196,8 @@ export const CHAPTERS = [
 
 <p>I'm assigned to arrive early in Kansas City this week—half an hour into the suburbs for one of Harbaugh's controversial satellite camps for high-school football players. Today, the Michigan football coach continues to expose a loophole in NCAA rules, which allow schools to host paid-for football camps across the country. These camps are angering rival coaches, who decry them as a sneaky scheme for additional in-person recruiting visits.</p>
 
+<p class="media-embed"><span class="media-emoji" data-media-id="harbaugh-likes-me">📷</span></p>
+
 <p>Harbaugh's wife is from Blue Springs, and I get in touch with her brother, John Feuerborn, one of Harbaugh's "trusted agents." He owns a couple bars in the area and speaks with a pinch of tobacco in his lip. During the camp, we hit it off. Afterwards, Harbaugh swims around questions from a radio reporter, who's fishing for a soundbite on the camp controversy.</p>
 
 <p>I note Harbaugh's antsy answers, asking a leading question instead.</p>

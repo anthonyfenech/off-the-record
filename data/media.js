@@ -37,6 +37,14 @@ export const MEDIA_CONTENT = {
         src: './assets/27-postscript/FANTASY CAMP SCRUM.mp4',
         placeholder: false
     },
+    'harbaugh-likes-me': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Jim Harbaugh at satellite camp in Blue Springs, Mo.',
+        src: './assets/to-go/6-15-16 harbaugh likes me.jpg',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',
