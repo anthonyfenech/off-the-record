@@ -195,6 +195,20 @@
       font-size: 14px;
     }
 
+    .box-excerpt-badge {
+      position: absolute;
+      top: -6px;
+      right: 30px;
+      background: #2196F3;
+      color: white;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     .box-title {
       font-size: 12px;
       line-height: 1.3;
@@ -563,6 +577,10 @@
       background: #fffde7;
     }
 
+    .excerpt-toggle.active {
+      background: #e3f2fd;
+    }
+
     .detail-toggle-icon {
       font-size: 20px;
     }
@@ -761,6 +779,7 @@
       <span>Sections: <strong id="sectionCount">0</strong></span>
       <span>Free: <strong id="freeCount">0</strong></span>
       <span>Paid: <strong id="paidCount">0</strong></span>
+      <span>Excerpts: <strong id="excerptCount">0</strong></span>
       <span>Words: <strong id="wordCount">0</strong></span>
       <span class="unsaved-badge" id="unsavedBadge">UNSAVED</span>
     </div>
@@ -855,6 +874,17 @@
     </div>
 
     <div class="detail-field">
+      <label>Tags</label>
+      <div class="detail-toggle excerpt-toggle" id="detailExcerptToggle">
+        <span class="detail-toggle-icon" id="detailExcerptIcon">📄</span>
+        <div class="detail-toggle-text">
+          <strong id="detailExcerptLabel">Not an Excerpt</strong>
+          <span id="detailExcerptDesc">Mark as potential excerpt</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-field">
       <label>Notes</label>
       <textarea id="detailNotes" placeholder="Internal notes..."></textarea>
     </div>
@@ -943,13 +973,13 @@ const DEMO_DATA = [
   { id: 1, type: 'break', title: 'Chapter 1: The Interview' },
   { id: 2, type: 'section', title: 'First Meeting with Dombrowski', paid: false, words: 1240, date: '2014-11-15', content: 'The hallway smelled like fresh paint and anxiety...' },
   { id: 3, type: 'section', title: 'Leyland\'s Office', paid: false, words: 890, date: '2014-11-15', content: 'Jim Leyland sat behind a desk cluttered with...' },
-  { id: 4, type: 'section', title: 'The Job Offer', paid: true, words: 1560, date: '2014-12-03', content: 'Three weeks later, my phone rang at 6am...' },
+  { id: 4, type: 'section', title: 'The Job Offer', paid: true, words: 1560, date: '2014-12-03', content: 'Three weeks later, my phone rang at 6am...', excerpt: true },
 
   // Chapter 2
   { id: 5, type: 'break', title: 'Chapter 2: Rookie Year' },
   { id: 6, type: 'section', title: 'First Day in the Press Box', paid: false, words: 1120, date: '2015-04-06', content: 'Comerica Park looked different from up here...' },
   { id: 7, type: 'section', title: 'Cabrera\'s Batting Practice', paid: false, words: 980, date: '2015-04-07', content: 'The sound of Miguel\'s bat was different...' },
-  { id: 8, type: 'section', title: 'Verlander\'s Cold Shoulder', paid: true, words: 1340, date: '2015-04-20', content: 'Justin didn\'t acknowledge my existence for three weeks...' },
+  { id: 8, type: 'section', title: 'Verlander\'s Cold Shoulder', paid: true, words: 1340, date: '2015-04-20', content: 'Justin didn\'t acknowledge my existence for three weeks...', excerpt: true },
 
   // Chapter 3
   { id: 9, type: 'break', title: 'Chapter 3: Spring Training' },
@@ -1098,6 +1128,7 @@ function renderBook() {
       const dateStr = item.date ? formatDate(item.date) : '';
       return `
         <div class="box ${item.paid ? 'paid' : ''}" data-id="${item.id}" data-source="book" draggable="true">
+          ${item.excerpt ? '<span class="box-excerpt-badge">Excerpt</span>' : ''}
           <div class="box-header">
             <span class="box-number">${sectionNum}</span>
             <span class="box-lock">${item.paid ? '🔒' : '🔓'}</span>
@@ -1167,6 +1198,7 @@ function updateStats() {
   document.getElementById('sectionCount').textContent = sections.length;
   document.getElementById('freeCount').textContent = sections.filter(s => !s.paid).length;
   document.getElementById('paidCount').textContent = sections.filter(s => s.paid).length;
+  document.getElementById('excerptCount').textContent = sections.filter(s => s.excerpt).length;
   document.getElementById('wordCount').textContent = totalWords.toLocaleString();
   document.getElementById('floorCount').textContent = floorItems.length;
 }
@@ -1217,6 +1249,7 @@ function openDetail(id) {
   document.getElementById('detailEdition').value = item.edition || '';
 
   updatePaidToggle(item.paid);
+  updateExcerptToggle(item.excerpt);
 
   document.getElementById('detailPanel').classList.add('open');
 }
@@ -1231,6 +1264,18 @@ function updatePaidToggle(paid) {
   icon.textContent = paid ? '🔒' : '🔓';
   label.textContent = paid ? 'Paid' : 'Free';
   desc.textContent = paid ? 'Premium content - requires payment' : 'Available to all readers';
+}
+
+function updateExcerptToggle(excerpt) {
+  const toggle = document.getElementById('detailExcerptToggle');
+  const icon = document.getElementById('detailExcerptIcon');
+  const label = document.getElementById('detailExcerptLabel');
+  const desc = document.getElementById('detailExcerptDesc');
+
+  toggle.classList.toggle('active', excerpt);
+  icon.textContent = excerpt ? '⭐' : '📄';
+  label.textContent = excerpt ? 'Excerpt' : 'Not an Excerpt';
+  desc.textContent = excerpt ? 'Marked as potential excerpt' : 'Mark as potential excerpt';
 }
 
 function closeDetail() {
@@ -1275,7 +1320,8 @@ function cutFromDetail() {
     date: item.date,
     content: item.content,
     notes: item.notes,
-    edition: item.edition
+    edition: item.edition,
+    excerpt: item.excerpt
   });
 
   closeDetail();
@@ -1296,6 +1342,15 @@ document.getElementById('detailPaidToggle').addEventListener('click', () => {
     item.paid = !item.paid;
     updatePaidToggle(item.paid);
     document.getElementById('detailNumber').classList.toggle('paid', item.paid);
+  }
+});
+
+document.getElementById('detailExcerptToggle').addEventListener('click', () => {
+  if (!currentDetailId) return;
+  const item = bookItems.find(i => i.id === currentDetailId);
+  if (item) {
+    item.excerpt = !item.excerpt;
+    updateExcerptToggle(item.excerpt);
   }
 });
 
@@ -1403,7 +1458,8 @@ document.addEventListener('drop', e => {
         date: item.date,
         content: item.content,
         notes: item.notes,
-        edition: item.edition
+        edition: item.edition,
+        excerpt: item.excerpt
       });
     }
   }
@@ -1423,7 +1479,8 @@ document.addEventListener('drop', e => {
       date: item.date,
       content: item.content,
       notes: item.notes,
-      edition: item.edition
+      edition: item.edition,
+      excerpt: item.excerpt
     };
 
     if (targetItem && targetItem.dataset.source === 'book') {
@@ -1476,7 +1533,8 @@ document.addEventListener('click', e => {
           date: item.date,
           content: item.content,
           notes: item.notes,
-          edition: item.edition
+          edition: item.edition,
+          excerpt: item.excerpt
         });
         render();
         showToast('Moved to Cutting Room Floor');
