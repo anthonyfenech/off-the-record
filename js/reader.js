@@ -100,8 +100,9 @@ class Reader {
             navFooter.style.display = 'none';
         }
 
-        // Remove paginated class
+        // Remove paginated class, add home-page class
         document.body.classList.remove('paginated');
+        document.body.classList.add('home-page');
 
         // Get saved progress
         const progress = getProgress();
@@ -238,6 +239,9 @@ class Reader {
             document.body.classList.add('scrolling');
             document.body.classList.remove('paginated');
         }
+
+        // Remove home-page class when viewing a chapter
+        document.body.classList.remove('home-page');
 
         this.currentChapter = chapterId;
         window.currentChapterId = chapterId;

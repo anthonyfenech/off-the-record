@@ -3350,3 +3350,9 @@ body:not(.boss-button-enabled) .boss-btn-mobile,
 body:not(.boss-button-enabled) .fake-screen {
     display: none !important;
 }
+
+/* Hide Boss Button on homepage */
+body.home-page .boss-btn,
+body.home-page .boss-btn-mobile {
+    display: none !important;
+}
