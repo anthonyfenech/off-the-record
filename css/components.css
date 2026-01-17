@@ -1875,6 +1875,26 @@ body.show-captions .media-modal-caption {
     }
 }
 
+/* Mobile - tighter modal padding */
+@media (max-width: 480px) {
+    .media-modal-overlay {
+        padding: 10px;
+    }
+
+    .media-modal {
+        max-width: calc(100vw - 20px);
+        border-width: 1px;
+    }
+
+    .media-modal-body {
+        padding: 8px;
+    }
+
+    .media-modal-body img {
+        max-height: 60vh;
+    }
+}
+
 /* ============================================
    SIDEBAR SEARCH
    ============================================ */
