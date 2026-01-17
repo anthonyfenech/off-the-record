@@ -66,7 +66,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Tale of the Tape: Fenech vs. Verlander',
-        src: './assets/12-pennant-race-verlander-tale-of-tape.jpg',
+        src: './assets/26-unethical/12-pennant-race-verlander-tale-of-tape.jpg',
         placeholder: false
     },
     'dombrowski-extension': {
