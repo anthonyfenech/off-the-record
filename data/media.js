@@ -661,7 +661,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎬',
         label: 'Video',
         caption: 'Cy Young 2016 with Bernie',
-        src: './assets/video-clips/cy-young-2016-bernie.mp4',
+        src: './assets/13-wake-up-call/cy-young-2016-bernie.mp4',
         placeholder: false
     },
 
