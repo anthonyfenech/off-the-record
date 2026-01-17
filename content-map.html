@@ -19,7 +19,7 @@
 
     .layout {
       display: grid;
-      grid-template-columns: 1fr 280px;
+      grid-template-columns: 1fr 300px;
       min-height: 100vh;
     }
 
@@ -93,6 +93,7 @@
       margin-bottom: 15px;
       font-size: 13px;
       color: #666;
+      flex-wrap: wrap;
     }
 
     .stats strong { color: #333; }
@@ -140,7 +141,7 @@
       border: 2px solid #ddd;
       border-radius: 6px;
       padding: 10px;
-      min-height: 80px;
+      min-height: 90px;
       position: relative;
       cursor: grab;
       transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
@@ -191,17 +192,19 @@
     .box.paid .box-number { background: #f9a825; }
 
     .box-lock {
-      cursor: pointer;
       font-size: 14px;
-      transition: transform 0.15s;
     }
-
-    .box-lock:hover { transform: scale(1.3); }
 
     .box-title {
       font-size: 12px;
       line-height: 1.3;
       color: #333;
+      margin-bottom: 4px;
+    }
+
+    .box-meta {
+      font-size: 10px;
+      color: #999;
     }
 
     .box-delete {
@@ -212,9 +215,9 @@
       border: none;
       color: #bbb;
       cursor: pointer;
-      font-size: 16px;
-      width: 20px;
-      height: 20px;
+      font-size: 14px;
+      width: 22px;
+      height: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -244,6 +247,7 @@
     }
 
     .box.chapter-break .box-header { display: none; }
+    .box.chapter-break .box-meta { display: none; }
 
     .box.chapter-break .box-title {
       color: white;
@@ -251,6 +255,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       font-size: 12px;
+      margin: 0;
     }
 
     .box.chapter-break .box-delete {
@@ -296,14 +301,6 @@
       text-transform: uppercase;
     }
 
-    .sidebar-toggle {
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
     /* Category Filter */
     .category-filter {
       margin-bottom: 15px;
@@ -321,7 +318,7 @@
 
     /* Floor List */
     .floor-list {
-      min-height: 100px;
+      min-height: 150px;
       padding: 10px;
       background: #1e272c;
       border-radius: 6px;
@@ -332,6 +329,13 @@
     .floor-list.drag-target {
       border-color: #ff9800;
       background: #3e2723;
+    }
+
+    .floor-empty {
+      color: #78909c;
+      font-size: 12px;
+      text-align: center;
+      padding: 30px 10px;
     }
 
     /* Floor Item */
@@ -378,6 +382,12 @@
       line-height: 1.3;
     }
 
+    .floor-item-meta {
+      font-size: 10px;
+      color: #78909c;
+      margin-top: 4px;
+    }
+
     .floor-item-delete {
       position: absolute;
       top: 5px;
@@ -420,7 +430,193 @@
     }
 
     /* ════════════════════════════════════════════════════
-       EDIT MODAL
+       DETAIL PANEL (Click on box)
+       ════════════════════════════════════════════════════ */
+
+    .detail-panel {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .detail-panel.open { display: flex; }
+
+    .detail-content {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 450px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .detail-number {
+      background: #333;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .detail-number.paid { background: #f9a825; }
+
+    .detail-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+      line-height: 1;
+    }
+
+    .detail-close:hover { color: #333; }
+
+    .detail-field {
+      margin-bottom: 18px;
+    }
+
+    .detail-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .detail-field input,
+    .detail-field textarea,
+    .detail-field select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .detail-field textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .detail-field input:focus,
+    .detail-field textarea:focus,
+    .detail-field select:focus {
+      outline: none;
+      border-color: #2196F3;
+    }
+
+    .detail-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .detail-toggle:hover {
+      background: #eee;
+    }
+
+    .detail-toggle.active {
+      background: #fffde7;
+    }
+
+    .detail-toggle-icon {
+      font-size: 20px;
+    }
+
+    .detail-toggle-text {
+      flex: 1;
+    }
+
+    .detail-toggle-text strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .detail-toggle-text span {
+      font-size: 11px;
+      color: #666;
+    }
+
+    .detail-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .detail-stat {
+      background: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .detail-stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .detail-stat-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .detail-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .detail-actions .btn {
+      flex: 1;
+    }
+
+    .btn-danger {
+      background: #e53935;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #eee;
+      color: #333;
+    }
+
+    /* ════════════════════════════════════════════════════
+       ADD MODAL
        ════════════════════════════════════════════════════ */
 
     .modal {
@@ -459,12 +655,14 @@
     }
 
     .modal-content input,
-    .modal-content select {
+    .modal-content select,
+    .modal-content textarea {
       width: 100%;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
       font-size: 14px;
+      font-family: inherit;
     }
 
     .modal-buttons {
@@ -512,10 +710,7 @@
 
 <div class="layout">
 
-  <!-- ════════════════════════════════════════════════════
-       MAIN PANEL
-       ════════════════════════════════════════════════════ -->
-
+  <!-- MAIN PANEL -->
   <div class="main-panel">
     <div class="header">
       <h1>CONTENT MAP</h1>
@@ -529,6 +724,7 @@
       <span>Sections: <strong id="sectionCount">0</strong></span>
       <span>Free: <strong id="freeCount">0</strong></span>
       <span>Paid: <strong id="paidCount">0</strong></span>
+      <span>Words: <strong id="wordCount">0</strong></span>
       <span class="unsaved-badge" id="unsavedBadge">UNSAVED</span>
     </div>
 
@@ -536,14 +732,11 @@
 
     <div class="add-buttons">
       <button class="btn btn-section" id="addSectionBtn">+ Section</button>
-      <button class="btn btn-break" id="addBreakBtn">+ Break</button>
+      <button class="btn btn-break" id="addBreakBtn">+ Chapter Break</button>
     </div>
   </div>
 
-  <!-- ════════════════════════════════════════════════════
-       CUTTING ROOM FLOOR SIDEBAR
-       ════════════════════════════════════════════════════ -->
-
+  <!-- CUTTING ROOM FLOOR SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-header">
       <h2>✂️ Cutting Room</h2>
@@ -570,16 +763,71 @@
 
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     MODAL
-     ════════════════════════════════════════════════════ -->
+<!-- DETAIL PANEL -->
+<div class="detail-panel" id="detailPanel">
+  <div class="detail-content">
+    <div class="detail-header">
+      <div class="detail-number" id="detailNumber">1</div>
+      <button class="detail-close" id="detailClose">×</button>
+    </div>
 
+    <div class="detail-field">
+      <label>Title</label>
+      <input type="text" id="detailTitle">
+    </div>
+
+    <div class="detail-stats">
+      <div class="detail-stat">
+        <div class="detail-stat-value" id="detailWords">0</div>
+        <div class="detail-stat-label">Words</div>
+      </div>
+      <div class="detail-stat">
+        <div class="detail-stat-value" id="detailChars">0</div>
+        <div class="detail-stat-label">Characters</div>
+      </div>
+    </div>
+
+    <div class="detail-field">
+      <label>Content Preview</label>
+      <textarea id="detailContent" placeholder="Section content..."></textarea>
+    </div>
+
+    <div class="detail-field">
+      <label>Access</label>
+      <div class="detail-toggle" id="detailPaidToggle">
+        <span class="detail-toggle-icon" id="detailPaidIcon">🔓</span>
+        <div class="detail-toggle-text">
+          <strong id="detailPaidLabel">Free</strong>
+          <span id="detailPaidDesc">Available to all readers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-field">
+      <label>Notes</label>
+      <textarea id="detailNotes" placeholder="Internal notes..."></textarea>
+    </div>
+
+    <div class="detail-actions">
+      <button class="btn btn-secondary" id="detailCancel">Cancel</button>
+      <button class="btn btn-danger" id="detailCut">✂️ Cut</button>
+      <button class="btn btn-section" id="detailSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD MODAL -->
 <div class="modal" id="modal">
   <div class="modal-content">
     <h3 id="modalTitle">Add Section</h3>
 
     <label>Title</label>
     <input type="text" id="inputTitle" placeholder="Section title...">
+
+    <div id="contentField">
+      <label>Content (optional)</label>
+      <textarea id="inputContent" placeholder="Section content..."></textarea>
+    </div>
 
     <div id="categoryField">
       <label>Category</label>
@@ -592,8 +840,8 @@
     </div>
 
     <div class="modal-buttons">
-      <button class="btn" style="background:#eee;color:#333" id="modalCancel">Cancel</button>
-      <button class="btn btn-section" id="modalSave">Save</button>
+      <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+      <button class="btn btn-section" id="modalSave">Add</button>
     </div>
   </div>
 </div>
@@ -603,10 +851,85 @@
 // STATE
 // ══════════════════════════════════════════════════════════
 
-let bookItems = [];      // Items in the book
-let floorItems = [];     // Items in cutting room floor
-let history = [];        // For undo
+let bookItems = [];
+let floorItems = [];
+let history = [];
 let hasChanges = false;
+let currentDetailId = null;
+
+// ══════════════════════════════════════════════════════════
+// DEMO DATA - 10 CHAPTERS
+// ══════════════════════════════════════════════════════════
+
+const DEMO_DATA = [
+  // Chapter 1
+  { id: 1, type: 'break', title: 'Chapter 1: The Interview' },
+  { id: 2, type: 'section', title: 'First Meeting with Dombrowski', paid: false, words: 1240, content: 'The hallway smelled like fresh paint and anxiety...' },
+  { id: 3, type: 'section', title: 'Leyland\'s Office', paid: false, words: 890, content: 'Jim Leyland sat behind a desk cluttered with...' },
+  { id: 4, type: 'section', title: 'The Job Offer', paid: true, words: 1560, content: 'Three weeks later, my phone rang at 6am...' },
+
+  // Chapter 2
+  { id: 5, type: 'break', title: 'Chapter 2: Rookie Year' },
+  { id: 6, type: 'section', title: 'First Day in the Press Box', paid: false, words: 1120, content: 'Comerica Park looked different from up here...' },
+  { id: 7, type: 'section', title: 'Cabrera\'s Batting Practice', paid: false, words: 980, content: 'The sound of Miguel\'s bat was different...' },
+  { id: 8, type: 'section', title: 'Verlander\'s Cold Shoulder', paid: true, words: 1340, content: 'Justin didn\'t acknowledge my existence for three weeks...' },
+
+  // Chapter 3
+  { id: 9, type: 'break', title: 'Chapter 3: Spring Training' },
+  { id: 10, type: 'section', title: 'Lakeland Arrival', paid: false, words: 1050, content: 'The drive from Tampa took longer than expected...' },
+  { id: 11, type: 'section', title: 'Soresy\'s Galarraga Story', paid: false, words: 1890, content: 'Armando Galarraga was throwing in the bullpen...' },
+  { id: 12, type: 'section', title: 'The Clubhouse Hierarchy', paid: true, words: 2100, content: 'Every clubhouse has unwritten rules...' },
+
+  // Chapter 4
+  { id: 13, type: 'break', title: 'Chapter 4: The Scandal' },
+  { id: 14, type: 'section', title: 'Internet Stalker Discovery', paid: false, words: 1670, content: 'The email came at 11pm on a Tuesday...' },
+  { id: 15, type: 'section', title: 'DUI Report Surfaces', paid: true, words: 2340, content: 'My editor called me into his office...' },
+  { id: 16, type: 'section', title: 'The Confrontation', paid: true, words: 1780, content: 'I found him in the parking lot after the game...' },
+
+  // Chapter 5
+  { id: 17, type: 'break', title: 'Chapter 5: Midseason' },
+  { id: 18, type: 'section', title: 'All-Star Break Blues', paid: false, words: 920, content: 'Four days without baseball felt like a month...' },
+  { id: 19, type: 'section', title: 'Trade Deadline Chaos', paid: false, words: 1450, content: 'Dombrowski was working three phones at once...' },
+  { id: 20, type: 'section', title: 'The Céspedes Deal', paid: true, words: 1890, content: 'Nobody saw this one coming...' },
+
+  // Chapter 6
+  { id: 21, type: 'break', title: 'Chapter 6: Pennant Race' },
+  { id: 22, type: 'section', title: 'September Pressure', paid: false, words: 1340, content: 'The magic number was 12...' },
+  { id: 23, type: 'section', title: 'Clinching Night', paid: false, words: 1560, content: 'The champagne burned my eyes...' },
+  { id: 24, type: 'section', title: 'Verlander\'s Confession', paid: true, words: 2450, content: 'He pulled me aside after the celebration...' },
+
+  // Chapter 7
+  { id: 25, type: 'break', title: 'Chapter 7: Postseason' },
+  { id: 26, type: 'section', title: 'ALDS Game 1', paid: false, words: 1120, content: 'October baseball hits different...' },
+  { id: 27, type: 'section', title: 'The Controversial Call', paid: true, words: 1780, content: 'Everyone in the press box saw it...' },
+  { id: 28, type: 'section', title: 'Series Loss', paid: false, words: 1230, content: 'The clubhouse was silent...' },
+
+  // Chapter 8
+  { id: 29, type: 'break', title: 'Chapter 8: Hot Seat' },
+  { id: 30, type: 'section', title: 'Ausmus Under Fire', paid: false, words: 1450, content: 'The fans wanted blood...' },
+  { id: 31, type: 'section', title: 'High Heat Interview', paid: true, words: 1670, content: 'Chris Russo didn\'t pull any punches...' },
+  { id: 32, type: 'section', title: 'Harbaugh Stalking', paid: true, words: 2100, content: 'I waited outside the hotel for four hours...' },
+
+  // Chapter 9
+  { id: 33, type: 'break', title: 'Chapter 9: The Rebuild' },
+  { id: 34, type: 'section', title: 'Verlander Trade Rumors', paid: false, words: 1340, content: 'Every reporter had a different source...' },
+  { id: 35, type: 'section', title: 'The Houston Deal', paid: true, words: 2890, content: 'August 31st, 11:58pm...' },
+  { id: 36, type: 'section', title: 'Saying Goodbye', paid: false, words: 1120, content: 'The clubhouse felt empty...' },
+
+  // Chapter 10
+  { id: 37, type: 'break', title: 'Chapter 10: The Incident' },
+  { id: 38, type: 'section', title: 'Houston Reunion', paid: false, words: 1560, content: 'I hadn\'t seen Justin in two years...' },
+  { id: 39, type: 'section', title: 'The Confrontation (Part 2)', paid: true, words: 3200, content: 'He was waiting for me outside the clubhouse...' },
+  { id: 40, type: 'section', title: 'Aftermath', paid: true, words: 2450, content: 'The ESPN alert came 45 minutes later...' },
+];
+
+const DEMO_FLOOR = [
+  { id: 100, title: 'Verlander rant (too personal)', category: 'needs-work', words: 890 },
+  { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long', words: 3400 },
+  { id: 102, title: 'Personal fishing trip', category: 'off-topic', words: 1200 },
+  { id: 103, title: 'Scherzer thank you letter', category: 'save-later', words: 450 },
+  { id: 104, title: 'Victor Martinez retirement', category: 'save-later', words: 1890 },
+];
 
 // ══════════════════════════════════════════════════════════
 // LOAD / SAVE
@@ -619,23 +942,13 @@ function loadData() {
   if (savedBook) {
     bookItems = JSON.parse(savedBook);
   } else {
-    bookItems = [
-      { id: 1, type: 'section', title: 'Soresy Galarraga Repertoire', paid: false },
-      { id: 2, type: 'section', title: 'Leyland Sleep Card', paid: true },
-      { id: 3, type: 'section', title: 'Knapp First Replay', paid: false },
-      { id: 4, type: 'break', title: 'Chapter 2: 2016' },
-      { id: 5, type: 'section', title: 'Donald No-Stretch', paid: false },
-    ];
+    bookItems = JSON.parse(JSON.stringify(DEMO_DATA));
   }
 
   if (savedFloor) {
     floorItems = JSON.parse(savedFloor);
   } else {
-    floorItems = [
-      { id: 100, title: 'Verlander rant (too angry)', category: 'needs-work' },
-      { id: 101, title: 'Miggy 500 HR tangent', category: 'too-long' },
-      { id: 102, title: 'Personal fishing trip story', category: 'off-topic' },
-    ];
+    floorItems = JSON.parse(JSON.stringify(DEMO_FLOOR));
   }
 
   render();
@@ -688,19 +1001,21 @@ function renderBook() {
       return `
         <div class="box chapter-break" data-id="${item.id}" data-source="book" draggable="true">
           <div class="box-title">═══ ${item.title} ═══</div>
-          <button class="box-delete" data-action="delete">×</button>
+          <button class="box-delete" data-action="delete" title="Remove">×</button>
         </div>
       `;
     } else {
       sectionNum++;
+      const words = item.words || 0;
       return `
         <div class="box ${item.paid ? 'paid' : ''}" data-id="${item.id}" data-source="book" draggable="true">
           <div class="box-header">
             <span class="box-number">${sectionNum}</span>
-            <span class="box-lock" data-action="toggle">${item.paid ? '🔒' : '🔓'}</span>
+            <span class="box-lock">${item.paid ? '🔒' : '🔓'}</span>
           </div>
           <div class="box-title">${item.title}</div>
-          <button class="box-delete" data-action="delete">×</button>
+          <div class="box-meta">${words.toLocaleString()} words</div>
+          <button class="box-delete" data-action="cut" title="Send to Cutting Room">✂️</button>
         </div>
       `;
     }
@@ -723,7 +1038,7 @@ function renderFloor() {
     : floorItems.filter(i => i.category === filter);
 
   if (filtered.length === 0) {
-    list.innerHTML = '<div style="color:#78909c;font-size:12px;text-align:center;padding:20px;">Drag sections here</div>';
+    list.innerHTML = '<div class="floor-empty">Drag sections here<br>or click ✂️ to cut</div>';
     return;
   }
 
@@ -733,16 +1048,20 @@ function renderFloor() {
         ${categoryIcons[item.category] || ''} ${item.category.replace('-', ' ')}
       </div>
       <div class="floor-item-title">${item.title}</div>
-      <button class="floor-item-delete" data-action="delete-floor">×</button>
+      <div class="floor-item-meta">${(item.words || 0).toLocaleString()} words</div>
+      <button class="floor-item-delete" data-action="delete-floor" title="Delete permanently">×</button>
     </div>
   `).join('');
 }
 
 function updateStats() {
   const sections = bookItems.filter(i => i.type === 'section');
+  const totalWords = sections.reduce((sum, s) => sum + (s.words || 0), 0);
+
   document.getElementById('sectionCount').textContent = sections.length;
   document.getElementById('freeCount').textContent = sections.filter(s => !s.paid).length;
   document.getElementById('paidCount').textContent = sections.filter(s => s.paid).length;
+  document.getElementById('wordCount').textContent = totalWords.toLocaleString();
   document.getElementById('floorCount').textContent = floorItems.length;
 }
 
@@ -766,7 +1085,115 @@ function showToast(msg) {
 }
 
 // ══════════════════════════════════════════════════════════
-// DRAG AND DROP (Event Delegation - Efficient)
+// DETAIL PANEL
+// ══════════════════════════════════════════════════════════
+
+function openDetail(id) {
+  const item = bookItems.find(i => i.id === id);
+  if (!item || item.type === 'break') return;
+
+  currentDetailId = id;
+
+  // Find section number
+  let sectionNum = 0;
+  for (const i of bookItems) {
+    if (i.type === 'section') sectionNum++;
+    if (i.id === id) break;
+  }
+
+  document.getElementById('detailNumber').textContent = sectionNum;
+  document.getElementById('detailNumber').classList.toggle('paid', item.paid);
+  document.getElementById('detailTitle').value = item.title;
+  document.getElementById('detailContent').value = item.content || '';
+  document.getElementById('detailNotes').value = item.notes || '';
+  document.getElementById('detailWords').textContent = (item.words || 0).toLocaleString();
+  document.getElementById('detailChars').textContent = ((item.content || '').length).toLocaleString();
+
+  updatePaidToggle(item.paid);
+
+  document.getElementById('detailPanel').classList.add('open');
+}
+
+function updatePaidToggle(paid) {
+  const toggle = document.getElementById('detailPaidToggle');
+  const icon = document.getElementById('detailPaidIcon');
+  const label = document.getElementById('detailPaidLabel');
+  const desc = document.getElementById('detailPaidDesc');
+
+  toggle.classList.toggle('active', paid);
+  icon.textContent = paid ? '🔒' : '🔓';
+  label.textContent = paid ? 'Paid' : 'Free';
+  desc.textContent = paid ? 'Premium content - requires payment' : 'Available to all readers';
+}
+
+function closeDetail() {
+  document.getElementById('detailPanel').classList.remove('open');
+  currentDetailId = null;
+}
+
+function saveDetail() {
+  if (!currentDetailId) return;
+
+  const item = bookItems.find(i => i.id === currentDetailId);
+  if (!item) return;
+
+  saveState();
+
+  item.title = document.getElementById('detailTitle').value.trim() || 'Untitled';
+  item.content = document.getElementById('detailContent').value;
+  item.notes = document.getElementById('detailNotes').value;
+  item.words = item.content.split(/\s+/).filter(w => w).length;
+
+  closeDetail();
+  render();
+}
+
+function cutFromDetail() {
+  if (!currentDetailId) return;
+
+  const item = bookItems.find(i => i.id === currentDetailId);
+  if (!item) return;
+
+  saveState();
+
+  // Move to floor
+  bookItems = bookItems.filter(i => i.id !== currentDetailId);
+  floorItems.push({
+    id: item.id,
+    title: item.title,
+    category: 'save-later',
+    words: item.words || 0,
+    content: item.content,
+    notes: item.notes
+  });
+
+  closeDetail();
+  render();
+  showToast('Moved to Cutting Room Floor');
+}
+
+// Event listeners for detail panel
+document.getElementById('detailClose').addEventListener('click', closeDetail);
+document.getElementById('detailCancel').addEventListener('click', closeDetail);
+document.getElementById('detailSave').addEventListener('click', saveDetail);
+document.getElementById('detailCut').addEventListener('click', cutFromDetail);
+
+document.getElementById('detailPaidToggle').addEventListener('click', () => {
+  if (!currentDetailId) return;
+  const item = bookItems.find(i => i.id === currentDetailId);
+  if (item) {
+    item.paid = !item.paid;
+    updatePaidToggle(item.paid);
+    document.getElementById('detailNumber').classList.toggle('paid', item.paid);
+  }
+});
+
+document.getElementById('detailPanel').addEventListener('click', e => {
+  if (e.target.id === 'detailPanel') closeDetail();
+});
+
+// ══════════════════════════════════════════════════════════
+// DRAG AND DROP
 // ══════════════════════════════════════════════════════════
 
 let dragData = null;
@@ -841,7 +1268,7 @@ document.addEventListener('drop', e => {
 
   saveState();
 
-  // CASE 1: Moving within book
+  // Moving within book
   if (dragData.source === 'book' && droppedOnGrid) {
     if (targetItem && targetItem.dataset.source === 'book') {
       const fromIdx = bookItems.findIndex(i => i.id === dragData.id);
@@ -851,21 +1278,24 @@ document.addEventListener('drop', e => {
     }
   }
 
-  // CASE 2: Moving from book to floor
+  // Moving from book to floor
   else if (dragData.source === 'book' && droppedOnFloor) {
     const idx = bookItems.findIndex(i => i.id === dragData.id);
     const item = bookItems[idx];
-    if (item.type === 'section') {
+    if (item && item.type === 'section') {
       bookItems.splice(idx, 1);
       floorItems.push({
         id: item.id,
         title: item.title,
-        category: 'save-later'
+        category: 'save-later',
+        words: item.words || 0,
+        content: item.content,
+        notes: item.notes
       });
     }
   }
 
-  // CASE 3: Moving from floor to book
+  // Moving from floor to book
   else if (dragData.source === 'floor' && droppedOnGrid) {
     const idx = floorItems.findIndex(i => i.id === dragData.id);
     const item = floorItems[idx];
@@ -875,7 +1305,10 @@ document.addEventListener('drop', e => {
       id: item.id,
       type: 'section',
       title: item.title,
-      paid: false
+      paid: false,
+      words: item.words || 0,
+      content: item.content,
+      notes: item.notes
     };
 
     if (targetItem && targetItem.dataset.source === 'book') {
@@ -886,7 +1319,7 @@ document.addEventListener('drop', e => {
     }
   }
 
-  // CASE 4: Reordering within floor
+  // Reordering within floor
   else if (dragData.source === 'floor' && droppedOnFloor && targetItem) {
     const fromIdx = floorItems.findIndex(i => i.id === dragData.id);
     const toIdx = floorItems.findIndex(i => i.id === parseInt(targetItem.dataset.id));
@@ -902,59 +1335,93 @@ document.addEventListener('drop', e => {
 });
 
 // ══════════════════════════════════════════════════════════
-// CLICK HANDLERS (Event Delegation)
+// CLICK HANDLERS
 // ══════════════════════════════════════════════════════════
 
 document.addEventListener('click', e => {
   const action = e.target.dataset.action;
-  if (!action) return;
 
-  const box = e.target.closest('.box, .floor-item');
-  const id = box ? parseInt(box.dataset.id) : null;
+  // Handle actions
+  if (action) {
+    const box = e.target.closest('.box, .floor-item');
+    const id = box ? parseInt(box.dataset.id) : null;
 
-  if (action === 'toggle' && id) {
-    saveState();
-    const item = bookItems.find(i => i.id === id);
-    if (item) item.paid = !item.paid;
-    render();
-  }
-
-  if (action === 'delete' && id) {
-    if (confirm('Delete this item?')) {
+    if (action === 'cut' && id) {
+      e.stopPropagation();
       saveState();
-      bookItems = bookItems.filter(i => i.id !== id);
-      render();
+      const idx = bookItems.findIndex(i => i.id === id);
+      const item = bookItems[idx];
+      if (item && item.type === 'section') {
+        bookItems.splice(idx, 1);
+        floorItems.push({
+          id: item.id,
+          title: item.title,
+          category: 'save-later',
+          words: item.words || 0,
+          content: item.content,
+          notes: item.notes
+        });
+        render();
+        showToast('Moved to Cutting Room Floor');
+      }
+      return;
     }
+
+    if (action === 'delete' && id) {
+      e.stopPropagation();
+      // Chapter breaks get deleted, sections go to floor
+      const item = bookItems.find(i => i.id === id);
+      if (item && item.type === 'break') {
+        if (confirm('Delete this chapter break?')) {
+          saveState();
+          bookItems = bookItems.filter(i => i.id !== id);
+          render();
+        }
+      }
+      return;
+    }
+
+    if (action === 'delete-floor' && id) {
+      e.stopPropagation();
+      if (confirm('Permanently delete this item?')) {
+        saveState();
+        floorItems = floorItems.filter(i => i.id !== id);
+        render();
+      }
+      return;
+    }
+
+    return;
   }
 
-  if (action === 'delete-floor' && id) {
-    if (confirm('Permanently delete from cutting room floor?')) {
-      saveState();
-      floorItems = floorItems.filter(i => i.id !== id);
-      render();
-    }
-  }
-});
-
-// Double-click to edit
-document.addEventListener('dblclick', e => {
+  // Click on box to open detail
   const box = e.target.closest('.box');
-  if (!box || e.target.closest('button')) return;
+  if (box && !e.target.closest('button')) {
+    const id = parseInt(box.dataset.id);
+    const item = bookItems.find(i => i.id === id);
+    if (item && item.type === 'section') {
+      openDetail(id);
+    }
+  }
 
-  const id = parseInt(box.dataset.id);
-  const item = bookItems.find(i => i.id === id);
-  if (!item) return;
-
-  const newTitle = prompt('Edit title:', item.title);
-  if (newTitle && newTitle.trim()) {
-    saveState();
-    item.title = newTitle.trim();
-    render();
+  // Click on floor item to edit
+  const floorItem = e.target.closest('.floor-item');
+  if (floorItem && !e.target.closest('button')) {
+    const id = parseInt(floorItem.dataset.id);
+    const item = floorItems.find(i => i.id === id);
+    if (item) {
+      const newTitle = prompt('Edit title:', item.title);
+      if (newTitle && newTitle.trim()) {
+        saveState();
+        item.title = newTitle.trim();
+        render();
+      }
+    }
   }
 });
 
 // ══════════════════════════════════════════════════════════
-// MODAL
+// ADD MODAL
 // ══════════════════════════════════════════════════════════
 
 let modalMode = null;
@@ -963,7 +1430,9 @@ document.getElementById('addSectionBtn').addEventListener('click', () => {
   modalMode = 'section';
   document.getElementById('modalTitle').textContent = 'Add Section';
   document.getElementById('categoryField').style.display = 'none';
+  document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
+  document.getElementById('inputContent').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
 });
@@ -972,6 +1441,7 @@ document.getElementById('addBreakBtn').addEventListener('click', () => {
   modalMode = 'break';
   document.getElementById('modalTitle').textContent = 'Add Chapter Break';
   document.getElementById('categoryField').style.display = 'none';
+  document.getElementById('contentField').style.display = 'none';
   document.getElementById('inputTitle').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
@@ -981,7 +1451,9 @@ document.getElementById('addFloorBtn').addEventListener('click', () => {
   modalMode = 'floor';
   document.getElementById('modalTitle').textContent = 'Add to Cutting Room Floor';
   document.getElementById('categoryField').style.display = 'block';
+  document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
+  document.getElementById('inputContent').value = '';
   document.getElementById('modal').classList.add('open');
   document.getElementById('inputTitle').focus();
 });
@@ -1002,13 +1474,16 @@ document.getElementById('modalSave').addEventListener('click', () => {
     0
   ) + 1;
 
+  const content = document.getElementById('inputContent')?.value || '';
+  const words = content.split(/\s+/).filter(w => w).length;
+
   if (modalMode === 'section') {
-    bookItems.push({ id: maxId, type: 'section', title, paid: false });
+    bookItems.push({ id: maxId, type: 'section', title, paid: false, words, content });
   } else if (modalMode === 'break') {
     bookItems.push({ id: maxId, type: 'break', title });
   } else if (modalMode === 'floor') {
     const category = document.getElementById('inputCategory').value;
-    floorItems.push({ id: maxId, title, category });
+    floorItems.push({ id: maxId, title, category, words, content });
   }
 
   document.getElementById('modal').classList.remove('open');
@@ -1038,19 +1513,15 @@ document.addEventListener('keydown', e => {
 
   if (e.key === 'Escape') {
     document.getElementById('modal').classList.remove('open');
+    closeDetail();
   }
 });
 
 // ══════════════════════════════════════════════════════════
-// FILTER
+// FILTER & BUTTONS
 // ══════════════════════════════════════════════════════════
 
 document.getElementById('floorFilter').addEventListener('change', renderFloor);
-
-// ══════════════════════════════════════════════════════════
-// BUTTON HANDLERS
-// ══════════════════════════════════════════════════════════
-
 document.getElementById('saveBtn').addEventListener('click', saveData);
 document.getElementById('undoBtn').addEventListener('click', undo);
 
