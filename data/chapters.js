@@ -2046,7 +2046,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline">LAKELAND, Fla., <em>March 31</em>—</span>To put the cherry on top of the Verlander profile and talk to Kate Upton herself, I flex my corporate muscle before the dog adoption show. I reach out to the PR flak who sent the story pitch a couple weeks ago and offer a trade. I'm working on a story about Justin—if I can talk to Upton for a couple minutes, I'll write a separate story about the dog adoption and get it on <em>USA TODAY</em>'s website.</p>
+<p class="has-dateline no-indent"><span class="dateline">LAKELAND, Fla., <em>March 31</em>—</span>To put the cherry on top of the Verlander profile and talk to Kate Upton herself, I flex my corporate muscle before the dog adoption show. I reach out to the PR flak who sent the story pitch a couple weeks ago and offer a trade. I'm working on a story about Justin—if I can talk to Upton for a couple minutes, I'll write a separate story about the dog adoption and get it on <em>USA TODAY</em>'s website. <span class="media-emoji" data-media-id="verlander-upton-dog-adoption">📰</span></p>
 
 <p>Ms. PR passes me along to Christie Williams, who's running the event and turns out to be Upton's older sister. Christie OKs the deal. When I get to the old airplane hangar where the dogs are waiting for a forever home, it's obvious they're not the main attraction. A crowd grows. People point their phones, carry magazines and hold up life-sized posters of Upton in a bikini.</p>
 
@@ -3783,7 +3783,7 @@ export const CHAPTERS = [
 
 <p>I’m at Harwell’s retirement complex for his surprise 90th birthday party. One of his friends invited me, and here I am sitting with Ernie and his wife Lulu.</p>
 
-<p>Me and Ernie, shooting the breeze—my dad’s gonna think this is so cool.</p>
+<p>Me and Ernie, shooting the breeze—my dad's gonna think this is so cool. <span class="media-emoji" data-media-id="ernie-harwell-talk">🔴</span></p>
 
 <p>I did my research, so I know what to ask. “Who were your favorite performers?”</p>
 

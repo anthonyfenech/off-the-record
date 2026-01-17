@@ -277,6 +277,22 @@ export const MEDIA_CONTENT = {
         url: 'https://www.si.com/mlb/2021/06/14/sticky-stuff-bubba-harkins-speaking-out-daily-cover',
         placeholder: false
     },
+    'verlander-upton-dog-adoption': {
+        type: 'link',
+        emoji: '📰',
+        label: 'Article',
+        caption: 'Justin Verlander, Kate Upton team up to find homes for dogs (Detroit Free Press)',
+        url: 'https://www.freep.com/story/sports/mlb/tigers/2016/04/01/detroit-tigers-justin-verlander-kate-upton/82514894/',
+        placeholder: false
+    },
+    'ernie-harwell-talk': {
+        type: 'audio',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: 'Ernie Harwell',
+        src: './assets/16-summer-2017-ii/ernie-harwell-talk.mp3',
+        placeholder: false
+    },
     'photo-1': {
         type: 'photo',
         emoji: '📷',
