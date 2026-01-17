@@ -799,16 +799,16 @@ button:focus-visible {
     align-items: center;
     gap: 6px;
     background: none;
-    border: 2px solid #000;
+    border: 2px solid #000 !important;
     border-radius: 3px;
     padding: 4px 8px;
     cursor: pointer;
     font-family: var(--font-mono);
     font-size: 10px;
-    font-weight: bold;
+    font-weight: bold !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #000;
+    color: #000 !important;
     transition: all 0.15s ease;
 }
 
