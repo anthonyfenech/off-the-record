@@ -31,18 +31,34 @@ class BossButton {
             this.fakeScreens[mode] = document.getElementById(`fake-screen-${mode}`);
         });
 
+        // Set up ESC key listener ALWAYS (even if button not found)
+        this.setupEscListener();
+
         if (!this.button) {
-            console.warn('Boss Button: Button element not found');
-            return;
+            console.warn('Boss Button: Button element not found, ESC key still active');
+        } else {
+            // Set up button click listeners
+            this.setupButtonListeners();
         }
 
-        // Set up event listeners
-        this.setupEventListeners();
+        // Set up fake screen click listeners
+        this.setupFakeScreenListeners();
 
         console.log('Boss Button: Initialized with', this.screenModes.length, 'rotating screens');
     }
 
-    setupEventListeners() {
+    setupEscListener() {
+        // ESC key listener - highest priority, capture phase, ALWAYS active
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggle();
+            }
+        }, { capture: true, passive: false });
+    }
+
+    setupButtonListeners() {
         // Desktop button click
         if (this.button) {
             this.button.addEventListener('click', (e) => {
@@ -60,16 +76,9 @@ class BossButton {
                 this.toggle();
             });
         }
+    }
 
-        // ESC key listener - highest priority, capture phase
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' || e.key === 'Esc') {
-                e.preventDefault();
-                e.stopPropagation();
-                this.toggle();
-            }
-        }, { capture: true, passive: false });
-
+    setupFakeScreenListeners() {
         // Click anywhere on fake screen to deactivate
         Object.values(this.fakeScreens).forEach(screen => {
             if (screen) {
