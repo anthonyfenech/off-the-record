@@ -1512,30 +1512,6 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Random Button</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="randomButtonText">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Show Credential</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="credentialCarousel">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Credential Size</span>
-                    <select id="credentialSize" class="size-select">
-                        <option value="lg">Large (350px)</option>
-                        <option value="md">Medium (250px) ✓</option>
-                        <option value="sm">Small (175px)</option>
-                    </select>
-                </div>
-
-                <div class="toggle-subheader">Navigation</div>
 
                 <div class="toggle-subheader">Full Book</div>
                 <div class="toggle-row">
@@ -2359,9 +2335,6 @@
                 draftBookmarks: localStorage.getItem('admin_draftBookmarks') === 'true',
                 twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
                 maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
-                randomButtonText: localStorage.getItem('admin_randomButtonText') === 'true',
-                credentialCarousel: localStorage.getItem('admin_credentialCarousel') !== 'false',
-                credentialSize: localStorage.getItem('admin_credentialSize') || 'md',
                 installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
                 installMessage: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
                 installButton: localStorage.getItem('admin_installButton') || 'Install',
@@ -2393,9 +2366,6 @@
             document.getElementById('draftBookmarks').checked = settings.draftBookmarks;
             document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
             document.getElementById('maintenanceMode').checked = settings.maintenanceMode;
-            document.getElementById('randomButtonText').checked = settings.randomButtonText;
-            document.getElementById('credentialCarousel').checked = settings.credentialCarousel;
-            document.getElementById('credentialSize').value = settings.credentialSize;
             document.getElementById('installPromptEnabled').checked = settings.installPromptEnabled;
             document.getElementById('installMessage').value = settings.installMessage;
             document.getElementById('installButton').value = settings.installButton;
@@ -2409,7 +2379,7 @@
             const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments', 'draftContact',
-                           'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
+                           'twitterEmbeds', 'maintenanceMode', 'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks'];
 
             toggles.forEach(id => {
@@ -2435,11 +2405,6 @@
                 document.getElementById(id).addEventListener('change', (e) => {
                     saveSetting(id, e.target.value);
                 });
-            });
-
-            // Credential size select
-            document.getElementById('credentialSize').addEventListener('change', (e) => {
-                saveSetting('credentialSize', e.target.value);
             });
 
             // Reset install prompt button

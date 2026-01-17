@@ -41,59 +41,6 @@
     color: var(--color-text-primary);
 }
 
-/* Credential Button - press pass as welcome button */
-.credential-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: transform var(--transition-fast), opacity var(--transition-fast);
-}
-
-.credential-btn:hover {
-    transform: scale(1.02);
-}
-
-.credential-btn:active {
-    transform: scale(0.98);
-    opacity: 0.9;
-}
-
-.credential-display {
-    margin: 0 auto;
-}
-
-.credential-display.credential-lg {
-    width: 350px;
-}
-
-.credential-display.credential-md {
-    width: 250px;
-}
-
-.credential-display.credential-sm {
-    width: 175px;
-}
-
-.credential-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-@media (max-width: 480px) {
-    .credential-display.credential-lg {
-        width: 280px;
-    }
-    .credential-display.credential-md {
-        width: 200px;
-    }
-    .credential-display.credential-sm {
-        width: 140px;
-    }
-}
-
 /* Continue Reading Banner */
 .continue-reading {
     position: fixed;

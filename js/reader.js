@@ -110,84 +110,18 @@ class Reader {
         const savedPage = progress.currentPage || 0;
         const isNewReader = !progress.lastUpdated;
 
-        // Button text - check admin setting for random text
-        let buttonText = isNewReader ? 'START READING' : 'CONTINUE READING';
+        // Button text
+        const buttonText = isNewReader ? 'START READING' : 'CONTINUE READING';
 
-        const useRandomText = localStorage.getItem('admin_randomButtonText') === 'true';
-        if (useRandomText) {
-            const randomTexts = [
-                'START READING',
-                'BEGIN',
-                'ENTER',
-                'DIVE IN',
-                'LET\'S GO',
-                'OPEN BOOK',
-                'READ NOW',
-                'GO',
-                'START',
-                'PRESS START'
-            ];
-            buttonText = randomTexts[Math.floor(Math.random() * randomTexts.length)];
-        }
-
-        // Check if credential carousel is enabled (default: OFF)
-        const showCarousel = localStorage.getItem('admin_credentialCarousel') === 'true';
-        const credentialImages = [
-            'credentials_01_002.jpg', 'credentials_01_004.jpg', 'credentials_01_006.jpg', 'credentials_01_008.jpg',
-            'credentials_01_010.jpg', 'credentials_01_012.jpg', 'credentials_01_014.jpg', 'credentials_01_016.jpg',
-            'credentials_01_018.jpg', 'credentials_01_020.jpg', 'credentials_01_022.jpg', 'credentials_01_024.jpg',
-            'credentials_01_026.jpg', 'credentials_01_028.jpg', 'credentials_01_030.jpg', 'credentials_01_032.jpg',
-            'credentials_01_034.jpg', 'credentials_01_036.jpg', 'credentials_01_038.jpg', 'credentials_01_040.jpg',
-            'credentials_01_042.jpg', 'credentials_01_044.jpg', 'credentials_01_046.jpg', 'credentials_01_048.jpg',
-            'credentials_01_050.jpg', 'credentials_01_052.jpg', 'credentials_01_054.jpg', 'credentials_01_056.jpg',
-            'credentials_01_057.jpg', 'credentials_01_059.jpg', 'credentials_01_061.jpg', 'credentials_01_063.jpg',
-            'credentials_01_064.jpg', 'credentials_01_066.jpg', 'credentials_01_068.jpg', 'credentials_01_070.jpg',
-            'credentials_01_072.jpg', 'credentials_01_074.jpg', 'credentials_01_076.jpg', 'credentials_01_078.jpg',
-            'credentials_01_080.jpg', 'credentials_01_082.jpg', 'credentials_01_084.jpg', 'credentials_01_086.jpg',
-            'credentials_01_088.jpg', 'credentials_01_090.jpg', 'credentials_01_092.jpg', 'credentials_01_094.jpg',
-            'credentials_01_096.jpg', 'credentials_01_098.jpg', 'credentials_01_100.jpg', 'credentials_01_102.jpg',
-            'credentials_01_104.jpg', 'credentials_01_106.jpg', 'credentials_01_108.jpg', 'credentials_01_113.jpg',
-            'credentials_01_115.jpg', 'credentials_01_117.jpg', 'credentials_01_119.jpg', 'credentials_01_121.jpg',
-            'credentials_01_123.jpg', 'credentials_01_125.jpg', 'credentials_01_127.jpg', 'credentials_01_129.jpg',
-            'credentials_01_131.jpg', 'credentials_01_133.jpg', 'credentials_01_135.jpg', 'credentials_01_137.jpg',
-            'credentials_01_139.jpg', 'credentials_01_141.jpg', 'credentials_01_143.jpg', 'credentials_01_147.jpg',
-            'credentials_01_149.jpg', 'credentials_01_155.jpg', 'credentials_01_157.jpg', 'credentials_01_159.jpg',
-            'credentials_01_161.jpg', 'credentials_01_163.jpg', 'credentials_01_165.jpg', 'credentials_01_167.jpg',
-            'credentials_01_168.jpg', 'credentials_01_169.jpg', 'credentials_01_171.jpg', 'credentials_01_173.jpg',
-            'credentials_01_175.jpg', 'credentials_01_177.jpg', 'credentials_01_179.jpg', 'credentials_01_181.jpg',
-            'credentials_01_183.jpg', 'credentials_01_185.jpg', 'credentials_01_187.jpg', 'credentials_01_189.jpg',
-            'credentials_01_191.jpg', 'credentials_01_193.jpg', 'credentials_01_195.jpg', 'credentials_01_197.jpg',
-            'credentials_01_199.jpg', 'credentials_01_201.jpg'
-        ];
-
-        let credentialHTML = '';
-        if (showCarousel) {
-            // Pick one random credential
-            const randomCredential = credentialImages[Math.floor(Math.random() * credentialImages.length)];
-            // Get size setting (lg, md, sm)
-            const credentialSize = localStorage.getItem('admin_credentialSize') || 'md';
-            // lg images are in /credentials/, md/sm are in /credentials/credentials-md/ etc.
-            const sizeFolder = credentialSize === 'lg' ? 'credentials' : `credentials/credentials-${credentialSize}`;
-            credentialHTML = `
-                <div class="credential-display credential-${credentialSize}">
-                    <img src="./assets/${sizeFolder}/${randomCredential}" alt="Press Credential" class="credential-img" onerror="this.style.display='none'">
-                </div>
-            `;
-        }
-
-        // Title page style HTML when credential mode is OFF
-        const titleHTML = !showCarousel ? `
-            <div class="title-page">
-                <div class="title-page-content">
-                    <h1 class="title-page-title">OFF-THE-RECORD</h1>
-                </div>
-                <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="parental-advisory">
-            </div>
-        ` : '';
-
+        // Homepage: Title page layout with read button
         this.chapterBody.innerHTML = `
             <div class="home-content">
-                ${showCarousel ? credentialHTML : titleHTML}
+                <div class="title-page">
+                    <div class="title-page-content">
+                        <h1 class="title-page-title">OFF-THE-RECORD</h1>
+                    </div>
+                    <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="parental-advisory">
+                </div>
                 <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
             </div>
         `;
