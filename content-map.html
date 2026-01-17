@@ -20,7 +20,7 @@
 
     .layout {
       display: grid;
-      grid-template-columns: 1fr 300px;
+      grid-template-columns: 300px 1fr;
       min-height: 100vh;
     }
 
@@ -271,43 +271,39 @@
     }
 
     /* ════════════════════════════════════════════════════
-       CHAPTER BREAK
+       CHAPTER BOX (inverted section box)
        ════════════════════════════════════════════════════ */
 
     .box.chapter-break {
-      background: #37474f;
-      border-color: #263238;
+      background: #333;
+      border-color: #333;
       color: white;
-      min-height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 8px;
     }
-
-    .box.chapter-break .box-header { display: none; }
-    .box.chapter-break .box-meta { display: none; }
 
     .box.chapter-break .box-title {
       color: white;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-size: 10px;
-      margin: 0;
-      text-align: center;
-      line-height: 1.4;
-      white-space: normal;
-      overflow: visible;
+    }
+
+    .box.chapter-break .box-meta {
+      color: #aaa;
+    }
+
+    .box.chapter-break .box-number {
+      background: #f0c040;
+      color: #333;
     }
 
     .box.chapter-break .box-delete {
-      color: #78909c;
+      color: #666;
     }
 
     .box.chapter-break .box-delete:hover {
       background: rgba(255,255,255,0.1);
       color: #ef5350;
+    }
+
+    .box.chapter-break:hover {
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     }
 
     /* Add buttons */
@@ -326,7 +322,7 @@
       color: white;
       padding: 15px;
       overflow-y: auto;
-      border-left: 3px solid #37474f;
+      border-right: 3px solid #37474f;
     }
 
     .sidebar-header {
@@ -794,33 +790,6 @@
 
 <div class="layout">
 
-  <!-- MAIN PANEL -->
-  <div class="main-panel">
-    <div class="header">
-      <h1>CONTENT MAP</h1>
-      <div class="header-buttons">
-        <button class="btn btn-undo" id="undoBtn" disabled title="Undo (Ctrl+Z)">↩</button>
-        <button class="btn btn-save" id="saveBtn" disabled title="Save (Ctrl+S)">💾 SAVE</button>
-      </div>
-    </div>
-
-    <div class="stats">
-      <span>Sections: <strong id="sectionCount">0</strong></span>
-      <span>Free: <strong id="freeCount">0</strong></span>
-      <span>Paid: <strong id="paidCount">0</strong></span>
-      <span>Excerpts: <strong id="excerptCount">0</strong></span>
-      <span>Words: <strong id="wordCount">0</strong></span>
-      <span class="unsaved-badge" id="unsavedBadge">UNSAVED</span>
-    </div>
-
-    <div class="grid" id="grid"></div>
-
-    <div class="add-buttons">
-      <button class="btn btn-section" id="addSectionBtn">+ Section</button>
-      <button class="btn btn-break" id="addBreakBtn">+ Chapter Break</button>
-    </div>
-  </div>
-
   <!-- CUTTING ROOM FLOOR SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-header">
@@ -843,6 +812,33 @@
 
     <div class="floor-stats">
       <span>Floor items: <strong id="floorCount">0</strong></span>
+    </div>
+  </div>
+
+  <!-- MAIN PANEL -->
+  <div class="main-panel">
+    <div class="header">
+      <h1>CONTENT MAP</h1>
+      <div class="header-buttons">
+        <button class="btn btn-undo" id="undoBtn" disabled title="Undo (Ctrl+Z)">↩</button>
+        <button class="btn btn-save" id="saveBtn" disabled title="Save (Ctrl+S)">💾 SAVE</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <span>Items: <strong id="itemCount">0</strong></span>
+      <span>Free: <strong id="freeCount">0</strong></span>
+      <span>Paid: <strong id="paidCount">0</strong></span>
+      <span>Excerpts: <strong id="excerptCount">0</strong></span>
+      <span>Words: <strong id="wordCount">0</strong></span>
+      <span class="unsaved-badge" id="unsavedBadge">UNSAVED</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="add-buttons">
+      <button class="btn btn-section" id="addSectionBtn">+ Section</button>
+      <button class="btn btn-break" id="addBreakBtn">+ Chapter Break</button>
     </div>
   </div>
 
@@ -1376,8 +1372,10 @@ function escapeHtml(str) {
 function formatDate(dateStr) {
   if (!dateStr) return '';
   const d = new Date(dateStr + 'T00:00:00');
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  const year = String(d.getFullYear()).slice(-2);
+  return `${month}/${day}/${year}`;
 }
 
 // ══════════════════════════════════════════════════════════
@@ -1443,27 +1441,39 @@ function render() {
 
 function renderBook() {
   const grid = document.getElementById('grid');
-  let sectionNum = 0;
+  let itemNum = 0;
 
   grid.innerHTML = bookItems.map(item => {
+    itemNum++;
     const title = escapeHtml(item.title);
+    const words = item.words || 0;
+    const dateStr = item.date ? formatDate(item.date) : '';
+
     if (item.type === 'break') {
+      // Chapter box - same structure as section, inverted colors
       return `
         <div class="box chapter-break" data-id="${item.id}" data-source="book" draggable="true">
-          <div class="box-title">${title}</div>
-          <button class="box-delete" data-action="delete" title="Remove">×</button>
+          <div class="box-header">
+            <div class="box-title-row">
+              <span class="box-number">${itemNum}</span>
+              <span class="box-title">${title}</span>
+            </div>
+          </div>
+          <div class="box-meta">
+            ${dateStr ? `<span>${dateStr}</span>` : '<span>—</span>'}
+            <span>${words.toLocaleString()} words</span>
+          </div>
+          <button class="box-delete" data-action="cut" title="Send to Cutting Room">✂️</button>
         </div>
       `;
     } else {
-      sectionNum++;
-      const words = item.words || 0;
-      const dateStr = item.date ? formatDate(item.date) : '';
+      // Section box
       return `
         <div class="box ${item.paid ? 'paid' : ''}" data-id="${item.id}" data-source="book" draggable="true">
           ${item.excerpt ? '<span class="box-excerpt-badge">Excerpt</span>' : ''}
           <div class="box-header">
             <div class="box-title-row">
-              <span class="box-number">${sectionNum}</span>
+              <span class="box-number">${itemNum}</span>
               <span class="box-title">${title}</span>
             </div>
             ${item.paid ? '<span class="box-lock">🔒</span>' : ''}
@@ -1511,9 +1521,9 @@ function renderFloor() {
 
 function updateStats() {
   const sections = bookItems.filter(i => i.type === 'section');
-  const totalWords = sections.reduce((sum, s) => sum + (s.words || 0), 0);
+  const totalWords = bookItems.reduce((sum, s) => sum + (s.words || 0), 0);
 
-  document.getElementById('sectionCount').textContent = sections.length;
+  document.getElementById('itemCount').textContent = bookItems.length;
   document.getElementById('freeCount').textContent = sections.filter(s => !s.paid).length;
   document.getElementById('paidCount').textContent = sections.filter(s => s.paid).length;
   document.getElementById('excerptCount').textContent = sections.filter(s => s.excerpt).length;
@@ -1546,19 +1556,24 @@ function showToast(msg) {
 
 function openDetail(id) {
   const item = bookItems.find(i => i.id === id);
-  if (!item || item.type === 'break') return;
+  if (!item) return;
 
   currentDetailId = id;
 
-  // Find section number
-  let sectionNum = 0;
+  // Find item number (sequential for all items)
+  let itemNum = 0;
   for (const i of bookItems) {
-    if (i.type === 'section') sectionNum++;
+    itemNum++;
     if (i.id === id) break;
   }
 
-  document.getElementById('detailNumber').textContent = sectionNum;
-  document.getElementById('detailNumber').classList.toggle('paid', item.paid);
+  const detailNum = document.getElementById('detailNumber');
+  detailNum.textContent = itemNum;
+  detailNum.classList.toggle('paid', item.paid);
+  // Chapter boxes get gold badge in modal too
+  detailNum.style.background = item.type === 'break' ? '#f0c040' : (item.paid ? '#f9a825' : '#333');
+  detailNum.style.color = item.type === 'break' ? '#333' : 'white';
+
   document.getElementById('detailTitle').value = item.title;
   document.getElementById('detailContent').value = item.content || '';
   document.getElementById('detailNotes').value = item.notes || '';

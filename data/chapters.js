@@ -5561,7 +5561,7 @@ export const CHAPTERS = [
 
 <p><em>Seriously, man, if his stance is that a reporter from Detroit can't ask him about a very serious claim that he made about his time in Detroit, I don't know what to tell him. You did your job. I think you've been fair in your scrutiny of the franchise, and the questions are definitely worth asking. It's not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you've done a nice job finding things to talk about during a time when there isn't much to talk about. It isn't easy, and I recognize that. Thanks for doing it.</em></p>
 
-<p>&nbsp;</p>
+<p class="scene-break">***</p>
 
             <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I'm about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and sports editor Chris Thomas caught me flat-footed. I was catching up with another editor when he said, "Let's have you follow-up with Bregman while you're in Houston to get his thoughts."</p>
 
