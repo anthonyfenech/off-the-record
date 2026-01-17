@@ -82,7 +82,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'ESPN BottomLine: Verlander incident',
-        src: './assets/26-unethical/12-pennant-race-espn-bottomline.png',
+        src: './assets/26-unethical/Verlander incident ESPN push alert.png',
         placeholder: false
     },
     'k-rod-stats': {
