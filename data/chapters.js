@@ -2212,7 +2212,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">SAN DIEGO, <em>July 11</em>—</span>I come to this year's all-star festivities strictly for the airline miles. I meet my long-distance relationship love interest here and skip the futures game and the home-run derby. We go for dinner in the Gaslamp District. But I can't skip the All-Star Game itself—Miguel Cabrera's appearance is the reason the company spent thousands of dollars in travel to send me here.</p>
 
-<p>I'm pleased to see Cabrera in a good mood during media time—we've been getting on well enough since his weird question. He welcomes my presence inside the American League clubhouse before the game, stepping out of a conversation with fellow stars to answer a few questions. <span class="media-emoji" data-media-id="cabrera-big-star">📷</span></p>
+<p>I'm pleased to see Cabrera in a good mood during media time—we've been getting on well enough since his weird question. He welcomes my presence inside the American League clubhouse before the game, stepping out of a conversation with fellow stars to answer a few questions.</p>
 
 <p>The two days off have done him good.</p>
 
