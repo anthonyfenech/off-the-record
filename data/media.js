@@ -713,7 +713,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Ending in Atlanta - October 2, 2016',
-        src: './assets/nu-get-images/10-2-16 ending in atl.jpg',
+        src: './assets/12-pennant-race/10-2-16 ending in atl.jpg',
         placeholder: false
     },
     'photo-2015-10-30': {
