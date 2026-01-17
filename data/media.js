@@ -737,7 +737,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'February 7, 2018',
-        src: './assets/nu-get-images/2018:02:07 4-18-52 PM.JPG',
+        src: './assets/17-world-series/2018:02:07 4-18-52 PM.JPG',
         placeholder: false
     },
     'photo-2018-07-12': {
