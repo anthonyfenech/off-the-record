@@ -67,10 +67,6 @@
             margin: 0 auto;
         }
 
-        .chapter-section {
-            margin-bottom: 40px;
-        }
-
         .chapter-section .chapter-header {
             margin-top: 2em;
             margin-bottom: 2em;
@@ -78,76 +74,7 @@
             border-bottom: 1px solid var(--color-border);
         }
 
-        .chapter-section .chapter-body {
-            margin: 0;
-        }
-
-        .scene-break {
-            text-align: center;
-            margin: 0;
-            padding: var(--space-lg) 0;
-        }
-
-        .flashback-header {
-            font-size: 1.25rem;
-            letter-spacing: 3px;
-            margin: 0;
-            padding: var(--space-lg) 0;
-        }
-
-        .media-modal-icon {
-            display: none;
-        }
-
-        .media-emoji {
-            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif !important;
-        }
-
-        .chapter-end {
-            text-align: center !important;
-            display: block;
-            width: 100%;
-            padding: 1.5em 0 3em 0;
-            color: var(--color-text-tertiary);
-            letter-spacing: 0.5em;
-            font-size: 1.25rem;
-        }
-
-        /* Navigation footer */
-        .nav-footer {
-            position: fixed;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 50;
-            background-color: var(--color-background);
-            padding: var(--space-sm) var(--space-md);
-            display: flex;
-            justify-content: center;
-            gap: var(--space-2xl);
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px 12px;
-            color: var(--color-text);
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .nav-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        /* ====== MONEY MODE: LOCKED STATE ====== */
-
-        /* Status indicator */
+        /* Status badge */
         .status-badge {
             font-family: 'Courier New', monospace;
             font-size: 11px;
@@ -170,63 +97,63 @@
             color: #fff;
         }
 
-        /* Full page lock overlay */
-        .page-lock-overlay {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            z-index: 90;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            transition: opacity 0.4s ease;
+        /* ====== INLINE LOCKED SECTIONS ====== */
+
+        .locked-section {
+            position: relative;
+            margin: 1.5em 0;
+            padding: 1.5em;
+            background: #f5f5f5;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        .page-lock-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .lock-icon-large {
-            font-size: 72px;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.05); opacity: 1; }
-        }
-
-
-        /* Blurred content when locked */
-        body.locked .book {
-            filter: blur(10px);
-            pointer-events: none;
+        /* Locked state - content blurred with lock icon */
+        body.locked .locked-section {
+            color: transparent;
+            text-shadow: 0 0 8px rgba(0,0,0,0.3);
             user-select: none;
+            cursor: not-allowed;
         }
 
-        body.locked .nav-footer {
-            display: none;
+        body.locked .locked-section::before {
+            content: '🔒';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            z-index: 2;
+            opacity: 0.7;
         }
 
-        /* Unlocked state */
-        body.unlocked .page-lock-overlay {
-            opacity: 0;
-            pointer-events: none;
+        body.locked .locked-section p {
+            filter: blur(4px);
         }
 
-        body.unlocked .book {
+        /* Unlocked state - normal display */
+        body.unlocked .locked-section {
+            background: #f0fff4;
+            border-left: 3px solid #38ef7d;
+        }
+
+        body.unlocked .locked-section::before {
+            content: none;
+        }
+
+        body.unlocked .locked-section p {
             filter: none;
-            pointer-events: auto;
-            user-select: text;
+        }
+
+        /* Demo content styling */
+        .demo-content p {
+            text-indent: 1.5em;
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .demo-content p:first-child {
+            text-indent: 0;
         }
     </style>
 </head>
@@ -246,38 +173,54 @@
         </div>
     </header>
 
-    <!-- Lock Overlay -->
-    <div class="page-lock-overlay" id="lockOverlay">
-        <div class="lock-icon-large">🔒</div>
-    </div>
-
     <!-- Main Content -->
     <main class="book">
-        <div id="content"></div>
+        <article class="chapter-section">
+            <header class="chapter-header">
+                <h2 class="chapter-title">DEMO: INLINE LOCKED SECTIONS</h2>
+            </header>
+
+            <div class="demo-content">
+                <p>SAN DIEGO, <em>December 8</em>—At the winter meetings, hundreds of reporters gather in hotel ballrooms chasing scoops. We're usually cooped up in the media room, with a main stage where press conferences are held, trades announced, and newly inducted Hall of Famers talk about being speechless.</p>
+
+                <p>I walk with a purpose, pretending I am a somebody. I stop Ken Rosenthal, as short in person as advertised on Twitter (5-foot-4½), introducing myself. Nice guy.</p>
+
+                <p>Each evening, the beat writers are summoned for a media session with the general manager, held in the team's suite. There are five of us, sitting in chairs, while general manager Dave Dombrowski sits at a high-top table on the other side of the room, flanked by assistant Al Avila.</p>
+
+                <!-- LOCKED SECTION -->
+                <div class="locked-section">
+                    <p><em>December 10</em>—Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers' suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout.</p>
+                    <p>Embarrassingly, I don't remember our conversation from last night. We talk a bit more.</p>
+                    <p>I meet Detroit's young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan.</p>
+                </div>
+
+                <p>I'm startled when I see the gray-haired guy from the flight here. We make eye contact again.</p>
+
+                <p>After the session, I realize in horror that I didn't turn my recorder on before I placed it on the table—I have no audio. My competitors have pity, sharing their tape so I'm able to write my stories.</p>
+
+                <!-- ANOTHER LOCKED SECTION -->
+                <div class="locked-section">
+                    <p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject.</p>
+                    <p>Put another way: Heading into my first year as beat writer of the team, it's pretty much guaranteed I'm going to write a good story about Nathan, who is one of the team's respected veterans.</p>
+                </div>
+
+                <p><em>December 11</em>—My mouth is dry when I wake up. I get a glass of water and check Twitter. Calamity! My team is close to a trade, reportedly sending a prospect shortstop to the Cincinnati Reds for righty starter Alfredo Simon.</p>
+
+                <p>Dave Dombrowski is known for making trades. And by the time I'm nearly finished whipping up a story for the first trade, Dombrowski is reportedly close to making another one—and this one is bigger.</p>
+
+                <!-- ANOTHER LOCKED SECTION -->
+                <div class="locked-section">
+                    <p>This is where some cutting room floor content would go. Maybe a story that didn't make the final cut, or some additional context that adds depth to the narrative.</p>
+                    <p>These locked sections can be sprinkled throughout each chapter, adding premium value for readers who want the full uncut experience.</p>
+                </div>
+
+                <p>According to Twitter, the Tigers are acquiring outfielder Yoenis Céspedes from the Boston Red Sox. Helplessly, I communicate with the sports desk. Should I re-do the first story to include both trades?</p>
+            </div>
+        </article>
     </main>
 
-    <!-- Navigation Footer -->
-    <nav class="nav-footer" id="navFooter">
-        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-            <span>Previous</span>
-        </button>
-        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
-            <span>Next</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-    </nav>
-
-    <script type="module">
-        import { CHAPTERS } from './data/chapters.js';
-        import { mediaModal } from './js/mediaModal.js';
-
-        // ====== MONEY MODE: SIMPLE LOCK/UNLOCK ======
-
+    <script>
+        // Simple lock/unlock toggle
         const isUnlocked = localStorage.getItem('moneyMode_unlocked') === 'true';
         const statusBadge = document.getElementById('statusBadge');
 
@@ -298,90 +241,21 @@
             }
         }
 
-        // Initialize state
+        // Initialize
         setUnlocked(isUnlocked);
 
-        // Status badge click to toggle
+        // Toggle on badge click
         statusBadge.addEventListener('click', () => {
-            const currentlyUnlocked = document.body.classList.contains('unlocked');
-            setUnlocked(!currentlyUnlocked);
+            setUnlocked(!document.body.classList.contains('unlocked'));
         });
 
-        // Keyboard shortcut: Ctrl+U to toggle
+        // Ctrl+U to toggle
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && e.key === 'u') {
                 e.preventDefault();
-                const currentlyUnlocked = document.body.classList.contains('unlocked');
-                setUnlocked(!currentlyUnlocked);
+                setUnlocked(!document.body.classList.contains('unlocked'));
             }
-        });
-
-        // ====== RENDER CHAPTERS ======
-
-        const container = document.getElementById('content');
-        container.innerHTML = CHAPTERS.map((ch, i) => {
-            const isSpecial = ch.section === 'title' || ch.section === 'toc';
-            return `
-            <article class="chapter-section${isSpecial ? ' special-page' : ''}" id="chapter-${ch.id}" data-chapter="${i}">
-                ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}</h2></header>` : ''}
-                <div class="chapter-body">${ch.content}</div>
-                ${!isSpecial ? '<div class="chapter-end">***</div>' : ''}
-            </article>
-        `}).join('');
-
-        // Hash navigation
-        if (window.location.hash) {
-            const target = document.querySelector(window.location.hash);
-            if (target) setTimeout(() => target.scrollIntoView(), 100);
-        }
-
-        // Chapter navigation
-        const chapters = document.querySelectorAll('.chapter-section');
-        const totalChapters = chapters.length;
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentChapter = 0;
-
-        function updateNav() {
-            prevBtn.disabled = currentChapter === 0;
-            nextBtn.disabled = currentChapter === totalChapters - 1;
-        }
-
-        function scrollToChapter(index) {
-            if (index >= 0 && index < totalChapters) {
-                currentChapter = index;
-                chapters[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                updateNav();
-            }
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    currentChapter = parseInt(entry.target.dataset.chapter);
-                    updateNav();
-                }
-            });
-        }, { rootMargin: '-80px 0px -50% 0px', threshold: 0 });
-
-        chapters.forEach(ch => observer.observe(ch));
-
-        prevBtn.addEventListener('click', () => scrollToChapter(currentChapter - 1));
-        nextBtn.addEventListener('click', () => scrollToChapter(currentChapter + 1));
-
-        updateNav();
-
-        // Media modal
-        mediaModal.init();
-        document.querySelectorAll('.media-emoji').forEach(emoji => {
-            emoji.addEventListener('click', (e) => {
-                e.preventDefault();
-                const mediaId = emoji.getAttribute('data-media-id');
-                if (mediaId) mediaModal.open(mediaId);
-            });
         });
     </script>
-
-    <script async src="https://platform.twitter.com/widgets.js"></script>
 </body>
 </html>
