@@ -149,6 +149,14 @@ export const MEDIA_CONTENT = {
         src: './assets/24-road-to-omaha/july-31-2019-angel-stadium.jpg',
         placeholder: false
     },
+    'verlander-victor-dugout': {
+        type: 'link',
+        emoji: '🎥',
+        label: 'Video',
+        caption: 'Verlander flipped off Victor Martinez in dugout (Reddit)',
+        url: 'https://www.reddit.com/r/baseball/comments/6vtvfg/verlander_flipped_off_victor_martinez_in_dugout/',
+        placeholder: false
+    },
     'winter-meetings-2014': {
         type: 'photo',
         emoji: '📷',

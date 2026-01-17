@@ -3573,7 +3573,7 @@ export const CHAPTERS = [
             <p>We'll finally get the chance to ask about yesterday's shenanigans. The media crowd gathers around Verlander's locker. Rival Cohort begins: "I know you might not want to talk about what happened yesterday…" (Ausmus remarked pregame that Martínez and Verlander were playing cards on the short flight to Chicago.) "Everything is good, right?"</p>
             <p>Verlander gladly takes the exit ramp. "All good."</p>
             <p>I follow up.</p>
-            <p>"Justin, what happened yesterday between you and Víctor in the dugout?"</p>
+            <p>"Justin, what happened yesterday between you and Víctor in the dugout?" <span class="media-emoji" data-media-id="verlander-victor-dugout">🎥</span></p>
             <p>"What are you talking about?"</p>
             <p>"The argument which was caught on video and shared on social media…"</p>
             <p>Verlander cuts me off. "You should stop."</p>
