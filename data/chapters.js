@@ -2238,7 +2238,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>July 25</em>—</span>At the <em>Free Press</em>, we're all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, I'm staying another day in Chicago, complying with my sports editor's request to cover the Michigan football coach.</p>
 
-<p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town. <span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span> <span class="media-emoji" data-media-id="waiting-for-harbaugh">📷</span></p>
+<p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. <span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span> Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town.</p>
 
 <p>&nbsp;</p>
 
