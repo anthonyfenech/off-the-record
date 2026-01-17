@@ -841,7 +841,7 @@ export const MEDIA_CONTENT = {
         emoji: '🐦',
         label: 'Tweet',
         caption: 'Bregman "Nah, false" Tweet',
-        src: './assets/nu-get-images/Bregman nah false tweet.png',
+        src: './assets/24-road-to-omaha/Bregman nah false tweet.png',
         placeholder: false
     },
     'february-19-2018': {
