@@ -293,6 +293,14 @@ export const MEDIA_CONTENT = {
         src: './assets/16-summer-2017-ii/ernie-harwell-talk.mp3',
         placeholder: false
     },
+    'ilitch-letter': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Letter from Mike Ilitch',
+        src: '',
+        placeholder: true
+    },
     'photo-1': {
         type: 'photo',
         emoji: '📷',
