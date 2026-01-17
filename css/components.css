@@ -4,13 +4,37 @@
 .home-content {
       text-align: center;
       padding: 0 var(--padding-mobile);
-      margin-top: calc(-1 * var(--space-2xl));
+      margin-top: calc(-1 * var(--space-3xl) - var(--space-xl));
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: var(--space-lg);
   }
+
+/* Parental Advisory Sticker */
+.parental-advisory {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+}
+
+.parental-advisory img {
+    width: 80px;
+    height: auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .parental-advisory {
+        bottom: 15px;
+        right: 15px;
+    }
+    .parental-advisory img {
+        width: 60px;
+    }
+}
 
 .start-reading-btn {
     font-family: var(--font-mono);

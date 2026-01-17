@@ -1230,6 +1230,39 @@
             border-color: #333;
             filter: grayscale(1) brightness(3);
         }
+        .edit-modal .today-btn {
+            padding: 8px 12px;
+            background: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.15s ease;
+        }
+        .edit-modal .today-btn:hover {
+            background: #45a049;
+            border-color: #45a049;
+        }
+        .edit-modal .metadata-btn {
+            padding: 8px 12px;
+            background: #2196F3;
+            border: 1px solid #2196F3;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .edit-modal .metadata-btn:hover {
+            background: #1976D2;
+            border-color: #1976D2;
+        }
+        #editDate {
+            font-family: 'Courier New', monospace;
+        }
         .detect-status {
             font-size: 10px;
             font-weight: normal;
@@ -1840,6 +1873,15 @@
                     <option value="">-- Unassigned --</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label>Date</label>
+                <div class="input-with-button">
+                    <input type="text" id="editDate" placeholder="MM/DD/YY or YYYY-MM-DD">
+                    <button type="button" id="setTodayBtn" class="today-btn" title="Set to today">Today</button>
+                    <button type="button" id="autoDetectDateBtn" class="detect-btn" title="Auto-detect date from filename">🔍</button>
+                    <button type="button" id="loadMetadataDateBtn" class="metadata-btn" title="Load from file metadata (run extract-dates.js first)">📷</button>
+                </div>
+            </div>
             <div class="edit-modal-actions">
                 <button class="delete-modal-btn" id="editDeleteBtn">🗑</button>
                 <button class="cancel-btn" id="editCancelBtn">Cancel</button>
@@ -2035,6 +2077,18 @@
             return `${mins}:${secs.toString().padStart(2, '0')}`;
         }
 
+        // Format date as MM/DD/YY
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr === '—') return '—';
+            // Handle YYYY-MM-DD format
+            const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (match) {
+                const [, year, month, day] = match;
+                return `${month}/${day}/${year.slice(2)}`;
+            }
+            return dateStr;
+        }
+
         // Build media list - show ALL media, not just active
         const allMedia = Object.entries(MEDIA_CONTENT)
             .map(([id, media]) => {
@@ -2051,7 +2105,8 @@
                     status: status.icon,
                     statusLabel: status.label,
                     statusSort: status.sort,
-                    date: media.date || '—',
+                    date: formatDate(media.date),
+                    rawDate: media.date || '',
                     time: formatDuration(media.duration)
                 };
             });
@@ -2111,6 +2166,10 @@
                                 <div class="preview-details-row">
                                     <span class="preview-details-label">Source:</span>
                                     <span class="preview-details-value">${item.src || '—'}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Date:</span>
+                                    <span class="preview-details-value">${item.date || '—'}</span>
                                 </div>
                                 <div class="preview-actions">
                                     <button class="preview-action-btn primary preview-edit-btn" data-id="${item.id}">Edit</button>
@@ -2193,6 +2252,8 @@
                     document.getElementById('editCaption').value = media.caption || '';
                     document.getElementById('editSrc').value = media.src || '';
                     document.getElementById('editDuration').value = media.duration || '';
+                    // Convert stored date (YYYY-MM-DD) to display format (MM/DD/YY)
+                    document.getElementById('editDate').value = media.date ? formatDate(media.date).replace(/—/g, '') : '';
                     // Set chapter dropdown
                     const chapterSelect = document.getElementById('editChapter');
                     chapterSelect.value = mediaItem?.chapterNum || '';
@@ -2701,6 +2762,150 @@
 
         autoDetectChapterBtn.addEventListener('click', autoDetectAndSetChapter);
 
+        // ====== DATE FIELD HELPERS ======
+        const setTodayBtn = document.getElementById('setTodayBtn');
+        const autoDetectDateBtn = document.getElementById('autoDetectDateBtn');
+        const editDateInput = document.getElementById('editDate');
+
+        // Set date to today (MM/DD/YY format)
+        function setToday() {
+            const today = new Date();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const yy = String(today.getFullYear()).slice(2);
+            const formatted = `${mm}/${dd}/${yy}`;
+            editDateInput.value = formatted;
+            console.log('[DATE] Set to today:', formatted);
+        }
+
+        // Convert YYYY-MM-DD to MM/DD/YY for display
+        function toDisplayDate(dateStr) {
+            if (!dateStr) return '';
+            const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (match) {
+                return `${match[2]}/${match[3]}/${match[1].slice(2)}`;
+            }
+            return dateStr; // Already in different format
+        }
+
+        // Convert MM/DD/YY to YYYY-MM-DD for storage
+        function toStorageDate(dateStr) {
+            if (!dateStr) return '';
+            // Handle MM/DD/YY
+            const match1 = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2})$/);
+            if (match1) {
+                const year = parseInt(match1[3]) > 50 ? `19${match1[3]}` : `20${match1[3]}`;
+                return `${year}-${match1[1].padStart(2, '0')}-${match1[2].padStart(2, '0')}`;
+            }
+            // Handle MM/DD/YYYY
+            const match2 = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (match2) {
+                return `${match2[3]}-${match2[1].padStart(2, '0')}-${match2[2].padStart(2, '0')}`;
+            }
+            // Already YYYY-MM-DD or other format - return as is
+            return dateStr;
+        }
+
+        // Extract date from filename
+        function extractDateFromFilename(filename) {
+            if (!filename) return null;
+
+            // Pattern: YYYY-MM-DD
+            const match1 = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+            if (match1) return `${match1[1]}-${match1[2]}-${match1[3]}`;
+
+            // Pattern: M-D-YY or MM-DD-YY
+            const match2 = filename.match(/(\d{1,2})-(\d{1,2})-(\d{2})(?!\d)/);
+            if (match2) {
+                const month = match2[1].padStart(2, '0');
+                const day = match2[2].padStart(2, '0');
+                const year = parseInt(match2[3]) > 50 ? `19${match2[3]}` : `20${match2[3]}`;
+                return `${year}-${month}-${day}`;
+            }
+
+            return null;
+        }
+
+        // Auto-detect date from source path
+        function autoDetectDate() {
+            const sourcePath = editSrcInput.value;
+            if (!sourcePath) {
+                alert('No source path to extract date from');
+                return;
+            }
+
+            const filename = sourcePath.split('/').pop();
+            const detectedDate = extractDateFromFilename(filename);
+
+            if (detectedDate) {
+                // Convert to MM/DD/YY for display
+                const displayDate = toDisplayDate(detectedDate);
+                editDateInput.value = displayDate;
+                console.log('[DATE] Auto-detected from filename:', displayDate);
+
+                // Visual feedback
+                editDateInput.style.background = '#ffffcc';
+                setTimeout(() => {
+                    editDateInput.style.background = '';
+                }, 1000);
+            } else {
+                alert('Could not detect date from filename.\n\nLooking for patterns like:\n• 2020-07-15\n• 7-15-20');
+            }
+        }
+
+        // Load date from metadata JSON file
+        let metadataDates = null;
+        const loadMetadataDateBtn = document.getElementById('loadMetadataDateBtn');
+
+        async function loadMetadataDates() {
+            if (metadataDates) return metadataDates;
+
+            try {
+                const response = await fetch('./data/media-dates.json');
+                if (!response.ok) throw new Error('File not found');
+                metadataDates = await response.json();
+                console.log('[DATE] Loaded metadata dates:', Object.keys(metadataDates).length, 'entries');
+                return metadataDates;
+            } catch (e) {
+                console.error('[DATE] Failed to load metadata dates:', e);
+                return null;
+            }
+        }
+
+        async function loadDateFromMetadata() {
+            const sourcePath = editSrcInput.value;
+            if (!sourcePath) {
+                alert('No source path specified');
+                return;
+            }
+
+            const dates = await loadMetadataDates();
+            if (!dates) {
+                alert('Could not load metadata dates.\n\nRun this first:\n  node scripts/extract-dates.js');
+                return;
+            }
+
+            const date = dates[sourcePath];
+            if (date) {
+                // Convert to MM/DD/YY for display
+                const displayDate = toDisplayDate(date);
+                editDateInput.value = displayDate;
+                console.log('[DATE] Loaded from metadata:', displayDate);
+
+                // Visual feedback
+                editDateInput.style.background = '#cce5ff';
+                setTimeout(() => {
+                    editDateInput.style.background = '';
+                }, 1000);
+            } else {
+                alert(`No metadata date found for:\n${sourcePath}\n\nTry running:\n  node scripts/extract-dates.js`);
+            }
+        }
+
+        setTodayBtn.addEventListener('click', setToday);
+        autoDetectDateBtn.addEventListener('click', autoDetectDate);
+        loadMetadataDateBtn.addEventListener('click', loadDateFromMetadata);
+
         // Auto-detect on source path change (with debounce)
         let detectTimeout;
         editSrcInput.addEventListener('input', () => {
@@ -2721,6 +2926,9 @@
             const src = document.getElementById('editSrc').value;
             const duration = document.getElementById('editDuration').value;
             const chapter = document.getElementById('editChapter').value;
+            const dateInput = document.getElementById('editDate').value;
+            // Convert display format (MM/DD/YY) to storage format (YYYY-MM-DD)
+            const date = toStorageDate(dateInput);
 
             const emojiMap = {
                 photo: '📷', newspaper: '📰', link: '🔗', tweet: '🐦',
@@ -2733,6 +2941,7 @@
                 MEDIA_CONTENT[mediaId].caption = caption;
                 MEDIA_CONTENT[mediaId].src = src;
                 MEDIA_CONTENT[mediaId].duration = duration || undefined;
+                MEDIA_CONTENT[mediaId].date = date || undefined;
                 MEDIA_CONTENT[mediaId].emoji = emojiMap[type] || '📷';
             }
 
@@ -2763,6 +2972,7 @@
                         if (label === 'Caption:' && valueEl) valueEl.textContent = caption || '—';
                         if (label === 'Type:' && valueEl) valueEl.textContent = type;
                         if (label === 'Source:' && valueEl) valueEl.textContent = src || '—';
+                        if (label === 'Date:' && valueEl) valueEl.textContent = formatDate(date) || '—';
                     });
                 }
             }
@@ -2774,7 +2984,7 @@
         emoji: '${emojiMap[type] || '📷'}',
         label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
         caption: '${caption.replace(/'/g, "\\'")}',
-        src: '${src}',${duration ? `\n        duration: '${duration}',` : ''}
+        src: '${src}',${duration ? `\n        duration: '${duration}',` : ''}${date ? `\n        date: '${date}',` : ''}
         placeholder: false
     },`;
 
@@ -2963,6 +3173,8 @@
                     document.getElementById('editCaption').value = media.caption || '';
                     document.getElementById('editSrc').value = media.src || '';
                     document.getElementById('editDuration').value = media.duration || '';
+                    // Convert stored date (YYYY-MM-DD) to display format (MM/DD/YY)
+                    document.getElementById('editDate').value = media.date ? formatDate(media.date).replace(/—/g, '') : '';
                     document.getElementById('editChapter').value = mediaItem?.chapterNum || '';
                     document.getElementById('editModalOverlay').classList.add('active');
                 }
