@@ -555,7 +555,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Tito Big Series - August 27, 2019',
-        src: './assets/27-postscript/2019:08:27 TITO BIG SERIES.JPG',
+        src: './assets/26-unethical/2019:08:27 TITO BIG SERIES.JPG',
         placeholder: false
     },
     'where-is-anthony-fenech': {
