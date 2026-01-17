@@ -45,6 +45,14 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/6-15-16 harbaugh likes me.jpg',
         placeholder: false
     },
+    'cabreras-kicks': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Miguel Cabrera\'s custom Louis Vuitton cleats',
+        src: './assets/to-go/7-12-16 cabrera\'s kicks.jpg',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',

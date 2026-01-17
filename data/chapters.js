@@ -2218,6 +2218,8 @@ export const CHAPTERS = [
 
 <p>Miggy proudly shows off his custom Louis Vuitton cleats.</p>
 
+<p class="media-embed"><span class="media-emoji" data-media-id="cabreras-kicks">📷</span></p>
+
 <p>"Sweet, huh?"</p>
 
 <p>&nbsp;</p>
