@@ -7019,7 +7019,7 @@ export const CHAPTERS = [
 
 <p>Cabrera was loosening up with a weighted bat when he saw me. "Hey, bitch." Bringing it in for a handshake, he pretended to hit me upside the head—some things never change.</p>
 
-<p>Inside the cage, Cabrera laced the JUGS machine. Line drives into the net, off the pitching screen and smack-dab into the heart of a paper target, hanging from a zip-tie to indicate straightaway center field. What I remember most is the sound as his bat smacked the ball, echoing around the garage like a shotgun blast.</p>
+<p>Inside the cage, Cabrera laced the JUGS machine. Line drives into the net, off the pitching screen and smack-dab into the heart of a paper target, hanging from a zip-tie to indicate straightaway center field. What I remember most is the sound as his bat smacked the ball, echoing around the garage like a shotgun blast. <span class="media-emoji" data-media-id="miguel-bp-covid">🎬</span></p>
 
 <p>After working up a sweat, Miggy and his crew—including fellow Venezuelan Hittin' Harold Castro—packed into a black Range Rover with dark window tints and drove off. It was the last exclusive of my career, the old-school kind—taking readers somewhere they couldn't go. It was the closest any Ball Writer got to Cabrera all season.</p>
 

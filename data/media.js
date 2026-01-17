@@ -21,6 +21,14 @@ export const MEDIA_CONTENT = {
         duration: '1:45',
         placeholder: false
     },
+    'miguel-bp-covid': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'Miguel Cabrera - Batting Practice During COVID',
+        src: './assets/27-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',
