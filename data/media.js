@@ -26,7 +26,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎬',
         label: 'Video',
         caption: 'Miguel Cabrera - Batting Practice During COVID',
-        src: './assets/28-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
+        src: './assets/27-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
         placeholder: false
     },
     'fantasy-camp-scrum': {
@@ -547,7 +547,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Max Scherzer thank you ad in the Detroit Free Press',
-        src: './assets/28-postscript/scherzer-thank-you.png',
+        src: './assets/27-postscript/scherzer-thank-you.png',
         placeholder: false
     },
     'tito-big-series-2019': {
