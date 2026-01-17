@@ -269,6 +269,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 1px;
+      padding-right: 16px;
     }
 
     .box-meta span {
@@ -1543,7 +1544,7 @@ function renderBook() {
           </div>
           <div class="box-meta">
             ${dateStr ? `<span>${dateStr}</span>` : '<span>—</span>'}
-            <span>${words.toLocaleString()} words</span>
+            <span>${words.toLocaleString()}</span>
           </div>
           <button class="box-delete" data-action="cut" title="Send to Cutting Room">✂️</button>
         </div>
@@ -1562,7 +1563,7 @@ function renderBook() {
           </div>
           <div class="box-meta">
             ${dateStr ? `<span>${dateStr}</span>` : '<span>—</span>'}
-            <span>${words.toLocaleString()} words</span>
+            <span>${words.toLocaleString()}</span>
           </div>
           <button class="box-delete" data-action="cut" title="Send to Cutting Room">✂️</button>
         </div>
