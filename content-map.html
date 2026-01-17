@@ -599,13 +599,6 @@
       color: #666;
     }
 
-    .detail-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
     .detail-row {
       display: flex;
       gap: 12px;
@@ -678,6 +671,8 @@
       border-radius: 10px;
       width: 90%;
       max-width: 400px;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .modal-content h3 {
@@ -715,6 +710,7 @@
 
     .modal-field-half label {
       display: block;
+      margin-top: 0;
       margin-bottom: 5px;
       font-size: 13px;
       font-weight: 600;
@@ -1039,8 +1035,38 @@ const DEMO_FLOOR = [
 ];
 
 // ══════════════════════════════════════════════════════════
+// CONSTANTS
+// ══════════════════════════════════════════════════════════
+
+const CATEGORY_ICONS = {
+  'needs-work': '⚠️',
+  'too-long': '📏',
+  'off-topic': '🚫',
+  'save-later': '🔄'
+};
+
+const EDITION_LABELS = {
+  'original': 'Original Manuscript',
+  'hardcover': 'Hardcover',
+  'paperback': 'Paperback',
+  'ebook': 'E-Book',
+  'audiobook': 'Audiobook',
+  'serialized': 'Serialized/Web',
+  'directors-cut': "Director's Cut",
+  'new': 'New Material'
+};
+
+// ══════════════════════════════════════════════════════════
 // HELPERS
 // ══════════════════════════════════════════════════════════
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+}
 
 function formatDate(dateStr) {
   if (!dateStr) return '';
@@ -1115,10 +1141,11 @@ function renderBook() {
   let sectionNum = 0;
 
   grid.innerHTML = bookItems.map(item => {
+    const title = escapeHtml(item.title);
     if (item.type === 'break') {
       return `
         <div class="box chapter-break" data-id="${item.id}" data-source="book" draggable="true">
-          <div class="box-title">═══ ${item.title} ═══</div>
+          <div class="box-title">═══ ${title} ═══</div>
           <button class="box-delete" data-action="delete" title="Remove">×</button>
         </div>
       `;
@@ -1133,7 +1160,7 @@ function renderBook() {
             <span class="box-number">${sectionNum}</span>
             <span class="box-lock">${item.paid ? '🔒' : '🔓'}</span>
           </div>
-          <div class="box-title">${item.title}</div>
+          <div class="box-title">${title}</div>
           <div class="box-meta">
             <span>${words.toLocaleString()} words</span>
             ${dateStr ? `<span>📅 ${dateStr}</span>` : ''}
@@ -1149,13 +1176,6 @@ function renderFloor() {
   const list = document.getElementById('floorList');
   const filter = document.getElementById('floorFilter').value;
 
-  const categoryIcons = {
-    'needs-work': '⚠️',
-    'too-long': '📏',
-    'off-topic': '🚫',
-    'save-later': '🔄'
-  };
-
   const filtered = filter === 'all'
     ? floorItems
     : floorItems.filter(i => i.category === filter);
@@ -1165,27 +1185,18 @@ function renderFloor() {
     return;
   }
 
-  const editionLabels = {
-    'original': 'Original Manuscript',
-    'hardcover': 'Hardcover',
-    'paperback': 'Paperback',
-    'ebook': 'E-Book',
-    'audiobook': 'Audiobook',
-    'serialized': 'Serialized/Web',
-    'directors-cut': "Director's Cut",
-    'new': 'New Material'
-  };
-
   list.innerHTML = filtered.map(item => {
+    const title = escapeHtml(item.title);
     const dateStr = item.date ? formatDate(item.date) : '';
+    const categoryLabel = item.category ? item.category.replace('-', ' ') : '';
     return `
     <div class="floor-item" data-id="${item.id}" data-source="floor" draggable="true">
-      <div class="floor-item-category ${item.category}">
-        ${categoryIcons[item.category] || ''} ${item.category.replace('-', ' ')}
+      <div class="floor-item-category ${item.category || ''}">
+        ${CATEGORY_ICONS[item.category] || ''} ${categoryLabel}
       </div>
-      <div class="floor-item-title">${item.title}</div>
+      <div class="floor-item-title">${title}</div>
       <div class="floor-item-meta">${(item.words || 0).toLocaleString()} words${dateStr ? ` · ${dateStr}` : ''}</div>
-      ${item.edition ? `<div class="floor-item-edition">From: ${editionLabels[item.edition] || item.edition}</div>` : ''}
+      ${item.edition ? `<div class="floor-item-edition">From: ${EDITION_LABELS[item.edition] || escapeHtml(item.edition)}</div>` : ''}
       <button class="floor-item-delete" data-action="delete-floor" title="Delete permanently">×</button>
     </div>
   `}).join('');
