@@ -705,7 +705,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'JFC go away - July 13, 2018',
-        src: './assets/nu-get-images/7-13-18 jfc go away.jpg',
+        src: './assets/19-draft-day/7-13-18 jfc go away.jpg',
         placeholder: false
     },
     'ending-in-atl-10-2-16': {
@@ -745,7 +745,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'July 12, 2018',
-        src: './assets/nu-get-images/2018:07:12 12-18-42 PM.JPG',
+        src: './assets/19-draft-day/2018:07:12 12-18-42 PM.JPG',
         placeholder: false
     },
     'photo-2018-10-11': {
