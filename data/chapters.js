@@ -992,8 +992,6 @@ export const CHAPTERS = [
 
 <p>Players laugh. Reporters, too. It's my first game as a BBWAA member—I don't know how I'll recover from this.</p>
 
-<p>&nbsp;</p>
-
 <p class="scene-break"><span>***</span></p>
 
 <p>&nbsp;</p>
@@ -5542,21 +5540,21 @@ export const CHAPTERS = [
         subtitle: "",
         teaser: "Words that needed to be said.",
         content: `
-            <p><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 12:15 <span class="small-caps">P.M.</span></p>
-            <p><strong>Subject:</strong> Tigers today</p>
+            <p class="no-indent"><strong>From:</strong> Thomas, Christopher &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Tuesday, August 20, 2019 12:15 <span class="small-caps">P.M.</span><br/>
+<strong>Subject:</strong> Tigers today</p>
             <p><em>Might be worth asking J.V. about if Bregman had been traded to Detroit, would things have been different. If he's got access. Would tie in nicely if we end up getting Bregman.</em></p>
 
             <p>&nbsp;</p>
 
-            <p><strong>To:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 <span class="small-caps">P.M.</span></p>
-            <p><strong>Subject:</strong> RE: Tigers today</p>
+            <p class="no-indent"><strong>To:</strong> Thomas, Christopher &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 <span class="small-caps">P.M.</span><br/>
+<strong>Subject:</strong> RE: Tigers today</p>
             <p><em>I apologize if I'm coming off a certain way, but I just need to make a couple points here: There is a very minimal chance I will be asking Justin Verlander anything. Why? Because I was the only person to ask him last year—at my editor's request—about his injury misdiagnosis claims. I understood then that it would harm my future relations with him, but I did it anyways.</em></p>
             <p><em>So, if I'm in the Astros clubhouse looking for Bregman and a scrum appears, sure, I'll go over there, once again putting myself in a situation that will almost assuredly result in Verlander ignoring my questions or taking the opportunity to publicly bully me.</em></p>
 
             <p>&nbsp;</p>
 
-            <p><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 <span class="small-caps">P.M.</span></p>
-            <p><strong>Subject:</strong> RE: Tigers today</p>
+            <p class="no-indent"><strong>From:</strong> Thomas, Christopher &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 <span class="small-caps">P.M.</span><br/>
+<strong>Subject:</strong> RE: Tigers today</p>
             <p><em>Seriously, man, if his stance is that a reporter from Detroit can't ask him about a very serious claim that he made about his time in Detroit, I don't know what to tell him. You did your job. I think you've been fair in your scrutiny of the franchise, and the questions are definitely worth asking. It's not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you've done a nice job finding things to talk about during a time when there isn't much to talk about. It isn't easy, and I recognize that. Thanks for doing it.</em></p>
 
             <p>&nbsp;</p>
@@ -5801,9 +5799,11 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
+<p>&nbsp;</p>
+
 <p class="flashback-header">AIRPLANE MODE</p>
 
-<p></p>
+<p>&nbsp;</p>
 
 <p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
 
@@ -6287,15 +6287,11 @@ export const CHAPTERS = [
 
 <p>Walking out of the clubhouse, I wonder if I'll be back—or if I want to be.</p>
 
-<p>&nbsp;</p>
-
 <p class="scene-break"><span>***</span></p>
 
 <p>&nbsp;</p>
 
 <p class="flashback-header">AIRPLANE MODE</p>
-
-<p>&nbsp;</p>
 
 <p class="scene-break"><span>***</span></p>
 
@@ -6977,6 +6973,8 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
+<p>&nbsp;</p>
+
 <p>The early months of the coronavirus was a lead pipe to the knees for most, including the newspaper industry, which, hobbled for years, took a particularly tough blow.</p>
 
 <p>Gannett imposed three weeks of mandatory unpaid furlough in May and June 2020, during which company stock dipped to $1.11. The <em>Free Press</em> newsroom housed 85 employees in 2020. Five years later, stock had rebounded to $5 per share—but the <em>Freep</em> head count had dwindled to 73, and the whole operation had moved to smaller offices for the second time in ten years.</p>
@@ -6990,6 +6988,8 @@ export const CHAPTERS = [
 <p>Peter Bhatia retired as executive editor in 2022 with another round of layoffs looming. Facing fourteen job losses, including five reporters, the newsroom was spared further damage when eight employees volunteered to leave—Bhatia included.</p>
 
 <p class="scene-break">***</p>
+
+<p>&nbsp;</p>
 
 <p>I last spoke with John Lowe in June 2020, checking in with him for some much-needed Seamhead therapy. He sensed that, for me, the end on the beat was near.</p>
 
@@ -7021,6 +7021,8 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
+<p>&nbsp;</p>
+
 <p>I closed the Miguel Cabrera chapter of my beat writing career inside a nondescript warehouse, where in July 2020, the greatest right-handed hitter of this generation readied for batting practice. I arrived to watch uninvited, only because I knew a guy who knew a guy who ran a local travel baseball program—and it turned out Miggy had been using its indoor batting cages.</p>
 
 <p>Cabrera was loosening up with a weighted bat when he saw me. "Hey, bitch." Bringing it in for a handshake, he pretended to hit me upside the head—some things never change.</p>
@@ -7034,6 +7036,8 @@ export const CHAPTERS = [
 <p>In 2029, the first year he's eligible, Cabrera will join the Seamhead and the Skipper in Cooperstown.</p>
 
 <p class="scene-break">***</p>
+
+<p>&nbsp;</p>
 
 <p>Four years after fleeing, I received an errant text one morning. A mistake. Had to be.</p>
 
@@ -7073,6 +7077,8 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
+<p>&nbsp;</p>
+
 <p>Plagued by too many poor decisions, the Highest Source In The Land was fired in 2022 after the Tigers' slow-moving rebuild—in its fifth year—was deemed a failure. Al Avila was replaced by a young hotshot executive, who came into town with a much-needed set of fresh eyes.</p>
 
 <p>Avila went only 404-573 as general manager in eight seasons, and his fate was likely sealed after another free agent deal went awry—this one the most debilitating yet.</p>
@@ -7094,6 +7100,8 @@ export const CHAPTERS = [
 <p>Hinch found poetic justice in 2024 by upsetting the Astros in the Tigers' two-game sweep at Minute Maid Park, the ballpark where his team once banged trash cans, beating the team that fired him and bringing to its knees the modern-day American League dynasty he helped build.</p>
 
 <p class="scene-break">***</p>
+
+<p>&nbsp;</p>
 
 <p>Changes within the Tigers' organization have been widespread, in the office and on the field—but some familiar faces remain.</p>
 
@@ -7131,6 +7139,8 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
+<p>&nbsp;</p>
+
 <p>Eleven days after Justin Verlander accused me of "unethical" behavior and had the Astros bar me from the clubhouse, he put an exclamation point on an award-winning season—throwing his third career no-hitter on September 1, 2019. Verlander struck out 14 batters against Toronto in the best game of his career. That winter, he won his elusive second Cy Young Award, posting numbers at age thirty-six worthy of his career prime.</p>
 
 <p>Approaching 3,000 career innings, Verlander's right arm finally blew out early in the pandemic season. Old Pal returned from Tommy John surgery two years later and won the Cy Young again in 2022, posting a career-best 1.75 ERA.</p>
@@ -7161,6 +7171,8 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
+<p>&nbsp;</p>
+
 <p>In addition to his tremendous natural gifts, Verlander has always looked for an edge, a little something extra. That doesn't make him unique among major-leaguers.</p>
 
 <p>The sticky stuff used for many years by various teams and many pitchers—including Verlander and Scherzer—was officially exposed in 2021, when Brian "Bubba" Harkins, an obscure Los Angeles Angels' visiting clubhouse manager, got sacked by the team.</p>
@@ -7178,6 +7190,8 @@ export const CHAPTERS = [
 <p>Harkins' defamation suit was settled confidentially in July 2023, hours before the case was scheduled to go to trial. <span class="media-emoji" data-media-id="harkins-settlement-latimes">📰</span></p>
 
 <p class="scene-break">***</p>
+
+<p>&nbsp;</p>
 
 <p>As for Anthony Fenech, I played out the string for as long as I could before officially losing my mind.</p>
 
