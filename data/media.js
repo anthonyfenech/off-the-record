@@ -133,6 +133,14 @@ export const MEDIA_CONTENT = {
         url: 'https://www.theringer.com/2019/12/20/year-in-review/sportswriting-new-orleans-times-picayune-saints-josh-katzenstein',
         placeholder: false
     },
+    'verlander-diva-nypost': {
+        type: 'link',
+        emoji: '📰',
+        label: 'New York Post',
+        caption: 'Verlander\'s diva attitude didn\'t sit well with Scherzer',
+        url: 'https://nypost.com/2023/08/12/justin-verlanders-diva-attitude-didnt-sit-well-with-max-scherzer-and-some-mets/',
+        placeholder: false
+    },
     'photo-1': {
         type: 'photo',
         emoji: '📷',

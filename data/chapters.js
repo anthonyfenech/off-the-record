@@ -7133,7 +7133,7 @@ export const CHAPTERS = [
 
 <p>The reunion didn't work. Trying to make sense of the Mets' fourth-place season, <em>New York Post</em> Ball Writer Mike Puma shed light on clubhouse chemistry issues: "Verlander and Scherzer had a strained relationship as Tigers teammates, and a source said even as the pitchers worked toward harmony with the Mets, there was occasional discord. Verlander was a 'diva,' according to this Met, causing Scherzer to grouse about his longtime teammate.</p>
 
-<p>"Verlander, who was traded back to the Astros on Aug. 1, was largely detached from teammates, according to the Met, and didn't add to the team's identity. On the other hand, Scherzer (who was traded to the Rangers on July 29) helped form the fabric of the clubhouse."</p>
+<p>"Verlander, who was traded back to the Astros on Aug. 1, was largely detached from teammates, according to the Met, and didn't add to the team's identity. On the other hand, Scherzer (who was traded to the Rangers on July 29) helped form the fabric of the clubhouse." <span class="media-emoji" data-media-id="verlander-diva-nypost">📰</span></p>
 
 <p>I never covered Scherzer on a full-time basis. He signed with the Washington Nationals just months after I took over as the Tigers' Ball Writer. But we were familiar enough, and I strived to build a relationship with Scherzer. At All-Star Game media days, I'd always sidle up to Max's podium for a quick hello.</p>
 
