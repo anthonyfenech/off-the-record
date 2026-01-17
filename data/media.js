@@ -633,7 +633,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎙️',
         label: 'Audio',
         caption: 'Winter Meetings Media Availability - December 10, 2019',
-        src: './assets/audio-clips/winter-meetings-12-10-19.mp3',
+        src: './assets/bottom-line/winter-meetings-12-10-19.mp3',
         placeholder: false
     },
     'jeff-moss-prank-call': {
