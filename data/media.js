@@ -61,6 +61,14 @@ export const MEDIA_CONTENT = {
         src: './assets/to-go/gammons-fisk-lede.JPG',
         placeholder: false
     },
+    'verlander-likes-waffles': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Screenshot',
+        caption: 'Justin Verlander likes my waffle machine tweet',
+        src: './assets/to-go/verlander likes waffles.PNG',
+        placeholder: false
+    },
     'high-heat-hot-seat': {
         type: 'photo',
         emoji: '📺',

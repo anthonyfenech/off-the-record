@@ -2916,6 +2916,8 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>February 16</em>—</span>Justin Verlander likes my tweet this morning, a picture of the waffle machine.</p>
 
+<p class="media-embed"><span class="media-emoji" data-media-id="verlander-likes-waffles">📷</span></p>
+
 <p>"Good morning, beautiful."</p>
 
 <p>I awoke early to start this spring's sourcing round. From opposing teams' media guides, I came up with a few front office execs for each team, plus scouts and advance scouts. Before our teams' cross paths this spring, I'll try to initiate meetups.</p>
