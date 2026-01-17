@@ -625,7 +625,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎙️',
         label: 'Audio',
         caption: 'Verlander Blow Off - August 20, 2019',
-        src: './assets/audio-clips/verlander-blow-off-8-20-19.mp3',
+        src: './assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
         placeholder: false
     },
     'winter-meetings-12-10-19': {
