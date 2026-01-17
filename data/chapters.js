@@ -3454,9 +3454,13 @@ export const CHAPTERS = [
 
 <p>I walk down the tunnel to the dugout and send two tweets:</p>
 
-<p><em>Justin Verlander watched the solar eclipse from the Path of Totality. "It was the most beautiful thing I've seen in my life," he said.</em></p>
+<blockquote class="twitter-tweet">
+    <a href="https://x.com/anthonyfenech/status/900093978615349249"></a>
+</blockquote>
 
-<p><em>Verlander, an admitted astronomy enthusiast, traveled to Nashville to watch the eclipse in its fullest totality, he said.</em></p>
+<blockquote class="twitter-tweet">
+    <a href="https://x.com/anthonyfenech/status/900096604170047489"></a>
+</blockquote>
 
 <p>I was trying to humanize the guy. Instead, Verlander is inflamed. A team PR official comes up to me during dinner in the press box and says, "JV didn't like your tweets. He said he was in a private conversation with Al Kaline."</p>
 
