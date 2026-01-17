@@ -119,8 +119,19 @@ class MediaModal {
         });
     }
 
+    // Check if media is disabled in admin (RED status)
+    isMediaEnabled(mediaId) {
+        const status = localStorage.getItem(`media_status_${mediaId}`);
+        return status !== 'red';
+    }
+
     // Open modal with media content
     open(mediaId) {
+        // Check if media is disabled (RED status in admin)
+        if (!this.isMediaEnabled(mediaId)) {
+            return; // Silently skip disabled media
+        }
+
         const media = getMediaById(mediaId);
 
         if (!media) {

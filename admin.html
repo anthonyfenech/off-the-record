@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - OFF-THE-RECORD</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
     <style>
         * {
             margin: 0;
@@ -1678,78 +1679,17 @@
 
             <div class="catalog-header">
                 <span class="catalog-title">Media Catalog</span>
-                <div style="display:flex; gap:8px; align-items:center;">
-                    <label style="font-size:11px; display:flex; align-items:center; gap:4px; cursor:pointer;">
-                        <input type="checkbox" id="showDeletedToggle"> Show deleted
-                    </label>
-                    <button class="add-btn" id="addMediaBtn">+ Add</button>
-                </div>
-            </div>
-
-            <div class="add-form" id="addForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Chapter</label>
-                        <select id="mediaChapter">
-                            <option value="">Select chapter...</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Type</label>
-                        <select id="mediaType">
-                            <option value="photo">Photo</option>
-                            <option value="newspaper">Newspaper</option>
-                            <option value="link">Link</option>
-                            <option value="tweet">Tweet</option>
-                            <option value="email">Email</option>
-                            <option value="text">Text Message</option>
-                            <option value="video">Video</option>
-                            <option value="audio">Audio</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Caption (what shows when clicked)</label>
-                        <input type="text" id="mediaCaption" placeholder="e.g., Tigers dugout, 2019">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>File Name (in assets folder)</label>
-                        <input type="text" id="mediaSrc" placeholder="e.g., dugout-photo.jpg">
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button class="btn-generate" id="generateBtn">Generate Code</button>
-                    <button class="btn-cancel" id="cancelBtn">Cancel</button>
-                </div>
-
-                <div class="output-section" id="outputSection" style="display:none;">
-                    <div class="step-box">
-                        <div class="step-label">STEP 1: Add to data/media.js</div>
-                        <div class="output-code" id="mediaCode"></div>
-                        <button class="copy-btn" data-target="mediaCode">Copy</button>
-                    </div>
-                    <div class="step-box">
-                        <div class="step-label">STEP 2: Paste in chapter text where you want the emoji</div>
-                        <div class="output-code" id="spanCode"></div>
-                        <button class="copy-btn" data-target="spanCode">Copy</button>
-                    </div>
-                </div>
             </div>
 
             <div class="catalog-container">
                 <table class="catalog-table" id="catalogTable">
                     <thead>
                         <tr>
-                            <th data-sort="status" title="🟢 Live (in chapter) | 🟡 Pending (placeholder) | 🔴 Cut (unused)">● <span class="sort-arrow">↕</span></th>
+                            <th data-sort="status" title="🟢 Live (shows in reader) | 🟡 Pending (placeholder) | 🔴 Cut (hidden from reader)">● <span class="sort-arrow">↕</span></th>
                             <th data-sort="icon">⬡ <span class="sort-arrow">↕</span></th>
                             <th data-sort="id">Media ID <span class="sort-arrow">↕</span></th>
                             <th data-sort="chapterNum"># <span class="sort-arrow">↕</span></th>
                             <th data-sort="chapterName">Chapter <span class="sort-arrow">↕</span></th>
-                            <th data-sort="date">Date <span class="sort-arrow">↕</span></th>
-                            <th data-sort="time">Time <span class="sort-arrow">↕</span></th>
                             <th class="action-col"></th>
                         </tr>
                     </thead>
@@ -1783,6 +1723,9 @@
                     </select>
                     <input type="text" class="inline-time" id="inlineTime" placeholder="Time">
                     <button class="inline-add-btn" id="inlineAddBtn">+</button>
+                    <label style="font-size:10px; display:flex; align-items:center; gap:3px; cursor:pointer; margin-left:auto; color:#888;">
+                        <input type="checkbox" id="showDeletedToggle"> Show deleted
+                    </label>
                 </div>
             </div>
             </div><!-- end catalog-panel -->
@@ -2137,15 +2080,13 @@
                     <td class="id-cell" title="${item.id}">${item.id}</td>
                     <td class="chapter-num-cell">${chapterNumBox}</td>
                     <td class="chapter-name-cell">${chapterLink}</td>
-                    <td class="date-cell">${item.date}</td>
-                    <td class="time-cell">${item.time}</td>
                     <td class="action-cell">
                         <button class="action-btn edit-btn" data-id="${item.id}" title="Edit">✏️</button>
                         <button class="action-btn delete-btn" data-id="${item.id}" title="Delete">✕</button>
                     </td>
                 </tr>
                 <tr class="preview-row" data-preview-for="${item.id}">
-                    <td colspan="8">
+                    <td colspan="6">
                         <div class="preview-content">
                             <div class="preview-media">
                                 <div class="loading-placeholder">Click to load...</div>
@@ -2500,82 +2441,6 @@
 
         }
 
-        // Media form functionality
-        const addBtn = document.getElementById('addMediaBtn');
-        const addForm = document.getElementById('addForm');
-        const cancelBtn = document.getElementById('cancelBtn');
-        const generateBtn = document.getElementById('generateBtn');
-        const outputSection = document.getElementById('outputSection');
-        const mediaCodeEl = document.getElementById('mediaCode');
-        const spanCodeEl = document.getElementById('spanCode');
-        const chapterSelect = document.getElementById('mediaChapter');
-
-        // Chapter titles for dropdown
-        const chapters = [
-            'TRUST THE PROCESS', 'GRAPEFRUIT', 'EARNING IT', 'A CAGED TIGER',
-            'THE BIGS', 'HITTERS COUNT', 'THE HOT STOVE', 'FIRE DRILL',
-            'PRIME-TIME', 'GLOBETROTTING', 'THE OTHER SHOE', 'UNETHICAL',
-            'CHANGE OF SCENERY', 'ENEMY LINES', 'A LETTER TO THE EDITOR',
-            'TURNING POINT', 'OPENING DAY', 'MAGIC NUMBER', 'OCTOBER',
-            'HOT COFFEE', 'THE FUTURE', 'THE WHITE FLAG', 'INSIDE BASEBALL',
-            'BURN OUT', 'THE BIG ONE', 'ROAD TO OMAHA'
-        ];
-
-        // Populate chapter dropdown
-        chapters.forEach((title, i) => {
-            const opt = document.createElement('option');
-            opt.value = i + 1;
-            opt.textContent = `${i + 1}. ${title}`;
-            chapterSelect.appendChild(opt);
-        });
-
-        const iconMap = {
-            photo: '📷',
-            newspaper: '📰',
-            link: '🔗',
-            tweet: '🐦',
-            email: '✉️',
-            text: '💬',
-            video: '🎬',
-            audio: '🎙️'
-        };
-
-        addBtn.addEventListener('click', () => {
-            addForm.classList.add('active');
-        });
-
-        cancelBtn.addEventListener('click', () => {
-            addForm.classList.remove('active');
-            outputSection.style.display = 'none';
-        });
-
-        generateBtn.addEventListener('click', () => {
-            const chapter = chapterSelect.value;
-            const chapterTitle = chapterSelect.options[chapterSelect.selectedIndex].text;
-            const type = document.getElementById('mediaType').value;
-            const caption = document.getElementById('mediaCaption').value;
-            const filename = document.getElementById('mediaSrc').value;
-            const icon = iconMap[type] || '📷';
-
-            // Generate a simple ID from chapter and type
-            const id = `ch${chapter}-${type}-${Date.now().toString().slice(-4)}`;
-
-            const mediaCode = `    '${id}': {
-        type: '${type}',
-        emoji: '${icon}',
-        label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
-        caption: '${caption}',
-        src: './assets/${filename}',
-        placeholder: false
-    },`;
-
-            const spanCode = `<span class="media-emoji" data-media-id="${id}">${icon}</span>`;
-
-            mediaCodeEl.textContent = mediaCode;
-            spanCodeEl.textContent = spanCode;
-            outputSection.style.display = 'block';
-        });
-
         // Copy buttons
         document.querySelectorAll('.copy-btn[data-target]').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -2697,11 +2562,11 @@
 
             const spanCode = `<span class="media-emoji" data-media-id="${mediaId}">${emoji}</span>`;
 
-            // Show the output in the existing modal form
-            document.getElementById('mediaCode').textContent = mediaCode;
-            document.getElementById('spanCode').textContent = spanCode;
-            document.getElementById('addForm').classList.add('active');
-            document.getElementById('outputSection').style.display = 'block';
+            // Copy media code to clipboard
+            const fullCode = `${mediaCode}\n\n// Span code:\n${spanCode}`;
+            navigator.clipboard.writeText(fullCode).then(() => {
+                alert(`Code copied to clipboard!\n\n1. Add to data/media.js\n2. Add span to chapter text`);
+            });
 
             // Clear inline form
             document.getElementById('inlineId').value = '';
