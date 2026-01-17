@@ -607,6 +607,282 @@ export const MEDIA_CONTENT = {
         caption: 'Trade Deadline Dugout (alt)',
         src: './assets/26-unethical/26-unethical-trade-deadline-dugout.jpg',
         placeholder: false
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // NU-GET AUDIO CLIPS
+    // ══════════════════════════════════════════════════════════
+    'verlander-injury-9-12-18': {
+        type: 'audio',
+        emoji: '🎙️',
+        label: 'Audio',
+        caption: 'Verlander Injury Discussion - September 12, 2018',
+        src: './assets/audio-clips/verlander-injury-9-12-18.mp3',
+        placeholder: false
+    },
+    'verlander-blow-off-8-20-19': {
+        type: 'audio',
+        emoji: '🎙️',
+        label: 'Audio',
+        caption: 'Verlander Blow Off - August 20, 2019',
+        src: './assets/audio-clips/verlander-blow-off-8-20-19.mp3',
+        placeholder: false
+    },
+    'winter-meetings-12-10-19': {
+        type: 'audio',
+        emoji: '🎙️',
+        label: 'Audio',
+        caption: 'Winter Meetings Media Availability - December 10, 2019',
+        src: './assets/audio-clips/winter-meetings-12-10-19.mp3',
+        placeholder: false
+    },
+    'jeff-moss-prank-call': {
+        type: 'audio',
+        emoji: '📞',
+        label: 'Phone Call',
+        caption: 'Jeff Moss Prank Call',
+        src: './assets/audio-clips/jeff-moss-prank-call.mp3',
+        placeholder: false
+    },
+    'kinsler-angel': {
+        type: 'audio',
+        emoji: '🎙️',
+        label: 'Audio',
+        caption: 'Kinsler Angel Recording',
+        src: './assets/audio-clips/kinsler-angel.mp3',
+        placeholder: false
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // NU-GET VIDEO CLIPS
+    // ══════════════════════════════════════════════════════════
+    'cy-young-2016-bernie': {
+        type: 'video',
+        emoji: '🎬',
+        label: 'Video',
+        caption: 'Cy Young 2016 with Bernie',
+        src: './assets/video-clips/cy-young-2016-bernie.mp4',
+        placeholder: false
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // NU-GET IMAGES
+    // ══════════════════════════════════════════════════════════
+    'chillen-right-before-2-21-18': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'We were chillen right before - February 21, 2018',
+        src: './assets/nu-get-images/2-21-18 we were chillen right before.jpg',
+        placeholder: false
+    },
+    'only-in-tiger-town-2-24-18': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Only in Tiger Town - February 24, 2018',
+        src: './assets/nu-get-images/2-24-18 only in tiger town.jpg',
+        placeholder: false
+    },
+    'have-to-be-better-5-25-15': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'I have to be better - May 25, 2015',
+        src: './assets/nu-get-images/5-25-15 i have to be better.jpg',
+        placeholder: false
+    },
+    'greatest-assignment-7-3-18': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Greatest assignment ever love you - July 3, 2018',
+        src: './assets/nu-get-images/7-3-18 greatest assignment ever love you.jpg',
+        placeholder: false
+    },
+    'jfc-go-away-7-13-18': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'JFC go away - July 13, 2018',
+        src: './assets/nu-get-images/7-13-18 jfc go away.jpg',
+        placeholder: false
+    },
+    'ending-in-atl-10-2-16': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Ending in Atlanta - October 2, 2016',
+        src: './assets/nu-get-images/10-2-16 ending in atl.jpg',
+        placeholder: false
+    },
+    'photo-2015-10-30': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'October 30, 2015',
+        src: './assets/nu-get-images/2015:10:30 5-11-25 PM.JPG',
+        placeholder: false
+    },
+    'photo-2016-10-26': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'October 26, 2016',
+        src: './assets/nu-get-images/2016:10:26 7-42-27 PM.JPG',
+        placeholder: false
+    },
+    'photo-2018-02-07': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'February 7, 2018',
+        src: './assets/nu-get-images/2018:02:07 4-18-52 PM.JPG',
+        placeholder: false
+    },
+    'photo-2018-07-12': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'July 12, 2018',
+        src: './assets/nu-get-images/2018:07:12 12-18-42 PM.JPG',
+        placeholder: false
+    },
+    'photo-2018-10-11': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'October 11, 2018',
+        src: './assets/nu-get-images/2018:10:11 09-41-54 PM.jpg',
+        placeholder: false
+    },
+    'photo-2019-04-17': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'April 17, 2019',
+        src: './assets/nu-get-images/2019:04:17 6-24-19 PM.JPG',
+        placeholder: false
+    },
+    'photo-2019-04-24': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'April 24, 2019',
+        src: './assets/nu-get-images/2019:04:24 10-10-31 AM.JPG',
+        placeholder: false
+    },
+    'photo-2019-08-21': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'August 21, 2019',
+        src: './assets/nu-get-images/2019:08:21 9-37-51 PM.JPG',
+        placeholder: false
+    },
+    'photo-2019-08-24': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'August 24, 2019',
+        src: './assets/nu-get-images/2019:08:24 11-59-33 PM.JPG',
+        placeholder: false
+    },
+    'apse-top-10': {
+        type: 'photo',
+        emoji: '🏆',
+        label: 'Award',
+        caption: 'APSE Top 10',
+        src: './assets/nu-get-images/APSE Top 10.jpg',
+        placeholder: false
+    },
+    'andrew-cab-2020': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Andrew Cab 2020',
+        src: './assets/nu-get-images/Andrew Cab 2020.png',
+        placeholder: false
+    },
+    'andrew-cab-2020-2': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Andrew Cab 2020 (2)',
+        src: './assets/nu-get-images/Andrew Cab 2020 2.png',
+        placeholder: false
+    },
+    'andrew-cab-2020-3': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Andrew Cab 2020 (3)',
+        src: './assets/nu-get-images/Andrew Cab 2020 3.png',
+        placeholder: false
+    },
+    'april-2-2019': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'April 2, 2019',
+        src: './assets/nu-get-images/April 2 2019 at 01.09 AM.JPG',
+        placeholder: false
+    },
+    'april-4-2019': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'April 4, 2019',
+        src: './assets/nu-get-images/April 4 2019 at 12.24 PM.JPG',
+        placeholder: false
+    },
+    'bregman-nah-false': {
+        type: 'photo',
+        emoji: '🐦',
+        label: 'Tweet',
+        caption: 'Bregman "Nah, false" Tweet',
+        src: './assets/nu-get-images/Bregman nah false tweet.png',
+        placeholder: false
+    },
+    'february-19-2018': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'February 19, 2018',
+        src: './assets/nu-get-images/February 19 2018 at 13.47 PM.JPG',
+        placeholder: false
+    },
+    'screenshot-2024-11-13': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Screenshot',
+        caption: 'Screenshot - November 13, 2024',
+        src: './assets/nu-get-images/Screenshot 2024-11-13 at 11.28.33 PM.png',
+        placeholder: false
+    },
+    'fenech-middle-finger': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Fenech Middle Finger',
+        src: './assets/nu-get-images/fenech middle finger.jpeg',
+        placeholder: false
+    },
+    'minnesota-selfie-zimm': {
+        type: 'selfie',
+        emoji: '🤳',
+        label: 'Selfie',
+        caption: 'Minnesota Selfie with Zimm',
+        src: './assets/nu-get-images/minnesota selfie zimm.jpeg',
+        placeholder: false
+    },
+    'verlander-trade-tweet': {
+        type: 'photo',
+        emoji: '🐦',
+        label: 'Tweet',
+        caption: 'Verlander Trade Tweet',
+        src: './assets/nu-get-images/verlander trade tweet.jpg',
+        placeholder: false
     }
 };
 
