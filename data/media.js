@@ -66,7 +66,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Screenshot',
         caption: 'Justin Verlander likes my waffle machine tweet',
-        src: './assets/to-go/verlander likes waffles.PNG',
+        src: './assets/14-prime-time/verlander likes waffles.PNG',
         placeholder: false
     },
     'sportscenter-studio': {
