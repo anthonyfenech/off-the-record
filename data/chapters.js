@@ -3753,7 +3753,7 @@ export const CHAPTERS = [
 
 <p>Inside the clubhouse, I stand feet away from guys I grew up idolizing.</p>
 
-<p>In the manager’s office, Tigers skipper Jim Leyland is lying on a couch in a tank top, smoking a cigarette. He’s asked about tonight’s rain forecast.</p>
+<p>In the manager’s office, Tigers skipper Jim Leyland is lying on a couch in a tank top, smoking a cigarette. He's asked about tonight's rain forecast. <span class="media-emoji" data-media-id="first-time-ever">🔴</span></p>
 
 <p>“I had a rule in A-ball… They get on the bus, and I say, ‘If you fuckers look up at the clouds, I’m fining the shit out of you.’” Uproarious laughter.</p>
 
