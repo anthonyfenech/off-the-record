@@ -50,7 +50,7 @@ export const MEDIA_CONTENT = {
         emoji: '📰',
         label: 'Newspaper Clipping',
         caption: 'Fantasy Camp Story',
-        src: './assets/24-road-to-omaha-fantasy-camp-story.jpg',
+        src: './assets/22-viva-las-vegas/24-road-to-omaha-fantasy-camp-story.jpg',
         placeholder: false
     },
     'july-2019': {
@@ -58,7 +58,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'July 31, 2019',
-        src: './assets/26-unethical-trade-deadline-dugout.jpg',
+        src: './assets/26-unethical/26-unethical-trade-deadline-dugout.jpg',
         placeholder: false
     },
     'tale-of-tape': {
@@ -74,7 +74,7 @@ export const MEDIA_CONTENT = {
         emoji: '📰',
         label: 'Newspaper',
         caption: 'Detroit Free Press, August 4, 2015',
-        src: './assets/08-trade-deadline-dombrowski-extension.jpg',
+        src: './assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.jpg',
         placeholder: false
     },
     'espn-bottomline': {
