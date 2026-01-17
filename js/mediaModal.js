@@ -236,7 +236,7 @@ class MediaModal {
     renderVideo(media) {
         return `
             <div class="media-video-container">
-                <video controls class="media-video">
+                <video controls class="media-video" controlsList="nodownload noplaybackrate" disablePictureInPicture>
                     <source src="${media.src}" type="video/mp4">
                     Your browser does not support video playback.
                 </video>
