@@ -964,7 +964,7 @@ export const CHAPTERS = [
 
 <p>He's not wrong.</p>
 
-<p class="scene-break"><span>***</span></p>
+<p class="scene-break">***</p>
 
 <p>&nbsp;</p>
 
@@ -992,7 +992,7 @@ export const CHAPTERS = [
 
 <p>Players laugh. Reporters, too. It's my first game as a BBWAA member—I don't know how I'll recover from this.</p>
 
-<p class="scene-break"><span>***</span></p>
+<p class="scene-break">***</p>
 
 <p>&nbsp;</p>
 
@@ -6287,13 +6287,15 @@ export const CHAPTERS = [
 
 <p>Walking out of the clubhouse, I wonder if I'll be back—or if I want to be.</p>
 
-<p class="scene-break"><span>***</span></p>
+<p class="scene-break">***</p>
 
 <p>&nbsp;</p>
 
 <p class="flashback-header">AIRPLANE MODE</p>
 
-<p class="scene-break"><span>***</span></p>
+<p>&nbsp;</p>
+
+<p class="scene-break">***</p>
 
 <p>&nbsp;</p>
 
