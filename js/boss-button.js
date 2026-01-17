@@ -7,7 +7,8 @@ class BossButton {
         this.isHidden = false;
         this.savedScrollX = 0;
         this.savedScrollY = 0;
-        this.activeMode = localStorage.getItem('bossButtonMode') || 'work';
+        this.screenModes = ['outlook', 'gmail', 'gdocs', 'slack', 'teams', 'wikipedia'];
+        this.currentMode = null;
         this.lastActivated = null;
         this.button = null;
         this.mobileButton = null;
@@ -25,24 +26,20 @@ class BossButton {
         this.overlay = document.getElementById('overlay');
 
         // Cache fake screens
-        this.fakeScreens = {
-            work: document.getElementById('fake-screen-work'),
-            journalism: document.getElementById('fake-screen-journalism'),
-            mlb: document.getElementById('fake-screen-mlb')
-        };
+        this.fakeScreens = {};
+        this.screenModes.forEach(mode => {
+            this.fakeScreens[mode] = document.getElementById(`fake-screen-${mode}`);
+        });
 
-        if (!this.button || !this.fakeScreens[this.activeMode]) {
-            console.warn('Boss Button: Required elements not found');
+        if (!this.button) {
+            console.warn('Boss Button: Button element not found');
             return;
         }
 
         // Set up event listeners
         this.setupEventListeners();
 
-        // Initialize mode selector if present
-        this.initModeSelector();
-
-        console.log('Boss Button: Initialized');
+        console.log('Boss Button: Initialized with', this.screenModes.length, 'rotating screens');
     }
 
     setupEventListeners() {
@@ -86,17 +83,6 @@ class BossButton {
         });
     }
 
-    initModeSelector() {
-        const modeSelect = document.getElementById('boss-mode-select');
-        if (modeSelect) {
-            modeSelect.value = this.activeMode;
-            modeSelect.addEventListener('change', (e) => {
-                this.activeMode = e.target.value;
-                localStorage.setItem('bossButtonMode', e.target.value);
-            });
-        }
-    }
-
     // Activate Boss Mode - must complete in <100ms
     activate() {
         const startTime = performance.now();
@@ -113,8 +99,11 @@ class BossButton {
         if (this.tocSidebar) this.tocSidebar.style.visibility = 'hidden';
         if (this.overlay) this.overlay.style.visibility = 'hidden';
 
-        // Show the active fake screen
-        const activeScreen = this.fakeScreens[this.activeMode];
+        // Randomly select a fake screen
+        this.currentMode = this.screenModes[Math.floor(Math.random() * this.screenModes.length)];
+
+        // Show the randomly selected fake screen
+        const activeScreen = this.fakeScreens[this.currentMode];
         if (activeScreen) {
             activeScreen.style.display = 'block';
             // Force reflow to ensure immediate paint
@@ -198,7 +187,7 @@ class BossButton {
         const data = {
             timestamp: new Date().toISOString(),
             action: action,
-            mode: this.activeMode,
+            mode: this.currentMode,
             chapter: window.location.hash || 'home',
             timeHidden: action === 'deactivate' && this.lastActivated
                 ? (Date.now() - this.lastActivated)

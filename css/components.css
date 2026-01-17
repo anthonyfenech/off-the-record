@@ -2455,262 +2455,893 @@ body.boss-mode-active .boss-btn {
     opacity: 1;
 }
 
-/* Fake Screen: Work Mode - Baseball Analytics */
-.fake-screen-work {
-    font-family: Arial, Helvetica, sans-serif;
+/* ===========================================
+   FAKE SCREENS - Realistic Work App Mockups
+   6 rotating screens for Boss Button
+   =========================================== */
+
+/* 1. OUTLOOK */
+.fake-screen-outlook {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f2f1;
+    padding: 0;
 }
 
-.fake-screen-work h2 {
-    color: #002D62;
-    margin-bottom: 5px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.fake-screen-work h3 {
-    color: #666;
-    margin-top: 5px;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-.fake-screen-work h4 {
-    color: #002D62;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.fake-screen-work table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 30px 0;
-    font-size: 14px;
-}
-
-.fake-screen-work th {
-    padding: 12px;
-    text-align: left;
-    background: #f0f0f0;
-    border-bottom: 2px solid #002D62;
-}
-
-.fake-screen-work th:not(:first-child) {
-    text-align: center;
-}
-
-.fake-screen-work td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.fake-screen-work td:not(:first-child) {
-    text-align: center;
-}
-
-.fake-screen-work p {
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.fake-screen-work ul {
-    line-height: 1.8;
-    color: #333;
-    margin-left: 20px;
-}
-
-/* Fake Screen: Journalism Mode */
-.fake-screen-journalism {
-    font-family: Georgia, 'Times New Roman', serif;
-}
-
-.fake-screen-journalism h2 {
-    border-bottom: 3px solid #333;
-    padding-bottom: 10px;
-    font-size: 22px;
-}
-
-.fake-screen-journalism h3 {
-    color: #666;
-    font-style: italic;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.fake-screen-journalism h4 {
-    color: #333;
-    font-size: 16px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.fake-screen-journalism ul {
-    line-height: 1.9;
-    color: #333;
-    font-size: 15px;
-    margin-left: 20px;
-}
-
-.fake-screen-journalism .callout-box {
-    margin-top: 40px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-left: 4px solid #333;
-}
-
-.fake-screen-journalism .callout-box h4 {
-    margin-top: 0;
-}
-
-.fake-screen-journalism .callout-box ul {
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-.fake-screen-journalism .citations {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #555;
-}
-
-.fake-screen-journalism .footer-note {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    font-size: 13px;
-    color: #888;
-    font-style: italic;
-}
-
-/* Fake Screen: MLB Mode */
-.fake-screen-mlb {
-    background: #f5f5f5;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.fake-screen-mlb .mlb-header {
-    background: #041E42;
+.outlook-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 8px 16px;
+    background: #0078d4;
     color: white;
-    padding: 15px 20px;
-    margin: -20px -20px 20px -20px;
 }
 
-.fake-screen-mlb .mlb-header h1 {
-    margin: 0;
-    font-size: 28px;
+.outlook-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
-.fake-screen-mlb .mlb-header p {
-    margin: 5px 0 0 0;
+.outlook-search {
+    flex: 1;
+    max-width: 400px;
+}
+
+.outlook-search input {
+    width: 100%;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.outlook-user {
+    width: 32px;
+    height: 32px;
+    background: #106ebe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 12px;
-    opacity: 0.8;
+    font-weight: 600;
 }
 
-.fake-screen-mlb .mlb-content {
+.outlook-body {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.outlook-sidebar {
+    width: 200px;
+    background: white;
+    padding: 12px 0;
+    border-right: 1px solid #edebe9;
+}
+
+.outlook-folder {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.outlook-folder:hover {
+    background: #f3f2f1;
+}
+
+.outlook-folder.active {
+    background: #e1dfdd;
+    font-weight: 600;
+}
+
+.outlook-folder .badge {
+    background: #0078d4;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.outlook-list {
+    flex: 1;
+    background: white;
+    overflow-y: auto;
+}
+
+.outlook-email {
+    padding: 12px 16px;
+    border-bottom: 1px solid #edebe9;
+    cursor: pointer;
+}
+
+.outlook-email:hover {
+    background: #f3f2f1;
+}
+
+.outlook-email.unread {
+    border-left: 3px solid #0078d4;
+    background: #f3f9ff;
+}
+
+.outlook-email.unread .email-sender,
+.outlook-email.unread .email-subject {
+    font-weight: 600;
+}
+
+.email-sender {
+    font-size: 14px;
+    color: #323130;
+    margin-bottom: 2px;
+}
+
+.email-subject {
+    font-size: 13px;
+    color: #323130;
+    margin-bottom: 4px;
+}
+
+.email-preview {
+    font-size: 12px;
+    color: #605e5c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email-time {
+    font-size: 11px;
+    color: #a19f9d;
+    margin-top: 4px;
+}
+
+/* 2. GMAIL */
+.fake-screen-gmail {
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+    background: #f6f8fc;
+    padding: 0;
+}
+
+.gmail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 16px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gmail-menu {
+    font-size: 20px;
+    color: #5f6368;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.gmail-logo {
+    display: flex;
+    align-items: center;
+}
+
+.gmail-search {
+    flex: 1;
+    max-width: 720px;
+}
+
+.gmail-search input {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #eaf1fb;
+    font-size: 14px;
+}
+
+.gmail-body {
+    display: flex;
+    height: calc(100vh - 65px);
+}
+
+.gmail-sidebar {
+    width: 256px;
+    padding: 8px;
+}
+
+.gmail-compose {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    margin: 8px;
+    background: #c2e7ff;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.gmail-nav-item {
+    padding: 8px 24px;
+    margin: 2px 8px;
+    border-radius: 0 16px 16px 0;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gmail-nav-item:hover {
+    background: #e8eaed;
+}
+
+.gmail-nav-item.active {
+    background: #d3e3fd;
+    font-weight: 600;
+}
+
+.gmail-badge {
+    background: none;
+    font-weight: 600;
+}
+
+.gmail-list {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    margin: 8px;
+    overflow-y: auto;
+}
+
+.gmail-email {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid #f1f3f4;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.gmail-email:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3);
+    z-index: 1;
+}
+
+.gmail-email.unread {
+    background: #f2f6fc;
+    font-weight: 600;
+}
+
+.gmail-checkbox, .gmail-star {
+    padding: 0 8px;
+    color: #5f6368;
+}
+
+.gmail-star {
+    color: #f4b400;
+}
+
+.gmail-sender {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gmail-content {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gmail-subject {
+    color: #202124;
+}
+
+.gmail-preview {
+    color: #5f6368;
+    font-weight: normal;
+}
+
+.gmail-time {
+    font-size: 12px;
+    color: #5f6368;
+    white-space: nowrap;
+}
+
+/* 3. GOOGLE DOCS */
+.fake-screen-gdocs {
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+    background: #f1f3f4;
+    padding: 0;
+}
+
+.gdocs-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gdocs-icon {
+    font-size: 24px;
+}
+
+.gdocs-title {
+    font-size: 18px;
+    font-weight: 400;
+    flex: 1;
+}
+
+.gdocs-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.gdocs-saved {
+    font-size: 12px;
+    color: #5f6368;
+}
+
+.gdocs-share {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.gdocs-toolbar {
+    display: flex;
+    gap: 16px;
+    padding: 4px 16px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 13px;
+    color: #3c4043;
+}
+
+.gdocs-toolbar span {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.gdocs-toolbar span:hover {
+    background: #f1f3f4;
+    border-radius: 4px;
+}
+
+.gdocs-body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.gdocs-content {
+    background: white;
+    width: 100%;
+    max-width: 816px;
+    min-height: 1056px;
+    padding: 72px 96px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.gdocs-content h1 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #202124;
+}
+
+.gdocs-content h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #202124;
+}
+
+.gdocs-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    color: #202124;
+}
+
+.gdocs-content p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #202124;
+}
+
+.gdocs-meta {
+    color: #5f6368;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+.gdocs-content ul, .gdocs-content ol {
+    margin-left: 24px;
+    margin-bottom: 12px;
+}
+
+.gdocs-content li {
+    font-size: 14px;
+    color: #202124;
+    margin-bottom: 4px;
+}
+
+/* 4. SLACK */
+.fake-screen-slack {
+    font-family: 'Slack-Lato', Lato, sans-serif;
+    background: #1a1d21;
+    padding: 0;
+    display: flex;
+}
+
+.slack-sidebar {
+    width: 260px;
+    background: #19171d;
+    color: #d1d2d3;
+    padding-top: 12px;
+}
+
+.slack-workspace {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+}
+
+.slack-workspace-icon {
+    width: 36px;
+    height: 36px;
+    background: #4a154b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.slack-channels {
+    margin-top: 16px;
+}
+
+.slack-section-header {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #ababad;
+}
+
+.slack-channel, .slack-dm {
+    padding: 6px 16px 6px 24px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.slack-channel:hover, .slack-dm:hover {
+    background: #27242c;
+}
+
+.slack-channel.active {
+    background: #1164a3;
+    color: white;
+}
+
+.slack-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.slack-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.slack-channel-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: #1d1c1d;
+}
+
+.slack-channel-desc {
+    font-size: 13px;
+    color: #616061;
+    margin-left: 12px;
+}
+
+.slack-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.slack-message {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.slack-avatar {
+    width: 36px;
+    height: 36px;
+    background: #e91e63;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.slack-message-content {
+    flex: 1;
+}
+
+.slack-message-header {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.slack-message-header strong {
+    color: #1d1c1d;
+}
+
+.slack-time {
+    font-size: 12px;
+    color: #616061;
+    margin-left: 8px;
+}
+
+.slack-message-text {
+    font-size: 15px;
+    color: #1d1c1d;
+    line-height: 1.46;
+}
+
+.slack-input {
+    padding: 20px;
+    border-top: 1px solid #e1e1e1;
+}
+
+.slack-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #868686;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+/* 5. MICROSOFT TEAMS */
+.fake-screen-teams {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    padding: 0;
+    display: flex;
+}
+
+.teams-sidebar {
+    width: 68px;
+    background: #292929;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.teams-nav-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #a5a5a5;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.teams-nav-icon:hover {
+    background: #3d3d3d;
+}
+
+.teams-nav-icon.active {
+    background: #464775;
+    color: white;
+}
+
+.teams-channels {
+    width: 240px;
+    background: #252423;
+    color: white;
+    padding: 12px 0;
+}
+
+.teams-team-header {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.teams-channel {
+    padding: 6px 16px 6px 32px;
+    font-size: 14px;
+    color: #d6d6d6;
+    cursor: pointer;
+}
+
+.teams-channel:hover {
+    background: #3d3d3d;
+}
+
+.teams-channel.active {
+    background: #464775;
+}
+
+.teams-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.teams-channel-name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.teams-header-actions {
+    display: flex;
+    gap: 16px;
+    font-size: 20px;
+    color: #616161;
+}
+
+.teams-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.teams-message {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.teams-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.teams-message-content {
+    flex: 1;
+}
+
+.teams-message-header {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.teams-message-header strong {
+    color: #242424;
+}
+
+.teams-time {
+    font-size: 12px;
+    color: #616161;
+    margin-left: 8px;
+}
+
+.teams-message-text {
+    font-size: 14px;
+    color: #242424;
+    line-height: 1.4;
+}
+
+.teams-input {
+    padding: 20px;
+    border-top: 1px solid #e1e1e1;
+}
+
+.teams-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 6. WIKIPEDIA */
+.fake-screen-wikipedia {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Lato, Helvetica, Arial, sans-serif;
+    background: #f8f9fa;
+    padding: 0;
+}
+
+.wiki-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    background: white;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+.wiki-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wiki-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.wiki-wordmark {
+    display: flex;
+    flex-direction: column;
+}
+
+.wiki-title {
+    font-size: 18px;
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+}
+
+.wiki-tagline {
+    font-size: 11px;
+    color: #54595d;
+}
+
+.wiki-search {
+    width: 300px;
+}
+
+.wiki-search input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.wiki-body {
+    display: flex;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.wiki-sidebar-nav {
+    width: 160px;
+    font-size: 13px;
+}
+
+.wiki-nav-item {
+    padding: 4px 0;
+    color: #0645ad;
+    cursor: pointer;
+}
+
+.wiki-nav-item:hover {
+    text-decoration: underline;
+}
+
+.wiki-content {
+    flex: 1;
     background: white;
     padding: 20px;
-    border-radius: 4px;
+    border: 1px solid #a2a9b1;
 }
 
-.fake-screen-mlb h2 {
-    color: #041E42;
-    border-bottom: 2px solid #041E42;
-    padding-bottom: 10px;
-    font-size: 20px;
+.wiki-content h1 {
+    font-size: 28px;
+    font-weight: normal;
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
 }
 
-.fake-screen-mlb h3 {
-    color: #041E42;
-    margin-top: 40px;
-    font-size: 16px;
+.wiki-content h2 {
+    font-size: 22px;
+    font-weight: normal;
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 4px;
+    margin-top: 24px;
+    margin-bottom: 12px;
 }
 
-.fake-screen-mlb table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 14px;
-}
-
-.fake-screen-mlb th {
-    padding: 10px;
-    text-align: left;
-    background: #f0f0f0;
-    border-bottom: 2px solid #041E42;
-}
-
-.fake-screen-mlb th:not(:first-child) {
-    text-align: center;
-}
-
-.fake-screen-mlb td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.fake-screen-mlb td:not(:first-child) {
-    text-align: center;
-}
-
-.fake-screen-mlb td:first-child {
-    font-weight: bold;
-}
-
-.fake-screen-mlb .highlight-row {
-    background: #fff8dc;
-}
-
-.fake-screen-mlb .games-box {
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 4px;
-    margin-top: 15px;
-}
-
-.fake-screen-mlb .games-box p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.fake-screen-mlb .news-section {
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 15px;
-}
-
-.fake-screen-mlb .news-section p {
+.wiki-intro {
     font-size: 14px;
     line-height: 1.6;
-    color: #333;
-    margin-top: 15px;
+    margin-bottom: 16px;
 }
 
-/* Boss Mode Settings Panel */
-.boss-settings {
-    margin: 20px 0;
-    padding: 15px;
-    background: var(--color-accent-light);
-    border-radius: 4px;
-    font-family: var(--font-mono);
+.wiki-toc {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 12px 16px;
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
-.boss-settings label {
+.wiki-toc-title {
     font-weight: bold;
-    margin-right: 10px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
-.boss-settings select {
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--color-border);
-    font-family: var(--font-mono);
+.wiki-toc ol {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.wiki-toc li {
+    padding: 2px 0;
+    color: #0645ad;
+}
+
+.wiki-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.wiki-content a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+.wiki-content a:hover {
+    text-decoration: underline;
+}
+
+.wiki-citation {
     font-size: 12px;
+    color: #72777d;
 }
 
 /* Hide Boss Button when disabled via admin */
