@@ -2198,9 +2198,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">BLUE SPRINGS, Mo., <em>June 15</em>—</span>Back on the Jim Harbaugh beat.</p>
 
-<p>I'm assigned to arrive early in Kansas City this week—half an hour into the suburbs for one of Harbaugh's controversial satellite camps for high-school football players. Today, the Michigan football coach continues to expose a loophole in NCAA rules, which allow schools to host paid-for football camps across the country. These camps are angering rival coaches, who decry them as a sneaky scheme for additional in-person recruiting visits.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="harbaugh-likes-me">📷</span></p>
+<p>I'm assigned to arrive early in Kansas City this week—half an hour into the suburbs for one of Harbaugh's controversial satellite camps for high-school football players. Today, the Michigan football coach continues to expose a loophole in NCAA rules, which allow schools to host paid-for football camps across the country. These camps are angering rival coaches, who decry them as a sneaky scheme for additional in-person recruiting visits. <span class="media-emoji" data-media-id="harbaugh-likes-me">📷</span></p>
 
 <p>Harbaugh's wife is from Blue Springs, and I get in touch with her brother, John Feuerborn, one of Harbaugh's "trusted agents." He owns a couple bars in the area and speaks with a pinch of tobacco in his lip. During the camp, we hit it off. Afterwards, Harbaugh swims around questions from a radio reporter, who's fishing for a soundbite on the camp controversy.</p>
 
@@ -2212,21 +2210,15 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline">SAN DIEGO, <em>July 11</em>—</span>I come to this year's all-star festivities strictly for the airline miles. I meet my long-distance relationship love interest here and skip the futures game and the home-run derby. We go for dinner in the Gaslamp District. But I can't skip the All-Star Game itself—Miguel Cabrera's appearance is the reason the company spent thousands of dollars in travel to send me here.</p>
+<p class="has-dateline no-indent"><span class="dateline">SAN DIEGO, <em>July 11</em>—</span>I come to this year's all-star festivities strictly for the airline miles. I meet my long-distance relationship love interest here and skip the futures game and the home-run derby. We go for dinner in the Gaslamp District. But I can't skip the All-Star Game itself—Miguel Cabrera's appearance is the reason the company spent thousands of dollars in travel to send me here. <span class="media-emoji" data-media-id="rainbow-new-york">📷</span></p>
 
-<p class="media-embed"><span class="media-emoji" data-media-id="rainbow-new-york">📷</span></p>
-
-<p>I'm pleased to see Cabrera in a good mood during media time—we've been getting on well enough since his weird question. He welcomes my presence inside the American League clubhouse before the game, stepping out of a conversation with fellow stars to answer a few questions.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="cabrera-big-star">📷</span></p>
+<p>I'm pleased to see Cabrera in a good mood during media time—we've been getting on well enough since his weird question. He welcomes my presence inside the American League clubhouse before the game, stepping out of a conversation with fellow stars to answer a few questions. <span class="media-emoji" data-media-id="cabrera-big-star">📷</span></p>
 
 <p>The two days off have done him good.</p>
 
 <p>"Even one day off in the regular season helps a lot. I think four days will help a lot."</p>
 
-<p>Miggy proudly shows off his custom Louis Vuitton cleats.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="cabreras-kicks">📷</span></p>
+<p>Miggy proudly shows off his custom Louis Vuitton cleats. <span class="media-emoji" data-media-id="cabreras-kicks">📷</span></p>
 
 <p>"Sweet, huh?"</p>
 
@@ -2246,9 +2238,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>July 25</em>—</span>At the <em>Free Press</em>, we're all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, I'm staying another day in Chicago, complying with my sports editor's request to cover the Michigan football coach.</p>
 
-<p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town.</p>
-
-<p class="media-embed"><span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span> <span class="media-emoji" data-media-id="waiting-for-harbaugh">📷</span></p>
+<p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town. <span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span> <span class="media-emoji" data-media-id="waiting-for-harbaugh">📷</span></p>
 
 <p>&nbsp;</p>
 
