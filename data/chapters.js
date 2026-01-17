@@ -5795,12 +5795,6 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
-<p>&nbsp;</p>
-
-<p class="flashback-header">AIRPLANE MODE</p>
-
-<p>&nbsp;</p>
-
 <p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
 
 <p>BBWAA President: Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
@@ -5849,7 +5843,11 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
-<p class="scene-break" style="font-family: 'Courier New', monospace; font-weight: bold;">AIRPLANE MODE</p>
+<p>&nbsp;</p>
+
+<p class="flashback-header">AIRPLANE MODE</p>
+
+<p>&nbsp;</p>
 
 <p class="has-dateline no-indent"><span class="dateline">2:44 <span class="small-caps">P.M.</span>—</span>The barrage of messages continues when I return to reality.</p>
 
