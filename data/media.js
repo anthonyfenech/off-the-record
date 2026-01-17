@@ -181,6 +181,14 @@ export const MEDIA_CONTENT = {
         src: '',
         placeholder: true
     },
+    'verlander-poppy-freep': {
+        type: 'link',
+        emoji: '📰',
+        label: 'Article',
+        caption: 'Justin Verlander remembers veterans with poppy flower (Detroit Free Press)',
+        url: 'https://www.freep.com/story/sports/mlb/tigers/2017/05/28/detroit-tigers-memorial-day-justin-verlander-remembers-veterans-poppy-flower/352657001/',
+        placeholder: false
+    },
     'winter-meetings-2014': {
         type: 'photo',
         emoji: '📷',

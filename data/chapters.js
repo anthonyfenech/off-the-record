@@ -3090,7 +3090,7 @@ export const CHAPTERS = [
 
 <p>Verlander is active in the veteran's community and established the Wins For Warriors foundation to support Iraq and Afghanistan war vets.</p>
 
-<p>I do my part to further Verlander's philanthropic endeavors by writing a piece on the red poppy.</p>
+<p>I do my part to further Verlander's philanthropic endeavors by writing a piece on the red poppy. <span class="media-emoji" data-media-id="verlander-poppy-freep">📰</span></p>
 
 <p>&nbsp;</p>
 
