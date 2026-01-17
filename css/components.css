@@ -772,7 +772,7 @@ button:focus-visible {
 
 /* Tappable Media Emojis */
 .media-emoji {
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif !important;
     font-size: 1em;
     line-height: 1;
     letter-spacing: 0 !important;
@@ -787,6 +787,12 @@ button:focus-visible {
     padding: 0 !important;
     margin: 0 !important;
     cursor: pointer;
+    /* Critical for mobile emoji rendering */
+    text-rendering: auto !important;
+    -webkit-font-smoothing: auto !important;
+    -moz-osx-font-smoothing: auto !important;
+    -webkit-font-feature-settings: normal !important;
+    font-feature-settings: normal !important;
 }
 
 .media-emoji:hover {

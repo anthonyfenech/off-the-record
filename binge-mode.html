@@ -121,9 +121,12 @@
             display: none;
         }
 
-        /* Fix emoji display */
+        /* Fix emoji display - must reset font smoothing for mobile */
         .media-emoji {
-            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif !important;
+            text-rendering: auto !important;
+            -webkit-font-smoothing: auto !important;
+            -moz-osx-font-smoothing: auto !important;
         }
 
         /* Smaller images in modal - desktop */
