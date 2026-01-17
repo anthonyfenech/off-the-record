@@ -1138,6 +1138,119 @@
             flex: 0 0 auto;
             padding: 10px 15px;
         }
+
+        /* Expandable Preview Row */
+        .catalog-table tr.expandable {
+            cursor: pointer;
+        }
+        .catalog-table tr.expandable:hover {
+            background: #f5f5f5;
+        }
+        .catalog-table tr.expanded {
+            background: #f0f0f0;
+        }
+        .preview-row {
+            display: none;
+        }
+        .preview-row.active {
+            display: table-row;
+        }
+        .preview-row td {
+            padding: 0 !important;
+            border-bottom: 2px solid #333;
+        }
+        .preview-content {
+            padding: 15px 20px;
+            background: #fafafa;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .preview-row.active .preview-content {
+            max-height: 400px;
+            padding: 15px 20px;
+        }
+        .preview-media {
+            flex-shrink: 0;
+            max-width: 200px;
+            max-height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .preview-media img {
+            max-width: 200px;
+            max-height: 150px;
+            object-fit: contain;
+            display: block;
+        }
+        .preview-media video {
+            max-width: 200px;
+            max-height: 150px;
+        }
+        .preview-media audio {
+            width: 200px;
+        }
+        .preview-media .loading-placeholder {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 11px;
+        }
+        .preview-details {
+            flex: 1;
+            min-width: 0;
+        }
+        .preview-details-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+        .preview-details-label {
+            color: #666;
+            min-width: 60px;
+        }
+        .preview-details-value {
+            color: #333;
+            word-break: break-all;
+        }
+        .preview-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .preview-action-btn {
+            padding: 6px 12px;
+            font-size: 11px;
+            font-family: inherit;
+            border: 1px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #fff;
+            color: #333;
+            transition: all 0.15s;
+        }
+        .preview-action-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+        .preview-action-btn.primary {
+            background: #333;
+            color: #fff;
+        }
+        .preview-action-btn.primary:hover {
+            background: #555;
+        }
     </style>
 </head>
 <body>
@@ -1756,14 +1869,13 @@
                 const chapterNumBox = item.chapterNum
                     ? `<span class="ch-num">${item.chapterNum}</span>`
                     : '—';
-                const idLink = item.src
-                    ? `<a href="#" class="media-preview-link" data-media-id="${item.id}" data-src="${item.src}" data-type="${item.type}" data-caption="${item.caption || ''}" title="Preview ${item.id}">${item.id}</a>`
-                    : item.id;
+                // Escape caption for data attribute
+                const escapedCaption = (item.caption || '').replace(/"/g, '&quot;');
                 return `
-                <tr class="${isDeleted ? 'deleted-row' : ''}" data-media-id="${item.id}">
+                <tr class="expandable ${isDeleted ? 'deleted-row' : ''}" data-media-id="${item.id}" data-src="${item.src || ''}" data-type="${item.type || 'photo'}" data-caption="${escapedCaption}">
                     <td class="status-cell" data-id="${item.id}" title="${item.statusLabel} - Click to change">${item.status}</td>
                     <td class="emoji-cell">${item.icon}</td>
-                    <td class="id-cell" title="${item.id}">${idLink}</td>
+                    <td class="id-cell" title="${item.id}">${item.id}</td>
                     <td class="chapter-num-cell">${chapterNumBox}</td>
                     <td class="chapter-name-cell">${chapterLink}</td>
                     <td class="date-cell">${item.date}</td>
@@ -1773,19 +1885,52 @@
                         <button class="action-btn delete-btn" data-id="${item.id}" title="Delete">✕</button>
                     </td>
                 </tr>
+                <tr class="preview-row" data-preview-for="${item.id}">
+                    <td colspan="8">
+                        <div class="preview-content">
+                            <div class="preview-media">
+                                <div class="loading-placeholder">Click to load...</div>
+                            </div>
+                            <div class="preview-details">
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">ID:</span>
+                                    <span class="preview-details-value">${item.id}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Type:</span>
+                                    <span class="preview-details-value">${item.type || 'photo'}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Caption:</span>
+                                    <span class="preview-details-value">${item.caption || '—'}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Source:</span>
+                                    <span class="preview-details-value">${item.src || '—'}</span>
+                                </div>
+                                <div class="preview-actions">
+                                    <button class="preview-action-btn primary preview-edit-btn" data-id="${item.id}">Edit</button>
+                                    <button class="preview-action-btn preview-view-btn" data-id="${item.id}" data-src="${item.src || ''}" data-type="${item.type || 'photo'}" data-caption="${escapedCaption}">View Full</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
             `;
             }).join('');
         }
 
         renderTable(allMedia);
 
-        // Status click-to-toggle
+        // ====== CONSOLIDATED CLICK HANDLER FOR CATALOG ======
+        // Handles: status toggle, edit button, delete button, row expansion
         document.getElementById('catalogBody').addEventListener('click', (e) => {
+            // 1. STATUS DOT CLICK - Cycle status
             if (e.target.classList.contains('status-cell')) {
+                e.stopPropagation();
                 const id = e.target.dataset.id;
                 const current = e.target.textContent.trim();
 
-                // Cycle: 🔴 → 🟡 → 🟢 → 🔴
                 let next, nextLabel, nextValue;
                 if (current === '🔴') {
                     next = '🟡'; nextLabel = 'Pending'; nextValue = 'yellow';
@@ -1795,19 +1940,145 @@
                     next = '🔴'; nextLabel = 'Cut'; nextValue = 'red';
                 }
 
-                // Update display
                 e.target.textContent = next;
                 e.target.title = `${nextLabel} - Click to change`;
-
-                // Save to localStorage
                 localStorage.setItem(`media_status_${id}`, nextValue);
+                return;
+            }
+
+            // 2. EDIT BUTTON CLICK - Open edit modal
+            const editBtn = e.target.closest('.edit-btn, .preview-edit-btn');
+            if (editBtn) {
+                e.stopPropagation();
+                const mediaId = editBtn.dataset.id;
+                const media = MEDIA_CONTENT[mediaId];
+
+                if (media) {
+                    document.getElementById('editMediaId').value = mediaId;
+                    document.getElementById('editId').value = mediaId;
+                    document.getElementById('editType').value = media.type || 'photo';
+                    document.getElementById('editCaption').value = media.caption || '';
+                    document.getElementById('editSrc').value = media.src || '';
+                    document.getElementById('editDuration').value = media.duration || '';
+                    document.getElementById('editModalOverlay').classList.add('active');
+                }
+                return;
+            }
+
+            // 3. DELETE BUTTON CLICK - Delete/Restore item
+            const deleteBtn = e.target.closest('.delete-btn');
+            if (deleteBtn) {
+                e.stopPropagation();
+                const mediaId = deleteBtn.dataset.id;
+                const row = deleteBtn.closest('tr');
+                const isDeleted = row.classList.contains('deleted-row');
+
+                if (isDeleted) {
+                    let deleted = getDeletedItems();
+                    deleted = deleted.filter(id => id !== mediaId);
+                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+                    row.classList.remove('deleted-row');
+                } else {
+                    if (confirm(`Delete "${mediaId}" from the catalog?\n\nNote: This hides it from this view. To permanently remove, delete the entry from data/media.js`)) {
+                        deleteMediaItem(mediaId);
+                    }
+                }
+                return;
+            }
+
+            // 4. VIEW FULL BUTTON CLICK - Open full preview modal
+            const viewBtn = e.target.closest('.preview-view-btn');
+            if (viewBtn) {
+                e.stopPropagation();
+                const src = viewBtn.dataset.src;
+                const type = viewBtn.dataset.type;
+                const caption = viewBtn.dataset.caption;
+                const mediaId = viewBtn.dataset.id;
+
+                let content = '';
+                if (['photo', 'photo2', 'selfie', 'newspaper', 'newspaper2', 'receipt', 'pdf', 'attachment', 'text'].includes(type)) {
+                    content = `<img src="${src}" alt="${caption}">`;
+                } else if (['video', 'tv-local', 'tv-network'].includes(type)) {
+                    content = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
+                } else if (['audio', 'radio', 'interview', 'mic', 'phone', 'record'].includes(type)) {
+                    content = `<audio controls autoplay><source src="${src}" type="audio/mpeg"></audio>`;
+                } else {
+                    content = `<img src="${src}" alt="${caption}">`;
+                }
+
+                previewBody.innerHTML = content;
+                previewCaption.textContent = caption || mediaId;
+                previewModal.classList.add('active');
+                return;
+            }
+
+            // 5. Don't expand if clicking on links
+            if (e.target.closest('a')) {
+                return;
+            }
+
+            // 6. ROW CLICK - Expand/collapse preview row
+            const row = e.target.closest('tr.expandable');
+            if (row && !row.classList.contains('preview-row')) {
+                const mediaId = row.dataset.mediaId;
+                const previewRow = document.querySelector(`tr[data-preview-for="${mediaId}"]`);
+
+                // Close all other open previews
+                document.querySelectorAll('.preview-row.active').forEach(r => {
+                    if (r !== previewRow) {
+                        r.classList.remove('active');
+                        const prevRow = r.previousElementSibling;
+                        if (prevRow) prevRow.classList.remove('expanded');
+                    }
+                });
+
+                // Toggle this preview
+                if (previewRow) {
+                    const isExpanding = !previewRow.classList.contains('active');
+                    previewRow.classList.toggle('active');
+                    row.classList.toggle('expanded');
+
+                    // Lazy load media on first expand
+                    if (isExpanding) {
+                        const media = MEDIA_CONTENT[mediaId];
+                        const mediaContainer = previewRow.querySelector('.preview-media');
+                        if (media && media.src && mediaContainer) {
+                            const hasContent = mediaContainer.querySelector('img, video, audio');
+                            if (!hasContent) {
+                                const type = media.type || 'photo';
+                                if (['photo', 'photo2', 'selfie', 'newspaper', 'newspaper2', 'receipt', 'pdf', 'attachment', 'text'].includes(type)) {
+                                    mediaContainer.innerHTML = `<img src="${media.src}" alt="${media.caption || ''}" onerror="this.parentElement.innerHTML='<em style=\\'color:#999;font-size:11px\\'>Image not found</em>'">`;
+                                } else if (['video', 'tv-local', 'tv-network'].includes(type)) {
+                                    mediaContainer.innerHTML = `<video controls style="max-width:200px;max-height:150px"><source src="${media.src}" type="video/mp4"></video>`;
+                                } else if (['audio', 'radio', 'interview', 'mic', 'phone', 'record'].includes(type)) {
+                                    mediaContainer.innerHTML = `<audio controls style="width:200px"><source src="${media.src}" type="audio/mpeg"></audio>`;
+                                } else {
+                                    mediaContainer.innerHTML = `<img src="${media.src}" alt="${media.caption || ''}">`;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Double-click to restore deleted items
+        document.getElementById('catalogBody').addEventListener('dblclick', (e) => {
+            const row = e.target.closest('tr.deleted-row');
+            if (row && document.getElementById('showDeletedToggle').checked) {
+                const mediaId = row.dataset.mediaId;
+                if (confirm(`Restore "${mediaId}"?`)) {
+                    let deleted = getDeletedItems();
+                    deleted = deleted.filter(id => id !== mediaId);
+                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+                    row.classList.remove('deleted-row');
+                }
             }
         });
 
         // Toggle functionality
         function loadSettings() {
             return {
-                showOverload: localStorage.getItem('admin_showOverload') === 'true',
                 showLockedPreviews: localStorage.getItem('admin_showLockedPreviews') === 'true',
                 showCaptions: localStorage.getItem('admin_showCaptions') === 'true',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
@@ -1842,7 +2113,6 @@
         function init() {
             const settings = loadSettings();
 
-            document.getElementById('showOverload').checked = settings.showOverload;
             document.getElementById('showLockedPreviews').checked = settings.showLockedPreviews;
             document.getElementById('showCaptions').checked = settings.showCaptions;
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
@@ -1869,7 +2139,7 @@
             document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
 
             // Add listeners for all toggles
-            const toggles = ['showOverload', 'showLockedPreviews', 'showCaptions',
+            const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments', 'draftContact',
                            'twitterEmbeds', 'maintenanceMode', 'randomButtonText', 'credentialCarousel', 'installPromptEnabled',
@@ -2143,33 +2413,6 @@
             if (e.key === 'Escape') previewModal.classList.remove('active');
         });
 
-        // Open modal on media ID click
-        document.getElementById('catalogBody').addEventListener('click', (e) => {
-            const link = e.target.closest('.media-preview-link');
-            if (link) {
-                e.preventDefault();
-                const src = link.dataset.src;
-                const type = link.dataset.type;
-                const caption = link.dataset.caption;
-                const mediaId = link.dataset.mediaId;
-
-                let content = '';
-                if (['photo', 'photo2', 'selfie', 'newspaper', 'newspaper2', 'receipt', 'pdf', 'attachment', 'text'].includes(type)) {
-                    content = `<img src="${src}" alt="${caption}">`;
-                } else if (['video', 'tv-local', 'tv-network'].includes(type)) {
-                    content = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
-                } else if (['audio', 'radio', 'interview', 'mic', 'phone', 'record'].includes(type)) {
-                    content = `<audio controls autoplay><source src="${src}" type="audio/mpeg"></audio>`;
-                } else {
-                    content = `<img src="${src}" alt="${caption}">`;
-                }
-
-                previewBody.innerHTML = content;
-                previewCaption.textContent = caption || mediaId;
-                previewModal.classList.add('active');
-            }
-        });
-
         // ====== DELETE FUNCTIONALITY ======
         function deleteMediaItem(mediaId) {
             const deleted = getDeletedItems();
@@ -2182,30 +2425,6 @@
             if (row) row.classList.add('deleted-row');
         }
 
-        // Delete/Restore button click handler
-        document.getElementById('catalogBody').addEventListener('click', (e) => {
-            const deleteBtn = e.target.closest('.delete-btn');
-            if (deleteBtn) {
-                e.stopPropagation();
-                const mediaId = deleteBtn.dataset.id;
-                const row = deleteBtn.closest('tr');
-                const isDeleted = row.classList.contains('deleted-row');
-
-                if (isDeleted) {
-                    // Restore
-                    let deleted = getDeletedItems();
-                    deleted = deleted.filter(id => id !== mediaId);
-                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
-                    row.classList.remove('deleted-row');
-                } else {
-                    // Delete
-                    if (confirm(`Delete "${mediaId}" from the catalog?\n\nNote: This hides it from this view. To permanently remove, delete the entry from data/media.js`)) {
-                        deleteMediaItem(mediaId);
-                    }
-                }
-            }
-        });
-
         // ====== EDIT FUNCTIONALITY ======
         const editModal = document.getElementById('editModalOverlay');
         const editCancelBtn = document.getElementById('editCancelBtn');
@@ -2216,26 +2435,6 @@
         editCancelBtn.addEventListener('click', () => editModal.classList.remove('active'));
         editModal.addEventListener('click', (e) => {
             if (e.target === editModal) editModal.classList.remove('active');
-        });
-
-        // Open edit modal
-        document.getElementById('catalogBody').addEventListener('click', (e) => {
-            const editBtn = e.target.closest('.edit-btn');
-            if (editBtn) {
-                e.stopPropagation();
-                const mediaId = editBtn.dataset.id;
-                const media = MEDIA_CONTENT[mediaId];
-
-                if (media) {
-                    document.getElementById('editMediaId').value = mediaId;
-                    document.getElementById('editId').value = mediaId;
-                    document.getElementById('editType').value = media.type || 'photo';
-                    document.getElementById('editCaption').value = media.caption || '';
-                    document.getElementById('editSrc').value = media.src || '';
-                    document.getElementById('editDuration').value = media.duration || '';
-                    editModal.classList.add('active');
-                }
-            }
         });
 
         // Save edit - generates code to copy
@@ -2282,20 +2481,6 @@
             document.querySelectorAll('.deleted-row').forEach(row => {
                 row.style.display = showDeletedToggle.checked ? '' : 'none';
             });
-        });
-
-        // ====== RESTORE DELETED ======
-        document.getElementById('catalogBody').addEventListener('dblclick', (e) => {
-            const row = e.target.closest('tr.deleted-row');
-            if (row && showDeletedToggle.checked) {
-                const mediaId = row.dataset.mediaId;
-                if (confirm(`Restore "${mediaId}"?`)) {
-                    let deleted = getDeletedItems();
-                    deleted = deleted.filter(id => id !== mediaId);
-                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
-                    row.classList.remove('deleted-row');
-                }
-            }
         });
     </script>
 </body>
