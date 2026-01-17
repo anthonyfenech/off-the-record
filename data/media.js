@@ -649,7 +649,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎙️',
         label: 'Audio',
         caption: 'Kinsler Angel Recording',
-        src: './assets/audio-clips/kinsler-angel.mp3',
+        src: './assets/16-summer-2017-ii/kinsler-angel.mp3',
         placeholder: false
     },
 
