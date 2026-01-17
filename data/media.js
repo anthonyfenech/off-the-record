@@ -17,7 +17,7 @@ export const MEDIA_CONTENT = {
         emoji: '📺',
         label: 'Video',
         caption: 'First time on MLB Network',
-        src: './assets/27-postscript/FIRST ON TV.MOV.mov',
+        src: './assets/05-rookie-year/FIRST ON TV.MOV.mov',
         duration: '1:45',
         placeholder: false
     },
@@ -26,7 +26,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎬',
         label: 'Video',
         caption: 'Miguel Cabrera - Batting Practice During COVID',
-        src: './assets/27-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
+        src: './assets/28-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
         placeholder: false
     },
     'fantasy-camp-scrum': {
@@ -34,7 +34,7 @@ export const MEDIA_CONTENT = {
         emoji: '🎬',
         label: 'Video',
         caption: 'Fantasy Camp Scrum',
-        src: './assets/27-postscript/FANTASY CAMP SCRUM.mp4',
+        src: './assets/22-viva-las-vegas/FANTASY CAMP SCRUM.mp4',
         placeholder: false
     },
     'harbaugh-likes-me': {
@@ -114,7 +114,7 @@ export const MEDIA_CONTENT = {
         emoji: '📺',
         label: 'Screenshot',
         caption: 'MLB Network High Heat - Hot Seat Discussion',
-        src: './assets/27-postscript/HIGH HEAT HOT SEAT.png',
+        src: './assets/11-hot-seat/HIGH HEAT HOT SEAT.png',
         placeholder: false
     },
     'victor-barking-dog': {
@@ -122,7 +122,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Victor Martinez - Spring Training 2016',
-        src: './assets/27-postscript/VICTOR BARKING DOG 2017.png',
+        src: './assets/10-spring-training/VICTOR BARKING DOG 2017.png',
         placeholder: false
     },
     'espn-push-alert': {
@@ -814,7 +814,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'Max Scherzer thank you ad in the Detroit Free Press',
-        src: './assets/27-postscript/scherzer-thank-you.png',
+        src: './assets/28-postscript/scherzer-thank-you.png',
         placeholder: false
     },
     'tito-big-series-2019': {
