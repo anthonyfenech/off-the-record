@@ -26,7 +26,6 @@ class BossButton {
         this.overlay = document.getElementById('overlay');
 
         // Cache fake screens
-        this.fakeScreens = {};
         this.screenModes.forEach(mode => {
             this.fakeScreens[mode] = document.getElementById(`fake-screen-${mode}`);
         });
@@ -50,7 +49,7 @@ class BossButton {
     setupEscListener() {
         // ESC key listener - highest priority, capture phase, ALWAYS active
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' || e.key === 'Esc') {
+            if (e.key === 'Escape') {
                 e.preventDefault();
                 e.stopPropagation();
                 this.toggle();
@@ -82,12 +81,7 @@ class BossButton {
         // Click anywhere on fake screen to deactivate
         Object.values(this.fakeScreens).forEach(screen => {
             if (screen) {
-                screen.addEventListener('click', (e) => {
-                    // Only toggle if clicking the background, not interactive elements
-                    if (e.target === screen || e.target.closest('.fake-screen-content')) {
-                        this.deactivate();
-                    }
-                });
+                screen.addEventListener('click', () => this.deactivate());
             }
         });
     }
