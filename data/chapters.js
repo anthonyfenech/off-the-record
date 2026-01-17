@@ -720,7 +720,7 @@ export const CHAPTERS = [
 
 <p>I haven't even started this job in earnest, but already in my young journalism career, I miss being a fan. Enjoying a baseball game. Rooting for players and having a favorite one. I wish I didn't know that some can display real jerk tendencies at times—just wait until you hear about the time I met Miguel Cabrera last year.</p>
 
-<p>Anyways, Verlander. He's a big car guy. Got a garage full of exotics—Aston Martins, Lamborghinis, Porsches, you name it. My car—a 2000 Ford Taurus with nearly 200,000 miles—died a couple days ago. <span class="media-emoji" data-media-id="">📷</span></p>
+<p>Anyways, Verlander. He's a big car guy. Got a garage full of exotics—Aston Martins, Lamborghinis, Porsches, you name it. My car—a 2000 Ford Taurus with nearly 200,000 miles—died a couple days ago. <span class="media-emoji" data-media-id="ford-taurus">📷</span></p>
 
 <p>Breaking the ice, I ask Justin, "Are you pissed off?"</p>
 
@@ -1184,7 +1184,7 @@ export const CHAPTERS = [
 
 <p>My jaw drops. I am on satellite radio with Mad Dog, and he just hit me with that?</p>
 
-<p>Hanging up, I realize I've been hood-winked. It won't take long for Internet Stalker's sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now. <span class="media-emoji" data-media-id="">🔴</span></p>
+<p>Hanging up, I realize I've been hood-winked. It won't take long for Internet Stalker's sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now. <span class="media-emoji" data-media-id="sour-shoes-prank">🔴</span></p>
 
 <p>&nbsp;</p>
 

@@ -589,6 +589,24 @@ export const MEDIA_CONTENT = {
         src: './assets/07-midseason/foul-ball-fox-commentary.mp4',
         placeholder: false
     },
+    'sour-shoes-prank': {
+        type: 'audio',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: 'Sour Shoes prank call from Howard Stern Show',
+        src: '',
+        placeholder: true
+    },
+
+    // Chapter 5 - Rookie Year
+    'ford-taurus': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: '2000 Ford Taurus with nearly 200,000 miles',
+        src: '',
+        placeholder: true
+    },
 
     // Chapter 8 - Trade Deadline
     'email-mozeliak': {
