@@ -3082,7 +3082,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">KANSAS CITY, Mo., <em>May 29</em>—</span>Avila accepts my apology, messaging early Memorial Day: "I read your stuff. Now we can kiss and make up."</p>
 
-<p>I arrive early to the stadium and hop on MLB Network in a suit while Brad Ausmus completes his workout routine around the field. I sweat through my suit in only five minutes on the field. Afterwards, I squat in front of an industrial fan inside the visitor's dugout to dry off.</p>
+<p>I arrive early to the stadium and hop on MLB Network in a suit while Brad Ausmus completes his workout routine around the field. I sweat through my suit in only five minutes on the field. Afterwards, I squat in front of an industrial fan inside the visitor's dugout to dry off. <span class="media-emoji" data-media-id="kc-heat-wave">📷</span></p>
 
 <p>Standing alongside MLB.com's Jason Beck in the clubhouse, I scan the large throwback baseball cards displayed above players' lockers, easily identifying the stadiums the photos were taken in. I acquired this talent rummaging through boxes of my dad's baseball cards in the basement.</p>
 
