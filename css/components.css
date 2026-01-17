@@ -162,6 +162,12 @@
     letter-spacing: 0.5em;
 }
 
+/* Ensure even spacing after scene break */
+.scene-break + p,
+.scene-break + p.has-dateline {
+    margin-top: 2.5rem;
+}
+
 /* Flashback Header */
 .flashback-header {
     font-family: var(--font-mono);
