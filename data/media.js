@@ -692,12 +692,12 @@ export const MEDIA_CONTENT = {
         src: './assets/06-opening-day/5-25-15 i have to be better.jpg',
         placeholder: false
     },
-    'greatest-assignment-7-3-18': {
+    'greatest-assignment-7-30-18': {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Greatest assignment ever love you - July 3, 2018',
-        src: './assets/nu-get-images/7-3-18 greatest assignment ever love you.jpg',
+        caption: 'Greatest assignment ever love you - July 30, 2018',
+        src: './assets/20-cooperstown/7-30-18 greatest assignment ever love you.jpg',
         placeholder: false
     },
     'jfc-go-away-7-13-18': {
