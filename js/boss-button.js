@@ -31,8 +31,6 @@ class BossButton {
 
         // Set up fake screen click listeners
         this.setupFakeScreenListeners();
-
-        console.log('Boss Button: Initialized with', this.screenModes.length, 'rotating screens (ESC key only)');
     }
 
     setupEscListener() {
@@ -91,22 +89,11 @@ class BossButton {
         // Add body class for any additional styling
         document.body.classList.add('boss-mode-active');
 
-        const endTime = performance.now();
-        const duration = endTime - startTime;
-
-        if (duration > 100) {
-            console.warn(`Boss Button: Activation took ${duration.toFixed(2)}ms (target: <100ms)`);
-        } else {
-            console.log(`Boss Button: Activated in ${duration.toFixed(2)}ms`);
-        }
-
         this.logAnalytics('activate');
     }
 
     // Deactivate Boss Mode - restore exact position
     deactivate() {
-        const startTime = performance.now();
-
         // Hide all fake screens
         Object.values(this.fakeScreens).forEach(screen => {
             if (screen) screen.style.display = 'none';
@@ -126,11 +113,6 @@ class BossButton {
 
         // Remove body class
         document.body.classList.remove('boss-mode-active');
-
-        const endTime = performance.now();
-        const duration = endTime - startTime;
-
-        console.log(`Boss Button: Deactivated in ${duration.toFixed(2)}ms`);
 
         this.logAnalytics('deactivate');
     }
@@ -155,8 +137,6 @@ class BossButton {
                 ? (Date.now() - this.lastActivated)
                 : null
         };
-
-        console.log('Boss Button Analytics:', data);
 
         // Dispatch custom event for external analytics integration
         window.dispatchEvent(new CustomEvent('bossButtonAction', { detail: data }));

@@ -11,7 +11,6 @@ class FontSizeManager {
     init() {
         // Apply saved size immediately
         this.applySize(this.currentSize);
-        console.log(`Font size initialized: ${this.currentSize}`);
     }
 
     loadSize() {
@@ -40,8 +39,6 @@ class FontSizeManager {
 
         // Apply to page
         this.applySize(size);
-
-        console.log(`Font size changed to: ${size}`);
     }
 
     applySize(size) {

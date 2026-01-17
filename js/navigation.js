@@ -27,6 +27,7 @@ class Navigation {
         this.touchEndX = 0;
         this.expandedYears = new Set();
         this.expandedSections = new Set();
+        this.expandedGalleries = new Set();
     }
 
     // Initialize navigation
@@ -557,7 +558,6 @@ class Navigation {
     // Initialize photo gallery in the sidebar
     initializePhotoGallery(container) {
         const galleries = getAllGalleries();
-        this.expandedGalleries = new Set();
 
         galleries.forEach(gallery => {
             const gallerySection = document.createElement('div');

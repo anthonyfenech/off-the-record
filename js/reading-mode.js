@@ -32,8 +32,6 @@ class ReadingModeManager {
 
         // Update UI to show current mode
         this.updateToggleUI();
-
-        console.log(`Reading mode initialized: ${this.currentMode}`);
     }
 
     loadMode() {
@@ -48,8 +46,6 @@ class ReadingModeManager {
     }
 
     switchMode(newMode) {
-        console.log(`Switching from ${this.currentMode} to ${newMode}`);
-
         // Save current chapter
         const currentChapter = window.currentChapterId;
 
@@ -68,8 +64,6 @@ class ReadingModeManager {
         window.dispatchEvent(new CustomEvent('readingModeChanged', {
             detail: { mode: newMode }
         }));
-
-        console.log(`Switched to ${newMode} mode`);
     }
 
     applyMode(mode, isSwitch = false) {

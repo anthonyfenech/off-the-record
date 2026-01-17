@@ -27,8 +27,6 @@ class App {
 
     // Start the app
     start() {
-        console.log('OFF-THE-RECORD: Initializing...');
-
         // Check maintenance mode (skip if already on maintenance or admin page)
         if (localStorage.getItem('admin_maintenanceMode') === 'true') {
             const path = window.location.pathname;
@@ -53,7 +51,6 @@ class App {
             this.initHomeLink();
 
             this.isReady = true;
-            console.log('OFF-THE-RECORD: Ready');
 
             // Dispatch ready event
             window.dispatchEvent(new Event('appReady'));

@@ -901,7 +901,6 @@ export const getMediaByType = (type) => {
 // Media type definitions with their emoji mappings
 export const MEDIA_TYPES = {
     photo: { emoji: '📷', label: 'Photo' },
-    photo2: { emoji: '📸', label: 'Photo' },
     video: { emoji: '🎬', label: 'Video' },
     'tv-local': { emoji: '📺', label: 'Local TV' },
     'tv-network': { emoji: '📡', label: 'Network TV' },
