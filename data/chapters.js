@@ -3700,6 +3700,9 @@ export const CHAPTERS = [
             <p>"Yes, the deal is done."</p>
             <p>"Thank you," and nothing more.</p>
             <p>The call lasts eleven seconds. I click here and WIN.</p>
+
+<p class="media-embed"><span class="media-emoji" data-media-id="avila-verlander-trade">📷</span></p>
+
             <p>My name crawls across the bright red breaking news bar on the TV screen. According to Anthony Fenech.</p>
 
             <p>&nbsp;</p>
