@@ -6055,7 +6055,7 @@ export const CHAPTERS = [
 
 <p>"Another one you told PR to announce so I couldn't break it."</p>
 
-<p>I'm confused and grasping for straws. Three weeks after putting Avila's decision-making in the crosshairs, this Sunday's sports front is dedicated to mine. I hurl the remote into the cushion, only serves to inflame me—I want to break something. I'm an unethically stained Ball Writer with no sources, now giving credit to parody accounts: "<a href="https://x.com/NotIanKinsler" target="_blank">@NotIanKinsler</a> was first to report the Castro promotion."</p>
+<p>I'm confused and grasping for straws. Three weeks after putting Avila's decision-making in the crosshairs, this Sunday's sports front is dedicated to mine. I hurl the remote into the cushion, only serves to inflame me—I want to break something. I'm an unethically stained Ball Writer with no sources, now giving credit to parody accounts: "<a href="https://x.com/anthonyfenech/status/1165671468509929473?s=20" target="_blank">@NotIanKinsler was first to report the Castro promotion.</a>"</p>
 
 <p>Embarrassed and angry, even after cooling off, I message HSITL: "Hey, taking a step back. Been a long week for me personally and professionally. I understand our relationship has changed and I am not going to scorch Earth every time you don't help me."</p>
 
