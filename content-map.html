@@ -685,6 +685,23 @@
       font-family: inherit;
     }
 
+    .modal-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .modal-field-half {
+      flex: 1;
+    }
+
+    .modal-field-half label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
     .modal-buttons {
       display: flex;
       justify-content: flex-end;
@@ -863,6 +880,17 @@
       <textarea id="inputContent" placeholder="Section content..."></textarea>
     </div>
 
+    <div class="modal-row" id="wordsDateRow">
+      <div id="wordsField" class="modal-field-half">
+        <label>Word Count</label>
+        <input type="number" id="inputWords" min="0" placeholder="0">
+      </div>
+      <div id="dateField" class="modal-field-half">
+        <label>Date</label>
+        <input type="date" id="inputDate">
+      </div>
+    </div>
+
     <div id="categoryField">
       <label>Category</label>
       <select id="inputCategory">
@@ -886,16 +914,6 @@
         <option value="directors-cut">Director's Cut</option>
         <option value="new">New Material</option>
       </select>
-    </div>
-
-    <div id="wordsField">
-      <label>Word Count</label>
-      <input type="number" id="inputWords" min="0" placeholder="0">
-    </div>
-
-    <div id="dateField">
-      <label>Date</label>
-      <input type="date" id="inputDate">
     </div>
 
     <div class="modal-buttons">
@@ -1530,8 +1548,7 @@ document.getElementById('addSectionBtn').addEventListener('click', () => {
   document.getElementById('modalTitle').textContent = 'Add Section';
   document.getElementById('categoryField').style.display = 'none';
   document.getElementById('editionField').style.display = 'block';
-  document.getElementById('wordsField').style.display = 'block';
-  document.getElementById('dateField').style.display = 'block';
+  document.getElementById('wordsDateRow').style.display = 'flex';
   document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
   document.getElementById('inputContent').value = '';
@@ -1547,8 +1564,7 @@ document.getElementById('addBreakBtn').addEventListener('click', () => {
   document.getElementById('modalTitle').textContent = 'Add Chapter Break';
   document.getElementById('categoryField').style.display = 'none';
   document.getElementById('editionField').style.display = 'none';
-  document.getElementById('wordsField').style.display = 'none';
-  document.getElementById('dateField').style.display = 'none';
+  document.getElementById('wordsDateRow').style.display = 'none';
   document.getElementById('contentField').style.display = 'none';
   document.getElementById('inputTitle').value = '';
   document.getElementById('modal').classList.add('open');
@@ -1560,8 +1576,7 @@ document.getElementById('addFloorBtn').addEventListener('click', () => {
   document.getElementById('modalTitle').textContent = 'Add to Cutting Room Floor';
   document.getElementById('categoryField').style.display = 'block';
   document.getElementById('editionField').style.display = 'block';
-  document.getElementById('wordsField').style.display = 'block';
-  document.getElementById('dateField').style.display = 'block';
+  document.getElementById('wordsDateRow').style.display = 'flex';
   document.getElementById('contentField').style.display = 'block';
   document.getElementById('inputTitle').value = '';
   document.getElementById('inputContent').value = '';
