@@ -777,7 +777,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'August 21, 2019',
-        src: './assets/nu-get-images/2019:08:21 9-37-51 PM.JPG',
+        src: './assets/25-letter-to-the-editor/2019:08:21 9-37-51 PM.JPG',
         placeholder: false
     },
     'photo-2019-08-24': {
