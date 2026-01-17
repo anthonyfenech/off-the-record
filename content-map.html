@@ -1902,14 +1902,11 @@ document.addEventListener('click', e => {
     return;
   }
 
-  // Click on box to open detail
+  // Click on box to open detail (both chapters and sections)
   const box = e.target.closest('.box');
   if (box && !e.target.closest('button')) {
     const id = parseInt(box.dataset.id);
-    const item = bookItems.find(i => i.id === id);
-    if (item && item.type === 'section') {
-      openDetail(id);
-    }
+    openDetail(id);
   }
 
   // Click on floor item to edit
