@@ -1678,6 +1678,12 @@
                 <label>Duration (for audio/video)</label>
                 <input type="text" id="editDuration" placeholder="e.g., 2:30">
             </div>
+            <div class="form-group">
+                <label>Chapter</label>
+                <select id="editChapter">
+                    <option value="">-- Unassigned --</option>
+                </select>
+            </div>
             <div class="edit-modal-actions">
                 <button class="delete-modal-btn" id="editDeleteBtn">🗑</button>
                 <button class="cancel-btn" id="editCancelBtn">Cancel</button>
@@ -1980,6 +1986,7 @@
                 e.stopPropagation();
                 const mediaId = editBtn.dataset.id;
                 const media = MEDIA_CONTENT[mediaId];
+                const mediaItem = allMedia.find(m => m.id === mediaId);
 
                 if (media) {
                     document.getElementById('editMediaId').value = mediaId;
@@ -1988,6 +1995,9 @@
                     document.getElementById('editCaption').value = media.caption || '';
                     document.getElementById('editSrc').value = media.src || '';
                     document.getElementById('editDuration').value = media.duration || '';
+                    // Set chapter dropdown
+                    const chapterSelect = document.getElementById('editChapter');
+                    chapterSelect.value = mediaItem?.chapterNum || '';
                     document.getElementById('editModalOverlay').classList.add('active');
                 }
                 return;
@@ -2042,6 +2052,20 @@
 
             // 5. Don't expand if clicking on links
             if (e.target.closest('a')) {
+                return;
+            }
+
+            // 5.5. CLICK IN PREVIEW ROW TO COLLAPSE (except on buttons/inputs)
+            const previewRowClick = e.target.closest('tr.preview-row');
+            if (previewRowClick && previewRowClick.classList.contains('active')) {
+                // Don't collapse if clicking on buttons or interactive elements
+                if (!e.target.closest('button') && !e.target.closest('input') &&
+                    !e.target.closest('select') && !e.target.closest('video') &&
+                    !e.target.closest('audio')) {
+                    previewRowClick.classList.remove('active');
+                    const dataRow = previewRowClick.previousElementSibling;
+                    if (dataRow) dataRow.classList.remove('expanded');
+                }
                 return;
             }
 
@@ -2343,6 +2367,15 @@
 
         init();
 
+        // Populate chapter dropdown
+        const editChapterSelect = document.getElementById('editChapter');
+        CHAPTERS.forEach(ch => {
+            const opt = document.createElement('option');
+            opt.value = ch.id;
+            opt.textContent = `${ch.id}. ${ch.title}`;
+            editChapterSelect.appendChild(opt);
+        });
+
         // Legend toggle
         const legendBtn = document.getElementById('legendBtn');
         const legendDropdown = document.getElementById('legendDropdown');
@@ -2440,20 +2473,63 @@
             if (e.target === editModal) editModal.classList.remove('active');
         });
 
-        // Save edit - generates code to copy
+        // Save edit - updates in-memory data AND generates code to copy
         editSaveBtn.addEventListener('click', () => {
             const mediaId = document.getElementById('editMediaId').value;
             const type = document.getElementById('editType').value;
             const caption = document.getElementById('editCaption').value;
             const src = document.getElementById('editSrc').value;
             const duration = document.getElementById('editDuration').value;
+            const chapter = document.getElementById('editChapter').value;
 
             const emojiMap = {
                 photo: '📷', newspaper: '📰', link: '🔗', tweet: '🐦',
                 email: '✉️', text: '💬', video: '🎬', audio: '🎙️'
             };
 
-            const code = `    '${mediaId}': {
+            // Update in-memory MEDIA_CONTENT
+            if (MEDIA_CONTENT[mediaId]) {
+                MEDIA_CONTENT[mediaId].type = type;
+                MEDIA_CONTENT[mediaId].caption = caption;
+                MEDIA_CONTENT[mediaId].src = src;
+                MEDIA_CONTENT[mediaId].duration = duration || undefined;
+                MEDIA_CONTENT[mediaId].emoji = emojiMap[type] || '📷';
+            }
+
+            // Update allMedia array
+            const mediaIndex = allMedia.findIndex(m => m.id === mediaId);
+            if (mediaIndex !== -1) {
+                allMedia[mediaIndex].type = type;
+                allMedia[mediaIndex].caption = caption;
+                allMedia[mediaIndex].src = src;
+                allMedia[mediaIndex].icon = emojiMap[type] || '📷';
+                allMedia[mediaIndex].time = duration ? formatDuration(duration) : '—';
+                if (chapter) {
+                    const chapterData = CHAPTERS.find(c => c.id === parseInt(chapter));
+                    allMedia[mediaIndex].chapterNum = parseInt(chapter);
+                    allMedia[mediaIndex].chapterName = chapterData?.title || '';
+                }
+            }
+
+            // Update the preview row content
+            const previewRow = document.querySelector(`tr[data-preview-for="${mediaId}"]`);
+            if (previewRow) {
+                const captionEl = previewRow.querySelector('.preview-details-value');
+                if (captionEl) {
+                    const rows = previewRow.querySelectorAll('.preview-details-row');
+                    rows.forEach(row => {
+                        const label = row.querySelector('.preview-details-label')?.textContent;
+                        const valueEl = row.querySelector('.preview-details-value');
+                        if (label === 'Caption:' && valueEl) valueEl.textContent = caption || '—';
+                        if (label === 'Type:' && valueEl) valueEl.textContent = type;
+                        if (label === 'Source:' && valueEl) valueEl.textContent = src || '—';
+                    });
+                }
+            }
+
+            // Generate code for clipboard
+            const chapterComment = chapter ? `  // Chapter ${chapter}` : '';
+            const code = `    '${mediaId}': {${chapterComment}
         type: '${type}',
         emoji: '${emojiMap[type] || '📷'}',
         label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
@@ -2464,7 +2540,7 @@
 
             // Copy to clipboard
             navigator.clipboard.writeText(code).then(() => {
-                alert(`Updated code copied to clipboard!\n\nReplace the entry in data/media.js with:\n\n${code}`);
+                alert(`Saved! Code copied to clipboard.\n\nTo make permanent, update data/media.js with:\n\n${code}`);
                 editModal.classList.remove('active');
             });
         });
