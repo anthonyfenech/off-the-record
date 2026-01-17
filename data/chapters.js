@@ -5797,7 +5797,8 @@ export const CHAPTERS = [
 
 <p class="flashback-header">AIRPLANE MODE</p>
 
-<div class="messages">
+<p></p>
+
 <p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
 
 <p>BBWAA President: Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
@@ -5843,7 +5844,6 @@ export const CHAPTERS = [
 <p>Orioles Scout: Just read your name in ESPN. That's great. Getting your name out there!</p>
 
 <p>Mom: Omg. Call when you can.</p>
-</div>
 
 <p class="scene-break">***</p>
 
@@ -6037,7 +6037,7 @@ export const CHAPTERS = [
 
 <p>Thankfully, I wasn't scheduled to follow the team to Minnesota for the rest of the road trip. But in Ball Writing, as in life, the news always seems to find you.</p>
 
-<p>Lunchtime, a fire breaks out—Twitter user <a href="https://x.com/NotIanKinsler" target="_blank">@NotIanKinsler</a> says prospect Willi Castro is being called up.</p>
+<p>Lunchtime, a fire breaks out—Twitter user @NotIanKinsler says prospect Willi Castro is being called up.</p>
 
 <p>"Report that I had it first," Not Ian Kinsler tweets.</p>
 
@@ -6049,7 +6049,7 @@ export const CHAPTERS = [
 
 <p>"Another one you told PR to announce so I couldn't break it."</p>
 
-<p>I'm confused and grasping for straws. Three weeks after putting Avila's decision-making in the crosshairs, this Sunday's sports front is dedicated to mine. I hurl the remote into the cushion, only serves to inflame me—I want to break something. I'm an unethically stained Ball Writer with no sources, now giving credit to parody accounts: "<a href="https://x.com/NotIanKinsler" target="_blank">@NotIanKinsler</a> was first to report the Castro promotion."</p>
+<p>I'm confused and grasping for straws. Three weeks after putting Avila's decision-making in the crosshairs, this Sunday's sports front is dedicated to mine. I hurl the remote into the cushion, only serves to inflame me—I want to break something. I'm an unethically stained Ball Writer with no sources, now giving credit to parody accounts: "@NotIanKinsler was first to report the Castro promotion."</p>
 
 <p>Embarrassed and angry, even after cooling off, I message HSITL: "Hey, taking a step back. Been a long week for me personally and professionally. I understand our relationship has changed and I am not going to scorch Earth every time you don't help me."</p>
 
@@ -7019,7 +7019,7 @@ export const CHAPTERS = [
 
 <p>Cabrera was loosening up with a weighted bat when he saw me. "Hey, bitch." Bringing it in for a handshake, he pretended to hit me upside the head—some things never change.</p>
 
-<p>Inside the cage, Cabrera laced the JUGS machine. Line drives into the net, off the pitching screen and smack-dab into the heart of a paper target, hanging from a zip-tie to indicate straightaway center field. What I remember most is the sound as his bat smacked the ball, echoing around the garage like a shotgun blast. <span class="media-emoji" data-media-id="miguel-bp-covid">🎬</span></p>
+<p>Inside the cage, Cabrera laced the JUGS machine. Line drives into the net, off the pitching screen and smack-dab into the heart of a paper target, hanging from a zip-tie to indicate straightaway center field. What I remember most is the sound as his bat smacked the ball, echoing around the garage like a shotgun blast.</p>
 
 <p>After working up a sweat, Miggy and his crew—including fellow Venezuelan Hittin' Harold Castro—packed into a black Range Rover with dark window tints and drove off. It was the last exclusive of my career, the old-school kind—taking readers somewhere they couldn't go. It was the closest any Ball Writer got to Cabrera all season.</p>
 
