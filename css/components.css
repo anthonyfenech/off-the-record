@@ -150,8 +150,7 @@
 /* Block Quote (emails, letters, documents) */
 .block-quote {
     margin: var(--space-xl) 0;
-    padding: var(--space-lg) var(--space-xl);
-    border-left: 3px solid var(--color-border);
+    padding: var(--space-lg) 0;
     background-color: var(--color-accent-light);
     text-indent: 0 !important;
 }
