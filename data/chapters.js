@@ -1986,7 +1986,11 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>March 13</em>—</span>Although Opening Day is still three weeks away, our season preview section is slated for two days before. That makes the drop-dead deadline for my big feature story eighteen days—and I still don’t have a subject for it when I’m forwarded this email.</p>
 
+<p>&nbsp;</p>
+
 <p>Subject: FW: Kate Upton - Grand Slam Adoption Event</p>
+
+<p>&nbsp;</p>
 
 <p>It’s a press release for an upcoming dog-adoption event hosted by supermodel Kate Upton and her boyfriend, Justin Verlander, forwarded by our entertainment reporter.</p>
 
