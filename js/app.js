@@ -6,6 +6,7 @@ import { pwa } from './pwa.js';
 import { photoGallery } from './photoGallery.js';
 import { bookmarks } from './bookmarks.js';
 import { bossButton } from './boss-button.js';
+import { auth } from './auth.js';
 import { CHAPTERS } from '../data/chapters.js';
 
 class App {
@@ -19,9 +20,23 @@ class App {
     init() {
         // Wait for DOM to be ready
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.start());
+            document.addEventListener('DOMContentLoaded', () => this.checkAuth());
         } else {
+            this.checkAuth();
+        }
+    }
+
+    // Check authentication before starting
+    checkAuth() {
+        // Initialize auth gate
+        const isAuthenticated = auth.init();
+
+        if (isAuthenticated) {
+            // Already authenticated, start the app
             this.start();
+        } else {
+            // Wait for successful authentication
+            window.addEventListener('authSuccess', () => this.start(), { once: true });
         }
     }
 

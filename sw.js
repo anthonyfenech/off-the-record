@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v338';
-const STATIC_CACHE = 'off-the-record-static-v338';
-const CONTENT_CACHE = 'off-the-record-content-v338';
+const CACHE_VERSION = 'v339';
+const STATIC_CACHE = 'off-the-record-static-v339';
+const CONTENT_CACHE = 'off-the-record-content-v339';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -29,6 +29,7 @@ const STATIC_ASSETS = [
     './js/font-size.js',
     './js/search.js',
     './js/config.js',
+    './js/auth.js',
     './data/chapters.js'
 ];
 

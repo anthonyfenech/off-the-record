@@ -48,6 +48,27 @@
             document.body.classList.add('boss-button-enabled');
         }
     </script>
+
+    <!-- Password Gate (Beta Access) -->
+    <div id="passwordGate" class="password-gate">
+        <div class="password-gate-content">
+            <h1 class="password-gate-title">OFF-THE-RECORD</h1>
+            <p class="password-gate-subtitle">Beta Access</p>
+            <form id="passwordForm" class="password-form">
+                <input
+                    type="password"
+                    id="passwordInput"
+                    class="password-input"
+                    placeholder="Enter password"
+                    autocomplete="off"
+                    autofocus
+                >
+                <button type="submit" class="password-submit">ENTER</button>
+                <p id="passwordError" class="password-error">Incorrect password</p>
+            </form>
+        </div>
+    </div>
+
     <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="header-content">
@@ -107,6 +128,9 @@
         <nav class="toc-content" id="tocContent">
             <!-- Populated by JavaScript -->
         </nav>
+        <div class="toc-footer">
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
     </aside>
 
     <!-- Overlay for TOC -->
