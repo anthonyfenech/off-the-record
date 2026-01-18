@@ -4313,12 +4313,9 @@ export const CHAPTERS = [
             <p>After workouts, I meet Tigers bench coach Steve Liddle on the back fields. I introduce myself and we walk across a field, getting to know one another.</p>
             <p>Liddle walks into the clubhouse through a back door. I walk around and enter through the lobby.</p>
             <p>Inside the dressing room, I feel an unusual energy—and eyes on me. Sauntering to the major-league side, I see why.</p>
-            <p>Sheets of paper are taped to the top shelf of each locker stall. I immediately recognize my handiwork:</p>
+            <p>Sheets of paper are taped to the top shelf of each locker stall. I immediately recognize my handiwork: Detroit Tigers Will Stink in 2018, Anthony Fenech, Detroit Free Press.</p>
 
-            <p><strong>Detroit Tigers Will Stink in 2018</strong><br>
-            Anthony Fenech, Detroit Free Press</p>
-
-            <p class="no-indent">I pop my head into Gardy's office before leaving. He's sitting at his desk. Liddle is in a chair across from him.</p>
+            <p>I pop my head into Gardy's office before leaving. He's sitting at his desk. Liddle is in a chair across from him.</p>
             <p>I tap the doorframe.</p>
             <p>"I'm a big boy; I can take it. If you ever need me to light a fire under them, let me know."</p>
             <p>They laugh. I know where the sheets came from. Liddle printed them himself.</p>
