@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v357';
-const STATIC_CACHE = 'off-the-record-static-v357';
-const CONTENT_CACHE = 'off-the-record-content-v357';
+const CACHE_VERSION = 'v358';
+const STATIC_CACHE = 'off-the-record-static-v358';
+const CONTENT_CACHE = 'off-the-record-content-v358';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -12,29 +12,29 @@ const STATIC_ASSETS = [
     './photos.html',
     './money-mode.html',
     './manifest.json',
-    './css/fonts.css',
-    './css/reset.css',
-    './css/variables.css',
-    './css/typography.css',
-    './css/layout.css',
-    './css/components.css',
+    './css/fonts.min.css',
+    './css/reset.min.css',
+    './css/variables.min.css',
+    './css/typography.min.css',
+    './css/layout.min.css',
+    './css/components.min.css',
     './fonts/literata-regular.woff2',
     './fonts/literata-regular-ext.woff2',
     './fonts/literata-italic.woff2',
     './fonts/literata-italic-ext.woff2',
-    './js/app.js',
-    './js/reader.js',
-    './js/navigation.js',
-    './js/storage.js',
-    './js/pwa.js',
-    './js/blog.js',
-    './js/guestbook.js',
-    './js/bookmarks.js',
-    './js/reading-mode.js',
-    './js/font-size.js',
-    './js/search.js',
-    './js/config.js',
-    './js/auth.js',
+    './js/app.min.js',
+    './js/reader.min.js',
+    './js/navigation.min.js',
+    './js/storage.min.js',
+    './js/pwa.min.js',
+    './js/blog.min.js',
+    './js/guestbook.min.js',
+    './js/bookmarks.min.js',
+    './js/reading-mode.min.js',
+    './js/font-size.min.js',
+    './js/search.min.js',
+    './js/config.min.js',
+    './js/auth.min.js',
     './data/chapters.js'
 ];
 
