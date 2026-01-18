@@ -3362,6 +3362,7 @@ body.home-page .boss-btn-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 15vh;
 }
 
 .password-gate-content {
@@ -3377,7 +3378,7 @@ body.home-page .boss-btn-mobile {
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
     color: var(--color-text-primary);
 }
 
