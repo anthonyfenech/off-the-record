@@ -53,6 +53,14 @@ export const MEDIA_CONTENT = {
         src: '',
         placeholder: true
     },
+    'crasnick-column': {
+        type: 'link',
+        emoji: '📰',
+        label: 'Article',
+        caption: 'ESPN: Opposite ends of MLB manager spectrum succeed',
+        src: 'https://www.espn.co.uk/mlb/story/_/id/22873239/opposite-ends-mlb-manager-spectrum-succeed',
+        placeholder: false
+    },
     'cabreras-kicks': {
         type: 'photo',
         emoji: '📷',

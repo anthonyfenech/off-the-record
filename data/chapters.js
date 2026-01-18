@@ -4326,7 +4326,7 @@ export const CHAPTERS = [
             <p>"I'm a big boy; I can take it. If you ever need me to light a fire under them, let me know."</p>
             <p>They laugh. I know where the sheets came from. Liddle printed them himself.</p>
             <p>Walking away, I feel like The Man. The team's dominant veteran presence has dissolved, leaving a group of young guys. I've been in major-league clubhouses longer than most of them.</p>
-            <p>ESPN.com's Jerry Crasnick asks if he can mention Gardy's ploy in a column.</p>
+            <p>ESPN.com's Jerry Crasnick asks if he can mention Gardy's ploy in a column. <span class="media-emoji" data-media-id="crasnick-column">📰</span></p>
             <p>"<em>Gardenhire isn't averse to some time-honored motivational tactics. Shortly thereafter, copies of the story were hanging in each player's locker, courtesy of the manager.</em>"</p>
 
             <p>&nbsp;</p>
