@@ -14,9 +14,13 @@
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
     <link rel="apple-touch-icon" href="./assets/icons/icon-180.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+    
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="./fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Self-hosted fonts (no external request) -->
+    <link rel="stylesheet" href="./css/fonts.css">
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/variables.css">
