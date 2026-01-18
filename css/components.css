@@ -4,8 +4,8 @@
 .home-content {
     text-align: center;
     padding: 0 var(--padding-mobile);
-    padding-top: 8vh;
-    min-height: 80vh;
+    padding-top: 20vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -24,8 +24,8 @@
 
 .home-sticker {
     position: absolute;
-    bottom: 18vh;
-    right: 20%;
+    bottom: 55px;
+    right: 0;
     width: 80px;
     height: auto;
 }
