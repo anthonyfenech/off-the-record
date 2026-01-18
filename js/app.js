@@ -27,15 +27,6 @@ class App {
 
     // Start the app
     start() {
-        // Check maintenance mode (skip if already on maintenance or admin page)
-        if (localStorage.getItem('admin_maintenanceMode') === 'true') {
-            const path = window.location.pathname;
-            if (!path.includes('maintenance.html') && !path.includes('admin.html')) {
-                window.location.href = './maintenance.html';
-                return;
-            }
-        }
-
         try {
             // Initialize core modules
             reader.init();
