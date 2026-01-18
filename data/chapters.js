@@ -4305,7 +4305,9 @@ export const CHAPTERS = [
             <p><em>Are you looking forward to helping some of the young guys</em>?</p>
             <p>Martínez answers none of them. Doesn't raise his noggin to look at me. He simply ignores me, as he's done since the Very Serious Story last year.</p>
 
-            <p class="has-dateline no-indent"><span class="dateline no-indent">There's a new sheriff in town.</span></p>
+            <p>&nbsp;</p>
+
+            <p>There's a new sheriff in town.</p>
             <p>Ron Gardenhire comes to Detroit after managing thirteen mostly successful seasons for Minnesota. Gardenhire's coaching staff is nearly a carbon-copy of his Twins crew—a loyal bunch of baseball men he trusts.</p>
             <p>Gardy brings a new vibe—they put together a playlist for infield warm-ups. Johnny Cash blasts from a big speaker while infielders take ground balls. Zero expectations. Players are loose.</p>
             <p>In his first meeting with the team, Gardenhire told 'em, "I don't know any of you guys, so I'm just going to call you 'buddy' when you're running around—until I can get a look at the back of your uniform."</p>
