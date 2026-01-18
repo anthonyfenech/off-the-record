@@ -4318,7 +4318,7 @@ export const CHAPTERS = [
             <div class="article-citation">
                 <p class="citation-title">Detroit Tigers Will Stink in 2018</p>
                 <p class="citation-byline">Anthony Fenech, Detroit Free Press</p>
-                <p class="citation-link"><a href="https://www.freep.com/story/sports/mlb/tigers/2018/02/12/detroit-tigers-spring-training/328555002/" target="_blank">(link)</a></p>
+                <p class="citation-link"><a href="https://www.freep.com/story/sports/mlb/tigers/2018/02/12/detroit-tigers-spring-training/328555002/" target="_blank">https://www.freep.com/story/sports/mlb/tigers/2018/02/12/detroit-tigers-spring-training/328555002/</a></p>
             </div>
 
             <p>I pop my head into Gardy's office before leaving. He's sitting at his desk. Liddle is in a chair across from him.</p>
