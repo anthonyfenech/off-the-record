@@ -558,7 +558,7 @@ export const CHAPTERS = [
 
 <p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. <span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span> He's digging up Facebook messages from college and posting them, too.</p>
 
-<p>So let me come clean: Months away from my twenty-first birthday, I got a DUI after flipping my PT Cruiser on the freeway. I was drinking on an empty stomach, changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
+<p>So let me come clean: Months away from my twenty-first birthday, I got a DUI after flipping my PT Cruiser on the freeway. I was drinking on an empty stomach, changed lanes at high speed, and went airborne. My mom picked me up from the hospital. <span class="media-emoji" data-media-id="dui-report">📄</span></p>
 
 <p>Almost forgotten until now, when it's currently online. Twelve RTs and counting.</p>
 
@@ -578,7 +578,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>At the winter meetings, hundreds of reporters gather in hotel ballrooms chasing scoops. We're usually cooped up in the media room, with a main stage where press conferences are held, trades announced, and newly inducted Hall of Famers talk about being speechless.</p>
+<p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>At the winter meetings, hundreds of reporters gather in hotel ballrooms chasing scoops. <span class="media-emoji" data-media-id="winter-meetings-12-7-14">📷</span> We're usually cooped up in the media room, with a main stage where press conferences are held, trades announced, and newly inducted Hall of Famers talk about being speechless.</p>
 
 <p>I walk with a purpose, pretending I am a somebody. I stop Ken Rosenthal, as short in person as advertised on Twitter (5-foot-4½), introducing myself. Nice guy.</p>
 
@@ -2512,7 +2512,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>October 21</em>—</span>Some sad news to share today.</p>
 
-<p>Longtime <em>Free Press</em> sports columnist Drew Sharp died yesterday. I met Sharp eleven years ago, fresh out of high school working my first internship at Detroit's AM-dial sports station. Sharp occasionally filled in as co-host. During commercial breaks I'd ask Sharp about sports writing. More recently, he was my co-host on the Talkin' Tigers podcast. <span class="media-emoji" data-media-id="talkin-tigers-drew">📷</span></p>
+<p>Longtime <em>Free Press</em> sports columnist Drew Sharp died yesterday. I met Sharp eleven years ago, fresh out of high school working my first internship at Detroit's AM-dial sports station. Sharp occasionally filled in as co-host. During commercial breaks I'd ask Sharp about sports writing. More recently, he was my co-host on the Talkin' Tigers podcast. <span class="media-emoji" data-media-id="photo-2016-10-26">📷</span></p>
 
 <p>By then, the native Detroiter had become quite comfortable as a local lightning rod, often taking the pessimist perspective, toying with fans' fragile feelings. I know—I hated Sharp. I crossed Xs through his column sig. But I always found myself reading what he wrote—and underlining words I didn't know.</p>
 
@@ -2798,7 +2798,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>January 27, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed "Freep Forward," top editors introduce new Gannett gobbledygook.</p>
+<p class="has-dateline no-indent"><span class="dateline">DETROIT, <em>January 27, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed "Freep Forward," top editors introduce new Gannett gobbledygook. <span class="media-emoji" data-media-id="freep-forward">📄</span></p>
 
 <p>My job hasn't changed, but others have—general assignment reporters are now "storytelling writers," editors are "directors," and assistant editors are "planners." The photo/video desk is now the "consumer product team."</p>
 
@@ -3358,7 +3358,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>August 15</em>—</span><span class="small-caps">WHAT'S SAID IN HERE, STAYS IN HERE</span>.</p>
 
-<p>A big banner hangs on the wall in the visitor's clubhouse here, above where Ian Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández. Hernández ejected Kinsler last night for arguing balls and strikes.</p>
+<p>A big banner hangs on the wall in the visitor's clubhouse here, above where Ian Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández. Hernández ejected Kinsler last night for arguing balls and strikes. <span class="media-emoji" data-media-id="kinsler-angel">🔴</span></p>
 
 <p>"He's messing with baseball games. Blatantly. It's not just like a borderline call here or there… I didn't even cuss at him. I just said you need to re-evaluate your life, man… I'm just saying it's pretty obvious that he needs to stop ruining baseball games… He needs to find another job… If I get fined for saying the truth, then so be it… He's that bad. I'm not mad at him for being bad. He just has to go away."</p>
 
@@ -4219,7 +4219,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline"><span class="dateline">SECAUCUS, N.J., <em>February 7</em>—</span>Making my annual pit stop at MLB Network. This year, I’m a panelist on the network’s afternoon show.</p>
+<p class="has-dateline"><span class="dateline">SECAUCUS, N.J., <em>February 7</em>—</span>Making my annual pit stop at MLB Network. This year, I'm a panelist on the network's afternoon show. <span class="media-emoji" data-media-id="photo-2018-02-07">📷</span></p>
 
 <p>I arrive five hours early. We’re opening with the ongoing free-agent saga of J.D. Martinez.</p>
 
@@ -4330,7 +4330,7 @@ export const CHAPTERS = [
 
             <p class="has-dateline no-indent"><span class="dateline"><em>February 20</em>—</span>Out killing time on the back fields when Miggy appears.</p>
             <p>He's out walking early and sits next to me on a silver titanium grandstand behind the backstop of Field No. 3. Nobody else is here. I ask about his first baseman's glove. The moment seems right, so I put it on and imagine snagging balls at first like Miggy.</p>
-            <p>As we chat, a crowd of fans gathers beyond the gate. Miggy hops down and signs autographs.</p>
+            <p>As we chat, a crowd of fans gathers beyond the gate. Miggy hops down and signs autographs. <span class="media-emoji" data-media-id="chillen-right-before-2-21-18">📷</span></p>
             <p>When workouts commence, I text Pedro Gomez.</p>
             <p>"Lengthy baseball talk with Miguel on the bench today, a conversation. Víctor was next to him (for part of this time). I didn't talk to Víctor but Miguel talking to me was big. He will be that bridge."</p>
             <p>"<span class="small-caps">THAT</span> is how you cover a baseball beat."</p>
@@ -4354,7 +4354,7 @@ export const CHAPTERS = [
 
             <p class="has-dateline no-indent"><span class="dateline">SARASOTA, Fla., <em>February 26</em>—</span>On another postcard-perfect spring day, I drive to Ed Smith Stadium, spring home of the Baltimore Orioles. A message pops in from my boss. Wondering whether it could ruin my day, I wait to read it until the song ends.</p>
             <p>"Congrats on the APSE. Very well done."</p>
-            <p>Big News! I won an award in this year's Associated Press Sports Editors' national contest—the Super Bowl for sports news organizations.</p>
+            <p>Big News! I won an award in this year's Associated Press Sports Editors' national contest—the Super Bowl for sports news organizations. <span class="media-emoji" data-media-id="apse-top-10">🏅</span></p>
             <p>I finished top ten in beat writing among all those entered in APSE's highest-circulation category. All sports, college and pro, National Guys included.</p>
             <p>The contest is judged on a variety of stories—features, game stories and breaking news. Chris Thomas thought I had a chance, so he submitted an entry. I won for my coverage of the last-place team in baseball.</p>
             <p>As Seamhead John Lowe says: "It's easy to cover a winning team. Anybody can do that."</p>
@@ -4587,7 +4587,7 @@ export const CHAPTERS = [
         subtitle: "",
         teaser: "A pilgrimage to baseball's shrine.",
         content: `
-            <p class="has-dateline"><span class="dateline">COOPERSTOWN, N.Y., <em>July 27</em>—</span>The first rule of the Cooperstown House is you don't talk about the Cooperstown House.</p>
+            <p class="has-dateline"><span class="dateline">COOPERSTOWN, N.Y., <em>July 27</em>—</span>The first rule of the Cooperstown House is you don't talk about the Cooperstown House. <span class="media-emoji" data-media-id="greatest-assignment-7-30-18">📷</span></p>
             <p>"Incognito," Kirk Gibson texts me. "U will get killed if you blow our cover."</p>
             <p>It's Friday afternoon, and three married couples and I have gathered at a cottage off a county road in central New York to live together for the weekend. They are here to celebrate their friends and former Tiger teammates Jack Morris and Alan Trammell getting inducted into the Baseball Hall of Fame. I'm here out of dumb luck, a last-minute replacement for another couple who couldn't come. I'm also here as a Ball Writer to cover induction ceremony weekend.</p>
             <p>I was invited.</p>
@@ -4864,7 +4864,7 @@ export const CHAPTERS = [
 
             <p>&nbsp;</p>
 
-            <p class="has-dateline no-indent"><span class="dateline"><em>September 12</em>—</span>And here we are. Same spot as yesterday, I pull the recorder from my back pocket. We're on the record.</p>
+            <p class="has-dateline no-indent"><span class="dateline"><em>September 12</em>—</span>And here we are. Same spot as yesterday, I pull the recorder from my back pocket. We're on the record. <span class="media-emoji" data-media-id="verlander-injury-9-12-18">🔴</span></p>
             <p>I reintroduce the topic—the "misdiagnosis" comments. Verlander has already apologized. Two days after the story was published last month, he reached out to Al Avila and veteran trainer Kevin Rand, who has helmed the Tigers' training room for sixteen seasons.</p>
             <p>Verlander leans back in thought, fingers tapping the armchair. There's a pause—ten seconds pass, twenty on the tape.</p>
             <p>He exhales.</p>
@@ -5085,7 +5085,7 @@ export const CHAPTERS = [
 
             <p class="has-dateline no-indent"><span class="dateline"><em>January 29</em>—</span>Wearing whites, I'm on the bump again.</p>
             <p>My arm feels fine in the first inning, but then I throw sixty pitches in the second, knocked for seven or eight runs by undefeated Team 1—the best team in fantasy camp. One of the real-life Tiger players gets a whiff of this and sends a couple of trainers to check it out.</p>
-            <p>Anthony Fenech, a man with many a night perched in the cheap seats, is unable to throw a pitch over the plate in coach pitch. His arm hurts.</p>
+            <p>Anthony Fenech, a man with many a night perched in the cheap seats, is unable to throw a pitch over the plate in coach pitch. His arm hurts. <span class="media-emoji" data-media-id="zimmermann-tweet-vid">🎬</span></p>
             <p>Video of my performance circulates online, shared on Twitter by Jordan Zimmermann, who is participating in fantasy beat writer camp. He reports my pitching line: <em>@anthonyfenech line vs Tigers Fantasy Camp: 2/3 IP, 2 H, 5 BB, 5 ER, or, not very good</em>.</p>
             <p>I sit at my locker scrolling through the ridicule, lucky the video culprits didn't stick around. I actually went back out for <em>another</em> inning and moved up five feet, like it was coach pitch.</p>
             <p>Everyone shacks up at the Ramada Inn, fantasy campers and coaches alike—even real-life ones. I walk past Tigers' third-base coach Ramon Santiago with an ice pack on my knee. "Now you know how it feels, <em>An-tony</em>."</p>
@@ -5255,9 +5255,9 @@ export const CHAPTERS = [
             <p>The Highest Source In The Land makes my references page stand out. It begs to be asked about.</p>
             <p>"I think it's very important to have a good relationship with your GM. I put my GM down there because I think he'd give you guys a unique look at the way I cover a team."</p>
             <p>After the interview, I take the 4 Train to The Bronx. Yankee Stadium is sterile and too corporate but still carries the ambiance of a baseball Mecca. Today's train ride was a herky-jerky hell with standing-room riders pressed against each other, the past two nights have been cold, and what kind of Mecca doesn't have windows in the press box? The joint cost $2.3 billion and its press box is wide open, exposed to windchill, leaving a roomful of Ball Writers watching on TV inside the enclosed media workroom—me included.</p>
-            <p>I spot Seamhead George King in the cafeteria in the second inning. King sits at a roundtable, material sprawled out, updating his game logs by hand.</p>
+            <p>I spot Seamhead George King in the cafeteria in the second inning. King sits at a roundtable, material sprawled out, updating his game logs by hand. <span class="media-emoji" data-media-id="george-king-scorecard">📷</span></p>
             <p>The Tigers catch the Yanks at the right time. They win the series, heading to Detroit with a winning record.</p>
-            <p>They will lose 114 games this season, among the most ever. But for now, they are 4-3. Tomorrow is the first and most popular game of the year. Brown liquor, keg beer at the fantasy camp tailgate—an Opening Day made for the 'Ball Writing Fun' movement.</p>
+            <p>They will lose 114 games this season, among the most ever. But for now, they are 4-3. Tomorrow is the first and most popular game of the year. Brown liquor, keg beer at the fantasy camp tailgate—an Opening Day made for the 'Ball Writing Fun' movement. <span class="media-emoji" data-media-id="april-4-2019">📷</span></p>
             <p>I wait for Miguel Cabrera postgame. He knows what to say.</p>
             <p>"Tell Detroit we're coming."</p>
 
@@ -5283,7 +5283,7 @@ export const CHAPTERS = [
             <p>&nbsp;</p>
 
             <p class="has-dateline no-indent"><span class="dateline"><em>April 24</em>—</span>The interview was rescheduled for today, within the hour.</p>
-            <p>I snap a selfie in the back of a taxi to the newsroom. Ron Colangelo checks in, looking for a scoop.</p>
+            <p>I snap a selfie in the back of a taxi to the newsroom. <span class="media-emoji" data-media-id="photo-2019-04-24">🤳</span> Ron Colangelo checks in, looking for a scoop.</p>
             <p>"How did yesterday go?"</p>
             <p>"Heading there now… Let's get it."</p>
             <p>"You would enjoy living there. Going to Fenway every day is special."</p>
@@ -5358,7 +5358,7 @@ export const CHAPTERS = [
             <p>"I (had) a tray of untouched food when Vin Scully sat down in front of me," Hernández recalled in the <em>Los Angeles Times</em>. "He took one look at me, smiled mischievously and asked, 'Mr. Hernández, were you overserved last night?'</p>
             <p>"I laughed, and for a few seconds forgot about how much I hurt."</p>
             <p>Afterwards, on the ledge at New York City's famous baseball bar, Foley's—a longtime staple for Ball Writers, scouts and umpires alike. Foley's is an industry institution, owned by an Irishman named Shaun Clancy—longtime boyfriend of colleague Kristie Ackert.</p>
-            <p>Foley's displays millions of dollars of memorabilia, including a collection of four thousand baseballs—signed by such luminaries as Pope John Paul II, President George H.W. Bush and Ball Writer Anthony Fenech.</p>
+            <p>Foley's displays millions of dollars of memorabilia, including a collection of four thousand baseballs—signed by such luminaries as Pope John Paul II, President George H.W. Bush and Ball Writer Anthony Fenech. <span class="media-emoji" data-media-id="foleys-signed-ball">⚾</span></p>
 
             <p>&nbsp;</p>
 
@@ -5563,12 +5563,12 @@ export const CHAPTERS = [
 
             <p>Still basking in the afterglow of a clicks bonanza from the Trade Deadline Exposé, Thomas wanted more juice—the lowly Tigers aren't bringing eyes to the site these days.</p>
             <p>I hoped it'd slip his mind, but nope. "Don't forget," he emailed yesterday, "as we mentioned before, we gotta get Bregman talking about the possibility of being a Tiger a few seasons ago. The sooner we get that one pregame, the better."</p>
-            <p>So, here I am. Walking into the Astros clubhouse to find Alex Bregman. Responding to my August 4 report, which said two years ago Detroit rebuffed Houston's efforts to trade for Michael Fulmer using Bregman as the centerpiece, the cocksure superstar tweeted, "Nah, false."</p>
+            <p>So, here I am. Walking into the Astros clubhouse to find Alex Bregman. Responding to my August 4 report, which said two years ago Detroit rebuffed Houston's efforts to trade for Michael Fulmer using Bregman as the centerpiece, the cocksure superstar tweeted, "Nah, false." <span class="media-emoji" data-media-id="bregman-nah-false">📷</span></p>
             <p>Days later, Bregman's tweet was gone. Weeks later, and Commander Click wants me to ask him about it. The first person I see? Bregman, inspecting a box of brand-new bats in a hallway off-limits to the media. Inside the locker room, Old Pal is not at his locker. I keep an eye on Bregman's stall.</p>
             <p>The digital clock says 3:04 <span class="small-caps">P.M.</span> I set a mental five-minute timer to get out of Dodge. Haven't seen Bregman—I'm hoping he went to the batting cages after picking a winner.</p>
             <p>The Tigers' TV guy and a cameraman enter the locker room. Rival Cohort Chris McCosky hustles in. More writers gather—all at Verlander's locker. He finally appears, squeezing into the center of the scrum.</p>
             <p>Ball Writers want to know how the future Hall of Famer feels about facing his former team tomorrow night.</p>
-            <p>I was hoping this wouldn't happen. I didn't want this to happen. Forced to decide between staying here—on Bregman watch—and walking over to the Verlander crowd, your fearless <em>Free Press</em> Ball Writer decides to join the fun (of course he does).</p>
+            <p>I was hoping this wouldn't happen. I didn't want this to happen. Forced to decide between staying here—on Bregman watch—and walking over to the Verlander crowd, your fearless <em>Free Press</em> Ball Writer decides to join the fun (of course he does). <span class="media-emoji" data-media-id="verlander-blow-off-8-20-19">🔴</span></p>
             <p>Walking slowly toward his locker, past the digital clock. Justin spots me and says:</p>
             <p>"I told you guys…"</p>
             <p>His eyes dart from side to side. We make eye contact at least once.</p>
@@ -5683,7 +5683,7 @@ export const CHAPTERS = [
             <p>Fidgeting on my phone, I approach the security guard who stopped me.</p>
             <p>"Why can't I go in?"</p>
             <p>"Gene said, 'I'll come and get him when he's ready to come in.'"</p>
-            <p>The guy has a clean-shaven head. He wears khaki pants and a team-issued employee ID badge hanging from a belt loop. I take a few steps back and snap the cover shot of my career—three security guards, standing side by side by side in front of the Astros clubhouse.</p>
+            <p>The guy has a clean-shaven head. He wears khaki pants and a team-issued employee ID badge hanging from a belt loop. I take a few steps back and snap the cover shot of my career—three security guards, standing side by side by side in front of the Astros clubhouse. <span class="media-emoji" data-media-id="security-guards-clubhouse">📷</span></p>
 
             <p>&nbsp;</p>
 
@@ -5721,12 +5721,12 @@ export const CHAPTERS = [
             <p>&nbsp;</p>
 
             <p class="has-dateline no-indent"><span class="dateline">10:30 <span class="small-caps">P.M.</span>—</span>I head to the Four Seasons team hotel, find a second-floor table with a nearby electrical outlet and post up there. I've got one more story to write.</p>
-            <p>The loud music of the lobby bar tries to lure me. I've been off the sauce for seven days and pass up the temptation with one concession—the Jack Daniel's mini I keep in my work bag in case of emergency.</p>
+            <p>The loud music of the lobby bar tries to lure me. I've been off the sauce for seven days and pass up the temptation with one concession—the Jack Daniel's mini I keep in my work bag in case of emergency. <span class="media-emoji" data-media-id="jack-daniels">📷</span></p>
             <p>Working into the wee hours with the help of trusted confidantes Pedro Gomez and Bob Nightengale from his hotel room in New York, sports editor Chris Thomas and I try to decipher CBA language and BBWAA rules. The story goes live just before two in the morning.</p>
 
             <p>&nbsp;</p>
 
-            <p class="has-dateline no-indent"><span class="dateline">3:04 <span class="small-caps">A.M.</span>—</span>I leave the Four Seasons so late, the Astros' next opponents have already arrived for their upcoming series—a puddle of Angels luggage takes up half the valet line when I grab a cab.</p>
+            <p class="has-dateline no-indent"><span class="dateline">3:04 <span class="small-caps">A.M.</span>—</span>I leave the Four Seasons so late, the Astros' next opponents have already arrived for their upcoming series—a puddle of Angels luggage takes up half the valet line when I grab a cab. <span class="media-emoji" data-media-id="angels-luggage">📷</span></p>
             <p>Could text Brad Ausmus but no—the Angels arrive having lost back-to-back walk-offs against the Rangers.</p>
             <p>Back in my hotel room, it's quiet. Scrolling through the story over and over, yawning in bed. It's on the front page of Freep.com, my cover shot included. Just a matter of time it's everywhere after that.</p>
             <p>I text my friend: "Gonna wake up tomorrow to a 'Justin Verlander Hates Anthony Fenech's Guts' story on <em>Deadspin</em>."</p>
@@ -5957,7 +5957,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline"><span class="dateline"><em>August 23</em>—</span>Arriving at the Houston airport, I have 152 unread messages.</p>
+<p class="has-dateline"><span class="dateline"><em>August 23</em>—</span>Arriving at the Houston airport, I have 152 unread messages. <span class="media-emoji" data-media-id="messages-after-verlander">📱</span></p>
 
 <p>Scanning through while snacking on a breakfast bagel at the gate, I can't help but notice who <em>didn't</em> reach out. Al Avila must've sent a front office edict after the Trade Deadline Exposé—no talking to Fenech… or else.</p>
 
@@ -6515,7 +6515,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>December 10</em>—</span>I work from my room today until the Tigers media availability at 4:30, when I decide to raise hell again.</p>
 
-<p>Al Avila sits flanked by manager Ron Gardenhire and VP of player development Dave Littlefield. They drone on about analytics and the minor leagues before I jump in.</p>
+<p>Al Avila sits flanked by manager Ron Gardenhire and VP of player development Dave Littlefield. They drone on about analytics and the minor leagues before I jump in. <span class="media-emoji" data-media-id="winter-meetings-12-10-19">🔴</span></p>
 
 <p>"Four years ago, I think it was in Nashville, you said you were going to come up with the 'Tiger Way' plan. Kind of like a uniform plan for players to play the game…"</p>
 
@@ -6741,7 +6741,7 @@ export const CHAPTERS = [
 
 <p>I had already started hoops networking. I registered for a credential for the NBA All-Star Game in Chicago and drove to cover a Cavaliers game in Cleveland, passing a sign on the side of the baseball stadium reminding fans that it was <span class="small-caps">46 DAYS UNTIL OPENING DAY</span>.</p>
 
-<p>I kept track of the Tigers as a lame duck, left up north for a month in sub-freezing temps after pitchers and catchers reported in the warm sunshine. I officially got my job back ten days ago. Thomas pulled me aside to break the good news at a co-worker's going-away party: "Don't fuck it up."</p>
+<p>I kept track of the Tigers as a lame duck, left up north for a month in sub-freezing temps after pitchers and catchers reported in the warm sunshine. I officially got my job back ten days ago. Thomas pulled me aside to break the good news at a co-worker's going-away party: "Don't fuck it up." <span class="media-emoji" data-media-id="photo-2015-10-30">📷</span></p>
 
 <p>In his official announcement, Thomas wrote, "Anthony has shown exceptional improvement in communication and collaboration over the past month after being reassigned from the Tigers beat in November 2019."</p>
 
@@ -7241,11 +7241,11 @@ export const CHAPTERS = [
 
 <p>"Off-the-record, I came here to work on a writing project I've been wanting to tackle. Been thinking about you recently. The story begins in the back of your SUV."</p>
 
-<p>Internet Stalker continued his crusades, even with his Twitter account suspended. He posted on his media fanfic website—until that got suspended, too.</p>
+<p>Internet Stalker continued his crusades, even with his Twitter account suspended. He posted on his media fanfic website—until that got suspended, too. <span class="media-emoji" data-media-id="internet-stalker-website">💻</span></p>
 
 <p>A year after Fuzzles died and six since the boogeyman caught me smoking a marijuana cigarette at a party, I lived New Year's Eve 2021 in quiet solitude inside a converted boat house along the sea. Malta had been in shutdown since the day after I arrived. Bars and restaurants closed. Gyms and coffee shops, too. Masks everywhere—even outside, even at the beach.</p>
 
-<p>Asleep early and many months sober, I was awakened by pots and pans at midnight, blissfully unaware of an Amber Alert circulating back home.</p>
+<p>Asleep early and many months sober, I was awakened by pots and pans at midnight, blissfully unaware of an Amber Alert circulating back home. <span class="media-emoji" data-media-id="where-is-anthony-fenech">📷</span></p>
 
 <p>Internet Stalker rang in the new year with a piece on my disappearance:</p>
 

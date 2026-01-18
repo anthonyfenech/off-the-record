@@ -282,15 +282,15 @@ export const MEDIA_CONTENT = {
     // Chapter 4 - Scandal
     'internet-stalker-website': {
         type: 'photo',
-        emoji: '📷',
+        emoji: '💻',
         label: 'Screenshot',
         caption: '',
-        src: './assets/04-scandal/internet-stalker-website-suspended.png',
+        src: './assets/28-postscript/internet-stalker-website-suspended.png',
         placeholder: false
     },
     'dui-report': {
         type: 'photo',
-        emoji: '📷',
+        emoji: '📄',
         label: 'Document',
         caption: '',
         src: './assets/04-scandal/dui-report.jpg',
@@ -440,7 +440,7 @@ export const MEDIA_CONTENT = {
     // Chapter 19 - Draft Day
     'foleys-signed-ball': {
         type: 'photo',
-        emoji: '📷',
+        emoji: '⚾',
         label: 'Photo',
         caption: '',
         src: './assets/19-draft-day/foleys-signed-ball.jpg',
@@ -478,7 +478,7 @@ export const MEDIA_CONTENT = {
     // Chapter 26 - Unethical
     'messages-after-verlander': {
         type: 'photo',
-        emoji: '💬',
+        emoji: '📱',
         label: 'Messages',
         caption: '',
         src: './assets/26-unethical/messages after verlander.JPG',
@@ -594,7 +594,7 @@ export const MEDIA_CONTENT = {
     // ══════════════════════════════════════════════════════════
     'verlander-injury-9-12-18': {
         type: 'audio',
-        emoji: '🎙️',
+        emoji: '🔴',
         label: 'Audio',
         caption: '',
         src: './assets/21-burn-out/verlander-injury-9-12-18.mp3',
@@ -602,7 +602,7 @@ export const MEDIA_CONTENT = {
     },
     'verlander-blow-off-8-20-19': {
         type: 'audio',
-        emoji: '🎙️',
+        emoji: '🔴',
         label: 'Audio',
         caption: '',
         src: './assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
@@ -610,7 +610,7 @@ export const MEDIA_CONTENT = {
     },
     'winter-meetings-12-10-19': {
         type: 'audio',
-        emoji: '🎙️',
+        emoji: '🔴',
         label: 'Audio',
         caption: '',
         src: './assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
@@ -621,12 +621,12 @@ export const MEDIA_CONTENT = {
         emoji: '🔴',
         label: 'Audio',
         caption: '',
-        src: './assets/07-midseason/jeff-moss-prank-call.mp3',
+        src: './assets/07-midseason/howard-stern-prank-call.mp3',
         placeholder: false
     },
     'kinsler-angel': {
         type: 'audio',
-        emoji: '🎙️',
+        emoji: '🔴',
         label: 'Audio',
         caption: '',
         src: './assets/16-summer-2017-ii/kinsler-angel.mp3',
@@ -746,7 +746,7 @@ export const MEDIA_CONTENT = {
     },
     'photo-2019-04-24': {
         type: 'photo',
-        emoji: '📷',
+        emoji: '🤳',
         label: 'Photo',
         caption: '',
         src: './assets/23-globetrotting/2019:04:24 10-10-31 AM.JPG',
@@ -770,7 +770,7 @@ export const MEDIA_CONTENT = {
     },
     'apse-top-10': {
         type: 'photo',
-        emoji: '🏆',
+        emoji: '🏅',
         label: 'Award',
         caption: '',
         src: './assets/18-awards-season/APSE Top 10.jpg',
