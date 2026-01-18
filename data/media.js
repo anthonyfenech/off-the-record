@@ -339,7 +339,7 @@ export const MEDIA_CONTENT = {
         emoji: '✉️',
         label: 'Email',
         caption: 'Email to Mozeliak - July 27, 2015',
-        src: './assets/08-trade-deadline/7:27:15 EMAIL MOZELIAK.jpg',
+        src: './assets/08-trade-deadline/email-mozeliak.jpg',
         placeholder: false
     },
 
@@ -540,14 +540,6 @@ export const MEDIA_CONTENT = {
         label: 'Photo',
         caption: 'Max Scherzer thank you ad in the Detroit Free Press',
         src: './assets/28-postscript/scherzer-thank-you.png',
-        placeholder: false
-    },
-    'tito-big-series-2019': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: 'Tito Big Series - August 27, 2019',
-        src: './assets/26-unethical/2019:08:27 TITO BIG SERIES.JPG',
         placeholder: false
     },
     'where-is-anthony-fenech': {
