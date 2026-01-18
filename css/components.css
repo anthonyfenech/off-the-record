@@ -104,10 +104,10 @@
     letter-spacing: 0.5em;
 }
 
-/* Ensure even spacing after scene break */
+/* Remove any extra margin after scene break to keep *** centered */
 .scene-break + p,
 .scene-break + p.has-dateline {
-    margin-top: 2.5rem;
+    margin-top: 0;
 }
 
 /* Article Citation (embedded article references) */

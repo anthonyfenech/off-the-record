@@ -149,15 +149,20 @@
             }
         }
 
-        /* Chapter end separator */
+        /* Chapter end separator - centered between chapters */
         .chapter-end {
             text-align: center !important;
             display: block;
             width: 100%;
-            padding: 1.5em 0 3em 0;
+            padding: 2.5em 0;
             color: var(--color-text-tertiary);
             letter-spacing: 0.5em;
             font-size: 1.25rem;
+        }
+
+        /* Remove extra margin from chapter headers after chapter-end to keep *** centered */
+        .chapter-section + .chapter-section .chapter-header {
+            margin-top: 0;
         }
 
         /* Navigation footer - GPU accelerated */
@@ -425,7 +430,7 @@
             }
 
             .chapter-end {
-                padding: 1em 0 2em 0;
+                padding: 1.5em 0;
                 font-size: 1.1rem;
             }
 

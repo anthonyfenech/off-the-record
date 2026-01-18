@@ -50,8 +50,8 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: 'True Life: I\'m A Ball Writer',
-        src: '',
-        placeholder: true
+        src: './assets/18-awards-season/munchies-at-als.jpg',
+        placeholder: false
     },
     'crasnick-column': {
         type: 'link',
@@ -285,6 +285,14 @@ export const MEDIA_CONTENT = {
         src: '',
         placeholder: true
     },
+    'peter-gammons-2016-02-29': {
+        type: 'audio',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: '',
+        src: './assets/10-spring-training/peter-gammons-2016-02-29.m4a',
+        placeholder: false
+    },
     'ernie-harwell-talk': {
         type: 'audio',
         emoji: '🔴',
@@ -298,8 +306,8 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: '',
-        src: '',
-        placeholder: true
+        src: './assets/14-prime-time/ilitch-letter.jpeg',
+        placeholder: false
     },
     // === AUTO-ADDED FROM ASSETS SCAN ===
 
@@ -345,8 +353,8 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: '',
-        src: '',
-        placeholder: true
+        src: './assets/04-scandal/sold-taurus-2015-01-31.jpg',
+        placeholder: false
     },
 
     // Chapter 8 - Trade Deadline
@@ -862,6 +870,22 @@ export const MEDIA_CONTENT = {
         label: 'Selfie',
         caption: '',
         src: './assets/12-pennant-race/minnesota selfie zimm.jpeg',
+        placeholder: false
+    },
+    'verlander-snakes-prank': {
+        type: 'audio',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: '',
+        src: './assets/12-pennant-race/cam-maybin-verlander-snakes-2016-09-30.m4a',
+        placeholder: false
+    },
+    'kinsler-tv-winter': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: '',
+        src: './assets/17-world-series/kinsler-tv-winter.jpg',
         placeholder: false
     },
     'verlander-trade-tweet': {

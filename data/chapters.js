@@ -1970,9 +1970,9 @@ export const CHAPTERS = [
 
 <p>“If you could, they’d take it apart on the street anyways.”</p>
 
-<p>Chauffeured by Ron Colangelo, Gammons is a runaway waterspout of stories. He is a BBWAA Hall of Famer with a blind spot for the Red Sox. <span class="media-emoji" data-media-id="gammons-stories">🔴</span> Saltalamacchia played four seasons in Boston. Ausmus grew up in New Haven, Connecticut reading Gammons, who made his name at the <em>Boston Globe</em> before becoming the first Ball Writer to bound head-first into television. He joined ESPN in 1989 and has become an institution there.</p>
+<p>Chauffeured by Ron Colangelo, Gammons is a runaway waterspout of stories. He is a BBWAA Hall of Famer with a blind spot for the Red Sox. Saltalamacchia played four seasons in Boston. Ausmus grew up in New Haven, Connecticut reading Gammons, who made his name at the <em>Boston Globe</em> before becoming the first Ball Writer to bound head-first into television. He joined ESPN in 1989 and has become an institution there.</p>
 
-<p>I don’t get intimidated much anymore, but my usually talkative self has been following along silently with my tape recorder running, like a cameraman on a reality TV show.</p>
+<p>I don't get intimidated much anymore, but my usually talkative self has been following along silently with my tape recorder running, like a cameraman on a reality TV show. <span class="media-emoji" data-media-id="peter-gammons-2016-02-29">🔴</span></p>
 
 <p>I text Seamhead John Lowe: “I was just part of a conversation with Peter Gammons.”</p>
 
@@ -2370,7 +2370,7 @@ export const CHAPTERS = [
 
 <p>He wants me to open it. I stare and laugh.</p>
 
-<p>Justin chuckles after his prank falls flat in front of teammates. He couldn’t get me.</p>
+<p>Justin chuckles after his prank falls flat in front of teammates. He couldn't get me. <span class="media-emoji" data-media-id="verlander-snakes-prank">🔴</span></p>
 
 <p>Before batting practice, I sit with Al Avila in the dugout. He’s one winning weekend away from taking the Tigers back to the playoffs in his first full season as general manager.</p>
 
@@ -4111,7 +4111,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline"><em>December 13</em>—</span>The Tigers have pushed back today’s media session. I’ve been holed up in my room pestering people like Al Avila about Kinsler.</p>
+<p class="has-dateline no-indent"><span class="dateline"><em>December 13</em>—</span>The Tigers have pushed back today's media session. I've been holed up in my room pestering people like Al Avila about Kinsler. <span class="media-emoji" data-media-id="kinsler-tv-winter">📷</span></p>
 
 <p>“Checking in on Kinsler.”</p>
 
