@@ -135,12 +135,12 @@
 }
 
 .citation-link a {
-    color: #0066cc;
+    color: var(--color-link);
     text-decoration: underline;
 }
 
 .citation-link a:hover {
-    color: #0044aa;
+    color: var(--color-link-hover);
 }
 
 .citation-link .citation-emoji {
@@ -649,10 +649,10 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
 /* Error state */
 .error {
     padding: var(--space-lg);
-    background-color: #ffebee;
-    border: 1px solid #ef5350;
+    background-color: var(--color-error-bg);
+    border: 1px solid var(--color-error-border);
     border-radius: 4px;
-    color: #c62828;
+    color: var(--color-error-text);
     text-align: center;
 }
 
@@ -1019,7 +1019,7 @@ body.show-captions .media-modal-caption {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: var(--color-video-bg);
 }
 
 .media-video {
@@ -1032,7 +1032,7 @@ body.show-captions .media-modal-caption {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #1a1a1a;
+    background: var(--color-player-bg);
     border-radius: 20px;
     padding: 8px 16px;
     height: 40px;
@@ -1048,7 +1048,7 @@ body.show-captions .media-modal-caption {
     width: 28px;
     height: 28px;
     border: none;
-    background: #fff;
+    background: var(--color-player-fill);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -1059,13 +1059,13 @@ body.show-captions .media-modal-caption {
 }
 
 .slim-player-btn:hover {
-    background: #e0e0e0;
+    background: var(--color-border);
 }
 
 .slim-player-icon {
     width: 14px;
     height: 14px;
-    color: #1a1a1a;
+    color: var(--color-player-bg);
 }
 
 .slim-player-icon.play {
@@ -1093,7 +1093,7 @@ body.show-captions .media-modal-caption {
 .slim-player-bar {
     position: relative;
     height: 4px;
-    background: #444;
+    background: var(--color-player-bar);
     border-radius: 2px;
 }
 
@@ -1102,7 +1102,7 @@ body.show-captions .media-modal-caption {
     top: 0;
     left: 0;
     height: 100%;
-    background: #fff;
+    background: var(--color-player-fill);
     border-radius: 2px;
     width: 0;
 }
@@ -1113,7 +1113,7 @@ body.show-captions .media-modal-caption {
     left: 0;
     width: 12px;
     height: 12px;
-    background: #fff;
+    background: var(--color-player-fill);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     cursor: grab;
@@ -1129,7 +1129,7 @@ body.show-captions .media-modal-caption {
 .slim-player-time {
     font-size: 12px;
     font-family: var(--font-mono);
-    color: #999;
+    color: var(--color-text-tertiary);
     min-width: 36px;
     text-align: right;
 }

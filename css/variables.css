@@ -12,6 +12,21 @@
     --color-success: #333;
     --color-overlay: rgba(51, 51, 51, 0.5);
 
+    /* Links */
+    --color-link: #0066cc;
+    --color-link-hover: #0044aa;
+
+    /* Errors */
+    --color-error-bg: #ffebee;
+    --color-error-border: #ef5350;
+    --color-error-text: #c62828;
+
+    /* Media player (dark theme) */
+    --color-player-bg: #1a1a1a;
+    --color-player-bar: #444;
+    --color-player-fill: #fff;
+    --color-video-bg: #000;
+
     /* Typography - Monospace typewriter style */
     --font-mono: 'Courier New', Courier, monospace;
     --font-serif: 'Literata', 'Times New Roman', Times, Georgia, serif;

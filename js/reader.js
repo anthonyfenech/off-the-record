@@ -37,7 +37,6 @@ class Reader {
 
         // Expose reader instance globally for other modules
         window.readerInstance = this;
-        window.currentChapterId = this.currentChapter;
 
         // Load saved progress
         const progress = getProgress();
