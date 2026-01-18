@@ -829,7 +829,7 @@ export const MEDIA_CONTENT = {
         emoji: '📷',
         label: 'Photo',
         caption: '',
-        src: './assets/13-wake-up-call/fenech middle finger.jpeg',
+        src: './assets/13-wake-up-call/fenech middle finger 11-6-16.jpeg',
         placeholder: false
     },
     'minnesota-selfie-zimm': {
