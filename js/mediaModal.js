@@ -386,22 +386,6 @@ class MediaModal {
 
     // Render embedded tweet
     renderTweet(media, body) {
-        // Check if Twitter embeds are enabled in admin settings
-        const embedsEnabled = localStorage.getItem('admin_twitterEmbeds') === 'true';
-
-        if (!embedsEnabled) {
-            // Fall back to simple link if embeds disabled
-            body.innerHTML = `
-                <div class="media-link-container">
-                    <p>View on Twitter/X:</p>
-                    <a href="${media.url}" target="_blank" rel="noopener noreferrer" class="media-link">
-                        ${media.url}
-                    </a>
-                </div>
-            `;
-            return;
-        }
-
         // Show loading state
         body.innerHTML = `
             <div class="media-tweet-container">

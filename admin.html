@@ -1496,23 +1496,6 @@
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Twitter Embeds</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="twitterEmbeds">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle-subheader">Home</div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Maintenance Mode</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="maintenanceMode">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-
                 <div class="toggle-subheader">Full Book</div>
                 <div class="toggle-row">
                     <span class="toggle-label">Clean Read</span>
@@ -2333,8 +2316,6 @@
                 draftAbout: localStorage.getItem('admin_draftAbout') === 'true',
                 draftAudio: localStorage.getItem('admin_draftAudio') === 'true',
                 draftBookmarks: localStorage.getItem('admin_draftBookmarks') === 'true',
-                twitterEmbeds: localStorage.getItem('admin_twitterEmbeds') === 'true',
-                maintenanceMode: localStorage.getItem('admin_maintenanceMode') === 'true',
                 installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
                 installMessage: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
                 installButton: localStorage.getItem('admin_installButton') || 'Install',
@@ -2364,8 +2345,6 @@
             document.getElementById('draftAbout').checked = settings.draftAbout;
             document.getElementById('draftAudio').checked = settings.draftAudio;
             document.getElementById('draftBookmarks').checked = settings.draftBookmarks;
-            document.getElementById('twitterEmbeds').checked = settings.twitterEmbeds;
-            document.getElementById('maintenanceMode').checked = settings.maintenanceMode;
             document.getElementById('installPromptEnabled').checked = settings.installPromptEnabled;
             document.getElementById('installMessage').value = settings.installMessage;
             document.getElementById('installButton').value = settings.installButton;
@@ -2379,7 +2358,7 @@
             const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments', 'draftContact',
-                           'twitterEmbeds', 'maintenanceMode', 'installPromptEnabled',
+                           'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks'];
 
             toggles.forEach(id => {

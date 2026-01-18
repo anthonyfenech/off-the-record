@@ -29,12 +29,6 @@ class Reader {
 
     // Initialize reader
     init() {
-        // Check if overload mode is enabled via admin panel (skip on maintenance page itself)
-        if (localStorage.getItem('admin_showOverload') === 'true' && !window.location.pathname.includes('maintenance.html')) {
-            window.location.href = './maintenance.html';
-            return;
-        }
-
         // Initialize media modal
         mediaModal.init();
 
