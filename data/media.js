@@ -559,45 +559,49 @@ export const MEDIA_CONTENT = {
         placeholder: false
     },
 
-    // Additional files found
-    'internet-stalker-typo': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Screenshot',
-        caption: 'Internet Stalker Website Suspended (alt)',
-        src: './assets/04-scandal/INTERNET STARLKER WEBSITEWebsite Suspended.png',
-        placeholder: false
-    },
-    'dombrowski-extension-alt': {
-        type: 'newspaper',
-        emoji: '📰',
-        label: 'Newspaper',
-        caption: 'Dombrowski Extension',
-        src: './assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.jpg',
-        placeholder: false
-    },
-    'fantasy-camp-alt': {
+    // Chapter 26 - Unethical (additional)
+    'trade-deadline-dugout': {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Fantasy Camp Story (alt)',
-        src: './assets/22-viva-las-vegas/24-road-to-omaha-fantasy-camp-story.jpg',
-        placeholder: false
-    },
-    'verlander-tale-of-tape-alt': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: 'Verlander Tale of Tape (alt)',
-        src: './assets/26-unethical/12-pennant-race-verlander-tale-of-tape.jpg',
-        placeholder: false
-    },
-    'trade-deadline-dugout-alt': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: 'Trade Deadline Dugout (alt)',
+        caption: 'Trade Deadline Dugout',
         src: './assets/26-unethical/26-unethical-trade-deadline-dugout.jpg',
+        placeholder: false
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // NEWLY CATALOGED FILES
+    // ══════════════════════════════════════════════════════════
+    'winter-meetings-12-7-14': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Winter Meetings - December 7, 2014',
+        src: './assets/04-scandal/12-7-14 winter meetings.jpg',
+        placeholder: false
+    },
+    'rainbow-over-new-york': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Rainbow Over New York - July 11, 2016',
+        src: './assets/11-hot-seat/7-11-16 rainbow over new york.jpg',
+        placeholder: false
+    },
+    'waiting-for-harbaugh': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'Waiting for Harbaugh - July 25, 2016',
+        src: './assets/11-hot-seat/7-25-16 waiting for harbaugh.jpg',
+        placeholder: false
+    },
+    'freep-forward': {
+        type: 'pdf',
+        emoji: '📄',
+        label: 'PDF',
+        caption: 'Freep Forward Organization Document',
+        src: './assets/13-wake-up-call/FreepForward_org.pdf',
         placeholder: false
     },
 
