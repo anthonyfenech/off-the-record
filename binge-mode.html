@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme-loading>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -33,10 +33,11 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: #fff;
+            background: var(--color-header-bg);
             border-bottom: 1px solid var(--color-border);
             will-change: transform;
             backface-visibility: hidden;
+            transition: background-color var(--transition-fast);
         }
 
         .header-content {
@@ -509,6 +510,15 @@
 </head>
 <body>
     <script>
+        // Apply theme immediately to prevent flash of wrong colors
+        (function() {
+            const theme = localStorage.getItem('reader_theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            document.documentElement.removeAttribute('data-theme-loading');
+        })();
+
         // Apply admin settings immediately
         if (localStorage.getItem('admin_showCaptions') === 'true') {
             document.body.classList.add('show-captions');
@@ -546,11 +556,6 @@
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
             <span>Previous</span>
-        </button>
-        <button type="button" class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmark chapter">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-            </svg>
         </button>
         <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
             <span>Next</span>

@@ -5,7 +5,6 @@ import { navigation } from './navigation.js';
 import { pwa } from './pwa.js';
 import { photoGallery } from './photoGallery.js';
 import { bookmarks } from './bookmarks.js';
-import { bossButton } from './boss-button.js';
 import { auth } from './auth.js';
 import { CHAPTERS } from '../data/chapters.js';
 
@@ -48,7 +47,6 @@ class App {
             navigation.init();
             pwa.init();
             photoGallery.init();
-            bossButton.init();
 
             // Initialize bookmark button
             this.initBookmarkButton();

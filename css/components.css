@@ -784,6 +784,360 @@ button:focus-visible {
     padding: var(--space-md);
     border-top: 1px solid var(--color-border);
     text-align: center;
+    background-color: var(--color-sidebar-bg);
+}
+
+/* ============================================
+   OPTIONS SECTION (in sidebar footer)
+   ============================================ */
+.toc-options {
+    padding: var(--space-lg) var(--padding-mobile);
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-sidebar-bg);
+}
+
+.toc-options-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-md);
+}
+
+.toc-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.toc-option:first-child {
+    padding-top: 0;
+}
+
+.toc-option:last-child {
+    padding-bottom: 0;
+}
+
+.toc-option-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Toggle Switch for Options */
+.toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: var(--color-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-background);
+    border-radius: 50%;
+    transition: transform var(--transition-fast);
+}
+
+.toggle-switch.active {
+    background-color: var(--color-text-primary);
+}
+
+.toggle-switch.active::after {
+    transform: translateX(20px);
+}
+
+/* Button Group for Options (Mode, Text Size) */
+.option-btn-group {
+    display: flex;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.option-btn {
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--color-background);
+    color: var(--color-text-tertiary);
+    border: none;
+    border-right: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.option-btn:last-child {
+    border-right: none;
+}
+
+.option-btn:hover {
+    background: var(--color-accent-light);
+    color: var(--color-text-primary);
+}
+
+.option-btn.active {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+/* Admin Link */
+.toc-admin-link {
+    padding: var(--space-lg) var(--padding-mobile);
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-sidebar-bg);
+}
+
+.toc-admin-link .admin-link {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.toc-admin-link .admin-link:hover {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   COLLAPSIBLE SIDEBAR SECTIONS (Search, etc.)
+   ============================================ */
+.toc-section {
+    border-top: 1px solid var(--color-border);
+}
+
+.toc-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-md) var(--padding-mobile);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color var(--transition-fast);
+}
+
+.toc-section-header:hover {
+    background-color: var(--color-accent-light);
+}
+
+.toc-section-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--color-text-tertiary);
+}
+
+.toc-section-arrow {
+    color: var(--color-text-tertiary);
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.toc-section.open .toc-section-arrow {
+    transform: rotate(180deg);
+}
+
+.toc-section-content {
+    padding: 0 var(--padding-mobile) var(--space-md);
+    position: relative;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    padding: 6px 10px;
+    transition: border-color var(--transition-fast);
+}
+
+.search-input-wrapper:focus-within {
+    border-color: var(--color-text-secondary);
+}
+
+.search-icon {
+    margin-right: 8px;
+    opacity: 0.4;
+    flex-shrink: 0;
+    color: var(--color-text-primary);
+}
+
+#searchInput {
+    flex: 1;
+    border: none;
+    background: none;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-text-primary);
+    outline: none;
+    min-width: 0;
+}
+
+#searchInput::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.search-clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    margin-left: 4px;
+    color: var(--color-text-tertiary);
+    font-size: 14px;
+    line-height: 1;
+    transition: color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.search-clear:hover {
+    color: var(--color-text-primary);
+}
+
+/* Search Results Dropdown */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: var(--padding-mobile);
+    right: var(--padding-mobile);
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 50;
+}
+
+[data-theme="dark"] .search-results {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.search-results-header {
+    padding: 8px 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-tertiary);
+    border-bottom: 1px solid var(--color-border-subtle);
+    background-color: var(--color-background-secondary);
+}
+
+.search-result-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-border-subtle);
+    transition: background-color var(--transition-fast);
+}
+
+.search-result-item:hover {
+    background-color: var(--color-accent-light);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-title {
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.search-result-snippet {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.search-result-snippet mark {
+    background-color: rgba(255, 235, 59, 0.5);
+    color: inherit;
+    font-weight: 500;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+[data-theme="dark"] .search-result-snippet mark {
+    background-color: rgba(255, 193, 7, 0.35);
+}
+
+.search-result-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.search-no-results {
+    padding: 24px 12px;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+}
+
+.search-show-all {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-background-secondary);
+    border: none;
+    border-top: 1px solid var(--color-border-subtle);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-link);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color var(--transition-fast);
+    text-align: center;
+}
+
+.search-show-all:hover {
+    background-color: var(--color-accent-light);
 }
 
 /* Tappable Media Emojis */
@@ -815,35 +1169,58 @@ button:focus-visible {
     opacity: 0.7;
 }
 
-/* Clean/Emoji Toggle Button */
+/* Clean/Emoji Toggle Button (becomes Show Media in dark mode version) */
 .clean-toggle {
     display: flex;
     align-items: center;
     gap: 6px;
     background: none;
-    border: 2px solid #000 !important;
+    border: 2px solid var(--color-text-primary) !important;
     border-radius: 3px;
     padding: 4px 8px;
     cursor: pointer;
     font-family: var(--font-mono);
     font-size: 10px;
     font-weight: 900 !important;
-    -webkit-text-stroke: 0.3px #000;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #000 !important;
+    color: var(--color-text-primary) !important;
     transition: all 0.15s ease;
 }
 
 .clean-toggle:hover {
-    border-color: #000;
-    color: #000;
+    border-color: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
 .clean-toggle.active {
-    background: #000;
-    border-color: #000;
-    color: #fff;
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+/* ============================================
+   DARK MODE TOGGLE (Moon button in header)
+   ============================================ */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--min-touch-target);  /* 44px - matches menu-btn for centered logo */
+    height: var(--min-touch-target);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+    color: #000;  /* Black moon in light mode */
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: #fff;  /* White moon in dark mode */
+}
+
+.theme-toggle:hover {
+    opacity: 0.7;
 }
 
 /* Hide media emojis when clean mode is active */
@@ -858,7 +1235,7 @@ body.clean-read .media-emoji {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: var(--color-modal-overlay);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -876,7 +1253,7 @@ body.clean-read .media-emoji {
 
 /* Media Modal */
 .media-modal {
-    background-color: var(--color-background);
+    background-color: var(--color-modal-bg);
     border: 1px solid var(--color-accent);
     max-width: 500px;
     width: auto;
@@ -885,7 +1262,7 @@ body.clean-read .media-emoji {
     flex-direction: column;
     box-shadow: var(--shadow-md);
     transform: scale(0.95);
-    transition: transform 150ms ease;
+    transition: transform 150ms ease, background-color var(--transition-fast);
     position: relative;
 }
 
@@ -915,7 +1292,7 @@ body.clean-read .media-emoji {
     position: absolute;
     top: 8px;
     right: 8px;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--color-modal-bg);
     border: 1px solid var(--color-border);
     border-radius: 50%;
     color: var(--color-text-primary);
@@ -932,7 +1309,7 @@ body.clean-read .media-emoji {
 
 .media-modal-close:hover {
     background: var(--color-text-primary);
-    color: var(--color-background);
+    color: var(--color-modal-bg);
 }
 
 /* Modal Body */
@@ -1360,7 +1737,7 @@ body.show-captions .media-modal-caption {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.95); /* Always dark for photo viewing */
     z-index: 1001;
     display: flex;
     align-items: center;
@@ -2365,1024 +2742,6 @@ body.show-captions .media-modal-caption {
 .toc-lock-icon {
     margin-left: var(--space-sm);
     font-size: 12px;
-}
-
-/* =========================================
-   BOSS BUTTON - Work-appropriate cover screen
-   Inspired by NCAA March Madness Boss Button
-   ========================================= */
-
-/* Desktop Boss Button - Header placement */
-.boss-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: none;
-    border: 1px solid var(--color-text-primary);
-    border-radius: 3px;
-    padding: 4px 8px;
-    cursor: pointer;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--color-text-primary);
-    transition: all var(--transition-fast);
-    opacity: 0.6;
-}
-
-.boss-btn:hover {
-    opacity: 1;
-    background: var(--color-accent-light);
-}
-
-.boss-btn:active {
-    transform: scale(0.95);
-}
-
-.boss-btn.active {
-    background: var(--color-text-primary);
-    border-color: var(--color-text-primary);
-    color: var(--color-background);
-    opacity: 1;
-}
-
-.boss-btn-icon {
-    font-size: 12px;
-    line-height: 1;
-}
-
-/* Mobile Boss Button - Floating */
-.boss-btn-mobile {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    z-index: 95;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: rgba(51, 51, 51, 0.8);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: all var(--transition-fast);
-}
-
-.boss-btn-mobile:hover {
-    background: rgba(51, 51, 51, 0.95);
-    transform: scale(1.05);
-}
-
-.boss-btn-mobile:active {
-    transform: scale(0.95);
-}
-
-@media (max-width: 768px) {
-    .boss-btn {
-        display: none;
-    }
-
-    .boss-btn-mobile {
-        display: flex;
-    }
-}
-
-/* Fake Screens - Work-appropriate cover content */
-.fake-screen {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: #ffffff;
-    overflow: auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.fake-screen-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Boss Mode Active State */
-body.boss-mode-active .boss-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10000;
-    background: var(--color-text-primary);
-    color: var(--color-background);
-    opacity: 1;
-}
-
-/* ===========================================
-   FAKE SCREENS - Realistic Work App Mockups
-   6 rotating screens for Boss Button
-   =========================================== */
-
-/* 1. OUTLOOK */
-.fake-screen-outlook {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f3f2f1;
-    padding: 0;
-}
-
-.outlook-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 8px 16px;
-    background: #0078d4;
-    color: white;
-}
-
-.outlook-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.outlook-search {
-    flex: 1;
-    max-width: 400px;
-}
-
-.outlook-search input {
-    width: 100%;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.outlook-user {
-    width: 32px;
-    height: 32px;
-    background: #106ebe;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.outlook-body {
-    display: flex;
-    height: calc(100vh - 50px);
-}
-
-.outlook-sidebar {
-    width: 200px;
-    background: white;
-    padding: 12px 0;
-    border-right: 1px solid #edebe9;
-}
-
-.outlook-folder {
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-}
-
-.outlook-folder:hover {
-    background: #f3f2f1;
-}
-
-.outlook-folder.active {
-    background: #e1dfdd;
-    font-weight: 600;
-}
-
-.outlook-folder .badge {
-    background: #0078d4;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 10px;
-    font-size: 11px;
-}
-
-.outlook-list {
-    flex: 1;
-    background: white;
-    overflow-y: auto;
-}
-
-.outlook-email {
-    padding: 12px 16px;
-    border-bottom: 1px solid #edebe9;
-    cursor: pointer;
-}
-
-.outlook-email:hover {
-    background: #f3f2f1;
-}
-
-.outlook-email.unread {
-    border-left: 3px solid #0078d4;
-    background: #f3f9ff;
-}
-
-.outlook-email.unread .email-sender,
-.outlook-email.unread .email-subject {
-    font-weight: 600;
-}
-
-.email-sender {
-    font-size: 14px;
-    color: #323130;
-    margin-bottom: 2px;
-}
-
-.email-subject {
-    font-size: 13px;
-    color: #323130;
-    margin-bottom: 4px;
-}
-
-.email-preview {
-    font-size: 12px;
-    color: #605e5c;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.email-time {
-    font-size: 11px;
-    color: #a19f9d;
-    margin-top: 4px;
-}
-
-/* 2. GMAIL */
-.fake-screen-gmail {
-    font-family: 'Google Sans', Roboto, Arial, sans-serif;
-    background: #f6f8fc;
-    padding: 0;
-}
-
-.gmail-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 8px 16px;
-    background: white;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.gmail-menu {
-    font-size: 20px;
-    color: #5f6368;
-    cursor: pointer;
-    padding: 8px;
-}
-
-.gmail-logo {
-    display: flex;
-    align-items: center;
-}
-
-.gmail-search {
-    flex: 1;
-    max-width: 720px;
-}
-
-.gmail-search input {
-    width: 100%;
-    padding: 12px 16px;
-    border: none;
-    border-radius: 8px;
-    background: #eaf1fb;
-    font-size: 14px;
-}
-
-.gmail-body {
-    display: flex;
-    height: calc(100vh - 65px);
-}
-
-.gmail-sidebar {
-    width: 256px;
-    padding: 8px;
-}
-
-.gmail-compose {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 24px;
-    margin: 8px;
-    background: #c2e7ff;
-    border: none;
-    border-radius: 16px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.gmail-nav-item {
-    padding: 8px 24px;
-    margin: 2px 8px;
-    border-radius: 0 16px 16px 0;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-}
-
-.gmail-nav-item:hover {
-    background: #e8eaed;
-}
-
-.gmail-nav-item.active {
-    background: #d3e3fd;
-    font-weight: 600;
-}
-
-.gmail-badge {
-    background: none;
-    font-weight: 600;
-}
-
-.gmail-list {
-    flex: 1;
-    background: white;
-    border-radius: 16px;
-    margin: 8px;
-    overflow-y: auto;
-}
-
-.gmail-email {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    border-bottom: 1px solid #f1f3f4;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.gmail-email:hover {
-    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3);
-    z-index: 1;
-}
-
-.gmail-email.unread {
-    background: #f2f6fc;
-    font-weight: 600;
-}
-
-.gmail-checkbox, .gmail-star {
-    padding: 0 8px;
-    color: #5f6368;
-}
-
-.gmail-star {
-    color: #f4b400;
-}
-
-.gmail-sender {
-    width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.gmail-content {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.gmail-subject {
-    color: #202124;
-}
-
-.gmail-preview {
-    color: #5f6368;
-    font-weight: normal;
-}
-
-.gmail-time {
-    font-size: 12px;
-    color: #5f6368;
-    white-space: nowrap;
-}
-
-/* 3. GOOGLE DOCS */
-.fake-screen-gdocs {
-    font-family: 'Google Sans', Roboto, Arial, sans-serif;
-    background: #f1f3f4;
-    padding: 0;
-}
-
-.gdocs-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 16px;
-    background: white;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.gdocs-icon {
-    font-size: 24px;
-}
-
-.gdocs-title {
-    font-size: 18px;
-    font-weight: 400;
-    flex: 1;
-}
-
-.gdocs-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.gdocs-saved {
-    font-size: 12px;
-    color: #5f6368;
-}
-
-.gdocs-share {
-    background: #1a73e8;
-    color: white;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.gdocs-toolbar {
-    display: flex;
-    gap: 16px;
-    padding: 4px 16px;
-    background: white;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 13px;
-    color: #3c4043;
-}
-
-.gdocs-toolbar span {
-    padding: 4px 8px;
-    cursor: pointer;
-}
-
-.gdocs-toolbar span:hover {
-    background: #f1f3f4;
-    border-radius: 4px;
-}
-
-.gdocs-body {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    height: calc(100vh - 100px);
-    overflow-y: auto;
-}
-
-.gdocs-content {
-    background: white;
-    width: 100%;
-    max-width: 816px;
-    min-height: 1056px;
-    padding: 72px 96px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-}
-
-.gdocs-content h1 {
-    font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 8px;
-    color: #202124;
-}
-
-.gdocs-content h2 {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 24px;
-    margin-bottom: 8px;
-    color: #202124;
-}
-
-.gdocs-content h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 16px;
-    margin-bottom: 4px;
-    color: #202124;
-}
-
-.gdocs-content p {
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: #202124;
-}
-
-.gdocs-meta {
-    color: #5f6368;
-    font-size: 12px;
-    margin-bottom: 24px;
-}
-
-.gdocs-content ul, .gdocs-content ol {
-    margin-left: 24px;
-    margin-bottom: 12px;
-}
-
-.gdocs-content li {
-    font-size: 14px;
-    color: #202124;
-    margin-bottom: 4px;
-}
-
-/* 4. SLACK */
-.fake-screen-slack {
-    font-family: 'Slack-Lato', Lato, sans-serif;
-    background: #1a1d21;
-    padding: 0;
-    display: flex;
-}
-
-.slack-sidebar {
-    width: 260px;
-    background: #19171d;
-    color: #d1d2d3;
-    padding-top: 12px;
-}
-
-.slack-workspace {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 16px;
-    font-weight: 700;
-    font-size: 18px;
-    color: white;
-}
-
-.slack-workspace-icon {
-    width: 36px;
-    height: 36px;
-    background: #4a154b;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-.slack-channels {
-    margin-top: 16px;
-}
-
-.slack-section-header {
-    padding: 8px 16px;
-    font-size: 13px;
-    color: #ababad;
-}
-
-.slack-channel, .slack-dm {
-    padding: 6px 16px 6px 24px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.slack-channel:hover, .slack-dm:hover {
-    background: #27242c;
-}
-
-.slack-channel.active {
-    background: #1164a3;
-    color: white;
-}
-
-.slack-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background: white;
-}
-
-.slack-header {
-    padding: 12px 20px;
-    border-bottom: 1px solid #e1e1e1;
-}
-
-.slack-channel-name {
-    font-weight: 700;
-    font-size: 18px;
-    color: #1d1c1d;
-}
-
-.slack-channel-desc {
-    font-size: 13px;
-    color: #616061;
-    margin-left: 12px;
-}
-
-.slack-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.slack-message {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.slack-avatar {
-    width: 36px;
-    height: 36px;
-    background: #e91e63;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 12px;
-    font-weight: 700;
-    flex-shrink: 0;
-}
-
-.slack-message-content {
-    flex: 1;
-}
-
-.slack-message-header {
-    font-size: 15px;
-    margin-bottom: 4px;
-}
-
-.slack-message-header strong {
-    color: #1d1c1d;
-}
-
-.slack-time {
-    font-size: 12px;
-    color: #616061;
-    margin-left: 8px;
-}
-
-.slack-message-text {
-    font-size: 15px;
-    color: #1d1c1d;
-    line-height: 1.46;
-}
-
-.slack-input {
-    padding: 20px;
-    border-top: 1px solid #e1e1e1;
-}
-
-.slack-input input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #868686;
-    border-radius: 4px;
-    font-size: 15px;
-}
-
-/* 5. MICROSOFT TEAMS */
-.fake-screen-teams {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f5f5;
-    padding: 0;
-    display: flex;
-}
-
-.teams-sidebar {
-    width: 68px;
-    background: #292929;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 12px;
-}
-
-.teams-nav-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #a5a5a5;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-bottom: 4px;
-}
-
-.teams-nav-icon:hover {
-    background: #3d3d3d;
-}
-
-.teams-nav-icon.active {
-    background: #464775;
-    color: white;
-}
-
-.teams-channels {
-    width: 240px;
-    background: #252423;
-    color: white;
-    padding: 12px 0;
-}
-
-.teams-team-header {
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.teams-channel {
-    padding: 6px 16px 6px 32px;
-    font-size: 14px;
-    color: #d6d6d6;
-    cursor: pointer;
-}
-
-.teams-channel:hover {
-    background: #3d3d3d;
-}
-
-.teams-channel.active {
-    background: #464775;
-}
-
-.teams-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background: white;
-}
-
-.teams-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    border-bottom: 1px solid #e1e1e1;
-}
-
-.teams-channel-name {
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.teams-header-actions {
-    display: flex;
-    gap: 16px;
-    font-size: 20px;
-    color: #616161;
-}
-
-.teams-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.teams-message {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.teams-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-.teams-message-content {
-    flex: 1;
-}
-
-.teams-message-header {
-    font-size: 14px;
-    margin-bottom: 4px;
-}
-
-.teams-message-header strong {
-    color: #242424;
-}
-
-.teams-time {
-    font-size: 12px;
-    color: #616161;
-    margin-left: 8px;
-}
-
-.teams-message-text {
-    font-size: 14px;
-    color: #242424;
-    line-height: 1.4;
-}
-
-.teams-input {
-    padding: 20px;
-    border-top: 1px solid #e1e1e1;
-}
-
-.teams-input input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #c7c7c7;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* 6. WIKIPEDIA */
-.fake-screen-wikipedia {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Lato, Helvetica, Arial, sans-serif;
-    background: #f8f9fa;
-    padding: 0;
-}
-
-.wiki-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 20px;
-    background: white;
-    border-bottom: 1px solid #a2a9b1;
-}
-
-.wiki-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.wiki-logo img {
-    width: 50px;
-    height: 50px;
-}
-
-.wiki-wordmark {
-    display: flex;
-    flex-direction: column;
-}
-
-.wiki-title {
-    font-size: 18px;
-    font-family: 'Linux Libertine', Georgia, Times, serif;
-}
-
-.wiki-tagline {
-    font-size: 11px;
-    color: #54595d;
-}
-
-.wiki-search {
-    width: 300px;
-}
-
-.wiki-search input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #a2a9b1;
-    border-radius: 2px;
-    font-size: 14px;
-}
-
-.wiki-body {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 20px;
-}
-
-.wiki-sidebar-nav {
-    width: 160px;
-    font-size: 13px;
-}
-
-.wiki-nav-item {
-    padding: 4px 0;
-    color: #0645ad;
-    cursor: pointer;
-}
-
-.wiki-nav-item:hover {
-    text-decoration: underline;
-}
-
-.wiki-content {
-    flex: 1;
-    background: white;
-    padding: 20px;
-    border: 1px solid #a2a9b1;
-}
-
-.wiki-content h1 {
-    font-size: 28px;
-    font-weight: normal;
-    font-family: 'Linux Libertine', Georgia, Times, serif;
-    border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 8px;
-    margin-bottom: 16px;
-}
-
-.wiki-content h2 {
-    font-size: 22px;
-    font-weight: normal;
-    font-family: 'Linux Libertine', Georgia, Times, serif;
-    border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 4px;
-    margin-top: 24px;
-    margin-bottom: 12px;
-}
-
-.wiki-intro {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.wiki-toc {
-    background: #f8f9fa;
-    border: 1px solid #a2a9b1;
-    padding: 12px 16px;
-    display: inline-block;
-    margin-bottom: 16px;
-}
-
-.wiki-toc-title {
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.wiki-toc ol {
-    margin-left: 20px;
-    font-size: 13px;
-}
-
-.wiki-toc li {
-    padding: 2px 0;
-    color: #0645ad;
-}
-
-.wiki-content p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 12px;
-}
-
-.wiki-content a {
-    color: #0645ad;
-    text-decoration: none;
-}
-
-.wiki-content a:hover {
-    text-decoration: underline;
-}
-
-.wiki-citation {
-    font-size: 12px;
-    color: #72777d;
-}
-
-/* Hide Boss Button when disabled via admin */
-body:not(.boss-button-enabled) .boss-btn,
-body:not(.boss-button-enabled) .boss-btn-mobile,
-body:not(.boss-button-enabled) .fake-screen {
-    display: none !important;
-}
-
-/* Hide Boss Button on homepage */
-body.home-page .boss-btn,
-body.home-page .boss-btn-mobile {
-    display: none !important;
 }
 
 /* ============================================

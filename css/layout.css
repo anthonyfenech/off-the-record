@@ -7,6 +7,9 @@ body {
     min-height: 100vh;
     padding-top: 70px; /* Account for fixed header */
     padding-bottom: 70px; /* Account for floating footer */
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 /* Paginated mode - prevent scrolling */
@@ -36,9 +39,9 @@ body.paginated .chapter-body {
     left: 0;
     right: 0;
     z-index: var(--z-header);
-    background-color: var(--color-background);
+    background-color: var(--color-header-bg);
     border-bottom: 1px solid var(--color-border);
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
 .header-content {
@@ -98,6 +101,7 @@ body.paginated .chapter-body {
     max-width: var(--max-width-reader);
     margin: 0 auto;
     padding: var(--padding-mobile);
+    background-color: var(--color-background);
 }
 
 /* Chapter content */
@@ -129,13 +133,14 @@ body.paginated .chapter-body {
     left: 50%;
     transform: translateX(-50%);
     z-index: var(--z-nav-footer);
-    background-color: var(--color-background);
+    background-color: var(--color-footer-bg);
     padding: var(--space-sm) var(--space-lg);
     display: flex;
     justify-content: center;
     gap: var(--space-2xl);
     border: 2px solid var(--color-accent);
     border-radius: 0;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .nav-btn {
@@ -186,13 +191,13 @@ body.paginated .chapter-body {
     width: 70%;
     max-width: 280px;
     height: 100vh;
-    background-color: var(--color-background);
+    background-color: var(--color-sidebar-bg);
     box-shadow: var(--shadow-md);
     border-right: 1px solid var(--color-border);
     z-index: var(--z-sidebar);
     display: flex;
     flex-direction: column;
-    transition: left var(--transition-normal);
+    transition: left var(--transition-normal), background-color var(--transition-fast);
 }
 
 .toc-sidebar.open {
@@ -234,7 +239,7 @@ body.paginated .chapter-body {
 }
 
 .toc-content {
-    flex: 1;
+    flex: 0 0 auto;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0;
@@ -303,10 +308,11 @@ body.paginated .chapter-body {
 .reading-mode-toggle {
     display: flex;
     gap: 0;
-    background: var(--color-background);
+    background: var(--color-background-secondary);
     border: 1px solid var(--color-border);
     border-radius: 3px;
     overflow: hidden;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .mode-btn {
@@ -315,7 +321,7 @@ body.paginated .chapter-body {
     font-size: var(--font-size-xs);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background: transparent;
+    background: var(--color-background-secondary);
     color: var(--color-text-secondary);
     border: none;
     cursor: pointer;

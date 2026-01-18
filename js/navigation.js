@@ -25,6 +25,8 @@ class Navigation {
         this.currentChapterId = 1;
         this.touchStartX = 0;
         this.touchEndX = 0;
+        this.touchStartY = 0;
+        this.touchEndY = 0;
         this.expandedYears = new Set();
         this.expandedSections = new Set();
         this.expandedGalleries = new Set();
@@ -343,11 +345,9 @@ class Navigation {
         const contactEnabled = localStorage.getItem('admin_draftContact') === 'true';
 
         const bottomSections = [
-            { id: 'settings', label: 'SETTINGS', type: 'dropdown' },
             ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             ...(commentsEnabled ? [{ id: 'comments', label: 'COMMENTS', type: 'link', url: './guestbook.html' }] : []),
-            ...(contactEnabled ? [{ id: 'contact', label: 'CONTACT', type: 'link', url: './contact.html' }] : []),
-            { id: 'admin', label: 'ADMIN', type: 'link', url: './admin.html' }
+            ...(contactEnabled ? [{ id: 'contact', label: 'CONTACT', type: 'link', url: './contact.html' }] : [])
         ];
 
         bottomSections.forEach(section => {
@@ -769,28 +769,58 @@ class Navigation {
         }
     }
 
-    // Swipe gestures for mobile
+    // Swipe and tap gestures for mobile
     setupSwipeGestures() {
         const readerEl = document.getElementById('reader');
 
         readerEl.addEventListener('touchstart', (e) => {
-            this.touchStartX = e.changedTouches[0].screenX;
+            this.touchStartX = e.changedTouches[0].clientX;
+            this.touchStartY = e.changedTouches[0].clientY;
         }, { passive: true });
 
         readerEl.addEventListener('touchend', (e) => {
-            this.touchEndX = e.changedTouches[0].screenX;
-            this.handleSwipe();
+            this.touchEndX = e.changedTouches[0].clientX;
+            this.touchEndY = e.changedTouches[0].clientY;
+            this.handleSwipeOrTap(e);
         }, { passive: true });
     }
 
-    handleSwipe() {
+    handleSwipeOrTap(e) {
         const swipeThreshold = 100;
-        const diff = this.touchStartX - this.touchEndX;
+        const tapThreshold = 20; // Max movement to count as a tap
+        const diffX = this.touchStartX - this.touchEndX;
+        const diffY = Math.abs(this.touchStartY - this.touchEndY);
 
-        if (diff > swipeThreshold) {
-            this.goToNext();
-        } else if (diff < -swipeThreshold) {
-            this.goToPrevious();
+        // Check if it's a swipe (horizontal movement > threshold)
+        if (Math.abs(diffX) > swipeThreshold && diffY < 100) {
+            if (diffX > 0) {
+                this.goToNext();
+            } else {
+                this.goToPrevious();
+            }
+            return;
+        }
+
+        // Check if it's a tap (minimal movement) - only in page mode
+        const mode = window.readingModeManager?.getMode() || 'scroll';
+        if (mode !== 'page') return;
+
+        if (Math.abs(diffX) < tapThreshold && diffY < tapThreshold) {
+            // Don't navigate if tapping on interactive elements
+            const target = e.target;
+            if (target.closest('a, button, .media-emoji, .nav-footer, .header, .toc-sidebar')) {
+                return;
+            }
+
+            const screenWidth = window.innerWidth;
+            const tapX = this.touchEndX;
+            const edgeZone = screenWidth * 0.25; // 25% on each side
+
+            if (tapX < edgeZone) {
+                this.goToPrevious();
+            } else if (tapX > screenWidth - edgeZone) {
+                this.goToNext();
+            }
         }
     }
 }

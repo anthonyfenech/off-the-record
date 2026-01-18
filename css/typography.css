@@ -32,11 +32,26 @@ body {
 
 /* No indent for dateline paragraphs, block quotes, or paragraphs following section breaks */
 .chapter-body p.has-dateline,
-.chapter-body p.no-indent,
 .chapter-body p.block-quote,
 .chapter-body .scene-break + p,
-.chapter-body .block-quote + p {
+.chapter-body .block-quote + p,
+.chapter-body .headline-block + p {
     text-indent: 0;
+}
+
+/* Email spacer - creates visual break before/after emails */
+.chapter-body p.email-spacer {
+    text-indent: 0;
+    height: 1em;
+    margin: 0;
+}
+
+/* Email block - no indents for email content */
+.chapter-body .email-block,
+.chapter-body .email-block p {
+    text-indent: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
 /* Signature block - right aligned with spacing */
