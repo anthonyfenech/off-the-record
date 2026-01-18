@@ -9,6 +9,8 @@ class MediaModal {
         this.modal = null;
         this.overlay = null;
         this.isOpen = false;
+        this.triggerElement = null; // Element that opened the modal
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     // Initialize the modal
@@ -89,13 +91,39 @@ class MediaModal {
                 this.close();
             }
         });
+    }
 
-        // Close on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.isOpen) {
-                this.close();
+    // Handle keyboard events (focus trap + close)
+    handleKeyDown(e) {
+        if (!this.isOpen) return;
+
+        if (e.key === 'Escape') {
+            this.close();
+            return;
+        }
+
+        // Focus trap - keep Tab within modal
+        if (e.key === 'Tab') {
+            const focusableElements = this.modal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey) {
+                // Shift+Tab: if on first element, go to last
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                // Tab: if on last element, go to first
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
             }
-        });
+        }
     }
 
     // Check if media is disabled in admin (RED status)
@@ -117,6 +145,9 @@ class MediaModal {
             console.error(`Media not found: ${mediaId}`);
             return;
         }
+
+        // Save the element that triggered the modal for focus restore
+        this.triggerElement = document.activeElement;
 
         this.currentMedia = media;
         this.renderContent(media);
@@ -366,6 +397,15 @@ class MediaModal {
         this.overlay.classList.add('active');
         this.overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+        // Add keyboard listener for focus trap
+        document.addEventListener('keydown', this.handleKeyDown);
+
+        // Focus the close button
+        const closeBtn = this.modal.querySelector('.media-modal-close');
+        if (closeBtn) {
+            closeBtn.focus();
+        }
     }
 
     // Close the modal
@@ -374,7 +414,17 @@ class MediaModal {
         this.overlay.classList.remove('active');
         this.overlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = ''; // Restore scrolling
+
+        // Remove keyboard listener
+        document.removeEventListener('keydown', this.handleKeyDown);
+
+        // Restore focus to trigger element
+        if (this.triggerElement && this.triggerElement.focus) {
+            this.triggerElement.focus();
+        }
+
         this.currentMedia = null;
+        this.triggerElement = null;
     }
 
     // Clean up

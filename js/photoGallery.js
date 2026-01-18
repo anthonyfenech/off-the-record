@@ -12,6 +12,8 @@ class PhotoGallery {
         this.isOpen = false;
         this.touchStartX = 0;
         this.touchEndX = 0;
+        this.triggerElement = null; // Element that opened the modal
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     // Initialize photo gallery
@@ -96,23 +98,6 @@ class PhotoGallery {
             }
         });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!this.isOpen) return;
-
-            switch(e.key) {
-                case 'Escape':
-                    this.close();
-                    break;
-                case 'ArrowLeft':
-                    this.showPrevious();
-                    break;
-                case 'ArrowRight':
-                    this.showNext();
-                    break;
-            }
-        });
-
         // Touch swipe navigation
         this.photoModal.addEventListener('touchstart', (e) => {
             this.touchStartX = e.changedTouches[0].screenX;
@@ -122,6 +107,46 @@ class PhotoGallery {
             this.touchEndX = e.changedTouches[0].screenX;
             this.handleSwipe();
         }, { passive: true });
+    }
+
+    // Handle keyboard events (focus trap + navigation)
+    handleKeyDown(e) {
+        if (!this.isOpen) return;
+
+        switch(e.key) {
+            case 'Escape':
+                this.close();
+                return;
+            case 'ArrowLeft':
+                this.showPrevious();
+                return;
+            case 'ArrowRight':
+                this.showNext();
+                return;
+        }
+
+        // Focus trap - keep Tab within modal
+        if (e.key === 'Tab') {
+            const focusableElements = this.photoModal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey) {
+                // Shift+Tab: if on first element, go to last
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                // Tab: if on last element, go to first
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
     }
 
     // Handle swipe gesture
@@ -149,6 +174,9 @@ class PhotoGallery {
             console.error(`Gallery or photo not found: ${galleryId}, ${photoId}`);
             return;
         }
+
+        // Save the element that triggered the modal for focus restore
+        this.triggerElement = document.activeElement;
 
         this.currentGallery = galleryId;
         this.currentPhoto = photoId;
@@ -249,6 +277,15 @@ class PhotoGallery {
         this.photoModalOverlay.classList.add('active');
         this.photoModalOverlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        // Add keyboard listener for focus trap and navigation
+        document.addEventListener('keydown', this.handleKeyDown);
+
+        // Focus the close button
+        const closeBtn = this.photoModal.querySelector('.photo-modal-close');
+        if (closeBtn) {
+            closeBtn.focus();
+        }
     }
 
     // Close the modal
@@ -257,8 +294,18 @@ class PhotoGallery {
         this.photoModalOverlay.classList.remove('active');
         this.photoModalOverlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+
+        // Remove keyboard listener
+        document.removeEventListener('keydown', this.handleKeyDown);
+
+        // Restore focus to trigger element
+        if (this.triggerElement && this.triggerElement.focus) {
+            this.triggerElement.focus();
+        }
+
         this.currentGallery = null;
         this.currentPhoto = null;
+        this.triggerElement = null;
     }
 
     // Render gallery grid

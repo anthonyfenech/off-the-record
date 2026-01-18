@@ -78,6 +78,11 @@
 
     /* Touch targets */
     --min-touch-target: 44px;
+
+    /* Performance - GPU acceleration */
+    --header-height-desktop: 69px;
+    --header-height-mobile: 64px;
+    --transition-modal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Font size classes (set by user preference) */
