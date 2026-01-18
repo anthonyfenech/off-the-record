@@ -7,7 +7,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🎙️',
         label: 'Audio',
-        caption: '97.1 The Ticket / 96.1 The Game - Trade Deadline Discussion',
+        caption: '',
         src: './assets/24-road-to-omaha/mike trade deadline.mp3',
         duration: '2:34',
         placeholder: false
@@ -16,7 +16,7 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '📺',
         label: 'Video',
-        caption: 'First time on MLB Network',
+        caption: '',
         src: './assets/05-rookie-year/FIRST ON TV.MOV.mov',
         duration: '1:45',
         placeholder: false
@@ -25,7 +25,7 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '🎬',
         label: 'Video',
-        caption: 'Miguel Cabrera - Batting Practice During COVID',
+        caption: '',
         src: './assets/28-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
         placeholder: false
     },
@@ -33,7 +33,7 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '🎬',
         label: 'Video',
-        caption: 'Fantasy Camp Scrum',
+        caption: '',
         src: './assets/22-viva-las-vegas/FANTASY CAMP SCRUM.mp4',
         placeholder: false
     },
@@ -41,7 +41,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Jim Harbaugh at satellite camp in Blue Springs, Mo.',
+        caption: '',
         src: './assets/11-hot-seat/6-15-16 harbaugh likes me.jpg',
         placeholder: false
     },
@@ -49,7 +49,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Miguel Cabrera\'s custom Louis Vuitton cleats',
+        caption: '',
         src: './assets/11-hot-seat/7-12-16 cabrera\'s kicks.jpg',
         placeholder: false
     },
@@ -57,7 +57,7 @@ export const MEDIA_CONTENT = {
         type: 'newspaper',
         emoji: '📰',
         label: 'Article',
-        caption: 'Peter Gammons\' lede from the 1975 World Series Game 6',
+        caption: '',
         src: './assets/23-globetrotting/gammons-fisk-lede.JPG',
         placeholder: false
     },
@@ -65,7 +65,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Screenshot',
-        caption: 'Justin Verlander likes my waffle machine tweet',
+        caption: '',
         src: './assets/14-prime-time/verlander likes waffles.PNG',
         placeholder: false
     },
@@ -73,7 +73,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'SportsCenter studio in Detroit',
+        caption: '',
         src: './assets/07-midseason/sportscenter-7-17-15.jpg',
         placeholder: false
     },
@@ -81,7 +81,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Harbaugh Watch at Big Ten Media Days in Chicago',
+        caption: '',
         src: './assets/11-hot-seat/7-25-16 stayed in chi to stalk harbaugh.jpg',
         placeholder: false
     },
@@ -89,7 +89,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📺',
         label: 'Screenshot',
-        caption: 'MLB Network High Heat - Hot Seat Discussion',
+        caption: '',
         src: './assets/11-hot-seat/HIGH HEAT HOT SEAT.png',
         placeholder: false
     },
@@ -97,7 +97,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Victor Martinez - Spring Training 2016',
+        caption: '',
         src: './assets/10-spring-training/VICTOR BARKING DOG 2017.png',
         placeholder: false
     },
@@ -105,7 +105,7 @@ export const MEDIA_CONTENT = {
         type: 'newspaper',
         emoji: '📰',
         label: 'Newspaper Clipping',
-        caption: 'Fantasy Camp Story',
+        caption: '',
         src: './assets/22-viva-las-vegas/24-road-to-omaha-fantasy-camp-story.jpg',
         placeholder: false
     },
@@ -113,7 +113,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'July 31, 2019 - Tigers dugout at Angel Stadium',
+        caption: '',
         src: './assets/24-road-to-omaha/july-31-2019-angel-stadium.jpg',
         placeholder: false
     },
@@ -121,7 +121,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '🎥',
         label: 'Video',
-        caption: 'Verlander flipped off Victor Martinez in dugout (Reddit)',
+        caption: '',
         url: 'https://www.reddit.com/r/baseball/comments/6vtvfg/verlander_flipped_off_victor_martinez_in_dugout/',
         placeholder: false
     },
@@ -129,7 +129,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'Article',
-        caption: 'Bubba Harkins defamation lawsuit settled (LA Times)',
+        caption: '',
         url: 'https://www.latimes.com/sports/angels/story/2023-07-31/bubba-harkins-defamation-lawsuit-angels-mlb-settled',
         placeholder: false
     },
@@ -137,7 +137,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Talkin\' Tigers podcast with Drew Sharp',
+        caption: '',
         src: './assets/13-wake-up-call/Talkin\' Tigers me and Drew.jpg',
         placeholder: false
     },
@@ -145,7 +145,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Kinsler to play for Team USA - TV screenshot',
+        caption: '',
         src: '',
         placeholder: true
     },
@@ -153,7 +153,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'Article',
-        caption: 'Justin Verlander remembers veterans with poppy flower (Detroit Free Press)',
+        caption: '',
         url: 'https://www.freep.com/story/sports/mlb/tigers/2017/05/28/detroit-tigers-memorial-day-justin-verlander-remembers-veterans-poppy-flower/352657001/',
         placeholder: false
     },
@@ -161,7 +161,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Internet Stalker article: Anthony Fenech is a Fucking Moron',
+        caption: '',
         src: './assets/04-scandal/anthony-fenech-moron.jpg',
         placeholder: false
     },
@@ -169,7 +169,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Tale of the Tape: Fenech vs. Verlander',
+        caption: '',
         src: './assets/26-unethical/12-pennant-race-verlander-tale-of-tape.jpg',
         placeholder: false
     },
@@ -177,7 +177,7 @@ export const MEDIA_CONTENT = {
         type: 'newspaper',
         emoji: '📰',
         label: 'Newspaper',
-        caption: 'Detroit Free Press, August 4, 2015',
+        caption: '',
         src: './assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.jpg',
         placeholder: false
     },
@@ -185,7 +185,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'ESPN BottomLine: Verlander incident',
+        caption: '',
         src: './assets/26-unethical/Verlander incident ESPN push alert.png',
         placeholder: false
     },
@@ -193,7 +193,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '🔗',
         label: 'Baseball Reference',
-        caption: 'Francisco Rodríguez Career Stats',
+        caption: '',
         url: 'https://www.baseball-reference.com/players/r/rodrifr03.shtml',
         placeholder: false
     },
@@ -201,7 +201,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '🔗',
         label: 'Detroit Free Press',
-        caption: 'Joe Nathan feature story',
+        caption: '',
         url: 'https://www.freep.com/story/sports/mlb/tigers/2015/02/15/joe-nathan-detroit-tigers/23446431/',
         placeholder: false
     },
@@ -209,7 +209,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'The Ringer',
-        caption: 'Sportswriting Year in Review',
+        caption: '',
         url: 'https://www.theringer.com/2019/12/20/year-in-review/sportswriting-new-orleans-times-picayune-saints-josh-katzenstein',
         placeholder: false
     },
@@ -217,7 +217,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'New York Post',
-        caption: 'Verlander\'s diva attitude didn\'t sit well with Scherzer',
+        caption: '',
         url: 'https://nypost.com/2023/08/12/justin-verlanders-diva-attitude-didnt-sit-well-with-max-scherzer-and-some-mets/',
         placeholder: false
     },
@@ -225,7 +225,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'Sports Illustrated',
-        caption: 'Sticky Stuff: Bubba Harkins Speaking Out',
+        caption: '',
         url: 'https://www.si.com/mlb/2021/06/14/sticky-stuff-bubba-harkins-speaking-out-daily-cover',
         placeholder: false
     },
@@ -233,7 +233,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'Article',
-        caption: 'Justin Verlander, Kate Upton team up to find homes for dogs (Detroit Free Press)',
+        caption: '',
         url: 'https://www.freep.com/story/sports/mlb/tigers/2016/04/01/detroit-tigers-justin-verlander-kate-upton/82514894/',
         placeholder: false
     },
@@ -241,7 +241,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📰',
         label: 'Article',
-        caption: 'Justin Verlander\'s happiness away from baseball includes girlfriend Kate Upton (Detroit Free Press)',
+        caption: '',
         url: 'https://www.freep.com/story/sports/mlb/tigers/2016/04/03/detroit-tigers-justin-verlander/82578802/',
         placeholder: false
     },
@@ -249,7 +249,7 @@ export const MEDIA_CONTENT = {
         type: 'link',
         emoji: '📷',
         label: 'Zillow',
-        caption: 'Alex Avila\'s Lakeland house with basketball court',
+        caption: '',
         url: 'https://www.zillow.com/homedetails/2827-Medinah-Cir-Lakeland-FL-33803/66197962_zpid/',
         placeholder: false
     },
@@ -257,7 +257,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🔴',
         label: 'Audio',
-        caption: 'Peter Gammons stories',
+        caption: '',
         src: '',
         placeholder: true
     },
@@ -265,7 +265,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🔴',
         label: 'Audio',
-        caption: 'Ernie Harwell',
+        caption: '',
         src: './assets/16-summer-2017-ii/ernie-harwell-talk.mp3',
         placeholder: false
     },
@@ -273,7 +273,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Letter from Mike Ilitch',
+        caption: '',
         src: '',
         placeholder: true
     },
@@ -284,7 +284,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Screenshot',
-        caption: 'Internet Stalker Website Suspended',
+        caption: '',
         src: './assets/04-scandal/internet-stalker-website-suspended.png',
         placeholder: false
     },
@@ -292,7 +292,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Document',
-        caption: 'DUI Report',
+        caption: '',
         src: './assets/04-scandal/dui-report.jpg',
         placeholder: false
     },
@@ -302,7 +302,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'My laptop after the foul ball - screen spider-webbed',
+        caption: '',
         src: './assets/07-midseason/laptop-busted.jpg',
         placeholder: false
     },
@@ -310,17 +310,9 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '🎬',
         label: 'Video',
-        caption: 'FOX Sports 1 broadcast - Foul ball play-by-play',
+        caption: '',
         src: './assets/07-midseason/foul-ball-fox-commentary.mp4',
         placeholder: false
-    },
-    'sour-shoes-prank': {
-        type: 'audio',
-        emoji: '🔴',
-        label: 'Audio',
-        caption: 'Sour Shoes prank call from Howard Stern Show',
-        src: '',
-        placeholder: true
     },
 
     // Chapter 5 - Rookie Year
@@ -328,7 +320,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: '2000 Ford Taurus with nearly 200,000 miles',
+        caption: '',
         src: '',
         placeholder: true
     },
@@ -338,7 +330,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '✉️',
         label: 'Email',
-        caption: 'Email to Mozeliak - July 27, 2015',
+        caption: '',
         src: './assets/08-trade-deadline/email-mozeliak.jpg',
         placeholder: false
     },
@@ -348,7 +340,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '📞',
         label: 'Voicemail',
-        caption: 'Pepper Voicemail',
+        caption: '',
         src: './assets/09-fire-drill/pepper-voicemail.m4a',
         placeholder: false
     },
@@ -358,7 +350,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Al Avila\'s Lakeland house - basketball court living room',
+        caption: '',
         src: './assets/10-spring-training/lakeland-bbq.png',
         placeholder: false
     },
@@ -368,7 +360,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'European Vacation',
+        caption: '',
         src: './assets/12-pennant-race/feneuropeanvacation.jpg',
         placeholder: false
     },
@@ -378,7 +370,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Middle Finger - November 6, 2016',
+        caption: '',
         src: './assets/13-wake-up-call/IS-middle-finger-11-6-16.jpg',
         placeholder: false
     },
@@ -388,7 +380,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: '2017 Journalism Day',
+        caption: '',
         src: './assets/14-prime-time/2017-journalism-day.jpg',
         placeholder: false
     },
@@ -396,7 +388,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Leyland Managing USA - March 10, 2017',
+        caption: '',
         src: './assets/14-prime-time/3-10-17 leyland managing usa.jpg',
         placeholder: false
     },
@@ -404,7 +396,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Screenshot',
-        caption: 'DSR Worst Sports Media Personality Bracket',
+        caption: '',
         src: './assets/14-prime-time/DSR worst sports media personality title bracket.jpg',
         placeholder: false
     },
@@ -412,7 +404,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'KC Heat Wave',
+        caption: '',
         src: './assets/14-prime-time/kc-heat-wave.jpg',
         placeholder: false
     },
@@ -422,7 +414,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Max Scherzer at press conference after 20-strikeout game',
+        caption: '',
         src: './assets/11-hot-seat/max-after-20.jpg',
         placeholder: false
     },
@@ -432,7 +424,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Al Avila - Verlander Trade',
+        caption: '',
         src: './assets/16-summer-2017-ii/19-draft-day-al-avila-verlander-trade.jpg',
         placeholder: false
     },
@@ -440,7 +432,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🔴',
         label: 'Audio',
-        caption: 'Jim Leyland - First time in a clubhouse recording',
+        caption: '',
         src: './assets/16-summer-2017-ii/first-time-ever.mp3',
         placeholder: false
     },
@@ -450,7 +442,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Foley\'s Signed Ball',
+        caption: '',
         src: './assets/19-draft-day/foleys-signed-ball.jpg',
         placeholder: false
     },
@@ -460,7 +452,7 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '🎬',
         label: 'Video',
-        caption: 'Zimmermann Tweet Video',
+        caption: '',
         src: './assets/22-viva-las-vegas/zimmermann tweet:vid.mov',
         placeholder: false
     },
@@ -470,7 +462,7 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '🎬',
         label: 'Video',
-        caption: 'Globetrotting Video',
+        caption: '',
         src: './assets/23-globetrotting/2020:10:12 3-43-41 PM.mov',
         placeholder: false
     },
@@ -478,7 +470,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Scorecard',
-        caption: 'George King Scorecard',
+        caption: '',
         src: './assets/23-globetrotting/george-king-scorecard.jpg',
         placeholder: false
     },
@@ -488,7 +480,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '💬',
         label: 'Messages',
-        caption: 'Messages After Verlander',
+        caption: '',
         src: './assets/26-unethical/messages after verlander.JPG',
         placeholder: false
     },
@@ -496,7 +488,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Security Guards Clubhouse',
+        caption: '',
         src: './assets/26-unethical/security guards clubhouse.JPG',
         placeholder: false
     },
@@ -504,7 +496,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Tito Big Series',
+        caption: '',
         src: './assets/26-unethical/tito-big-series.jpg',
         placeholder: false
     },
@@ -512,7 +504,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Angels Luggage',
+        caption: '',
         src: './assets/26-unethical/unethical - angels luggages.JPG',
         placeholder: false
     },
@@ -520,7 +512,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Jack Daniels',
+        caption: '',
         src: './assets/26-unethical/unethical jack daniels.JPG',
         placeholder: false
     },
@@ -528,7 +520,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Zero Fox Given',
+        caption: '',
         src: './assets/26-unethical/zero fox given.JPG',
         placeholder: false
     },
@@ -538,7 +530,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Max Scherzer thank you ad in the Detroit Free Press',
+        caption: '',
         src: './assets/28-postscript/scherzer-thank-you.png',
         placeholder: false
     },
@@ -546,7 +538,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Screenshot',
-        caption: 'Where Is Anthony Fenech',
+        caption: '',
         src: './assets/28-postscript/where-is-anthony-fenech.png',
         placeholder: false
     },
@@ -556,7 +548,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Trade Deadline Dugout',
+        caption: '',
         src: './assets/26-unethical/26-unethical-trade-deadline-dugout.jpg',
         placeholder: false
     },
@@ -568,7 +560,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Winter Meetings - December 7, 2014',
+        caption: '',
         src: './assets/04-scandal/12-7-14 winter meetings.jpg',
         placeholder: false
     },
@@ -576,7 +568,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Rainbow Over New York - July 11, 2016',
+        caption: '',
         src: './assets/11-hot-seat/7-11-16 rainbow over new york.jpg',
         placeholder: false
     },
@@ -584,7 +576,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Waiting for Harbaugh - July 25, 2016',
+        caption: '',
         src: './assets/11-hot-seat/7-25-16 waiting for harbaugh.jpg',
         placeholder: false
     },
@@ -592,7 +584,7 @@ export const MEDIA_CONTENT = {
         type: 'pdf',
         emoji: '📄',
         label: 'PDF',
-        caption: 'Freep Forward Organization Document',
+        caption: '',
         src: './assets/13-wake-up-call/FreepForward_org.pdf',
         placeholder: false
     },
@@ -604,7 +596,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🎙️',
         label: 'Audio',
-        caption: 'Verlander Injury Discussion - September 12, 2018',
+        caption: '',
         src: './assets/21-burn-out/verlander-injury-9-12-18.mp3',
         placeholder: false
     },
@@ -612,7 +604,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🎙️',
         label: 'Audio',
-        caption: 'Verlander Blow Off - August 20, 2019',
+        caption: '',
         src: './assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
         placeholder: false
     },
@@ -620,15 +612,15 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🎙️',
         label: 'Audio',
-        caption: 'Winter Meetings Media Availability - December 10, 2019',
+        caption: '',
         src: './assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
         placeholder: false
     },
     'jeff-moss-prank-call': {
         type: 'audio',
-        emoji: '📞',
-        label: 'Phone Call',
-        caption: 'Jeff Moss Prank Call',
+        emoji: '🔴',
+        label: 'Audio',
+        caption: '',
         src: './assets/07-midseason/jeff-moss-prank-call.mp3',
         placeholder: false
     },
@@ -636,7 +628,7 @@ export const MEDIA_CONTENT = {
         type: 'audio',
         emoji: '🎙️',
         label: 'Audio',
-        caption: 'Kinsler Angel Recording',
+        caption: '',
         src: './assets/16-summer-2017-ii/kinsler-angel.mp3',
         placeholder: false
     },
@@ -648,7 +640,7 @@ export const MEDIA_CONTENT = {
         type: 'video',
         emoji: '🎬',
         label: 'Video',
-        caption: 'Cy Young 2016 with Bernie',
+        caption: '',
         src: './assets/13-wake-up-call/cy-young-2016-bernie.mp4',
         placeholder: false
     },
@@ -660,7 +652,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'We were chillen right before - February 21, 2018',
+        caption: '',
         src: './assets/18-awards-season/2-21-18 we were chillen right before.jpg',
         placeholder: false
     },
@@ -668,7 +660,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Only in Tiger Town - February 24, 2018',
+        caption: '',
         src: './assets/18-awards-season/2-24-18 only in tiger town.jpg',
         placeholder: false
     },
@@ -676,7 +668,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'I have to be better - May 25, 2015',
+        caption: '',
         src: './assets/06-opening-day/5-25-15 i have to be better.jpg',
         placeholder: false
     },
@@ -684,7 +676,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Greatest assignment ever love you - July 30, 2018',
+        caption: '',
         src: './assets/20-cooperstown/7-30-18 greatest assignment ever love you.jpg',
         placeholder: false
     },
@@ -692,7 +684,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'JFC go away - July 13, 2018',
+        caption: '',
         src: './assets/19-draft-day/7-13-18 jfc go away.jpg',
         placeholder: false
     },
@@ -700,7 +692,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Ending in Atlanta - October 2, 2016',
+        caption: '',
         src: './assets/12-pennant-race/10-2-16 ending in atl.jpg',
         placeholder: false
     },
@@ -708,7 +700,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'October 30, 2015',
+        caption: '',
         src: './assets/09-fire-drill/2015:10:30 5-11-25 PM.JPG',
         placeholder: false
     },
@@ -716,7 +708,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'October 26, 2016',
+        caption: '',
         src: './assets/13-wake-up-call/2016:10:26 7-42-27 PM.JPG',
         placeholder: false
     },
@@ -724,7 +716,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'February 7, 2018',
+        caption: '',
         src: './assets/17-world-series/2018:02:07 4-18-52 PM.JPG',
         placeholder: false
     },
@@ -732,7 +724,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'July 12, 2018',
+        caption: '',
         src: './assets/19-draft-day/2018:07:12 12-18-42 PM.JPG',
         placeholder: false
     },
@@ -740,7 +732,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'October 11, 2018',
+        caption: '',
         src: './assets/10-spring-training/2018:10:11 09-41-54 PM.jpg',
         placeholder: false
     },
@@ -748,7 +740,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'April 17, 2019',
+        caption: '',
         src: './assets/23-globetrotting/2019:04:17 6-24-19 PM.JPG',
         placeholder: false
     },
@@ -756,7 +748,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'April 24, 2019',
+        caption: '',
         src: './assets/23-globetrotting/2019:04:24 10-10-31 AM.JPG',
         placeholder: false
     },
@@ -764,7 +756,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'August 21, 2019',
+        caption: '',
         src: './assets/25-letter-to-the-editor/2019:08:21 9-37-51 PM.JPG',
         placeholder: false
     },
@@ -772,7 +764,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'August 24, 2019',
+        caption: '',
         src: './assets/26-unethical/2019:08:24 11-59-33 PM.JPG',
         placeholder: false
     },
@@ -780,7 +772,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '🏆',
         label: 'Award',
-        caption: 'APSE Top 10',
+        caption: '',
         src: './assets/18-awards-season/APSE Top 10.jpg',
         placeholder: false
     },
@@ -788,7 +780,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Andrew Cab 2020',
+        caption: '',
         src: './assets/28-postscript/Andrew Cab 2020.png',
         placeholder: false
     },
@@ -796,7 +788,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Andrew Cab 2020 (2)',
+        caption: '',
         src: './assets/28-postscript/Andrew Cab 2020 2.png',
         placeholder: false
     },
@@ -804,7 +796,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Andrew Cab 2020 (3)',
+        caption: '',
         src: './assets/28-postscript/Andrew Cab 2020 3.png',
         placeholder: false
     },
@@ -812,7 +804,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'April 2, 2019',
+        caption: '',
         src: './assets/23-globetrotting/April 2 2019 at 01.09 AM.JPG',
         placeholder: false
     },
@@ -820,7 +812,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'April 4, 2019',
+        caption: '',
         src: './assets/23-globetrotting/April 4 2019 at 12.24 PM.JPG',
         placeholder: false
     },
@@ -828,7 +820,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '🐦',
         label: 'Tweet',
-        caption: 'Bregman "Nah, false" Tweet',
+        caption: '',
         src: './assets/24-road-to-omaha/Bregman nah false tweet.png',
         placeholder: false
     },
@@ -836,7 +828,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'February 19, 2018',
+        caption: '',
         src: './assets/18-awards-season/February 19 2018 at 13.47 PM.JPG',
         placeholder: false
     },
@@ -844,7 +836,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Screenshot',
-        caption: 'Screenshot - November 13, 2024',
+        caption: '',
         src: './assets/26-unethical/Screenshot 2024-11-13 at 11.28.33 PM.png',
         placeholder: false
     },
@@ -852,7 +844,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '📷',
         label: 'Photo',
-        caption: 'Fenech Middle Finger',
+        caption: '',
         src: './assets/13-wake-up-call/fenech middle finger.jpeg',
         placeholder: false
     },
@@ -860,7 +852,7 @@ export const MEDIA_CONTENT = {
         type: 'selfie',
         emoji: '🤳',
         label: 'Selfie',
-        caption: 'Minnesota Selfie with Zimm',
+        caption: '',
         src: './assets/12-pennant-race/minnesota selfie zimm.jpeg',
         placeholder: false
     },
@@ -868,7 +860,7 @@ export const MEDIA_CONTENT = {
         type: 'photo',
         emoji: '🐦',
         label: 'Tweet',
-        caption: 'Verlander Trade Tweet',
+        caption: '',
         src: './assets/16-summer-2017-ii/verlander trade tweet.jpg',
         placeholder: false
     }

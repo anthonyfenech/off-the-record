@@ -1,0 +1,162 @@
+═══════════════════════════════════════════════════════════════════
+UNEMBEDDED MEDIA INVENTORY
+Generated: 2026-01-17
+═══════════════════════════════════════════════════════════════════
+
+PHOTOS NOT IN MANUSCRIPT:
+────────────────────────────────────────────────────────────────────
+
+04-SCANDAL:
+  • internet-stalker-website → "Internet Stalker Website Suspended"
+  • dui-report → "DUI Report"
+  • winter-meetings-12-7-14 → "Winter Meetings - December 7, 2014"
+
+06-OPENING-DAY:
+  • have-to-be-better-5-25-15 → "I have to be better - May 25, 2015"
+
+09-FIRE-DRILL:
+  • photo-2015-10-30 → "October 30, 2015"
+
+10-SPRING-TRAINING:
+  • photo-2018-10-11 → "October 11, 2018"
+
+11-HOT-SEAT:
+  • rainbow-over-new-york → "Rainbow Over New York - July 11, 2016"
+  • waiting-for-harbaugh → "Waiting for Harbaugh - July 25, 2016"
+
+12-PENNANT-RACE:
+  • european-vacation → "European Vacation"
+  • ending-in-atl-10-2-16 → "Ending in Atlanta - October 2, 2016"
+  • minnesota-selfie-zimm → "Minnesota Selfie with Zimm"
+
+13-WAKE-UP-CALL:
+  • middle-finger → "Middle Finger - November 6, 2016"
+  • photo-2016-10-26 → "October 26, 2016"
+  • fenech-middle-finger → "Fenech Middle Finger"
+
+14-PRIME-TIME:
+  • journalism-day-2017 → "2017 Journalism Day"
+  • leyland-managing-usa → "Leyland Managing USA - March 10, 2017"
+  • dsr-bracket → "DSR Worst Sports Media Personality Bracket"
+
+16-SUMMER-2017-II:
+  • verlander-trade-tweet → "Verlander Trade Tweet"
+
+17-WORLD-SERIES:
+  • photo-2018-02-07 → "February 7, 2018"
+
+18-AWARDS-SEASON:
+  • chillen-right-before-2-21-18 → "We were chillen right before - February 21, 2018"
+  • only-in-tiger-town-2-24-18 → "Only in Tiger Town - February 24, 2018"
+  • apse-top-10 → "APSE Top 10"
+  • february-19-2018 → "February 19, 2018"
+
+19-DRAFT-DAY:
+  • foleys-signed-ball → "Foley's Signed Ball"
+  • jfc-go-away-7-13-18 → "JFC go away - July 13, 2018"
+  • photo-2018-07-12 → "July 12, 2018"
+
+20-COOPERSTOWN:
+  • greatest-assignment-7-30-18 → "Greatest assignment ever love you - July 30, 2018"
+
+23-GLOBETROTTING:
+  • george-king-scorecard → "George King Scorecard"
+  • photo-2019-04-17 → "April 17, 2019"
+  • photo-2019-04-24 → "April 24, 2019"
+  • april-2-2019 → "April 2, 2019"
+  • april-4-2019 → "April 4, 2019"
+
+24-ROAD-TO-OMAHA:
+  • bregman-nah-false → "Bregman 'Nah, false' Tweet"
+
+25-LETTER-TO-THE-EDITOR:
+  • photo-2019-08-21 → "August 21, 2019"
+
+26-UNETHICAL:
+  • messages-after-verlander → "Messages After Verlander"
+  • security-guards-clubhouse → "Security Guards Clubhouse"
+  • tito-big-series → "Tito Big Series"
+  • angels-luggage → "Angels Luggage"
+  • jack-daniels → "Jack Daniels"
+  • zero-fox-given → "Zero Fox Given"
+  • trade-deadline-dugout → "Trade Deadline Dugout"
+  • photo-2019-08-24 → "August 24, 2019"
+  • screenshot-2024-11-13 → "Screenshot - November 13, 2024"
+
+28-POSTSCRIPT:
+  • where-is-anthony-fenech → "Where Is Anthony Fenech"
+  • andrew-cab-2020 → "Andrew Cab 2020"
+  • andrew-cab-2020-2 → "Andrew Cab 2020 (2)"
+  • andrew-cab-2020-3 → "Andrew Cab 2020 (3)"
+
+
+AUDIO NOT IN MANUSCRIPT:
+────────────────────────────────────────────────────────────────────
+
+07-MIDSEASON:
+  • jeff-moss-prank-call → "Jeff Moss Prank Call"
+    Embed: <span class="media-emoji" data-media-id="jeff-moss-prank-call">📞</span>
+
+09-FIRE-DRILL:
+  • pepper-voicemail → "Pepper Voicemail"
+    Embed: <span class="media-emoji" data-media-id="pepper-voicemail">📞</span>
+
+16-SUMMER-2017-II:
+  • kinsler-angel → "Kinsler Angel Recording"
+    Embed: <span class="media-emoji" data-media-id="kinsler-angel">🎙️</span>
+
+21-BURN-OUT:
+  • verlander-injury-9-12-18 → "Verlander Injury Discussion - September 12, 2018"
+    Embed: <span class="media-emoji" data-media-id="verlander-injury-9-12-18">🎙️</span>
+
+25-LETTER-TO-THE-EDITOR:
+  • verlander-blow-off-8-20-19 → "Verlander Blow Off - August 20, 2019"
+    Embed: <span class="media-emoji" data-media-id="verlander-blow-off-8-20-19">🎙️</span>
+
+27-BOTTOM-NINE:
+  • winter-meetings-12-10-19 → "Winter Meetings Media Availability - December 10, 2019"
+    Embed: <span class="media-emoji" data-media-id="winter-meetings-12-10-19">🎙️</span>
+
+
+VIDEOS NOT IN MANUSCRIPT:
+────────────────────────────────────────────────────────────────────
+
+13-WAKE-UP-CALL:
+  • cy-young-2016-bernie → "Cy Young 2016 with Bernie"
+    Embed: <span class="media-emoji" data-media-id="cy-young-2016-bernie">🎬</span>
+
+22-VIVA-LAS-VEGAS:
+  • zimmermann-tweet-vid → "Zimmermann Tweet Video"
+    Embed: <span class="media-emoji" data-media-id="zimmermann-tweet-vid">🎬</span>
+
+23-GLOBETROTTING:
+  • globetrotting-video → "Globetrotting Video"
+    Embed: <span class="media-emoji" data-media-id="globetrotting-video">🎬</span>
+
+
+PDF NOT IN MANUSCRIPT:
+────────────────────────────────────────────────────────────────────
+
+13-WAKE-UP-CALL:
+  • freep-forward → "Freep Forward Organization Document"
+    Embed: <span class="media-emoji" data-media-id="freep-forward">📄</span>
+
+
+═══════════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════════
+Photos: 43
+Audio: 6
+Video: 3
+PDF: 1
+────────────────────────────────────────────────────────────────────
+TOTAL: 53 items to embed
+═══════════════════════════════════════════════════════════════════
+
+
+QUICK EMBED REFERENCE:
+────────────────────────────────────────────────────────────────────
+Photo:  <span class="media-emoji" data-media-id="ID">📷</span>
+Audio:  <span class="media-emoji" data-media-id="ID">🎙️</span>
+Video:  <span class="media-emoji" data-media-id="ID">🎬</span>
+PDF:    <span class="media-emoji" data-media-id="ID">📄</span>
