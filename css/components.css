@@ -143,8 +143,8 @@
     color: #0044aa;
 }
 
-.citation-emoji {
-    font-size: 12pt;
+.citation-link .citation-emoji {
+    font-size: 12pt !important;
     vertical-align: middle;
 }
 
