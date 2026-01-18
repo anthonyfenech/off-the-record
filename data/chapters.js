@@ -3146,7 +3146,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline">UP NORTH, Mich., <em>July 5</em>—</span>Although I promised not to be on my phone this holiday weekend, here I am—scrolling underneath sunsetting skies, still cursing National Guy Jon Morosi to the heavens.</p>
 
-<p>Morosi is one of the nicest guys you'll ever hate. Yesterday, he blew my cover. First, he shared my inside information on Twitter: "Cubs inquired to Tigers on availability of Justin Verlander and Alex Avila, sources say, but sides have not engaged in trade negotiations." <span class="media-emoji" data-media-id="morosi-cubs-tweet">🐦</span> Then he called out my source, telling everyone that a "top Chicago scout" was at yesterday's game.</p>
+<p>Morosi is one of the nicest guys you'll ever hate. Yesterday, he blew my cover. First, he shared my inside information on Twitter: "Cubs inquired to Tigers on availability of Justin Verlander and Alex Avila, sources say, but sides have not engaged in trade negotiations." Then he called out my source, telling everyone that a "top Chicago scout" was at yesterday's game.</p>
 
 <p>Still thinking about it a day later, since I abandoned the plan of spending vacation without a phone glued to my hand.</p>
 

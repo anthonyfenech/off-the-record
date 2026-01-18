@@ -1,28 +1,7 @@
 // MediaModal - Displays media content in a modal overlay
-// Handles photos, videos, audio, documents, tweets, and other inline media
+// Handles photos, videos, audio, documents, and other inline media
 
 import { getMediaById } from '../data/media.js';
-
-// Load Twitter widget script if not already loaded
-let twitterWidgetLoaded = false;
-function loadTwitterWidget() {
-    if (twitterWidgetLoaded) return Promise.resolve();
-    return new Promise((resolve) => {
-        if (window.twttr) {
-            twitterWidgetLoaded = true;
-            resolve();
-            return;
-        }
-        const script = document.createElement('script');
-        script.src = 'https://platform.twitter.com/widgets.js';
-        script.async = true;
-        script.onload = () => {
-            twitterWidgetLoaded = true;
-            resolve();
-        };
-        document.head.appendChild(script);
-    });
-}
 
 class MediaModal {
     constructor() {
@@ -212,9 +191,6 @@ class MediaModal {
                 case 'link':
                     body.innerHTML = this.renderLink(media);
                     break;
-                case 'tweet':
-                    this.renderTweet(media, body);
-                    return; // renderTweet handles its own async rendering
                 default:
                     body.innerHTML = this.renderPlaceholder(media);
             }
@@ -382,47 +358,6 @@ class MediaModal {
                 </a>
             </div>
         `;
-    }
-
-    // Render embedded tweet
-    renderTweet(media, body) {
-        // Show loading state
-        body.innerHTML = `
-            <div class="media-tweet-container">
-                <div class="tweet-loading">Loading tweet...</div>
-            </div>
-        `;
-
-        // Extract tweet ID from URL
-        const tweetId = media.url.match(/status\/(\d+)/)?.[1];
-        if (!tweetId) {
-            body.innerHTML = this.renderLink(media);
-            return;
-        }
-
-        // Load Twitter widget and create embed
-        loadTwitterWidget().then(() => {
-            const container = body.querySelector('.media-tweet-container');
-            if (container && window.twttr) {
-                container.innerHTML = '';
-                window.twttr.widgets.createTweet(tweetId, container, {
-                    theme: 'light',
-                    dnt: true // Do Not Track
-                }).then((el) => {
-                    if (!el) {
-                        // Tweet failed to load, show link fallback
-                        container.innerHTML = `
-                            <div class="tweet-error">
-                                <p>Tweet could not be loaded.</p>
-                                <a href="${media.url}" target="_blank" rel="noopener noreferrer" class="media-link">
-                                    View on Twitter/X
-                                </a>
-                            </div>
-                        `;
-                    }
-                });
-            }
-        });
     }
 
     // Show the modal

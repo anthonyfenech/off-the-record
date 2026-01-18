@@ -197,14 +197,6 @@ export const MEDIA_CONTENT = {
         url: 'https://www.baseball-reference.com/players/r/rodrifr03.shtml',
         placeholder: false
     },
-    'morosi-cubs-tweet': {
-        type: 'tweet',
-        emoji: '🐦',
-        label: 'Tweet',
-        caption: 'Jon Morosi tweet about Cubs-Tigers negotiations',
-        url: 'https://x.com/jonmorosi/status/882039692824281088',
-        placeholder: false
-    },
     'joe-nathan-story': {
         type: 'link',
         emoji: '🔗',
@@ -918,7 +910,6 @@ export const MEDIA_TYPES = {
     pdf: { emoji: '📄', label: 'PDF Document' },
     attachment: { emoji: '📎', label: 'Attachment' },
     link: { emoji: '🔗', label: 'Link' },
-    tweet: { emoji: '🐦', label: 'Tweet' },
     email: { emoji: '✉️', label: 'E-mail' },
     text: { emoji: '💬', label: 'Text Message' },
     selfie: { emoji: '🤳', label: 'Selfie' },
