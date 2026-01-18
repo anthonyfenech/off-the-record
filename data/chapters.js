@@ -5558,7 +5558,7 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="no-indent"><strong>To:</strong> Thomas, Christopher &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 <span class="small-caps">P.M.</span><br/>
+<p class="no-indent"><strong>To:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 <span class="small-caps">P.M.</span><br/>
 <strong>Subject:</strong> RE: Tigers today</p>
 
 <p class="no-indent"><em><i>I apologize if I’m coming off a certain way, but I just need to make a couple points here: There is a very minimal chance I will be asking Justin Verlander anything. Why? Because I was the only person to ask him last year—at my editor’s request—about his injury misdiagnosis claims. I understood then that it would harm my future relations with him, but I did it anyways.</em></p>
@@ -5567,14 +5567,16 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="no-indent"><strong>From:</strong> Thomas, Christopher &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 <span class="small-caps">P.M.</span><br/>
+<p class="no-indent"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 <span class="small-caps">P.M.</span><br/>
 <strong>Subject:</strong> RE: Tigers today</p>
 
 <p class="no-indent"><em><i>Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are definitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job finding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</i></em></p>
 
 <p class="scene-break">***</p>
 
-            <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I’m about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and sports editor Chris Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
+<p>&nbsp;</p>
+
+ <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I’m about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and sports editor Chris Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
 
             <p>Still basking in the afterglow of a clicks bonanza from the Trade Deadline Exposé, Thomas wanted more juice—the lowly Tigers aren’t bringing eyes to the site these days.</p>
             <p>I hoped it’d slip his mind, but nope. “Don’t forget,” he emailed yesterday, “as we mentioned before, we gotta get Bregman talking about the possibility of being a Tiger a few seasons ago. The sooner we get that one pregame, the better.”</p>
