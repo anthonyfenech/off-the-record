@@ -141,87 +141,6 @@ class BossButton {
         // Dispatch custom event for external analytics integration
         window.dispatchEvent(new CustomEvent('bossButtonAction', { detail: data }));
     }
-
-    // Performance test suite
-    runTests() {
-        console.log('=================================');
-        console.log('   BOSS BUTTON TEST SUITE');
-        console.log('=================================');
-
-        const perfResult = this.testPerformance();
-        const scrollResult = this.testScrollRestoration();
-
-        console.log('=================================');
-        if (perfResult && scrollResult) {
-            console.log('✅ ALL TESTS PASSED - Ready for production');
-        } else {
-            console.error('❌ TESTS FAILED - DO NOT DEPLOY');
-        }
-        console.log('=================================');
-
-        return perfResult && scrollResult;
-    }
-
-    testPerformance() {
-        console.log('🧪 Testing Boss Button Performance...');
-        const iterations = 50;
-        const timings = [];
-
-        for (let i = 0; i < iterations; i++) {
-            const start = performance.now();
-            this.activate();
-            this.deactivate();
-            const end = performance.now();
-            timings.push(end - start);
-        }
-
-        const avgTime = timings.reduce((a, b) => a + b) / timings.length;
-        const maxTime = Math.max(...timings);
-        const minTime = Math.min(...timings);
-
-        console.log(`📊 Performance Results (${iterations} iterations):`);
-        console.log(`   Average: ${avgTime.toFixed(2)}ms`);
-        console.log(`   Min: ${minTime.toFixed(2)}ms`);
-        console.log(`   Max: ${maxTime.toFixed(2)}ms`);
-
-        if (maxTime > 100) {
-            console.error('❌ FAILED: Boss Button exceeds 100ms requirement');
-            return false;
-        }
-
-        console.log('✅ PASSED: Boss Button performance acceptable');
-        return true;
-    }
-
-    testScrollRestoration() {
-        console.log('🧪 Testing Scroll Restoration...');
-        const testPositions = [0, 100, 500, 1000, 2500];
-        let passed = true;
-
-        testPositions.forEach(pos => {
-            window.scrollTo(0, pos);
-            // Wait for scroll to settle
-            const savedPos = window.scrollY;
-
-            this.activate();
-            this.deactivate();
-
-            const restoredPos = window.scrollY;
-
-            if (Math.abs(savedPos - restoredPos) > 1) {
-                console.error(`❌ FAILED: Scroll restoration at ${pos}px (expected ${savedPos}, got ${restoredPos})`);
-                passed = false;
-            } else {
-                console.log(`✅ Position ${pos}px restored correctly`);
-            }
-        });
-
-        if (passed) {
-            console.log('✅ PASSED: All scroll positions restored accurately');
-        }
-
-        return passed;
-    }
 }
 
 // Create singleton instance
@@ -229,9 +148,3 @@ const bossButton = new BossButton();
 
 // Export for module usage
 export { bossButton };
-
-// Make available globally for debugging and testing
-if (typeof window !== 'undefined') {
-    window.bossButton = bossButton;
-    window.runBossButtonTests = () => bossButton.runTests();
-}
