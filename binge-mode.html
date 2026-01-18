@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
     <title>BINGE MODE</title>
 
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
@@ -216,6 +217,281 @@
         body.hide-chapter-breaks .chapter-end {
             display: none;
         }
+
+        /* ============================================
+           MOBILE-FIRST RESPONSIVE ENHANCEMENTS
+           Desktop (1024px+) remains unchanged
+           ============================================ */
+
+        /* Reduced Motion Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* iOS-Specific Fixes */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                -webkit-text-size-adjust: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        /* Android-Specific Fixes */
+        @supports (-webkit-appearance: none) {
+            .nav-btn,
+            .bookmark-btn,
+            .back-to-reader,
+            .menu-btn,
+            .clean-toggle {
+                -webkit-appearance: none;
+            }
+        }
+
+        /* Large Tablet (max-width: 1023px) */
+        @media (max-width: 1023px) {
+            body {
+                padding-left: env(safe-area-inset-left, 20px);
+                padding-right: env(safe-area-inset-right, 20px);
+            }
+
+            .header {
+                padding-left: env(safe-area-inset-left, 0);
+                padding-right: env(safe-area-inset-right, 0);
+            }
+        }
+
+        /* Small Tablet / Large Phone (max-width: 767px) */
+        @media (max-width: 767px) {
+            body {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .chapter-section {
+                margin-bottom: 30px;
+            }
+
+            .chapter-section .chapter-header {
+                margin-top: 1.5em;
+                margin-bottom: 1.5em;
+                padding-bottom: 1em;
+            }
+        }
+
+        /* Standard Phone - MAIN MOBILE (max-width: 599px) */
+        @media (max-width: 599px) {
+            /* Safe Area Insets */
+            body {
+                padding: 74px 16px 90px;
+                padding-top: calc(74px + env(safe-area-inset-top, 0px));
+                padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+                padding-left: max(16px, env(safe-area-inset-left, 16px));
+                padding-right: max(16px, env(safe-area-inset-right, 16px));
+            }
+
+            .header {
+                padding-top: env(safe-area-inset-top, 0);
+            }
+
+            .header-content {
+                height: 64px;
+                padding: 0 12px;
+            }
+
+            .header-logo-img {
+                height: 24px;
+            }
+
+            /* Touch Targets - WCAG 2.1 AA (44x44px minimum) */
+            .back-to-reader {
+                width: 48px;
+                height: 48px;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                user-select: none;
+            }
+
+            .back-to-reader:active {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            .menu-btn {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 10px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .menu-btn:active {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            /* Navigation Footer - Full Width Bottom Bar */
+            .nav-footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: none;
+                border-radius: 0;
+                box-shadow: none;
+                border-top: 1px solid var(--color-border);
+                padding: var(--space-sm) var(--space-md);
+                padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom, var(--space-sm)));
+                gap: var(--space-lg);
+                background-color: var(--color-background);
+            }
+
+            .nav-btn {
+                min-width: 48px;
+                min-height: 44px;
+                padding: 10px 14px;
+                font-size: 13px;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                user-select: none;
+            }
+
+            .nav-btn:active:not(:disabled) {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            .bookmark-btn {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 10px;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                user-select: none;
+            }
+
+            .bookmark-btn:active {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            /* Media Emoji Touch Targets */
+            .media-emoji {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 32px;
+                min-height: 32px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .media-emoji:active {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            /* Spacing Adjustments */
+            .chapter-section {
+                margin-bottom: 24px;
+            }
+
+            .chapter-section .chapter-header {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                padding-bottom: 0.75em;
+            }
+
+            .scene-break {
+                padding: var(--space-md) 0;
+            }
+
+            .flashback-header {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+                padding: var(--space-md) 0;
+            }
+
+            .chapter-end {
+                padding: 1em 0 2em 0;
+                font-size: 1.1rem;
+            }
+
+            /* Clean Toggle Button */
+            .clean-toggle {
+                min-width: 44px;
+                min-height: 44px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .clean-toggle:active {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+        }
+
+        /* Small Phone - iPhone SE (max-width: 374px) */
+        @media (max-width: 374px) {
+            body {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .header-content {
+                padding: 0 8px;
+            }
+
+            .header-logo-img {
+                height: 22px;
+            }
+
+            .nav-btn {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+
+            .nav-btn span {
+                display: none;
+            }
+
+            .nav-footer {
+                gap: var(--space-xl);
+            }
+
+            .chapter-section .chapter-header {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Landscape Mode on Short Screens */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .header-content {
+                height: 50px;
+            }
+
+            .nav-footer {
+                padding: var(--space-xs) var(--space-md);
+            }
+
+            .nav-btn {
+                min-height: 36px;
+                padding: 6px 10px;
+            }
+
+            .bookmark-btn {
+                min-height: 36px;
+                padding: 6px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -235,14 +511,14 @@
     <header class="header" id="header">
         <div class="header-content">
             <a href="./" class="back-to-reader" aria-label="Back to reader">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </a>
             <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
-            <button class="clean-toggle" id="cleanToggle" title="Toggle media icons">Clean</button>
+            <button type="button" class="clean-toggle" id="cleanToggle" title="Toggle media icons">Clean</button>
         </div>
     </header>
 
@@ -252,20 +528,20 @@
 
     <!-- Chapter Navigation Footer -->
     <nav class="nav-footer" id="navFooter">
-        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button type="button" class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
             <span>Previous</span>
         </button>
-        <button class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmark chapter">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button type="button" class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmark chapter">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
             </svg>
         </button>
-        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
+        <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
             <span>Next</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </button>
