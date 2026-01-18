@@ -61,6 +61,14 @@ export const MEDIA_CONTENT = {
         src: 'https://www.espn.co.uk/mlb/story/_/id/22873239/opposite-ends-mlb-manager-spectrum-succeed',
         placeholder: false
     },
+    'tigers-stink-2018-photo': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'February 19, 2018',
+        src: './assets/18-awards-season/February 19 2018 at 13.47 PM.JPG',
+        placeholder: false
+    },
     'cabreras-kicks': {
         type: 'photo',
         emoji: '📷',

@@ -143,6 +143,10 @@
     color: var(--color-accent);
 }
 
+.citation-emoji {
+    font-size: 12pt;
+}
+
 /* Flashback Header */
 .flashback-header {
     font-family: var(--font-mono);
