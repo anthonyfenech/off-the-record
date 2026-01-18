@@ -4315,8 +4315,8 @@ export const CHAPTERS = [
             <p>Inside the dressing room, I feel an unusual energy—and eyes on me. Sauntering to the major-league side, I see why.</p>
             <p>Sheets of paper are taped to the top shelf of each locker stall. I immediately recognize my handiwork:</p>
 
-            <p class="block-quote"><strong>Detroit Tigers Will Stink in 2018</strong><br>
-            <span class="small-caps">Anthony Fenech, Detroit Free Press</span></p>
+            <p><strong>Detroit Tigers Will Stink in 2018</strong><br>
+            Anthony Fenech, Detroit Free Press</p>
 
             <p class="no-indent">I pop my head into Gardy's office before leaving. He's sitting at his desk. Liddle is in a chair across from him.</p>
             <p>I tap the doorframe.</p>
