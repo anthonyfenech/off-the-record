@@ -492,11 +492,13 @@ export const CHAPTERS = [
 <p class="no-indent"><strong>From:</strong> Myers, Gene &nbsp;&nbsp;&nbsp; <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">P.M.</span><br/>
 <strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
 
-<p class="no-indent">“After more than seven years, in essence, in the </em>Free Press’<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
+<p>&nbsp;</p>
+
+<p class="no-indent"><i>“After more than seven years, in essence, in the </em>Free Press’<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
 
 <p class="no-indent">“This has been Anthony’s path to The Show: He started on the Prep Crew and He did stringing work while at Central Michigan. He blogged countless games for Freep.com while interning in Las Vegas, Pittsburgh and Phoenix. He became a </em>Freep<em> intern and officially hired. Since then, he usually has staffed the overnight sports web shift but covered enough baseball to earn his Baseball Writers’ Association of America card before the 2013 season. When it arrived, it was one of the happiest days of his life.</em></p>
 
-<p class="no-indent">“John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: ‘A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call ‘interrupted a nap in my car.’”</em></p>
+<p class="no-indent">“John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: ‘A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call ‘interrupted a nap in my car.’”</em></p></i>
 
 <p>&nbsp;</p>
 
