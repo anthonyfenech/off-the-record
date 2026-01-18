@@ -752,22 +752,6 @@ export const MEDIA_CONTENT = {
         src: './assets/23-globetrotting/2019:04:24 10-10-31 AM.JPG',
         placeholder: false
     },
-    'photo-2019-08-21': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: '',
-        src: './assets/25-letter-to-the-editor/2019:08:21 9-37-51 PM.JPG',
-        placeholder: false
-    },
-    'photo-2019-08-24': {
-        type: 'photo',
-        emoji: '📷',
-        label: 'Photo',
-        caption: '',
-        src: './assets/26-unethical/2019:08:24 11-59-33 PM.JPG',
-        placeholder: false
-    },
     'apse-top-10': {
         type: 'photo',
         emoji: '🏅',
