@@ -45,6 +45,14 @@ export const MEDIA_CONTENT = {
         src: './assets/11-hot-seat/6-15-16 harbaugh likes me.jpg',
         placeholder: false
     },
+    'true-life-ball-writer': {
+        type: 'photo',
+        emoji: '📷',
+        label: 'Photo',
+        caption: 'True Life: I\'m A Ball Writer',
+        src: '',
+        placeholder: true
+    },
     'cabreras-kicks': {
         type: 'photo',
         emoji: '📷',

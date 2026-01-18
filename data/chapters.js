@@ -4413,7 +4413,7 @@ export const CHAPTERS = [
             <p>"No, I'm pooped. Next time."</p>
             <p>Avila changes his mind later on—I'm invited to his suburban home in Bloomfield Hills.</p>
             <p>He gives a short tour. Baseball is on TV and Avila has prepared a charcuterie board of meats and cheeses on the kitchen table. I send a picture.</p>
-            <p>Caption: "True Life: I'm A Ball Writer. In this episode, I text my GM for a cigar. When I arrive, the GM says, 'I got some munchies for you.'"</p>`,
+            <p>Caption: "True Life: I'm A Ball Writer. In this episode, I text my GM for a cigar. When I arrive, the GM says, 'I got some munchies for you.'" <span class="media-emoji" data-media-id="true-life-ball-writer">📷</span></p>`,
         wordCount: 2900
     },
     {
