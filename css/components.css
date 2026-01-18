@@ -135,16 +135,17 @@
 }
 
 .citation-link a {
-    color: var(--color-text-muted);
-    text-decoration: none;
+    color: #0066cc;
+    text-decoration: underline;
 }
 
 .citation-link a:hover {
-    color: var(--color-accent);
+    color: #0044aa;
 }
 
 .citation-emoji {
     font-size: 12pt;
+    vertical-align: middle;
 }
 
 /* Flashback Header */
