@@ -4313,7 +4313,13 @@ export const CHAPTERS = [
             <p>After workouts, I meet Tigers bench coach Steve Liddle on the back fields. I introduce myself and we walk across a field, getting to know one another.</p>
             <p>Liddle walks into the clubhouse through a back door. I walk around and enter through the lobby.</p>
             <p>Inside the dressing room, I feel an unusual energy—and eyes on me. Sauntering to the major-league side, I see why.</p>
-            <p>Sheets of paper are taped to the top shelf of each locker stall. I immediately recognize my handiwork: Detroit Tigers Will Stink in 2018, Anthony Fenech, Detroit Free Press.</p>
+            <p>Sheets of paper are taped to the top shelf of each locker stall. I immediately recognize my handiwork:</p>
+
+            <div class="article-citation">
+                <p class="citation-title">Detroit Tigers Will Stink in 2018</p>
+                <p class="citation-byline">Anthony Fenech, Detroit Free Press</p>
+                <p class="citation-link"><a href="https://www.freep.com/story/sports/mlb/tigers/2018/02/12/detroit-tigers-spring-training/328555002/" target="_blank">(link)</a></p>
+            </div>
 
             <p>I pop my head into Gardy's office before leaving. He's sitting at his desk. Liddle is in a chair across from him.</p>
             <p>I tap the doorframe.</p>

@@ -110,6 +110,39 @@
     margin-top: 2.5rem;
 }
 
+/* Article Citation (embedded article references) */
+.article-citation {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.article-citation p {
+    text-indent: 0;
+    margin: 0;
+}
+
+.citation-title {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.citation-byline {
+    font-size: 10pt;
+}
+
+.citation-link {
+    font-size: 8pt;
+}
+
+.citation-link a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.citation-link a:hover {
+    color: var(--color-accent);
+}
+
 /* Flashback Header */
 .flashback-header {
     font-family: var(--font-mono);
