@@ -23,6 +23,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
 }
 
 .prompt-content {
@@ -132,6 +133,11 @@
     margin-top: 5px;
 }
 
+.char-counter.at-limit {
+    color: #c62828;
+    font-weight: bold;
+}
+
 /* Buttons */
 .prompt-buttons {
     display: flex;
@@ -208,6 +214,8 @@
     white-space: pre-wrap;
     font-style: italic;
     line-height: 1.6;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .fenech-response {

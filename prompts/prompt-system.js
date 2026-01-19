@@ -65,6 +65,9 @@ class PromptSystem {
         const modal = document.getElementById('prompt-modal');
         if (!modal) return;
 
+        // Don't show if another prompt is already active
+        if (modal.classList.contains('active')) return;
+
         // Populate content
         document.getElementById('prompt-title').textContent = prompt.title;
         document.getElementById('prompt-setup').textContent = prompt.setup;
@@ -74,6 +77,12 @@ class PromptSystem {
         const choicesDiv = document.getElementById('prompt-choices');
         const textDiv = document.getElementById('prompt-text');
         const contentDiv = document.querySelector('.prompt-content');
+
+        // Remove any existing outcome screen
+        const existingOutcome = contentDiv.querySelector('.outcome-screen');
+        if (existingOutcome) {
+            existingOutcome.remove();
+        }
 
         choicesDiv.innerHTML = '';
         textDiv.innerHTML = '';
@@ -99,6 +108,17 @@ class PromptSystem {
 
         // Store current prompt
         this.currentPrompt = prompt;
+
+        // Focus first interactive element
+        setTimeout(() => {
+            const firstChoice = choicesDiv.querySelector('input[type="radio"]');
+            const textarea = document.getElementById('prompt-textarea');
+            if (firstChoice) {
+                firstChoice.focus();
+            } else if (textarea) {
+                textarea.focus();
+            }
+        }, 100);
     }
 
     setupMultipleChoice(prompt, container) {
@@ -139,6 +159,11 @@ class PromptSystem {
 
         textarea.addEventListener('input', () => {
             counter.textContent = `${textarea.value.length} / ${prompt.maxLength}`;
+            if (textarea.value.length >= prompt.maxLength) {
+                counter.classList.add('at-limit');
+            } else {
+                counter.classList.remove('at-limit');
+            }
         });
 
         container.appendChild(textarea);
@@ -294,9 +319,37 @@ class PromptSystem {
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.promptSystem = new PromptSystem();
-    });
+    document.addEventListener('DOMContentLoaded', initPromptSystem);
 } else {
+    initPromptSystem();
+}
+
+function initPromptSystem() {
     window.promptSystem = new PromptSystem();
+
+    // Skip button handler
+    const skipBtn = document.getElementById('prompt-skip');
+    if (skipBtn) {
+        skipBtn.addEventListener('click', () => {
+            window.promptSystem.skipPrompt();
+        });
+    }
+
+    // Overlay click to close
+    const overlay = document.querySelector('.prompt-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            window.promptSystem.skipPrompt();
+        });
+    }
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('prompt-modal');
+            if (modal && modal.classList.contains('active')) {
+                window.promptSystem.skipPrompt();
+            }
+        }
+    });
 }
