@@ -3584,7 +3584,8 @@ export const CHAPTERS = [
             <p>Packing up my stuff, I see a message flash onto my phone. It’s Ian Kinsler.</p>
             <p>“Be careful. You might lose the clubhouse.”</p>
             <p>Maybe. Players have a ‘pack mentality’—even if I’m writing about an issue that most of the clubhouse agrees with, they won’t be seen speaking to me out of solidarity. But I knew I hadn’t lost Ian Kinsler.</p>
-            <p>Despite any previous pessimism, we iron out the final few wrinkles. Very Serious Story is in the hopper by 11 <span class="small-caps">P.M.</span>, ready to go live online at 1 <span class="small-caps">A.M.</span> local time—the plan is to run it in the following day’s print edition.</p>
+            <p>Despite any previous pessimism, we iron out the final few wrinkles. Very Serious Story is in the hopper by 11 <span class="small-caps">P.M.</span>, ready to go live online at 1 <span class="small-caps">A.M.</span> local time—the plan is to run it in the following day's print edition.</p>
+            <div id="vmart-hospital-scene"></div>
             <p>Nearing midnight, I receive a most unnerving text message.</p>
             <p>“U might want to hold off on ur story.”</p>
             <p>I handle this well: “What the fuck, man?… Sorry… What’s up.”</p>
@@ -7308,8 +7309,6 @@ export const CHAPTERS = [
 <p>As Pedro always did, he immediately called back. He did not mince disappointment with the boneheaded pizza delivery plan I carried out. It was audible in his voice, the exasperation of his words, and the seriousness with which he said, “Anthony, you committed career suicide.”</p>
 
 <p>I knew that kind of honesty was not easy to share. He sounded like a dejected dad—I had let him down. A couple days later, I messaged him.</p>
-
-<div id="pedro-response-scene"></div>
 
 <p>"I really appreciate the honesty you gave me a couple nights ago. I know you were disappointed to hear that, and I was embarrassed to tell you about it—you have put in so much time with me because I’m much better than that. You’re right, the pizza didn’t ‘just happen.’</p>
 

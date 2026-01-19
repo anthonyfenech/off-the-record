@@ -6,10 +6,14 @@
     left: 0;
     width: 100%;
     height: 100%;
+    height: 100dvh; /* Dynamic viewport height - adapts to keyboard */
     z-index: 10000;
     display: none;
-    align-items: center;
+    align-items: flex-start; /* Align to top on mobile for keyboard */
     justify-content: center;
+    padding-top: 5vh;
+    padding-top: 5dvh;
+    box-sizing: border-box;
 }
 
 #prompt-modal.active {
@@ -346,9 +350,16 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+    #prompt-modal {
+        align-items: flex-start;
+        padding-top: 10px;
+    }
+
     .prompt-content {
         padding: 20px;
         width: 95%;
+        max-height: 80vh;
+        max-height: 80dvh; /* Leaves room for keyboard */
     }
 
     #prompt-title {
@@ -364,6 +375,6 @@
     }
 
     #prompt-textarea {
-        min-height: 120px;
+        min-height: 100px;
     }
 }
