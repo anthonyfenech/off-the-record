@@ -3456,7 +3456,9 @@ export const CHAPTERS = [
 
 <p class="has-dateline no-indent"><span class="dateline"><em>August 23</em>—</span>Same time as yesterday, just before batting practice.</p>
 
-<p>I’m sitting in the dugout next to Omar Vizquel when I see Justin out of the corner of my eye.</p>
+<div id="verlander-eclipse-scene"></div>
+
+<p>I'm sitting in the dugout next to Omar Vizquel when I see Justin out of the corner of my eye.</p>
 
 <p>He walks up the dugout steps behind us. I look back.</p>
 
@@ -3674,8 +3676,9 @@ export const CHAPTERS = [
             <p>I break the glass.</p>
             <p>Deep Throat. Finally. “They still haven’t said anything. So, we’re finding out together.”</p>
             <p>A buzzer sounds on MLB Network. Midnight comes and goes without a word.</p>
-            <p>“Nothing????”</p>
-            <p>Finally, Deep Throat delivers the Big News: “Apparently, he said yes at 11:59.”</p>
+            <p>"Nothing????"</p>
+            <div id="verlander-trade-scene"></div>
+            <p>Finally, Deep Throat delivers the Big News: "Apparently, he said yes at 11:59."</p>
             <p>But I can’t yet claim this as my own yet. To Avila: “Come on. I got a tip it’s done. What the hell.”</p>
             <p>I pray I don’t get backdoored by Ken Rosenthal. I type the words in, ready to go.</p>
             <p>The Tigers have traded Justin Verlander to the Astros, I’m told.</p>
@@ -5888,9 +5891,11 @@ export const CHAPTERS = [
 
 <p>&nbsp;</p>
 
-<p class="has-dateline no-indent"><span class="dateline">3:46 <span class="small-caps">P.M.</span>—</span>No security guard triple-team today. The Bad Boy of Ball Writing is back. My every move is watched inside the Astros’ clubhouse. <em>Of course,</em> I needed to off my phone. Nothing good to see there at the moment: <em>Y’all are nothing but leeches… You are a true dipshit af… Fenech is garbage. Good for JV.</em></p>
+<div id="astros-clubhouse-scene"></div>
 
-<p>I stand in the middle of the clubhouse like nothing’s wrong. Head up, eyes forward, no phone.</p>
+<p class="has-dateline no-indent"><span class="dateline">3:46 <span class="small-caps">P.M.</span>—</span>No security guard triple-team today. The Bad Boy of Ball Writing is back. My every move is watched inside the Astros' clubhouse. <em>Of course,</em> I needed to off my phone. Nothing good to see there at the moment: <em>Y'all are nothing but leeches… You are a true dipshit af… Fenech is garbage. Good for JV.</em></p>
+
+<p>I stand in the middle of the clubhouse like nothing's wrong. Head up, eyes forward, no phone.</p>
 
 <p>Old Pal isn’t here. During a quiet moment, I hear PR flaks chat outside the clubhouse.</p>
 
@@ -7234,6 +7239,8 @@ export const CHAPTERS = [
 
 <p>Ron Colangelo—a minor-league broadcaster in much younger days—served as public-address announcer. His voice echoed around the empty stadium.</p>
 
+<div id="pizza-decision-scene"></div>
+
 <p>Late in the final scrimmage of summer camp, socially distanced from reality and light years beyond better judgment, I stepped into the lower-level concourse and put in motion a spectacular resignation plan.</p>
 
 <p>It was neither knee-jerk nor well-thought out. As I triggered the plan, I felt like I was already walking to the principal’s office—defiantly ignoring the flashing, screaming, DON’T DO IT warnings around me.</p>
@@ -7302,7 +7309,9 @@ export const CHAPTERS = [
 
 <p>I knew that kind of honesty was not easy to share. He sounded like a dejected dad—I had let him down. A couple days later, I messaged him.</p>
 
-<p>“I really appreciate the honesty you gave me a couple nights ago. I know you were disappointed to hear that, and I was embarrassed to tell you about it—you have put in so much time with me because I’m much better than that. You’re right, the pizza didn’t ‘just happen.’</p>
+<div id="pedro-response-scene"></div>
+
+<p>"I really appreciate the honesty you gave me a couple nights ago. I know you were disappointed to hear that, and I was embarrassed to tell you about it—you have put in so much time with me because I’m much better than that. You’re right, the pizza didn’t ‘just happen.’</p>
 
 <p>“I made the decision; I did it consciously and I am aware of the future implications this may have on my place in the industry. While I wish I would have acted more mature in carrying it out, I hit the breaking point and made a move.</p>
 

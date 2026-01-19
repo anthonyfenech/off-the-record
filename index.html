@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="./css/typography.min.css">
     <link rel="stylesheet" href="./css/layout.min.css">
     <link rel="stylesheet" href="./css/components.min.css">
+    <link rel="stylesheet" href="./prompts/prompt-styles.min.css">
 </head>
 <body>
     <script>
@@ -348,5 +349,25 @@
         });
     </script>
     <script async src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Interactive Prompt Modal -->
+    <div id="prompt-modal">
+        <div class="prompt-overlay"></div>
+        <div class="prompt-content">
+            <h2 id="prompt-title"></h2>
+            <p id="prompt-setup"></p>
+            <p id="prompt-question"></p>
+
+            <div id="prompt-choices"></div>
+            <div id="prompt-text"></div>
+
+            <div class="prompt-buttons">
+                <button id="prompt-submit">SUBMIT</button>
+                <button id="prompt-skip">SKIP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./prompts/prompt-system.min.js"></script>
 </body>
 </html>

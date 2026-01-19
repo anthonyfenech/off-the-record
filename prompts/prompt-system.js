@@ -1,0 +1,302 @@
+// Simple, reliable prompt system - no fancy bullshit
+
+class PromptSystem {
+    constructor() {
+        this.prompts = [];
+        this.responses = this.loadResponses();
+        this.observers = [];
+        this.currentPrompt = null;
+        this.init();
+    }
+
+    async init() {
+        try {
+            const response = await fetch('./prompts/prompts.json');
+            const data = await response.json();
+            this.prompts = data.prompts;
+
+            // Set up triggers after a short delay to ensure chapter content is loaded
+            setTimeout(() => this.setupTriggers(), 500);
+
+            // Re-setup triggers when chapter changes
+            document.addEventListener('chapterLoaded', () => {
+                setTimeout(() => this.setupTriggers(), 100);
+            });
+        } catch (error) {
+            console.error('Failed to load prompts:', error);
+        }
+    }
+
+    setupTriggers() {
+        // Disconnect existing observers
+        this.observers.forEach(obs => obs.disconnect());
+        this.observers = [];
+
+        this.prompts.forEach(prompt => {
+            const element = document.getElementById(prompt.triggerElement);
+            if (!element) {
+                return; // Element not in current chapter
+            }
+
+            // Skip if already answered
+            if (this.hasAnswered(prompt.id)) {
+                return;
+            }
+
+            // Create observer that triggers when element comes into view
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.showPrompt(prompt);
+                            observer.disconnect();
+                        }
+                    });
+                },
+                { rootMargin: '100px 0px 0px 0px', threshold: 0 }
+            );
+
+            observer.observe(element);
+            this.observers.push(observer);
+        });
+    }
+
+    showPrompt(prompt) {
+        const modal = document.getElementById('prompt-modal');
+        if (!modal) return;
+
+        // Populate content
+        document.getElementById('prompt-title').textContent = prompt.title;
+        document.getElementById('prompt-setup').textContent = prompt.setup;
+        document.getElementById('prompt-question').textContent = prompt.question;
+
+        // Clear previous content
+        const choicesDiv = document.getElementById('prompt-choices');
+        const textDiv = document.getElementById('prompt-text');
+        const contentDiv = document.querySelector('.prompt-content');
+
+        choicesDiv.innerHTML = '';
+        textDiv.innerHTML = '';
+        choicesDiv.style.display = 'none';
+        textDiv.style.display = 'none';
+
+        // Show the input section
+        document.getElementById('prompt-title').style.display = 'block';
+        document.getElementById('prompt-setup').style.display = 'block';
+        document.getElementById('prompt-question').style.display = 'block';
+        document.querySelector('.prompt-buttons').style.display = 'flex';
+
+        // Set up based on type
+        if (prompt.type === 'multiple-choice') {
+            this.setupMultipleChoice(prompt, choicesDiv);
+        } else if (prompt.type === 'creative-text') {
+            this.setupCreativeText(prompt, textDiv);
+        }
+
+        // Show modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Store current prompt
+        this.currentPrompt = prompt;
+    }
+
+    setupMultipleChoice(prompt, container) {
+        container.style.display = 'block';
+
+        prompt.choices.forEach(choice => {
+            const label = document.createElement('label');
+            label.className = 'prompt-choice';
+            label.innerHTML = `
+                <input type="radio" name="prompt-answer" value="${choice.id}">
+                <span>${choice.text}</span>
+            `;
+            container.appendChild(label);
+        });
+
+        // Submit handler
+        document.getElementById('prompt-submit').onclick = () => {
+            const selected = document.querySelector('input[name="prompt-answer"]:checked');
+            if (selected) {
+                this.submitAnswer(selected.value);
+            } else {
+                alert('Please select an answer');
+            }
+        };
+    }
+
+    setupCreativeText(prompt, container) {
+        container.style.display = 'block';
+
+        const textarea = document.createElement('textarea');
+        textarea.id = 'prompt-textarea';
+        textarea.maxLength = prompt.maxLength;
+        textarea.placeholder = prompt.placeholder || '';
+
+        const counter = document.createElement('div');
+        counter.className = 'char-counter';
+        counter.textContent = `0 / ${prompt.maxLength}`;
+
+        textarea.addEventListener('input', () => {
+            counter.textContent = `${textarea.value.length} / ${prompt.maxLength}`;
+        });
+
+        container.appendChild(textarea);
+        container.appendChild(counter);
+
+        // Submit handler
+        document.getElementById('prompt-submit').onclick = () => {
+            const text = textarea.value.trim();
+            if (text.length > 0) {
+                this.submitAnswer(text);
+            } else {
+                alert('Please write a response');
+            }
+        };
+    }
+
+    submitAnswer(answer) {
+        const prompt = this.currentPrompt;
+
+        // Save response
+        this.responses[prompt.id] = {
+            answer: answer,
+            timestamp: new Date().toISOString()
+        };
+        this.saveResponses();
+
+        // Show outcome
+        this.showOutcome(prompt, answer);
+    }
+
+    showOutcome(prompt, userAnswer) {
+        const content = document.querySelector('.prompt-content');
+
+        // Hide the input elements
+        document.getElementById('prompt-title').style.display = 'none';
+        document.getElementById('prompt-setup').style.display = 'none';
+        document.getElementById('prompt-question').style.display = 'none';
+        document.getElementById('prompt-choices').style.display = 'none';
+        document.getElementById('prompt-text').style.display = 'none';
+        document.querySelector('.prompt-buttons').style.display = 'none';
+
+        // Create outcome container
+        const outcomeDiv = document.createElement('div');
+        outcomeDiv.className = 'outcome-screen';
+
+        if (prompt.type === 'multiple-choice') {
+            // Find user's choice text
+            const userChoice = prompt.choices.find(c => c.id === userAnswer);
+            const userText = userChoice ? userChoice.text : userAnswer;
+
+            outcomeDiv.innerHTML = `
+                <h2>YOU CHOSE:</h2>
+                <p class="user-choice">${userText}</p>
+
+                <div class="divider">VS</div>
+
+                <h2>FENECH CHOSE:</h2>
+                <p class="fenech-choice">${prompt.answerText}</p>
+
+                <div class="outcome-text">${prompt.outcome}</div>
+
+                <button id="continue-btn" class="continue-btn">CONTINUE READING</button>
+            `;
+        } else if (prompt.type === 'creative-text') {
+            let html = `
+                <h3>YOU WROTE:</h3>
+                <div class="user-response">"${this.escapeHTML(userAnswer)}"</div>
+
+                <div class="divider">VS</div>
+
+                <h3>FENECH WROTE:</h3>
+                <div class="fenech-response">"${this.escapeHTML(prompt.answer)}"</div>
+
+                <div class="outcome-text">${prompt.outcome}</div>
+            `;
+
+            // Add Pedro's response if it exists
+            if (prompt.pedroResponse) {
+                html += `
+                    <div class="pedro-response">
+                        <h3>PEDRO'S RESPONSE:</h3>
+                        <div class="response-text">"${prompt.pedroResponse}"</div>
+                    </div>
+                `;
+            }
+
+            html += `<button id="continue-btn" class="continue-btn">CONTINUE READING</button>`;
+            outcomeDiv.innerHTML = html;
+        }
+
+        content.appendChild(outcomeDiv);
+
+        // Continue button handler
+        document.getElementById('continue-btn').onclick = () => {
+            outcomeDiv.remove();
+            this.hidePrompt();
+        };
+    }
+
+    hidePrompt() {
+        const modal = document.getElementById('prompt-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    skipPrompt() {
+        const prompt = this.currentPrompt;
+        if (prompt) {
+            this.responses[prompt.id] = {
+                answer: 'SKIPPED',
+                timestamp: new Date().toISOString()
+            };
+            this.saveResponses();
+        }
+        this.hidePrompt();
+    }
+
+    hasAnswered(promptId) {
+        return this.responses[promptId] !== undefined;
+    }
+
+    loadResponses() {
+        try {
+            const saved = localStorage.getItem('otr-prompt-responses');
+            return saved ? JSON.parse(saved) : {};
+        } catch (error) {
+            console.error('Failed to load responses:', error);
+            return {};
+        }
+    }
+
+    saveResponses() {
+        try {
+            localStorage.setItem('otr-prompt-responses', JSON.stringify(this.responses));
+        } catch (error) {
+            console.error('Failed to save responses:', error);
+        }
+    }
+
+    escapeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // Reset all responses (for testing)
+    resetResponses() {
+        this.responses = {};
+        localStorage.removeItem('otr-prompt-responses');
+        console.log('Prompt responses reset');
+    }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.promptSystem = new PromptSystem();
+    });
+} else {
+    window.promptSystem = new PromptSystem();
+}
