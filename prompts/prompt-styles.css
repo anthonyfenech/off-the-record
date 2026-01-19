@@ -74,7 +74,8 @@
 }
 
 .prompt-choice {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 15px;
     margin: 10px 0;
     border: 2px solid var(--color-text-primary, #333);
@@ -84,14 +85,54 @@
     color: var(--color-text-primary);
 }
 
-.prompt-choice:hover {
+.prompt-choice:hover,
+.prompt-choice:focus-within {
     background: var(--color-text-primary, #333);
     color: var(--color-background, #fefefe);
 }
 
-.prompt-choice input {
-    margin-right: 10px;
-    accent-color: var(--color-text-primary);
+/* Custom radio button styling */
+.prompt-choice input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--color-text-primary, #333);
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+}
+
+.prompt-choice input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: var(--color-text-primary, #333);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prompt-choice input[type="radio"]:focus {
+    outline: 3px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+/* Invert colors on hover/focus */
+.prompt-choice:hover input[type="radio"],
+.prompt-choice:focus-within input[type="radio"] {
+    border-color: var(--color-background, #fefefe);
+}
+
+.prompt-choice:hover input[type="radio"]:checked::before,
+.prompt-choice:focus-within input[type="radio"]:checked::before {
+    background: var(--color-background, #fefefe);
 }
 
 [data-theme="dark"] .prompt-choice {
@@ -160,6 +201,11 @@
 
 .prompt-buttons button:hover {
     opacity: 0.8;
+}
+
+.prompt-buttons button:focus {
+    outline: 3px solid #4a90e2;
+    outline-offset: 2px;
 }
 
 #prompt-skip {

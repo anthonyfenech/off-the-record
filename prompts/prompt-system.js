@@ -352,4 +352,38 @@ function initPromptSystem() {
             }
         }
     });
+
+    // Keyboard navigation for multiple choice prompts
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('prompt-modal');
+        if (!modal || !modal.classList.contains('active')) return;
+
+        const choices = document.querySelectorAll('#prompt-choices input[type="radio"]');
+        if (choices.length === 0) return;
+
+        // Arrow key navigation
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const currentIndex = Array.from(choices).findIndex(r => r === document.activeElement);
+            let nextIndex;
+
+            if (e.key === 'ArrowDown') {
+                nextIndex = currentIndex < choices.length - 1 ? currentIndex + 1 : 0;
+            } else {
+                nextIndex = currentIndex > 0 ? currentIndex - 1 : choices.length - 1;
+            }
+
+            choices[nextIndex].focus();
+            choices[nextIndex].checked = true;
+        }
+
+        // Enter key to submit when choice is selected
+        if (e.key === 'Enter') {
+            const selected = document.querySelector('input[name="prompt-answer"]:checked');
+            if (selected && window.promptSystem.currentPrompt?.type === 'multiple-choice') {
+                e.preventDefault();
+                window.promptSystem.submitAnswer(selected.value);
+            }
+        }
+    });
 }
