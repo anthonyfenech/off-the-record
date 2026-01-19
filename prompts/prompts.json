@@ -2,6 +2,8 @@
   "prompts": [
     {
       "id": "verlander-eclipse",
+      "status": "active",
+      "name": "Verlander Eclipse Confrontation",
       "chapter": 16,
       "triggerElement": "verlander-eclipse-scene",
       "title": "WHAT WOULD YOU DO?",
@@ -19,6 +21,8 @@
     },
     {
       "id": "vmart-hospital-text",
+      "status": "active",
+      "name": "V-Mart Hospital Text",
       "chapter": 16,
       "triggerElement": "vmart-hospital-scene",
       "title": "WHAT DO YOU TEXT BACK?",
@@ -32,6 +36,8 @@
     },
     {
       "id": "verlander-trade",
+      "status": "active",
+      "name": "Verlander Trade Tweet",
       "chapter": 17,
       "triggerElement": "verlander-trade-scene",
       "title": "TWEET THE SCOOP",
@@ -45,6 +51,8 @@
     },
     {
       "id": "astros-clubhouse",
+      "status": "active",
+      "name": "Astros Clubhouse Decision",
       "chapter": 26,
       "triggerElement": "astros-clubhouse-scene",
       "title": "SHOULD I GO INTO THE ASTROS CLUBHOUSE?",
@@ -62,6 +70,8 @@
     },
     {
       "id": "quit-job",
+      "status": "active",
+      "name": "Pizza Resignation",
       "chapter": 28,
       "triggerElement": "pizza-decision-scene",
       "title": "HOW SHOULD I QUIT MY JOB?",

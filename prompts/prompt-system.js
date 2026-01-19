@@ -32,7 +32,10 @@ class PromptSystem {
         this.observers.forEach(obs => obs.disconnect());
         this.observers = [];
 
-        this.prompts.forEach(prompt => {
+        // Only set up triggers for ACTIVE prompts (bench prompts are ignored)
+        const activePrompts = this.prompts.filter(p => p.status === 'active' || !p.status);
+
+        activePrompts.forEach(prompt => {
             const element = document.getElementById(prompt.triggerElement);
             if (!element) {
                 return; // Element not in current chapter

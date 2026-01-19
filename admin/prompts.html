@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Admin - OFF-THE-RECORD</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>INTERACTIVE PROMPTS ADMIN</h1>
+            <button id="new-prompt-btn" class="btn btn-primary">+ NEW PROMPT</button>
+        </header>
+
+        <!-- Warning Banner (shown when at 5/5) -->
+        <div id="limit-warning" class="warning-banner" style="display: none;">
+            <span class="warning-icon">&#9888;</span>
+            Active limit reached (5/5). Deactivate a prompt to activate another.
+        </div>
+
+        <!-- Active Prompts Section -->
+        <section class="prompts-section active-section">
+            <div class="section-header">
+                <h2>ACTIVE PROMPTS <span id="active-count">(0/5)</span></h2>
+                <span class="badge badge-live">LIVE ON SITE</span>
+            </div>
+            <table class="prompts-table" id="active-table">
+                <thead>
+                    <tr>
+                        <th class="col-status">Status</th>
+                        <th class="col-name">Prompt Name</th>
+                        <th class="col-chapter">Chapter</th>
+                        <th class="col-type">Type</th>
+                        <th class="col-actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="active-tbody">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+            <div id="active-empty" class="empty-state" style="display: none;">
+                No active prompts. Activate prompts from the bench below.
+            </div>
+        </section>
+
+        <!-- Bench Prompts Section -->
+        <section class="prompts-section bench-section">
+            <div class="section-header">
+                <h2>BENCH PROMPTS <span id="bench-count">(0)</span></h2>
+                <span class="badge badge-bench">NOT ACTIVE</span>
+            </div>
+            <table class="prompts-table" id="bench-table">
+                <thead>
+                    <tr>
+                        <th class="col-status">Status</th>
+                        <th class="col-name">Prompt Name</th>
+                        <th class="col-chapter">Chapter</th>
+                        <th class="col-type">Type</th>
+                        <th class="col-actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bench-tbody">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+            <div id="bench-empty" class="empty-state" style="display: none;">
+                No bench prompts. Create new prompts to build your roster.
+            </div>
+        </section>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Edit Prompt</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <form id="prompt-form">
+                <!-- Status Toggle -->
+                <div class="form-group status-toggle">
+                    <label>Status:</label>
+                    <div class="toggle-buttons">
+                        <label class="toggle-option">
+                            <input type="radio" name="status" value="active">
+                            <span class="toggle-label active-toggle">ACTIVE</span>
+                        </label>
+                        <label class="toggle-option">
+                            <input type="radio" name="status" value="bench" checked>
+                            <span class="toggle-label bench-toggle">BENCH</span>
+                        </label>
+                    </div>
+                    <div id="status-warning" class="field-warning" style="display: none;">
+                        Cannot activate: 5 active prompts already
+                    </div>
+                </div>
+
+                <!-- Basic Info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prompt-name">Prompt Name *</label>
+                        <input type="text" id="prompt-name" required placeholder="e.g., Verlander Confrontation">
+                    </div>
+                    <div class="form-group">
+                        <label for="prompt-id">ID (auto-generated)</label>
+                        <input type="text" id="prompt-id" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prompt-chapter">Chapter *</label>
+                        <select id="prompt-chapter" required>
+                            <option value="">Select chapter...</option>
+                            <!-- Chapters 1-28 -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prompt-trigger">Trigger Element ID *</label>
+                        <input type="text" id="prompt-trigger" required placeholder="e.g., verlander-scene">
+                    </div>
+                </div>
+
+                <!-- Prompt Type -->
+                <div class="form-group">
+                    <label for="prompt-type">Type *</label>
+                    <select id="prompt-type" required>
+                        <option value="multiple-choice">Multiple Choice</option>
+                        <option value="creative-text">Creative Text</option>
+                    </select>
+                </div>
+
+                <!-- Content -->
+                <div class="form-group">
+                    <label for="prompt-title">Display Title *</label>
+                    <input type="text" id="prompt-title" required placeholder="e.g., WHAT WOULD YOU DO?">
+                </div>
+
+                <div class="form-group">
+                    <label for="prompt-setup">Setup Text *</label>
+                    <textarea id="prompt-setup" rows="3" required placeholder="Context shown before the question..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="prompt-question">Question *</label>
+                    <input type="text" id="prompt-question" required placeholder="The question to ask the reader">
+                </div>
+
+                <!-- Multiple Choice Fields -->
+                <div id="mc-fields" class="conditional-fields">
+                    <div class="form-group">
+                        <label>Choices (2-4 options) *</label>
+                        <div id="choices-container">
+                            <div class="choice-row">
+                                <input type="text" class="choice-input" data-choice="A" placeholder="Choice A">
+                                <label class="correct-label"><input type="radio" name="correct-answer" value="A"> Correct</label>
+                            </div>
+                            <div class="choice-row">
+                                <input type="text" class="choice-input" data-choice="B" placeholder="Choice B">
+                                <label class="correct-label"><input type="radio" name="correct-answer" value="B"> Correct</label>
+                            </div>
+                            <div class="choice-row">
+                                <input type="text" class="choice-input" data-choice="C" placeholder="Choice C">
+                                <label class="correct-label"><input type="radio" name="correct-answer" value="C"> Correct</label>
+                            </div>
+                        </div>
+                        <button type="button" id="add-choice-btn" class="btn btn-small">+ Add Choice D</button>
+                    </div>
+                </div>
+
+                <!-- Creative Text Fields -->
+                <div id="ct-fields" class="conditional-fields" style="display: none;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prompt-maxlength">Max Characters *</label>
+                            <input type="number" id="prompt-maxlength" value="280" min="50" max="1000">
+                        </div>
+                        <div class="form-group">
+                            <label for="prompt-placeholder">Placeholder Text</label>
+                            <input type="text" id="prompt-placeholder" placeholder="Type your response...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prompt-answer-text">Fenech's Actual Answer *</label>
+                        <textarea id="prompt-answer-text" rows="2" placeholder="What Fenech actually said/did"></textarea>
+                    </div>
+                </div>
+
+                <!-- Outcome -->
+                <div class="form-group">
+                    <label for="prompt-outcome">Outcome Text *</label>
+                    <textarea id="prompt-outcome" rows="4" required placeholder="What happened after..."></textarea>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Prompt</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Delete Prompt</h2>
+                <button class="modal-close" id="delete-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete "<span id="delete-prompt-name"></span>"?</p>
+                <p id="delete-active-warning" class="warning-text" style="display: none;">
+                    This is an ACTIVE prompt. Deleting will remove it from the live site.
+                </p>
+            </div>
+            <div class="modal-actions">
+                <button id="delete-cancel" class="btn btn-secondary">Cancel</button>
+                <button id="delete-confirm" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-scripts.js"></script>
+</body>
+</html>
