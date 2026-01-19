@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     padding-top: 70px; /* Account for fixed header */
-    padding-bottom: 70px; /* Account for floating footer */
+    padding-bottom: 120px; /* Account for floating footer */
     background-color: var(--color-background);
     color: var(--color-text-primary);
     transition: background-color var(--transition-fast), color var(--transition-fast);
@@ -124,6 +124,7 @@ body.paginated .chapter-body {
 .chapter-body {
     margin-bottom: var(--space-2xl);
     margin-top: var(--space-lg);
+    padding-bottom: 60px; /* Extra space to clear fixed nav footer */
 }
 
 /* Navigation footer */
