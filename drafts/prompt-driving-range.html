@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Driving Range - OFF-THE-RECORD</title>
+    <link rel="stylesheet" href="/prompts/prompt-styles.css">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f4f1ea;
+        }
+
+        .test-section {
+            border: 3px solid #333;
+            padding: 30px;
+            margin: 40px 0;
+            background: white;
+        }
+
+        .test-section h2 {
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .test-content {
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        .prompt-trigger {
+            height: 3px;
+            background: #ff0000;
+            margin: 20px 0;
+        }
+
+        .reset-all {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .reset-all:hover {
+            background: #cc0000;
+        }
+
+        .instructions {
+            background: #fffacd;
+            border: 2px solid #ffa500;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .instructions h1 {
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<button class="reset-all" onclick="resetAllPrompts()">RESET ALL PROMPTS</button>
+
+<div class="instructions">
+    <h1>PROMPT DRIVING RANGE</h1>
+    <p><strong>PURPOSE:</strong> Test all interactive prompts quickly without navigating through the entire book.</p>
+
+    <p><strong>HOW TO USE:</strong></p>
+    <ol>
+        <li>Scroll down slowly through this page</li>
+        <li>Each prompt will trigger when you reach the red line</li>
+        <li>Test the prompt (answer or skip)</li>
+        <li>Continue scrolling to next prompt</li>
+        <li>Click "RESET ALL PROMPTS" button to test again</li>
+    </ol>
+
+    <p><strong>PROMPTS ON THIS PAGE:</strong></p>
+    <ul>
+        <li>1. Verlander Camera Confrontation (multiple choice)</li>
+        <li>2. Verlander Trade Tweet (creative text)</li>
+        <li>3. Astros Clubhouse Decision (multiple choice)</li>
+        <li>4. Pizza Resignation (multiple choice)</li>
+        <li>5. V-Mart Hospital Text (creative text)</li>
+    </ul>
+</div>
+
+<!-- TEST 1: VERLANDER CAMERA CONFRONTATION -->
+<div class="test-section">
+    <h2>Test 1: Verlander Camera Confrontation</h2>
+
+    <div class="test-content">
+        <p><strong>CONTEXT:</strong> Spring training 2017. Verlander just blew you off after sitting in the heat for an hour. Now you're in a press scrum with TV cameras rolling.</p>
+
+        <p>You spent two years building this relationship. He knows he's blowing you off - keeping you in your place. The beat writers are crowded around. Channel 2 and Channel 4 have their cameras zooming in.</p>
+
+        <p>You know Verlander cares deeply about his on-camera image more than anything...</p>
+    </div>
+
+    <!-- TRIGGER POINT -->
+    <div id="test-verlander-camera" class="prompt-trigger"></div>
+
+    <div class="test-content">
+        <p><em>[This is where you would call him out on camera in the actual book]</em></p>
+
+        <p>"I asked it too early and immediately looked at the camera guys, spread my hands and said, 'Don't use that, guys.'"</p>
+    </div>
+</div>
+
+<!-- TEST 2: VERLANDER TRADE TWEET -->
+<div class="test-section">
+    <h2>Test 2: Verlander Trade Tweet</h2>
+
+    <div class="test-content">
+        <p><strong>CONTEXT:</strong> August 31, 2017, 12:16 AM. Your phone just rang. The source confirmed it.</p>
+
+        <p>This is the BIGGEST scoop of your career. Justin Verlander traded to Houston. You asked instantly, hurriedly: "Is it done?" They said yes, the deal is done.</p>
+
+        <p>You have 11 seconds before other reporters get it. Twitter is open. Your fingers are on the keyboard.</p>
+
+        <p>Other reporters are circling. This could make or break your reputation...</p>
+    </div>
+
+    <!-- TRIGGER POINT -->
+    <div id="test-verlander-trade" class="prompt-trigger"></div>
+
+    <div class="test-content">
+        <p><em>[This is where you would tweet the scoop in the actual book]</em></p>
+
+        <p>"I hit Send and I tweeted, 'The Tigers have traded Justin Verlander to the Astros,' told it before anyone else on the planet."</p>
+
+        <p>Mother-fucking WOOOOO!!!!!</p>
+    </div>
+</div>
+
+<!-- TEST 3: ASTROS CLUBHOUSE -->
+<div class="test-section">
+    <h2>Test 3: Astros Clubhouse Decision</h2>
+
+    <div class="test-content">
+        <p><strong>CONTEXT:</strong> August 24, 2019. Day after the Verlander Incident.</p>
+
+        <p>Verlander called you unethical on national television. ESPN ran the story. The Astros might bar you from the clubhouse.</p>
+
+        <p>But MLB rules guarantee reporters equal access. You're the Bad Boy of Ball Writing now. Do you walk into that clubhouse?</p>
+
+        <p>Your editor is watching. Your peers are watching. Verlander is watching...</p>
+    </div>
+
+    <!-- TRIGGER POINT -->
+    <div id="test-astros-clubhouse" class="prompt-trigger"></div>
+
+    <div class="test-content">
+        <p><em>[This is where you would walk into the clubhouse in the actual book]</em></p>
+
+        <p>"I walked right the fuck in. History will be on your side."</p>
+    </div>
+</div>
+
+<!-- TEST 4: PIZZA RESIGNATION -->
+<div class="test-section">
+    <h2>Test 4: How Should I Quit?</h2>
+
+    <div class="test-content">
+        <p><strong>CONTEXT:</strong> July 20, 2020. Morning.</p>
+
+        <p>You woke up feeling dangerous today. You've been frozen out, humiliated, pushed to the breaking point by Tigers PR and your own editor.</p>
+
+        <p>On your notepad: Jet's Pizza phone number. Comerica Park address. Ron Colangelo's direct line.</p>
+
+        <p>You texted Deep Throat at 10:49 AM: "If you don't think I'll order Jet's Pizza to deliver to Tigers PR as a thank you for their help this summer camp..."</p>
+
+        <p>How do you actually quit this job?</p>
+    </div>
+
+    <!-- TRIGGER POINT -->
+    <div id="test-pizza-resignation" class="prompt-trigger"></div>
+
+    <div class="test-content">
+        <p><em>[This is where you would order the pizza in the actual book]</em></p>
+
+        <p>"I ordered two large pizzas, cheese bread, and a two-liter of Coke."</p>
+
+        <p>"I sent them *pizza*."</p>
+    </div>
+</div>
+
+<!-- TEST 5: V-MART HOSPITAL TEXT -->
+<div class="test-section">
+    <h2>Test 5: V-Mart Hospital Text</h2>
+
+    <div class="test-content">
+        <p><strong>CONTEXT:</strong> August 27, 2017, 11:30 PM.</p>
+
+        <p>You've spent days reporting an explosive story: Victor Martinez is causing clubhouse dysfunction. The story is edited, fact-checked, ready to publish at 2 AM.</p>
+
+        <p>You're at the Irish bar, brought up two shots of whiskey. It's nearing 11:30 PM when you receive a most unnerving text.</p>
+
+        <p>It's from Brad Ausmus, the manager of the team: "U might want to hold off on ur story."</p>
+
+        <p>You have 2.5 hours until publication. What do you text back?</p>
+    </div>
+
+    <!-- TRIGGER POINT -->
+    <div id="test-vmart-hospital" class="prompt-trigger"></div>
+
+    <div class="test-content">
+        <p><em>[This is where you would text Ausmus in the actual book]</em></p>
+
+        <p>"What the fuck, man?"</p>
+
+        <p>Ausmus revealed V-Mart went to the hospital with heart issues. The story was killed. Disaster averted.</p>
+
+        <p><strong>(REPORTER'S NOTE:</strong> I have never independently confirmed that Martinez actually went to the hospital that night. The timing could seem "exceptionally coincidental.")</p>
+    </div>
+</div>
+
+<div style="height: 500px; text-align: center; padding-top: 200px;">
+    <h2>END OF DRIVING RANGE</h2>
+    <p>Click "RESET ALL PROMPTS" to test again</p>
+</div>
+
+<!-- Prompt Modal (same as main site) -->
+<div id="prompt-modal">
+    <div class="prompt-overlay"></div>
+    <div class="prompt-content">
+        <h2 id="prompt-title"></h2>
+        <p id="prompt-setup"></p>
+        <p id="prompt-question"></p>
+
+        <div id="prompt-choices"></div>
+        <div id="prompt-text"></div>
+
+        <div class="prompt-buttons">
+            <button id="prompt-submit">SUBMIT</button>
+            <button id="prompt-skip">SKIP</button>
+        </div>
+    </div>
+</div>
+
+<!-- Test-specific prompts data -->
+<script>
+// Driving range prompts - same as production but with test IDs
+const drivingRangePrompts = {
+    "prompts": [
+        {
+            "id": "test-verlander-camera",
+            "triggerElement": "test-verlander-camera",
+            "title": "WHAT WOULD YOU DO?",
+            "setup": "Verlander just blew you off after two years of relationship-building. Now you're in a press scrum. TV cameras are rolling. You know he cares deeply about his on-camera image.",
+            "question": "What would you do?",
+            "type": "multiple-choice",
+            "choices": [
+                { "id": "A", "text": "Nothing" },
+                { "id": "B", "text": "Call him out privately" },
+                { "id": "C", "text": "Call him out on camera" }
+            ],
+            "answer": "C",
+            "answerText": "Call him out on camera",
+            "outcome": "This did not sit well with him, especially on-camera. And I knew that if there was one thing Verlander cared about, it was his on-camera image, which is why I asked it on-camera in the first place."
+        },
+        {
+            "id": "test-verlander-trade",
+            "triggerElement": "test-verlander-trade",
+            "title": "TWEET THE SCOOP",
+            "setup": "Your source just confirmed it. The biggest scoop of your career. Justin Verlander traded to Houston. You have 11 seconds before other reporters get it.",
+            "question": "What do you tweet? (280 characters max)",
+            "type": "creative-text",
+            "maxLength": 280,
+            "placeholder": "Type your tweet here...",
+            "answer": "The Tigers have traded Justin Verlander to the Astros",
+            "outcome": "Mother-fucking WOOOOO!!!!! Fenech got the scoop by two minutes and 27 seconds. Simple, clean, perfect."
+        },
+        {
+            "id": "test-astros-clubhouse",
+            "triggerElement": "test-astros-clubhouse",
+            "title": "SHOULD I GO INTO THE ASTROS CLUBHOUSE?",
+            "setup": "Day after the Verlander Incident. He called you unethical. The Astros might bar you. MLB rules say you have access.",
+            "question": "Should I go into the Astros clubhouse?",
+            "type": "multiple-choice",
+            "choices": [
+                { "id": "A", "text": "Yes" },
+                { "id": "B", "text": "No" },
+                { "id": "C", "text": "Of course" }
+            ],
+            "answer": "C",
+            "answerText": "Of course",
+            "outcome": "Of course you went in. History will be on your side."
+        },
+        {
+            "id": "test-pizza-resignation",
+            "triggerElement": "test-pizza-resignation",
+            "title": "HOW SHOULD I QUIT MY JOB?",
+            "setup": "You've been frozen out, humiliated, pushed to the breaking point. You woke up 'feeling dangerous today.' On your notepad: Jet's Pizza number, Comerica Park address, Ron Colangelo's phone number.",
+            "question": "How should I quit my job?",
+            "type": "multiple-choice",
+            "choices": [
+                { "id": "A", "text": "FAX" },
+                { "id": "B", "text": "TWITTER TIRADE" },
+                { "id": "C", "text": "SEND THE TIGERS A PIZZA" }
+            ],
+            "answer": "C",
+            "answerText": "Send the Tigers a pizza",
+            "outcome": "I sent them pizza. This became viral career suicide. Pedro Gomez would later call to say: 'Anthony, you committed career suicide.'"
+        },
+        {
+            "id": "test-vmart-hospital",
+            "triggerElement": "test-vmart-hospital",
+            "title": "WHAT DO YOU TEXT BACK?",
+            "setup": "August 27, 2017, 11:30 PM. Your explosive Victor Martinez clubhouse story publishes at 2 AM. Brad Ausmus just texted: 'U might want to hold off on ur story.' He says V-Mart went to hospital with heart issues. You have 2.5 hours.",
+            "question": "What do you text Ausmus?",
+            "type": "creative-text",
+            "maxLength": 280,
+            "placeholder": "Type your text...",
+            "answer": "What the fuck, man?",
+            "outcome": "You texted back in a panic. Ausmus revealed V-Mart was hospitalized with heart issues. The story was killed. Disaster averted.\n\n(REPORTER'S NOTE: Fenech never independently confirmed Martinez actually went to the hospital that night. The timing could seem 'exceptionally coincidental.')"
+        }
+    ]
+};
+
+// Reset function
+function resetAllPrompts() {
+    if (confirm('Reset all prompts? You will be able to test them all again.')) {
+        localStorage.removeItem('otr-prompt-responses');
+        if (window.promptSystem) {
+            window.promptSystem.responses = {};
+        }
+        location.reload();
+    }
+}
+</script>
+
+<!-- Load prompt system with test data -->
+<script>
+// Override fetch to use local test data
+const originalFetch = window.fetch;
+window.fetch = function(url) {
+    if (url.includes('prompts.json')) {
+        return Promise.resolve({
+            json: () => Promise.resolve(drivingRangePrompts)
+        });
+    }
+    return originalFetch.apply(this, arguments);
+};
+</script>
+
+<script src="/prompts/prompt-system.js"></script>
+
+</body>
+</html>
