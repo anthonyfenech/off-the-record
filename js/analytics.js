@@ -112,6 +112,18 @@
     window.addEventListener('beforeunload', handleUnload);
     window.addEventListener('pagehide', handleUnload);
 
+    // Track custom events (e.g., emoji clicks)
+    function trackEvent(eventType, eventData) {
+        const data = {
+            event: eventType,
+            sessionId: generateSessionId(),
+            page: currentPage || 'Unknown',
+            timestamp: new Date().toISOString(),
+            ...eventData
+        };
+        sendToGoogleSheets(data);
+    }
+
     // Expose functions globally
     window.analytics = {
         trackPageView: function(pageName) {
@@ -119,6 +131,7 @@
             startTimeTracking(pageName);
         },
         trackTimeSpent: trackTimeSpent,
+        trackEvent: trackEvent,
         getSessionId: generateSessionId,
         getDeviceType: getDeviceType
     };

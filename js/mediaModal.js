@@ -132,6 +132,49 @@ class MediaModal {
         return status !== 'red';
     }
 
+    // Map media types to asset categories for analytics
+    getAssetCategory(mediaType) {
+        const categoryMap = {
+            // Photos
+            'photo': 'photo',
+            'photo2': 'photo',
+            'selfie': 'photo',
+            // Videos
+            'video': 'video',
+            'tv-local': 'video',
+            'tv-network': 'video',
+            // Audio
+            'audio': 'audio',
+            'radio': 'audio',
+            'interview': 'audio',
+            'mic': 'audio',
+            'phone': 'audio',
+            'record': 'audio',
+            // Documents
+            'newspaper': 'document',
+            'newspaper2': 'document',
+            'receipt': 'document',
+            'pdf': 'document',
+            'attachment': 'document',
+            'text': 'document',
+            // Links
+            'link': 'link',
+            // Text/Notes
+            'notes': 'text',
+            'email': 'text',
+            'scoop': 'text',
+            'duck': 'text',
+            'award': 'text',
+            'skeleton': 'text',
+            'baseball': 'text',
+            'stats': 'text',
+            'correction': 'text',
+            'important': 'text',
+            'question': 'text'
+        };
+        return categoryMap[mediaType] || 'other';
+    }
+
     // Open modal with media content
     open(mediaId) {
         // Check if media is disabled (RED status in admin)
@@ -144,6 +187,20 @@ class MediaModal {
         if (!media) {
             console.error(`Media not found: ${mediaId}`);
             return;
+        }
+
+        // Track emoji click in analytics
+        try {
+            if (window.analytics && window.analytics.trackEvent) {
+                window.analytics.trackEvent('emoji_click', {
+                    assetType: this.getAssetCategory(media.type),
+                    assetId: mediaId,
+                    emoji: media.emoji,
+                    label: media.label
+                });
+            }
+        } catch (e) {
+            console.error('[Analytics] Error tracking emoji click:', e);
         }
 
         // Save the element that triggered the modal for focus restore
