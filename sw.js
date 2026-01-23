@@ -1,13 +1,15 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v358';
-const STATIC_CACHE = 'off-the-record-static-v358';
-const CONTENT_CACHE = 'off-the-record-content-v358';
+const CACHE_VERSION = 'v359';
+const STATIC_CACHE = 'off-the-record-static-v359';
+const CONTENT_CACHE = 'off-the-record-content-v359';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
     './',
     './index.html',
+    './binge-mode.html',
+    './offline.html',
     './guestbook.html',
     './photos.html',
     './money-mode.html',
@@ -157,7 +159,7 @@ async function networkFirst(request) {
 
         // If HTML request and not cached, return offline page
         if (isHTMLRequest(request)) {
-            return caches.match('./index.html');
+            return caches.match('./offline.html');
         }
 
         throw error;
