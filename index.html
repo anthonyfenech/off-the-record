@@ -368,5 +368,44 @@
     </div>
 
     <script src="./prompts/prompt-system.min.js"></script>
+
+    <!-- Analytics -->
+    <script src="./js/analytics.js"></script>
+    <script>
+        // Track Home page view on load
+        window.addEventListener('load', function() {
+            if (window.analytics) {
+                window.analytics.trackPageView('Home');
+            }
+        });
+
+        // Track chapter changes by observing URL hash changes
+        window.addEventListener('hashchange', function() {
+            if (window.analytics) {
+                const hash = window.location.hash;
+                const chapterMatch = hash.match(/chapter-(\d+)/);
+                if (chapterMatch) {
+                    window.analytics.trackPageView('Chapter ' + chapterMatch[1]);
+                }
+            }
+        });
+
+        // Also observe chapter title changes for SPA navigation
+        (function() {
+            const titleEl = document.getElementById('chapterTitle');
+            if (titleEl) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'childList' && titleEl.textContent) {
+                            if (window.analytics) {
+                                window.analytics.trackPageView(titleEl.textContent);
+                            }
+                        }
+                    });
+                });
+                observer.observe(titleEl, { childList: true, characterData: true, subtree: true });
+            }
+        })();
+    </script>
 </body>
 </html>

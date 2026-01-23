@@ -693,5 +693,40 @@
         });
 
     </script>
+
+    <!-- Analytics -->
+    <script src="./js/analytics.js"></script>
+    <script>
+        // Track Binge Mode page view on load
+        window.addEventListener('load', function() {
+            if (window.analytics) {
+                window.analytics.trackPageView('Binge Mode');
+            }
+        });
+
+        // Track chapter scrolling in binge mode
+        (function() {
+            let lastTrackedChapter = null;
+            const chapterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const chapterId = entry.target.id;
+                        if (chapterId && chapterId !== lastTrackedChapter) {
+                            lastTrackedChapter = chapterId;
+                            if (window.analytics) {
+                                const chapterNum = chapterId.replace('chapter-', '');
+                                window.analytics.trackPageView('Binge Mode - Chapter ' + chapterNum);
+                            }
+                        }
+                    }
+                });
+            }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+            // Observe all chapter sections
+            document.querySelectorAll('.chapter-section').forEach(function(section) {
+                chapterObserver.observe(section);
+            });
+        })();
+    </script>
 </body>
 </html>
