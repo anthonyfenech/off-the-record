@@ -212,6 +212,7 @@ body.paginated .chapter-body {
     border-bottom: 1px solid var(--color-border);
     min-height: var(--min-touch-target);
     position: relative;
+    flex-shrink: 0;
 }
 
 .toc-header-icon {
@@ -240,10 +241,10 @@ body.paginated .chapter-body {
 }
 
 .toc-content {
-    flex: 0 0 auto;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0;
+    max-height: calc(100vh - 120px);
 }
 
 .toc-footer {
