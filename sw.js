@@ -15,7 +15,7 @@ const STATIC_ASSETS = [
     './css/fonts.min.css',
     './css/reset.min.css',
     './css/variables.min.css',
-    './css/typography.min.css',
+    './css/typography.css',
     './css/layout.min.css',
     './css/components.min.css',
     './fonts/literata-regular.woff2',

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mentions - OFF-THE-RECORD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f4f1ea;
+            --text: #1a1a1a;
+            --card-bg: #ffffff;
+            --border: #e1e1e1;
+            --muted: #666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Literata', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--text);
+        }
+
+        .header h1 {
+            font-family: 'Courier New', monospace;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .header .years {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            color: var(--muted);
+        }
+
+        /* Tweet cards */
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tweet-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+
+        .tweet-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .tweet-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Loading indicator */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--muted);
+            font-family: 'Courier New', monospace;
+        }
+
+        .loading.hidden {
+            display: none;
+        }
+
+        /* End message */
+        .end-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+            font-style: italic;
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+        }
+
+        .end-message.hidden {
+            display: none;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            z-index: 10001;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        /* Counter */
+        .counter {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .tweet-card {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./" class="back-link">&larr; Back to OFF-THE-RECORD</a>
+
+        <header class="header">
+            <h1>The Mentions</h1>
+            <p>From 2015-2020, this is what my Twitter mentions looked like for covering the Detroit Tigers.</p>
+            <p style="margin-top: 15px;">These are real tweets I received for doing my job.</p>
+            <div class="years">2015 &ndash; 2020</div>
+        </header>
+
+        <div class="feed" id="feed"></div>
+
+        <div class="loading" id="loading">Loading...</div>
+
+        <div class="end-message hidden" id="end-message">
+            That's all of them.
+        </div>
+
+        <div class="counter" id="counter"></div>
+    </div>
+
+    <!-- Modal for full-size view -->
+    <div class="modal" id="modal">
+        <span class="modal-close">&times;</span>
+        <img id="modal-img" src="" alt="Full size tweet">
+    </div>
+
+    <script>
+        const BATCH_SIZE = 20;
+        const SCROLL_BATCH = 10;
+        let allImages = [];
+        let loadedCount = 0;
+        let isLoading = false;
+
+        // Load manifest
+        async function init() {
+            try {
+                const response = await fetch('./assets/mentions/manifest.json');
+                const manifest = await response.json();
+                allImages = manifest.images;
+                updateCounter();
+                loadMore(BATCH_SIZE);
+                setupScrollListener();
+            } catch (error) {
+                document.getElementById('loading').textContent = 'Error loading images';
+                console.error('Failed to load manifest:', error);
+            }
+        }
+
+        // Load more images
+        function loadMore(count) {
+            if (isLoading || loadedCount >= allImages.length) return;
+            isLoading = true;
+
+            const feed = document.getElementById('feed');
+            const end = Math.min(loadedCount + count, allImages.length);
+
+            for (let i = loadedCount; i < end; i++) {
+                const img = allImages[i];
+                const card = document.createElement('div');
+                card.className = 'tweet-card';
+                card.innerHTML = `<img src="./assets/mentions/${img.filename}" alt="Tweet screenshot" loading="lazy">`;
+                card.addEventListener('click', () => openModal(`./assets/mentions/${img.filename}`));
+                feed.appendChild(card);
+            }
+
+            loadedCount = end;
+            isLoading = false;
+            updateCounter();
+
+            // Check if we've loaded everything
+            if (loadedCount >= allImages.length) {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('end-message').classList.remove('hidden');
+            }
+        }
+
+        // Update counter
+        function updateCounter() {
+            const counter = document.getElementById('counter');
+            counter.textContent = `${loadedCount} of ${allImages.length}`;
+        }
+
+        // Infinite scroll
+        function setupScrollListener() {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && loadedCount < allImages.length) {
+                    loadMore(SCROLL_BATCH);
+                }
+            }, { rootMargin: '200px' });
+
+            observer.observe(document.getElementById('loading'));
+        }
+
+        // Modal
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal').addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
