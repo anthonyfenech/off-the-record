@@ -11,6 +11,8 @@ class MediaModal {
         this.isOpen = false;
         this.triggerElement = null; // Element that opened the modal
         this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.modalOpenTime = null; // Timestamp for duration tracking
+        this.trackingData = null; // Store tracking data for close event
     }
 
     // Initialize the modal
@@ -189,19 +191,14 @@ class MediaModal {
             return;
         }
 
-        // Track emoji click in analytics
-        try {
-            if (window.analytics && window.analytics.trackEvent) {
-                window.analytics.trackEvent('emoji_click', {
-                    assetType: this.getAssetCategory(media.type),
-                    assetId: mediaId,
-                    emoji: media.emoji,
-                    label: media.label
-                });
-            }
-        } catch (e) {
-            console.error('[Analytics] Error tracking emoji click:', e);
-        }
+        // Store timestamp and tracking data for duration calculation on close
+        this.modalOpenTime = Date.now();
+        this.trackingData = {
+            assetType: this.getAssetCategory(media.type),
+            assetId: mediaId,
+            emoji: media.emoji,
+            label: media.label
+        };
 
         // Save the element that triggered the modal for focus restore
         this.triggerElement = document.activeElement;
@@ -467,6 +464,30 @@ class MediaModal {
 
     // Close the modal
     close() {
+        // Track emoji click with duration on close
+        try {
+            if (window.analytics && window.analytics.trackEvent && this.trackingData) {
+                let seconds = null;
+                if (this.modalOpenTime) {
+                    seconds = Math.round((Date.now() - this.modalOpenTime) / 1000);
+                    // Cap at 600 seconds (10 minutes) - likely user left tab open
+                    if (seconds > 600) {
+                        seconds = 600;
+                    }
+                    // Ensure minimum of 0
+                    if (seconds < 0) {
+                        seconds = 0;
+                    }
+                }
+                window.analytics.trackEvent('emoji_click', {
+                    ...this.trackingData,
+                    seconds: seconds
+                });
+            }
+        } catch (e) {
+            console.error('[Analytics] Error tracking emoji click:', e);
+        }
+
         this.isOpen = false;
         this.overlay.classList.remove('active');
         this.overlay.setAttribute('aria-hidden', 'true');
@@ -482,6 +503,8 @@ class MediaModal {
 
         this.currentMedia = null;
         this.triggerElement = null;
+        this.modalOpenTime = null;
+        this.trackingData = null;
     }
 
     // Clean up
