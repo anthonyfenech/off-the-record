@@ -99,6 +99,15 @@
     .btn-break { background: #666; color: white; }
     .btn-undo { background: #9c27b0; color: white; }
     .btn-save { background: #2196F3; color: white; }
+    .btn-analytics {
+      background: #9c27b0;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-analytics:hover { background: #7b1fa2; }
 
     .btn-save:disabled {
       background: #ccc;
@@ -904,6 +913,10 @@
       </div>
       <div class="header-buttons">
         <button class="btn btn-undo" id="undoBtn" disabled title="Undo (Ctrl+Z)">↩</button>
+        <a href="https://docs.google.com/spreadsheets/d/1wgf9HTdj8ROQHYJ3o_8JHF6UPT0TkKkYU7afCgRhOgY/edit?gid=0#gid=0"
+           target="_blank"
+           class="btn btn-analytics"
+           title="View Analytics">📊 ANALYTICS</a>
         <button class="btn btn-save" id="saveBtn" disabled title="Save (Ctrl+S)">💾 SAVE</button>
       </div>
     </div>
