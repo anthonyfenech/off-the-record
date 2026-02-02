@@ -550,7 +550,11 @@
                 </svg>
             </a>
             <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
-            <button type="button" class="clean-toggle" id="cleanToggle" title="Toggle media icons">Clean</button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -565,6 +569,9 @@
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
             <span>Previous</span>
+        </button>
+        <button type="button" class="nav-btn nav-media" id="mediaBtn" aria-label="Toggle media visibility">
+            <span>Media</span>
         </button>
         <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
             <span>Next</span>
@@ -703,22 +710,55 @@
             });
         });
 
-        // Clean read toggle
-        const cleanToggle = document.getElementById('cleanToggle');
-        const cleanKey = 'fullbook_cleanRead';
+        // Media toggle (in footer)
+        const mediaBtn = document.getElementById('mediaBtn');
+        const mediaKey = 'reader_cleanRead';
 
-        // Load saved state
-        if (localStorage.getItem(cleanKey) === 'true') {
-            document.body.classList.add('clean-read');
-            cleanToggle.classList.add('active');
+        // Initialize toggle state (active = media visible = NOT clean-read)
+        function updateMediaBtnState() {
+            const isCleanRead = localStorage.getItem(mediaKey) === 'true';
+            // Button is active (red) when media is visible (not clean-read)
+            mediaBtn.classList.toggle('media-active', !isCleanRead);
         }
 
-        cleanToggle.addEventListener('click', () => {
+        // Load saved state
+        if (localStorage.getItem(mediaKey) === 'true') {
+            document.body.classList.add('clean-read');
+        }
+        updateMediaBtnState();
+
+        mediaBtn.addEventListener('click', () => {
             document.body.classList.toggle('clean-read');
-            cleanToggle.classList.toggle('active');
-            localStorage.setItem(cleanKey, document.body.classList.contains('clean-read'));
+            const isCleanRead = document.body.classList.contains('clean-read');
+            localStorage.setItem(mediaKey, isCleanRead);
+            updateMediaBtnState();
         });
 
+    </script>
+
+    <!-- Theme Toggle -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeKey = 'reader_theme';
+
+        // Initialize toggle state
+        function updateThemeToggle() {
+            const isDark = localStorage.getItem(themeKey) === 'dark';
+            themeToggle.classList.toggle('active', isDark);
+        }
+        updateThemeToggle();
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem(themeKey, 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem(themeKey, 'dark');
+            }
+            updateThemeToggle();
+        });
     </script>
 
     <!-- Analytics -->

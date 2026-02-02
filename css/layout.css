@@ -184,6 +184,28 @@ body.paginated .chapter-body {
     background-color: transparent;
 }
 
+/* Media toggle button */
+.nav-btn.nav-media {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+}
+
+.nav-btn.nav-media.media-active {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+.nav-btn.nav-media.media-active::after {
+    display: none;
+}
+
+.nav-btn.nav-media:not(.media-active) {
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
 /* Table of Contents Sidebar */
 .toc-sidebar {
     position: fixed;
