@@ -82,6 +82,11 @@
                 <button type="submit" class="password-submit">ENTER</button>
                 <p id="passwordError" class="password-error">Incorrect password</p>
             </form>
+            <div id="reader-count" style="display: none; margin-top: 20px;">
+                <p style="font-family: 'Courier New', monospace; text-align: center; color: #888; font-size: 14px; margin: 0;">
+                    👥 <span id="count-number">0</span> readers started
+                </p>
+            </div>
         </div>
     </div>
 
@@ -449,6 +454,65 @@
                 observer.observe(titleEl, { childList: true, characterData: true, subtree: true });
             }
         })();
+    </script>
+
+    <!-- Reader Counter System -->
+    <script>
+    (function() {
+        const API_URL = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+
+        // Format number with commas
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Fetch and display count
+        async function fetchCount() {
+            try {
+                const response = await fetch(API_URL + '?action=getReaderCount');
+                const data = await response.json();
+
+                if (data.total !== undefined) {
+                    document.getElementById('count-number').textContent = formatNumber(data.total);
+                    document.getElementById('reader-count').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Failed to fetch reader count:', error);
+            }
+        }
+
+        // Increment count
+        async function incrementCount() {
+            try {
+                await fetch(API_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'incrementStartReading' })
+                });
+            } catch (error) {
+                console.error('Failed to increment count:', error);
+            }
+        }
+
+        // Initialize - fetch count on page load
+        fetchCount();
+
+        // Hook into password form - increment when password gate is passed
+        const passwordForm = document.getElementById('passwordForm');
+        if (passwordForm) {
+            const originalSubmit = passwordForm.onsubmit;
+            passwordForm.addEventListener('submit', function(e) {
+                // Check if password is correct by watching for gate hide
+                setTimeout(function() {
+                    const gate = document.getElementById('passwordGate');
+                    if (gate && (gate.style.display === 'none' || gate.classList.contains('hidden'))) {
+                        incrementCount();
+                    }
+                }, 100);
+            });
+        }
+    })();
     </script>
 </body>
 </html>
