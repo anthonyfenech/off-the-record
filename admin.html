@@ -1434,6 +1434,177 @@
         .preview-action-btn.primary:hover {
             background: #555;
         }
+
+        /* Interactive Prompts Generator */
+        .prompt-generator-section {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 30px 30px;
+        }
+
+        .prompt-generator-title {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333;
+        }
+
+        .prompt-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .prompt-form-row {
+            margin-bottom: 15px;
+        }
+
+        .prompt-form-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .prompt-form-label {
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .prompt-form-input,
+        .prompt-form-textarea {
+            width: 100%;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .prompt-form-textarea {
+            resize: vertical;
+            min-height: 50px;
+        }
+
+        .prompt-form-input:focus,
+        .prompt-form-textarea:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .prompt-answer-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .prompt-answer-text {
+            flex: 7;
+        }
+
+        .prompt-answer-percent {
+            flex: 2;
+        }
+
+        .prompt-answer-percent input {
+            width: 100%;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .prompt-form-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .prompt-generate-btn {
+            padding: 10px 20px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .prompt-generate-btn:hover {
+            background: #555;
+        }
+
+        .prompt-output {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .prompt-output.active {
+            display: block;
+        }
+
+        .prompt-output-label {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .prompt-output-code {
+            background: #f5f5f5;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-x: auto;
+        }
+
+        .prompt-copy-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-family: inherit;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #fff;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .prompt-copy-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        .prompt-answer-optional {
+            color: #999;
+            font-size: 10px;
+            font-weight: normal;
+            text-transform: none;
+            letter-spacing: normal;
+        }
     </style>
 </head>
 <body>
@@ -1736,6 +1907,66 @@
                         <span class="stat-value" id="installCount">0</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Prompts Generator Section -->
+    <div class="prompt-generator-section">
+        <div class="prompt-generator-title">Interactive Prompts</div>
+        <div class="prompt-form">
+            <div class="prompt-form-row">
+                <label class="prompt-form-label">Prompt ID</label>
+                <input type="text" class="prompt-form-input" id="promptId" placeholder="e.g., chapter-5-decision">
+            </div>
+            <div class="prompt-form-row">
+                <label class="prompt-form-label">Question</label>
+                <input type="text" class="prompt-form-input" id="promptQuestion" placeholder="What would you have done in this situation?">
+            </div>
+            <div class="prompt-form-row">
+                <label class="prompt-form-label">Trigger Text</label>
+                <textarea class="prompt-form-textarea" id="promptTrigger" rows="2" placeholder="Exact text from manuscript that triggers the prompt..."></textarea>
+            </div>
+            <div class="prompt-form-row">
+                <label class="prompt-form-label">Answer 1</label>
+                <div class="prompt-answer-row">
+                    <div class="prompt-answer-text">
+                        <input type="text" class="prompt-form-input" id="promptAnswer1Text" placeholder="First answer option">
+                    </div>
+                    <div class="prompt-answer-percent">
+                        <input type="number" id="promptAnswer1Percent" min="0" max="100" placeholder="%">
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-form-row">
+                <label class="prompt-form-label">Answer 2</label>
+                <div class="prompt-answer-row">
+                    <div class="prompt-answer-text">
+                        <input type="text" class="prompt-form-input" id="promptAnswer2Text" placeholder="Second answer option">
+                    </div>
+                    <div class="prompt-answer-percent">
+                        <input type="number" id="promptAnswer2Percent" min="0" max="100" placeholder="%">
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-form-row">
+                <label class="prompt-form-label">Answer 3 <span class="prompt-answer-optional">(optional)</span></label>
+                <div class="prompt-answer-row">
+                    <div class="prompt-answer-text">
+                        <input type="text" class="prompt-form-input" id="promptAnswer3Text" placeholder="Third answer option (optional)">
+                    </div>
+                    <div class="prompt-answer-percent">
+                        <input type="number" id="promptAnswer3Percent" min="0" max="100" placeholder="%">
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-form-actions">
+                <button type="button" class="prompt-generate-btn" id="generatePromptBtn">Generate Code</button>
+            </div>
+            <div class="prompt-output" id="promptOutput">
+                <div class="prompt-output-label">Generated Code</div>
+                <pre class="prompt-output-code" id="promptOutputCode"></pre>
+                <button type="button" class="prompt-copy-btn" id="copyPromptBtn">Copy to Clipboard</button>
             </div>
         </div>
     </div>
@@ -2986,6 +3217,147 @@
                     document.getElementById('editChapter').value = mediaItem?.chapterNum || '';
                     document.getElementById('editModalOverlay').classList.add('active');
                 }
+            }
+        });
+
+        // ====== INTERACTIVE PROMPTS GENERATOR ======
+
+        const generatePromptBtn = document.getElementById('generatePromptBtn');
+        const copyPromptBtn = document.getElementById('copyPromptBtn');
+        const promptOutput = document.getElementById('promptOutput');
+        const promptOutputCode = document.getElementById('promptOutputCode');
+
+        /**
+         * Escape special characters in strings for JSON
+         */
+        function escapeString(str) {
+            return str
+                .replace(/\\/g, '\\\\')
+                .replace(/'/g, "\\'")
+                .replace(/"/g, '\\"')
+                .replace(/\n/g, '\\n')
+                .replace(/\r/g, '\\r')
+                .replace(/\t/g, '\\t');
+        }
+
+        /**
+         * Generate prompt code from form inputs
+         */
+        function generatePromptCode() {
+            const id = document.getElementById('promptId').value.trim();
+            const question = document.getElementById('promptQuestion').value.trim();
+            const triggerText = document.getElementById('promptTrigger').value.trim();
+
+            const answer1Text = document.getElementById('promptAnswer1Text').value.trim();
+            const answer1Percent = parseInt(document.getElementById('promptAnswer1Percent').value) || 0;
+
+            const answer2Text = document.getElementById('promptAnswer2Text').value.trim();
+            const answer2Percent = parseInt(document.getElementById('promptAnswer2Percent').value) || 0;
+
+            const answer3Text = document.getElementById('promptAnswer3Text').value.trim();
+            const answer3Percent = parseInt(document.getElementById('promptAnswer3Percent').value) || 0;
+
+            // Validation
+            if (!id) {
+                alert('Please enter a Prompt ID');
+                return;
+            }
+            if (!question) {
+                alert('Please enter a Question');
+                return;
+            }
+            if (!triggerText) {
+                alert('Please enter Trigger Text');
+                return;
+            }
+            if (!answer1Text || !answer2Text) {
+                alert('Please enter at least two answers');
+                return;
+            }
+
+            // Check percentages add up to 100
+            const totalPercent = answer1Percent + answer2Percent + (answer3Text ? answer3Percent : 0);
+            if (totalPercent !== 100) {
+                alert('Percentages must add up to 100%. Current total: ' + totalPercent + '%');
+                return;
+            }
+
+            // Build choices array
+            const choices = [
+                { text: answer1Text, percentage: answer1Percent },
+                { text: answer2Text, percentage: answer2Percent }
+            ];
+
+            if (answer3Text) {
+                choices.push({ text: answer3Text, percentage: answer3Percent });
+            }
+
+            // Build the code string with proper formatting
+            let code = '{\n';
+            code += `    id: '${escapeString(id)}',\n`;
+            code += `    question: '${escapeString(question)}',\n`;
+            code += `    triggerText: '${escapeString(triggerText)}',\n`;
+            code += '    choices: [\n';
+
+            choices.forEach((choice, index) => {
+                code += `        { text: '${escapeString(choice.text)}', percentage: ${choice.percentage} }`;
+                if (index < choices.length - 1) {
+                    code += ',';
+                }
+                code += '\n';
+            });
+
+            code += '    ]\n';
+            code += '}';
+
+            // Display the output
+            promptOutputCode.textContent = code;
+            promptOutput.classList.add('active');
+        }
+
+        /**
+         * Copy generated code to clipboard
+         */
+        function copyPromptCode() {
+            const code = promptOutputCode.textContent;
+
+            if (!code) {
+                alert('No code to copy. Generate code first.');
+                return;
+            }
+
+            navigator.clipboard.writeText(code).then(() => {
+                // Visual feedback
+                const originalText = copyPromptBtn.textContent;
+                copyPromptBtn.textContent = 'Copied!';
+                copyPromptBtn.style.background = '#333';
+                copyPromptBtn.style.color = '#fff';
+
+                setTimeout(() => {
+                    copyPromptBtn.textContent = originalText;
+                    copyPromptBtn.style.background = '';
+                    copyPromptBtn.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy to clipboard. Please copy manually.');
+            });
+        }
+
+        // Event listeners
+        generatePromptBtn.addEventListener('click', generatePromptCode);
+        copyPromptBtn.addEventListener('click', copyPromptCode);
+
+        // Allow Enter key to generate in text inputs
+        ['promptId', 'promptQuestion', 'promptAnswer1Text', 'promptAnswer2Text', 'promptAnswer3Text'].forEach(inputId => {
+            const input = document.getElementById(inputId);
+            if (input) {
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        generatePromptCode();
+                    }
+                });
             }
         });
     </script>

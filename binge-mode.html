@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/typography.css">
     <link rel="stylesheet" href="./css/layout.min.css">
     <link rel="stylesheet" href="./css/components.min.css">
+    <link rel="stylesheet" href="./css/interactive-prompts.css">
 
     <style>
         body {
@@ -664,6 +665,13 @@
 
         // Initialize media modal for emoji triggers
         mediaModal.init();
+
+        // Initialize interactive prompts system
+        import('./js/interactivePrompts.js').then(({ InteractivePrompts }) => {
+            import('./data/prompts.js').then(({ PROMPTS }) => {
+                new InteractivePrompts(PROMPTS);
+            });
+        });
 
         // Attach click handlers to media emojis
         document.querySelectorAll('.media-emoji').forEach(emoji => {
