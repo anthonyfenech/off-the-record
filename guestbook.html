@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Sign the guestbook - OFF-THE-RECORD">
+    <meta name="description" content="Guestbook - OFF-THE-RECORD">
     <meta name="theme-color" content="#333333">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="OFF-THE-RECORD">
 
-    <title>Comments - OFF-THE-RECORD</title>
+    <title>THE ROLODEX - OFF-THE-RECORD</title>
 
     <link rel="manifest" href="./manifest.json">
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
 
-    <!-- Google Fonts - Literata for body text -->
-    
-    
     <!-- Preload critical fonts -->
     <link rel="preload" href="./fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -30,6 +27,251 @@
     <link rel="stylesheet" href="./css/layout.min.css">
     <link rel="stylesheet" href="./css/components.min.css">
     <link rel="stylesheet" href="./css/otr-tier1-states.css">
+
+    <!-- Rolodex-specific styles -->
+    <style>
+        /* Rolodex Page Styles */
+        .rolodex-page {
+            padding-bottom: var(--space-3xl);
+        }
+
+        .rolodex-intro {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xl);
+            line-height: 1.6;
+        }
+
+        /* Form Section */
+        .rolodex-form-section {
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .rolodex-section-heading {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-sm);
+            font-weight: bold;
+            color: var(--color-text-primary);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal);
+            margin-bottom: var(--space-lg);
+        }
+
+        .rolodex-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rolodex-form .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .rolodex-form .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: var(--font-size-xs);
+            font-weight: bold;
+            color: var(--color-text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .rolodex-form .form-label .required {
+            color: #DC143C;
+        }
+
+        .rolodex-form .form-input,
+        .rolodex-form .form-textarea {
+            width: 100%;
+            font-family: var(--font-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            padding: var(--space-sm) var(--space-md);
+            transition: border-color var(--transition-fast);
+            box-sizing: border-box;
+        }
+
+        .rolodex-form .form-input:focus,
+        .rolodex-form .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-text-primary);
+        }
+
+        .rolodex-form .form-input::placeholder,
+        .rolodex-form .form-textarea::placeholder {
+            color: var(--color-text-tertiary);
+            font-style: italic;
+        }
+
+        .rolodex-form .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .rolodex-form .char-count {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-tertiary);
+            text-align: right;
+            margin-top: var(--space-xs);
+        }
+
+        .rolodex-form .char-count.warning {
+            color: #DC143C;
+        }
+
+        .rolodex-form .form-note {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-tertiary);
+            font-style: italic;
+            margin-top: var(--space-xs);
+        }
+
+        /* Submit Button - Red accent */
+        .rolodex-submit {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-sm);
+            font-weight: bold;
+            color: #ffffff;
+            background: #DC143C;
+            border: 2px solid #DC143C;
+            padding: var(--space-sm) var(--space-xl);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            margin-top: var(--space-sm);
+        }
+
+        .rolodex-submit:hover:not(:disabled) {
+            background: #b01030;
+            border-color: #b01030;
+        }
+
+        .rolodex-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Success/Error Messages */
+        .rolodex-message {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-sm);
+            padding: var(--space-md);
+            margin-top: var(--space-lg);
+            text-align: center;
+            display: none;
+        }
+
+        .rolodex-message.success {
+            color: #2e7d32;
+            background: rgba(46, 125, 50, 0.1);
+            border: 1px solid #2e7d32;
+        }
+
+        .rolodex-message.error {
+            color: var(--color-error-text);
+            background: var(--color-error-bg);
+            border: 1px solid var(--color-error-border);
+        }
+
+        .rolodex-message.visible {
+            display: block;
+        }
+
+        /* Comments Section */
+        .rolodex-comments-section {
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .rolodex-comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .rolodex-comment {
+            padding: var(--space-lg) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .rolodex-comment:first-child {
+            padding-top: 0;
+        }
+
+        .rolodex-comment:last-child {
+            border-bottom: none;
+        }
+
+        .rolodex-comment-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .rolodex-comment-name {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-base);
+            font-weight: bold;
+            color: var(--color-text-primary);
+        }
+
+        .rolodex-comment-location {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-tertiary);
+        }
+
+        .rolodex-comment-date {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-tertiary);
+            margin-left: auto;
+        }
+
+        .rolodex-comment-text {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            color: var(--color-text-primary);
+        }
+
+        .rolodex-empty {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-tertiary);
+            font-style: italic;
+        }
+
+        .rolodex-loading {
+            font-family: var(--font-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-tertiary);
+            text-align: center;
+            padding: var(--space-lg) 0;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 599px) {
+            .rolodex-comment-header {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+
+            .rolodex-comment-date {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Navigation -->
@@ -49,26 +291,57 @@
     <main class="reader" id="reader">
         <article class="chapter">
             <header class="chapter-header">
-                <h2 class="chapter-title">COMMENTS</h2>
+                <h2 class="chapter-title">THE ROLODEX</h2>
             </header>
-            <div class="guestbook-page" id="guestbookContainer">
-                <!-- Guestbook content rendered by JS -->
+            <div class="rolodex-page" id="rolodexContainer">
+                <!-- Intro -->
+                <p class="rolodex-intro">Sign it. Share your story. Tell the truth.</p>
+
+                <!-- Submission Form -->
+                <section class="rolodex-form-section">
+                    <h3 class="rolodex-section-heading">SIGN THE ROLODEX</h3>
+                    <form class="rolodex-form" id="rolodexForm">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email <span class="required">*</span></label>
+                            <input type="email" class="form-input" id="email" name="email" required autocomplete="email">
+                            <p class="form-note">Your email will not be displayed publicly.</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="location">Location <span class="required">*</span></label>
+                            <input type="text" class="form-input" id="location" name="location" required placeholder="City, State" autocomplete="address-level2">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="comment">Comment <span class="required">*</span></label>
+                            <textarea class="form-textarea" id="comment" name="comment" required maxlength="500" placeholder="Share your thoughts..."></textarea>
+                            <div class="char-count" id="charCount">0 / 500</div>
+                        </div>
+                        <button type="submit" class="rolodex-submit" id="submitBtn">SIGN IT</button>
+                        <div class="rolodex-message success" id="successMessage">
+                            Thanks for signing the Rolodex. Your comment will appear after approval.
+                        </div>
+                        <div class="rolodex-message error" id="errorMessage">
+                            Something went wrong. Please try again.
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Comments Display -->
+                <section class="rolodex-comments-section">
+                    <h3 class="rolodex-section-heading">WHAT PEOPLE ARE SAYING</h3>
+                    <div class="rolodex-comments-list" id="commentsList">
+                        <p class="rolodex-loading">Loading comments...</p>
+                    </div>
+                </section>
             </div>
         </article>
     </main>
 
     <!-- Scripts -->
-    <script type="module">
-        import { guestbook } from './js/guestbook.min.js';
-
-        // Initialize guestbook on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('guestbookContainer');
-            if (container) {
-                guestbook.render(container);
-            }
-        });
-    </script>
+    <script src="./js/rolodex.js"></script>
     <script src="./js/otr-tier1-error-handler.js"></script>
 </body>
 </html>
