@@ -2,6 +2,7 @@
  * Interactive Prompts System
  * Triggers Q&A modals when user scrolls to specific text in the manuscript
  * Uses IntersectionObserver for scroll detection and TreeWalker for text searching
+ * Only triggers when scrolling DOWN - prevents re-triggering on scroll back
  */
 
 export class InteractivePrompts {
@@ -15,6 +16,13 @@ export class InteractivePrompts {
         this.currentPrompt = null;
         this.triggerElements = new Map();
 
+        // Scroll direction tracking
+        this.lastScrollY = window.scrollY;
+        this.scrollingDown = true;
+        this.triggeredThisSession = new Set(
+            JSON.parse(sessionStorage.getItem('prompts_triggered_this_session') || '[]')
+        );
+
         this.init();
     }
 
@@ -27,8 +35,28 @@ export class InteractivePrompts {
         }
 
         this.createModal();
+        this.setupScrollTracking();
         this.observeTriggers();
         this.setupKeyboardListeners();
+    }
+
+    /**
+     * Set up scroll direction tracking
+     */
+    setupScrollTracking() {
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    this.scrollingDown = currentScrollY > this.lastScrollY;
+                    this.lastScrollY = currentScrollY;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
     }
 
     /**
@@ -111,8 +139,8 @@ export class InteractivePrompts {
      */
     _setupObservers() {
         this.prompts.forEach(prompt => {
-            // Skip if already responded
-            if (this.hasResponded(prompt.id)) {
+            // Skip if already responded OR already triggered this session
+            if (this.hasResponded(prompt.id) || this.triggeredThisSession.has(prompt.id)) {
                 return;
             }
 
@@ -130,9 +158,27 @@ export class InteractivePrompts {
                 const observer = new IntersectionObserver(
                     (entries) => {
                         entries.forEach(entry => {
-                            if (entry.isIntersecting && !this.hasResponded(prompt.id)) {
+                            // Only trigger if:
+                            // 1. Element is intersecting (visible)
+                            // 2. User is scrolling DOWN
+                            // 3. User hasn't already responded
+                            // 4. Prompt hasn't been triggered this session
+                            if (entry.isIntersecting &&
+                                this.scrollingDown &&
+                                !this.hasResponded(prompt.id) &&
+                                !this.triggeredThisSession.has(prompt.id)) {
+
+                                // Mark as triggered this session
+                                this.triggeredThisSession.add(prompt.id);
+                                sessionStorage.setItem(
+                                    'prompts_triggered_this_session',
+                                    JSON.stringify([...this.triggeredThisSession])
+                                );
+
                                 // Disconnect this observer to prevent re-triggering
                                 observer.disconnect();
+
+                                // Show the prompt
                                 this.show(prompt);
                             }
                         });
@@ -408,6 +454,14 @@ export class InteractivePrompts {
     clearResponses() {
         this.responses = {};
         localStorage.removeItem('prompt_responses');
+    }
+
+    /**
+     * Clear session triggers (allows prompts to show again this session)
+     */
+    clearSessionTriggers() {
+        this.triggeredThisSession.clear();
+        sessionStorage.removeItem('prompts_triggered_this_session');
     }
 
     /**

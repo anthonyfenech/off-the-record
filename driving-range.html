@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Range - Test Interactive Prompts</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
+    <link rel="stylesheet" href="./css/interactive-prompts.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .dr-header {
+            background: #333;
+            color: #fff;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .dr-header-content {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .dr-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .dr-subtitle {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .dr-count {
+            font-size: 13px;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .dr-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dr-btn {
+            background: #fff;
+            color: #333;
+            border: none;
+            padding: 8px 16px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+
+        .dr-btn:hover {
+            background: #ddd;
+        }
+
+        .dr-btn.reset {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .dr-btn.reset:hover {
+            background: #c0392b;
+        }
+
+        .dr-main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Progress Indicator */
+        .dr-progress {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .dr-progress-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .dr-progress-bar {
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .dr-progress-fill {
+            height: 100%;
+            background: #27ae60;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        /* Prompt Card */
+        .dr-prompt-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .dr-prompt-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dr-prompt-card.completed {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .dr-prompt-id {
+            font-size: 10px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .dr-prompt-question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .dr-prompt-trigger {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background: #f9f9f9;
+            border-left: 3px solid #ddd;
+        }
+
+        .dr-prompt-trigger strong {
+            display: block;
+            color: #999;
+            font-style: normal;
+            font-size: 10px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        /* Choices */
+        .dr-choices {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dr-choice {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .dr-choice:hover {
+            border-color: #333;
+            background: #fff;
+        }
+
+        .dr-choice input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #333;
+            cursor: pointer;
+        }
+
+        .dr-choice-text {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        /* Results */
+        .dr-results {
+            display: none;
+        }
+
+        .dr-results.active {
+            display: block;
+        }
+
+        .dr-result-item {
+            margin-bottom: 15px;
+        }
+
+        .dr-result-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .dr-result-text {
+            flex: 1;
+        }
+
+        .dr-your-choice {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 11px;
+            margin-left: 8px;
+        }
+
+        .dr-bar-wrapper {
+            height: 35px;
+            background: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .dr-bar-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .dr-bar-fill.red { background: #E74C3C; }
+        .dr-bar-fill.blue { background: #3498DB; }
+        .dr-bar-fill.yellow { background: #F1C40F; }
+        .dr-bar-fill.green { background: #27AE60; }
+
+        .dr-bar-percent {
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .dr-bar-fill.yellow .dr-bar-percent {
+            color: #333;
+            text-shadow: none;
+        }
+
+        /* Empty State */
+        .dr-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .dr-empty h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .dr-empty p {
+            margin-bottom: 20px;
+        }
+
+        /* Completion State */
+        .dr-complete {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .dr-complete h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #27ae60;
+        }
+
+        .dr-complete p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .dr-complete-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .dr-complete-btn {
+            padding: 12px 24px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .dr-complete-btn.primary {
+            background: #333;
+            color: #fff;
+            border: none;
+        }
+
+        .dr-complete-btn.primary:hover {
+            background: #555;
+        }
+
+        .dr-complete-btn.secondary {
+            background: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
+
+        .dr-complete-btn.secondary:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .dr-header {
+                padding: 15px 20px;
+            }
+
+            .dr-header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dr-title {
+                font-size: 16px;
+            }
+
+            .dr-main {
+                padding: 20px 15px;
+            }
+
+            .dr-prompt-card {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+
+            .dr-prompt-question {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="dr-header">
+        <div class="dr-header-content">
+            <div>
+                <div class="dr-title">Driving Range</div>
+                <div class="dr-subtitle">Test All Interactive Prompts</div>
+            </div>
+            <div class="dr-count" id="promptCount">Loading...</div>
+            <div class="dr-actions">
+                <button class="dr-btn reset" id="resetBtn">Reset Progress</button>
+                <a href="./admin.html" class="dr-btn">Back to Admin</a>
+                <a href="./" class="dr-btn">Back to Reader</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dr-main" id="main">
+        <!-- Content populated by JavaScript -->
+    </main>
+
+    <script>
+        const PROMPTS_STORAGE_KEY = 'admin_interactivePrompts';
+        const DRIVING_RANGE_PROGRESS_KEY = 'driving_range_progress';
+
+        let prompts = [];
+        let currentIndex = 0;
+
+        /**
+         * Load prompts from localStorage or fallback to static file
+         */
+        async function loadPrompts() {
+            // Try localStorage first (admin panel)
+            const adminPrompts = localStorage.getItem(PROMPTS_STORAGE_KEY);
+            if (adminPrompts) {
+                try {
+                    const parsed = JSON.parse(adminPrompts);
+                    if (parsed && parsed.length > 0) {
+                        return parsed;
+                    }
+                } catch (e) {
+                    console.error('Error parsing admin prompts:', e);
+                }
+            }
+
+            // Fallback to static file
+            try {
+                const module = await import('./data/prompts.js');
+                if (module.PROMPTS && module.PROMPTS.length > 0) {
+                    return module.PROMPTS;
+                }
+            } catch (e) {
+                console.log('No static prompts file found');
+            }
+
+            return [];
+        }
+
+        /**
+         * Load progress from localStorage
+         */
+        function loadProgress() {
+            try {
+                return parseInt(localStorage.getItem(DRIVING_RANGE_PROGRESS_KEY)) || 0;
+            } catch (e) {
+                return 0;
+            }
+        }
+
+        /**
+         * Save progress to localStorage
+         */
+        function saveProgress(index) {
+            localStorage.setItem(DRIVING_RANGE_PROGRESS_KEY, index.toString());
+        }
+
+        /**
+         * Reset all progress
+         */
+        function resetProgress() {
+            if (!confirm('Reset all driving range progress? This will let you go through all prompts again.')) {
+                return;
+            }
+            localStorage.removeItem(DRIVING_RANGE_PROGRESS_KEY);
+            localStorage.removeItem('prompt_responses');
+            sessionStorage.removeItem('prompts_triggered_this_session');
+            currentIndex = 0;
+            render();
+        }
+
+        /**
+         * Update the progress indicator
+         */
+        function updateProgress() {
+            const progressText = document.querySelector('.dr-progress-text');
+            const progressFill = document.querySelector('.dr-progress-fill');
+
+            if (progressText && progressFill) {
+                const completed = currentIndex;
+                const total = prompts.length;
+                progressText.textContent = `Prompt ${Math.min(completed + 1, total)} of ${total}`;
+                progressFill.style.width = `${(completed / total) * 100}%`;
+            }
+        }
+
+        /**
+         * Handle choice selection
+         */
+        function handleChoice(promptIndex, choiceIndex) {
+            const prompt = prompts[promptIndex];
+            const card = document.querySelector(`[data-prompt-index="${promptIndex}"]`);
+
+            if (!card || !prompt) return;
+
+            // Hide choices, show results
+            const choicesEl = card.querySelector('.dr-choices');
+            const resultsEl = card.querySelector('.dr-results');
+
+            choicesEl.style.display = 'none';
+            resultsEl.classList.add('active');
+
+            // Animate bars
+            setTimeout(() => {
+                resultsEl.querySelectorAll('.dr-bar-fill').forEach(bar => {
+                    bar.style.width = bar.dataset.percentage + '%';
+                });
+            }, 50);
+
+            // Save response
+            const responses = JSON.parse(localStorage.getItem('prompt_responses') || '{}');
+            responses[prompt.id] = { choiceIndex, timestamp: Date.now() };
+            localStorage.setItem('prompt_responses', JSON.stringify(responses));
+
+            // Mark card as completed
+            setTimeout(() => {
+                card.classList.add('completed');
+
+                // Advance to next prompt after 2 seconds
+                setTimeout(() => {
+                    currentIndex = promptIndex + 1;
+                    saveProgress(currentIndex);
+                    updateProgress();
+
+                    if (currentIndex < prompts.length) {
+                        showNextPrompt();
+                    } else {
+                        showCompletion();
+                    }
+                }, 2000);
+            }, 500);
+        }
+
+        /**
+         * Show the next prompt
+         */
+        function showNextPrompt() {
+            const nextCard = document.querySelector(`[data-prompt-index="${currentIndex}"]`);
+            if (nextCard) {
+                nextCard.classList.add('visible');
+                nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        /**
+         * Show completion message
+         */
+        function showCompletion() {
+            const main = document.getElementById('main');
+            main.innerHTML = `
+                <div class="dr-progress">
+                    <div class="dr-progress-text">All ${prompts.length} prompts completed!</div>
+                    <div class="dr-progress-bar">
+                        <div class="dr-progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="dr-complete">
+                    <h2>All Prompts Completed!</h2>
+                    <p>You've tested all ${prompts.length} interactive prompts. Return to the site or visit the admin panel to add more.</p>
+                    <div class="dr-complete-actions">
+                        <a href="./admin.html" class="dr-complete-btn primary">Back to Admin</a>
+                        <a href="./" class="dr-complete-btn secondary">Back to Reader</a>
+                        <button class="dr-complete-btn secondary" onclick="resetProgress()">Start Over</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * Render all prompts
+         */
+        function render() {
+            const main = document.getElementById('main');
+            const countEl = document.getElementById('promptCount');
+
+            if (prompts.length === 0) {
+                countEl.textContent = '0 prompts';
+                main.innerHTML = `
+                    <div class="dr-empty">
+                        <h2>No Prompts Configured</h2>
+                        <p>Add prompts in the admin panel to test them here.</p>
+                        <a href="./admin.html" class="dr-btn" style="display: inline-block; background: #333; color: #fff;">Go to Admin Panel</a>
+                    </div>
+                `;
+                return;
+            }
+
+            countEl.textContent = `${prompts.length} prompt${prompts.length !== 1 ? 's' : ''}`;
+
+            // Check if all completed
+            if (currentIndex >= prompts.length) {
+                showCompletion();
+                return;
+            }
+
+            const colors = ['red', 'blue', 'yellow', 'green'];
+
+            main.innerHTML = `
+                <div class="dr-progress">
+                    <div class="dr-progress-text">Prompt ${currentIndex + 1} of ${prompts.length}</div>
+                    <div class="dr-progress-bar">
+                        <div class="dr-progress-fill" style="width: ${(currentIndex / prompts.length) * 100}%"></div>
+                    </div>
+                </div>
+                ${prompts.map((prompt, index) => {
+                    const isCompleted = index < currentIndex;
+                    const isActive = index === currentIndex;
+                    const isFuture = index > currentIndex;
+
+                    if (isFuture) return ''; // Don't render future prompts
+
+                    return `
+                        <div class="dr-prompt-card ${isCompleted ? 'completed visible' : ''} ${isActive ? 'visible' : ''}" data-prompt-index="${index}">
+                            <div class="dr-prompt-id">${prompt.id}</div>
+                            <div class="dr-prompt-question">${prompt.question}</div>
+                            <div class="dr-prompt-trigger">
+                                <strong>Trigger Text:</strong>
+                                ${prompt.triggerText}
+                            </div>
+
+                            <div class="dr-choices" ${isCompleted ? 'style="display:none"' : ''}>
+                                ${prompt.choices.map((choice, cIndex) => `
+                                    <label class="dr-choice">
+                                        <input type="radio" name="prompt-${index}" value="${cIndex}"
+                                            onchange="handleChoice(${index}, ${cIndex})" ${isCompleted ? 'disabled' : ''}>
+                                        <span class="dr-choice-text">${choice.text}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
+
+                            <div class="dr-results ${isCompleted ? 'active' : ''}">
+                                ${prompt.choices.map((choice, cIndex) => {
+                                    const responses = JSON.parse(localStorage.getItem('prompt_responses') || '{}');
+                                    const userChoice = responses[prompt.id]?.choiceIndex;
+                                    const isUserChoice = userChoice === cIndex;
+                                    const color = colors[cIndex] || 'blue';
+
+                                    return `
+                                        <div class="dr-result-item">
+                                            <div class="dr-result-label">
+                                                <span class="dr-result-text">${choice.text}</span>
+                                                ${isUserChoice ? '<span class="dr-your-choice">Your choice</span>' : ''}
+                                            </div>
+                                            <div class="dr-bar-wrapper">
+                                                <div class="dr-bar-fill ${color}" data-percentage="${choice.percentage}" ${isCompleted ? `style="width: ${choice.percentage}%"` : ''}>
+                                                    <span class="dr-bar-percent">${choice.percentage}%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            `;
+        }
+
+        /**
+         * Initialize the page
+         */
+        async function init() {
+            prompts = await loadPrompts();
+            currentIndex = loadProgress();
+
+            // If progress is beyond available prompts (prompts were deleted), reset
+            if (currentIndex > prompts.length) {
+                currentIndex = prompts.length;
+                saveProgress(currentIndex);
+            }
+
+            render();
+
+            // Reset button
+            document.getElementById('resetBtn').addEventListener('click', resetProgress);
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
