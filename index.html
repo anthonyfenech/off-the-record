@@ -204,9 +204,14 @@
                 </div>
             </div>
         </div>
-        <!-- Admin Link -->
-        <div class="toc-admin-link">
-            <a href="./admin.html" class="admin-link">Admin</a>
+        <!-- Admin Link (hidden until password typed) -->
+        <div class="toc-section" id="adminSection" style="display: none;">
+            <a href="./admin.html" class="toc-section-header" style="text-decoration: none;">
+                <span class="toc-section-title">Admin</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+            </a>
         </div>
         <div class="toc-footer">
             <button class="logout-btn" id="logoutBtn">Logout</button>
@@ -524,6 +529,35 @@
                 }, 100);
             });
         }
+    })();
+    </script>
+    <script>
+    // Admin access - type secret password anywhere to reveal Admin tab
+    (function() {
+        var ADMIN_PASSWORD = 'FENECHADMIN';
+        var ADMIN_KEY = 'otr_admin_access';
+        var typed = '';
+        var adminSection = document.getElementById('adminSection');
+
+        // Check if already authenticated
+        if (localStorage.getItem(ADMIN_KEY) === 'true' && adminSection) {
+            adminSection.style.display = '';
+        }
+
+        // Listen for password typing
+        document.addEventListener('keypress', function(e) {
+            typed += e.key.toUpperCase();
+            // Keep only last N characters where N is password length
+            if (typed.length > ADMIN_PASSWORD.length) {
+                typed = typed.slice(-ADMIN_PASSWORD.length);
+            }
+            // Check for match
+            if (typed === ADMIN_PASSWORD) {
+                localStorage.setItem(ADMIN_KEY, 'true');
+                if (adminSection) adminSection.style.display = '';
+                typed = '';
+            }
+        });
     })();
     </script>
     <script src="./js/otr-tier1-error-handler.js"></script>
