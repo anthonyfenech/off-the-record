@@ -115,87 +115,49 @@
             }
         }
 
-        /* Reader Counter Control Section */
-        .counter-control-section {
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background: #fafafa;
-        }
-
-        .counter-control-section h3 {
+        /* Reader Counter Control - Compact */
+        .counter-stats-compact p {
             font-family: 'Courier New', monospace;
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin: 0 0 20px 0;
+            font-size: 11px;
+            margin: 2px 0;
         }
 
-        .counter-control-section h4 {
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin: 0 0 15px 0;
-            color: #666;
-        }
-
-        .counter-stats p {
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            margin: 5px 0;
-        }
-
-        .counter-stats .counter-total {
+        .counter-total-compact {
             font-weight: bold;
+            margin-top: 6px !important;
+        }
+
+        .counter-manual-compact {
             margin-top: 10px;
-            font-size: 14px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
         }
 
-        .counter-toggle-row {
+        .counter-input-compact {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-            padding: 15px 0;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+            gap: 6px;
+            margin: 4px 0;
         }
 
-        .counter-toggle-row span {
+        .counter-input-compact label {
             font-family: 'Courier New', monospace;
-            font-size: 13px;
+            font-size: 10px;
+            min-width: 45px;
         }
 
-        .counter-manual {
-            margin-top: 20px;
-        }
-
-        .counter-input-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-        }
-
-        .counter-input-row label {
+        .counter-input-compact input {
+            width: 55px;
+            padding: 3px 5px;
             font-family: 'Courier New', monospace;
-            font-size: 12px;
-            min-width: 130px;
-        }
-
-        .counter-input-row input {
-            width: 100px;
-            padding: 6px 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
+            font-size: 11px;
             border: 1px solid #ccc;
         }
 
         .counter-set-btn {
             font-family: 'Courier New', monospace;
-            padding: 6px 15px;
-            font-size: 11px;
-            letter-spacing: 1px;
+            padding: 3px 8px;
+            font-size: 10px;
             cursor: pointer;
             background: #333;
             color: #fff;
@@ -2015,51 +1977,6 @@
            title="View Analytics">📊 Analytics</a>
     </nav>
 
-    <!-- Reader Counter Control Section -->
-    <div class="counter-control-section">
-        <h3>READER COUNTER CONTROL</h3>
-
-        <!-- Current Stats -->
-        <div class="counter-stats">
-            <p>📄 PDF Downloads: <span id="pdf-count">0</span></p>
-            <p>📖 Start Reading Clicks: <span id="start-count">0</span></p>
-            <p>📱 Kindle Downloads: <span id="kindle-count">0</span></p>
-            <p class="counter-total">👥 TOTAL READERS: <span id="total-count">0</span></p>
-        </div>
-
-        <!-- Toggle Switch -->
-        <div class="counter-toggle-row">
-            <label class="toggle-switch">
-                <input type="checkbox" id="counterToggle" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span id="counterStatus">Counter Enabled</span>
-        </div>
-
-        <!-- Manual Controls -->
-        <div class="counter-manual">
-            <h4>MANUAL ADJUSTMENTS</h4>
-
-            <div class="counter-input-row">
-                <label>PDF Downloads:</label>
-                <input type="number" id="pdf-input" value="0">
-                <button class="counter-set-btn" data-type="pdf_downloads">SET</button>
-            </div>
-
-            <div class="counter-input-row">
-                <label>Start Reading:</label>
-                <input type="number" id="start-input" value="0">
-                <button class="counter-set-btn" data-type="start_reading_clicks">SET</button>
-            </div>
-
-            <div class="counter-input-row">
-                <label>Kindle Downloads:</label>
-                <input type="number" id="kindle-input" value="0">
-                <button class="counter-set-btn" data-type="kindle_downloads">SET</button>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="left-panel">
             <div class="toggle-group">
@@ -2321,6 +2238,41 @@
             </div><!-- end catalog-panel -->
 
             <div class="extra-panels">
+                <!-- Reader Counter Control -->
+                <div class="control-panel">
+                    <div class="control-panel-title">Reader Counter</div>
+                    <div class="counter-stats-compact">
+                        <p>📄 PDF: <span id="pdf-count">0</span></p>
+                        <p>📖 Reading: <span id="start-count">0</span></p>
+                        <p>📱 Kindle: <span id="kindle-count">0</span></p>
+                        <p class="counter-total-compact">👥 TOTAL: <span id="total-count">0</span></p>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label" id="counterStatus">Enabled</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="counterToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="counter-manual-compact">
+                        <div class="counter-input-compact">
+                            <label>PDF:</label>
+                            <input type="number" id="pdf-input" value="0">
+                            <button class="counter-set-btn" data-type="pdf_downloads">SET</button>
+                        </div>
+                        <div class="counter-input-compact">
+                            <label>Read:</label>
+                            <input type="number" id="start-input" value="0">
+                            <button class="counter-set-btn" data-type="start_reading_clicks">SET</button>
+                        </div>
+                        <div class="counter-input-compact">
+                            <label>Kindle:</label>
+                            <input type="number" id="kindle-input" value="0">
+                            <button class="counter-set-btn" data-type="kindle_downloads">SET</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="control-panel">
                     <div class="control-panel-title">Install Prompt</div>
                     <div class="toggle-row">
