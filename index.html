@@ -472,6 +472,12 @@
                 const response = await fetch(API_URL + '?action=getReaderCount');
                 const data = await response.json();
 
+                // Check if counter is enabled
+                if (data.counter_enabled === false) {
+                    document.getElementById('reader-count').style.display = 'none';
+                    return;
+                }
+
                 if (data.total !== undefined) {
                     document.getElementById('count-number').textContent = formatNumber(data.total);
                     document.getElementById('reader-count').style.display = 'block';
