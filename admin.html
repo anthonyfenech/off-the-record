@@ -1435,175 +1435,427 @@
             background: #555;
         }
 
-        /* Interactive Prompts Generator */
-        .prompt-generator-section {
-            max-width: 800px;
+        /* ====== PROMPT MANAGER SECTION ====== */
+        .prompt-manager-section {
+            max-width: 900px;
             margin: 40px auto 0;
             padding: 0 30px 30px;
         }
 
-        .prompt-generator-title {
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .prompt-manager-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 2px solid #333;
         }
 
-        .prompt-form {
-            background: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .prompt-form-row {
-            margin-bottom: 15px;
-        }
-
-        .prompt-form-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .prompt-form-label {
-            display: block;
-            font-size: 11px;
+        .prompt-manager-title {
+            font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-            color: #333;
+            letter-spacing: 2px;
         }
 
-        .prompt-form-input,
-        .prompt-form-textarea {
-            width: 100%;
-            padding: 10px;
+        .prompt-manager-count {
+            font-size: 11px;
+            color: #666;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
+        .prompt-manager-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .prompt-add-btn {
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
             font-family: inherit;
             font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.15s;
+        }
+
+        .prompt-add-btn:hover {
+            background: #219a52;
+        }
+
+        .prompt-export-btn {
+            background: #fff;
+            color: #333;
+            border: 1px solid #333;
+            padding: 10px 18px;
+            font-family: inherit;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.15s;
+        }
+
+        .prompt-export-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Prompt Table */
+        .prompt-table-container {
+            max-height: 400px;
+            overflow-y: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
+        }
+
+        .prompt-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .prompt-table thead {
+            position: sticky;
+            top: 0;
             background: #fff;
+            z-index: 1;
         }
 
-        .prompt-form-textarea {
-            resize: vertical;
-            min-height: 50px;
+        .prompt-table th {
+            text-align: left;
+            padding: 10px 8px;
+            border-bottom: 2px solid #333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 10px;
+            font-weight: bold;
+            white-space: nowrap;
         }
 
-        .prompt-form-input:focus,
-        .prompt-form-textarea:focus {
+        .prompt-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .prompt-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .prompt-table .num-cell {
+            width: 30px;
+            text-align: center;
+            color: #999;
+        }
+
+        .prompt-table .id-cell {
+            width: 140px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .prompt-table .question-cell {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .prompt-table .trigger-cell {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #666;
+            font-style: italic;
+        }
+
+        .prompt-table .choices-cell {
+            width: 60px;
+            text-align: center;
+        }
+
+        .prompt-table .action-cell {
+            width: 70px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .prompt-table .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            font-size: 14px;
+            opacity: 0.6;
+            transition: opacity 0.15s, transform 0.15s;
+        }
+
+        .prompt-table .action-btn:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .prompt-table .action-btn.delete-btn:hover {
+            color: #e74c3c;
+        }
+
+        /* Empty State */
+        .prompt-empty-state {
+            padding: 60px 20px;
+            text-align: center;
+            color: #999;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .prompt-empty-state p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        /* Prompt Modal */
+        .prompt-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10002;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .prompt-modal-overlay.active {
+            display: flex;
+        }
+
+        .prompt-modal {
+            background: #fff;
+            border-radius: 8px;
+            width: 700px;
+            max-width: 95vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .prompt-modal h3 {
+            margin: 0 0 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .prompt-modal .form-group {
+            margin-bottom: 18px;
+        }
+
+        .prompt-modal .form-group label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .prompt-modal .form-group .label-hint {
+            font-weight: normal;
+            color: #999;
+            text-transform: none;
+            letter-spacing: normal;
+            font-size: 10px;
+        }
+
+        .prompt-modal .form-group input[type="text"],
+        .prompt-modal .form-group input[type="number"],
+        .prompt-modal .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            font-family: inherit;
+            font-size: 13px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.15s;
+        }
+
+        .prompt-modal .form-group input:focus,
+        .prompt-modal .form-group textarea:focus {
             outline: none;
             border-color: #333;
         }
 
-        .prompt-answer-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
+        .prompt-modal .form-group textarea {
+            resize: vertical;
+            min-height: 70px;
         }
 
-        .prompt-answer-text {
+        .prompt-modal .answer-row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .prompt-modal .answer-text {
             flex: 7;
         }
 
-        .prompt-answer-percent {
+        .prompt-modal .answer-percent {
             flex: 2;
+            min-width: 80px;
         }
 
-        .prompt-answer-percent input {
-            width: 100%;
-            padding: 10px;
-            font-family: inherit;
-            font-size: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .prompt-modal .answer-percent input {
             text-align: center;
         }
 
-        .prompt-form-actions {
-            margin-top: 20px;
+        .prompt-modal .percent-total {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .prompt-modal .percent-total.warning {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .prompt-modal .percent-total.error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .prompt-modal .percent-total.success {
+            color: #27ae60;
+        }
+
+        .prompt-modal-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .prompt-modal-actions .left-actions {
             display: flex;
             gap: 10px;
         }
 
-        .prompt-generate-btn {
-            padding: 10px 20px;
-            font-family: inherit;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: #333;
+        .prompt-modal-actions .right-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .prompt-modal .delete-btn {
+            background: #e74c3c;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            padding: 10px 18px;
+            font-family: inherit;
+            font-size: 12px;
             cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: background 0.15s;
         }
 
-        .prompt-generate-btn:hover {
-            background: #555;
+        .prompt-modal .delete-btn:hover {
+            background: #c0392b;
         }
 
-        .prompt-output {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .prompt-output.active {
-            display: block;
-        }
-
-        .prompt-output-label {
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            color: #666;
-        }
-
-        .prompt-output-code {
-            background: #f5f5f5;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 11px;
-            white-space: pre-wrap;
-            word-break: break-word;
-            overflow-x: auto;
-        }
-
-        .prompt-copy-btn {
-            margin-top: 10px;
-            padding: 8px 16px;
-            font-family: inherit;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .prompt-modal .cancel-btn {
             background: #fff;
             color: #333;
-            border: 1px solid #333;
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            padding: 10px 18px;
+            font-family: inherit;
+            font-size: 12px;
             cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.15s;
         }
 
-        .prompt-copy-btn:hover {
+        .prompt-modal .cancel-btn:hover {
+            border-color: #333;
+        }
+
+        .prompt-modal .save-btn {
             background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.15s;
+        }
+
+        .prompt-modal .save-btn:hover {
+            background: #555;
+        }
+
+        .prompt-modal .save-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Notification Toast */
+        .prompt-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            z-index: 10003;
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .prompt-notification.active {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .prompt-notification.success {
+            background: #27ae60;
             color: #fff;
         }
 
-        .prompt-answer-optional {
-            color: #999;
-            font-size: 10px;
-            font-weight: normal;
-            text-transform: none;
-            letter-spacing: normal;
+        .prompt-notification.error {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .prompt-notification.info {
+            background: #666;
+            color: #fff;
         }
     </style>
 </head>
@@ -1911,65 +2163,117 @@
         </div>
     </div>
 
-    <!-- Interactive Prompts Generator Section -->
-    <div class="prompt-generator-section">
-        <div class="prompt-generator-title">Interactive Prompts</div>
-        <div class="prompt-form">
-            <div class="prompt-form-row">
-                <label class="prompt-form-label">Prompt ID</label>
-                <input type="text" class="prompt-form-input" id="promptId" placeholder="e.g., chapter-5-decision">
+    <!-- Interactive Prompts Manager Section -->
+    <div class="prompt-manager-section">
+        <div class="prompt-manager-header">
+            <div>
+                <span class="prompt-manager-title">Interactive Prompts</span>
+                <span class="prompt-manager-count" id="promptCount">Total: 0 prompts</span>
             </div>
-            <div class="prompt-form-row">
-                <label class="prompt-form-label">Question</label>
-                <input type="text" class="prompt-form-input" id="promptQuestion" placeholder="What would you have done in this situation?">
+            <div class="prompt-manager-actions">
+                <button type="button" class="prompt-export-btn" id="exportPromptsBtn">Export to File</button>
+                <button type="button" class="prompt-add-btn" id="addPromptBtn">+ Add New Prompt</button>
             </div>
-            <div class="prompt-form-row">
-                <label class="prompt-form-label">Trigger Text</label>
-                <textarea class="prompt-form-textarea" id="promptTrigger" rows="2" placeholder="Exact text from manuscript that triggers the prompt..."></textarea>
+        </div>
+
+        <!-- Prompts Table -->
+        <div id="promptTableContainer">
+            <div class="prompt-empty-state" id="promptEmptyState">
+                <p>No prompts yet. Click <strong>ADD NEW PROMPT</strong> to get started.</p>
             </div>
-            <div class="prompt-form-row">
-                <label class="prompt-form-label">Answer 1</label>
-                <div class="prompt-answer-row">
-                    <div class="prompt-answer-text">
-                        <input type="text" class="prompt-form-input" id="promptAnswer1Text" placeholder="First answer option">
+            <div class="prompt-table-container" id="promptTableWrapper" style="display: none;">
+                <table class="prompt-table">
+                    <thead>
+                        <tr>
+                            <th class="num-cell">#</th>
+                            <th>Prompt ID</th>
+                            <th>Question</th>
+                            <th>Trigger Text</th>
+                            <th class="choices-cell">Choices</th>
+                            <th class="action-cell">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="promptTableBody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prompt Add/Edit Modal -->
+    <div class="prompt-modal-overlay" id="promptModalOverlay">
+        <div class="prompt-modal">
+            <h3 id="promptModalTitle">Add New Prompt</h3>
+            <input type="hidden" id="promptEditIndex" value="-1">
+
+            <div class="form-group">
+                <label>Prompt ID <span class="label-hint">(lowercase-with-dashes, e.g., "verlander-tweet")</span></label>
+                <input type="text" id="promptIdInput" placeholder="e.g., chapter-5-decision">
+            </div>
+
+            <div class="form-group">
+                <label>Question</label>
+                <input type="text" id="promptQuestionInput" placeholder="What would you have done in this situation?">
+            </div>
+
+            <div class="form-group">
+                <label>Trigger Text <span class="label-hint">(exact text from manuscript where prompt appears)</span></label>
+                <textarea id="promptTriggerInput" rows="3" placeholder="Enter exact text from manuscript where prompt should appear..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Answer 1</label>
+                <div class="answer-row">
+                    <div class="answer-text">
+                        <input type="text" id="promptAnswer1Text" placeholder="First answer option">
                     </div>
-                    <div class="prompt-answer-percent">
+                    <div class="answer-percent">
                         <input type="number" id="promptAnswer1Percent" min="0" max="100" placeholder="%">
                     </div>
                 </div>
             </div>
-            <div class="prompt-form-row">
-                <label class="prompt-form-label">Answer 2</label>
-                <div class="prompt-answer-row">
-                    <div class="prompt-answer-text">
-                        <input type="text" class="prompt-form-input" id="promptAnswer2Text" placeholder="Second answer option">
+
+            <div class="form-group">
+                <label>Answer 2</label>
+                <div class="answer-row">
+                    <div class="answer-text">
+                        <input type="text" id="promptAnswer2Text" placeholder="Second answer option">
                     </div>
-                    <div class="prompt-answer-percent">
+                    <div class="answer-percent">
                         <input type="number" id="promptAnswer2Percent" min="0" max="100" placeholder="%">
                     </div>
                 </div>
             </div>
-            <div class="prompt-form-row">
-                <label class="prompt-form-label">Answer 3 <span class="prompt-answer-optional">(optional)</span></label>
-                <div class="prompt-answer-row">
-                    <div class="prompt-answer-text">
-                        <input type="text" class="prompt-form-input" id="promptAnswer3Text" placeholder="Third answer option (optional)">
+
+            <div class="form-group">
+                <label>Answer 3 <span class="label-hint">(optional)</span></label>
+                <div class="answer-row">
+                    <div class="answer-text">
+                        <input type="text" id="promptAnswer3Text" placeholder="Third answer option (optional)">
                     </div>
-                    <div class="prompt-answer-percent">
+                    <div class="answer-percent">
                         <input type="number" id="promptAnswer3Percent" min="0" max="100" placeholder="%">
                     </div>
                 </div>
             </div>
-            <div class="prompt-form-actions">
-                <button type="button" class="prompt-generate-btn" id="generatePromptBtn">Generate Code</button>
-            </div>
-            <div class="prompt-output" id="promptOutput">
-                <div class="prompt-output-label">Generated Code</div>
-                <pre class="prompt-output-code" id="promptOutputCode"></pre>
-                <button type="button" class="prompt-copy-btn" id="copyPromptBtn">Copy to Clipboard</button>
+
+            <div class="percent-total" id="percentTotal">Total: 0%</div>
+
+            <div class="prompt-modal-actions">
+                <div class="left-actions">
+                    <button type="button" class="delete-btn" id="promptDeleteBtn" style="display: none;">Delete</button>
+                </div>
+                <div class="right-actions">
+                    <button type="button" class="cancel-btn" id="promptCancelBtn">Cancel</button>
+                    <button type="button" class="save-btn" id="promptSaveBtn">Save</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Notification Toast -->
+    <div class="prompt-notification" id="promptNotification"></div>
 
     <!-- Edit Modal -->
     <div class="edit-modal-overlay" id="editModalOverlay">
@@ -3220,146 +3524,505 @@
             }
         });
 
-        // ====== INTERACTIVE PROMPTS GENERATOR ======
+        // ====== INTERACTIVE PROMPTS MANAGER ======
 
-        const generatePromptBtn = document.getElementById('generatePromptBtn');
-        const copyPromptBtn = document.getElementById('copyPromptBtn');
-        const promptOutput = document.getElementById('promptOutput');
-        const promptOutputCode = document.getElementById('promptOutputCode');
+        const PROMPTS_STORAGE_KEY = 'admin_interactivePrompts';
+
+        // DOM Elements
+        const promptCount = document.getElementById('promptCount');
+        const promptEmptyState = document.getElementById('promptEmptyState');
+        const promptTableWrapper = document.getElementById('promptTableWrapper');
+        const promptTableBody = document.getElementById('promptTableBody');
+        const addPromptBtn = document.getElementById('addPromptBtn');
+        const exportPromptsBtn = document.getElementById('exportPromptsBtn');
+        const promptModalOverlay = document.getElementById('promptModalOverlay');
+        const promptModalTitle = document.getElementById('promptModalTitle');
+        const promptEditIndex = document.getElementById('promptEditIndex');
+        const promptIdInput = document.getElementById('promptIdInput');
+        const promptQuestionInput = document.getElementById('promptQuestionInput');
+        const promptTriggerInput = document.getElementById('promptTriggerInput');
+        const promptAnswer1Text = document.getElementById('promptAnswer1Text');
+        const promptAnswer1Percent = document.getElementById('promptAnswer1Percent');
+        const promptAnswer2Text = document.getElementById('promptAnswer2Text');
+        const promptAnswer2Percent = document.getElementById('promptAnswer2Percent');
+        const promptAnswer3Text = document.getElementById('promptAnswer3Text');
+        const promptAnswer3Percent = document.getElementById('promptAnswer3Percent');
+        const percentTotal = document.getElementById('percentTotal');
+        const promptDeleteBtn = document.getElementById('promptDeleteBtn');
+        const promptCancelBtn = document.getElementById('promptCancelBtn');
+        const promptSaveBtn = document.getElementById('promptSaveBtn');
+        const promptNotification = document.getElementById('promptNotification');
 
         /**
-         * Escape special characters in strings for JSON
+         * Load prompts from localStorage
          */
-        function escapeString(str) {
+        function loadPrompts() {
+            try {
+                const stored = localStorage.getItem(PROMPTS_STORAGE_KEY);
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                console.error('Error loading prompts:', e);
+                return [];
+            }
+        }
+
+        /**
+         * Save prompts to localStorage
+         */
+        function savePrompts(prompts) {
+            try {
+                localStorage.setItem(PROMPTS_STORAGE_KEY, JSON.stringify(prompts));
+                return true;
+            } catch (e) {
+                console.error('Error saving prompts:', e);
+                return false;
+            }
+        }
+
+        /**
+         * Truncate text to specified length
+         */
+        function truncate(text, maxLength) {
+            if (!text) return '';
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
+        }
+
+        /**
+         * Show notification toast
+         */
+        function showNotification(message, type = 'success') {
+            promptNotification.textContent = message;
+            promptNotification.className = 'prompt-notification ' + type;
+            promptNotification.classList.add('active');
+
+            setTimeout(() => {
+                promptNotification.classList.remove('active');
+            }, type === 'error' ? 4000 : 2000);
+        }
+
+        /**
+         * Render the prompts table
+         */
+        function renderPromptsTable() {
+            const prompts = loadPrompts();
+
+            // Update count
+            promptCount.textContent = `Total: ${prompts.length} prompt${prompts.length !== 1 ? 's' : ''}`;
+
+            // Show/hide empty state vs table
+            if (prompts.length === 0) {
+                promptEmptyState.style.display = 'block';
+                promptTableWrapper.style.display = 'none';
+                return;
+            }
+
+            promptEmptyState.style.display = 'none';
+            promptTableWrapper.style.display = 'block';
+
+            // Build table rows
+            promptTableBody.innerHTML = prompts.map((prompt, index) => `
+                <tr data-index="${index}">
+                    <td class="num-cell">${index + 1}</td>
+                    <td class="id-cell">${prompt.id || ''}</td>
+                    <td class="question-cell" title="${(prompt.question || '').replace(/"/g, '&quot;')}">${truncate(prompt.question, 50)}</td>
+                    <td class="trigger-cell" title="${(prompt.triggerText || '').replace(/"/g, '&quot;')}">${truncate(prompt.triggerText, 50)}</td>
+                    <td class="choices-cell">${prompt.choices ? prompt.choices.length : 0}</td>
+                    <td class="action-cell">
+                        <button type="button" class="action-btn edit-btn" data-index="${index}" title="Edit">✏️</button>
+                        <button type="button" class="action-btn delete-btn" data-index="${index}" title="Delete">✕</button>
+                    </td>
+                </tr>
+            `).join('');
+
+            // Attach event listeners
+            promptTableBody.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openEditModal(parseInt(btn.dataset.index));
+                });
+            });
+
+            promptTableBody.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deletePrompt(parseInt(btn.dataset.index));
+                });
+            });
+
+            // Click row to edit
+            promptTableBody.querySelectorAll('tr').forEach(row => {
+                row.addEventListener('click', () => {
+                    openEditModal(parseInt(row.dataset.index));
+                });
+                row.style.cursor = 'pointer';
+            });
+        }
+
+        /**
+         * Open modal for adding a new prompt
+         */
+        function openAddModal() {
+            promptModalTitle.textContent = 'Add New Prompt';
+            promptEditIndex.value = '-1';
+            promptDeleteBtn.style.display = 'none';
+
+            // Clear all fields
+            promptIdInput.value = '';
+            promptQuestionInput.value = '';
+            promptTriggerInput.value = '';
+            promptAnswer1Text.value = '';
+            promptAnswer1Percent.value = '';
+            promptAnswer2Text.value = '';
+            promptAnswer2Percent.value = '';
+            promptAnswer3Text.value = '';
+            promptAnswer3Percent.value = '';
+
+            updatePercentTotal();
+            promptModalOverlay.classList.add('active');
+            promptIdInput.focus();
+        }
+
+        /**
+         * Open modal for editing an existing prompt
+         */
+        function openEditModal(index) {
+            const prompts = loadPrompts();
+            const prompt = prompts[index];
+
+            if (!prompt) return;
+
+            promptModalTitle.textContent = 'Edit Prompt';
+            promptEditIndex.value = index.toString();
+            promptDeleteBtn.style.display = 'block';
+
+            // Fill in fields
+            promptIdInput.value = prompt.id || '';
+            promptQuestionInput.value = prompt.question || '';
+            promptTriggerInput.value = prompt.triggerText || '';
+
+            const choices = prompt.choices || [];
+            promptAnswer1Text.value = choices[0]?.text || '';
+            promptAnswer1Percent.value = choices[0]?.percentage ?? '';
+            promptAnswer2Text.value = choices[1]?.text || '';
+            promptAnswer2Percent.value = choices[1]?.percentage ?? '';
+            promptAnswer3Text.value = choices[2]?.text || '';
+            promptAnswer3Percent.value = choices[2]?.percentage ?? '';
+
+            updatePercentTotal();
+            promptModalOverlay.classList.add('active');
+            promptIdInput.focus();
+        }
+
+        /**
+         * Close the modal
+         */
+        function closeModal() {
+            promptModalOverlay.classList.remove('active');
+        }
+
+        /**
+         * Update the percentage total display
+         */
+        function updatePercentTotal() {
+            const p1 = parseInt(promptAnswer1Percent.value) || 0;
+            const p2 = parseInt(promptAnswer2Percent.value) || 0;
+            const p3 = promptAnswer3Text.value.trim() ? (parseInt(promptAnswer3Percent.value) || 0) : 0;
+            const total = p1 + p2 + p3;
+
+            percentTotal.textContent = `Total: ${total}%`;
+            percentTotal.classList.remove('warning', 'error', 'success');
+
+            if (total === 100) {
+                percentTotal.classList.add('success');
+            } else if (total > 100) {
+                percentTotal.classList.add('error');
+            } else if (total > 0) {
+                percentTotal.classList.add('warning');
+            }
+        }
+
+        /**
+         * Validate form inputs
+         */
+        function validateForm() {
+            const id = promptIdInput.value.trim();
+            const question = promptQuestionInput.value.trim();
+            const trigger = promptTriggerInput.value.trim();
+            const a1Text = promptAnswer1Text.value.trim();
+            const a2Text = promptAnswer2Text.value.trim();
+            const a3Text = promptAnswer3Text.value.trim();
+            const p1 = parseInt(promptAnswer1Percent.value) || 0;
+            const p2 = parseInt(promptAnswer2Percent.value) || 0;
+            const p3 = a3Text ? (parseInt(promptAnswer3Percent.value) || 0) : 0;
+
+            // Required fields
+            if (!id) {
+                showNotification('Please enter a Prompt ID', 'error');
+                promptIdInput.focus();
+                return false;
+            }
+
+            // ID format (lowercase with dashes)
+            if (!/^[a-z0-9-]+$/.test(id)) {
+                showNotification('Prompt ID must be lowercase letters, numbers, and dashes only', 'error');
+                promptIdInput.focus();
+                return false;
+            }
+
+            // Check ID uniqueness
+            const prompts = loadPrompts();
+            const editIndex = parseInt(promptEditIndex.value);
+            const duplicateIndex = prompts.findIndex((p, i) => p.id === id && i !== editIndex);
+            if (duplicateIndex !== -1) {
+                showNotification('A prompt with this ID already exists', 'error');
+                promptIdInput.focus();
+                return false;
+            }
+
+            if (!question) {
+                showNotification('Please enter a Question', 'error');
+                promptQuestionInput.focus();
+                return false;
+            }
+
+            if (!trigger) {
+                showNotification('Please enter Trigger Text', 'error');
+                promptTriggerInput.focus();
+                return false;
+            }
+
+            if (trigger.length < 10) {
+                showNotification('Trigger text must be at least 10 characters', 'error');
+                promptTriggerInput.focus();
+                return false;
+            }
+
+            if (!a1Text || !a2Text) {
+                showNotification('Please enter at least two answers', 'error');
+                (a1Text ? promptAnswer2Text : promptAnswer1Text).focus();
+                return false;
+            }
+
+            // Check percentages
+            const total = p1 + p2 + p3;
+            if (total !== 100) {
+                showNotification(`Percentages should add up to 100% (current: ${total}%)`, 'error');
+                return false;
+            }
+
+            return true;
+        }
+
+        /**
+         * Save prompt (add or update)
+         */
+        function savePrompt() {
+            if (!validateForm()) return;
+
+            const prompts = loadPrompts();
+            const editIndex = parseInt(promptEditIndex.value);
+
+            const a3Text = promptAnswer3Text.value.trim();
+
+            const promptData = {
+                id: promptIdInput.value.trim(),
+                question: promptQuestionInput.value.trim(),
+                triggerText: promptTriggerInput.value.trim(),
+                choices: [
+                    { text: promptAnswer1Text.value.trim(), percentage: parseInt(promptAnswer1Percent.value) || 0 },
+                    { text: promptAnswer2Text.value.trim(), percentage: parseInt(promptAnswer2Percent.value) || 0 }
+                ]
+            };
+
+            if (a3Text) {
+                promptData.choices.push({
+                    text: a3Text,
+                    percentage: parseInt(promptAnswer3Percent.value) || 0
+                });
+            }
+
+            if (editIndex === -1) {
+                // Add new prompt
+                prompts.push(promptData);
+                showNotification('Prompt added successfully!', 'success');
+            } else {
+                // Update existing prompt
+                prompts[editIndex] = promptData;
+                showNotification('Prompt saved successfully!', 'success');
+            }
+
+            savePrompts(prompts);
+            closeModal();
+            renderPromptsTable();
+        }
+
+        /**
+         * Delete a prompt
+         */
+        function deletePrompt(index) {
+            const prompts = loadPrompts();
+            const prompt = prompts[index];
+
+            if (!prompt) return;
+
+            if (!confirm(`Are you sure you want to delete the prompt "${prompt.id}"?`)) {
+                return;
+            }
+
+            prompts.splice(index, 1);
+            savePrompts(prompts);
+            closeModal();
+            renderPromptsTable();
+            showNotification('Prompt deleted', 'info');
+        }
+
+        /**
+         * Export prompts to a downloadable JavaScript file
+         */
+        function exportPromptsToFile() {
+            const prompts = loadPrompts();
+
+            if (prompts.length === 0) {
+                showNotification('No prompts to export', 'error');
+                return;
+            }
+
+            // Build the JavaScript file content
+            let content = `/**
+ * Interactive Prompts Data
+ * Generated from Admin Panel
+ * Date: ${new Date().toISOString().split('T')[0]}
+ *
+ * Each prompt triggers when user scrolls to the trigger text
+ */
+
+export const PROMPTS = [\n`;
+
+            prompts.forEach((prompt, index) => {
+                content += '    {\n';
+                content += `        id: '${escapeForJS(prompt.id)}',\n`;
+                content += `        question: '${escapeForJS(prompt.question)}',\n`;
+                content += `        triggerText: '${escapeForJS(prompt.triggerText)}',\n`;
+                content += '        choices: [\n';
+
+                prompt.choices.forEach((choice, cIndex) => {
+                    content += `            { text: '${escapeForJS(choice.text)}', percentage: ${choice.percentage} }`;
+                    if (cIndex < prompt.choices.length - 1) content += ',';
+                    content += '\n';
+                });
+
+                content += '        ]\n';
+                content += '    }';
+                if (index < prompts.length - 1) content += ',';
+                content += '\n';
+            });
+
+            content += `];
+
+// Export for CommonJS compatibility
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { PROMPTS };
+}
+`;
+
+            // Create download
+            const blob = new Blob([content], { type: 'application/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'prompts.js';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showNotification('prompts.js downloaded! Move to data/ folder and commit.', 'success');
+        }
+
+        /**
+         * Escape string for JavaScript single quotes
+         */
+        function escapeForJS(str) {
+            if (!str) return '';
             return str
                 .replace(/\\/g, '\\\\')
                 .replace(/'/g, "\\'")
-                .replace(/"/g, '\\"')
                 .replace(/\n/g, '\\n')
                 .replace(/\r/g, '\\r')
                 .replace(/\t/g, '\\t');
         }
 
-        /**
-         * Generate prompt code from form inputs
-         */
-        function generatePromptCode() {
-            const id = document.getElementById('promptId').value.trim();
-            const question = document.getElementById('promptQuestion').value.trim();
-            const triggerText = document.getElementById('promptTrigger').value.trim();
+        // ====== EVENT LISTENERS ======
 
-            const answer1Text = document.getElementById('promptAnswer1Text').value.trim();
-            const answer1Percent = parseInt(document.getElementById('promptAnswer1Percent').value) || 0;
+        // Add button
+        addPromptBtn.addEventListener('click', openAddModal);
 
-            const answer2Text = document.getElementById('promptAnswer2Text').value.trim();
-            const answer2Percent = parseInt(document.getElementById('promptAnswer2Percent').value) || 0;
+        // Export button
+        exportPromptsBtn.addEventListener('click', exportPromptsToFile);
 
-            const answer3Text = document.getElementById('promptAnswer3Text').value.trim();
-            const answer3Percent = parseInt(document.getElementById('promptAnswer3Percent').value) || 0;
-
-            // Validation
-            if (!id) {
-                alert('Please enter a Prompt ID');
-                return;
-            }
-            if (!question) {
-                alert('Please enter a Question');
-                return;
-            }
-            if (!triggerText) {
-                alert('Please enter Trigger Text');
-                return;
-            }
-            if (!answer1Text || !answer2Text) {
-                alert('Please enter at least two answers');
-                return;
-            }
-
-            // Check percentages add up to 100
-            const totalPercent = answer1Percent + answer2Percent + (answer3Text ? answer3Percent : 0);
-            if (totalPercent !== 100) {
-                alert('Percentages must add up to 100%. Current total: ' + totalPercent + '%');
-                return;
-            }
-
-            // Build choices array
-            const choices = [
-                { text: answer1Text, percentage: answer1Percent },
-                { text: answer2Text, percentage: answer2Percent }
-            ];
-
-            if (answer3Text) {
-                choices.push({ text: answer3Text, percentage: answer3Percent });
-            }
-
-            // Build the code string with proper formatting
-            let code = '{\n';
-            code += `    id: '${escapeString(id)}',\n`;
-            code += `    question: '${escapeString(question)}',\n`;
-            code += `    triggerText: '${escapeString(triggerText)}',\n`;
-            code += '    choices: [\n';
-
-            choices.forEach((choice, index) => {
-                code += `        { text: '${escapeString(choice.text)}', percentage: ${choice.percentage} }`;
-                if (index < choices.length - 1) {
-                    code += ',';
-                }
-                code += '\n';
-            });
-
-            code += '    ]\n';
-            code += '}';
-
-            // Display the output
-            promptOutputCode.textContent = code;
-            promptOutput.classList.add('active');
-        }
-
-        /**
-         * Copy generated code to clipboard
-         */
-        function copyPromptCode() {
-            const code = promptOutputCode.textContent;
-
-            if (!code) {
-                alert('No code to copy. Generate code first.');
-                return;
-            }
-
-            navigator.clipboard.writeText(code).then(() => {
-                // Visual feedback
-                const originalText = copyPromptBtn.textContent;
-                copyPromptBtn.textContent = 'Copied!';
-                copyPromptBtn.style.background = '#333';
-                copyPromptBtn.style.color = '#fff';
-
-                setTimeout(() => {
-                    copyPromptBtn.textContent = originalText;
-                    copyPromptBtn.style.background = '';
-                    copyPromptBtn.style.color = '';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                alert('Failed to copy to clipboard. Please copy manually.');
-            });
-        }
-
-        // Event listeners
-        generatePromptBtn.addEventListener('click', generatePromptCode);
-        copyPromptBtn.addEventListener('click', copyPromptCode);
-
-        // Allow Enter key to generate in text inputs
-        ['promptId', 'promptQuestion', 'promptAnswer1Text', 'promptAnswer2Text', 'promptAnswer3Text'].forEach(inputId => {
-            const input = document.getElementById(inputId);
-            if (input) {
-                input.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        generatePromptCode();
-                    }
-                });
+        // Modal close on overlay click
+        promptModalOverlay.addEventListener('click', (e) => {
+            if (e.target === promptModalOverlay) {
+                closeModal();
             }
         });
+
+        // Cancel button
+        promptCancelBtn.addEventListener('click', closeModal);
+
+        // Save button
+        promptSaveBtn.addEventListener('click', savePrompt);
+
+        // Delete button in modal
+        promptDeleteBtn.addEventListener('click', () => {
+            const editIndex = parseInt(promptEditIndex.value);
+            if (editIndex !== -1) {
+                deletePrompt(editIndex);
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (!promptModalOverlay.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+
+            if (e.key === 'Enter' && e.ctrlKey) {
+                savePrompt();
+            }
+        });
+
+        // Update percent total on input
+        [promptAnswer1Percent, promptAnswer2Percent, promptAnswer3Percent, promptAnswer3Text].forEach(el => {
+            el.addEventListener('input', updatePercentTotal);
+        });
+
+        // Tab through form fields
+        const formFields = [
+            promptIdInput, promptQuestionInput, promptTriggerInput,
+            promptAnswer1Text, promptAnswer1Percent,
+            promptAnswer2Text, promptAnswer2Percent,
+            promptAnswer3Text, promptAnswer3Percent
+        ];
+
+        formFields.forEach((field, index) => {
+            field.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    if (index < formFields.length - 1) {
+                        formFields[index + 1].focus();
+                    } else {
+                        savePrompt();
+                    }
+                }
+            });
+        });
+
+        // Initial render
+        renderPromptsTable();
     </script>
 </body>
 </html>
