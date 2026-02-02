@@ -176,12 +176,40 @@
         }
 
         .container {
-            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .admin-section {
-            margin-bottom: 30px;
+        .left-panel {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .right-panel {
+            flex: 1;
+            min-width: 600px;
+        }
+
+        .bottom-row {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .extra-panels {
+            flex: 0 0 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .prompt-manager-inline {
+            flex: 1;
+            min-width: 0;
         }
 
         .control-panel {
@@ -1960,8 +1988,7 @@
     </nav>
 
     <div class="container">
-        <!-- Settings Section -->
-        <div class="admin-section">
+        <div class="left-panel">
             <div class="toggle-group">
                 <div class="toggle-header">Settings</div>
 
@@ -2129,10 +2156,9 @@
                 <div>🟡 Pending (placeholder)</div>
                 <div>🔴 Cut (unused)</div>
             </div>
-        </div><!-- end Settings Section -->
+        </div>
 
-        <!-- Chapter Locking & Media Catalog Section -->
-        <div class="admin-section">
+        <div class="right-panel">
             <div class="catalog-panel">
             <!-- Chapter Locking Section -->
             <div class="catalog-header collapsible-header" id="chapterLockHeader">
@@ -2203,124 +2229,127 @@
                 </div>
             </div>
             </div><!-- end catalog-panel -->
-        </div><!-- end Chapter Locking & Media Catalog Section -->
+        </div><!-- end right-panel -->
 
-        <!-- Reader Counter Section -->
-        <div class="admin-section">
-            <div class="control-panel">
-                <div class="control-panel-title">Reader Counter</div>
-                <div class="counter-stats-compact">
-                    <p>📄 PDF: <span id="pdf-count">0</span></p>
-                    <p>📖 Reading: <span id="start-count">0</span></p>
-                    <p>📱 Kindle: <span id="kindle-count">0</span></p>
-                    <p class="counter-total-compact">👥 TOTAL: <span id="total-count">0</span></p>
-                </div>
-                <div class="toggle-row">
-                    <span class="toggle-label" id="counterStatus">Enabled</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="counterToggle" checked>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="counter-manual-compact">
-                    <div class="counter-input-compact">
-                        <label>PDF:</label>
-                        <input type="number" id="pdf-input" value="0">
-                        <button class="counter-set-btn" data-type="pdf_downloads">SET</button>
+        <!-- Bottom Row: Extra Panels + Interactive Prompts side by side -->
+        <div class="bottom-row">
+            <div class="extra-panels">
+                <!-- Reader Counter Control -->
+                <div class="control-panel">
+                    <div class="control-panel-title">Reader Counter</div>
+                    <div class="counter-stats-compact">
+                        <p>📄 PDF: <span id="pdf-count">0</span></p>
+                        <p>📖 Reading: <span id="start-count">0</span></p>
+                        <p>📱 Kindle: <span id="kindle-count">0</span></p>
+                        <p class="counter-total-compact">👥 TOTAL: <span id="total-count">0</span></p>
                     </div>
-                    <div class="counter-input-compact">
-                        <label>Read:</label>
-                        <input type="number" id="start-input" value="0">
-                        <button class="counter-set-btn" data-type="start_reading_clicks">SET</button>
+                    <div class="toggle-row">
+                        <span class="toggle-label" id="counterStatus">Enabled</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="counterToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
                     </div>
-                    <div class="counter-input-compact">
-                        <label>Kindle:</label>
-                        <input type="number" id="kindle-input" value="0">
-                        <button class="counter-set-btn" data-type="kindle_downloads">SET</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="control-panel" style="margin-top: 15px;">
-                <div class="control-panel-title">Install Prompt</div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Enabled</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="installPromptEnabled">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="toggle-row">
-                    <span class="toggle-label">Dismissed</span>
-                    <button class="reset-btn" id="resetInstallPrompt">Reset</button>
-                </div>
-                <div class="install-options">
-                    <div class="mini-form-group">
-                        <label>Message</label>
-                        <input type="text" id="installMessage" placeholder="Install message...">
-                    </div>
-                    <div class="mini-form-group">
-                        <label>Button</label>
-                        <input type="text" id="installButton" placeholder="Button text...">
-                    </div>
-                    <div class="mini-form-row">
-                        <div class="mini-form-group">
-                            <label>Delay (sec)</label>
-                            <input type="number" id="installDelay" min="0" max="60" value="1">
+                    <div class="counter-manual-compact">
+                        <div class="counter-input-compact">
+                            <label>PDF:</label>
+                            <input type="number" id="pdf-input" value="0">
+                            <button class="counter-set-btn" data-type="pdf_downloads">SET</button>
                         </div>
-                        <div class="mini-form-group">
-                            <label>Auto-hide (sec)</label>
-                            <input type="number" id="installAutoHide" min="0" max="120" value="0" placeholder="0=never">
+                        <div class="counter-input-compact">
+                            <label>Read:</label>
+                            <input type="number" id="start-input" value="0">
+                            <button class="counter-set-btn" data-type="start_reading_clicks">SET</button>
+                        </div>
+                        <div class="counter-input-compact">
+                            <label>Kindle:</label>
+                            <input type="number" id="kindle-input" value="0">
+                            <button class="counter-set-btn" data-type="kindle_downloads">SET</button>
                         </div>
                     </div>
                 </div>
-                <div class="install-stats">
-                    <span class="stat-label">Installs:</span>
-                    <span class="stat-value" id="installCount">0</span>
-                </div>
-            </div>
-        </div><!-- end Reader Counter & Install Prompt Section -->
 
-        <!-- Interactive Prompts Section -->
-        <div class="admin-section">
-            <div class="prompt-manager-section">
-                <div class="prompt-manager-header">
-                    <div>
-                        <span class="prompt-manager-title">Interactive Prompts</span>
-                        <span class="prompt-manager-count" id="promptCount">Total: 0 prompts</span>
+                <div class="control-panel">
+                    <div class="control-panel-title">Install Prompt</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Enabled</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="installPromptEnabled">
+                            <span class="toggle-slider"></span>
+                        </label>
                     </div>
-                    <div class="prompt-manager-actions">
-                        <a href="./drafts/prompt-driving-range.html" target="_blank" class="prompt-export-btn" style="text-decoration: none; display: inline-flex; align-items: center;">Test in Driving Range</a>
-                        <button type="button" class="prompt-export-btn" id="exportPromptsBtn">Export to File</button>
-                        <button type="button" class="prompt-add-btn" id="addPromptBtn">+ Add New Prompt</button>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Dismissed</span>
+                        <button class="reset-btn" id="resetInstallPrompt">Reset</button>
+                    </div>
+                    <div class="install-options">
+                        <div class="mini-form-group">
+                            <label>Message</label>
+                            <input type="text" id="installMessage" placeholder="Install message...">
+                        </div>
+                        <div class="mini-form-group">
+                            <label>Button</label>
+                            <input type="text" id="installButton" placeholder="Button text...">
+                        </div>
+                        <div class="mini-form-row">
+                            <div class="mini-form-group">
+                                <label>Delay (sec)</label>
+                                <input type="number" id="installDelay" min="0" max="60" value="1">
+                            </div>
+                            <div class="mini-form-group">
+                                <label>Auto-hide (sec)</label>
+                                <input type="number" id="installAutoHide" min="0" max="120" value="0" placeholder="0=never">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="install-stats">
+                        <span class="stat-label">Installs:</span>
+                        <span class="stat-value" id="installCount">0</span>
                     </div>
                 </div>
+            </div><!-- end extra-panels -->
 
-                <!-- Prompts Table -->
-                <div id="promptTableContainer">
-                    <div class="prompt-empty-state" id="promptEmptyState">
-                        <p>No prompts yet. Click <strong>ADD NEW PROMPT</strong> to get started.</p>
+            <!-- Interactive Prompts (inline) -->
+            <div class="prompt-manager-inline">
+                <div class="prompt-manager-section">
+                    <div class="prompt-manager-header">
+                        <div>
+                            <span class="prompt-manager-title">Interactive Prompts</span>
+                            <span class="prompt-manager-count" id="promptCount">Total: 0 prompts</span>
+                        </div>
+                        <div class="prompt-manager-actions">
+                            <a href="./drafts/prompt-driving-range.html" target="_blank" class="prompt-export-btn" style="text-decoration: none; display: inline-flex; align-items: center;">Test in Driving Range</a>
+                            <button type="button" class="prompt-export-btn" id="exportPromptsBtn">Export to File</button>
+                            <button type="button" class="prompt-add-btn" id="addPromptBtn">+ Add New Prompt</button>
+                        </div>
                     </div>
-                    <div class="prompt-table-container" id="promptTableWrapper" style="display: none;">
-                        <table class="prompt-table">
-                            <thead>
-                                <tr>
-                                    <th class="num-cell">#</th>
-                                    <th>Prompt ID</th>
-                                    <th>Question</th>
-                                    <th>Trigger Text</th>
-                                    <th class="choices-cell">Choices</th>
-                                    <th class="action-cell">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="promptTableBody">
-                                <!-- Populated dynamically -->
-                            </tbody>
-                        </table>
+
+                    <!-- Prompts Table -->
+                    <div id="promptTableContainer">
+                        <div class="prompt-empty-state" id="promptEmptyState">
+                            <p>No prompts yet. Click <strong>ADD NEW PROMPT</strong> to get started.</p>
+                        </div>
+                        <div class="prompt-table-container" id="promptTableWrapper" style="display: none;">
+                            <table class="prompt-table">
+                                <thead>
+                                    <tr>
+                                        <th class="num-cell">#</th>
+                                        <th>Prompt ID</th>
+                                        <th>Question</th>
+                                        <th>Trigger Text</th>
+                                        <th class="choices-cell">Choices</th>
+                                        <th class="action-cell">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="promptTableBody">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- end Interactive Prompts Section -->
+            </div><!-- end prompt-manager-inline -->
+        </div><!-- end bottom-row -->
     </div><!-- end container -->
 
     <!-- Prompt Add/Edit Modal -->
