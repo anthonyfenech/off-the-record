@@ -37,8 +37,13 @@
     <link rel="stylesheet" href="./css/interactive-prompts.css">
     <link rel="stylesheet" href="./prompts/prompt-styles.min.css">
     <link rel="stylesheet" href="./css/otr-tier1-states.css">
+    <style>
+        /* Hide menu and theme toggle on home page only */
+        .home-page .menu-btn,
+        .home-page .theme-toggle { display: none; }
+    </style>
 </head>
-<body>
+<body class="home-page">
     <script>
         // Apply theme immediately to prevent flash of wrong colors
         (function() {
