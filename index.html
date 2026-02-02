@@ -70,6 +70,12 @@
             document.body.classList.add('dateline-bold');
         }
     </script>
+    <script>
+        // Hide password gate immediately if already authenticated (prevents flash)
+        if (localStorage.getItem('otr_beta_access') === 'true') {
+            document.write('<style>#passwordGate{display:none !important}</style>');
+        }
+    </script>
 
     <!-- Password Gate (Beta Access) -->
     <div id="passwordGate" class="password-gate">
