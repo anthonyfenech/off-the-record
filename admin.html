@@ -395,24 +395,48 @@
         }
 
         /* Radio button group for dateline formatting */
-        .radio-group {
+        /* Dateline format icon buttons */
+        .dateline-icons {
             display: flex;
-            flex-direction: column;
             gap: 6px;
             margin-bottom: 8px;
         }
 
-        .radio-option {
+        .dateline-icon-btn {
+            width: 32px;
+            height: 28px;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 14px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            cursor: pointer;
+            justify-content: center;
+            transition: all 0.15s;
         }
 
-        .radio-option input[type="radio"] {
-            margin: 0;
-            cursor: pointer;
+        .dateline-icon-btn:hover {
+            border-color: #333;
+        }
+
+        .dateline-icon-btn.active {
+            background: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        .dateline-icon-btn .icon-i {
+            font-style: italic;
+        }
+
+        .dateline-icon-btn .icon-bi {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .dateline-icon-btn .icon-b {
+            font-weight: bold;
         }
 
         /* Right Panel - Media Catalog */
@@ -1976,7 +2000,7 @@
         <a href="./">Home</a>
         <a href="./binge-mode.html">Binge Mode</a>
         <a href="./content-map.html">Content Map</a>
-        <button class="nav-active">Admin</button>
+        <a href="https://github.com/anthonyfenech/off-the-record" target="_blank">GitHub</a>
         <a href="https://docs.google.com/spreadsheets/d/1wgf9HTdj8ROQHYJ3o_8JHF6UPT0TkKkYU7afCgRhOgY/edit?gid=0#gid=0"
            target="_blank"
            class="nav-analytics"
@@ -2013,19 +2037,16 @@
                     </label>
                 </div>
                 <div class="toggle-subheader">Dateline Formatting</div>
-                <div class="radio-group">
-                    <label class="radio-option">
-                        <input type="radio" name="datelineFormat" value="current" checked>
-                        <span>Current (Italic)</span>
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="datelineFormat" value="bold-italic">
-                        <span>Bold + Italics</span>
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="datelineFormat" value="bold">
-                        <span>Bold Only</span>
-                    </label>
+                <div class="dateline-icons">
+                    <button type="button" class="dateline-icon-btn active" data-format="current" title="Italic">
+                        <span class="icon-i">I</span>
+                    </button>
+                    <button type="button" class="dateline-icon-btn" data-format="bold-italic" title="Bold + Italic">
+                        <span class="icon-bi">BI</span>
+                    </button>
+                    <button type="button" class="dateline-icon-btn" data-format="bold" title="Bold Only">
+                        <span class="icon-b">B</span>
+                    </button>
                 </div>
                 <div class="toggle-subheader">Media</div>
                 <div class="toggle-row">
@@ -2053,9 +2074,6 @@
             </div>
 
             <div class="quick-links">
-                <a href="./">Site</a>
-                <a href="./binge-mode.html">Binge Mode</a>
-                <a href="https://github.com/anthonyfenech/off-the-record" target="_blank">GitHub</a>
                 <span class="legend-btn" id="legendBtn">Legend</span>
             </div>
 
@@ -3025,8 +3043,9 @@
             document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
 
             // Load dateline format selection
-            const datelineRadio = document.querySelector(`input[name="datelineFormat"][value="${settings.datelineFormat}"]`);
-            if (datelineRadio) datelineRadio.checked = true;
+            document.querySelectorAll('.dateline-icon-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.format === settings.datelineFormat);
+            });
 
             // Add listeners for all toggles
             const toggles = ['showLockedPreviews', 'showCaptions',
@@ -3055,10 +3074,12 @@
                 });
             });
 
-            // Dateline format radio buttons
-            document.querySelectorAll('input[name="datelineFormat"]').forEach(radio => {
-                radio.addEventListener('change', (e) => {
-                    saveSetting('datelineFormat', e.target.value);
+            // Dateline format icon buttons
+            document.querySelectorAll('.dateline-icon-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.dateline-icon-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    saveSetting('datelineFormat', btn.dataset.format);
                 });
             });
 
