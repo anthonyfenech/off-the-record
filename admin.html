@@ -1535,28 +1535,28 @@
         /* ====== PROMPT MANAGER SECTION ====== */
         .prompt-manager-section {
             max-width: 900px;
-            margin: 40px auto 0;
-            padding: 0 30px 30px;
+            margin: 15px auto 0;
+            padding: 0 30px 20px;
         }
 
         .prompt-manager-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #333;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
         }
 
         .prompt-manager-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .prompt-manager-count {
-            font-size: 11px;
+            font-size: 10px;
             color: #666;
             margin-left: 10px;
             font-weight: normal;
@@ -1564,16 +1564,16 @@
 
         .prompt-manager-actions {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .prompt-add-btn {
             background: #27ae60;
             color: #fff;
             border: none;
-            padding: 10px 18px;
+            padding: 6px 12px;
             font-family: inherit;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
             cursor: pointer;
             border-radius: 4px;
@@ -1590,9 +1590,9 @@
             background: #fff;
             color: #333;
             border: 1px solid #333;
-            padding: 10px 18px;
+            padding: 6px 12px;
             font-family: inherit;
-            font-size: 12px;
+            font-size: 11px;
             cursor: pointer;
             border-radius: 4px;
             text-transform: uppercase;
@@ -1707,7 +1707,7 @@
 
         /* Empty State */
         .prompt-empty-state {
-            padding: 60px 20px;
+            padding: 30px 20px;
             text-align: center;
             color: #999;
             background: #f9f9f9;
@@ -1717,7 +1717,7 @@
 
         .prompt-empty-state p {
             margin: 0;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         /* Prompt Modal */
@@ -2157,6 +2157,7 @@
                     <span class="save-indicator" id="saveIndicator">Saved!</span>
                     <button class="lock-btn" id="lockAllBtn">Lock All</button>
                     <button class="lock-btn" id="unlockAllBtn">Unlock All</button>
+                    <button class="lock-btn" id="runAuditBtn" style="background: #fff; border: 1px solid #333;">Run Audit</button>
                 </div>
             </div>
 
@@ -2164,25 +2165,7 @@
                 <!-- Populated dynamically -->
             </div>
 
-            <div style="margin: 30px 0; border-top: 2px solid #333;"></div>
-
-            <!-- Chapter Audit Section -->
-            <div class="catalog-header collapsible-header" id="chapterAuditHeader">
-                <span class="catalog-title">Chapter Audit <span class="collapse-arrow" id="chapterAuditArrow">▶</span></span>
-                <div class="lock-actions">
-                    <span class="audit-stats" id="auditStats"></span>
-                    <button class="lock-btn" id="runAuditBtn">Run Audit</button>
-                </div>
-            </div>
-
-            <div class="chapter-audit-list collapsed" id="chapterAuditList">
-                <div class="audit-summary" id="auditSummary">
-                    <p>Click "Run Audit" to check media chapter classifications against source paths.</p>
-                </div>
-                <div class="audit-results" id="auditResults"></div>
-            </div>
-
-            <div style="margin: 30px 0; border-top: 2px solid #333;"></div>
+            <div style="margin: 20px 0; border-top: 1px solid #ddd;"></div>
 
             <div class="catalog-header">
                 <span class="catalog-title">Media Catalog</span>
@@ -3521,23 +3504,12 @@
         });
 
         // ====== CHAPTER AUDIT ======
-        const chapterAuditHeader = document.getElementById('chapterAuditHeader');
-        const chapterAuditList = document.getElementById('chapterAuditList');
-        const chapterAuditArrow = document.getElementById('chapterAuditArrow');
         const runAuditBtn = document.getElementById('runAuditBtn');
-        const auditStats = document.getElementById('auditStats');
-        const auditSummary = document.getElementById('auditSummary');
-        const auditResults = document.getElementById('auditResults');
-
-        // Toggle audit panel
-        chapterAuditHeader.addEventListener('click', (e) => {
-            if (e.target.closest('button')) return;
-            chapterAuditList.classList.toggle('collapsed');
-            chapterAuditArrow.textContent = chapterAuditList.classList.contains('collapsed') ? '▶' : '▼';
-        });
 
         // Run chapter audit
         function runChapterAudit() {
+            runAuditBtn.textContent = 'Running...';
+            runAuditBtn.disabled = true;
             const issues = {
                 mismatch: [], // Content says X, path says Y
                 missing: [],  // No content reference, but has path
@@ -3583,111 +3555,36 @@
 
             const totalIssues = issues.mismatch.length + issues.missing.length;
 
-            // Update stats
-            if (totalIssues > 0) {
-                auditStats.textContent = `${totalIssues} issues found`;
-                auditStats.className = 'audit-stats has-issues';
-            } else {
-                auditStats.textContent = 'All OK ✓';
-                auditStats.className = 'audit-stats';
-            }
-
-            // Update summary
-            auditSummary.innerHTML = `
-                <strong>Audit Results:</strong><br>
-                ✓ Correct: ${correctCount}<br>
-                ⚠ Mismatched: ${issues.mismatch.length}<br>
-                ❓ Not in chapters: ${issues.missing.length}<br>
-                ❌ No detectable path: ${issues.noPath.length}
-            `;
-            auditSummary.className = totalIssues > 0 ? 'audit-summary warning' : 'audit-summary success';
-
-            // Render issues
-            let html = '';
+            // Log results to console
+            console.log('=== CHAPTER AUDIT RESULTS ===');
+            console.log(`✓ Correct: ${correctCount}`);
+            console.log(`⚠ Mismatched: ${issues.mismatch.length}`);
+            console.log(`❓ Not in chapters: ${issues.missing.length}`);
+            console.log(`❌ No detectable path: ${issues.noPath.length}`);
 
             if (issues.mismatch.length > 0) {
-                html += '<div style="font-weight:bold; margin:15px 0 8px; font-size:12px;">⚠ Chapter Mismatch (in chapter content but path suggests different)</div>';
-                issues.mismatch.forEach(issue => {
-                    html += `
-                        <div class="audit-item mismatch" data-id="${issue.id}">
-                            <div class="audit-item-info">
-                                <div class="audit-item-id">${issue.id}</div>
-                                <div class="audit-item-detail">
-                                    Content: Ch. ${issue.contentChapter} → Path suggests: <strong>Ch. ${issue.pathChapter}</strong> (${issue.pathChapterName})
-                                </div>
-                                <div class="audit-item-detail"><code>${issue.src}</code></div>
-                            </div>
-                        </div>
-                    `;
-                });
+                console.log('\n⚠ MISMATCHES:');
+                issues.mismatch.forEach(i => console.log(`  ${i.id}: Content Ch.${i.contentChapter} vs Path Ch.${i.pathChapter}`));
             }
 
             if (issues.missing.length > 0) {
-                html += '<div style="font-weight:bold; margin:15px 0 8px; font-size:12px;">❓ Not Referenced in Chapters (detected from path)</div>';
-                issues.missing.forEach(issue => {
-                    html += `
-                        <div class="audit-item missing" data-id="${issue.id}">
-                            <div class="audit-item-info">
-                                <div class="audit-item-id">${issue.id}</div>
-                                <div class="audit-item-detail">
-                                    Path suggests: <strong>Ch. ${issue.detectedChapter}</strong> (${issue.detectedChapterName})
-                                </div>
-                                <div class="audit-item-detail"><code>${issue.src}</code></div>
-                            </div>
-                        </div>
-                    `;
-                });
+                console.log('\n❓ NOT IN CHAPTERS:');
+                issues.missing.forEach(i => console.log(`  ${i.id}: Detected Ch.${i.detectedChapter}`));
             }
 
-            if (issues.noPath.length > 0) {
-                html += '<div style="font-weight:bold; margin:15px 0 8px; font-size:12px;">❌ No Detectable Path</div>';
-                issues.noPath.forEach(issue => {
-                    html += `
-                        <div class="audit-item" data-id="${issue.id}">
-                            <div class="audit-item-info">
-                                <div class="audit-item-id">${issue.id}</div>
-                                <div class="audit-item-detail"><code>${issue.src || 'No source path'}</code></div>
-                            </div>
-                        </div>
-                    `;
-                });
-            }
+            // Show alert with summary
+            const msg = totalIssues === 0
+                ? `✓ Audit Complete!\n\nAll ${correctCount} media items correctly classified.`
+                : `Audit Complete!\n\n✓ Correct: ${correctCount}\n⚠ Mismatched: ${issues.mismatch.length}\n❓ Not in chapters: ${issues.missing.length}\n❌ No path: ${issues.noPath.length}\n\nCheck console for details.`;
 
-            if (totalIssues === 0 && issues.noPath.length === 0) {
-                html = '<div style="text-align:center; padding:20px; color:#155724;">✓ All media items are correctly classified!</div>';
-            }
+            alert(msg);
 
-            auditResults.innerHTML = html;
-
-            // Expand panel if collapsed
-            if (chapterAuditList.classList.contains('collapsed')) {
-                chapterAuditList.classList.remove('collapsed');
-                chapterAuditArrow.textContent = '▼';
-            }
+            // Reset button
+            runAuditBtn.textContent = 'Run Audit';
+            runAuditBtn.disabled = false;
         }
 
         runAuditBtn.addEventListener('click', runChapterAudit);
-
-        // Click on audit item to open edit modal
-        auditResults.addEventListener('click', (e) => {
-            const item = e.target.closest('.audit-item');
-            if (item) {
-                const mediaId = item.dataset.id;
-                const mediaItem = allMedia.find(m => m.id === mediaId);
-                if (mediaItem) {
-                    const media = MEDIA_CONTENT[mediaId];
-                    document.getElementById('editMediaId').value = mediaId;
-                    document.getElementById('editType').value = media.type || 'photo';
-                    document.getElementById('editCaption').value = media.caption || '';
-                    document.getElementById('editSrc').value = media.src || '';
-                    document.getElementById('editDuration').value = media.duration || '';
-                    // Convert stored date (YYYY-MM-DD) to display format (MM/DD/YY)
-                    document.getElementById('editDate').value = media.date ? formatDate(media.date).replace(/—/g, '') : '';
-                    document.getElementById('editChapter').value = mediaItem?.chapterNum || '';
-                    document.getElementById('editModalOverlay').classList.add('active');
-                }
-            }
-        });
 
         // ====== INTERACTIVE PROMPTS MANAGER ======
 
