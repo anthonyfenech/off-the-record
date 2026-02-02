@@ -183,7 +183,17 @@
         }
     </style>
 </head>
-<body>
+<body style="opacity: 0;">
+    <script>
+        // Auth check - must run synchronously before content renders
+        (function() {
+            if (localStorage.getItem('otr_beta_access') !== 'true') {
+                window.location.replace('./');
+                return;
+            }
+            document.body.style.opacity = '1';
+        })();
+    </script>
     <header class="header">
         <div class="header-content">
             <a href="./" class="back-to-reader" aria-label="Back to reader">

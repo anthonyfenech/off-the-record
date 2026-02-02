@@ -264,8 +264,7 @@
             .nav-btn,
             .bookmark-btn,
             .back-to-reader,
-            .menu-btn,
-            .clean-toggle {
+            .menu-btn {
                 -webkit-appearance: none;
             }
         }
@@ -437,17 +436,6 @@
                 font-size: 1.1rem;
             }
 
-            /* Clean Toggle Button */
-            .clean-toggle {
-                min-width: 44px;
-                min-height: 44px;
-                -webkit-tap-highlight-color: transparent;
-            }
-
-            .clean-toggle:active {
-                opacity: 0.5;
-                transform: scale(0.95);
-            }
         }
 
         /* Small Phone - iPhone SE (max-width: 374px) */
@@ -510,7 +498,17 @@
         }
     </style>
 </head>
-<body>
+<body style="opacity: 0;">
+    <script>
+        // Auth check - must run synchronously before content renders
+        (function() {
+            if (localStorage.getItem('otr_beta_access') !== 'true') {
+                window.location.replace('./');
+                return;
+            }
+            document.body.style.opacity = '1';
+        })();
+    </script>
     <script>
         // Apply theme immediately to prevent flash of wrong colors
         (function() {

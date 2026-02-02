@@ -110,3 +110,20 @@
   background: #333;
   color: #fff;
 }
+
+/* ── Media Button States ── */
+/* Ensure media button is always visible */
+.nav-btn.nav-media {
+  display: flex;
+}
+
+/* Media button active state (media visible) */
+.nav-btn.nav-media.media-active {
+  background-color: #cc0000;
+  color: #ffffff;
+  border: none;
+}
+
+.nav-btn.nav-media.media-active::after {
+  display: none;
+}
