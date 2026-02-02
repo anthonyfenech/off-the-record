@@ -121,7 +121,7 @@
             display: block;
         }
 
-        /* ====== Q&A ADMIN SECTION ====== */
+        /* ====== Q&A TAB HEADER ====== */
         .qa-header {
             display: flex;
             justify-content: space-between;
@@ -168,10 +168,6 @@
             color: #fff;
         }
 
-        .qa-btn.primary:hover {
-            background: #555;
-        }
-
         .qa-btn.secondary {
             background: #fff;
             color: #333;
@@ -188,194 +184,59 @@
             border-color: #e74c3c;
         }
 
-        .qa-btn.danger:hover {
-            background: #c0392b;
-            border-color: #c0392b;
-        }
-
-        /* Q&A Progress */
-        .qa-progress {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #fff;
-            border: 2px solid #333;
-        }
-
-        .qa-progress-text {
-            font-size: 14px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .qa-progress-bar {
-            height: 8px;
-            background: #ddd;
-            border: 1px solid #333;
-        }
-
-        .qa-progress-fill {
-            height: 100%;
-            background: #27ae60;
-            transition: width 0.3s;
-        }
-
-        /* Q&A Prompt Card */
-        .qa-prompt-card {
-            background: #fff;
-            border: 3px solid #333;
-            padding: 25px;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .qa-prompt-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .qa-prompt-card.completed {
-            opacity: 0.5;
-            border-color: #999;
-        }
-
-        .qa-prompt-id {
-            font-size: 10px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .qa-prompt-question {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .qa-prompt-trigger {
-            font-size: 11px;
-            color: #666;
-            padding: 10px;
-            background: #f5f5f5;
-            border-left: 3px solid #999;
-            margin-bottom: 20px;
-        }
-
-        .qa-prompt-trigger strong {
-            display: block;
-            color: #999;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            font-size: 10px;
-        }
-
-        /* Q&A Choices */
-        .qa-choices {
+        /* Q&A Prompt List */
+        .qa-prompt-list {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .qa-choice {
+        .qa-prompt-item {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 12px;
-            padding: 12px 15px;
-            background: #f9f9f9;
-            border: 2px solid #ddd;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
             cursor: pointer;
             transition: all 0.15s;
         }
 
-        .qa-choice:hover {
+        .qa-prompt-item:hover {
             border-color: #333;
-            background: #fff;
         }
 
-        .qa-choice input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #333;
+        .qa-prompt-item.completed {
+            opacity: 0.5;
+            background: #f5f5f5;
         }
 
-        .qa-choice-text {
+        .qa-prompt-item-text {
             font-size: 14px;
         }
 
-        /* Q&A Results */
-        .qa-results {
-            display: none;
-        }
-
-        .qa-results.active {
-            display: block;
-        }
-
-        .qa-result-item {
-            margin-bottom: 12px;
-        }
-
-        .qa-result-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-            margin-bottom: 5px;
-        }
-
-        .qa-your-choice {
-            color: #27ae60;
-            font-weight: bold;
+        .qa-prompt-item-status {
             font-size: 11px;
+            text-transform: uppercase;
+            color: #999;
         }
 
-        .qa-bar-wrapper {
-            height: 30px;
-            background: #ddd;
-            border: 1px solid #333;
+        .qa-prompt-item.completed .qa-prompt-item-status {
+            color: #27ae60;
         }
 
-        .qa-bar-fill {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding-left: 10px;
-            width: 0;
-            transition: width 0.5s ease;
-        }
-
-        .qa-bar-fill.red { background: #E74C3C; }
-        .qa-bar-fill.blue { background: #3498DB; }
-        .qa-bar-fill.yellow { background: #F1C40F; }
-        .qa-bar-fill.green { background: #27AE60; }
-
-        .qa-bar-percent {
-            font-size: 12px;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .qa-bar-fill.yellow .qa-bar-percent {
-            color: #333;
-        }
-
-        /* Empty/Complete States */
-        .qa-empty, .qa-complete {
+        .qa-empty {
             text-align: center;
             padding: 60px 20px;
             background: #fff;
-            border: 3px solid #333;
+            border: 1px solid #ddd;
         }
 
-        .qa-empty h3, .qa-complete h3 {
+        .qa-empty h3 {
             margin-top: 0;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        .qa-complete h3 {
-            color: #27ae60;
         }
     </style>
 </head>
@@ -558,36 +419,13 @@
     <button class="qa-btn danger" onclick="resetQAPrompts()">RESET Q&A PROGRESS</button>
 </div>
 
-<div class="qa-progress" id="qaProgress" style="display: none;">
-    <div class="qa-progress-text" id="qaProgressText">Prompt 1 of 0</div>
-    <div class="qa-progress-bar">
-        <div class="qa-progress-fill" id="qaProgressFill"></div>
-    </div>
-</div>
+<p style="margin-bottom: 20px; font-size: 13px; color: #666;">Click any prompt below to test it in the modal (same as main site):</p>
 
-<div id="qaContainer">
+<div id="qaContainer" class="qa-prompt-list">
     <!-- Populated by JavaScript -->
 </div>
 
 </div><!-- end qa-tab -->
-
-<!-- Prompt Modal (same as main site) -->
-<div id="prompt-modal">
-    <div class="prompt-overlay"></div>
-    <div class="prompt-content">
-        <h2 id="prompt-title"></h2>
-        <p id="prompt-setup"></p>
-        <p id="prompt-question"></p>
-
-        <div id="prompt-choices"></div>
-        <div id="prompt-text"></div>
-
-        <div class="prompt-buttons">
-            <button id="prompt-submit">SUBMIT</button>
-            <button id="prompt-skip">SKIP</button>
-        </div>
-    </div>
-</div>
 
 <!-- Test-specific prompts data for NARRATIVE prompts -->
 <script>
@@ -699,7 +537,6 @@ function resetAllPrompts() {
         }
         // Reset Q&A prompts
         localStorage.removeItem('prompt_responses');
-        localStorage.removeItem('qa_driving_range_progress');
         sessionStorage.removeItem('prompts_triggered_this_session');
         location.reload();
     }
@@ -708,15 +545,16 @@ function resetAllPrompts() {
 function resetQAPrompts() {
     if (confirm('Reset Q&A prompts progress? You will be able to test them all again.')) {
         localStorage.removeItem('prompt_responses');
-        localStorage.removeItem('qa_driving_range_progress');
         sessionStorage.removeItem('prompts_triggered_this_session');
-        initQAPrompts();
+        updateQAList();
     }
 }
 
-// ====== Q&A PROMPTS SYSTEM ======
+// ====== Q&A PROMPTS SYSTEM (Uses Production Modal) ======
 let qaPrompts = [];
-let qaCurrentIndex = 0;
+let qaModal = null;
+let qaOverlay = null;
+let currentQAPrompt = null;
 
 async function loadQAPrompts() {
     // Try localStorage first (admin panel)
@@ -745,100 +583,157 @@ async function loadQAPrompts() {
     return [];
 }
 
-function loadQAProgress() {
-    try {
-        return parseInt(localStorage.getItem('qa_driving_range_progress')) || 0;
-    } catch (e) {
-        return 0;
-    }
+function createQAModal() {
+    // Create overlay (uses production CSS classes)
+    qaOverlay = document.createElement('div');
+    qaOverlay.className = 'prompt-overlay';
+
+    // Create modal (uses production CSS classes)
+    qaModal = document.createElement('div');
+    qaModal.className = 'prompt-modal';
+    qaModal.innerHTML = `
+        <button type="button" class="prompt-close" aria-label="Close">&times;</button>
+        <div class="prompt-question"></div>
+        <div class="prompt-choices"></div>
+        <div class="prompt-results"></div>
+    `;
+
+    document.body.appendChild(qaOverlay);
+    document.body.appendChild(qaModal);
+
+    // Close handlers
+    qaModal.querySelector('.prompt-close').addEventListener('click', closeQAModal);
+    qaOverlay.addEventListener('click', closeQAModal);
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && qaModal.classList.contains('active')) {
+            closeQAModal();
+        }
+    });
 }
 
-function saveQAProgress(index) {
-    localStorage.setItem('qa_driving_range_progress', index.toString());
-}
+function openQAModal(prompt) {
+    currentQAPrompt = prompt;
+    const responses = JSON.parse(localStorage.getItem('prompt_responses') || '{}');
+    const existingResponse = responses[prompt.id];
 
-function updateQAProgress() {
-    const progressEl = document.getElementById('qaProgress');
-    const textEl = document.getElementById('qaProgressText');
-    const fillEl = document.getElementById('qaProgressFill');
+    // Set question
+    qaModal.querySelector('.prompt-question').textContent = prompt.question;
 
-    if (qaPrompts.length > 0) {
-        progressEl.style.display = 'block';
-        textEl.textContent = `Prompt ${Math.min(qaCurrentIndex + 1, qaPrompts.length)} of ${qaPrompts.length}`;
-        fillEl.style.width = `${(qaCurrentIndex / qaPrompts.length) * 100}%`;
+    const choicesEl = qaModal.querySelector('.prompt-choices');
+    const resultsEl = qaModal.querySelector('.prompt-results');
+
+    if (existingResponse) {
+        // Already answered - show results
+        choicesEl.style.display = 'none';
+        resultsEl.style.display = 'block';
+        renderQAResults(prompt, existingResponse.choiceIndex);
     } else {
-        progressEl.style.display = 'none';
+        // Show choices
+        choicesEl.style.display = 'flex';
+        resultsEl.style.display = 'none';
+        renderQAChoices(prompt);
     }
+
+    // Show modal
+    qaOverlay.classList.add('active');
+    qaModal.classList.add('active');
 }
 
-function handleQAChoice(promptIndex, choiceIndex) {
-    const prompt = qaPrompts[promptIndex];
-    const card = document.querySelector(`[data-qa-index="${promptIndex}"]`);
+function closeQAModal() {
+    qaOverlay.classList.remove('active');
+    qaModal.classList.remove('active');
+    currentQAPrompt = null;
+    updateQAList();
+}
 
-    if (!card || !prompt) return;
+function renderQAChoices(prompt) {
+    const choicesEl = qaModal.querySelector('.prompt-choices');
 
-    // Hide choices, show results
-    const choicesEl = card.querySelector('.qa-choices');
-    const resultsEl = card.querySelector('.qa-results');
+    choicesEl.innerHTML = prompt.choices.map((choice, index) => `
+        <label class="prompt-choice" data-index="${index}">
+            <input type="radio" name="qa-choice" value="${index}">
+            <span class="prompt-choice-label">${choice.text}</span>
+        </label>
+    `).join('');
 
-    choicesEl.style.display = 'none';
-    resultsEl.classList.add('active');
-
-    // Animate bars
-    setTimeout(() => {
-        resultsEl.querySelectorAll('.qa-bar-fill').forEach(bar => {
-            bar.style.width = bar.dataset.percentage + '%';
+    // Add click handlers
+    choicesEl.querySelectorAll('.prompt-choice').forEach(el => {
+        el.addEventListener('click', () => {
+            const index = parseInt(el.dataset.index);
+            handleQASelection(index);
         });
-    }, 50);
+    });
+}
+
+function handleQASelection(choiceIndex) {
+    if (!currentQAPrompt) return;
 
     // Save response
     const responses = JSON.parse(localStorage.getItem('prompt_responses') || '{}');
-    responses[prompt.id] = { choiceIndex, timestamp: Date.now() };
+    responses[currentQAPrompt.id] = { choiceIndex, timestamp: Date.now() };
     localStorage.setItem('prompt_responses', JSON.stringify(responses));
 
-    // Mark card as completed and advance
+    // Hide choices, show results
+    qaModal.querySelector('.prompt-choices').style.display = 'none';
+    qaModal.querySelector('.prompt-results').style.display = 'block';
+
+    renderQAResults(currentQAPrompt, choiceIndex);
+}
+
+function renderQAResults(prompt, userChoiceIndex) {
+    const resultsEl = qaModal.querySelector('.prompt-results');
+    const colors = ['red', 'blue', 'yellow', 'green'];
+
+    resultsEl.innerHTML = prompt.choices.map((choice, index) => {
+        const isUserChoice = index === userChoiceIndex;
+        const color = colors[index] || 'blue';
+
+        return `
+            <div class="prompt-result-item">
+                <div class="prompt-result-label">
+                    <span class="prompt-result-text">${choice.text}</span>
+                    ${isUserChoice ? '<span class="prompt-your-choice">← Your choice</span>' : ''}
+                    <span class="prompt-result-percentage">${choice.percentage}%</span>
+                </div>
+                <div class="result-bar-container">
+                    <div class="result-bar-wrapper">
+                        <div class="result-bar-fill ${color}" style="width: 0%">
+                            <span class="result-bar-percentage">${choice.percentage}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    // Animate bars
     setTimeout(() => {
-        card.classList.add('completed');
-
-        setTimeout(() => {
-            qaCurrentIndex = promptIndex + 1;
-            saveQAProgress(qaCurrentIndex);
-            updateQAProgress();
-
-            if (qaCurrentIndex < qaPrompts.length) {
-                showNextQAPrompt();
-            } else {
-                showQACompletion();
-            }
-        }, 1500);
-    }, 500);
+        resultsEl.querySelectorAll('.result-bar-fill').forEach((bar, i) => {
+            bar.style.width = prompt.choices[i].percentage + '%';
+        });
+    }, 50);
 }
 
-function showNextQAPrompt() {
-    const nextCard = document.querySelector(`[data-qa-index="${qaCurrentIndex}"]`);
-    if (nextCard) {
-        nextCard.classList.add('visible');
-        nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
-function showQACompletion() {
+function updateQAList() {
     const container = document.getElementById('qaContainer');
-    container.innerHTML += `
-        <div class="qa-complete">
-            <h3>ALL Q&A PROMPTS COMPLETED!</h3>
-            <p>You've tested all ${qaPrompts.length} Q&A prompts from the Admin Panel.</p>
-            <p style="margin-top: 20px;">
-                <a href="../admin.html" class="qa-btn primary" target="_blank">ADD MORE IN ADMIN</a>
-                <button class="qa-btn secondary" onclick="resetQAPrompts()">TEST AGAIN</button>
-            </p>
-        </div>
-    `;
+    const responses = JSON.parse(localStorage.getItem('prompt_responses') || '{}');
+
+    container.innerHTML = qaPrompts.map((prompt, index) => {
+        const isCompleted = !!responses[prompt.id];
+
+        return `
+            <div class="qa-prompt-item ${isCompleted ? 'completed' : ''}" onclick="openQAModal(qaPrompts[${index}])">
+                <span class="qa-prompt-item-text">${index + 1}. ${prompt.question}</span>
+                <span class="qa-prompt-item-status">${isCompleted ? '✓ Completed' : 'Click to test'}</span>
+            </div>
+        `;
+    }).join('');
 }
 
 async function initQAPrompts() {
     qaPrompts = await loadQAPrompts();
-    qaCurrentIndex = loadQAProgress();
 
     const container = document.getElementById('qaContainer');
     const countEl = document.getElementById('qaCount');
@@ -859,84 +754,12 @@ async function initQAPrompts() {
 
     countEl.textContent = `${qaPrompts.length} prompt${qaPrompts.length !== 1 ? 's' : ''}`;
 
-    // Reset if progress exceeds available prompts
-    if (qaCurrentIndex > qaPrompts.length) {
-        qaCurrentIndex = qaPrompts.length;
-        saveQAProgress(qaCurrentIndex);
+    // Create modal if not exists
+    if (!qaModal) {
+        createQAModal();
     }
 
-    // Check if all done
-    if (qaCurrentIndex >= qaPrompts.length) {
-        updateQAProgress();
-        container.innerHTML = `
-            <div class="qa-complete">
-                <h3>ALL Q&A PROMPTS COMPLETED!</h3>
-                <p>You've already tested all ${qaPrompts.length} Q&A prompts.</p>
-                <p style="margin-top: 20px;">
-                    <a href="../admin.html" class="qa-btn primary" target="_blank">ADD MORE IN ADMIN</a>
-                    <button class="qa-btn secondary" onclick="resetQAPrompts()">TEST AGAIN</button>
-                </p>
-            </div>
-        `;
-        return;
-    }
-
-    updateQAProgress();
-
-    const colors = ['red', 'blue', 'yellow', 'green'];
-    const responses = JSON.parse(localStorage.getItem('prompt_responses') || '{}');
-
-    container.innerHTML = qaPrompts.map((prompt, index) => {
-        const isCompleted = index < qaCurrentIndex;
-        const isActive = index === qaCurrentIndex;
-        const isFuture = index > qaCurrentIndex;
-
-        if (isFuture) return '';
-
-        const userChoice = responses[prompt.id]?.choiceIndex;
-
-        return `
-            <div class="qa-prompt-card ${isCompleted ? 'completed visible' : ''} ${isActive ? 'visible' : ''}" data-qa-index="${index}">
-                <div class="qa-prompt-id">#${index + 1} - ${prompt.id}</div>
-                <div class="qa-prompt-question">${prompt.question}</div>
-                <div class="qa-prompt-trigger">
-                    <strong>Trigger Text:</strong>
-                    ${prompt.triggerText}
-                </div>
-
-                <div class="qa-choices" ${isCompleted ? 'style="display:none"' : ''}>
-                    ${prompt.choices.map((choice, cIndex) => `
-                        <label class="qa-choice">
-                            <input type="radio" name="qa-${index}" value="${cIndex}"
-                                onchange="handleQAChoice(${index}, ${cIndex})" ${isCompleted ? 'disabled' : ''}>
-                            <span class="qa-choice-text">${choice.text}</span>
-                        </label>
-                    `).join('')}
-                </div>
-
-                <div class="qa-results ${isCompleted ? 'active' : ''}">
-                    ${prompt.choices.map((choice, cIndex) => {
-                        const isUserChoice = userChoice === cIndex;
-                        const color = colors[cIndex] || 'blue';
-
-                        return `
-                            <div class="qa-result-item">
-                                <div class="qa-result-label">
-                                    <span>${choice.text}</span>
-                                    ${isUserChoice ? '<span class="qa-your-choice">YOUR CHOICE</span>' : ''}
-                                </div>
-                                <div class="qa-bar-wrapper">
-                                    <div class="qa-bar-fill ${color}" data-percentage="${choice.percentage}" ${isCompleted ? `style="width: ${choice.percentage}%"` : ''}>
-                                        <span class="qa-bar-percent">${choice.percentage}%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        `;
-    }).join('');
+    updateQAList();
 }
 </script>
 
