@@ -530,6 +530,13 @@
         if (localStorage.getItem('admin_fullBookChapterBreaks') === 'false') {
             document.body.classList.add('hide-chapter-breaks');
         }
+        // Apply dateline formatting
+        const datelineFormat = localStorage.getItem('admin_datelineFormat') || 'current';
+        if (datelineFormat === 'bold-italic') {
+            document.body.classList.add('dateline-bold-italic');
+        } else if (datelineFormat === 'bold') {
+            document.body.classList.add('dateline-bold');
+        }
     </script>
     <!-- Header Navigation -->
     <header class="header" id="header">

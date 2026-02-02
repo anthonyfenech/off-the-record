@@ -183,6 +183,17 @@
     font-weight: normal;
 }
 
+/* Dateline formatting options (controlled via admin panel) */
+body.dateline-bold-italic .dateline {
+    font-weight: bold;
+    font-style: italic;
+}
+
+body.dateline-bold .dateline {
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* Paragraphs starting with datelines - no text-indent */
 .has-dateline {
     text-indent: 0 !important;

@@ -56,6 +56,13 @@
         if (localStorage.getItem('reader_cleanRead') === 'true') {
             document.body.classList.add('clean-read');
         }
+        // Apply dateline formatting
+        const datelineFormat = localStorage.getItem('admin_datelineFormat') || 'current';
+        if (datelineFormat === 'bold-italic') {
+            document.body.classList.add('dateline-bold-italic');
+        } else if (datelineFormat === 'bold') {
+            document.body.classList.add('dateline-bold');
+        }
     </script>
 
     <!-- Password Gate (Beta Access) -->
