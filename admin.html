@@ -54,42 +54,53 @@
 
         .admin-nav {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid #ddd;
+            flex-wrap: wrap;
         }
 
-        .admin-nav a {
-            padding: 8px 16px;
-            font-size: 11px;
+        .admin-nav a,
+        .admin-nav button {
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-decoration: none;
-            color: #666;
-            border: 1px solid #ddd;
+            color: #333;
+            background: #fff;
+            border: 1px solid #333;
             border-radius: 4px;
-            transition: all 0.15s ease;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
         }
 
         .admin-nav a:hover {
-            background: #333;
-            border-color: #333;
-            color: #fff;
+            opacity: 0.7;
         }
 
-        .admin-nav a.big-btn {
+        .admin-nav .nav-active {
             background: #333;
             color: #fff;
-            border-color: #333;
-            padding: 12px 24px;
-            font-size: 13px;
-            font-weight: bold;
+            cursor: default;
         }
 
-        .admin-nav a.big-btn:hover {
-            background: #555;
-            border-color: #555;
+        .admin-nav .nav-active:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+            .admin-nav {
+                gap: 8px;
+            }
+            .admin-nav a,
+            .admin-nav button {
+                padding: 8px 12px;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
         }
 
         h1 {
@@ -1893,7 +1904,8 @@
     <nav class="admin-nav">
         <a href="./">Home</a>
         <a href="./binge-mode.html">Binge Mode</a>
-        <a href="./content-map.html" class="big-btn">Content Map</a>
+        <a href="./content-map.html">Content Map</a>
+        <button class="nav-active">Admin</button>
     </nav>
 
     <div class="container">
