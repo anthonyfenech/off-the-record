@@ -712,7 +712,9 @@ export const CHAPTERS = [
 
 <p>This is my life now.</p>
 
-<p>WASHINGTON, <em>January 18, 2015</em>—Working from a standing desk inside Reagan Airport when news breaks of Max Scherzer’s impending signing. It’s a National Guy with the scoop—Scherzer to the Washington Nationals for seven years and \$210 million. In the past couple years, the term “mystery team” has been popularized—national insiders floating out unnamed teams to further a player’s market value as a favor to the agent.</p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">WASHINGTON, <em>January 18, 2015</em>—</span>Working from a standing desk inside Reagan Airport when news breaks of Max Scherzer's impending signing. It’s a National Guy with the scoop—Scherzer to the Washington Nationals for seven years and \$210 million. In the past couple years, the term “mystery team” has been popularized—national insiders floating out unnamed teams to further a player’s market value as a favor to the agent.</p>
 
 <p>So, I chase down the mystery team—despite Dombrowski’s insistence all winter, the Tigers were not a serious player to re-sign Scherzer.</p>
 
@@ -978,7 +980,7 @@ export const CHAPTERS = [
 
 <p>EMBARRASSING FLASHBACK</p>
 
-<p>DETROIT, <em>April 5, 2013</em>—Opening Day, my first game as a BBWAA member. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a BBWAA member. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>
 
 <p>The New York media surrounds lefty reliever Boone Logan. Poking a tape recorder into a pack of reporters, the Taylor Swift Pandora on my phone goes off.</p>
 
@@ -1000,7 +1002,7 @@ export const CHAPTERS = [
 
 <p class="scene-break">***</p>
 
-<p>DETROIT, <em>April 22, 2015</em>—Two weeks later, Joe Nathan is injured again.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
 
 <p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only ten pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>
 
@@ -1764,9 +1766,11 @@ export const CHAPTERS = [
 
 <p>Once again, a friend helps. This time, it’s ESPN.com’s Marly Rivera who helps piece together that the Tigers have been pursuing lefty reliever Justin Wilson, according to her source.</p>
 
-<p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it’s Villarreal again: “Come now to suite.”</p>
+<p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it's Villarreal again: "Come now to suite."</p>
 
-<p>ZZYZX, Calif., <em>January 15, 2016</em>—I learned many things my rookie year on the beat. Don’t overdrink the night before Getaway Day. Always sit with scouts while eating dinner and double-check email addresses. Keep a backup keyboard in your work bag.</p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. Don’t overdrink the night before Getaway Day. Always sit with scouts while eating dinner and double-check email addresses. Keep a backup keyboard in your work bag.</p>
 
 <p>Today, I’m re-learning a hard lesson: Don’t travel on arbitration day.</p>
 
@@ -2814,7 +2818,9 @@ export const CHAPTERS = [
 
 <p>No answer—again.</p>
 
-<p>DETROIT, <em>January 27, 2017</em>—The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed “Freep Forward,” top editors introduce new Gannett gobbledygook. <span class="media-emoji" data-media-id="freep-forward">📄</span></p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>January 27, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed “Freep Forward,” top editors introduce new Gannett gobbledygook. <span class="media-emoji" data-media-id="freep-forward">📄</span></p>
 
 <p>My job hasn’t changed, but others have—general assignment reporters are now “storytelling writers,” editors are “directors,” and assistant editors are “planners.” The photo/video desk is now the “consumer product team.”</p>
 
@@ -4012,7 +4018,9 @@ export const CHAPTERS = [
 
 <p>One day, I hope to be mentioned in the same breath.</p>
 
-<p>DETROIT, <em>September 21, 2017</em>—Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>September 21, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
 
 <p>3:33 <span class="small-caps">P.M.</span>—&quot;What’s going to happen at Comerica today?”</p>
 
@@ -4422,7 +4430,9 @@ export const CHAPTERS = [
 
 <p>One co-worker tells me to report CC to HR. Another says to contact the union rep. I decide to document the day, in writing and detail.</p>
 
-<p>DETROIT, <em>January 8, 2018</em>—Nothing to report. It’s a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents—including mega-stars Bryce Harper and Manny Machado—are still on the market. Former Tiger J.D. Martinez, too.</p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>January 8, 2018</em>—</span>Nothing to report. It’s a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents—including mega-stars Bryce Harper and Manny Machado—are still on the market. Former Tiger J.D. Martinez, too.</p>
 
 <p>Meanwhile, I’m not getting many scoops. The Tigers are entering the first year of a tear-it-down rebuild. They did sign veteran righty Mike Fiers (my scoop), but otherwise, just minor-league signings.</p>
 
@@ -5886,9 +5896,11 @@ export const CHAPTERS = [
 
 <p>Avila is dejected. The deal would’ve been a boon for Detroit. Montas, 25, will open next season hot before receiving an eighty-game suspension for testing positive for a banned substance. He’ll return to post a 3.90 ERA, 1.24 WHIP and 9.6 strikeouts per nine innings in seventy-one starts for the A’s and Yankees through 2022. Hardy, meanwhile, will suffer a bum elbow in 2019—cutting his season short.</p>
 
-<p>Deep Throat circles back after hearing the news: “Good thing you didn’t go with it.”</p>
+<p>Deep Throat circles back after hearing the news: "Good thing you didn't go with it."</p>
 
-<p>DETROIT, <em>January 4, 2019</em>—Ringing in the new year at a swanky cigar bar in suburban Detroit.</p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>January 4, 2019</em>—</span>Ringing in the new year at a swanky cigar bar in suburban Detroit.</p>
 
 <p>The Highest Source In The Land is wearing a burgundy turtleneck and reading glasses that he flips on when checking his phone. Al Avila is drinking the usual tonight. I’m drinking wine.</p>
 
@@ -6428,9 +6440,11 @@ export const CHAPTERS = [
 
 <p>Detroit wraps up its series against the Royals at Omaha’s TD Ameritrade Field tomorrow night—it’s a grand-opening big league game to kick off the College World Series. I get to stay when the Tigers leave and cover a winning team for a change.</p>
 
-<p>For the first time since 1984, the Wolverines are in Omaha—the heartland city that has hosted college baseball’s annual championship since 1950. They arrive as the most unlikely of the College World Series’ eight teams—a cold-weather, Big Ten program that has stolen serious attention from the Tigers.</p>
+<p>For the first time since 1984, the Wolverines are in Omaha—the heartland city that has hosted college baseball's annual championship since 1950. They arrive as the most unlikely of the College World Series' eight teams—a cold-weather, Big Ten program that has stolen serious attention from the Tigers.</p>
 
-<p>OMAHA, Neb., <em>June 13</em>—Kicking up stones, I pull into a parking lot at a local high school.</p>
+<p class="scene-break">***</p>
+
+<p class="has-dateline"><span class="dateline">OMAHA, Neb., <em>June 13</em>—</span>Kicking up stones, I pull into a parking lot at a local high school.</p>
 
 <p>I’m late, but in the right place—a bus emblazoned in maize-and-blue lettering blocks my view of the field where Michigan baseball is finishing practice.</p>
 
