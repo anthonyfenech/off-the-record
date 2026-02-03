@@ -2252,9 +2252,7 @@ export const CHAPTERS = [
 
 <p>Subject: Next week 1A story</p>
 
-<p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the Tigers are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
-
-<p class="scene-break">***</p>
+<p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the Tigers are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
 
 <p class="scene-break">***</p>
 
@@ -6704,13 +6702,11 @@ export const CHAPTERS = [
 
 <p>Subject: RE: Tigers today</p>
 
-<p><em>Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
+<p><em>Seriously, man, if his stance is that a reporter from Detroit can't ask him about a very serious claim that he made about his time in Detroit, I don't know what to tell him. You did your job. I think you've been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It's not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you've done a nice job ﬁnding things to talk about during a time when there isn't much to talk about. It isn't easy, and I recognize that. Thanks for doing it.</em></p>
 
 <p class="scene-break">***</p>
 
-<p class="scene-break">***</p>
-
-<p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I’m about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and sports editor Chris Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
+<p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I'm about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and sports editor Chris Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
 
 <p>Still basking in the afterglow of a clicks bonanza from the Trade Deadline Exposé, Thomas wanted more juice—the lowly Tigers aren’t bringing eyes to the site these days.</p>
 
