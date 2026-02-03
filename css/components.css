@@ -1152,6 +1152,149 @@ button:focus-visible {
     background-color: var(--color-accent-light);
 }
 
+/* Search Result Item Updates */
+.search-result-chapter {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    font-family: var(--font-mono);
+}
+
+.search-result-preview {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.search-result-preview mark {
+    background-color: rgba(255, 235, 59, 0.5);
+    color: inherit;
+    font-weight: 600;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+[data-theme="dark"] .search-result-preview mark {
+    background-color: rgba(255, 193, 7, 0.35);
+}
+
+.search-results-count {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+/* In-Chapter Search Highlighting */
+.search-highlight {
+    background-color: #ffeb3b;
+    padding: 2px 0;
+    border-radius: 2px;
+    transition: background-color 1s ease-out;
+}
+
+.search-highlight-current {
+    background-color: #ff9800;
+    box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.3);
+}
+
+.search-highlight-fade {
+    background-color: transparent;
+}
+
+[data-theme="dark"] .search-highlight {
+    background-color: rgba(255, 235, 59, 0.4);
+}
+
+[data-theme="dark"] .search-highlight-current {
+    background-color: rgba(255, 152, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.2);
+}
+
+/* Match Navigation Floating UI */
+.search-match-nav {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: var(--font-mono);
+}
+
+[data-theme="dark"] .search-match-nav {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.match-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color var(--transition-fast);
+}
+
+.match-nav-btn:hover:not(:disabled) {
+    background-color: var(--color-accent-light);
+}
+
+.match-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.match-nav-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 4px;
+    color: var(--color-text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: color var(--transition-fast);
+}
+
+.match-nav-close:hover {
+    color: var(--color-text-primary);
+}
+
+.match-counter {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    min-width: 45px;
+    text-align: center;
+}
+
+/* Mobile Responsive Search */
+@media (max-width: 600px) {
+    .search-match-nav {
+        bottom: 80px;
+        right: 10px;
+        left: auto;
+        padding: 6px 10px;
+    }
+
+    .match-counter {
+        font-size: 12px;
+        min-width: 40px;
+    }
+}
+
 /* Tappable Media Emojis */
 .media-emoji {
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif !important;
