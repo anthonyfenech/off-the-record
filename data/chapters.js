@@ -8536,3 +8536,72 @@ export const CHAPTERS = [
         wordCount: 1403
     }
 ];
+// Export total word count for progress calculations
+export const getTotalWordCount = () => {
+    return CHAPTERS.reduce((sum, chapter) => sum + chapter.wordCount, 0);
+};
+
+// Export chapter count
+export const getChapterCount = () => CHAPTERS.length;
+
+// Get first chapter ID
+export const getFirstChapterId = () => CHAPTERS[0]?.id ?? 1;
+
+// Get last chapter ID
+export const getLastChapterId = () => CHAPTERS[CHAPTERS.length - 1]?.id ?? 1;
+
+// Get previous chapter ID (returns null if at first chapter)
+export const getPreviousChapterId = (currentId) => {
+    const currentIndex = CHAPTERS.findIndex(c => c.id === currentId);
+    if (currentIndex <= 0) return null;
+    return CHAPTERS[currentIndex - 1].id;
+};
+
+// Get next chapter ID (returns null if at last chapter)
+export const getNextChapterId = (currentId) => {
+    const currentIndex = CHAPTERS.findIndex(c => c.id === currentId);
+    if (currentIndex < 0 || currentIndex >= CHAPTERS.length - 1) return null;
+    return CHAPTERS[currentIndex + 1].id;
+};
+
+// Calculate reading time (words per minute = 200)
+export const calculateReadingTime = (wordCount) => {
+    const minutes = Math.ceil(wordCount / 200);
+    return minutes;
+};
+
+// Get intro chapters (nested under INTRO dropdown)
+export const getIntroChapters = () => {
+    return CHAPTERS.filter(c => c.section === 'intro');
+};
+
+// Get postscript chapters (nested under POSTSCRIPT dropdown)
+export const getPostscriptChapters = () => {
+    return CHAPTERS.filter(c => c.section === 'postscript');
+};
+
+// Get chapters grouped by year (only year-section chapters)
+export const getChaptersByYear = () => {
+    const yearMap = {};
+
+    CHAPTERS.filter(c => c.section === 'year').forEach(chapter => {
+        const yearKey = chapter.year;
+        if (!yearMap[yearKey]) {
+            yearMap[yearKey] = [];
+        }
+        yearMap[yearKey].push(chapter);
+    });
+
+    return yearMap;
+};
+
+// Get sorted year keys
+export const getSortedYears = () => {
+    const years = Object.keys(getChaptersByYear()).map(Number);
+    years.sort((a, b) => a - b);
+    // Add 2020 as empty year section
+    if (!years.includes(2020)) {
+        years.push(2020);
+    }
+    return years;
+};
