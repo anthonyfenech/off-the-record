@@ -6210,8 +6210,7 @@ export const CHAPTERS = [
 
 <p>Subject: Michigan baseball</p>
 
-<p><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>
-
+<p><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>`,
         wordCount: 2490
     },
     {
