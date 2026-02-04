@@ -236,7 +236,6 @@ export const CHAPTERS = [
 
 <p>“I apologize for that,” he says. “Have a good trip to Denver. Great ballpark and cool city.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DENVER, <em>August 29</em>—</span>Still catching up on sleep. The Tigers are here playing the Colorado Rockies. I stay downtown after tonight’s game and go to this guy’s apartment.</p>
 
@@ -244,7 +243,6 @@ export const CHAPTERS = [
 
 <p>Basically, I fly around the country nine months every year writing about baseball. The job is never-ending, like a machine you can’t beat. How, sitting here thinking about it, it’s rather ridiculous that I’m writing and tweeting about these millionaires playing baseball. A game.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 30</em>—</span>The next day comes fast. Clubhouse opens at 9:30 for day games and today is what they call Getaway Day. Justin Verlander is pitching today. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, thirty-four, a perennial All-Star with Hall of Fame credentials, wants no part of the long rebuild in store for the Tigers next season.</p>
 
@@ -288,7 +286,6 @@ export const CHAPTERS = [
 
 <p>Nothing else, no eye contact. PR calls for last question. There are none. Verlander flees the scene.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 31</em>—</span>Live from the Denver airport, it’s the trade deadline.</p>
 
@@ -438,7 +435,6 @@ export const CHAPTERS = [
 
 <p>Now one of the <em>Freep</em>’s top editors joins Seamhead in Gene Myers’ office, and I don’t need a fly on the wall to know what’s being said. I message my buddy, breaking the Big News before anyone leaves the room: “John Lowe is retiring.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 27</em>—</span>With the chance of a career up for the taking, I go into overdrive.</p>
 
@@ -460,7 +456,6 @@ export const CHAPTERS = [
 
 <p>Suarez isn’t shy and is perhaps even unsmart in saying so many things to someone like me—not even a rookie yet, not even on the beat but foaming at the mouth for the shot. I haven’t put in all this work, all these years on the web desk posting other sports writers’ words for nothing. The trust Soria’s agent shows me provides hope.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 31</em>—</span>I get a text late this morning from Suarez, who says the Tigers are picking up Soria’s option. I seriously consider following <em>Freep</em> protocol and getting my source approved first but remember I need this scoop. So instead, I tweet it out first (11:33 <span class="small-caps">A.M.</span>) then message my source to the web editor on duty.</p>
 
@@ -470,7 +465,6 @@ export const CHAPTERS = [
 
 <p>From the sports editor, reply all: “Woo-hoo!!!!”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 11</em>—</span>Gene Myers pulls me into his office during tonight’s web shift and asks if I want the good or bad news first.</p>
 
@@ -496,7 +490,6 @@ export const CHAPTERS = [
 
 <p><em>“John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: ‘A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call ‘interrupted a nap in my car.’”</em></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 12</em>—</span>My first official day as a Ball Writer goes like this: At 4:15 <span class="small-caps">P.M.</span>, I see a tweet from Ken Rosenthal, a FOXSports.com and MLB Network insider.</p>
 
@@ -576,7 +569,6 @@ export const CHAPTERS = [
 
 <p>Has he read Internet Stalker’s stuff? I feel like I’m living my own horror story.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>At the winter meetings, hundreds of reporters gather in hotel ballrooms chasing scoops. We’re usually cooped up in the media room, with a main stage where press conferences are held, trades announced, and newly inducted Hall of Famers talk about being speechless. <span class="media-emoji" data-media-id="winter-meetings-12-7-14">📷</span></p>
 
@@ -588,7 +580,6 @@ export const CHAPTERS = [
 
 <p>After the session, I realize in horror that I didn’t turn my recorder on before I placed it on the table—I have no audio. My competitors have pity, sharing their tape so I’m able to write my stories.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers’ suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout.</p>
 
@@ -598,7 +589,6 @@ export const CHAPTERS = [
 
 <p>While it wasn’t explicitly stated as such, the story I was pitching to Nathan’s agent was a fluff piece. By allowing a certain kind of access, it’s almost certain the resulting story will be favorable for the subject. Put another way: Heading into my first year as beat writer of the team, it’s pretty much guaranteed I’m going to write a good story about Nathan, who is one of the team’s respected veterans.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 11</em>—</span>My mouth is dry when I wake up.</p>
 
@@ -634,7 +624,6 @@ export const CHAPTERS = [
 
 <p>He writes her name on the back of the card in blue ink: RACHEL—EXT. 149.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>December 21</em>—</span>Haven’t smoked in forever when I go to my buddies to watch football tonight. A week after the winter meetings—fifteen-day clean streak. No more.</p>
 
@@ -664,7 +653,6 @@ export const CHAPTERS = [
 
 <p>A couple days later, I write a column about how they should be aggressive in pursuing Scherzer. I push Boras’ agenda under the guise of my opinion. I’m being used. It feels good.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 19</em>—</span>Still swinging for the fences, trying to find feature stories. A colleague passes along an email address for Justin Verlander’s parents. I message them, introducing myself.</p>
 
@@ -678,7 +666,6 @@ export const CHAPTERS = [
 
 <p>His agent hasn’t answered my two introductory voicemails, the email I sent last week, or another call today about it.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 23</em>—</span>Enjoying my newfound access to Scott Boras perhaps a bit too much, I call him on my drive into the newsroom tonight. I ask when he’s going to get me in touch with Tigers owner Mike Ilitch.</p>
 
@@ -690,7 +677,6 @@ export const CHAPTERS = [
 
 <p>Determined to prove my worth to Boras, I walk up to Holland and introduce myself. I ask if he can pass along Ilitch’s number. Sorry, but no. Worth a shot.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 31</em>—</span>Today is my Mitch Albom Birthday. I am 27 years, 2 months and 12 days old today—exactly how old Albom was on August 5, 1985, the day he debuted as a sports columnist. We measure our careers in Mitch Time around here: From the moment you walk into the <em>Free Press</em> sports department, you are measured by the cardboard cutout of Mitch in the corner, holding up one finger, <em>Voted #1 sports columnist in the country—again!</em></p>
 
@@ -712,7 +698,6 @@ export const CHAPTERS = [
 
 <p>This is my life now.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">WASHINGTON, <em>January 18, 2015</em>—</span>Working from a standing desk inside Reagan Airport when news breaks of Max Scherzer's impending signing. It’s a National Guy with the scoop—Scherzer to the Washington Nationals for seven years and \$210 million. In the past couple years, the term “mystery team” has been popularized—national insiders floating out unnamed teams to further a player’s market value as a favor to the agent.</p>
 
@@ -726,7 +711,6 @@ export const CHAPTERS = [
 
 <p>I know Kelly. I have his number. To my scoopin’ surprise, he confirms it’s true. I ask if I can use his name. Yep, to that, too. This is easy.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>January 22</em>—</span>The team’s annual winter caravan begins with a media free-for-all—players scattered around tables in the stadium’s beer garden. The goal is to talk to as many guys as possible so you can skip the actual bus tour stops.</p>
 
@@ -752,7 +736,6 @@ export const CHAPTERS = [
 
 <p>“Dude!”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>January 24</em>—</span>The frigid streets around the stadium are full of fans. They’ve come early, standing in double-file lines waiting for the doors to open. It’s TigerFest—a winter extravaganza that promises up close and personal looks, autograph opportunities and plenty of fun.</p>
 
@@ -776,7 +759,6 @@ export const CHAPTERS = [
 
 <p>Today is the first day of school—pitchers and catchers reporting day.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 24</em>—</span>Awakened by news that Joba Chamberlain, a big boy reliever with a bushy beard, has been spotted in TigerTown. This was reported by Ken Rosenthal on Twitter at 6:44 <span class="small-caps">A.M.</span>, while I was fast asleep.</p>
 
@@ -792,7 +774,6 @@ export const CHAPTERS = [
 
 <p>We exchange numbers. Of course he can get me some, just let him know. Introducing my new favorite friend—we’ll call him Gator.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 25</em>—</span>Big News out of camp: Brad Ausmus is on Twitter.</p>
 
@@ -814,7 +795,6 @@ export const CHAPTERS = [
 
 <p>“The message to the team—between you and the team, right?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 26</em>—</span>On the back fields, I get a text message from someone at MLB Network, asking if I have time to come on television today. Immediately, I head back to the hotel to change into a shirt, tie and jacket. I’ve never been on TV like this, and I’m certifiably nervous—so I take swigs of apple-flavored whiskey when I get back.</p>
 
@@ -832,7 +812,6 @@ export const CHAPTERS = [
 
 <p>There is adrenaline, excitement and pressure to impress the team’s decision makers, who are always watching, always evaluating. A few of them, including Dave Dombrowski, look on from the tower.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 18</em>—</span>Working hard at spring training again, lounging around with the Tiger Beat at a picnic table outside the clubhouse. We’re waiting for the manager to arrive for his media session when an unmistakable voice hollers out from above.</p>
 
@@ -846,7 +825,6 @@ export const CHAPTERS = [
 
 <p>After the session, Leyland comes down to join us before today’s workouts begin. Soon, the Most Popular Boy of Perrysburg, Ohio’s 1962 senior class is holding court again.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 20</em>—</span>The Opening Day starter is revealed.</p>
 
@@ -880,7 +858,6 @@ export const CHAPTERS = [
 
 <p>Detroit enters 2015 as the four-time defending division champions. But even with all that, Dombrowski still finds himself in a peculiar position—he’s a lame duck, his contract expires after the year. I am still far too fresh to recognize any of this, years away from realizing how rare of a position I’m in. A GM in his situation needs the media. For once, I have leverage.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DUNEDIN, Fla., <em>March 27</em>—</span>Panic at the ballpark when Justin Verlander leaves the game after the second inning.</p>
 
@@ -890,7 +867,6 @@ export const CHAPTERS = [
 
 <p>Verlander won’t make his next start—he doesn’t pitch again until June.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 28</em>—</span>I arrive to the clubhouse, taking up surveillance. One eye on Verlander’s locker at all times.</p>
 
@@ -900,7 +876,6 @@ export const CHAPTERS = [
 
 <p>“Can you let me get dressed?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CLEARWATER, Fla., <em>March 29</em>—</span>Standing in the hallway of the visitors’ clubhouse when head trainer Kevin Rand calls me over.</p>
 
@@ -914,7 +889,6 @@ export const CHAPTERS = [
 
 <p>Regardless, all I did was my job. I walked up to the team’s star pitcher and asked him how he was feeling after an injury forced him to leave the game yesterday.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 3</em>—</span>In the chaotic aftermath of the spring finale, with attendants and staffers and players ready for departure—opportunity knocks me over while collecting postgame quotes.</p>
 
@@ -950,7 +924,6 @@ export const CHAPTERS = [
 
 <p>Miguel Cabrera sits at his locker in the clubhouse, eyeing me pregame. He looks at Ron Colangelo, points at me, “I like this guy. Look at him, he dresses nice.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">PITTSBURGH, <em>April 13</em>—</span>First away series and I’m road tripping with my buddy on the Ohio Turnpike. We’re staying at the team hotel. I forgot to book; the traveling secretary bailed me out.</p>
 
@@ -964,7 +937,6 @@ export const CHAPTERS = [
 
 <p>We go up to Mt. Washington for a couple of beers, a neighborhood far above the Pittsburgh skyline—so far it takes an incline to get straight up the cliffside. We’re still that high when we get back to the team hotel and run into players waiting at the elevator bank. It’s awkward as you’d imagine. Let’s just say nothing and pretend like it didn’t happen.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 15</em>—</span>At the park early today, where Justin Verlander is throwing a simulated game—he’s even simulating the national anthem, standing with his hat over his heart.</p>
 
@@ -976,7 +948,6 @@ export const CHAPTERS = [
 
 <p>He’s not wrong.</p>
 
-<p class="scene-break">***</p>
 
 <p>EMBARRASSING FLASHBACK</p>
 
@@ -1000,7 +971,6 @@ export const CHAPTERS = [
 
 <p>Players laugh. Reporters, too. It’s my first game as a BBWAA member—I don’t know how I’ll recover from this.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
 
@@ -1014,7 +984,6 @@ export const CHAPTERS = [
 
 <p>Nathan doesn’t respond.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 23</em>—</span>Bad news arrives the next day.</p>
 
@@ -1038,7 +1007,6 @@ export const CHAPTERS = [
 
 <p>Back in the press box, I write three stories: A game story, a sidebar on Nathan’s injury and an opinion piece about why it would be wise to pursue Soriano—a favor for Scott Boras.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">OAKLAND, Calif., <em>May 27</em>—</span>The best part about Gator’s friendship isn’t the breaking news tips, but his bead on the clubhouse.</p>
 
@@ -1088,7 +1056,6 @@ export const CHAPTERS = [
 
 <p>It was a better day for the beat writer. I got four-of-six roster moves. But my scoops amount to second-hand rumors—if I don’t find some real sources, I’m bound to get burned.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SEATTLE, <em>July 8</em>—</span>I sit in the dugout today with J.D. Martinez for a feature story to chronicle his breakout year. I explain my angle—I want to highlight the work his personal hitting coach has done with him, but I want to keep the coach anonymous. I’ll call him the Mysterious Hitting Guru.</p>
 
@@ -1104,7 +1071,6 @@ export const CHAPTERS = [
 
 <p>“Scott said try Craig Wallenbrock.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>July 9</em>—</span>I got through to Wallenbrock and gave him the spiel. Feature story on J.D. l’ll conceal your identity—the Mysterious Hitting Guru.</p>
 
@@ -1122,7 +1088,6 @@ export const CHAPTERS = [
 
 <p>We agree to disagree.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 10</em>—</span>Tigers lead Twins, 6-1. Bottom of the ninth.</p>
 
@@ -1152,7 +1117,6 @@ export const CHAPTERS = [
 
 <p>The sun comes up. Day game today.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 11</em>—</span>In the first inning, straight out of the You Couldn’t Make This Up If You Tried files, disaster is coming.</p>
 
@@ -1176,7 +1140,6 @@ export const CHAPTERS = [
 
 <p>“That’s what you get, bro.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 17</em>—</span>Back from the All-Star break, I get an email from a guy with the Christopher “Mad Dog” Russo radio show, asking for availability to talk Tigers.</p>
 
@@ -1190,7 +1153,6 @@ export const CHAPTERS = [
 
 <p>Hanging up, I realize I’ve been hood-winked. It won’t take long for Internet Stalker’s sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now. <span class="media-emoji" data-media-id="jeff-moss-prank-call">🔴</span></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 19</em>—</span>Redemption is mine. A week after I got punk’d by Internet Stalker, I get an email from an ESPN producer, inviting me onto <em>SportsCenter</em> today.</p>
 
@@ -1220,7 +1182,6 @@ export const CHAPTERS = [
 
 <p>The Tigers enter the series on the outskirts of the pennant race. They lose the first two games—the bullpen taking the loss both times. Heading into the series, I had written they should “buy” at the trade deadline. After last night’s walk-off loss, I wrote that they should “sell.” Now, I’m getting torched online—they’re calling me Flip-Floppin’ Fen.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 29</em>—</span>They avoid the sweep with a win on Getaway Day. In the clubhouse afterwards—two days until the trade deadline—the players try to put a positive spin on things. Verlander hopes his performance (eight innings, one run, 10 strikeouts) helps the front office believe there’s a chance. I linger after the scrum and comment on his suede jacket, trying to get on his good side.</p>
 
@@ -1244,7 +1205,6 @@ export const CHAPTERS = [
 
 <p>I start by rushing up to the press box and tweeting out Dombrowski’s quotes. Then I have to write up a story about that and rewrite the game story—and I gotta do it by 5 <span class="small-caps">P.M.</span> at the latest because I have a 7:20 flight to Baltimore.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">BALTIMORE, <em>July 30</em>—</span>News breaks that the Tigers’ fire sale has begun: They are trading David Price to the Toronto Blue Jays, according to a National Guy. It takes me a bit—and my Internet Haters are taunting me online because of it—but I finally get it confirmed with a Toronto source (pro scout). It was an hour late, but any kind of confirmation feels like a win.</p>
 
@@ -1268,7 +1228,6 @@ export const CHAPTERS = [
 
 <p>He throws on a backpack, hops on a bicycle and heads to Toronto.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 31</em>—</span>It’s the trade deadline. Detroit still has two veteran players they’d like to move: outfielder Yoenis Céspedes and closer Joakim Soria, both of whom are hitting free agency.</p>
 
@@ -1296,11 +1255,9 @@ export const CHAPTERS = [
 
 <p>Dealin’ Dave Dombrowski isn’t done, though. By the time the writers are ushered out of the clubhouse, he’s reportedly striking another deal, this time sending closer Joakim Soria to Pittsburgh.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">WASHINGTON, <em>August 3</em>—</span>I take the train from Baltimore after today’s series finale to see my little brother in D.C. for the day, having written a column saying Dombrowski should receive a contract extension. It expires at year’s end. My argument is twofold: you can’t find a better general manager than Dombrowski, and he’s already made trades with an eye for the future.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 4</em>—</span>I see a newsstand in the airport, today’s <em>Free Press</em> and the banner on Page 1A. JOB 1: EXTEND DOMBROWSKI. Underneath: KEEPING TIGERS GM IS CRUCIAL TO REBOOTING, REJUVENATING THE TEAM—ANTHONY FENECH, 1B <span class="media-emoji" data-media-id="dombrowski-extension">📰</span></p>
 
@@ -1372,7 +1329,6 @@ export const CHAPTERS = [
 
 <p>“I appreciate it. I am sure we will work well together.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ROUND ROCK, Texas, <em>August 13</em>—</span>I fly to Texas a day before the Tigers, taking a pit stop in suburban Austin to spend the afternoon at Seamhead’s retirement digs. The place is very John Lowe—many bookshelves, minimal decor—down to the Wi-Fi password: 18741874, signifying Sir Winston Churchill’s birth year.</p>
 
@@ -1392,7 +1348,6 @@ export const CHAPTERS = [
 
 <p>“I’ll keep in touch, Dave.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 15</em>—</span>It’s my first free continental breakfast as a Hilton Honors Gold Member, an achievement I’ve been chasing since the spring. I pick up a copy of the <em>Houston Chronicle</em>, but the sports section is missing.</p>
 
@@ -1406,7 +1361,6 @@ export const CHAPTERS = [
 
 <p>In retrospect, it was an unnecessary icebreaker. But I am who I am, and Matthew Boyd is who he is—someone I’ll come to learn has never smoked weed in his life.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CHICAGO, <em>August 18</em>—</span>First time at historic Wrigley Field, which opened in 1914 and presents horrible working conditions for Ball Writers.</p>
 
@@ -1416,7 +1370,6 @@ export const CHAPTERS = [
 
 <p>A couple innings later, I scurry out of the press box—Dombrowski is calling. I scribble quotes from the Red Sox president on the back of a print-out scorecard.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 1</em>—</span>Let me formally introduce my competitors on the Tiger Beat. There’s Rival Cohort Chris McCosky from the <em>Detroit News</em>, Jason Beck from MLB.com, James Schmehl from MLive.com and most recently, Katie Strang from ESPN.com.</p>
 
@@ -1426,7 +1379,6 @@ export const CHAPTERS = [
 
 <p>We went out for beers downtown last night. Strang isn’t moving from hockey to baseball by choice, so she might not be here long. But she’s good at her job, and I’m not thrilled with that, to be honest.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 2</em>—</span>I am starting to build a relationship with Royals players.</p>
 
@@ -1522,7 +1474,6 @@ export const CHAPTERS = [
 
 <p>“You.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>September 27</em>—</span>Sweating out the final week of the season. Six to go.</p>
 
@@ -1540,7 +1491,6 @@ export const CHAPTERS = [
 
 <p>He doesn’t take any editing liberties. He thanks me for writing it.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 29</em>—</span>In Texas, I’m issued a final challenge for my rookie year. It comes by way of Nick Cotsonika, temporarily a <em>Freep </em>editor between stops in his impressive sports writing career. Cotsonika, returned a few months ago after getting laid off as <em>Yahoo! Sports</em>’ top NHL guy.</p>
 
@@ -1576,7 +1526,6 @@ export const CHAPTERS = [
 
 <p>Verlander has all day to talk about this kind of story.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CHICAGO, <em>October 4</em>—</span>On the final day of the season I wake up and run ten miles. The long run in preparation for a half-marathon in two weeks. To the end of Lake Shore Drive.</p>
 
@@ -1634,7 +1583,6 @@ export const CHAPTERS = [
 
 <p>I write my stories slowly, the final Ball Writer to file out of the press box. When I leave, I take the elevator to the concourse. I walk around the emptiness of the half-lit stadium, staying in the last moments of my only rookie year as long as I can.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">BOCA RATON, Fla., <em>November 9</em>—</span>Welcome to the offseason.</p>
 
@@ -1666,7 +1614,6 @@ export const CHAPTERS = [
 
 <p>It was a successful week at the GM meetings—I didn’t get scooped.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>November 18</em>—</span>Pulling double-duty, covering basketball practice when the top National Guy rears his ugly head again: They’re closing in on a trade with the Brewers for All-Star closer Francisco Rodríguez, according to Ken Rosenthal.</p>
 
@@ -1674,7 +1621,6 @@ export const CHAPTERS = [
 
 <p>Tigers PR: “We picked you up asking a question to Van Gundy on the call at the end. Was very strange.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 29</em>—</span>Worlds collide again: At Red Wings morning skate when baseball news breaks.</p>
 
@@ -1698,7 +1644,6 @@ export const CHAPTERS = [
 
 <p>“<em>Dear Anthony: I have read your letter and must tell you what a good printer you are. You can start getting ready to be a hockey player (Red Wing) by 1. Eat good food, get exercise, and get a lot of sleep, because hockey players have to be healthy. 2. Listen to mom and dad, because hockey players need discipline. 3. Study hard when you go to school, because hockey players have to be smart. 4. Learn to skate and practice a lot, because hockey players need to be excellent skaters. You do all of the things I listed above and then write me another letter and let me know how you’re doing when you start playing with a Mites or Squirt team. Thank you for your letter. Sincerely yours, Michael Ilitch.</em>” <span class="media-emoji" data-media-id="ilitch-letter">📷</span></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">NASHVILLE, <em>December 6</em>—</span>Back at the winter meetings. This year, I took the advice I was given and come prepared. If the writers don’t love me already, maybe they’re going to love what I brought inside my garment bag.</p>
 
@@ -1712,7 +1657,6 @@ export const CHAPTERS = [
 
 <p>I wallow away in my room, writing up another breaking story I can’t confirm.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 7</em>—</span>At 4 <span class="small-caps">P.M.</span>, we’re summoned to a sixth-floor suite. Behind a table sits general manager Al Avila, flanked by his top lieutenant—assistant David Chadd. Behind them, a bay window overlooks the lobby action below.</p>
 
@@ -1740,7 +1684,6 @@ export const CHAPTERS = [
 
 <p>Colangelo is convincing as he claims innocence—but finding the culprit is fruitless. During Avila’s sessions, the entire traveling front office is present. They sit around, silently judging our questions. They make faces at each other and text people. They are sources—at least one of them Bob Nightengale’s.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 8</em>—</span>The annual Baseball Writers’ Association of America meeting is bright and early. Writers have crammed into a conference room, where issues are debated and voted on, Hall of Famers are revealed, and various organizational topics are tackled.</p>
 
@@ -1756,7 +1699,6 @@ export const CHAPTERS = [
 
 <p>Someone makes a good point about the built-in advantages league-affiliated writers have in breaking news, but I’m over it. I need some water in the worst way, so I walk out. I voted no.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 9</em>—</span>ALERT!</p>
 
@@ -1768,7 +1710,6 @@ export const CHAPTERS = [
 
 <p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it's Villarreal again: "Come now to suite."</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. Don’t overdrink the night before Getaway Day. Always sit with scouts while eating dinner and double-check email addresses. Keep a backup keyboard in your work bag.</p>
 
@@ -1784,7 +1725,6 @@ export const CHAPTERS = [
 
 <p>After breaking seventy-nine arbitration deals last year, Heyman will up the record to eighty-four this year. To outsiders, this is what a baseball insider looks like—well-connected, probably cooped in an office working the phones like a coked-out penny stockbroker. But to an insider, Heyman’s reporting is beyond the realm. Inexplicable, how Heyman churns a running scroll of scoops like that—minute-by-minute, exact figures, star players and small. When the 4 o’clock deadline passes for teams and players to exchange figures, The Heymachine spits out numbers: <em>Tigers file at \$6M, J.D. Martinez at \$8M</em>.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">TORONTO, <em>January 18</em>—</span>I flew to Detroit from L.A. last night, then to Toronto this morning. It’s now almost two and I still haven’t left the airport. I’ve been at customs since eight this morning.</p>
 
@@ -1794,7 +1734,6 @@ export const CHAPTERS = [
 
 <p>So… customs escort me to a flight home. When I arrive, I’m punched in the face by breaking news. Another big signing.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>January 20</em>—</span>An introductory press conference is called. Upton, a three-time All-Star, is the latest free agent import. The power hitting outfielder will soon be \$132.75 million richer.</p>
 
@@ -1822,7 +1761,6 @@ export const CHAPTERS = [
 
 <p>Pardoned from the mic, Internet Stalker pleaded for a follow-up, but security got him out.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>January 21</em>—</span>The boys are back in town. After the media kickoff at Comerica Park, I head to the Veterans Affairs medical center in Ann Arbor for the ribbon-cutting of a new wing personally financed by Justin Verlander.</p>
 
@@ -1854,7 +1792,6 @@ export const CHAPTERS = [
 
 <p>“Positive story, correct?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SECAUCUS, N.J., <em>February 12</em>—</span>A couple weeks ago, I reached out to the producers at MLB Network, saying I’d be in the area today. I’m in Brooklyn for the premiere of my buddy’s new short film, which was selected to screen at an indie festival. But as I found out this morning, Brooklyn is not in the same world as industrial New Jersey, where network studios are located.</p>
 
@@ -1898,7 +1835,6 @@ export const CHAPTERS = [
 
 <p>No again. “Because then, you’ll write about it the first time I throw anything different.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 21</em>—</span>While walking the aback fields, I try to block out the construction sounds of real-life Tonka trucks and follow the sound of bat cracks I hear in the distance.</p>
 
@@ -1916,7 +1852,6 @@ export const CHAPTERS = [
 
 <p>Martínez isn’t in the mood for my defense. “Away!” he shouts. As Víctor walks off, a security guard runs up.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 22</em>—</span>Spring training is the leisure season. For established players, there is minimal pressure. Games are exhibitions, so nobody loses. Optimism intoxicates the air, and eternal wonderment rubs off on Ball Writers, too.</p>
 
@@ -1930,7 +1865,6 @@ export const CHAPTERS = [
 
 <p>“I came here to see him. Royalty.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 23</em>—</span>There is a lighter feel in Lakeland this spring. Although Al Avila worked alongside Dave Dombrowski for almost two decades, in his first spring training on the job, Avila is running his ship in stark contrast to the past. Under Dombrowski, the front-office staff was buttoned up—working diligently but not without fear. He was the boss, not a friend, and club-media relations were separated by a thick black line.</p>
 
@@ -1950,7 +1884,6 @@ export const CHAPTERS = [
 
 <p>We talk about anything except baseball. About Catholic schools, Donald Trump, and not being golfers. About his family and this girl who is coming to see me. The Highest Source In The Land says things to the Ball Writer he really shouldn’t. We don’t know each other like that. Yet as we stand here clinking our glasses, it feels as though we could.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 29</em>—</span>Royalty is in camp this morning. Peter Gammons, perhaps the Greatest Ball Writer of All-Time, moves slowly through the clubhouse.</p>
 
@@ -1976,7 +1909,6 @@ export const CHAPTERS = [
 
 <p>“Mountaintop.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 13</em>—</span>Although Opening Day is still three weeks away, our season preview section is slated for two days before. That makes the drop-dead deadline for my big feature story eighteen days—and I still don’t have a subject for it when I’m forwarded this email.</p>
 
@@ -1996,7 +1928,6 @@ export const CHAPTERS = [
 
 <p>When I talk to his parents around the corner of the clubhouse during batting practice the next day, I ask them what story about him hasn’t been told. Soon enough, they’re talking about how he’s happier these days, how the biggest difference in his life has been his girlfriend, and I’m calling out bingo. <span class="media-emoji" data-media-id="verlander-kate-bingo">📰</span></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 26</em>—</span>Cracking Verlander’s code proves a tougher task.</p>
 
@@ -2016,7 +1947,6 @@ export const CHAPTERS = [
 
 <p>“I don’t do that kind of stuff.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 28</em>—</span>It’s quiet in TigerTown, only a dozen or so players around.</p>
 
@@ -2040,7 +1970,6 @@ export const CHAPTERS = [
 
 <p>“Yeah, sure. If she’ll talk to you.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 31</em>—</span>To put the cherry on top of the Verlander profile and talk to Kate Upton herself, I flex my corporate muscle before the dog adoption show. I reach out to the PR flak who sent the story pitch a couple weeks ago and offer a trade. I’m working on a story about Justin—if I can talk to Upton for a couple minutes, I’ll write a separate story about the dog adoption and get it on <em>USA TODAY</em>’s website. <span class="media-emoji" data-media-id="verlander-upton-dog-adoption">📰</span></p>
 
@@ -2082,7 +2011,6 @@ export const CHAPTERS = [
 
 <p>He must’ve fallen asleep.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 9</em>—</span>After posting a winning record in April, Detroit is nose-diving in May. They arrive in D.C. on a six-game losing streak. Five weeks into the season, the \$200 million team is under .500 and struggling to show life. Ausmus has lost fan support.</p>
 
@@ -2096,7 +2024,6 @@ export const CHAPTERS = [
 
 <p>“Good job on TV today. Brad saw it, too, and he appreciated it.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 11</em>—</span>Caught in a downpour walking to the ballpark. Absolutely soaked. Víctor Martínez does me a solid, offering a spray of fine cologne.</p>
 
@@ -2110,7 +2037,6 @@ export const CHAPTERS = [
 
 <p>“I <em>knew</em> I had a chance.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 12</em>—</span>Running late to the train, I’m cold-cocked with a call from my sports editor, who says a top prospect is coming up—can you write about it? I’m in a cab, but sure, and start pecking away on my phone.</p>
 
@@ -2118,7 +2044,6 @@ export const CHAPTERS = [
 
 <p>It’s my second season.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">BALTIMORE, <em>May 13</em>—</span>The Tigers are shut out again tonight, and experienced reporters are starting to read the tea leaves. Walking out of the clubhouse after the loss, ESPN.com’s Katie Strang asks if I heard what Ian Kinsler said.</p>
 
@@ -2128,7 +2053,6 @@ export const CHAPTERS = [
 
 <p>“He said nothing.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 14</em>—</span>The roller coaster continues. Detroit has dropped three straight and nine of the last eleven. A Tiger Beat colleague shares a scoop of his own—he’s stepping down from his spot and out of sports writing entirely. His marriage is still intact, and he wants to spend more time with his wife and kids, maybe play some more poker.</p>
 
@@ -2146,7 +2070,6 @@ export const CHAPTERS = [
 
 <p>I take him up on it, fishing her out of the family area after the game. I say hello to Justin’s parents while waiting for the media elevator.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 15</em>—</span>Another loss last night, and with all apologies to Westhoff’s idea and Saupold’s mother, there is a more pressing story. Ever since Internet Scrub put out that 100 percent wrong information, my sports editor has been all over me, asking for a pre-written story in case Ausmus gets canned.</p>
 
@@ -2162,7 +2085,6 @@ export const CHAPTERS = [
 
 <p>Try as we may (again), the <em>Free Press</em> can’t fire Brad Ausmus. Miguel Cabrera and J.D. Martinez go back-to-back in the eighth and the Tigers leave town with a managerial-saving win.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ANAHEIM, Calif., <em>May 31</em>—</span>Although I joke about it, this whole Internet Stalker thing is starting to take its toll. When I’m out with friends in Detroit, I feel under surveillance, carefully looking around. I don’t text people back. I watch my surroundings before I speak.</p>
 
@@ -2186,7 +2108,6 @@ export const CHAPTERS = [
 
 <p>Livin’ the dream.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">BLUE SPRINGS, Mo., <em>June 15</em>—</span>Back on the Jim Harbaugh beat.</p>
 
@@ -2200,7 +2121,6 @@ export const CHAPTERS = [
 
 <p>“Man, how much do you love football? You can just tell how much you love it out there.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SAN DIEGO, <em>July 11</em>—</span>I come to this year’s all-star festivities strictly for the airline miles. I meet my long-distance relationship love interest here and skip the futures game and the home-run derby. We go for dinner in the Gaslamp District. But I can’t skip the All-Star Game itself—Miguel Cabrera’s appearance is the reason the company spent thousands of dollars in travel to send me here.</p>
 
@@ -2214,7 +2134,6 @@ export const CHAPTERS = [
 
 <p>“Sweet, huh?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 15</em>—</span>When the regular season restarts after the All-Star break, the Tigers are in the thick of things. They begin the second half at 46-43, within striking distance of the division lead and two games behind a playoff spot.</p>
 
@@ -2226,13 +2145,11 @@ export const CHAPTERS = [
 
 <p>Verlander opens the second half in the win column, dominating the Royals over seven innings at Comerica Park. Verlander strikes out ten batters, allowing one unearned run on four hits. July ends on an eight-game winning streak.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 25</em>—</span>At the <em>Free Press</em>, we’re all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, I’m staying another day in Chicago, complying with my sports editor’s request to cover the Michigan football coach.</p>
 
 <p>Big Ten football media days are being held at the city’s convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I’ve kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I’m in town. <span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span></p>
 
-<p class="scene-break">***</p>
 
 <p>JUNK MAIL</p>
 
@@ -2258,7 +2175,6 @@ export const CHAPTERS = [
 
 <p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the Tigers are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
@@ -2266,7 +2182,6 @@ export const CHAPTERS = [
 
 <p>Well, they did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in that upbeat story. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 20</em>—</span>Thanks to a colossal scheduling mishap, I’m back at the ballpark on an off day I had requested weeks in advance. My backup is on vacation, and I’m stuck covering pregame. I have plans tonight.</p>
 
@@ -2312,7 +2227,6 @@ export const CHAPTERS = [
 
 <p>Walking out of the clubhouse, I turn around and see a National Guy who witnessed the whole thing, the nicest guy you’ll meet, face flushed crimson.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 21</em>—</span>On this beat, there’s only one way to get over things.</p>
 
@@ -2360,7 +2274,6 @@ export const CHAPTERS = [
 
 <p>“Oh yeah?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 21</em>—</span>Per usual, Verlander speaks with reporters the day before his start.</p>
 
@@ -2382,7 +2295,6 @@ export const CHAPTERS = [
 
 <p>They laugh. What a ridiculous concept.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ATLANTA, <em>September 30</em>—</span>For the first time in my career, it’s a real pennant race. Detroit arrives 1½ games back.</p>
 
@@ -2406,7 +2318,6 @@ export const CHAPTERS = [
 
 <p>Half a game out. Two to go.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 1</em>—</span>After blocking Justin’s prank attempt yesterday, I come bearing gifts today.</p>
 
@@ -2448,7 +2359,6 @@ export const CHAPTERS = [
 
 <p>By the time the media is kicked out, Jays win.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 2</em>—</span>There were still scenarios in which the Tigers could play another day, but each required help. Both teams ahead in the standings won, and the season finale was rendered without suspense—they were shut out.</p>
 
@@ -2490,7 +2400,6 @@ export const CHAPTERS = [
 
 <p>“It ruined the room. Víctor became more detached as the season wore on. Brad will be back, I guarantee it. And Wally won’t be back as hitting coach—I guarantee that, too.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 4</em>—</span>After scores of unanswered emails and unreturned voicemails— “Just trying to open a line of communication,” I’d say—it’s Mike Milchin himself showing up in my texts.</p>
 
@@ -2530,7 +2439,6 @@ export const CHAPTERS = [
 
 <p>“JV wanted me to send you a thank you for your article and work. He appreciated it very much.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>October 21</em>—</span>Some sad news to share today.</p>
 
@@ -2552,7 +2460,6 @@ export const CHAPTERS = [
 
 <p>Izzo speaking at Drew’s funeral says volumes about him. As Izzo’s voice booms through the church, I think about my Internet Haters. About how I’d be remembered if I didn’t wake up tomorrow.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SCOTTSDALE, Ariz., <em>November 7</em>—</span>Up and at ‘em for breakfast, a man jogs past. Navy blue pullover, red shorts, crew socks. Dave Dombrowski, out for his morning run.</p>
 
@@ -2580,7 +2487,6 @@ export const CHAPTERS = [
 
 <p>At night, action happens in the courtyard. I get the lucky draw of pulling up an empty seat next to longtime agent Adam Katz. Instead of bombarding him with baseball questions, I filter the conversation through his girlfriend, a lovely lady we’ll call “Miss V.” I get his number afterwards. We’ll talk shop another time.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 8</em>—</span>I get to the gym at 7:25 on Election Day, and I’m disgusted to see Ken Rosenthal already sweating on the elliptical. When I walk over to the weights area, I’m even more disgusted to see Rival Cohort in a cut-off shirt.</p>
 
@@ -2658,7 +2564,6 @@ export const CHAPTERS = [
 
 <p>I’ve made a Jack and Coke-fueled mistake. David Chadd is my longest-standing relationship In The Room—he was a source, and joking or not, I just outed him in front of his coworkers.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>November 16</em>—</span>All those famous people I rub shoulders with daily? Scott, Justin, Kate… you don’t call your friends by their full name, do you?</p>
 
@@ -2710,7 +2615,6 @@ export const CHAPTERS = [
 
 <p>“I’m just glad that I voted for Verlander so Kate Upton can’t come at me.” <span class="media-emoji" data-media-id="cy-young-2016-bernie">🎬</span></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">OXON HILL, Md., <em>December 4</em>—</span>It’s a stress-free cab ride to this year’s winter meetings from D.C. Walking into the resort, the first recognizable face I see is Jim Leyland. He’s on the phone, wearing loafers with no socks.</p>
 
@@ -2726,7 +2630,6 @@ export const CHAPTERS = [
 
 <p>The goal is to advance the conversation past emails as quickly as possible. I met a few sources in person in Scottsdale last month and a couple guys from San Diego on the opening night here.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 5</em>—</span>I start the winter meetings hot, getting the first scoop out of the way early. Working remotely from my twelfth-floor hotel room, I text Ian Kinsler.</p>
 
@@ -2776,7 +2679,6 @@ export const CHAPTERS = [
 
 <p>By taking ownership of the decision, Leyland shields Verlander. Fans can’t blame him for not playing for his country—it was <em>Leyland</em>’s decision. A savvy, selfless move by the skipper.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 6</em>—</span>I finally meet Mike Milchin in the flesh. He stands more unassuming than most agents. Glasses, red sweater, black leather jacket.</p>
 
@@ -2790,7 +2692,6 @@ export const CHAPTERS = [
 
 <p>Back up in the room, I highlight Milchin’s name in teal.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 7</em>—</span>Another sourcing milestone, flagging down agent Jay Franklin. After playing phone tag for three days, I pinned him down Wednesday afternoon at a resort watering hole.</p>
 
@@ -2818,7 +2719,6 @@ export const CHAPTERS = [
 
 <p>No answer—again.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>January 27, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed “Freep Forward,” top editors introduce new Gannett gobbledygook. <span class="media-emoji" data-media-id="freep-forward">📄</span></p>
 
@@ -2832,7 +2732,6 @@ export const CHAPTERS = [
 
 <p>Odds are this position will never get filled.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SECAUCUS, N.J., <em>February 9</em>—</span>Visiting MLB Network’s studios, I peel the visitor’s badge and stuff it in my coat. I’m going on the morning show, sitting across from <em>Sports Illustrated</em>’s Tom Verducci, still one of the best Ball Writers around.</p>
 
@@ -2890,7 +2789,6 @@ export const CHAPTERS = [
 
 <p>I feel only mildly creeped out. Not quite a death threat but impressed nonetheless by garnering that kind of hatred in the first place. I am a <em>Ball Writer</em>—I write about <em>baseball</em>.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 13</em>—</span>Nothing much is happening in TigerTown, twenty-four hours before pitchers and catchers officially report. Catchers take batting practice and pitchers throw long toss. Clubhouses are closed, and the manager doesn’t talk until tomorrow.</p>
 
@@ -2912,7 +2810,6 @@ export const CHAPTERS = [
 
 <p>Five minutes becomes thirty becomes an hour. At least I’ll have a good sunburn.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 15</em>—</span>This morning, we’re allowed into the brand-new clubhouse for the first time.</p>
 
@@ -2950,7 +2847,6 @@ export const CHAPTERS = [
 
 <p>But I knew – I just wanted Verlander to know I’m not getting pushed around.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 16</em>—</span>Justin Verlander likes my tweet this morning, a picture of the waffle machine. <span class="media-emoji" data-media-id="verlander-likes-waffles">📷</span></p>
 
@@ -2960,7 +2856,6 @@ export const CHAPTERS = [
 
 <p>This year, I’m targeting younger front-office staffers in line for promotions in years to come.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 15</em>—</span>HSITL invites me to his spring abode, where we share a smoke on the balcony. Avila is staying at Grasslands, a gated community with a golf and country club. Apparently, Verlander has a place here, too.</p>
 
@@ -2986,7 +2881,6 @@ export const CHAPTERS = [
 
 <p>Avila himself is a father of three. A devout Catholic. An all-around good guy. He dips the cigar into his drink. “I could tell your dad is a good man.” The best, I say. Avila tells stories about his climb up the scouting ranks and how he met his wife. He refills our drinks twice.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 28</em>—</span>With Opening Day only seventy-two hours away and the Tigers’ roster not finalized, I wake up on high alert.</p>
 
@@ -3024,7 +2918,6 @@ export const CHAPTERS = [
 
 <p>Mato confirms Sánchez will begin the season in the bullpen.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CHICAGO, <em>April 4</em>—</span>After a rainout, Opening Day finally arrives. Clouds continue to cake the sky, sprinkles drop off-and-on, and the gloomy gray U.S. Cellular Field looks as ugly as ever.</p>
 
@@ -3052,7 +2945,6 @@ export const CHAPTERS = [
 
 <p>And, despite conditions, the game is played. Verlander wins on Opening Day.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 18</em>—</span>Standing in front of the visitor’s dugout, staring into the camera, hand shaking a bit as I hold the microphone. Jordan Zimmermann walks by, as close as one can without touching me. I’m waiting for today’s MLB Network spot to begin.</p>
 
@@ -3062,7 +2954,6 @@ export const CHAPTERS = [
 
 <p>Like his first two starts this season, Zimmermann’s debut last year in Detroit was a mixed bag. We exchanged numbers at the end of the season. Our subsequent offseason exchanges were entertaining, with Zimmermann either acting like he doesn’t have my number or saying something sarcastically stupid. This is to say—I like him.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">OAKLAND, Calif., <em>May 7</em>—</span>Two minutes into today’s pregame media session, the manager has a question for this Ball Writer.</p>
 
@@ -3076,7 +2967,6 @@ export const CHAPTERS = [
 
 <p>“What did J.D. just do?” Ausmus waits for the screen to load. “He hit a home run.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ANAHEIM, Calif., <em>May 11</em>—</span>Waiting for my luggage at John Wayne Airport, itching for a scoop, I decide to give Martinez a try.</p>
 
@@ -3096,7 +2986,6 @@ export const CHAPTERS = [
 
 <p>I drive them to the team hotel in Newport Beach.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CHICAGO, <em>May 26</em>—</span>Halfway through the longest road trip of the season—11 games in 12 days—I land at O’Hare around 2:30 <span class="small-caps">A.M.</span> and check into my room past four. I set an alarm for 9:30 and shut the curtains.</p>
 
@@ -3106,7 +2995,6 @@ export const CHAPTERS = [
 
 <p>I head up to the room and write a story, summarizing Morosi’s report. It’s clearly coming from someone In The Room. I don’t return to the gym.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 27</em>—</span>I write a column decoding Morosi’s reporting for the readers.</p>
 
@@ -3114,7 +3002,6 @@ export const CHAPTERS = [
 
 <p>The words drive Avila berserk—he’s booming through my phone between the doubleheader, taking exception to the notion he’d be communicating through the press.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>May 29</em>—</span>Avila accepts my apology, messaging early Memorial Day: “I read your stuff. Now we can kiss and make up.”</p>
 
@@ -3134,7 +3021,6 @@ export const CHAPTERS = [
 
 <p>I do my part to further Verlander’s philanthropic endeavors by writing a piece on the red poppy. <span class="media-emoji" data-media-id="verlander-poppy-freep">📰</span></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 30</em>—</span>The charitable, cheery feeling in this corner of the clubhouse does not last.</p>
 
@@ -3220,7 +3106,6 @@ export const CHAPTERS = [
 
 <p>But even as the newspaper industry and the <em>Freep</em> have been buffeted, the beat remains. My job is to cover a team with its own accelerating change—none of it good.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 5</em>—</span>I get a message from Mitch Albom—he’s looking for his Baseball Writers’ Card.</p>
 
@@ -3240,7 +3125,6 @@ export const CHAPTERS = [
 
 <p>Of course, I can—it’s not every day you get a chance to DoorDash your idol.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>July 17</em>—</span>With the trade deadline two weeks away, I’m on special assignment, sort of like Top Scout.</p>
 
@@ -3264,7 +3148,6 @@ export const CHAPTERS = [
 
 <p>Not what the front office wants to hear—Avila had been discussing a Martinez trade with Arizona throughout the day. After the game, J.D. terms his exit “precautionary.” He thinks dehydration may be to blame—it was ninety-two degrees at game time.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 18</em>—</span>This evening, it’s ninety degrees at Kauffman Stadium—but decidedly cooler inside the air-conditioned press box, where news breaks an hour before the game. Martinez, hitting fifth and starting in right field, is “close” to being traded to the Diamondbacks.</p>
 
@@ -3288,7 +3171,6 @@ export const CHAPTERS = [
 
 <p>“Why? He sucks in the outfield.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>July 20</em>—</span>With trade deadline season in full swing (eleven days away), things are starting to pick up. I wake up to a tip from Jordan Zimmermann, who sent a pair of texts my way at 1:50 <span class="small-caps">A.M.</span></p>
 
@@ -3300,7 +3182,6 @@ export const CHAPTERS = [
 
 <p>“Yes it is. Probably won’t happen.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 24</em>—</span>Like an elephant, Mike Moustakas doesn’t forget.</p>
 
@@ -3322,7 +3203,6 @@ export const CHAPTERS = [
 
 <p>“You guys really shoved it up my ass.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 29</em>—</span>I’ve decided to write a column blasting the Tigers for their lack of competitiveness, calling them soft for how the team of high-priced veterans were bulldozed by the Royals.</p>
 
@@ -3384,7 +3264,6 @@ export const CHAPTERS = [
 
 <p>“I guess. I think this will take care of itself and you will have plenty to write about.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 14</em>—</span>On my first day back on the beat after attending a wedding in Cancún, I head to Ian Kinsler’s corner. It’s become something of a comfort area, after our conversations last month. Kinsler’s locker is closest to the showers with an empty stall next door—respect shown to a veteran and former Texas Ranger.</p>
 
@@ -3396,7 +3275,6 @@ export const CHAPTERS = [
 
 <p>Hernández promptly tosses Kinsler, leading to one of the most memorable interviews of a Ball Writer’s life.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 15</em>—</span>WHAT’S SAID IN HERE, STAYS IN HERE.</p>
 
@@ -3414,7 +3292,6 @@ export const CHAPTERS = [
 
 <p>“Write what you want. Just keep the cuss words out of it.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 16</em>—</span>Brad Ausmus says Kinsler has indeed been fined by the commissioner’s office—it’s by far the highest fine he’s seen in his career.</p>
 
@@ -3432,7 +3309,6 @@ export const CHAPTERS = [
 
 <p>Verlander pauses. He utters an unconvincing “no” instead.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 22</em>—</span>The commissioner is on the scene.</p>
 
@@ -3486,7 +3362,6 @@ export const CHAPTERS = [
 
 <p>Verlander isn’t at his locker postgame.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 23</em>—</span>Same time as yesterday, just before batting practice.</p>
 
@@ -3514,7 +3389,6 @@ export const CHAPTERS = [
 
 <p>My up-and-down relationship with Justin has crashed again.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 24</em>—</span>On the tarmac at DTW for a short flight to Chicago, watching highlights of today’s base-brawl between the Tigers and Yankees.</p>
 
@@ -3562,7 +3436,6 @@ export const CHAPTERS = [
 
 <p>“But he doesn’t have the fuckin’ balls to. He wants to get released, and I’m not gonna fuckin’ do it.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 25</em>—</span>With the bulk of the Very Serious Story written, I need to talk to Martínez and Ausmus at the ballpark today.</p>
 
@@ -3660,7 +3533,6 @@ export const CHAPTERS = [
 
 <p>“OK. I’m leaving.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 26</em>—</span>Late in the game, a lump in my throat. Been building all day.</p>
 
@@ -3724,7 +3596,6 @@ export const CHAPTERS = [
 
 <p>“You have my word.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 27</em>—</span>After fitful sleep, I see a text from a player, sent at 6:16 <span class="small-caps">A.M.</span></p>
 
@@ -3772,7 +3643,6 @@ export const CHAPTERS = [
 
 <p>The last scene before the elevator door closes: A man’s bald head. Streaks of rain on the window. Dark clouds.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DENVER, <em>August 30</em>—</span>The change of scenery has been welcome—my fortunes changed immediately after I landed in Colorado two nights ago. The cab driver got me to the dispensary just before closing time and I’ve slept well since then—after the past weekend, I needed at least six solid hours.</p>
 
@@ -3810,7 +3680,6 @@ export const CHAPTERS = [
 
 <p>Verlander leaves.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 31</em>—</span>When I arrive at the Denver airport for a two-leg trip home, the pieces for a wild trade are coming together in St. Petersburg, Florida.</p>
 
@@ -3882,7 +3751,6 @@ export const CHAPTERS = [
 
 <p>My name crawls across the bright red breaking news bar on the TV screen. According to Anthony Fenech.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 1</em>—</span>I arrive at the ballpark today as Big Man On Campus—the beat writer who scooped the National Guys.</p>
 
@@ -4018,7 +3886,6 @@ export const CHAPTERS = [
 
 <p>One day, I hope to be mentioned in the same breath.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>September 21, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
 
@@ -4068,7 +3935,6 @@ export const CHAPTERS = [
 
 <p>“<em>And, so, the immediate reaction to the unsurprising news is that it had been a long time coming. But it should have come much sooner.</em>”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 26</em>—</span>When the final road trip of the season begins, the Tigers rest comfortably in free-fall mode, losers of seven straight. Between the lines and behind closed doors, players can’t wait for the season to mercifully end.</p>
 
@@ -4114,7 +3980,6 @@ export const CHAPTERS = [
 
 <p>I take my medicine. We shake hands and I leave feeling a little bit better—but still sour that I didn’t call.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 1</em>—</span>The Tigers have just wrapped up a last-place season (64-98) with a lopsided loss to Minnesota.</p>
 
@@ -4146,7 +4011,6 @@ export const CHAPTERS = [
 
 <p>“You motherfucker.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 19</em>—</span>For the second year in a row, my birthday is interrupted by breaking news.</p>
 
@@ -4166,7 +4030,6 @@ export const CHAPTERS = [
 
 <p>Biting my tongue: “Yes, I do. Thank you for getting back to me.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LOS ANGELES, <em>October 31</em>—</span>At the airport again. I get a text from Alex Avila, who says he’s in Italy. I reached out to Alex once my flight was booked: “I have to write a story on Verlander. Is there anything behind the scenes you might know, any possible angles, etc.?”</p>
 
@@ -4202,7 +4065,6 @@ export const CHAPTERS = [
 
 <p>“He seemed happy to see you. He must like you.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 1</em>—</span>In Game 7, Houston ambushes the Dodgers in the first inning. George Springer jumps a Yu Darvish fastball for a lead-off double and scores on a throwing error. The Astros score twice before Darvish records an out.</p>
 
@@ -4254,7 +4116,6 @@ export const CHAPTERS = [
 
 <p>“Thanks. See you at the GM Meetings.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ORLANDO, Fla., <em>November 14</em>—</span>I begin the GM meetings with a bang.</p>
 
@@ -4278,7 +4139,6 @@ export const CHAPTERS = [
 
 <p>“I was younger then… I didn’t know what to do. I’ll give you my number. What’s yours?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ORLANDO, Fla., <em>December 10</em>—</span>Back in Orlando for the winter meetings. I’m a seasoned vet—it’s my fourth meetings.</p>
 
@@ -4310,7 +4170,6 @@ export const CHAPTERS = [
 
 <p>“I’m offering you one… Got three.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 11</em>—</span>On the first afternoon of the winter meetings, tension simmers inside the Tigers’ suite. I’m sitting at the opposite end of the row from Katie Strang, who strikes fear in the room.</p>
 
@@ -4342,7 +4201,6 @@ export const CHAPTERS = [
 
 <p>Norris never returned to the majors, with the Tigers or anyone else.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 13</em>—</span>The Tigers have pushed back today’s media session. I’ve been holed up in my room pestering people like Al Avila about Kinsler. <span class="media-emoji" data-media-id="kinsler-tv-winter">📷</span></p>
 
@@ -4386,7 +4244,6 @@ export const CHAPTERS = [
 
 <p>“I don’t know what to tell ya, buddy, but I’m only going to the Angels.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>December 19</em>—</span>I wake up in bed to a flurry of alerts. I’m tabloid material again.</p>
 
@@ -4430,7 +4287,6 @@ export const CHAPTERS = [
 
 <p>One co-worker tells me to report CC to HR. Another says to contact the union rep. I decide to document the day, in writing and detail.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>January 8, 2018</em>—</span>Nothing to report. It’s a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents—including mega-stars Bryce Harper and Manny Machado—are still on the market. Former Tiger J.D. Martinez, too.</p>
 
@@ -4454,7 +4310,6 @@ export const CHAPTERS = [
 
 <p>I also realize I’m caring less and less.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 1</em>—</span>In TigerTown early to report on top prospects.</p>
 
@@ -4482,13 +4337,11 @@ export const CHAPTERS = [
 
 <p>Still… I’m a Ball Writer. When I get back to my hotel, I immediately write notes on what Avila told me. There might come a day.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>February 6</em>—</span>Things are going so well, the Tigers let me throw luggage onto their 18-wheeler of baseball equipment, training supplies and other cargo soon headed to Florida for spring training. I’ll realize later that this is a convenience afforded to everyone on the Tiger Beat—I’m not that special.</p>
 
 <p>I park my car in the garage back home, where it’ll stay for the next six weeks, and give Mom a big hug at departures—it’s off to spring training once again.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SECAUCUS, N.J., <em>February 7</em>—</span>Making my annual pit stop at MLB Network. This year, I’m a panelist on the network’s afternoon show. <span class="media-emoji" data-media-id="photo-2018-02-07">📷</span></p>
 
@@ -4560,7 +4413,6 @@ export const CHAPTERS = [
 
 <p>“No. You’re a sarcastic asshole.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 18</em>—</span>More clouds hover over TigerTown. The team has lost its veteran star power except for two players: Víctor Martínez, who won’t speak to me—and Miguel Cabrera, who is embroiled in an ongoing child paternity lawsuit.</p>
 
@@ -4626,7 +4478,6 @@ export const CHAPTERS = [
 
 <p>“<em>Gardenhire isn’t averse to some time-honored motivational tactics. Shortly thereafter, copies of the story were hanging in each player’s locker, courtesy of the manager.</em>”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 20</em>—</span>Out killing time on the back fields when Miggy appears.</p>
 
@@ -4660,13 +4511,11 @@ export const CHAPTERS = [
 
 <p>I get up and leave the bench to them and their speculation.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 25</em>—</span>Justin Verlander was traded to Houston, but his name still reverberates here. After the World Series, we appear to be on good terms. He still follows me on Twitter, still favorites my tweets:</p>
 
 <p>“Pitchers and catchers have reported to spring training, but I still haven’t seen Justin Verlander. Will ask.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SARASOTA, Fla., <em>February 26</em>—</span>On another postcard-perfect spring day, I drive to Ed Smith Stadium, spring home of the Baltimore Orioles. A message pops in from my boss. Wondering whether it could ruin my day, I wait to read it until the song ends.</p>
 
@@ -4686,7 +4535,6 @@ export const CHAPTERS = [
 
 <p>“No problem. You earned it. Now you have to one-up yourself next year :)”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 3</em>—</span>I’m pleased to announce that I have won the 2018 Worst Detroit Sports Media Personality tournament, as hosted by Internet Stalker. It’s an honor to be named the best at something—even if it’s being the worst.</p>
 
@@ -4702,7 +4550,6 @@ export const CHAPTERS = [
 
 <p>Super creepy, yep. Sends shivers down your spine—that, too. I triple-lock the hotel door with a hanger.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">WEST PALM BEACH, Fla., <em>March 4</em>—</span>The Tigers begin a two-game road trip on Florida’s East Coast—today against the Nationals at The Ballpark of the Palm Beaches, which the Nationals share with the Astros.</p>
 
@@ -4720,7 +4567,6 @@ export const CHAPTERS = [
 
 <p>“Thanks, Anthony.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 13</em>—</span>Before the series opener against New York, I spend time outside the clubhouse with Willie Horton.</p>
 
@@ -4750,7 +4596,6 @@ export const CHAPTERS = [
 
 <p>“<em>Because that’s what leaders say</em>.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 22</em>—</span>After staying out too late with a few visiting scouts last night, I’m back at Comerica Park bright and early.</p>
 
@@ -4812,7 +4657,6 @@ export const CHAPTERS = [
 
 <p>After my TV gig, I see Tigers quality control coach Joe Vavra sitting in the dugout, scrolling through his phone in disbelief. Today, he’s a proud father filled with emotion. Vavra tries to keep up with congratulatory messages—his son, Terrin, was drafted in the third round by Colorado.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 6</em>—</span>Bending the rules, I dial traveling secretary Brian Britten. I’m in a terrible spot, 25 minutes from Fenway Park. He finds an open room for me at the historic Commonwealth Hotel—five minutes’ walk to the park.</p>
 
@@ -4836,7 +4680,6 @@ export const CHAPTERS = [
 
 <p>“I believe it. I love this man.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>June 13</em>—</span>The mood is sullen inside the Tigers’ clubhouse. Mighty Miggy is out for the season.</p>
 
@@ -4854,7 +4697,6 @@ export const CHAPTERS = [
 
 <p>I find Nick Castellanos and say: “It’s your team now. Good luck.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CLEVELAND, <em>June 24</em>—</span>Sandwiched between Tigers Twitter Guy and Seamhead John Lowe, who joined us after Sunday service, church program in tote.</p>
 
@@ -4884,7 +4726,6 @@ export const CHAPTERS = [
 
 <p>“It’s just growth. You’re either in it for the long haul or you’re not. Getting your ass kicked is a part of learning how to become a good team, and it’s no secret that if we want to get to the World Series, we have to get through Cleveland.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>June 26</em>—</span>Lounging on an off night, I feel my skin tingle. With the postgame show muted in the background—TIGERS LOSE SEVENTH STRAIGHT—I hear from Deep Throat.</p>
 
@@ -4894,7 +4735,6 @@ export const CHAPTERS = [
 
 <p>I won’t hear from Deep Throat again tonight.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 27</em>—</span>HSITL still hasn’t gotten back to me, and my grapevine of sources appears to be gagged. Another call goes unanswered. One message comes back negative— “haven’t heard anything.”</p>
 
@@ -4928,7 +4768,6 @@ export const CHAPTERS = [
 
 <p>I know I am. I vow to never forget it.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">TAMPA, Fla., <em>July 12</em>—</span>It’s taken three years, but Ball Writing has finally broken my body.</p>
 
@@ -4984,7 +4823,6 @@ export const CHAPTERS = [
 
 <p>Tests show a bacterial infection. I pick up a prescription and dinner to-go, then purchase <em>Titanic</em> on pay-per-view for \$3.99. Life’s too short.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">HOUSTON, <em>July 15</em>—</span>If karma is a thing, we’re seeing it at Minute Maid Park.</p>
 
@@ -4994,7 +4832,6 @@ export const CHAPTERS = [
 
 <p>The Tigers snap a seven-game losing streak, heading into the break with a payback win.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">WASHINGTON, <em>July 16</em>—</span>Despite any previous proclamations that I’d never cover another All-Star Game, I’m back in D.C., combining work with a chance to see my girlfriend.</p>
 
@@ -5014,7 +4851,6 @@ export const CHAPTERS = [
 
 <p>After filing my story on Jiménez, I surrender my first-row seat for the Home Run Derby and watch from the hotel room with my gal. We scrap dinner plans and order room service instead.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 20</em>—</span>Tonight, for the first and only time ever, I leave the stadium through the underground tunnel that leads to the players’ parking garage. I hop into Kirk Gibson’s white F-150 and hitch a lift back to his house in the suburbs.</p>
 
@@ -5054,7 +4890,6 @@ export const CHAPTERS = [
 
 <p>When I’ve had enough, we refill our drinks and watch some baseball highlights.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 21</em>—</span>As the season’s second half begins, I go over to the other side and see my Boston guys, J.D. Martinez and David Price. Renewing acquaintances with players I’ve covered has become my favorite part of the job.</p>
 
@@ -5084,7 +4919,6 @@ export const CHAPTERS = [
 
 <p>I walk away feeling good that he trusted me enough to say that, still shocked that he did.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 25</em>—</span>After today’s matinee, the Tigers front office will fly to Detroit on the team’s private plane and then to Cooperstown for Baseball Hall of Fame induction weekend. There, they’ll stay in a big corner house off Main Street.</p>
 
@@ -5120,7 +4954,6 @@ export const CHAPTERS = [
 
 <p>Gibson: “But only a few. So be careful.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 28</em>—</span>Leaving a hall of fame party, walking to Tigers’ HQ. The front office is holed up this weekend in a four-bedroom colonial hidden behind tall trees.</p>
 
@@ -5136,7 +4969,6 @@ export const CHAPTERS = [
 
 <p>“You gotta ask yourself,” Gibby says, “Do you want to be a golden retriever… or do you want to be a pitbull?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 30</em>—</span>Trade deadline eve, I receive an auspicious text from a Red Sox scout.</p>
 
@@ -5288,7 +5120,6 @@ export const CHAPTERS = [
 
 <p>I’m in trouble. Tram’s wife is upset she was mentioned in the Cooperstown story—she doesn’t like the public eye. I can’t win.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 1</em>—</span>I wait outside the clubhouse postgame for another big fail moment. This one isn’t in the public domain—but it’s tougher to swallow.</p>
 
@@ -5300,7 +5131,6 @@ export const CHAPTERS = [
 
 <p>“You didn’t even need to apologize, Anthony… honestly. But I appreciate it.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">OAKLAND, Calif., <em>August 4</em>—</span>Last night, halfway through the Tigers-A’s opener, veteran Oakland starter Brett Anderson had yet to allow a baserunner when I decided to muck things up. I tweeted that I picked Anderson, never an All-Star, “just to face the Tigers in fantasy baseball”—poking fun at the team’s lack of offense.</p>
 
@@ -5350,7 +5180,6 @@ export const CHAPTERS = [
 
 <p>“I respect that.” I acknowledge that I can step over the line sometimes and I appreciate his reaching out. We shake hands.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ANAHEIM, Calif., <em>August 6</em>—</span>When I land in SoCal, my phone returns to service with a Ball Writer’s worst nightmare.</p>
 
@@ -5388,7 +5217,6 @@ export const CHAPTERS = [
 
 <p>Avila the comedian adds that I must have had a “good source.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">SALT LAKE CITY, <em>August 9</em>—</span>On the flight home, I’m alerted by the sports desk about a long story posted by <em>Bleacher Report</em>, an online sports outlet, about HOW KATE UPTON SAVED JUSTIN VERLANDER’S CAREER.</p>
 
@@ -5408,7 +5236,6 @@ export const CHAPTERS = [
 
 <p>I know enough to know this won’t be the end of it. Houston visits next month.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 10</em>—</span>Verlander has apparently apologized to the Tigers for his comments.</p>
 
@@ -5454,7 +5281,6 @@ export const CHAPTERS = [
 
 <p>Smoking cigars to the stubs, we watch the sun go down.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 18</em>—</span>Before the media are admitted to the visitor’s clubhouse, I’m standing against a brick wall in the bowels of Target Field when Rod Allen walks up. He’s no longer the soft-speaking guy I shared the hotel bar with. Today, Allen is louder, significantly so, and appears not to care that longtime broadcast partner Mario Impemba is standing close by, in easy range of his booming voice.</p>
 
@@ -5484,7 +5310,6 @@ export const CHAPTERS = [
 
 <p>I look down at my shoes and inch myself away until the clubhouse finally opens.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 23</em>—</span>Ronny Rodríguez hits his first home run—the Tigers’ third homer today, securing free Arby’s curly fries for fans at participating Metro Detroit locations.</p>
 
@@ -5502,7 +5327,6 @@ export const CHAPTERS = [
 
 <p>Done. This actually works out perfect, he says—corporate recently levied a travel mandate and he wants to save \$3,000 on Tigers (53-75) the rest of the way.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 30</em>—</span>Living my best life on the Burn Out List, lying around watching <em>90 Day Fiancé</em> when I get a text message from hell: “I’ll call you in a few.”</p>
 
@@ -5512,7 +5336,6 @@ export const CHAPTERS = [
 
 <p>Newspapers these days.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 5</em>—</span>By myself at the neighborhood watering hole when something strange catches my eye—Kirk Gibson is on TV for the Tigers-White Sox series finale in Chicago. Strange, because I talked to Gibby yesterday—and he wasn’t in Chicago.</p>
 
@@ -5540,7 +5363,6 @@ export const CHAPTERS = [
 
 <p>He never does. Neither he nor Mario nor anyone else I contact responds besides Deep Throat, the most dependable of ‘em all. He predicts they’ll both be fired by Happy Hour tomorrow but can’t say more. The quiet—too quiet—keeps me up all night.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 6</em>—</span>By dawn, it’s out. Another reporter was on the case—Katie Strang, of course—and her scoop is racing across the Internet: TIGERS BROADCASTERS INVOLVED IN PHYSICAL ALTERCATION.</p>
 
@@ -5552,7 +5374,6 @@ export const CHAPTERS = [
 
 <p>“<em>‘It was not a chokehold,’ Allen’s agent Tom Shaer said—a claim confirmed by two other persons with knowledge of the situation.</em>”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 11</em>—</span>The suits have had this series circled—my boss sent a reminder three days ago—and now it’s here.</p>
 
@@ -5578,7 +5399,6 @@ export const CHAPTERS = [
 
 <p>“I have to go out soon. Come back tomorrow.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 12</em>—</span>And here we are. Same spot as yesterday, I pull the recorder from my back pocket. We’re on the record. <span class="media-emoji" data-media-id="verlander-injury-9-12-18">🔴</span></p>
 
@@ -5684,7 +5504,6 @@ export const CHAPTERS = [
 
 <p>On this beat, if you’re not the bad guy every now and then, you’re probably not doing a good job.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">MILWAUKEE, <em>September 28</em>—</span>For the last road trip of the season, I have a final request.</p>
 
@@ -5720,7 +5539,6 @@ export const CHAPTERS = [
 
 <p>I’m not surprised. Don’t necessarily blame him. If the shoe was on the other foot, I might act the same way. Just wanted to say thanks. Víctor Martínez had as much impact on me as any player I’ve covered—he was the first guy to make me feel comfortable in the clubhouse.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 29</em>—</span>When I wake up, I text Dick Leinenkugel.</p>
 
@@ -5754,7 +5572,6 @@ export const CHAPTERS = [
 
 <p>Not even five hours earlier, Al shoved me at the lobby bar. Now, at almost 3 <span class="small-caps">A.M.</span>, we’re leaving the suite, stepping into the elevator together.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 30</em>—</span>In the postseason clubhouse, I settle accounts. Apologize again to veteran righty Jordan Zimmermann for the tweet I made in spring training.</p>
 
@@ -5772,7 +5589,6 @@ export const CHAPTERS = [
 
 <p>“As a player, I’m still inconsistent. As a leader, I get selfish at times when I’m struggling. In general, we have a lot of work to do. Me, personally, I have a lot of work to do.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>October 1</em>—</span>Tell me about it.</p>
 
@@ -5818,7 +5634,6 @@ export const CHAPTERS = [
 
 <p>“Stir it a little.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>A bad-influence friend from the past stopped by last night with a box of beer and a bag. Bad decisions were made, and I didn’t get back on the floor until news had broken: Detroit signs Jordy Mercer.</p>
 
@@ -5832,7 +5647,6 @@ export const CHAPTERS = [
 
 <p>Harper will sign with the Phillies in February for thirteen years and \$330 million—the largest contract in baseball history.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 14</em>—</span>More news: Kinsler signs a sweet deal with the Padres, securing two years for \$16 million.</p>
 
@@ -5898,7 +5712,6 @@ export const CHAPTERS = [
 
 <p>Deep Throat circles back after hearing the news: "Good thing you didn't go with it."</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>January 4, 2019</em>—</span>Ringing in the new year at a swanky cigar bar in suburban Detroit.</p>
 
@@ -5926,7 +5739,6 @@ export const CHAPTERS = [
 
 <p>I’m rooting for Al, too. Does that make me a bad journalist? Or does it make me human?</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>January 15</em>—</span>A lot has changed since I stumbled upon fantasy camp on the back fields of TigerTown last winter, quickly swearing it off. But this year we’re making Ball Writing fun again. So, in December, I signed up to play ball with bankers, accountants, lawyers—Tigers fans eager to wear the Olde English ‘D’.</p>
 
@@ -5950,7 +5762,6 @@ export const CHAPTERS = [
 
 <p>“Great! I’ll put you on the worst team then.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>January 28</em>—</span>Fantasy camp begins with a powwow. All 72 participants circle round, standing outside the Tigers’ minor-league clubhouse, listening to Jerry Lewis’ opening remarks. This week, each player has a locker. Inside hangs a Tigers uniform—home or road. Mine says FENECH on the back. No. 19.</p>
 
@@ -5966,7 +5777,6 @@ export const CHAPTERS = [
 
 <p>“Good job,” Robertson says, taking the ball. “We’re going to need you for innings, so rest that arm up.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>January 29</em>—</span>Wearing whites, I’m on the bump again.</p>
 
@@ -5982,7 +5792,6 @@ export const CHAPTERS = [
 
 <p>Is the pain worth it? I’ve been receiving comments from all over: Ball Writers, readers, sources—even players are getting into it. <span class="media-emoji" data-media-id="fantasy-camp-scrum">🎬</span></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 12</em>—</span>Arriving at the park, I walk past Jordan Zimmermann in the parking lot.</p>
 
@@ -5996,7 +5805,6 @@ export const CHAPTERS = [
 
 <p>It’s good to be back.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 19</em>—</span>I’m on the back fields watching Hall of Famer Alan Trammell work with prospect middle infielders during minor-league mini-camp.</p>
 
@@ -6012,7 +5820,6 @@ export const CHAPTERS = [
 
 <p>Introducing myself, I called him “Mr. Trammell.” Ten years later, he’s “Tram.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 1</em>—</span>Today in the parking lot, Miguel Cabrera vrooms around the corner in a car so exotic I couldn’t tell you what it was.</p>
 
@@ -6022,7 +5829,6 @@ export const CHAPTERS = [
 
 <p>This is our relationship now—playful threats of vehicular manslaughter.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 4</em>—</span>The big kid in class is cutting up, so I have to tell the teacher—former media relations director Aileen Villarreal, who’s now Cabrera’s PR handler.</p>
 
@@ -6038,7 +5844,6 @@ export const CHAPTERS = [
 
 <p>The teacher and principal are on the way. That’ll show him.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKE BUENA VISTA, Fla., <em>March 6</em>—</span>I see pro scouting director Sam Menzin in the media dining area, which reminds me. During the game, I text Menzin, taking him up on his dinner invitation from a couple days ago.</p>
 
@@ -6050,7 +5855,6 @@ export const CHAPTERS = [
 
 <p>“Hey, be happy I asked you.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 7</em>—</span>I’m at breakfast with Craig Monroe at Cracker Barrel when I get a call from a scout, who says the front office is freaking out because earlier I’d texted some provocative questions to the Highest Source In The Land.</p>
 
@@ -6110,7 +5914,6 @@ export const CHAPTERS = [
 
 <p>“You are doing your job,” my source says, “very, very, very well.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 8</em>—</span>The Daily Churn is waiting by dawn. The desk is looking to capitalize on the access controversy with web hits. It’s Coach Content: “Thinking about changing the headline to reference the policy change. Probably would get a little more traction.”</p>
 
@@ -6134,7 +5937,6 @@ export const CHAPTERS = [
 
 <p>“Al said you reached out to him. From now on, whenever you want to talk to him, go through me.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 9</em>—</span>Michael Fulmer has grown testy talking about it, insisting he’s not worried about his fastball.</p>
 
@@ -6156,7 +5958,6 @@ export const CHAPTERS = [
 
 <p>Three years ago, the team promised the Tiger Beat a new media center in the renovation. Now they’re restricting clubhouse hallway access. Maybe a cage is more what they had in mind.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">FORT MYERS, Fla., <em>March 10</em>—</span>I pack my bags, fuel up the rental and leave early for spring break—the Tigers and I need a little space. Plus, Pedro Gomez is scheduled to be in Red Sox camp tomorrow.</p>
 
@@ -6184,7 +5985,6 @@ export const CHAPTERS = [
 
 <p>Covering the Red Sox at the <em>Boston Globe</em> is arguably the best beat in baseball—a major newspaper in a baseball-mad city where some of the greatest sports writers of all-time have written—Gammons, McDonough, Montville, Ryan, Shaughnessy.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ATLANTA, <em>March 19</em>—</span>High noon at the world’s busiest airport, I get a tip from TigerTown. Michael Fulmer is injured, as indicated by the velocity dip this spring.</p>
 
@@ -6224,7 +6024,6 @@ export const CHAPTERS = [
 
 <p>Back in my hotel room by half past noon, I shower and pull up the ScoopSheet. From my computer, I rapid-fire good luck messages across the league, personalizing the greetings: <em>How’s it going</em>?… <em>What’s your coverage like this year</em>?… <em>Safe travels</em>. I do this until midnight, leaving West Coast guys for last.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 29</em>—</span>I walk to the dome for Opening Day: Tigers-Blue Jays.</p>
 
@@ -6232,7 +6031,6 @@ export const CHAPTERS = [
 
 <p>An hour before first pitch, I send my application to the <em>Boston</em> <em>Globe</em>.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">NEW YORK, <em>April 3</em>—</span>Phone interview today.</p>
 
@@ -6256,7 +6054,6 @@ export const CHAPTERS = [
 
 <p>“Tell Detroit we’re coming.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 20</em>—</span>Scott Boras called this afternoon to let me know that Nick Castellanos signed with him. Apparently, Nick ditched his longtime agent, who has always been helpful. Agenting is cutthroat. I also can’t blame Castellanos for defecting—Boras is the surest way to secure big money.</p>
 
@@ -6264,7 +6061,6 @@ export const CHAPTERS = [
 
 <p>I keep my sources in the loop. Executives, scouts, even the PR chief over there I’ve gotten to know. The night before I leave, I meet with a Red Sox scout I’ve known for years at a dingy dive near the airport. He helps me compile a list of story ideas for the interview and wishes me good luck.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">BOSTON, <em>April 22</em>—</span>Inside the press box at Fenway Park, there’s a framed picture of the <em>Boston Globe</em> sports front on October 22, 1975—the day after Carlton Fisk hit one of the most famous home runs in baseball history.</p>
 
@@ -6280,7 +6076,6 @@ export const CHAPTERS = [
 
 <p>Today’s game gets rained out. Doubleheader tomorrow—bad news for anyone who has an interview at the <em>Boston Globe</em>.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 24</em>—</span>The interview was rescheduled for today, within the hour.</p>
 
@@ -6308,7 +6103,6 @@ export const CHAPTERS = [
 
 <p>“I can imagine.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CHICAGO, <em>April 26</em>—</span>Physically and emotionally exhausted, I climb into Andrew’s Navigator at O’Hare. I tell my personal Chicago cabbie about the interview.</p>
 
@@ -6334,7 +6128,6 @@ export const CHAPTERS = [
 
 <p>“No worries.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>May 12</em>—</span>The suspense is killing me.</p>
 
@@ -6342,7 +6135,6 @@ export const CHAPTERS = [
 
 <p>It’s been more than two weeks. Decision day is looming.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>May 13</em>—</span>Mom picks me up at the airport.</p>
 
@@ -6378,7 +6170,6 @@ export const CHAPTERS = [
 
 <p>I hang up the phone. Somehow, someway, I laugh. Life’s funny like that.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">NEW YORK, <em>May 24</em>—</span>The days after I didn’t get the <em>Boston Globe</em> job are becoming a blur. Drinking almost every day. I’m at the Museum of Modern Art in Manhattan.</p>
 
@@ -6386,7 +6177,6 @@ export const CHAPTERS = [
 
 <p>I celebrate by staying out until the sun comes up.</p>
 
-<p class="scene-break">***</p>
 
 <p>JUNK MAIL</p>
 
@@ -6422,7 +6212,6 @@ export const CHAPTERS = [
 
 <p><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>
 
-<p class="scene-break">***</p>`,
         wordCount: 2490
     },
     {
@@ -6442,7 +6231,6 @@ export const CHAPTERS = [
 
 <p>For the first time since 1984, the Wolverines are in Omaha—the heartland city that has hosted college baseball's annual championship since 1950. They arrive as the most unlikely of the College World Series' eight teams—a cold-weather, Big Ten program that has stolen serious attention from the Tigers.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">OMAHA, Neb., <em>June 13</em>—</span>Kicking up stones, I pull into a parking lot at a local high school.</p>
 
@@ -6456,7 +6244,6 @@ export const CHAPTERS = [
 
 <p>“C’mon. You’re putting us to sleep.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 17</em>—</span>After Michigan’s tournament-opening win over Texas Tech two days ago, I met up with a trio of player dads. They celebrated the win; I celebrated covering it. Before tonight’s game, I stop for <em>another</em> beer with the dads.</p>
 
@@ -6480,7 +6267,6 @@ export const CHAPTERS = [
 
 <p>I’ve been trying to get in touch with Close for five years. I’ve called, emailed, sent his assistant old pictures and clippings from the <em>Freep</em> archives, everything. At long last, I highlight his name in green on ScoopSheet.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 19</em>—</span>Criss-crossing the empty campus on an electric scooter, I chase stories with an enthusiasm unknown to mankind. After interviewing Fetter for a story, I speed to an interview with Vanderbilt head coach Tim Corbin.</p>
 
@@ -6494,7 +6280,6 @@ export const CHAPTERS = [
 
 <p>“I don’t think there could be a better way,” Bakich says of his reunion with Corbin, “than to meet in the College World Series finals.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 21</em>—</span>Michigan stamps its spot in the finals by beating Texas Tech <em>again</em> tonight. The Wolverines are trying to add a third national title alongside the 1953 and ‘62 teams.</p>
 
@@ -6516,7 +6301,6 @@ export const CHAPTERS = [
 
 <p>“Stop it.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 26</em>—</span>Michigan and Vanderbilt split the first two games in the best-of-three finals to set up a grand finale.</p>
 
@@ -6544,7 +6328,6 @@ export const CHAPTERS = [
 
 <p>Sweating through my jacket, I get to the team hotel—hands on knees and breathing heavily—before the Wolverines’ bus pulls up to another roar.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 4</em>—</span>Back on the Tiger Beat and left to my own devices on Independence Day, I reach out to Al, suggesting we smoke a cigar in the name of freedom.</p>
 
@@ -6556,7 +6339,6 @@ export const CHAPTERS = [
 
 <p>“Everything is temporary,” he says.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 23</em>—</span>Cloudy with a 90 percent chance I start trouble today—rain is in the forecast, and I don’t really want to go to work. The Tigers are 12-46 since I didn’t get the <em>Boston Globe</em> job. Tigers-Phillies tonight.</p>
 
@@ -6576,7 +6358,6 @@ export const CHAPTERS = [
 
 <p>But I’m not going to be patient. The trade deadline is coming.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ANAHEIM, Calif., <em>July 31</em>—</span>Nearly twenty unanswered texts to Al Avila tells you everything about how this trade deadline is going. After getting frozen out by my own team’s front office, I’m relying on second-hand sources, Snapchat messages, and Scott Boras to break news. It’s a humbling position for a beat writer, but it’s also liberating—when your primary sources cut you off, you get creative.</p>
 
@@ -6612,7 +6393,6 @@ export const CHAPTERS = [
 
 <p>Rival Exec talks me down. Over an hour on the phone. He knows how it goes: “There comes a time where you gotta punch back.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 3</em>—</span>Since I arrived here for the final leg of the three-city trip, I’ve been putting together the Trade Deadline Exposé—unearthing moves Al Avila should’ve made, analyzing his below-average return on players and questioning why he keeps making similar mistakes.</p>
 
@@ -6664,7 +6444,6 @@ export const CHAPTERS = [
 
 <p>I reach out to Rival Exec. “There will be repercussions.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 5</em>—</span>Back home after twelve days on the road, more Tiger Beat drama.</p>
 
@@ -6718,7 +6497,6 @@ export const CHAPTERS = [
 
 <p><em>Seriously, man, if his stance is that a reporter from Detroit can't ask him about a very serious claim that he made about his time in Detroit, I don't know what to tell him. You did your job. I think you've been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It's not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you've done a nice job ﬁnding things to talk about during a time when there isn't much to talk about. It isn't easy, and I recognize that. Thanks for doing it.</em></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I'm about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and sports editor Chris Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
 
@@ -6812,7 +6590,6 @@ export const CHAPTERS = [
 
 <p>It’s satire, obviously. Like Justin Verlander would ever read my tweets.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 21</em>—</span>Standing next to an Astros PR guy at the urinal.</p>
 
@@ -7080,7 +6857,6 @@ export const CHAPTERS = [
 
 <p>I’m jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…\$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>
 
-<p class="scene-break">***</p>
 
 <p>AIRPLANE MODE</p>
 
@@ -7130,7 +6906,6 @@ export const CHAPTERS = [
 
 <p>Mom: Omg. Call when you can.</p>
 
-<p class="scene-break">***</p>
 
 <p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
 
@@ -7216,7 +6991,6 @@ export const CHAPTERS = [
 
 <p>“Yesterday and today may not go down as your favorites but they’ll make you an even better reporter than you are. Stay strong. You have fans rooting for you from the newsroom.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 23</em>—</span>Arriving at the Houston airport, I have 152 unread messages. <span class="media-emoji" data-media-id="messages-after-verlander">📱</span></p>
 
@@ -7276,7 +7050,6 @@ export const CHAPTERS = [
 
 <p>I can’t say for sure it was Le Batard. I can only pray another prank call doesn’t surface.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 24</em>—</span>Forty-eight hours later, and the Verlander storm isn’t over.</p>
 
@@ -7322,7 +7095,6 @@ export const CHAPTERS = [
 
 <p>I consider reaching out to my new competitor for advice: I’d like to become Not Anthony Fenech. Any ideas?</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 11</em>—</span>Driving through drizzle into work, endless dark skies forecast a long night ahead. The radar doesn’t look much better.</p>
 
@@ -7336,7 +7108,6 @@ export const CHAPTERS = [
 
 <p>“Hey. I just wanted to call and let you know that… You know if you write this story, you’re not going to have a job, right?”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 13</em>—</span>The city is abuzz: Meaningful baseball has returned to Comerica Park.</p>
 
@@ -7380,7 +7151,6 @@ export const CHAPTERS = [
 
 <p>The scene is a final vestige of access this generation, a color picture in gray times. In the years to come, this kind of close-quarters access will become extinct. Gardenhire today talks to a room of reporters at arms-length for more than fifteen minutes. Sports writers in the future will be lucky to get the manager in the dugout—with marketing dollars at stake, teams will soon put their managers on stage, answering questions in front of corporate-sponsored backdrops.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 20</em>—</span>The final home stand of the season gets off to a fitting start.</p>
 
@@ -7408,7 +7178,6 @@ export const CHAPTERS = [
 
 <p>McCann singles in the top of the second inning, upping his average to .375 in 40 at-bats against his former team. The Tigers are throttled, 10-1. Two days later, they snap a five-game losing streak, narrowly avoiding the record for most home losses.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 25</em>—</span>Normal day at the ballpark.</p>
 
@@ -7430,7 +7199,6 @@ export const CHAPTERS = [
 
 <p>Miggy drops the charade. “We’ll see. I don’t know.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">CHICAGO, <em>September 27</em>—</span>In my worst nightmare, I wake up in a chilly hotel room in the South Loop and stare outside. Clouds cover the lake. It is rainy, windy and gray. Take a taxi to the ugliest baseball stadium ever built. In this nightmare, I am stuck in traffic and heading to U.S. Cellular Field to cover not one game between the Tigers (46-112) and White Sox, but two. A doubleheader.</p>
 
@@ -7472,7 +7240,6 @@ export const CHAPTERS = [
 
 <p>I don’t wake up. In this nightmare, I’m left at U.S. Cellular Field waiting forty minutes for my ride. Andrew apologizes for the delay when he arrives—he needed to take All-Star slugger José Abreu home first.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 29</em>—</span>The regular season finale feels like Christmas morning. I can’t fall back asleep.</p>
 
@@ -7542,7 +7309,6 @@ export const CHAPTERS = [
 
 <p>Walking out of the clubhouse, I wonder if I’ll be back—or if I want to be.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>October 4</em>—</span>After spending the past month in an emotional spin cycle, I’m holed up with enough supply to fend off even the most intrusive self-loathing thoughts.</p>
 
@@ -7568,7 +7334,6 @@ export const CHAPTERS = [
 
 <p><em>Thawed out from drugs, got my appetite back, fell into a comfortable routine – gym, beach, receipts. Trimmed receipts for hours. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Did this for days, until two years’ worth of receipts were xeroxed and hole-punched and clipped inside a binder. Read more books. Bought a used Kindle for €10, case included. Started with Plimpton’s </em>Paper Lion<em>. Got 219 pages through </em>The Fountainhead<em> but couldn’t fully get into it, so I bought Bret Easton Ellis and Donna Tartt’s first book. I heard the news today, oh boy. The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A </em>Sports Illustrated<em> reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series. It was sunny every day, it was cheap, so I extended my stay. Went to the American football bar to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 </em><em>A.M.</em><em> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. Couldn’t keep my mind off work most of the time and maybe even missed being so miserable, so I bought a notebook from the bazaar and started writing about my job. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. Drank by the sea and on the balcony of a full-service hotel and thought about Ball Writing. Talked to people who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. At first, my distant relatives weren’t sure about a journalist staying with them. Two years ago, corrupt government influences killed the country’s top investigative reporter—the mob laced her engine with a bomb and let the ignition do the rest. I fought periodic rounds of anger, even 5,000 miles away from home and more relaxed than I had felt in months. Went to church every week, washed my face with holy water, and walked around mostly sober thinking about nothing else but this book. One day it rained and I saw my name online. Someone texted me, shared a tweet. They were trolling me, slandering me underneath. It rained all day that day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back.</em></p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LONDON, <em>November 14</em>—</span>After more than a month away, I’m heading home when an email arrives: LAYOFFS LOOMING</p>
 
@@ -7576,7 +7341,6 @@ export const CHAPTERS = [
 
 <p>I’ve never felt more insecure about my career.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>November 22</em>—</span>I pull myself together and decide to meet with <em>Free Press</em> brass before the winter begins. I’m going to go on the offensive.</p>
 
@@ -7586,7 +7350,6 @@ export const CHAPTERS = [
 
 <p>We set a meeting for Monday morning.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 25</em>—</span>Heading into the newsroom, I cover my bases with sources before beeping into the building.</p>
 
@@ -7666,7 +7429,6 @@ export const CHAPTERS = [
 
 <p>Tonight, I go to my room after dinner. Take a sleeping pill. In bed by eleven.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 9</em>—</span>The last thing I want to do is linger at the lobby bar for familiar faces. As expected, everybody asks about the Verlander thing. It’s frustrating because it’s not something I can explain in one standing conversation. Not something I particularly want to explain.</p>
 
@@ -7758,7 +7520,6 @@ export const CHAPTERS = [
 
 <p>“It’s more lip service than substance. They’re good at delivering buzz phrases.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>I work from my room today until the Tigers media availability at 4:30, when I decide to raise hell again.</p>
 
@@ -7806,7 +7567,6 @@ export const CHAPTERS = [
 
 <p>I want to feel like Fenech again—not an unethical schmuck, uncomfortable in his own skin and shying away from folks like Rosenthal. Right now, we’re on opposite hotel escalators, and I keep my head down. I raise it long enough to catch a stray glance from baseball’s No. 1 National Guy. No acknowledgment. Ken Rosenthal—like everybody else these days—looks at me like I’m a ghost.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 11</em>—</span>Bright and early, the annual managers’ buffet brunch.</p>
 
@@ -7854,7 +7614,6 @@ export const CHAPTERS = [
 
 <p>“This was His way of bringing us together.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 12</em>—</span>Five years ago, I’d contact sources like a mad man, building my baseball spider web from brunch time until the lobby bar. Now, I can’t get out of here soon enough.</p>
 
@@ -7874,7 +7633,6 @@ export const CHAPTERS = [
 
 <p>I can’t decide if he’s being supportive or touchdown-dancing on my grave.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 16</em>—</span>Deep Throat is officially back on American soil.</p>
 
@@ -7890,7 +7648,6 @@ export const CHAPTERS = [
 
 <p>Me, too.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 20</em>—</span>One of my sports writing friends is in the news. Josh Katzenstein, former Lions beat writer, got laid off from the <em>New Orleans Times-Picayune</em>.</p>
 
@@ -7906,7 +7663,6 @@ export const CHAPTERS = [
 
 <p>If this sports writing thing doesn’t work out, maybe I could start selling weed. It is becoming legal in Michigan…</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 21</em>—</span>Deep Throat drops an early Christmas present down my chimney, tipping me off that the Tigers are signing first baseman C.J. Cron and second baseman Jonathan Schoop.</p>
 
@@ -7918,13 +7674,11 @@ export const CHAPTERS = [
 
 <p>Not bad for a local guy who’s been told he can’t cover baseball anymore and was eating Rice Krispies Treats for breakfast.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 23</em>—</span>Word that I’m not long for the beat reaches Internet Stalker, who does the honors. He breaks the news on a burner account named after his dog—the Twitter account he’d been using to harass me has been banned.</p>
 
 <p>“Marlo the Mutt Scoop: The <em>Free Press</em> has an ad for a new Tigers beat writer. Fenech leaving. Most predictable thing ever.”</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 25</em>—</span>Merry Christmas!</p>
 
@@ -7946,7 +7700,6 @@ export const CHAPTERS = [
 
 <p>All is not calm. All is not bright.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 26</em>—</span>A local reporter publicly connects the dots: “So Anthony Fenech to exit the Tigers beat and switch to covering the Pistons to replace the buyout-taking Vince Ellis—and a new hire to cover in place of Fenech?”</p>
 
@@ -7954,7 +7707,6 @@ export const CHAPTERS = [
 
 <p>I spend the holidays ignoring calls and trying to dive into NBA sourcing. I’ve been building a new ScoopSheet (SwooshSheet), going through media guides, picking sourcing targets for introductory emails. Vince passed along contacts for scouts with the Heat and Nets.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 31</em>—</span>We had to put Fuzzles down today, four months shy of her twentieth birthday. I was in sixth grade when we got her, a little ball of long gray hair. She always lived with Mom but stayed some weekends with me.</p>
 
@@ -8004,7 +7756,6 @@ export const CHAPTERS = [
 
 <p>Sunny, seventy-seven degrees, and smells like spring training. I made it to Florida for Ball Writing’s best month. Only got fourteen days, let’s make the most of ‘em.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 12</em>—</span>By morning, the sports world begins to spin more slowly.</p>
 
@@ -8140,7 +7891,6 @@ export const CHAPTERS = [
 
 <p>I’m afraid to leave the press box because I don’t think I’ll ever be back.</p>
 
-<p class="scene-break">***</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 13</em>—</span>New this morning: Two Utah Jazz players who were at Detroit’s Little Caesars Arena last weekend have tested positive.</p>
 
@@ -8204,7 +7954,6 @@ export const CHAPTERS = [
 
 <p>“It’s my whole life. That’s all of Willie Horton’s life as a professional.”</p>
 
-<p class="scene-break">***</p>
 
 <p>The early months of the coronavirus was a lead pipe to the knees for most, including the newspaper industry, which, hobbled for years, took a particularly tough blow.</p>
 
@@ -8218,7 +7967,6 @@ export const CHAPTERS = [
 
 <p>Peter Bhatia retired as executive editor in 2022 with another round of layoffs looming. Facing fourteen job losses, including five reporters, the newsroom was spared further damage when eight employees volunteered to leave—Bhatia included.</p>
 
-<p class="scene-break">***</p>
 
 <p>I last spoke with John Lowe in June 2020, checking in with him for some much-needed Seamhead therapy. He sensed that, for me, the end on the beat was near.</p>
 
@@ -8248,7 +7996,6 @@ export const CHAPTERS = [
 
 <p>Lamont retired from the dugout in 2017 after twenty-three years in the big leagues as a manager and coach. He worked for the Royals as a special assistant after retiring and still speaks with Leyland every morning.</p>
 
-<p class="scene-break">***</p>
 
 <p>I closed the Miguel Cabrera chapter of my beat writing career inside a nondescript warehouse, where in July 2020, the greatest right-handed hitter of this generation readied for batting practice. I arrived to watch uninvited, only because I knew a guy who knew a guy who ran a local travel baseball program—and it turned out Miggy had been using its indoor batting cages.</p>
 
@@ -8262,7 +8009,6 @@ export const CHAPTERS = [
 
 <p>In 2029, the first year he’s eligible, Cabrera will join the Seamhead and the Skipper in Cooperstown.</p>
 
-<p class="scene-break">***</p>
 
 <p>Four years after fleeing, I received an errant text one morning. A mistake. Had to be.</p>
 
@@ -8300,7 +8046,6 @@ export const CHAPTERS = [
 
 <p>A great pitcher was rewarded—and so was a great guy. Boyd and his wife Ashley founded Kingdom Home in 2018, a charity that combats sex trafficking and abuse in Uganda and operates safe homes for children. The Boyd’s effort started with a helping hand to a Ugandan widow who rescued three dozen from forced marriages or prostitution rings. Kingdom Home is still going strong. Hundreds of children have been rescued and put into safe homes, and many donations have come from major leaguers—including Skubal.</p>
 
-<p class="scene-break">***</p>
 
 <p>Plagued by too many poor decisions, the Highest Source In The Land was fired in 2022 after the Tigers’ slow-moving rebuild—in its fifth year—was deemed a failure. Al Avila was replaced by a young hotshot executive, who came into town with a much-needed set of fresh eyes.</p>
 
@@ -8356,7 +8101,6 @@ export const CHAPTERS = [
 
 <p>Sam Menzin’s tenure came to an unfortunate end in April 2025, when he resigned in response to an active HR investigation: According to the <em>Athletic</em>, Menzin allegedly sent two female employees “photos of his genitals via Snapchat, an app where images are viewed and then auto deleted. Both women said they received unsolicited lewd photos from Menzin on several occasions, dating back to at least 2017.”</p>
 
-<p class="scene-break">***</p>
 
 <p>Eleven days after Justin Verlander accused me of “unethical” behavior and had the Astros bar me from the clubhouse, he put an exclamation point on an award-winning season—throwing his third career no-hitter on September 1, 2019. Verlander struck out 14 batters against Toronto in the best game of his career. That winter, he won his elusive second Cy Young Award, posting numbers at age thirty-six worthy of his career prime.</p>
 
@@ -8402,7 +8146,6 @@ export const CHAPTERS = [
 
 <p>Harkins’ defamation suit was settled confidentially in July 2023, hours before the case was scheduled to go to trial. <span class="media-emoji" data-media-id="harkins-settlement-latimes">📰</span></p>
 
-<p class="scene-break">***</p>
 
 <p>As for Anthony Fenech, I played out the string for as long as I could before officially losing my mind.</p>
 
