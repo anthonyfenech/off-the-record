@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Catalog - Admin</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Admin Header */
+        .admin-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        .admin-header a {
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .admin-header h1 {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Admin Nav */
+        .admin-nav {
+            display: flex;
+            gap: 0;
+            padding: 0 20px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-nav a {
+            padding: 10px 15px;
+            color: #666;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.15s;
+        }
+
+        .admin-nav a:hover {
+            color: #333;
+            background: #eee;
+        }
+
+        .admin-nav a.active {
+            color: #333;
+            border-bottom-color: #333;
+        }
+
+        /* Main Container */
+        .catalog-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Catalog Panel */
+        .catalog-panel {
+            background: #fff;
+        }
+
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .catalog-title {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .catalog-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            max-height: calc(100vh - 280px);
+            overflow-y: auto;
+        }
+
+        /* Catalog Table */
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .catalog-table thead {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1;
+        }
+
+        .catalog-table th {
+            text-align: left;
+            padding: 10px 8px;
+            border-bottom: 2px solid #333;
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .catalog-table th:hover {
+            background: #f5f5f5;
+        }
+
+        .catalog-table th.sorted {
+            background: #f0f0f0;
+        }
+
+        .sort-arrow {
+            margin-left: 4px;
+            color: #999;
+            font-size: 10px;
+        }
+
+        .catalog-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .catalog-table tr:hover {
+            background: #fafafa;
+        }
+
+        .status-cell {
+            cursor: pointer;
+            text-align: center;
+            width: 30px;
+        }
+
+        .emoji-cell {
+            width: 30px;
+            text-align: center;
+        }
+
+        .id-cell {
+            font-size: 11px;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .chapter-num-cell {
+            width: 30px;
+            text-align: center;
+        }
+
+        .ch-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .chapter-name-cell {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .chapter-name-cell a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .chapter-name-cell a:hover {
+            text-decoration: underline;
+        }
+
+        /* Inline Add Form */
+        .inline-add-form {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .inline-form-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .inline-status, .inline-emoji, .inline-chapter {
+            padding: 6px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .inline-status {
+            width: 50px;
+        }
+
+        .inline-emoji {
+            width: 50px;
+        }
+
+        .inline-id {
+            flex: 1;
+            padding: 6px 8px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .inline-chapter {
+            width: 200px;
+        }
+
+        .inline-time {
+            width: 60px;
+            padding: 6px 8px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .inline-add-btn {
+            padding: 6px 12px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .inline-add-btn:hover {
+            background: #555;
+        }
+
+        /* Action buttons */
+        .action-col {
+            width: 50px;
+        }
+        .action-cell {
+            text-align: center;
+            white-space: nowrap;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 2px 4px;
+            font-size: 10px;
+            opacity: 0.5;
+            transition: opacity 0.15s;
+        }
+        .action-btn:hover {
+            opacity: 1;
+        }
+        .action-btn.delete-btn:hover {
+            color: #dc3545;
+        }
+        .action-btn.edit-btn:hover {
+            color: #007bff;
+        }
+        tr.deleted-row {
+            display: none;
+        }
+        tr.deleted-row td {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        tr.deleted-row .action-cell {
+            text-decoration: none;
+        }
+        tr.deleted-row .action-btn.delete-btn {
+            font-size: 0;
+        }
+        tr.deleted-row .action-btn.delete-btn::after {
+            content: '↩';
+            font-size: 12px;
+        }
+
+        /* Media Preview Modal */
+        .preview-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        .preview-modal-overlay.active {
+            display: flex;
+        }
+        .preview-modal {
+            background: #fff;
+            border-radius: 8px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .preview-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: #fff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+        }
+        .preview-modal-close:hover {
+            background: #000;
+        }
+        .preview-modal-body {
+            padding: 20px;
+        }
+        .preview-modal-body img {
+            max-width: 80vw;
+            max-height: 75vh;
+            display: block;
+        }
+        .preview-modal-body video,
+        .preview-modal-body audio {
+            max-width: 80vw;
+            max-height: 75vh;
+        }
+        .preview-modal-caption {
+            padding: 10px 20px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Edit Modal */
+        .edit-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+        }
+        .edit-modal-overlay.active {
+            display: flex;
+        }
+        .edit-modal {
+            background: #fff;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 90vw;
+            padding: 20px;
+        }
+        .edit-modal h3 {
+            margin: 0 0 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .edit-modal .form-group {
+            margin-bottom: 12px;
+        }
+        .edit-modal .form-group label {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: #666;
+        }
+        .edit-modal .form-group input,
+        .edit-modal .form-group select {
+            width: 100%;
+            padding: 8px;
+            font-family: inherit;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .edit-modal .input-with-button {
+            display: flex;
+            gap: 6px;
+        }
+        .edit-modal .input-with-button input {
+            flex: 1;
+        }
+        .edit-modal .detect-btn {
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .edit-modal .detect-btn:hover {
+            background: #333;
+            border-color: #333;
+            filter: grayscale(1) brightness(3);
+        }
+        .edit-modal .today-btn {
+            padding: 8px 12px;
+            background: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.15s ease;
+        }
+        .edit-modal .today-btn:hover {
+            background: #45a049;
+            border-color: #45a049;
+        }
+        .edit-modal .metadata-btn {
+            padding: 8px 12px;
+            background: #2196F3;
+            border: 1px solid #2196F3;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .edit-modal .metadata-btn:hover {
+            background: #1976D2;
+            border-color: #1976D2;
+        }
+        #editDate {
+            font-family: 'Courier New', monospace;
+        }
+        .detect-status {
+            font-size: 10px;
+            font-weight: normal;
+            margin-left: 8px;
+        }
+        .detect-status.success {
+            color: #28a745;
+        }
+        .detect-status.error {
+            color: #dc3545;
+        }
+        .edit-modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .edit-modal-actions button {
+            flex: 1;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .edit-modal-actions .save-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+        }
+        .edit-modal-actions .cancel-btn {
+            background: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
+        .edit-modal-actions .delete-modal-btn {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            flex: 0 0 auto;
+            padding: 10px 15px;
+        }
+
+        /* Expandable Preview Row */
+        .catalog-table tr.expandable {
+            cursor: pointer;
+        }
+        .catalog-table tr.expandable:hover {
+            background: #f5f5f5;
+        }
+        .catalog-table tr.expanded {
+            background: #f0f0f0;
+        }
+        .preview-row {
+            display: none;
+        }
+        .preview-row.active {
+            display: table-row;
+        }
+        .preview-row td {
+            padding: 0 !important;
+            border-bottom: 2px solid #333;
+        }
+        .preview-content {
+            padding: 15px 20px;
+            background: #fafafa;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .preview-row.active .preview-content {
+            max-height: 400px;
+            padding: 15px 20px;
+        }
+        .preview-media {
+            flex-shrink: 0;
+            max-width: 200px;
+            max-height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .preview-media img {
+            max-width: 200px;
+            max-height: 150px;
+            object-fit: contain;
+            display: block;
+        }
+        .preview-media video {
+            max-width: 200px;
+            max-height: 150px;
+        }
+        .preview-media audio {
+            width: 200px;
+        }
+        .preview-media .loading-placeholder {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 11px;
+        }
+        .preview-details {
+            flex: 1;
+            min-width: 0;
+        }
+        .preview-details-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+        .preview-details-label {
+            color: #666;
+            min-width: 60px;
+        }
+        .preview-details-value {
+            color: #333;
+            word-break: break-all;
+        }
+        .preview-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .preview-action-btn {
+            padding: 6px 12px;
+            font-size: 11px;
+            font-family: inherit;
+            border: 1px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #fff;
+            color: #333;
+            transition: all 0.15s;
+        }
+        .preview-action-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+        .preview-action-btn.primary {
+            background: #333;
+            color: #fff;
+        }
+        .preview-action-btn.primary:hover {
+            background: #555;
+        }
+
+        /* Notification Toast */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            z-index: 10003;
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background: #333;
+            color: #fff;
+        }
+
+        .notification.active {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Legend */
+        .legend-info {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .legend-info span {
+            margin-right: 15px;
+        }
+
+        /* Stats */
+        .catalog-stats {
+            font-size: 11px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <a href="./admin.html" title="Back to Admin">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </a>
+        <h1>Media Catalog</h1>
+    </header>
+
+    <nav class="admin-nav">
+        <a href="./">Home</a>
+        <a href="./admin.html">Admin</a>
+        <a href="./content-map.html">Content Map</a>
+        <a href="https://github.com/anthonyfenech/off-the-record" target="_blank">GitHub</a>
+    </nav>
+
+    <div class="catalog-page">
+        <div class="catalog-panel">
+            <div class="catalog-header">
+                <span class="catalog-title">Media Catalog</span>
+                <span class="catalog-stats" id="catalogStats"></span>
+            </div>
+
+            <div class="legend-info">
+                <span>🟢 Live (in chapter)</span>
+                <span>🟡 Pending (placeholder)</span>
+                <span>🔴 Cut (unused)</span>
+            </div>
+
+            <div class="catalog-container">
+                <table class="catalog-table" id="catalogTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="status" title="🟢 Live (shows in reader) | 🟡 Pending (placeholder) | 🔴 Cut (hidden from reader)">● <span class="sort-arrow">↕</span></th>
+                            <th data-sort="icon">⬡ <span class="sort-arrow">↕</span></th>
+                            <th data-sort="id">Media ID <span class="sort-arrow">↕</span></th>
+                            <th data-sort="chapterNum"># <span class="sort-arrow">↕</span></th>
+                            <th data-sort="chapterName">Chapter <span class="sort-arrow">↕</span></th>
+                            <th class="action-col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalogBody">
+                        <!-- Populated dynamically from media.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Inline Add Form -->
+            <div class="inline-add-form" id="inlineAddForm">
+                <div class="inline-form-row">
+                    <select class="inline-status" id="inlineStatus" title="Status">
+                        <option value="green">🟢</option>
+                        <option value="yellow">🟡</option>
+                        <option value="red">🔴</option>
+                    </select>
+                    <select class="inline-emoji" id="inlineEmoji" title="Type">
+                        <option value="📷">📷</option>
+                        <option value="📰">📰</option>
+                        <option value="🔗">🔗</option>
+                        <option value="🐦">🐦</option>
+                        <option value="✉️">✉️</option>
+                        <option value="💬">💬</option>
+                        <option value="🎬">🎬</option>
+                        <option value="🎙️">🎙️</option>
+                    </select>
+                    <input type="text" class="inline-id" id="inlineId" placeholder="Media ID">
+                    <select class="inline-chapter" id="inlineChapter" title="Chapter">
+                        <option value="">—</option>
+                    </select>
+                    <input type="text" class="inline-time" id="inlineTime" placeholder="Time">
+                    <button class="inline-add-btn" id="inlineAddBtn">+</button>
+                    <label style="font-size:10px; display:flex; align-items:center; gap:3px; cursor:pointer; margin-left:auto; color:#888;">
+                        <input type="checkbox" id="showDeletedToggle"> Show deleted
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal-overlay" id="editModalOverlay">
+        <div class="edit-modal">
+            <h3>Edit Media Entry</h3>
+            <input type="hidden" id="editMediaId">
+            <div class="form-group">
+                <label>Media ID</label>
+                <input type="text" id="editId" readonly style="background:#f5f5f5;">
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <select id="editType">
+                    <option value="photo">📷 Photo</option>
+                    <option value="newspaper">📰 Newspaper</option>
+                    <option value="link">🔗 Link</option>
+                    <option value="email">✉️ Email</option>
+                    <option value="text">💬 Text</option>
+                    <option value="video">🎬 Video</option>
+                    <option value="audio">🎙️ Audio</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Caption</label>
+                <input type="text" id="editCaption" placeholder="Caption text...">
+            </div>
+            <div class="form-group">
+                <label>Source Path</label>
+                <div class="input-with-button">
+                    <input type="text" id="editSrc" placeholder="./assets/...">
+                    <button type="button" id="autoDetectChapterBtn" class="detect-btn" title="Auto-detect chapter from path">🔍</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Duration (for audio/video)</label>
+                <input type="text" id="editDuration" placeholder="e.g., 2:30">
+            </div>
+            <div class="form-group">
+                <label>Chapter <span id="chapterDetectStatus" class="detect-status"></span></label>
+                <select id="editChapter">
+                    <option value="">-- Unassigned --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <div class="input-with-button">
+                    <input type="text" id="editDate" placeholder="MM/DD/YY or YYYY-MM-DD">
+                    <button type="button" id="setTodayBtn" class="today-btn" title="Set to today">Today</button>
+                    <button type="button" id="autoDetectDateBtn" class="detect-btn" title="Auto-detect date from filename">🔍</button>
+                    <button type="button" id="loadMetadataDateBtn" class="metadata-btn" title="Load from file metadata (run extract-dates.js first)">📷</button>
+                </div>
+            </div>
+            <div class="edit-modal-actions">
+                <button class="delete-modal-btn" id="editDeleteBtn">🗑</button>
+                <button class="cancel-btn" id="editCancelBtn">Cancel</button>
+                <button class="save-btn" id="editSaveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification" id="notification"></div>
+
+    <script type="module">
+        import { MEDIA_CONTENT } from './data/media.js';
+        import { CHAPTERS } from './data/chapters.js';
+
+        // Chapter titles for lookups
+        const chapterTitles = CHAPTERS.map(ch => ch.title);
+
+        // Populate catalog table from media.js
+        const catalogBody = document.getElementById('catalogBody');
+
+        // Check if media is used in any chapter
+        function isMediaInUse(mediaId) {
+            for (let i = 0; i < CHAPTERS.length; i++) {
+                if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Find which chapter a media ID is used in (returns object with num and name)
+        function findChapterForMedia(mediaId) {
+            for (let i = 0; i < CHAPTERS.length; i++) {
+                if (CHAPTERS[i].content.includes(`data-media-id="${mediaId}"`)) {
+                    return {
+                        num: CHAPTERS[i].id,
+                        name: chapterTitles[i],
+                        full: `${CHAPTERS[i].id}. ${chapterTitles[i]}`,
+                        source: 'content'
+                    };
+                }
+            }
+            // Fallback: try to detect from source path
+            const media = MEDIA_CONTENT[mediaId];
+            if (media && media.src) {
+                const detected = detectChapterFromPath(media.src);
+                if (detected) {
+                    return {
+                        num: detected.num,
+                        name: detected.name,
+                        full: `${detected.num}. ${detected.name}`,
+                        source: 'path'
+                    };
+                }
+            }
+            return { num: null, name: null, full: '—', source: null };
+        }
+
+        // Detect chapter from source path (e.g., ./assets/12-pennant-race/photo.jpg → chapter 12)
+        function detectChapterFromPath(sourcePath) {
+            if (!sourcePath) return null;
+
+            // Match pattern: ./assets/XX-chapter-name/ where XX is chapter number
+            const match = sourcePath.match(/\.\/assets\/(\d{2})-([^\/]+)\//);
+            if (!match) return null;
+
+            const chapterNum = parseInt(match[1], 10);
+            const folderName = match[2];
+
+            // Find matching chapter
+            const chapter = CHAPTERS.find(ch => ch.id === chapterNum);
+            if (chapter) {
+                return {
+                    num: chapterNum,
+                    name: chapter.title,
+                    folder: `${match[1]}-${folderName}`
+                };
+            }
+
+            return {
+                num: chapterNum,
+                name: folderName.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                folder: `${match[1]}-${folderName}`
+            };
+        }
+
+        // Get status: 🟢 Live (in use), 🟡 Pending (placeholder), 🔴 Cut (unused)
+        // Check localStorage for manual overrides first
+        function getStatus(id, media) {
+            const override = localStorage.getItem(`media_status_${id}`);
+            if (override === 'green') return { icon: '🟢', label: 'Live', sort: 1 };
+            if (override === 'yellow') return { icon: '🟡', label: 'Pending', sort: 2 };
+            if (override === 'red') return { icon: '🔴', label: 'Cut', sort: 3 };
+
+            // Auto-detect if no override
+            if (media.placeholder) return { icon: '🟡', label: 'Pending', sort: 2 };
+            if (isMediaInUse(id)) return { icon: '🟢', label: 'Live', sort: 1 };
+            return { icon: '🔴', label: 'Cut', sort: 3 };
+        }
+
+        // Format duration (expects seconds or "mm:ss" string)
+        function formatDuration(duration) {
+            if (!duration) return '—';
+            if (typeof duration === 'string') return duration;
+            const mins = Math.floor(duration / 60);
+            const secs = duration % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Format date as MM/DD/YY
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr === '—') return '—';
+            // Handle YYYY-MM-DD format
+            const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (match) {
+                const [, year, month, day] = match;
+                return `${month}/${day}/${year.slice(2)}`;
+            }
+            return dateStr;
+        }
+
+        // Build media list - show ALL media, not just active
+        const allMedia = Object.entries(MEDIA_CONTENT)
+            .map(([id, media]) => {
+                const status = getStatus(id, media);
+                const chapter = findChapterForMedia(id);
+                return {
+                    id,
+                    icon: media.emoji || '📷',
+                    type: media.type,
+                    src: media.src,
+                    chapterNum: chapter.num,
+                    chapterName: chapter.name,
+                    caption: media.caption,
+                    status: status.icon,
+                    statusLabel: status.label,
+                    statusSort: status.sort,
+                    date: formatDate(media.date),
+                    rawDate: media.date || '',
+                    time: formatDuration(media.duration)
+                };
+            });
+
+        // Update stats
+        document.getElementById('catalogStats').textContent = `${allMedia.length} items`;
+
+        // Get deleted items from localStorage
+        function getDeletedItems() {
+            const stored = localStorage.getItem('admin_deletedMedia');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        // Render table
+        function renderTable(data) {
+            const deletedItems = getDeletedItems();
+            catalogBody.innerHTML = data.map(item => {
+                const isDeleted = deletedItems.includes(item.id);
+                const chapterLink = item.chapterNum
+                    ? `<a href="./?chapter=${item.chapterNum}" target="_blank">${item.chapterName}</a>`
+                    : '—';
+                const chapterNumBox = item.chapterNum
+                    ? `<span class="ch-num">${item.chapterNum}</span>`
+                    : '—';
+                // Escape caption for data attribute
+                const escapedCaption = (item.caption || '').replace(/"/g, '&quot;');
+                return `
+                <tr class="expandable ${isDeleted ? 'deleted-row' : ''}" data-media-id="${item.id}" data-src="${item.src || ''}" data-type="${item.type || 'photo'}" data-caption="${escapedCaption}">
+                    <td class="status-cell" data-id="${item.id}" title="${item.statusLabel} - Click to change">${item.status}</td>
+                    <td class="emoji-cell">${item.icon}</td>
+                    <td class="id-cell" title="${item.id}">${item.id}</td>
+                    <td class="chapter-num-cell">${chapterNumBox}</td>
+                    <td class="chapter-name-cell">${chapterLink}</td>
+                    <td class="action-cell">
+                        <button class="action-btn edit-btn" data-id="${item.id}" title="Edit">✏️</button>
+                        <button class="action-btn delete-btn" data-id="${item.id}" title="Delete">✕</button>
+                    </td>
+                </tr>
+                <tr class="preview-row" data-preview-for="${item.id}">
+                    <td colspan="6">
+                        <div class="preview-content">
+                            <div class="preview-media">
+                                <div class="loading-placeholder">Click to load...</div>
+                            </div>
+                            <div class="preview-details">
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">ID:</span>
+                                    <span class="preview-details-value">${item.id}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Type:</span>
+                                    <span class="preview-details-value">${item.type || 'photo'}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Caption:</span>
+                                    <span class="preview-details-value">${item.caption || '—'}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Source:</span>
+                                    <span class="preview-details-value">${item.src || '—'}</span>
+                                </div>
+                                <div class="preview-details-row">
+                                    <span class="preview-details-label">Date:</span>
+                                    <span class="preview-details-value">${item.date || '—'}</span>
+                                </div>
+                                <div class="preview-actions">
+                                    <button class="preview-action-btn primary preview-edit-btn" data-id="${item.id}">Edit</button>
+                                    <button class="preview-action-btn preview-view-btn" data-id="${item.id}" data-src="${item.src || ''}" data-type="${item.type || 'photo'}" data-caption="${escapedCaption}">View Full</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            }).join('');
+        }
+
+        renderTable(allMedia);
+
+        // ====== PREVIEW MODAL SETUP (must be before click handler) ======
+        const previewModal = document.createElement('div');
+        previewModal.className = 'preview-modal-overlay';
+        previewModal.innerHTML = `
+            <div class="preview-modal">
+                <button class="preview-modal-close">&times;</button>
+                <div class="preview-modal-body"></div>
+                <div class="preview-modal-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(previewModal);
+
+        const previewBody = previewModal.querySelector('.preview-modal-body');
+        const previewCaption = previewModal.querySelector('.preview-modal-caption');
+        const previewClose = previewModal.querySelector('.preview-modal-close');
+
+        // Close modal handlers
+        previewClose.addEventListener('click', () => previewModal.classList.remove('active'));
+        previewModal.addEventListener('click', (e) => {
+            if (e.target === previewModal) previewModal.classList.remove('active');
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                previewModal.classList.remove('active');
+                document.getElementById('editModalOverlay').classList.remove('active');
+            }
+        });
+
+        // ====== CONSOLIDATED CLICK HANDLER FOR CATALOG ======
+        // Handles: status toggle, edit button, delete button, row expansion
+        document.getElementById('catalogBody').addEventListener('click', (e) => {
+            // 1. STATUS DOT CLICK - Cycle status
+            if (e.target.classList.contains('status-cell')) {
+                e.stopPropagation();
+                const id = e.target.dataset.id;
+                const current = e.target.textContent.trim();
+
+                let next, nextLabel, nextValue;
+                if (current === '🔴') {
+                    next = '🟡'; nextLabel = 'Pending'; nextValue = 'yellow';
+                } else if (current === '🟡') {
+                    next = '🟢'; nextLabel = 'Live'; nextValue = 'green';
+                } else {
+                    next = '🔴'; nextLabel = 'Cut'; nextValue = 'red';
+                }
+
+                e.target.textContent = next;
+                e.target.title = `${nextLabel} - Click to change`;
+                localStorage.setItem(`media_status_${id}`, nextValue);
+                return;
+            }
+
+            // 2. EDIT BUTTON CLICK - Open edit modal
+            const editBtn = e.target.closest('.edit-btn, .preview-edit-btn');
+            if (editBtn) {
+                e.stopPropagation();
+                const mediaId = editBtn.dataset.id;
+                const media = MEDIA_CONTENT[mediaId];
+                const mediaItem = allMedia.find(m => m.id === mediaId);
+
+                if (media) {
+                    document.getElementById('editMediaId').value = mediaId;
+                    document.getElementById('editId').value = mediaId;
+                    document.getElementById('editType').value = media.type || 'photo';
+                    document.getElementById('editCaption').value = media.caption || '';
+                    document.getElementById('editSrc').value = media.src || '';
+                    document.getElementById('editDuration').value = media.duration || '';
+                    // Convert stored date (YYYY-MM-DD) to display format (MM/DD/YY)
+                    document.getElementById('editDate').value = media.date ? formatDate(media.date).replace(/—/g, '') : '';
+                    // Set chapter dropdown
+                    const chapterSelect = document.getElementById('editChapter');
+                    chapterSelect.value = mediaItem?.chapterNum || '';
+                    document.getElementById('editModalOverlay').classList.add('active');
+                }
+                return;
+            }
+
+            // 3. DELETE BUTTON CLICK - Delete/Restore item
+            const deleteBtn = e.target.closest('.delete-btn');
+            if (deleteBtn) {
+                e.stopPropagation();
+                const mediaId = deleteBtn.dataset.id;
+                const row = deleteBtn.closest('tr');
+                const isDeleted = row.classList.contains('deleted-row');
+
+                if (isDeleted) {
+                    let deleted = getDeletedItems();
+                    deleted = deleted.filter(id => id !== mediaId);
+                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+                    row.classList.remove('deleted-row');
+                } else {
+                    if (confirm(`Delete "${mediaId}" from the catalog?\n\nNote: This hides it from this view. To permanently remove, delete the entry from data/media.js`)) {
+                        deleteMediaItem(mediaId);
+                    }
+                }
+                return;
+            }
+
+            // 4. VIEW FULL BUTTON CLICK - Open full preview modal
+            const viewBtn = e.target.closest('.preview-view-btn');
+            if (viewBtn) {
+                e.stopPropagation();
+                const src = viewBtn.dataset.src;
+                const type = viewBtn.dataset.type;
+                const caption = viewBtn.dataset.caption;
+                const mediaId = viewBtn.dataset.id;
+
+                let content = '';
+                if (['photo', 'photo2', 'selfie', 'newspaper', 'newspaper2', 'receipt', 'pdf', 'attachment', 'text'].includes(type)) {
+                    content = `<img src="${src}" alt="${caption}">`;
+                } else if (['video', 'tv-local', 'tv-network'].includes(type)) {
+                    content = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
+                } else if (['audio', 'radio', 'interview', 'mic', 'phone', 'record'].includes(type)) {
+                    content = `<audio controls autoplay><source src="${src}" type="audio/mpeg"></audio>`;
+                } else {
+                    content = `<img src="${src}" alt="${caption}">`;
+                }
+
+                previewBody.innerHTML = content;
+                previewCaption.textContent = caption || mediaId;
+                previewModal.classList.add('active');
+                return;
+            }
+
+            // 5. Don't expand if clicking on links
+            if (e.target.closest('a')) {
+                return;
+            }
+
+            // 5.5. CLICK IN PREVIEW ROW TO COLLAPSE (except on buttons/inputs)
+            const previewRowClick = e.target.closest('tr.preview-row');
+            if (previewRowClick && previewRowClick.classList.contains('active')) {
+                // Don't collapse if clicking on buttons or interactive elements
+                if (!e.target.closest('button') && !e.target.closest('input') &&
+                    !e.target.closest('select') && !e.target.closest('video') &&
+                    !e.target.closest('audio')) {
+                    previewRowClick.classList.remove('active');
+                    const dataRow = previewRowClick.previousElementSibling;
+                    if (dataRow) dataRow.classList.remove('expanded');
+                }
+                return;
+            }
+
+            // 6. ROW CLICK - Expand/collapse preview row
+            const row = e.target.closest('tr.expandable');
+            if (row && !row.classList.contains('preview-row')) {
+                const mediaId = row.dataset.mediaId;
+                const previewRow = document.querySelector(`tr[data-preview-for="${mediaId}"]`);
+
+                // Close all other open previews
+                document.querySelectorAll('.preview-row.active').forEach(r => {
+                    if (r !== previewRow) {
+                        r.classList.remove('active');
+                        const prevRow = r.previousElementSibling;
+                        if (prevRow) prevRow.classList.remove('expanded');
+                    }
+                });
+
+                // Toggle this preview
+                if (previewRow) {
+                    const isExpanding = !previewRow.classList.contains('active');
+                    previewRow.classList.toggle('active');
+                    row.classList.toggle('expanded');
+
+                    // Lazy load media on first expand
+                    if (isExpanding) {
+                        const media = MEDIA_CONTENT[mediaId];
+                        const mediaContainer = previewRow.querySelector('.preview-media');
+                        if (media && media.src && mediaContainer) {
+                            const hasContent = mediaContainer.querySelector('img, video, audio');
+                            if (!hasContent) {
+                                const type = media.type || 'photo';
+                                if (['photo', 'photo2', 'selfie', 'newspaper', 'newspaper2', 'receipt', 'pdf', 'attachment', 'text'].includes(type)) {
+                                    mediaContainer.innerHTML = `<img src="${media.src}" alt="${media.caption || ''}" onerror="this.parentElement.innerHTML='<em style=\\'color:#999;font-size:11px\\'>Image not found</em>'">`;
+                                } else if (['video', 'tv-local', 'tv-network'].includes(type)) {
+                                    mediaContainer.innerHTML = `<video controls style="max-width:200px;max-height:150px"><source src="${media.src}" type="video/mp4"></video>`;
+                                } else if (['audio', 'radio', 'interview', 'mic', 'phone', 'record'].includes(type)) {
+                                    mediaContainer.innerHTML = `<audio controls style="width:200px"><source src="${media.src}" type="audio/mpeg"></audio>`;
+                                } else {
+                                    mediaContainer.innerHTML = `<img src="${media.src}" alt="${media.caption || ''}">`;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Double-click to restore deleted items
+        document.getElementById('catalogBody').addEventListener('dblclick', (e) => {
+            const row = e.target.closest('tr.deleted-row');
+            if (row && document.getElementById('showDeletedToggle').checked) {
+                const mediaId = row.dataset.mediaId;
+                if (confirm(`Restore "${mediaId}"?`)) {
+                    let deleted = getDeletedItems();
+                    deleted = deleted.filter(id => id !== mediaId);
+                    localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+                    row.classList.remove('deleted-row');
+                }
+            }
+        });
+
+        // Table sorting
+        const table = document.getElementById('catalogTable');
+        const headers = table.querySelectorAll('th[data-sort]');
+        let sortDir = {};
+        let currentData = [...allMedia];
+
+        const sortKeys = { status: 'statusSort', icon: 'icon', id: 'id', chapterNum: 'chapterNum', chapterName: 'chapterName', date: 'date', time: 'time' };
+
+        headers.forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.dataset.sort;
+                const key = sortKeys[col];
+
+                // Toggle direction
+                sortDir[col] = sortDir[col] === 'asc' ? 'desc' : 'asc';
+                const dir = sortDir[col];
+
+                // Update arrows
+                headers.forEach(h => {
+                    h.classList.remove('sorted');
+                    h.querySelector('.sort-arrow').textContent = '↕';
+                });
+                th.classList.add('sorted');
+                th.querySelector('.sort-arrow').textContent = dir === 'asc' ? '↑' : '↓';
+
+                // Sort data
+                currentData.sort((a, b) => {
+                    const aVal = (a[key] || '').toString();
+                    const bVal = (b[key] || '').toString();
+                    const cmp = aVal.localeCompare(bVal);
+                    return dir === 'asc' ? cmp : -cmp;
+                });
+
+                // Re-render
+                renderTable(currentData);
+            });
+        });
+
+        // Populate chapter dropdown
+        const editChapterSelect = document.getElementById('editChapter');
+        CHAPTERS.forEach(ch => {
+            const opt = document.createElement('option');
+            opt.value = ch.id;
+            opt.textContent = `${ch.id}. ${ch.title}`;
+            editChapterSelect.appendChild(opt);
+        });
+
+        // Populate inline chapter dropdown
+        const inlineChapterSelect = document.getElementById('inlineChapter');
+        CHAPTERS.forEach((ch, i) => {
+            const opt = document.createElement('option');
+            opt.value = ch.id;
+            opt.textContent = `${ch.id}. ${ch.title}`;
+            inlineChapterSelect.appendChild(opt);
+        });
+
+        // Inline add form handler
+        const inlineAddBtn = document.getElementById('inlineAddBtn');
+        inlineAddBtn.addEventListener('click', () => {
+            const status = document.getElementById('inlineStatus').value;
+            const emoji = document.getElementById('inlineEmoji').value;
+            const mediaId = document.getElementById('inlineId').value.trim();
+            const chapterVal = document.getElementById('inlineChapter').value;
+            const time = document.getElementById('inlineTime').value.trim();
+
+            if (!mediaId) {
+                alert('Please enter a Media ID');
+                return;
+            }
+
+            // Get chapter info
+            const chapterNum = chapterVal ? parseInt(chapterVal) : null;
+            const chapterName = chapterNum ? CHAPTERS.find(c => c.id === chapterNum)?.title : null;
+
+            // Determine status emoji
+            const statusEmoji = status === 'green' ? '🟢' : status === 'yellow' ? '🟡' : '🔴';
+
+            // Generate media.js code
+            const placeholder = status === 'yellow';
+            const typeMap = {
+                '📷': 'photo',
+                '📰': 'newspaper',
+                '🔗': 'link',
+                '✉️': 'email',
+                '💬': 'text',
+                '🎬': 'video',
+                '🎙️': 'audio'
+            };
+            const type = typeMap[emoji] || 'photo';
+
+            const mediaCode = `    '${mediaId}': {
+        type: '${type}',
+        emoji: '${emoji}',
+        label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
+        caption: '',
+        src: './assets/${mediaId}',${time ? `\n        duration: '${time}',` : ''}
+        placeholder: ${placeholder}
+    },`;
+
+            const spanCode = `<span class="media-emoji" data-media-id="${mediaId}">${emoji}</span>`;
+
+            // Copy media code to clipboard
+            const fullCode = `${mediaCode}\n\n// Span code:\n${spanCode}`;
+            navigator.clipboard.writeText(fullCode).then(() => {
+                alert(`Code copied to clipboard!\n\n1. Add to data/media.js\n2. Add span to chapter text`);
+            });
+
+            // Clear inline form
+            document.getElementById('inlineId').value = '';
+            document.getElementById('inlineTime').value = '';
+        });
+
+        // ====== DELETE FUNCTIONALITY ======
+        function deleteMediaItem(mediaId) {
+            const deleted = getDeletedItems();
+            if (!deleted.includes(mediaId)) {
+                deleted.push(mediaId);
+                localStorage.setItem('admin_deletedMedia', JSON.stringify(deleted));
+            }
+            // Hide the row
+            const row = document.querySelector(`tr[data-media-id="${mediaId}"]`);
+            if (row) row.classList.add('deleted-row');
+        }
+
+        // ====== EDIT FUNCTIONALITY ======
+        const editModal = document.getElementById('editModalOverlay');
+        const editCancelBtn = document.getElementById('editCancelBtn');
+        const editSaveBtn = document.getElementById('editSaveBtn');
+        const editDeleteBtn = document.getElementById('editDeleteBtn');
+
+        // Close edit modal
+        editCancelBtn.addEventListener('click', () => editModal.classList.remove('active'));
+        editModal.addEventListener('click', (e) => {
+            if (e.target === editModal) editModal.classList.remove('active');
+        });
+
+        // Auto-detect chapter from source path
+        const autoDetectChapterBtn = document.getElementById('autoDetectChapterBtn');
+        const editSrcInput = document.getElementById('editSrc');
+        const chapterDetectStatus = document.getElementById('chapterDetectStatus');
+
+        function autoDetectAndSetChapter() {
+            const sourcePath = editSrcInput.value;
+            const detected = detectChapterFromPath(sourcePath);
+            const chapterSelect = document.getElementById('editChapter');
+
+            if (detected) {
+                chapterSelect.value = detected.num;
+                chapterDetectStatus.textContent = `✓ Detected: Ch. ${detected.num}`;
+                chapterDetectStatus.className = 'detect-status success';
+                // Flash the select to show change
+                chapterSelect.style.background = '#d4edda';
+                setTimeout(() => { chapterSelect.style.background = ''; }, 1000);
+            } else {
+                chapterDetectStatus.textContent = '⚠ Could not detect';
+                chapterDetectStatus.className = 'detect-status error';
+            }
+            // Clear status after 3 seconds
+            setTimeout(() => {
+                chapterDetectStatus.textContent = '';
+                chapterDetectStatus.className = 'detect-status';
+            }, 3000);
+        }
+
+        autoDetectChapterBtn.addEventListener('click', autoDetectAndSetChapter);
+
+        // ====== DATE FIELD HELPERS ======
+        const setTodayBtn = document.getElementById('setTodayBtn');
+        const autoDetectDateBtn = document.getElementById('autoDetectDateBtn');
+        const editDateInput = document.getElementById('editDate');
+
+        // Set date to today (MM/DD/YY format)
+        function setToday() {
+            const today = new Date();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const yy = String(today.getFullYear()).slice(2);
+            const formatted = `${mm}/${dd}/${yy}`;
+            editDateInput.value = formatted;
+            console.log('[DATE] Set to today:', formatted);
+        }
+
+        // Convert YYYY-MM-DD to MM/DD/YY for display
+        function toDisplayDate(dateStr) {
+            if (!dateStr) return '';
+            const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (match) {
+                return `${match[2]}/${match[3]}/${match[1].slice(2)}`;
+            }
+            return dateStr; // Already in different format
+        }
+
+        // Convert MM/DD/YY to YYYY-MM-DD for storage
+        function toStorageDate(dateStr) {
+            if (!dateStr) return '';
+            // Handle MM/DD/YY
+            const match1 = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2})$/);
+            if (match1) {
+                const year = parseInt(match1[3]) > 50 ? `19${match1[3]}` : `20${match1[3]}`;
+                return `${year}-${match1[1].padStart(2, '0')}-${match1[2].padStart(2, '0')}`;
+            }
+            // Handle MM/DD/YYYY
+            const match2 = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (match2) {
+                return `${match2[3]}-${match2[1].padStart(2, '0')}-${match2[2].padStart(2, '0')}`;
+            }
+            // Already YYYY-MM-DD or other format - return as is
+            return dateStr;
+        }
+
+        // Extract date from filename
+        function extractDateFromFilename(filename) {
+            if (!filename) return null;
+
+            // Pattern: YYYY-MM-DD
+            const match1 = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+            if (match1) return `${match1[1]}-${match1[2]}-${match1[3]}`;
+
+            // Pattern: M-D-YY or MM-DD-YY
+            const match2 = filename.match(/(\d{1,2})-(\d{1,2})-(\d{2})(?!\d)/);
+            if (match2) {
+                const month = match2[1].padStart(2, '0');
+                const day = match2[2].padStart(2, '0');
+                const year = parseInt(match2[3]) > 50 ? `19${match2[3]}` : `20${match2[3]}`;
+                return `${year}-${month}-${day}`;
+            }
+
+            return null;
+        }
+
+        // Auto-detect date from source path
+        function autoDetectDate() {
+            const sourcePath = editSrcInput.value;
+            if (!sourcePath) {
+                alert('No source path to extract date from');
+                return;
+            }
+
+            const filename = sourcePath.split('/').pop();
+            const detectedDate = extractDateFromFilename(filename);
+
+            if (detectedDate) {
+                // Convert to MM/DD/YY for display
+                const displayDate = toDisplayDate(detectedDate);
+                editDateInput.value = displayDate;
+                console.log('[DATE] Auto-detected from filename:', displayDate);
+
+                // Visual feedback
+                editDateInput.style.background = '#ffffcc';
+                setTimeout(() => {
+                    editDateInput.style.background = '';
+                }, 1000);
+            } else {
+                alert('Could not detect date from filename.\n\nLooking for patterns like:\n• 2020-07-15\n• 7-15-20');
+            }
+        }
+
+        // Load date from metadata JSON file
+        let metadataDates = null;
+        const loadMetadataDateBtn = document.getElementById('loadMetadataDateBtn');
+
+        async function loadMetadataDates() {
+            if (metadataDates) return metadataDates;
+
+            try {
+                const response = await fetch('./data/media-dates.json');
+                if (!response.ok) throw new Error('File not found');
+                metadataDates = await response.json();
+                console.log('[DATE] Loaded metadata dates:', Object.keys(metadataDates).length, 'entries');
+                return metadataDates;
+            } catch (e) {
+                console.error('[DATE] Failed to load metadata dates:', e);
+                return null;
+            }
+        }
+
+        async function loadDateFromMetadata() {
+            const sourcePath = editSrcInput.value;
+            if (!sourcePath) {
+                alert('No source path specified');
+                return;
+            }
+
+            const dates = await loadMetadataDates();
+            if (!dates) {
+                alert('Could not load metadata dates.\n\nRun this first:\n  node scripts/extract-dates.js');
+                return;
+            }
+
+            const date = dates[sourcePath];
+            if (date) {
+                // Convert to MM/DD/YY for display
+                const displayDate = toDisplayDate(date);
+                editDateInput.value = displayDate;
+                console.log('[DATE] Loaded from metadata:', displayDate);
+
+                // Visual feedback
+                editDateInput.style.background = '#cce5ff';
+                setTimeout(() => {
+                    editDateInput.style.background = '';
+                }, 1000);
+            } else {
+                alert(`No metadata date found for:\n${sourcePath}\n\nTry running:\n  node scripts/extract-dates.js`);
+            }
+        }
+
+        setTodayBtn.addEventListener('click', setToday);
+        autoDetectDateBtn.addEventListener('click', autoDetectDate);
+        loadMetadataDateBtn.addEventListener('click', loadDateFromMetadata);
+
+        // Auto-detect on source path change (with debounce)
+        let detectTimeout;
+        editSrcInput.addEventListener('input', () => {
+            clearTimeout(detectTimeout);
+            detectTimeout = setTimeout(() => {
+                const sourcePath = editSrcInput.value;
+                if (sourcePath.includes('./assets/') && sourcePath.includes('/')) {
+                    autoDetectAndSetChapter();
+                }
+            }, 500);
+        });
+
+        // Save edit - updates in-memory data AND generates code to copy
+        editSaveBtn.addEventListener('click', () => {
+            const mediaId = document.getElementById('editMediaId').value;
+            const type = document.getElementById('editType').value;
+            const caption = document.getElementById('editCaption').value;
+            const src = document.getElementById('editSrc').value;
+            const duration = document.getElementById('editDuration').value;
+            const chapter = document.getElementById('editChapter').value;
+            const dateInput = document.getElementById('editDate').value;
+            // Convert display format (MM/DD/YY) to storage format (YYYY-MM-DD)
+            const date = toStorageDate(dateInput);
+
+            const emojiMap = {
+                photo: '📷', newspaper: '📰', link: '🔗',
+                email: '✉️', text: '💬', video: '🎬', audio: '🎙️'
+            };
+
+            // Update in-memory MEDIA_CONTENT
+            if (MEDIA_CONTENT[mediaId]) {
+                MEDIA_CONTENT[mediaId].type = type;
+                MEDIA_CONTENT[mediaId].caption = caption;
+                MEDIA_CONTENT[mediaId].src = src;
+                MEDIA_CONTENT[mediaId].duration = duration || undefined;
+                MEDIA_CONTENT[mediaId].date = date || undefined;
+                MEDIA_CONTENT[mediaId].emoji = emojiMap[type] || '📷';
+            }
+
+            // Update allMedia array
+            const mediaIndex = allMedia.findIndex(m => m.id === mediaId);
+            if (mediaIndex !== -1) {
+                allMedia[mediaIndex].type = type;
+                allMedia[mediaIndex].caption = caption;
+                allMedia[mediaIndex].src = src;
+                allMedia[mediaIndex].icon = emojiMap[type] || '📷';
+                allMedia[mediaIndex].time = duration ? formatDuration(duration) : '—';
+                if (chapter) {
+                    const chapterData = CHAPTERS.find(c => c.id === parseInt(chapter));
+                    allMedia[mediaIndex].chapterNum = parseInt(chapter);
+                    allMedia[mediaIndex].chapterName = chapterData?.title || '';
+                }
+            }
+
+            // Update the preview row content
+            const previewRow = document.querySelector(`tr[data-preview-for="${mediaId}"]`);
+            if (previewRow) {
+                const captionEl = previewRow.querySelector('.preview-details-value');
+                if (captionEl) {
+                    const rows = previewRow.querySelectorAll('.preview-details-row');
+                    rows.forEach(row => {
+                        const label = row.querySelector('.preview-details-label')?.textContent;
+                        const valueEl = row.querySelector('.preview-details-value');
+                        if (label === 'Caption:' && valueEl) valueEl.textContent = caption || '—';
+                        if (label === 'Type:' && valueEl) valueEl.textContent = type;
+                        if (label === 'Source:' && valueEl) valueEl.textContent = src || '—';
+                        if (label === 'Date:' && valueEl) valueEl.textContent = formatDate(date) || '—';
+                    });
+                }
+            }
+
+            // Generate code for clipboard
+            const chapterComment = chapter ? `  // Chapter ${chapter}` : '';
+            const code = `    '${mediaId}': {${chapterComment}
+        type: '${type}',
+        emoji: '${emojiMap[type] || '📷'}',
+        label: '${type.charAt(0).toUpperCase() + type.slice(1)}',
+        caption: '${caption.replace(/'/g, "\\'")}',
+        src: '${src}',${duration ? `\n        duration: '${duration}',` : ''}${date ? `\n        date: '${date}',` : ''}
+        placeholder: false
+    },`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(code).then(() => {
+                alert(`Saved! Code copied to clipboard.\n\nTo make permanent, update data/media.js with:\n\n${code}`);
+                editModal.classList.remove('active');
+            });
+        });
+
+        // Delete from edit modal
+        editDeleteBtn.addEventListener('click', () => {
+            const mediaId = document.getElementById('editMediaId').value;
+            if (confirm(`Delete "${mediaId}"?`)) {
+                deleteMediaItem(mediaId);
+                editModal.classList.remove('active');
+            }
+        });
+
+        // ====== SHOW DELETED TOGGLE ======
+        const showDeletedToggle = document.getElementById('showDeletedToggle');
+        showDeletedToggle.addEventListener('change', () => {
+            document.querySelectorAll('.deleted-row').forEach(row => {
+                row.style.display = showDeletedToggle.checked ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
