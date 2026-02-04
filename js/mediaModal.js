@@ -349,6 +349,8 @@ class MediaModal {
                 <img src="${media.src}"
                      alt="${media.caption}"
                      class="media-image"
+                     loading="lazy"
+                     decoding="async"
                      onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\\'media-error\\'><div class=\\'media-error-icon\\'>📷</div><p>Image failed to load</p><button class=\\'media-retry-btn\\' onclick=\\'window.mediaModal.retryMedia(\\x22${mediaId}\\x22)\\'>Try Again</button></div>';">
             </div>
         `;
@@ -477,7 +479,7 @@ class MediaModal {
         if (media.src) {
             return `
                 <div class="media-document-container">
-                    <img src="${media.src}" alt="${media.caption}" class="media-document-image">
+                    <img src="${media.src}" alt="${media.caption}" class="media-document-image" loading="lazy" decoding="async">
                 </div>
             `;
         } else {

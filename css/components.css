@@ -3725,3 +3725,46 @@ body.is-offline .media-emoji {
 #chapterBody.chapter-fade-in {
     opacity: 1;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   PERFORMANCE OPTIMIZATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Image loading - prevent layout shift */
+.media-image,
+.media-document-image {
+    background-color: var(--color-background-secondary);
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}
+
+/* GPU acceleration for animations */
+.chapter-fade-out,
+.chapter-fade-in,
+.media-modal,
+.toc-sidebar {
+    will-change: opacity, transform;
+    transform: translateZ(0);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

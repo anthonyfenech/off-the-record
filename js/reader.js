@@ -249,9 +249,9 @@ class Reader {
                 // Scroll to top
                 window.scrollTo({ top: 0, behavior: 'instant' });
 
-                // Add scroll listener for completion tracking
+                // Add scroll listener for completion tracking (passive for performance)
                 window.removeEventListener('scroll', this.handleScroll);
-                window.addEventListener('scroll', this.handleScroll);
+                window.addEventListener('scroll', this.handleScroll, { passive: true });
             }
 
             // Dispatch event for other components
