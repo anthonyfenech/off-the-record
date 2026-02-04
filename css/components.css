@@ -1329,6 +1329,25 @@ button:focus-visible {
     opacity: 0.7;
 }
 
+/* Expand tap target for touch devices without affecting layout */
+@media (hover: none) and (pointer: coarse) {
+    .media-emoji {
+        position: relative;
+    }
+
+    .media-emoji::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
 /* Clean/Emoji Toggle Button (becomes Show Media in dark mode version) */
 .clean-toggle {
     display: flex;

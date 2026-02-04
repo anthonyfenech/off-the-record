@@ -184,6 +184,14 @@ body.paginated .chapter-body {
     background-color: transparent;
 }
 
+/* Touch devices - larger tap targets */
+@media (hover: none) and (pointer: coarse) {
+    .nav-btn {
+        min-height: 44px;
+        padding: 10px 0;
+    }
+}
+
 /* Media toggle button */
 .nav-btn.nav-media {
     text-transform: uppercase;
