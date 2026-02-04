@@ -53,7 +53,6 @@ const STATIC_ASSETS = [
     './js/theme.min.js',
     './js/survey-system.min.js',
     './js/page-controls.min.js',
-    './js/analytics-tracking.min.js',
     './js/reader-counter.min.js',
     './js/admin-access.min.js',
     './js/prompts-init.min.js',
