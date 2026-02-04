@@ -3,6 +3,9 @@
 
 import { getMediaById } from '../data/media.js';
 
+// Articles data cache
+let articlesCache = null;
+
 class MediaModal {
     constructor() {
         this.currentMedia = null;
@@ -13,6 +16,25 @@ class MediaModal {
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.modalOpenTime = null; // Timestamp for duration tracking
         this.trackingData = null; // Store tracking data for close event
+    }
+
+    // Load articles data (cached)
+    async loadArticles() {
+        if (articlesCache) return articlesCache;
+        try {
+            const response = await fetch('./data/freep-articles.json');
+            articlesCache = await response.json();
+            return articlesCache;
+        } catch (e) {
+            console.error('[MediaModal] Failed to load articles:', e);
+            return {};
+        }
+    }
+
+    // Get article by ID
+    async getArticleById(id) {
+        const articles = await this.loadArticles();
+        return articles[id] || null;
     }
 
     // Initialize the modal
@@ -161,6 +183,8 @@ class MediaModal {
             'text': 'document',
             // Links
             'link': 'link',
+            // Articles
+            'article': 'article',
             // Text/Notes
             'notes': 'text',
             'email': 'text',
@@ -178,13 +202,32 @@ class MediaModal {
     }
 
     // Open modal with media content
-    open(mediaId) {
+    async open(mediaId) {
         // Check if media is disabled (RED status in admin)
         if (!this.isMediaEnabled(mediaId)) {
             return; // Silently skip disabled media
         }
 
-        const media = getMediaById(mediaId);
+        let media = getMediaById(mediaId);
+
+        // If not in MEDIA_CONTENT, check if it's an article
+        if (!media) {
+            const article = await this.getArticleById(mediaId);
+            if (article) {
+                // Convert article to media format
+                media = {
+                    type: 'article',
+                    emoji: '🗞️',
+                    label: 'Article',
+                    caption: article.headline,
+                    headline: article.headline,
+                    date: article.date,
+                    publication: article.publication || 'Detroit Free Press',
+                    url: article.url,
+                    excerpt: article.excerpt
+                };
+            }
+        }
 
         if (!media) {
             console.error(`Media not found: ${mediaId}`);
@@ -275,6 +318,9 @@ class MediaModal {
                     break;
                 case 'link':
                     body.innerHTML = this.renderLink(media);
+                    break;
+                case 'article':
+                    body.innerHTML = this.renderArticle(media);
                     break;
                 default:
                     body.innerHTML = this.renderPlaceholder(media);
@@ -443,6 +489,34 @@ class MediaModal {
                 </a>
             </div>
         `;
+    }
+
+    // Render Free Press article
+    renderArticle(media) {
+        const excerpt = media.excerpt && media.excerpt !== media.headline
+            ? `<p class="article-excerpt">${this.escapeHtml(media.excerpt)}</p>`
+            : '';
+
+        return `
+            <div class="media-article-container">
+                <div class="article-publication">DETROIT FREE PRESS</div>
+                <div class="article-byline">BY ANTHONY FENECH</div>
+                <h2 class="article-headline">${this.escapeHtml(media.headline)}</h2>
+                <div class="article-date">${media.date}</div>
+                ${excerpt}
+                <a href="${media.url}" target="_blank" rel="noopener noreferrer" class="article-link-btn">
+                    READ FULL ARTICLE →
+                </a>
+            </div>
+        `;
+    }
+
+    // Escape HTML for safe display
+    escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
     }
 
     // Show the modal

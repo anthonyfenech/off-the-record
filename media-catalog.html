@@ -674,6 +674,161 @@
             font-size: 11px;
             color: #666;
         }
+
+        /* ============================================
+           ARTICLES SECTION
+           ============================================ */
+        .articles-panel {
+            margin-top: 30px;
+            background: #fff;
+        }
+
+        .articles-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .articles-title {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .articles-count {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .article-filters {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .year-filter {
+            padding: 6px 12px;
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .year-filter:hover {
+            background: #f5f5f5;
+        }
+
+        .year-filter.active {
+            background: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        #articleSearch {
+            width: 100%;
+            padding: 10px 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #articleSearch:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .articles-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .article-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            gap: 12px;
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-item:hover {
+            background: #fafafa;
+        }
+
+        .article-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .article-headline {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .article-meta {
+            font-size: 10px;
+            color: #888;
+            margin: 0;
+        }
+
+        .article-actions {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .copy-code-btn,
+        .preview-link-btn {
+            padding: 5px 10px;
+            font-size: 10px;
+            font-family: inherit;
+            border: 1px solid #333;
+            background: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.15s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .copy-code-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        .preview-link-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .copy-code-btn.copied {
+            background: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+
+        .no-articles {
+            padding: 30px;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -751,6 +906,27 @@
                     <label style="font-size:10px; display:flex; align-items:center; gap:3px; cursor:pointer; margin-left:auto; color:#888;">
                         <input type="checkbox" id="showDeletedToggle"> Show deleted
                     </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Articles Section -->
+        <div class="articles-panel">
+            <div class="articles-header">
+                <span class="articles-title">🗞️ My Articles</span>
+                <span class="articles-count" id="articlesCount"></span>
+            </div>
+
+            <div class="article-filters" id="articleFilters">
+                <button class="year-filter active" data-year="all">All</button>
+                <!-- Year buttons populated dynamically -->
+            </div>
+
+            <input type="text" id="articleSearch" placeholder="Search articles by headline...">
+
+            <div class="articles-container">
+                <div id="articleList">
+                    <!-- Articles loaded dynamically -->
                 </div>
             </div>
         </div>
@@ -1643,6 +1819,140 @@
                 row.style.display = showDeletedToggle.checked ? '' : 'none';
             });
         });
+
+        // ====== ARTICLES SECTION ======
+        let allArticles = {};
+        let currentYear = 'all';
+        let currentSearch = '';
+
+        // Load articles from JSON
+        async function loadArticles() {
+            try {
+                const response = await fetch('./data/freep-articles.json');
+                allArticles = await response.json();
+
+                // Get unique years and sort them
+                const years = [...new Set(Object.values(allArticles).map(a => a.year))]
+                    .filter(y => y && y !== 'unknown')
+                    .sort();
+
+                // Populate year filter buttons
+                const filtersContainer = document.getElementById('articleFilters');
+                years.forEach(year => {
+                    const btn = document.createElement('button');
+                    btn.className = 'year-filter';
+                    btn.setAttribute('data-year', year);
+                    btn.textContent = year;
+                    filtersContainer.appendChild(btn);
+                });
+
+                // Add click handlers to year filters
+                document.querySelectorAll('.year-filter').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.year-filter').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        currentYear = btn.getAttribute('data-year');
+                        displayArticles();
+                    });
+                });
+
+                displayArticles();
+            } catch (err) {
+                console.error('Failed to load articles:', err);
+                document.getElementById('articleList').innerHTML =
+                    '<div class="no-articles">Failed to load articles</div>';
+            }
+        }
+
+        // Display filtered articles
+        function displayArticles() {
+            const articleList = document.getElementById('articleList');
+            articleList.innerHTML = '';
+
+            const filtered = Object.entries(allArticles).filter(([id, data]) => {
+                const yearMatch = currentYear === 'all' || data.year === currentYear;
+                const searchMatch = currentSearch === '' ||
+                    data.headline.toLowerCase().includes(currentSearch.toLowerCase());
+                return yearMatch && searchMatch;
+            });
+
+            // Sort by date (newest first)
+            filtered.sort((a, b) => {
+                const dateA = parseDate(a[1].date);
+                const dateB = parseDate(b[1].date);
+                return dateB - dateA;
+            });
+
+            if (filtered.length === 0) {
+                articleList.innerHTML = '<div class="no-articles">No articles found</div>';
+                document.getElementById('articlesCount').textContent = '0 articles';
+                return;
+            }
+
+            document.getElementById('articlesCount').textContent = `${filtered.length} articles`;
+
+            filtered.forEach(([id, data]) => {
+                const item = document.createElement('div');
+                item.className = 'article-item';
+                item.innerHTML = `
+                    <div class="article-info">
+                        <div class="article-headline">${escapeHtml(data.headline)}</div>
+                        <p class="article-meta">${data.date} • ${data.year}</p>
+                    </div>
+                    <div class="article-actions">
+                        <button class="copy-code-btn" data-article-id="${id}">Copy Code</button>
+                        <a href="${data.url}" target="_blank" class="preview-link-btn">View</a>
+                    </div>
+                `;
+                articleList.appendChild(item);
+            });
+        }
+
+        // Parse date string to Date object for sorting
+        function parseDate(dateStr) {
+            if (!dateStr || dateStr === 'Date unknown') return new Date(0);
+            // Handle MM/DD/YYYY or MM/DD/YY format
+            const parts = dateStr.split('/');
+            if (parts.length === 3) {
+                let year = parseInt(parts[2]);
+                if (year < 100) year += 2000;
+                return new Date(year, parseInt(parts[0]) - 1, parseInt(parts[1]));
+            }
+            return new Date(0);
+        }
+
+        // Escape HTML for safe display
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Search handler
+        document.getElementById('articleSearch').addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            displayArticles();
+        });
+
+        // Copy code handler (using event delegation)
+        document.getElementById('articleList').addEventListener('click', (e) => {
+            if (e.target.classList.contains('copy-code-btn')) {
+                const articleId = e.target.getAttribute('data-article-id');
+                const code = `<span class="media-emoji" data-media-id="${articleId}">🗞️</span>`;
+
+                navigator.clipboard.writeText(code).then(() => {
+                    e.target.textContent = '✓ Copied!';
+                    e.target.classList.add('copied');
+                    setTimeout(() => {
+                        e.target.textContent = 'Copy Code';
+                        e.target.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+        });
+
+        // Initialize articles
+        loadArticles();
     </script>
 </body>
 </html>

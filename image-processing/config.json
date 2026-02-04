@@ -1,0 +1,35 @@
+{
+  "hard_drive_path": "/Volumes/CHANGEME/archive",
+  "api_key": "YOUR_API_KEY_HERE",
+  "priority_folders": ["photos", "screenshots"],
+  "output_folder": "./processing_results",
+  "max_concurrent_batches": 5,
+  "batch_size": 2000,
+  "special_keywords": [
+    "diversity",
+    "investigative",
+    "Deep Throat",
+    "pizza party",
+    "Malta",
+    "Houston incident",
+    "business side",
+    "Verlander incident",
+    "clubhouse ban"
+  ],
+  "key_people": [
+    "Verlander",
+    "CC",
+    "Christopher Thomas",
+    "Colangelo",
+    "Pedro Gomez",
+    "Deep Throat",
+    "Al Avila",
+    "Internet Stalker",
+    "Dombrowski",
+    "Ilitch",
+    "Ausmus",
+    "Gardenhire",
+    "Cabrera",
+    "Miguel"
+  ]
+}
