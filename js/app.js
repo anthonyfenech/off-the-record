@@ -6,6 +6,7 @@ import { pwa } from './pwa.js';
 import { photoGallery } from './photoGallery.js';
 import { bookmarks } from './bookmarks.js';
 import { auth } from './auth.js';
+import { mobileOptimizer } from './mobile-optimizer.js';
 import { CHAPTERS } from '../data/chapters.js';
 
 class App {
@@ -42,6 +43,9 @@ class App {
     // Start the app
     start() {
         try {
+            // Initialize mobile optimizations first
+            mobileOptimizer.init();
+
             // Initialize core modules
             reader.init();
             navigation.init();

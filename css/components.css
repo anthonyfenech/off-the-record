@@ -3768,3 +3768,61 @@ html {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE OPTIMIZATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Slow connection mode - reduce animations, prefer smaller assets */
+.slow-connection * {
+    transition-duration: 0.1s !important;
+}
+
+.slow-connection .chapter-fade-out,
+.slow-connection .chapter-fade-in {
+    transition-duration: 0.15s !important;
+}
+
+/* iOS viewport height fix - use --vh variable */
+.is-ios .full-height {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Mobile touch enhancements */
+@media (max-width: 768px) {
+    /* Ensure all interactive elements are easily tappable */
+    .prompt-choice,
+    .survey-option {
+        min-height: 48px;
+        padding: 14px 16px;
+    }
+
+    /* Larger spacing between tappable elements */
+    .button-group,
+    .nav-group {
+        gap: 12px;
+    }
+
+    /* Faster transitions on mobile for snappier feel */
+    .modal,
+    .toc-sidebar,
+    .media-modal {
+        transition-duration: 0.2s;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Disable hover effects on touch devices */
+    .nav-btn:hover::after {
+        transform: scaleX(0);
+    }
+
+    /* Larger touch targets */
+    .emoji-button,
+    .reaction-btn {
+        min-width: 48px;
+        min-height: 48px;
+    }
+}

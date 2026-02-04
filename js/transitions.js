@@ -55,6 +55,9 @@ class ChapterTransitions {
 
     // Preload next chapter content
     preloadNextChapter() {
+        // Skip preloading on slow connections
+        if (window.DISABLE_PRELOAD) return;
+
         const nextId = getNextChapterId(this.currentChapterId);
         if (!nextId || this.preloadedChapters.has(nextId)) return;
 

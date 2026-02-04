@@ -7,13 +7,18 @@
 * {
     margin: 0;
     padding: 0;
+    /* Remove iOS tap highlight */
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* iOS viewport height fix */
+    height: -webkit-fill-available;
 }
 
 body {
@@ -30,12 +35,41 @@ img, picture, video, canvas, svg {
 
 input, button, textarea, select {
     font: inherit;
+    /* Prevent iOS zoom on input focus */
+    font-size: 16px;
+}
+
+/* iOS input appearance fixes */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 button {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+/* Custom active state for touch feedback */
+button:active,
+a:active,
+[role="button"]:active {
+    opacity: 0.7;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
