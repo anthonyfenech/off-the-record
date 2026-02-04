@@ -104,7 +104,7 @@
     letter-spacing: 0.5em;
 }
 
-/* Remove any extra margin after scene break to keep *** centered */
+/* Remove any extra margin after scene break */
 .scene-break + p,
 .scene-break + p.has-dateline {
     margin-top: 0;

@@ -189,8 +189,8 @@ class Reader {
             .filter(p => p.trim())
             .map(p => {
                 const trimmed = p.trim();
-                if (trimmed === '---' || trimmed === '***' || trimmed === '* * *') {
-                    return { type: 'break', content: '* * *' };
+                if (trimmed === '---') {
+                    return { type: 'break', content: '' };
                 }
                 return { type: 'paragraph', content: trimmed };
             });

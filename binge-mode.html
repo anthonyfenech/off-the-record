@@ -111,7 +111,7 @@
             background-color: transparent;
         }
 
-        /* Scene breaks (***) - centered with spacing */
+        /* Scene breaks - centered with spacing */
         .scene-break {
             text-align: center;
             margin: 0;
@@ -163,7 +163,7 @@
             font-size: 1.25rem;
         }
 
-        /* Remove extra margin from chapter headers after chapter-end to keep *** centered */
+        /* Remove extra margin from chapter headers after chapter-end */
         .chapter-section + .chapter-section .chapter-header {
             margin-top: 0;
         }
@@ -610,7 +610,7 @@
             <article class="chapter-section${isSpecial ? ' special-page' : ''}${isLocked ? ' locked' : ''}" id="chapter-${ch.id}" data-chapter="${i}">
                 ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}${isLocked ? ' 🔒' : ''}</h2></header>` : ''}
                 <div class="chapter-body">${chapterContent}</div>
-                ${!isSpecial && !isLocked ? '<div class="chapter-end">***</div>' : ''}
+                ${!isSpecial && !isLocked ? '<div class="chapter-end"></div>' : ''}
             </article>
         `}).join('');
 
