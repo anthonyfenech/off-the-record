@@ -617,9 +617,8 @@ function selectEmoji(el) {
 function submitTest() {
     if (!currentTestPrompt) return;
     setAnswered(currentTestPrompt.id);
-    document.getElementById('testOutcome').textContent = currentTestPrompt.outcome;
-    document.getElementById('testOutcome').style.display = 'block';
-    document.getElementById('testButtons').innerHTML = '<button class="modal-btn submit" onclick="closeTestModal()">CLOSE</button>';
+    // Close modal immediately - NO outcome text shown (critical requirement)
+    closeTestModal();
     renderPrompts();
 }
 function skipTest() { closeTestModal(); }
@@ -717,10 +716,14 @@ function deletePrompt(id) {
 }
 
 function copyCode(id) {
-    const prompt = allPrompts.find(p => p.id === id);
-    if (!prompt) return;
-    const code = JSON.stringify(prompt, null, 2);
-    navigator.clipboard.writeText(code).then(() => alert('Copied to clipboard'));
+    const code = `<div class="prompt-trigger" data-prompt-id="${id}"></div>`;
+    navigator.clipboard.writeText(code).then(() => {
+        // Show brief feedback
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.textContent = '✓ COPIED';
+        setTimeout(() => btn.textContent = originalText, 2000);
+    });
 }
 
 // Bulk operations
