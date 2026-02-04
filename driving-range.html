@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Range - OFF-THE-RECORD</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Courier New', monospace; max-width: 700px; margin: 0 auto; padding: 20px; background: #f5f5f5; line-height: 1.6; }
+        h1 { text-align: center; margin-bottom: 30px; letter-spacing: 2px; }
+        .prompt-section { background: #fff; border: 2px solid #000; padding: 25px; margin-bottom: 30px; }
+        .prompt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        .prompt-number { font-weight: bold; font-size: 14px; }
+        .prompt-status { font-size: 12px; color: #666; }
+        .prompt-status.answered { color: #000; }
+        .prompt-title { font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .prompt-context { color: #333; margin-bottom: 20px; font-size: 14px; }
+        .trigger-line { height: 3px; background: #ff0000; margin: 20px 0; }
+        .prompt-outcome { color: #333; font-size: 14px; font-style: italic; }
+        .reset-btn { position: fixed; top: 15px; right: 15px; background: #ff0000; color: #fff; border: none; padding: 12px 20px; font-family: inherit; font-weight: bold; cursor: pointer; font-size: 12px; z-index: 100; }
+        .reset-btn:hover { background: #cc0000; }
+        /* Modal */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(128,128,128,0.7); z-index: 1000; }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+        .modal { background: #fff; border: 1px solid #000; width: 95%; max-width: 450px; padding: 25px; position: relative; }
+        .modal-close { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #000; }
+        .modal-question { text-align: center; font-weight: bold; margin-bottom: 25px; font-size: 16px; }
+        .modal-choices { margin-bottom: 20px; }
+        .modal-choice { display: flex; align-items: center; padding: 12px; border: 1px solid #ccc; margin-bottom: 8px; cursor: pointer; }
+        .modal-choice:hover { border-color: #000; }
+        .modal-choice input { margin-right: 12px; width: 18px; height: 18px; }
+        .modal-choice label { cursor: pointer; flex: 1; }
+        .modal-input { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: inherit; font-size: 14px; margin-bottom: 15px; resize: vertical; min-height: 80px; }
+        .modal-buttons { display: flex; gap: 10px; }
+        .modal-btn { flex: 1; padding: 12px; font-family: inherit; font-weight: bold; cursor: pointer; font-size: 14px; min-height: 44px; }
+        .modal-btn.submit { background: #000; color: #fff; border: none; }
+        .modal-btn.skip { background: #fff; color: #000; border: 1px solid #000; }
+        .end-section { text-align: center; padding: 40px; color: #666; }
+    </style>
+</head>
+<body>
+
+<button class="reset-btn" onclick="resetAll()">RESET ALL</button>
+
+<h1>DRIVING RANGE</h1>
+
+<div id="prompts-container"></div>
+
+<div class="end-section">END OF PROMPTS</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-question" id="modalQuestion"></div>
+        <div class="modal-choices" id="modalChoices"></div>
+        <div class="modal-buttons">
+            <button class="modal-btn skip" id="btnSkip">SKIP</button>
+            <button class="modal-btn submit" id="btnSubmit">SUBMIT</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const PROMPTS = [
+    {
+        id: 'verlander-camera',
+        title: 'Verlander Camera Confrontation',
+        context: 'Verlander just blew you off after two years of relationship-building. Now you\'re in a press scrum. TV cameras are rolling. You know he cares deeply about his on-camera image.',
+        question: 'What would you do?',
+        type: 'choice',
+        choices: ['Nothing', 'Call him out privately', 'Call him out on camera'],
+        outcome: 'This did not sit well with him, especially on-camera. And I knew that if there was one thing Verlander cared about, it was his on-camera image, which is why I asked it on-camera in the first place.'
+    },
+    {
+        id: 'verlander-trade',
+        title: 'Verlander Trade Tweet',
+        context: 'Your source just confirmed it. The biggest scoop of your career. Justin Verlander traded to Houston. You have 11 seconds before other reporters get it.',
+        question: 'What do you tweet?',
+        type: 'text',
+        outcome: 'Mother-fucking WOOOOO!!!!! Fenech got the scoop by two minutes and 27 seconds. Simple, clean, perfect. "The Tigers have traded Justin Verlander to the Astros."'
+    },
+    {
+        id: 'astros-clubhouse',
+        title: 'Astros Clubhouse Decision',
+        context: 'Day after the Verlander Incident. He called you unethical on national TV. The Astros might bar you. MLB rules say you have access.',
+        question: 'Should I go into the Astros clubhouse?',
+        type: 'choice',
+        choices: ['Yes', 'No', 'Of course'],
+        outcome: 'Of course you went in. What were you supposed to do—let them win? History will be on your side.'
+    },
+    {
+        id: 'pizza-resignation',
+        title: 'Pizza Resignation',
+        context: 'You\'ve been frozen out, humiliated, pushed to the breaking point. You woke up "feeling dangerous today." On your notepad: Jet\'s Pizza number, Comerica Park address, Ron Colangelo\'s phone number.',
+        question: 'How should I quit my job?',
+        type: 'choice',
+        choices: ['Fax', 'Twitter tirade', 'Send the Tigers a pizza'],
+        outcome: 'I sent them pizza. This became viral career suicide. Pedro Gomez would later call to say: "Anthony, you committed career suicide."'
+    },
+    {
+        id: 'vmart-hospital',
+        title: 'V-Mart Hospital Text',
+        context: 'August 27, 2017, 11:30 PM. Your explosive Victor Martinez story publishes at 2 AM. Brad Ausmus just texted: "U might want to hold off on ur story." He says V-Mart went to hospital with heart issues.',
+        question: 'What do you text Ausmus?',
+        type: 'text',
+        outcome: '"What the fuck, man?" You texted back in a panic. The story was killed. Disaster averted. (REPORTER\'S NOTE: Fenech never independently confirmed Martinez actually went to the hospital. The timing could seem "exceptionally coincidental.")'
+    }
+];
+
+const STORAGE_KEY = 'driving_range_answered';
+let currentPromptId = null;
+let selectedChoice = null;
+
+function getAnswered() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; }
+}
+function setAnswered(id) {
+    const answered = getAnswered();
+    answered[id] = true;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(answered));
+}
+
+function loadAdminPrompts() {
+    try {
+        const admin = JSON.parse(localStorage.getItem('admin_interactivePrompts') || '[]');
+        return admin.map((p, i) => ({
+            id: 'admin-' + i,
+            title: 'Q&A: ' + (p.question || '').substring(0, 30),
+            context: '',
+            question: p.question,
+            type: 'choice',
+            choices: p.choices ? p.choices.map(c => c.text) : [],
+            outcome: 'Response recorded.'
+        }));
+    } catch { return []; }
+}
+
+function renderPrompts() {
+    const container = document.getElementById('prompts-container');
+    const answered = getAnswered();
+    const allPrompts = [...PROMPTS, ...loadAdminPrompts()];
+
+    container.innerHTML = allPrompts.map((p, i) => `
+        <div class="prompt-section" id="section-${p.id}">
+            <div class="prompt-header">
+                <span class="prompt-number">#${i + 1}</span>
+                <span class="prompt-status ${answered[p.id] ? 'answered' : ''}">${answered[p.id] ? '&#10003; Answered' : '&#9675; Not answered'}</span>
+            </div>
+            <div class="prompt-title">${p.title}</div>
+            ${p.context ? `<div class="prompt-context">${p.context}</div>` : ''}
+            <div class="trigger-line" data-prompt-id="${p.id}"></div>
+            <div class="prompt-outcome">${p.outcome}</div>
+        </div>
+    `).join('');
+
+    setupObservers(allPrompts);
+}
+
+function setupObservers(allPrompts) {
+    const answered = getAnswered();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.dataset.promptId;
+                if (!answered[id]) {
+                    const prompt = allPrompts.find(p => p.id === id);
+                    if (prompt) openModal(prompt);
+                }
+            }
+        });
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+    document.querySelectorAll('.trigger-line').forEach(el => observer.observe(el));
+}
+
+function openModal(prompt) {
+    currentPromptId = prompt.id;
+    selectedChoice = null;
+
+    document.getElementById('modalQuestion').textContent = prompt.question;
+    const choicesEl = document.getElementById('modalChoices');
+
+    if (prompt.type === 'text') {
+        choicesEl.innerHTML = `<textarea class="modal-input" id="textInput" placeholder="Type your answer..."></textarea>`;
+    } else {
+        choicesEl.innerHTML = prompt.choices.map((c, i) => `
+            <div class="modal-choice" onclick="selectChoice(${i})">
+                <input type="radio" name="choice" id="choice${i}" value="${i}">
+                <label for="choice${i}">${c}</label>
+            </div>
+        `).join('');
+    }
+
+    document.getElementById('modalOverlay').classList.add('active');
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    currentPromptId = null;
+    selectedChoice = null;
+}
+
+function selectChoice(index) {
+    selectedChoice = index;
+    document.querySelectorAll('.modal-choice input').forEach((el, i) => el.checked = i === index);
+}
+
+function submit() {
+    if (!currentPromptId) return;
+    const textInput = document.getElementById('textInput');
+    if (textInput && !textInput.value.trim()) return;
+    if (!textInput && selectedChoice === null) return;
+
+    setAnswered(currentPromptId);
+    closeModal();
+    renderPrompts();
+}
+
+function resetAll() {
+    if (confirm('Reset all prompts?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        location.reload();
+    }
+}
+
+// Event listeners
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('btnSkip').addEventListener('click', closeModal);
+document.getElementById('btnSubmit').addEventListener('click', submit);
+document.getElementById('modalOverlay').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
+
+// Initialize
+renderPrompts();
+</script>
+
+</body>
+</html>
