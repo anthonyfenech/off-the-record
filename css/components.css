@@ -3712,3 +3712,16 @@ body.is-offline .media-emoji {
         -webkit-appearance: none;
     }
 }
+
+/* Chapter Transitions */
+#chapterBody {
+    transition: opacity 0.3s ease-out;
+}
+
+#chapterBody.chapter-fade-out {
+    opacity: 0;
+}
+
+#chapterBody.chapter-fade-in {
+    opacity: 1;
+}

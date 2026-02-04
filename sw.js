@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v366';
-const STATIC_CACHE = 'off-the-record-static-v366';
-const CONTENT_CACHE = 'off-the-record-content-v366';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v366';
+const CACHE_VERSION = 'v368';
+const STATIC_CACHE = 'off-the-record-static-v368';
+const CONTENT_CACHE = 'off-the-record-content-v368';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v368';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -31,6 +31,7 @@ const STATIC_ASSETS = [
     './js/navigation.min.js',
     './js/storage.min.js',
     './js/pwa.min.js',
+    './js/transitions.min.js',
     './js/blog.min.js',
     './js/guestbook.min.js',
     './js/bookmarks.min.js',
@@ -42,6 +43,7 @@ const STATIC_ASSETS = [
     './js/otr-tier1-error-handler.min.js',
     './js/analytics.min.js',
     './js/bookmark.min.js',
+    './js/live-prompts.js',
     './js/interactivePrompts.min.js',
     './js/mediaModal.min.js',
     './js/photoGallery.min.js',

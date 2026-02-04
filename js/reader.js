@@ -5,6 +5,7 @@ import { getProgress, saveProgress, markChapterComplete, isChapterComplete } fro
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager } from './reading-mode.js';
 import { CONFIG } from './config.js';
+import { transitions } from './transitions.js';
 
 class Reader {
     constructor() {
@@ -34,6 +35,9 @@ class Reader {
 
         // Initialize reading mode manager
         readingModeManager.init();
+
+        // Initialize transitions for smooth chapter navigation
+        transitions.init();
 
         // Expose reader instance globally for other modules
         window.readerInstance = this;
@@ -135,8 +139,8 @@ class Reader {
         return lockedChapters.includes(chapterId);
     }
 
-    // Load a specific chapter
-    loadChapter(chapterId, startPage = null) {
+    // Load a specific chapter with optional transitions
+    loadChapter(chapterId, startPage = null, useTransition = true) {
         const chapter = CHAPTERS.find(c => c.id === chapterId);
 
         if (!chapter) {
@@ -150,6 +154,18 @@ class Reader {
             return;
         }
 
+        // Use transition if enabled and we're changing chapters (not initial load)
+        const shouldTransition = useTransition && this.currentChapter !== null && this.currentChapter !== chapterId;
+
+        if (shouldTransition) {
+            transitions.transitionTo(() => this.doLoadChapter(chapter, chapterId, startPage));
+        } else {
+            this.doLoadChapter(chapter, chapterId, startPage);
+        }
+    }
+
+    // Internal method to actually load chapter content
+    doLoadChapter(chapter, chapterId, startPage) {
         // Show chapter header (may be hidden from home page)
         const chapterHeader = document.querySelector('.chapter-header');
         if (chapterHeader) {
@@ -183,8 +199,11 @@ class Reader {
         // Update DOM - just the title, no subtitle or reading time
         this.chapterTitle.textContent = chapter.title;
 
-        // Parse content into paragraph data
-        const paragraphData = chapter.content
+        // Check if chapter is preloaded for instant loading
+        const preloaded = transitions.getPreloaded(chapterId);
+
+        // Parse content into paragraph data (use preloaded if available)
+        const paragraphData = preloaded ? preloaded.paragraphData : chapter.content
             .split('\n\n')
             .filter(p => p.trim())
             .map(p => {
