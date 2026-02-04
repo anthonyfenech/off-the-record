@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v375';
-const STATIC_CACHE = 'off-the-record-static-v375';
-const CONTENT_CACHE = 'off-the-record-content-v375';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v375';
+const CACHE_VERSION = 'v376';
+const STATIC_CACHE = 'off-the-record-static-v376';
+const CONTENT_CACHE = 'off-the-record-content-v376';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v376';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -52,6 +52,15 @@ const STATIC_ASSETS = [
     './js/photoGallery.min.js',
     './js/theme.min.js',
     './js/survey-system.min.js',
+    './js/page-controls.min.js',
+    './js/analytics-tracking.min.js',
+    './js/reader-counter.min.js',
+    './js/admin-access.min.js',
+    './js/prompts-init.min.js',
+    './js/binge-init.min.js',
+    './js/binge-theme.min.js',
+    './js/binge-analytics.min.js',
+    './js/photos-init.min.js',
     './data/chapters.js',
     './data/media.js',
     './data/photos.js',

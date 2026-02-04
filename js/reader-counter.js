@@ -1,0 +1,72 @@
+// ═══════════════════════════════════════════════════════════════
+// READER COUNTER SYSTEM
+// Fetches and displays reader count, increments on password gate pass
+// Extracted from index.html inline scripts
+// ═══════════════════════════════════════════════════════════════
+
+(function() {
+    'use strict';
+
+    var API_URL = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+
+    // Format number with commas
+    function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Fetch and display count
+    async function fetchCount() {
+        try {
+            var response = await fetch(API_URL + '?action=getReaderCount');
+            var data = await response.json();
+
+            // Check if counter is enabled
+            if (data.counter_enabled === false) {
+                var countEl = document.getElementById('reader-count');
+                if (countEl) countEl.style.display = 'none';
+                return;
+            }
+
+            if (data.total !== undefined) {
+                var numberEl = document.getElementById('count-number');
+                var countEl = document.getElementById('reader-count');
+                if (numberEl) numberEl.textContent = formatNumber(data.total);
+                if (countEl) countEl.style.display = 'block';
+            }
+        } catch (error) {
+            // Silently fail - counter is non-critical
+        }
+    }
+
+    // Increment count
+    async function incrementCount() {
+        try {
+            await fetch(API_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'incrementStartReading' })
+            });
+        } catch (error) {
+            // Silently fail - counter is non-critical
+        }
+    }
+
+    // Initialize - fetch count on page load
+    fetchCount();
+
+    // Hook into password form - increment when password gate is passed
+    var passwordForm = document.getElementById('passwordForm');
+    if (passwordForm) {
+        passwordForm.addEventListener('submit', function(e) {
+            // Check if password is correct by watching for gate hide
+            setTimeout(function() {
+                var gate = document.getElementById('passwordGate');
+                if (gate && (gate.style.display === 'none' || gate.classList.contains('hidden'))) {
+                    incrementCount();
+                }
+            }, 100);
+        });
+    }
+
+})();

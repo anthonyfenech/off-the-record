@@ -262,141 +262,8 @@
     <script type="module" src="./js/theme.min.js"></script>
     <script type="module" src="./js/app.min.js"></script>
 
-    <!-- Media Toggle (in footer navigation) -->
-    <script>
-        const mediaBtn = document.getElementById('mediaBtn');
-        const mediaKey = 'reader_cleanRead';
-
-        // Initialize toggle state (active = media visible = NOT clean-read)
-        function updateMediaBtnState() {
-            const isCleanRead = localStorage.getItem(mediaKey) === 'true';
-            // Button is active (red) when media is visible (not clean-read)
-            mediaBtn.classList.toggle('media-active', !isCleanRead);
-        }
-
-        // Load saved state on page load
-        if (localStorage.getItem(mediaKey) === 'true') {
-            document.body.classList.add('clean-read');
-        }
-        updateMediaBtnState();
-
-        mediaBtn.addEventListener('click', () => {
-            document.body.classList.toggle('clean-read');
-            const isCleanRead = document.body.classList.contains('clean-read');
-            localStorage.setItem(mediaKey, isCleanRead);
-            updateMediaBtnState();
-        });
-    </script>
-
-    <!-- Mode Toggle (Scroll/Pages) -->
-    <script>
-        const modeToggle = document.getElementById('modeToggle');
-        const modeKey = 'reader_mode';
-
-        // Initialize mode from localStorage
-        function initMode() {
-            const savedMode = localStorage.getItem(modeKey) || 'scroll';
-            setMode(savedMode);
-        }
-
-        function setMode(mode) {
-            // Update buttons
-            modeToggle.querySelectorAll('.option-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.mode === mode);
-            });
-
-            // Update body class and trigger reading mode manager if available
-            if (mode === 'page') {
-                document.body.classList.remove('scrolling');
-                document.body.classList.add('paginated');
-            } else {
-                document.body.classList.remove('paginated');
-                document.body.classList.add('scrolling');
-            }
-
-            localStorage.setItem(modeKey, mode);
-
-            // Trigger existing reading mode manager if available
-            if (window.readingModeManager) {
-                window.readingModeManager.setMode(mode);
-            }
-        }
-
-        initMode();
-
-        modeToggle.addEventListener('click', (e) => {
-            const btn = e.target.closest('.option-btn');
-            if (btn) {
-                setMode(btn.dataset.mode);
-            }
-        });
-    </script>
-
-    <!-- Text Size Toggle -->
-    <script>
-        const textSizeToggle = document.getElementById('textSizeToggle');
-        const textSizeKey = 'reader_fontSize';
-
-        // Initialize text size from localStorage
-        function initTextSize() {
-            const savedSize = localStorage.getItem(textSizeKey) || 'medium';
-            setTextSize(savedSize);
-        }
-
-        function setTextSize(size) {
-            // Update buttons
-            textSizeToggle.querySelectorAll('.option-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.size === size);
-            });
-
-            // Update body class
-            document.body.classList.remove('font-small', 'font-medium', 'font-large');
-            document.body.classList.add('font-' + size);
-
-            localStorage.setItem(textSizeKey, size);
-        }
-
-        initTextSize();
-
-        textSizeToggle.addEventListener('click', (e) => {
-            const btn = e.target.closest('.option-btn');
-            if (btn) {
-                setTextSize(btn.dataset.size);
-            }
-        });
-    </script>
-
-    <!-- Search Section Toggle -->
-    <script>
-        const searchToggle = document.getElementById('searchToggle');
-        const searchSection = document.getElementById('searchSection');
-        const searchContent = document.getElementById('searchContent');
-        const searchInput = document.getElementById('searchInput');
-
-        searchToggle.addEventListener('click', () => {
-            const isOpen = searchSection.classList.toggle('open');
-            searchToggle.setAttribute('aria-expanded', isOpen);
-            searchContent.style.display = isOpen ? 'block' : 'none';
-
-            // Focus input when opened
-            if (isOpen) {
-                setTimeout(() => searchInput.focus(), 100);
-            }
-        });
-    </script>
-
-    <!-- Options Section Toggle -->
-    <script>
-        const optionsToggle = document.getElementById('optionsToggle');
-        const optionsSection = document.getElementById('optionsSection');
-        const optionsContent = document.getElementById('optionsContent');
-
-        optionsToggle.addEventListener('click', () => {
-            const isOpen = optionsSection.classList.toggle('open');
-            optionsToggle.setAttribute('aria-expanded', isOpen);
-            optionsContent.style.display = isOpen ? 'block' : 'none';
-        });
-    </script>
+    <!-- Page Controls (media toggle, mode toggle, text size, search, options) -->
+    <script src="./js/page-controls.min.js"></script>
 
     <!-- Interactive Prompt Modal -->
     <div id="prompt-modal">
@@ -419,39 +286,7 @@
     <script src="./prompts/prompt-system.min.js"></script>
 
     <!-- Interactive Q&A Prompts (text-triggered) -->
-    <script type="module">
-        import { InteractivePrompts } from './js/interactivePrompts.min.js';
-
-        // Load from admin panel localStorage first, fallback to static file
-        const adminPrompts = JSON.parse(localStorage.getItem('admin_interactivePrompts') || '[]');
-        let promptsInstance = null;
-
-        function initPrompts() {
-            if (adminPrompts.length > 0) {
-                promptsInstance = new InteractivePrompts(adminPrompts);
-            } else {
-                // Fallback to static prompts file
-                import('./data/prompts.js').then(({ PROMPTS }) => {
-                    if (PROMPTS && PROMPTS.length > 0) {
-                        promptsInstance = new InteractivePrompts(PROMPTS);
-                    }
-                }).catch(() => {
-                    // No static file or empty - that's fine
-                });
-            }
-        }
-
-        // Initialize on page load
-        initPrompts();
-
-        // Re-initialize when chapter changes (SPA navigation)
-        document.addEventListener('chapterLoaded', () => {
-            if (promptsInstance) {
-                promptsInstance.destroy();
-            }
-            setTimeout(initPrompts, 300);
-        });
-    </script>
+    <script type="module" src="./js/prompts-init.min.js"></script>
 
     <!-- Analytics -->
     <script src="./js/analytics.min.js"></script>
@@ -461,136 +296,15 @@
 
     <!-- Live Prompts (Interactive Reader Prompts) -->
     <script src="./js/live-prompts.js"></script>
-    <script>
-        // Track Home page view on load
-        window.addEventListener('load', function() {
-            if (window.analytics) {
-                window.analytics.trackPageView('Home');
-            }
-        });
 
-        // Track chapter changes by observing URL hash changes
-        window.addEventListener('hashchange', function() {
-            if (window.analytics) {
-                const hash = window.location.hash;
-                const chapterMatch = hash.match(/chapter-(\d+)/);
-                if (chapterMatch) {
-                    window.analytics.trackPageView('Chapter ' + chapterMatch[1]);
-                }
-            }
-        });
-
-        // Also observe chapter title changes for SPA navigation
-        (function() {
-            const titleEl = document.getElementById('chapterTitle');
-            if (titleEl) {
-                const observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        if (mutation.type === 'childList' && titleEl.textContent) {
-                            if (window.analytics) {
-                                window.analytics.trackPageView(titleEl.textContent);
-                            }
-                        }
-                    });
-                });
-                observer.observe(titleEl, { childList: true, characterData: true, subtree: true });
-            }
-        })();
-    </script>
+    <!-- Analytics Tracking -->
+    <script src="./js/analytics-tracking.min.js"></script>
 
     <!-- Reader Counter System -->
-    <script>
-    (function() {
-        const API_URL = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+    <script src="./js/reader-counter.min.js"></script>
 
-        // Format number with commas
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        // Fetch and display count
-        async function fetchCount() {
-            try {
-                const response = await fetch(API_URL + '?action=getReaderCount');
-                const data = await response.json();
-
-                // Check if counter is enabled
-                if (data.counter_enabled === false) {
-                    document.getElementById('reader-count').style.display = 'none';
-                    return;
-                }
-
-                if (data.total !== undefined) {
-                    document.getElementById('count-number').textContent = formatNumber(data.total);
-                    document.getElementById('reader-count').style.display = 'block';
-                }
-            } catch (error) {
-                console.error('Failed to fetch reader count:', error);
-            }
-        }
-
-        // Increment count
-        async function incrementCount() {
-            try {
-                await fetch(API_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'incrementStartReading' })
-                });
-            } catch (error) {
-                console.error('Failed to increment count:', error);
-            }
-        }
-
-        // Initialize - fetch count on page load
-        fetchCount();
-
-        // Hook into password form - increment when password gate is passed
-        const passwordForm = document.getElementById('passwordForm');
-        if (passwordForm) {
-            const originalSubmit = passwordForm.onsubmit;
-            passwordForm.addEventListener('submit', function(e) {
-                // Check if password is correct by watching for gate hide
-                setTimeout(function() {
-                    const gate = document.getElementById('passwordGate');
-                    if (gate && (gate.style.display === 'none' || gate.classList.contains('hidden'))) {
-                        incrementCount();
-                    }
-                }, 100);
-            });
-        }
-    })();
-    </script>
-    <script>
-    // Admin access - type secret password anywhere to reveal Admin tab
-    (function() {
-        var ADMIN_PASSWORD = 'FENECHADMIN';
-        var ADMIN_KEY = 'otr_admin_access';
-        var typed = '';
-        var adminSection = document.getElementById('adminSection');
-
-        // Check if already authenticated
-        if (localStorage.getItem(ADMIN_KEY) === 'true' && adminSection) {
-            adminSection.style.display = '';
-        }
-
-        // Listen for password typing
-        document.addEventListener('keypress', function(e) {
-            typed += e.key.toUpperCase();
-            // Keep only last N characters where N is password length
-            if (typed.length > ADMIN_PASSWORD.length) {
-                typed = typed.slice(-ADMIN_PASSWORD.length);
-            }
-            // Check for match
-            if (typed === ADMIN_PASSWORD) {
-                localStorage.setItem(ADMIN_KEY, 'true');
-                if (adminSection) adminSection.style.display = '';
-                typed = '';
-            }
-        });
-    })();
-    </script>
+    <!-- Admin Access (secret password) -->
+    <script src="./js/admin-access.min.js"></script>
     <script src="./js/otr-tier1-error-handler.min.js"></script>
 
 </body>
