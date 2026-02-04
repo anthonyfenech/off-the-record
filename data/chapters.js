@@ -3705,9 +3705,9 @@ export const CHAPTERS = [
 
 <p>Today, Astros manager A.J. Hinch is ejected early from Houston’s hurricane-displaced game against Texas. Miffed, with time on his hands, Hinch connects with Tigers adviser Scott Bream and rekindles trade talks. From inside the visiting manager’s office at Tropicana Field, over speakerphone, the framework for trade deadline fireworks is falling into place.</p>
 
-<p>Me? Don’t know anything about it. With my luck, Verlander will get traded while I’m in the air.</p>
+<p>Me? Don't know anything about it. With my luck, Verlander will get traded while I'm in the air.</p>
 
-<p>DETROIT—I get home after 10. Less than two hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome back pour.</p>
+<p class="has-dateline">DETROIT—I get home after 10. Less than two hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome back pour.</p>
 
 <p>Deep Throat confirms the front office is In The Room. Apparently, they are spending the deadline at Al Avila’s suburban Detroit home.</p>
 
@@ -3869,9 +3869,9 @@ export const CHAPTERS = [
 
 <p>During the game, John has me track Kenny Rogers’ pitch velocity. After I transcribe Leyland quotes, he passes me the book.</p>
 
-<p>Leaving the ballpark, I’m hooked. I fear I’ve been drugged by this life.</p>
+<p>Leaving the ballpark, I'm hooked. I fear I've been drugged by this life.</p>
 
-<p><em>February 10, 2008</em>—I’m about to meet another legend today, after picking John Lowe’s brain all winter. We’d meet up at bookstores and Ram’s Horn. I keep notes, so I don’t lose the wisdom he shares.</p>
+<p class="has-dateline"><em>February 10, 2008</em>—I'm about to meet another legend today, after picking John Lowe's brain all winter. We'd meet up at bookstores and Ram's Horn. I keep notes, so I don't lose the wisdom he shares.</p>
 
 <p>I turned twenty last fall, so I need all the guidance I can get. Seamhead was already a Ball Writer at my age. I’m still answering phones.</p>
 
@@ -3950,7 +3950,7 @@ export const CHAPTERS = [
 
 <p>Seven hours ago, I was getting ready for a wedding. Now, I bleed out a blowout loss.</p>
 
-<p>I use the time to write a column. I consider calling Brad but figure he’s all talked out. The sports desk’s headline goes live: TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE.</p>
+<p>I use the time to write a column. I consider calling Brad but figure he's all talked out. The sports desk's headline goes live: <small>TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE.</small></p>
 
 <p>“<em>Ausmus, a player’s manager to a fault, was not the right fit for a team that needed more conviction than comfort from a leader. In talking with Tigers people, that notion was repeated.</em></p>
 
