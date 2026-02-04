@@ -31,10 +31,10 @@ body {
     margin-right: auto;
 }
 
-/* Body paragraphs - spacing between, no indents */
+/* Body paragraphs - tight book-like spacing */
 .chapter-body p {
     margin-top: 0;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     text-indent: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -301,7 +301,7 @@ body {
     }
 
     .chapter-body p {
-        margin-bottom: 1.4em;
+        margin-bottom: 0.9em;
     }
 
     .chapter-body .scene-break {
@@ -341,6 +341,6 @@ body {
     }
 
     .chapter-body p {
-        margin-bottom: 1.6em;
+        margin-bottom: 1.1em;
     }
 }
