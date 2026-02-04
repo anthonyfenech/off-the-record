@@ -584,5 +584,36 @@
     })();
     </script>
     <script src="./js/otr-tier1-error-handler.min.js"></script>
+
+    <!-- Offline Indicator -->
+    <div id="offlineIndicator" class="offline-indicator" style="display: none;">
+        <span class="offline-icon">&#9889;</span>
+        <span>You're offline</span>
+    </div>
+    <script>
+    (function() {
+        const indicator = document.getElementById('offlineIndicator');
+
+        function updateOnlineStatus() {
+            if (navigator.onLine) {
+                indicator.style.display = 'none';
+                document.body.classList.remove('is-offline');
+                // Trigger background sync if available
+                if ('serviceWorker' in navigator && 'sync' in window.SyncManager) {
+                    navigator.serviceWorker.ready.then(reg => {
+                        reg.sync.register('sync-analytics');
+                    });
+                }
+            } else {
+                indicator.style.display = 'flex';
+                document.body.classList.add('is-offline');
+            }
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        updateOnlineStatus();
+    })();
+    </script>
 </body>
 </html>

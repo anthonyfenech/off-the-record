@@ -3537,6 +3537,57 @@ body.show-captions .media-modal-caption {
     }
 }
 
+/* ============================================
+   OFFLINE INDICATOR
+   ============================================ */
+
+.offline-indicator {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    animation: slideUp 0.3s ease-out;
+}
+
+.offline-indicator .offline-icon {
+    font-size: 14px;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+[data-theme="dark"] .offline-indicator {
+    background: #e0e0e0;
+    color: #1a1a1a;
+}
+
+/* Dim interactive elements when offline */
+body.is-offline .nav-btn:not(:disabled),
+body.is-offline .media-emoji {
+    opacity: 0.7;
+}
+
 /* Android-specific optimizations */
 @supports (-webkit-appearance: none) {
     .menu-btn,

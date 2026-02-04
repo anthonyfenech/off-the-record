@@ -1,8 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v365';
-const STATIC_CACHE = 'off-the-record-static-v365';
-const CONTENT_CACHE = 'off-the-record-content-v365';
+const CACHE_VERSION = 'v366';
+const STATIC_CACHE = 'off-the-record-static-v366';
+const CONTENT_CACHE = 'off-the-record-content-v366';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v366';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -38,8 +39,24 @@ const STATIC_ASSETS = [
     './js/search.min.js',
     './js/config.min.js',
     './js/auth.min.js',
-    './js/otr-tier1-error-handler.js',
-    './data/chapters.js'
+    './js/otr-tier1-error-handler.min.js',
+    './js/analytics.min.js',
+    './js/bookmark.min.js',
+    './js/interactivePrompts.min.js',
+    './js/mediaModal.min.js',
+    './js/photoGallery.min.js',
+    './js/theme.min.js',
+    './js/survey-system.min.js',
+    './data/chapters.js',
+    './data/media.js',
+    './data/photos.js',
+    './css/bookmark.css',
+    './prompts/prompt-styles.min.css',
+    './prompts/prompt-system.min.js',
+    './assets/icons/icon-192.png',
+    './assets/icons/icon-512.png',
+    './assets/icons/OTR-header.png',
+    './assets/icons/tab-logo.svg'
 ];
 
 // Install event - cache static assets
@@ -194,4 +211,70 @@ self.addEventListener('message', (event) => {
             })
         );
     }
+
+    // Queue analytics for background sync
+    if (event.data && event.data.type === 'QUEUE_ANALYTICS') {
+        event.waitUntil(queueAnalytics(event.data.payload));
+    }
 });
+
+// Background sync for analytics
+self.addEventListener('sync', (event) => {
+    if (event.tag === 'sync-analytics') {
+        event.waitUntil(syncAnalytics());
+    }
+});
+
+// Queue analytics data for later sync
+async function queueAnalytics(data) {
+    const cache = await caches.open(ANALYTICS_CACHE);
+    const queue = await getAnalyticsQueue(cache);
+    queue.push({
+        ...data,
+        timestamp: Date.now()
+    });
+    await cache.put('analytics-queue', new Response(JSON.stringify(queue)));
+}
+
+// Get queued analytics
+async function getAnalyticsQueue(cache) {
+    try {
+        const response = await cache.match('analytics-queue');
+        if (response) {
+            return await response.json();
+        }
+    } catch (e) {
+        // Ignore errors
+    }
+    return [];
+}
+
+// Sync queued analytics when online
+async function syncAnalytics() {
+    const cache = await caches.open(ANALYTICS_CACHE);
+    const queue = await getAnalyticsQueue(cache);
+
+    if (queue.length === 0) return;
+
+    // Process queue
+    const successfulItems = [];
+    for (const item of queue) {
+        try {
+            // Try to send analytics
+            const response = await fetch(item.url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(item.data)
+            });
+            if (response.ok) {
+                successfulItems.push(item);
+            }
+        } catch (e) {
+            // Will retry on next sync
+        }
+    }
+
+    // Remove successful items from queue
+    const remaining = queue.filter(item => !successfulItems.includes(item));
+    await cache.put('analytics-queue', new Response(JSON.stringify(remaining)));
+}
