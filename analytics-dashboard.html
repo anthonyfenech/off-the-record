@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | Off the Record</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Apply theme before CSS loads -->
+    <script>
+        (function() {
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="./css/analytics-dashboard.css">
+</head>
+<body>
+    <!-- Authentication Screen -->
+    <div class="auth-screen">
+        <form class="auth-box" id="auth-form">
+            <h1>Analytics Dashboard</h1>
+            <input type="password" id="auth-password" placeholder="Enter password" autocomplete="off" required>
+            <button type="submit">Access Dashboard</button>
+            <div class="auth-error" id="auth-error"></div>
+        </form>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">Off the Record Analytics</h1>
+
+            <div class="dashboard-nav">
+                <a href="./admin.html">← Admin</a>
+                <button id="theme-toggle">Theme</button>
+                <button id="refresh-btn">Refresh</button>
+            </div>
+        </header>
+
+        <!-- Time Range Selector -->
+        <div class="time-range">
+            <button data-range="24h">24 Hours</button>
+            <button data-range="7d" class="active">7 Days</button>
+            <button data-range="30d">30 Days</button>
+            <button data-range="all">All Time</button>
+            <span id="last-refresh" style="margin-left: auto; font-size: 10px; color: #999;"></span>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-grid" style="margin-top: 20px;">
+            <div class="metric-card">
+                <div class="metric-label">Total Readers</div>
+                <div class="metric-value" id="metric-readers">—</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Avg Time/Chapter</div>
+                <div class="metric-value" id="metric-time">—</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Completion Rate</div>
+                <div class="metric-value" id="metric-completion">—</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Return Rate</div>
+                <div class="metric-value" id="metric-return">—</div>
+            </div>
+        </div>
+
+        <!-- Engagement Heatmap -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Chapter Engagement Heatmap</h2>
+            </div>
+            <div class="heatmap-container">
+                <div class="loading" style="display: none;">Loading data</div>
+                <div id="chapter-heatmap"></div>
+            </div>
+        </section>
+
+        <!-- Two Column Layout -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <!-- Drop-off Funnel -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Reader Drop-off Funnel</h2>
+                </div>
+                <div class="chart-container">
+                    <div class="loading" style="display: none;">Loading data</div>
+                    <div id="dropoff-funnel" class="funnel-container"></div>
+                </div>
+            </section>
+
+            <!-- Reading Patterns -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Reading Patterns</h2>
+                </div>
+                <div class="heatmap-container">
+                    <div class="loading" style="display: none;">Loading data</div>
+                    <div id="reading-patterns"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Asset Performance -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Top Performing Assets</h2>
+            </div>
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">Type</th>
+                            <th>Asset ID</th>
+                            <th style="width: 100px;">Clicks</th>
+                            <th style="width: 150px;">Chapters</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asset-table-body">
+                        <tr><td colspan="4" class="loading">Loading data</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Insights Panel -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Insights & Recommendations</h2>
+            </div>
+            <div class="insights-panel" id="insights-panel">
+                <div class="loading" style="display: none;">Generating insights</div>
+            </div>
+        </section>
+
+        <!-- Export Options -->
+        <section class="section">
+            <div class="export-buttons">
+                <button class="export-btn" id="export-csv">Export CSV</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/analytics-dashboard.js"></script>
+</body>
+</html>

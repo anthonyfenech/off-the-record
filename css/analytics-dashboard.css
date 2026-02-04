@@ -1,0 +1,651 @@
+/* Analytics Dashboard - Typewriter Aesthetic */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #fefefe;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Dark mode */
+[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* ========== AUTH SCREEN ========== */
+
+.auth-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-box {
+    background: #fff;
+    border: 2px solid #333;
+    padding: 40px;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+}
+
+[data-theme="dark"] .auth-box {
+    background: #242424;
+    border-color: #e0e0e0;
+}
+
+.auth-box h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 30px 0;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+[data-theme="dark"] .auth-box input {
+    border-color: #666;
+    color: #e0e0e0;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    opacity: 0.8;
+}
+
+.auth-error {
+    color: #c00;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* ========== DASHBOARD LAYOUT ========== */
+
+.dashboard {
+    display: none;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dashboard.active {
+    display: block;
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #333;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+[data-theme="dark"] .dashboard-header {
+    border-color: #444;
+}
+
+.dashboard-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.dashboard-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dashboard-nav a,
+.dashboard-nav button {
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #333;
+    background: transparent;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .dashboard-nav a,
+[data-theme="dark"] .dashboard-nav button {
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav button:hover {
+    background: #333;
+    color: #fff;
+}
+
+[data-theme="dark"] .dashboard-nav a:hover,
+[data-theme="dark"] .dashboard-nav button:hover {
+    background: #e0e0e0;
+    color: #1a1a1a;
+}
+
+/* Time range selector */
+.time-range {
+    display: flex;
+    gap: 5px;
+}
+
+.time-range button {
+    padding: 6px 12px;
+    font-size: 10px;
+    background: transparent;
+    border: 1px solid #999;
+    color: #666;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.time-range button.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+[data-theme="dark"] .time-range button.active {
+    background: #e0e0e0;
+    color: #1a1a1a;
+}
+
+/* ========== METRICS GRID ========== */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+[data-theme="dark"] .metric-card {
+    background: #242424;
+    border-color: #444;
+}
+
+.metric-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+[data-theme="dark"] .metric-label {
+    color: #999;
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.metric-change {
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.metric-change.positive {
+    color: #27ae60;
+}
+
+.metric-change.negative {
+    color: #c0392b;
+}
+
+/* ========== SECTIONS ========== */
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+[data-theme="dark"] .section-header {
+    border-color: #444;
+}
+
+.section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.section-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.section-controls select,
+.section-controls button {
+    padding: 5px 10px;
+    font-family: inherit;
+    font-size: 10px;
+    border: 1px solid #999;
+    background: transparent;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .section-controls select,
+[data-theme="dark"] .section-controls button {
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+/* ========== HEATMAP ========== */
+
+.heatmap-container {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+[data-theme="dark"] .heatmap-container {
+    background: #242424;
+    border-color: #444;
+}
+
+.heatmap-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.heatmap-label {
+    width: 100px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.heatmap-bar-container {
+    flex: 1;
+    height: 24px;
+    background: #e0e0e0;
+    position: relative;
+    margin: 0 10px;
+}
+
+[data-theme="dark"] .heatmap-bar-container {
+    background: #333;
+}
+
+.heatmap-bar {
+    height: 100%;
+    background: #333;
+    transition: width 0.3s ease;
+}
+
+[data-theme="dark"] .heatmap-bar {
+    background: #e0e0e0;
+}
+
+.heatmap-bar.high {
+    background: #27ae60;
+}
+
+.heatmap-bar.medium {
+    background: #f39c12;
+}
+
+.heatmap-bar.low {
+    background: #c0392b;
+}
+
+.heatmap-value {
+    width: 50px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* ========== DATA TABLE ========== */
+
+.data-table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+[data-theme="dark"] .data-table th,
+[data-theme="dark"] .data-table td {
+    border-color: #444;
+}
+
+.data-table th {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #f5f5f5;
+    cursor: pointer;
+    user-select: none;
+}
+
+[data-theme="dark"] .data-table th {
+    background: #2a2a2a;
+}
+
+.data-table th:hover {
+    background: #e0e0e0;
+}
+
+[data-theme="dark"] .data-table th:hover {
+    background: #333;
+}
+
+.data-table th.sorted-asc::after {
+    content: ' ▲';
+}
+
+.data-table th.sorted-desc::after {
+    content: ' ▼';
+}
+
+.data-table tr:hover td {
+    background: #f9f9f9;
+}
+
+[data-theme="dark"] .data-table tr:hover td {
+    background: #2a2a2a;
+}
+
+.emoji-type {
+    font-size: 16px;
+}
+
+/* ========== CHART CONTAINERS ========== */
+
+.chart-container {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    min-height: 300px;
+}
+
+[data-theme="dark"] .chart-container {
+    background: #242424;
+    border-color: #444;
+}
+
+.chart-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========== DROP-OFF FUNNEL ========== */
+
+.funnel-container {
+    padding: 20px;
+}
+
+.funnel-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.funnel-label {
+    width: 120px;
+    font-size: 11px;
+}
+
+.funnel-bar-container {
+    flex: 1;
+    position: relative;
+}
+
+.funnel-bar {
+    height: 30px;
+    background: linear-gradient(90deg, #333 0%, #666 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    transition: width 0.3s ease;
+}
+
+[data-theme="dark"] .funnel-bar {
+    background: linear-gradient(90deg, #e0e0e0 0%, #999 100%);
+    color: #1a1a1a;
+}
+
+.funnel-drop {
+    font-size: 10px;
+    color: #c0392b;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+/* ========== INSIGHTS PANEL ========== */
+
+.insights-panel {
+    background: #fffacd;
+    border: 1px solid #f0e68c;
+    padding: 20px;
+}
+
+[data-theme="dark"] .insights-panel {
+    background: #3d3520;
+    border-color: #5c4d30;
+}
+
+.insight-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.insight-item:last-child {
+    margin-bottom: 0;
+}
+
+.insight-icon {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* ========== REAL-TIME INDICATOR ========== */
+
+.realtime-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.realtime-dot {
+    width: 8px;
+    height: 8px;
+    background: #27ae60;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.realtime-count {
+    font-weight: bold;
+}
+
+/* ========== LOADING STATE ========== */
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #999;
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ========== EXPORT BUTTONS ========== */
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.export-btn {
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 15px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metric-value {
+        font-size: 22px;
+    }
+
+    .heatmap-label {
+        width: 70px;
+        font-size: 10px;
+    }
+
+    .data-table {
+        font-size: 11px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .time-range {
+        flex-wrap: wrap;
+    }
+
+    .funnel-label {
+        width: 80px;
+        font-size: 10px;
+    }
+}
