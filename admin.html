@@ -3895,10 +3895,10 @@
                 return false;
             }
 
-            // Check percentages
+            // Check percentages (allow 0% total for no pre-set votes, or exactly 100%)
             const total = p1 + p2 + p3;
-            if (total !== 100) {
-                showNotification(`Percentages should add up to 100% (current: ${total}%)`, 'error');
+            if (total !== 0 && total !== 100) {
+                showNotification(`Percentages should add up to 100% or be left at 0% (current: ${total}%)`, 'error');
                 return false;
             }
 
