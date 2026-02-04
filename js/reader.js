@@ -199,6 +199,9 @@ class Reader {
         // Update DOM - just the title, no subtitle or reading time
         this.chapterTitle.textContent = chapter.title;
 
+        // Add data-slug for CSS targeting
+        this.chapterBody.dataset.slug = chapter.slug || '';
+
         // Check if chapter is preloaded for instant loading
         const preloaded = transitions.getPreloaded(chapterId);
 
