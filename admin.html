@@ -1841,35 +1841,6 @@
             flex: 7;
         }
 
-        .prompt-modal .answer-percent {
-            flex: 2;
-            min-width: 80px;
-        }
-
-        .prompt-modal .answer-percent input {
-            text-align: center;
-        }
-
-        .prompt-modal .percent-total {
-            margin-top: 8px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .prompt-modal .percent-total.warning {
-            color: #e67e22;
-            font-weight: bold;
-        }
-
-        .prompt-modal .percent-total.error {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        .prompt-modal .percent-total.success {
-            color: #27ae60;
-        }
-
         .prompt-modal .prompt-add-answer-btn {
             margin-top: 8px;
             padding: 6px 12px;
@@ -2416,7 +2387,6 @@
                 </div>
             </div>
 
-            <div class="percent-total" id="percentTotal" style="display:none;">Total: 0%</div>
 
             <div class="prompt-modal-actions">
                 <div class="left-actions">
@@ -2680,7 +2650,6 @@
         const answersGroup = document.getElementById('answersGroup');
         const answersHint = document.getElementById('answersHint');
         const addAnswerBtn = document.getElementById('addAnswerBtn');
-        const percentTotal = document.getElementById('percentTotal');
         const promptDeleteBtn = document.getElementById('promptDeleteBtn');
         const promptCancelBtn = document.getElementById('promptCancelBtn');
         const promptSaveBtn = document.getElementById('promptSaveBtn');
@@ -2688,14 +2657,14 @@
 
         // Type configuration
         const TYPE_CONFIG = {
-            'multiple-choice': { max: 4, hasPercent: true, label: 'Answers' },
-            'yes-no': { max: 2, hasPercent: true, label: 'Answers', fixed: ['Yes', 'No'] },
-            'poll': { max: 4, hasPercent: true, label: 'Options' },
-            'text-input': { max: 0, hasPercent: false },
-            'checkboxes': { max: 6, hasPercent: false, label: 'Options' },
-            'scale': { max: 0, hasPercent: false },
-            'prediction': { max: 4, hasPercent: false, label: 'Options' },
-            'emoji-reaction': { max: 8, hasPercent: false }
+            'multiple-choice': { max: 4, label: 'Answers' },
+            'yes-no': { max: 2, label: 'Answers', fixed: ['Yes', 'No'] },
+            'poll': { max: 4, label: 'Options' },
+            'text-input': { max: 0 },
+            'checkboxes': { max: 6, label: 'Options' },
+            'scale': { max: 0 },
+            'prediction': { max: 4, label: 'Options' },
+            'emoji-reaction': { max: 8 }
         };
         const EMOJIS = ['😡','😂','😱','😢','🔥','💀','👏','🤔','😤','🙌','💯','🤷','😅','🤯','👍','👎'];
         let selectedEmojis = [];
@@ -2707,26 +2676,23 @@
 
             if (type === 'text-input') {
                 promptDynamicFields.innerHTML = '<div class="form-group"><label>Character Limit</label><input type="text" value="280" disabled style="width:80px;"></div>';
-                percentTotal.style.display = 'none';
             } else if (type === 'scale') {
                 promptDynamicFields.innerHTML = `<div class="form-group scale-row">
                     <div><label>Min Label (1)</label><input type="text" id="scaleMinInput" placeholder="Bad idea"></div>
                     <div><label>Max Label (10)</label><input type="text" id="scaleMaxInput" placeholder="Brilliant"></div>
                 </div>`;
-                percentTotal.style.display = 'none';
             } else if (type === 'emoji-reaction') {
                 selectedEmojis = [];
                 promptDynamicFields.innerHTML = `<div class="form-group"><label>Select Emojis (max 8)</label>
                     <div class="emoji-grid">${EMOJIS.map(e => `<button type="button" class="emoji-btn" onclick="window.togglePromptEmoji(this,'${e}')">${e}</button>`).join('')}</div>
                     <div style="font-size:11px;color:#666;margin-top:5px;">Selected: <span id="emojiCountSpan">0</span>/8</div>
                 </div>`;
-                percentTotal.style.display = 'none';
             } else {
                 // Types with choices
                 answersHint.textContent = `(max ${config.max})`;
                 answersContainer.innerHTML = '';
                 if (config.fixed) {
-                    config.fixed.forEach((text, i) => addAnswerField(text, 0, true));
+                    config.fixed.forEach((text) => addAnswerField(text, true));
                     addAnswerBtn.style.display = 'none';
                 } else {
                     addAnswerField(); addAnswerField();
@@ -2734,7 +2700,6 @@
                 }
                 promptDynamicFields.innerHTML = '';
                 promptDynamicFields.appendChild(answersGroup);
-                percentTotal.style.display = config.hasPercent ? 'block' : 'none';
                 updateAddAnswerBtn();
             }
         };
@@ -2746,7 +2711,7 @@
             document.getElementById('emojiCountSpan').textContent = selectedEmojis.length;
         };
 
-        window.addAnswerField = function(text = '', percent = 0, disabled = false) {
+        window.addAnswerField = function(text = '', disabled = false) {
             const type = promptTypeSelect.value;
             const config = TYPE_CONFIG[type];
             const count = answersContainer.querySelectorAll('.answer-row').length;
@@ -2755,11 +2720,9 @@
             const div = document.createElement('div');
             div.className = 'answer-row';
             div.innerHTML = `<div class="answer-text"><input type="text" class="answer-text-input" placeholder="Option ${count+1}" value="${text}" ${disabled?'disabled':''}></div>
-                ${config.hasPercent ? `<div class="answer-percent"><input type="number" class="answer-percent-input" min="0" max="100" placeholder="%" value="${percent||''}" onchange="window.updatePercentTotal()"></div>` : ''}
-                ${!disabled ? '<button type="button" class="remove-answer" onclick="this.closest(\'.answer-row\').remove();window.updateAddAnswerBtn();window.updatePercentTotal();">✕</button>' : ''}`;
+                ${!disabled ? '<button type="button" class="remove-answer" onclick="this.closest(\'.answer-row\').remove();window.updateAddAnswerBtn();">✕</button>' : ''}`;
             answersContainer.appendChild(div);
             updateAddAnswerBtn();
-            updatePercentTotal();
         };
 
         window.updateAddAnswerBtn = function() {
@@ -2769,16 +2732,6 @@
             addAnswerBtn.disabled = count >= config.max;
         };
 
-        window.updatePercentTotal = function() {
-            const inputs = answersContainer.querySelectorAll('.answer-percent-input');
-            let total = 0;
-            inputs.forEach(inp => total += parseInt(inp.value) || 0);
-            percentTotal.textContent = `Total: ${total}%`;
-            percentTotal.classList.remove('warning', 'error', 'success');
-            if (total === 100) percentTotal.classList.add('success');
-            else if (total > 100) percentTotal.classList.add('error');
-            else if (total > 0) percentTotal.classList.add('warning');
-        };
 
         /**
          * Load prompts from localStorage
@@ -2955,17 +2908,13 @@
                 const choices = prompt.choices || [];
                 const config = TYPE_CONFIG[type];
                 if (config.fixed) {
-                    config.fixed.forEach((text, i) => {
-                        const pct = choices[i]?.percentage || 0;
-                        addAnswerField(text, pct, true);
-                    });
+                    config.fixed.forEach((text) => addAnswerField(text, true));
                 } else {
-                    choices.forEach(c => addAnswerField(c.text || c, c.percentage || 0, false));
+                    choices.forEach(c => addAnswerField(c.text || c, false));
                 }
                 updateAddAnswerBtn();
             }
 
-            window.updatePercentTotal();
             promptModalOverlay.classList.add('active');
             promptIdInput.focus();
         }
@@ -2975,27 +2924,6 @@
          */
         function closeModal() {
             promptModalOverlay.classList.remove('active');
-        }
-
-        /**
-         * Update the percentage total display
-         */
-        function updatePercentTotal() {
-            const p1 = parseInt(promptAnswer1Percent.value) || 0;
-            const p2 = parseInt(promptAnswer2Percent.value) || 0;
-            const p3 = promptAnswer3Text.value.trim() ? (parseInt(promptAnswer3Percent.value) || 0) : 0;
-            const total = p1 + p2 + p3;
-
-            percentTotal.textContent = `Total: ${total}%`;
-            percentTotal.classList.remove('warning', 'error', 'success');
-
-            if (total === 100) {
-                percentTotal.classList.add('success');
-            } else if (total > 100) {
-                percentTotal.classList.add('error');
-            } else if (total > 0) {
-                percentTotal.classList.add('warning');
-            }
         }
 
         /**
@@ -3058,16 +2986,6 @@
                     showNotification('Please enter at least two options', 'error');
                     return false;
                 }
-                // Check percentages for types that have them
-                if (config.hasPercent) {
-                    const percentInputs = answersContainer.querySelectorAll('.answer-percent-input');
-                    let total = 0;
-                    percentInputs.forEach(inp => total += parseInt(inp.value) || 0);
-                    if (total !== 0 && total !== 100) {
-                        showNotification(`Percentages should add up to 100% or be left at 0% (current: ${total}%)`, 'error');
-                        return false;
-                    }
-                }
             } else if (type === 'emoji-reaction') {
                 if (selectedEmojis.length < 2) {
                     showNotification('Please select at least 2 emojis', 'error');
@@ -3100,15 +3018,10 @@
             // Type-specific data
             if (['multiple-choice','yes-no','poll','checkboxes','prediction'].includes(type)) {
                 const textInputs = answersContainer.querySelectorAll('.answer-text-input');
-                const percentInputs = answersContainer.querySelectorAll('.answer-percent-input');
                 promptData.choices = [];
-                textInputs.forEach((inp, i) => {
+                textInputs.forEach((inp) => {
                     if (inp.value.trim()) {
-                        const choice = { text: inp.value.trim() };
-                        if (config.hasPercent && percentInputs[i]) {
-                            choice.percentage = parseInt(percentInputs[i].value) || 0;
-                        }
-                        promptData.choices.push(choice);
+                        promptData.choices.push(inp.value.trim());
                     }
                 });
             } else if (type === 'text-input') {
@@ -3185,7 +3098,8 @@ export const PROMPTS = [\n`;
                 content += '        choices: [\n';
 
                 prompt.choices.forEach((choice, cIndex) => {
-                    content += `            { text: '${escapeForJS(choice.text)}', percentage: ${choice.percentage} }`;
+                    const text = typeof choice === 'string' ? choice : (choice.text || choice);
+                    content += `            '${escapeForJS(text)}'`;
                     if (cIndex < prompt.choices.length - 1) content += ',';
                     content += '\n';
                 });
@@ -3271,32 +3185,6 @@ if (typeof module !== 'undefined' && module.exports) {
             if (e.key === 'Enter' && e.ctrlKey) {
                 savePrompt();
             }
-        });
-
-        // Update percent total on input
-        [promptAnswer1Percent, promptAnswer2Percent, promptAnswer3Percent, promptAnswer3Text].forEach(el => {
-            el.addEventListener('input', updatePercentTotal);
-        });
-
-        // Tab through form fields
-        const formFields = [
-            promptIdInput, promptQuestionInput, promptTriggerInput,
-            promptAnswer1Text, promptAnswer1Percent,
-            promptAnswer2Text, promptAnswer2Percent,
-            promptAnswer3Text, promptAnswer3Percent
-        ];
-
-        formFields.forEach((field, index) => {
-            field.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    if (index < formFields.length - 1) {
-                        formFields[index + 1].focus();
-                    } else {
-                        savePrompt();
-                    }
-                }
-            });
         });
 
         // Initial render
