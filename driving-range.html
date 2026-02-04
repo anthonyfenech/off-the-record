@@ -6,36 +6,35 @@
     <title>Driving Range - OFF-THE-RECORD</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Courier New', monospace; max-width: 700px; margin: 0 auto; padding: 20px; background: #f5f5f5; line-height: 1.6; }
-        h1 { text-align: center; margin-bottom: 30px; letter-spacing: 2px; }
-        .prompt-section { background: #fff; border: 2px solid #000; padding: 25px; margin-bottom: 30px; }
-        .prompt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
-        .prompt-number { font-weight: bold; font-size: 14px; }
-        .prompt-status { font-size: 12px; color: #666; }
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #fff; line-height: 1.5; font-size: 14px; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        .prompt-section { background: #fff; padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid #ddd; }
+        .prompt-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .prompt-number { font-weight: bold; }
+        .prompt-status { color: #888; }
         .prompt-status.answered { color: #000; }
-        .prompt-title { font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .prompt-context { color: #333; margin-bottom: 20px; font-size: 14px; }
-        .trigger-line { height: 3px; background: #ff0000; margin: 20px 0; }
-        .prompt-outcome { color: #333; font-size: 14px; font-style: italic; }
-        .reset-btn { position: fixed; top: 15px; right: 15px; background: #ff0000; color: #fff; border: none; padding: 12px 20px; font-family: inherit; font-weight: bold; cursor: pointer; font-size: 12px; z-index: 100; }
-        .reset-btn:hover { background: #cc0000; }
+        .prompt-title { font-weight: bold; margin-bottom: 10px; }
+        .prompt-context { color: #444; margin-bottom: 15px; }
+        .trigger-line { height: 2px; background: #ff0000; margin: 15px 0; }
+        .prompt-outcome { color: #444; font-style: italic; }
+        .reset-btn { position: fixed; top: 10px; right: 10px; background: #ff0000; color: #fff; border: none; padding: 8px 15px; cursor: pointer; font-size: 12px; z-index: 100; }
         /* Modal */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(128,128,128,0.7); z-index: 1000; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
         .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
-        .modal { background: #fff; border: 1px solid #000; width: 95%; max-width: 450px; padding: 25px; position: relative; }
-        .modal-close { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #000; }
-        .modal-question { text-align: center; font-weight: bold; margin-bottom: 25px; font-size: 16px; }
-        .modal-choices { margin-bottom: 20px; }
-        .modal-choice { display: flex; align-items: center; padding: 12px; border: 1px solid #ccc; margin-bottom: 8px; cursor: pointer; }
-        .modal-choice:hover { border-color: #000; }
-        .modal-choice input { margin-right: 12px; width: 18px; height: 18px; }
-        .modal-choice label { cursor: pointer; flex: 1; }
-        .modal-input { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: inherit; font-size: 14px; margin-bottom: 15px; resize: vertical; min-height: 80px; }
+        .modal { background: #fff; width: 90%; max-width: 260px; padding: 20px; position: relative; }
+        .modal.wide { max-width: 400px; }
+        .modal-close { position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer; }
+        .modal-question { font-weight: bold; margin-bottom: 15px; }
+        .modal-choices { margin-bottom: 15px; }
+        .modal-choice { display: block; padding: 5px 0; cursor: pointer; }
+        .modal-choice input { margin-right: 8px; }
+        .modal-choice label { cursor: pointer; }
+        .modal-input { width: 100%; padding: 8px; border: 1px solid #ccc; font-family: inherit; font-size: 14px; margin-bottom: 10px; resize: vertical; min-height: 60px; }
         .modal-buttons { display: flex; gap: 10px; }
-        .modal-btn { flex: 1; padding: 12px; font-family: inherit; font-weight: bold; cursor: pointer; font-size: 14px; min-height: 44px; }
+        .modal-btn { flex: 1; padding: 8px; cursor: pointer; font-size: 13px; }
         .modal-btn.submit { background: #000; color: #fff; border: none; }
-        .modal-btn.skip { background: #fff; color: #000; border: 1px solid #000; }
-        .end-section { text-align: center; padding: 40px; color: #666; }
+        .modal-btn.skip { background: #fff; color: #000; border: 1px solid #999; }
+        .end-section { text-align: center; padding: 30px; color: #888; }
     </style>
 </head>
 <body>
@@ -66,45 +65,45 @@ const PROMPTS = [
     {
         id: 'verlander-camera',
         title: 'Verlander Camera Confrontation',
-        context: 'Verlander just blew you off after two years of relationship-building. Now you\'re in a press scrum. TV cameras are rolling. You know he cares deeply about his on-camera image.',
+        context: 'Verlander blew you off. Now you\'re in a press scrum with TV cameras rolling.',
         question: 'What would you do?',
         type: 'choice',
         choices: ['Nothing', 'Call him out privately', 'Call him out on camera'],
-        outcome: 'This did not sit well with him, especially on-camera. And I knew that if there was one thing Verlander cared about, it was his on-camera image, which is why I asked it on-camera in the first place.'
+        outcome: 'I asked it on-camera because I knew that\'s what he cared about most.'
     },
     {
         id: 'verlander-trade',
         title: 'Verlander Trade Tweet',
-        context: 'Your source just confirmed it. The biggest scoop of your career. Justin Verlander traded to Houston. You have 11 seconds before other reporters get it.',
+        context: 'Source confirmed: Verlander traded to Houston. You have 11 seconds.',
         question: 'What do you tweet?',
         type: 'text',
-        outcome: 'Mother-fucking WOOOOO!!!!! Fenech got the scoop by two minutes and 27 seconds. Simple, clean, perfect. "The Tigers have traded Justin Verlander to the Astros."'
+        outcome: '"The Tigers have traded Justin Verlander to the Astros." First by 2 minutes 27 seconds.'
     },
     {
         id: 'astros-clubhouse',
         title: 'Astros Clubhouse Decision',
-        context: 'Day after the Verlander Incident. He called you unethical on national TV. The Astros might bar you. MLB rules say you have access.',
-        question: 'Should I go into the Astros clubhouse?',
+        context: 'Day after Verlander called you unethical on national TV. You have clubhouse access.',
+        question: 'Should I go in?',
         type: 'choice',
         choices: ['Yes', 'No', 'Of course'],
-        outcome: 'Of course you went in. What were you supposed to do—let them win? History will be on your side.'
+        outcome: 'Of course you went in. History will be on your side.'
     },
     {
         id: 'pizza-resignation',
         title: 'Pizza Resignation',
-        context: 'You\'ve been frozen out, humiliated, pushed to the breaking point. You woke up "feeling dangerous today." On your notepad: Jet\'s Pizza number, Comerica Park address, Ron Colangelo\'s phone number.',
-        question: 'How should I quit my job?',
+        context: 'Frozen out. Humiliated. You woke up feeling dangerous. Jet\'s Pizza is on speed dial.',
+        question: 'How should I quit?',
         type: 'choice',
         choices: ['Fax', 'Twitter tirade', 'Send the Tigers a pizza'],
-        outcome: 'I sent them pizza. This became viral career suicide. Pedro Gomez would later call to say: "Anthony, you committed career suicide."'
+        outcome: 'I sent them pizza. Career suicide. Worth it.'
     },
     {
         id: 'vmart-hospital',
         title: 'V-Mart Hospital Text',
-        context: 'August 27, 2017, 11:30 PM. Your explosive Victor Martinez story publishes at 2 AM. Brad Ausmus just texted: "U might want to hold off on ur story." He says V-Mart went to hospital with heart issues.',
-        question: 'What do you text Ausmus?',
+        context: 'Your V-Mart story drops at 2 AM. Ausmus texts: "Hold off." Says V-Mart is in the hospital.',
+        question: 'What do you text back?',
         type: 'text',
-        outcome: '"What the fuck, man?" You texted back in a panic. The story was killed. Disaster averted. (REPORTER\'S NOTE: Fenech never independently confirmed Martinez actually went to the hospital. The timing could seem "exceptionally coincidental.")'
+        outcome: '"What the fuck, man?" Story killed. (Never confirmed V-Mart was actually hospitalized.)'
     }
 ];
 
@@ -177,6 +176,9 @@ function setupObservers(allPrompts) {
 function openModal(prompt) {
     currentPromptId = prompt.id;
     selectedChoice = null;
+
+    const modal = document.getElementById('modal');
+    modal.classList.toggle('wide', prompt.type === 'text');
 
     document.getElementById('modalQuestion').textContent = prompt.question;
     const choicesEl = document.getElementById('modalChoices');
