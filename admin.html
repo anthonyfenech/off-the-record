@@ -1870,6 +1870,56 @@
             color: #27ae60;
         }
 
+        .prompt-modal .prompt-add-answer-btn {
+            margin-top: 8px;
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        .prompt-modal .prompt-add-answer-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .prompt-modal .answer-row {
+            margin-bottom: 8px;
+        }
+        .prompt-modal .answer-row .remove-answer {
+            padding: 6px 10px;
+            font-size: 11px;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #ccc;
+            color: #e74c3c;
+        }
+        .prompt-modal .emoji-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0;
+        }
+        .prompt-modal .emoji-btn {
+            width: 36px;
+            height: 36px;
+            font-size: 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 4px;
+        }
+        .prompt-modal .emoji-btn.selected {
+            background: #333;
+            border-color: #333;
+        }
+        .prompt-modal .scale-row {
+            display: flex;
+            gap: 12px;
+        }
+        .prompt-modal .scale-row > div {
+            flex: 1;
+        }
+
         .prompt-modal-actions {
             display: flex;
             justify-content: space-between;
@@ -2308,8 +2358,8 @@
                                         <th class="num-cell">#</th>
                                         <th>Prompt ID</th>
                                         <th>Question</th>
-                                        <th>Trigger Text</th>
-                                        <th class="choices-cell">Choices</th>
+                                        <th>Type</th>
+                                        <th class="choices-cell">Details</th>
                                         <th class="action-cell">Actions</th>
                                     </tr>
                                 </thead>
@@ -2334,6 +2384,20 @@
             </div>
 
             <div class="form-group">
+                <label>Prompt Type</label>
+                <select id="promptTypeSelect" onchange="window.updatePromptTypeFields()">
+                    <option value="multiple-choice">Multiple Choice (max 4)</option>
+                    <option value="yes-no">Yes/No</option>
+                    <option value="poll">Poll (max 4)</option>
+                    <option value="text-input">Text Input (280 chars)</option>
+                    <option value="checkboxes">Checkboxes (max 6)</option>
+                    <option value="scale">Scale (1-10)</option>
+                    <option value="prediction">Prediction (max 4)</option>
+                    <option value="emoji-reaction">Emoji Reaction (max 8)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label>Question</label>
                 <input type="text" id="promptQuestionInput" placeholder="What would you have done in this situation?">
             </div>
@@ -2343,43 +2407,16 @@
                 <textarea id="promptTriggerInput" rows="3" placeholder="Enter exact text from manuscript where prompt should appear..."></textarea>
             </div>
 
-            <div class="form-group">
-                <label>Answer 1</label>
-                <div class="answer-row">
-                    <div class="answer-text">
-                        <input type="text" id="promptAnswer1Text" placeholder="First answer option">
-                    </div>
-                    <div class="answer-percent">
-                        <input type="number" id="promptAnswer1Percent" min="0" max="100" placeholder="%">
-                    </div>
+            <!-- Dynamic fields based on type -->
+            <div id="promptDynamicFields">
+                <div class="form-group" id="answersGroup">
+                    <label>Answers <span class="label-hint" id="answersHint">(max 4)</span></label>
+                    <div id="answersContainer"></div>
+                    <button type="button" class="prompt-add-answer-btn" id="addAnswerBtn" onclick="window.addAnswerField()">+ Add Answer</button>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label>Answer 2</label>
-                <div class="answer-row">
-                    <div class="answer-text">
-                        <input type="text" id="promptAnswer2Text" placeholder="Second answer option">
-                    </div>
-                    <div class="answer-percent">
-                        <input type="number" id="promptAnswer2Percent" min="0" max="100" placeholder="%">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Answer 3 <span class="label-hint">(optional)</span></label>
-                <div class="answer-row">
-                    <div class="answer-text">
-                        <input type="text" id="promptAnswer3Text" placeholder="Third answer option (optional)">
-                    </div>
-                    <div class="answer-percent">
-                        <input type="number" id="promptAnswer3Percent" min="0" max="100" placeholder="%">
-                    </div>
-                </div>
-            </div>
-
-            <div class="percent-total" id="percentTotal">Total: 0%</div>
+            <div class="percent-total" id="percentTotal" style="display:none;">Total: 0%</div>
 
             <div class="prompt-modal-actions">
                 <div class="left-actions">
@@ -2635,19 +2672,113 @@
         const promptModalTitle = document.getElementById('promptModalTitle');
         const promptEditIndex = document.getElementById('promptEditIndex');
         const promptIdInput = document.getElementById('promptIdInput');
+        const promptTypeSelect = document.getElementById('promptTypeSelect');
         const promptQuestionInput = document.getElementById('promptQuestionInput');
         const promptTriggerInput = document.getElementById('promptTriggerInput');
-        const promptAnswer1Text = document.getElementById('promptAnswer1Text');
-        const promptAnswer1Percent = document.getElementById('promptAnswer1Percent');
-        const promptAnswer2Text = document.getElementById('promptAnswer2Text');
-        const promptAnswer2Percent = document.getElementById('promptAnswer2Percent');
-        const promptAnswer3Text = document.getElementById('promptAnswer3Text');
-        const promptAnswer3Percent = document.getElementById('promptAnswer3Percent');
+        const promptDynamicFields = document.getElementById('promptDynamicFields');
+        const answersContainer = document.getElementById('answersContainer');
+        const answersGroup = document.getElementById('answersGroup');
+        const answersHint = document.getElementById('answersHint');
+        const addAnswerBtn = document.getElementById('addAnswerBtn');
         const percentTotal = document.getElementById('percentTotal');
         const promptDeleteBtn = document.getElementById('promptDeleteBtn');
         const promptCancelBtn = document.getElementById('promptCancelBtn');
         const promptSaveBtn = document.getElementById('promptSaveBtn');
         const promptNotification = document.getElementById('promptNotification');
+
+        // Type configuration
+        const TYPE_CONFIG = {
+            'multiple-choice': { max: 4, hasPercent: true, label: 'Answers' },
+            'yes-no': { max: 2, hasPercent: true, label: 'Answers', fixed: ['Yes', 'No'] },
+            'poll': { max: 4, hasPercent: true, label: 'Options' },
+            'text-input': { max: 0, hasPercent: false },
+            'checkboxes': { max: 6, hasPercent: false, label: 'Options' },
+            'scale': { max: 0, hasPercent: false },
+            'prediction': { max: 4, hasPercent: false, label: 'Options' },
+            'emoji-reaction': { max: 8, hasPercent: false }
+        };
+        const EMOJIS = ['😡','😂','😱','😢','🔥','💀','👏','🤔','😤','🙌','💯','🤷','😅','🤯','👍','👎'];
+        let selectedEmojis = [];
+
+        // Update form fields based on type
+        window.updatePromptTypeFields = function() {
+            const type = promptTypeSelect.value;
+            const config = TYPE_CONFIG[type];
+
+            if (type === 'text-input') {
+                promptDynamicFields.innerHTML = '<div class="form-group"><label>Character Limit</label><input type="text" value="280" disabled style="width:80px;"></div>';
+                percentTotal.style.display = 'none';
+            } else if (type === 'scale') {
+                promptDynamicFields.innerHTML = `<div class="form-group scale-row">
+                    <div><label>Min Label (1)</label><input type="text" id="scaleMinInput" placeholder="Bad idea"></div>
+                    <div><label>Max Label (10)</label><input type="text" id="scaleMaxInput" placeholder="Brilliant"></div>
+                </div>`;
+                percentTotal.style.display = 'none';
+            } else if (type === 'emoji-reaction') {
+                selectedEmojis = [];
+                promptDynamicFields.innerHTML = `<div class="form-group"><label>Select Emojis (max 8)</label>
+                    <div class="emoji-grid">${EMOJIS.map(e => `<button type="button" class="emoji-btn" onclick="window.togglePromptEmoji(this,'${e}')">${e}</button>`).join('')}</div>
+                    <div style="font-size:11px;color:#666;margin-top:5px;">Selected: <span id="emojiCountSpan">0</span>/8</div>
+                </div>`;
+                percentTotal.style.display = 'none';
+            } else {
+                // Types with choices
+                answersHint.textContent = `(max ${config.max})`;
+                answersContainer.innerHTML = '';
+                if (config.fixed) {
+                    config.fixed.forEach((text, i) => addAnswerField(text, 0, true));
+                    addAnswerBtn.style.display = 'none';
+                } else {
+                    addAnswerField(); addAnswerField();
+                    addAnswerBtn.style.display = 'inline-block';
+                }
+                promptDynamicFields.innerHTML = '';
+                promptDynamicFields.appendChild(answersGroup);
+                percentTotal.style.display = config.hasPercent ? 'block' : 'none';
+                updateAddAnswerBtn();
+            }
+        };
+
+        window.togglePromptEmoji = function(btn, emoji) {
+            const idx = selectedEmojis.indexOf(emoji);
+            if (idx > -1) { selectedEmojis.splice(idx,1); btn.classList.remove('selected'); }
+            else if (selectedEmojis.length < 8) { selectedEmojis.push(emoji); btn.classList.add('selected'); }
+            document.getElementById('emojiCountSpan').textContent = selectedEmojis.length;
+        };
+
+        window.addAnswerField = function(text = '', percent = 0, disabled = false) {
+            const type = promptTypeSelect.value;
+            const config = TYPE_CONFIG[type];
+            const count = answersContainer.querySelectorAll('.answer-row').length;
+            if (count >= config.max) return;
+
+            const div = document.createElement('div');
+            div.className = 'answer-row';
+            div.innerHTML = `<div class="answer-text"><input type="text" class="answer-text-input" placeholder="Option ${count+1}" value="${text}" ${disabled?'disabled':''}></div>
+                ${config.hasPercent ? `<div class="answer-percent"><input type="number" class="answer-percent-input" min="0" max="100" placeholder="%" value="${percent||''}" onchange="window.updatePercentTotal()"></div>` : ''}
+                ${!disabled ? '<button type="button" class="remove-answer" onclick="this.closest(\'.answer-row\').remove();window.updateAddAnswerBtn();window.updatePercentTotal();">✕</button>' : ''}`;
+            answersContainer.appendChild(div);
+            updateAddAnswerBtn();
+            updatePercentTotal();
+        };
+
+        window.updateAddAnswerBtn = function() {
+            const type = promptTypeSelect.value;
+            const config = TYPE_CONFIG[type];
+            const count = answersContainer.querySelectorAll('.answer-row').length;
+            addAnswerBtn.disabled = count >= config.max;
+        };
+
+        window.updatePercentTotal = function() {
+            const inputs = answersContainer.querySelectorAll('.answer-percent-input');
+            let total = 0;
+            inputs.forEach(inp => total += parseInt(inp.value) || 0);
+            percentTotal.textContent = `Total: ${total}%`;
+            percentTotal.classList.remove('warning', 'error', 'success');
+            if (total === 100) percentTotal.classList.add('success');
+            else if (total > 100) percentTotal.classList.add('error');
+            else if (total > 0) percentTotal.classList.add('warning');
+        };
 
         /**
          * Load prompts from localStorage
@@ -2717,19 +2848,27 @@
             promptTableWrapper.style.display = 'block';
 
             // Build table rows
-            promptTableBody.innerHTML = prompts.map((prompt, index) => `
+            promptTableBody.innerHTML = prompts.map((prompt, index) => {
+                const type = prompt.type || 'multiple-choice';
+                const typeLabel = type.replace(/-/g,' ');
+                let details = '';
+                if (prompt.choices) details = `${prompt.choices.length} options`;
+                else if (type === 'text-input') details = '280 chars';
+                else if (type === 'scale') details = `${prompt.scaleMinLabel||'1'} → ${prompt.scaleMaxLabel||'10'}`;
+                else if (type === 'emoji-reaction') details = `${(prompt.emojis||[]).length} emojis`;
+                return `
                 <tr data-index="${index}">
                     <td class="num-cell">${index + 1}</td>
                     <td class="id-cell">${prompt.id || ''}</td>
-                    <td class="question-cell" title="${(prompt.question || '').replace(/"/g, '&quot;')}">${truncate(prompt.question, 50)}</td>
-                    <td class="trigger-cell" title="${(prompt.triggerText || '').replace(/"/g, '&quot;')}">${truncate(prompt.triggerText, 50)}</td>
-                    <td class="choices-cell">${prompt.choices ? prompt.choices.length : 0}</td>
+                    <td class="question-cell" title="${(prompt.question || '').replace(/"/g, '&quot;')}">${truncate(prompt.question, 40)}</td>
+                    <td class="trigger-cell" title="${typeLabel}">${typeLabel}</td>
+                    <td class="choices-cell">${details}</td>
                     <td class="action-cell">
                         <button type="button" class="action-btn edit-btn" data-index="${index}" title="Edit">✏️</button>
                         <button type="button" class="action-btn delete-btn" data-index="${index}" title="Delete">✕</button>
                     </td>
                 </tr>
-            `).join('');
+            `}).join('');
 
             // Attach event listeners
             promptTableBody.querySelectorAll('.edit-btn').forEach(btn => {
@@ -2765,16 +2904,12 @@
 
             // Clear all fields
             promptIdInput.value = '';
+            promptTypeSelect.value = 'multiple-choice';
             promptQuestionInput.value = '';
             promptTriggerInput.value = '';
-            promptAnswer1Text.value = '';
-            promptAnswer1Percent.value = '';
-            promptAnswer2Text.value = '';
-            promptAnswer2Percent.value = '';
-            promptAnswer3Text.value = '';
-            promptAnswer3Percent.value = '';
+            selectedEmojis = [];
 
-            updatePercentTotal();
+            window.updatePromptTypeFields();
             promptModalOverlay.classList.add('active');
             promptIdInput.focus();
         }
@@ -2794,18 +2929,43 @@
 
             // Fill in fields
             promptIdInput.value = prompt.id || '';
+            promptTypeSelect.value = prompt.type || 'multiple-choice';
             promptQuestionInput.value = prompt.question || '';
             promptTriggerInput.value = prompt.triggerText || '';
 
-            const choices = prompt.choices || [];
-            promptAnswer1Text.value = choices[0]?.text || '';
-            promptAnswer1Percent.value = choices[0]?.percentage ?? '';
-            promptAnswer2Text.value = choices[1]?.text || '';
-            promptAnswer2Percent.value = choices[1]?.percentage ?? '';
-            promptAnswer3Text.value = choices[2]?.text || '';
-            promptAnswer3Percent.value = choices[2]?.percentage ?? '';
+            // Update dynamic fields first
+            window.updatePromptTypeFields();
 
-            updatePercentTotal();
+            // Then fill in type-specific data
+            const type = prompt.type || 'multiple-choice';
+            if (type === 'scale') {
+                const minInput = document.getElementById('scaleMinInput');
+                const maxInput = document.getElementById('scaleMaxInput');
+                if (minInput) minInput.value = prompt.scaleMinLabel || '';
+                if (maxInput) maxInput.value = prompt.scaleMaxLabel || '';
+            } else if (type === 'emoji-reaction') {
+                selectedEmojis = prompt.emojis || [];
+                document.querySelectorAll('.emoji-btn').forEach(btn => {
+                    if (selectedEmojis.includes(btn.textContent)) btn.classList.add('selected');
+                });
+                const countSpan = document.getElementById('emojiCountSpan');
+                if (countSpan) countSpan.textContent = selectedEmojis.length;
+            } else if (['multiple-choice','yes-no','poll','checkboxes','prediction'].includes(type)) {
+                answersContainer.innerHTML = '';
+                const choices = prompt.choices || [];
+                const config = TYPE_CONFIG[type];
+                if (config.fixed) {
+                    config.fixed.forEach((text, i) => {
+                        const pct = choices[i]?.percentage || 0;
+                        addAnswerField(text, pct, true);
+                    });
+                } else {
+                    choices.forEach(c => addAnswerField(c.text || c, c.percentage || 0, false));
+                }
+                updateAddAnswerBtn();
+            }
+
+            window.updatePercentTotal();
             promptModalOverlay.classList.add('active');
             promptIdInput.focus();
         }
@@ -2843,14 +3003,10 @@
          */
         function validateForm() {
             const id = promptIdInput.value.trim();
+            const type = promptTypeSelect.value;
             const question = promptQuestionInput.value.trim();
             const trigger = promptTriggerInput.value.trim();
-            const a1Text = promptAnswer1Text.value.trim();
-            const a2Text = promptAnswer2Text.value.trim();
-            const a3Text = promptAnswer3Text.value.trim();
-            const p1 = parseInt(promptAnswer1Percent.value) || 0;
-            const p2 = parseInt(promptAnswer2Percent.value) || 0;
-            const p3 = a3Text ? (parseInt(promptAnswer3Percent.value) || 0) : 0;
+            const config = TYPE_CONFIG[type];
 
             // Required fields
             if (!id) {
@@ -2894,17 +3050,29 @@
                 return false;
             }
 
-            if (!a1Text || !a2Text) {
-                showNotification('Please enter at least two answers', 'error');
-                (a1Text ? promptAnswer2Text : promptAnswer1Text).focus();
-                return false;
-            }
-
-            // Check percentages (allow 0% total for no pre-set votes, or exactly 100%)
-            const total = p1 + p2 + p3;
-            if (total !== 0 && total !== 100) {
-                showNotification(`Percentages should add up to 100% or be left at 0% (current: ${total}%)`, 'error');
-                return false;
+            // Type-specific validation
+            if (['multiple-choice','yes-no','poll','checkboxes','prediction'].includes(type)) {
+                const textInputs = answersContainer.querySelectorAll('.answer-text-input');
+                const filledCount = [...textInputs].filter(i => i.value.trim()).length;
+                if (filledCount < 2) {
+                    showNotification('Please enter at least two options', 'error');
+                    return false;
+                }
+                // Check percentages for types that have them
+                if (config.hasPercent) {
+                    const percentInputs = answersContainer.querySelectorAll('.answer-percent-input');
+                    let total = 0;
+                    percentInputs.forEach(inp => total += parseInt(inp.value) || 0);
+                    if (total !== 0 && total !== 100) {
+                        showNotification(`Percentages should add up to 100% or be left at 0% (current: ${total}%)`, 'error');
+                        return false;
+                    }
+                }
+            } else if (type === 'emoji-reaction') {
+                if (selectedEmojis.length < 2) {
+                    showNotification('Please select at least 2 emojis', 'error');
+                    return false;
+                }
             }
 
             return true;
@@ -2918,32 +3086,46 @@
 
             const prompts = loadPrompts();
             const editIndex = parseInt(promptEditIndex.value);
-
-            const a3Text = promptAnswer3Text.value.trim();
+            const type = promptTypeSelect.value;
+            const config = TYPE_CONFIG[type];
 
             const promptData = {
                 id: promptIdInput.value.trim(),
+                type: type,
                 question: promptQuestionInput.value.trim(),
                 triggerText: promptTriggerInput.value.trim(),
-                choices: [
-                    { text: promptAnswer1Text.value.trim(), percentage: parseInt(promptAnswer1Percent.value) || 0 },
-                    { text: promptAnswer2Text.value.trim(), percentage: parseInt(promptAnswer2Percent.value) || 0 }
-                ]
+                modalSize: ['text-input','checkboxes','scale'].includes(type) ? 'medium' : 'small'
             };
 
-            if (a3Text) {
-                promptData.choices.push({
-                    text: a3Text,
-                    percentage: parseInt(promptAnswer3Percent.value) || 0
+            // Type-specific data
+            if (['multiple-choice','yes-no','poll','checkboxes','prediction'].includes(type)) {
+                const textInputs = answersContainer.querySelectorAll('.answer-text-input');
+                const percentInputs = answersContainer.querySelectorAll('.answer-percent-input');
+                promptData.choices = [];
+                textInputs.forEach((inp, i) => {
+                    if (inp.value.trim()) {
+                        const choice = { text: inp.value.trim() };
+                        if (config.hasPercent && percentInputs[i]) {
+                            choice.percentage = parseInt(percentInputs[i].value) || 0;
+                        }
+                        promptData.choices.push(choice);
+                    }
                 });
+            } else if (type === 'text-input') {
+                promptData.charLimit = 280;
+            } else if (type === 'scale') {
+                const minInput = document.getElementById('scaleMinInput');
+                const maxInput = document.getElementById('scaleMaxInput');
+                promptData.scaleMinLabel = minInput ? minInput.value.trim() : '';
+                promptData.scaleMaxLabel = maxInput ? maxInput.value.trim() : '';
+            } else if (type === 'emoji-reaction') {
+                promptData.emojis = [...selectedEmojis];
             }
 
             if (editIndex === -1) {
-                // Add new prompt
                 prompts.push(promptData);
                 showNotification('Prompt added successfully!', 'success');
             } else {
-                // Update existing prompt
                 prompts[editIndex] = promptData;
                 showNotification('Prompt saved successfully!', 'success');
             }
