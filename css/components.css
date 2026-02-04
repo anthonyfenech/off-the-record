@@ -3588,6 +3588,121 @@ body.is-offline .media-emoji {
     opacity: 0.7;
 }
 
+/* ============================================
+   MEDIA ERROR STATES
+   ============================================ */
+
+.media-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xl);
+    text-align: center;
+    min-height: 200px;
+    background: var(--color-background-secondary);
+    border-radius: 4px;
+}
+
+.media-error-icon {
+    font-size: 48px;
+    opacity: 0.5;
+    margin-bottom: var(--space-md);
+}
+
+.media-error p {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.media-retry-btn {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--space-sm) var(--space-lg);
+    background: transparent;
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.media-retry-btn:hover {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+/* Chapter loading error */
+.chapter-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xl);
+    text-align: center;
+    min-height: 300px;
+}
+
+.chapter-error-icon {
+    font-size: 64px;
+    opacity: 0.4;
+    margin-bottom: var(--space-lg);
+}
+
+.chapter-error h2 {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-md);
+}
+
+.chapter-error p {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 400px;
+}
+
+.chapter-error-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chapter-error-btn {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--space-md) var(--space-xl);
+    background: transparent;
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chapter-error-btn:hover {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+.chapter-error-btn.primary {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+.chapter-error-btn.primary:hover {
+    background: transparent;
+    color: var(--color-text-primary);
+}
+
 /* Android-specific optimizations */
 @supports (-webkit-appearance: none) {
     .menu-btn,

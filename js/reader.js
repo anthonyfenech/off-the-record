@@ -552,9 +552,26 @@ class Reader {
         }
     }
 
-    // Show error message
+    // Show error message with user-friendly UI
     showError(message) {
-        this.chapterBody.innerHTML = `<div class="error">${message}</div>`;
+        const isOffline = !navigator.onLine;
+        const errorIcon = isOffline ? '📡' : '📖';
+        const errorTitle = isOffline ? 'You\'re Offline' : 'Chapter Unavailable';
+        const errorMessage = isOffline
+            ? 'This chapter isn\'t available offline. Connect to the internet to continue reading.'
+            : message || 'We couldn\'t load this chapter. Please try again.';
+
+        this.chapterBody.innerHTML = `
+            <div class="chapter-error">
+                <div class="chapter-error-icon">${errorIcon}</div>
+                <h2>${errorTitle}</h2>
+                <p>${errorMessage}</p>
+                <div class="chapter-error-actions">
+                    <button class="chapter-error-btn primary" onclick="window.location.reload()">Try Again</button>
+                    <button class="chapter-error-btn" onclick="window.location.hash='home'">Go Home</button>
+                </div>
+            </div>
+        `;
     }
 
     // Show locked chapter placeholder

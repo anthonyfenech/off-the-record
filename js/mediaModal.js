@@ -343,18 +343,24 @@ class MediaModal {
 
     // Render image content
     renderImage(media) {
+        const mediaId = media.id || 'unknown';
         return `
             <div class="media-image-container">
-                <img src="${media.src}" alt="${media.caption}" class="media-image">
+                <img src="${media.src}"
+                     alt="${media.caption}"
+                     class="media-image"
+                     onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\\'media-error\\'><div class=\\'media-error-icon\\'>📷</div><p>Image failed to load</p><button class=\\'media-retry-btn\\' onclick=\\'window.mediaModal.retryMedia(\\x22${mediaId}\\x22)\\'>Try Again</button></div>';">
             </div>
         `;
     }
 
     // Render video content
     renderVideo(media) {
+        const mediaId = media.id || 'unknown';
         return `
             <div class="media-video-container">
-                <video controls class="media-video" controlsList="nodownload noplaybackrate" disablePictureInPicture>
+                <video controls class="media-video" controlsList="nodownload noplaybackrate" disablePictureInPicture
+                       onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\\'media-error\\'><div class=\\'media-error-icon\\'>🎥</div><p>Video failed to load</p><button class=\\'media-retry-btn\\' onclick=\\'window.mediaModal.retryMedia(\\x22${mediaId}\\x22)\\'>Try Again</button></div>';">
                     <source src="${media.src}" type="video/mp4">
                     Your browser does not support video playback.
                 </video>
@@ -581,6 +587,14 @@ class MediaModal {
         this.trackingData = null;
     }
 
+    // Retry loading media after failure
+    retryMedia(mediaId) {
+        if (mediaId && mediaId !== 'unknown') {
+            this.close();
+            setTimeout(() => this.open(mediaId), 100);
+        }
+    }
+
     // Clean up
     destroy() {
         if (this.overlay && this.overlay.parentNode) {
@@ -592,5 +606,10 @@ class MediaModal {
     }
 }
 
-// Export single instance
-export const mediaModal = new MediaModal();
+// Create and export single instance
+const mediaModalInstance = new MediaModal();
+
+// Expose globally for error retry buttons
+window.mediaModal = mediaModalInstance;
+
+export const mediaModal = mediaModalInstance;

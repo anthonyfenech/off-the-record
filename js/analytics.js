@@ -57,10 +57,41 @@
 
     // ========== DATA TRANSMISSION ==========
 
+    const FAILED_QUEUE_KEY = 'analytics_failed_queue';
     const eventQueue = [];
     let isProcessingQueue = false;
 
-    async function sendToGoogleSheets(data) {
+    // Load any previously failed events from localStorage
+    function loadFailedQueue() {
+        try {
+            const stored = localStorage.getItem(FAILED_QUEUE_KEY);
+            return stored ? JSON.parse(stored) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    // Save failed events to localStorage for retry
+    function saveFailedQueue(queue) {
+        try {
+            // Keep max 100 events to prevent storage overflow
+            const trimmed = queue.slice(-100);
+            localStorage.setItem(FAILED_QUEUE_KEY, JSON.stringify(trimmed));
+        } catch (e) {
+            // Storage full or unavailable - silently fail
+        }
+    }
+
+    // Clear failed queue after successful sync
+    function clearFailedQueue() {
+        try {
+            localStorage.removeItem(FAILED_QUEUE_KEY);
+        } catch (e) {
+            // Ignore
+        }
+    }
+
+    async function sendToGoogleSheets(data, isRetry = false) {
         const enrichedData = {
             ...data,
             visitorId: getVisitorId(),
@@ -69,9 +100,18 @@
             browser: getBrowserInfo(),
             screenSize: getScreenSize(),
             isReturnVisitor: isReturnVisitor(),
-            timestamp: new Date().toISOString(),
-            url: window.location.href
+            timestamp: data.timestamp || new Date().toISOString(),
+            url: window.location.href,
+            isRetry: isRetry
         };
+
+        // If offline, queue for later
+        if (!navigator.onLine) {
+            const failedQueue = loadFailedQueue();
+            failedQueue.push(enrichedData);
+            saveFailedQueue(failedQueue);
+            return false;
+        }
 
         try {
             await fetch(GOOGLE_SHEETS_URL, {
@@ -82,7 +122,11 @@
             });
             return true;
         } catch (error) {
-            console.error('[Analytics] Error:', error);
+            // Queue failed event for retry
+            const failedQueue = loadFailedQueue();
+            failedQueue.push(enrichedData);
+            saveFailedQueue(failedQueue);
+            console.warn('[Analytics] Queued for retry:', error.message);
             return false;
         }
     }
@@ -104,6 +148,25 @@
 
         isProcessingQueue = false;
     }
+
+    // Retry failed events when back online
+    async function retryFailedEvents() {
+        const failedQueue = loadFailedQueue();
+        if (failedQueue.length === 0) return;
+
+        console.log('[Analytics] Retrying', failedQueue.length, 'failed events');
+        clearFailedQueue();
+
+        for (const event of failedQueue) {
+            await sendToGoogleSheets(event, true);
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+    }
+
+    // Listen for online event to retry failed events
+    window.addEventListener('online', () => {
+        setTimeout(retryFailedEvents, 1000);
+    });
 
     // ========== PAGE STATE ==========
 
