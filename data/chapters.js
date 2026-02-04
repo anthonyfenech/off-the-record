@@ -371,7 +371,7 @@ export const CHAPTERS = [
         title: "DREAM JOB",
         subtitle: "",
         teaser: "Landing the position of a lifetime.",
-        content: `<p>DETROIT, <em>October 21, 2014</em>—Three years earlier.</p>
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>October 21, 2014</em>—</span>Three years earlier.</p>
 
 <p>I’m twenty-seven and working the day shift on the <em>Free Press</em> sports desk. I’m curled in front of a computer with a wad of dipping tobacco and a half-full Styrofoam cup within reach.</p>
 
@@ -1454,7 +1454,9 @@ export const CHAPTERS = [
 
 <p>Yup, Ausmus is out. Or is he?</p>
 
-<p>Myers tells me to cancel my weekend plans: “I need you to be in Cleveland tomorrow.” <br> <br> CLEVELAND, <em>September 11</em>—At Progressive Field the next day in time for Ausmus’ pregame media session. Ausmus isn’t out: He’s being peppered with questions from reporters.</p>
+<p>Myers tells me to cancel my weekend plans: "I need you to be in Cleveland tomorrow."</p>
+
+<p class="has-dateline"><span class="dateline">CLEVELAND, <em>September 11</em>—</span>At Progressive Field the next day in time for Ausmus' pregame media session. Ausmus isn't out: He's being peppered with questions from reporters.</p>
 
 <p><em>Did that report sting you? Did it surprise you that it came out… angry even?</em></p>
 
@@ -3790,7 +3792,7 @@ export const CHAPTERS = [
         title: "WORLD SERIES",
         subtitle: "",
         teaser: "October baseball returns.",
-        content: `<p>DETROIT, <em>May 22, 2007</em>—It’s my first week at the <em>Free Press</em>.</p>
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It's my first week at the <em>Free Press</em>.</p>
 
 <p>When I arrive, the security guard asks me to sign-in and calls up to Sports. When the prep sports editor arrives, he tells the guard I’m new on the Prep Crew and I’ll need a badge.</p>
 
@@ -4936,7 +4938,7 @@ export const CHAPTERS = [
         title: "COOPERSTOWN",
         subtitle: "",
         teaser: "Baseball's hallowed grounds.",
-        content: `<p>COOPERSTOWN, N.Y., <em>July 27</em>—The first rule of the Cooperstown House is you don’t talk about the Cooperstown House. <span class="media-emoji" data-media-id="greatest-assignment-7-30-18">📷</span></p>
+        content: `<p class="has-dateline"><span class="dateline">COOPERSTOWN, N.Y., <em>July 27</em>—</span>The first rule of the Cooperstown House is you don't talk about the Cooperstown House. <span class="media-emoji" data-media-id="greatest-assignment-7-30-18">📷</span></p>
 
 <p>“Incognito,” Kirk Gibson texts me. “U will get killed if you blow our cover.”</p>
 
