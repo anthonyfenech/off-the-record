@@ -11,12 +11,18 @@
 
     <title>Photos - OFF-THE-RECORD</title>
 
+    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
     <link rel="manifest" href="./manifest.json">
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
 
-    <!-- Google Fonts - Literata for body text -->
-    
-    
     <!-- Preload critical fonts -->
     <link rel="preload" href="./fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
 

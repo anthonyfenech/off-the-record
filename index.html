@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme-loading>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -11,6 +11,16 @@
     <meta name="format-detection" content="telephone=no">
 
     <title>OFF-THE-RECORD</title>
+
+    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            // Theme (dark/light)
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 
     <link rel="manifest" href="./manifest.json">
 
@@ -45,20 +55,10 @@
 </head>
 <body class="home-page">
     <script>
-        // Apply theme immediately to prevent flash of wrong colors
-        (function() {
-            const theme = localStorage.getItem('reader_theme');
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-            document.documentElement.removeAttribute('data-theme-loading');
-        })();
-
-        // Apply admin settings immediately
+        // Apply body classes immediately (theme already set in <head>)
         if (localStorage.getItem('admin_showCaptions') === 'true') {
             document.body.classList.add('show-captions');
         }
-        // Show Media: Default is ON (emojis visible), clean-read hides them
         if (localStorage.getItem('reader_cleanRead') === 'true') {
             document.body.classList.add('clean-read');
         }
