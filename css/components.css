@@ -1334,7 +1334,7 @@ button:focus-visible {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: var(--color-text-primary);
+    background: none;
     border: 2px solid var(--color-text-primary) !important;
     border-radius: 3px;
     padding: 4px 8px;
@@ -1344,19 +1344,19 @@ button:focus-visible {
     font-weight: 900 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--color-background) !important;
+    color: var(--color-text-primary) !important;
     transition: all 0.15s ease;
 }
 
 .clean-toggle:hover {
     border-color: var(--color-text-primary);
-    color: var(--color-background);
+    color: var(--color-text-primary);
 }
 
 .clean-toggle.active {
-    background: none;
+    background: var(--color-text-primary);
     border-color: var(--color-text-primary);
-    color: var(--color-text-primary);
+    color: var(--color-background);
 }
 
 /* ============================================
