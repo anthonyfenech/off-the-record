@@ -199,9 +199,9 @@ body.dateline-bold .dateline {
     text-indent: 0 !important;
 }
 
-/* Mid-chapter datelines get visual spacing (scene break effect) */
+/* Mid-chapter datelines get visual spacing (one blank line) */
 p + p.has-dateline {
-    margin-top: var(--space-2xl);
+    margin-top: 1em;
 }
 
 /* Scene/section breaks (for major transitions) */
