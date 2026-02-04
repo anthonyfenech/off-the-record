@@ -96,9 +96,37 @@
 
         .end-section { text-align: center; padding: 30px; color: #888; font-size: 12px; }
 
+        /* View Toggle */
+        .view-toggle { display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; }
+        .view-btn { padding: 6px 15px; font-size: 12px; cursor: pointer; border: 1px solid #ccc; background: #fff; }
+        .view-btn.active { background: #333; color: #fff; border-color: #333; }
+
+        /* Preview button */
+        .prompt-card-actions button.preview { background: #e8f4e8; border-color: #4a4; color: #262; }
+
+        /* Preview Mode */
+        .preview-badge { background: #4a4; color: #fff; font-size: 10px; padding: 3px 8px; margin-bottom: 10px; display: inline-block; }
+        .preview-toggle { display: flex; gap: 8px; justify-content: center; margin-bottom: 10px; }
+        .preview-toggle button { padding: 4px 10px; font-size: 11px; cursor: pointer; border: 1px solid #ccc; background: #fff; }
+        .preview-toggle button.active { background: #333; color: #fff; }
+        .modal.mobile-preview { max-width: 340px !important; width: 95% !important; }
+
+        /* Chapter Map */
+        .chapter-map { background: #fff; border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; }
+        .chapter-map h2 { text-align: center; font-size: 14px; margin-bottom: 15px; }
+        .chapter-map-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .chapter-cell { padding: 8px; font-size: 11px; border: 1px solid #eee; cursor: pointer; }
+        .chapter-cell.has-prompts { background: #f8f8f8; }
+        .chapter-cell.has-prompts:hover { background: #e8e8e8; }
+        .chapter-cell.empty { color: #aaa; cursor: default; }
+        .chapter-cell .dots { color: #666; }
+        .chapter-cell .dots .tested { color: #4a4; }
+        .chapter-map-summary { margin-top: 15px; text-align: center; font-size: 12px; color: #666; }
+
         @media (max-width: 600px) {
             .filter-bar { flex-direction: column; }
             .form-row-inline { flex-direction: column; gap: 10px; }
+            .chapter-map-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -112,6 +140,12 @@
     <span class="stat" id="statTested">0 Tested</span>
     <span class="stat" id="statUntested">0 Untested</span>
     <span class="stat" id="statChapters">0 Chapters</span>
+</div>
+
+<!-- View Toggle -->
+<div class="view-toggle">
+    <button class="view-btn active" id="listViewBtn" onclick="setView('list')">List View</button>
+    <button class="view-btn" id="mapViewBtn" onclick="setView('map')">Chapter Map</button>
 </div>
 
 <!-- Bulk Actions -->
@@ -185,6 +219,13 @@
         </div>
         <button class="form-submit" onclick="addPrompt()">ADD PROMPT</button>
     </div>
+</div>
+
+<!-- Chapter Map (hidden by default) -->
+<div class="chapter-map" id="chapterMap" style="display:none;">
+    <h2>CHAPTER MAP</h2>
+    <div class="chapter-map-grid" id="chapterMapGrid"></div>
+    <div class="chapter-map-summary" id="chapterMapSummary"></div>
 </div>
 
 <!-- Prompts Container -->
@@ -381,7 +422,9 @@ function renderPrompts() {
                 <div class="prompt-card-actions">
                     <button onclick="editPrompt('${p.id}')">EDIT</button>
                     <button onclick="deletePrompt('${p.id}')" class="danger">DELETE</button>
+                    <button onclick="duplicatePrompt('${p.id}')">DUPLICATE</button>
                     <button onclick="copyCode('${p.id}')">COPY CODE</button>
+                    <button onclick="previewPrompt('${p.id}')" class="preview">PREVIEW</button>
                     <button onclick="testPrompt('${p.id}')">TEST</button>
                 </div>
             </div>`;
@@ -582,7 +625,9 @@ function submitTest() {
 function skipTest() { closeTestModal(); }
 function closeTestModal() {
     document.getElementById('testModal').classList.remove('active');
+    document.getElementById('testModalContent').classList.remove('mobile-preview');
     currentTestPrompt = null;
+    isPreviewMode = false;
 }
 
 // Edit modal
@@ -718,6 +763,158 @@ function resetAll() {
     localStorage.removeItem(ANSWERED_KEY);
     sessionStorage.removeItem(TRIGGERED_KEY);
     location.reload();
+}
+
+// View toggle
+let currentView = 'list';
+function setView(view) {
+    currentView = view;
+    document.getElementById('listViewBtn').classList.toggle('active', view === 'list');
+    document.getElementById('mapViewBtn').classList.toggle('active', view === 'map');
+    document.getElementById('promptsContainer').style.display = view === 'list' ? 'block' : 'none';
+    document.getElementById('chapterMap').style.display = view === 'map' ? 'block' : 'none';
+    document.querySelector('.filter-bar').style.display = view === 'list' ? 'flex' : 'none';
+    document.querySelector('.add-form').style.display = view === 'list' ? 'block' : 'none';
+    if (view === 'map') renderChapterMap();
+}
+
+// Chapter map
+function renderChapterMap() {
+    const answered = getAnswered();
+    const grid = document.getElementById('chapterMapGrid');
+    const summary = document.getElementById('chapterMapSummary');
+
+    // Group prompts by chapter
+    const chapterCounts = {};
+    allPrompts.forEach(p => {
+        const ch = p.chapter || 0;
+        if (!chapterCounts[ch]) chapterCounts[ch] = { total: 0, tested: 0 };
+        chapterCounts[ch].total++;
+        if (answered[p.id]) chapterCounts[ch].tested++;
+    });
+
+    let html = '';
+    for (let i = 1; i <= 29; i++) {
+        const data = chapterCounts[i] || { total: 0, tested: 0 };
+        const hasPrompts = data.total > 0;
+        const dots = [];
+        for (let j = 0; j < data.total; j++) {
+            dots.push(j < data.tested ? '<span class="tested">●</span>' : '○');
+        }
+        html += `<div class="chapter-cell ${hasPrompts ? 'has-prompts' : 'empty'}" onclick="${hasPrompts ? `filterByChapter(${i})` : ''}">
+            <div>Ch. ${i}</div>
+            <div class="dots">${dots.join(' ') || '-'}</div>
+        </div>`;
+    }
+
+    // Add unassigned
+    const unassigned = chapterCounts[0] || { total: 0, tested: 0 };
+    if (unassigned.total > 0) {
+        const dots = [];
+        for (let j = 0; j < unassigned.total; j++) {
+            dots.push(j < unassigned.tested ? '<span class="tested">●</span>' : '○');
+        }
+        html += `<div class="chapter-cell has-prompts" onclick="filterByChapter(0)">
+            <div>Unassigned</div>
+            <div class="dots">${dots.join(' ')}</div>
+        </div>`;
+    }
+
+    grid.innerHTML = html;
+
+    const totalPrompts = allPrompts.length;
+    const totalTested = allPrompts.filter(p => answered[p.id]).length;
+    const chaptersWithPrompts = Object.keys(chapterCounts).filter(k => k !== '0').length;
+    summary.innerHTML = `${totalPrompts} prompts across ${chaptersWithPrompts} chapters | ${totalTested} tested`;
+}
+
+function filterByChapter(ch) {
+    setView('list');
+    document.getElementById('chapterFilter').value = ch === 0 ? '' : ch;
+    renderPrompts();
+    if (ch === 0) {
+        // Scroll to unassigned section
+        const unassignedHeader = document.querySelector('.chapter-header');
+        if (unassignedHeader && unassignedHeader.textContent.includes('UNASSIGNED')) {
+            unassignedHeader.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
+
+// Duplicate prompt
+function duplicatePrompt(id) {
+    const prompt = allPrompts.find(p => p.id === id);
+    if (!prompt) return;
+
+    const newPrompt = {
+        ...prompt,
+        id: 'prompt-' + Date.now(),
+        created: Date.now(),
+        modified: Date.now()
+    };
+
+    allPrompts.push(newPrompt);
+    savePrompts();
+    renderPrompts();
+
+    // Open edit modal for the new prompt
+    setTimeout(() => editPrompt(newPrompt.id), 100);
+}
+
+// Preview prompt (read-only test)
+let isPreviewMode = false;
+let previewDevice = 'desktop';
+
+function previewPrompt(id) {
+    const prompt = allPrompts.find(p => p.id === id);
+    if (!prompt) return;
+    isPreviewMode = true;
+    previewDevice = 'desktop';
+    currentTestPrompt = prompt;
+
+    const modal = document.getElementById('testModalContent');
+    modal.className = 'modal ' + (SMALL_TYPES.includes(prompt.type) ? 'small' : 'medium');
+
+    const choicesEl = document.getElementById('testChoices');
+
+    // Add preview header
+    let previewHeader = `<div class="preview-badge">PREVIEW MODE</div>
+        <div class="preview-toggle">
+            <button class="${previewDevice==='desktop'?'active':''}" onclick="setPreviewDevice('desktop')">Desktop</button>
+            <button class="${previewDevice==='mobile'?'active':''}" onclick="setPreviewDevice('mobile')">Mobile</button>
+        </div>`;
+
+    document.getElementById('testQuestion').innerHTML = previewHeader + prompt.question;
+    document.getElementById('testOutcome').style.display = 'none';
+
+    if (prompt.type === 'text-input') {
+        choicesEl.innerHTML = `<textarea class="modal-input" disabled placeholder="Type your answer..."></textarea>`;
+    } else if (prompt.type === 'scale') {
+        choicesEl.innerHTML = `<div class="modal-scale">
+            <div class="modal-scale-labels"><span>${prompt.scaleMinLabel||'1'}</span><span>${prompt.scaleMaxLabel||'10'}</span></div>
+            <input type="range" min="1" max="10" value="5" disabled>
+            <div class="modal-scale-value">5</div></div>`;
+    } else if (prompt.type === 'emoji-reaction') {
+        choicesEl.innerHTML = `<div class="modal-emojis">${(prompt.emojis||EMOJIS.slice(0,4)).map(e => `<span class="modal-emoji">${e}</span>`).join('')}</div>`;
+    } else if (prompt.type === 'checkboxes') {
+        choicesEl.innerHTML = (prompt.choices||[]).map((c,i) => `<div class="modal-choice"><input type="checkbox" disabled><label>${c}</label></div>`).join('');
+    } else {
+        choicesEl.innerHTML = (prompt.choices||[]).map((c,i) => `<div class="modal-choice"><input type="radio" name="testChoice" disabled><label>${c}</label></div>`).join('');
+    }
+
+    document.getElementById('testButtons').innerHTML = '<button class="modal-btn submit" onclick="closeTestModal()">CLOSE PREVIEW</button>';
+    document.getElementById('testModal').classList.add('active');
+}
+
+function setPreviewDevice(device) {
+    previewDevice = device;
+    const modal = document.getElementById('testModalContent');
+    modal.classList.toggle('mobile-preview', device === 'mobile');
+
+    // Update toggle buttons
+    document.querySelectorAll('.preview-toggle button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === device);
+    });
 }
 
 // Event listeners
