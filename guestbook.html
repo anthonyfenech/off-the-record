@@ -9,6 +9,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="OFF-THE-RECORD">
 
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://script.google.com https://*.googleapis.com; media-src 'self' blob:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <title>THE ROLODEX - OFF-THE-RECORD</title>
 
     <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
@@ -360,7 +365,7 @@
     </main>
 
     <!-- Scripts -->
-    <script src="./js/rolodex.js"></script>
+    <script type="module" src="./js/rolodex.js"></script>
     <script src="./js/otr-tier1-error-handler.min.js"></script>
 </body>
 </html>

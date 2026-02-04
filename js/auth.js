@@ -1,27 +1,56 @@
 // Password Protection for Beta Access
+// Includes brute force protection and session expiry
+
+import { security } from './security.js';
+
 // Password can be changed here - just update this value
 const BETA_PASSWORD = 'BALLWRITER';
-
-const AUTH_KEY = 'otr_beta_access';
+const AUTH_KEY = 'otr_beta_session';
+const SESSION_HOURS = 168; // 7 days
 
 export const auth = {
     // Check if user is authenticated
     isAuthenticated() {
-        return localStorage.getItem(AUTH_KEY) === 'true';
+        // Check for valid session
+        return security.isSessionValid(AUTH_KEY);
     },
 
     // Verify password and store auth state
     authenticate(password) {
-        if (password === BETA_PASSWORD) {
-            localStorage.setItem(AUTH_KEY, 'true');
-            return true;
+        // Check if locked out from too many attempts
+        const loginCheck = security.checkLoginAttempt();
+        if (!loginCheck.allowed) {
+            return {
+                success: false,
+                error: `Too many attempts. Try again in ${loginCheck.remainingSeconds} seconds.`
+            };
         }
-        return false;
+
+        // Check password
+        if (password === BETA_PASSWORD) {
+            security.resetLoginAttempts();
+            security.createSession(AUTH_KEY, SESSION_HOURS);
+            return { success: true };
+        }
+
+        // Record failed attempt
+        const result = security.recordFailedLogin();
+        if (result.locked) {
+            return {
+                success: false,
+                error: `Too many failed attempts. Locked out for ${result.lockoutMinutes} minutes.`
+            };
+        }
+
+        return {
+            success: false,
+            error: `Incorrect password. ${result.attemptsRemaining} attempts remaining.`
+        };
     },
 
     // Clear authentication (logout)
     logout() {
-        localStorage.removeItem(AUTH_KEY);
+        security.clearSession(AUTH_KEY);
         window.location.reload();
     },
 
@@ -66,12 +95,15 @@ export const auth = {
             e.preventDefault();
 
             const password = input.value.trim().toUpperCase();
+            const result = this.authenticate(password);
 
-            if (this.authenticate(password)) {
+            if (result.success) {
                 this.hideGate();
                 // Dispatch event so app knows to load content
                 window.dispatchEvent(new Event('authSuccess'));
             } else {
+                // Show error message
+                errorMsg.textContent = result.error;
                 errorMsg.style.display = 'block';
                 input.value = '';
                 input.focus();

@@ -134,6 +134,11 @@
 const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
 // ============================================================
+// SECURITY - Import rate limiting
+// ============================================================
+import { security } from './security.js';
+
+// ============================================================
 // ROLODEX CLASS
 // ============================================================
 
@@ -211,18 +216,25 @@ class Rolodex {
     async handleSubmit(e) {
         e.preventDefault();
 
+        // Rate limiting - max 3 submissions per 5 minutes
+        const rateCheck = security.isRateLimited('guestbook_submit', 3, 300000);
+        if (rateCheck.limited) {
+            this.showMessage('error', `Too many submissions. Please wait ${Math.ceil(rateCheck.remainingSeconds / 60)} minutes.`);
+            return;
+        }
+
         // Check if script URL is configured
         if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
             this.showMessage('error', 'Guestbook is not configured yet. Please check back later.');
             return;
         }
 
-        // Get form data
+        // Get form data and sanitize
         const formData = {
-            name: this.form.name.value.trim(),
-            email: this.form.email.value.trim(),
-            location: this.form.location.value.trim(),
-            comment: this.form.comment.value.trim()
+            name: security.sanitizeInput(this.form.name.value.trim()),
+            email: security.sanitizeInput(this.form.email.value.trim()),
+            location: security.sanitizeInput(this.form.location.value.trim()),
+            comment: security.sanitizeInput(this.form.comment.value.trim())
         };
 
         // Client-side validation
