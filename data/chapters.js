@@ -8287,24 +8287,39 @@ export const getTotalWordCount = () => {
 // Export chapter count
 export const getChapterCount = () => CHAPTERS.length;
 
-// Get first chapter ID
-export const getFirstChapterId = () => CHAPTERS[0]?.id ?? 1;
+// Get first chapter ID (skips chapters without IDs like title/TOC)
+export const getFirstChapterId = () => {
+    const firstWithId = CHAPTERS.find(c => c.id !== undefined);
+    return firstWithId?.id ?? 1;
+};
 
 // Get last chapter ID
 export const getLastChapterId = () => CHAPTERS[CHAPTERS.length - 1]?.id ?? 1;
 
-// Get previous chapter ID (returns null if at first chapter)
+// Get previous chapter ID (returns null if at first chapter, skips chapters without IDs)
 export const getPreviousChapterId = (currentId) => {
     const currentIndex = CHAPTERS.findIndex(c => c.id === currentId);
     if (currentIndex <= 0) return null;
-    return CHAPTERS[currentIndex - 1].id;
+    // Find the previous chapter that has an ID
+    for (let i = currentIndex - 1; i >= 0; i--) {
+        if (CHAPTERS[i].id !== undefined) {
+            return CHAPTERS[i].id;
+        }
+    }
+    return null;
 };
 
-// Get next chapter ID (returns null if at last chapter)
+// Get next chapter ID (returns null if at last chapter, skips chapters without IDs)
 export const getNextChapterId = (currentId) => {
     const currentIndex = CHAPTERS.findIndex(c => c.id === currentId);
     if (currentIndex < 0 || currentIndex >= CHAPTERS.length - 1) return null;
-    return CHAPTERS[currentIndex + 1].id;
+    // Find the next chapter that has an ID
+    for (let i = currentIndex + 1; i < CHAPTERS.length; i++) {
+        if (CHAPTERS[i].id !== undefined) {
+            return CHAPTERS[i].id;
+        }
+    }
+    return null;
 };
 
 // Calculate reading time (words per minute = 200)
