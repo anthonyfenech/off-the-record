@@ -259,8 +259,21 @@ class Reader {
                 element.className = 'scene-break';
                 element.innerHTML = `<span>${item.content}</span>`;
             } else {
-                element = document.createElement('p');
-                element.innerHTML = item.content;
+                // Check if content already has <p> tag with classes
+                const pMatch = item.content.match(/^<p([^>]*)>([\s\S]*)<\/p>$/);
+                if (pMatch) {
+                    element = document.createElement('p');
+                    // Preserve attributes from original <p> tag
+                    const attrs = pMatch[1];
+                    if (attrs) {
+                        const classMatch = attrs.match(/class="([^"]*)"/);
+                        if (classMatch) element.className = classMatch[1];
+                    }
+                    element.innerHTML = pMatch[2];
+                } else {
+                    element = document.createElement('p');
+                    element.innerHTML = item.content;
+                }
             }
             element.dataset.paragraphIndex = index;
             this.paragraphElements.push(element);
