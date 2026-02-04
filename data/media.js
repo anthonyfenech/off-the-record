@@ -61,17 +61,6 @@ export const MEDIA_CONTENT = {
         src: 'https://www.espn.co.uk/mlb/story/_/id/22873239/opposite-ends-mlb-manager-spectrum-succeed',
         placeholder: false
     },
-    // My Bylines (Free Press articles)
-    'verlander-traded-freep': {
-        type: 'byline',
-        emoji: '🗞️',
-        label: 'My Byline',
-        headline: 'Tigers trade Justin Verlander to Houston Astros for 3 prospects',
-        date: 'August 31, 2017',
-        excerpt: 'The Detroit Tigers have traded Justin Verlander to the Houston Astros, ending a 13-year tenure that included two no-hitters, a Cy Young Award and an MVP.',
-        url: 'https://www.freep.com/story/sports/mlb/tigers/2017/08/31/detroit-tigers-justin-verlander-trade-houston-astros/619876001/',
-        placeholder: false
-    },
     'tigers-stink-2018-photo': {
         type: 'photo',
         emoji: '📷',
@@ -941,7 +930,6 @@ export const MEDIA_TYPES = {
     pdf: { emoji: '📄', label: 'PDF Document' },
     attachment: { emoji: '📎', label: 'Attachment' },
     link: { emoji: '🔗', label: 'Link' },
-    byline: { emoji: '🗞️', label: 'My Byline' },
     email: { emoji: '✉️', label: 'E-mail' },
     text: { emoji: '💬', label: 'Text Message' },
     selfie: { emoji: '🤳', label: 'Selfie' },
