@@ -24,7 +24,7 @@ export const CHAPTERS = [
 <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="parental-advisory">
 </div>`,
         wordCount: 0
-    },,
+    },
     {
         year: null,
         section: 'toc',
@@ -64,7 +64,7 @@ export const CHAPTERS = [
 <p class="toc-entry"><a href="#chapter-29" class="toc-link">Dedication</a></p>
 </div>`,
         wordCount: 0
-    },,
+    },
     {
         id: 1,
         year: null,
