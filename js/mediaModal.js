@@ -161,6 +161,8 @@ class MediaModal {
             'text': 'document',
             // Links
             'link': 'link',
+            // Byline (author's articles)
+            'byline': 'article',
             // Text/Notes
             'notes': 'text',
             'email': 'text',
@@ -275,6 +277,9 @@ class MediaModal {
                     break;
                 case 'link':
                     body.innerHTML = this.renderLink(media);
+                    break;
+                case 'byline':
+                    body.innerHTML = this.renderByline(media);
                     break;
                 default:
                     body.innerHTML = this.renderPlaceholder(media);
@@ -440,6 +445,26 @@ class MediaModal {
                 <p>This link opens in a new window:</p>
                 <a href="${media.url}" target="_blank" rel="noopener noreferrer" class="media-link">
                     ${media.url}
+                </a>
+            </div>
+        `;
+    }
+
+    // Render byline (author's article)
+    renderByline(media) {
+        return `
+            <div class="media-byline-container">
+                <div class="byline-header">
+                    <span class="byline-publication">DETROIT FREE PRESS</span>
+                    <span class="byline-author">BY ANTHONY FENECH</span>
+                </div>
+                <h2 class="byline-headline">${media.headline || media.caption || ''}</h2>
+                <p class="byline-date">${media.date || ''}</p>
+                <div class="byline-excerpt">
+                    <p>${media.excerpt || ''}</p>
+                </div>
+                <a href="${media.url}" target="_blank" rel="noopener noreferrer" class="byline-read-btn">
+                    READ FULL ARTICLE →
                 </a>
             </div>
         `;
