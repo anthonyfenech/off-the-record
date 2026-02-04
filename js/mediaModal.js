@@ -16,6 +16,11 @@ class MediaModal {
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.modalOpenTime = null; // Timestamp for duration tracking
         this.trackingData = null; // Store tracking data for close event
+
+        // Audio player cleanup references
+        this.audioElement = null;
+        this.dragMouseUp = null;
+        this.dragMouseMove = null;
     }
 
     // Load articles data (cached)
@@ -453,16 +458,24 @@ class MediaModal {
             audio.currentTime = pct * audio.duration;
         });
 
-        // Drag to seek
+        // Drag to seek - store references for cleanup
         let dragging = false;
         handle.addEventListener('mousedown', () => dragging = true);
-        document.addEventListener('mouseup', () => dragging = false);
-        document.addEventListener('mousemove', (e) => {
+
+        // Store references to remove on modal close
+        this.dragMouseUp = () => dragging = false;
+        this.dragMouseMove = (e) => {
             if (!dragging) return;
             const rect = bar.getBoundingClientRect();
             const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
             audio.currentTime = pct * audio.duration;
-        });
+        };
+
+        document.addEventListener('mouseup', this.dragMouseUp);
+        document.addEventListener('mousemove', this.dragMouseMove);
+
+        // Store audio element for cleanup
+        this.audioElement = audio;
     }
 
     // Render text content
@@ -577,6 +590,20 @@ class MediaModal {
 
         // Remove keyboard listener
         document.removeEventListener('keydown', this.handleKeyDown);
+
+        // Clean up audio player listeners and stop playback
+        if (this.audioElement) {
+            this.audioElement.pause();
+            this.audioElement = null;
+        }
+        if (this.dragMouseUp) {
+            document.removeEventListener('mouseup', this.dragMouseUp);
+            this.dragMouseUp = null;
+        }
+        if (this.dragMouseMove) {
+            document.removeEventListener('mousemove', this.dragMouseMove);
+            this.dragMouseMove = null;
+        }
 
         // Restore focus to trigger element
         if (this.triggerElement && this.triggerElement.focus) {
