@@ -1,6 +1,6 @@
 // Reader - Core reading interface logic with pagination
 
-import { CHAPTERS } from '../data/chapters.js';
+import { CHAPTERS, getChapterBySlug, getChapterSlug } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager } from './reading-mode.js';
@@ -511,21 +511,44 @@ class Reader {
         return Math.round((completed / CHAPTERS.length) * 100);
     }
 
-    // Get chapter ID from URL hash
+    // Get chapter ID from URL hash (supports slug-based URLs)
     getChapterFromHash() {
-        const hash = window.location.hash.replace('#chapter-', '');
-        const chapterId = parseInt(hash);
-        // Allow all valid chapter IDs (including -1 for title, 0 for TOC)
-        if (isNaN(chapterId)) return null;
-        const validIds = CHAPTERS.map(c => c.id);
-        return validIds.includes(chapterId) ? chapterId : null;
+        const hash = window.location.hash.replace('#', '');
+        if (!hash) return null;
+
+        // Try to find chapter by slug
+        const chapter = getChapterBySlug(hash);
+        if (chapter) {
+            return chapter.id;
+        }
+
+        // Backwards compatibility: support old #chapter-N format
+        if (hash.startsWith('chapter-')) {
+            const chapterId = parseInt(hash.replace('chapter-', ''));
+            if (!isNaN(chapterId)) {
+                const validIds = CHAPTERS.map(c => c.id).filter(id => id !== undefined);
+                if (validIds.includes(chapterId)) {
+                    // Redirect to new slug URL
+                    const slug = getChapterSlug(chapterId);
+                    if (slug) {
+                        history.replaceState(null, null, `#${slug}`);
+                    }
+                    return chapterId;
+                }
+            }
+        }
+
+        return null;
     }
 
-    // Update URL hash
+    // Update URL hash (uses slug)
     updateHash(chapterId) {
-        const newHash = `#chapter-${chapterId}`;
-        if (window.location.hash !== newHash) {
-            history.pushState(null, null, newHash);
+        const slug = getChapterSlug(chapterId);
+        if (slug) {
+            const newHash = `#${slug}`;
+            if (window.location.hash !== newHash) {
+                history.pushState(null, null, newHash);
+            }
         }
     }
 

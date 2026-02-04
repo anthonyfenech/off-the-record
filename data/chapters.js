@@ -15,6 +15,7 @@ export const CHAPTERS = [
         year: null,
         section: 'title',
         title: "TITLE PAGE",
+        slug: "title-page",
         subtitle: "",
         teaser: "",
         content: `<div class="title-page">
@@ -29,39 +30,40 @@ export const CHAPTERS = [
         year: null,
         section: 'toc',
         title: "TABLE OF CONTENTS",
+        slug: "table-of-contents",
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
 <h2 class="toc-page-title">TABLE OF CONTENTS</h2>
-<p class="toc-entry"><a href="#chapter-1" class="toc-link">Author’s Note</a></p>
-<p class="toc-entry"><a href="#chapter-2" class="toc-link">Summer 2017</a></p>
-<p class="toc-entry"><a href="#chapter-3" class="toc-link">Dream Job</a></p>
-<p class="toc-entry"><a href="#chapter-4" class="toc-link">Scandal!</a></p>
-<p class="toc-entry"><a href="#chapter-5" class="toc-link">Rookie Year</a></p>
-<p class="toc-entry"><a href="#chapter-6" class="toc-link">Opening Day</a></p>
-<p class="toc-entry"><a href="#chapter-7" class="toc-link">Midseason</a></p>
-<p class="toc-entry"><a href="#chapter-8" class="toc-link">Trade Deadline</a></p>
-<p class="toc-entry"><a href="#chapter-9" class="toc-link">Fire Drill</a></p>
-<p class="toc-entry"><a href="#chapter-10" class="toc-link">Spring Training</a></p>
-<p class="toc-entry"><a href="#chapter-11" class="toc-link">Hot Seat</a></p>
-<p class="toc-entry"><a href="#chapter-12" class="toc-link">Pennant Race</a></p>
-<p class="toc-entry"><a href="#chapter-13" class="toc-link">Wake-Up Call</a></p>
-<p class="toc-entry"><a href="#chapter-14" class="toc-link">Prime-Time</a></p>
-<p class="toc-entry"><a href="#chapter-15" class="toc-link">Fireworks</a></p>
-<p class="toc-entry"><a href="#chapter-16" class="toc-link">Summer 2017</a></p>
-<p class="toc-entry"><a href="#chapter-17" class="toc-link">World Series</a></p>
-<p class="toc-entry"><a href="#chapter-18" class="toc-link">Awards Season</a></p>
-<p class="toc-entry"><a href="#chapter-19" class="toc-link">Draft Day</a></p>
-<p class="toc-entry"><a href="#chapter-20" class="toc-link">Cooperstown</a></p>
-<p class="toc-entry"><a href="#chapter-21" class="toc-link">Burn Out</a></p>
-<p class="toc-entry"><a href="#chapter-22" class="toc-link">Viva Las Vegas</a></p>
-<p class="toc-entry"><a href="#chapter-23" class="toc-link">Globetrotting</a></p>
-<p class="toc-entry"><a href="#chapter-24" class="toc-link">Road to Omaha</a></p>
-<p class="toc-entry"><a href="#chapter-25" class="toc-link">A Letter to the Editor</a></p>
-<p class="toc-entry"><a href="#chapter-26" class="toc-link">Unethical</a></p>
-<p class="toc-entry"><a href="#chapter-27" class="toc-link">Bottom Nine</a></p>
-<p class="toc-entry"><a href="#chapter-28" class="toc-link">Postscript</a></p>
-<p class="toc-entry"><a href="#chapter-29" class="toc-link">Dedication</a></p>
+<p class="toc-entry"><a href="#authors-note" class="toc-link">Author's Note</a></p>
+<p class="toc-entry"><a href="#summer-2017-prologue" class="toc-link">Summer 2017</a></p>
+<p class="toc-entry"><a href="#dream-job" class="toc-link">Dream Job</a></p>
+<p class="toc-entry"><a href="#scandal" class="toc-link">Scandal!</a></p>
+<p class="toc-entry"><a href="#rookie-year" class="toc-link">Rookie Year</a></p>
+<p class="toc-entry"><a href="#opening-day" class="toc-link">Opening Day</a></p>
+<p class="toc-entry"><a href="#midseason" class="toc-link">Midseason</a></p>
+<p class="toc-entry"><a href="#trade-deadline" class="toc-link">Trade Deadline</a></p>
+<p class="toc-entry"><a href="#fire-drill" class="toc-link">Fire Drill</a></p>
+<p class="toc-entry"><a href="#spring-training" class="toc-link">Spring Training</a></p>
+<p class="toc-entry"><a href="#hot-seat" class="toc-link">Hot Seat</a></p>
+<p class="toc-entry"><a href="#pennant-race" class="toc-link">Pennant Race</a></p>
+<p class="toc-entry"><a href="#wake-up-call" class="toc-link">Wake-Up Call</a></p>
+<p class="toc-entry"><a href="#prime-time" class="toc-link">Prime-Time</a></p>
+<p class="toc-entry"><a href="#fireworks" class="toc-link">Fireworks</a></p>
+<p class="toc-entry"><a href="#summer-2017" class="toc-link">Summer 2017</a></p>
+<p class="toc-entry"><a href="#world-series" class="toc-link">World Series</a></p>
+<p class="toc-entry"><a href="#awards-season" class="toc-link">Awards Season</a></p>
+<p class="toc-entry"><a href="#draft-day" class="toc-link">Draft Day</a></p>
+<p class="toc-entry"><a href="#cooperstown" class="toc-link">Cooperstown</a></p>
+<p class="toc-entry"><a href="#burn-out" class="toc-link">Burn Out</a></p>
+<p class="toc-entry"><a href="#viva-las-vegas" class="toc-link">Viva Las Vegas</a></p>
+<p class="toc-entry"><a href="#globetrotting" class="toc-link">Globetrotting</a></p>
+<p class="toc-entry"><a href="#road-to-omaha" class="toc-link">Road to Omaha</a></p>
+<p class="toc-entry"><a href="#letter-to-the-editor" class="toc-link">A Letter to the Editor</a></p>
+<p class="toc-entry"><a href="#unethical" class="toc-link">Unethical</a></p>
+<p class="toc-entry"><a href="#bottom-nine" class="toc-link">Bottom Nine</a></p>
+<p class="toc-entry"><a href="#postscript" class="toc-link">Postscript</a></p>
+<p class="toc-entry"><a href="#dedication" class="toc-link">Dedication</a></p>
 </div>`,
         wordCount: 0
     },
@@ -70,6 +72,7 @@ export const CHAPTERS = [
         year: null,
         section: 'intro',
         title: "AUTHOR'S NOTE",
+        slug: "authors-note",
         subtitle: "St. Paul's Bay, Malta",
         teaser: "A love letter to sports writing, a lesson on craft, and a story full of intense, fascinating characters.",
         content: `<p>ST. PAUL’S BAY, Malta—Dawn is coming up over the Mediterranean now. 7:12 <span class="small-caps">A.M.</span> I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived.</p>
@@ -160,6 +163,7 @@ export const CHAPTERS = [
         year: null,
         section: 'intro',
         title: "SUMMER 2017",
+        slug: "summer-2017-prologue",
         subtitle: "Where our story begins",
         teaser: "Where our story begins.",
         content: `<p class="has-dateline"><span class="dateline">CHICAGO, <em>August 27</em>—</span>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man’s bald head. The last scene before the elevator door closes.</p>
@@ -369,6 +373,7 @@ export const CHAPTERS = [
         year: null,
         section: 'intro',
         title: "DREAM JOB",
+        slug: "dream-job",
         subtitle: "",
         teaser: "Landing the position of a lifetime.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>October 21, 2014</em>—</span>Three years earlier.</p>
@@ -537,6 +542,7 @@ export const CHAPTERS = [
         year: null,
         section: 'intro',
         title: "SCANDAL!",
+        slug: "scandal",
         subtitle: "",
         teaser: "The Internet Stalker arrives.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>December 5</em>—</span>Something bad has happened. I have an Internet Stalker. There’s this guy who runs a blog with more than 15,000 followers on Twitter, and he’s trying to ruin my career.</p>
@@ -753,6 +759,7 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "ROOKIE YEAR",
+        slug: "rookie-year",
         subtitle: "",
         teaser: "First full season on the beat.",
         content: `<p>LAKELAND, Fla., <em>February 16</em>—Walk downstairs for breakfast and see Tigers chief legal counsel John Westhoff, sipping cereal and reading a newspaper. I smile. He nods knowingly from behind his glasses.</p>
@@ -906,6 +913,7 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "OPENING DAY",
+        slug: "opening-day",
         subtitle: "",
         teaser: "The best day on the calendar.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time. Here was mine.</p>
@@ -1032,6 +1040,7 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "MIDSEASON",
+        slug: "midseason",
         subtitle: "",
         teaser: "The All-Star break and its dramas.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>July 2</em>—</span>Halfway through my rookie year, my best source isn’t in the front office, the clubhouse, the press box or affiliated with the team at all. I have yet to figure out what Gator does for a living or why he hangs out with baseball players—but I don’t particularly care.</p>
@@ -1166,6 +1175,7 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "TRADE DEADLINE",
+        slug: "trade-deadline",
         subtitle: "",
         teaser: "Dave Dombrowski's exit.",
         content: `<p>ST. PETERSBURG, Fla., <em>July 27</em>—It’s raining when we land. I get a taxi and check into my room at a Hampton Inn, way too far from Tropicana Field.</p>
@@ -1406,6 +1416,7 @@ export const CHAPTERS = [
         year: 2015,
         section: 'year',
         title: "FIRE DRILL",
+        slug: "fire-drill",
         subtitle: "",
         teaser: "A season falls apart.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>September 10</em>—</span>A code green Thursday night. Watching the NFL season opener with pizza and friends on my off day. George Sipple is with the last-place Tigers in Cleveland.</p>
@@ -1815,6 +1826,7 @@ export const CHAPTERS = [
         year: 2016,
         section: 'year',
         title: "SPRING TRAINING",
+        slug: "spring-training",
         subtitle: "",
         teaser: "Baseball's annual rite of renewal.",
         content: `<p>LAKELAND, Fla., <em>February 18</em>—Pitchers and catchers report to camp today and Justin Verlander is driving his Range Rover. After Verlander battled injuries for the past two years, folks are anxious to see which pitcher pulls up in TigerTown: The one who looked past his prime in the first half of last season or the one who looked like Justin Verlander in the second half?</p>
@@ -1997,6 +2009,7 @@ export const CHAPTERS = [
         year: 2016,
         section: 'year',
         title: "HOT SEAT",
+        slug: "hot-seat",
         subtitle: "",
         teaser: "The pressure mounts.",
         content: `<p class="has-dateline"><span class="dateline">WASHINGTON, <em>May 8</em>—</span>By the time I check into my hotel room, there’s a wild rumor circulating and an urgent alert from the web desk to chase it.</p>
@@ -2254,6 +2267,7 @@ export const CHAPTERS = [
         year: 2016,
         section: 'year',
         title: "PENNANT RACE",
+        slug: "pennant-race",
         subtitle: "",
         teaser: "A wild card chase.",
         content: `<p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>September 20</em>—</span>Justin Verlander seeks a buyer for his car.</p>
@@ -2378,6 +2392,7 @@ export const CHAPTERS = [
         year: 2016,
         section: 'year',
         title: "WAKE-UP CALL",
+        slug: "wake-up-call",
         subtitle: "",
         teaser: "Reality sets in.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>October 3</em>—</span>Not even bloody seven o’clock on the first morning of the offseason and my phone is ringing. Deep Throat is fuming about my Ausmus column.</p>
@@ -2775,6 +2790,7 @@ export const CHAPTERS = [
         year: 2017,
         section: 'year',
         title: "PRIME-TIME",
+        slug: "prime-time",
         subtitle: "",
         teaser: "The national spotlight.",
         content: `<p>TAMPA, Fla., <em>February 12, 2017</em>—The calendar begins when I arrive to spring training. Still thinking about what Pedro Gomez said earlier, what he’s been saying for the past two years.</p>
@@ -3046,6 +3062,7 @@ export const CHAPTERS = [
         year: 2017,
         section: 'year',
         title: "FIREWORKS",
+        slug: "fireworks",
         subtitle: "",
         teaser: "Midsummer tensions explode.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>July 2</em>—</span>Pulling into the parking lot yesterday, I got a ping from Top Scout—“Are you here tomorrow?”</p>
@@ -3408,6 +3425,7 @@ export const CHAPTERS = [
         year: 2017,
         section: 'year',
         title: "SUMMER 2017",
+        slug: "summer-2017",
         subtitle: "Part II",
         teaser: "The Very Serious Story.",
         content: `<p class="has-dateline"><span class="dateline">CHICAGO, <em>August 24</em>—</span>I reach out to sources as we land.</p>
@@ -3790,6 +3808,7 @@ export const CHAPTERS = [
         year: 2017,
         section: 'year',
         title: "WORLD SERIES",
+        slug: "world-series",
         subtitle: "",
         teaser: "October baseball returns.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It's my first week at the <em>Free Press</em>.</p>
@@ -4403,6 +4422,7 @@ export const CHAPTERS = [
         year: 2018,
         section: 'year',
         title: "AWARDS SEASON",
+        slug: "awards-season",
         subtitle: "",
         teaser: "The offseason circuit.",
         content: `<p>LAKELAND, Fla., <em>February 13</em>—The first week of pitchers and catchers isn’t short on drama. Unfortunately, it’s self-inflicted.</p>
@@ -4637,6 +4657,7 @@ export const CHAPTERS = [
         year: 2018,
         section: 'year',
         title: "DRAFT DAY",
+        slug: "draft-day",
         subtitle: "",
         teaser: "Amateur dreams realized.",
         content: `<p class="has-dateline"><span class="dateline">BOSTON, <em>June 5</em>—</span>After a couple hours’ sleep in Atlanta, it’s back to the airport. I had an alarm at 4 and snoozed it until 4:30.</p>
@@ -4936,6 +4957,7 @@ export const CHAPTERS = [
         year: 2018,
         section: 'year',
         title: "COOPERSTOWN",
+        slug: "cooperstown",
         subtitle: "",
         teaser: "Baseball's hallowed grounds.",
         content: `<p class="has-dateline"><span class="dateline">COOPERSTOWN, N.Y., <em>July 27</em>—</span>The first rule of the Cooperstown House is you don't talk about the Cooperstown House. <span class="media-emoji" data-media-id="greatest-assignment-7-30-18">📷</span></p>
@@ -5273,6 +5295,7 @@ export const CHAPTERS = [
         year: 2018,
         section: 'year',
         title: "BURN OUT",
+        slug: "burn-out",
         subtitle: "",
         teaser: "The grind takes its toll.",
         content: `<p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>August 16</em>—</span>With no rooms available downtown this weekend, the Tigers traveling secretary helps me book a room at the team hotel—the luxury-brand Loews, located in a tall tower around the corner from the ballpark.</p>
@@ -5616,6 +5639,7 @@ export const CHAPTERS = [
         year: 2019,
         section: 'year',
         title: "VIVA LAS VEGAS",
+        slug: "viva-las-vegas",
         subtitle: "",
         teaser: "Desert adventures.",
         content: `<p class="has-dateline"><span class="dateline">LAS VEGAS, <em>December 9</em>—</span>Heading to the winter meetings, I get a text from Ian Kinsler.</p>
@@ -6016,6 +6040,7 @@ export const CHAPTERS = [
         year: 2019,
         section: 'year',
         title: "GLOBETROTTING",
+        slug: "globetrotting",
         subtitle: "",
         teaser: "International baseball.",
         content: `<p class="has-dateline"><span class="dateline">TORONTO, <em>March 28</em>—</span>Welcome to Canada, at long last. I arrived from Tampa yesterday. Cold, gray, rainy, the whole deal—good thing baseball is played under a roof here.</p>
@@ -6220,6 +6245,7 @@ export const CHAPTERS = [
         year: 2019,
         section: 'year',
         title: "ROAD TO OMAHA",
+        slug: "road-to-omaha",
         subtitle: "",
         teaser: "College World Series.",
         content: `<p>KANSAS CITY, Mo., <em>June 12</em>—Skipping town after the second game, hitting the road for three hours. I’m driving a lime green Camaro, flipping through the radio dial on a dark construction detour after midnight. Listening to a debate on porn—healthy part of society or public health hazard?</p>
@@ -6476,6 +6502,7 @@ export const CHAPTERS = [
         year: 2019,
         section: 'year',
         title: "A LETTER TO THE EDITOR",
+        slug: "letter-to-the-editor",
         subtitle: "",
         teaser: "Houston calling.",
         content: `<p>From: Thomas, Christopher Sent: Tuesday, August 20, 2019 12:15 PM</p>
@@ -6776,6 +6803,7 @@ export const CHAPTERS = [
         year: 2019,
         section: 'year',
         title: "UNETHICAL",
+        slug: "unethical",
         subtitle: "",
         teaser: "The incident.",
         content: `<p class="has-dateline"><span class="dateline">HOUSTON, <em>August 22</em>—</span>Must have dozed off in my dress slacks—4 in the morning, maybe?</p>
@@ -7414,6 +7442,7 @@ export const CHAPTERS = [
         year: 2019,
         section: 'year',
         title: "BOTTOM NINE",
+        slug: "bottom-nine",
         subtitle: "",
         teaser: "Final innings.",
         content: `<p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>The Winter Meetings again. Perhaps, for me, the final one—a scary thought I cannot shake. It is raining as I arrive at the Manchester Grand Hyatt Resort.</p>
@@ -7937,6 +7966,7 @@ export const CHAPTERS = [
         year: 2020,
         section: 'closing',
         title: "POSTSCRIPT",
+        slug: "postscript",
         subtitle: "",
         teaser: "Looking back.",
         content: `<p>Sometimes, sports writing means making tough calls. Three weeks after the pandemic hit, the <em>Free Press</em> received the kind of tip nobody wants to get.</p>
@@ -8216,6 +8246,7 @@ export const CHAPTERS = [
         year: null,
         section: 'closing',
         title: "DEDICATION",
+        slug: "dedication",
         subtitle: "",
         teaser: "",
         content: `<p>This book is dedicated to Pedro Gomez.</p>
@@ -8363,4 +8394,15 @@ export const getSortedYears = () => {
         years.push(2020);
     }
     return years;
+};
+
+// Get chapter by slug
+export const getChapterBySlug = (slug) => {
+    return CHAPTERS.find(c => c.slug === slug) || null;
+};
+
+// Get chapter slug by ID
+export const getChapterSlug = (id) => {
+    const chapter = CHAPTERS.find(c => c.id === id);
+    return chapter?.slug || null;
 };

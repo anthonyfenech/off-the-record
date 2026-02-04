@@ -126,7 +126,7 @@ And so on...`,
 - Swipe gestures (swipe right = previous, left = next)
 - Keyboard shortcuts (arrow keys, h/l)
 - Table of Contents sidebar
-- URL-based deep linking (`#chapter-5`)
+- URL-based deep linking with readable slugs (`#wake-up-call`)
 - Browser back/forward button support
 
 ### Progress Tracking

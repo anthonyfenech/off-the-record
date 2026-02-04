@@ -607,7 +607,7 @@
                 : ch.content;
 
             return `
-            <article class="chapter-section${isSpecial ? ' special-page' : ''}${isLocked ? ' locked' : ''}" id="chapter-${ch.id}" data-chapter="${i}">
+            <article class="chapter-section${isSpecial ? ' special-page' : ''}${isLocked ? ' locked' : ''}" id="${ch.slug}" data-chapter="${i}">
                 ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}${isLocked ? ' 🔒' : ''}</h2></header>` : ''}
                 <div class="chapter-body">${chapterContent}</div>
                 ${!isSpecial && !isLocked ? '<div class="chapter-end"></div>' : ''}
