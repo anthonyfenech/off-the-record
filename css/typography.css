@@ -1,75 +1,147 @@
-/* Typography System - Typewriter Aesthetic */
+/* ═══════════════════════════════════════════════════════════════
+   TYPOGRAPHY - PROFESSIONAL READING COMFORT
+   Publishing-quality typography for long-form reading
+   ═══════════════════════════════════════════════════════════════ */
 
+/* Base text rendering */
 body {
     font-family: var(--font-mono);
     font-size: var(--font-size-md);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-primary);
     background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-/* Reading-optimized body text - Traditional book formatting */
+/* ═══════════════════════════════════════════════════════════════
+   CHAPTER BODY - MAIN READING CONTENT
+   Optimized for 60-70 characters per line
+   ═══════════════════════════════════════════════════════════════ */
+
 .chapter-body {
     font-family: var(--font-serif);
     font-size: var(--font-size-reader);
-    line-height: 1.4;
+    line-height: 1.7;
     color: var(--color-text-primary);
-    text-align: justify;
+    text-align: left;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Body paragraphs - spacing between, no indents */
 .chapter-body p {
-    margin-bottom: 0;
-    text-indent: 0.5in;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    text-indent: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    word-spacing: 0.02em;
 }
 
-/* No indent for first paragraph of chapter */
-.chapter-body .page-container > p:first-child {
-    text-indent: 0;
+/* Last paragraph - no bottom margin */
+.chapter-body .page-container > p:last-child {
+    margin-bottom: 0;
 }
 
-/* No indent for dateline paragraphs, block quotes, or paragraphs following section breaks */
-.chapter-body p.has-dateline,
-.chapter-body p.block-quote,
-.chapter-body .scene-break + p,
-.chapter-body .block-quote + p,
-.chapter-body .headline-block + p {
-    text-indent: 0;
+/* ═══════════════════════════════════════════════════════════════
+   SCENE BREAKS
+   Visual separation for time/location shifts
+   ═══════════════════════════════════════════════════════════════ */
+
+.chapter-body .scene-break {
+    text-align: center;
+    margin: 2.5em 0;
+    color: var(--color-text-tertiary);
+    font-size: 1.125em;
+    letter-spacing: 0.3em;
 }
 
-/* Email spacer - creates visual break before/after emails */
+/* Paragraph after scene break - no special treatment needed */
+.chapter-body .scene-break + p {
+    margin-top: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SPECIAL CONTENT BLOCKS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Email spacer */
 .chapter-body p.email-spacer {
-    text-indent: 0;
-    height: 1em;
+    height: 1.5em;
     margin: 0;
 }
 
-/* Email block - no indents for email content */
+/* Email block */
 .chapter-body .email-block,
 .chapter-body .email-block p {
-    text-indent: 0 !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
+    margin-left: 0;
+    padding-left: 0;
 }
 
-/* Signature block - right aligned with spacing */
+/* Signature block */
 .chapter-body .signature {
     text-align: right;
-    text-indent: 0;
-    margin-top: var(--space-xl);
+    margin-top: 2em;
     font-style: italic;
 }
 
-/* Chapter titles - Typewriter style with uppercase and letter-spacing */
+/* Dateline paragraphs */
+.chapter-body p.has-dateline {
+    margin-bottom: 1.5em;
+}
+
+/* Block quotes */
+.chapter-body .block-quote,
+.chapter-body blockquote {
+    margin: 2em 0;
+    padding-left: 1.5em;
+    border-left: 2px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Pull quotes - highlighted key moments */
+.chapter-body .pullquote {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 2em 0;
+    padding-left: 1.5em;
+    border-left: 3px solid #cc0000;
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+/* Headline blocks */
+.headline-block {
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 2em 0;
+}
+
+/* Small caps */
+.small-caps {
+    font-size: 0.85em;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHAPTER TITLES & HEADERS
+   Typewriter aesthetic
+   ═══════════════════════════════════════════════════════════════ */
+
 .chapter-title {
     font-family: var(--font-mono);
     font-size: 1.875rem;
-    line-height: var(--line-height-tight);
+    line-height: 1.2;
     font-weight: bold;
     color: var(--color-text-primary);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wide);
     text-align: center;
@@ -78,7 +150,7 @@ body {
 .chapter-subtitle {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
-    line-height: var(--line-height-normal);
+    line-height: 1.4;
     color: var(--color-text-secondary);
     font-style: italic;
     margin-bottom: var(--space-sm);
@@ -92,12 +164,35 @@ body {
     margin-bottom: 0;
 }
 
-/* Header typography */
+/* Section headers within chapter */
+.chapter-body h2 {
+    font-family: var(--font-mono);
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin: 2.5em 0 1em 0;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.chapter-body h3 {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 2em 0 0.75em 0;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════ */
+
 .header-title {
     font-family: var(--font-mono);
     font-size: 1.25rem;
     font-weight: bold;
-    
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-normal);
@@ -130,7 +225,10 @@ body {
     letter-spacing: var(--letter-spacing-tight);
 }
 
-/* Table of Contents */
+/* ═══════════════════════════════════════════════════════════════
+   TABLE OF CONTENTS
+   ═══════════════════════════════════════════════════════════════ */
+
 .toc-header h2 {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
@@ -143,14 +241,14 @@ body {
 .toc-chapter-title {
     font-family: var(--font-mono);
     font-size: var(--font-size-xs);
-    line-height: var(--line-height-normal);
+    line-height: 1.4;
     color: var(--color-text-primary);
 }
 
 .toc-chapter-subtitle {
     font-family: var(--font-mono);
     font-size: var(--font-size-xs);
-    line-height: var(--line-height-normal);
+    line-height: 1.4;
     color: var(--color-text-secondary);
     font-style: italic;
 }
@@ -162,27 +260,70 @@ body {
     text-align: center;
 }
 
-/* Small caps - for headlines/tickers within text */
-.small-caps {
-    font-size: 0.85em;
-    letter-spacing: 0.02em;
+/* ═══════════════════════════════════════════════════════════════
+   EMPHASIS & INLINE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+.chapter-body em {
+    font-style: italic;
 }
 
-/* Headline blocks - centered bold text with spacing */
-.headline-block {
-    display: block;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+.chapter-body strong {
+    font-weight: 600;
+}
+
+/* Lists */
+.chapter-body ul,
+.chapter-body ol {
     margin: 1.5em 0;
-    text-indent: 0 !important;
+    padding-left: 2em;
 }
 
-/* Mobile - smaller header to prevent wrapping */
+.chapter-body li {
+    margin-bottom: 0.5em;
+    line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Mobile - slightly tighter for small screens */
 @media (max-width: 599px) {
     .header-title {
         font-size: var(--font-size-lg);
         letter-spacing: 1px;
+    }
+
+    .chapter-body {
+        line-height: 1.65;
+        max-width: 100%;
+    }
+
+    .chapter-body p {
+        margin-bottom: 1.4em;
+    }
+
+    .chapter-body .scene-break {
+        margin: 2em 0;
+    }
+
+    .chapter-body .pullquote {
+        font-size: 1.1em;
+        padding-left: 1em;
+        border-left-width: 2px;
+    }
+
+    .chapter-title {
+        font-size: 1.5rem;
+    }
+
+    .chapter-body h2 {
+        font-size: 1.25rem;
+    }
+
+    .chapter-body h3 {
+        font-size: 1.0625rem;
     }
 }
 
@@ -190,5 +331,16 @@ body {
 @media (min-width: 600px) {
     .chapter-title {
         font-size: var(--font-size-2xl);
+    }
+}
+
+/* Large screens - slightly larger text */
+@media (min-width: 1024px) {
+    .chapter-body {
+        line-height: 1.75;
+    }
+
+    .chapter-body p {
+        margin-bottom: 1.6em;
     }
 }

@@ -57,10 +57,10 @@
     --font-size-md: 1.125rem;    /* 18px */
     --font-size-lg: 1.375rem;    /* 22px */
 
-    /* Reader font sizes (user adjustable) */
-    --font-size-reader-small: 0.875rem;   /* 14px */
-    --font-size-reader-medium: 1rem;      /* 16px - default */
-    --font-size-reader-large: 1.25rem;    /* 20px */
+    /* Reader font sizes (user adjustable) - optimized for long-form reading */
+    --font-size-reader-small: 1rem;       /* 16px */
+    --font-size-reader-medium: 1.125rem;  /* 18px - default, optimal for reading */
+    --font-size-reader-large: 1.375rem;   /* 22px */
     --font-size-reader: var(--font-size-reader-medium);
     --font-size-xl: 1.75rem;     /* 28px */
     --font-size-2xl: 2.25rem;    /* 36px */
