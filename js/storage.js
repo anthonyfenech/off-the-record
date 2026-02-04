@@ -3,8 +3,66 @@
 const STORAGE_KEYS = {
     PROGRESS: 'off_the_record_progress',
     COMPLETION: 'off_the_record_completion',
-    PREFERENCES: 'off_the_record_preferences'
+    PREFERENCES: 'off_the_record_preferences',
+    DEBUG: 'otr_debug_mode'
 };
+
+// ═══════════════════════════════════════════════════════════════
+// DEBUG LOGGING SYSTEM
+// Silent in production, verbose when enabled for troubleshooting
+// ═══════════════════════════════════════════════════════════════
+
+const logger = {
+    isDebugMode() {
+        try {
+            return localStorage.getItem(STORAGE_KEYS.DEBUG) === 'true';
+        } catch {
+            return false;
+        }
+    },
+
+    error(message, error = null) {
+        if (!this.isDebugMode()) return;
+        if (error) {
+            console.error(`[OTR Storage] ${message}`, error);
+        } else {
+            console.error(`[OTR Storage] ${message}`);
+        }
+    },
+
+    warn(message) {
+        if (!this.isDebugMode()) return;
+        console.warn(`[OTR Storage] ${message}`);
+    },
+
+    log(message) {
+        if (!this.isDebugMode()) return;
+        console.log(`[OTR Storage] ${message}`);
+    }
+};
+
+// Toggle debug mode from console: window.toggleDebugMode()
+if (typeof window !== 'undefined') {
+    window.toggleDebugMode = function() {
+        try {
+            const current = localStorage.getItem(STORAGE_KEYS.DEBUG) === 'true';
+            const newValue = !current;
+            localStorage.setItem(STORAGE_KEYS.DEBUG, newValue.toString());
+            console.log(`Debug mode: ${newValue ? 'ON' : 'OFF'}`);
+            if (newValue) {
+                console.log('Storage errors will now be logged. Run toggleDebugMode() again to disable.');
+            }
+            return newValue;
+        } catch (e) {
+            console.log('Could not toggle debug mode:', e.message);
+            return false;
+        }
+    };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// STORAGE UTILITIES
+// ═══════════════════════════════════════════════════════════════
 
 // Check if localStorage is available
 function isLocalStorageAvailable() {
@@ -46,7 +104,7 @@ export function getProgress() {
         }
         return parsed;
     } catch (error) {
-        console.error('Error reading progress:', error);
+        logger.error('Error reading progress:', error);
         return {
             currentChapter: 1,
             currentPage: 0,
@@ -59,7 +117,7 @@ export function getProgress() {
 // Save reading progress
 export function saveProgress(currentChapter, currentPage, completionPercentage) {
     if (!isLocalStorageAvailable()) {
-        console.warn('localStorage not available');
+        logger.warn('localStorage not available');
         return false;
     }
 
@@ -73,10 +131,9 @@ export function saveProgress(currentChapter, currentPage, completionPercentage) 
         localStorage.setItem(STORAGE_KEYS.PROGRESS, JSON.stringify(data));
         return true;
     } catch (error) {
-        console.error('Error saving progress:', error);
-        // Handle quota exceeded
+        logger.error('Error saving progress:', error);
         if (error.name === 'QuotaExceededError') {
-            console.error('localStorage quota exceeded');
+            logger.error('localStorage quota exceeded');
         }
         return false;
     }
@@ -92,7 +149,7 @@ export function getChapterCompletion() {
         const data = localStorage.getItem(STORAGE_KEYS.COMPLETION);
         return data ? JSON.parse(data) : {};
     } catch (error) {
-        console.error('Error reading chapter completion:', error);
+        logger.error('Error reading chapter completion:', error);
         return {};
     }
 }
@@ -109,7 +166,7 @@ export function markChapterComplete(chapterId) {
         localStorage.setItem(STORAGE_KEYS.COMPLETION, JSON.stringify(completion));
         return true;
     } catch (error) {
-        console.error('Error saving chapter completion:', error);
+        logger.error('Error saving chapter completion:', error);
         return false;
     }
 }
@@ -133,7 +190,7 @@ export function getPreferences() {
         const data = localStorage.getItem(STORAGE_KEYS.PREFERENCES);
         return data ? JSON.parse(data) : { fontSize: 'medium', theme: 'light' };
     } catch (error) {
-        console.error('Error reading preferences:', error);
+        logger.error('Error reading preferences:', error);
         return { fontSize: 'medium', theme: 'light' };
     }
 }
@@ -148,7 +205,7 @@ export function savePreferences(preferences) {
         localStorage.setItem(STORAGE_KEYS.PREFERENCES, JSON.stringify(preferences));
         return true;
     } catch (error) {
-        console.error('Error saving preferences:', error);
+        logger.error('Error saving preferences:', error);
         return false;
     }
 }
@@ -165,7 +222,7 @@ export function clearAllData() {
         localStorage.removeItem(STORAGE_KEYS.PREFERENCES);
         return true;
     } catch (error) {
-        console.error('Error clearing data:', error);
+        logger.error('Error clearing data:', error);
         return false;
     }
 }
