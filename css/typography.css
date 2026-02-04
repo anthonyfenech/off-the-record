@@ -22,11 +22,11 @@ body {
 
 .chapter-body {
     font-family: var(--font-serif);
-    font-size: var(--font-size-reader);
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.6;
     color: var(--color-text-primary);
     text-align: left;
-    max-width: 680px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -34,7 +34,7 @@ body {
 /* Body paragraphs - tight book-like spacing */
 .chapter-body p {
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 1.2rem;
     text-indent: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -281,25 +281,7 @@ body {
 
 .chapter-body li {
     margin-bottom: 0.5em;
-    line-height: 1.7;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   AUTHOR'S NOTE - BOOK-LIKE STYLING
-   Tighter spacing and smaller font for prefatory material
-   ═══════════════════════════════════════════════════════════════ */
-
-.chapter-body[data-slug="authors-note"] {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.chapter-body[data-slug="authors-note"] p {
-    margin-bottom: 1.2rem !important;
-    line-height: 1.6 !important;
+    line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -314,12 +296,12 @@ body {
     }
 
     .chapter-body {
-        line-height: 1.65;
+        line-height: 1.6;
         max-width: 100%;
     }
 
     .chapter-body p {
-        margin-bottom: 0.9em;
+        margin-bottom: 1.2rem;
     }
 
     .chapter-body .scene-break {
@@ -352,13 +334,13 @@ body {
     }
 }
 
-/* Large screens - slightly larger text */
+/* Large screens - consistent with base styles */
 @media (min-width: 1024px) {
     .chapter-body {
-        line-height: 1.75;
+        line-height: 1.6;
     }
 
     .chapter-body p {
-        margin-bottom: 1.1em;
+        margin-bottom: 1.2rem;
     }
 }
