@@ -6,7 +6,7 @@
 (function() {
     'use strict';
 
-    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzrquxCfMdj1C2t43Qh8kH2RFg-_EmOz5RbaNTqJbMsIWtO_umHXtftiMfELm6LFPWp/exec';
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
 
     // ========== SESSION MANAGEMENT ==========
 
