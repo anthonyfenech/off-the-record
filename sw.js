@@ -155,8 +155,8 @@ async function cacheFirst(request) {
         // Fetch from network
         const response = await fetch(request);
 
-        // Cache the new response
-        if (response.ok) {
+        // Cache the new response (skip partial content 206)
+        if (response.ok && response.status !== 206) {
             cache.put(request, response.clone());
         }
 
@@ -173,8 +173,8 @@ async function networkFirst(request) {
         // Try network first
         const response = await fetch(request);
 
-        if (response.ok) {
-            // Cache successful responses
+        if (response.ok && response.status !== 206) {
+            // Cache successful responses (skip partial content 206)
             const cache = await caches.open(CONTENT_CACHE);
             cache.put(request, response.clone());
         }
