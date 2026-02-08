@@ -3091,6 +3091,30 @@ body.show-captions .media-modal-caption {
     margin-top: var(--space-sm);
 }
 
+/* Remember me checkbox */
+.remember-me-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.remember-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--color-text-primary);
+}
+
+.remember-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    user-select: none;
+}
+
 /* Shake animation for wrong password */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }

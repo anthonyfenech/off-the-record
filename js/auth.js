@@ -3,10 +3,26 @@
 
 import { security } from './security.js';
 
-// Password can be changed here - just update this value
-const BETA_PASSWORD = 'BALLWRITER';
+// Password hash (obfuscated) - generated from simpleHash('BALLWRITER')
+// To change password: run simpleHash('NEWPASSWORD') in console and update this value
+const PASSWORD_HASH = -1322527314;
 const AUTH_KEY = 'otr_beta_session';
 const SESSION_HOURS = 168; // 7 days
+const REMEMBER_ME_HOURS = 720; // 30 days
+
+// Simple hash function for password obfuscation
+// Not cryptographically secure, but prevents casual password discovery
+function simpleHash(str) {
+    let hash = 0;
+    const salt = 'otr2024beta';
+    const salted = salt + str.toUpperCase() + salt;
+    for (let i = 0; i < salted.length; i++) {
+        const char = salted.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32-bit integer
+    }
+    return hash;
+}
 
 export const auth = {
     // Check if user is authenticated
@@ -16,20 +32,25 @@ export const auth = {
     },
 
     // Verify password and store auth state
-    authenticate(password) {
+    authenticate(password, rememberMe = false) {
         // Check if locked out from too many attempts
         const loginCheck = security.checkLoginAttempt();
         if (!loginCheck.allowed) {
+            const timeDisplay = loginCheck.remainingMinutes > 1
+                ? `${loginCheck.remainingMinutes} minutes`
+                : `${loginCheck.remainingSeconds} seconds`;
             return {
                 success: false,
-                error: `Too many attempts. Try again in ${loginCheck.remainingSeconds} seconds.`
+                error: `Too many attempts. Try again in ${timeDisplay}.`
             };
         }
 
-        // Check password
-        if (password === BETA_PASSWORD) {
+        // Check password using hash comparison
+        const inputHash = simpleHash(password);
+        if (inputHash === PASSWORD_HASH) {
             security.resetLoginAttempts();
-            security.createSession(AUTH_KEY, SESSION_HOURS);
+            const sessionLength = rememberMe ? REMEMBER_ME_HOURS : SESSION_HOURS;
+            security.createSession(AUTH_KEY, sessionLength);
             return { success: true };
         }
 
@@ -78,6 +99,7 @@ export const auth = {
         const form = document.getElementById('passwordForm');
         const input = document.getElementById('passwordInput');
         const errorMsg = document.getElementById('passwordError');
+        const rememberCheckbox = document.getElementById('rememberMe');
 
         if (!gate || !form || !input) return;
 
@@ -95,7 +117,8 @@ export const auth = {
             e.preventDefault();
 
             const password = input.value.trim().toUpperCase();
-            const result = this.authenticate(password);
+            const rememberMe = rememberCheckbox ? rememberCheckbox.checked : false;
+            const result = this.authenticate(password, rememberMe);
 
             if (result.success) {
                 this.hideGate();

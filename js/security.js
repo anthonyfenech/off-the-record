@@ -1,11 +1,40 @@
 // Security - Practical security utilities for the memoir site
 // Input sanitization, rate limiting, session management
 
+const LOGIN_STATE_KEY = 'otr_login_state';
+const MAX_ATTEMPTS = 5;
+const LOCKOUT_MINUTES = 15;
+
 class Security {
     constructor() {
         this.rateLimits = new Map();
-        this.loginAttempts = 0;
-        this.lockoutUntil = 0;
+        // Load persistent login state from localStorage
+        this._loadLoginState();
+    }
+
+    // Load login state from localStorage
+    _loadLoginState() {
+        try {
+            const state = JSON.parse(localStorage.getItem(LOGIN_STATE_KEY));
+            if (state) {
+                this.loginAttempts = state.attempts || 0;
+                this.lockoutUntil = state.lockoutUntil || 0;
+            } else {
+                this.loginAttempts = 0;
+                this.lockoutUntil = 0;
+            }
+        } catch {
+            this.loginAttempts = 0;
+            this.lockoutUntil = 0;
+        }
+    }
+
+    // Save login state to localStorage
+    _saveLoginState() {
+        localStorage.setItem(LOGIN_STATE_KEY, JSON.stringify({
+            attempts: this.loginAttempts,
+            lockoutUntil: this.lockoutUntil
+        }));
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -119,40 +148,53 @@ class Security {
     }
 
     // ═══════════════════════════════════════════════════════════════
-    // LOGIN PROTECTION
+    // LOGIN PROTECTION (persisted to localStorage)
     // ═══════════════════════════════════════════════════════════════
 
     // Check login attempt (brute force protection)
     checkLoginAttempt() {
         const now = Date.now();
 
+        // Reload state in case another tab modified it
+        this._loadLoginState();
+
         // Check if locked out
         if (this.lockoutUntil > now) {
             const remainingSeconds = Math.ceil((this.lockoutUntil - now) / 1000);
-            return { allowed: false, remainingSeconds };
+            const remainingMinutes = Math.ceil(remainingSeconds / 60);
+            return { allowed: false, remainingSeconds, remainingMinutes };
         }
 
-        return { allowed: true };
+        // If lockout expired, reset state
+        if (this.lockoutUntil > 0 && this.lockoutUntil <= now) {
+            this.loginAttempts = 0;
+            this.lockoutUntil = 0;
+            this._saveLoginState();
+        }
+
+        return { allowed: true, attemptsRemaining: MAX_ATTEMPTS - this.loginAttempts };
     }
 
     // Record failed login
     recordFailedLogin() {
         this.loginAttempts++;
 
-        // Lock out after 5 failed attempts for 5 minutes
-        if (this.loginAttempts >= 5) {
-            this.lockoutUntil = Date.now() + 300000; // 5 minutes
-            this.loginAttempts = 0;
-            return { locked: true, lockoutMinutes: 5 };
+        // Lock out after MAX_ATTEMPTS failed attempts for LOCKOUT_MINUTES
+        if (this.loginAttempts >= MAX_ATTEMPTS) {
+            this.lockoutUntil = Date.now() + (LOCKOUT_MINUTES * 60 * 1000);
+            this._saveLoginState();
+            return { locked: true, lockoutMinutes: LOCKOUT_MINUTES };
         }
 
-        return { locked: false, attemptsRemaining: 5 - this.loginAttempts };
+        this._saveLoginState();
+        return { locked: false, attemptsRemaining: MAX_ATTEMPTS - this.loginAttempts };
     }
 
     // Reset login attempts on success
     resetLoginAttempts() {
         this.loginAttempts = 0;
         this.lockoutUntil = 0;
+        this._saveLoginState();
     }
 
     // ═══════════════════════════════════════════════════════════════
