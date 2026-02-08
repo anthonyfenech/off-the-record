@@ -55,7 +55,6 @@ class MediaModal {
         this.overlay.className = 'media-modal-overlay';
         this.overlay.setAttribute('role', 'dialog');
         this.overlay.setAttribute('aria-modal', 'true');
-        this.overlay.setAttribute('aria-hidden', 'true');
 
         // Create modal container
         this.modal = document.createElement('div');
@@ -544,7 +543,6 @@ class MediaModal {
     show() {
         this.isOpen = true;
         this.overlay.classList.add('active');
-        this.overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
 
         // Add keyboard listener for focus trap
@@ -585,7 +583,6 @@ class MediaModal {
 
         this.isOpen = false;
         this.overlay.classList.remove('active');
-        this.overlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = ''; // Restore scrolling
 
         // Remove keyboard listener
