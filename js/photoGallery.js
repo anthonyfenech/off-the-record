@@ -29,7 +29,6 @@ class PhotoGallery {
         this.photoModalOverlay.className = 'photo-modal-overlay';
         this.photoModalOverlay.setAttribute('role', 'dialog');
         this.photoModalOverlay.setAttribute('aria-modal', 'true');
-        this.photoModalOverlay.setAttribute('aria-hidden', 'true');
 
         // Create modal container
         this.photoModal = document.createElement('div');
@@ -275,7 +274,6 @@ class PhotoGallery {
     show() {
         this.isOpen = true;
         this.photoModalOverlay.classList.add('active');
-        this.photoModalOverlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
 
         // Add keyboard listener for focus trap and navigation
@@ -292,7 +290,6 @@ class PhotoGallery {
     close() {
         this.isOpen = false;
         this.photoModalOverlay.classList.remove('active');
-        this.photoModalOverlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
 
         // Remove keyboard listener

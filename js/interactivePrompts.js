@@ -66,7 +66,6 @@ export class InteractivePrompts {
         // Create overlay
         this.overlay = document.createElement('div');
         this.overlay.className = 'prompt-overlay';
-        this.overlay.setAttribute('aria-hidden', 'true');
 
         // Create modal
         this.modal = document.createElement('div');
@@ -304,7 +303,6 @@ export class InteractivePrompts {
 
         // Show modal
         this.overlay.classList.add('active');
-        this.overlay.setAttribute('aria-hidden', 'false');
         this.modal.classList.add('active');
 
         // Focus first choice for accessibility
@@ -403,7 +401,6 @@ export class InteractivePrompts {
         // Hide modal and overlay
         this.modal.classList.remove('active');
         this.overlay.classList.remove('active');
-        this.overlay.setAttribute('aria-hidden', 'true');
 
         // Reset current prompt
         this.currentPrompt = null;
