@@ -18,8 +18,12 @@ class PhotoGallery {
 
     // Initialize photo gallery
     init() {
-        this.createPhotoModal();
-        this.attachEventListeners();
+        try {
+            this.createPhotoModal();
+            this.attachEventListeners();
+        } catch (error) {
+            console.error('[PhotoGallery] Failed to initialize:', error);
+        }
     }
 
     // Create photo modal DOM elements
@@ -166,22 +170,26 @@ class PhotoGallery {
 
     // Open photo modal
     open(galleryId, photoId) {
-        const gallery = getGalleryById(galleryId);
-        const photo = getPhotoById(galleryId, photoId);
+        try {
+            const gallery = getGalleryById(galleryId);
+            const photo = getPhotoById(galleryId, photoId);
 
-        if (!gallery || !photo) {
-            console.error(`Gallery or photo not found: ${galleryId}, ${photoId}`);
-            return;
+            if (!gallery || !photo) {
+                console.error(`[PhotoGallery] Gallery or photo not found: ${galleryId}, ${photoId}`);
+                return;
+            }
+
+            // Save the element that triggered the modal for focus restore
+            this.triggerElement = document.activeElement;
+
+            this.currentGallery = galleryId;
+            this.currentPhoto = photoId;
+
+            this.renderPhoto(gallery, photo);
+            this.show();
+        } catch (error) {
+            console.error('[PhotoGallery] Failed to open modal:', error);
         }
-
-        // Save the element that triggered the modal for focus restore
-        this.triggerElement = document.activeElement;
-
-        this.currentGallery = galleryId;
-        this.currentPhoto = photoId;
-
-        this.renderPhoto(gallery, photo);
-        this.show();
     }
 
     // Render photo in modal
@@ -307,57 +315,61 @@ class PhotoGallery {
 
     // Render gallery grid
     renderGalleryGrid(galleryId, containerId) {
-        const gallery = getGalleryById(galleryId);
-        const container = document.getElementById(containerId);
+        try {
+            const gallery = getGalleryById(galleryId);
+            const container = document.getElementById(containerId);
 
-        if (!gallery || !container) {
-            console.error(`Gallery or container not found: ${galleryId}, ${containerId}`);
-            return;
-        }
-
-        // Clear container
-        container.innerHTML = '';
-
-        // Create photo grid
-        const grid = document.createElement('div');
-        grid.className = 'photo-grid';
-
-        gallery.photos.forEach(photo => {
-            const photoCard = document.createElement('div');
-            photoCard.className = 'photo-card';
-            photoCard.setAttribute('data-photo-id', photo.id);
-            photoCard.setAttribute('role', 'button');
-            photoCard.setAttribute('tabindex', '0');
-            photoCard.setAttribute('aria-label', `View photo: ${photo.caption}`);
-
-            // Create thumbnail or placeholder
-            if (photo.hasImage) {
-                photoCard.style.backgroundImage = `url(${photo.thumbnail || photo.src})`;
-            } else {
-                photoCard.classList.add('photo-card-placeholder');
-                photoCard.innerHTML = `
-                    <div class="photo-card-icon">📷</div>
-                    <div class="photo-card-filename">${photo.filename}</div>
-                `;
+            if (!gallery || !container) {
+                console.error(`[PhotoGallery] Gallery or container not found: ${galleryId}, ${containerId}`);
+                return;
             }
 
-            // Add click handler
-            photoCard.addEventListener('click', () => {
-                this.open(galleryId, photo.id);
-            });
+            // Clear container
+            container.innerHTML = '';
 
-            // Add keyboard handler
-            photoCard.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.open(galleryId, photo.id);
+            // Create photo grid
+            const grid = document.createElement('div');
+            grid.className = 'photo-grid';
+
+            gallery.photos.forEach(photo => {
+                const photoCard = document.createElement('div');
+                photoCard.className = 'photo-card';
+                photoCard.setAttribute('data-photo-id', photo.id);
+                photoCard.setAttribute('role', 'button');
+                photoCard.setAttribute('tabindex', '0');
+                photoCard.setAttribute('aria-label', `View photo: ${photo.caption}`);
+
+                // Create thumbnail or placeholder
+                if (photo.hasImage) {
+                    photoCard.style.backgroundImage = `url(${photo.thumbnail || photo.src})`;
+                } else {
+                    photoCard.classList.add('photo-card-placeholder');
+                    photoCard.innerHTML = `
+                        <div class="photo-card-icon">📷</div>
+                        <div class="photo-card-filename">${photo.filename}</div>
+                    `;
                 }
+
+                // Add click handler
+                photoCard.addEventListener('click', () => {
+                    this.open(galleryId, photo.id);
+                });
+
+                // Add keyboard handler
+                photoCard.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.open(galleryId, photo.id);
+                    }
+                });
+
+                grid.appendChild(photoCard);
             });
 
-            grid.appendChild(photoCard);
-        });
-
-        container.appendChild(grid);
+            container.appendChild(grid);
+        } catch (error) {
+            console.error('[PhotoGallery] Failed to render gallery grid:', error);
+        }
     }
 
     // Clean up

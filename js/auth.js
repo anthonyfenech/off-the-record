@@ -13,6 +13,9 @@ const REMEMBER_ME_HOURS = 720; // 30 days
 // Simple hash function for password obfuscation
 // Not cryptographically secure, but prevents casual password discovery
 function simpleHash(str) {
+    if (!str || typeof str !== 'string') {
+        return 0;
+    }
     let hash = 0;
     const salt = 'otr2024beta';
     const salted = salt + str.toUpperCase() + salt;

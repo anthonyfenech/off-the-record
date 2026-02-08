@@ -307,6 +307,7 @@ class Navigation {
                         window.open(section.url, '_blank', 'noopener,noreferrer');
                     }
                 } else if (section.comingSoon) {
+                    // Placeholder for future feature - intentional
                     alert('Coming Soon');
                 }
                 this.closeTOC();
@@ -389,6 +390,7 @@ class Navigation {
                             window.open(section.url, '_blank', 'noopener,noreferrer');
                         }
                     } else if (section.comingSoon) {
+                        // Placeholder for future feature - intentional
                         alert('Coming Soon');
                     }
                     this.closeTOC();

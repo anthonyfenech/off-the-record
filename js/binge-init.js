@@ -112,7 +112,9 @@ import('./interactivePrompts.js').then(({ InteractivePrompts }) => {
             if (PROMPTS && PROMPTS.length > 0) {
                 new InteractivePrompts(PROMPTS);
             }
-        }).catch(() => {});
+        }).catch((error) => {
+            console.warn('[BingeMode] Failed to load prompts:', error);
+        });
     }
 });
 
