@@ -151,3 +151,12 @@ if (mediaBtn) {
         updateMediaBtnState();
     });
 }
+
+// Expose globals for sidebar navigation
+window.CHAPTERS = CHAPTERS;
+window.chapters = chapters;
+window.scrollToChapter = scrollToChapter;
+Object.defineProperty(window, 'currentChapter', {
+    get: () => currentChapter,
+    set: (val) => { currentChapter = val; }
+});
