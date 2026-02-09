@@ -3277,7 +3277,7 @@ body.show-captions .media-modal-caption {
     .nav-btn,
     .media-modal-close,
     .chapter-nav-button,
-    .sidebar-close {
+    .close-btn {
         touch-action: manipulation;
     }
 
