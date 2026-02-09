@@ -68,16 +68,15 @@
                 document.body.classList.add('scrolling');
             }
 
-            localStorage.setItem(modeKey, mode);
-
+            // Sync with reading mode manager (if loaded)
             if (window.readingModeManager) {
-                window.readingModeManager.setMode(mode);
+                window.readingModeManager.switchMode(mode);
             }
         }
 
         function initMode() {
-            var savedMode = localStorage.getItem(modeKey) || 'scroll';
-            setMode(savedMode);
+            // Always start in scroll mode (no localStorage persistence)
+            setMode('scroll');
         }
 
         initMode();

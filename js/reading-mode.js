@@ -35,14 +35,8 @@ class ReadingModeManager {
     }
 
     loadMode() {
-        // Load saved preference from localStorage
-        const saved = localStorage.getItem('readingMode');
-        // Default to config setting for new users
-        return saved || CONFIG.defaultReadingMode || 'scroll';
-    }
-
-    saveMode(mode) {
-        localStorage.setItem('readingMode', mode);
+        // Always start in scroll mode (no localStorage persistence)
+        return 'scroll';
     }
 
     switchMode(newMode) {
@@ -51,7 +45,6 @@ class ReadingModeManager {
 
         // Update mode
         this.currentMode = newMode;
-        this.saveMode(newMode);
         this.applyMode(newMode, true);
         this.updateToggleUI();
 
