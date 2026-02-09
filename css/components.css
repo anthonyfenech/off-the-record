@@ -3385,7 +3385,8 @@ body.show-captions .media-modal-caption {
         padding-bottom: env(safe-area-inset-bottom, 0px);
         box-shadow: none;
         z-index: 300;
-        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .toc-sidebar.open {
