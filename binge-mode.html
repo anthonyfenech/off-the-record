@@ -28,8 +28,8 @@
         })();
     </script>
 
-    <!-- CRITICAL: Hide sidebar before CSS loads to prevent flash -->
-    <style>.sidebar{visibility:hidden;transform:translateX(-100%)}.sidebar-overlay{visibility:hidden;opacity:0}</style>
+    <!-- Critical: Hide sidebar before CSS loads to prevent flash -->
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0}</style>
 
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
 
@@ -38,18 +38,18 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=387" as="style">
-    <link rel="preload" href="./css/typography.css?v=387" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=388" as="style">
+    <link rel="preload" href="./css/typography.css?v=388" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=387">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=388">
 
-    <link rel="stylesheet" href="./css/reset.min.css?v=387">
-    <link rel="stylesheet" href="./css/variables.min.css?v=387">
-    <link rel="stylesheet" href="./css/typography.css?v=387">
-    <link rel="stylesheet" href="./css/layout.min.css?v=387">
-    <link rel="stylesheet" href="./css/components.min.css?v=387">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=387">
+    <link rel="stylesheet" href="./css/reset.min.css?v=388">
+    <link rel="stylesheet" href="./css/variables.min.css?v=388">
+    <link rel="stylesheet" href="./css/typography.css?v=388">
+    <link rel="stylesheet" href="./css/layout.min.css?v=388">
+    <link rel="stylesheet" href="./css/components.min.css?v=388">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=388">
 
     <style>
         body {
@@ -123,31 +123,6 @@
         .header-logo-img {
             height: 28px;
             width: auto;
-        }
-
-        .back-to-reader {
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text-primary);
-            transition: opacity 0.15s ease;
-        }
-
-        .back-to-reader:hover {
-            opacity: 0.7;
-        }
-
-        .menu-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            color: var(--color-text);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .book {
@@ -337,332 +312,7 @@
             display: none;
         }
 
-        /* ========== SIDEBAR ========== */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 200;
-        }
-
-        .sidebar-overlay.open {
-            display: block;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 280px;
-            height: 100vh;
-            background: #fff;
-            border-right: 2px solid var(--color-border);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 210;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            padding: 0;
-            box-sizing: border-box;
-            will-change: transform;
-        }
-
-        .sidebar.open {
-            transform: translateX(0);
-        }
-
-        .sidebar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .sidebar-header-title {
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* Global sidebar button reset */
-        .sidebar button {
-            border: none;
-            outline: none;
-            -webkit-appearance: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .sidebar-close {
-            background: none !important;
-            border: none !important;
-            outline: none !important;
-            box-shadow: none !important;
-            -webkit-appearance: none !important;
-            appearance: none !important;
-            -webkit-tap-highlight-color: transparent;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 8px;
-            color: var(--color-text-primary);
-            line-height: 1;
-            min-width: 44px;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sidebar-close:hover {
-            opacity: 0.7;
-        }
-
-        .sidebar-nav {
-            padding: 0;
-        }
-
-        .sidebar-link {
-            padding: 0.75rem 1rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            color: var(--color-text-primary);
-            text-decoration: none;
-            border-bottom: 1px solid var(--color-border);
-            cursor: pointer;
-            transition: background 0.15s;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar-link:hover {
-            background: #f5f5f5;
-        }
-
-        .sidebar-link.active {
-            background: #f0f0f0;
-            font-weight: bold;
-        }
-
-        .sidebar-link.back-link {
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .sidebar-section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 1rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--color-border);
-            cursor: pointer;
-            background: none;
-            border-left: none;
-            border-right: none;
-            border-top: none;
-            width: 100%;
-            color: var(--color-text-primary);
-            min-height: 44px;
-            transition: background 0.15s;
-        }
-
-        .sidebar-section-header:hover {
-            background: #f5f5f5;
-        }
-
-        .sidebar-section-arrow {
-            font-size: 0.75rem;
-            transition: transform 0.2s;
-        }
-
-        .sidebar-section-header.expanded .sidebar-section-arrow {
-            transform: rotate(180deg);
-        }
-
-        .sidebar-section-content {
-            display: none;
-            background: #fafafa;
-        }
-
-        .sidebar-section-content.expanded {
-            display: block;
-        }
-
-        .sidebar-chapter-item {
-            padding: 0.6rem 1rem 0.6rem 1.5rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            color: var(--color-text-primary);
-            text-decoration: none;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: background 0.15s;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            background: none;
-            border-left: none;
-            border-right: none;
-            border-top: none;
-            width: 100%;
-            text-align: left;
-        }
-
-        .sidebar-chapter-item:hover {
-            background: #f0f0f0;
-        }
-
-        .sidebar-chapter-item.active {
-            background: #e8e8e8;
-            font-weight: bold;
-        }
-
-        .sidebar-search {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .sidebar-search-input {
-            width: 100%;
-            padding: 8px 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            border: 1px solid var(--color-border);
-            border-radius: 0;
-            outline: none;
-            box-sizing: border-box;
-        }
-
-        .sidebar-search-input:focus {
-            border-color: var(--color-text-primary);
-        }
-
-        .sidebar-search-results {
-            max-height: 200px;
-            overflow-y: auto;
-            margin-top: 0.5rem;
-        }
-
-        .sidebar-search-result {
-            padding: 0.5rem 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.75rem;
-            cursor: pointer;
-            border-bottom: 1px solid #eee;
-        }
-
-        .sidebar-search-result:hover {
-            color: var(--color-text-secondary);
-        }
-
-        .sidebar-search-result-title {
-            font-weight: bold;
-        }
-
-        .sidebar-search-result-snippet {
-            color: var(--color-text-secondary);
-            margin-top: 2px;
-        }
-
-        .sidebar-font-toggle {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            padding: 0.75rem 1rem;
-        }
-
-        .sidebar-font-btn {
-            flex: 1;
-            padding: 8px;
-            font-family: 'Courier New', monospace;
-            border: 1px solid var(--color-border);
-            background: #fff;
-            cursor: pointer;
-            text-align: center;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.15s;
-        }
-
-        .sidebar-font-btn + .sidebar-font-btn {
-            border-left: none;
-        }
-
-        .sidebar-font-btn:hover {
-            background: #f5f5f5;
-        }
-
-        .sidebar-font-btn.active {
-            background: var(--color-text-primary);
-            color: #fff;
-            border-color: var(--color-text-primary);
-        }
-
-        .sidebar-font-label {
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            padding: 0.75rem 1rem 0.25rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .sidebar-mode-toggle {
-            padding: 0.75rem 1rem;
-            opacity: 0.4;
-            pointer-events: none;
-        }
-
-        .sidebar-mode-label {
-            font-family: 'Courier New', monospace;
-            font-size: 0.75rem;
-            color: var(--color-text-secondary);
-            font-style: italic;
-        }
-
-        .sidebar-logout {
-            padding: 0.75rem 1rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            text-decoration: none;
-            border-top: 2px solid var(--color-border);
-            cursor: pointer;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            transition: background 0.15s;
-            background: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: none;
-            width: 100%;
-            text-align: left;
-        }
-
-        .sidebar-logout:hover {
-            background: #f5f5f5;
-        }
-
-        .sidebar-divider {
-            height: 2px;
-            background: var(--color-border);
-            margin: 0;
-        }
-
+        /* Font size classes */
         body.font-small .chapter-body {
             font-size: 0.9rem;
         }
@@ -673,12 +323,6 @@
 
         body.font-large .chapter-body {
             font-size: 1.15rem;
-        }
-
-        @media (max-width: 600px) {
-            .sidebar {
-                width: 70%;
-            }
         }
 
         /* ============================================
@@ -709,7 +353,6 @@
         /* Android-Specific Fixes */
         @supports (-webkit-appearance: none) {
             .nav-btn,
-            .back-to-reader,
             .menu-btn {
                 -webkit-appearance: none;
             }
@@ -771,19 +414,6 @@
             }
 
             /* Touch Targets - WCAG 2.1 AA (44x44px minimum) */
-            .back-to-reader {
-                width: 48px;
-                height: 48px;
-                -webkit-tap-highlight-color: transparent;
-                -webkit-touch-callout: none;
-                user-select: none;
-            }
-
-            .back-to-reader:active {
-                opacity: 0.5;
-                transform: scale(0.95);
-            }
-
             .menu-btn {
                 min-width: 44px;
                 min-height: 44px;
@@ -898,6 +528,12 @@
                 min-height: 36px;
             }
         }
+
+        /* Binge mode link should appear selected in sidebar */
+        .toc-top-section[data-section="full-book"] .toc-top-header {
+            background: var(--color-bg-hover);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body style="opacity: 0;">
@@ -953,66 +589,15 @@
         } else if (datelineFormat === 'bold') {
             document.body.classList.add('dateline-bold');
         }
+        // Apply font size
+        const fontSize = localStorage.getItem('reader_fontSize') || 'medium';
+        document.body.classList.add('font-' + fontSize);
     </script>
-    <!-- Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar" id="sidebar" role="dialog" aria-label="Navigation menu">
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">MENU</span>
-            <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu">&times;</button>
-        </div>
-
-        <nav class="sidebar-nav">
-            <!-- Back to Reader -->
-            <a href="./" class="sidebar-link back-link">← READER</a>
-
-            <!-- Chapters Section -->
-            <button class="sidebar-section-header" id="chaptersToggle">
-                BOOK <span class="sidebar-section-arrow">▼</span>
-            </button>
-            <div class="sidebar-section-content expanded" id="chaptersList">
-                <!-- Generated by JS from CHAPTERS array -->
-            </div>
-
-            <!-- Search Section -->
-            <button class="sidebar-section-header" id="searchToggle">
-                SEARCH <span class="sidebar-section-arrow">▼</span>
-            </button>
-            <div class="sidebar-section-content" id="searchSection">
-                <div class="sidebar-search">
-                    <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="Search chapters...">
-                    <div class="sidebar-search-results" id="sidebarSearchResults"></div>
-                </div>
-            </div>
-
-            <!-- Options Section -->
-            <button class="sidebar-section-header" id="optionsToggle">
-                OPTIONS <span class="sidebar-section-arrow">▼</span>
-            </button>
-            <div class="sidebar-section-content" id="optionsSection">
-                <div class="sidebar-mode-toggle">
-                    <div class="sidebar-mode-label">MODE: Scroll only in Binge Mode</div>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-font-label">TEXT</div>
-                <div class="sidebar-font-toggle">
-                    <button class="sidebar-font-btn" data-size="small" style="font-size: 0.75rem;">A-</button>
-                    <button class="sidebar-font-btn" data-size="medium" style="font-size: 0.9rem;">A</button>
-                    <button class="sidebar-font-btn" data-size="large" style="font-size: 1.1rem;">A+</button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Logout at bottom -->
-        <button class="sidebar-logout" id="sidebarLogout">LOGOUT</button>
-    </aside>
 
     <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="header-content">
-            <button class="back-to-reader" id="hamburgerBtn" aria-label="Open navigation menu">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -1053,181 +638,363 @@
         </button>
     </nav>
 
-    <!-- Binge Mode Core Logic -->
-    <script type="module" src="./js/binge-init.min.js?v=387"></script>
+    <!-- Table of Contents Sidebar (IDENTICAL to index.html) -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <!-- Search Section -->
+        <div class="toc-section" id="searchSection">
+            <button class="toc-section-header" id="searchToggle" aria-expanded="false">
+                <span class="toc-section-title">Search</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="toc-section-content" id="searchContent" style="display: none;">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="" autocomplete="off" aria-label="Search chapters" />
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">✕</button>
+                </div>
+                <div class="search-results" id="searchResults" style="display: none;"></div>
+            </div>
+        </div>
+        <!-- Options Section -->
+        <div class="toc-section" id="optionsSection">
+            <button class="toc-section-header" id="optionsToggle" aria-expanded="false">
+                <span class="toc-section-title">Options</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="toc-section-content" id="optionsContent" style="display: none;">
+                <div class="toc-option">
+                    <span class="toc-option-label">Mode</span>
+                    <div class="option-btn-group" id="modeToggle">
+                        <button class="option-btn active" data-mode="scroll" disabled>Scroll</button>
+                        <button class="option-btn" data-mode="page" disabled title="Pages not available in Binge Mode">Pages</button>
+                    </div>
+                </div>
+                <div class="toc-option">
+                    <span class="toc-option-label">Text</span>
+                    <div class="option-btn-group" id="textSizeToggle">
+                        <button class="option-btn" data-size="small">A-</button>
+                        <button class="option-btn active" data-size="medium">A</button>
+                        <button class="option-btn" data-size="large">A+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Admin Link (hidden until password typed) -->
+        <div class="toc-section" id="adminSection" style="display: none;">
+            <a href="./admin.html" class="toc-section-header" style="text-decoration: none;">
+                <span class="toc-section-title">Admin</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="toc-footer">
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
 
-    <!-- Sidebar Navigation -->
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Binge Mode Core Logic -->
+    <script type="module" src="./js/binge-init.min.js?v=388"></script>
+
+    <!-- Sidebar Navigation (builds TOC identical to main reader) -->
     <script type="module">
+        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
+        import { isChapterComplete } from './js/storage.min.js';
+
         // Wait for binge-init to set up globals
         const waitForInit = setInterval(() => {
-            if (typeof CHAPTERS !== 'undefined' && typeof scrollToChapter !== 'undefined') {
+            if (typeof window.CHAPTERS !== 'undefined' && typeof window.scrollToChapter !== 'undefined') {
                 clearInterval(waitForInit);
-                initSidebar();
+                initBingeSidebar();
             }
         }, 50);
 
-        function initSidebar() {
-            // ========== SIDEBAR ==========
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const sidebarClose = document.getElementById('sidebarClose');
+        function initBingeSidebar() {
+            // DOM elements (same IDs as index.html)
+            const menuBtn = document.getElementById('menuBtn');
+            const closeTocBtn = document.getElementById('closeTocBtn');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const overlay = document.getElementById('overlay');
+            const tocContent = document.getElementById('tocContent');
 
-            function openSidebar() {
-                // Remove critical CSS overrides
-                sidebar.style.visibility = 'visible';
-                sidebar.style.transform = '';
-                sidebarOverlay.style.visibility = 'visible';
-                sidebarOverlay.style.opacity = '';
-                sidebar.classList.add('open');
-                sidebarOverlay.classList.add('open');
+            // Build TOC
+            buildTOC();
+
+            // Sidebar open/close
+            function openTOC() {
+                tocSidebar.style.visibility = 'visible';
+                tocSidebar.style.transform = '';
+                overlay.style.visibility = 'visible';
+                overlay.style.opacity = '';
+                tocSidebar.classList.add('open');
+                overlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                sidebarClose.focus();
             }
 
-            function closeSidebar() {
-                sidebar.classList.remove('open');
-                sidebarOverlay.classList.remove('open');
+            function closeTOC() {
+                tocSidebar.classList.remove('open');
+                overlay.classList.remove('active');
                 document.body.style.overflow = '';
-                hamburgerBtn.focus();
-                // Re-add hard hide after transition
                 setTimeout(() => {
-                    if (!sidebar.classList.contains('open')) {
-                        sidebar.style.visibility = 'hidden';
-                        sidebarOverlay.style.visibility = 'hidden';
+                    if (!tocSidebar.classList.contains('open')) {
+                        tocSidebar.style.visibility = 'hidden';
+                        overlay.style.visibility = 'hidden';
                     }
                 }, 310);
             }
 
-            hamburgerBtn.addEventListener('click', openSidebar);
-            sidebarClose.addEventListener('click', closeSidebar);
-            sidebarOverlay.addEventListener('click', closeSidebar);
+            menuBtn.addEventListener('click', openTOC);
+            closeTocBtn.addEventListener('click', closeTOC);
+            overlay.addEventListener('click', closeTOC);
 
-            // Touch event support for mobile (iOS especially)
-            sidebarClose.addEventListener('touchstart', (e) => {
+            // Touch support for iOS
+            closeTocBtn.addEventListener('touchstart', (e) => {
                 e.preventDefault();
-                closeSidebar();
+                closeTOC();
             });
-            sidebarOverlay.addEventListener('touchstart', (e) => {
+            overlay.addEventListener('touchstart', (e) => {
                 e.preventDefault();
-                closeSidebar();
+                closeTOC();
             });
 
+            // Escape key
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && sidebar.classList.contains('open')) {
-                    closeSidebar();
+                if (e.key === 'Escape' && tocSidebar.classList.contains('open')) {
+                    closeTOC();
                 }
             });
 
-            sidebar.addEventListener('keydown', (e) => {
-                if (e.key === 'Tab') {
-                    const focusable = sidebar.querySelectorAll('button, a, input, [tabindex]:not([tabindex="-1"])');
-                    const first = focusable[0];
-                    const last = focusable[focusable.length - 1];
-                    if (e.shiftKey && document.activeElement === first) {
-                        e.preventDefault();
-                        last.focus();
-                    } else if (!e.shiftKey && document.activeElement === last) {
-                        e.preventDefault();
-                        first.focus();
-                    }
+            // Build TOC structure (mirrors navigation.js)
+            function buildTOC() {
+                const fragment = document.createDocumentFragment();
+
+                // BOOK section
+                fragment.appendChild(createBookSection());
+
+                // BINGE MODE link (current page - highlighted)
+                fragment.appendChild(createTopSection({ id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html', current: true }));
+
+                // Divider
+                const divider = document.createElement('div');
+                divider.className = 'toc-divider';
+                fragment.appendChild(divider);
+
+                tocContent.appendChild(fragment);
+            }
+
+            // Create BOOK section with chapters
+            function createBookSection() {
+                const section = document.createElement('div');
+                section.className = 'toc-top-section';
+                section.dataset.section = 'book';
+
+                const sectionHeader = document.createElement('div');
+                sectionHeader.className = 'toc-top-header';
+
+                const sectionTitle = document.createElement('h3');
+                sectionTitle.className = 'toc-top-title';
+                sectionTitle.textContent = 'OFF-THE-RECORD';
+
+                sectionHeader.appendChild(sectionTitle);
+
+                const bookContent = document.createElement('div');
+                bookContent.className = 'toc-book-content collapsed';
+                bookContent.id = 'toc-book-content';
+
+                // Build chapter list
+                buildBookContent(bookContent);
+
+                sectionHeader.addEventListener('click', () => {
+                    toggleTopSection('book', sectionHeader, bookContent);
+                });
+
+                section.appendChild(sectionHeader);
+                section.appendChild(bookContent);
+
+                return section;
+            }
+
+            // Build chapter items (flat list like navigation.js)
+            function buildBookContent(container) {
+                const frontMatter = CHAPTERS.filter(c => c.section === 'title' || c.section === 'toc');
+                const introChapters = getIntroChapters();
+                const chaptersByYear = getChaptersByYear();
+                const years = getSortedYears();
+                const postscriptChapters = getPostscriptChapters();
+
+                frontMatter.forEach(chapter => {
+                    container.appendChild(createChapterItem(chapter));
+                });
+
+                introChapters.forEach(chapter => {
+                    container.appendChild(createChapterItem(chapter));
+                });
+
+                years.forEach(year => {
+                    const chapters = chaptersByYear[year] || [];
+                    chapters.forEach(chapter => {
+                        container.appendChild(createChapterItem(chapter));
+                    });
+                });
+
+                postscriptChapters.forEach(chapter => {
+                    container.appendChild(createChapterItem(chapter));
+                });
+            }
+
+            // Create chapter item
+            function createChapterItem(chapter) {
+                const item = document.createElement('div');
+                item.className = 'toc-chapter';
+                item.dataset.chapterId = chapter.id;
+
+                const lockedChapters = JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
+                const isLocked = lockedChapters.includes(chapter.id);
+
+                if (isLocked) {
+                    item.classList.add('toc-chapter-locked');
                 }
-            });
 
-            // Generate chapter list from CHAPTERS array
-            const chaptersList = document.getElementById('chaptersList');
-            chaptersList.innerHTML = CHAPTERS.map((ch, i) => {
-                const isSpecial = ch.section === 'title' || ch.section === 'toc';
-                const numLabel = '';
-                return `<button class="sidebar-chapter-item" data-chapter-index="${i}" data-chapter-id="${ch.id}">
-                    ${ch.title}
-                </button>`;
-            }).join('');
+                const indicator = document.createElement('div');
+                indicator.className = 'chapter-indicator';
 
-            function handleChapterClick(e) {
-                const btn = e.target.closest('.sidebar-chapter-item');
-                if (!btn) return;
-                const idx = parseInt(btn.dataset.chapterIndex);
-                closeSidebar();
-                scrollToChapter(idx);
-            }
-            chaptersList.addEventListener('click', handleChapterClick);
-            chaptersList.addEventListener('touchstart', (e) => {
-                const btn = e.target.closest('.sidebar-chapter-item');
-                if (!btn) return;
-                e.preventDefault();
-                handleChapterClick(e);
-            });
+                const info = document.createElement('div');
+                info.className = 'toc-chapter-info';
 
-            function updateSidebarHighlight() {
-                chaptersList.querySelectorAll('.sidebar-chapter-item').forEach(item => {
-                    const idx = parseInt(item.dataset.chapterIndex);
-                    item.classList.toggle('active', idx === currentChapter);
-                });
-            }
+                const titleRow = document.createElement('div');
+                titleRow.className = 'toc-chapter-title-row';
 
-            const sidebarObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateSidebarHighlight();
+                const title = document.createElement('span');
+                title.className = 'toc-chapter-title';
+                title.textContent = chapter.title;
+
+                titleRow.appendChild(title);
+
+                if (isLocked) {
+                    const lockIcon = document.createElement('span');
+                    lockIcon.className = 'toc-lock-icon';
+                    lockIcon.textContent = '🔒';
+                    titleRow.appendChild(lockIcon);
+                }
+
+                info.appendChild(titleRow);
+
+                item.appendChild(indicator);
+                item.appendChild(info);
+
+                // Click handler - navigate to main reader at this chapter
+                const handleChapterSelect = () => {
+                    if (!isLocked) {
+                        closeTOC();
+                        window.location.href = './?chapter=' + chapter.id;
                     }
+                };
+                item.addEventListener('click', handleChapterSelect);
+                item.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    handleChapterSelect();
                 });
-            }, { rootMargin: '-80px 0px -50% 0px', threshold: 0 });
-            chapters.forEach(ch => sidebarObserver.observe(ch));
 
-            updateSidebarHighlight();
+                // Mark completed chapters
+                if (isChapterComplete(chapter.id)) {
+                    item.classList.add('completed');
+                    indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                }
 
-            // Collapsible sections
-            function setupCollapsible(toggleId, contentId) {
-                const toggle = document.getElementById(toggleId);
-                const content = document.getElementById(contentId);
-                toggle.addEventListener('click', () => {
-                    toggle.classList.toggle('expanded');
-                    content.classList.toggle('expanded');
-                });
+                return item;
             }
 
-            document.getElementById('chaptersToggle').classList.add('expanded');
-            setupCollapsible('chaptersToggle', 'chaptersList');
-            setupCollapsible('searchToggle', 'searchSection');
-            setupCollapsible('optionsToggle', 'optionsSection');
+            // Create top section (BINGE MODE link)
+            function createTopSection(section) {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'toc-top-section';
+                sectionDiv.dataset.section = section.id;
 
-            // Font size toggle
-            const fontSizeKey = 'reader_fontSize';
-            const fontSizes = ['small', 'medium', 'large'];
-            const fontBtns = document.querySelectorAll('.sidebar-font-btn');
+                const sectionHeader = document.createElement('div');
+                sectionHeader.className = 'toc-top-header toc-top-link';
 
-            function applyFontSize(size) {
-                fontSizes.forEach(s => document.body.classList.remove(`font-${s}`));
-                document.body.classList.add(`font-${size}`);
-                localStorage.setItem(fontSizeKey, size);
-                fontBtns.forEach(btn => {
-                    btn.classList.toggle('active', btn.dataset.size === size);
-                });
+                const sectionTitle = document.createElement('h3');
+                sectionTitle.className = 'toc-top-title';
+                sectionTitle.textContent = section.label;
+
+                sectionHeader.appendChild(sectionTitle);
+
+                // Clicking BINGE MODE does nothing (already here)
+                if (section.current) {
+                    sectionHeader.style.cursor = 'default';
+                } else {
+                    sectionHeader.addEventListener('click', () => {
+                        closeTOC();
+                        window.location.href = section.url;
+                    });
+                }
+
+                sectionDiv.appendChild(sectionHeader);
+                return sectionDiv;
             }
 
-            const savedFontSize = localStorage.getItem(fontSizeKey) || 'medium';
-            applyFontSize(savedFontSize);
-
-            fontBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    applyFontSize(btn.dataset.size);
-                });
-            });
+            // Toggle section expand/collapse
+            const expandedSections = new Set();
+            function toggleTopSection(sectionId, sectionHeader, sectionContent) {
+                if (expandedSections.has(sectionId)) {
+                    expandedSections.delete(sectionId);
+                    sectionContent.classList.add('collapsed');
+                    sectionHeader.classList.remove('expanded');
+                } else {
+                    expandedSections.add(sectionId);
+                    sectionContent.classList.remove('collapsed');
+                    sectionHeader.classList.add('expanded');
+                }
+            }
 
             // Search functionality
-            const searchInput = document.getElementById('sidebarSearchInput');
-            const searchResults = document.getElementById('sidebarSearchResults');
+            const searchToggle = document.getElementById('searchToggle');
+            const searchContent = document.getElementById('searchContent');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchClear = document.getElementById('searchClear');
+
+            searchToggle.addEventListener('click', () => {
+                const isExpanded = searchContent.style.display !== 'none';
+                searchContent.style.display = isExpanded ? 'none' : 'block';
+                searchToggle.setAttribute('aria-expanded', !isExpanded);
+                searchToggle.classList.toggle('expanded', !isExpanded);
+                if (!isExpanded) searchInput.focus();
+            });
 
             searchInput.addEventListener('input', () => {
                 const query = searchInput.value.trim().toLowerCase();
+                searchClear.style.display = query.length > 0 ? 'block' : 'none';
+
                 if (query.length < 2) {
+                    searchResults.style.display = 'none';
                     searchResults.innerHTML = '';
                     return;
                 }
 
                 const matches = [];
-                CHAPTERS.forEach((ch, i) => {
+                CHAPTERS.forEach(ch => {
                     const titleMatch = ch.title.toLowerCase().includes(query);
                     const textContent = ch.content.replace(/<[^>]*>/g, '');
                     const contentMatch = textContent.toLowerCase().includes(query);
@@ -1240,50 +1007,86 @@
                             const end = Math.min(textContent.length, idx + query.length + 30);
                             snippet = (start > 0 ? '...' : '') + textContent.slice(start, end) + (end < textContent.length ? '...' : '');
                         }
-                        matches.push({ index: i, title: ch.title, snippet, id: ch.id });
+                        matches.push({ id: ch.id, title: ch.title, snippet });
                     }
                 });
 
                 if (matches.length === 0) {
-                    searchResults.innerHTML = '<div class="sidebar-search-result"><em>No results found</em></div>';
-                    return;
+                    searchResults.innerHTML = '<div class="search-result-item"><em>No results found</em></div>';
+                } else {
+                    searchResults.innerHTML = matches.slice(0, 10).map(m =>
+                        `<div class="search-result-item" data-chapter-id="${m.id}">
+                            <div class="search-result-title">${m.title}</div>
+                            ${m.snippet ? `<div class="search-result-snippet">${m.snippet}</div>` : ''}
+                        </div>`
+                    ).join('');
                 }
-
-                searchResults.innerHTML = matches.slice(0, 15).map(m =>
-                    `<div class="sidebar-search-result" data-index="${m.index}">
-                        <div class="sidebar-search-result-title">${m.title}</div>
-                        ${m.snippet ? `<div class="sidebar-search-result-snippet">${m.snippet}</div>` : ''}
-                    </div>`
-                ).join('');
+                searchResults.style.display = 'block';
             });
 
             searchResults.addEventListener('click', (e) => {
-                const result = e.target.closest('.sidebar-search-result');
-                if (!result || !result.dataset.index) return;
-                const idx = parseInt(result.dataset.index);
-                closeSidebar();
-                scrollToChapter(idx);
+                const item = e.target.closest('.search-result-item');
+                if (item && item.dataset.chapterId) {
+                    closeTOC();
+                    window.location.href = './?chapter=' + item.dataset.chapterId;
+                }
+            });
+
+            searchClear.addEventListener('click', () => {
+                searchInput.value = '';
+                searchResults.innerHTML = '';
+                searchResults.style.display = 'none';
+                searchClear.style.display = 'none';
+                searchInput.focus();
+            });
+
+            // Options functionality
+            const optionsToggle = document.getElementById('optionsToggle');
+            const optionsContent = document.getElementById('optionsContent');
+            const textSizeToggle = document.getElementById('textSizeToggle');
+
+            optionsToggle.addEventListener('click', () => {
+                const isExpanded = optionsContent.style.display !== 'none';
+                optionsContent.style.display = isExpanded ? 'none' : 'block';
+                optionsToggle.setAttribute('aria-expanded', !isExpanded);
+                optionsToggle.classList.toggle('expanded', !isExpanded);
+            });
+
+            // Text size toggle
+            const fontSizeKey = 'reader_fontSize';
+            const currentSize = localStorage.getItem(fontSizeKey) || 'medium';
+            textSizeToggle.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.size === currentSize);
+                btn.addEventListener('click', () => {
+                    const size = btn.dataset.size;
+                    document.body.classList.remove('font-small', 'font-medium', 'font-large');
+                    document.body.classList.add('font-' + size);
+                    localStorage.setItem(fontSizeKey, size);
+                    textSizeToggle.querySelectorAll('.option-btn').forEach(b => {
+                        b.classList.toggle('active', b.dataset.size === size);
+                    });
+                });
             });
 
             // Logout
-            document.getElementById('sidebarLogout').addEventListener('click', () => {
-                localStorage.removeItem('otr_access');
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                localStorage.removeItem('otr_beta_session');
                 window.location.href = './';
             });
         }
     </script>
 
     <!-- Theme Toggle -->
-    <script src="./js/binge-theme.min.js?v=387"></script>
+    <script src="./js/binge-theme.min.js?v=388"></script>
 
     <!-- Analytics & Bookmark -->
-    <script src="./js/analytics.min.js?v=387"></script>
-    <script src="./js/binge-analytics.min.js?v=387"></script>
+    <script src="./js/analytics.min.js?v=388"></script>
+    <script src="./js/binge-analytics.min.js?v=388"></script>
 
     <!-- Live Prompts (Interactive Reader Prompts) -->
-    <script src="./js/live-prompts.js?v=387"></script>
+    <script src="./js/live-prompts.js?v=388"></script>
 
-    <script src="./js/otr-tier1-error-handler.min.js?v=387"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=388"></script>
 
 </body>
 </html>
