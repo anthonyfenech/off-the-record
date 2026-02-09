@@ -296,6 +296,7 @@ body.paginated .chapter-body {
     display: flex;
     flex-direction: column;
     transition: left var(--transition-normal), background-color var(--transition-fast);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .toc-sidebar.open {
@@ -313,7 +314,7 @@ body.paginated .chapter-body {
 }
 
 .toc-header-icon {
-    font-family: var(--font-mono);
+    font-family: inherit;
     font-size: var(--font-size-xl);
     font-weight: bold;
     position: absolute;
@@ -328,8 +329,13 @@ body.paginated .chapter-body {
     align-items: center;
     justify-content: center;
     color: var(--color-text-primary);
-    background: none;
-    border: none;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     transition: opacity var(--transition-fast);
     margin-left: auto;
