@@ -763,10 +763,10 @@ class Navigation {
     // TOC actions
     openTOC() {
         // Remove critical CSS overrides
-        this.tocSidebar.style.display = '';
-        this.tocSidebar.style.visibility = '';
-        this.overlay.style.display = '';
-        this.overlay.style.visibility = '';
+        this.tocSidebar.style.visibility = 'visible';
+        this.tocSidebar.style.transform = '';
+        this.overlay.style.visibility = 'visible';
+        this.overlay.style.opacity = '';
         this.tocSidebar.classList.add('open');
         this.overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -779,8 +779,8 @@ class Navigation {
         // Re-add hard hide after transition
         setTimeout(() => {
             if (!this.tocSidebar.classList.contains('open')) {
-                this.tocSidebar.style.display = 'none';
                 this.tocSidebar.style.visibility = 'hidden';
+                this.overlay.style.visibility = 'hidden';
             }
         }, 310);
     }

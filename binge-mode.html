@@ -29,7 +29,7 @@
     </script>
 
     <!-- CRITICAL: Hide sidebar before CSS loads to prevent flash -->
-    <style>.sidebar,.sidebar-overlay{display:none!important;visibility:hidden!important}</style>
+    <style>.sidebar{visibility:hidden;transform:translateX(-100%)}.sidebar-overlay{visibility:hidden;opacity:0}</style>
 
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
 
@@ -1053,10 +1053,10 @@
 
             function openSidebar() {
                 // Remove critical CSS overrides
-                sidebar.style.display = '';
-                sidebar.style.visibility = '';
-                sidebarOverlay.style.display = '';
-                sidebarOverlay.style.visibility = '';
+                sidebar.style.visibility = 'visible';
+                sidebar.style.transform = '';
+                sidebarOverlay.style.visibility = 'visible';
+                sidebarOverlay.style.opacity = '';
                 sidebar.classList.add('open');
                 sidebarOverlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
@@ -1071,8 +1071,8 @@
                 // Re-add hard hide after transition
                 setTimeout(() => {
                     if (!sidebar.classList.contains('open')) {
-                        sidebar.style.display = 'none';
                         sidebar.style.visibility = 'hidden';
+                        sidebarOverlay.style.visibility = 'hidden';
                     }
                 }, 310);
             }
