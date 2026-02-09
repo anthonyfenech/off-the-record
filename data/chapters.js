@@ -982,11 +982,12 @@ export const CHAPTERS = [
 
 <p>“Won’t hear about this again until next year.”</p>
 
-<p>He’s not wrong.</p>
+<p>He's not wrong.</p>
 
-
-<p>EMBARRASSING FLASHBACK</p>
-
+<p></p>
+<p class="scene-break">***</p>
+<p></p>
+<p class="flashback-header">EMBARRASSING FLASHBACK</p>
 <p></p>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a BBWAA member. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>
 
@@ -1006,9 +1007,10 @@ export const CHAPTERS = [
 
 <p>“My 9-year-old daughter listens to that, man.”</p>
 
-<p>Players laugh. Reporters, too. It’s my first game as a BBWAA member—I don’t know how I’ll recover from this.</p>
+<p>Players laugh. Reporters, too. It's my first game as a BBWAA member—I don't know how I'll recover from this.</p>
 
-
+<p></p>
+<p class="scene-break">***</p>
 <p></p>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
 

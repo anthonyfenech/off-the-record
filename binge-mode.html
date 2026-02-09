@@ -85,7 +85,6 @@
         .chapter-body p.scene-break {
             text-align: center !important;
             text-indent: 0 !important;
-            margin: 1.5em 0 !important;
         }
 
         .chapter-body p.signature {
@@ -94,7 +93,15 @@
             margin-top: 1.5em !important;
         }
 
-        .chapter-body p.flashback-header,
+        .chapter-body p.flashback-header {
+            text-align: center !important;
+            text-indent: 0 !important;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: calc(var(--font-size-reader) + 2px);
+            letter-spacing: 3px;
+        }
+
         .chapter-body p.headline-block {
             text-indent: 0 !important;
         }
@@ -195,19 +202,20 @@
             background-color: transparent;
         }
 
-        /* Scene breaks - centered with spacing */
+        /* Scene breaks - plain centered text */
         .scene-break {
-            text-align: center;
-            margin: 0;
-            padding: var(--space-lg) 0;
+            text-align: center !important;
+            text-indent: 0 !important;
         }
 
-        /* Make flashback header bigger - match nav size */
+        /* Flashback header */
         .flashback-header {
-            font-size: 1.25rem;
+            text-align: center !important;
+            text-indent: 0 !important;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: calc(var(--font-size-reader) + 2px);
             letter-spacing: 3px;
-            margin: 0;
-            padding: var(--space-lg) 0;
         }
 
         /* Hide emoji icon in modal header */
@@ -503,16 +511,6 @@
                 margin-top: 1em;
                 margin-bottom: 1em;
                 padding-bottom: 0.75em;
-            }
-
-            .scene-break {
-                padding: var(--space-md) 0;
-            }
-
-            .flashback-header {
-                font-size: 1.1rem;
-                letter-spacing: 2px;
-                padding: var(--space-md) 0;
             }
 
             .chapter-end {

@@ -53,16 +53,8 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 .chapter-body .scene-break {
-    text-align: center;
-    margin: 2.5em 0;
-    color: var(--color-text-tertiary);
-    font-size: 1.125em;
-    letter-spacing: 0.3em;
-}
-
-/* Paragraph after scene break - no special treatment needed */
-.chapter-body .scene-break + p {
-    margin-top: 0;
+    text-align: center !important;
+    text-indent: 0 !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -302,10 +294,6 @@ body {
 
     .chapter-body p {
         margin-bottom: 1.2rem;
-    }
-
-    .chapter-body .scene-break {
-        margin: 2em 0;
     }
 
     .chapter-body .pullquote {

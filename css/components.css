@@ -92,22 +92,8 @@
 
 /* Scene Break */
 .scene-break {
-    text-align: center;
-    margin: 2.5rem 0;
-    padding: 0;
-    position: relative;
-}
-
-.scene-break span {
-    font-family: var(--font-serif);
-    color: var(--color-text-tertiary);
-    letter-spacing: 0.5em;
-}
-
-/* Remove any extra margin after scene break */
-.scene-break + p,
-.scene-break + p.has-dateline {
-    margin-top: 0;
+    text-align: center !important;
+    text-indent: 0 !important;
 }
 
 /* Article Citation (embedded article references) */
@@ -150,11 +136,12 @@
 
 /* Flashback Header */
 .flashback-header {
-    font-family: var(--font-mono);
+    text-align: center !important;
+    text-indent: 0 !important;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    text-indent: 0;
+    font-size: calc(var(--font-size-reader) + 2px);
+    letter-spacing: 3px;
 }
 
 /* Block Quote (emails, letters, documents) */
