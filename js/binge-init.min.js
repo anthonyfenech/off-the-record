@@ -21,6 +21,7 @@ if (container) {
     container.innerHTML = CHAPTERS.map((ch, i) => {
         const isSpecial = ch.section === 'title' || ch.section === 'toc';
         const isLocked = isChapterLocked(ch.id);
+        const isLastChapter = i === CHAPTERS.length - 1;
 
         const chapterContent = isLocked
             ? `<div class="locked-chapter">
@@ -30,11 +31,14 @@ if (container) {
                </div>`
             : ch.content;
 
+        // Show *** separator after each chapter except: special pages, locked, or last chapter
+        const showSeparator = !isSpecial && !isLocked && !isLastChapter;
+
         return `
         <article class="chapter-section${isSpecial ? ' special-page' : ''}${isLocked ? ' locked' : ''}" id="${ch.slug}" data-chapter="${i}">
             ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}${isLocked ? ' 🔒' : ''}</h2></header>` : ''}
             <div class="chapter-body">${chapterContent}</div>
-            ${!isSpecial && !isLocked ? '<div class="chapter-end"></div>' : ''}
+            ${showSeparator ? '<p class="scene-break">***</p>' : ''}
         </article>
     `}).join('');
 }

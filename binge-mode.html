@@ -38,18 +38,18 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=386" as="style">
-    <link rel="preload" href="./css/typography.css?v=386" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=387" as="style">
+    <link rel="preload" href="./css/typography.css?v=387" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=386">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=387">
 
-    <link rel="stylesheet" href="./css/reset.min.css?v=386">
-    <link rel="stylesheet" href="./css/variables.min.css?v=386">
-    <link rel="stylesheet" href="./css/typography.css?v=386">
-    <link rel="stylesheet" href="./css/layout.min.css?v=386">
-    <link rel="stylesheet" href="./css/components.min.css?v=386">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=386">
+    <link rel="stylesheet" href="./css/reset.min.css?v=387">
+    <link rel="stylesheet" href="./css/variables.min.css?v=387">
+    <link rel="stylesheet" href="./css/typography.css?v=387">
+    <link rel="stylesheet" href="./css/layout.min.css?v=387">
+    <link rel="stylesheet" href="./css/components.min.css?v=387">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=387">
 
     <style>
         body {
@@ -205,18 +205,18 @@
             }
         }
 
-        /* Chapter end separator - centered between chapters */
-        .chapter-end {
+        /* Chapter end separator - plain centered *** */
+        .chapter-section > .scene-break {
             text-align: center !important;
-            display: block;
-            width: 100%;
-            padding: 2.5em 0;
-            color: var(--color-text-tertiary);
-            letter-spacing: 0.5em;
-            font-size: 1.25rem;
+            text-indent: 0 !important;
+            margin: 2em 0 0 0;
+            padding: 0;
+            color: inherit;
+            letter-spacing: normal;
+            font-size: inherit;
         }
 
-        /* Remove extra margin from chapter headers after chapter-end */
+        /* Remove extra margin from chapter headers after scene-break */
         .chapter-section + .chapter-section .chapter-header {
             margin-top: 0;
         }
@@ -333,7 +333,7 @@
             display: none;
         }
 
-        body.hide-chapter-breaks .chapter-end {
+        body.hide-chapter-breaks .chapter-section > .scene-break {
             display: none;
         }
 
@@ -848,9 +848,8 @@
                 padding-bottom: 0.75em;
             }
 
-            .chapter-end {
-                padding: 1.5em 0;
-                font-size: 1.1rem;
+            .chapter-section > .scene-break {
+                margin: 1.5em 0 0 0;
             }
 
         }
@@ -1055,7 +1054,7 @@
     </nav>
 
     <!-- Binge Mode Core Logic -->
-    <script type="module" src="./js/binge-init.min.js?v=386"></script>
+    <script type="module" src="./js/binge-init.min.js?v=387"></script>
 
     <!-- Sidebar Navigation -->
     <script type="module">
@@ -1275,16 +1274,16 @@
     </script>
 
     <!-- Theme Toggle -->
-    <script src="./js/binge-theme.min.js?v=386"></script>
+    <script src="./js/binge-theme.min.js?v=387"></script>
 
     <!-- Analytics & Bookmark -->
-    <script src="./js/analytics.min.js?v=386"></script>
-    <script src="./js/binge-analytics.min.js?v=386"></script>
+    <script src="./js/analytics.min.js?v=387"></script>
+    <script src="./js/binge-analytics.min.js?v=387"></script>
 
     <!-- Live Prompts (Interactive Reader Prompts) -->
-    <script src="./js/live-prompts.js?v=386"></script>
+    <script src="./js/live-prompts.js?v=387"></script>
 
-    <script src="./js/otr-tier1-error-handler.min.js?v=386"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=387"></script>
 
 </body>
 </html>

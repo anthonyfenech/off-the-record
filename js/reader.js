@@ -217,6 +217,13 @@ class Reader {
                 return { type: 'paragraph', content: trimmed };
             });
 
+        // Add *** separator at end of chapter (except special pages and last chapter)
+        const isSpecial = chapter.section === 'title' || chapter.section === 'toc';
+        const isLastChapter = CHAPTERS.indexOf(chapter) === CHAPTERS.length - 1;
+        if (!isSpecial && !isLastChapter) {
+            paragraphData.push({ type: 'break', content: '***' });
+        }
+
         // Create paragraph elements
         this.createParagraphElements(paragraphData);
 
