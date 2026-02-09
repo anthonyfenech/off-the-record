@@ -6,6 +6,8 @@ import { CONFIG } from './config.js';
 class ReadingModeManager {
     constructor() {
         this.currentMode = this.loadMode();
+        this.lastModeSwitch = 0;
+        this.modeSwitchDebounce = 300; // ms
     }
 
     init() {
@@ -40,6 +42,11 @@ class ReadingModeManager {
     }
 
     switchMode(newMode) {
+        // Debounce rapid toggling
+        const now = Date.now();
+        if (now - this.lastModeSwitch < this.modeSwitchDebounce) return;
+        this.lastModeSwitch = now;
+
         // Save current chapter and position
         const currentChapter = window.currentChapterId;
         const reader = window.readerInstance;

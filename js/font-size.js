@@ -122,3 +122,6 @@ document.addEventListener('keydown', (e) => {
 
 // Export for use in other modules
 export { fontSizeManager };
+
+// Expose globally for non-module scripts (page-controls.js)
+window.fontSizeManager = fontSizeManager;

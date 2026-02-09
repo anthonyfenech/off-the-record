@@ -91,34 +91,39 @@
 
     // ─────────────────────────────────────────────────────────────
     // TEXT SIZE TOGGLE
-    // Adjusts font size (small/medium/large)
+    // Delegates to fontSizeManager (single source of truth)
     // ─────────────────────────────────────────────────────────────
     const textSizeToggle = document.getElementById('textSizeToggle');
-    const textSizeKey = 'reader_fontSize';
 
     if (textSizeToggle) {
-        function setTextSize(size) {
+        function updateTextSizeUI(size) {
             textSizeToggle.querySelectorAll('.option-btn').forEach(function(btn) {
                 btn.classList.toggle('active', btn.dataset.size === size);
             });
-
-            document.body.classList.remove('font-small', 'font-medium', 'font-large');
-            document.body.classList.add('font-' + size);
-
-            localStorage.setItem(textSizeKey, size);
         }
 
+        // Initialize UI from fontSizeManager state
         function initTextSize() {
-            var savedSize = localStorage.getItem(textSizeKey) || 'small';
-            setTextSize(savedSize);
+            var currentSize = window.fontSizeManager ?
+                window.fontSizeManager.getSize() :
+                (localStorage.getItem('reader_fontSize') || 'small');
+            updateTextSizeUI(currentSize);
         }
 
         initTextSize();
 
+        // Handle button clicks - delegate to fontSizeManager
         textSizeToggle.addEventListener('click', function(e) {
             var btn = e.target.closest('.option-btn');
-            if (btn) {
-                setTextSize(btn.dataset.size);
+            if (btn && window.fontSizeManager) {
+                window.fontSizeManager.changeSize(btn.dataset.size);
+            }
+        });
+
+        // Sync UI when font size changes (e.g., from keyboard shortcuts)
+        window.addEventListener('fontsizechange', function(e) {
+            if (e.detail && e.detail.size) {
+                updateTextSizeUI(e.detail.size);
             }
         });
     }

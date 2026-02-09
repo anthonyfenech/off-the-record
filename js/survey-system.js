@@ -83,8 +83,8 @@ class SurveySystem {
             }
 
             .survey-modal {
-                background: #1a1a1a;
-                border: 1px solid #333;
+                background: var(--color-background-secondary, #1a1a1a);
+                border: 1px solid var(--color-border, #333);
                 border-radius: 8px;
                 max-width: 420px;
                 width: 90%;
@@ -92,7 +92,7 @@ class SurveySystem {
                 overflow-y: auto;
                 padding: 24px;
                 font-family: 'Courier New', monospace;
-                color: #fefefe;
+                color: var(--color-text-primary, #fefefe);
                 animation: modalSlideIn 0.3s ease;
             }
 
@@ -125,7 +125,7 @@ class SurveySystem {
             .survey-close {
                 background: none;
                 border: none;
-                color: #666;
+                color: var(--color-text-secondary, #666);
                 cursor: pointer;
                 font-size: 24px;
                 line-height: 1;
@@ -133,7 +133,7 @@ class SurveySystem {
             }
 
             .survey-close:hover {
-                color: #fff;
+                color: var(--color-text-primary, #fff);
             }
 
             .survey-question {
@@ -143,7 +143,7 @@ class SurveySystem {
             .survey-question-text {
                 font-size: 14px;
                 margin-bottom: 12px;
-                color: #ccc;
+                color: var(--color-text-secondary, #ccc);
             }
 
             .survey-stars {
@@ -175,21 +175,21 @@ class SurveySystem {
                 align-items: center;
                 gap: 10px;
                 padding: 10px 12px;
-                background: #252525;
-                border: 1px solid #333;
+                background: var(--color-background-tertiary, #252525);
+                border: 1px solid var(--color-border, #333);
                 border-radius: 4px;
                 cursor: pointer;
                 transition: all 0.15s;
             }
 
             .survey-option:hover {
-                border-color: #ff0000;
-                background: #2a2a2a;
+                border-color: var(--color-error-border, #ff0000);
+                background: var(--color-accent-light, #2a2a2a);
             }
 
             .survey-option.selected {
-                border-color: #ff0000;
-                background: #3a1a1a;
+                border-color: var(--color-error-border, #ff0000);
+                background: var(--color-error-bg, #3a1a1a);
             }
 
             .survey-option input {
@@ -199,14 +199,14 @@ class SurveySystem {
             .survey-radio {
                 width: 16px;
                 height: 16px;
-                border: 2px solid #666;
+                border: 2px solid var(--color-text-secondary, #666);
                 border-radius: 50%;
                 flex-shrink: 0;
             }
 
             .survey-option.selected .survey-radio {
-                border-color: #ff0000;
-                background: #ff0000;
+                border-color: var(--color-error-border, #ff0000);
+                background: var(--color-error-border, #ff0000);
             }
 
             .survey-option-text {
@@ -216,35 +216,35 @@ class SurveySystem {
             .survey-textarea {
                 width: 100%;
                 min-height: 80px;
-                background: #252525;
-                border: 1px solid #333;
+                background: var(--color-background-tertiary, #252525);
+                border: 1px solid var(--color-border, #333);
                 border-radius: 4px;
                 padding: 10px;
                 font-family: inherit;
                 font-size: 13px;
-                color: #fefefe;
+                color: var(--color-text-primary, #fefefe);
                 resize: vertical;
             }
 
             .survey-textarea:focus {
                 outline: none;
-                border-color: #ff0000;
+                border-color: var(--color-error-border, #ff0000);
             }
 
             .survey-input {
                 width: 100%;
-                background: #252525;
-                border: 1px solid #333;
+                background: var(--color-background-tertiary, #252525);
+                border: 1px solid var(--color-border, #333);
                 border-radius: 4px;
                 padding: 10px;
                 font-family: inherit;
                 font-size: 13px;
-                color: #fefefe;
+                color: var(--color-text-primary, #fefefe);
             }
 
             .survey-input:focus {
                 outline: none;
-                border-color: #ff0000;
+                border-color: var(--color-error-border, #ff0000);
             }
 
             .survey-buttons {
@@ -267,22 +267,22 @@ class SurveySystem {
             }
 
             .survey-btn-primary {
-                background: #ff0000;
-                color: #fff;
+                background: var(--color-error-border, #ff0000);
+                color: var(--color-text-primary, #fff);
             }
 
             .survey-btn-primary:hover {
-                background: #cc0000;
+                background: var(--color-error-text, #cc0000);
             }
 
             .survey-btn-secondary {
-                background: #333;
-                color: #999;
+                background: var(--color-border, #333);
+                color: var(--color-text-tertiary, #999);
             }
 
             .survey-btn-secondary:hover {
-                background: #444;
-                color: #fff;
+                background: var(--color-border-subtle, #444);
+                color: var(--color-text-primary, #fff);
             }
 
             .survey-emoji-options {
@@ -294,8 +294,8 @@ class SurveySystem {
             .survey-emoji-btn {
                 font-size: 32px;
                 padding: 8px;
-                background: #252525;
-                border: 2px solid #333;
+                background: var(--color-background-tertiary, #252525);
+                border: 2px solid var(--color-border, #333);
                 border-radius: 8px;
                 cursor: pointer;
                 transition: all 0.15s;
@@ -303,12 +303,12 @@ class SurveySystem {
 
             .survey-emoji-btn:hover {
                 transform: scale(1.1);
-                border-color: #666;
+                border-color: var(--color-text-secondary, #666);
             }
 
             .survey-emoji-btn.selected {
-                border-color: #ff0000;
-                background: #3a1a1a;
+                border-color: var(--color-error-border, #ff0000);
+                background: var(--color-error-bg, #3a1a1a);
             }
 
             .survey-slider {
@@ -320,19 +320,19 @@ class SurveySystem {
                 display: flex;
                 justify-content: space-between;
                 font-size: 11px;
-                color: #666;
+                color: var(--color-text-secondary, #666);
                 margin-top: 4px;
             }
 
             .survey-dropdown {
                 width: 100%;
-                background: #252525;
-                border: 1px solid #333;
+                background: var(--color-background-tertiary, #252525);
+                border: 1px solid var(--color-border, #333);
                 border-radius: 4px;
                 padding: 10px;
                 font-family: inherit;
                 font-size: 13px;
-                color: #fefefe;
+                color: var(--color-text-primary, #fefefe);
             }
 
             .survey-price-cards {
@@ -343,20 +343,20 @@ class SurveySystem {
 
             .survey-price-card {
                 padding: 16px;
-                background: #252525;
-                border: 2px solid #333;
+                background: var(--color-background-tertiary, #252525);
+                border: 2px solid var(--color-border, #333);
                 border-radius: 8px;
                 cursor: pointer;
                 transition: all 0.15s;
             }
 
             .survey-price-card:hover {
-                border-color: #666;
+                border-color: var(--color-text-secondary, #666);
             }
 
             .survey-price-card.selected {
-                border-color: #ff0000;
-                background: #3a1a1a;
+                border-color: var(--color-error-border, #ff0000);
+                background: var(--color-error-bg, #3a1a1a);
             }
 
             .survey-price-tier {
@@ -373,12 +373,12 @@ class SurveySystem {
 
             .survey-price-amount {
                 font-size: 18px;
-                color: #ff0000;
+                color: var(--color-error-border, #ff0000);
             }
 
             .survey-price-desc {
                 font-size: 11px;
-                color: #888;
+                color: var(--color-text-tertiary, #888);
             }
 
             .survey-thank-you {
@@ -393,7 +393,7 @@ class SurveySystem {
 
             .survey-thank-you-text {
                 font-size: 14px;
-                color: #ccc;
+                color: var(--color-text-secondary, #ccc);
             }
 
             /* Inline reactions */
@@ -401,8 +401,8 @@ class SurveySystem {
                 position: absolute;
                 display: none;
                 gap: 4px;
-                background: #1a1a1a;
-                border: 1px solid #333;
+                background: var(--color-background-secondary, #1a1a1a);
+                border: 1px solid var(--color-border, #333);
                 border-radius: 20px;
                 padding: 4px 8px;
                 z-index: 100;
@@ -1135,7 +1135,7 @@ class SurveySystem {
                     <button class="survey-close" onclick="surveySystem.closeModal()">×</button>
                 </div>
 
-                <p style="color: #ccc; font-size: 13px; margin-bottom: 20px;">
+                <p class="survey-question-text" style="font-size: 13px; margin-bottom: 20px;">
                     If this book had three versions...
                 </p>
 
