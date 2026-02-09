@@ -45,11 +45,11 @@ class Navigation {
         this.overlay.addEventListener('click', () => this.closeTOC());
 
         // Touch event support for mobile (iOS especially)
-        this.closeTocBtn.addEventListener('touchend', (e) => {
+        this.closeTocBtn.addEventListener('touchstart', (e) => {
             e.preventDefault();
             this.closeTOC();
         });
-        this.overlay.addEventListener('touchend', (e) => {
+        this.overlay.addEventListener('touchstart', (e) => {
             e.preventDefault();
             this.closeTOC();
         });

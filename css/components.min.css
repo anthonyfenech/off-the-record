@@ -3374,10 +3374,10 @@ body.show-captions .media-modal-caption {
         transform: scale(0.95);
     }
 
-    /* TOC Sidebar - 85% width modal with GPU acceleration */
+    /* TOC Sidebar - 70% width modal with GPU acceleration */
     .toc-sidebar {
-        width: 85%;
-        max-width: 85%;
+        width: 70%;
+        max-width: 70%;
         left: 0;
         transform: translate3d(-100%, 0, 0);
         transition: transform var(--transition-modal);
