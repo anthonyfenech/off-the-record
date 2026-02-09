@@ -762,9 +762,11 @@ class Navigation {
 
     // TOC actions
     openTOC() {
-        // Make visible before opening
-        this.tocSidebar.style.visibility = 'visible';
-        this.tocSidebar.style.left = '';
+        // Remove critical CSS overrides
+        this.tocSidebar.style.display = '';
+        this.tocSidebar.style.visibility = '';
+        this.overlay.style.display = '';
+        this.overlay.style.visibility = '';
         this.tocSidebar.classList.add('open');
         this.overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -774,12 +776,13 @@ class Navigation {
         this.tocSidebar.classList.remove('open');
         this.overlay.classList.remove('active');
         document.body.style.overflow = '';
-        // Hide after slide-out transition (300ms)
+        // Re-add hard hide after transition
         setTimeout(() => {
             if (!this.tocSidebar.classList.contains('open')) {
+                this.tocSidebar.style.display = 'none';
                 this.tocSidebar.style.visibility = 'hidden';
             }
-        }, 300);
+        }, 310);
     }
 
     // Keyboard navigation

@@ -62,7 +62,9 @@ function updateNav() {
 function scrollToChapter(index) {
     if (index >= 0 && index < totalChapters) {
         currentChapter = index;
-        chapters[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerHeight = document.getElementById('header').offsetHeight + 15;
+        const targetTop = chapters[index].getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
         updateNav();
     }
 }

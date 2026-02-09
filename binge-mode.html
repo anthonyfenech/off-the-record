@@ -28,6 +28,9 @@
         })();
     </script>
 
+    <!-- CRITICAL: Hide sidebar before CSS loads to prevent flash -->
+    <style>.sidebar,.sidebar-overlay{display:none!important;visibility:hidden!important}</style>
+
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
 
     <!-- Preload critical fonts -->
@@ -303,21 +306,23 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -300px;
+            left: 0;
             width: 300px;
             height: 100vh;
             background: #fff;
             border-right: 2px solid var(--color-border);
-            transition: left 0.3s ease;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
             z-index: 210;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             padding: 0;
             box-sizing: border-box;
+            will-change: transform;
         }
 
         .sidebar.open {
-            left: 0;
+            transform: translateX(0);
         }
 
         .sidebar-header {
@@ -329,18 +334,29 @@
         }
 
         .sidebar-header-title {
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.85rem;
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .sidebar-close {
-            background: none;
+        /* Global sidebar button reset */
+        .sidebar button {
             border: none;
             outline: none;
-            box-shadow: none;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .sidebar-close {
+            background: none !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            -webkit-tap-highlight-color: transparent;
             font-size: 1.5rem;
             cursor: pointer;
             padding: 8px;
@@ -351,8 +367,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            -webkit-appearance: none;
-            appearance: none;
         }
 
         .sidebar-close:hover {
@@ -365,7 +379,7 @@
 
         .sidebar-link {
             padding: 0.75rem 1rem;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.85rem;
             color: var(--color-text-primary);
             text-decoration: none;
@@ -396,7 +410,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.75rem 1rem;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.85rem;
             font-weight: bold;
             letter-spacing: 1px;
@@ -437,7 +451,7 @@
 
         .sidebar-chapter-item {
             padding: 0.6rem 1rem 0.6rem 1.5rem;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.8rem;
             color: var(--color-text-primary);
             text-decoration: none;
@@ -464,12 +478,6 @@
             font-weight: bold;
         }
 
-        .sidebar-chapter-num {
-            display: inline-block;
-            min-width: 28px;
-            color: var(--color-text-secondary);
-        }
-
         .sidebar-search {
             padding: 0.75rem 1rem;
             border-bottom: 1px solid var(--color-border);
@@ -478,7 +486,7 @@
         .sidebar-search-input {
             width: 100%;
             padding: 8px 10px;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.8rem;
             border: 1px solid var(--color-border);
             border-radius: 0;
@@ -498,7 +506,7 @@
 
         .sidebar-search-result {
             padding: 0.5rem 0;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.75rem;
             cursor: pointer;
             border-bottom: 1px solid #eee;
@@ -527,7 +535,7 @@
         .sidebar-font-btn {
             flex: 1;
             padding: 8px;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             border: 1px solid var(--color-border);
             background: #fff;
             cursor: pointer;
@@ -554,7 +562,7 @@
         }
 
         .sidebar-font-label {
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.8rem;
             letter-spacing: 1px;
             padding: 0.75rem 1rem 0.25rem;
@@ -569,7 +577,7 @@
         }
 
         .sidebar-mode-label {
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.75rem;
             color: var(--color-text-secondary);
             font-style: italic;
@@ -577,7 +585,7 @@
 
         .sidebar-logout {
             padding: 0.75rem 1rem;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.8rem;
             color: var(--color-text-secondary);
             text-decoration: none;
@@ -620,7 +628,6 @@
         @media (max-width: 600px) {
             .sidebar {
                 width: 70%;
-                left: -70%;
             }
         }
 
@@ -1045,6 +1052,11 @@
             const sidebarClose = document.getElementById('sidebarClose');
 
             function openSidebar() {
+                // Remove critical CSS overrides
+                sidebar.style.display = '';
+                sidebar.style.visibility = '';
+                sidebarOverlay.style.display = '';
+                sidebarOverlay.style.visibility = '';
                 sidebar.classList.add('open');
                 sidebarOverlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
@@ -1056,6 +1068,13 @@
                 sidebarOverlay.classList.remove('open');
                 document.body.style.overflow = '';
                 hamburgerBtn.focus();
+                // Re-add hard hide after transition
+                setTimeout(() => {
+                    if (!sidebar.classList.contains('open')) {
+                        sidebar.style.display = 'none';
+                        sidebar.style.visibility = 'hidden';
+                    }
+                }, 310);
             }
 
             hamburgerBtn.addEventListener('click', openSidebar);
@@ -1112,9 +1131,9 @@
             const chaptersList = document.getElementById('chaptersList');
             chaptersList.innerHTML = CHAPTERS.map((ch, i) => {
                 const isSpecial = ch.section === 'title' || ch.section === 'toc';
-                const numLabel = (!isSpecial && ch.id > 0) ? `<span class="sidebar-chapter-num">${ch.id}.</span>` : '';
+                const numLabel = '';
                 return `<button class="sidebar-chapter-item" data-chapter-index="${i}" data-chapter-id="${ch.id}">
-                    ${numLabel}${ch.title}
+                    ${ch.title}
                 </button>`;
             }).join('');
 

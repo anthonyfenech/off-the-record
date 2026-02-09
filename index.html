@@ -34,7 +34,7 @@
     </script>
 
     <!-- Critical: Hide sidebar before CSS loads to prevent flash -->
-    <style>.toc-sidebar{visibility:hidden;left:-300px}</style>
+    <style>.toc-sidebar,.overlay{display:none!important;visibility:hidden!important}</style>
 
     <link rel="manifest" href="./manifest.json">
 
@@ -229,7 +229,7 @@
     </nav>
 
     <!-- Table of Contents Sidebar -->
-    <aside class="toc-sidebar" id="tocSidebar" style="left:-300px;visibility:hidden">
+    <aside class="toc-sidebar" id="tocSidebar">
         <div class="toc-header">
             <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
