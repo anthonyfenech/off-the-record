@@ -30,6 +30,10 @@ class Navigation {
         this.expandedYears = new Set();
         this.expandedSections = new Set();
         this.expandedGalleries = new Set();
+
+        // Throttle for rapid page turns (150ms)
+        this.lastPageTurn = 0;
+        this.pageTurnThrottle = 150;
     }
 
     // Initialize navigation
@@ -719,6 +723,11 @@ class Navigation {
 
     // Navigate to previous page or chapter
     goToPrevious() {
+        // Throttle rapid clicks
+        const now = Date.now();
+        if (now - this.lastPageTurn < this.pageTurnThrottle) return;
+        this.lastPageTurn = now;
+
         const mode = window.readingModeManager?.getMode() || 'scroll';
         const prevChapterId = getPreviousChapterId(this.currentChapterId);
 
@@ -739,6 +748,11 @@ class Navigation {
 
     // Navigate to next page or chapter
     goToNext() {
+        // Throttle rapid clicks
+        const now = Date.now();
+        if (now - this.lastPageTurn < this.pageTurnThrottle) return;
+        this.lastPageTurn = now;
+
         const mode = window.readingModeManager?.getMode() || 'scroll';
         const nextChapterId = getNextChapterId(this.currentChapterId);
 

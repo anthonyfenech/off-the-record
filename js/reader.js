@@ -67,6 +67,9 @@ class Reader {
         // Listen for resize to recalculate pages
         window.addEventListener('resize', this.handleResize);
 
+        // Listen for font size changes to recalculate pages
+        window.addEventListener('fontsizechange', this.handleResize);
+
         // Start auto-save
         this.startAutoSave();
     }
@@ -85,6 +88,8 @@ class Reader {
 
     // Show the home page
     showHomePage() {
+        if (!this.chapterBody) return;
+
         // Hide chapter header on home page
         const chapterHeader = document.querySelector('.chapter-header');
         if (chapterHeader) {
@@ -273,6 +278,9 @@ class Reader {
 
     // Create paragraph elements from data
     createParagraphElements(paragraphData) {
+        // Null guard for DOM element
+        if (!this.chapterBody) return;
+
         // Clear existing content
         this.chapterBody.innerHTML = '';
         this.paragraphElements = [];
@@ -317,7 +325,8 @@ class Reader {
 
     // Calculate which paragraphs fit on each page
     calculatePages() {
-        if (this.paragraphElements.length === 0) return;
+        // Null guard for DOM element and empty content
+        if (!this.chapterBody || this.paragraphElements.length === 0) return;
 
         // Get available height for content
         const availableHeight = this.getAvailableHeight();
@@ -380,7 +389,8 @@ class Reader {
 
     // Show a specific page
     showPage(pageIndex) {
-        if (pageIndex < 0 || pageIndex >= this.totalPages) return;
+        // Null guard for pages array and boundary check
+        if (!this.pages || pageIndex < 0 || pageIndex >= this.totalPages) return;
 
         this.currentPage = pageIndex;
         const pageContent = this.pages[pageIndex];
@@ -452,13 +462,28 @@ class Reader {
         };
     }
 
-    // Handle window resize
+    // Handle window resize or font size change
     onResize() {
+        if (!this.chapterBody) return;
+
         const mode = readingModeManager.getMode();
         if (this.paragraphElements.length > 0 && mode === 'page') {
-            const savedPage = this.currentPage;
+            // Calculate approximate reading position (percentage through chapter)
+            const oldTotalPages = this.totalPages;
+            const readingProgress = oldTotalPages > 0 ? this.currentPage / oldTotalPages : 0;
+
             this.calculatePages();
-            this.currentPage = Math.min(savedPage, this.totalPages - 1);
+
+            // Restore approximate position based on percentage
+            if (this.totalPages > 0) {
+                this.currentPage = Math.min(
+                    Math.round(readingProgress * this.totalPages),
+                    this.totalPages - 1
+                );
+            } else {
+                this.currentPage = 0;
+            }
+
             this.showPage(this.currentPage);
         }
     }
@@ -508,6 +533,8 @@ class Reader {
 
     // Attach click handlers to media emojis
     attachMediaEmojiHandlers() {
+        if (!this.chapterBody) return;
+
         const mediaEmojis = this.chapterBody.querySelectorAll('.media-emoji');
 
         mediaEmojis.forEach(emoji => {
@@ -583,6 +610,8 @@ class Reader {
 
     // Show error message with user-friendly UI
     showError(message) {
+        if (!this.chapterBody) return;
+
         const isOffline = !navigator.onLine;
         const errorIcon = isOffline ? '📡' : '📖';
         const errorTitle = isOffline ? 'You\'re Offline' : 'Chapter Unavailable';
@@ -605,6 +634,8 @@ class Reader {
 
     // Show locked chapter placeholder
     showLockedChapter(chapter) {
+        if (!this.chapterBody) return;
+
         // Show chapter header
         const chapterHeader = document.querySelector('.chapter-header');
         if (chapterHeader) {

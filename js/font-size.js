@@ -51,6 +51,9 @@ class FontSizeManager {
 
         // Add current size class
         body.classList.add(`font-${size}`);
+
+        // Dispatch event for pagination recalculation
+        window.dispatchEvent(new CustomEvent('fontsizechange', { detail: { size } }));
     }
 
     increaseFontSize() {
