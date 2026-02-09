@@ -1050,6 +1050,31 @@
             sidebarClose.addEventListener('click', closeSidebar);
             sidebarOverlay.addEventListener('click', closeSidebar);
 
+            // Touch event support for mobile (iOS especially)
+            sidebarClose.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                closeSidebar();
+            });
+            sidebarOverlay.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                closeSidebar();
+            });
+
+            // Swipe-to-close gesture on sidebar
+            let sidebarTouchStartX = 0;
+            sidebar.addEventListener('touchstart', (e) => {
+                sidebarTouchStartX = e.touches[0].clientX;
+            }, { passive: true });
+            sidebar.addEventListener('touchmove', (e) => {
+                const currentX = e.touches[0].clientX;
+                const diffX = sidebarTouchStartX - currentX;
+                // If swiped left more than 60px, close sidebar
+                if (diffX > 60) {
+                    e.preventDefault();
+                    closeSidebar();
+                }
+            }, { passive: false });
+
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && sidebar.classList.contains('open')) {
                     closeSidebar();
@@ -1081,12 +1106,19 @@
                 </button>`;
             }).join('');
 
-            chaptersList.addEventListener('click', (e) => {
+            function handleChapterClick(e) {
                 const btn = e.target.closest('.sidebar-chapter-item');
                 if (!btn) return;
                 const idx = parseInt(btn.dataset.chapterIndex);
                 closeSidebar();
                 scrollToChapter(idx);
+            }
+            chaptersList.addEventListener('click', handleChapterClick);
+            chaptersList.addEventListener('touchstart', (e) => {
+                const btn = e.target.closest('.sidebar-chapter-item');
+                if (!btn) return;
+                e.preventDefault();
+                handleChapterClick(e);
             });
 
             function updateSidebarHighlight() {

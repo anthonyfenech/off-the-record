@@ -54,6 +54,9 @@ class Navigation {
             this.closeTOC();
         });
 
+        // Swipe-to-close gesture on sidebar
+        this.setupSidebarSwipeClose();
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
 
@@ -241,11 +244,16 @@ class Navigation {
         item.appendChild(info);
 
         // Click handler - only works if not locked
-        item.addEventListener('click', () => {
+        const handleChapterSelect = () => {
             if (!isLocked) {
-                reader.loadChapter(chapter.id);
                 this.closeTOC();
+                reader.loadChapter(chapter.id);
             }
+        };
+        item.addEventListener('click', handleChapterSelect);
+        item.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            handleChapterSelect();
         });
 
         return item;
@@ -308,7 +316,8 @@ class Navigation {
             sectionDiv.appendChild(sectionHeader);
             sectionDiv.appendChild(sectionContent);
         } else {
-            sectionHeader.addEventListener('click', () => {
+            const handleSectionLink = () => {
+                this.closeTOC();
                 if (section.url) {
                     // Use location.href for internal links to stay within PWA
                     if (section.url.startsWith('./') || section.url.startsWith('/')) {
@@ -320,7 +329,11 @@ class Navigation {
                     // Placeholder for future feature - intentional
                     alert('Coming Soon');
                 }
-                this.closeTOC();
+            };
+            sectionHeader.addEventListener('click', handleSectionLink);
+            sectionHeader.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                handleSectionLink();
             });
 
             sectionDiv.appendChild(sectionHeader);
@@ -391,7 +404,8 @@ class Navigation {
                 sectionDiv.appendChild(sectionHeader);
                 sectionDiv.appendChild(sectionContent);
             } else {
-                sectionHeader.addEventListener('click', () => {
+                const handleBottomLink = () => {
+                    this.closeTOC();
                     if (section.url) {
                         // Use location.href for internal links to stay within PWA
                         if (section.url.startsWith('./') || section.url.startsWith('/')) {
@@ -403,7 +417,11 @@ class Navigation {
                         // Placeholder for future feature - intentional
                         alert('Coming Soon');
                     }
-                    this.closeTOC();
+                };
+                sectionHeader.addEventListener('click', handleBottomLink);
+                sectionHeader.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    handleBottomLink();
                 });
 
                 sectionDiv.appendChild(sectionHeader);
@@ -788,6 +806,26 @@ class Navigation {
                 this.closeTOC();
                 break;
         }
+    }
+
+    // Swipe-to-close gesture on sidebar
+    setupSidebarSwipeClose() {
+        let sidebarTouchStartX = 0;
+
+        this.tocSidebar.addEventListener('touchstart', (e) => {
+            sidebarTouchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        this.tocSidebar.addEventListener('touchmove', (e) => {
+            const currentX = e.touches[0].clientX;
+            const diffX = sidebarTouchStartX - currentX;
+
+            // If swiped left more than 60px, close sidebar
+            if (diffX > 60) {
+                e.preventDefault();
+                this.closeTOC();
+            }
+        }, { passive: false });
     }
 
     // Swipe and tap gestures for mobile
