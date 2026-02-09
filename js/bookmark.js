@@ -1,6 +1,7 @@
 /**
- * Auto-Bookmark & Resume System
- * Dead-simple: saves position, one-click resume
+ * Auto-Bookmark System
+ * Saves reading position for chapter progress tracking
+ * Note: Visual resume prompt removed - tracking remains for sidebar indicators
  */
 
 (function() {
@@ -84,92 +85,6 @@
         });
     }
 
-    // ========== TIME FORMATTING ==========
-
-    function formatTimestamp(timestamp) {
-        const now = Date.now();
-        const diff = now - timestamp;
-
-        const minutes = Math.floor(diff / 60000);
-        const hours = Math.floor(diff / 3600000);
-        const days = Math.floor(diff / 86400000);
-
-        if (minutes < 5) return 'Just now';
-        if (minutes < 60) return `${minutes} minutes ago`;
-        if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
-        if (days === 1) return 'Yesterday';
-        if (days < 7) return `${days} days ago`;
-        return new Date(timestamp).toLocaleDateString();
-    }
-
-    // ========== RESUME PROMPT ==========
-
-    function createResumePrompt() {
-        const prompt = document.createElement('div');
-        prompt.id = 'resume-prompt';
-        prompt.className = 'resume-prompt';
-        prompt.innerHTML = `
-            <div class="resume-card">
-                <p class="resume-label">Continue Reading</p>
-                <h3 class="resume-chapter" id="resume-chapter-title"></h3>
-                <p class="resume-time" id="resume-time"></p>
-                <button id="btn-resume" class="btn-resume">CONTINUE →</button>
-            </div>
-        `;
-        prompt.style.display = 'none';
-        return prompt;
-    }
-
-    function showResumePrompt(bookmark) {
-        let prompt = document.getElementById('resume-prompt');
-
-        if (!prompt) {
-            prompt = createResumePrompt();
-            // Insert after title page content or at start of chapter body
-            const titlePage = document.querySelector('.title-page');
-            const chapterBody = document.getElementById('chapterBody');
-
-            if (titlePage) {
-                titlePage.appendChild(prompt);
-            } else if (chapterBody) {
-                chapterBody.insertBefore(prompt, chapterBody.firstChild);
-            } else {
-                return; // Can't find insertion point
-            }
-        }
-
-        // Fill in bookmark details
-        const titleEl = document.getElementById('resume-chapter-title');
-        const timeEl = document.getElementById('resume-time');
-        const btnResume = document.getElementById('btn-resume');
-
-        if (titleEl) titleEl.textContent = bookmark.chapterTitle;
-        if (timeEl) timeEl.textContent = formatTimestamp(bookmark.timestamp);
-
-        // Handle resume click
-        if (btnResume) {
-            btnResume.onclick = () => resumeReading(bookmark);
-        }
-
-        // Show prompt
-        prompt.style.display = 'block';
-    }
-
-    function hideResumePrompt() {
-        const prompt = document.getElementById('resume-prompt');
-        if (prompt) {
-            prompt.style.display = 'none';
-        }
-    }
-
-    function resumeReading(bookmark) {
-        // Store scroll target for destination
-        sessionStorage.setItem('scrollToPercent', bookmark.scrollPercent.toString());
-
-        // Navigate to chapter using slug
-        window.location.hash = bookmark.chapterSlug;
-    }
-
     // ========== SCROLL RESTORATION ==========
 
     function checkScrollRestore() {
@@ -213,20 +128,10 @@
             };
         }
 
-        // Check if this is the title/home page
-        const isTitlePage = !currentChapter.id || currentChapter.id < 1;
+        // Check if this is a real chapter (not title/home page)
+        const isRealChapter = currentChapter.id && currentChapter.id >= 1;
 
-        if (isTitlePage) {
-            // Show resume prompt if bookmark exists
-            const bookmark = getBookmark();
-            if (bookmark && bookmark.chapterId) {
-                // Small delay to let title page render
-                setTimeout(() => showResumePrompt(bookmark), 100);
-            }
-        } else {
-            // Hide resume prompt
-            hideResumePrompt();
-
+        if (isRealChapter) {
             // Check if we should restore scroll position
             checkScrollRestore();
 
@@ -277,11 +182,7 @@
         init: init,
         save: saveBookmark,
         get: getBookmark,
-        clear: clearBookmark,
-        resume: function() {
-            const bm = getBookmark();
-            if (bm) resumeReading(bm);
-        }
+        clear: clearBookmark
     };
 
     // Auto-init when DOM ready
