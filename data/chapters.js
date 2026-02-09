@@ -8237,7 +8237,7 @@ export const CHAPTERS = [
     {
         id: 28,
         year: 2020,
-        section: 'closing',
+        section: 'postscript',
         title: "POSTSCRIPT",
         slug: "postscript",
         subtitle: "",
@@ -8517,7 +8517,7 @@ export const CHAPTERS = [
     {
         id: 29,
         year: null,
-        section: 'closing',
+        section: 'postscript',
         title: "DEDICATION",
         slug: "dedication",
         subtitle: "",
