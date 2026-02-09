@@ -51,21 +51,21 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=378" as="style">
-    <link rel="preload" href="./css/typography.css?v=378" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=379" as="style">
+    <link rel="preload" href="./css/typography.css?v=379" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=378">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=379">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./css/reset.min.css?v=378">
-    <link rel="stylesheet" href="./css/variables.min.css?v=378">
-    <link rel="stylesheet" href="./css/typography.css?v=378">
-    <link rel="stylesheet" href="./css/layout.min.css?v=378">
-    <link rel="stylesheet" href="./css/components.min.css?v=378">
-    <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=378">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=378">
-    <link rel="stylesheet" href="./css/bookmark.css?v=378">
+    <link rel="stylesheet" href="./css/reset.min.css?v=379">
+    <link rel="stylesheet" href="./css/variables.min.css?v=379">
+    <link rel="stylesheet" href="./css/typography.css?v=379">
+    <link rel="stylesheet" href="./css/layout.min.css?v=379">
+    <link rel="stylesheet" href="./css/components.min.css?v=379">
+    <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=379">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=379">
+    <link rel="stylesheet" href="./css/bookmark.css?v=379">
     <style>
         /* Hide menu and theme toggle on home page only */
         .home-page .menu-btn,
@@ -212,17 +212,22 @@
     <!-- Chapter Navigation Footer -->
     <nav class="nav-footer" id="navFooter">
         <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
-            <span>Previous</span>
+            <span>Prev</span>
         </button>
-        <button class="nav-btn nav-media" id="mediaBtn" aria-label="Toggle media visibility">
-            <span>Media</span>
-        </button>
+        <div class="nav-center">
+            <button class="nav-btn nav-binge" id="bingeBtn" aria-label="Enter Binge Mode">
+                <span>Binge</span>
+            </button>
+            <button class="nav-btn nav-media media-active" id="mediaBtn" aria-label="Toggle media">
+                <span>Media</span>
+            </button>
+        </div>
         <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
             <span>Next</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </button>
@@ -306,26 +311,26 @@
 
 
     <!-- Scripts -->
-    <script type="module" src="./js/config.min.js?v=378"></script>
-    <script type="module" src="./data/chapters.js?v=378"></script>
-    <script type="module" src="./data/media.js?v=378"></script>
-    <script type="module" src="./data/photos.js?v=378"></script>
-    <script type="module" src="./js/storage.min.js?v=378"></script>
-    <script type="module" src="./js/mediaModal.min.js?v=378"></script>
-    <script type="module" src="./js/photoGallery.min.js?v=378"></script>
-    <script type="module" src="./js/blog.min.js?v=378"></script>
-    <script type="module" src="./js/guestbook.min.js?v=378"></script>
-    <script type="module" src="./js/reading-mode.min.js?v=378"></script>
-    <script type="module" src="./js/font-size.min.js?v=378"></script>
-    <script type="module" src="./js/search.min.js?v=378"></script>
-    <script type="module" src="./js/reader.min.js?v=378"></script>
-    <script type="module" src="./js/navigation.min.js?v=378"></script>
-    <script type="module" src="./js/pwa.min.js?v=378"></script>
-    <script type="module" src="./js/theme.min.js?v=378"></script>
-    <script type="module" src="./js/app.min.js?v=378"></script>
+    <script type="module" src="./js/config.min.js?v=379"></script>
+    <script type="module" src="./data/chapters.js?v=379"></script>
+    <script type="module" src="./data/media.js?v=379"></script>
+    <script type="module" src="./data/photos.js?v=379"></script>
+    <script type="module" src="./js/storage.min.js?v=379"></script>
+    <script type="module" src="./js/mediaModal.min.js?v=379"></script>
+    <script type="module" src="./js/photoGallery.min.js?v=379"></script>
+    <script type="module" src="./js/blog.min.js?v=379"></script>
+    <script type="module" src="./js/guestbook.min.js?v=379"></script>
+    <script type="module" src="./js/reading-mode.min.js?v=379"></script>
+    <script type="module" src="./js/font-size.min.js?v=379"></script>
+    <script type="module" src="./js/search.min.js?v=379"></script>
+    <script type="module" src="./js/reader.min.js?v=379"></script>
+    <script type="module" src="./js/navigation.min.js?v=379"></script>
+    <script type="module" src="./js/pwa.min.js?v=379"></script>
+    <script type="module" src="./js/theme.min.js?v=379"></script>
+    <script type="module" src="./js/app.min.js?v=379"></script>
 
     <!-- Page Controls (media toggle, mode toggle, text size, search, options) -->
-    <script src="./js/page-controls.min.js?v=378"></script>
+    <script src="./js/page-controls.min.js?v=379"></script>
 
     <!-- Interactive Prompt Modal -->
     <div id="prompt-modal">
@@ -345,26 +350,26 @@
         </div>
     </div>
 
-    <script src="./prompts/prompt-system.min.js?v=378"></script>
+    <script src="./prompts/prompt-system.min.js?v=379"></script>
 
     <!-- Interactive Q&A Prompts (text-triggered) -->
-    <script type="module" src="./js/prompts-init.min.js?v=378"></script>
+    <script type="module" src="./js/prompts-init.min.js?v=379"></script>
 
     <!-- Analytics -->
-    <script src="./js/analytics.min.js?v=378"></script>
+    <script src="./js/analytics.min.js?v=379"></script>
 
     <!-- Auto-Bookmark & Resume -->
-    <script src="./js/bookmark.min.js?v=378"></script>
+    <script src="./js/bookmark.min.js?v=379"></script>
 
     <!-- Live Prompts (Interactive Reader Prompts) -->
-    <script src="./js/live-prompts.js?v=378"></script>
+    <script src="./js/live-prompts.js?v=379"></script>
 
     <!-- Reader Counter System -->
-    <script src="./js/reader-counter.min.js?v=378"></script>
+    <script src="./js/reader-counter.min.js?v=379"></script>
 
     <!-- Admin Access (secret password) -->
-    <script src="./js/admin-access.min.js?v=378"></script>
-    <script src="./js/otr-tier1-error-handler.min.js?v=378"></script>
+    <script src="./js/admin-access.min.js?v=379"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=379"></script>
 
 </body>
 </html>

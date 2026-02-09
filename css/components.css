@@ -3426,30 +3426,16 @@ body.show-captions .media-modal-caption {
         min-height: 0;
     }
 
-    /* Navigation footer - bottom bar */
+    /* Navigation footer - compact floating box */
     .nav-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        transform: none;
-        border: none;
-        border-top: 1px solid var(--color-border);
-        border-radius: 0;
-        padding: 12px max(16px, env(safe-area-inset-left, 0px))
-                 calc(12px + env(safe-area-inset-bottom, 0px))
-                 max(16px, env(safe-area-inset-right, 0px));
-        gap: 16px;
-        box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.04);
+        bottom: max(12px, calc(env(safe-area-inset-bottom) + 4px));
+        max-width: 290px;
+        padding: 9px 12px;
     }
 
-    /* Larger touch targets for nav buttons */
+    /* Touch targets for nav buttons */
     .nav-btn {
-        min-width: 48px;
         min-height: 44px;
-        padding: 10px 14px;
-        font-size: 13px;
-        gap: 4px;
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         user-select: none;
@@ -3460,23 +3446,16 @@ body.show-captions .media-modal-caption {
         transform: scale(0.95);
     }
 
-    .nav-btn svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .bookmark-btn {
-        min-width: 44px;
+    .nav-btn.nav-binge,
+    .nav-btn.nav-media {
         min-height: 44px;
-        padding: 10px;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        user-select: none;
+        padding: 3px 10px;
+        font-size: 9px;
     }
 
-    .bookmark-btn:active {
-        opacity: 0.5;
-        transform: scale(0.95);
+    .nav-center {
+        gap: 10px;
+        margin: 0 10px;
     }
 
     /* Overlay - GPU accelerated */
@@ -3524,15 +3503,19 @@ body.show-captions .media-modal-caption {
     }
 
     .nav-footer {
-        padding: 10px max(12px, env(safe-area-inset-left, 0px))
-                 calc(10px + env(safe-area-inset-bottom, 0px))
-                 max(12px, env(safe-area-inset-right, 0px));
-        gap: 12px;
+        max-width: 270px;
+        padding: 8px 10px;
     }
 
-    .nav-btn {
-        padding: 8px 10px;
-        font-size: 12px;
+    .nav-center {
+        gap: 8px;
+        margin: 0 8px;
+    }
+
+    .nav-btn.nav-binge,
+    .nav-btn.nav-media {
+        padding: 3px 8px;
+        font-size: 8px;
     }
 }
 

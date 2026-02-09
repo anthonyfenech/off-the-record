@@ -38,18 +38,18 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=378" as="style">
-    <link rel="preload" href="./css/typography.css?v=378" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=379" as="style">
+    <link rel="preload" href="./css/typography.css?v=379" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=378">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=379">
 
-    <link rel="stylesheet" href="./css/reset.min.css?v=378">
-    <link rel="stylesheet" href="./css/variables.min.css?v=378">
-    <link rel="stylesheet" href="./css/typography.css?v=378">
-    <link rel="stylesheet" href="./css/layout.min.css?v=378">
-    <link rel="stylesheet" href="./css/components.min.css?v=378">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=378">
+    <link rel="stylesheet" href="./css/reset.min.css?v=379">
+    <link rel="stylesheet" href="./css/variables.min.css?v=379">
+    <link rel="stylesheet" href="./css/typography.css?v=379">
+    <link rel="stylesheet" href="./css/layout.min.css?v=379">
+    <link rel="stylesheet" href="./css/components.min.css?v=379">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=379">
 
     <style>
         body {
@@ -221,49 +221,99 @@
             margin-top: 0;
         }
 
-        /* Navigation footer - GPU accelerated */
+        /* Navigation footer — floating compact box */
         .nav-footer {
             position: fixed;
-            bottom: 12px;
+            bottom: 16px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 50;
-            background-color: var(--color-background);
-            padding: var(--space-sm) var(--space-md);
+            background: #ffffff;
+            border: 1.5px solid #1a1a1a;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            width: auto;
+            max-width: 260px;
             display: flex;
-            justify-content: center;
-            gap: var(--space-2xl);
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 14px;
+            gap: 0;
             will-change: transform;
             backface-visibility: hidden;
         }
 
-        .bookmark-btn {
+        /* All nav buttons — base style */
+        .nav-btn {
+            font-family: 'Courier New', 'Courier Prime', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #1a1a1a;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 8px;
-            color: var(--color-text);
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 4px;
+            padding: 0;
+            white-space: nowrap;
+            transition: opacity 0.15s ease;
         }
 
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px 12px;
-            color: var(--color-text);
-            font-family: inherit;
-            font-size: 14px;
+        .nav-btn:hover:not(:disabled) {
+            opacity: 0.6;
         }
 
         .nav-btn:disabled {
-            opacity: 0.3;
+            opacity: 0.25;
             cursor: not-allowed;
+        }
+
+        .nav-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Center button group */
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 14px;
+        }
+
+        /* MEDIA — boxed style */
+        .nav-btn.nav-media {
+            border: 1.5px solid #1a1a1a;
+            padding: 3px 12px;
+            font-size: 9px;
+            letter-spacing: 0.12em;
+        }
+
+        /* MEDIA active state */
+        .nav-btn.nav-media.media-active {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* Dark mode */
+        [data-theme="dark"] .nav-footer {
+            background: #1a1a1a;
+            border-color: #555;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+
+        [data-theme="dark"] .nav-btn {
+            color: #e5e5e5;
+        }
+
+        [data-theme="dark"] .nav-btn.nav-media {
+            border-color: #555;
+        }
+
+        [data-theme="dark"] .nav-btn.nav-media.media-active {
+            background: #e5e5e5;
+            color: #1a1a1a;
         }
 
         .chapter-indicator {
@@ -659,7 +709,6 @@
         /* Android-Specific Fixes */
         @supports (-webkit-appearance: none) {
             .nav-btn,
-            .bookmark-btn,
             .back-to-reader,
             .menu-btn {
                 -webkit-appearance: none;
@@ -747,49 +796,30 @@
                 transform: scale(0.95);
             }
 
-            /* Navigation Footer - Full Width Bottom Bar */
+            /* Navigation Footer - Compact floating box */
             .nav-footer {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                transform: none;
-                border-radius: 0;
-                box-shadow: none;
-                border-top: 1px solid var(--color-border);
-                padding: var(--space-sm) var(--space-md);
-                padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom, var(--space-sm)));
-                gap: var(--space-lg);
-                background-color: var(--color-background);
+                bottom: max(12px, calc(env(safe-area-inset-bottom) + 4px));
+                max-width: 250px;
+                padding: 9px 12px;
             }
 
             .nav-btn {
-                min-width: 48px;
+                font-size: 10px;
                 min-height: 44px;
-                padding: 10px 14px;
-                font-size: 13px;
                 -webkit-tap-highlight-color: transparent;
                 -webkit-touch-callout: none;
                 user-select: none;
             }
 
-            .nav-btn:active:not(:disabled) {
-                opacity: 0.5;
-                transform: scale(0.95);
-            }
-
-            .bookmark-btn {
-                min-width: 44px;
+            .nav-btn.nav-media {
+                font-size: 9px;
+                padding: 3px 10px;
                 min-height: 44px;
-                padding: 10px;
-                -webkit-tap-highlight-color: transparent;
-                -webkit-touch-callout: none;
-                user-select: none;
             }
 
-            .bookmark-btn:active {
-                opacity: 0.5;
-                transform: scale(0.95);
+            .nav-center {
+                gap: 10px;
+                margin: 0 10px;
             }
 
             /* Media Emoji Touch Targets */
@@ -845,14 +875,6 @@
                 font-size: 12px;
             }
 
-            .nav-btn span {
-                display: none;
-            }
-
-            .nav-footer {
-                gap: var(--space-xl);
-            }
-
             .chapter-section .chapter-header {
                 font-size: 0.9em;
             }
@@ -870,17 +892,11 @@
             }
 
             .nav-footer {
-                padding: var(--space-xs) var(--space-md);
+                padding: 8px 10px;
             }
 
             .nav-btn {
                 min-height: 36px;
-                padding: 6px 10px;
-            }
-
-            .bookmark-btn {
-                min-height: 36px;
-                padding: 6px;
             }
         }
     </style>
@@ -1015,24 +1031,26 @@
     <!-- Chapter Navigation Footer -->
     <nav class="nav-footer" id="navFooter">
         <button type="button" class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
-            <span>Previous</span>
+            <span>Prev</span>
         </button>
-        <button type="button" class="nav-btn nav-media" id="mediaBtn" aria-label="Toggle media visibility">
-            <span>Media</span>
-        </button>
+        <div class="nav-center">
+            <button type="button" class="nav-btn nav-media media-active" id="mediaBtn" aria-label="Toggle media">
+                <span>Media</span>
+            </button>
+        </div>
         <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
             <span>Next</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </button>
     </nav>
 
     <!-- Binge Mode Core Logic -->
-    <script type="module" src="./js/binge-init.min.js?v=378"></script>
+    <script type="module" src="./js/binge-init.min.js?v=379"></script>
 
     <!-- Sidebar Navigation -->
     <script type="module">
@@ -1252,16 +1270,16 @@
     </script>
 
     <!-- Theme Toggle -->
-    <script src="./js/binge-theme.min.js?v=378"></script>
+    <script src="./js/binge-theme.min.js?v=379"></script>
 
     <!-- Analytics & Bookmark -->
-    <script src="./js/analytics.min.js?v=378"></script>
-    <script src="./js/binge-analytics.min.js?v=378"></script>
+    <script src="./js/analytics.min.js?v=379"></script>
+    <script src="./js/binge-analytics.min.js?v=379"></script>
 
     <!-- Live Prompts (Interactive Reader Prompts) -->
-    <script src="./js/live-prompts.js?v=378"></script>
+    <script src="./js/live-prompts.js?v=379"></script>
 
-    <script src="./js/otr-tier1-error-handler.min.js?v=378"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=379"></script>
 
 </body>
 </html>

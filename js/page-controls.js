@@ -35,6 +35,19 @@
     }
 
     // ─────────────────────────────────────────────────────────────
+    // BINGE BUTTON (Footer Navigation)
+    // Navigates to binge-mode.html
+    // ─────────────────────────────────────────────────────────────
+    const bingeBtn = document.getElementById('bingeBtn');
+
+    if (bingeBtn) {
+        bingeBtn.addEventListener('click', function() {
+            // Navigate to binge mode
+            window.location.href = './binge-mode.html';
+        });
+    }
+
+    // ─────────────────────────────────────────────────────────────
     // MODE TOGGLE (Scroll/Pages)
     // Switches between scroll mode and pagination mode
     // ─────────────────────────────────────────────────────────────

@@ -127,61 +127,79 @@ body.paginated .chapter-body {
     padding-bottom: 60px; /* Extra space to clear fixed nav footer */
 }
 
-/* Navigation footer */
+/* Navigation footer — floating compact box */
 .nav-footer {
     position: fixed;
-    bottom: 12px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     z-index: var(--z-nav-footer);
-    background-color: var(--color-footer-bg);
-    padding: var(--space-sm) var(--space-lg);
-    display: flex;
-    justify-content: center;
-    gap: var(--space-2xl);
-    border: 2px solid var(--color-accent);
-    border-radius: 0;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast);
-}
-
-.nav-btn {
+    background: #ffffff;
+    border: 1.5px solid #1a1a1a;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    width: auto;
+    max-width: 300px;
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
-    padding: 2px 0;
-    min-height: 24px;
-    border-radius: 0;
-    position: relative;
-    transition: all var(--transition-fast);
+    justify-content: space-between;
+    padding: 9px 14px;
+    gap: 0;
 }
 
-.nav-btn::after {
-    content: '';
-    position: absolute;
-    bottom: var(--space-sm);
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: var(--color-accent);
-    transform: scaleX(0);
-    transition: transform var(--transition-fast);
+/* All nav buttons — base style */
+.nav-btn {
+    font-family: 'Courier New', 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
 }
 
-.nav-btn:hover::after {
-    transform: scaleX(1);
+.nav-btn:hover:not(:disabled) {
+    opacity: 0.6;
 }
 
 .nav-btn:disabled {
-    opacity: 0.3;
+    opacity: 0.25;
     cursor: not-allowed;
 }
 
-.nav-btn:disabled::after {
-    display: none;
+/* Chevron arrows for PREV/NEXT */
+.nav-btn svg {
+    width: 14px;
+    height: 14px;
 }
 
-.nav-btn:disabled:hover {
-    background-color: transparent;
+/* Center button group (BINGE + MEDIA) */
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 14px;
+}
+
+/* BINGE and MEDIA — boxed style */
+.nav-btn.nav-binge,
+.nav-btn.nav-media {
+    border: 1.5px solid #1a1a1a;
+    padding: 3px 12px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+}
+
+/* MEDIA active state (when media is showing) */
+.nav-btn.nav-media.media-active {
+    background: #1a1a1a;
+    color: #ffffff;
 }
 
 /* Touch devices - larger tap targets */
@@ -190,28 +208,77 @@ body.paginated .chapter-body {
         min-height: 44px;
         padding: 10px 0;
     }
+    .nav-btn.nav-binge,
+    .nav-btn.nav-media {
+        min-height: 44px;
+        padding: 3px 12px;
+    }
 }
 
-/* Media toggle button */
-.nav-btn.nav-media {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 2px 8px;
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav-footer {
+        bottom: max(12px, calc(env(safe-area-inset-bottom) + 4px));
+        max-width: 290px;
+        padding: 9px 12px;
+    }
+    .nav-btn {
+        font-size: 10px;
+        min-height: 44px;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .nav-btn.nav-binge,
+    .nav-btn.nav-media {
+        font-size: 9px;
+        padding: 3px 10px;
+        min-height: 44px;
+    }
+    .nav-center {
+        gap: 10px;
+        margin: 0 10px;
+    }
+    .nav-btn:active:not(:disabled) {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
 }
 
-.nav-btn.nav-media.media-active {
-    background-color: #cc0000;
-    color: #ffffff;
+/* Extra small screens */
+@media (max-width: 360px) {
+    .nav-footer {
+        max-width: 270px;
+        padding: 8px 10px;
+    }
+    .nav-center {
+        gap: 8px;
+        margin: 0 8px;
+    }
+    .nav-btn.nav-binge,
+    .nav-btn.nav-media {
+        padding: 3px 8px;
+        font-size: 8px;
+    }
 }
 
-.nav-btn.nav-media.media-active::after {
-    display: none;
+/* Dark mode support */
+[data-theme="dark"] .nav-footer {
+    background: #1a1a1a;
+    border-color: #555;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
-.nav-btn.nav-media:not(.media-active) {
-    border: 1px solid var(--color-border);
-    color: var(--color-text-primary);
+[data-theme="dark"] .nav-btn {
+    color: #e5e5e5;
+}
+
+[data-theme="dark"] .nav-btn.nav-binge,
+[data-theme="dark"] .nav-btn.nav-media {
+    border-color: #555;
+}
+
+[data-theme="dark"] .nav-btn.nav-media.media-active {
+    background: #e5e5e5;
+    color: #1a1a1a;
 }
 
 /* Table of Contents Sidebar */
