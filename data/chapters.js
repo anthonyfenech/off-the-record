@@ -2255,30 +2255,30 @@ export const CHAPTERS = [
 <p></p>
 <p class="flashback-header">JUNK MAIL</p>
 <p></p>
-<p class="has-dateline"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>
+<p class="email-line"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>
 
-<p class="has-dateline"><strong>Subject:</strong> Tigers …</p>
+<p class="email-line"><strong>Subject:</strong> Tigers …</p>
 
-<p class="has-dateline"><em>… you out there, buddy?</em></p>
-
-<p></p>
-<p class="has-dateline"><strong>From:</strong> Fenech, Anthony <strong>Sent:</strong> Saturday, July 30, 2016 9:26 AM</p>
-
-<p class="has-dateline"><strong>Subject:</strong> Re: Tigers …</p>
-
-<p class="has-dateline"><em>I'm sorry. Should have emailed you. Probably shouldn't have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</em></p>
+<p class="email-line"><em>… you out there, buddy?</em></p>
 
 <p></p>
-<p class="has-dateline"><strong>From:</strong> Maxwell, Charlie <strong>Sent:</strong> Monday, August 1, 2016 4:48 PM</p>
+<p class="email-line"><strong>From:</strong> Fenech, Anthony <strong>Sent:</strong> Saturday, July 30, 2016 9:26 AM</p>
 
-<p class="has-dateline"><em>You're late to your FP chats, a smart ass who doesn't know any more about the game than your readers, and look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>
+<p class="email-line"><strong>Subject:</strong> Re: Tigers …</p>
+
+<p class="email-line"><em>I'm sorry. Should have emailed you. Probably shouldn't have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</em></p>
 
 <p></p>
-<p class="has-dateline"><strong>From:</strong> Bull, Kevin <strong>Sent:</strong> Friday, August 5, 2016 10:52 PM</p>
+<p class="email-line"><strong>From:</strong> Maxwell, Charlie <strong>Sent:</strong> Monday, August 1, 2016 4:48 PM</p>
 
-<p class="has-dateline"><strong>Subject:</strong> Next week 1A story</p>
+<p class="email-line"><em>You're late to your FP chats, a smart ass who doesn't know any more about the game than your readers, and look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>
 
-<p class="has-dateline"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the Tigers are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
+<p></p>
+<p class="email-line"><strong>From:</strong> Bull, Kevin <strong>Sent:</strong> Friday, August 5, 2016 10:52 PM</p>
+
+<p class="email-line"><strong>Subject:</strong> Next week 1A story</p>
+
+<p class="email-line"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the Tigers are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
 
 <p></p>
 <p class="scene-break">***</p>
@@ -6429,41 +6429,41 @@ export const CHAPTERS = [
 <p class="flashback-header">JUNK MAIL</p>
 <p></p>
 
-<p class="has-dateline"><strong>From:</strong> George Kaleniecki <strong>Sent:</strong> Thursday, June 6, 2019 9:51 AM</p>
+<p class="email-line"><strong>From:</strong> George Kaleniecki <strong>Sent:</strong> Thursday, June 6, 2019 9:51 AM</p>
 
-<p class="has-dateline"><strong>Subject:</strong> What a Dumb Column, By a Dumb Ass</p>
+<p class="email-line"><strong>Subject:</strong> What a Dumb Column, By a Dumb Ass</p>
 
-<p class="has-dateline"><em>The Detroit Tigers carried Víctor Martínez for his bat, knowing he couldn't play the Field again. Mr. Suckass Fenech should pay more attention to the Minor Leagues That Mexican Al Avila has destroyed. If his draft picks are so good, bring them up to the major leagues with Real Major League Coaches. Why work with a Coach in the Minors not good enough to be up in the Majors. Perhaps the </em>Free Press<em> should look for a real sports writer as they down size …</em></p>
-
-<p></p>
-<p class="has-dateline"><strong>From:</strong> James Patchen <strong>Sent:</strong> Thursday, June 6, 2019 10:44 AM</p>
-
-<p class="has-dateline"><strong>Subject:</strong> (No subject)</p>
-
-<p class="has-dateline"><em>Ah, yes negativity. I've come to expect nothing but sideline, hindsight managerial bad press from Detroit writers. Ernie Harwell worked to find the good and encouraged and supported the team(management &amp; players). Grow up Get a life</em></p>
+<p class="email-line"><em>The Detroit Tigers carried Víctor Martínez for his bat, knowing he couldn't play the Field again. Mr. Suckass Fenech should pay more attention to the Minor Leagues That Mexican Al Avila has destroyed. If his draft picks are so good, bring them up to the major leagues with Real Major League Coaches. Why work with a Coach in the Minors not good enough to be up in the Majors. Perhaps the </em>Free Press<em> should look for a real sports writer as they down size …</em></p>
 
 <p></p>
-<p class="has-dateline"><strong>From:</strong> Robert Rosman <strong>Sent:</strong> Sunday, June 9 5:31 AM</p>
+<p class="email-line"><strong>From:</strong> James Patchen <strong>Sent:</strong> Thursday, June 6, 2019 10:44 AM</p>
 
-<p class="has-dateline"><strong>Subject:</strong> You will be a columnist soon. Trust me.</p>
+<p class="email-line"><strong>Subject:</strong> (No subject)</p>
 
-<p class="has-dateline"><em>Anthony: I consider you the most talented journalist/beat writer I have read in Detroit in several years. You have a distinctive style. You seem to have maintained a fairly high rate of enthusiasm despite covering a team not resembling the '27 Yankees. Not an easy task. And you can write.</em></p>
-
-<p class="has-dateline"><em>Give it a few years and, if the </em>Freep<em> or the </em>New York Times<em> hasn't offered you a column, call ESPN. Have them call me, if you want a reference.</em></p>
+<p class="email-line"><em>Ah, yes negativity. I've come to expect nothing but sideline, hindsight managerial bad press from Detroit writers. Ernie Harwell worked to find the good and encouraged and supported the team(management &amp; players). Grow up Get a life</em></p>
 
 <p></p>
-<p class="has-dateline"><strong>From:</strong> Baseball America <strong>Sent:</strong> Monday, June 10, 2019 1:54 PM</p>
+<p class="email-line"><strong>From:</strong> Robert Rosman <strong>Sent:</strong> Sunday, June 9 5:31 AM</p>
 
-<p class="has-dateline"><strong>Subject:</strong> Re: Tigers update</p>
+<p class="email-line"><strong>Subject:</strong> You will be a columnist soon. Trust me.</p>
 
-<p class="has-dateline"><em>Anthony, I think it's best for both of us to part ways. I hear you regarding the &quot;do more with less&quot; mantra that pervades all media/publishing these days. That is part of the reason deadlines are so critical for us. But obviously they are not as critical as </em>Free Press<em> deadlines, nor should they be. Thank you for helping us out when we really needed the help.</em></p>
+<p class="email-line"><em>Anthony: I consider you the most talented journalist/beat writer I have read in Detroit in several years. You have a distinctive style. You seem to have maintained a fairly high rate of enthusiasm despite covering a team not resembling the '27 Yankees. Not an easy task. And you can write.</em></p>
+
+<p class="email-line"><em>Give it a few years and, if the </em>Freep<em> or the </em>New York Times<em> hasn't offered you a column, call ESPN. Have them call me, if you want a reference.</em></p>
 
 <p></p>
-<p class="has-dateline"><strong>To:</strong> Casey Close <strong>Sent:</strong> Tuesday, June 11, 2019 1:14 PM</p>
+<p class="email-line"><strong>From:</strong> Baseball America <strong>Sent:</strong> Monday, June 10, 2019 1:54 PM</p>
 
-<p class="has-dateline"><strong>Subject:</strong> Michigan baseball</p>
+<p class="email-line"><strong>Subject:</strong> Re: Tigers update</p>
 
-<p class="has-dateline"><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>
+<p class="email-line"><em>Anthony, I think it's best for both of us to part ways. I hear you regarding the &quot;do more with less&quot; mantra that pervades all media/publishing these days. That is part of the reason deadlines are so critical for us. But obviously they are not as critical as </em>Free Press<em> deadlines, nor should they be. Thank you for helping us out when we really needed the help.</em></p>
+
+<p></p>
+<p class="email-line"><strong>To:</strong> Casey Close <strong>Sent:</strong> Tuesday, June 11, 2019 1:14 PM</p>
+
+<p class="email-line"><strong>Subject:</strong> Michigan baseball</p>
+
+<p class="email-line"><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>
 
 <p></p>
 <p class="scene-break">***</p>
