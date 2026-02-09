@@ -2,19 +2,26 @@
 
 /* Skip Navigation Link - Accessibility */
 .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: var(--color-background, #fff);
-    color: var(--color-text-primary, #333);
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    background: var(--color-bg, #fff);
+    color: var(--color-text, #333);
     padding: 8px 16px;
     z-index: 10000;
-    font-family: var(--font-mono);
+    font-family: 'Courier New', monospace;
     font-size: 0.85rem;
     text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
 }
+
 .skip-link:focus {
-    top: 0;
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Home Page */

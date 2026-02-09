@@ -773,6 +773,7 @@ class Navigation {
 
     // TOC actions
     openTOC() {
+        if (!this.tocSidebar || !this.overlay) return;
         // Remove critical CSS overrides
         this.tocSidebar.style.visibility = 'visible';
         this.tocSidebar.style.transform = '';
@@ -784,21 +785,22 @@ class Navigation {
     }
 
     closeTOC() {
+        if (!this.tocSidebar || !this.overlay) return;
         this.tocSidebar.classList.remove('open');
         this.overlay.classList.remove('active');
         document.body.style.overflow = '';
         // Re-add hard hide after transition
         setTimeout(() => {
-            if (!this.tocSidebar.classList.contains('open')) {
+            if (this.tocSidebar && !this.tocSidebar.classList.contains('open')) {
                 this.tocSidebar.style.visibility = 'hidden';
-                this.overlay.style.visibility = 'hidden';
+                if (this.overlay) this.overlay.style.visibility = 'hidden';
             }
         }, 310);
     }
 
     // Keyboard navigation
     handleKeyPress(e) {
-        if (this.tocSidebar.classList.contains('open') ||
+        if (this.tocSidebar?.classList.contains('open') ||
             e.target.tagName === 'INPUT' ||
             e.target.tagName === 'TEXTAREA') {
             return;
@@ -825,15 +827,20 @@ class Navigation {
     // Swipe and tap gestures for mobile
     setupSwipeGestures() {
         const readerEl = document.getElementById('reader');
+        if (!readerEl) return;
 
         readerEl.addEventListener('touchstart', (e) => {
-            this.touchStartX = e.changedTouches[0].clientX;
-            this.touchStartY = e.changedTouches[0].clientY;
+            const touch = e.changedTouches?.[0];
+            if (!touch) return;
+            this.touchStartX = touch.clientX;
+            this.touchStartY = touch.clientY;
         }, { passive: true });
 
         readerEl.addEventListener('touchend', (e) => {
-            this.touchEndX = e.changedTouches[0].clientX;
-            this.touchEndY = e.changedTouches[0].clientY;
+            const touch = e.changedTouches?.[0];
+            if (!touch) return;
+            this.touchEndX = touch.clientX;
+            this.touchEndY = touch.clientY;
             this.handleSwipeOrTap(e);
         }, { passive: true });
     }
