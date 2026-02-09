@@ -7126,57 +7126,63 @@ export const CHAPTERS = [
 
 <p>Messages arrive from everywhere. “You’re Big News on the radio,” a local radio host says. “People backing you.”</p>
 
-<p>I’m jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…\$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>
+<p>I'm jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…\$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>
 
+<p></p>
+<p class="scene-break">***</p>
+<p></p>
+<p class="flashback-header">AIRPLANE MODE</p>
+<p></p>
 
-<p>AIRPLANE MODE</p>
+<p class="email-line"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>
 
-<p>Mom: Woohoo best game Tigers could win—against Houston!!!!</p>
+<p class="email-line"><strong>BBWAA President:</strong> Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
 
-<p>BBWAA President: Anthony, I’m sorry for missing your calls. My phone was charging downstairs overnight and I didn’t hear it ringing.</p>
+<p class="email-line"><strong>Copy Editor:</strong> Did you ask about the eclipse again?</p>
 
-<p>Copy Editor: Did you ask about the eclipse again?</p>
+<p class="email-line"><strong>Arizona Scout:</strong> I love you.</p>
 
-<p>Arizona Scout: I love you.</p>
+<p class="email-line"><strong>Verlander's Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>
 
-<p>Verlander’s Former Teammate: Fenech-Verlander beef is exactly what I needed in my life.</p>
+<p class="email-line"><strong>Gator:</strong> He's not talking about you is he? Lol</p>
 
-<p>Gator: He’s not talking about you is he? Lol</p>
+<p class="email-line"><strong>Unknown (313) Number:</strong> Any comment on the locker-room incident?</p>
 
-<p>Unknown (313) Number: Any comment on the locker-room incident?</p>
+<p class="email-line"><strong>Drug Dealer:</strong> Lmk if anyone tries to mess with you.</p>
 
-<p>Drug Dealer: Lmk if anyone tries to mess with you.</p>
+<p class="email-line"><strong>Middle School Friend:</strong> verlander beefin with you? whats up man?</p>
 
-<p>Middle School Friend: verlander beefin with you? whats up man?</p>
+<p class="email-line"><strong>MLB PR:</strong> Hi Anthony, I just tried calling you. Here is a statement that we wanted you to have first. We have gotten some other requests from reporters and we will send this to them as well.</p>
 
-<p>MLB PR: Hi Anthony, I just tried calling you. Here is a statement that we wanted you to have first. We have gotten some other requests from reporters and we will send this to them as well.</p>
+<p class="email-line"><strong>Sports Editor:</strong> Give me a shout when you can.</p>
 
-<p>Sports Editor: Give me a shout when you can.</p>
+<p class="email-line"><strong>Pedro Gomez:</strong> This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You're not wrong here. Remember that.</p>
 
-<p>Pedro Gomez: This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You’re not wrong here. Remember that.</p>
+<p class="email-line"><strong>Radio Host:</strong> Hey bro, long time… any chance you can come on about the Verlander thing?</p>
 
-<p>Radio Host: Hey bro, long time… any chance you can come on about the Verlander thing?</p>
+<p class="email-line"><strong>Pro Ball Player:</strong> Yooo what's Verlander's deal?</p>
 
-<p>Pro Ball Player: Yooo what’s Verlander’s deal?</p>
+<p class="email-line"><strong>Ex-Girlfriend's Roommate:</strong> Thought the reporters weren't supposed to be the news? Wasn't expecting to see you the topic of the little red ribbon at the top of the Freep.</p>
 
-<p>Ex-Girlfriend’s Roommate: Thought the reporters weren’t supposed to be the news? Wasn’t expecting to see you the topic of the little red ribbon at the top of the Freep.</p>
+<p class="email-line"><strong>Deep Throat:</strong> I'd say you're the most popular sports writer in America today.</p>
 
-<p>Deep Throat: I'd say you're the most popular sports writer in America today.</p>
+<p class="email-line"><strong>National Radio Host:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>
 
-<p>National Radio Host: Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>
+<p class="email-line"><strong>High School Classmate:</strong> Why is Justin Verlander trashing u on Twitter hahah?</p>
 
-<p>High School Classmate: Why is Justin Verlander trashing u on Twitter hahah?</p>
+<p class="email-line"><strong>National TV Reporter:</strong> Crazy you're on his mind so much. You should be flattered.</p>
 
-<p>National TV Reporter: Crazy you’re on his mind so much. You should be flattered.</p>
+<p class="email-line"><strong>Brewers Scout:</strong> Sounds like a lot went on since we talked lol, still wanna catch up today?</p>
 
-<p>Brewers Scout: Sounds like a lot went on since we talked lol, still wanna catch up today?</p>
+<p class="email-line"><strong>National Guy:</strong> Anthony, don't let the creeps get you down. Worst PR guy in my experience, which probably covers 100-plus PR guys.</p>
 
-<p>National Guy: Anthony, don’t let the creeps get you down. Worst PR guy in my experience, which probably covers 100-plus PR guys.</p>
+<p class="email-line"><strong>Orioles Scout:</strong> Just read your name in ESPN. That's great. Getting your name out there!</p>
 
-<p>Orioles Scout: Just read your name in ESPN. That’s great. Getting your name out there!</p>
+<p class="email-line"><strong>Mom:</strong> Omg. Call when you can.</p>
 
-<p>Mom: Omg. Call when you can.</p>
-
+<p></p>
+<p class="scene-break">***</p>
+<p></p>
 
 <p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
 
