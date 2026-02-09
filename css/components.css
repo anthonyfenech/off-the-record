@@ -3455,7 +3455,6 @@ body.show-captions .media-modal-caption {
         transform: scale(0.95);
     }
 
-    .nav-btn.nav-binge,
     .nav-btn.nav-media {
         min-height: 44px;
         padding: 3px 10px;
@@ -3521,7 +3520,6 @@ body.show-captions .media-modal-caption {
         margin: 0 8px;
     }
 
-    .nav-btn.nav-binge,
     .nav-btn.nav-media {
         padding: 3px 8px;
         font-size: 8px;
