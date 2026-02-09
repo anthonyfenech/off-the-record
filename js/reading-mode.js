@@ -40,17 +40,56 @@ class ReadingModeManager {
     }
 
     switchMode(newMode) {
-        // Save current chapter
+        // Save current chapter and position
         const currentChapter = window.currentChapterId;
+        const reader = window.readerInstance;
+        const oldMode = this.currentMode;
+        let readingPercent = 0;
+
+        // Capture current reading position as percentage
+        if (reader && currentChapter) {
+            if (oldMode === 'scroll') {
+                // Scroll mode: calculate scroll percentage
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                readingPercent = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+            } else if (oldMode === 'page' && reader.totalPages > 0) {
+                // Page mode: calculate page percentage
+                readingPercent = reader.currentPage / reader.totalPages;
+            }
+            // Clamp between 0 and 1
+            readingPercent = Math.max(0, Math.min(1, readingPercent));
+        }
 
         // Update mode
         this.currentMode = newMode;
         this.applyMode(newMode, true);
         this.updateToggleUI();
 
-        // Reload current chapter in new mode
-        if (window.readerInstance && currentChapter) {
-            window.readerInstance.loadChapter(currentChapter, 0);
+        // Reload current chapter in new mode with position restoration
+        if (reader && currentChapter) {
+            if (newMode === 'page') {
+                // Switching to Pages: load chapter, then jump to approximate page
+                reader.loadChapter(currentChapter, null, false);
+                // After pagination calculates, jump to approximate page
+                setTimeout(() => {
+                    if (reader.totalPages > 0) {
+                        const targetPage = Math.min(
+                            Math.round(readingPercent * reader.totalPages),
+                            reader.totalPages - 1
+                        );
+                        reader.showPage(Math.max(0, targetPage));
+                    }
+                }, 50);
+            } else {
+                // Switching to Scroll: load chapter, then scroll to approximate position
+                reader.loadChapter(currentChapter, 0, false);
+                setTimeout(() => {
+                    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const targetScroll = Math.round(readingPercent * scrollHeight);
+                    window.scrollTo({ top: targetScroll, behavior: 'instant' });
+                }, 50);
+            }
         }
 
         // Dispatch event for other components

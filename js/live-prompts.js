@@ -95,7 +95,7 @@
                     display: flex;
                 }
                 .live-prompt-modal {
-                    background: #fff;
+                    background: var(--color-modal-bg, #fff);
                     width: 90%;
                     padding: 20px;
                     position: relative;
@@ -115,13 +115,13 @@
                     border: none;
                     font-size: 20px;
                     cursor: pointer;
-                    color: #333;
+                    color: var(--color-text-primary, #333);
                 }
                 .live-prompt-question {
                     font-size: 14px;
                     font-weight: normal;
                     margin-bottom: 15px;
-                    color: #333;
+                    color: var(--color-text-primary, #333);
                 }
                 .live-prompt-choices {
                     margin-bottom: 15px;
@@ -132,7 +132,7 @@
                     cursor: pointer;
                     font-size: 13px;
                     font-weight: normal;
-                    color: #333;
+                    color: var(--color-text-primary, #333);
                 }
                 .live-prompt-choice input {
                     margin-right: 8px;
@@ -140,7 +140,9 @@
                 .live-prompt-input {
                     width: 100%;
                     padding: 8px;
-                    border: 1px solid #ccc;
+                    border: 1px solid var(--color-border, #ccc);
+                    background: var(--color-background, #fff);
+                    color: var(--color-text-primary, #333);
                     font-family: inherit;
                     font-size: 13px;
                     margin-bottom: 10px;
@@ -154,7 +156,7 @@
                     display: flex;
                     justify-content: space-between;
                     font-size: 11px;
-                    color: #666;
+                    color: var(--color-text-secondary, #666);
                     margin-bottom: 5px;
                 }
                 .live-prompt-scale input[type="range"] {
@@ -164,7 +166,7 @@
                     text-align: center;
                     font-size: 24px;
                     margin: 10px 0;
-                    color: #333;
+                    color: var(--color-text-primary, #333);
                 }
                 .live-prompt-emojis {
                     display: flex;
@@ -182,7 +184,7 @@
                 }
                 .live-prompt-emoji:hover,
                 .live-prompt-emoji.selected {
-                    border-color: #000;
+                    border-color: var(--color-accent, #000);
                 }
                 .live-prompt-buttons {
                     display: flex;
@@ -197,14 +199,14 @@
                     font-family: Arial, sans-serif;
                 }
                 .live-prompt-btn.submit {
-                    background: #000;
-                    color: #fff;
+                    background: var(--color-accent, #000);
+                    color: var(--color-background, #fff);
                     border: none;
                 }
                 .live-prompt-btn.skip {
-                    background: #fff;
-                    color: #000;
-                    border: 1px solid #999;
+                    background: var(--color-background, #fff);
+                    color: var(--color-text-primary, #000);
+                    border: 1px solid var(--color-border, #999);
                 }
             `;
 

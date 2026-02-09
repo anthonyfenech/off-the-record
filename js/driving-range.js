@@ -59,7 +59,9 @@ function loadAdminPrompts() {
                 });
             }
         });
-    } catch(e) {}
+    } catch(e) {
+        console.warn('[OTR] Failed to load admin prompts:', e);
+    }
 }
 
 function savePrompts() {
@@ -67,14 +69,14 @@ function savePrompts() {
 }
 
 function getAnswered() {
-    try { return JSON.parse(localStorage.getItem(ANSWERED_KEY) || '{}'); } catch { return {}; }
+    try { return JSON.parse(localStorage.getItem(ANSWERED_KEY) || '{}'); } catch (e) { console.warn('[OTR] Failed to get answered:', e); return {}; }
 }
 function setAnswered(id) {
     const a = getAnswered(); a[id] = true;
     localStorage.setItem(ANSWERED_KEY, JSON.stringify(a));
 }
 function getTriggered() {
-    try { return JSON.parse(sessionStorage.getItem(TRIGGERED_KEY) || '{}'); } catch { return {}; }
+    try { return JSON.parse(sessionStorage.getItem(TRIGGERED_KEY) || '{}'); } catch (e) { console.warn('[OTR] Failed to get triggered:', e); return {}; }
 }
 function setTriggered(id) {
     const t = getTriggered(); t[id] = true;

@@ -58,7 +58,9 @@
                 scrollPercent: scrollPercent,
                 timestamp: Date.now()
             }));
-        } catch (e) {}
+        } catch (e) {
+            console.warn('[OTR] Failed to save binge bookmark:', e);
+        }
     }
 
     function restoreBingeBookmark() {
@@ -75,7 +77,9 @@
                     section.scrollIntoView({ behavior: 'instant', block: 'start' });
                 }, 100);
             }
-        } catch (e) {}
+        } catch (e) {
+            console.warn('[OTR] Failed to restore binge bookmark:', e);
+        }
     }
 
     // Track visible chapter
