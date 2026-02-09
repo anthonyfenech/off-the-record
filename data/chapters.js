@@ -2261,16 +2261,19 @@ export const CHAPTERS = [
 
 <p><em>… you out there, buddy?</em></p>
 
+<p></p>
 <p>From: Fenech, Anthony Sent: Saturday, July 30, 2016 9:26 AM</p>
 
 <p>Subject: Re: Tigers …</p>
 
 <p><em>I'm sorry. Should have emailed you. Probably shouldn't have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</em></p>
 
+<p></p>
 <p>From: Maxwell, Charlie Sent: Monday, August 1, 2016 4:48 PM</p>
 
 <p><em>You're late to your FP chats, a smart ass who doesn't know any more about the game than your readers, and look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>
 
+<p></p>
 <p>From: Bull, Kevin Sent: Friday, August 5, 2016 10:52 PM</p>
 
 <p>Subject: Next week 1A story</p>
@@ -6430,28 +6433,32 @@ export const CHAPTERS = [
 
 <p>Subject: What a Dumb Column, By a Dumb Ass</p>
 
-<p><em>The Detroit Tigers carried Víctor Martínez for his bat, knowing he couldn’t play the Field again. Mr. Suckass Fenech should pay more attention to the Minor Leagues That Mexican Al Avila has destroyed. If his draft picks are so good, bring them up to the major leagues with Real Major League Coaches. Why work with a Coach in the Minors not good enough to be up in the Majors. Perhaps the </em>Free Press<em> should look for a real sports writer as they down size …</em></p>
+<p><em>The Detroit Tigers carried Víctor Martínez for his bat, knowing he couldn't play the Field again. Mr. Suckass Fenech should pay more attention to the Minor Leagues That Mexican Al Avila has destroyed. If his draft picks are so good, bring them up to the major leagues with Real Major League Coaches. Why work with a Coach in the Minors not good enough to be up in the Majors. Perhaps the </em>Free Press<em> should look for a real sports writer as they down size …</em></p>
 
+<p></p>
 <p>From: James Patchen Sent: Thursday, June 6, 2019 10:44 AM</p>
 
 <p>Subject: (No subject)</p>
 
 <p><em>Ah, yes negativity. I've come to expect nothing but sideline, hindsight managerial bad press from Detroit writers. Ernie Harwell worked to find the good and encouraged and supported the team(management &amp; players). Grow up Get a life</em></p>
 
+<p></p>
 <p>From: Robert Rosman Sent: Sunday, June 9 5:31 AM</p>
 
 <p>Subject: You will be a columnist soon. Trust me.</p>
 
 <p><em>Anthony: I consider you the most talented journalist/beat writer I have read in Detroit in several years. You have a distinctive style. You seem to have maintained a fairly high rate of enthusiasm despite covering a team not resembling the ‘27 Yankees. Not an easy task. And you can write.</em></p>
 
-<p><em>Give it a few years and, if the </em>Freep<em> or the </em>New York Times<em> hasn’t offered you a column, call ESPN. Have them call me, if you want a reference.</em></p>
+<p><em>Give it a few years and, if the </em>Freep<em> or the </em>New York Times<em> hasn't offered you a column, call ESPN. Have them call me, if you want a reference.</em></p>
 
+<p></p>
 <p>From: Baseball America Sent: Monday, June 10, 2019 1:54 PM</p>
 
 <p>Subject: Re: Tigers update</p>
 
 <p><em>Anthony, I think it's best for both of us to part ways. I hear you regarding the &quot;do more with less&quot; mantra that pervades all media/publishing these days. That is part of the reason deadlines are so critical for us. But obviously they are not as critical as </em>Free Press<em> deadlines, nor should they be. Thank you for helping us out when we really needed the help.</em></p>
 
+<p></p>
 <p>To: Casey Close Sent: Tuesday, June 11, 2019 1:14 PM</p>
 
 <p>Subject: Michigan baseball</p>
