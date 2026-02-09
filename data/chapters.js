@@ -2248,11 +2248,13 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>July 25</em>—</span>At the <em>Free Press</em>, we’re all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, I’m staying another day in Chicago, complying with my sports editor’s request to cover the Michigan football coach.</p>
 
-<p>Big Ten football media days are being held at the city’s convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I’ve kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I’m in town. <span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span></p>
+<p>Big Ten football media days are being held at the city's convention center. I am on Harbaugh Watch, following him around the sprawling McCormick Place all day for a feature story. Apparently, Harbaugh has taken a liking to me after I wrote about his family last month at the satellite camp. I've kept in touch with an In The Room source close to Harbaugh, who could be of good use one day—you never know. The source owns a bar in Kansas City and invited me to visit the next time I'm in town. <span class="media-emoji" data-media-id="harbaugh-watch-chicago">📷</span></p>
 
-
-<p>JUNK MAIL</p>
-
+<p></p>
+<p class="scene-break">***</p>
+<p></p>
+<p class="flashback-header">JUNK MAIL</p>
+<p></p>
 <p>From: Crawford, Kirkland Sent: Friday, July 29, 2016 11:58 PM</p>
 
 <p>Subject: Tigers …</p>
@@ -2275,7 +2277,8 @@ export const CHAPTERS = [
 
 <p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the Tigers are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
 
-
+<p></p>
+<p class="scene-break">***</p>
 <p></p>
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
@@ -6417,8 +6420,11 @@ export const CHAPTERS = [
 
 <p>I celebrate by staying out until the sun comes up.</p>
 
-
-<p>JUNK MAIL</p>
+<p></p>
+<p class="scene-break">***</p>
+<p></p>
+<p class="flashback-header">JUNK MAIL</p>
+<p></p>
 
 <p>From: George Kaleniecki Sent: Thursday, June 6, 2019 9:51 AM</p>
 
@@ -6450,7 +6456,11 @@ export const CHAPTERS = [
 
 <p>Subject: Michigan baseball</p>
 
-<p><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>`,
+<p><em>Hello Casey, this is Anthony Fenech and I cover the Tigers for the </em>Detroit Free Press<em>. With Michigan advancing to the College World Series, I'm going to be staying in Omaha after the Tigers-Royals kickoff game on Thursday to cover U-M. Working on a story looking back at the 1984 team. If you have any time to chat, let me know. I'm at 734-752-9667.</em></p>
+
+<p></p>
+<p class="scene-break">***</p>
+<p></p>`,
         wordCount: 2490
     },
     {
