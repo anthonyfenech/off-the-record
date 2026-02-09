@@ -191,6 +191,46 @@ p + p.has-dateline {
     margin-top: 1em;
 }
 
+/* ============================================
+   MANUSCRIPT PARAGRAPH OVERRIDES
+   Higher specificity for chapter content
+   ============================================ */
+
+/* Email lines (JUNK MAIL, AIRPLANE MODE sections) - tight spacing */
+.chapter-body p.email-line {
+    text-indent: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Dateline paragraphs in chapter content */
+.chapter-body p.has-dateline {
+    text-indent: 0 !important;
+    margin-top: 1em !important;
+}
+
+/* Scene breaks in chapter content */
+.chapter-body p.scene-break {
+    text-align: center !important;
+    text-indent: 0 !important;
+}
+
+/* Flashback headers in chapter content */
+.chapter-body p.flashback-header {
+    text-align: center !important;
+    text-indent: 0 !important;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: calc(var(--font-size-reader) + 2px);
+    letter-spacing: 3px;
+}
+
+/* Signature blocks */
+.chapter-body p.signature {
+    text-align: right !important;
+    text-indent: 0 !important;
+    margin-top: 1.5em !important;
+}
+
 /* Scene/section breaks (for major transitions) */
 .section-break {
     margin: var(--space-2xl) 0;
