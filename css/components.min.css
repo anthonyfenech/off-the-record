@@ -825,7 +825,7 @@ button:focus-visible {
 }
 
 .toc-options-title {
-    font-family: var(--font-mono);
+    font-family: inherit;
     font-size: var(--font-size-xs);
     font-weight: bold;
     text-transform: uppercase;
@@ -850,7 +850,7 @@ button:focus-visible {
 }
 
 .toc-option-label {
-    font-family: var(--font-mono);
+    font-family: inherit;
     font-size: 12px;
     color: var(--color-text-secondary);
     text-transform: uppercase;
@@ -898,7 +898,7 @@ button:focus-visible {
 
 .option-btn {
     padding: 4px 10px;
-    font-family: var(--font-mono);
+    font-family: inherit;
     font-size: 11px;
     font-weight: bold;
     text-transform: uppercase;
@@ -933,7 +933,7 @@ button:focus-visible {
 }
 
 .toc-admin-link .admin-link {
-    font-family: var(--font-mono);
+    font-family: inherit;
     font-size: var(--font-size-xs);
     font-weight: bold;
     text-transform: uppercase;
@@ -973,7 +973,7 @@ button:focus-visible {
 }
 
 .toc-section-title {
-    font-family: var(--font-mono);
+    font-family: inherit;
     font-size: var(--font-size-xs);
     font-weight: bold;
     text-transform: uppercase;
