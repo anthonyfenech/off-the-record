@@ -47,7 +47,12 @@ if (container) {
 if (window.location.hash) {
     const target = document.querySelector(window.location.hash);
     if (target) {
-        setTimeout(() => target.scrollIntoView(), 100);
+        setTimeout(() => {
+            const header = document.getElementById('header');
+            const headerHeight = header ? header.offsetHeight + 20 : 90;
+            const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        }, 100);
     }
 }
 
@@ -66,7 +71,8 @@ function updateNav() {
 function scrollToChapter(index) {
     if (index >= 0 && index < totalChapters) {
         currentChapter = index;
-        const headerHeight = document.getElementById('header').offsetHeight + 15;
+        const header = document.getElementById('header');
+        const headerHeight = header ? header.offsetHeight + 20 : 90;
         const targetTop = chapters[index].getBoundingClientRect().top + window.pageYOffset - headerHeight;
         window.scrollTo({ top: targetTop, behavior: 'smooth' });
         updateNav();
