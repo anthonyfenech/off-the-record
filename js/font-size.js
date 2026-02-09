@@ -15,13 +15,13 @@ class FontSizeManager {
 
     loadSize() {
         // Load saved preference from localStorage
-        const saved = localStorage.getItem('fontSize');
-        // Default to medium if no preference saved
-        return saved || 'medium';
+        const saved = localStorage.getItem('reader_fontSize');
+        // Default to small if no preference saved
+        return saved || 'small';
     }
 
     saveSize(size) {
-        localStorage.setItem('fontSize', size);
+        localStorage.setItem('reader_fontSize', size);
     }
 
     changeSize(size) {
@@ -112,7 +112,7 @@ document.addEventListener('keydown', (e) => {
             fontSizeManager.decreaseFontSize();
         } else if (e.key === '0') {
             e.preventDefault();
-            fontSizeManager.changeSize('medium');
+            fontSizeManager.changeSize('small');
         }
     }
 });

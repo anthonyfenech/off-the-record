@@ -22,7 +22,7 @@ body {
 
 .chapter-body {
     font-family: var(--font-serif);
-    font-size: 16px;
+    font-size: var(--font-size-reader);
     line-height: 1.6;
     color: var(--color-text-primary);
     text-align: left;

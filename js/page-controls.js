@@ -97,7 +97,7 @@
         }
 
         function initTextSize() {
-            var savedSize = localStorage.getItem(textSizeKey) || 'medium';
+            var savedSize = localStorage.getItem(textSizeKey) || 'small';
             setTextSize(savedSize);
         }
 

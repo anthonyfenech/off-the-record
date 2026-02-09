@@ -67,6 +67,65 @@
         /* Hide menu and theme toggle on home page only */
         .home-page .menu-btn,
         .home-page .theme-toggle { display: none; }
+
+        /* === PARAGRAPH FORMATTING === */
+        .chapter-body p {
+            text-indent: 0.5in !important;
+            text-align: justify !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.6;
+        }
+
+        .chapter-body p.has-dateline {
+            text-indent: 0 !important;
+            margin-top: 1em !important;
+        }
+
+        .chapter-body p:empty {
+            height: 1em;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .chapter-body p:first-child {
+            text-indent: 0 !important;
+        }
+
+        .chapter-body .dateline {
+            font-weight: 500;
+        }
+
+        /* Special formatting - preserve existing */
+        .chapter-body p.scene-break {
+            text-align: center !important;
+            text-indent: 0 !important;
+            margin: 1.5em 0 !important;
+        }
+
+        .chapter-body p.signature {
+            text-align: right !important;
+            text-indent: 0 !important;
+            margin-top: 1.5em !important;
+        }
+
+        .chapter-body p.flashback-header,
+        .chapter-body p.headline-block {
+            text-indent: 0 !important;
+        }
+
+        .chapter-body .block-quote p {
+            text-indent: 0 !important;
+            margin-left: 2em !important;
+        }
+
+        /* Mobile: smaller indent, left-aligned for readability */
+        @media (max-width: 600px) {
+            .chapter-body p {
+                text-indent: 24px !important;
+                text-align: left !important;
+            }
+        }
     </style>
 </head>
 <body class="home-page">
