@@ -54,9 +54,6 @@ class Navigation {
             this.closeTOC();
         });
 
-        // Swipe-to-close gesture on sidebar
-        this.setupSidebarSwipeClose();
-
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
 
@@ -809,26 +806,6 @@ class Navigation {
                 this.closeTOC();
                 break;
         }
-    }
-
-    // Swipe-to-close gesture on sidebar
-    setupSidebarSwipeClose() {
-        let sidebarTouchStartX = 0;
-
-        this.tocSidebar.addEventListener('touchstart', (e) => {
-            sidebarTouchStartX = e.touches[0].clientX;
-        }, { passive: true });
-
-        this.tocSidebar.addEventListener('touchmove', (e) => {
-            const currentX = e.touches[0].clientX;
-            const diffX = sidebarTouchStartX - currentX;
-
-            // If swiped left more than 60px, close sidebar
-            if (diffX > 60) {
-                e.preventDefault();
-                this.closeTOC();
-            }
-        }, { passive: false });
     }
 
     // Swipe and tap gestures for mobile
