@@ -112,6 +112,14 @@
             font-style: italic;
         }
 
+        .library-count {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: 16px;
+            letter-spacing: 0.05em;
+        }
+
         /* Search Form */
         .library-search {
             margin-bottom: 40px;
@@ -332,6 +340,7 @@
         <div class="library-header">
             <h1 class="library-title">Search Full Fenech Library</h1>
             <p class="library-subtitle">Documents from 15 years on the Detroit Tigers beat</p>
+            <p class="library-count" id="libraryCount"></p>
         </div>
 
         <div class="library-search">
@@ -591,6 +600,178 @@
             link.textContent = chapter.navTitle || chapter.title;
             return link;
         }
+    </script>
+
+    <!-- Library Search -->
+    <script>
+    (function() {
+        let libraryData = [];
+        let currentResults = [];
+        let currentPage = 1;
+        const resultsPerPage = 10;
+
+        // DOM elements
+        const searchInput = document.getElementById('librarySearchInput');
+        const searchBtn = document.getElementById('librarySearchBtn');
+        const resultsSection = document.getElementById('libraryResults');
+        const resultsList = document.getElementById('resultsList');
+        const pagination = document.getElementById('libraryPagination');
+        const resultsStart = document.getElementById('resultsStart');
+        const resultsEnd = document.getElementById('resultsEnd');
+        const resultsTotal = document.getElementById('resultsTotal');
+        const libraryCount = document.getElementById('libraryCount');
+
+        // Load library data
+        fetch('./library-data.json')
+            .then(res => res.json())
+            .then(data => {
+                libraryData = data;
+                libraryCount.textContent = data.length.toLocaleString() + ' DOCUMENTS IN THE LIBRARY';
+            })
+            .catch(err => {
+                console.error('Failed to load library data:', err);
+                libraryCount.textContent = 'Error loading library';
+            });
+
+        // Search handler
+        function performSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            if (!query) return;
+
+            currentResults = libraryData.filter(record => {
+                const titleMatch = record.title.toLowerCase().includes(query);
+                const textMatch = record.text.toLowerCase().includes(query);
+                return titleMatch || textMatch;
+            });
+
+            currentPage = 1;
+            displayResults(query);
+        }
+
+        // Display results
+        function displayResults(query) {
+            const total = currentResults.length;
+            const start = (currentPage - 1) * resultsPerPage;
+            const end = Math.min(start + resultsPerPage, total);
+            const pageResults = currentResults.slice(start, end);
+
+            resultsStart.textContent = total > 0 ? start + 1 : 0;
+            resultsEnd.textContent = end;
+            resultsTotal.textContent = total.toLocaleString();
+
+            resultsList.innerHTML = '';
+
+            if (total === 0) {
+                resultsList.innerHTML = '<p style="color: var(--color-text-secondary); padding: 20px 0;">No results found.</p>';
+            } else {
+                pageResults.forEach(record => {
+                    const item = document.createElement('div');
+                    item.className = 'result-item';
+
+                    const title = document.createElement('p');
+                    title.className = 'result-title';
+                    const titleLink = document.createElement('a');
+                    titleLink.href = record.url || '#';
+                    titleLink.textContent = record.title;
+                    title.appendChild(titleLink);
+
+                    const meta = document.createElement('span');
+                    meta.className = 'result-dataset';
+                    meta.textContent = ' - ' + record.dataset + ' - ' + formatDate(record.date);
+                    title.appendChild(meta);
+
+                    const preview = document.createElement('p');
+                    preview.className = 'result-preview';
+                    preview.innerHTML = highlightText(record.text, query);
+
+                    item.appendChild(title);
+                    item.appendChild(preview);
+                    resultsList.appendChild(item);
+                });
+            }
+
+            renderPagination(total);
+            resultsSection.classList.add('visible');
+        }
+
+        // Highlight search term
+        function highlightText(text, query) {
+            const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp('(' + escaped + ')', 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        // Format date
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // Render pagination
+        function renderPagination(total) {
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(total / resultsPerPage);
+            if (totalPages <= 1) return;
+
+            const maxVisible = 5;
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+            if (endPage - startPage < maxVisible - 1) {
+                startPage = Math.max(1, endPage - maxVisible + 1);
+            }
+
+            // First page
+            if (startPage > 1) {
+                pagination.appendChild(createPageBtn(1));
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.color = 'var(--color-text-secondary)';
+                    pagination.appendChild(ellipsis);
+                }
+            }
+
+            // Page numbers
+            for (let i = startPage; i <= endPage; i++) {
+                pagination.appendChild(createPageBtn(i));
+            }
+
+            // Last page
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.color = 'var(--color-text-secondary)';
+                    pagination.appendChild(ellipsis);
+                }
+                pagination.appendChild(createPageBtn(totalPages));
+            }
+        }
+
+        function createPageBtn(page) {
+            const btn = document.createElement('button');
+            btn.className = 'page-link' + (page === currentPage ? ' active' : '');
+            btn.textContent = page;
+            btn.addEventListener('click', () => {
+                if (page !== currentPage) {
+                    currentPage = page;
+                    displayResults(searchInput.value.trim().toLowerCase());
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            return btn;
+        }
+
+        // Event listeners
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+    })();
     </script>
 </body>
 </html>
