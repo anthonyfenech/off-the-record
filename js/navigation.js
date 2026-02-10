@@ -4,7 +4,8 @@ import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, g
 import { reader } from './reader.js';
 import { isChapterComplete } from './storage.js';
 import { photoGallery } from './photoGallery.js';
-import { getAllGalleries } from '../data/photos.js';
+// Stub - data/photos.js removed
+const getAllGalleries = () => [];
 import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
 import { readingModeManager } from './reading-mode.js';

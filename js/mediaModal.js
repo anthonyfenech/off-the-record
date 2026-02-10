@@ -1,7 +1,8 @@
 // MediaModal - Displays media content in a modal overlay
 // Handles photos, videos, audio, documents, and other inline media
 
-import { getMediaById } from '../data/media.js';
+// Stub - data/media.js removed
+const getMediaById = () => null;
 
 // Articles data cache
 let articlesCache = null;

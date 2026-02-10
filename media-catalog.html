@@ -995,13 +995,14 @@
     <div class="notification" id="notification"></div>
 
     <script type="module">
-        import { MEDIA_CONTENT } from './data/media.js';
+        // MEDIA_CONTENT removed - data/media.js deleted
+        const MEDIA_CONTENT = {};
         import { CHAPTERS } from './data/chapters.js';
 
         // Chapter titles for lookups
         const chapterTitles = CHAPTERS.map(ch => ch.title);
 
-        // Populate catalog table from media.js
+        // Populate catalog table (empty - media.js removed)
         const catalogBody = document.getElementById('catalogBody');
 
         // Check if media is used in any chapter

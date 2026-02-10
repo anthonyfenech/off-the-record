@@ -61,8 +61,6 @@ const STATIC_ASSETS = [
     './js/binge-analytics.min.js',
     './js/photos-init.min.js',
     './data/chapters.js',
-    './data/media.js',
-    './data/photos.js',
     './prompts/prompt-styles.min.css',
     './prompts/prompt-system.min.js',
     './assets/icons/icon-192.png',

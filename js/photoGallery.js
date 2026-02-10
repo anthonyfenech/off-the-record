@@ -1,7 +1,12 @@
 // PhotoGallery - Photo gallery viewer with navigation
 // Handles thumbnail grid and full-screen photo viewing with swipe/keyboard navigation
 
-import { getGalleryById, getPhotoById, getNextPhoto, getPreviousPhoto, getPhotoIndex } from '../data/photos.js';
+// Stubs - data/photos.js removed
+const getGalleryById = () => null;
+const getPhotoById = () => null;
+const getNextPhoto = () => null;
+const getPreviousPhoto = () => null;
+const getPhotoIndex = () => -1;
 
 class PhotoGallery {
     constructor() {
