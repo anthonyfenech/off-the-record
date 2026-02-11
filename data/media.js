@@ -12,6 +12,7 @@ const MEDIA_DATA = {
 
   'winter-meetings-12-7-14': {
     type: 'photo',
+    emoji: '📷',
     title: 'Winter Meetings 2014',
     src: 'assets/04-scandal/12-7-14 winter meetings.jpg',
     date: '2014-12-07',
@@ -20,6 +21,7 @@ const MEDIA_DATA = {
 
   'anthony-fenech-moron': {
     type: 'photo',
+    emoji: '📷',
     title: 'Internet Trolling Screenshot',
     src: 'assets/04-scandal/anthony-fenech-moron.jpg',
     date: '2014-01-01',
@@ -28,6 +30,7 @@ const MEDIA_DATA = {
 
   'dui-report': {
     type: 'photo',
+    emoji: '📷',
     title: 'DUI Report Document',
     src: 'assets/04-scandal/dui-report.jpg',
     date: '2010-01-01',
@@ -36,6 +39,7 @@ const MEDIA_DATA = {
 
   'ford-taurus': {
     type: 'photo',
+    emoji: '📷',
     title: 'Sold the Taurus',
     src: 'assets/04-scandal/sold-taurus-2015-01-31.jpg',
     date: '2015-01-31',
@@ -44,6 +48,7 @@ const MEDIA_DATA = {
 
   'sold-taurus-webp': {
     type: 'photo',
+    emoji: '📷',
     title: 'Sold the Taurus (Screenshot)',
     src: 'assets/audio-staging/1-31-2015-sold-taurus.webp',
     date: '2015-01-31',
@@ -52,6 +57,7 @@ const MEDIA_DATA = {
 
   'hr-derby-arizona-2011': {
     type: 'photo',
+    emoji: '📷',
     title: 'Home Run Derby Arizona 2011',
     src: 'assets/audio-staging/hr-derby-in-arizona-2011.webp',
     date: '2011-07-01',
@@ -64,6 +70,7 @@ const MEDIA_DATA = {
 
   'first-on-tv': {
     type: 'video',
+    emoji: '🎬',
     title: 'First TV Appearance',
     src: 'assets/05-rookie-year/FIRST ON TV.MOV.mov',
     date: '2015-02-26',
@@ -72,6 +79,7 @@ const MEDIA_DATA = {
 
   'anthony-bass-interview': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Anthony Bass Interview',
     src: 'assets/audio-staging/5-6-14-anthony-bass-funny-at-4.42-pm.mp3',
     date: '2014-05-06',
@@ -80,6 +88,7 @@ const MEDIA_DATA = {
 
   'verlander-mlb-net-day': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Verlander MLB Network Day',
     src: 'assets/audio-staging/2-25-15-verlander-mlb-net-day-at-12.54-pm.mp3',
     date: '2015-02-25',
@@ -88,6 +97,7 @@ const MEDIA_DATA = {
 
   'buster-olney-email': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Buster Olney Email Discussion',
     src: 'assets/audio-staging/3-3-15-buster-olney-e-mail.mp3',
     date: '2015-03-03',
@@ -96,6 +106,7 @@ const MEDIA_DATA = {
 
   'leyland-holding-court': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Jim Leyland Holding Court',
     src: 'assets/audio-staging/3-18-15-leyland-holding-court-at-3.41-pm.mp3',
     date: '2015-03-18',
@@ -104,6 +115,7 @@ const MEDIA_DATA = {
 
   'first-mlb-network-spring': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'First MLB Network Appearance',
     src: 'assets/audio-staging/first-mlb-network-spring-2015.webp',
     date: '2015-02-01',
@@ -112,6 +124,7 @@ const MEDIA_DATA = {
 
   'playing-basketball-feb-2015': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Playing Basketball - Spring Training Recording',
     src: 'assets/audio-staging/2-28-15-playing-basketball-at-7.59-am.mp3',
     date: '2015-02-28',
@@ -120,6 +133,7 @@ const MEDIA_DATA = {
 
   'tigers-2015-season-tickets': {
     type: 'document',
+    emoji: '📄',
     title: 'Tigers 2015 Season Ticket Benefits Package',
     src: 'assets/audio-staging/tigers-2015-season-ticket-benefits.pdf',
     date: '2015-01-01',
@@ -128,6 +142,7 @@ const MEDIA_DATA = {
 
   'first-year-plan': {
     type: 'document',
+    emoji: '📄',
     title: 'Anthony Fenech First Year Plan',
     src: 'assets/audio-staging/anthony-fenech-b-globefirst-year-plan.pdf',
     date: '2015-01-01',
@@ -140,6 +155,7 @@ const MEDIA_DATA = {
 
   'price-opening-day-starter': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'David Price Named Opening Day Starter',
     src: 'assets/audio-staging/3-20-15-d-price-opening-day-starter-at-11.09-am.mp3',
     date: '2015-03-20',
@@ -148,6 +164,7 @@ const MEDIA_DATA = {
 
   'shane-greene-interview': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Shane Greene Amazing Interview',
     src: 'assets/audio-staging/3-28-15-shane-greene-amazing-interview-tigers-post-at-3.03-pm.mp3',
     date: '2015-03-28',
@@ -156,6 +173,7 @@ const MEDIA_DATA = {
 
   'price-opening-day-transcript': {
     type: 'document',
+    emoji: '📄',
     title: 'David Price Named Opening Day Starter - Transcript',
     src: 'assets/audio-staging/3-20-15-d-price-opening-day-starter-at-11-09-am.pdf',
     date: '2015-03-20',
@@ -168,6 +186,7 @@ const MEDIA_DATA = {
 
   'foul-ball-fox-commentary': {
     type: 'video',
+    emoji: '🎬',
     title: 'Foul Ball Fox Commentary',
     src: 'assets/07-midseason/foul-ball-fox-commentary.mp4',
     date: '2015-07-01',
@@ -176,6 +195,7 @@ const MEDIA_DATA = {
 
   'jeff-moss-prank-call': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Howard Stern Prank Call',
     src: 'assets/07-midseason/howard-stern-prank-call.mp3',
     date: '2015-07-01',
@@ -184,6 +204,7 @@ const MEDIA_DATA = {
 
   'laptop-busted': {
     type: 'photo',
+    emoji: '📷',
     title: 'Busted Laptop',
     src: 'assets/07-midseason/laptop-busted.jpg',
     date: '2015-07-01',
@@ -192,6 +213,7 @@ const MEDIA_DATA = {
 
   'sportscenter-studio': {
     type: 'photo',
+    emoji: '📷',
     title: 'SportsCenter Appearance',
     src: 'assets/07-midseason/sportscenter-7-17-15.jpg',
     date: '2015-07-17',
@@ -200,6 +222,7 @@ const MEDIA_DATA = {
 
   'brad-love-these-questions': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Brad Ausmus - Love These Questions',
     src: 'assets/audio-staging/5-20-15-brad-post-love-these-questions-at-5.22-pm.mp3',
     date: '2015-05-20',
@@ -208,6 +231,7 @@ const MEDIA_DATA = {
 
   'tomosovich-fs1': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'FS1 Appearance with Tomosovich',
     src: 'assets/audio-staging/7-11-15-tomosovich-fs1.webp',
     date: '2015-07-11',
@@ -216,6 +240,7 @@ const MEDIA_DATA = {
 
   'verlander-2015-hr-log': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'Verlander 2015 Home Run Log',
     src: 'assets/audio-staging/verlander-2015-hr-log.webp',
     date: '2015-07-01',
@@ -224,6 +249,7 @@ const MEDIA_DATA = {
 
   'bp-hr-derby-2015': {
     type: 'photo',
+    emoji: '📷',
     title: 'All-Star Break - Home Run Derby 2015',
     src: 'assets/audio-staging/2015-bp-hr-derby.webp',
     date: '2015-07-13',
@@ -232,6 +258,7 @@ const MEDIA_DATA = {
 
   'talkin-tigers-podcast': {
     type: 'photo',
+    emoji: '📷',
     title: 'Talkin Tigers Podcast with Drew',
     src: 'assets/audio-staging/talkin-tigers-me-and-drew.webp',
     date: '2015-07-01',
@@ -244,6 +271,7 @@ const MEDIA_DATA = {
 
   'dombrowski-extension': {
     type: 'photo',
+    emoji: '📷',
     title: 'Dombrowski Extension News',
     src: 'assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.jpg',
     date: '2015-07-01',
@@ -252,6 +280,7 @@ const MEDIA_DATA = {
 
   'email-mozeliak': {
     type: 'photo',
+    emoji: '📷',
     title: 'Email to Mozeliak',
     src: 'assets/08-trade-deadline/email-mozeliak.jpg',
     date: '2015-07-01',
@@ -260,6 +289,7 @@ const MEDIA_DATA = {
 
   'katie-strang-2016': {
     type: 'video',
+    emoji: '🎬',
     title: 'Katie Strang Interview',
     src: 'assets/08-trade-deadline/katie-strang-2016-04-16-web.mp4',
     date: '2016-04-16',
@@ -268,6 +298,7 @@ const MEDIA_DATA = {
 
   'dave-exit-interview': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Dave Dombrowski Exit Interview',
     src: 'assets/audio-staging/8-5-15-dave-exit-interview-in-underwear-at-2.53-pm.mp3',
     date: '2015-08-05',
@@ -276,6 +307,7 @@ const MEDIA_DATA = {
 
   'brad-post-norris-nick-victor': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Brad Post - Norris, Nick, Victor',
     src: 'assets/audio-staging/8-20-15-brad-post-norris-nick-victor-messing-at-12.33-am.mp3',
     date: '2015-08-20',
@@ -284,6 +316,7 @@ const MEDIA_DATA = {
 
   'victor-go-ask-manager': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Victor Martinez - Go Ask the Manager',
     src: 'assets/audio-staging/8-26-15-victor-go-ask-the-manager-at-3.46-pm.mp3',
     date: '2015-08-26',
@@ -292,6 +325,7 @@ const MEDIA_DATA = {
 
   'dombrowski-extension-paper': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'Dombrowski Extension Paper',
     src: 'assets/audio-staging/8-4-15-dombrowski-extension-paper.webp',
     date: '2015-08-04',
@@ -300,6 +334,7 @@ const MEDIA_DATA = {
 
   'brad-post-mccann-rajai': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Brad Ausmus Post-Game - McCann and Rajai Funny Moment',
     src: 'assets/audio-staging/9-8-15-brad-post-mccann-rajai-funny-at-11-37-pm.mp3',
     date: '2015-09-08',
@@ -308,6 +343,7 @@ const MEDIA_DATA = {
 
   'katie-strang-video-raw': {
     type: 'video',
+    emoji: '🎬',
     title: 'Katie Strang Interview (Raw Video)',
     src: 'assets/audio-staging/2016-04-16-12-29-03-katie-strang-img-7050.mp4',
     date: '2016-04-16',
@@ -320,6 +356,7 @@ const MEDIA_DATA = {
 
   'photo-2015-10-30': {
     type: 'photo',
+    emoji: '📷',
     title: 'October 30, 2015',
     src: 'assets/09-fire-drill/2015:10:30 5-11-25 PM.JPG',
     date: '2015-10-30',
@@ -328,6 +365,7 @@ const MEDIA_DATA = {
 
   'airplane-announcement-2015': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Airplane Announcement Recording',
     src: 'assets/audio-staging/11-20-15-airplane-announcement.m4a',
     date: '2015-11-20',
@@ -336,6 +374,7 @@ const MEDIA_DATA = {
 
   'brad-post-verlander-sept': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Brad Ausmus Post-Game - Verlander Discussion',
     src: 'assets/audio-staging/9-28-15-brad-post-verlander-at-11.20-pm.mp3',
     date: '2015-09-28',
@@ -344,6 +383,7 @@ const MEDIA_DATA = {
 
   'mlb-network-november-2015': {
     type: 'photo',
+    emoji: '📷',
     title: 'MLB Network Appearance - November 2015',
     src: 'assets/audio-staging/mlb-network-november-2015.webp',
     date: '2015-11-01',
@@ -356,6 +396,7 @@ const MEDIA_DATA = {
 
   'victor-barking-dog': {
     type: 'photo',
+    emoji: '📷',
     title: 'Victor Barking Dog 2017',
     src: 'assets/10-spring-training/VICTOR BARKING DOG 2017.png',
     date: '2017-03-01',
@@ -364,6 +405,7 @@ const MEDIA_DATA = {
 
   'lakeland-bbq': {
     type: 'photo',
+    emoji: '📷',
     title: 'Lakeland BBQ',
     src: 'assets/10-spring-training/lakeland-bbq.png',
     date: '2016-03-01',
@@ -372,6 +414,7 @@ const MEDIA_DATA = {
 
   'verlander-spring-2016': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Verlander Spring Training 2016',
     src: 'assets/audio-staging/2-27-16-verlander.m4a',
     date: '2016-02-27',
@@ -380,6 +423,7 @@ const MEDIA_DATA = {
 
   'spring-training-roster-2016': {
     type: 'screenshot',
+    emoji: '📷',
     title: '2016 Spring Training Roster',
     src: 'assets/audio-staging/2016-spring-trainign-roster.webp',
     date: '2016-02-01',
@@ -392,6 +436,7 @@ const MEDIA_DATA = {
 
   'harbaugh-likes-me': {
     type: 'photo',
+    emoji: '📷',
     title: 'Harbaugh Likes Me',
     src: 'assets/11-hot-seat/6-15-16 harbaugh likes me.jpg',
     date: '2016-06-15',
@@ -400,6 +445,7 @@ const MEDIA_DATA = {
 
   'cabreras-kicks': {
     type: 'photo',
+    emoji: '📷',
     title: "Cabrera's Kicks",
     src: "assets/11-hot-seat/7-12-16 cabrera's kicks.jpg",
     date: '2016-07-12',
@@ -408,6 +454,7 @@ const MEDIA_DATA = {
 
   'harbaugh-watch-chicago': {
     type: 'photo',
+    emoji: '📷',
     title: 'Stalking Harbaugh in Chicago',
     src: 'assets/11-hot-seat/7-25-16 stayed in chi to stalk harbaugh.jpg',
     date: '2016-07-25',
@@ -416,6 +463,7 @@ const MEDIA_DATA = {
 
   'high-heat-hot-seat': {
     type: 'photo',
+    emoji: '📷',
     title: 'High Heat Hot Seat',
     src: 'assets/11-hot-seat/HIGH HEAT HOT SEAT.png',
     date: '2016-07-01',
@@ -424,6 +472,7 @@ const MEDIA_DATA = {
 
   'max-after-20': {
     type: 'photo',
+    emoji: '📷',
     title: 'Max After 20 Strikeouts',
     src: 'assets/11-hot-seat/max-after-20.jpg',
     date: '2016-05-11',
@@ -432,6 +481,7 @@ const MEDIA_DATA = {
 
   'espn-sportscenter-2016': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'ESPN SportsCenter 2016',
     src: 'assets/audio-staging/espn-sportscenter-2016-dead-link.webp',
     date: '2016-04-01',
@@ -440,6 +490,7 @@ const MEDIA_DATA = {
 
   'mlb-network-nats-park': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'MLB Network at Nationals Park',
     src: 'assets/audio-staging/mlb-network-nats-park-may-2016.webp',
     date: '2016-05-01',
@@ -448,6 +499,7 @@ const MEDIA_DATA = {
 
   'bp-hr-derby-2016': {
     type: 'photo',
+    emoji: '📷',
     title: 'All-Star Break - Home Run Derby 2016',
     src: 'assets/audio-staging/2016-bp-hr-derby.webp',
     date: '2016-07-11',
@@ -456,6 +508,7 @@ const MEDIA_DATA = {
 
   'bp-hr-derby-2016-alt': {
     type: 'photo',
+    emoji: '📷',
     title: 'All-Star Break - Home Run Derby 2016 (Alternate)',
     src: 'assets/audio-staging/2016-bp-hr-derby-2.webp',
     date: '2016-07-11',
@@ -464,6 +517,7 @@ const MEDIA_DATA = {
 
   'mlb-net-high-heat': {
     type: 'photo',
+    emoji: '📷',
     title: 'MLB Network High Heat Appearance',
     src: 'assets/audio-staging/undated-mlb-net-high-heat.webp',
     date: '2016-07-01',
@@ -476,6 +530,7 @@ const MEDIA_DATA = {
 
   'ending-in-atl': {
     type: 'photo',
+    emoji: '📷',
     title: 'October 2, 2016 - Ending in Atlanta',
     src: 'assets/12-pennant-race/10-2-16 ending in atl.jpg',
     date: '2016-10-02',
@@ -484,6 +539,7 @@ const MEDIA_DATA = {
 
   'tale-of-tape': {
     type: 'photo',
+    emoji: '📷',
     title: 'Verlander Tale of the Tape',
     src: 'assets/26-unethical/12-pennant-race-verlander-tale-of-tape.jpg',
     date: '2016-10-01',
@@ -496,6 +552,7 @@ const MEDIA_DATA = {
 
   'photo-2016-10-26': {
     type: 'photo',
+    emoji: '📷',
     title: 'October 26, 2016',
     src: 'assets/13-wake-up-call/2016:10:26 7-42-27 PM.JPG',
     date: '2016-10-26',
@@ -504,6 +561,7 @@ const MEDIA_DATA = {
 
   'freep-forward': {
     type: 'pdf',
+    emoji: '📄',
     title: 'Freep Forward Document',
     src: 'assets/13-wake-up-call/FreepForward_org.pdf',
     date: '2016-01-01',
@@ -512,6 +570,7 @@ const MEDIA_DATA = {
 
   'cy-young-2016-bernie': {
     type: 'video',
+    emoji: '🎬',
     title: 'Cy Young 2016 Coverage',
     src: 'assets/13-wake-up-call/cy-young-2016-bernie.mp4',
     date: '2016-11-16',
@@ -520,6 +579,7 @@ const MEDIA_DATA = {
 
   'fenech-middle-finger': {
     type: 'photo',
+    emoji: '📷',
     title: 'Election Night - November 6, 2016',
     src: 'assets/13-wake-up-call/fenech middle finger 11-6-16.jpeg',
     date: '2016-11-06',
@@ -528,6 +588,7 @@ const MEDIA_DATA = {
 
   'tigers-2016-reflections': {
     type: 'document',
+    emoji: '📄',
     title: 'Tigers 2016 Season Reflections',
     src: 'assets/audio-staging/tigers-2016-reflections-inc-copy.pdf',
     date: '2016-10-01',
@@ -540,6 +601,7 @@ const MEDIA_DATA = {
 
   'ilitch-letter': {
     type: 'photo',
+    emoji: '📷',
     title: 'Ilitch Letter',
     src: 'assets/14-prime-time/ilitch-letter.jpeg',
     date: '2017-02-10',
@@ -548,6 +610,7 @@ const MEDIA_DATA = {
 
   'kc-heat-wave': {
     type: 'photo',
+    emoji: '📷',
     title: 'KC Heat Wave',
     src: 'assets/14-prime-time/kc-heat-wave.jpg',
     date: '2017-07-01',
@@ -556,6 +619,7 @@ const MEDIA_DATA = {
 
   'verlander-likes-waffles': {
     type: 'photo',
+    emoji: '📷',
     title: 'Verlander Likes Waffles',
     src: 'assets/14-prime-time/verlander likes waffles.PNG',
     date: '2017-01-01',
@@ -564,6 +628,7 @@ const MEDIA_DATA = {
 
   'brad-pre-may-2017': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Brad Ausmus Pre-Game - May 2017',
     src: 'assets/audio-staging/done-5-6-17-brad-pre-2-min-in-.m4a',
     date: '2017-05-06',
@@ -576,6 +641,7 @@ const MEDIA_DATA = {
 
   'avila-verlander-trade': {
     type: 'photo',
+    emoji: '📷',
     title: 'Avila Verlander Trade Press Conference',
     src: 'assets/16-summer-2017-ii/19-draft-day-al-avila-verlander-trade.jpg',
     date: '2017-08-31',
@@ -584,6 +650,7 @@ const MEDIA_DATA = {
 
   'ernie-harwell-talk': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Ernie Harwell Talk',
     src: 'assets/16-summer-2017-ii/ernie-harwell-talk.mp3',
     date: '2017-08-01',
@@ -592,6 +659,7 @@ const MEDIA_DATA = {
 
   'first-time-ever': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'First Time Ever - Verlander Trade Night',
     src: 'assets/16-summer-2017-ii/first-time-ever.mp3',
     date: '2017-08-31',
@@ -600,6 +668,7 @@ const MEDIA_DATA = {
 
   'kinsler-angel': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Kinsler Recording',
     src: 'assets/16-summer-2017-ii/kinsler-angel.mp3',
     date: '2017-07-01',
@@ -608,6 +677,7 @@ const MEDIA_DATA = {
 
   'cabrera-good-mood': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Miguel Cabrera in Good Mood',
     src: 'assets/audio-staging/OTR_audio_cabrera-good-mood_003.mp3',
     date: '2017-05-20',
@@ -616,6 +686,7 @@ const MEDIA_DATA = {
 
   'mlb-net-studio-feb-2017': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'MLB Network Studio February 2017',
     src: 'assets/audio-staging/mlb-net-in-studio-feb-2017.webp',
     date: '2017-02-01',
@@ -628,6 +699,7 @@ const MEDIA_DATA = {
 
   'photo-2018-02-07': {
     type: 'photo',
+    emoji: '📷',
     title: 'February 7, 2018',
     src: 'assets/17-world-series/2018:02:07 4-18-52 PM.JPG',
     date: '2018-02-07',
@@ -636,6 +708,7 @@ const MEDIA_DATA = {
 
   'kinsler-tv-winter': {
     type: 'photo',
+    emoji: '📷',
     title: 'Kinsler TV Winter',
     src: 'assets/17-world-series/kinsler-tv-winter.jpg',
     date: '2017-11-01',
@@ -644,6 +717,7 @@ const MEDIA_DATA = {
 
   'kinsler-team-usa': {
     type: 'photo',
+    emoji: '📷',
     title: 'Kinsler Team USA',
     src: 'assets/17-world-series/kinsler-tv-winter.jpg',
     date: '2017-03-01',
@@ -652,6 +726,7 @@ const MEDIA_DATA = {
 
   'tigers-season-recap-2017': {
     type: 'document',
+    emoji: '📄',
     title: '2017 Tigers Season Recap',
     src: 'assets/audio-staging/2017-tigers-season-recap-1002.pdf',
     date: '2017-10-02',
@@ -660,6 +735,7 @@ const MEDIA_DATA = {
 
   'tigers-column-oct-2': {
     type: 'document',
+    emoji: '📄',
     title: 'Tigers Column - October 2, 2017',
     src: 'assets/audio-staging/tigers-column-1002.pdf',
     date: '2017-10-02',
@@ -672,6 +748,7 @@ const MEDIA_DATA = {
 
   'chillen-right-before-2-21-18': {
     type: 'photo',
+    emoji: '📷',
     title: 'Chillen Right Before',
     src: 'assets/18-awards-season/2-21-18 we were chillen right before.jpg',
     date: '2018-02-21',
@@ -680,6 +757,7 @@ const MEDIA_DATA = {
 
   'apse-top-10': {
     type: 'photo',
+    emoji: '📷',
     title: 'APSE Top 10',
     src: 'assets/18-awards-season/APSE Top 10.jpg',
     date: '2018-06-01',
@@ -688,6 +766,7 @@ const MEDIA_DATA = {
 
   'peter-gammons-2016-02-29': {
     type: 'photo',
+    emoji: '📷',
     title: 'February 19, 2018',
     src: 'assets/18-awards-season/February 19 2018 at 13.47 PM.JPG',
     date: '2018-02-19',
@@ -696,6 +775,7 @@ const MEDIA_DATA = {
 
   'munchies-at-als': {
     type: 'photo',
+    emoji: '📷',
     title: 'Munchies at Als',
     src: 'assets/18-awards-season/munchies-at-als.jpg',
     date: '2018-02-01',
@@ -708,6 +788,7 @@ const MEDIA_DATA = {
 
   'tigers-stink-2018-photo': {
     type: 'photo',
+    emoji: '📷',
     title: 'July 12, 2018',
     src: 'assets/19-draft-day/2018:07:12 12-18-42 PM.JPG',
     date: '2018-07-12',
@@ -716,6 +797,7 @@ const MEDIA_DATA = {
 
   'foleys-signed-ball': {
     type: 'photo',
+    emoji: '📷',
     title: 'Signed Ball at Foleys',
     src: 'assets/19-draft-day/foleys-signed-ball.jpg',
     date: '2018-06-01',
@@ -728,6 +810,7 @@ const MEDIA_DATA = {
 
   'greatest-assignment-7-30-18': {
     type: 'photo',
+    emoji: '📷',
     title: 'Greatest Assignment Ever',
     src: 'assets/20-cooperstown/7-30-18 greatest assignment ever love you.jpg',
     date: '2018-07-30',
@@ -740,6 +823,7 @@ const MEDIA_DATA = {
 
   'verlander-injury-9-12-18': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Verlander Injury Recording',
     src: 'assets/21-burn-out/verlander-injury-9-12-18.mp3',
     date: '2018-09-12',
@@ -748,6 +832,7 @@ const MEDIA_DATA = {
 
   'gannett-survey-monkey': {
     type: 'video',
+    emoji: '🎬',
     title: 'Gannett Survey Monkey Video',
     src: 'assets/audio-staging/gannett-survey-monkey-1-7-17.mp4',
     date: '2017-01-07',
@@ -756,6 +841,7 @@ const MEDIA_DATA = {
 
   'gene-email-freep-beat': {
     type: 'document',
+    emoji: '📄',
     title: 'Gene Email - Freep Beat Assignment',
     src: 'assets/audio-staging/gene-e-mail-announcement-freep-beat.pdf',
     date: '2015-01-01',
@@ -768,6 +854,7 @@ const MEDIA_DATA = {
 
   'fantasy-camp': {
     type: 'photo',
+    emoji: '📷',
     title: 'Fantasy Camp Story',
     src: 'assets/22-viva-las-vegas/24-road-to-omaha-fantasy-camp-story.jpg',
     date: '2019-02-01',
@@ -776,6 +863,7 @@ const MEDIA_DATA = {
 
   'fantasy-camp-scrum': {
     type: 'video',
+    emoji: '🎬',
     title: 'Fantasy Camp Scrum',
     src: 'assets/22-viva-las-vegas/FANTASY CAMP SCRUM.mp4',
     date: '2019-02-01',
@@ -784,6 +872,7 @@ const MEDIA_DATA = {
 
   'zimmermann-tweet-vid': {
     type: 'video',
+    emoji: '🎬',
     title: 'Zimmermann Tweet Video',
     src: 'assets/22-viva-las-vegas/zimmermann tweet:vid.mov',
     date: '2019-02-01',
@@ -792,6 +881,7 @@ const MEDIA_DATA = {
 
   'tigers-business-dossier': {
     type: 'document',
+    emoji: '📄',
     title: 'Tigers Business Investigation Dossier',
     src: 'assets/audio-staging/anthony-fenech-tigers-business-dossier.pdf',
     date: '2020-08-13',
@@ -800,6 +890,7 @@ const MEDIA_DATA = {
 
   'fantasy-camp-paper': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'Fantasy Camp Newspaper Clipping',
     src: 'assets/audio-staging/fantasy-camp-paper-2-7-19.webp',
     date: '2019-02-07',
@@ -812,6 +903,7 @@ const MEDIA_DATA = {
 
   'photo-2019-04-24': {
     type: 'photo',
+    emoji: '📷',
     title: 'April 24, 2019',
     src: 'assets/23-globetrotting/2019:04:24 10-10-31 AM.JPG',
     date: '2019-04-24',
@@ -820,6 +912,7 @@ const MEDIA_DATA = {
 
   'april-4-2019': {
     type: 'photo',
+    emoji: '📷',
     title: 'April 4, 2019',
     src: 'assets/23-globetrotting/April 4 2019 at 12.24 PM.JPG',
     date: '2019-04-04',
@@ -828,6 +921,7 @@ const MEDIA_DATA = {
 
   'gammons-fisk-lede': {
     type: 'photo',
+    emoji: '📷',
     title: 'Gammons Fisk Lede',
     src: 'assets/23-globetrotting/gammons-fisk-lede.JPG',
     date: '2019-04-01',
@@ -836,6 +930,7 @@ const MEDIA_DATA = {
 
   'george-king-scorecard': {
     type: 'photo',
+    emoji: '📷',
     title: 'George King Scorecard',
     src: 'assets/23-globetrotting/george-king-scorecard.jpg',
     date: '2019-04-01',
@@ -844,6 +939,7 @@ const MEDIA_DATA = {
 
   'video-2020-10-12': {
     type: 'video',
+    emoji: '🎬',
     title: 'October 12, 2020',
     src: 'assets/23-globetrotting/2020:10:12 3-43-41 PM.mov',
     date: '2020-10-12',
@@ -856,6 +952,7 @@ const MEDIA_DATA = {
 
   'bregman-nah-false': {
     type: 'photo',
+    emoji: '📷',
     title: 'Bregman "Nah False" Tweet',
     src: 'assets/24-road-to-omaha/Bregman nah false tweet.png',
     date: '2019-07-01',
@@ -864,6 +961,7 @@ const MEDIA_DATA = {
 
   'july-2019': {
     type: 'photo',
+    emoji: '📷',
     title: 'July 31, 2019 - Angel Stadium',
     src: 'assets/24-road-to-omaha/july-31-2019-angel-stadium.jpg',
     date: '2019-07-31',
@@ -872,6 +970,7 @@ const MEDIA_DATA = {
 
   'mike-trade-deadline': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Mike Trade Deadline Recording',
     src: 'assets/24-road-to-omaha/mike trade deadline.mp3',
     date: '2019-07-31',
@@ -880,6 +979,7 @@ const MEDIA_DATA = {
 
   'fantasy-camp-2019': {
     type: 'document',
+    emoji: '📄',
     title: 'Fantasy Camp 2019',
     src: 'assets/audio-staging/fantasy-camp-page-2-7-19.pdf',
     date: '2019-02-07',
@@ -892,6 +992,7 @@ const MEDIA_DATA = {
 
   'verlander-blow-off-8-20-19': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Verlander Blow-Off Recording',
     src: 'assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
     date: '2019-08-20',
@@ -904,6 +1005,7 @@ const MEDIA_DATA = {
 
   'espn-bottomline': {
     type: 'photo',
+    emoji: '📷',
     title: 'ESPN Push Alert - Verlander Incident',
     src: 'assets/26-unethical/Verlander incident ESPN push alert.png',
     date: '2019-08-22',
@@ -912,6 +1014,7 @@ const MEDIA_DATA = {
 
   'messages-after-verlander': {
     type: 'photo',
+    emoji: '📷',
     title: 'Messages After Verlander Incident',
     src: 'assets/26-unethical/messages after verlander.JPG',
     date: '2019-08-22',
@@ -920,6 +1023,7 @@ const MEDIA_DATA = {
 
   'security-guards-clubhouse': {
     type: 'photo',
+    emoji: '📷',
     title: 'Security Guards at Clubhouse',
     src: 'assets/26-unethical/security guards clubhouse.JPG',
     date: '2019-08-22',
@@ -928,6 +1032,7 @@ const MEDIA_DATA = {
 
   'angels-luggage': {
     type: 'photo',
+    emoji: '📷',
     title: 'Angels Luggage',
     src: 'assets/26-unethical/unethical - angels luggages.JPG',
     date: '2019-08-22',
@@ -936,6 +1041,7 @@ const MEDIA_DATA = {
 
   'jack-daniels': {
     type: 'photo',
+    emoji: '📷',
     title: 'Jack Daniels After Incident',
     src: 'assets/26-unethical/unethical jack daniels.JPG',
     date: '2019-08-22',
@@ -944,6 +1050,7 @@ const MEDIA_DATA = {
 
   'union-background': {
     type: 'document',
+    emoji: '📄',
     title: 'Union Background Document',
     src: 'assets/audio-staging/union-background.pdf',
     date: '2019-01-01',
@@ -956,6 +1063,7 @@ const MEDIA_DATA = {
 
   'winter-meetings-12-10-19': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Winter Meetings 2019 Recording',
     src: 'assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
     date: '2019-12-10',
@@ -964,6 +1072,7 @@ const MEDIA_DATA = {
 
   'mccosky-verlander-trade-tweet': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'McCosky Verlander Trade Tweet',
     src: 'assets/audio-staging/mccosky-tweet-verlander-trade.webp',
     date: '2017-08-31',
@@ -972,6 +1081,7 @@ const MEDIA_DATA = {
 
   'bregman-nah-tweet': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'Alex Bregman NAH Tweet',
     src: 'assets/audio-staging/bregman-nah-false-tweet.webp',
     date: '2017-09-01',
@@ -980,6 +1090,7 @@ const MEDIA_DATA = {
 
   'mccosky-tweet-verlander-2': {
     type: 'screenshot',
+    emoji: '📷',
     title: 'McCosky Verlander Trade Tweet (Alternate)',
     src: 'assets/audio-staging/mccosky-tweet-verlander-trade-2.webp',
     date: '2017-08-31',
@@ -992,6 +1103,7 @@ const MEDIA_DATA = {
 
   'miguel-bp-covid': {
     type: 'video',
+    emoji: '🎬',
     title: 'Miguel Cabrera BP - COVID Era',
     src: 'assets/28-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
     date: '2020-07-01',
@@ -1000,6 +1112,7 @@ const MEDIA_DATA = {
 
   'internet-stalker-website': {
     type: 'photo',
+    emoji: '📷',
     title: 'Internet Stalker Website Suspended',
     src: 'assets/28-postscript/internet-stalker-website-suspended.png',
     date: '2020-01-01',
@@ -1008,6 +1121,7 @@ const MEDIA_DATA = {
 
   'scherzer-thank-you': {
     type: 'photo',
+    emoji: '📷',
     title: 'Scherzer Thank You',
     src: 'assets/28-postscript/scherzer-thank-you.png',
     date: '2020-01-01',
@@ -1016,6 +1130,7 @@ const MEDIA_DATA = {
 
   'where-is-anthony-fenech': {
     type: 'photo',
+    emoji: '📷',
     title: 'Where Is Anthony Fenech?',
     src: 'assets/28-postscript/where-is-anthony-fenech.png',
     date: '2020-01-01',
@@ -1024,6 +1139,7 @@ const MEDIA_DATA = {
 
   'cabrera-on-verlander-2019': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Cabrera on Verlander (2019)',
     src: 'assets/audio-staging/8-20-19-cabrera-on-verlander-at-11.44-pm-at-1144-pm.mp3',
     date: '2019-08-20',
@@ -1032,6 +1148,7 @@ const MEDIA_DATA = {
 
   'verlander-blow-off-2019': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Verlander Blow Off (2019)',
     src: 'assets/audio-staging/8-20-19-verlander-blow-off-at-5.02-pm-at-0502-pm.mp3',
     date: '2019-08-20',
@@ -1040,6 +1157,7 @@ const MEDIA_DATA = {
 
   'la-times-essay': {
     type: 'document',
+    emoji: '📄',
     title: 'LA Times Essay',
     src: 'assets/audio-staging/la-times-essay-10.pdf',
     date: '2019-10-01',
@@ -1048,6 +1166,7 @@ const MEDIA_DATA = {
 
   'things-i-will-remember-2019': {
     type: 'document',
+    emoji: '📄',
     title: 'Things I Will Remember 2019',
     src: 'assets/audio-staging/things-i-will-remember-2019.pdf',
     date: '2019-12-01',
@@ -1056,6 +1175,7 @@ const MEDIA_DATA = {
 
   'all-notebooks': {
     type: 'photo',
+    emoji: '📷',
     title: 'All Notebooks Collection',
     src: 'assets/audio-staging/all-notebooks.webp',
     date: '2020-01-01',
@@ -1064,6 +1184,7 @@ const MEDIA_DATA = {
 
   'freep-farewell': {
     type: 'document',
+    emoji: '📄',
     title: 'Freep Farewell Document',
     src: 'assets/audio-staging/freep-farewell.pdf',
     date: '2020-01-01',
@@ -1076,6 +1197,7 @@ const MEDIA_DATA = {
 
   'boras-clip': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Scott Boras Clip',
     src: 'assets/boras-clip-6-14-20.mp3',
     date: '2020-06-14',
@@ -1084,6 +1206,7 @@ const MEDIA_DATA = {
 
   'cabrera-on-verlander': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Cabrera on Verlander',
     src: 'assets/cabrera-on-verlander-8-20-19.mp3',
     date: '2019-08-20',
@@ -1092,6 +1215,7 @@ const MEDIA_DATA = {
 
   'verlander-blow-off-root': {
     type: 'audio',
+    emoji: '🎙️',
     title: 'Verlander Blow-Off (backup)',
     src: 'assets/verlander-blow-off-8-20-19.mp3',
     date: '2019-08-20',
@@ -1104,6 +1228,7 @@ const MEDIA_DATA = {
 
   'mention-screenshot-1': {
     type: 'photo',
+    emoji: '📷',
     title: 'Twitter Mention Screenshot 1',
     src: 'assets/mentions/Screen Shot 2020-05-03 at 5.18.20 PM.webp',
     date: '2020-05-03',
@@ -1112,6 +1237,7 @@ const MEDIA_DATA = {
 
   'mention-screenshot-2': {
     type: 'photo',
+    emoji: '📷',
     title: 'Twitter Mention Screenshot 2',
     src: 'assets/mentions/Screen Shot 2020-05-03 at 5.19.42 PM.webp',
     date: '2020-05-03',
@@ -1120,6 +1246,7 @@ const MEDIA_DATA = {
 
   'mention-screenshot-3': {
     type: 'photo',
+    emoji: '📷',
     title: 'Twitter Mention Screenshot 3',
     src: 'assets/mentions/Screen Shot 2020-05-03 at 5.20.19 PM.webp',
     date: '2020-05-03',
@@ -1128,6 +1255,7 @@ const MEDIA_DATA = {
 
   'mention-screenshot-4': {
     type: 'photo',
+    emoji: '📷',
     title: 'Twitter Mention Screenshot 4',
     src: 'assets/mentions/Screen Shot 2020-05-03 at 5.20.32 PM.webp',
     date: '2020-05-03',
@@ -1136,6 +1264,7 @@ const MEDIA_DATA = {
 
   'mention-screenshot-5': {
     type: 'photo',
+    emoji: '📷',
     title: 'Twitter Mention Screenshot 5',
     src: 'assets/mentions/Screen Shot 2020-05-03 at 5.21.07 PM.webp',
     date: '2020-05-03',
@@ -1148,6 +1277,7 @@ const MEDIA_DATA = {
 
   'joe-nathan-story': {
     type: 'link',
+    emoji: '🔗',
     title: 'Joe Nathan Story - Detroit Free Press',
     src: 'https://www.freep.com/story/sports/mlb/tigers/2015/02/17/joe-nathan-detroit-tigers/23556289/',
     date: '2015-02-17',
@@ -1157,6 +1287,7 @@ const MEDIA_DATA = {
 
   'crasnick-column': {
     type: 'link',
+    emoji: '🔗',
     title: 'Jerry Crasnick Column',
     src: 'https://www.espn.com/',
     date: '2015-07-01',
@@ -1166,6 +1297,7 @@ const MEDIA_DATA = {
 
   'verlander-diva-nypost': {
     type: 'link',
+    emoji: '🔗',
     title: 'Verlander Bars Reporter - NY Post',
     src: 'https://nypost.com/2019/08/22/justin-verlander-orders-astros-to-bar-detroit-reporter-over-grudge/',
     date: '2019-08-22',
@@ -1175,6 +1307,7 @@ const MEDIA_DATA = {
 
   'harkins-settlement-latimes': {
     type: 'link',
+    emoji: '🔗',
     title: 'Harkins Settlement - LA Times',
     src: 'https://www.latimes.com/',
     date: '2019-01-01',
@@ -1184,6 +1317,7 @@ const MEDIA_DATA = {
 
   'katzenstein-ringer': {
     type: 'link',
+    emoji: '🔗',
     title: 'Katzenstein - The Ringer',
     src: 'https://www.theringer.com/',
     date: '2019-01-01',
@@ -1193,6 +1327,7 @@ const MEDIA_DATA = {
 
   'sticky-stuff-si': {
     type: 'link',
+    emoji: '🔗',
     title: 'Sticky Stuff Investigation - Sports Illustrated',
     src: 'https://www.si.com/',
     date: '2021-06-01',
@@ -1202,6 +1337,7 @@ const MEDIA_DATA = {
 
   'verlander-poppy-freep': {
     type: 'link',
+    emoji: '🔗',
     title: 'Verlander Poppy Story - Free Press',
     src: 'https://www.freep.com/',
     date: '2017-05-01',
@@ -1211,6 +1347,7 @@ const MEDIA_DATA = {
 
   'k-rod-stats': {
     type: 'link',
+    emoji: '🔗',
     title: 'K-Rod Statistics',
     src: 'https://www.baseball-reference.com/',
     date: '2016-01-01',
@@ -1220,6 +1357,7 @@ const MEDIA_DATA = {
 
   'true-life-ball-writer': {
     type: 'link',
+    emoji: '🔗',
     title: 'True Life: Ball Writer',
     src: 'https://www.mtv.com/',
     date: '2015-01-01',
@@ -1229,6 +1367,7 @@ const MEDIA_DATA = {
 
   'verlander-kate-bingo': {
     type: 'photo',
+    emoji: '📷',
     title: 'Verlander Kate Upton Bingo',
     src: 'assets/14-prime-time/verlander likes waffles.PNG',
     date: '2017-01-01',
@@ -1237,6 +1376,7 @@ const MEDIA_DATA = {
 
   'verlander-snakes-prank': {
     type: 'photo',
+    emoji: '📷',
     title: 'Verlander Snakes Prank',
     src: 'assets/14-prime-time/verlander likes waffles.PNG',
     date: '2017-01-01',
@@ -1245,6 +1385,7 @@ const MEDIA_DATA = {
 
   'verlander-upton-dog-adoption': {
     type: 'photo',
+    emoji: '📷',
     title: 'Verlander Upton Dog Adoption',
     src: 'assets/14-prime-time/verlander likes waffles.PNG',
     date: '2017-01-01',
@@ -1253,6 +1394,7 @@ const MEDIA_DATA = {
 
   'verlander-victor-dugout': {
     type: 'photo',
+    emoji: '📷',
     title: 'Verlander Victor Dugout',
     src: 'assets/10-spring-training/VICTOR BARKING DOG 2017.png',
     date: '2017-03-01',

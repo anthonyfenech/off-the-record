@@ -1114,7 +1114,15 @@
                 const chapter = findChapterForMedia(id);
                 return {
                     id,
-                    icon: media.emoji || '📷',
+                    icon: media.emoji || ({
+                        photo: '📷', photo2: '📷', selfie: '📷',
+                        newspaper: '📰', newspaper2: '📰',
+                        link: '🔗', email: '✉️', text: '💬',
+                        video: '🎬', 'tv-local': '📺', 'tv-network': '📺',
+                        audio: '🎙️', radio: '🎙️', interview: '🎙️', mic: '🎙️',
+                        phone: '📞', record: '🎙️', tweet: '🐦',
+                        receipt: '🧾', pdf: '📄', document: '📄', screenshot: '📷', attachment: '📎'
+                    })[media.type] || '📷',
                     type: media.type,
                     src: media.src,
                     chapterNum: chapter.num,
