@@ -1,8 +1,14 @@
 // MediaModal - Displays media content in a modal overlay
 // Handles photos, videos, audio, documents, and other inline media
 
-// Stub - data/media.js removed
-const getMediaById = () => null;
+// Media data lookup - requires data/media.js to be loaded first
+// Falls back gracefully if MEDIA_DATA not available
+function getMediaById(id) {
+  if (typeof MEDIA_DATA !== 'undefined' && MEDIA_DATA[id]) {
+    return MEDIA_DATA[id];
+  }
+  return null;
+}
 
 // Articles data cache
 let articlesCache = null;

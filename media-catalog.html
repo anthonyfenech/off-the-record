@@ -994,9 +994,10 @@
     <!-- Notification Toast -->
     <div class="notification" id="notification"></div>
 
+    <script src="./data/media.js"></script>
     <script type="module">
-        // MEDIA_CONTENT removed - data/media.js deleted
-        const MEDIA_CONTENT = {};
+        // Use MEDIA_DATA from data/media.js
+        const MEDIA_CONTENT = typeof MEDIA_DATA !== 'undefined' ? MEDIA_DATA : {};
         import { CHAPTERS } from './data/chapters.js';
 
         // Chapter titles for lookups
