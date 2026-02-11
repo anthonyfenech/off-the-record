@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 142 media items
+ * Total: 145 media items
  */
 
 const MEDIA_DATA = {
@@ -145,6 +145,15 @@ const MEDIA_DATA = {
     emoji: '📄',
     title: 'Anthony Fenech First Year Plan',
     src: 'assets/audio-staging/anthony-fenech-b-globefirst-year-plan.pdf',
+    date: '2015-01-01',
+    chapter: 5
+  },
+
+  'd-price-notes-2015': {
+    type: 'document',
+    emoji: '📄',
+    title: 'David Price Notes 2015',
+    src: 'assets/audio-staging/D Price notes 2015.txt',
     date: '2015-01-01',
     chapter: 5
   },
@@ -635,6 +644,15 @@ const MEDIA_DATA = {
     chapter: 14
   },
 
+  'not-gonna-quote-me': {
+    type: 'document',
+    emoji: '📄',
+    title: 'Off-the-Record Quote Transcript',
+    src: "assets/audio-staging/you're not gonna quote me.txt",
+    date: '2017-01-01',
+    chapter: 14
+  },
+
   // ========================================
   // CHAPTER 16 - SUMMER 2017 II (VERLANDER TRADE)
   // ========================================
@@ -894,6 +912,15 @@ const MEDIA_DATA = {
     title: 'Fantasy Camp Newspaper Clipping',
     src: 'assets/audio-staging/fantasy-camp-paper-2-7-19.webp',
     date: '2019-02-07',
+    chapter: 22
+  },
+
+  'email-to-corporate': {
+    type: 'document',
+    emoji: '✉️',
+    title: 'Email to Gannett Corporate - Business Dossier',
+    src: 'assets/audio-staging/EMAIL TO CORPORATE.txt',
+    date: '2020-08-13',
     chapter: 22
   },
 
