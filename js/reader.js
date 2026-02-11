@@ -6,6 +6,7 @@ import { mediaModal } from './mediaModal.js';
 import { readingModeManager } from './reading-mode.js';
 import { CONFIG } from './config.js';
 import { transitions } from './transitions.js';
+import { imageLightbox } from './image-lightbox.js';
 
 class Reader {
     constructor() {
@@ -38,6 +39,9 @@ class Reader {
 
         // Initialize transitions for smooth chapter navigation
         transitions.init();
+
+        // Initialize image lightbox
+        imageLightbox.init();
 
         // Expose reader instance globally for other modules
         window.readerInstance = this;
@@ -268,6 +272,9 @@ class Reader {
                 window.removeEventListener('scroll', this.handleScroll);
                 window.addEventListener('scroll', this.handleScroll, { passive: true });
             }
+
+            // Bind lightbox to any inline images
+            imageLightbox.bindImages();
 
             // Dispatch event for other components
             window.dispatchEvent(new CustomEvent('chapterLoaded', {

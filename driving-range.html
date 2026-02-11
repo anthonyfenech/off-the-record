@@ -131,6 +131,27 @@
     </style>
 </head>
 <body>
+    <!-- Auth check -->
+    <script>
+        (function() {
+            var session = localStorage.getItem('otr_beta_session');
+            if (!session) {
+                window.location.replace('./');
+                return;
+            }
+            try {
+                var data = JSON.parse(session);
+                if (!data.authenticated || Date.now() > data.expires) {
+                    localStorage.removeItem('otr_beta_session');
+                    window.location.replace('./');
+                    return;
+                }
+            } catch (e) {
+                window.location.replace('./');
+                return;
+            }
+        })();
+    </script>
 
 <h1>PROMPT DRIVING RANGE</h1>
 
