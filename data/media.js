@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 134 media items
+ * Total: 142 media items
  */
 
 const MEDIA_DATA = {
@@ -39,6 +39,22 @@ const MEDIA_DATA = {
     title: 'Sold the Taurus',
     src: 'assets/04-scandal/sold-taurus-2015-01-31.jpg',
     date: '2015-01-31',
+    chapter: 4
+  },
+
+  'sold-taurus-webp': {
+    type: 'photo',
+    title: 'Sold the Taurus (Screenshot)',
+    src: 'assets/audio-staging/1-31-2015-sold-taurus.webp',
+    date: '2015-01-31',
+    chapter: 4
+  },
+
+  'hr-derby-arizona-2011': {
+    type: 'photo',
+    title: 'Home Run Derby Arizona 2011',
+    src: 'assets/audio-staging/hr-derby-in-arizona-2011.webp',
+    date: '2011-07-01',
     chapter: 4
   },
 
@@ -106,6 +122,14 @@ const MEDIA_DATA = {
     type: 'document',
     title: 'Tigers 2015 Season Ticket Benefits Package',
     src: 'assets/audio-staging/tigers-2015-season-ticket-benefits.pdf',
+    date: '2015-01-01',
+    chapter: 5
+  },
+
+  'first-year-plan': {
+    type: 'document',
+    title: 'Anthony Fenech First Year Plan',
+    src: 'assets/audio-staging/anthony-fenech-b-globefirst-year-plan.pdf',
     date: '2015-01-01',
     chapter: 5
   },
@@ -279,6 +303,14 @@ const MEDIA_DATA = {
     title: 'Brad Ausmus Post-Game - McCann and Rajai Funny Moment',
     src: 'assets/audio-staging/9-8-15-brad-post-mccann-rajai-funny-at-11-37-pm.mp3',
     date: '2015-09-08',
+    chapter: 8
+  },
+
+  'katie-strang-video-raw': {
+    type: 'video',
+    title: 'Katie Strang Interview (Raw Video)',
+    src: 'assets/audio-staging/2016-04-16-12-29-03-katie-strang-img-7050.mp4',
+    date: '2016-04-16',
     chapter: 8
   },
 
@@ -766,6 +798,14 @@ const MEDIA_DATA = {
     chapter: 22
   },
 
+  'fantasy-camp-paper': {
+    type: 'screenshot',
+    title: 'Fantasy Camp Newspaper Clipping',
+    src: 'assets/audio-staging/fantasy-camp-paper-2-7-19.webp',
+    date: '2019-02-07',
+    chapter: 22
+  },
+
   // ========================================
   // CHAPTER 23 - GLOBETROTTING
   // ========================================
@@ -938,6 +978,14 @@ const MEDIA_DATA = {
     chapter: 16
   },
 
+  'mccosky-tweet-verlander-2': {
+    type: 'screenshot',
+    title: 'McCosky Verlander Trade Tweet (Alternate)',
+    src: 'assets/audio-staging/mccosky-tweet-verlander-trade-2.webp',
+    date: '2017-08-31',
+    chapter: 16
+  },
+
   // ========================================
   // CHAPTER 28 - POSTSCRIPT
   // ========================================
@@ -1003,6 +1051,22 @@ const MEDIA_DATA = {
     title: 'Things I Will Remember 2019',
     src: 'assets/audio-staging/things-i-will-remember-2019.pdf',
     date: '2019-12-01',
+    chapter: 28
+  },
+
+  'all-notebooks': {
+    type: 'photo',
+    title: 'All Notebooks Collection',
+    src: 'assets/audio-staging/all-notebooks.webp',
+    date: '2020-01-01',
+    chapter: 28
+  },
+
+  'freep-farewell': {
+    type: 'document',
+    title: 'Freep Farewell Document',
+    src: 'assets/audio-staging/freep-farewell.pdf',
+    date: '2020-01-01',
     chapter: 28
   },
 
