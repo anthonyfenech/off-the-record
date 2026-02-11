@@ -737,7 +737,7 @@ const MEDIA_DATA = {
     type: 'audio',
     emoji: '🎙️',
     title: 'Miguel Cabrera in Good Mood',
-    src: 'assets/audio-staging/OTR_audio_cabrera-good-mood_003.mp3',
+    src: 'assets/audio-staging/audio_cabrera-good-mood_003.mp3',
     date: '2017-05-20',
     chapter: 16
   },
