@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 73 media items
+ * Total: 88 media items
  */
 
 const MEDIA_DATA = {
@@ -110,6 +110,14 @@ const MEDIA_DATA = {
     chapter: 8
   },
 
+  'katie-strang-2016': {
+    type: 'video',
+    title: 'Katie Strang Interview',
+    src: 'assets/08-trade-deadline/katie-strang-2016-04-16-web.mp4',
+    date: '2016-04-16',
+    chapter: 8
+  },
+
   // ========================================
   // CHAPTER 09 - FIRE DRILL
   // ========================================
@@ -190,6 +198,14 @@ const MEDIA_DATA = {
   // CHAPTER 12 - PENNANT RACE
   // ========================================
 
+  'ending-in-atl': {
+    type: 'photo',
+    title: 'October 2, 2016 - Ending in Atlanta',
+    src: 'assets/12-pennant-race/10-2-16 ending in atl.jpg',
+    date: '2016-10-02',
+    chapter: 12
+  },
+
   'tale-of-tape': {
     type: 'photo',
     title: 'Verlander Tale of the Tape',
@@ -223,6 +239,14 @@ const MEDIA_DATA = {
     title: 'Cy Young 2016 Coverage',
     src: 'assets/13-wake-up-call/cy-young-2016-bernie.mp4',
     date: '2016-11-16',
+    chapter: 13
+  },
+
+  'fenech-middle-finger': {
+    type: 'photo',
+    title: 'Election Night - November 6, 2016',
+    src: 'assets/13-wake-up-call/fenech middle finger 11-6-16.jpeg',
+    date: '2016-11-06',
     chapter: 13
   },
 
@@ -346,6 +370,14 @@ const MEDIA_DATA = {
     chapter: 18
   },
 
+  'munchies-at-als': {
+    type: 'photo',
+    title: 'Munchies at Als',
+    src: 'assets/18-awards-season/munchies-at-als.jpg',
+    date: '2018-02-01',
+    chapter: 18
+  },
+
   // ========================================
   // CHAPTER 19 - DRAFT DAY
   // ========================================
@@ -355,6 +387,14 @@ const MEDIA_DATA = {
     title: 'July 12, 2018',
     src: 'assets/19-draft-day/2018:07:12 12-18-42 PM.JPG',
     date: '2018-07-12',
+    chapter: 19
+  },
+
+  'foleys-signed-ball': {
+    type: 'photo',
+    title: 'Signed Ball at Foleys',
+    src: 'assets/19-draft-day/foleys-signed-ball.jpg',
+    date: '2018-06-01',
     chapter: 19
   },
 
@@ -443,6 +483,14 @@ const MEDIA_DATA = {
     title: 'George King Scorecard',
     src: 'assets/23-globetrotting/george-king-scorecard.jpg',
     date: '2019-04-01',
+    chapter: 23
+  },
+
+  'video-2020-10-12': {
+    type: 'video',
+    title: 'October 12, 2020',
+    src: 'assets/23-globetrotting/2020:10:12 3-43-41 PM.mov',
+    date: '2020-10-12',
     chapter: 23
   },
 
@@ -575,6 +623,78 @@ const MEDIA_DATA = {
     title: 'Where Is Anthony Fenech?',
     src: 'assets/28-postscript/where-is-anthony-fenech.png',
     date: '2020-01-01',
+    chapter: 28
+  },
+
+  // ========================================
+  // MISCELLANEOUS / ROOT ASSETS
+  // ========================================
+
+  'boras-clip': {
+    type: 'audio',
+    title: 'Scott Boras Clip',
+    src: 'assets/boras-clip-6-14-20.mp3',
+    date: '2020-06-14',
+    chapter: 28
+  },
+
+  'cabrera-on-verlander': {
+    type: 'audio',
+    title: 'Cabrera on Verlander',
+    src: 'assets/cabrera-on-verlander-8-20-19.mp3',
+    date: '2019-08-20',
+    chapter: 26
+  },
+
+  'verlander-blow-off-root': {
+    type: 'audio',
+    title: 'Verlander Blow-Off (backup)',
+    src: 'assets/verlander-blow-off-8-20-19.mp3',
+    date: '2019-08-20',
+    chapter: 25
+  },
+
+  // ========================================
+  // MENTIONS SCREENSHOTS
+  // ========================================
+
+  'mention-screenshot-1': {
+    type: 'photo',
+    title: 'Twitter Mention Screenshot 1',
+    src: 'assets/mentions/Screen Shot 2020-05-03 at 5.18.20 PM.webp',
+    date: '2020-05-03',
+    chapter: 28
+  },
+
+  'mention-screenshot-2': {
+    type: 'photo',
+    title: 'Twitter Mention Screenshot 2',
+    src: 'assets/mentions/Screen Shot 2020-05-03 at 5.19.42 PM.webp',
+    date: '2020-05-03',
+    chapter: 28
+  },
+
+  'mention-screenshot-3': {
+    type: 'photo',
+    title: 'Twitter Mention Screenshot 3',
+    src: 'assets/mentions/Screen Shot 2020-05-03 at 5.20.19 PM.webp',
+    date: '2020-05-03',
+    chapter: 28
+  },
+
+  'mention-screenshot-4': {
+    type: 'photo',
+    title: 'Twitter Mention Screenshot 4',
+    src: 'assets/mentions/Screen Shot 2020-05-03 at 5.20.32 PM.webp',
+    date: '2020-05-03',
+    chapter: 28
+  },
+
+  'mention-screenshot-5': {
+    type: 'photo',
+    title: 'Twitter Mention Screenshot 5',
+    src: 'assets/mentions/Screen Shot 2020-05-03 at 5.21.07 PM.webp',
+    date: '2020-05-03',
     chapter: 28
   },
 
