@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 118 media items
+ * Total: 134 media items
  */
 
 const MEDIA_DATA = {
@@ -94,6 +94,22 @@ const MEDIA_DATA = {
     chapter: 5
   },
 
+  'playing-basketball-feb-2015': {
+    type: 'audio',
+    title: 'Playing Basketball - Spring Training Recording',
+    src: 'assets/audio-staging/2-28-15-playing-basketball-at-7.59-am.mp3',
+    date: '2015-02-28',
+    chapter: 5
+  },
+
+  'tigers-2015-season-tickets': {
+    type: 'document',
+    title: 'Tigers 2015 Season Ticket Benefits Package',
+    src: 'assets/audio-staging/tigers-2015-season-ticket-benefits.pdf',
+    date: '2015-01-01',
+    chapter: 5
+  },
+
   // ========================================
   // CHAPTER 06 - OPENING DAY
   // ========================================
@@ -111,6 +127,14 @@ const MEDIA_DATA = {
     title: 'Shane Greene Amazing Interview',
     src: 'assets/audio-staging/3-28-15-shane-greene-amazing-interview-tigers-post-at-3.03-pm.mp3',
     date: '2015-03-28',
+    chapter: 6
+  },
+
+  'price-opening-day-transcript': {
+    type: 'document',
+    title: 'David Price Named Opening Day Starter - Transcript',
+    src: 'assets/audio-staging/3-20-15-d-price-opening-day-starter-at-11-09-am.pdf',
+    date: '2015-03-20',
     chapter: 6
   },
 
@@ -170,6 +194,22 @@ const MEDIA_DATA = {
     type: 'screenshot',
     title: 'Verlander 2015 Home Run Log',
     src: 'assets/audio-staging/verlander-2015-hr-log.webp',
+    date: '2015-07-01',
+    chapter: 7
+  },
+
+  'bp-hr-derby-2015': {
+    type: 'photo',
+    title: 'All-Star Break - Home Run Derby 2015',
+    src: 'assets/audio-staging/2015-bp-hr-derby.webp',
+    date: '2015-07-13',
+    chapter: 7
+  },
+
+  'talkin-tigers-podcast': {
+    type: 'photo',
+    title: 'Talkin Tigers Podcast with Drew',
+    src: 'assets/audio-staging/talkin-tigers-me-and-drew.webp',
     date: '2015-07-01',
     chapter: 7
   },
@@ -234,6 +274,14 @@ const MEDIA_DATA = {
     chapter: 8
   },
 
+  'brad-post-mccann-rajai': {
+    type: 'audio',
+    title: 'Brad Ausmus Post-Game - McCann and Rajai Funny Moment',
+    src: 'assets/audio-staging/9-8-15-brad-post-mccann-rajai-funny-at-11-37-pm.mp3',
+    date: '2015-09-08',
+    chapter: 8
+  },
+
   // ========================================
   // CHAPTER 09 - FIRE DRILL
   // ========================================
@@ -243,6 +291,30 @@ const MEDIA_DATA = {
     title: 'October 30, 2015',
     src: 'assets/09-fire-drill/2015:10:30 5-11-25 PM.JPG',
     date: '2015-10-30',
+    chapter: 9
+  },
+
+  'airplane-announcement-2015': {
+    type: 'audio',
+    title: 'Airplane Announcement Recording',
+    src: 'assets/audio-staging/11-20-15-airplane-announcement.m4a',
+    date: '2015-11-20',
+    chapter: 9
+  },
+
+  'brad-post-verlander-sept': {
+    type: 'audio',
+    title: 'Brad Ausmus Post-Game - Verlander Discussion',
+    src: 'assets/audio-staging/9-28-15-brad-post-verlander-at-11.20-pm.mp3',
+    date: '2015-09-28',
+    chapter: 9
+  },
+
+  'mlb-network-november-2015': {
+    type: 'photo',
+    title: 'MLB Network Appearance - November 2015',
+    src: 'assets/audio-staging/mlb-network-november-2015.webp',
+    date: '2015-11-01',
     chapter: 9
   },
 
@@ -342,6 +414,30 @@ const MEDIA_DATA = {
     chapter: 11
   },
 
+  'bp-hr-derby-2016': {
+    type: 'photo',
+    title: 'All-Star Break - Home Run Derby 2016',
+    src: 'assets/audio-staging/2016-bp-hr-derby.webp',
+    date: '2016-07-11',
+    chapter: 11
+  },
+
+  'bp-hr-derby-2016-alt': {
+    type: 'photo',
+    title: 'All-Star Break - Home Run Derby 2016 (Alternate)',
+    src: 'assets/audio-staging/2016-bp-hr-derby-2.webp',
+    date: '2016-07-11',
+    chapter: 11
+  },
+
+  'mlb-net-high-heat': {
+    type: 'photo',
+    title: 'MLB Network High Heat Appearance',
+    src: 'assets/audio-staging/undated-mlb-net-high-heat.webp',
+    date: '2016-07-01',
+    chapter: 11
+  },
+
   // ========================================
   // CHAPTER 12 - PENNANT RACE
   // ========================================
@@ -398,6 +494,14 @@ const MEDIA_DATA = {
     chapter: 13
   },
 
+  'tigers-2016-reflections': {
+    type: 'document',
+    title: 'Tigers 2016 Season Reflections',
+    src: 'assets/audio-staging/tigers-2016-reflections-inc-copy.pdf',
+    date: '2016-10-01',
+    chapter: 13
+  },
+
   // ========================================
   // CHAPTER 14 - PRIME TIME
   // ========================================
@@ -423,6 +527,14 @@ const MEDIA_DATA = {
     title: 'Verlander Likes Waffles',
     src: 'assets/14-prime-time/verlander likes waffles.PNG',
     date: '2017-01-01',
+    chapter: 14
+  },
+
+  'brad-pre-may-2017': {
+    type: 'audio',
+    title: 'Brad Ausmus Pre-Game - May 2017',
+    src: 'assets/audio-staging/done-5-6-17-brad-pre-2-min-in-.m4a',
+    date: '2017-05-06',
     chapter: 14
   },
 
@@ -510,6 +622,14 @@ const MEDIA_DATA = {
     type: 'document',
     title: '2017 Tigers Season Recap',
     src: 'assets/audio-staging/2017-tigers-season-recap-1002.pdf',
+    date: '2017-10-02',
+    chapter: 17
+  },
+
+  'tigers-column-oct-2': {
+    type: 'document',
+    title: 'Tigers Column - October 2, 2017',
+    src: 'assets/audio-staging/tigers-column-1002.pdf',
     date: '2017-10-02',
     chapter: 17
   },
@@ -635,6 +755,14 @@ const MEDIA_DATA = {
     title: 'Zimmermann Tweet Video',
     src: 'assets/22-viva-las-vegas/zimmermann tweet:vid.mov',
     date: '2019-02-01',
+    chapter: 22
+  },
+
+  'tigers-business-dossier': {
+    type: 'document',
+    title: 'Tigers Business Investigation Dossier',
+    src: 'assets/audio-staging/anthony-fenech-tigers-business-dossier.pdf',
+    date: '2020-08-13',
     chapter: 22
   },
 
