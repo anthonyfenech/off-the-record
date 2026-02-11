@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 88 media items
+ * Total: 118 media items
  */
 
 const MEDIA_DATA = {
@@ -54,6 +54,66 @@ const MEDIA_DATA = {
     chapter: 5
   },
 
+  'anthony-bass-interview': {
+    type: 'audio',
+    title: 'Anthony Bass Interview',
+    src: 'assets/audio-staging/5-6-14-anthony-bass-funny-at-4.42-pm.mp3',
+    date: '2014-05-06',
+    chapter: 5
+  },
+
+  'verlander-mlb-net-day': {
+    type: 'audio',
+    title: 'Verlander MLB Network Day',
+    src: 'assets/audio-staging/2-25-15-verlander-mlb-net-day-at-12.54-pm.mp3',
+    date: '2015-02-25',
+    chapter: 5
+  },
+
+  'buster-olney-email': {
+    type: 'audio',
+    title: 'Buster Olney Email Discussion',
+    src: 'assets/audio-staging/3-3-15-buster-olney-e-mail.mp3',
+    date: '2015-03-03',
+    chapter: 5
+  },
+
+  'leyland-holding-court': {
+    type: 'audio',
+    title: 'Jim Leyland Holding Court',
+    src: 'assets/audio-staging/3-18-15-leyland-holding-court-at-3.41-pm.mp3',
+    date: '2015-03-18',
+    chapter: 5
+  },
+
+  'first-mlb-network-spring': {
+    type: 'screenshot',
+    title: 'First MLB Network Appearance',
+    src: 'assets/audio-staging/first-mlb-network-spring-2015.webp',
+    date: '2015-02-01',
+    chapter: 5
+  },
+
+  // ========================================
+  // CHAPTER 06 - OPENING DAY
+  // ========================================
+
+  'price-opening-day-starter': {
+    type: 'audio',
+    title: 'David Price Named Opening Day Starter',
+    src: 'assets/audio-staging/3-20-15-d-price-opening-day-starter-at-11.09-am.mp3',
+    date: '2015-03-20',
+    chapter: 6
+  },
+
+  'shane-greene-interview': {
+    type: 'audio',
+    title: 'Shane Greene Amazing Interview',
+    src: 'assets/audio-staging/3-28-15-shane-greene-amazing-interview-tigers-post-at-3.03-pm.mp3',
+    date: '2015-03-28',
+    chapter: 6
+  },
+
   // ========================================
   // CHAPTER 07 - MIDSEASON
   // ========================================
@@ -90,6 +150,30 @@ const MEDIA_DATA = {
     chapter: 7
   },
 
+  'brad-love-these-questions': {
+    type: 'audio',
+    title: 'Brad Ausmus - Love These Questions',
+    src: 'assets/audio-staging/5-20-15-brad-post-love-these-questions-at-5.22-pm.mp3',
+    date: '2015-05-20',
+    chapter: 7
+  },
+
+  'tomosovich-fs1': {
+    type: 'screenshot',
+    title: 'FS1 Appearance with Tomosovich',
+    src: 'assets/audio-staging/7-11-15-tomosovich-fs1.webp',
+    date: '2015-07-11',
+    chapter: 7
+  },
+
+  'verlander-2015-hr-log': {
+    type: 'screenshot',
+    title: 'Verlander 2015 Home Run Log',
+    src: 'assets/audio-staging/verlander-2015-hr-log.webp',
+    date: '2015-07-01',
+    chapter: 7
+  },
+
   // ========================================
   // CHAPTER 08 - TRADE DEADLINE
   // ========================================
@@ -115,6 +199,38 @@ const MEDIA_DATA = {
     title: 'Katie Strang Interview',
     src: 'assets/08-trade-deadline/katie-strang-2016-04-16-web.mp4',
     date: '2016-04-16',
+    chapter: 8
+  },
+
+  'dave-exit-interview': {
+    type: 'audio',
+    title: 'Dave Dombrowski Exit Interview',
+    src: 'assets/audio-staging/8-5-15-dave-exit-interview-in-underwear-at-2.53-pm.mp3',
+    date: '2015-08-05',
+    chapter: 8
+  },
+
+  'brad-post-norris-nick-victor': {
+    type: 'audio',
+    title: 'Brad Post - Norris, Nick, Victor',
+    src: 'assets/audio-staging/8-20-15-brad-post-norris-nick-victor-messing-at-12.33-am.mp3',
+    date: '2015-08-20',
+    chapter: 8
+  },
+
+  'victor-go-ask-manager': {
+    type: 'audio',
+    title: 'Victor Martinez - Go Ask the Manager',
+    src: 'assets/audio-staging/8-26-15-victor-go-ask-the-manager-at-3.46-pm.mp3',
+    date: '2015-08-26',
+    chapter: 8
+  },
+
+  'dombrowski-extension-paper': {
+    type: 'screenshot',
+    title: 'Dombrowski Extension Paper',
+    src: 'assets/audio-staging/8-4-15-dombrowski-extension-paper.webp',
+    date: '2015-08-04',
     chapter: 8
   },
 
@@ -147,6 +263,22 @@ const MEDIA_DATA = {
     title: 'Lakeland BBQ',
     src: 'assets/10-spring-training/lakeland-bbq.png',
     date: '2016-03-01',
+    chapter: 10
+  },
+
+  'verlander-spring-2016': {
+    type: 'audio',
+    title: 'Verlander Spring Training 2016',
+    src: 'assets/audio-staging/2-27-16-verlander.m4a',
+    date: '2016-02-27',
+    chapter: 10
+  },
+
+  'spring-training-roster-2016': {
+    type: 'screenshot',
+    title: '2016 Spring Training Roster',
+    src: 'assets/audio-staging/2016-spring-trainign-roster.webp',
+    date: '2016-02-01',
     chapter: 10
   },
 
@@ -191,6 +323,22 @@ const MEDIA_DATA = {
     title: 'Max After 20 Strikeouts',
     src: 'assets/11-hot-seat/max-after-20.jpg',
     date: '2016-05-11',
+    chapter: 11
+  },
+
+  'espn-sportscenter-2016': {
+    type: 'screenshot',
+    title: 'ESPN SportsCenter 2016',
+    src: 'assets/audio-staging/espn-sportscenter-2016-dead-link.webp',
+    date: '2016-04-01',
+    chapter: 11
+  },
+
+  'mlb-network-nats-park': {
+    type: 'screenshot',
+    title: 'MLB Network at Nationals Park',
+    src: 'assets/audio-staging/mlb-network-nats-park-may-2016.webp',
+    date: '2016-05-01',
     chapter: 11
   },
 
@@ -314,6 +462,22 @@ const MEDIA_DATA = {
     chapter: 16
   },
 
+  'cabrera-good-mood': {
+    type: 'audio',
+    title: 'Miguel Cabrera in Good Mood',
+    src: 'assets/audio-staging/OTR_audio_cabrera-good-mood_003.mp3',
+    date: '2017-05-20',
+    chapter: 16
+  },
+
+  'mlb-net-studio-feb-2017': {
+    type: 'screenshot',
+    title: 'MLB Network Studio February 2017',
+    src: 'assets/audio-staging/mlb-net-in-studio-feb-2017.webp',
+    date: '2017-02-01',
+    chapter: 14
+  },
+
   // ========================================
   // CHAPTER 17 - WORLD SERIES
   // ========================================
@@ -339,6 +503,14 @@ const MEDIA_DATA = {
     title: 'Kinsler Team USA',
     src: 'assets/17-world-series/kinsler-tv-winter.jpg',
     date: '2017-03-01',
+    chapter: 17
+  },
+
+  'tigers-season-recap-2017': {
+    type: 'document',
+    title: '2017 Tigers Season Recap',
+    src: 'assets/audio-staging/2017-tigers-season-recap-1002.pdf',
+    date: '2017-10-02',
     chapter: 17
   },
 
@@ -419,6 +591,22 @@ const MEDIA_DATA = {
     title: 'Verlander Injury Recording',
     src: 'assets/21-burn-out/verlander-injury-9-12-18.mp3',
     date: '2018-09-12',
+    chapter: 21
+  },
+
+  'gannett-survey-monkey': {
+    type: 'video',
+    title: 'Gannett Survey Monkey Video',
+    src: 'assets/audio-staging/gannett-survey-monkey-1-7-17.mp4',
+    date: '2017-01-07',
+    chapter: 21
+  },
+
+  'gene-email-freep-beat': {
+    type: 'document',
+    title: 'Gene Email - Freep Beat Assignment',
+    src: 'assets/audio-staging/gene-e-mail-announcement-freep-beat.pdf',
+    date: '2015-01-01',
     chapter: 21
   },
 
@@ -522,6 +710,14 @@ const MEDIA_DATA = {
     chapter: 24
   },
 
+  'fantasy-camp-2019': {
+    type: 'document',
+    title: 'Fantasy Camp 2019',
+    src: 'assets/audio-staging/fantasy-camp-page-2-7-19.pdf',
+    date: '2019-02-07',
+    chapter: 22
+  },
+
   // ========================================
   // CHAPTER 25 - LETTER TO THE EDITOR
   // ========================================
@@ -578,6 +774,14 @@ const MEDIA_DATA = {
     chapter: 26
   },
 
+  'union-background': {
+    type: 'document',
+    title: 'Union Background Document',
+    src: 'assets/audio-staging/union-background.pdf',
+    date: '2019-01-01',
+    chapter: 26
+  },
+
   // ========================================
   // CHAPTER 27 - BOTTOM NINE
   // ========================================
@@ -588,6 +792,22 @@ const MEDIA_DATA = {
     src: 'assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
     date: '2019-12-10',
     chapter: 27
+  },
+
+  'mccosky-verlander-trade-tweet': {
+    type: 'screenshot',
+    title: 'McCosky Verlander Trade Tweet',
+    src: 'assets/audio-staging/mccosky-tweet-verlander-trade.webp',
+    date: '2017-08-31',
+    chapter: 16
+  },
+
+  'bregman-nah-tweet': {
+    type: 'screenshot',
+    title: 'Alex Bregman NAH Tweet',
+    src: 'assets/audio-staging/bregman-nah-false-tweet.webp',
+    date: '2017-09-01',
+    chapter: 16
   },
 
   // ========================================
@@ -623,6 +843,38 @@ const MEDIA_DATA = {
     title: 'Where Is Anthony Fenech?',
     src: 'assets/28-postscript/where-is-anthony-fenech.png',
     date: '2020-01-01',
+    chapter: 28
+  },
+
+  'cabrera-on-verlander-2019': {
+    type: 'audio',
+    title: 'Cabrera on Verlander (2019)',
+    src: 'assets/audio-staging/8-20-19-cabrera-on-verlander-at-11.44-pm-at-1144-pm.mp3',
+    date: '2019-08-20',
+    chapter: 26
+  },
+
+  'verlander-blow-off-2019': {
+    type: 'audio',
+    title: 'Verlander Blow Off (2019)',
+    src: 'assets/audio-staging/8-20-19-verlander-blow-off-at-5.02-pm-at-0502-pm.mp3',
+    date: '2019-08-20',
+    chapter: 26
+  },
+
+  'la-times-essay': {
+    type: 'document',
+    title: 'LA Times Essay',
+    src: 'assets/audio-staging/la-times-essay-10.pdf',
+    date: '2019-10-01',
+    chapter: 28
+  },
+
+  'things-i-will-remember-2019': {
+    type: 'document',
+    title: 'Things I Will Remember 2019',
+    src: 'assets/audio-staging/things-i-will-remember-2019.pdf',
+    date: '2019-12-01',
     chapter: 28
   },
 
