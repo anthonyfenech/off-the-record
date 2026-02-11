@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Tool Name - OTR</title>
+    <style>
+        /* Minimal tool styles - self-contained */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f8f8;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Stats bar */
+        .stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+        .stat { color: #666; }
+
+        /* Action buttons */
+        .actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 8px 16px;
+            font-size: 11px;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .btn:hover { background: #f0f0f0; }
+        .btn.primary { background: #333; color: #fff; border-color: #333; }
+        .btn.primary:hover { background: #444; }
+        .btn.danger { background: #c00; color: #fff; border-color: #c00; }
+        .btn.danger:hover { background: #d22; }
+
+        /* Form elements */
+        .form-section {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .form-section h2 {
+            font-size: 13px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .form-row { margin-bottom: 12px; }
+        .form-row label {
+            display: block;
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 13px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+        .form-row textarea { min-height: 80px; resize: vertical; }
+
+        /* Data display */
+        .data-section {
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .data-header {
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .data-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .data-item:last-child { border-bottom: none; }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: #fff;
+            padding: 25px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .modal h3 { font-size: 14px; margin-bottom: 20px; }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .stats { flex-direction: column; align-items: center; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tool Name</h1>
+
+<div class="stats">
+    <span class="stat" id="stat1">0 Items</span>
+    <span class="stat" id="stat2">0 Processed</span>
+    <span class="stat" id="stat3">0 Pending</span>
+</div>
+
+<div class="actions">
+    <button class="btn" onclick="exportData()">Export</button>
+    <button class="btn" onclick="importData()">Import</button>
+    <button class="btn primary" onclick="processAll()">Process All</button>
+    <button class="btn danger" onclick="resetAll()">Reset</button>
+</div>
+
+<div class="form-section">
+    <h2>Add New Item</h2>
+    <div class="form-row">
+        <label>Item Name</label>
+        <input type="text" id="itemName" placeholder="Enter name...">
+    </div>
+    <div class="form-row">
+        <label>Description</label>
+        <textarea id="itemDesc" placeholder="Enter description..."></textarea>
+    </div>
+    <button class="btn primary" onclick="addItem()">Add Item</button>
+</div>
+
+<div class="data-section">
+    <div class="data-header">Items</div>
+    <div id="itemsList">
+        <div class="data-item">This is template-4: A minimal tool page with inline styles for internal development tools.</div>
+    </div>
+</div>
+
+<script>
+    // Tool functionality goes here
+    function exportData() { alert('Export not implemented'); }
+    function importData() { alert('Import not implemented'); }
+    function processAll() { alert('Process not implemented'); }
+    function resetAll() { if(confirm('Reset all data?')) alert('Reset not implemented'); }
+    function addItem() { alert('Add not implemented'); }
+</script>
+
+</body>
+</html>

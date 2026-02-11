@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standalone Page - OFF-THE-RECORD</title>
+    <style>
+        /* Self-contained styles - no external dependencies */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Literata', Georgia, serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'SF Mono', 'Courier New', monospace;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #004499;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: 'SF Mono', 'Courier New', monospace;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            background: #1a1a1a;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #e8e8e8;
+                background: #1a1a1a;
+            }
+
+            p {
+                color: #b0b0b0;
+            }
+
+            .logo {
+                color: #888;
+            }
+
+            a {
+                color: #6B9FFF;
+            }
+
+            a:hover {
+                color: #99BBFF;
+            }
+
+            .btn {
+                background: #e8e8e8;
+                color: #1a1a1a;
+            }
+
+            .btn:hover {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">OFF-THE-RECORD</div>
+
+    <h1>Standalone Page Title</h1>
+
+    <p>This is template-3: A self-contained standalone page with all styles inline. No external CSS dependencies. Uses system dark mode detection.</p>
+
+    <p>Use this template for special pages that must work independently, like offline.html or error pages.</p>
+
+    <a href="./" class="btn">Return Home</a>
+</div>
+
+</body>
+</html>

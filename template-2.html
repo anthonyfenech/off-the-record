@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Tool - OFF-THE-RECORD</title>
+
+    <!-- Apply theme before CSS loads -->
+    <script>
+        (function() {
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <!-- Core CSS Stack -->
+    <link rel="stylesheet" href="./css/fonts.min.css?v=391">
+    <link rel="stylesheet" href="./css/reset.min.css?v=391">
+    <link rel="stylesheet" href="./css/variables.min.css?v=391">
+    <link rel="stylesheet" href="./css/typography.min.css?v=391">
+    <link rel="stylesheet" href="./css/layout.min.css?v=391">
+    <link rel="stylesheet" href="./css/components.min.css?v=391">
+
+    <style>
+        /* Admin page styles */
+        body {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 30px;
+        }
+
+        .admin-title {
+            font-family: var(--font-mono, 'Courier New', monospace);
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .admin-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .admin-nav a {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+        }
+
+        .admin-nav a:hover {
+            color: var(--color-text);
+        }
+
+        .admin-nav button {
+            font-size: 12px;
+            padding: 6px 12px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            cursor: pointer;
+        }
+
+        .admin-nav button:hover {
+            background: var(--color-border);
+        }
+
+        .admin-content {
+            /* Your admin content styles */
+        }
+
+        .section {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-mono, 'Courier New', monospace);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Auth check -->
+    <script>
+        (function() {
+            var session = localStorage.getItem('otr_beta_session');
+            if (!session) {
+                window.location.replace('./');
+                return;
+            }
+            try {
+                var data = JSON.parse(session);
+                if (!data.authenticated || Date.now() > data.expires) {
+                    localStorage.removeItem('otr_beta_session');
+                    window.location.replace('./');
+                    return;
+                }
+            } catch (e) {
+                window.location.replace('./');
+                return;
+            }
+        })();
+    </script>
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <h1 class="admin-title">Admin Tool Name</h1>
+        <nav class="admin-nav">
+            <a href="./admin.html">Admin Home</a>
+            <a href="./">Reader</a>
+            <button id="themeToggle">Theme</button>
+        </nav>
+    </header>
+
+    <!-- Admin Content -->
+    <main class="admin-content">
+        <section class="section">
+            <h2 class="section-title">Section Title</h2>
+            <p>This is template-2: An admin-style page with simplified header, no TOC sidebar, and noindex meta tag.</p>
+        </section>
+    </main>
+
+    <script>
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('reader_theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('reader_theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

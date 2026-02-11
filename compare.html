@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Audit - OTR</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 40px 20px; line-height: 1.6; background: #fafafa; }
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        .date { color: #666; font-size: 14px; margin-bottom: 30px; }
+        h2 { font-size: 18px; margin: 30px 0 15px; padding-top: 20px; border-top: 1px solid #ddd; }
+        h3 { font-size: 15px; margin: 20px 0 10px; color: #333; }
+        p, li { font-size: 14px; color: #444; }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f0f0f0; font-weight: 600; }
+        .yes { color: #2a2; }
+        .no { color: #a22; }
+        .partial { color: #a80; }
+        code { background: #e8e8e8; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        .recommendation { background: #e8f4e8; border-left: 3px solid #2a2; padding: 15px; margin: 15px 0; }
+        .warning { background: #fef3e8; border-left: 3px solid #a80; padding: 15px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+<h1>OTR Template Audit Report</h1>
+<p class="date">Generated: February 2026</p>
+
+<h2>1. File Inventory</h2>
+<table>
+    <tr>
+        <th>File</th>
+        <th>Lines</th>
+        <th>Purpose</th>
+        <th>CSS Approach</th>
+    </tr>
+    <tr>
+        <td>index.html</td>
+        <td>377</td>
+        <td>Main reader app</td>
+        <td>Modular CSS files</td>
+    </tr>
+    <tr>
+        <td>binge-mode.html</td>
+        <td>1099</td>
+        <td>Full book reader</td>
+        <td>Modular CSS files</td>
+    </tr>
+    <tr>
+        <td>library.html</td>
+        <td>777</td>
+        <td>Document search</td>
+        <td>Modular + inline</td>
+    </tr>
+    <tr>
+        <td>admin.html</td>
+        <td>3287</td>
+        <td>Admin panel</td>
+        <td>Modular CSS files</td>
+    </tr>
+    <tr>
+        <td>media-catalog.html</td>
+        <td>1960</td>
+        <td>Media management</td>
+        <td>Modular CSS files</td>
+    </tr>
+    <tr>
+        <td>content-map.html</td>
+        <td>2193</td>
+        <td>Content explorer</td>
+        <td>Modular CSS files</td>
+    </tr>
+    <tr>
+        <td>driving-range.html</td>
+        <td>269</td>
+        <td>Prompt manager</td>
+        <td>All inline styles</td>
+    </tr>
+    <tr>
+        <td>analytics-dashboard.html</td>
+        <td>151</td>
+        <td>Analytics view</td>
+        <td>Single external CSS</td>
+    </tr>
+    <tr>
+        <td>offline.html</td>
+        <td>81</td>
+        <td>Offline fallback</td>
+        <td>All inline styles</td>
+    </tr>
+</table>
+
+<h2>2. Consistency Audit</h2>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>index</th>
+        <th>library</th>
+        <th>admin</th>
+        <th>driving-range</th>
+        <th>analytics</th>
+        <th>offline</th>
+    </tr>
+    <tr>
+        <td>DOCTYPE html</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+    </tr>
+    <tr>
+        <td>lang="en"</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+    </tr>
+    <tr>
+        <td>UTF-8 charset</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+    </tr>
+    <tr>
+        <td>viewport meta</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+    </tr>
+    <tr>
+        <td>Early theme script</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+    </tr>
+    <tr>
+        <td>Auth check</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+    </tr>
+    <tr>
+        <td>Dark mode support</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+    </tr>
+    <tr>
+        <td>Modular CSS</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+    </tr>
+    <tr>
+        <td>Standard header</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="partial">Custom</td>
+        <td class="no">No</td>
+        <td class="partial">Custom</td>
+        <td class="no">No</td>
+    </tr>
+    <tr>
+        <td>TOC sidebar</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+    </tr>
+    <tr>
+        <td>noindex meta</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+    </tr>
+</table>
+
+<h2>3. Standard Components</h2>
+
+<h3>Core CSS Stack (in load order)</h3>
+<ul>
+    <li><code>css/fonts.min.css</code> - Self-hosted fonts</li>
+    <li><code>css/reset.min.css</code> - CSS reset</li>
+    <li><code>css/variables.min.css</code> - CSS custom properties</li>
+    <li><code>css/typography.min.css</code> - Type styles</li>
+    <li><code>css/layout.min.css</code> - Layout utilities</li>
+    <li><code>css/components.min.css</code> - UI components</li>
+    <li><code>css/otr-tier1-states.css</code> - State classes</li>
+</ul>
+
+<h3>Required Meta Tags</h3>
+<ul>
+    <li><code>&lt;meta charset="UTF-8"&gt;</code></li>
+    <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"&gt;</code></li>
+    <li><code>&lt;meta name="format-detection" content="telephone=no"&gt;</code></li>
+    <li><code>&lt;meta name="theme-color" content="#ffffff"&gt;</code></li>
+</ul>
+
+<h3>Early Theme Detection Script</h3>
+<p>Must appear BEFORE CSS loads to prevent flash of wrong theme:</p>
+<pre style="background:#e8e8e8;padding:15px;font-size:12px;overflow-x:auto;margin:10px 0;">
+&lt;script&gt;
+    (function() {
+        if (localStorage.getItem('reader_theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    })();
+&lt;/script&gt;
+</pre>
+
+<h3>Auth Check Script</h3>
+<p>Required for protected pages (appears in body, top):</p>
+<pre style="background:#e8e8e8;padding:15px;font-size:12px;overflow-x:auto;margin:10px 0;">
+&lt;script&gt;
+    (function() {
+        var session = localStorage.getItem('otr_beta_session');
+        if (!session) {
+            window.location.replace('./');
+            return;
+        }
+        try {
+            var data = JSON.parse(session);
+            if (!data.authenticated || Date.now() > data.expires) {
+                localStorage.removeItem('otr_beta_session');
+                window.location.replace('./');
+            }
+        } catch (e) {
+            window.location.replace('./');
+        }
+    })();
+&lt;/script&gt;
+</pre>
+
+<h2>4. Template Recommendations</h2>
+
+<div class="recommendation">
+    <strong>template-1.html</strong> - Standard Page<br>
+    Full modular CSS stack, header with nav, TOC sidebar, auth check. Use for reader-facing pages.
+</div>
+
+<div class="recommendation">
+    <strong>template-2.html</strong> - Admin Page<br>
+    Modular CSS, simplified header, no TOC sidebar, noindex meta. Use for admin tools.
+</div>
+
+<div class="recommendation">
+    <strong>template-3.html</strong> - Standalone Page<br>
+    Self-contained with inline styles. Use for special pages like offline.html.
+</div>
+
+<div class="recommendation">
+    <strong>template-4.html</strong> - Tool Page<br>
+    Minimal structure with inline styles. Use for internal development tools.
+</div>
+
+<div class="recommendation">
+    <strong>template-5.html</strong> - Blank Slate<br>
+    Absolute minimum viable structure. Starting point for experiments.
+</div>
+
+<h2>5. Issues Found</h2>
+
+<div class="warning">
+    <strong>driving-range.html</strong> lacks dark mode support and auth check. Consider adding for consistency.
+</div>
+
+<div class="warning">
+    <strong>analytics-dashboard.html</strong> uses separate CSS file instead of modular stack. Intentional for isolation.
+</div>
+
+<div class="warning">
+    <strong>offline.html</strong> is intentionally self-contained (must work without network).
+</div>
+
+<h2>6. Version Query Strings</h2>
+<p>CSS/JS files use <code>?v=391</code> for cache busting. Update this number when making changes.</p>
+
+</body>
+</html>

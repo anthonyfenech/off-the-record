@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Page Title - OFF-THE-RECORD">
+    <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/template-1.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Page Title - OFF-THE-RECORD">
+    <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+
+    <title>Page Title - OFF-THE-RECORD</title>
+
+    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <!-- Critical: Hide sidebar before CSS loads to prevent flash -->
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0}</style>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="./fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="./css/variables.min.css?v=391" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=391" as="style">
+
+    <!-- Self-hosted fonts -->
+    <link rel="stylesheet" href="./css/fonts.min.css?v=391">
+
+    <!-- Core CSS Stack -->
+    <link rel="stylesheet" href="./css/reset.min.css?v=391">
+    <link rel="stylesheet" href="./css/variables.min.css?v=391">
+    <link rel="stylesheet" href="./css/typography.min.css?v=391">
+    <link rel="stylesheet" href="./css/layout.min.css?v=391">
+    <link rel="stylesheet" href="./css/components.min.css?v=391">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=391">
+
+    <style>
+        /* Page-specific styles */
+        body {
+            padding: 90px 20px 40px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--color-header-bg);
+            border-bottom: 1px solid var(--color-border);
+            transition: background-color var(--transition-fast);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 69px;
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-logo-img {
+            height: 28px;
+            width: auto;
+        }
+
+        .page-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--color-text);
+        }
+
+        .page-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .page-content {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        @media (max-width: 599px) {
+            body {
+                padding: 74px 16px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Auth check -->
+    <script>
+        (function() {
+            var session = localStorage.getItem('otr_beta_session');
+            if (!session) {
+                window.location.replace('./');
+                return;
+            }
+            try {
+                var data = JSON.parse(session);
+                if (!data.authenticated || Date.now() > data.expires) {
+                    localStorage.removeItem('otr_beta_session');
+                    window.location.replace('./');
+                    return;
+                }
+            } catch (e) {
+                window.location.replace('./');
+                return;
+            }
+            document.body.style.opacity = '1';
+        })();
+    </script>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Page Title</h1>
+            <p class="page-subtitle">Optional subtitle or description</p>
+        </div>
+
+        <div class="page-content">
+            <!-- Your content here -->
+            <p>This is template-1: A standard reader-facing page with full modular CSS, header navigation, TOC sidebar, and auth protection.</p>
+        </div>
+    </main>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <!-- Options Section -->
+        <div class="toc-section" id="optionsSection">
+            <button class="toc-section-header" id="optionsToggle" aria-expanded="false">
+                <span class="toc-section-title">Options</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="toc-section-content" id="optionsContent" style="display: none;">
+                <div class="toc-option">
+                    <span class="toc-option-label">Theme</span>
+                    <div class="option-btn-group" id="themeToggleGroup">
+                        <button class="option-btn" data-theme="light">Light</button>
+                        <button class="option-btn" data-theme="dark">Dark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="toc-footer">
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <script type="module">
+        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
+
+        const menuBtn = document.getElementById('menuBtn');
+        const closeTocBtn = document.getElementById('closeTocBtn');
+        const tocSidebar = document.getElementById('tocSidebar');
+        const overlay = document.getElementById('overlay');
+        const tocContent = document.getElementById('tocContent');
+        const themeToggle = document.getElementById('themeToggle');
+        const optionsToggle = document.getElementById('optionsToggle');
+        const optionsContent = document.getElementById('optionsContent');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        buildTOC();
+
+        function openTOC() {
+            tocSidebar.style.visibility = 'visible';
+            tocSidebar.style.transform = '';
+            overlay.style.visibility = 'visible';
+            overlay.style.opacity = '';
+            tocSidebar.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTOC() {
+            tocSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (!tocSidebar.classList.contains('open')) {
+                    tocSidebar.style.visibility = 'hidden';
+                    overlay.style.visibility = 'hidden';
+                }
+            }, 310);
+        }
+
+        menuBtn.addEventListener('click', openTOC);
+        closeTocBtn.addEventListener('click', closeTOC);
+        overlay.addEventListener('click', closeTOC);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && tocSidebar.classList.contains('open')) {
+                closeTOC();
+            }
+        });
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('reader_theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('reader_theme', 'dark');
+            }
+        });
+
+        optionsToggle.addEventListener('click', () => {
+            const isExpanded = optionsToggle.getAttribute('aria-expanded') === 'true';
+            optionsToggle.setAttribute('aria-expanded', !isExpanded);
+            optionsContent.style.display = isExpanded ? 'none' : 'block';
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('otr_beta_session');
+            window.location.href = './';
+        });
+
+        function buildTOC() {
+            const fragment = document.createDocumentFragment();
+            fragment.appendChild(createBookSection());
+            fragment.appendChild(createNavLink('BINGE MODE', './binge-mode.html', false));
+            fragment.appendChild(createNavLink('LIBRARY', './library.html', false));
+            const divider = document.createElement('div');
+            divider.className = 'toc-divider';
+            fragment.appendChild(divider);
+            tocContent.appendChild(fragment);
+        }
+
+        function createNavLink(label, url, isCurrent) {
+            const section = document.createElement('div');
+            section.className = 'toc-top-section';
+            const link = document.createElement('a');
+            link.href = url;
+            link.className = 'toc-top-header';
+            link.style.textDecoration = 'none';
+            if (isCurrent) link.style.fontWeight = 'bold';
+            const title = document.createElement('h3');
+            title.className = 'toc-top-title';
+            title.textContent = label;
+            const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            arrow.setAttribute('class', 'toc-section-arrow');
+            arrow.setAttribute('width', '12');
+            arrow.setAttribute('height', '12');
+            arrow.setAttribute('viewBox', '0 0 24 24');
+            arrow.setAttribute('fill', 'none');
+            arrow.setAttribute('stroke', 'currentColor');
+            arrow.setAttribute('stroke-width', '2');
+            arrow.innerHTML = '<polyline points="9 6 15 12 9 18"></polyline>';
+            link.appendChild(title);
+            link.appendChild(arrow);
+            section.appendChild(link);
+            return section;
+        }
+
+        function createBookSection() {
+            const section = document.createElement('div');
+            section.className = 'toc-top-section';
+            section.dataset.section = 'book';
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'toc-top-header';
+            sectionHeader.style.cursor = 'pointer';
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-top-title';
+            sectionTitle.textContent = 'OFF-THE-RECORD';
+            sectionHeader.appendChild(sectionTitle);
+            const bookContent = document.createElement('div');
+            bookContent.className = 'toc-book-content collapsed';
+            bookContent.id = 'toc-book-content';
+            buildBookContent(bookContent);
+            sectionHeader.addEventListener('click', () => {
+                bookContent.classList.toggle('collapsed');
+            });
+            section.appendChild(sectionHeader);
+            section.appendChild(bookContent);
+            return section;
+        }
+
+        function buildBookContent(container) {
+            const introChapters = getIntroChapters();
+            const chaptersByYear = getChaptersByYear();
+            const postscriptChapters = getPostscriptChapters();
+            const years = getSortedYears();
+            introChapters.forEach(ch => container.appendChild(createChapterLink(ch)));
+            years.forEach(year => {
+                const yearChapters = chaptersByYear[year] || [];
+                yearChapters.forEach(ch => container.appendChild(createChapterLink(ch)));
+            });
+            postscriptChapters.forEach(ch => container.appendChild(createChapterLink(ch)));
+        }
+
+        function createChapterLink(chapter) {
+            const link = document.createElement('a');
+            link.href = `./?chapter=${chapter.id}`;
+            link.className = 'toc-chapter-link';
+            link.textContent = chapter.navTitle || chapter.title;
+            return link;
+        }
+    </script>
+</body>
+</html>
