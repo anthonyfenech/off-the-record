@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 145 media items
+ * Total: 150 media items
  */
 
 const MEDIA_DATA = {
@@ -64,6 +64,26 @@ const MEDIA_DATA = {
     chapter: 4
   },
 
+  'verlander-jersey-festival': {
+    type: 'photo',
+    emoji: '📷',
+    title: 'Festival Photo with Verlander Jersey',
+    caption: 'Early photo at festival — someone nearby wearing Verlander #35 green jersey',
+    src: 'assets/audio-staging/img-004289.webp',
+    date: '2005-01-01',
+    chapter: 4
+  },
+
+  'jeff-moss-falsities': {
+    type: 'document',
+    emoji: '📄',
+    title: 'Detroit Sports Rag False Claims',
+    caption: 'Documentation of internet stalker posts from Nov-Dec 2014 — false allegations and harassment',
+    src: 'assets/audio-staging/jeff-moss-falsities.webp',
+    date: '2014-12-08',
+    chapter: 4
+  },
+
   // ========================================
   // CHAPTER 05 - ROOKIE YEAR
   // ========================================
@@ -101,6 +121,16 @@ const MEDIA_DATA = {
     title: 'Buster Olney Email Discussion',
     src: 'assets/audio-staging/3-3-15-buster-olney-e-mail.mp3',
     date: '2015-03-03',
+    chapter: 5
+  },
+
+  'olympus-voice-recorder': {
+    type: 'video',
+    emoji: '🎬',
+    title: 'Olympus Voice Recorder',
+    caption: 'Recording equipment used for interviews — Olympus digital voice recorder',
+    src: 'assets/audio-staging/mov-3156.mp4',
+    date: '2015-01-01',
     chapter: 5
   },
 
@@ -552,6 +582,16 @@ const MEDIA_DATA = {
     title: 'Verlander Tale of the Tape',
     src: 'assets/26-unethical/12-pennant-race-verlander-tale-of-tape.jpg',
     date: '2016-10-01',
+    chapter: 12
+  },
+
+  'espn-tigers-playoff-push': {
+    type: 'screenshot',
+    emoji: '📷',
+    title: 'ESPN: Tigers Needs to Make Playoff Push',
+    caption: 'ESPN SportsCenter link preview — Anthony Fenech article on Tigers contention',
+    src: 'assets/audio-staging/screenshot-2023-06-17-at-11-20-49-pm.webp',
+    date: '2015-07-01',
     chapter: 12
   },
 
@@ -1036,6 +1076,16 @@ const MEDIA_DATA = {
     title: 'ESPN Push Alert - Verlander Incident',
     src: 'assets/26-unethical/Verlander incident ESPN push alert.png',
     date: '2019-08-22',
+    chapter: 26
+  },
+
+  'union-communication-notes': {
+    type: 'document',
+    emoji: '📄',
+    title: 'BBWAA Union Communication Notes',
+    caption: 'Notes on union communications — Fidelman remarks, Avila texts, blackmail allegations',
+    src: 'assets/audio-staging/union-communication-notes.webp',
+    date: '2019-08-24',
     chapter: 26
   },
 
