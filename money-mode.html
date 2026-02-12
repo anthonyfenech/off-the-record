@@ -745,12 +745,12 @@
     <!-- Overlay for TOC -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Binge Mode Core Logic -->
-    <script type="module" src="./js/binge-init.min.js?v=391"></script>
+    <!-- Money Mode Core Logic -->
+    <script type="module" src="./js/money-mode-init.min.js?v=391"></script>
 
     <!-- Sidebar Navigation (builds TOC identical to main reader) -->
     <script type="module">
-        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
+        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/money-mode-chapters.js';
         import { isChapterComplete } from './js/storage.min.js';
 
         // Wait for binge-init to set up globals
