@@ -302,7 +302,7 @@
         // ═══════════════════════════════════════════════════════════════
 
         const PER_PAGE = 25;
-        const OTR_FILES_BASE = 'https://anthonyfenech.github.io/otr-files';
+        const OTR_FILES_BASE = `${window.location.origin}/otr-files`;
         const DOCUMENTS_URL = `${OTR_FILES_BASE}/js/documents.js`;
 
         let documents = [];
@@ -315,38 +315,14 @@
         // STEP 1: Load Documents
         // ─────────────────────────────────────────────────────────────────
         async function loadDocuments() {
-            // Try ES module import first (works on same origin or with CORS)
             try {
                 const module = await import(`${DOCUMENTS_URL}?t=${Date.now()}`);
                 if (module.OTR_DOCUMENTS && Array.isArray(module.OTR_DOCUMENTS)) {
                     documents = module.OTR_DOCUMENTS;
-                    console.log('[Go Off] Loaded via ES module:', documents.length, 'documents');
+                    console.log('[Go Off] Loaded', documents.length, 'documents');
                     buildIndex();
                     checkUrlParams();
-                    return;
                 }
-            } catch (e) {
-                console.warn('[Go Off] ES module import failed, trying CORS proxy:', e.message);
-            }
-
-            // Fallback: Fetch via CORS proxy, then eval
-            try {
-                const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(DOCUMENTS_URL);
-                const response = await fetch(proxyUrl);
-                const text = await response.text();
-
-                // Remove ES module export syntax and eval
-                const cleaned = text.replace(/export\s*\{[^}]*\}\s*;?\s*$/m, '');
-                const fn = new Function(cleaned + '; return OTR_DOCUMENTS;');
-                documents = fn();
-
-                if (!Array.isArray(documents)) {
-                    throw new Error('OTR_DOCUMENTS is not an array');
-                }
-
-                console.log('[Go Off] Loaded via CORS proxy:', documents.length, 'documents');
-                buildIndex();
-                checkUrlParams();
             } catch (e) {
                 console.error('[Go Off] Failed to load documents:', e);
             }
