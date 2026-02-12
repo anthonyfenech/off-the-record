@@ -26,61 +26,7 @@
     <link rel="stylesheet" href="./css/components.min.css?v=391">
 
     <style>
-        body { padding: 90px 20px 60px; }
-
-        .header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: var(--color-header-bg);
-            border-bottom: 1px solid var(--color-border);
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 69px;
-            padding: 0 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .header-logo-img { height: 28px; }
-
-        .chapter {
-            max-width: 640px;
-            margin: 0 auto;
-        }
-        .chapter-header {
-            margin-top: 2em;
-            margin-bottom: 2em;
-            padding-bottom: 1.5em;
-            border-bottom: 1px solid var(--color-border);
-        }
-        .chapter-title {
-            font-family: var(--font-mono);
-            font-size: 1.875rem;
-            line-height: 1.2;
-            font-weight: bold;
-            color: var(--color-text-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-align: center;
-            margin: 0;
-        }
-        .chapter-body {
-            margin-top: 1.5em;
-        }
-        .chapter-intro {
-            color: var(--color-text-secondary);
-            font-style: italic;
-            margin-bottom: 2em;
-            text-align: center;
-        }
-        .doc-count {
-            font-family: 'Courier New', monospace;
-            font-size: 0.85em;
-        }
-
+        /* Search form - full width of reading column */
         .search-form {
             display: flex;
             gap: 10px;
@@ -92,27 +38,40 @@
             font-size: 16px;
             font-family: var(--font-body);
             border: 1px solid var(--color-border);
-            background: var(--color-bg);
-            color: var(--color-text);
+            background: var(--color-background);
+            color: var(--color-text-primary);
         }
         .search-input:focus {
             outline: none;
-            border-color: var(--color-text);
+            border-color: var(--color-text-primary);
         }
         .search-btn {
             padding: 12px 24px;
-            font-family: 'Courier New', monospace;
+            font-family: var(--font-mono);
             font-size: 12px;
             font-weight: bold;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            background: var(--color-text);
-            color: var(--color-bg);
+            background: var(--color-text-primary);
+            color: var(--color-background);
             border: none;
             cursor: pointer;
+            white-space: nowrap;
         }
         .search-btn:hover { opacity: 0.8; }
 
+        /* Intro text */
+        .chapter-intro {
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 2em;
+        }
+        .doc-count {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+        }
+
+        /* Results */
         .results { display: none; }
         .results.visible { display: block; }
         .results-info {
@@ -142,12 +101,13 @@
         .result-snippet {
             font-size: 0.95rem;
             line-height: 1.6;
-            color: var(--color-text);
+            color: var(--color-text-primary);
         }
         .result-snippet strong {
             font-weight: 700;
         }
 
+        /* Pagination */
         .pagination {
             display: flex;
             justify-content: center;
@@ -155,7 +115,7 @@
             margin-top: 2em;
         }
         .page-btn {
-            font-family: 'Courier New', monospace;
+            font-family: var(--font-mono);
             font-size: 14px;
             padding: 6px 12px;
             background: none;
@@ -166,20 +126,13 @@
         }
         .page-btn:hover { opacity: 0.7; }
         .page-btn.active {
-            color: var(--color-text);
+            color: var(--color-text-primary);
             text-decoration: none;
             cursor: default;
         }
-        .no-results {
-            color: var(--color-text-secondary);
-            font-style: italic;
-            padding: 2em 0;
-        }
 
+        /* Mobile */
         @media (max-width: 600px) {
-            body { padding: 74px 16px 40px; }
-            .header-content { height: 64px; padding: 0 12px; }
-            .header-logo-img { height: 24px; }
             .search-form { flex-direction: column; }
             .search-btn { width: 100%; }
         }
@@ -190,8 +143,16 @@
         localStorage.setItem('otr_beta_session', JSON.stringify({ authenticated: true, expires: Date.now() + 365*24*60*60*1000 }));
     </script>
 
-    <header class="header">
+    <!-- Header Navigation -->
+    <header class="header" id="header">
         <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="visibility: hidden;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
             <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -199,25 +160,49 @@
         </div>
     </header>
 
-    <main class="chapter">
-        <header class="chapter-header">
-            <h1 class="chapter-title">GO OFF</h1>
-        </header>
-        <div class="chapter-body">
-            <p class="chapter-intro">Search the OTR Files document archive. <span class="doc-count" id="docCount"></span></p>
+    <!-- Main Reading Area -->
+    <main class="reader" id="reader">
+        <article class="chapter" id="chapterContent">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Go Off</h2>
+            </header>
+            <div class="chapter-body" id="chapterBody">
+                <p class="chapter-intro">Search the OTR Files document archive. <span class="doc-count" id="docCount"></span></p>
 
-        <form class="search-form" onsubmit="return false;">
-            <input type="text" class="search-input" id="searchInput" autocomplete="off">
-            <button type="submit" class="search-btn" id="searchBtn">Search</button>
-        </form>
+                <form class="search-form" onsubmit="return false;">
+                    <input type="text" class="search-input" id="searchInput" autocomplete="off">
+                    <button type="submit" class="search-btn" id="searchBtn">Search</button>
+                </form>
 
-        <div class="results" id="results">
-            <p class="results-info" id="resultsInfo"></p>
-            <div id="resultsList"></div>
-            <div class="pagination" id="pagination"></div>
-        </div>
-        </div>
+                <div class="results" id="results">
+                    <p class="results-info" id="resultsInfo"></p>
+                    <div id="resultsList"></div>
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </article>
     </main>
+
+    <!-- Chapter Navigation Footer -->
+    <nav class="nav-footer" id="navFooter">
+        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span>Prev</span>
+        </button>
+        <div class="nav-center">
+            <button class="nav-btn nav-media media-active" id="mediaBtn" aria-label="Toggle media">
+                <span>Media</span>
+            </button>
+        </div>
+        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter" disabled>
+            <span>Next</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </nav>
 
     <script type="module">
         const TYPES = { w: 'tweet', x: 'text', e: 'email', a: 'article', d: 'document', n: 'note', v: 'voicemail', r: 'recording', A: 'article', T: 'text' };
@@ -226,10 +211,9 @@
 
         function parse(d) {
             const [id, mmdd, ta, title, from, snippet] = d;
-            // id format: "-T253094" or "-A0001" - extract type from prefix
             const typeChar = ta ? ta[0] : (id[1] || 'x');
             return {
-                id: id.replace(/^-/, ''),  // Remove leading dash
+                id: id.replace(/^-/, ''),
                 date: mmdd || '',
                 type: TYPES[typeChar] || typeChar,
                 title: title || '',
@@ -242,13 +226,9 @@
             try {
                 const response = await fetch('https://anthonyfenech.github.io/otr-files/js/documents.js');
                 const text = await response.text();
-
-                // Strip export statement and execute to get the array
-                // Format: const D=[[...]];export{D as OTR_DOCUMENTS};
                 const cleaned = text.replace(/export\s*\{[^}]*\}\s*;?\s*$/, '');
                 const fn = new Function(cleaned + '; return D;');
                 const data = fn();
-
                 docs = data.map(d => parse(d));
                 document.getElementById('docCount').textContent = docs.length.toLocaleString() + ' documents';
                 console.log('[Go Off] Loaded', docs.length, 'documents');
@@ -260,7 +240,7 @@
 
         function bold(text) {
             if (!query || !text) return text;
-            return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<strong>$1</strong>');
+            return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')})`, 'gi'), '<strong>$1</strong>');
         }
 
         function search(q) {
