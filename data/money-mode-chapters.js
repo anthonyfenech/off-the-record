@@ -64,6 +64,7 @@ export const CHAPTERS = [
 <p class="toc-entry"><a href="#bottom-nine" class="toc-link">Bottom Nine</a></p>
 <p class="toc-entry"><a href="#postscript" class="toc-link">Postscript</a></p>
 <p class="toc-entry"><a href="#dedication" class="toc-link">Dedication</a></p>
+<p class="toc-entry"><a href="./go-off.html" class="toc-link">Go Off</a></p>
 </div>`,
         wordCount: 0
     },
