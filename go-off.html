@@ -207,6 +207,24 @@
         /* Mobile */
         @media (max-width: 600px) {
             .result-header { flex-direction: column; }
+            #searchInput { width: 200px !important; }
+        }
+
+        /* Sidebar styles (supplement to components.css) */
+        .toc-sidebar .toc-link {
+            display: block;
+            padding: 12px 20px;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-size: 15px;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .toc-sidebar .toc-link:hover {
+            background: var(--color-border);
+        }
+        .toc-sidebar .toc-link.active {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -218,7 +236,7 @@
     <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="header-content">
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="visibility: hidden;">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -274,6 +292,27 @@
             </div>
         </article>
     </main>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <a href="./" class="toc-link">Home</a>
+            <a href="./binge-mode.html" class="toc-link">Binge Mode</a>
+            <a href="./library.html" class="toc-link">Library</a>
+            <a href="./go-off.html" class="toc-link active">Go Off</a>
+        </nav>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
 
     <script type="module">
         // ═══════════════════════════════════════════════════════════════
@@ -624,6 +663,30 @@
 
         // Load documents on page load
         loadDocuments();
+
+        // ─────────────────────────────────────────────────────────────────
+        // SIDEBAR NAVIGATION
+        // ─────────────────────────────────────────────────────────────────
+        const menuBtn = document.getElementById('menuBtn');
+        const closeTocBtn = document.getElementById('closeTocBtn');
+        const tocSidebar = document.getElementById('tocSidebar');
+        const overlay = document.getElementById('overlay');
+
+        function openSidebar() {
+            tocSidebar.classList.add('open');
+            overlay.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            tocSidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openSidebar);
+        closeTocBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
     </script>
 </body>
 </html>
