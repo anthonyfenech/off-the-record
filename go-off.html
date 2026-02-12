@@ -26,49 +26,25 @@
     <link rel="stylesheet" href="./css/components.min.css?v=391">
 
     <style>
-        /* Search form - full width of reading column */
-        .search-form {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 2em;
-        }
-        .search-input {
-            flex: 1;
-            padding: 12px 16px;
-            font-size: 16px;
-            font-family: var(--font-body);
-            border: 1px solid var(--color-border);
-            background: var(--color-background);
-            color: var(--color-text-primary);
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: var(--color-text-primary);
-        }
-        .search-btn {
-            padding: 12px 24px;
-            font-family: var(--font-mono);
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            background: var(--color-text-primary);
-            color: var(--color-background);
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .search-btn:hover { opacity: 0.8; }
-
-        /* Intro text */
-        .chapter-intro {
+        /* Archive status message */
+        .archive-status {
+            text-align: center;
+            font-size: 0.85rem;
             color: var(--color-text-secondary);
             font-style: italic;
-            margin-bottom: 2em;
+            margin-top: 1em;
         }
-        .doc-count {
-            font-family: var(--font-mono);
-            font-size: 0.85em;
+
+        /* Dark mode adjustments for search bar */
+        [data-theme="dark"] #searchInput {
+            background: var(--color-background);
+            color: var(--color-text-primary);
+            border-color: #555;
+        }
+        [data-theme="dark"] #searchButton {
+            background: #eee;
+            color: #222;
+            border-color: #eee;
         }
 
         /* Results */
@@ -81,30 +57,127 @@
             padding-bottom: 1em;
             border-bottom: 1px solid var(--color-border);
         }
-        .result {
-            margin-bottom: 1.5rem;
+
+        /* Result Card Styles */
+        .result-card {
+            border: 1px solid var(--color-border);
+            padding: 16px;
+            margin-bottom: 16px;
+            background: var(--color-background);
+        }
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .result-meta-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .result-type {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+            background: var(--color-border);
+            padding: 2px 6px;
+        }
+        .result-date {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--color-text-secondary);
+        }
+        .result-classification {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 6px;
+            font-weight: bold;
+        }
+        .result-classification.unredacted {
+            background: #d4edda;
+            color: #155724;
+        }
+        .result-classification.partially-redacted {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .result-classification.heavily-redacted {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .result-classification.classified {
+            background: #333;
+            color: #fff;
+        }
+        [data-theme="dark"] .result-classification.unredacted {
+            background: #1e4620;
+            color: #a3d9a5;
+        }
+        [data-theme="dark"] .result-classification.partially-redacted {
+            background: #5c4813;
+            color: #f5d67a;
+        }
+        [data-theme="dark"] .result-classification.heavily-redacted {
+            background: #5c1a1a;
+            color: #f5a3a3;
+        }
+        [data-theme="dark"] .result-classification.classified {
+            background: #111;
+            color: #888;
         }
         .result-title {
-            line-height: 1.4;
-            margin-bottom: 0.3em;
-        }
-        .result-title a {
-            color: var(--color-link);
+            font-size: 1.1rem;
             font-weight: 700;
-            text-decoration: none;
+            line-height: 1.3;
+            margin-bottom: 4px;
+            color: var(--color-text-primary);
         }
-        .result-title a:hover { text-decoration: underline; }
-        .result-type {
+        .result-id {
+            font-family: var(--font-mono);
+            font-size: 10px;
             color: var(--color-text-secondary);
-            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .result-participants {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
         }
         .result-snippet {
             font-size: 0.95rem;
             line-height: 1.6;
             color: var(--color-text-primary);
+            margin-bottom: 12px;
         }
-        .result-snippet strong {
-            font-weight: 700;
+        .result-snippet mark {
+            background: #ffeb3b;
+            color: #000;
+            padding: 0 2px;
+            font-weight: 600;
+        }
+        [data-theme="dark"] .result-snippet mark {
+            background: #806d00;
+            color: #fff;
+        }
+        .result-link {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-link);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .result-link:hover {
+            text-decoration: underline;
         }
 
         /* Pagination */
@@ -113,6 +186,7 @@
             justify-content: center;
             gap: 8px;
             margin-top: 2em;
+            flex-wrap: wrap;
         }
         .page-btn {
             font-family: var(--font-mono);
@@ -131,10 +205,17 @@
             cursor: default;
         }
 
+        /* Loading state */
+        .loading-indicator {
+            text-align: center;
+            padding: 2em;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
         /* Mobile */
         @media (max-width: 600px) {
-            .search-form { flex-direction: column; }
-            .search-btn { width: 100%; }
+            .result-header { flex-direction: column; }
         }
     </style>
 </head>
@@ -167,12 +248,42 @@
                 <h2 class="chapter-title">Go Off</h2>
             </header>
             <div class="chapter-body" id="chapterBody">
-                <p class="chapter-intro">Search the OTR Files document archive. <span class="doc-count" id="docCount"></span></p>
+                <p>If you've made it this far, you already know how the story ends. You know about the texts, the emails, the conversations that were never supposed to see the light of day. You've read the chapters. You've drawn your own conclusions.</p>
 
-                <form class="search-form" onsubmit="return false;">
-                    <input type="text" class="search-input" id="searchInput" autocomplete="off">
-                    <button type="submit" class="search-btn" id="searchBtn">Search</button>
-                </form>
+                <p>But what you've read is only what made the cut. For every paragraph that survived, there were ten that didn't. For every source I named, there were five I protected. For every story I published, there were dozens I buried in a drawer and forgot about — until now.</p>
+
+                <p>Below is a search engine connected to my personal archive: fifteen years of text messages, emails, notes, voice recordings, articles, receipts, and documents from my time covering the Detroit Tigers for the Detroit Free Press. Some of it is redacted. Some of it is raw. All of it is real.</p>
+
+                <p>Type a name. Type a date. Type a word you half-remember from a conversation you weren't supposed to hear. Welcome to the archive.</p>
+
+                <div style="max-width: 100%; margin: 2em auto;">
+                    <input type="text" id="searchInput" placeholder="Search the archive..." style="
+                        width: 100%;
+                        padding: 12px 16px;
+                        font-family: Georgia, 'Times New Roman', serif;
+                        font-size: 16px;
+                        border: 1px solid #ccc;
+                        border-radius: 0;
+                        outline: none;
+                        box-sizing: border-box;
+                        margin-bottom: 12px;
+                    " />
+                    <button id="searchButton" style="
+                        display: block;
+                        margin: 0 auto;
+                        padding: 10px 32px;
+                        font-family: 'Courier New', monospace;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        background: #222;
+                        color: #fff;
+                        border: 1px solid #222;
+                        cursor: pointer;
+                    ">Search</button>
+                </div>
+
+                <p class="archive-status" id="archiveStatus"></p>
 
                 <div class="results" id="results">
                     <p class="results-info" id="resultsInfo"></p>
@@ -205,109 +316,383 @@
     </nav>
 
     <script type="module">
-        const TYPES = { w: 'tweet', x: 'text', e: 'email', a: 'article', d: 'document', n: 'note', v: 'voicemail', r: 'recording', A: 'article', T: 'text' };
+        // ═══════════════════════════════════════════════════════════════
+        // GO OFF - OTR FILES DOCUMENT SEARCH
+        // ═══════════════════════════════════════════════════════════════
+
         const PER_PAGE = 25;
-        let docs = [], results = [], page = 1, query = '';
+        const OTR_FILES_BASE = 'https://anthonyfenech.github.io/otr-files';
+        const DOCUMENTS_URL = `${OTR_FILES_BASE}/js/documents.js`;
 
-        function parse(d) {
-            const [id, mmdd, ta, title, from, snippet] = d;
-            const typeChar = ta ? ta[0] : (id[1] || 'x');
-            return {
-                id: id.replace(/^-/, ''),
-                date: mmdd || '',
-                type: TYPES[typeChar] || typeChar,
-                title: title || '',
-                from: from || '',
-                snippet: snippet || ''
-            };
-        }
+        let documents = [];
+        let index = {};
+        let results = [];
+        let currentPage = 1;
+        let currentQuery = '';
 
-        async function load() {
+        // ─────────────────────────────────────────────────────────────────
+        // STEP 1: Load Documents
+        // ─────────────────────────────────────────────────────────────────
+        async function loadDocuments() {
+            const statusEl = document.getElementById('archiveStatus');
+
+            // Try ES module import first (works on same origin or with CORS)
             try {
-                const response = await fetch('https://anthonyfenech.github.io/otr-files/js/documents.js');
+                const module = await import(`${DOCUMENTS_URL}?t=${Date.now()}`);
+                if (module.OTR_DOCUMENTS && Array.isArray(module.OTR_DOCUMENTS)) {
+                    documents = module.OTR_DOCUMENTS;
+                    console.log('[Go Off] Loaded via ES module:', documents.length, 'documents');
+                    statusEl.textContent = '';
+                    buildIndex();
+                    checkUrlParams();
+                    return;
+                }
+            } catch (e) {
+                console.warn('[Go Off] ES module import failed, trying CORS proxy:', e.message);
+            }
+
+            // Fallback: Fetch via CORS proxy, then eval
+            try {
+                const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(DOCUMENTS_URL);
+                const response = await fetch(proxyUrl);
                 const text = await response.text();
-                const cleaned = text.replace(/export\s*\{[^}]*\}\s*;?\s*$/, '');
-                const fn = new Function(cleaned + '; return D;');
-                const data = fn();
-                docs = data.map(d => parse(d));
-                document.getElementById('docCount').textContent = docs.length.toLocaleString() + ' documents';
-                console.log('[Go Off] Loaded', docs.length, 'documents');
-            } catch(e) {
-                console.error('[Go Off] Load error:', e);
-                document.getElementById('docCount').textContent = 'Archive unavailable';
+
+                // Remove ES module export syntax and eval
+                const cleaned = text.replace(/export\s*\{[^}]*\}\s*;?\s*$/m, '');
+                const fn = new Function(cleaned + '; return OTR_DOCUMENTS;');
+                documents = fn();
+
+                if (!Array.isArray(documents)) {
+                    throw new Error('OTR_DOCUMENTS is not an array');
+                }
+
+                console.log('[Go Off] Loaded via CORS proxy:', documents.length, 'documents');
+                statusEl.textContent = '';
+                buildIndex();
+                checkUrlParams();
+            } catch (e) {
+                console.error('[Go Off] Failed to load documents:', e);
+                // Show nothing - user will see "No documents found" if they search
             }
         }
 
-        function bold(text) {
-            if (!query || !text) return text;
-            return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')})`, 'gi'), '<strong>$1</strong>');
+        // ─────────────────────────────────────────────────────────────────
+        // STEP 2: Build Inverted Index
+        // ─────────────────────────────────────────────────────────────────
+        function tokenize(text) {
+            if (!text) return [];
+            return text.toLowerCase()
+                .replace(/[^\w\s]/g, ' ')
+                .split(/\s+/)
+                .filter(t => t.length > 1);
         }
 
-        function search(q) {
-            query = q.toLowerCase().trim();
-            if (!query) { document.getElementById('results').classList.remove('visible'); return; }
-            results = docs.filter(d =>
-                (d.title && d.title.toLowerCase().includes(query)) ||
-                (d.from && d.from.toLowerCase().includes(query)) ||
-                (d.snippet && d.snippet.toLowerCase().includes(query)) ||
-                (d.id && d.id.toLowerCase().includes(query))
-            );
-            page = 1;
-            render();
+        function buildIndex() {
+            index = {};
+            documents.forEach((doc, docIndex) => {
+                const fields = [
+                    doc.title || '',
+                    doc.from || '',
+                    doc.to || '',
+                    doc.searchText || '',
+                    doc.content || '',
+                    doc.contextNote || '',
+                    doc.id || '',
+                    doc.slug || '',
+                    (doc.subjects || []).join(' '),
+                    (doc.tags || []).join(' '),
+                    (doc.participants || []).join(' ')
+                ];
+
+                const allText = fields.join(' ');
+                const tokens = tokenize(allText);
+
+                tokens.forEach(token => {
+                    if (!index[token]) {
+                        index[token] = new Set();
+                    }
+                    index[token].add(docIndex);
+                });
+            });
+
+            console.log('[Go Off] Index built with', Object.keys(index).length, 'unique tokens');
         }
 
-        function render() {
-            const el = document.getElementById('results');
-            const list = document.getElementById('resultsList');
-            const pag = document.getElementById('pagination');
-            const info = document.getElementById('resultsInfo');
-
-            if (!results.length) {
-                el.classList.add('visible');
-                info.textContent = 'No documents found.';
-                list.innerHTML = '';
-                pag.innerHTML = '';
+        // ─────────────────────────────────────────────────────────────────
+        // STEP 3: Perform Search with Scoring
+        // ─────────────────────────────────────────────────────────────────
+        function performSearch(query) {
+            currentQuery = query.trim().toLowerCase();
+            if (!currentQuery) {
+                results = [];
                 return;
             }
 
-            const start = (page - 1) * PER_PAGE;
+            const queryTokens = tokenize(currentQuery);
+            if (queryTokens.length === 0) {
+                results = [];
+                return;
+            }
+
+            // Find candidate documents (intersection of all query tokens)
+            let candidateIndices = null;
+            for (const token of queryTokens) {
+                const matches = index[token];
+                if (!matches) {
+                    candidateIndices = new Set();
+                    break;
+                }
+                if (candidateIndices === null) {
+                    candidateIndices = new Set(matches);
+                } else {
+                    candidateIndices = new Set([...candidateIndices].filter(i => matches.has(i)));
+                }
+            }
+
+            if (!candidateIndices || candidateIndices.size === 0) {
+                results = [];
+                return;
+            }
+
+            // Score each candidate
+            const scored = [];
+            const queryLower = currentQuery;
+
+            candidateIndices.forEach(docIndex => {
+                const doc = documents[docIndex];
+                let score = 0;
+
+                // Title match: +10
+                if (doc.title && doc.title.toLowerCase().includes(queryLower)) {
+                    score += 10;
+                }
+
+                // Subject match: +5 each
+                if (doc.subjects) {
+                    doc.subjects.forEach(s => {
+                        if (s.toLowerCase().includes(queryLower)) score += 5;
+                    });
+                }
+
+                // Tag match: +3 each
+                if (doc.tags) {
+                    doc.tags.forEach(t => {
+                        if (t.toLowerCase().includes(queryLower)) score += 3;
+                    });
+                }
+
+                // From/To match: +5 each
+                if (doc.from && doc.from.toLowerCase().includes(queryLower)) score += 5;
+                if (doc.to && doc.to.toLowerCase().includes(queryLower)) score += 5;
+
+                // Participants match: +3 each
+                if (doc.participants) {
+                    doc.participants.forEach(p => {
+                        if (p.toLowerCase().includes(queryLower)) score += 3;
+                    });
+                }
+
+                // SearchText/content match: +1
+                const textContent = (doc.searchText || doc.content || '').toLowerCase();
+                if (textContent.includes(queryLower)) score += 1;
+
+                // Featured bonus: +2
+                if (doc.featured) score += 2;
+
+                // ID exact match bonus: +15
+                if (doc.id && doc.id.toLowerCase() === queryLower) score += 15;
+
+                scored.push({ doc, docIndex, score });
+            });
+
+            // Sort by score descending, then by date descending
+            scored.sort((a, b) => {
+                if (b.score !== a.score) return b.score - a.score;
+                // Secondary sort by date
+                const dateA = a.doc.date || '';
+                const dateB = b.doc.date || '';
+                return dateB.localeCompare(dateA);
+            });
+
+            results = scored.map(s => s.doc);
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // STEP 4: Generate Snippet with Highlighting
+        // ─────────────────────────────────────────────────────────────────
+        function generateSnippet(doc, maxLength = 200) {
+            const text = doc.searchText || doc.content || doc.contextNote || '';
+            if (!text || !currentQuery) return '';
+
+            const queryLower = currentQuery.toLowerCase();
+            const textLower = text.toLowerCase();
+            const pos = textLower.indexOf(queryLower);
+
+            let snippet;
+            if (pos === -1) {
+                // Query not found in text, use beginning
+                snippet = text.substring(0, maxLength);
+            } else {
+                // Center around match
+                const start = Math.max(0, pos - 50);
+                const end = Math.min(text.length, pos + maxLength - 50);
+                snippet = (start > 0 ? '...' : '') + text.substring(start, end) + (end < text.length ? '...' : '');
+            }
+
+            // Highlight query terms
+            const escaped = currentQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escaped})`, 'gi');
+            return snippet.replace(regex, '<mark>$1</mark>');
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // STEP 5: Render Results
+        // ─────────────────────────────────────────────────────────────────
+        function getClassificationClass(classification) {
+            if (!classification) return '';
+            const c = classification.toLowerCase().replace(/\s+/g, '-');
+            if (c.includes('unredacted')) return 'unredacted';
+            if (c.includes('partially')) return 'partially-redacted';
+            if (c.includes('heavily')) return 'heavily-redacted';
+            if (c.includes('classified')) return 'classified';
+            return '';
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr);
+            if (isNaN(d)) return dateStr;
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        function renderResults() {
+            const resultsEl = document.getElementById('results');
+            const listEl = document.getElementById('resultsList');
+            const pagEl = document.getElementById('pagination');
+            const infoEl = document.getElementById('resultsInfo');
+
+            if (results.length === 0) {
+                resultsEl.classList.add('visible');
+                infoEl.textContent = currentQuery ? 'No documents found.' : '';
+                listEl.innerHTML = '';
+                pagEl.innerHTML = '';
+                return;
+            }
+
+            const start = (currentPage - 1) * PER_PAGE;
             const end = Math.min(start + PER_PAGE, results.length);
-            const pages = Math.ceil(results.length / PER_PAGE);
+            const totalPages = Math.ceil(results.length / PER_PAGE);
 
-            info.textContent = `Showing ${start + 1} to ${end} of ${results.length} Results.`;
+            infoEl.textContent = `Showing ${start + 1} to ${end} of ${results.length} results`;
 
-            list.innerHTML = results.slice(start, end).map(d => {
-                const typeLabel = d.type ? d.type.charAt(0).toUpperCase() + d.type.slice(1) : '';
-                const snippetHtml = d.snippet ? bold(d.snippet) : '';
+            listEl.innerHTML = results.slice(start, end).map(doc => {
+                const type = doc.type || 'document';
+                const typeLabel = type.charAt(0).toUpperCase() + type.slice(1);
+                const date = formatDate(doc.date);
+                const classification = doc.classification || '';
+                const classClass = getClassificationClass(classification);
+                const title = doc.title || doc.id || 'Untitled';
+                const id = doc.id || '';
+                const from = doc.from || '';
+                const to = doc.to || '';
+                const snippet = generateSnippet(doc);
+
+                let participantsHtml = '';
+                if (from || to) {
+                    const parts = [];
+                    if (from) parts.push(`From: ${from}`);
+                    if (to) parts.push(`To: ${to}`);
+                    participantsHtml = `<div class="result-participants">${parts.join(' &bull; ')}</div>`;
+                }
+
                 return `
-                <div class="result">
-                    <div class="result-title"><a href="https://anthonyfenech.github.io/otr-files/document.html?id=${d.id}" target="_blank" rel="noopener">${d.title || d.id}</a><span class="result-type"> - ${typeLabel}</span></div>
-                    ${snippetHtml ? `<div class="result-snippet">${snippetHtml}</div>` : ''}
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="result-meta-left">
+                            <span class="result-type">${typeLabel}</span>
+                            ${date ? `<span class="result-date">${date}</span>` : ''}
+                        </div>
+                        ${classification ? `<span class="result-classification ${classClass}">${classification}</span>` : ''}
+                    </div>
+                    <div class="result-title">${title}</div>
+                    <div class="result-id">${id}</div>
+                    ${participantsHtml}
+                    ${snippet ? `<div class="result-snippet">${snippet}</div>` : ''}
+                    <a href="${OTR_FILES_BASE}/document.html?id=${encodeURIComponent(id)}" target="_blank" rel="noopener" class="result-link">View Document &rarr;</a>
                 </div>
             `}).join('');
 
-            pag.innerHTML = pages > 1 ? Array.from({length: pages}, (_, i) =>
-                `<button class="page-btn${i+1 === page ? ' active' : ''}" data-p="${i+1}">${i+1}</button>`
-            ).join('') : '';
+            // Render pagination
+            if (totalPages > 1) {
+                let pagHtml = '';
+                for (let i = 1; i <= totalPages; i++) {
+                    pagHtml += `<button class="page-btn${i === currentPage ? ' active' : ''}" data-page="${i}">${i}</button>`;
+                }
+                pagEl.innerHTML = pagHtml;
 
-            pag.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
-                page = +b.dataset.p;
-                render();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }));
+                pagEl.querySelectorAll('button').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        currentPage = parseInt(btn.dataset.page);
+                        renderResults();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+            } else {
+                pagEl.innerHTML = '';
+            }
 
-            el.classList.add('visible');
+            resultsEl.classList.add('visible');
         }
 
-        document.getElementById('searchBtn').addEventListener('click', () => search(document.getElementById('searchInput').value));
-        document.getElementById('searchInput').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); search(e.target.value); }});
+        // ─────────────────────────────────────────────────────────────────
+        // STEP 6: Handle Search
+        // ─────────────────────────────────────────────────────────────────
+        function handleSearch(query) {
+            currentPage = 1;
+            performSearch(query);
+            renderResults();
+
+            // Update URL
+            const url = new URL(window.location);
+            if (query.trim()) {
+                url.searchParams.set('q', query.trim());
+            } else {
+                url.searchParams.delete('q');
+            }
+            history.replaceState(null, '', url);
+        }
+
+        function checkUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const q = params.get('q');
+            if (q) {
+                document.getElementById('searchInput').value = q;
+                handleSearch(q);
+            }
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // INITIALIZATION
+        // ─────────────────────────────────────────────────────────────────
+        document.getElementById('searchButton').addEventListener('click', () => {
+            handleSearch(document.getElementById('searchInput').value);
+        });
+
+        document.getElementById('searchInput').addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSearch(e.target.value);
+            }
+        });
+
         document.getElementById('themeToggle').addEventListener('click', () => {
             const dark = document.documentElement.getAttribute('data-theme') === 'dark';
             document.documentElement.setAttribute('data-theme', dark ? '' : 'dark');
             localStorage.setItem('reader_theme', dark ? 'light' : 'dark');
         });
 
-        load();
+        // Load documents on page load
+        loadDocuments();
     </script>
 </body>
 </html>
