@@ -240,8 +240,15 @@
 
         async function load() {
             try {
-                const m = await import('https://anthonyfenech.github.io/otr-files/js/documents.js');
-                const data = m.OTR_DOCUMENTS;
+                const response = await fetch('https://anthonyfenech.github.io/otr-files/js/documents.js');
+                const text = await response.text();
+
+                // Strip export statement and execute to get the array
+                // Format: const D=[[...]];export{D as OTR_DOCUMENTS};
+                const cleaned = text.replace(/export\s*\{[^}]*\}\s*;?\s*$/, '');
+                const fn = new Function(cleaned + '; return D;');
+                const data = fn();
+
                 docs = data.map(d => parse(d));
                 document.getElementById('docCount').textContent = docs.length.toLocaleString() + ' documents';
                 console.log('[Go Off] Loaded', docs.length, 'documents');
