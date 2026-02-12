@@ -26,15 +26,6 @@
     <link rel="stylesheet" href="./css/components.min.css?v=391">
 
     <style>
-        /* Archive status message */
-        .archive-status {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            font-style: italic;
-            margin-top: 1em;
-        }
-
         /* Dark mode adjustments for search bar */
         [data-theme="dark"] #searchInput {
             background: var(--color-background);
@@ -248,16 +239,8 @@
                 <h2 class="chapter-title">Go Off</h2>
             </header>
             <div class="chapter-body" id="chapterBody">
-                <p>If you've made it this far, you already know how the story ends. You know about the texts, the emails, the conversations that were never supposed to see the light of day. You've read the chapters. You've drawn your own conclusions.</p>
-
-                <p>But what you've read is only what made the cut. For every paragraph that survived, there were ten that didn't. For every source I named, there were five I protected. For every story I published, there were dozens I buried in a drawer and forgot about — until now.</p>
-
-                <p>Below is a search engine connected to my personal archive: fifteen years of text messages, emails, notes, voice recordings, articles, receipts, and documents from my time covering the Detroit Tigers for the Detroit Free Press. Some of it is redacted. Some of it is raw. All of it is real.</p>
-
-                <p>Type a name. Type a date. Type a word you half-remember from a conversation you weren't supposed to hear. Welcome to the archive.</p>
-
-                <div style="max-width: 100%; margin: 2em auto;">
-                    <input type="text" id="searchInput" placeholder="Search the archive..." style="
+                <div style="max-width: 100%; margin: 0 auto;">
+                    <input type="text" id="searchInput" placeholder="Type to search..." style="
                         width: 100%;
                         padding: 12px 16px;
                         font-family: Georgia, 'Times New Roman', serif;
@@ -282,8 +265,6 @@
                         cursor: pointer;
                     ">Search</button>
                 </div>
-
-                <p class="archive-status" id="archiveStatus"></p>
 
                 <div class="results" id="results">
                     <p class="results-info" id="resultsInfo"></p>
@@ -334,15 +315,12 @@
         // STEP 1: Load Documents
         // ─────────────────────────────────────────────────────────────────
         async function loadDocuments() {
-            const statusEl = document.getElementById('archiveStatus');
-
             // Try ES module import first (works on same origin or with CORS)
             try {
                 const module = await import(`${DOCUMENTS_URL}?t=${Date.now()}`);
                 if (module.OTR_DOCUMENTS && Array.isArray(module.OTR_DOCUMENTS)) {
                     documents = module.OTR_DOCUMENTS;
                     console.log('[Go Off] Loaded via ES module:', documents.length, 'documents');
-                    statusEl.textContent = '';
                     buildIndex();
                     checkUrlParams();
                     return;
@@ -367,12 +345,10 @@
                 }
 
                 console.log('[Go Off] Loaded via CORS proxy:', documents.length, 'documents');
-                statusEl.textContent = '';
                 buildIndex();
                 checkUrlParams();
             } catch (e) {
                 console.error('[Go Off] Failed to load documents:', e);
-                // Show nothing - user will see "No documents found" if they search
             }
         }
 
