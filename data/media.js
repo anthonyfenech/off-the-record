@@ -74,12 +74,12 @@ const MEDIA_DATA = {
     chapter: 4
   },
 
-  'jeff-moss-falsities': {
+  'internet-stalker-falsities': {
     type: 'document',
     emoji: '📄',
     title: 'Detroit Sports Rag False Claims',
     caption: 'Documentation of internet stalker posts from Nov-Dec 2014 — false allegations and harassment',
-    src: 'assets/audio-staging/jeff-moss-falsities.webp',
+    src: 'assets/audio-staging/internet-stalker-falsities.webp',
     date: '2014-12-08',
     chapter: 4
   },
@@ -232,7 +232,7 @@ const MEDIA_DATA = {
     chapter: 7
   },
 
-  'jeff-moss-prank-call': {
+  'internet-stalker-prank-call': {
     type: 'audio',
     emoji: '🎙️',
     title: 'Howard Stern Prank Call',
