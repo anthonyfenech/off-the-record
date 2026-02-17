@@ -960,7 +960,7 @@ const MEDIA_DATA = {
     type: 'document',
     emoji: '✉️',
     title: 'Email to Gannett Corporate - Business Dossier',
-    src: 'assets/audio-staging/EMAIL TO CORPORATE.txt',
+    src: '_private/email-to-corporate.txt',
     date: '2020-08-13',
     chapter: 22
   },
