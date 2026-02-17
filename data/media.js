@@ -1414,12 +1414,11 @@ const MEDIA_DATA = {
   },
 
   'k-rod-stats': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'K-Rod Statistics',
-    src: 'https://www.baseball-reference.com/',
+    type: 'screenshot',
+    emoji: '📷',
+    title: 'K-Rod Statistics - Baseball Reference',
+    src: 'assets/10-spring-training/k-rod-stats.webp',
     date: '2016-01-01',
-    publication: 'Baseball Reference',
     chapter: 10
   },
 
