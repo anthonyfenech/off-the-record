@@ -4655,7 +4655,7 @@ export const CHAPTERS = [
 
 <p>Walking away, I feel like The Man. The team’s dominant veteran presence has dissolved, leaving a group of young guys. I’ve been in major-league clubhouses longer than most of them.</p>
 
-<p>ESPN.com’s Jerry Crasnick asks if he can mention Gardy’s ploy in a column. <span class="media-emoji" data-media-id="crasnick-column">📰</span></p>
+<p>ESPN.com’s Jerry Crasnick asks if he can mention Gardy’s ploy in a column. <span class="media-emoji" data-media-id="crasnick-column">🔗</span></p>
 
 <p>“<em>Gardenhire isn’t averse to some time-honored motivational tactics. Shortly thereafter, copies of the story were hanging in each player’s locker, courtesy of the manager.</em>”</p>
 
@@ -6312,7 +6312,7 @@ export const CHAPTERS = [
 
 <p>“<em>When it finally crashed off the mesh attached to the left field foul pole, one step after another the reaction unfurled: from Carlton Fisk</em>’<em>s convulsive leap to John Kiley</em>’<em>s booming of the </em>‘<em>Hallelujah Chorus</em>’<em> to the wearing off of the numbness to the outcry that echoed across the cold New England morning.</em></p>
 
-<p>“<em>At 12:34 </em><em>A.M.</em><em>, in the 12th inning, Fisk’s histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times</em>,<em> and a game that brings back summertime one more day. For the seventh game of the World Series.</em>” <span class="media-emoji" data-media-id="gammons-fisk-lede">📰</span></p>
+<p>“<em>At 12:34 </em><em>A.M.</em><em>, in the 12th inning, Fisk’s histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times</em>,<em> and a game that brings back summertime one more day. For the seventh game of the World Series.</em>” <span class="media-emoji" data-media-id="gammons-fisk-lede">🔗</span></p>
 
 <p>It can give you chills.</p>
 
@@ -7952,7 +7952,7 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>December 20</em>—</span>One of my sports writing friends is in the news. Josh Katzenstein, former Lions beat writer, got laid off from the <em>New Orleans Times-Picayune</em>.</p>
 
-<p>Katzenstein left the industry to sell CBD products. His story is featured in the <em>Ringer</em>: “He used to be a beat writer, and when he sells CBD products to vape shops, he still acts like one. ‘The skills,’ said Katzenstein, ‘are super-transferrable.’” <span class="media-emoji" data-media-id="katzenstein-ringer">📰</span></p>
+<p>Katzenstein left the industry to sell CBD products. His story is featured in the <em>Ringer</em>: “He used to be a beat writer, and when he sells CBD products to vape shops, he still acts like one. ‘The skills,’ said Katzenstein, ‘are super-transferrable.’” <span class="media-emoji" data-media-id="katzenstein-ringer">🔗</span></p>
 
 <p>The <em>Ringer</em> was created by Bill Simmons, who earned his spot on sports writing’s Mount Rushmore the hard way. After getting rejected by traditional outlets, Simmons started blogging while bar backing, eventually building a media empire.</p>
 
@@ -8419,7 +8419,7 @@ export const CHAPTERS = [
 
 <p>The reunion didn’t work. Trying to make sense of the Mets’ fourth-place season, <em>New York Post</em> Ball Writer Mike Puma shed light on clubhouse chemistry issues: “Verlander and Scherzer had a strained relationship as Tigers teammates, and a source said even as the pitchers worked toward harmony with the Mets, there was occasional discord. Verlander was a ’diva,’ according to this Met, causing Scherzer to grouse about his longtime teammate.</p>
 
-<p>“Verlander, who was traded back to the Astros on Aug. 1, was largely detached from teammates, according to the Met, and didn’t add to the team’s identity. On the other hand, Scherzer (who was traded to the Rangers on July 29) helped form the fabric of the clubhouse.” <span class="media-emoji" data-media-id="verlander-diva-nypost">📰</span></p>
+<p>“Verlander, who was traded back to the Astros on Aug. 1, was largely detached from teammates, according to the Met, and didn’t add to the team’s identity. On the other hand, Scherzer (who was traded to the Rangers on July 29) helped form the fabric of the clubhouse.” <span class="media-emoji" data-media-id="verlander-diva-nypost">🔗</span></p>
 
 <p>I never covered Scherzer on a full-time basis. He signed with the Washington Nationals just months after I took over as the Tigers’ Ball Writer. But we were familiar enough, and I strived to build a relationship with Scherzer. At All-Star Game media days, I’d always sidle up to Max’s podium for a quick hello.</p>
 
@@ -8449,11 +8449,11 @@ export const CHAPTERS = [
 
 <p>According to a June 2021 interview with <em>Sports Illustrated</em>, Harkins said the substance was developed by All-Star closer Troy Percival, who saved 316 games in ten seasons with the Angels from 1995-2004. Harkins said he wasn’t asked to produce the goo until 2005, when Percival signed with the Tigers.</p>
 
-<p>From <em>Sports Illustrated</em>: “A year or two later, with Percival gone, then-Detroit ace Justin Verlander approached Harkins during a road trip: ‘He said, ‘Hey, we had Troy Percival on our team last year, and he shared the stuff that he was using and we started using it—and we called him and said, ‘We would like to get some; what do we need to do?’ He said, ‘Well, talk to Bubba.’” <span class="media-emoji" data-media-id="sticky-stuff-si">📰</span></p>
+<p>From <em>Sports Illustrated</em>: “A year or two later, with Percival gone, then-Detroit ace Justin Verlander approached Harkins during a road trip: ‘He said, ‘Hey, we had Troy Percival on our team last year, and he shared the stuff that he was using and we started using it—and we called him and said, ‘We would like to get some; what do we need to do?’ He said, ‘Well, talk to Bubba.’” <span class="media-emoji" data-media-id="sticky-stuff-si">🔗</span></p>
 
 <p>In court filings, Harkins said Verlander texted him after the Angels fired him: “Bubba, it’s JV. Firstly, I’m so sorry to hear about this. Please give me a shout whenever you can.” In their subsequent phone conversation, Verlander said ‘the league has let this go on for 100 hundred years,’ and that it was ‘(expletive).’”</p>
 
-<p>Harkins’ defamation suit was settled confidentially in July 2023, hours before the case was scheduled to go to trial. <span class="media-emoji" data-media-id="harkins-settlement-latimes">📰</span></p>
+<p>Harkins’ defamation suit was settled confidentially in July 2023, hours before the case was scheduled to go to trial. <span class="media-emoji" data-media-id="harkins-settlement-latimes">🔗</span></p>
 
 
 <p>As for Anthony Fenech, I played out the string for as long as I could before officially losing my mind.</p>

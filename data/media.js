@@ -313,6 +313,7 @@ const MEDIA_DATA = {
     emoji: '📷',
     title: 'Dombrowski Extension News',
     src: 'assets/08-trade-deadline/08-trade-deadline-dombrowski-extension.webp',
+    url: 'https://www.freep.com/story/sports/mlb/tigers/2015/08/03/fenech-dombrowski-might-tigers-biggest-free-agent-signing/31090267/',
     date: '2015-07-01',
     chapter: 8
   },
@@ -1416,7 +1417,7 @@ const MEDIA_DATA = {
     type: 'link',
     emoji: '🔗',
     title: 'Verlander Poppy Story - Free Press',
-    src: 'https://www.freep.com/',
+    src: 'https://www.freep.com/story/sports/mlb/tigers/2017/05/28/detroit-tigers-memorial-day-justin-verlander-remembers-veterans-poppy-flower/352657001/',
     date: '2017-05-01',
     publication: 'Detroit Free Press',
     chapter: 14
