@@ -1393,16 +1393,6 @@ const MEDIA_DATA = {
     chapter: 22
   },
 
-  'katzenstein-ringer': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Katzenstein - The Ringer',
-    src: 'https://www.theringer.com/',
-    date: '2019-01-01',
-    publication: 'The Ringer',
-    chapter: 22
-  },
-
   'sticky-stuff-si': {
     type: 'link',
     emoji: '🔗',
@@ -1431,16 +1421,6 @@ const MEDIA_DATA = {
     date: '2016-01-01',
     publication: 'Baseball Reference',
     chapter: 10
-  },
-
-  'true-life-ball-writer': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'True Life: Ball Writer',
-    src: 'https://www.mtv.com/',
-    date: '2015-01-01',
-    publication: 'MTV',
-    chapter: 5
   },
 
   'verlander-kate-bingo': {

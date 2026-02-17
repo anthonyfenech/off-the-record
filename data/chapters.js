@@ -4815,7 +4815,7 @@ export const CHAPTERS = [
 
 <p>He gives a short tour. Baseball is on TV and Avila has prepared a charcuterie board of meats and cheeses on the kitchen table. I send a picture.</p>
 
-<p>Caption: “True Life: I’m A Ball Writer. In this episode, I text my GM for a cigar. When I arrive, the GM says, ‘I got some munchies for you.’” <span class="media-emoji" data-media-id="true-life-ball-writer">📷</span></p>`,
+<p>Caption: "True Life: I'm A Ball Writer. In this episode, I text my GM for a cigar. When I arrive, the GM says, 'I got some munchies for you.'"</p>`,
         wordCount: 2389
     },
     {
@@ -7952,7 +7952,7 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>December 20</em>—</span>One of my sports writing friends is in the news. Josh Katzenstein, former Lions beat writer, got laid off from the <em>New Orleans Times-Picayune</em>.</p>
 
-<p>Katzenstein left the industry to sell CBD products. His story is featured in the <em>Ringer</em>: “He used to be a beat writer, and when he sells CBD products to vape shops, he still acts like one. ‘The skills,’ said Katzenstein, ‘are super-transferrable.’” <span class="media-emoji" data-media-id="katzenstein-ringer">🔗</span></p>
+<p>Katzenstein left the industry to sell CBD products. His story is featured in the <em>Ringer</em>: "He used to be a beat writer, and when he sells CBD products to vape shops, he still acts like one. 'The skills,' said Katzenstein, 'are super-transferrable.'"</p>
 
 <p>The <em>Ringer</em> was created by Bill Simmons, who earned his spot on sports writing’s Mount Rushmore the hard way. After getting rejected by traditional outlets, Simmons started blogging while bar backing, eventually building a media empire.</p>
 
