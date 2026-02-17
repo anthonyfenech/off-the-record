@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idea</title>
+  <style>
+    :root {
+      --bg: #1a1a1a;
+      --text: #e0e0e0;
+      --header-bg: #252525;
+      --border: #3a3a3a;
+      --label: #888;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --text: #1a1a1a;
+        --header-bg: #f5f5f5;
+        --border: #ddd;
+        --label: #666;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .email-header {
+      background: var(--header-bg);
+      border: 1px solid var(--border);
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .email-header div {
+      margin-bottom: 6px;
+    }
+    .email-header div:last-child {
+      margin-bottom: 0;
+    }
+    .label {
+      color: var(--label);
+      display: inline-block;
+      width: 70px;
+    }
+    .email-body {
+      padding: 10px 0;
+      white-space: pre-wrap;
+    }
+    .email-body p {
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-header">
+    <div><span class="label">From:</span> kurt ralston</div>
+    <div><span class="label">To:</span> Anthony Fenech</div>
+    <div><span class="label">Date:</span> Monday, December 27, 2015 11:28 PM</div>
+    <div><span class="label">Subject:</span> Idea</div>
+  </div>
+  <div class="email-body"><p>Fans might like to read about your first year as a beat writer.  Players, coaches, ballparks,</p>
+<p>press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises,</p>
+<p>any special places/events? Take us through a typical day on the road. What were the</p>
+<p>hilites and lowlights? Any physical or mental fatigue occur during the nine months?</p>
+<p>Congratulations on year one. I look forward to year number two.</p></div>
+</body>
+</html>

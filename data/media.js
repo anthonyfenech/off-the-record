@@ -1,7 +1,7 @@
 /**
  * OTR Media Database
  * Maps media IDs to file paths and metadata
- * Total: 150 media items
+ * Total: 186 media items (148 original + 38 junk mail)
  */
 
 const MEDIA_DATA = {
@@ -1456,6 +1456,390 @@ const MEDIA_DATA = {
     src: 'assets/10-spring-training/VICTOR BARKING DOG 2017.webp',
     date: '2017-03-01',
     chapter: 10
+  },
+
+  // ========================================
+  // JUNK MAIL - Email Collection
+  // ========================================
+
+  'junk-mail-1-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'All Hail The New Seamhead!!',
+    caption: 'All Hail The New Seamhead!!',
+    src: 'assets/junk-mail/junk-mail-1-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-1-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Hanrahan',
+    caption: 'Hanrahan',
+    src: 'assets/junk-mail/junk-mail-1-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-1-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Re: Hanrahan',
+    caption: 'Re: Hanrahan',
+    src: 'assets/junk-mail/junk-mail-1-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-1-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Police Report',
+    caption: 'Police Report',
+    src: 'assets/junk-mail/junk-mail-1-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-1-05': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Anthony Fenech inquiry',
+    caption: 'Anthony Fenech inquiry',
+    src: 'assets/junk-mail/junk-mail-1-05.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-2-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Tigers …',
+    caption: 'Tigers …',
+    src: 'assets/junk-mail/junk-mail-2-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-2-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Re: Tigers …',
+    caption: 'Re: Tigers …',
+    src: 'assets/junk-mail/junk-mail-2-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-2-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: '(No subject)',
+    caption: '(No subject)',
+    src: 'assets/junk-mail/junk-mail-2-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-2-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Next week 1A story',
+    caption: 'Next week 1A story',
+    src: 'assets/junk-mail/junk-mail-2-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-3-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Yup. Me again. Seeking donations for the departed (soon-to-be)',
+    caption: 'Yup. Me again. Seeking donations for the departed (soon-to-be)',
+    src: 'assets/junk-mail/junk-mail-3-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-3-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Business cards',
+    caption: 'Business cards',
+    src: 'assets/junk-mail/junk-mail-3-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-3-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'BOO BOO',
+    caption: 'BOO BOO',
+    src: 'assets/junk-mail/junk-mail-3-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-3-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Idea',
+    caption: 'Idea',
+    src: 'assets/junk-mail/junk-mail-3-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-4-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Reply to your article: How the Detroit Tigers built a sinking ship over four yrs',
+    caption: 'Reply to your article: How the Detroit Tigers built a sinking ship over four yrs',
+    src: 'assets/junk-mail/junk-mail-4-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-4-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Sunday column',
+    caption: 'Sunday column',
+    src: 'assets/junk-mail/junk-mail-4-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-4-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Potential listicle for Sunday',
+    caption: 'Potential listicle for Sunday',
+    src: 'assets/junk-mail/junk-mail-4-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-4-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Are you High',
+    caption: 'Are you High',
+    src: 'assets/junk-mail/junk-mail-4-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-5-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Gardenhire stuff',
+    caption: 'Gardenhire stuff',
+    src: 'assets/junk-mail/junk-mail-5-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-5-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Bosio details via Athletic',
+    caption: 'Bosio details via Athletic',
+    src: 'assets/junk-mail/junk-mail-5-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-5-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Dummy Hoy',
+    caption: 'Dummy Hoy',
+    src: 'assets/junk-mail/junk-mail-5-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-5-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Tigers Update',
+    caption: 'Tigers Update',
+    src: 'assets/junk-mail/junk-mail-5-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-5-05': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Grammar',
+    caption: 'Grammar',
+    src: 'assets/junk-mail/junk-mail-5-05.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-5-06': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Starting Monday…',
+    caption: 'Starting Monday…',
+    src: 'assets/junk-mail/junk-mail-5-06.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-6-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'What a Dumb Column, By a Dumb Ass',
+    caption: 'What a Dumb Column, By a Dumb Ass',
+    src: 'assets/junk-mail/junk-mail-6-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-6-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: '(No subject)',
+    caption: '(No subject)',
+    src: 'assets/junk-mail/junk-mail-6-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-6-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'You will be a columnist soon. Trust me.',
+    caption: 'You will be a columnist soon. Trust me.',
+    src: 'assets/junk-mail/junk-mail-6-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-6-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Re: Tigers update',
+    caption: 'Re: Tigers update',
+    src: 'assets/junk-mail/junk-mail-6-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-6-05': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Michigan baseball',
+    caption: 'Michigan baseball',
+    src: 'assets/junk-mail/junk-mail-6-05.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-7-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Report properly',
+    caption: 'Report properly',
+    src: 'assets/junk-mail/junk-mail-7-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-7-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Thank you',
+    caption: 'Thank you',
+    src: 'assets/junk-mail/junk-mail-7-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-7-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Beat Writer',
+    caption: 'Beat Writer',
+    src: 'assets/junk-mail/junk-mail-7-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-7-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Many of us miss you!',
+    caption: 'Many of us miss you!',
+    src: 'assets/junk-mail/junk-mail-7-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-7-05': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Quiet lately.',
+    caption: 'Quiet lately.',
+    src: 'assets/junk-mail/junk-mail-7-05.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-8-01': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Hello From Detroit',
+    caption: 'Hello From Detroit',
+    src: 'assets/junk-mail/junk-mail-8-01.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-8-02': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'RE: Nationals beat writer candidate – Anthony Fenech',
+    caption: 'RE: Nationals beat writer candidate – Anthony Fenech',
+    src: 'assets/junk-mail/junk-mail-8-02.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-8-03': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Yankees beat reporter candidate - Anthony Fenech',
+    caption: 'Yankees beat reporter candidate - Anthony Fenech',
+    src: 'assets/junk-mail/junk-mail-8-03.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-8-04': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Checking in on Cubs beat reporter position',
+    caption: 'Checking in on Cubs beat reporter position',
+    src: 'assets/junk-mail/junk-mail-8-04.html',
+    chapter: 0,
+    placeholder: false
+  },
+
+  'junk-mail-8-05': {
+    type: 'email',
+    emoji: '✉️',
+    title: 'Re: Checking in on Cubs beat reporter position',
+    caption: 'Re: Checking in on Cubs beat reporter position',
+    src: 'assets/junk-mail/junk-mail-8-05.html',
+    chapter: 0,
+    placeholder: false
   }
 
 };

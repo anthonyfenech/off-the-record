@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are you High</title>
+  <style>
+    :root {
+      --bg: #1a1a1a;
+      --text: #e0e0e0;
+      --header-bg: #252525;
+      --border: #3a3a3a;
+      --label: #888;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --text: #1a1a1a;
+        --header-bg: #f5f5f5;
+        --border: #ddd;
+        --label: #666;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .email-header {
+      background: var(--header-bg);
+      border: 1px solid var(--border);
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .email-header div {
+      margin-bottom: 6px;
+    }
+    .email-header div:last-child {
+      margin-bottom: 0;
+    }
+    .label {
+      color: var(--label);
+      display: inline-block;
+      width: 70px;
+    }
+    .email-body {
+      padding: 10px 0;
+      white-space: pre-wrap;
+    }
+    .email-body p {
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-header">
+    <div><span class="label">From:</span> George Kaleniecki</div>
+    <div><span class="label">To:</span> Anthony Fenech</div>
+    <div><span class="label">Date:</span> Friday, September 29, 2017 11:34 AM</div>
+    <div><span class="label">Subject:</span> Are you High</div>
+  </div>
+  <div class="email-body"><p>Good morning Anthony, hundreds of managers and coaches available in the minor leagues and you pitch another reject for the Tigers. It would be nice to actually understand what a person is trying to say in English instead of some mumble jumble. Please put away you pencil or I pad and try another sport Anthony because baseball is one you never learned to play properly. Sorry, but it shows in your writing. Have a nice day,</p></div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiet lately.</title>
+  <style>
+    :root {
+      --bg: #1a1a1a;
+      --text: #e0e0e0;
+      --header-bg: #252525;
+      --border: #3a3a3a;
+      --label: #888;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --text: #1a1a1a;
+        --header-bg: #f5f5f5;
+        --border: #ddd;
+        --label: #666;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .email-header {
+      background: var(--header-bg);
+      border: 1px solid var(--border);
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .email-header div {
+      margin-bottom: 6px;
+    }
+    .email-header div:last-child {
+      margin-bottom: 0;
+    }
+    .label {
+      color: var(--label);
+      display: inline-block;
+      width: 70px;
+    }
+    .email-body {
+      padding: 10px 0;
+      white-space: pre-wrap;
+    }
+    .email-body p {
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-header">
+    <div><span class="label">From:</span> Bill D</div>
+    <div><span class="label">To:</span> Anthony Fenech</div>
+    <div><span class="label">Date:</span> Thursday, September 24, 2020 10:23 AM</div>
+    <div><span class="label">Subject:</span> Quiet lately.</div>
+  </div>
+  <div class="email-body"><p>Anthony,</p>
+<p>None of my business but I haven’t heard from you in regards to the Tigers lately.</p>
+<p>I’m in NC and am used to following you. This morning, I did a search and didn’t see any announcements. I hope you are well. I just wanted you to know that I enjoy your work and have missed your coverage.</p></div>
+</body>
+</html>
