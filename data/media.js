@@ -487,7 +487,7 @@ const MEDIA_DATA = {
     type: 'photo',
     emoji: '📷',
     title: "Cabrera's Kicks",
-    src: "assets/11-hot-seat/7-12-16 cabrera-s kicks.jpg",
+    src: "assets/11-hot-seat/7-12-16 cabrera-s kicks.webp",
     date: '2016-07-12',
     chapter: 11
   },
@@ -1367,7 +1367,7 @@ const MEDIA_DATA = {
     type: 'link',
     emoji: '🔗',
     title: 'Jerry Crasnick Column',
-    src: 'https://www.espn.com/',
+    src: 'https://www.espn.com/mlb/story/_/id/22873239/opposite-ends-mlb-manager-spectrum-succeed',
     date: '2015-07-01',
     publication: 'ESPN',
     chapter: 7
@@ -1387,7 +1387,7 @@ const MEDIA_DATA = {
     type: 'link',
     emoji: '🔗',
     title: 'Harkins Settlement - LA Times',
-    src: 'https://www.latimes.com/',
+    src: 'https://www.latimes.com/sports/angels/story/2023-07-31/bubba-harkins-defamation-lawsuit-angels-mlb-settled',
     date: '2019-01-01',
     publication: 'LA Times',
     chapter: 22
@@ -1407,7 +1407,7 @@ const MEDIA_DATA = {
     type: 'link',
     emoji: '🔗',
     title: 'Sticky Stuff Investigation - Sports Illustrated',
-    src: 'https://www.si.com/',
+    src: 'https://www.si.com/mlb/2021/06/14/sticky-stuff-bubba-harkins-speaking-out-daily-cover',
     date: '2021-06-01',
     publication: 'Sports Illustrated',
     chapter: 28
