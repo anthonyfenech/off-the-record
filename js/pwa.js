@@ -7,9 +7,11 @@ class PWA {
     }
 
     init() {
-        // Register service worker silently
+        // TEMPORARILY DISABLED - unregister any existing SW
         if ('serviceWorker' in navigator) {
-            this.registerServiceWorker();
+            navigator.serviceWorker.getRegistrations().then(registrations => {
+                registrations.forEach(reg => reg.unregister());
+            });
         }
     }
 

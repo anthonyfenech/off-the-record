@@ -86,6 +86,11 @@ body {
     margin-bottom: 1.5em;
 }
 
+/* No indent - flush left like section starts */
+.chapter-body p.no-indent {
+    text-indent: 0 !important;
+}
+
 /* Block quotes */
 .chapter-body .block-quote,
 .chapter-body blockquote {

@@ -62,7 +62,7 @@ export const CHAPTERS = [
 <p class="toc-entry"><a href="#letter-to-the-editor" class="toc-link">A Letter to the Editor</a></p>
 <p class="toc-entry"><a href="#unethical" class="toc-link">Unethical</a></p>
 <p class="toc-entry"><a href="#bottom-nine" class="toc-link">Bottom Nine</a></p>
-<p class="toc-entry"><a href="#postscript" class="toc-link">Postscript</a></p>
+<p class="toc-entry"><a href="#the-pandemic" class="toc-link">The Pandemic</a></p>
 <p class="toc-entry"><a href="#dedication" class="toc-link">Dedication</a></p>
 <p class="toc-entry"><a href="./go-off.html" class="toc-link">Go Off</a></p>
 </div>`,
@@ -7143,31 +7143,13 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>
 
-<p class="email-line"><strong>BBWAA President:</strong> Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
-
-<p class="email-line"><strong>Copy Editor:</strong> Did you ask about the eclipse again?</p>
-
-<p class="email-line"><strong>Arizona Scout:</strong> I love you.</p>
-
 <p class="email-line"><strong>Verlander's Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>
-
-<p class="email-line"><strong>Gator:</strong> He's not talking about you is he? Lol</p>
 
 <p class="email-line"><strong>Unknown (313) Number:</strong> Any comment on the locker-room incident?</p>
 
 <p class="email-line"><strong>Drug Dealer:</strong> Lmk if anyone tries to mess with you.</p>
 
-<p class="email-line"><strong>Middle School Friend:</strong> verlander beefin with you? whats up man?</p>
-
-<p class="email-line"><strong>MLB PR:</strong> Hi Anthony, I just tried calling you. Here is a statement that we wanted you to have first. We have gotten some other requests from reporters and we will send this to them as well.</p>
-
-<p class="email-line"><strong>Sports Editor:</strong> Give me a shout when you can.</p>
-
 <p class="email-line"><strong>Pedro Gomez:</strong> This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You're not wrong here. Remember that.</p>
-
-<p class="email-line"><strong>Radio Host:</strong> Hey bro, long time… any chance you can come on about the Verlander thing?</p>
-
-<p class="email-line"><strong>Pro Ball Player:</strong> Yooo what's Verlander's deal?</p>
 
 <p class="email-line"><strong>Ex-Girlfriend's Roommate:</strong> Thought the reporters weren't supposed to be the news? Wasn't expecting to see you the topic of the little red ribbon at the top of the Freep.</p>
 
@@ -7175,15 +7157,9 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>National Radio Host:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>
 
-<p class="email-line"><strong>High School Classmate:</strong> Why is Justin Verlander trashing u on Twitter hahah?</p>
-
 <p class="email-line"><strong>National TV Reporter:</strong> Crazy you're on his mind so much. You should be flattered.</p>
 
-<p class="email-line"><strong>Brewers Scout:</strong> Sounds like a lot went on since we talked lol, still wanna catch up today?</p>
-
-<p class="email-line"><strong>National Guy:</strong> Anthony, don't let the creeps get you down. Worst PR guy in my experience, which probably covers 100-plus PR guys.</p>
-
-<p class="email-line"><strong>Orioles Scout:</strong> Just read your name in ESPN. That's great. Getting your name out there!</p>
+<p class="email-line"><strong>Copy Editor:</strong> Did you ask about the eclipse again?</p>
 
 <p class="email-line"><strong>Mom:</strong> Omg. Call when you can.</p>
 
@@ -8244,9 +8220,9 @@ export const CHAPTERS = [
     {
         id: 28,
         year: 2020,
-        section: 'postscript',
-        title: "POSTSCRIPT",
-        slug: "postscript",
+        section: 'year',
+        title: "THE PANDEMIC",
+        slug: "the-pandemic",
         subtitle: "",
         teaser: "Looking back.",
         content: `<p>Sometimes, sports writing means making tough calls. Three weeks after the pandemic hit, the <em>Free Press</em> received the kind of tip nobody wants to get.</p>

@@ -62,7 +62,7 @@ export const CHAPTERS = [
 <p class="toc-entry"><a href="#letter-to-the-editor" class="toc-link">A Letter to the Editor</a></p>
 <p class="toc-entry"><a href="#unethical" class="toc-link">Unethical</a></p>
 <p class="toc-entry"><a href="#bottom-nine" class="toc-link">Bottom Nine</a></p>
-<p class="toc-entry"><a href="#postscript" class="toc-link">Postscript</a></p>
+<p class="toc-entry"><a href="#the-pandemic" class="toc-link">The Pandemic</a></p>
 <p class="toc-entry"><a href="#dedication" class="toc-link">Dedication</a></p>
 <p class="toc-entry"><a href="./go-off.html" class="toc-link">Go Off</a></p>
 </div>`,
@@ -7141,31 +7141,13 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>
 
-<p class="email-line"><strong>BBWAA President:</strong> Anthony, I'm sorry for missing your calls. My phone was charging downstairs overnight and I didn't hear it ringing.</p>
-
-<p class="email-line"><strong>Copy Editor:</strong> Did you ask about the eclipse again?</p>
-
-<p class="email-line"><strong>Arizona Scout:</strong> I love you.</p>
-
 <p class="email-line"><strong>Verlander's Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>
-
-<p class="email-line"><strong>Gator:</strong> He's not talking about you is he? Lol</p>
 
 <p class="email-line"><strong>Unknown (313) Number:</strong> Any comment on the locker-room incident?</p>
 
 <p class="email-line"><strong>Drug Dealer:</strong> Lmk if anyone tries to mess with you.</p>
 
-<p class="email-line"><strong>Middle School Friend:</strong> verlander beefin with you? whats up man?</p>
-
-<p class="email-line"><strong>MLB PR:</strong> Hi Anthony, I just tried calling you. Here is a statement that we wanted you to have first. We have gotten some other requests from reporters and we will send this to them as well.</p>
-
-<p class="email-line"><strong>Sports Editor:</strong> Give me a shout when you can.</p>
-
 <p class="email-line"><strong>Pedro Gomez:</strong> This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You're not wrong here. Remember that.</p>
-
-<p class="email-line"><strong>Radio Host:</strong> Hey bro, long time… any chance you can come on about the Verlander thing?</p>
-
-<p class="email-line"><strong>Pro Ball Player:</strong> Yooo what's Verlander's deal?</p>
 
 <p class="email-line"><strong>Ex-Girlfriend's Roommate:</strong> Thought the reporters weren't supposed to be the news? Wasn't expecting to see you the topic of the little red ribbon at the top of the Freep.</p>
 
@@ -7173,15 +7155,9 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>National Radio Host:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>
 
-<p class="email-line"><strong>High School Classmate:</strong> Why is Justin Verlander trashing u on Twitter hahah?</p>
-
 <p class="email-line"><strong>National TV Reporter:</strong> Crazy you're on his mind so much. You should be flattered.</p>
 
-<p class="email-line"><strong>Brewers Scout:</strong> Sounds like a lot went on since we talked lol, still wanna catch up today?</p>
-
-<p class="email-line"><strong>National Guy:</strong> Anthony, don't let the creeps get you down. Worst PR guy in my experience, which probably covers 100-plus PR guys.</p>
-
-<p class="email-line"><strong>Orioles Scout:</strong> Just read your name in ESPN. That's great. Getting your name out there!</p>
+<p class="email-line"><strong>Copy Editor:</strong> Did you ask about the eclipse again?</p>
 
 <p class="email-line"><strong>Mom:</strong> Omg. Call when you can.</p>
 
@@ -7345,7 +7321,7 @@ export const CHAPTERS = [
 
 <p>Put another way: Justin Verlander could have knocked me upside the head with a baseball bat, and some folks would still blame me for standing in the clubhouse.</p>
 
-<p>Thomas’s column—ASTROS, VERLANDER, AND FREE PRESS: HERE’S WHAT HAPPENED—will post on Freep.com tomorrow as a defense of my rights as a reporter.</p>
+<p>Thomas's column—<span class="small-caps">ASTROS, VERLANDER, AND FREE PRESS: HERE'S WHAT HAPPENED</span>—will post on Freep.com tomorrow as a defense of my rights as a reporter.</p>
 
 <p>The word ‘unethical’ attached to my name makes me sick. I wait on the couch for the column to appear online.</p>
 
@@ -7623,7 +7599,11 @@ export const CHAPTERS = [
 
 <p>The working title is <em>OFF-THE-RECORD</em>.</p>
 
-<p><em>Thawed out from drugs, got my appetite back, fell into a comfortable routine – gym, beach, receipts. Trimmed receipts for hours. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Did this for days, until two years’ worth of receipts were xeroxed and hole-punched and clipped inside a binder. Read more books. Bought a used Kindle for €10, case included. Started with Plimpton’s </em>Paper Lion<em>. Got 219 pages through </em>The Fountainhead<em> but couldn’t fully get into it, so I bought Bret Easton Ellis and Donna Tartt’s first book. I heard the news today, oh boy. The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A </em>Sports Illustrated<em> reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series. It was sunny every day, it was cheap, so I extended my stay. Went to the American football bar to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 </em><em>A.M.</em><em> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. Couldn’t keep my mind off work most of the time and maybe even missed being so miserable, so I bought a notebook from the bazaar and started writing about my job. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. Drank by the sea and on the balcony of a full-service hotel and thought about Ball Writing. Talked to people who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. At first, my distant relatives weren’t sure about a journalist staying with them. Two years ago, corrupt government influences killed the country’s top investigative reporter—the mob laced her engine with a bomb and let the ignition do the rest. I fought periodic rounds of anger, even 5,000 miles away from home and more relaxed than I had felt in months. Went to church every week, washed my face with holy water, and walked around mostly sober thinking about nothing else but this book. One day it rained and I saw my name online. Someone texted me, shared a tweet. They were trolling me, slandering me underneath. It rained all day that day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back.</em></p>
+<p></p>
+<p class="scene-break">***</p>
+<p></p>
+
+<p class="no-indent"><em>Thawed out from drugs, got my appetite back, fell into a comfortable routine – gym, beach, receipts. Trimmed receipts for hours. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Did this for days, until two years’ worth of receipts were xeroxed and hole-punched and clipped inside a binder. Read more books. Bought a used Kindle for €10, case included. Started with Plimpton’s </em>Paper Lion<em>. Got 219 pages through </em>The Fountainhead<em> but couldn’t fully get into it, so I bought Bret Easton Ellis and Donna Tartt’s first book. I heard the news today, oh boy. The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A </em>Sports Illustrated<em> reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series. It was sunny every day, it was cheap, so I extended my stay. Went to the American football bar to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 </em><em>A.M.</em><em> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. Couldn’t keep my mind off work most of the time and maybe even missed being so miserable, so I bought a notebook from the bazaar and started writing about my job. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. Drank by the sea and on the balcony of a full-service hotel and thought about Ball Writing. Talked to people who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. At first, my distant relatives weren’t sure about a journalist staying with them. Two years ago, corrupt government influences killed the country’s top investigative reporter—the mob laced her engine with a bomb and let the ignition do the rest. I fought periodic rounds of anger, even 5,000 miles away from home and more relaxed than I had felt in months. Went to church every week, washed my face with holy water, and walked around mostly sober thinking about nothing else but this book. One day it rained and I saw my name online. Someone texted me, shared a tweet. They were trolling me, slandering me underneath. It rained all day that day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back.</em></p>
 
 
 <p></p>
@@ -8242,9 +8222,9 @@ export const CHAPTERS = [
     {
         id: 28,
         year: 2020,
-        section: 'postscript',
-        title: "POSTSCRIPT",
-        slug: "postscript",
+        section: 'year',
+        title: "THE PANDEMIC",
+        slug: "the-pandemic",
         subtitle: "",
         teaser: "Looking back.",
         content: `<p>Sometimes, sports writing means making tough calls. Three weeks after the pandemic hit, the <em>Free Press</em> received the kind of tip nobody wants to get.</p>

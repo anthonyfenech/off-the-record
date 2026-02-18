@@ -1,8 +1,8 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v391';
-const STATIC_CACHE = 'off-the-record-static-v391';
-const CONTENT_CACHE = 'off-the-record-content-v391';
+const CACHE_VERSION = 'v395';
+const STATIC_CACHE = 'off-the-record-static-v395';
+const CONTENT_CACHE = 'off-the-record-content-v395';
 const ANALYTICS_CACHE = 'off-the-record-analytics-v377';
 
 // Files to cache immediately on install
@@ -11,8 +11,6 @@ const STATIC_ASSETS = [
     './index.html',
     './binge-mode.html',
     './offline.html',
-    './guestbook.html',
-    './photos.html',
     './money-mode.html',
     './manifest.json',
     './css/fonts.min.css',
@@ -31,18 +29,12 @@ const STATIC_ASSETS = [
     './js/navigation.min.js',
     './js/storage.min.js',
     './js/pwa.min.js',
-    './js/transitions.min.js',
-    './js/mobile-optimizer.min.js',
     './js/blog.min.js',
     './js/guestbook.min.js',
-    './js/bookmarks.min.js',
     './js/reading-mode.min.js',
     './js/font-size.min.js',
     './js/search.min.js',
     './js/config.min.js',
-    './js/auth.min.js',
-    './js/security.min.js',
-    './js/rolodex.js',
     './js/otr-tier1-error-handler.min.js',
     './js/analytics.min.js',
     './js/bookmark.min.js',
@@ -51,7 +43,6 @@ const STATIC_ASSETS = [
     './js/mediaModal.min.js',
     './js/photoGallery.min.js',
     './js/theme.min.js',
-    './js/survey-system.min.js',
     './js/page-controls.min.js',
     './js/reader-counter.min.js',
     './js/admin-access.min.js',
@@ -59,7 +50,6 @@ const STATIC_ASSETS = [
     './js/binge-init.min.js',
     './js/binge-theme.min.js',
     './js/binge-analytics.min.js',
-    './js/photos-init.min.js',
     './data/chapters.js',
     './prompts/prompt-styles.min.css',
     './prompts/prompt-system.min.js',
