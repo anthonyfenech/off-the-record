@@ -787,13 +787,6 @@ class Navigation {
     openTOC() {
         if (!this.tocSidebar || !this.overlay) return;
 
-        // Always collapse the book section when opening sidebar
-        this.expandedSections.delete('book');
-        const bookContent = document.getElementById('toc-book-content');
-        const bookSection = this.tocContent?.querySelector('[data-section="book"]');
-        if (bookContent) bookContent.classList.add('collapsed');
-        if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
-
         // Remove critical CSS overrides
         this.tocSidebar.style.visibility = 'visible';
         this.tocSidebar.style.transform = '';
@@ -809,11 +802,17 @@ class Navigation {
         this.tocSidebar.classList.remove('open');
         this.overlay.classList.remove('active');
         document.body.style.overflow = '';
-        // Re-add hard hide after transition
+        // Re-add hard hide after transition, then collapse book section while hidden
         setTimeout(() => {
             if (this.tocSidebar && !this.tocSidebar.classList.contains('open')) {
                 this.tocSidebar.style.visibility = 'hidden';
                 if (this.overlay) this.overlay.style.visibility = 'hidden';
+                // Collapse book section while sidebar is hidden (no visible animation)
+                this.expandedSections.delete('book');
+                const bookContent = document.getElementById('toc-book-content');
+                const bookSection = this.tocContent?.querySelector('[data-section="book"]');
+                if (bookContent) bookContent.classList.add('collapsed');
+                if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
             }
         }, 310);
     }
