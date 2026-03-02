@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v408';
-const STATIC_CACHE = 'off-the-record-static-v408';
-const CONTENT_CACHE = 'off-the-record-content-v408';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v408';
+const CACHE_VERSION = 'v409';
+const STATIC_CACHE = 'off-the-record-static-v409';
+const CONTENT_CACHE = 'off-the-record-content-v409';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v409';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -40,23 +40,23 @@ const STATIC_ASSETS = [
     './js/reader-name.js',
     './js/analytics.min.js',
     './js/bookmark.min.js',
-    './js/live-prompts.js',
-    './js/interactivePrompts.min.js',
+    // PROMPTS DISABLED: './js/live-prompts.js',
+    // PROMPTS DISABLED: './js/interactivePrompts.min.js',
     './js/mediaModal.min.js',
     './js/photoGallery.min.js',
     './js/theme.min.js',
     './js/page-controls.min.js',
     './js/reader-counter.min.js',
     './js/admin-access.min.js',
-    './js/prompts-init.min.js',
+    // PROMPTS DISABLED: './js/prompts-init.min.js',
     './js/binge-init.min.js',
     './js/failsafes.js',
     './js/overlay-cleanup.js',
     './js/binge-theme.min.js',
     './js/binge-analytics.min.js',
     './data/chapters.js',
-    './prompts/prompt-styles.min.css',
-    './prompts/prompt-system.min.js',
+    // PROMPTS DISABLED: './prompts/prompt-styles.min.css',
+    // PROMPTS DISABLED: './prompts/prompt-system.min.js',
     './assets/icons/icon-192.png',
     './assets/icons/icon-512.png',
     './assets/icons/OTR-header.png',
