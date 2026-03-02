@@ -41,11 +41,13 @@
         (function() {
             // Immediately clear any stuck overlay states from previous sessions
             document.addEventListener('DOMContentLoaded', function() {
-                // Remove active class from all overlays
-                var overlays = document.querySelectorAll('.overlay, [class*="overlay"], [id*="overlay"]');
+                // Remove active class from all overlays including lightbox
+                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .media-modal-overlay, .photo-modal-overlay, [class*="overlay"], [id*="overlay"]');
                 overlays.forEach(function(el) {
                     el.classList.remove('active');
                     el.style.pointerEvents = 'none';
+                    el.style.display = 'none';
+                    el.style.visibility = 'hidden';
                 });
                 // Ensure body scroll is not locked
                 document.body.style.overflow = '';

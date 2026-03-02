@@ -85,6 +85,8 @@ export const overlayCleanup = {
             '#live-prompt-modal',
             '#prompt-modal',
             '.overlay.active',
+            '.lightbox-overlay',
+            '.lightbox-overlay.active',
             '[role="dialog"]'
         ];
 

@@ -3904,12 +3904,16 @@ html {
     z-index: 10000;
     padding: 5%;
     box-sizing: border-box;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .lightbox-overlay.active {
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: auto;
+    visibility: visible;
 }
 
 /* Close button */
