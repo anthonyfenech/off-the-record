@@ -10,6 +10,7 @@ import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
 import { readingModeManager } from './reading-mode.js';
 import { fontSizeManager } from './font-size.js';
+import { overlayCleanup } from './overlay-cleanup.js';
 
 class Navigation {
     constructor() {
@@ -58,6 +59,15 @@ class Navigation {
             e.preventDefault();
             this.closeTOC();
         });
+
+        // Register with overlay cleanup system for guaranteed dismissal
+        if (typeof overlayCleanup !== 'undefined' && this.overlay) {
+            overlayCleanup.register('navigation-sidebar', {
+                isOpen: () => this.tocSidebar?.classList.contains('open'),
+                close: () => this.closeTOC(),
+                element: this.overlay
+            });
+        }
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));

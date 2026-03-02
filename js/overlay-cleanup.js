@@ -144,9 +144,43 @@ export const overlayCleanup = {
     },
 
     /**
+     * Initial cleanup on page load - removes stuck overlays
+     * This runs before any other JavaScript to ensure clean state
+     */
+    _initialCleanup() {
+        // Remove active class from all overlays
+        const activeOverlays = document.querySelectorAll('.overlay.active, .active[class*="overlay"]');
+        activeOverlays.forEach(el => {
+            el.classList.remove('active');
+        });
+
+        // Ensure body scroll is not locked
+        document.body.style.overflow = '';
+
+        // Ensure all overlay elements have pointer-events: none
+        const overlaySelectors = [
+            '.overlay:not(.active)',
+            '.media-modal-overlay:not(.active)',
+            '.photo-modal-overlay:not(.active)',
+            '.prompt-overlay:not(.active)',
+            '#prompt-modal:not(.active)'
+        ];
+        overlaySelectors.forEach(selector => {
+            try {
+                document.querySelectorAll(selector).forEach(el => {
+                    el.style.pointerEvents = 'none';
+                });
+            } catch (e) { /* ignore */ }
+        });
+    },
+
+    /**
      * Initialize automatic cleanup handlers
      */
     init() {
+        // Immediate cleanup on page load - clear any stuck overlays from previous session
+        this._initialCleanup();
+
         // Clean up when page becomes hidden (tab switch, minimize)
         document.addEventListener('visibilitychange', () => {
             if (document.hidden && this.hasOpenOverlay()) {
