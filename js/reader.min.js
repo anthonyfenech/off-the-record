@@ -552,8 +552,14 @@ class Reader {
                 e.preventDefault();
                 e.stopPropagation();
                 console.log('[Reader] Emoji clicked:', mediaId);
+                console.log('[Reader] mediaModal object:', mediaModal);
+                console.log('[Reader] mediaModal.open:', typeof mediaModal?.open);
                 if (mediaId) {
-                    mediaModal.open(mediaId);
+                    try {
+                        mediaModal.open(mediaId);
+                    } catch (err) {
+                        console.error('[Reader] mediaModal.open() threw error:', err);
+                    }
                 }
             });
         });
