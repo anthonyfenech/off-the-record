@@ -550,12 +550,20 @@ class Reader {
             console.log('[Reader] Attaching click handler to emoji:', mediaId);
             emoji.addEventListener('click', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 console.log('[Reader] Emoji clicked:', mediaId);
                 if (mediaId) {
                     mediaModal.open(mediaId);
                 }
             });
         });
+
+        // Debug: document-level click capture to see what's being clicked
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('media-emoji') || e.target.closest('.media-emoji')) {
+                console.log('[Reader] Document captured emoji click:', e.target, e.target.closest('.media-emoji'));
+            }
+        }, true);
     }
 
     // Auto-save progress
