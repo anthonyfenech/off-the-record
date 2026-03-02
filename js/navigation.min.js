@@ -786,6 +786,14 @@ class Navigation {
     // TOC actions
     openTOC() {
         if (!this.tocSidebar || !this.overlay) return;
+
+        // Always collapse the book section when opening sidebar
+        this.expandedSections.delete('book');
+        const bookContent = document.getElementById('toc-book-content');
+        const bookSection = this.tocContent?.querySelector('[data-section="book"]');
+        if (bookContent) bookContent.classList.add('collapsed');
+        if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+
         // Remove critical CSS overrides
         this.tocSidebar.style.visibility = 'visible';
         this.tocSidebar.style.transform = '';
