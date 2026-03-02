@@ -228,15 +228,21 @@ class MediaModal {
 
     // Open modal with media content
     async open(mediaId) {
+        console.log('[MediaModal] open() called with:', mediaId);
+
         // Check if media is disabled (RED status in admin)
         if (!this.isMediaEnabled(mediaId)) {
+            console.log('[MediaModal] Media is DISABLED (red status):', mediaId);
             return; // Silently skip disabled media
         }
+        console.log('[MediaModal] Media is enabled');
 
         let media = getMediaById(mediaId);
+        console.log('[MediaModal] getMediaById returned:', media);
 
         // If not in MEDIA_CONTENT, check if it's an article
         if (!media) {
+            console.log('[MediaModal] Not in MEDIA_DATA, checking articles...');
             const article = await this.getArticleById(mediaId);
             if (article) {
                 // Convert article to media format
@@ -255,9 +261,10 @@ class MediaModal {
         }
 
         if (!media) {
-            console.error(`Media not found: ${mediaId}`);
+            console.error('[MediaModal] Media not found:', mediaId);
             return;
         }
+        console.log('[MediaModal] Proceeding to render media:', media.type);
 
         // Store timestamp and tracking data for duration calculation on close
         this.modalOpenTime = Date.now();
