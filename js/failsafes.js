@@ -7,8 +7,8 @@
     'use strict';
 
     // All overlay-type selectors used across the site
-    var OVERLAY_SELECTORS = '.overlay, .modal, .toc-sidebar, .lightbox-overlay, #overlay, #prompt-modal, .prompt-overlay, [class*="overlay"], [class*="modal"], [class*="lightbox"]';
-    var ACTIVE_OVERLAY_SELECTORS = '.overlay.active, .modal.active, .toc-sidebar.active, .lightbox-overlay.active, #prompt-modal.active, .prompt-overlay.active';
+    var OVERLAY_SELECTORS = '.overlay, .modal, .toc-sidebar, .lightbox-overlay, .photo-modal-overlay, #overlay, #prompt-modal, .prompt-overlay, [class*="overlay"], [class*="modal"], [class*="lightbox"]';
+    var ACTIVE_OVERLAY_SELECTORS = '.overlay.active, .modal.active, .toc-sidebar.active, .lightbox-overlay.active, .photo-modal-overlay.active, #prompt-modal.active, .prompt-overlay.active';
     var BODY_CLASSES = ['sidebar-open', 'modal-open', 'no-scroll'];
 
     // === HELPER: Close all overlays ===
@@ -62,7 +62,7 @@
 
     // === FAILSAFE 4: Backdrop Click/Tap Universal Close ===
     function setupBackdropListeners() {
-        document.querySelectorAll('.overlay, .prompt-overlay, .lightbox-overlay').forEach(function(overlay) {
+        document.querySelectorAll('.overlay, .prompt-overlay, .lightbox-overlay, .photo-modal-overlay').forEach(function(overlay) {
             // Only add listeners once
             if (overlay.dataset.failsafeListenerAdded) return;
             overlay.dataset.failsafeListenerAdded = 'true';
@@ -103,7 +103,7 @@
             }
         });
 
-        document.querySelectorAll('.overlay, .toc-sidebar, .modal, .lightbox-overlay, .prompt-overlay, #prompt-modal').forEach(function(el) {
+        document.querySelectorAll('.overlay, .toc-sidebar, .modal, .lightbox-overlay, .photo-modal-overlay, .prompt-overlay, #prompt-modal').forEach(function(el) {
             observer.observe(el, { attributes: true, attributeFilter: ['class'] });
         });
     }

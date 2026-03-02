@@ -1322,7 +1322,7 @@ button:focus-visible {
 }
 
 /* Mobile Responsive Search */
-@media (max-width: 600px) {
+@media (max-width: 599px) {
     .search-match-nav {
         bottom: 80px;
         right: 10px;
@@ -1336,32 +1336,32 @@ button:focus-visible {
     }
 }
 
-/* Tappable Media Emojis */
-.media-emoji {
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif !important;
+/* Tappable Media Emojis - using specificity instead of !important */
+.chapter-body .media-emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif;
     font-size: 1em;
     line-height: 1;
-    letter-spacing: 0 !important;
-    word-spacing: 0 !important;
-    text-transform: none !important;
-    font-variant: normal !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    background: none !important;
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    letter-spacing: 0;
+    word-spacing: 0;
+    text-transform: none;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
     /* Critical for mobile emoji rendering */
-    text-rendering: auto !important;
-    -webkit-font-smoothing: auto !important;
-    -moz-osx-font-smoothing: auto !important;
-    -webkit-font-feature-settings: normal !important;
-    font-feature-settings: normal !important;
+    text-rendering: auto;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
 }
 
-.media-emoji:hover {
+.chapter-body .media-emoji:hover {
     opacity: 0.7;
 }
 
@@ -2520,7 +2520,7 @@ body.show-captions .media-modal-caption {
 }
 
 /* Tablet and up */
-@media (min-width: 640px) {
+@media (min-width: 600px) {
     .install-prompt {
         left: 50%;
         right: auto;
@@ -3345,10 +3345,60 @@ body.show-captions .media-modal-caption {
     backface-visibility: hidden;
 }
 
+/* TOC Sidebar - consolidated from layout.css, using GPU-accelerated transform */
 .toc-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: var(--color-sidebar-bg);
+    box-shadow: var(--shadow-md);
+    border-right: 1px solid var(--color-border);
+    z-index: var(--z-sidebar);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', monospace;
+    /* GPU-accelerated hiding via transform */
+    transform: translate3d(-100%, 0, 0);
+    transition: transform var(--transition-normal), background-color var(--transition-fast);
     will-change: transform;
     backface-visibility: hidden;
     contain: layout style paint;
+}
+
+.toc-sidebar.open {
+    transform: translate3d(0, 0, 0);
+}
+
+/* Desktop: max-width kicks in */
+@media (min-width: 600px) {
+    .toc-sidebar {
+        width: 280px;
+        max-width: 280px;
+    }
+}
+
+/* Overlay - consolidated from layout.css */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-overlay);
+    z-index: var(--z-overlay);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 /* CSS containment for performance */
@@ -3397,12 +3447,10 @@ body.show-captions .media-modal-caption {
         transform: scale(0.95);
     }
 
-    /* TOC Sidebar - 70% width modal with GPU acceleration */
+    /* TOC Sidebar - mobile overrides (base styles in components.css above) */
     .toc-sidebar {
         width: 70%;
         max-width: 70%;
-        left: 0;
-        transform: translate3d(-100%, 0, 0);
         transition: transform var(--transition-modal);
         padding-top: env(safe-area-inset-top, 0px);
         padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -3410,10 +3458,6 @@ body.show-captions .media-modal-caption {
         z-index: 300;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-    }
-
-    .toc-sidebar.open {
-        transform: translate3d(0, 0, 0);
     }
 
     /* TOC header - sticky with close button */
@@ -3969,7 +4013,8 @@ html {
 #overlay:not(.active),
 .lightbox-overlay:not(.active),
 .prompt-overlay:not(.active),
-#prompt-modal:not(.active) {
+#prompt-modal:not(.active),
+.photo-modal-overlay:not(.active) {
     pointer-events: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
@@ -3990,4 +4035,15 @@ body:not(.sidebar-open):not(.modal-open) {
 .lightbox-overlay:not(.active) {
     z-index: -1 !important;
     display: none !important;
+}
+
+/* Fixed elements must not capture events when hidden */
+.install-prompt:not(.show) {
+    pointer-events: none !important;
+}
+
+/* Continue reading uses display:none via JS, but add safety net */
+.continue-reading[style*="display: none"],
+.continue-reading[style*="display:none"] {
+    pointer-events: none !important;
 }

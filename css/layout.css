@@ -281,27 +281,7 @@ body.paginated .chapter-body {
     color: #1a1a1a;
 }
 
-/* Table of Contents Sidebar */
-.toc-sidebar {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 70%;
-    max-width: 280px;
-    height: 100vh;
-    background-color: var(--color-sidebar-bg);
-    box-shadow: var(--shadow-md);
-    border-right: 1px solid var(--color-border);
-    z-index: var(--z-sidebar);
-    display: flex;
-    flex-direction: column;
-    transition: left var(--transition-normal), background-color var(--transition-fast);
-    font-family: 'Courier New', monospace;
-}
-
-.toc-sidebar.open {
-    left: 0;
-}
+/* Table of Contents Sidebar - consolidated in components.css */
 
 .toc-header {
     display: flex;
@@ -358,26 +338,7 @@ body.paginated .chapter-body {
     border-top: 1px solid var(--color-border);
 }
 
-/* Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-overlay);
-    z-index: var(--z-overlay);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity var(--transition-normal), visibility var(--transition-normal);
-}
-
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
+/* Overlay - consolidated in components.css */
 
 /* Tablet and up */
 @media (min-width: 600px) {
@@ -391,10 +352,6 @@ body.paginated .chapter-body {
 
     .nav-footer {
         padding: var(--space-sm) var(--space-lg);
-    }
-
-    .toc-sidebar {
-        width: 280px;
     }
 }
 

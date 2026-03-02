@@ -28,11 +28,11 @@
     (function(){
         if(window.location.search.indexOf('reset=true')===-1)return;
         var s=document.createElement('style');
-        s.textContent='*{pointer-events:auto!important}.overlay,.modal,.toc-sidebar,.lightbox-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important}body{overflow:auto!important;pointer-events:auto!important}';
+        s.textContent='*{pointer-events:auto!important}.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important}body{overflow:auto!important;pointer-events:auto!important}';
         document.head.appendChild(s);
         document.addEventListener('DOMContentLoaded',function(){
             document.querySelectorAll('.active').forEach(function(el){el.classList.remove('active')});
-            document.querySelectorAll('.overlay,.modal,.toc-sidebar,.lightbox-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]').forEach(function(el){
+            document.querySelectorAll('.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]').forEach(function(el){
                 el.style.cssText='display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important';
             });
             document.body.style.overflow='auto';
@@ -90,20 +90,20 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=402" as="style">
-    <link rel="preload" href="./css/typography.min.css?v=402" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=403" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=403" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=402">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=403">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./css/reset.min.css?v=402">
-    <link rel="stylesheet" href="./css/variables.min.css?v=402">
-    <link rel="stylesheet" href="./css/typography.min.css?v=402">
-    <link rel="stylesheet" href="./css/layout.min.css?v=402">
-    <link rel="stylesheet" href="./css/components.min.css?v=402">
-    <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=402">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=402">
+    <link rel="stylesheet" href="./css/reset.min.css?v=403">
+    <link rel="stylesheet" href="./css/variables.min.css?v=403">
+    <link rel="stylesheet" href="./css/typography.min.css?v=403">
+    <link rel="stylesheet" href="./css/layout.min.css?v=403">
+    <link rel="stylesheet" href="./css/components.min.css?v=403">
+    <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=403">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=403">
     <style>
         /* Hide menu and theme toggle on home page only */
         .home-page .menu-btn,
@@ -341,28 +341,28 @@
 
 
     <!-- Scripts -->
-    <script type="module" src="./js/config.min.js?v=402"></script>
-    <script type="module" src="./data/chapters.js?v=402"></script>
-    <script src="./data/media.js?v=402"></script>
-    <script type="module" src="./js/storage.min.js?v=402"></script>
-    <script type="module" src="./js/mediaModal.min.js?v=402"></script>
-    <script type="module" src="./js/photoGallery.min.js?v=402"></script>
-    <script type="module" src="./js/blog.min.js?v=402"></script>
-    <script type="module" src="./js/guestbook.min.js?v=402"></script>
-    <script type="module" src="./js/reading-mode.min.js?v=402"></script>
-    <script type="module" src="./js/font-size.min.js?v=402"></script>
-    <script type="module" src="./js/search.min.js?v=402"></script>
-    <script type="module" src="./js/reader.min.js?v=402"></script>
-    <script type="module" src="./js/navigation.min.js?v=402"></script>
-    <script type="module" src="./js/pwa.min.js?v=402"></script>
-    <script type="module" src="./js/theme.min.js?v=402"></script>
-    <script type="module" src="./js/app.min.js?v=402"></script>
+    <script type="module" src="./js/config.min.js?v=403"></script>
+    <script type="module" src="./data/chapters.js?v=403"></script>
+    <script src="./data/media.js?v=403"></script>
+    <script type="module" src="./js/storage.min.js?v=403"></script>
+    <script type="module" src="./js/mediaModal.min.js?v=403"></script>
+    <script type="module" src="./js/photoGallery.min.js?v=403"></script>
+    <script type="module" src="./js/blog.min.js?v=403"></script>
+    <script type="module" src="./js/guestbook.min.js?v=403"></script>
+    <script type="module" src="./js/reading-mode.min.js?v=403"></script>
+    <script type="module" src="./js/font-size.min.js?v=403"></script>
+    <script type="module" src="./js/search.min.js?v=403"></script>
+    <script type="module" src="./js/reader.min.js?v=403"></script>
+    <script type="module" src="./js/navigation.min.js?v=403"></script>
+    <script type="module" src="./js/pwa.min.js?v=403"></script>
+    <script type="module" src="./js/theme.min.js?v=403"></script>
+    <script type="module" src="./js/app.min.js?v=403"></script>
 
     <!-- Page Controls (media toggle, mode toggle, text size, search, options) -->
-    <script src="./js/page-controls.min.js?v=402"></script>
+    <script src="./js/page-controls.min.js?v=403"></script>
 
     <!-- Overlay Failsafes -->
-    <script src="./js/failsafes.js?v=402"></script>
+    <script src="./js/failsafes.js?v=403"></script>
 
     <!-- Interactive Prompt Modal -->
     <div id="prompt-modal">
@@ -382,27 +382,27 @@
         </div>
     </div>
 
-    <script src="./prompts/prompt-system.min.js?v=402"></script>
+    <script src="./prompts/prompt-system.min.js?v=403"></script>
 
     <!-- Interactive Q&A Prompts (text-triggered) -->
-    <script type="module" src="./js/prompts-init.min.js?v=402"></script>
+    <script type="module" src="./js/prompts-init.min.js?v=403"></script>
 
     <!-- Reader Persona & Analytics -->
-    <script src="./js/reader-name.js?v=402"></script>
-    <script src="./js/analytics.min.js?v=402"></script>
+    <script src="./js/reader-name.js?v=403"></script>
+    <script src="./js/analytics.min.js?v=403"></script>
 
     <!-- Auto-Bookmark & Resume -->
-    <script src="./js/bookmark.min.js?v=402"></script>
+    <script src="./js/bookmark.min.js?v=403"></script>
 
     <!-- Live Prompts (Interactive Reader Prompts) -->
-    <script src="./js/live-prompts.js?v=402"></script>
+    <script src="./js/live-prompts.js?v=403"></script>
 
     <!-- Reader Counter System -->
-    <script src="./js/reader-counter.min.js?v=402"></script>
+    <script src="./js/reader-counter.min.js?v=403"></script>
 
     <!-- Admin Access (secret password) -->
-    <script src="./js/admin-access.min.js?v=402"></script>
-    <script src="./js/otr-tier1-error-handler.min.js?v=402"></script>
+    <script src="./js/admin-access.min.js?v=403"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=403"></script>
 
 </body>
 </html>
