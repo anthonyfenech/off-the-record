@@ -74,18 +74,18 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=409" as="style">
-    <link rel="preload" href="./css/typography.min.css?v=409" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=410" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=410" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=409">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=410">
 
-    <link rel="stylesheet" href="./css/reset.min.css?v=409">
-    <link rel="stylesheet" href="./css/variables.min.css?v=409">
-    <link rel="stylesheet" href="./css/typography.min.css?v=409">
-    <link rel="stylesheet" href="./css/layout.min.css?v=409">
-    <link rel="stylesheet" href="./css/components.min.css?v=409">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=409">
+    <link rel="stylesheet" href="./css/reset.min.css?v=410">
+    <link rel="stylesheet" href="./css/variables.min.css?v=410">
+    <link rel="stylesheet" href="./css/typography.min.css?v=410">
+    <link rel="stylesheet" href="./css/layout.min.css?v=410">
+    <link rel="stylesheet" href="./css/components.min.css?v=410">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=410">
 
     <style>
         body {
@@ -655,6 +655,13 @@
         buildTOC();
 
         function openTOC() {
+            // Always collapse book section when opening
+            expandedSections.delete('book');
+            const bookContent = document.getElementById('toc-book-content');
+            const bookSection = tocContent.querySelector('[data-section="book"]');
+            if (bookContent) bookContent.classList.add('collapsed');
+            if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+
             tocSidebar.style.visibility = 'visible';
             tocSidebar.style.transform = '';
             overlay.style.visibility = 'visible';
@@ -901,13 +908,13 @@
     </script>
 
     <!-- Overlay Failsafes -->
-    <script src="./js/failsafes.js?v=409"></script>
+    <script src="./js/failsafes.js?v=410"></script>
 
     <!-- Reader Persona & Analytics -->
-    <script src="./js/reader-name.js?v=409"></script>
-    <script src="./js/analytics.min.js?v=409"></script>
+    <script src="./js/reader-name.js?v=410"></script>
+    <script src="./js/analytics.min.js?v=410"></script>
 
-    <script src="./js/otr-tier1-error-handler.min.js?v=409"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=410"></script>
 
 </body>
 </html>
