@@ -1260,8 +1260,9 @@
                 <div class="control-panel">
                     <div class="control-panel-title">Reader Counter</div>
                     <div class="counter-stats-compact">
-                        <p>📄 PDF: <span id="pdf-count">0</span></p>
-                        <p>📖 Reading: <span id="start-count">0</span></p>
+                        <p>📄 PDF Downloads: <span id="pdf-count">0</span></p>
+                        <p>📚 EPUB Downloads: <span id="epub-count">0</span></p>
+                        <p>🍎 Apple Books: <span id="start-count">0</span></p>
                         <p>📱 Kindle: <span id="kindle-count">0</span></p>
                         <p class="counter-total-compact">👥 TOTAL: <span id="total-count">0</span></p>
                     </div>
@@ -1273,20 +1274,26 @@
                         </label>
                     </div>
                     <div class="counter-manual-compact">
+                        <p style="font-size: 7px; color: #999; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.3px;">(auto-tracked from /get page)</p>
                         <div class="counter-input-compact">
                             <label>PDF:</label>
                             <input type="number" id="pdf-input" value="0">
-                            <button class="counter-set-btn" data-type="pdf_downloads">SET</button>
+                            <button class="counter-set-btn" data-type="pdf_download">SET</button>
                         </div>
                         <div class="counter-input-compact">
-                            <label>Read:</label>
+                            <label>EPUB:</label>
+                            <input type="number" id="epub-input" value="0">
+                            <button class="counter-set-btn" data-type="epub_download">SET</button>
+                        </div>
+                        <div class="counter-input-compact">
+                            <label>Apple:</label>
                             <input type="number" id="start-input" value="0">
-                            <button class="counter-set-btn" data-type="start_reading_clicks">SET</button>
+                            <button class="counter-set-btn" data-type="apple_books_click">SET</button>
                         </div>
                         <div class="counter-input-compact">
                             <label>Kindle:</label>
                             <input type="number" id="kindle-input" value="0">
-                            <button class="counter-set-btn" data-type="kindle_downloads">SET</button>
+                            <button class="counter-set-btn" data-type="kindle_click">SET</button>
                         </div>
                     </div>
                 </div>

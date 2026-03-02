@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#333333">
+    <meta name="description" content="Download OFF-THE-RECORD - Available as PDF, EPUB, and more">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Get the Book - OFF-THE-RECORD">
+    <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/get.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Get the Book - OFF-THE-RECORD">
+    <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+
+    <title>Get the Book - OFF-THE-RECORD</title>
+
+    <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
+    <script>
+    (function(){
+        if(window.location.search.indexOf('reset=true')===-1)return;
+        var s=document.createElement('style');
+        s.textContent='*{pointer-events:auto!important}.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important}body{overflow:auto!important;pointer-events:auto!important}';
+        document.head.appendChild(s);
+        document.addEventListener('DOMContentLoaded',function(){
+            document.querySelectorAll('.active').forEach(function(el){el.classList.remove('active')});
+            document.querySelectorAll('.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]').forEach(function(el){
+                el.style.cssText='display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important';
+            });
+            document.body.style.overflow='auto';
+            document.body.style.pointerEvents='auto';
+            document.body.classList.remove('sidebar-open','modal-open','no-scroll','home-page');
+            console.log('NUCLEAR RESET TRIGGERED — all overlays destroyed. Remove ?reset=true from URL to restore normal behavior.');
+        });
+    })();
+    </script>
+
+    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <!-- Critical: Hide sidebar and overlays before CSS loads to prevent flash -->
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay,.lightbox-overlay{visibility:hidden;opacity:0;pointer-events:none}</style>
+
+    <!-- Emergency overlay cleanup -->
+    <script>
+        (function() {
+            document.addEventListener('DOMContentLoaded', function() {
+                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .prompt-overlay, [class*="overlay"]');
+                overlays.forEach(function(el) {
+                    el.classList.remove('active');
+                    el.style.pointerEvents = 'none';
+                    el.style.visibility = 'hidden';
+                });
+                document.body.style.overflow = '';
+            });
+        })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="./fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="./css/variables.min.css?v=405" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=405" as="style">
+
+    <!-- Self-hosted fonts (no external request) -->
+    <link rel="stylesheet" href="./css/fonts.min.css?v=405">
+
+    <link rel="stylesheet" href="./css/reset.min.css?v=405">
+    <link rel="stylesheet" href="./css/variables.min.css?v=405">
+    <link rel="stylesheet" href="./css/typography.min.css?v=405">
+    <link rel="stylesheet" href="./css/layout.min.css?v=405">
+    <link rel="stylesheet" href="./css/components.min.css?v=405">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=405">
+
+    <style>
+        body {
+            padding: 90px 20px 40px;
+        }
+
+        /* Sticky header - GPU accelerated */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--color-header-bg);
+            border-bottom: 1px solid var(--color-border);
+            will-change: transform;
+            backface-visibility: hidden;
+            transition: background-color var(--transition-fast);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 69px;
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-logo-img {
+            height: 28px;
+            width: auto;
+        }
+
+        /* Main content container */
+        .get-container {
+            max-width: 520px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        /* Page title */
+        .get-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 32px;
+            color: var(--color-text);
+        }
+
+        /* Section labels */
+        .section-label {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-text-muted);
+            margin-bottom: 12px;
+            margin-top: 40px;
+        }
+
+        .section-label:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Format cards */
+        .format-card {
+            background: var(--color-bg-secondary, #f5f5f5);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .format-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin: 0 0 8px 0;
+        }
+
+        .format-description {
+            font-family: 'Literata', Georgia, serif;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+        }
+
+        .format-detail {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-muted);
+            margin: 0 0 16px 0;
+        }
+
+        .format-detail:empty {
+            display: none;
+        }
+
+        /* Buttons */
+        .format-btn {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            padding: 14px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            border: 1.5px solid var(--color-text);
+            border-radius: 4px;
+            background: var(--color-text);
+            color: var(--color-bg);
+            cursor: pointer;
+            transition: opacity 0.15s ease, background 0.15s ease;
+            text-decoration: none;
+        }
+
+        .format-btn:hover:not(.inactive):not(.downloading) {
+            opacity: 0.8;
+        }
+
+        .format-btn:active:not(.inactive):not(.downloading) {
+            transform: scale(0.98);
+        }
+
+        .format-btn.downloading {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .format-btn.inactive {
+            background: var(--color-bg-secondary, #f5f5f5);
+            color: var(--color-text-muted);
+            border-color: var(--color-border);
+            opacity: 0.5;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .format-btn.error {
+            background: var(--color-bg-secondary, #f5f5f5);
+            color: var(--color-text-muted);
+            border-color: var(--color-border);
+            opacity: 0.7;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* Dark mode adjustments */
+        [data-theme="dark"] .format-card {
+            background: var(--color-bg-secondary, #2a2a2a);
+        }
+
+        [data-theme="dark"] .format-btn {
+            background: var(--color-text);
+            color: var(--color-bg);
+        }
+
+        [data-theme="dark"] .format-btn.inactive,
+        [data-theme="dark"] .format-btn.error {
+            background: var(--color-bg-secondary, #2a2a2a);
+            color: var(--color-text-muted);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 599px) {
+            body {
+                padding: 74px 16px 90px;
+                padding-top: calc(74px + env(safe-area-inset-top, 0px));
+                padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+                padding-left: max(16px, env(safe-area-inset-left, 16px));
+                padding-right: max(16px, env(safe-area-inset-right, 16px));
+            }
+
+            .header-content {
+                height: 64px;
+                padding: 0 12px;
+            }
+
+            .header-logo-img {
+                height: 24px;
+            }
+
+            .get-title {
+                font-size: 1.25rem;
+            }
+
+            .format-card {
+                padding: 20px;
+            }
+
+            .format-btn {
+                min-height: 48px;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        /* Small phone */
+        @media (max-width: 374px) {
+            body {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .format-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body style="opacity: 0;">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <noscript>
+        <div style="max-width: 640px; margin: 80px auto; padding: 20px; font-family: 'Courier New', monospace; text-align: center;">
+            <h1 style="font-size: 1.4rem; margin-bottom: 16px;">OFF-THE-RECORD</h1>
+            <p>This page requires JavaScript. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+
+    <script>
+        // TEMP: password bypass for testing — remove before launch
+        localStorage.setItem('otr_beta_session', JSON.stringify({
+            authenticated: true,
+            expires: Date.now() + (365 * 24 * 60 * 60 * 1000)
+        }));
+    </script>
+
+    <script>
+        // Auth check - must run synchronously before content renders
+        (function() {
+            var session = localStorage.getItem('otr_beta_session');
+            if (!session) {
+                window.location.replace('./');
+                return;
+            }
+            try {
+                var data = JSON.parse(session);
+                if (!data.authenticated || Date.now() > data.expires) {
+                    localStorage.removeItem('otr_beta_session');
+                    window.location.replace('./');
+                    return;
+                }
+            } catch (e) {
+                window.location.replace('./');
+                return;
+            }
+            document.body.style.opacity = '1';
+        })();
+    </script>
+
+    <!-- Configuration Object -->
+    <script>
+        var GET_FORMATS = {
+            downloads: [
+                {
+                    id: 'pdf',
+                    title: 'PDF',
+                    description: 'The complete memoir — all 29 chapters. Formatted for offline reading and printing.',
+                    detail: 'Free • No email required',
+                    buttonText: 'DOWNLOAD PDF',
+                    buttonTextActive: 'DOWNLOADING...',
+                    url: './assets/downloads/off-the-record.pdf',
+                    filename: 'OFF-THE-RECORD.pdf',
+                    type: 'download',
+                    active: true,
+                    eventName: 'pdf_download'
+                },
+                {
+                    id: 'epub',
+                    title: 'EPUB',
+                    description: 'Universal ebook format. Works with Apple Books, Google Play Books, Kobo, and most ereader apps. Drag into your library.',
+                    detail: 'Free • No email required',
+                    buttonText: 'DOWNLOAD EPUB',
+                    buttonTextActive: 'DOWNLOADING...',
+                    url: './assets/downloads/off-the-record.epub',
+                    filename: 'OFF-THE-RECORD.epub',
+                    type: 'download',
+                    active: true,
+                    eventName: 'epub_download'
+                }
+            ],
+            bookstores: [
+                {
+                    id: 'apple-books',
+                    title: 'APPLE BOOKS',
+                    description: 'Read on iPhone, iPad, or Mac',
+                    detail: '',
+                    buttonText: 'GET ON APPLE BOOKS',
+                    url: '',
+                    type: 'link',
+                    active: false,
+                    eventName: 'apple_books_click'
+                },
+                {
+                    id: 'kindle',
+                    title: 'KINDLE',
+                    description: 'Read on any Kindle device or app',
+                    detail: '',
+                    buttonText: 'GET ON KINDLE',
+                    url: '',
+                    type: 'link',
+                    active: false,
+                    eventName: 'kindle_click'
+                },
+                {
+                    id: 'google-play',
+                    title: 'GOOGLE PLAY BOOKS',
+                    description: 'Read on Android, Chromebook, or web',
+                    detail: '',
+                    buttonText: 'GET ON GOOGLE PLAY',
+                    url: '',
+                    type: 'link',
+                    active: false,
+                    eventName: 'google_play_click'
+                }
+            ]
+        };
+    </script>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="get-container" id="main-content">
+        <h1 class="get-title">Get the Book</h1>
+        <div id="formats-container"></div>
+    </main>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <div class="toc-footer">
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Render formats from config -->
+    <script>
+        (function() {
+            'use strict';
+
+            var container = document.getElementById('formats-container');
+            var downloadingFlags = {};
+
+            // Get reader identification
+            function getReaderName() {
+                return window.OTR_READER_NAME ||
+                       localStorage.getItem('otr_reader_name') ||
+                       localStorage.getItem('otr_session_id') ||
+                       'anonymous_' + Date.now();
+            }
+
+            // Get device type
+            function getDeviceType() {
+                var width = window.innerWidth;
+                if (width <= 480) return 'mobile';
+                if (width <= 1024) return 'tablet';
+                return 'desktop';
+            }
+
+            // Fire analytics event (fire and forget)
+            function fireAnalyticsEvent(format) {
+                var payload = {
+                    event_type: format.eventName,
+                    page: 'Get The Book',
+                    format: format.id,
+                    reader_name: getReaderName(),
+                    device: getDeviceType(),
+                    timestamp: new Date().toISOString(),
+                    referrer: document.referrer || 'direct'
+                };
+
+                // Use the site's analytics if available
+                if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                    window.analytics.trackEvent(format.eventName, payload);
+                }
+
+                // Also send directly to Google Apps Script
+                var endpoint = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+                try {
+                    fetch(endpoint, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                } catch (e) {
+                    // Ignore errors - fire and forget
+                }
+            }
+
+            // Handle download click
+            function handleDownloadClick(format, btn) {
+                // Check if already downloading
+                if (downloadingFlags[format.id]) return;
+
+                // Set downloading flag
+                downloadingFlags[format.id] = true;
+
+                // Update button state
+                btn.textContent = format.buttonTextActive;
+                btn.classList.add('downloading');
+
+                // Fire analytics event
+                fireAnalyticsEvent(format);
+
+                // Trigger file download
+                var link = document.createElement('a');
+                link.href = format.url;
+                link.download = format.filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // After 5 seconds, restore button
+                setTimeout(function() {
+                    btn.textContent = format.buttonText;
+                    btn.classList.remove('downloading');
+                    downloadingFlags[format.id] = false;
+                }, 5000);
+            }
+
+            // Handle link click
+            function handleLinkClick(format) {
+                // Fire analytics event
+                fireAnalyticsEvent(format);
+
+                // Open URL in new tab
+                window.open(format.url, '_blank', 'noopener');
+            }
+
+            // Create a format card
+            function createCard(format) {
+                var card = document.createElement('div');
+                card.className = 'format-card';
+                card.dataset.formatId = format.id;
+
+                var title = document.createElement('h3');
+                title.className = 'format-title';
+                title.textContent = format.title;
+
+                var desc = document.createElement('p');
+                desc.className = 'format-description';
+                desc.textContent = format.description;
+
+                var detail = document.createElement('p');
+                detail.className = 'format-detail';
+                detail.textContent = format.detail || '';
+
+                var btn = document.createElement('button');
+                btn.className = 'format-btn';
+                btn.type = 'button';
+
+                if (!format.active) {
+                    btn.textContent = 'COMING SOON';
+                    btn.classList.add('inactive');
+                } else {
+                    btn.textContent = format.buttonText;
+
+                    if (format.type === 'download') {
+                        btn.addEventListener('click', function() {
+                            handleDownloadClick(format, btn);
+                        });
+                    } else if (format.type === 'link') {
+                        btn.addEventListener('click', function() {
+                            handleLinkClick(format);
+                        });
+                    }
+                }
+
+                card.appendChild(title);
+                card.appendChild(desc);
+                if (format.detail) {
+                    card.appendChild(detail);
+                }
+                card.appendChild(btn);
+
+                return card;
+            }
+
+            // Create section label
+            function createSectionLabel(text) {
+                var label = document.createElement('div');
+                label.className = 'section-label';
+                label.textContent = text;
+                return label;
+            }
+
+            // Render all formats
+            function render() {
+                var fragment = document.createDocumentFragment();
+
+                // Downloads section
+                if (GET_FORMATS.downloads && GET_FORMATS.downloads.length > 0) {
+                    fragment.appendChild(createSectionLabel('DOWNLOAD'));
+                    GET_FORMATS.downloads.forEach(function(format) {
+                        fragment.appendChild(createCard(format));
+                    });
+                }
+
+                // Bookstores section
+                if (GET_FORMATS.bookstores && GET_FORMATS.bookstores.length > 0) {
+                    fragment.appendChild(createSectionLabel('BOOKSTORES'));
+                    GET_FORMATS.bookstores.forEach(function(format) {
+                        fragment.appendChild(createCard(format));
+                    });
+                }
+
+                container.appendChild(fragment);
+            }
+
+            // Initialize
+            render();
+        })();
+    </script>
+
+    <!-- Sidebar Navigation -->
+    <script type="module">
+        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
+        import { isChapterComplete } from './js/storage.min.js';
+
+        const menuBtn = document.getElementById('menuBtn');
+        const closeTocBtn = document.getElementById('closeTocBtn');
+        const tocSidebar = document.getElementById('tocSidebar');
+        const overlay = document.getElementById('overlay');
+        const tocContent = document.getElementById('tocContent');
+
+        // Build TOC
+        buildTOC();
+
+        function openTOC() {
+            tocSidebar.style.visibility = 'visible';
+            tocSidebar.style.transform = '';
+            overlay.style.visibility = 'visible';
+            overlay.style.opacity = '';
+            tocSidebar.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTOC() {
+            tocSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (!tocSidebar.classList.contains('open')) {
+                    tocSidebar.style.visibility = 'hidden';
+                    overlay.style.visibility = 'hidden';
+                }
+            }, 310);
+        }
+
+        menuBtn.addEventListener('click', openTOC);
+        closeTocBtn.addEventListener('click', closeTOC);
+        overlay.addEventListener('click', closeTOC);
+
+        closeTocBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            closeTOC();
+        });
+        overlay.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            closeTOC();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && tocSidebar.classList.contains('open')) {
+                closeTOC();
+            }
+        });
+
+        function buildTOC() {
+            const fragment = document.createDocumentFragment();
+
+            // BOOK section
+            fragment.appendChild(createBookSection());
+
+            // Get the Book link (current page - highlighted)
+            fragment.appendChild(createTopSection({ id: 'get-book', label: 'GET THE BOOK', type: 'link', url: './get.html', current: true }));
+
+            // Divider
+            const divider = document.createElement('div');
+            divider.className = 'toc-divider';
+            fragment.appendChild(divider);
+
+            tocContent.appendChild(fragment);
+        }
+
+        function createBookSection() {
+            const section = document.createElement('div');
+            section.className = 'toc-top-section';
+            section.dataset.section = 'book';
+
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'toc-top-header';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-top-title';
+            sectionTitle.textContent = 'OFF-THE-RECORD';
+
+            sectionHeader.appendChild(sectionTitle);
+
+            const bookContent = document.createElement('div');
+            bookContent.className = 'toc-book-content collapsed';
+            bookContent.id = 'toc-book-content';
+
+            buildBookContent(bookContent);
+
+            sectionHeader.addEventListener('click', () => {
+                toggleTopSection('book', sectionHeader, bookContent);
+            });
+
+            section.appendChild(sectionHeader);
+            section.appendChild(bookContent);
+
+            return section;
+        }
+
+        function buildBookContent(container) {
+            const frontMatter = CHAPTERS.filter(c => c.section === 'title' || c.section === 'toc');
+            const introChapters = getIntroChapters();
+            const chaptersByYear = getChaptersByYear();
+            const years = getSortedYears();
+            const postscriptChapters = getPostscriptChapters();
+
+            frontMatter.forEach(chapter => {
+                container.appendChild(createChapterItem(chapter));
+            });
+
+            introChapters.forEach(chapter => {
+                container.appendChild(createChapterItem(chapter));
+            });
+
+            years.forEach(year => {
+                const chapters = chaptersByYear[year] || [];
+                chapters.forEach(chapter => {
+                    container.appendChild(createChapterItem(chapter));
+                });
+            });
+
+            postscriptChapters.forEach(chapter => {
+                container.appendChild(createChapterItem(chapter));
+            });
+        }
+
+        function createChapterItem(chapter) {
+            const item = document.createElement('div');
+            item.className = 'toc-chapter';
+            item.dataset.chapterId = chapter.id;
+
+            const lockedChapters = JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
+            const isLocked = lockedChapters.includes(chapter.id);
+
+            if (isLocked) {
+                item.classList.add('toc-chapter-locked');
+            }
+
+            const indicator = document.createElement('div');
+            indicator.className = 'chapter-indicator';
+
+            const info = document.createElement('div');
+            info.className = 'toc-chapter-info';
+
+            const titleRow = document.createElement('div');
+            titleRow.className = 'toc-chapter-title-row';
+
+            const title = document.createElement('span');
+            title.className = 'toc-chapter-title';
+            title.textContent = chapter.title;
+
+            titleRow.appendChild(title);
+
+            if (isLocked) {
+                const lockIcon = document.createElement('span');
+                lockIcon.className = 'toc-lock-icon';
+                lockIcon.textContent = '🔒';
+                titleRow.appendChild(lockIcon);
+            }
+
+            info.appendChild(titleRow);
+
+            item.appendChild(indicator);
+            item.appendChild(info);
+
+            const handleChapterSelect = () => {
+                if (!isLocked) {
+                    closeTOC();
+                    window.location.href = './?chapter=' + chapter.id;
+                }
+            };
+            item.addEventListener('click', handleChapterSelect);
+            item.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                handleChapterSelect();
+            });
+
+            if (isChapterComplete(chapter.id)) {
+                item.classList.add('completed');
+                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+            }
+
+            return item;
+        }
+
+        function createTopSection(section) {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'toc-top-section';
+            sectionDiv.dataset.section = section.id;
+
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'toc-top-header toc-top-link';
+
+            if (section.current) {
+                sectionHeader.style.background = 'var(--color-bg-hover)';
+                sectionHeader.style.fontWeight = 'bold';
+            }
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-top-title';
+            sectionTitle.textContent = section.label;
+
+            sectionHeader.appendChild(sectionTitle);
+
+            if (!section.current) {
+                sectionHeader.addEventListener('click', () => {
+                    closeTOC();
+                    window.location.href = section.url;
+                });
+            } else {
+                sectionHeader.style.cursor = 'default';
+            }
+
+            sectionDiv.appendChild(sectionHeader);
+            return sectionDiv;
+        }
+
+        const expandedSections = new Set();
+        function toggleTopSection(sectionId, sectionHeader, sectionContent) {
+            if (expandedSections.has(sectionId)) {
+                expandedSections.delete(sectionId);
+                sectionContent.classList.add('collapsed');
+                sectionHeader.classList.remove('expanded');
+            } else {
+                expandedSections.add(sectionId);
+                sectionContent.classList.remove('collapsed');
+                sectionHeader.classList.add('expanded');
+            }
+        }
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('otr_beta_session');
+            window.location.href = './';
+        });
+    </script>
+
+    <!-- Theme Toggle -->
+    <script>
+        (function() {
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('click', function() {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('reader_theme', 'light');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('reader_theme', 'dark');
+                }
+            });
+        })();
+    </script>
+
+    <!-- Overlay Failsafes -->
+    <script src="./js/failsafes.js?v=405"></script>
+
+    <!-- Reader Persona & Analytics -->
+    <script src="./js/reader-name.js?v=405"></script>
+    <script src="./js/analytics.min.js?v=405"></script>
+
+    <script src="./js/otr-tier1-error-handler.min.js?v=405"></script>
+
+</body>
+</html>
