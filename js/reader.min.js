@@ -543,33 +543,16 @@ class Reader {
         if (!this.chapterBody) return;
 
         const mediaEmojis = this.chapterBody.querySelectorAll('.media-emoji');
-        console.log('[Reader] attachMediaEmojiHandlers found', mediaEmojis.length, 'emojis');
 
         mediaEmojis.forEach(emoji => {
-            const mediaId = emoji.getAttribute('data-media-id');
-            console.log('[Reader] Attaching click handler to emoji:', mediaId);
             emoji.addEventListener('click', (e) => {
                 e.preventDefault();
-                e.stopPropagation();
-                console.log('[Reader] Emoji clicked:', mediaId);
-                console.log('[Reader] mediaModal object:', mediaModal);
-                console.log('[Reader] mediaModal.open:', typeof mediaModal?.open);
+                const mediaId = emoji.getAttribute('data-media-id');
                 if (mediaId) {
-                    try {
-                        mediaModal.open(mediaId);
-                    } catch (err) {
-                        console.error('[Reader] mediaModal.open() threw error:', err);
-                    }
+                    mediaModal.open(mediaId);
                 }
             });
         });
-
-        // Debug: document-level click capture to see what's being clicked
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('media-emoji') || e.target.closest('.media-emoji')) {
-                console.log('[Reader] Document captured emoji click:', e.target, e.target.closest('.media-emoji'));
-            }
-        }, true);
     }
 
     // Auto-save progress
