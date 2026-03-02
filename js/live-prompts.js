@@ -90,9 +90,16 @@
                     z-index: 10000;
                     align-items: center;
                     justify-content: center;
+                    pointer-events: none;
                 }
                 .live-prompt-overlay.active {
                     display: flex;
+                    pointer-events: auto;
+                }
+                .live-prompt-overlay.hidden {
+                    display: none !important;
+                    visibility: hidden !important;
+                    pointer-events: none !important;
                 }
                 .live-prompt-modal {
                     background: var(--color-modal-bg, #fff);
@@ -226,6 +233,17 @@
                     this.closeModal();
                 }
             });
+
+            // Register with global overlay cleanup if available
+            if (window.__forceCloseOverlays) {
+                // Already have cleanup, register our close function
+                const self = this;
+                const originalForceClose = window.__forceCloseOverlays;
+                window.__forceCloseOverlays = function() {
+                    self.closeModal();
+                    originalForceClose();
+                };
+            }
         }
 
         setupObservers() {
@@ -378,8 +396,16 @@
         }
 
         closeModal() {
-            this.modal.classList.remove('active');
-            this.currentPrompt = null;
+            try {
+                this.currentPrompt = null;
+            } finally {
+                // ALWAYS ensure cleanup happens
+                if (this.modal) {
+                    this.modal.classList.remove('active');
+                }
+                // Restore body scroll (in case it was locked)
+                document.body.style.overflow = '';
+            }
         }
 
         skipPrompt() {

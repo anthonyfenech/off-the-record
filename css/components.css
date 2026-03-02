@@ -1458,12 +1458,14 @@ body.clean-read .media-emoji {
     padding: var(--padding-mobile);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 150ms ease, visibility 150ms ease;
 }
 
 .media-modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 /* Media Modal */
@@ -2028,12 +2030,14 @@ body.show-captions .media-modal-caption {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 150ms ease, visibility 150ms ease;
 }
 
 .photo-modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 /* Photo Modal */
@@ -3044,6 +3048,16 @@ body.show-captions .media-modal-caption {
     align-items: center;
     justify-content: center;
     padding-bottom: 15vh;
+    transition: opacity 150ms ease, visibility 150ms ease;
+}
+
+/* Hidden state - multiple approaches for guaranteed hiding */
+.password-gate.hidden,
+.password-gate[style*="display: none"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 .password-gate-content {

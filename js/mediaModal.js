@@ -1,6 +1,8 @@
 // MediaModal - Displays media content in a modal overlay
 // Handles photos, videos, audio, documents, and other inline media
 
+import { overlayCleanup } from './overlay-cleanup.js';
+
 // Media data lookup - requires data/media.js to be loaded first
 // Falls back gracefully if MEDIA_DATA not available
 function getMediaById(id) {
@@ -53,6 +55,18 @@ class MediaModal {
     init() {
         this.createModalElements();
         this.attachEventListeners();
+        this._registerCleanup();
+    }
+
+    // Register with overlay cleanup system
+    _registerCleanup() {
+        if (typeof overlayCleanup !== 'undefined') {
+            overlayCleanup.register('mediaModal', {
+                isOpen: () => this.isOpen,
+                close: () => this.close(),
+                element: this.overlay
+            });
+        }
     }
 
     // Create modal DOM elements
@@ -562,62 +576,67 @@ class MediaModal {
         }
     }
 
-    // Close the modal
+    // Close the modal - wrapped in try/catch for guaranteed cleanup
     close() {
-        // Track emoji click with duration on close
         try {
-            if (window.analytics && window.analytics.trackEvent && this.trackingData) {
-                let seconds = null;
-                if (this.modalOpenTime) {
-                    seconds = Math.round((Date.now() - this.modalOpenTime) / 1000);
-                    // Cap at 600 seconds (10 minutes) - likely user left tab open
-                    if (seconds > 600) {
-                        seconds = 600;
+            // Track emoji click with duration on close
+            try {
+                if (window.analytics && window.analytics.trackEvent && this.trackingData) {
+                    let seconds = null;
+                    if (this.modalOpenTime) {
+                        seconds = Math.round((Date.now() - this.modalOpenTime) / 1000);
+                        // Cap at 600 seconds (10 minutes) - likely user left tab open
+                        if (seconds > 600) {
+                            seconds = 600;
+                        }
+                        // Ensure minimum of 0
+                        if (seconds < 0) {
+                            seconds = 0;
+                        }
                     }
-                    // Ensure minimum of 0
-                    if (seconds < 0) {
-                        seconds = 0;
-                    }
+                    window.analytics.trackEvent('emoji_click', {
+                        ...this.trackingData,
+                        seconds: seconds
+                    });
                 }
-                window.analytics.trackEvent('emoji_click', {
-                    ...this.trackingData,
-                    seconds: seconds
-                });
+            } catch (e) {
+                console.error('[Analytics] Error tracking emoji click:', e);
             }
-        } catch (e) {
-            console.error('[Analytics] Error tracking emoji click:', e);
-        }
 
-        this.isOpen = false;
-        this.overlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
+            // Remove keyboard listener
+            document.removeEventListener('keydown', this.handleKeyDown);
 
-        // Remove keyboard listener
-        document.removeEventListener('keydown', this.handleKeyDown);
+            // Clean up audio player listeners and stop playback
+            if (this.audioElement) {
+                this.audioElement.pause();
+                this.audioElement = null;
+            }
+            if (this.dragMouseUp) {
+                document.removeEventListener('mouseup', this.dragMouseUp);
+                this.dragMouseUp = null;
+            }
+            if (this.dragMouseMove) {
+                document.removeEventListener('mousemove', this.dragMouseMove);
+                this.dragMouseMove = null;
+            }
 
-        // Clean up audio player listeners and stop playback
-        if (this.audioElement) {
-            this.audioElement.pause();
-            this.audioElement = null;
-        }
-        if (this.dragMouseUp) {
-            document.removeEventListener('mouseup', this.dragMouseUp);
-            this.dragMouseUp = null;
-        }
-        if (this.dragMouseMove) {
-            document.removeEventListener('mousemove', this.dragMouseMove);
-            this.dragMouseMove = null;
-        }
+            // Restore focus to trigger element
+            if (this.triggerElement && this.triggerElement.focus) {
+                this.triggerElement.focus();
+            }
 
-        // Restore focus to trigger element
-        if (this.triggerElement && this.triggerElement.focus) {
-            this.triggerElement.focus();
+            this.currentMedia = null;
+            this.triggerElement = null;
+            this.modalOpenTime = null;
+            this.trackingData = null;
+        } finally {
+            // ALWAYS ensure these cleanup steps happen
+            this.isOpen = false;
+            if (this.overlay) {
+                this.overlay.classList.remove('active');
+            }
+            document.body.style.overflow = ''; // Restore scrolling
         }
-
-        this.currentMedia = null;
-        this.triggerElement = null;
-        this.modalOpenTime = null;
-        this.trackingData = null;
     }
 
     // Retry loading media after failure

@@ -369,12 +369,14 @@ body.paginated .chapter-body {
     z-index: var(--z-overlay);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
 .overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 /* Tablet and up */

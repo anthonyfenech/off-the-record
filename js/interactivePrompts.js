@@ -5,6 +5,8 @@
  * Only triggers when scrolling DOWN - prevents re-triggering on scroll back
  */
 
+import { overlayCleanup } from './overlay-cleanup.js';
+
 export class InteractivePrompts {
     constructor(prompts = []) {
         this.prompts = prompts;
@@ -38,6 +40,20 @@ export class InteractivePrompts {
         this.setupScrollTracking();
         this.observeTriggers();
         this.setupKeyboardListeners();
+        this._registerCleanup();
+    }
+
+    /**
+     * Register with overlay cleanup system
+     */
+    _registerCleanup() {
+        if (typeof overlayCleanup !== 'undefined') {
+            overlayCleanup.register('interactivePrompts', {
+                isOpen: () => this.modal && this.modal.classList.contains('active'),
+                close: () => this.close(),
+                element: this.overlay
+            });
+        }
     }
 
     /**
@@ -389,26 +405,36 @@ export class InteractivePrompts {
     }
 
     /**
-     * Close the modal
+     * Close the modal - wrapped in try/finally for guaranteed cleanup
      */
     close() {
-        // Clear timeout
-        if (this.autoCloseTimeout) {
-            clearTimeout(this.autoCloseTimeout);
-            this.autoCloseTimeout = null;
+        try {
+            // Clear timeout
+            if (this.autoCloseTimeout) {
+                clearTimeout(this.autoCloseTimeout);
+                this.autoCloseTimeout = null;
+            }
+
+            // Reset current prompt
+            this.currentPrompt = null;
+
+            // Reset bar widths for next time
+            if (this.modal) {
+                this.modal.querySelectorAll('.result-bar-fill').forEach(bar => {
+                    bar.style.width = '0';
+                });
+            }
+        } finally {
+            // ALWAYS ensure these cleanup steps happen
+            if (this.modal) {
+                this.modal.classList.remove('active');
+            }
+            if (this.overlay) {
+                this.overlay.classList.remove('active');
+            }
+            // Restore body scroll (in case it was locked)
+            document.body.style.overflow = '';
         }
-
-        // Hide modal and overlay
-        this.modal.classList.remove('active');
-        this.overlay.classList.remove('active');
-
-        // Reset current prompt
-        this.currentPrompt = null;
-
-        // Reset bar widths for next time
-        this.modal.querySelectorAll('.result-bar-fill').forEach(bar => {
-            bar.style.width = '0';
-        });
     }
 
     /**

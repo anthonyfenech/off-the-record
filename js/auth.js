@@ -2,6 +2,7 @@
 // Includes brute force protection and session expiry
 
 import { security } from './security.js';
+import { overlayCleanup } from './overlay-cleanup.js';
 
 // Password hash (obfuscated) - generated from simpleHash('BALLWRITER')
 // To change password: run simpleHash('NEWPASSWORD') in console and update this value
@@ -83,16 +84,36 @@ export const auth = {
         const gate = document.getElementById('passwordGate');
         if (gate) {
             gate.style.display = 'flex';
+            gate.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
     },
 
-    // Hide the password gate
+    // Hide the password gate - uses multiple methods for guaranteed dismissal
     hideGate() {
         const gate = document.getElementById('passwordGate');
         if (gate) {
+            // Primary: set display none
             gate.style.display = 'none';
+            // Backup: add hidden class (CSS has !important rules)
+            gate.classList.add('hidden');
+            // Restore body scroll
             document.body.style.overflow = '';
+        }
+    },
+
+    // Register with overlay cleanup system
+    _registerCleanup() {
+        const gate = document.getElementById('passwordGate');
+        if (gate && typeof overlayCleanup !== 'undefined') {
+            overlayCleanup.register('passwordGate', {
+                isOpen: () => {
+                    const g = document.getElementById('passwordGate');
+                    return g && g.style.display !== 'none' && !g.classList.contains('hidden');
+                },
+                close: () => this.hideGate(),
+                element: gate
+            });
         }
     },
 
@@ -105,6 +126,9 @@ export const auth = {
         const rememberCheckbox = document.getElementById('rememberMe');
 
         if (!gate || !form || !input) return;
+
+        // Register with cleanup system
+        this._registerCleanup();
 
         // If already authenticated, hide the gate
         if (this.isAuthenticated()) {

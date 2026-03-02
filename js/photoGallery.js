@@ -1,6 +1,8 @@
 // PhotoGallery - Photo gallery viewer with navigation
 // Handles thumbnail grid and full-screen photo viewing with swipe/keyboard navigation
 
+import { overlayCleanup } from './overlay-cleanup.js';
+
 // Stubs - data/photos.js removed
 const getGalleryById = () => null;
 const getPhotoById = () => null;
@@ -26,8 +28,20 @@ class PhotoGallery {
         try {
             this.createPhotoModal();
             this.attachEventListeners();
+            this._registerCleanup();
         } catch (error) {
             console.error('[PhotoGallery] Failed to initialize:', error);
+        }
+    }
+
+    // Register with overlay cleanup system
+    _registerCleanup() {
+        if (typeof overlayCleanup !== 'undefined') {
+            overlayCleanup.register('photoGallery', {
+                isOpen: () => this.isOpen,
+                close: () => this.close(),
+                element: this.photoModalOverlay
+            });
         }
     }
 
@@ -299,23 +313,28 @@ class PhotoGallery {
         }
     }
 
-    // Close the modal
+    // Close the modal - wrapped in try/finally for guaranteed cleanup
     close() {
-        this.isOpen = false;
-        this.photoModalOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+        try {
+            // Remove keyboard listener
+            document.removeEventListener('keydown', this.handleKeyDown);
 
-        // Remove keyboard listener
-        document.removeEventListener('keydown', this.handleKeyDown);
+            // Restore focus to trigger element
+            if (this.triggerElement && this.triggerElement.focus) {
+                this.triggerElement.focus();
+            }
 
-        // Restore focus to trigger element
-        if (this.triggerElement && this.triggerElement.focus) {
-            this.triggerElement.focus();
+            this.currentGallery = null;
+            this.currentPhoto = null;
+            this.triggerElement = null;
+        } finally {
+            // ALWAYS ensure these cleanup steps happen
+            this.isOpen = false;
+            if (this.photoModalOverlay) {
+                this.photoModalOverlay.classList.remove('active');
+            }
+            document.body.style.overflow = '';
         }
-
-        this.currentGallery = null;
-        this.currentPhoto = null;
-        this.triggerElement = null;
     }
 
     // Render gallery grid

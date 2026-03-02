@@ -11,10 +11,19 @@
     display: none;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
 }
 
 #prompt-modal.active {
     display: flex;
+    pointer-events: auto;
+}
+
+/* Hidden state fallback */
+#prompt-modal.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .prompt-overlay {
