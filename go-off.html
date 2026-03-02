@@ -11,19 +11,54 @@
 
     <title>Go Off - OFF-THE-RECORD</title>
 
+    <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
+    <script>
+    (function(){
+        if(window.location.search.indexOf('reset=true')===-1)return;
+        var s=document.createElement('style');
+        s.textContent='*{pointer-events:auto!important}.overlay,.modal,.toc-sidebar,.lightbox-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important}body{overflow:auto!important;pointer-events:auto!important}';
+        document.head.appendChild(s);
+        document.addEventListener('DOMContentLoaded',function(){
+            document.querySelectorAll('.active').forEach(function(el){el.classList.remove('active')});
+            document.querySelectorAll('.overlay,.modal,.toc-sidebar,.lightbox-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]').forEach(function(el){
+                el.style.cssText='display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important';
+            });
+            document.body.style.overflow='auto';
+            document.body.style.pointerEvents='auto';
+            document.body.classList.remove('sidebar-open','modal-open','no-scroll','home-page');
+            console.log('NUCLEAR RESET TRIGGERED — all overlays destroyed. Remove ?reset=true from URL to restore normal behavior.');
+        });
+    })();
+    </script>
+
     <script>
         if (localStorage.getItem('reader_theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
 
+    <!-- Emergency overlay cleanup -->
+    <script>
+        (function() {
+            document.addEventListener('DOMContentLoaded', function() {
+                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .prompt-overlay, [class*="overlay"]');
+                overlays.forEach(function(el) {
+                    el.classList.remove('active');
+                    el.style.pointerEvents = 'none';
+                    el.style.visibility = 'hidden';
+                });
+                document.body.style.overflow = '';
+            });
+        })();
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
-    <link rel="stylesheet" href="./css/fonts.min.css?v=391">
-    <link rel="stylesheet" href="./css/reset.min.css?v=391">
-    <link rel="stylesheet" href="./css/variables.min.css?v=391">
-    <link rel="stylesheet" href="./css/typography.min.css?v=391">
-    <link rel="stylesheet" href="./css/layout.min.css?v=391">
-    <link rel="stylesheet" href="./css/components.min.css?v=391">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=401">
+    <link rel="stylesheet" href="./css/reset.min.css?v=401">
+    <link rel="stylesheet" href="./css/variables.min.css?v=401">
+    <link rel="stylesheet" href="./css/typography.min.css?v=401">
+    <link rel="stylesheet" href="./css/layout.min.css?v=401">
+    <link rel="stylesheet" href="./css/components.min.css?v=401">
 
     <style>
         /* Dark mode adjustments for search bar */
@@ -688,5 +723,8 @@
         closeTocBtn.addEventListener('click', closeSidebar);
         overlay.addEventListener('click', closeSidebar);
     </script>
+
+    <!-- Overlay Failsafes -->
+    <script src="./js/failsafes.js?v=401"></script>
 </body>
 </html>

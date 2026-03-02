@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v395';
-const STATIC_CACHE = 'off-the-record-static-v395';
-const CONTENT_CACHE = 'off-the-record-content-v395';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v377';
+const CACHE_VERSION = 'v401';
+const STATIC_CACHE = 'off-the-record-static-v401';
+const CONTENT_CACHE = 'off-the-record-content-v401';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v401';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -48,6 +48,8 @@ const STATIC_ASSETS = [
     './js/admin-access.min.js',
     './js/prompts-init.min.js',
     './js/binge-init.min.js',
+    './js/failsafes.js',
+    './js/overlay-cleanup.js',
     './js/binge-theme.min.js',
     './js/binge-analytics.min.js',
     './data/chapters.js',

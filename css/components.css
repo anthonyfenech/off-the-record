@@ -3959,3 +3959,35 @@ html {
     text-align: center;
     max-width: 600px;
 }
+
+/* ============================================
+   FAILSAFE: Overlay Safety Net
+   Prevents overlays from blocking when inactive
+   ============================================ */
+
+.overlay:not(.active),
+#overlay:not(.active),
+.lightbox-overlay:not(.active),
+.prompt-overlay:not(.active),
+#prompt-modal:not(.active) {
+    pointer-events: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.toc-sidebar:not(.open) {
+    pointer-events: none !important;
+    visibility: hidden !important;
+    transform: translateX(-100%) !important;
+}
+
+/* Body must never be scroll-locked without an active overlay */
+body:not(.sidebar-open):not(.modal-open) {
+    overflow-y: auto !important;
+}
+
+/* Lightbox specific — z-index:10000 means it MUST be hidden when inactive */
+.lightbox-overlay:not(.active) {
+    z-index: -1 !important;
+    display: none !important;
+}
