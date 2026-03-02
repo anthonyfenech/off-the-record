@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#333333">
     <meta name="description" content="Download OFF-THE-RECORD - Available as PDF, EPUB, and more">
+    <meta name="theme-color" content="#333333">
 
-    <!-- Open Graph -->
+    <!-- Open Graph (Facebook, iMessage, LinkedIn) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Download - OFF-THE-RECORD">
     <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
@@ -17,6 +16,10 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Download - OFF-THE-RECORD">
     <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OTR">
+    <meta name="format-detection" content="telephone=no">
 
     <title>Download - OFF-THE-RECORD</title>
 
@@ -43,100 +46,70 @@
     <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
     <script>
         (function() {
+            // Theme (dark/light)
             if (localStorage.getItem('reader_theme') === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
             }
         })();
     </script>
 
-    <!-- Critical: Hide sidebar and overlays before CSS loads to prevent flash -->
-    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay,.lightbox-overlay{visibility:hidden;opacity:0;pointer-events:none}</style>
+    <!-- Critical: Hide sidebar and nav-footer before CSS loads to prevent flash -->
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0;pointer-events:none}.nav-footer{display:none}</style>
 
-    <!-- Emergency overlay cleanup -->
+    <!-- Emergency overlay cleanup - runs before anything else -->
     <script>
         (function() {
+            // Immediately clear any stuck overlay states from previous sessions
             document.addEventListener('DOMContentLoaded', function() {
-                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .prompt-overlay, [class*="overlay"]');
+                // Remove active class from all overlays including lightbox
+                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .media-modal-overlay, .photo-modal-overlay, [class*="overlay"], [id*="overlay"]');
                 overlays.forEach(function(el) {
                     el.classList.remove('active');
                     el.style.pointerEvents = 'none';
+                    el.style.display = 'none';
                     el.style.visibility = 'hidden';
                 });
+                // Ensure body scroll is not locked
                 document.body.style.overflow = '';
             });
         })();
     </script>
 
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="./assets/icons/icon-180.png">
 
     <!-- Preload critical fonts -->
     <link rel="preload" href="./fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=410" as="style">
-    <link rel="preload" href="./css/typography.min.css?v=410" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=411" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=411" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=410">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=411">
 
-    <link rel="stylesheet" href="./css/reset.min.css?v=410">
-    <link rel="stylesheet" href="./css/variables.min.css?v=410">
-    <link rel="stylesheet" href="./css/typography.min.css?v=410">
-    <link rel="stylesheet" href="./css/layout.min.css?v=410">
-    <link rel="stylesheet" href="./css/components.min.css?v=410">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=410">
-
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/reset.min.css?v=411">
+    <link rel="stylesheet" href="./css/variables.min.css?v=411">
+    <link rel="stylesheet" href="./css/typography.min.css?v=411">
+    <link rel="stylesheet" href="./css/layout.min.css?v=411">
+    <link rel="stylesheet" href="./css/components.min.css?v=411">
+    <!-- PROMPTS DISABLED: re-enable when prompt system is fixed -->
+    <!-- <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=411"> -->
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=411">
     <style>
-        body {
-            padding: 90px 20px 40px;
-        }
-
-        /* Sticky header - GPU accelerated */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: var(--color-header-bg);
-            border-bottom: 1px solid var(--color-border);
-            will-change: transform;
-            backface-visibility: hidden;
-            transition: background-color var(--transition-fast);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 69px;
-            padding: 0 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .header-logo-img {
-            height: 28px;
-            width: auto;
-        }
-
-        /* Main content container */
-        .get-container {
+        /* Download page specific styles */
+        .chapter-body {
             max-width: 520px;
             margin: 0 auto;
-            padding-top: 20px;
-        }
-
-        /* Page title */
-        .get-title {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-            margin-bottom: 32px;
-            color: var(--color-text);
         }
 
         /* Section labels */
@@ -262,27 +235,6 @@
 
         /* Mobile adjustments */
         @media (max-width: 599px) {
-            body {
-                padding: 74px 16px 90px;
-                padding-top: calc(74px + env(safe-area-inset-top, 0px));
-                padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
-                padding-left: max(16px, env(safe-area-inset-left, 16px));
-                padding-right: max(16px, env(safe-area-inset-right, 16px));
-            }
-
-            .header-content {
-                height: 64px;
-                padding: 0 12px;
-            }
-
-            .header-logo-img {
-                height: 24px;
-            }
-
-            .get-title {
-                font-size: 1.25rem;
-            }
-
             .format-card {
                 padding: 20px;
             }
@@ -295,56 +247,152 @@
 
         /* Small phone */
         @media (max-width: 374px) {
-            body {
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-
             .format-card {
                 padding: 16px;
             }
         }
     </style>
 </head>
-<body style="opacity: 0;">
-    <a href="#main-content" class="skip-link">Skip to content</a>
+<body>
+    <a href="#reader" class="skip-link">Skip to content</a>
     <noscript>
         <div style="max-width: 640px; margin: 80px auto; padding: 20px; font-family: 'Courier New', monospace; text-align: center;">
             <h1 style="font-size: 1.4rem; margin-bottom: 16px;">OFF-THE-RECORD</h1>
-            <p>This page requires JavaScript. Please enable JavaScript in your browser settings.</p>
+            <p>This site requires JavaScript to read chapters. Please enable JavaScript in your browser settings.</p>
         </div>
     </noscript>
-
+    <script>
+        // Apply body classes immediately (theme already set in <head>)
+        if (localStorage.getItem('admin_showCaptions') === 'true') {
+            document.body.classList.add('show-captions');
+        }
+        if (localStorage.getItem('reader_cleanRead') === 'true') {
+            document.body.classList.add('clean-read');
+        }
+    </script>
     <script>
         // TEMP: password bypass for testing — remove before launch
         localStorage.setItem('otr_beta_session', JSON.stringify({
             authenticated: true,
-            expires: Date.now() + (365 * 24 * 60 * 60 * 1000)
+            expires: Date.now() + (365 * 24 * 60 * 60 * 1000) // 1 year
         }));
     </script>
+    <!-- Password Gate hidden by default since bypass is active -->
+    <style>#passwordGate{display:none !important;visibility:hidden !important;pointer-events:none !important}</style>
 
-    <script>
-        // Auth check - must run synchronously before content renders
-        (function() {
-            var session = localStorage.getItem('otr_beta_session');
-            if (!session) {
-                window.location.replace('./');
-                return;
-            }
-            try {
-                var data = JSON.parse(session);
-                if (!data.authenticated || Date.now() > data.expires) {
-                    localStorage.removeItem('otr_beta_session');
-                    window.location.replace('./');
-                    return;
-                }
-            } catch (e) {
-                window.location.replace('./');
-                return;
-            }
-            document.body.style.opacity = '1';
-        })();
-    </script>
+    <!-- Password Gate (Beta Access) -->
+    <div id="passwordGate" class="password-gate" style="display:none !important">
+        <div class="password-gate-content">
+            <h1 class="password-gate-title">OFF-THE-RECORD</h1>
+            <form id="passwordForm" class="password-form">
+                <label for="passwordInput" class="sr-only">Enter password</label>
+                <input
+                    type="password"
+                    id="passwordInput"
+                    class="password-input"
+                    placeholder="Enter password"
+                    autocomplete="off"
+                    autofocus
+                >
+                <div class="remember-me-wrapper">
+                    <input type="checkbox" id="rememberMe" class="remember-checkbox">
+                    <label for="rememberMe" class="remember-label">Remember me for 30 days</label>
+                </div>
+                <button type="submit" class="password-submit">ENTER</button>
+                <p id="passwordError" class="password-error">Incorrect password</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <a href="./" class="header-logo" id="homeLink"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Reading Area -->
+    <main class="reader" id="reader">
+        <article class="chapter" id="chapterContent">
+            <header class="chapter-header">
+                <h2 class="chapter-title" id="chapterTitle">DOWNLOAD</h2>
+            </header>
+            <div class="chapter-body" id="chapterBody">
+                <div id="formats-container"></div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <!-- Search Section -->
+        <div class="toc-section" id="searchSection">
+            <button class="toc-section-header" id="searchToggle" aria-expanded="false">
+                <span class="toc-section-title">Search</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="toc-section-content" id="searchContent" style="display: none;">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="" autocomplete="off" aria-label="Search chapters" />
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">&#10005;</button>
+                </div>
+                <div class="search-results" id="searchResults" style="display: none;"></div>
+            </div>
+        </div>
+        <!-- Options Section -->
+        <div class="toc-section" id="optionsSection">
+            <button class="toc-section-header" id="optionsToggle" aria-expanded="false">
+                <span class="toc-section-title">Options</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="toc-section-content" id="optionsContent" style="display: none;">
+                <div class="toc-option">
+                    <span class="toc-option-label">Theme</span>
+                    <div class="option-btn-group" id="themeToggleGroup">
+                        <button class="option-btn" data-theme="light">Light</button>
+                        <button class="option-btn" data-theme="dark">Dark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="toc-footer">
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- Configuration Object -->
     <script>
@@ -414,51 +462,6 @@
             ]
         };
     </script>
-
-    <!-- Header Navigation -->
-    <header class="header" id="header">
-        <div class="header-content">
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            <a href="./" class="header-logo"><img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
-            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <main class="get-container" id="main-content">
-        <h1 class="get-title">Download</h1>
-        <div id="formats-container"></div>
-    </main>
-
-    <!-- Table of Contents Sidebar -->
-    <aside class="toc-sidebar" id="tocSidebar">
-        <div class="toc-header">
-            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <nav class="toc-content" id="tocContent">
-            <!-- Populated by JavaScript -->
-        </nav>
-        <div class="toc-footer">
-            <button class="logout-btn" id="logoutBtn">Logout</button>
-        </div>
-    </aside>
-
-    <!-- Overlay for TOC -->
-    <div class="overlay" id="overlay"></div>
 
     <!-- Render formats from config -->
     <script>
@@ -640,7 +643,7 @@
         })();
     </script>
 
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar Navigation (builds TOC identical to navigation.js) -->
     <script type="module">
         import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
         import { isChapterComplete } from './js/storage.min.js';
@@ -653,6 +656,8 @@
 
         // Build TOC
         buildTOC();
+
+        const expandedSections = new Set();
 
         function openTOC() {
             // Always collapse book section when opening
@@ -821,7 +826,7 @@
             const handleChapterSelect = () => {
                 if (!isLocked) {
                     closeTOC();
-                    window.location.href = './?chapter=' + chapter.id;
+                    window.location.href = './#chapter-' + chapter.id;
                 }
             };
             item.addEventListener('click', handleChapterSelect);
@@ -870,7 +875,6 @@
             return sectionDiv;
         }
 
-        const expandedSections = new Set();
         function toggleTopSection(sectionId, sectionHeader, sectionContent) {
             if (expandedSections.has(sectionId)) {
                 expandedSections.delete(sectionId);
@@ -888,33 +892,66 @@
             localStorage.removeItem('otr_beta_session');
             window.location.href = './';
         });
+
+        // Options toggle
+        const optionsToggle = document.getElementById('optionsToggle');
+        const optionsContent = document.getElementById('optionsContent');
+        if (optionsToggle && optionsContent) {
+            optionsToggle.addEventListener('click', () => {
+                const isExpanded = optionsToggle.getAttribute('aria-expanded') === 'true';
+                optionsToggle.setAttribute('aria-expanded', !isExpanded);
+                optionsContent.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+
+        // Theme toggle in options
+        const themeToggleGroup = document.getElementById('themeToggleGroup');
+        if (themeToggleGroup) {
+            const buttons = themeToggleGroup.querySelectorAll('.option-btn');
+            const updateThemeButtons = () => {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                buttons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.theme === (isDark ? 'dark' : 'light'));
+                });
+            };
+            updateThemeButtons();
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.dataset.theme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('reader_theme', 'dark');
+                    } else {
+                        document.documentElement.removeAttribute('data-theme');
+                        localStorage.setItem('reader_theme', 'light');
+                    }
+                    updateThemeButtons();
+                });
+            });
+        }
+
+        // Search toggle (placeholder - search not functional on this page)
+        const searchToggle = document.getElementById('searchToggle');
+        const searchContent = document.getElementById('searchContent');
+        if (searchToggle && searchContent) {
+            searchToggle.addEventListener('click', () => {
+                const isExpanded = searchToggle.getAttribute('aria-expanded') === 'true';
+                searchToggle.setAttribute('aria-expanded', !isExpanded);
+                searchContent.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
     </script>
 
-    <!-- Theme Toggle -->
-    <script>
-        (function() {
-            const themeToggle = document.getElementById('themeToggle');
-            themeToggle.addEventListener('click', function() {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                if (isDark) {
-                    document.documentElement.removeAttribute('data-theme');
-                    localStorage.setItem('reader_theme', 'light');
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('reader_theme', 'dark');
-                }
-            });
-        })();
-    </script>
+    <!-- Theme Toggle (header button) -->
+    <script type="module" src="./js/theme.min.js?v=411"></script>
 
     <!-- Overlay Failsafes -->
-    <script src="./js/failsafes.js?v=410"></script>
+    <script src="./js/failsafes.js?v=411"></script>
 
     <!-- Reader Persona & Analytics -->
-    <script src="./js/reader-name.js?v=410"></script>
-    <script src="./js/analytics.min.js?v=410"></script>
+    <script src="./js/reader-name.js?v=411"></script>
+    <script src="./js/analytics.min.js?v=411"></script>
 
-    <script src="./js/otr-tier1-error-handler.min.js?v=410"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=411"></script>
 
 </body>
 </html>
