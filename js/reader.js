@@ -543,11 +543,14 @@ class Reader {
         if (!this.chapterBody) return;
 
         const mediaEmojis = this.chapterBody.querySelectorAll('.media-emoji');
+        console.log('[Reader] attachMediaEmojiHandlers found', mediaEmojis.length, 'emojis');
 
         mediaEmojis.forEach(emoji => {
+            const mediaId = emoji.getAttribute('data-media-id');
+            console.log('[Reader] Attaching click handler to emoji:', mediaId);
             emoji.addEventListener('click', (e) => {
                 e.preventDefault();
-                const mediaId = emoji.getAttribute('data-media-id');
+                console.log('[Reader] Emoji clicked:', mediaId);
                 if (mediaId) {
                     mediaModal.open(mediaId);
                 }
