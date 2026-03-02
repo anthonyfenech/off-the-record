@@ -264,6 +264,10 @@ export class InteractivePrompts {
      * @returns {string} - Normalized text
      */
     _normalizeText(text) {
+        // Guard against undefined/null text
+        if (!text || typeof text !== 'string') {
+            return '';
+        }
         return text
             .replace(/\s+/g, ' ')
             .replace(/['']/g, "'")
