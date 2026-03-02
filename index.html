@@ -159,23 +159,11 @@
             expires: Date.now() + (365 * 24 * 60 * 60 * 1000) // 1 year
         }));
     </script>
-    <script>
-        // Hide password gate immediately if already authenticated (prevents flash)
-        (function() {
-            var session = localStorage.getItem('otr_beta_session');
-            if (session) {
-                try {
-                    var data = JSON.parse(session);
-                    if (data.authenticated && Date.now() <= data.expires) {
-                        document.write('<style>#passwordGate{display:none !important}</style>');
-                    }
-                } catch (e) {}
-            }
-        })();
-    </script>
+    <!-- Password Gate hidden by default since bypass is active -->
+    <style>#passwordGate{display:none !important;visibility:hidden !important;pointer-events:none !important}</style>
 
     <!-- Password Gate (Beta Access) -->
-    <div id="passwordGate" class="password-gate">
+    <div id="passwordGate" class="password-gate" style="display:none !important">
         <div class="password-gate-content">
             <h1 class="password-gate-title">OFF-THE-RECORD</h1>
             <form id="passwordForm" class="password-form">
