@@ -1,6 +1,14 @@
+/* ============================================
+   OTR Components — UI elements, modals, overlays, sidebar
+   Buttons, forms, cards, interactive elements.
+
+   Z-INDEX HIERARCHY: See variables.css
+   FAILSAFE RULES: End of file (do not remove)
+   ============================================ */
+
 /* UI Components */
 
-/* Skip Navigation Link - Accessibility */
+/* Skip Navigation Link - Accessibility (z-index: 99999 = highest priority) */
 .skip-link {
     position: absolute !important;
     top: -9999px !important;
@@ -8,7 +16,7 @@
     background: var(--color-bg, #fff);
     color: var(--color-text, #333);
     padding: 8px 16px;
-    z-index: 10000;
+    z-index: 99999;
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
     text-decoration: none;
@@ -1385,21 +1393,23 @@ button:focus-visible {
 }
 
 /* Clean/Emoji Toggle Button (becomes Show Media in dark mode version) */
+/* Clean toggle - using specificity instead of !important */
+.header .clean-toggle,
 .clean-toggle {
     display: flex;
     align-items: center;
     gap: 6px;
     background: none;
-    border: 2px solid var(--color-text-primary) !important;
+    border: 2px solid var(--color-text-primary);
     border-radius: 3px;
     padding: 4px 8px;
     cursor: pointer;
     font-family: var(--font-mono);
     font-size: 10px;
-    font-weight: 900 !important;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--color-text-primary) !important;
+    color: var(--color-text-primary);
     transition: all 0.15s ease;
 }
 
@@ -3043,7 +3053,7 @@ body.show-captions .media-modal-caption {
     right: 0;
     bottom: 0;
     background-color: var(--color-background);
-    z-index: 9999;
+    z-index: 50000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3892,8 +3902,7 @@ html {
 /* Mobile touch enhancements */
 @media (max-width: 768px) {
     /* Ensure all interactive elements are easily tappable */
-    .prompt-choice,
-    .survey-option {
+    .prompt-choice {
         min-height: 48px;
         padding: 14px 16px;
     }
@@ -3945,7 +3954,7 @@ html {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
+    z-index: 5000;
     padding: 5%;
     box-sizing: border-box;
     pointer-events: none;
@@ -4031,19 +4040,17 @@ body:not(.sidebar-open):not(.modal-open) {
     overflow-y: auto !important;
 }
 
-/* Lightbox specific — z-index:10000 means it MUST be hidden when inactive */
+/* Lightbox specific — z-index:5000 means it MUST be hidden when inactive */
 .lightbox-overlay:not(.active) {
     z-index: -1 !important;
     display: none !important;
 }
 
 /* Fixed elements must not capture events when hidden */
+/* .install-prompt uses .show class toggle - :not(.show) is correct */
 .install-prompt:not(.show) {
     pointer-events: none !important;
 }
 
-/* Continue reading uses display:none via JS, but add safety net */
-.continue-reading[style*="display: none"],
-.continue-reading[style*="display:none"] {
-    pointer-events: none !important;
-}
+/* Note: .continue-reading uses display:none via JS, which already prevents
+   interaction. No pointer-events rule needed. */

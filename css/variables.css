@@ -1,6 +1,24 @@
 /* Design System Variables - Typewriter Aesthetic */
 
 /* ============================================
+   Z-INDEX HIERARCHY — OFF-THE-RECORD
+   ============================================
+   -1        Hidden/inactive overlays
+   1-10      In-content elements
+   50        Dropdowns, search results
+   80-100    Fixed UI (install prompt, continue reading, header, footer, progress)
+   105       Floating controls
+   150       Overlay backdrop
+   200       Sidebar
+   250-300   Sidebar mobile internals
+   1000-1001 Media modals, photo modals
+   5000      Lightbox overlay
+   5001      Prompt modal
+   50000     Password gate
+   99999     Skip link (accessibility)
+   ============================================ */
+
+/* ============================================
    LIGHT MODE (DEFAULT)
    ============================================ */
 :root {

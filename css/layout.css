@@ -1,3 +1,8 @@
+/* ============================================
+   OTR Layout — Page structure, grid, fixed positioning
+   Header, footer, reader area, responsive containers.
+   ============================================ */
+
 /* Layout System - Mobile First */
 
 /* Body layout */
@@ -243,8 +248,8 @@ body.paginated .chapter-body {
     }
 }
 
-/* Extra small screens */
-@media (max-width: 360px) {
+/* Extra small screens (374px = iPhone SE and smaller) */
+@media (max-width: 374px) {
     .nav-footer {
         max-width: 270px;
         padding: 8px 10px;
