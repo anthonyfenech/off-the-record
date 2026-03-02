@@ -266,21 +266,28 @@ class MediaModal {
         }
         console.log('[MediaModal] Proceeding to render media:', media.type);
 
-        // Store timestamp and tracking data for duration calculation on close
-        this.modalOpenTime = Date.now();
-        this.trackingData = {
-            assetType: this.getAssetCategory(media.type),
-            assetId: mediaId,
-            emoji: media.emoji,
-            label: media.label
-        };
+        try {
+            // Store timestamp and tracking data for duration calculation on close
+            this.modalOpenTime = Date.now();
+            this.trackingData = {
+                assetType: this.getAssetCategory(media.type),
+                assetId: mediaId,
+                emoji: media.emoji,
+                label: media.label
+            };
+            console.log('[MediaModal] trackingData set');
 
-        // Save the element that triggered the modal for focus restore
-        this.triggerElement = document.activeElement;
+            // Save the element that triggered the modal for focus restore
+            this.triggerElement = document.activeElement;
 
-        this.currentMedia = media;
-        this.renderContent(media);
-        this.show();
+            this.currentMedia = media;
+            console.log('[MediaModal] About to call renderContent()');
+            this.renderContent(media);
+            console.log('[MediaModal] renderContent() completed, calling show()');
+            this.show();
+        } catch (err) {
+            console.error('[MediaModal] Error after "Proceeding to render":', err);
+        }
     }
 
     // Render media content based on type
