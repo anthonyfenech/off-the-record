@@ -6,6 +6,17 @@
 // Sheet names
 const RAW_DATA_SHEET = 'Raw Data';
 const READER_SUMMARY_SHEET = 'Reader Summary';
+const COUNTERS_SHEET = 'Counters';
+
+// Counter cell references (in Counters sheet)
+// Row 1: Headers, Row 2: Values
+const COUNTER_CELLS = {
+  pdf_download: 'B2',      // PDF Downloads
+  epub_download: 'C2',     // EPUB Downloads
+  apple_books_click: 'D2', // Apple Books clicks
+  kindle_click: 'E2',      // Kindle clicks
+  google_play_click: 'F2'  // Google Play clicks
+};
 
 // Column headers for Reader Summary
 const READER_SUMMARY_HEADERS = [
@@ -28,11 +39,19 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
 
-    // Log to Raw Data sheet
+    // Log to Raw Data sheet (always happens first)
     logRawEvent(data);
 
-    // Update Reader Summary
-    updateReaderSummary(data);
+    // Check if this is a Get The Book event
+    const eventType = data.event_type || data.event;
+    if (eventType && COUNTER_CELLS[eventType]) {
+      incrementCounter(eventType);
+    }
+
+    // Update Reader Summary for regular analytics events
+    if (data.readerName || data.reader_name) {
+      updateReaderSummary(data);
+    }
 
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -60,22 +79,117 @@ function logRawEvent(data) {
     ]);
   }
 
+  // Handle both old format (event) and new format (event_type)
+  const eventName = data.event_type || data.event || '';
+  const readerName = data.reader_name || data.readerName || 'Unknown Reader';
+  const deviceType = data.device || data.deviceType || '';
+
   sheet.appendRow([
     data.timestamp || new Date().toISOString(),
-    data.event || '',
-    data.readerName || 'Unknown Reader',
+    eventName,
+    readerName,
     data.visitorId || '',
     data.sessionId || '',
     data.page || '',
-    data.chapter || '',
-    data.deviceType || '',
+    data.chapter || data.format || '',
+    deviceType,
     data.browser || '',
     data.screenSize || '',
     data.scrollDepth || '',
     data.timeSpent || '',
-    data.url || '',
+    data.url || data.referrer || '',
     JSON.stringify(data)
   ]);
+}
+
+/**
+ * Increment a counter in the Counters sheet
+ */
+function incrementCounter(eventType) {
+  const cellRef = COUNTER_CELLS[eventType];
+  if (!cellRef) {
+    console.warn('No counter cell defined for event type:', eventType);
+    return;
+  }
+
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(COUNTERS_SHEET);
+
+  // Create Counters sheet if it doesn't exist
+  if (!sheet) {
+    sheet = ss.insertSheet(COUNTERS_SHEET);
+    // Add headers
+    sheet.getRange('A1:F1').setValues([['Counter', 'PDF Downloads', 'EPUB Downloads', 'Apple Books', 'Kindle', 'Google Play']]);
+    sheet.getRange('A2:F2').setValues([['Count', 0, 0, 0, 0, 0]]);
+    sheet.getRange('A1:F1').setFontWeight('bold');
+    console.log('Created Counters sheet with headers');
+  }
+
+  try {
+    const cell = sheet.getRange(cellRef);
+    const currentValue = cell.getValue();
+    const numericValue = (typeof currentValue === 'number' && !isNaN(currentValue)) ? currentValue : 0;
+    cell.setValue(numericValue + 1);
+    console.log('Incremented', eventType, 'counter from', numericValue, 'to', numericValue + 1);
+  } catch (error) {
+    console.error('Error incrementing counter for', eventType, ':', error);
+    // Don't throw - logging to Raw Data already succeeded
+  }
+}
+
+/**
+ * Get current counter values (for admin dashboard)
+ */
+function getCounters() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(COUNTERS_SHEET);
+
+  if (!sheet) {
+    return {
+      pdf_download: 0,
+      epub_download: 0,
+      apple_books_click: 0,
+      kindle_click: 0,
+      google_play_click: 0
+    };
+  }
+
+  const counters = {};
+  for (const [eventType, cellRef] of Object.entries(COUNTER_CELLS)) {
+    try {
+      const value = sheet.getRange(cellRef).getValue();
+      counters[eventType] = (typeof value === 'number' && !isNaN(value)) ? value : 0;
+    } catch (e) {
+      counters[eventType] = 0;
+    }
+  }
+
+  return counters;
+}
+
+/**
+ * Set a counter value (for manual corrections)
+ */
+function setCounter(eventType, value) {
+  const cellRef = COUNTER_CELLS[eventType];
+  if (!cellRef) {
+    throw new Error('Unknown counter type: ' + eventType);
+  }
+
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(COUNTERS_SHEET);
+
+  if (!sheet) {
+    throw new Error('Counters sheet not found');
+  }
+
+  const numericValue = parseInt(value, 10);
+  if (isNaN(numericValue) || numericValue < 0) {
+    throw new Error('Invalid counter value: ' + value);
+  }
+
+  sheet.getRange(cellRef).setValue(numericValue);
+  return { success: true, eventType: eventType, newValue: numericValue };
 }
 
 /**

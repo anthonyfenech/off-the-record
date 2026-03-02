@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v404';
-const STATIC_CACHE = 'off-the-record-static-v404';
-const CONTENT_CACHE = 'off-the-record-content-v404';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v404';
+const CACHE_VERSION = 'v405';
+const STATIC_CACHE = 'off-the-record-static-v405';
+const CONTENT_CACHE = 'off-the-record-content-v405';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v405';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -12,6 +12,7 @@ const STATIC_ASSETS = [
     './binge-mode.html',
     './offline.html',
     './money-mode.html',
+    './get.html',
     './manifest.json',
     './css/fonts.min.css',
     './css/reset.min.css',
