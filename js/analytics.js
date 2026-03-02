@@ -94,6 +94,7 @@
     async function sendToGoogleSheets(data, isRetry = false) {
         const enrichedData = {
             ...data,
+            readerName: window.OTR_READER_NAME || 'Unknown Reader',
             visitorId: getVisitorId(),
             sessionId: generateSessionId(),
             deviceType: getDeviceType(),
@@ -457,6 +458,7 @@
             const elapsed = Math.round((Date.now() - pageStartTime) / 1000);
             const data = {
                 event: 'page_unload',
+                readerName: window.OTR_READER_NAME || 'Unknown Reader',
                 visitorId: getVisitorId(),
                 sessionId: generateSessionId(),
                 page: currentPage,
@@ -505,6 +507,7 @@
         // Utilities
         getSessionId: generateSessionId,
         getVisitorId: getVisitorId,
+        getReaderName: function() { return window.OTR_READER_NAME || 'Unknown Reader'; },
         getDeviceType: getDeviceType,
         getScrollDepth: getScrollDepth,
 
@@ -523,6 +526,7 @@
 
     // Initialize
     console.log('[Analytics] Enhanced tracking initialized', {
+        readerName: window.OTR_READER_NAME || 'Unknown Reader',
         session: generateSessionId(),
         visitor: getVisitorId(),
         returnVisitor: isReturnVisitor()
