@@ -34,7 +34,24 @@
     </script>
 
     <!-- Critical: Hide sidebar and nav-footer before CSS loads to prevent flash -->
-    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0}.nav-footer{display:none}</style>
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0;pointer-events:none}.nav-footer{display:none}</style>
+
+    <!-- Emergency overlay cleanup - runs before anything else -->
+    <script>
+        (function() {
+            // Immediately clear any stuck overlay states from previous sessions
+            document.addEventListener('DOMContentLoaded', function() {
+                // Remove active class from all overlays
+                var overlays = document.querySelectorAll('.overlay, [class*="overlay"], [id*="overlay"]');
+                overlays.forEach(function(el) {
+                    el.classList.remove('active');
+                    el.style.pointerEvents = 'none';
+                });
+                // Ensure body scroll is not locked
+                document.body.style.overflow = '';
+            });
+        })();
+    </script>
 
     <link rel="manifest" href="./manifest.json">
 
