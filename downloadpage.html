@@ -9,16 +9,16 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Get the Book - OFF-THE-RECORD">
+    <meta property="og:title" content="Download - OFF-THE-RECORD">
     <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
-    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/get.html">
+    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/downloadpage.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Get the Book - OFF-THE-RECORD">
+    <meta name="twitter:title" content="Download - OFF-THE-RECORD">
     <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
 
-    <title>Get the Book - OFF-THE-RECORD</title>
+    <title>Download - OFF-THE-RECORD</title>
 
     <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
     <script>
@@ -74,18 +74,18 @@
     <link rel="preload" href="./fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="./css/variables.min.css?v=405" as="style">
-    <link rel="preload" href="./css/typography.min.css?v=405" as="style">
+    <link rel="preload" href="./css/variables.min.css?v=406" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=406" as="style">
 
     <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="./css/fonts.min.css?v=405">
+    <link rel="stylesheet" href="./css/fonts.min.css?v=406">
 
-    <link rel="stylesheet" href="./css/reset.min.css?v=405">
-    <link rel="stylesheet" href="./css/variables.min.css?v=405">
-    <link rel="stylesheet" href="./css/typography.min.css?v=405">
-    <link rel="stylesheet" href="./css/layout.min.css?v=405">
-    <link rel="stylesheet" href="./css/components.min.css?v=405">
-    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=405">
+    <link rel="stylesheet" href="./css/reset.min.css?v=406">
+    <link rel="stylesheet" href="./css/variables.min.css?v=406">
+    <link rel="stylesheet" href="./css/typography.min.css?v=406">
+    <link rel="stylesheet" href="./css/layout.min.css?v=406">
+    <link rel="stylesheet" href="./css/components.min.css?v=406">
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=406">
 
     <style>
         body {
@@ -435,7 +435,7 @@
     </header>
 
     <main class="get-container" id="main-content">
-        <h1 class="get-title">Get the Book</h1>
+        <h1 class="get-title">Download</h1>
         <div id="formats-container"></div>
     </main>
 
@@ -488,7 +488,7 @@
             function fireAnalyticsEvent(format) {
                 var payload = {
                     event_type: format.eventName,
-                    page: 'Get The Book',
+                    page: 'Download',
                     format: format.id,
                     reader_name: getReaderName(),
                     device: getDeviceType(),
@@ -618,7 +618,7 @@
 
                 // Downloads section
                 if (GET_FORMATS.downloads && GET_FORMATS.downloads.length > 0) {
-                    fragment.appendChild(createSectionLabel('DOWNLOAD'));
+                    fragment.appendChild(createSectionLabel('FILES'));
                     GET_FORMATS.downloads.forEach(function(format) {
                         fragment.appendChild(createCard(format));
                     });
@@ -701,8 +701,11 @@
             // BOOK section
             fragment.appendChild(createBookSection());
 
-            // Get the Book link (current page - highlighted)
-            fragment.appendChild(createTopSection({ id: 'get-book', label: 'GET THE BOOK', type: 'link', url: './get.html', current: true }));
+            // BINGE MODE link
+            fragment.appendChild(createTopSection({ id: 'binge-mode', label: 'BINGE MODE', type: 'link', url: './binge-mode.html', current: false }));
+
+            // DOWNLOAD link (current page - highlighted)
+            fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html', current: true }));
 
             // Divider
             const divider = document.createElement('div');
@@ -898,13 +901,13 @@
     </script>
 
     <!-- Overlay Failsafes -->
-    <script src="./js/failsafes.js?v=405"></script>
+    <script src="./js/failsafes.js?v=406"></script>
 
     <!-- Reader Persona & Analytics -->
-    <script src="./js/reader-name.js?v=405"></script>
-    <script src="./js/analytics.min.js?v=405"></script>
+    <script src="./js/reader-name.js?v=406"></script>
+    <script src="./js/analytics.min.js?v=406"></script>
 
-    <script src="./js/otr-tier1-error-handler.min.js?v=405"></script>
+    <script src="./js/otr-tier1-error-handler.min.js?v=406"></script>
 
 </body>
 </html>
