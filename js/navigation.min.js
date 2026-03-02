@@ -735,6 +735,9 @@ class Navigation {
 
     // Navigate to previous page or chapter
     goToPrevious() {
+        // Close sidebar if open
+        this.closeTOC();
+
         // Throttle rapid clicks
         const now = Date.now();
         if (now - this.lastPageTurn < this.pageTurnThrottle) return;
@@ -760,6 +763,9 @@ class Navigation {
 
     // Navigate to next page or chapter
     goToNext() {
+        // Close sidebar if open
+        this.closeTOC();
+
         // Throttle rapid clicks
         const now = Date.now();
         if (now - this.lastPageTurn < this.pageTurnThrottle) return;
