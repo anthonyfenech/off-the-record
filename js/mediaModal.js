@@ -577,18 +577,19 @@ class MediaModal {
     // Show the modal
     show() {
         console.log('[MediaModal] show() called');
-        console.log('[MediaModal] overlay element:', this.overlay);
-        console.log('[MediaModal] overlay in DOM:', document.body.contains(this.overlay));
+
+        // CRITICAL: Clear any inline styles set by overlay-cleanup.js
+        // Inline styles override CSS classes, so we must clear them first
+        this.overlay.style.display = '';
+        this.overlay.style.visibility = '';
+        this.overlay.style.opacity = '';
+        this.overlay.style.pointerEvents = '';
 
         this.isOpen = true;
         this.overlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
 
-        console.log('[MediaModal] overlay.classList after adding active:', this.overlay.classList.toString());
-        console.log('[MediaModal] overlay computed style - display:', getComputedStyle(this.overlay).display);
-        console.log('[MediaModal] overlay computed style - visibility:', getComputedStyle(this.overlay).visibility);
-        console.log('[MediaModal] overlay computed style - opacity:', getComputedStyle(this.overlay).opacity);
-        console.log('[MediaModal] overlay computed style - z-index:', getComputedStyle(this.overlay).zIndex);
+        console.log('[MediaModal] show() complete - overlay should be visible');
 
         // Add keyboard listener for focus trap
         document.addEventListener('keydown', this.handleKeyDown);
@@ -598,12 +599,6 @@ class MediaModal {
         if (closeBtn) {
             closeBtn.focus();
         }
-
-        // Check if something closes it immediately
-        setTimeout(() => {
-            console.log('[MediaModal] After 100ms - overlay still has active?', this.overlay.classList.contains('active'));
-            console.log('[MediaModal] After 100ms - isOpen:', this.isOpen);
-        }, 100);
     }
 
     // Close the modal - wrapped in try/catch for guaranteed cleanup
