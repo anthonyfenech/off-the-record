@@ -596,13 +596,6 @@
         </div>
     </noscript>
     <script>
-        // TEMP: password bypass for testing — remove before launch
-        localStorage.setItem('otr_beta_session', JSON.stringify({
-            authenticated: true,
-            expires: Date.now() + (365 * 24 * 60 * 60 * 1000) // 1 year
-        }));
-    </script>
-    <script>
         // Auth check - must run synchronously before content renders
         // Money Mode requires BOTH beta session AND admin access
         (function() {
