@@ -4,9 +4,9 @@
 import { security } from './security.js';
 import { overlayCleanup } from './overlay-cleanup.js';
 
-// Password hash (obfuscated) - generated from simpleHash('BALLWRITER')
+// Password hash (obfuscated) - generated from simpleHash('GOATMODE')
 // To change password: run simpleHash('NEWPASSWORD') in console and update this value
-const PASSWORD_HASH = -1322527314;
+const PASSWORD_HASH = -290606366;
 const AUTH_KEY = 'otr_beta_session';
 const SESSION_HOURS = 168; // 7 days
 const REMEMBER_ME_HOURS = 720; // 30 days
