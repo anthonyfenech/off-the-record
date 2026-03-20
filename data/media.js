@@ -1219,7 +1219,7 @@ const MEDIA_DATA = {
     type: 'audio',
     emoji: '🎙️',
     title: 'Cabrera on Verlander (2019)',
-    src: 'assets/audio-staging/8-20-19-cabrera-on-verlander-at-11.44-pm-at-1144-pm.mp3',
+    src: 'assets/26-unethical/cabrera-on-verlander-8-20-19.mp3',
     date: '2019-08-20',
     chapter: 26
   },
@@ -1228,7 +1228,7 @@ const MEDIA_DATA = {
     type: 'audio',
     emoji: '🎙️',
     title: 'Verlander Blow Off (2019)',
-    src: 'assets/audio-staging/8-20-19-verlander-blow-off-at-5.02-pm-at-0502-pm.mp3',
+    src: 'assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
     date: '2019-08-20',
     chapter: 26
   },
@@ -1286,18 +1286,9 @@ const MEDIA_DATA = {
     type: 'audio',
     emoji: '🎙️',
     title: 'Cabrera on Verlander',
-    src: 'assets/cabrera-on-verlander-8-20-19.mp3',
+    src: 'assets/26-unethical/cabrera-on-verlander-8-20-19.mp3',
     date: '2019-08-20',
     chapter: 26
-  },
-
-  'verlander-blow-off-root': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Verlander Blow-Off (backup)',
-    src: 'assets/verlander-blow-off-8-20-19.mp3',
-    date: '2019-08-20',
-    chapter: 25
   },
 
   // ========================================
