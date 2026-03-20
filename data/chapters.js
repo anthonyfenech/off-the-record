@@ -41,12 +41,10 @@ export const CHAPTERS = [
 <p class="toc-entry"><a href="#scandal" class="toc-link">Scandal!</a></p>
 <p class="toc-entry"><a href="#rookie-year" class="toc-link">Rookie Year</a></p>
 <p class="toc-entry"><a href="#opening-day" class="toc-link">Opening Day</a></p>
-<p class="toc-entry"><a href="#midseason" class="toc-link">Midseason</a></p>
 <p class="toc-entry"><a href="#trade-deadline" class="toc-link">Trade Deadline</a></p>
 <p class="toc-entry"><a href="#fire-drill" class="toc-link">Fire Drill</a></p>
 <p class="toc-entry"><a href="#spring-training" class="toc-link">Spring Training</a></p>
 <p class="toc-entry"><a href="#hot-seat" class="toc-link">Hot Seat</a></p>
-<p class="toc-entry"><a href="#pennant-race" class="toc-link">Pennant Race</a></p>
 <p class="toc-entry"><a href="#wake-up-call" class="toc-link">Wake-Up Call</a></p>
 <p class="toc-entry"><a href="#prime-time" class="toc-link">Prime-Time</a></p>
 <p class="toc-entry"><a href="#fireworks" class="toc-link">Fireworks</a></p>
@@ -86,7 +84,7 @@ export const CHAPTERS = [
 
 <p>Five years ago, a similar blind faith led me here, to a speck on the map underneath Sicily, a place with three hundred days of sunshine, homemade pasta and, most importantly, a place where nobody knew my name.</p>
 
-<p>Since you, also, don’t know my name, allow me to introduce myself. My name is Anthony Fenech. For posterity’s sake, it’s pronounced Fen-ICK. And yes, I am aware my last name rhymes with dick.</p>
+<p>Since you, also, don't know my name, allow me to introduce myself. My name is Anthony Fenech.</p>
 
 <p>I was a sportswriter in my past life. Started at nineteen in 2007 and lasted into the pandemic year of 2020, including five years when I covered the Detroit Tigers for the <em>Detroit Free Press</em> as the team’s beat reporter. That role was something of a dream job for this whippersnapper—covering my favorite team growing up for the hometown paper. I liked it; I was good at it.</p>
 
@@ -98,29 +96,23 @@ export const CHAPTERS = [
 
 <p>As it turns out, unethical is a hard tag for a journalist to shake—even when it’s not true.</p>
 
-<p>The accident left my name disfigured in an industry where reputation is all you’ve got. It nearly destroyed mine, just two years after I was honored as one of the top ten sports beat writers in America.</p>
-
-<p>The <em>Free Press</em> took me off the Tigers beat for a while before reinstating me.</p>
+<p>The accident left my name disfigured in an industry where reputation is all you've got. It nearly destroyed mine, just two years after I was honored as one of the Top 10 sports beat writers in America by the Associated Press Sports Editors.</p>
 
 <p>But by then, divine intervention had stepped in. I first felt called to devote my time to write this book within months after the accident, when I was spiraling. I took far too many drugs one weekend and dove headfirst into a box of paper receipts in the basement. The receipts tracked the five years I spent traversing the major leagues and brought to life memories that, for the first time since the accident, made me affectionate toward sports writing again.</p>
 
 <p>The more time I spent on the book, the more fun I had, and the stronger my belief grew that walking away from the beat and writing a behind-the-scenes book about the sports writing life wasn’t just the best move—it was the <em>only</em> move.</p>
 
-<p>I arrived in Malta in fall 2020, ahead of the second wave of COVID-19, and hunkered down inside a converted boat house along the sea. When I discovered the nearby bus stop was named <em>Anthony</em>, I took it as a sign I was in the right place and got to work on <em>OFF-THE-RECORD</em>.</p>
+<p>I arrived in Malta in fall 2020, ahead of the second wave of COVID-19, and hunkered down inside a converted boat house along the sea. When I discovered the nearby bus stop was named <em>Anthony,</em> I took it as a sign I was in the right place and got to work on <em>OFF-THE-RECORD</em>.</p>
 
-<p>I wrote this book primarily for two reasons: (1) To take readers inside the mechanics and realities of the sports media machine—as close to the bone as possible, consequences be damned; and (2) To document my experiences and daily dramas as they unfolded. Most active sports writers can’t really take you behind the curtains. They’re kept in line by the daily grind—breaking news, trade rumors and speculation that scrolls across your phone like 24/7 Tetris—plus the daily care and feeding of their sources and bosses and major league officials. In Malta, the last thing I cared about was angering folks or re-establishing my sourcing network.</p>
+<p>In writing this story, there was no such thing as off-the-record when it came to my career. <em>OFF-THE-RECORD</em> is my reporter's spiral notebook of what I've learned and observed over the years, rather than a reasoned analysis of the state of sports journalism or Major League Baseball as it's played these days. I wrote this book longing to experience the golden age of the sports writers I admired—my superheroes—back when writing mattered, before they became TV talking heads and newspapers died, before the daily grind of breaking news, trade rumors and speculation scrolling across your phone like 24/7 Tetris replaced storytelling. I wrote it for those who lived through that era and for sports writers who never got the chance—those who've thought about going off-the-record and those who wouldn't dare.</p>
 
-<p>In writing this book, there was no such thing as off-the-record when it came to my career. <em>OFF-THE-RECORD</em> is my reporter’s spiral notebook of what I’ve learned and observed over the years, rather than a reasoned analysis of the state of sports journalism or Major League Baseball as it’s played these days. Covering a big-league baseball team is not much different than covering celebrities, city hall or a president who promises to “Make America Great Again.” In all cases, you find good and bad and unexpected, reliable sources. To protect them and to keep the dope coming, you wind up knowing a lot of things you can’t print. This was one of the journalistic barriers I ignored when writing <em>OFF-THE-RECORD</em>.</p>
+<p>There are two problems with that type of all-in, lottery-winning approach. The most obvious but least serious is that even the people I considered friends in the business have at times treated me like a walking Wuhan lab.</p>
 
-<p>There are two problems with that type of all-in, lottery-winning approach. The most obvious but least serious is that even the people I considered friends in sports writing have at times treated me like a walking Wuhan lab.</p>
+<p>The first colleague I told about <em>OFF-THE-RECORD</em> ghosted me. Another sounded shocked anyone would write something this dangerous: "I wouldn't want people coming after me."</p>
 
-<p>The first colleague I told about <em>OFF-THE-RECORD</em> appears to have ghosted me—he hasn’t responded in almost two years. Another guy sounded shocked that anyone would write something as dangerous as a behind-the-scenes book about the sports writing life. “I wouldn’t want people coming after me.”</p>
+<p>Which brings us to the other, more complicated problem: Losing my identity.</p>
 
-<p>Which brings us to the other, more complicated problem: <em>Losing my identity</em>.</p>
-
-<p>I had worked in sports media for my entire adult life before moving to Malta. Having your byline posted and printed from a major metropolitan newsroom comes with a certain kind of attention. Your phone is always lighting up with editors and sources and others. Your mailbox is always full of readers emailing to compliment/complain/criticize your work.</p>
-
-<p>Your name and face are all over the website, more than two million people see it each year. That’s not including the weekly podcast and TV appearances and radio interviews and Twitter, where there’s always a fresh stack of notifications waiting to scroll through: retweets, favorites, people mentioning you, saying how funny or stupid you are.</p>
+<p>I had worked in sports media for my entire adult life before moving to Malta. Having your byline posted from a major metropolitan newsroom comes with a certain kind of attention. Your phone lights up constantly. Your name and face are everywhere—websites, podcasts, TV, radio, Twitter—two million people scroll past your work each year.</p>
 
 <p>I was no longer in a job with its work rhythms and deadlines, a structure I needed. For the first time since high school, I was writing for an audience of one.</p>
 
@@ -128,11 +120,11 @@ export const CHAPTERS = [
 
 <p>I’ve been living in my own Edge City, like gonzo god Hunter Thompson, who once wrote that “when a jackrabbit gets addicted to road-running, it is only a matter of time before he gets smashed—and when a journalist turns into a politics junkie he will sooner or later start raving and babbling in print about things that only a person who has Been There can possibly understand.”</p>
 
-<p>Same goes for sports writing. I got addicted. Smashed. Turned into a Ball Writing junkie and once found a letter two winters ago that my fiancée hid in a drawer: “I feel sad at the thought of leaving him like this. I don’t think he’s doing great. It’s not even just his use or intake. The war he’s fighting these days is deep in his heart. This feels like the last mission. I think he’d be willing to die for this feat.” You wouldn’t have needed to ask twice.</p>
+<p>Same goes for this life. I got addicted. Smashed. Turned into a Ball Writing junkie and once found a letter two winters ago that my fiancée hid in a drawer: "I feel sad at the thought of leaving him like this. I don't think he's doing great. It's not even just his use or intake. The war he's fighting these days is deep in his heart. This feels like the last mission. I think he'd be willing to die for this feat." You wouldn't have needed to ask twice.</p>
 
-<p>But that was then. I have been living in St. Paul’s Bay, a quiet locality that was bombed by Germany in World War II. It’s got a Starbucks with comfortable seating and a McDonald’s within ten minutes’ walk, surrounded by the bluest water you’ve ever seen.</p>
+<p>But that was two years ago. The water outside my window tells a different story.</p>
 
-<p>It’s never looked bluer than today, backdropped by steep brown cliffs and green springtime shrubbery. The day feels as bright as the one when I discovered I wanted to be a sportswriter.</p>
+<p>It's never looked bluer than today, backdropped by steep brown cliffs and green springtime shrubbery. The day feels as bright as the one when I discovered I wanted to be a sportswriter.</p>
 
 <p>I was in high school, age seventeen, doing community service after being pulled aside for being very drunk at the last football game of my senior year. So, there I was at the local St. Vincent de Paul, unloading donations and organizing shelves of books, CDs, DVDs and movies in alphabetical order. And then I picked up a book that changed my life.</p>
 
@@ -146,9 +138,9 @@ export const CHAPTERS = [
 
 <p>Whatever I wrote in all those hotel rooms and press boxes and hospitality lounges, whoever I texted and called and bribed for scoops back then, is no different in these pages than it was when I covered baseball like my life depended on it.</p>
 
-<p>I haven’t enjoyed everything about sports writing. I’ve felt like an outcast at times and misunderstood at others. I’ve also had to learn from—and live with—mistakes I made. Yet, sitting here awash in the fatigue and excitement of surviving a marathon thrill ride, I know there’s been far more good than bad. I went from the rawest rookie to breaking stories and winning awards and building life-long relationships in baseball. I wouldn’t trade those years, or the years it took to write this book, for anything. If you doubt me, feel the early onset carpal tunnel in my wrists.</p>
+<p>I haven't enjoyed everything about sports writing. I've felt like an outcast at times and misunderstood at others. Yet, sitting here awash in the fatigue and excitement of surviving a marathon thrill ride, I know there's been far more good than bad. I went from the rawest rookie to breaking stories and building life-long relationships in baseball. I wouldn't trade those years, or the years it took to write this book, for anything. If you doubt me, feel the early onset carpal tunnel in my wrists.</p>
 
-<p>So, what follows, then, is not so much a book about me as it is a love letter to sports writing, a lesson on craft, and a story full of intense, fascinating characters.</p>
+<p>So, what follows, then, is not so much a book about me as it is a love letter to sports writing, a tribute to sports writers, one man's lesson on the craft.</p>
 
 <p>It’s a reflection of what I’ve seen and felt while covering baseball for a living, which has provided me with the story of a lifetime, too good not to share.</p>
 
@@ -157,7 +149,7 @@ export const CHAPTERS = [
 <p class="signature"><em>April 20, 2025</em></p>
 
 <p class="signature"><em>Portobello Flats, Malta</em></p>`,
-        wordCount: 1915
+        wordCount: 1734
     },
     {
         id: 2,
@@ -185,7 +177,7 @@ export const CHAPTERS = [
 
 <p>Andrew, my Chicago driver who also shuttles players and umpires, talks in his New York tongue—conversation I’m not interested in at the moment.</p>
 
-<p>The city streets are bumpy. I lean my head on the door panel—maybe the bumps will help ease my pain. I close my eyes and try to forget about the weekend that was, the wreckage still to sift through.</p>
+<p>I lean my head on the door panel. Close my eyes and try to forget about the weekend that was, the wreckage still to sift through.</p>
 
 <p>I open them to receive a text message from the Tigers’ top PR official. He is apologizing for yesterday, when he tried intimidating me by suggesting I could not continue my baseball writing job if I went through with the Very Serious Story.</p>
 
@@ -203,9 +195,7 @@ export const CHAPTERS = [
 
 <p>The Very Serious Story threatens the harmony of the clubhouse and exposes the bad behavior of a highly paid, highly respected veteran player. A story PR does not want to be published.</p>
 
-<p>It is my job to write these stories; it’s PR’s job to keep me from writing them. I need access to cover the team. PR is in charge of that access. This can make for awkward relationships when these competing forces collide. Often as a sports writer, you take the loss, bruised from failing to break through brick walls.</p>
-
-<p>I am holding the ‘L’ as we speak. The biggest of my career. I broke through the brick wall on the Very Serious Story almost a year ago—I had to wait until the time came, if ever it did.</p>
+<p>I am holding the 'L' as we speak. The biggest of my career. I broke through the brick wall on the Very Serious Story almost a year ago—I had to wait until the time came, if ever it did.</p>
 
 <p>There was a fight in the clubhouse last season. It fractured the team and the player who sparked it had become an even bigger problem this year—but I couldn’t put it out there unprompted. I have enough sourcing to go with the Very Serious Story, but I’ve had to wait—it’s bad form to drop a bomb unprompted, and nothing’s happened recently to warrant such a move.</p>
 
@@ -215,17 +205,17 @@ export const CHAPTERS = [
 
 <p>Even when we somehow missed that deadline (don’t wanna talk about it), we still got the Very Serious Story in the chute and ready to go, scheduled to go live online at 1 <span class="small-caps">A.M.</span></p>
 
-<p>Yet here I sit—sixteen hours later—and the Very Serious Story has not been published. I still don’t want to talk about it—I successfully silenced Andrew a few minutes ago. Said I was tired and wanted to close my eyes for a bit.</p>
+<p>Yet here I sit—16 hours later—and the Very Serious Story has not been published. I still don’t want to talk about it—I successfully silenced Andrew a few minutes ago. Said I was tired and wanted to close my eyes for a bit.</p>
 
 <p>The day was bad. I was hungover enough from whiskey and stress and threw out the burnt crackers the cafeteria was passing off as French toast.</p>
 
-<p>I sat next to the Tigers’ traveling PR guy and he told me Justin Verlander (the star starting pitcher) wasn’t going to be talking to me anymore. Still mad over something I tweeted about him watching the solar eclipse earlier in the year (seriously), or the way I pushed back in the last postgame interview (he walked out), or maybe in protest of the Very Serious Story I was writing (everyone knows).</p>
+<p>I sat next to the Tigers’ traveling PR guy and he told me Justin Verlander (the star starting pitcher) wasn’t going to be talking to me anymore. Still mad over something I tweeted about him watching the solar eclipse earlier in the month (seriously), or the way I pushed back in the last postgame interview (he walked out), or maybe in protest of the Very Serious Story I was writing (everyone knows).</p>
 
 <p>All Detroit’s media relations manager knew was what Verlander had previously told him— “I’m not talking to Fenech anymore.”</p>
 
 <p>Sadly, the Very Serious Story has been killed. It’s never going to be published. At least, not in that form. The story I waited so patiently on where I had to walk up to the player with everyone watching, where players and coaches were pulling me outside the clubhouse and pinging my phone. All that for nothing.</p>
 
-<p>Why not? I’ll tell you why not and just keep it as straight to the point as possible: For reasons I am far too drained to recollect again, it took far too long for the Very Serious Story to come out of the oven, and we got lucky it did: Past midnight last night, about half an hour before the story was set to go live, I got a phone call from a source who ended up saving us in the end—lest we look like insensitive clowns, kicking the poor chap while he’s down.</p>
+<p>Past midnight, about half an hour before the story was set to go live, I got a phone call from a source who ended up saving us in the end—lest we look like insensitive clowns, kicking the poor chap while he's down.</p>
 
 <p>We pulled the story, which hasn’t seen the light of day—and likely never will.</p>
 
@@ -239,11 +229,11 @@ export const CHAPTERS = [
 
 <p>“First, that was a very uncalled for comment yesterday. Second—whatever, I don’t even want to get into it. Refer to ‘First.’”</p>
 
-<p>“I apologize for that,” he says. “Have a good trip to Denver. Great ballpark and cool city.”</p>
+<p>"I apologize for that. Have a good trip to Denver. Great ballpark and cool city."</p>
 
 
 <p></p>
-<p class="has-dateline"><span class="dateline">DENVER, <em>August 29</em>—</span>Still catching up on sleep. The Tigers are here playing the Colorado Rockies. I stay downtown after tonight’s game and go to this guy’s apartment.</p>
+<p class="has-dateline"><span class="dateline">DENVER, <em>August 29</em>—</span>I stay downtown after tonight's game and go to this guy's apartment.</p>
 
 <p>I met the guy a couple of weeks ago at a wedding in Cancún, and here we are, sitting outside on his seventh-floor patio with another couple. I’m wearing shirt-tie-jacket and a work bag, an easy way to introduce myself—hi, I’m Anthony Fenech—I’m a sports writer, I cover the Detroit Tigers baseball team for the <em>Detroit Free Press</em>.</p>
 
@@ -251,9 +241,9 @@ export const CHAPTERS = [
 
 
 <p></p>
-<p class="has-dateline"><span class="dateline"><em>August 30</em>—</span>The next day comes fast. Clubhouse opens at 9:30 for day games and today is what they call Getaway Day. Justin Verlander is pitching today. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, thirty-four, a perennial All-Star with Hall of Fame credentials, wants no part of the long rebuild in store for the Tigers next season.</p>
+<p class="has-dateline"><span class="dateline"><em>August 30</em>—</span>Getaway Day comes fast. Clubhouse opens at 9:30 for day games. Justin Verlander is pitching. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, 34, wants no part of the long rebuild in store for the Tigers next season.</p>
 
-<p>Problem is that the team is paying him big bucks for a long time. This year, Verlander is making \$28 million—he’s owed \$117 million through 2020, thanks to a contract extension signed in his prime. The Tigers, meanwhile, have fallen on tough times: After years of competing for championships with high-payroll rosters, they stink now and have little choice but to enter a rebuild phase, where they’ll essentially tank for a few seasons, trading their established players for top prospects and attempt to improve through the draft.</p>
+<p>Problem is that the team is paying him big bucks for a long time. This year, Verlander is making $28 million—he's owed $117 million through 2020, thanks to a contract extension signed in his prime. The Tigers, meanwhile, have fallen on tough times: After years of competing for championships with high-payroll rosters, they stink now and have little choice but to enter a rebuild phase, where they’ll essentially tank for a few seasons, trading their established players for top prospects and attempt to improve through the draft.</p>
 
 <p>There are 162 games in a baseball season. Today’s is No. 132. Tigers win. On the mound, Verlander pitches six strong innings for the trade deadline scouts in attendance, allowing one run.</p>
 
@@ -287,7 +277,7 @@ export const CHAPTERS = [
 
 <p>So, I enter the locker room today with my antennae up. I see the team’s PR guy—a non-confrontational fellow, soft-spoken, wouldn’t hurt a fly. The players know this and Verlander knows he’s not just another player. He’s wearing suede maroon. When the nice PR man approaches, his body language is that of standing his ground. When a handful of us sports writers half-circle him for the interview, I wait purposely for two others to ask questions before asking, ‘How big were those two strikeouts in the fourth inning?’”</p>
 
-<p>“Next question,” he says. “Next question.”</p>
+<p>"Next question. Next question."</p>
 
 <p>Verlander scans the faces until someone else stammers in. I follow up with an even more basic question, “How was your fastball today?”</p>
 
@@ -301,19 +291,17 @@ export const CHAPTERS = [
 
 <p>I’m flying to Atlanta then Detroit, slouched into an empty row and scrolling through Denver airport conspiracy theories when everything changes. It’s Deep Throat, dropping a tip. “Trade coming today. Not Verlander.”</p>
 
-<p>Three-alarmer. After I’m tipped off, I canvass my top sources to see if I can fish out the scoop. I blast texts to those who might know.</p>
+<p>Three-alarmer. I blast texts to everyone who might know.</p>
 
 <p>Trying to find the identity of the mystery trade, I contact the team’s general manager—the chief decision-maker, so-to-speak, known around here as the Highest Source In The Land. I slow-play my hand. “Just checking in. Do you think anything’s going to happen today?”</p>
 
 <p>Two minutes later, more aggressively: “Actually, I got a tip that something is going to happen. So, I’m checking up on that.”</p>
 
-<p>Time is of the essence. Trying to find agents in the know. “Keep me posted if you hear anything about J-Up.” I tell Justin Upton’s agent something is brewing. “Not Verlander is all I know.”</p>
+<p>Time is of the essence. Trying to find agents in the know. "Keep me posted if you hear anything about J-Up." I tell his agent something is brewing. "Not Verlander is all I know."</p>
 
-<p>I text Detroit’s assistant GM.</p>
+<p>I text Detroit's assistant GM: "Got a tip something is in the works—any context you can add, completely off-the-record?"</p>
 
-<p>“I got a tip something is in the works—any context you can add, completely off-the-record?”</p>
-
-<p>Standing in the jetway now, inching forward into a sports writing nightmare: Boarding a plane while news is breaking—before ten minutes of no Wi-Fi during takeoff.</p>
+<p>Standing in the jetway now, inching forward into a reporter's nightmare: Boarding a plane while news is breaking—before ten minutes of no Internet during takeoff.</p>
 
 <p>Before I get to my seat, I’m beat. It’s one of the National Guys, of course, who says a trade is “close”—Upton is headed out the door. Ken Rosenthal says J-Up is going to the Los Angeles Angels. Rosenthal is the biggest of the National Guys, an exclusive club of baseball reporting sharks who feed on schools of scoops.</p>
 
@@ -333,7 +321,7 @@ export const CHAPTERS = [
 
 <p>“I don’t think so but predicting others’ decisions is not something I’m usually comfortable with.”</p>
 
-<p>When I mention being on the plane while the Upton news is breaking, he reassures me: “Don’t sweat it, you’re really good at what you do and sometimes you can’t control timing and info.”</p>
+<p>When I mention being on the plane while news is breaking, he reassures me: “Don’t sweat it, you’re really good at what you do and sometimes you can’t control timing and info.”</p>
 
 <p>With the front office in close proximity back home, I touch base with my sources.</p>
 
@@ -345,9 +333,9 @@ export const CHAPTERS = [
 
 <p>I check with a Tigers guy. Nothing.</p>
 
-<p>Deep Throat confirms the front office is In The Room as we speak. They are spending the final hours of the trade deadline at the GM’s suburban Detroit house. His wife made dinner, apparently. In fact, according to maps, from where I stand on my porch smoking a cigarette exchanging messages with his subordinates, I could make it to his kitchen table in thirty-five minutes flat. I know. I’ve been there.</p>
+<p>Deep Throat confirms the front office is In The Room as we speak. They are spending the final hours of the trade deadline at the GM’s suburban Detroit house. His wife made dinner, apparently. In fact, according to maps, from where I stand on my porch smoking a cigarette exchanging messages with his subordinates, I could make it to his kitchen table in 35 minutes flat. I know. I’ve been there.</p>
 
-<p>This proximity is something I consider: Not the 24.1 miles in between, rather the dining room area the Tigers’ front officers currently share—which includes most, if not all, of my top sources. None of those leakers in there want to be exposed. They’re aware of not being on their phones. They probably go to the bathroom to text me while taking a leak. Some must take a lot of leaks.</p>
+<p>Not the 24.1 miles in between, rather the dining room area the Tigers' front office currently shares—which includes most, if not all, of my top sources. None of those leakers in there want to be exposed. They’re aware of not being on their phones. They probably go to the bathroom to text me while taking a leak. Some must take a lot of leaks.</p>
 
 <p>Forty minutes until the trade deadline, there’s a tipster on Line 2. He may or may not be In The Room tonight. Still talking about the Very Serious Story that won’t ever be.</p>
 
@@ -561,7 +549,7 @@ export const CHAPTERS = [
 
 <p><em>&quot;I am contacting you to find out why you chose Anthony Fenech on the Tigers beat? My sources have told me that Mr. Fenech has at least one DUI conviction. I am told there was another incident that I am still trying to dig up.</em></p>
 
-<p><em>&quot;My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writers job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made.&quot;</em></p>
+<p><em>&quot;My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writer's job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made.&quot;</em></p>
 
 <p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. He’s digging up Facebook messages from college and posting them, too. <span class="media-emoji" data-media-id="anthony-fenech-moron">📷</span></p>
 
@@ -569,7 +557,6 @@ export const CHAPTERS = [
 
 <p>Almost forgotten until now, when it’s currently online. Twelve RTs and counting.</p>
 
-<p>I did more than a few things I now regret when I was younger. I would like to apologize for everything dumb that I did or said back then—this is extremely embarrassing to share publicly but I feel explaining it is necessary to move forward, in case you Google my name and read about it online one day.</p>
 
 <p>So yeah. That’s basically what’s happened, and I don’t know what’s going to happen from here, but I think the plan is just to ignore the noise and move on. Don’t respond, don’t interact—and no phone interviews without clearing it first.</p>
 
@@ -603,7 +590,7 @@ export const CHAPTERS = [
 
 <p>I meet Detroit’s young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans’ trust. I suggest I could visit Nathan while training for the season. Pepe buys in. <span class="media-emoji" data-media-id="joe-nathan-story">📰</span></p>
 
-<p>While it wasn’t explicitly stated as such, the story I was pitching to Nathan’s agent was a fluff piece. By allowing a certain kind of access, it’s almost certain the resulting story will be favorable for the subject. Put another way: Heading into my first year as beat writer of the team, it’s pretty much guaranteed I’m going to write a good story about Nathan, who is one of the team’s respected veterans.</p>
+<p>While it wasn't explicitly stated as such, the story I was pitching to Nathan's agent was a fluff piece. By allowing a certain kind of access, it's almost certain the resulting story will be favorable for the subject.</p>
 
 
 <p></p>
@@ -611,7 +598,7 @@ export const CHAPTERS = [
 
 <p>I get a glass of water and check Twitter. Calamity! My team is close to a trade, reportedly sending a prospect shortstop to the Cincinnati Reds for righty starter Alfredo Simon.</p>
 
-<p>Dave Dombrowski is known for making trades. And by the time I’m nearly finished whipping up a story for the first trade, Dombrowski is reportedly close to making another one—and this one is bigger.</p>
+<p>And by the time I'm nearly finished whipping up a story for the first trade, Dombrowski is reportedly close to making another one—and this one is bigger.</p>
 
 <p>According to Twitter, Detroit is landing star outfielder Yoenis Céspedes from the Boston Red Sox. Helpless, I communicate with the sports desk, Should I re-do the first story or write a whole new story? Soon, an alert for an impending press conference.</p>
 
@@ -627,7 +614,7 @@ export const CHAPTERS = [
 
 <p>Hurry back up to my room and write a new story. Put a dress shirt over the white tee and a jacket. Feeling quite hungover, I go to the front desk and check out.</p>
 
-<p>I didn’t travel lightly and probably look like a newbie. Large garment bag, rolling carry-on luggage and struggling to keep my work bag on my shoulder when I walk through the elastic markers of the valet line.</p>
+<p>Large garment bag, rolling carry-on, work bag slipping off my shoulder as I walk through the valet line.</p>
 
 <p>Standing right in front of me, within an arm’s length, is Scott Boras—the biggest agent in baseball, arguably the most powerful person in the sport. Boras reps a lot of Tigers. When he turns around, I extend my hand and say, “I should introduce myself…”</p>
 
@@ -643,17 +630,41 @@ export const CHAPTERS = [
 
 
 <p></p>
-<p class="has-dateline"><span class="dateline">DETROIT, <em>December 21</em>—</span>Haven’t smoked in forever when I go to my buddies to watch football tonight. A week after the winter meetings—fifteen-day clean streak. No more.</p>
+<p class="has-dateline"><span class="dateline"><em>December 19</em>—</span>Still swinging for the fences, trying to find feature stories. A colleague passes along an email address for Justin Verlander's parents. I message them, introducing myself.</p>
 
-<p>It’s Christmas time and already dark outside when my phone lights up. <em>Unknown</em> is calling. I don’t answer <em>Unknown</em>, especially not with Internet Stalker following me around.</p>
+<p>"I'm writing to see if you could reach out to Justin and see if he would consider letting me spend some time with him this winter and sit in on a workout or bullpen to write a behind-the-scenes kind of story.</p>
+
+<p>"His story is an important one to this year's team and I'd like to share it with our readers."</p>
+
+<p>Verlander's dad, Richard, responds.</p>
+
+<p>"We're happy to talk with you but any interviews with Justin should go through normal channels with the Tigers. Happy Holidays."</p>
+
+<p>Nice guy.</p>
+
+<p>Verlander's agent hasn't answered my two introductory voicemails, the email I sent last week, or another call today about it.</p>
+
+<p>Don't even know what he looks like.</p>
+
+<p>And I'm certainly not going around guessing anymore after what happened yesterday, when I walked up to an agent who I thought was another agent.</p>
+
+<p>"Are you Nez Balelo?"</p>
+
+<p>Whoever it was, the guy felt bad for me.</p>
+
+
+<p></p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>December 21</em>—</span>Haven't smoked in forever when I go to my buddies to watch football tonight. A week after the winter meetings—fifteen-day clean streak. No more.</p>
+
+<p>It's Christmas time and already dark outside when my phone lights up. <em>Unknown</em> is calling. I don't answer <em>Unknown</em>, especially not with Internet Stalker following me around.</p>
 
 <p>A couple minutes later, another call—<em>Unknown</em> again.</p>
 
-<p>Sorry, man—you must have the right number, but I’m not biting.</p>
+<p>Sorry, man—you must have the right number, but I'm not biting.</p>
 
 <p>Then I receive a text message from a 949 number.</p>
 
-<p>“Anthony, this is Scott Boras. Give me a call.”</p>
+<p>"Anthony, this is Scott Boras. Give me a call."</p>
 
 <p>Remember: I'm high as a kite, through the roof, hovering a thousand feet in the air. I pick up the phone and Scott Boras is telling me to call him.</p>
 
@@ -661,29 +672,15 @@ export const CHAPTERS = [
 
 <p>He got my number from Dylan.</p>
 
-<p>“Dylan Hernández,&quot; Boras says. &quot;A man of mystery.”</p>
+<p>"Dylan Hernández,&quot; Boras says. &quot;A man of mystery."</p>
 
-<p>Boras is calling to chat about client Max Scherzer, the ace righty starter, who is a free agent after five seasons with the Tigers. He’s greasing my wheels, working his angles, essentially providing me with reasons why they should be in on Scherzer, to keep him with the team.</p>
+<p>Boras is calling to chat about client Max Scherzer—five seasons with the Tigers, now a free agent. He's greasing my wheels, working his angles.</p>
 
-<p>Scherzer, thirty, won the Cy Young Award two years ago and became one of baseball’s best pitchers in Detroit, a workhorse who logs 200-plus innings yearly. Still stunned I’m talking to Scott Boras; my early objective becomes clear—keep him on the phone as long as I can.</p>
+<p>Scherzer, thirty, won the Cy Young Award two years ago and became one of baseball's best pitchers in Detroit, a workhorse who logs 200-plus innings yearly. Still stunned I'm talking to Scott Boras; my early objective becomes clear—keep him on the phone as long as I can.</p>
 
-<p>We talk for 26 minutes. I call Ball Writer Dylan Hernández for translation—Boras wants me to write something about the Tigers pursuing Scherzer, to stir up the market.</p>
+<p>We talk for 26 minutes. I call Ball Writer Dylan Hernández for translation—Boras wants me to write something about the Tigers pursuing him, to stir up the market.</p>
 
-<p>A couple days later, I write a column about how they should be aggressive in pursuing Scherzer. I push Boras’ agenda under the guise of my opinion. I’m being used. It feels good.</p>
-
-
-<p></p>
-<p class="has-dateline"><span class="dateline"><em>December 19</em>—</span>Still swinging for the fences, trying to find feature stories. A colleague passes along an email address for Justin Verlander’s parents. I message them, introducing myself.</p>
-
-<p>“I’m writing to see if you could reach out to Justin and see if he would consider letting me spend some time with him this winter and sit in on a workout or bullpen to write a behind-the-scenes kind of story.</p>
-
-<p>“His story is an important one to this year’s team and I’d like to share it with our readers.”</p>
-
-<p>Verlander’s dad, Richard, responds.</p>
-
-<p>“We’re happy to talk with you but any interviews with Justin should go through normal channels with the Tigers. Happy Holidays.”</p>
-
-<p>His agent hasn’t answered my two introductory voicemails, the email I sent last week, or another call today about it.</p>
+<p>A couple days later, I write a column about how they should be aggressive in pursuing Scherzer. I push Boras' agenda under the guise of my opinion. I'm being used. It feels good.</p>
 
 
 <p></p>
@@ -693,7 +690,7 @@ export const CHAPTERS = [
 
 <p>I’m covering the Red Wings game. Ilitch, a multi-billionaire, owns the local National Hockey League team, too—an Original Six franchise. I stop in the newsroom for expenses and stroll a few blocks to Joe Louis Arena for the game.</p>
 
-<p>In the media dining room, I spot longtime Red Wings general manager Ken Holland at a nearby table. Holland has been in charge since 1998—he’d have Ilitch’s number.</p>
+<p>In the media dining room, I spot longtime Red Wings general manager Ken Holland at a nearby table. Holland has been in charge since 1998.</p>
 
 <p>Determined to prove my worth to Boras, I walk up to Holland and introduce myself. I ask if he can pass along Ilitch’s number. Sorry, but no. Worth a shot.</p>
 
@@ -707,13 +704,13 @@ export const CHAPTERS = [
 
 <p>I could even write about today.</p>
 
-<p>With Internet Stalker’s spotlight on my every move, I try to keep a low profile this New Year’s Eve as opposed to going out partying. My buddy is having people over at his bungalow in the hills. “Nothing too big,” he says. A few guys I know from college, a couple guys I meet for the first time. Wives/fiancés/girlfriends, etc.</p>
+<p>With Internet Stalker’s spotlight on my every move, I try to keep a low profile this New Year’s Eve as opposed to going out partying. My buddy is having people over at his bungalow in the hills. "Nothing too big." A few guys I know from college, a couple guys I meet for the first time. Wives/fiancés/girlfriends, etc.</p>
 
-<p>There’s a football game on, food and drinks, a tub of jungle juice and supposedly weed. I have a few beers, because what’s the difference between one and five when you Ubering home? We smoke a joint on the deck in the back.</p>
+<p>I have a few beers, because what's the difference between one and five when you're Ubering home? We smoke a joint on the deck in the back.</p>
 
 <p>I’m sitting on the couch almost starting to trust people again when I hear angry commotion in the kitchen. My buddy taps me on the shoulder and says, “Fen, let’s go talk outside.”</p>
 
-<p>Buddy: “So don’t freak out but apparently one of the other guys—I don’t know what he was thinking – but he tweeted at the troll guy, saying you were here, and ... ”</p>
+<p>Buddy: “So don’t freak out but apparently one of the other guys—I don't know what he was thinking—but he tweeted at the troll guy, saying you were here, and ... ”</p>
 
 <p><em>EXCLUSIVE: Fenech spotted at New Year’s Eve party smoking weed, source says. Working on pics … NICE HIRE @</em>Freep<em>!!! #DontDrinkAndDrive</em></p>
 
@@ -725,7 +722,7 @@ export const CHAPTERS = [
 
 <p>So, I chase down the mystery team—despite Dombrowski’s insistence all winter, the Tigers were not a serious player to re-sign Scherzer.</p>
 
-<p>I treat this two-alarm fire like a four. I text Dombrowski after I fasten my seatbelt on the plane, asking indirectly if they were the mystery team: “Was the team engaged in talks with Scherzer at the end?” I send a text message and an email: “Doubling up via email because I’m taking off for a flight soon.” There is adrenaline. He gets back to me while we taxi the runway— “No”—and I tweet it out while we hit the air.</p>
+<p>I treat this two-alarm fire like a four. I text Dombrowski after I fasten my seatbelt on the plane, asking indirectly if they were the mystery team: "Was the team engaged in talks with Scherzer at the end?" He gets back to me while we taxi the runway—"No"—and I tweet it out while we hit the air.</p>
 
 <p>The extra effort pays off: When I get onto Wi-Fi, I see that Ken Rosenthal retweeted me.</p>
 
@@ -739,7 +736,7 @@ export const CHAPTERS = [
 
 <p>As a rookie beat writer, I’m trying to get face time with key figures like Justin Verlander, who, I’ll admit, was my favorite player growing up. I wore a tan glove in high school because he did. Now, I’ve gotta flush all that and cover him like an unbiased reporter.</p>
 
-<p>I haven’t even started this job in earnest, but already in my young journalism career, I miss being a fan. Enjoying a baseball game. Rooting for players and having a favorite one. I wish I didn’t know that some can display real jerk tendencies at times—just wait until you hear about the time I met Miguel Cabrera last year.</p>
+<p>I haven't even started this job in earnest, but already in my young journalism career, I miss being a fan. Enjoying a baseball game. Rooting for players and having a favorite one.</p>
 
 <p>Anyways, Verlander. He’s a big car guy. Got a garage full of exotics—Aston Martins, Lamborghinis, Porsches, you name it. My car—a 2000 Ford Taurus with nearly 200,000 miles—died a couple days ago. <span class="media-emoji" data-media-id="ford-taurus">📷</span></p>
 
@@ -761,7 +758,7 @@ export const CHAPTERS = [
 
 
 <p></p>
-<p class="has-dateline"><span class="dateline"><em>January 24</em>—</span>The frigid streets around the stadium are full of fans. They’ve come early, standing in double-file lines waiting for the doors to open. It’s TigerFest—a winter extravaganza that promises up close and personal looks, autograph opportunities and plenty of fun.</p>
+<p class="has-dateline"><span class="dateline"><em>January 24</em>—</span>The frigid streets around the stadium are full of fans. They’ve come early, standing in double-file lines waiting for the doors to open. It's TigerFest—the team's annual winter fan event.</p>
 
 <p>Today, I can properly receive my due credit for writing that killer feature on Víctor Martínez and his American family last year—I haven’t seen Víctor since the story came out.</p>
 
@@ -1067,18 +1064,11 @@ export const CHAPTERS = [
 
 <p>He spends at least three hours on the phone every day. Not texting or Twittering or Facebooking. No, George King is actually <em>on the phone</em>, talking to people.</p>
 
-<p>Ball Writing rules to live by.</p>`,
-        wordCount: 1223
-    },
-    {
-        id: 7,
-        year: 2015,
-        section: 'year',
-        title: "MIDSEASON",
-        slug: "midseason",
-        subtitle: "",
-        teaser: "The All-Star break and its dramas.",
-        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>July 2</em>—</span>Halfway through my rookie year, my best source isn’t in the front office, the clubhouse, the press box or affiliated with the team at all. I have yet to figure out what Gator does for a living or why he hangs out with baseball players—but I don’t particularly care.</p>
+<p>Ball Writing rules to live by.</p>
+
+
+<p></p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>July 2</em>—</span>Halfway through my rookie year, my best source isn't in the front office, the clubhouse, the press box or affiliated with the team at all. I have yet to figure out what Gator does for a living or why he hangs out with baseball players—but I don't particularly care.</p>
 
 <p>He’s at his friend’s place drinking beers today, asking about the vibe in the clubhouse. His friend, an injured player, is wondering.</p>
 
@@ -1209,7 +1199,7 @@ export const CHAPTERS = [
 <p>No, it’s not another prank—that’s what I thought at first, too. Email address checked out; I found the producer on LinkedIn.</p>
 
 <p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>! <span class="media-emoji" data-media-id="sportscenter-studio">📷</span></p>`,
-        wordCount: 1436
+        wordCount: 2659
     },
     {
         id: 8,
@@ -2361,11 +2351,45 @@ export const CHAPTERS = [
         id: 12,
         year: 2016,
         section: 'year',
-        title: "PENNANT RACE",
-        slug: "pennant-race",
+        title: "WAKE-UP CALL",
+        slug: "wake-up-call",
         subtitle: "",
-        teaser: "A wild card chase.",
-        content: `<p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>September 20</em>—</span>Justin Verlander seeks a buyer for his car.</p>
+        teaser: "The pennant race ends. Reality sets in.",
+        content: `<p class="has-dateline"><span class="dateline">PECULIAR, Mo., <em>September 1</em>—</span>The pennant race takes us to the heartland this week.</p>
+
+<p>For dinner, I drive 45 minutes outside town to Peculiar, taking up a source on his offer.</p>
+
+<p>Merle's American Tavern is the name suggested by Jim Harbaugh. Merle was the first name of the father of Harbaugh's wife, her brother John Feuerborn, and nine other siblings. Feuerborn owns the place.</p>
+
+<p>I clicked with Feuerborn when we met at the satellite camp. He seems to be a good guy to know: Says he's been in Harbaugh's locker rooms before NFL playoff games and inside his hotel suites at bowl games.</p>
+
+<p>I stay at Merle's for a couple beers and a killer cheeseburger and put it on the <em>Freep</em> tab.</p>
+
+
+<p></p>
+<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 4</em>—</span>Halfway through the rubber game of the series, I head down to the concourse to meet John Feuerborn and his girlfriend.</p>
+
+<p>"I told Harbs you came by the bar," he says. "You're in rare air, man. Harbs only likes two sports writers. You and the guy from San Francisco."</p>
+
+<p>"Tim Kawakami?"</p>
+
+<p>"Yeah."</p>
+
+<p>"Seriously?"</p>
+
+<p>"Seriously."</p>
+
+<p>The Tigers leave town happy. Justin Upton homers in the eighth for the win; it's his seventh home run since Brad Ausmus took him out of the starting lineup as a reset.</p>
+
+<p>In the manager's office, Brad won't take credit for pushing the right button.</p>
+
+<p>"Like I always say—water will eventually find its level."</p>
+
+<p>A smiley face is taped to the straw in the red solo cup on his desk. Twelve games over .500, a season-high.</p>
+
+
+<p></p>
+<p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>September 20</em>—</span>Justin Verlander seeks a buyer for his car.</p>
 
 <p>Standing a few feet away from his locker when TV broadcaster Rod Allen walks by.</p>
 
@@ -2483,18 +2507,11 @@ export const CHAPTERS = [
 
 <p>I moved forward with Miggy this year in a topsy-turvy but not insignificant way—and the rest of the Tigers’ superstars on less dramatic scale. I feel eye-to-eye with most everyone else in here.</p>
 
-<p>The players will soon scatter on charters for the winter. I’m flying commercial, with an upgrade. It was a good season—it’s too bad the book won’t happen. Maybe next year.</p>`,
-        wordCount: 1012
-    },
-    {
-        id: 13,
-        year: 2016,
-        section: 'year',
-        title: "WAKE-UP CALL",
-        slug: "wake-up-call",
-        subtitle: "",
-        teaser: "Reality sets in.",
-        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>October 3</em>—</span>Not even bloody seven o’clock on the first morning of the offseason and my phone is ringing. Deep Throat is fuming about my Ausmus column.</p>
+<p>The players will soon scatter on charters for the winter. I'm flying commercial, with an upgrade. It was a good season—it's too bad the book won't happen. Maybe next year.</p>
+
+
+<p></p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>October 3</em>—</span>Not even bloody seven o'clock on the first morning of the offseason and my phone is ringing. Deep Throat is fuming about my Ausmus column.</p>
 
 <p>“I can’t talk for long, but look, Brad is part of the problem. A big part of it.”</p>
 
@@ -2892,8 +2909,8 @@ export const CHAPTERS = [
 
 <p>Boras sounds unusually emotional. “In the end, what made Mike Ilitch a winner was his passion. Because he really, really studied the game. These weren’t business decisions. This was something very close to his heart.”</p>
 
-<p>That’s the thing about a five-alarm news story: It’s a mad rush to get critical information, then build on it with as many sources as you can as quickly as you can. The truest test of reporting—your sourcing network, interviewing skills and deadline stamina under pressure.</p>`,
-        wordCount: 4405
+<p>That's the thing about a five-alarm news story: It's a mad rush to get critical information, then build on it with as many sources as you can as quickly as you can. The truest test of reporting—your sourcing network, interviewing skills and deadline stamina under pressure.</p>`,
+        wordCount: 5691
     },
     {
         id: 14,
