@@ -1278,7 +1278,8 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline">WASHINGTON, <em>August 3</em>—</span>I take the train from Baltimore after today's series finale to see my little brother in D.C. for the day.</p>
 
-<p>I'm writing a column for tomorrow's paper, saying Dave Dombrowski should receive a contract extension. It expires at year's end. My argument: You can't find a better general manager than Dombrowski, and he's already made trades with an eye for the future.<br> I feel a pull to phone Dombrowski, but I don't. I don't want to bug him.</p>
+<p>I'm writing a column for tomorrow's paper, saying Dave Dombrowski should receive a contract extension. It expires at year's end. My argument: You can't find a better general manager than Dombrowski, and he's already made trades with an eye for the future.</p>
+<p>I feel a pull to phone Dombrowski, but I don't. I don't want to bug him.</p>
 
 <p></p>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 4</em>—</span>I see a newsstand in the airport, today's <em>Free Press</em> and the banner on Page 1A. JOB 1: EXTEND DOMBROWSKI. Underneath: KEEPING TIGERS GM IS CRUCIAL TO REBOOTING, REJUVENATING THE TEAM—ANTHONY FENECH, 1B <span class="media-emoji" data-media-id="dombrowski-extension">📰</span></p>
