@@ -55,8 +55,6 @@
             } catch (e) {
                 console.warn('[LivePrompts] Error loading admin prompts:', e);
             }
-
-            console.log(`[LivePrompts] Loaded ${Object.keys(this.prompts).length} prompts`);
         }
 
         createModal() {
@@ -283,9 +281,6 @@
                 observer.observe(trigger);
             });
 
-            if (triggers.length > 0) {
-                console.log(`[LivePrompts] Watching ${triggers.length} new prompt triggers`);
-            }
         }
 
         shouldTrigger(id) {

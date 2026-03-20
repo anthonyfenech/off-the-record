@@ -14,6 +14,7 @@
    1000-1001 Media modals, photo modals
    5000      Lightbox overlay
    5001      Prompt modal
+   9999      Offline indicator
    50000     Password gate
    99999     Skip link (accessibility)
    ============================================ */
@@ -44,6 +45,13 @@
     --color-error-bg: #ffebee;
     --color-error-border: #ef5350;
     --color-error-text: #c62828;
+
+    /* Accent */
+    --color-accent-red: #cc0000;
+
+    /* Search Highlights */
+    --color-highlight: #ffeb3b;
+    --color-highlight-current: #ff9800;
 
     /* Media player */
     --color-player-bg: #1a1a1a;
@@ -168,6 +176,13 @@
     --color-error-bg: #3d2020;
     --color-error-border: #ef5350;
     --color-error-text: #ff8a80;
+
+    /* Accent (same in dark mode) */
+    --color-accent-red: #cc0000;
+
+    /* Search Highlights (same in dark mode) */
+    --color-highlight: #ffeb3b;
+    --color-highlight-current: #ff9800;
 
     /* Media player (stays dark) */
     --color-player-bg: #1a1a1a;

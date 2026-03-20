@@ -1239,14 +1239,14 @@ button:focus-visible {
 
 /* In-Chapter Search Highlighting */
 .search-highlight {
-    background-color: #ffeb3b;
+    background-color: var(--color-highlight);
     padding: 2px 0;
     border-radius: 2px;
     transition: background-color 1s ease-out;
 }
 
 .search-highlight-current {
-    background-color: #ff9800;
+    background-color: var(--color-highlight-current);
     box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.3);
 }
 
@@ -1439,11 +1439,11 @@ button:focus-visible {
     border: none;
     cursor: pointer;
     transition: opacity var(--transition-fast);
-    color: #000;  /* Black moon in light mode */
+    color: var(--color-text-primary);  /* Black moon in light mode */
 }
 
 [data-theme="dark"] .theme-toggle {
-    color: #fff;  /* White moon in dark mode */
+    color: var(--color-text-primary);  /* White moon in dark mode - uses dark mode variable */
 }
 
 .theme-toggle:hover {
@@ -1532,8 +1532,8 @@ body.clean-read .media-emoji {
     justify-content: center;
     transition: all var(--transition-fast);
     z-index: 10;
-    width: 32px;
-    height: 32px;
+    width: var(--min-touch-target);
+    height: var(--min-touch-target);
 }
 
 .media-modal-close:hover {
@@ -2510,8 +2510,8 @@ body.show-captions .media-modal-caption {
 }
 
 .bookmark-remove {
-    width: 32px;
-    height: 32px;
+    width: var(--min-touch-target);
+    height: var(--min-touch-target);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3662,8 +3662,8 @@ body.show-captions .media-modal-caption {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: #333;
-    color: #fff;
+    background: var(--color-accent);
+    color: var(--color-background);
     font-family: var(--font-mono);
     font-size: 12px;
     text-transform: uppercase;
@@ -3690,8 +3690,8 @@ body.show-captions .media-modal-caption {
 }
 
 [data-theme="dark"] .offline-indicator {
-    background: #e0e0e0;
-    color: #1a1a1a;
+    background: var(--color-text-primary);
+    color: var(--color-background);
 }
 
 /* Dim interactive elements when offline */
@@ -3976,8 +3976,8 @@ html {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 32px;
-    height: 32px;
+    width: var(--min-touch-target);
+    height: var(--min-touch-target);
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.6);
@@ -3988,7 +3988,7 @@ html {
 }
 
 .lightbox-close:hover {
-    color: #fff;
+    color: var(--color-player-fill);
 }
 
 /* Image container */

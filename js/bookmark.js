@@ -22,7 +22,8 @@
             localStorage.setItem('_test', '1');
             localStorage.removeItem('_test');
             return true;
-        } catch {
+        } catch (e) {
+            console.warn('[OTR] Storage not available:', e);
             return false;
         }
     }
@@ -56,7 +57,8 @@
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
             return stored ? JSON.parse(stored) : null;
-        } catch {
+        } catch (e) {
+            console.warn('[OTR] Bookmark read error:', e);
             return null;
         }
     }
@@ -172,8 +174,6 @@
         if (window.currentChapterId !== undefined) {
             handleChapterLoaded({ detail: { chapterId: window.currentChapterId } });
         }
-
-        console.log('[Bookmark] Initialized');
     }
 
     // ========== PUBLIC API ==========

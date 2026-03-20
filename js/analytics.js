@@ -155,7 +155,6 @@
         const failedQueue = loadFailedQueue();
         if (failedQueue.length === 0) return;
 
-        console.log('[Analytics] Retrying', failedQueue.length, 'failed events');
         clearFailedQueue();
 
         for (const event of failedQueue) {
@@ -525,10 +524,4 @@
     };
 
     // Initialize
-    console.log('[Analytics] Enhanced tracking initialized', {
-        readerName: window.OTR_READER_NAME || 'Unknown Reader',
-        session: generateSessionId(),
-        visitor: getVisitorId(),
-        returnVisitor: isReturnVisitor()
-    });
 })();
