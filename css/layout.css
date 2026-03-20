@@ -139,8 +139,8 @@ body.paginated .chapter-body {
     left: 50%;
     transform: translateX(-50%);
     z-index: var(--z-nav-footer);
-    background: #ffffff;
-    border: 1.5px solid #1a1a1a;
+    background: var(--color-background);
+    border: 1.5px solid var(--color-text-primary);
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     width: auto;
     max-width: 300px;
@@ -157,7 +157,7 @@ body.paginated .chapter-body {
     font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #1a1a1a;
+    color: var(--color-text-primary);
     background: none;
     border: none;
     cursor: pointer;
@@ -195,7 +195,7 @@ body.paginated .chapter-body {
 /* BINGE and MEDIA — boxed style */
 .nav-btn.nav-binge,
 .nav-btn.nav-media {
-    border: 1.5px solid #1a1a1a;
+    border: 1.5px solid var(--color-text-primary);
     padding: 3px 12px;
     font-size: 9px;
     letter-spacing: 0.12em;
@@ -203,8 +203,8 @@ body.paginated .chapter-body {
 
 /* MEDIA active state (when media is showing) */
 .nav-btn.nav-media.media-active {
-    background: #1a1a1a;
-    color: #ffffff;
+    background: var(--color-text-primary);
+    color: var(--color-background);
 }
 
 /* Touch devices - larger tap targets */
@@ -267,23 +267,23 @@ body.paginated .chapter-body {
 
 /* Dark mode support */
 [data-theme="dark"] .nav-footer {
-    background: #1a1a1a;
-    border-color: #555;
+    background: var(--color-background);
+    border-color: var(--color-border);
     box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 [data-theme="dark"] .nav-btn {
-    color: #e5e5e5;
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .nav-btn.nav-binge,
 [data-theme="dark"] .nav-btn.nav-media {
-    border-color: #555;
+    border-color: var(--color-border);
 }
 
 [data-theme="dark"] .nav-btn.nav-media.media-active {
-    background: #e5e5e5;
-    color: #1a1a1a;
+    background: var(--color-text-primary);
+    color: var(--color-background);
 }
 
 /* Table of Contents Sidebar - consolidated in components.css */
