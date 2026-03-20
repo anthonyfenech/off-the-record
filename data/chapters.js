@@ -1747,6 +1747,7 @@ export const CHAPTERS = [
 
 <p></p>
 <p class="scene-break">***</p>
+<p></p>
 
 <p class="flashback-header"><strong>JUNK MAIL</strong></p>
 
@@ -1772,9 +1773,10 @@ export const CHAPTERS = [
 
 <p>Congratulations on year one. I look forward to year number two.</p>
 
-<p class="scene-break">***</p>
-
 <p></p>
+<p class="scene-break">***</p>
+<p></p>
+
 <p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. Today, I'm re-learning a hard lesson: Don't travel on arbitration day.</p>
 
 <p>This year, I'm on the highway, 1½ hours outside Las Vegas, foolishly driving a rental car with one hand. My other hand is texting sources, checking Twitter and searching for the next exit. I've been beaten twice. According to Jon Heyman, the National Guy who breaks arbitration deals with superhuman ease, <em>two</em> deals are happening.</p>
@@ -2233,6 +2235,7 @@ export const CHAPTERS = [
 
 <p></p>
 <p class="scene-break">***</p>
+<p></p>
 
 <p class="flashback-header"><strong>JUNK MAIL</strong></p>
 
@@ -2258,9 +2261,10 @@ export const CHAPTERS = [
 
 <p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can definitely take us back to that road trip in Baltimore where we thought Ausmus was close to being fired. Cool?</em></p>
 
-<p class="scene-break">***</p>
-
 <p></p>
+<p class="scene-break">***</p>
+<p></p>
+
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
 <p>The Tigers did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in the story about how they saved their season. But Detroit is still seven games above .500 and well within reach—1½ games behind the wild-card.</p>
@@ -6253,9 +6257,10 @@ export const CHAPTERS = [
 
 <p class="email-line"><em>Seriously, man, if his stance is that a reporter from Detroit can't ask him about a very serious claim that he made about his time in Detroit, I don't know what to tell him. You did your job. I think you've been fair in your scrutiny of the franchise, and the questions are definitely worth asking. It's not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you've done a nice job finding things to talk about during a time when there isn't much to talk about. It isn't easy, and I recognize that. Thanks for doing it.</em></p>
 
-<p class="scene-break">***</p>
-
 <p></p>
+<p class="scene-break">***</p>
+<p></p>
+
 <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I'm about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and Coach Content caught me flat-footed. I was catching up with another editor when he said, "Let's have you follow-up with Bregman while you're in Houston to get his thoughts."</p>
 
 <p>Still basking in the afterglow of a clicks bonanza from the Trade Deadline Exposé, he wanted more juice—the lowly Tigers aren't bringing eyes to the site these days.</p>
