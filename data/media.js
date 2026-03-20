@@ -50,15 +50,6 @@ const MEDIA_DATA = {
   // CHAPTER 05 - ROOKIE YEAR
   // ========================================
 
-  'first-on-tv': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'First TV Appearance',
-    src: 'assets/05-rookie-year/FIRST ON TV.MOV.mp4',
-    date: '2015-02-26',
-    chapter: 5
-  },
-
   // ========================================
   // CHAPTER 06 - OPENING DAY
   // ========================================
@@ -66,24 +57,6 @@ const MEDIA_DATA = {
   // ========================================
   // CHAPTER 07 - MIDSEASON
   // ========================================
-
-  'foul-ball-fox-commentary': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Foul Ball Fox Commentary',
-    src: 'assets/07-midseason/foul-ball-fox-commentary.mp4',
-    date: '2015-07-01',
-    chapter: 7
-  },
-
-  'internet-stalker-prank-call': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Howard Stern Prank Call',
-    src: 'assets/07-midseason/howard-stern-prank-call.mp3',
-    date: '2015-07-01',
-    chapter: 7
-  },
 
   'laptop-busted': {
     type: 'photo',
@@ -123,15 +96,6 @@ const MEDIA_DATA = {
     title: 'Email to Mozeliak',
     src: 'assets/08-trade-deadline/email-mozeliak.webp',
     date: '2015-07-01',
-    chapter: 8
-  },
-
-  'katie-strang-2016': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Katie Strang Interview',
-    src: 'assets/08-trade-deadline/katie-strang-2016-04-16-web.mp4',
-    date: '2016-04-16',
     chapter: 8
   },
 
@@ -263,15 +227,6 @@ const MEDIA_DATA = {
     chapter: 13
   },
 
-  'cy-young-2016-bernie': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Cy Young 2016 Coverage',
-    src: 'assets/13-wake-up-call/cy-young-2016-bernie.mp4',
-    date: '2016-11-16',
-    chapter: 13
-  },
-
   'fenech-middle-finger': {
     type: 'photo',
     emoji: '📷',
@@ -322,33 +277,6 @@ const MEDIA_DATA = {
     title: 'Avila Verlander Trade Press Conference',
     src: 'assets/16-summer-2017-ii/19-draft-day-al-avila-verlander-trade.webp',
     date: '2017-08-31',
-    chapter: 16
-  },
-
-  'ernie-harwell-talk': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Ernie Harwell Talk',
-    src: 'assets/16-summer-2017-ii/ernie-harwell-talk.mp3',
-    date: '2017-08-01',
-    chapter: 16
-  },
-
-  'first-time-ever': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'First Time Ever - Verlander Trade Night',
-    src: 'assets/16-summer-2017-ii/first-time-ever.mp3',
-    date: '2017-08-31',
-    chapter: 16
-  },
-
-  'kinsler-angel': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Kinsler Recording',
-    src: 'assets/16-summer-2017-ii/kinsler-angel.mp3',
-    date: '2017-07-01',
     chapter: 16
   },
 
@@ -462,15 +390,6 @@ const MEDIA_DATA = {
   // CHAPTER 21 - BURN OUT
   // ========================================
 
-  'verlander-injury-9-12-18': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Verlander Injury Recording',
-    src: 'assets/21-burn-out/verlander-injury-9-12-18.mp3',
-    date: '2018-09-12',
-    chapter: 21
-  },
-
   // ========================================
   // CHAPTER 22 - VIVA LAS VEGAS
   // ========================================
@@ -480,24 +399,6 @@ const MEDIA_DATA = {
     emoji: '📷',
     title: 'Fantasy Camp Story',
     src: 'assets/22-viva-las-vegas/24-road-to-omaha-fantasy-camp-story.webp',
-    date: '2019-02-01',
-    chapter: 22
-  },
-
-  'fantasy-camp-scrum': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Fantasy Camp Scrum',
-    src: 'assets/22-viva-las-vegas/FANTASY CAMP SCRUM.mp4',
-    date: '2019-02-01',
-    chapter: 22
-  },
-
-  'zimmermann-tweet-vid': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Zimmermann Tweet Video',
-    src: 'assets/22-viva-las-vegas/zimmermann tweet-vid.mp4',
     date: '2019-02-01',
     chapter: 22
   },
@@ -551,15 +452,6 @@ const MEDIA_DATA = {
     chapter: 23
   },
 
-  'video-2020-10-12': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'October 12, 2020',
-    src: 'assets/23-globetrotting/2020-10-12 3-43-41 PM.mp4',
-    date: '2020-10-12',
-    chapter: 23
-  },
-
   // ========================================
   // CHAPTER 24 - ROAD TO OMAHA
   // ========================================
@@ -582,27 +474,9 @@ const MEDIA_DATA = {
     chapter: 24
   },
 
-  'mike-trade-deadline': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Mike Trade Deadline Recording',
-    src: 'assets/24-road-to-omaha/mike trade deadline.mp3',
-    date: '2019-07-31',
-    chapter: 24
-  },
-
   // ========================================
   // CHAPTER 25 - LETTER TO THE EDITOR
   // ========================================
-
-  'verlander-blow-off-8-20-19': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Verlander Blow-Off Recording',
-    src: 'assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
-    date: '2019-08-20',
-    chapter: 25
-  },
 
   // ========================================
   // CHAPTER 26 - UNETHICAL
@@ -657,27 +531,9 @@ const MEDIA_DATA = {
   // CHAPTER 27 - BOTTOM NINE
   // ========================================
 
-  'winter-meetings-12-10-19': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Winter Meetings 2019 Recording',
-    src: 'assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
-    date: '2019-12-10',
-    chapter: 27
-  },
-
   // ========================================
   // CHAPTER 28 - POSTSCRIPT
   // ========================================
-
-  'miguel-bp-covid': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Miguel Cabrera BP - COVID Era',
-    src: 'assets/28-postscript/MIGUEL BATTING PRACTICE COVID.mp4',
-    date: '2020-07-01',
-    chapter: 28
-  },
 
   'internet-stalker-website': {
     type: 'photo',
@@ -706,45 +562,9 @@ const MEDIA_DATA = {
     chapter: 28
   },
 
-  'cabrera-on-verlander-2019': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Cabrera on Verlander (2019)',
-    src: 'assets/26-unethical/cabrera-on-verlander-8-20-19.mp3',
-    date: '2019-08-20',
-    chapter: 26
-  },
-
-  'verlander-blow-off-2019': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Verlander Blow Off (2019)',
-    src: 'assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
-    date: '2019-08-20',
-    chapter: 26
-  },
-
   // ========================================
   // MISCELLANEOUS / ROOT ASSETS
   // ========================================
-
-  'boras-clip': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Scott Boras Clip',
-    src: 'assets/boras-clip-6-14-20.mp3',
-    date: '2020-06-14',
-    chapter: 28
-  },
-
-  'cabrera-on-verlander': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Cabrera on Verlander',
-    src: 'assets/26-unethical/cabrera-on-verlander-8-20-19.mp3',
-    date: '2019-08-20',
-    chapter: 26
-  },
 
   // ========================================
   // MENTIONS SCREENSHOTS
