@@ -244,6 +244,8 @@ p + p.has-dateline {
 .chapter-body p.scene-break {
     text-align: center !important;
     text-indent: 0 !important;
+    margin-top: -0.6rem;
+    margin-bottom: -0.6rem;
 }
 
 /* Flashback headers in chapter content */

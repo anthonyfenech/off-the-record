@@ -1746,7 +1746,7 @@ export const CHAPTERS = [
 <p>That's as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn't even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it's Villarreal again: "Come now to suite."</p>
 
 <p></p>
-<p class="scene-break">* * *</p>
+<p class="scene-break">***</p>
 
 <p class="flashback-header"><strong>JUNK MAIL</strong></p>
 
@@ -1772,7 +1772,7 @@ export const CHAPTERS = [
 
 <p>Congratulations on year one. I look forward to year number two.</p>
 
-<p class="scene-break">* * *</p>
+<p class="scene-break">***</p>
 
 <p></p>
 <p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. Today, I'm re-learning a hard lesson: Don't travel on arbitration day.</p>
@@ -2232,7 +2232,7 @@ export const CHAPTERS = [
 <p>Apparently, Harbaugh has taken a liking to me after the satellite camp story. I've kept up with his brother-in-law. Supposed to see him when we're in K.C. next.</p>
 
 <p></p>
-<p class="scene-break">* * *</p>
+<p class="scene-break">***</p>
 
 <p class="flashback-header"><strong>JUNK MAIL</strong></p>
 
@@ -2258,7 +2258,7 @@ export const CHAPTERS = [
 
 <p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don't get swept in Seattle. I think it's something you can start reporting now. Can definitely take us back to that road trip in Baltimore where we thought Ausmus was close to being fired. Cool?</em></p>
 
-<p class="scene-break">* * *</p>
+<p class="scene-break">***</p>
 
 <p></p>
 <p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
@@ -7723,7 +7723,7 @@ export const CHAPTERS = [
 <p>Pour a drink. Roll one up. Free Bird on repeat.</p>
 <p>And I sit there and think about how, if I live to write that sports writing book, this is how it would end, with the phone ringing and everything else a beautiful blur—a ride so real, I couldn’t have made it up.</p>
 <p></p>
-<p>***</p>
+<p class="scene-break">***</p>
 <p></p>
 <p><em>London was a mess. Spent fourteen days quarantining at an airport hotel. On the third day, called MetLife. When the lady on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. “From America, writing a book.” Everyone asked about the book, so I changed my bio to just an American flag and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. Told a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house smoking cigarettes along the sea. Got a tip, a message on my phone. Amber Alert back home.</em> <em>WHERE IN THE WORLD IS ANTHONY FENECH? It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for Him. He kept track of how many days it had been since the day the sports writer had died. When the</em> Free Press <em>found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat. Corporate called, Coach Content was leaving, was I coming back to work? Got laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. Got here on my birthday. Next day, everything closed. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate hostel in the south. Got a text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called. “The story begins in the back of your SUV,” I said. Visited the village where my grandparents lived. Relapsed the hardest when I found out he died. The Super Bowl started at midnight and there were drugs and new friends and a cab to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, crying on a bench. The sun came up. I wondered if He ever thought about me. I googled my name. “One of these days,” the story said, “we will find out what happened between Anthony Fenech and life.” Every day, I thought of that day. I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went—</em></p>
 <p></p>
