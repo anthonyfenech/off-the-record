@@ -46,44 +46,6 @@ const MEDIA_DATA = {
     chapter: 4
   },
 
-  'sold-taurus-webp': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'Sold the Taurus (Screenshot)',
-    src: 'assets/audio-staging/1-31-2015-sold-taurus.webp',
-    date: '2015-01-31',
-    chapter: 4
-  },
-
-  'hr-derby-arizona-2011': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'Home Run Derby Arizona 2011',
-    src: 'assets/audio-staging/hr-derby-in-arizona-2011.webp',
-    date: '2011-07-01',
-    chapter: 4
-  },
-
-  'verlander-jersey-festival': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'Festival Photo with Verlander Jersey',
-    caption: 'Early photo at festival — someone nearby wearing Verlander #35 green jersey',
-    src: 'assets/audio-staging/img-004289.webp',
-    date: '2005-01-01',
-    chapter: 4
-  },
-
-  'internet-stalker-falsities': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Detroit Sports Rag False Claims',
-    caption: 'Documentation of internet stalker posts from Nov-Dec 2014 — false allegations and harassment',
-    src: 'assets/audio-staging/internet-stalker-falsities.webp',
-    date: '2014-12-08',
-    chapter: 4
-  },
-
   // ========================================
   // CHAPTER 05 - ROOKIE YEAR
   // ========================================
@@ -97,127 +59,9 @@ const MEDIA_DATA = {
     chapter: 5
   },
 
-  'anthony-bass-interview': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Anthony Bass Interview',
-    src: 'assets/audio-staging/5-6-14-anthony-bass-funny-at-4.42-pm.mp3',
-    date: '2014-05-06',
-    chapter: 5
-  },
-
-  'verlander-mlb-net-day': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Verlander MLB Network Day',
-    src: 'assets/audio-staging/2-25-15-verlander-mlb-net-day-at-12.54-pm.mp3',
-    date: '2015-02-25',
-    chapter: 5
-  },
-
-  'buster-olney-email': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Buster Olney Email Discussion',
-    src: 'assets/audio-staging/3-3-15-buster-olney-e-mail.mp3',
-    date: '2015-03-03',
-    chapter: 5
-  },
-
-  'olympus-voice-recorder': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Olympus Voice Recorder',
-    caption: 'Recording equipment used for interviews — Olympus digital voice recorder',
-    src: 'assets/audio-staging/mov-3156.mp4',
-    date: '2015-01-01',
-    chapter: 5
-  },
-
-  'leyland-holding-court': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Jim Leyland Holding Court',
-    src: 'assets/audio-staging/3-18-15-leyland-holding-court-at-3.41-pm.mp3',
-    date: '2015-03-18',
-    chapter: 5
-  },
-
-  'first-mlb-network-spring': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'First MLB Network Appearance',
-    src: 'assets/audio-staging/first-mlb-network-spring-2015.webp',
-    date: '2015-02-01',
-    chapter: 5
-  },
-
-  'playing-basketball-feb-2015': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Playing Basketball - Spring Training Recording',
-    src: 'assets/audio-staging/2-28-15-playing-basketball-at-7.59-am.mp3',
-    date: '2015-02-28',
-    chapter: 5
-  },
-
-  'tigers-2015-season-tickets': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Tigers 2015 Season Ticket Benefits Package',
-    src: 'assets/audio-staging/tigers-2015-season-ticket-benefits.pdf',
-    date: '2015-01-01',
-    chapter: 5
-  },
-
-  'first-year-plan': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Anthony Fenech First Year Plan',
-    src: 'assets/audio-staging/anthony-fenech-b-globefirst-year-plan.pdf',
-    date: '2015-01-01',
-    chapter: 5
-  },
-
-  'd-price-notes-2015': {
-    type: 'document',
-    emoji: '📄',
-    title: 'David Price Notes 2015',
-    src: 'assets/audio-staging/D Price notes 2015.txt',
-    date: '2015-01-01',
-    chapter: 5
-  },
-
   // ========================================
   // CHAPTER 06 - OPENING DAY
   // ========================================
-
-  'price-opening-day-starter': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'David Price Named Opening Day Starter',
-    src: 'assets/audio-staging/3-20-15-d-price-opening-day-starter-at-11.09-am.mp3',
-    date: '2015-03-20',
-    chapter: 6
-  },
-
-  'shane-greene-interview': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Shane Greene Amazing Interview',
-    src: 'assets/audio-staging/3-28-15-shane-greene-amazing-interview-tigers-post-at-3.03-pm.mp3',
-    date: '2015-03-28',
-    chapter: 6
-  },
-
-  'price-opening-day-transcript': {
-    type: 'document',
-    emoji: '📄',
-    title: 'David Price Named Opening Day Starter - Transcript',
-    src: 'assets/audio-staging/3-20-15-d-price-opening-day-starter-at-11-09-am.pdf',
-    date: '2015-03-20',
-    chapter: 6
-  },
 
   // ========================================
   // CHAPTER 07 - MIDSEASON
@@ -259,51 +103,6 @@ const MEDIA_DATA = {
     chapter: 7
   },
 
-  'brad-love-these-questions': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Brad Ausmus - Love These Questions',
-    src: 'assets/audio-staging/5-20-15-brad-post-love-these-questions-at-5.22-pm.mp3',
-    date: '2015-05-20',
-    chapter: 7
-  },
-
-  'tomosovich-fs1': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'FS1 Appearance with Tomosovich',
-    src: 'assets/audio-staging/7-11-15-tomosovich-fs1.webp',
-    date: '2015-07-11',
-    chapter: 7
-  },
-
-  'verlander-2015-hr-log': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'Verlander 2015 Home Run Log',
-    src: 'assets/audio-staging/verlander-2015-hr-log.webp',
-    date: '2015-07-01',
-    chapter: 7
-  },
-
-  'bp-hr-derby-2015': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'All-Star Break - Home Run Derby 2015',
-    src: 'assets/audio-staging/2015-bp-hr-derby.webp',
-    date: '2015-07-13',
-    chapter: 7
-  },
-
-  'talkin-tigers-podcast': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'Talkin Tigers Podcast with Drew',
-    src: 'assets/audio-staging/talkin-tigers-me-and-drew.webp',
-    date: '2015-07-01',
-    chapter: 7
-  },
-
   // ========================================
   // CHAPTER 08 - TRADE DEADLINE
   // ========================================
@@ -336,60 +135,6 @@ const MEDIA_DATA = {
     chapter: 8
   },
 
-  'dave-exit-interview': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Dave Dombrowski Exit Interview',
-    src: 'assets/audio-staging/8-5-15-dave-exit-interview-in-underwear-at-2.53-pm.mp3',
-    date: '2015-08-05',
-    chapter: 8
-  },
-
-  'brad-post-norris-nick-victor': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Brad Post - Norris, Nick, Victor',
-    src: 'assets/audio-staging/8-20-15-brad-post-norris-nick-victor-messing-at-12.33-am.mp3',
-    date: '2015-08-20',
-    chapter: 8
-  },
-
-  'victor-go-ask-manager': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Victor Martinez - Go Ask the Manager',
-    src: 'assets/audio-staging/8-26-15-victor-go-ask-the-manager-at-3.46-pm.mp3',
-    date: '2015-08-26',
-    chapter: 8
-  },
-
-  'dombrowski-extension-paper': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'Dombrowski Extension Paper',
-    src: 'assets/audio-staging/8-4-15-dombrowski-extension-paper.webp',
-    date: '2015-08-04',
-    chapter: 8
-  },
-
-  'brad-post-mccann-rajai': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Brad Ausmus Post-Game - McCann and Rajai Funny Moment',
-    src: 'assets/audio-staging/9-8-15-brad-post-mccann-rajai-funny-at-11-37-pm.mp3',
-    date: '2015-09-08',
-    chapter: 8
-  },
-
-  'katie-strang-video-raw': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Katie Strang Interview (Raw Video)',
-    src: 'assets/audio-staging/2016-04-16-12-29-03-katie-strang-img-7050.mp4',
-    date: '2016-04-16',
-    chapter: 8
-  },
-
   // ========================================
   // CHAPTER 09 - FIRE DRILL
   // ========================================
@@ -400,33 +145,6 @@ const MEDIA_DATA = {
     title: 'October 30, 2015',
     src: 'assets/09-fire-drill/2015-10-30 5-11-25 PM.webp',
     date: '2015-10-30',
-    chapter: 9
-  },
-
-  'airplane-announcement-2015': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Airplane Announcement Recording',
-    src: 'assets/audio-staging/11-20-15-airplane-announcement.mp3',
-    date: '2015-11-20',
-    chapter: 9
-  },
-
-  'brad-post-verlander-sept': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Brad Ausmus Post-Game - Verlander Discussion',
-    src: 'assets/audio-staging/9-28-15-brad-post-verlander-at-11.20-pm.mp3',
-    date: '2015-09-28',
-    chapter: 9
-  },
-
-  'mlb-network-november-2015': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'MLB Network Appearance - November 2015',
-    src: 'assets/audio-staging/mlb-network-november-2015.webp',
-    date: '2015-11-01',
     chapter: 9
   },
 
@@ -449,24 +167,6 @@ const MEDIA_DATA = {
     title: 'Lakeland BBQ',
     src: 'assets/10-spring-training/lakeland-bbq.webp',
     date: '2016-03-01',
-    chapter: 10
-  },
-
-  'verlander-spring-2016': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Verlander Spring Training 2016',
-    src: 'assets/audio-staging/2-27-16-verlander.mp3',
-    date: '2016-02-27',
-    chapter: 10
-  },
-
-  'spring-training-roster-2016': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: '2016 Spring Training Roster',
-    src: 'assets/audio-staging/2016-spring-trainign-roster.webp',
-    date: '2016-02-01',
     chapter: 10
   },
 
@@ -519,51 +219,6 @@ const MEDIA_DATA = {
     chapter: 11
   },
 
-  'espn-sportscenter-2016': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'ESPN SportsCenter 2016',
-    src: 'assets/audio-staging/espn-sportscenter-2016-dead-link.webp',
-    date: '2016-04-01',
-    chapter: 11
-  },
-
-  'mlb-network-nats-park': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'MLB Network at Nationals Park',
-    src: 'assets/audio-staging/mlb-network-nats-park-may-2016.webp',
-    date: '2016-05-01',
-    chapter: 11
-  },
-
-  'bp-hr-derby-2016': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'All-Star Break - Home Run Derby 2016',
-    src: 'assets/audio-staging/2016-bp-hr-derby.webp',
-    date: '2016-07-11',
-    chapter: 11
-  },
-
-  'bp-hr-derby-2016-alt': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'All-Star Break - Home Run Derby 2016 (Alternate)',
-    src: 'assets/audio-staging/2016-bp-hr-derby-2.webp',
-    date: '2016-07-11',
-    chapter: 11
-  },
-
-  'mlb-net-high-heat': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'MLB Network High Heat Appearance',
-    src: 'assets/audio-staging/undated-mlb-net-high-heat.webp',
-    date: '2016-07-01',
-    chapter: 11
-  },
-
   // ========================================
   // CHAPTER 12 - PENNANT RACE
   // ========================================
@@ -583,16 +238,6 @@ const MEDIA_DATA = {
     title: 'Verlander Tale of the Tape',
     src: 'assets/26-unethical/12-pennant-race-verlander-tale-of-tape.webp',
     date: '2016-10-01',
-    chapter: 12
-  },
-
-  'espn-tigers-playoff-push': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'ESPN: Tigers Needs to Make Playoff Push',
-    caption: 'ESPN SportsCenter link preview — Anthony Fenech article on Tigers contention',
-    src: 'assets/audio-staging/screenshot-2023-06-17-at-11-20-49-pm.webp',
-    date: '2015-07-01',
     chapter: 12
   },
 
@@ -636,15 +281,6 @@ const MEDIA_DATA = {
     chapter: 13
   },
 
-  'tigers-2016-reflections': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Tigers 2016 Season Reflections',
-    src: 'assets/audio-staging/tigers-2016-reflections-inc-copy.pdf',
-    date: '2016-10-01',
-    chapter: 13
-  },
-
   // ========================================
   // CHAPTER 14 - PRIME TIME
   // ========================================
@@ -672,24 +308,6 @@ const MEDIA_DATA = {
     emoji: '📷',
     title: 'Verlander Likes Waffles',
     src: 'assets/14-prime-time/verlander likes waffles.webp',
-    date: '2017-01-01',
-    chapter: 14
-  },
-
-  'brad-pre-may-2017': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Brad Ausmus Pre-Game - May 2017',
-    src: 'assets/audio-staging/done-5-6-17-brad-pre-2-min-in-.mp3',
-    date: '2017-05-06',
-    chapter: 14
-  },
-
-  'not-gonna-quote-me': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Off-the-Record Quote Transcript',
-    src: "assets/audio-staging/you-re not gonna quote me.txt",
     date: '2017-01-01',
     chapter: 14
   },
@@ -734,24 +352,6 @@ const MEDIA_DATA = {
     chapter: 16
   },
 
-  'cabrera-good-mood': {
-    type: 'audio',
-    emoji: '🎙️',
-    title: 'Miguel Cabrera in Good Mood',
-    src: 'assets/audio-staging/audio_cabrera-good-mood_003.mp3',
-    date: '2017-05-20',
-    chapter: 16
-  },
-
-  'mlb-net-studio-feb-2017': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'MLB Network Studio February 2017',
-    src: 'assets/audio-staging/mlb-net-in-studio-feb-2017.webp',
-    date: '2017-02-01',
-    chapter: 14
-  },
-
   // ========================================
   // CHAPTER 17 - WORLD SERIES
   // ========================================
@@ -780,24 +380,6 @@ const MEDIA_DATA = {
     title: 'Kinsler Team USA',
     src: 'assets/17-world-series/kinsler-tv-winter.webp',
     date: '2017-03-01',
-    chapter: 17
-  },
-
-  'tigers-season-recap-2017': {
-    type: 'document',
-    emoji: '📄',
-    title: '2017 Tigers Season Recap',
-    src: 'assets/audio-staging/2017-tigers-season-recap-1002.pdf',
-    date: '2017-10-02',
-    chapter: 17
-  },
-
-  'tigers-column-oct-2': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Tigers Column - October 2, 2017',
-    src: 'assets/audio-staging/tigers-column-1002.pdf',
-    date: '2017-10-02',
     chapter: 17
   },
 
@@ -889,24 +471,6 @@ const MEDIA_DATA = {
     chapter: 21
   },
 
-  'gannett-survey-monkey': {
-    type: 'video',
-    emoji: '🎬',
-    title: 'Gannett Survey Monkey Video',
-    src: 'assets/audio-staging/gannett-survey-monkey-1-7-17.mp4',
-    date: '2017-01-07',
-    chapter: 21
-  },
-
-  'gene-email-freep-beat': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Gene Email - Freep Beat Assignment',
-    src: 'assets/audio-staging/gene-e-mail-announcement-freep-beat.pdf',
-    date: '2015-01-01',
-    chapter: 21
-  },
-
   // ========================================
   // CHAPTER 22 - VIVA LAS VEGAS
   // ========================================
@@ -935,24 +499,6 @@ const MEDIA_DATA = {
     title: 'Zimmermann Tweet Video',
     src: 'assets/22-viva-las-vegas/zimmermann tweet-vid.mp4',
     date: '2019-02-01',
-    chapter: 22
-  },
-
-  'tigers-business-dossier': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Tigers Business Investigation Dossier',
-    src: 'assets/audio-staging/anthony-fenech-tigers-business-dossier.pdf',
-    date: '2020-08-13',
-    chapter: 22
-  },
-
-  'fantasy-camp-paper': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'Fantasy Camp Newspaper Clipping',
-    src: 'assets/audio-staging/fantasy-camp-paper-2-7-19.webp',
-    date: '2019-02-07',
     chapter: 22
   },
 
@@ -1045,15 +591,6 @@ const MEDIA_DATA = {
     chapter: 24
   },
 
-  'fantasy-camp-2019': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Fantasy Camp 2019',
-    src: 'assets/audio-staging/fantasy-camp-page-2-7-19.pdf',
-    date: '2019-02-07',
-    chapter: 22
-  },
-
   // ========================================
   // CHAPTER 25 - LETTER TO THE EDITOR
   // ========================================
@@ -1077,16 +614,6 @@ const MEDIA_DATA = {
     title: 'ESPN Push Alert - Verlander Incident',
     src: 'assets/26-unethical/Verlander incident ESPN push alert.webp',
     date: '2019-08-22',
-    chapter: 26
-  },
-
-  'union-communication-notes': {
-    type: 'document',
-    emoji: '📄',
-    title: 'BBWAA Union Communication Notes',
-    caption: 'Notes on union communications — Fidelman remarks, Avila texts, blackmail allegations',
-    src: 'assets/audio-staging/union-communication-notes.webp',
-    date: '2019-08-24',
     chapter: 26
   },
 
@@ -1126,15 +653,6 @@ const MEDIA_DATA = {
     chapter: 26
   },
 
-  'union-background': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Union Background Document',
-    src: 'assets/audio-staging/union-background.pdf',
-    date: '2019-01-01',
-    chapter: 26
-  },
-
   // ========================================
   // CHAPTER 27 - BOTTOM NINE
   // ========================================
@@ -1146,33 +664,6 @@ const MEDIA_DATA = {
     src: 'assets/27-bottom-nine/winter-meetings-12-10-19.mp3',
     date: '2019-12-10',
     chapter: 27
-  },
-
-  'mccosky-verlander-trade-tweet': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'McCosky Verlander Trade Tweet',
-    src: 'assets/audio-staging/mccosky-tweet-verlander-trade.webp',
-    date: '2017-08-31',
-    chapter: 16
-  },
-
-  'bregman-nah-tweet': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'Alex Bregman NAH Tweet',
-    src: 'assets/audio-staging/bregman-nah-false-tweet.webp',
-    date: '2017-09-01',
-    chapter: 16
-  },
-
-  'mccosky-tweet-verlander-2': {
-    type: 'screenshot',
-    emoji: '📷',
-    title: 'McCosky Verlander Trade Tweet (Alternate)',
-    src: 'assets/audio-staging/mccosky-tweet-verlander-trade-2.webp',
-    date: '2017-08-31',
-    chapter: 16
   },
 
   // ========================================
@@ -1231,42 +722,6 @@ const MEDIA_DATA = {
     src: 'assets/25-letter-to-the-editor/verlander-blow-off-8-20-19.mp3',
     date: '2019-08-20',
     chapter: 26
-  },
-
-  'la-times-essay': {
-    type: 'document',
-    emoji: '📄',
-    title: 'LA Times Essay',
-    src: 'assets/audio-staging/la-times-essay-10.pdf',
-    date: '2019-10-01',
-    chapter: 28
-  },
-
-  'things-i-will-remember-2019': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Things I Will Remember 2019',
-    src: 'assets/audio-staging/things-i-will-remember-2019.pdf',
-    date: '2019-12-01',
-    chapter: 28
-  },
-
-  'all-notebooks': {
-    type: 'photo',
-    emoji: '📷',
-    title: 'All Notebooks Collection',
-    src: 'assets/audio-staging/all-notebooks.webp',
-    date: '2020-01-01',
-    chapter: 28
-  },
-
-  'freep-farewell': {
-    type: 'document',
-    emoji: '📄',
-    title: 'Freep Farewell Document',
-    src: 'assets/audio-staging/freep-farewell.pdf',
-    date: '2020-01-01',
-    chapter: 28
   },
 
   // ========================================
