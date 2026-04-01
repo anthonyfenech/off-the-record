@@ -812,14 +812,25 @@
             closeTocBtn.addEventListener('click', closeTOC);
             overlay.addEventListener('click', closeTOC);
 
-            // Touch support for iOS
-            closeTocBtn.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                closeTOC();
+            // Touch support for iOS - use touchend with scroll detection
+            let closeBtnTouchMoved = false;
+            closeTocBtn.addEventListener('touchstart', () => { closeBtnTouchMoved = false; }, { passive: true });
+            closeTocBtn.addEventListener('touchmove', () => { closeBtnTouchMoved = true; }, { passive: true });
+            closeTocBtn.addEventListener('touchend', (e) => {
+                if (!closeBtnTouchMoved) {
+                    e.preventDefault();
+                    closeTOC();
+                }
             });
-            overlay.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                closeTOC();
+
+            let overlayTouchMoved = false;
+            overlay.addEventListener('touchstart', () => { overlayTouchMoved = false; }, { passive: true });
+            overlay.addEventListener('touchmove', () => { overlayTouchMoved = true; }, { passive: true });
+            overlay.addEventListener('touchend', (e) => {
+                if (!overlayTouchMoved) {
+                    e.preventDefault();
+                    closeTOC();
+                }
             });
 
             // Escape key
@@ -958,10 +969,6 @@
                     }
                 };
                 item.addEventListener('click', handleChapterSelect);
-                item.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    handleChapterSelect();
-                });
 
                 // Mark completed chapters
                 if (isChapterComplete(chapter.id)) {
