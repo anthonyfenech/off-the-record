@@ -296,16 +296,16 @@ p + p.has-dateline {
 }
 
 .toc-top-header::after {
-    content: '▼';
+    content: '▸';
     display: inline-block;
     font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
     margin-left: var(--space-sm);
-    transition: transform var(--transition-fast);
+    transition: transform 0.25s ease;
 }
 
 .toc-top-header.expanded::after {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 /* Link sections - no dropdown arrow */
@@ -375,16 +375,16 @@ p + p.has-dateline {
 }
 
 .toc-nested-header::after {
-    content: '▼';
+    content: '▸';
     display: inline-block;
     font-size: var(--font-size-xs);
     color: var(--color-text-secondary);
     margin-left: var(--space-sm);
-    transition: transform var(--transition-fast);
+    transition: transform 0.25s ease;
 }
 
 .toc-nested-header.expanded::after {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 .toc-nested-title {
@@ -423,16 +423,16 @@ p + p.has-dateline {
 }
 
 .toc-section-header::after {
-    content: '▼';
+    content: '▸';
     display: inline-block;
     font-size: var(--font-size-xs);
     color: var(--color-text-secondary);
     margin-left: auto;
-    transition: transform var(--transition-fast);
+    transition: transform 0.25s ease;
 }
 
 .toc-section-header.expanded::after {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 /* Link sections - no dropdown arrow */
@@ -1017,12 +1017,12 @@ button:focus-visible {
 
 .toc-section-arrow {
     color: var(--color-text-tertiary);
-    transition: transform var(--transition-fast);
+    transition: transform 0.25s ease;
     flex-shrink: 0;
 }
 
 .toc-section.open .toc-section-arrow {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 .toc-section-content {
@@ -1935,7 +1935,7 @@ body.show-captions .media-modal-caption {
 }
 
 .gallery-section-header::after {
-    content: '▼';
+    content: '▸';
     display: inline-block;
     position: absolute;
     right: var(--space-md);
@@ -1943,7 +1943,7 @@ body.show-captions .media-modal-caption {
     transform: translateY(-50%);
     font-size: var(--font-size-xs);
     color: var(--color-text-secondary);
-    transition: transform var(--transition-fast);
+    transition: transform 0.25s ease;
 }
 
 .gallery-section-header.disabled::after {
@@ -1951,7 +1951,7 @@ body.show-captions .media-modal-caption {
 }
 
 .gallery-section-header.expanded::after {
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(90deg);
 }
 
 .gallery-section-title {
