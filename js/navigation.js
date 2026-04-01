@@ -50,14 +50,26 @@ class Navigation {
         this.closeTocBtn.addEventListener('click', () => this.closeTOC());
         this.overlay.addEventListener('click', () => this.closeTOC());
 
-        // Touch event support for mobile (iOS especially)
-        this.closeTocBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            this.closeTOC();
+        // Touch event support for mobile - use touchend with scroll detection
+        // to avoid closing sidebar when user scrolls and finger lands on these elements
+        let closeBtnTouchMoved = false;
+        this.closeTocBtn.addEventListener('touchstart', () => { closeBtnTouchMoved = false; }, { passive: true });
+        this.closeTocBtn.addEventListener('touchmove', () => { closeBtnTouchMoved = true; }, { passive: true });
+        this.closeTocBtn.addEventListener('touchend', (e) => {
+            if (!closeBtnTouchMoved) {
+                e.preventDefault();
+                this.closeTOC();
+            }
         });
-        this.overlay.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            this.closeTOC();
+
+        let overlayTouchMoved = false;
+        this.overlay.addEventListener('touchstart', () => { overlayTouchMoved = false; }, { passive: true });
+        this.overlay.addEventListener('touchmove', () => { overlayTouchMoved = true; }, { passive: true });
+        this.overlay.addEventListener('touchend', (e) => {
+            if (!overlayTouchMoved) {
+                e.preventDefault();
+                this.closeTOC();
+            }
         });
 
         // Register with overlay cleanup system for guaranteed dismissal
@@ -264,10 +276,6 @@ class Navigation {
             }
         };
         item.addEventListener('click', handleChapterSelect);
-        item.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            handleChapterSelect();
-        });
 
         return item;
     }
@@ -344,10 +352,6 @@ class Navigation {
                 }
             };
             sectionHeader.addEventListener('click', handleSectionLink);
-            sectionHeader.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                handleSectionLink();
-            });
 
             sectionDiv.appendChild(sectionHeader);
         }
@@ -432,10 +436,6 @@ class Navigation {
                     }
                 };
                 sectionHeader.addEventListener('click', handleBottomLink);
-                sectionHeader.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    handleBottomLink();
-                });
 
                 sectionDiv.appendChild(sectionHeader);
             }
