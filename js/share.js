@@ -14,7 +14,7 @@
 
     const BRAND_RED = '#cc0000';
     const CANVAS_WIDTH = 1080;
-    const CANVAS_MIN_HEIGHT = 1080;
+    const CANVAS_MIN_HEIGHT = 400;
     const CANVAS_MAX_HEIGHT = 1920;
     const CANVAS_PADDING = 120;
     const CANVAS_BG = '#1a1a1a';
@@ -31,7 +31,11 @@
     let oButton = null;
     let overlay = null;
     let currentImageBlob = null;
+    let currentImageDataUrl = null;
     let currentTextExcerpt = '';
+
+    // Check if clipboard image copy is supported (not in Firefox)
+    const canCopyImages = typeof ClipboardItem !== 'undefined';
 
     // ═══════════════════════════════════════════════════════════════
     // O BUTTON
@@ -348,7 +352,7 @@
                         <span class="share-btn-text">Share to X</span>
                     </button>
                     <button class="share-btn share-btn-copy" data-action="copy">
-                        <span class="share-btn-text">Copy Image</span>
+                        <span class="share-btn-text">${canCopyImages ? 'Copy Image' : 'Download Image'}</span>
                     </button>
                     <button class="share-btn share-btn-email" data-action="email">
                         <span class="share-btn-text">Email</span>
@@ -403,6 +407,7 @@
         }
         document.removeEventListener('keydown', handleEscapeKey);
         currentImageBlob = null;
+        currentImageDataUrl = null;
         currentTextExcerpt = '';
     }
 
@@ -437,7 +442,7 @@
     }
 
     async function shareToTwitter() {
-        // Copy image to clipboard first
+        // Copy image to clipboard first (or download on Firefox)
         const copied = await copyImageToClipboard(true);
 
         // Build tweet URL
@@ -447,8 +452,10 @@
 
         window.open(tweetUrl, '_blank', 'noopener,noreferrer,width=550,height=420');
 
-        if (copied) {
+        if (copied && canCopyImages) {
             showToast('Image copied — paste into your tweet');
+        } else if (copied) {
+            showToast('Image downloaded — attach to your tweet');
         }
     }
 
@@ -456,6 +463,12 @@
         if (!currentImageBlob) {
             if (!silent) showToast('No image to copy');
             return false;
+        }
+
+        // Firefox fallback: download instead of copy
+        if (!canCopyImages) {
+            downloadImage();
+            return true;
         }
 
         try {
@@ -468,9 +481,27 @@
             return true;
         } catch (err) {
             console.error('Failed to copy image:', err);
-            if (!silent) showToast('Failed to copy image');
+            // Fallback to download on error
+            if (!silent) {
+                downloadImage();
+            }
             return false;
         }
+    }
+
+    function downloadImage() {
+        if (!currentImageDataUrl) {
+            showToast('No image to download');
+            return;
+        }
+
+        const link = document.createElement('a');
+        link.href = currentImageDataUrl;
+        link.download = 'off-the-record-excerpt.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        showToast('Image downloaded');
     }
 
     function shareViaEmail() {
@@ -519,6 +550,11 @@
             return;
         }
 
+        // Show loading state on O button
+        if (oButton) {
+            oButton.classList.add('loading');
+        }
+
         // Build plain text excerpt for email/tweet
         currentTextExcerpt = content.map(item => {
             if (item.type === 'scene-break') return '\n***\n';
@@ -528,32 +564,42 @@
             return '';
         }).join('\n\n').trim();
 
-        // Render to canvas
-        const canvas = renderToCanvas(content);
+        // Render to canvas (use setTimeout to allow loading animation to start)
+        setTimeout(() => {
+            const canvas = renderToCanvas(content);
 
-        // Convert to blob
-        canvas.toBlob(blob => {
-            if (!blob) {
-                console.error('[Share] Failed to create image blob');
-                return;
-            }
+            // Store data URL for Firefox download fallback
+            currentImageDataUrl = canvas.toDataURL('image/png');
 
-            currentImageBlob = blob;
+            // Convert to blob
+            canvas.toBlob(blob => {
+                // Remove loading state
+                if (oButton) {
+                    oButton.classList.remove('loading');
+                }
 
-            // Create and show overlay
-            createOverlay();
+                if (!blob) {
+                    console.error('[Share] Failed to create image blob');
+                    return;
+                }
 
-            // Set preview image
-            const previewImg = document.getElementById('share-preview-img');
-            if (previewImg) {
-                previewImg.src = URL.createObjectURL(blob);
-            }
+                currentImageBlob = blob;
 
-            // Show overlay with animation
-            requestAnimationFrame(() => {
-                overlay.classList.add('visible');
-            });
-        }, 'image/png');
+                // Create and show overlay
+                createOverlay();
+
+                // Set preview image
+                const previewImg = document.getElementById('share-preview-img');
+                if (previewImg) {
+                    previewImg.src = URL.createObjectURL(blob);
+                }
+
+                // Show overlay with animation
+                requestAnimationFrame(() => {
+                    overlay.classList.add('visible');
+                });
+            }, 'image/png');
+        }, 50);
     }
 
     // ═══════════════════════════════════════════════════════════════
