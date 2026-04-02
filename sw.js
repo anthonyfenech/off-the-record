@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v434';
-const STATIC_CACHE = 'off-the-record-static-v434';
-const CONTENT_CACHE = 'off-the-record-content-v434';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v434';
+const CACHE_VERSION = 'v435';
+const STATIC_CACHE = 'off-the-record-static-v435';
+const CONTENT_CACHE = 'off-the-record-content-v435';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v435';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -48,6 +48,7 @@ const STATIC_ASSETS = [
     './js/page-controls.min.js',
     './js/reader-counter.min.js',
     './js/admin-access.min.js',
+    './js/auth-standalone.min.js',
     // PROMPTS DISABLED: './js/prompts-init.min.js',
     './js/binge-init.min.js',
     './js/failsafes.js',
