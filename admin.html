@@ -2041,13 +2041,13 @@
                 // Populate counter elements
                 if (elements.pdf) elements.pdf.textContent = formatCounterNumber(data.pdf_download || 0);
                 if (elements.epub) elements.epub.textContent = formatCounterNumber(data.epub_download || 0);
-                if (elements.start) elements.start.textContent = formatCounterNumber(data.apple_books_click || 0);
+                if (elements.start) elements.start.textContent = formatCounterNumber(data.start_reading || 0);
                 if (elements.kindle) elements.kindle.textContent = formatCounterNumber(data.kindle_click || 0);
                 if (elements.total) elements.total.textContent = formatCounterNumber(data.total || 0);
 
                 console.log('[OTR Admin] Counters loaded — PDF:', data.pdf_download || 0,
                     ', EPUB:', data.epub_download || 0,
-                    ', Apple Books:', data.apple_books_click || 0,
+                    ', Start Reading:', data.start_reading || 0,
                     ', Kindle:', data.kindle_click || 0,
                     ', Total:', data.total || 0);
 
