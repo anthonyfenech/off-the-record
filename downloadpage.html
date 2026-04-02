@@ -132,17 +132,7 @@
             letter-spacing: 1px;
             text-decoration: none;
             color: var(--color-text, #000);
-            cursor: pointer;
-            transition: opacity 0.15s ease;
             -webkit-tap-highlight-color: transparent;
-        }
-
-        .format-item:hover {
-            text-decoration: underline;
-        }
-
-        .format-item:active {
-            opacity: 0.7;
         }
 
         .format-item .format-emoji {
@@ -150,42 +140,23 @@
             line-height: 1;
         }
 
-        /* Placeholder (coming soon) items */
-        .format-item.placeholder {
-            color: #999;
-            cursor: default;
-            flex-direction: column;
-            gap: 4px;
+        /* Active/clickable items only */
+        a.format-item {
+            cursor: pointer;
+            transition: opacity 0.15s ease;
         }
 
-        .format-item.placeholder:hover {
-            text-decoration: none;
+        a.format-item:hover {
+            text-decoration: underline;
         }
 
-        .format-item.placeholder .format-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .format-item.placeholder .coming-soon {
-            font-size: 10px;
-            font-weight: normal;
-            letter-spacing: 1.5px;
-            color: #999;
+        a.format-item:active {
+            opacity: 0.7;
         }
 
         /* Dark mode */
         [data-theme="dark"] .format-item {
             color: var(--color-text, #fff);
-        }
-
-        [data-theme="dark"] .format-item.placeholder {
-            color: #666;
-        }
-
-        [data-theme="dark"] .format-item.placeholder .coming-soon {
-            color: #666;
         }
 
         /* Mobile - larger tap targets */
@@ -194,7 +165,7 @@
                 gap: 28px;
             }
 
-            .format-item {
+            a.format-item {
                 min-height: 44px;
                 padding: 8px 0;
             }
@@ -272,46 +243,25 @@
             <div class="chapter-body" id="chapterBody">
                 <!-- Format Menu -->
                 <nav class="format-menu">
-                    <!-- PDF - LIVE -->
                     <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="format-item" onclick="trackPdfDownload()">
-                        <span class="format-emoji">📄</span>
                         <span class="format-name">PDF</span>
+                        <span class="format-emoji">📄</span>
                     </a>
-
-                    <!-- EPUB - Coming Soon -->
-                    <div class="format-item placeholder">
-                        <div class="format-row">
-                            <span class="format-emoji">📱</span>
-                            <span class="format-name">EPUB</span>
-                        </div>
-                        <span class="coming-soon">COMING SOON</span>
+                    <div class="format-item">
+                        <span class="format-name">EPUB</span>
+                        <span class="format-emoji">📱</span>
                     </div>
-
-                    <!-- Kindle - Coming Soon -->
-                    <div class="format-item placeholder">
-                        <div class="format-row">
-                            <span class="format-emoji">🔥</span>
-                            <span class="format-name">KINDLE</span>
-                        </div>
-                        <span class="coming-soon">COMING SOON</span>
+                    <div class="format-item">
+                        <span class="format-name">KINDLE</span>
+                        <span class="format-emoji">🔗</span>
                     </div>
-
-                    <!-- Apple Books - Coming Soon -->
-                    <div class="format-item placeholder">
-                        <div class="format-row">
-                            <span class="format-emoji">📚</span>
-                            <span class="format-name">APPLE BOOKS</span>
-                        </div>
-                        <span class="coming-soon">COMING SOON</span>
+                    <div class="format-item">
+                        <span class="format-name">APPLE BOOKS</span>
+                        <span class="format-emoji">🔗</span>
                     </div>
-
-                    <!-- Google Play - Coming Soon -->
-                    <div class="format-item placeholder">
-                        <div class="format-row">
-                            <span class="format-emoji">▶️</span>
-                            <span class="format-name">GOOGLE PLAY</span>
-                        </div>
-                        <span class="coming-soon">COMING SOON</span>
+                    <div class="format-item">
+                        <span class="format-name">GOOGLE PLAY</span>
+                        <span class="format-emoji">🔗</span>
                     </div>
                 </nav>
             </div>
