@@ -40,15 +40,20 @@
 
     // Increment count
     async function incrementCount() {
-        try {
-            await fetch(API_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'incrementStartReading' })
-            });
-        } catch (error) {
-            // Silently fail - counter is non-critical
+        // Check if tracking is enabled
+        if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
+            try {
+                await fetch(API_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'incrementStartReading' })
+                });
+            } catch (error) {
+                // Silently fail - counter is non-critical
+            }
+        } else {
+            console.log('[OTR Analytics]', new Date().toISOString(), 'SUPPRESSED:', 'incrementStartReading', JSON.stringify({ action: 'incrementStartReading' }));
         }
     }
 
