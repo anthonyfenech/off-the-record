@@ -6,7 +6,7 @@
 (function() {
     'use strict';
 
-    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+    const GOOGLE_SHEETS_URL = OTR_ANALYTICS_CONFIG.analyticsScriptUrl;
 
     // ========== SESSION MANAGEMENT ==========
 

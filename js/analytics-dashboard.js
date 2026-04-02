@@ -8,7 +8,7 @@
 
     // Configuration
     const CONFIG = {
-        SHEETS_API_URL: 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec',
+        SHEETS_API_URL: OTR_ANALYTICS_CONFIG.analyticsScriptUrl,
         REFRESH_INTERVAL: 30000, // 30 seconds
         CACHE_DURATION: 60000,   // 1 minute cache
         PASSWORD: 'otr2024admin'

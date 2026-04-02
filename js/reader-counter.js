@@ -7,7 +7,7 @@
 (function() {
     'use strict';
 
-    var API_URL = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+    var API_URL = OTR_ANALYTICS_CONFIG.readerCounterUrl;
 
     // Format number with commas
     function formatNumber(num) {
