@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v441';
-const STATIC_CACHE = 'off-the-record-static-v441';
-const CONTENT_CACHE = 'off-the-record-content-v441';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v441';
+const CACHE_VERSION = 'v442';
+const STATIC_CACHE = 'off-the-record-static-v442';
+const CONTENT_CACHE = 'off-the-record-content-v442';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v442';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -22,6 +22,7 @@ const STATIC_ASSETS = [
     './css/layout.min.css',
     './css/components.min.css',
     './css/otr-tier1-states.css',
+    './css/share.min.css',
     './fonts/literata-regular.woff2',
     './fonts/literata-regular-ext.woff2',
     './fonts/literata-italic.woff2',
@@ -48,6 +49,7 @@ const STATIC_ASSETS = [
     './js/photoGallery.min.js',
     './js/theme.min.js',
     './js/page-controls.min.js',
+    './js/share.min.js',
     './js/reader-counter.min.js',
     './js/admin-access.min.js',
     './js/auth-standalone.min.js',

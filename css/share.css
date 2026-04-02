@@ -1,0 +1,262 @@
+/**
+ * Share Feature Styles - OFF-THE-RECORD
+ * =====================================
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   O BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+
+.share-o-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #cc0000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.share-o-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.share-o-button:active {
+    transform: scale(0.95);
+}
+
+/* Dark mode */
+[data-theme="dark"] .share-o-button {
+    background: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .share-o-button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile adjustments - larger touch target area via padding */
+@media (max-width: 599px) {
+    .share-o-button {
+        bottom: max(80px, calc(env(safe-area-inset-bottom) + 70px));
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SHARE OVERLAY
+   ═══════════════════════════════════════════════════════════════ */
+
+.share-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.share-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SHARE MODAL
+   ═══════════════════════════════════════════════════════════════ */
+
+.share-modal {
+    background: #1a1a1a;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.share-overlay.visible .share-modal {
+    transform: scale(1);
+}
+
+/* Close button */
+.share-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+}
+
+.share-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Preview area */
+.share-preview {
+    padding: 16px;
+    background: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+.share-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Actions */
+.share-actions {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: transparent;
+    color: #f5f5f5;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.share-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #555;
+}
+
+.share-btn:active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Twitter/X button - slight accent */
+.share-btn-x {
+    border-color: #333;
+}
+
+.share-btn-x:hover {
+    border-color: #555;
+}
+
+/* Native share button - only on mobile */
+.share-btn-native {
+    background: #cc0000;
+    border-color: #cc0000;
+}
+
+.share-btn-native:hover {
+    background: #aa0000;
+    border-color: #aa0000;
+}
+
+/* Toast notification */
+.share-toast {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 20;
+}
+
+.share-toast.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 599px) {
+    .share-modal {
+        max-width: 100%;
+        max-height: 85vh;
+        border-radius: 12px 12px 0 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(100%);
+    }
+
+    .share-overlay.visible .share-modal {
+        transform: translateY(0);
+    }
+
+    .share-preview {
+        max-height: 40vh;
+    }
+
+    .share-actions {
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+
+    .share-btn {
+        min-height: 48px;
+    }
+}
