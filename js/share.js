@@ -19,10 +19,47 @@
     const CANVAS_PADDING = 120;
     const CANVAS_BG = '#1a1a1a';
     const CANVAS_TEXT_COLOR = '#f5f5f5';
-    const CANVAS_FONT_SIZE = 36;
+    const CANVAS_FONT_SIZE = 42;
     const CANVAS_LINE_HEIGHT = 1.6;
+    const CANVAS_TITLE_SIZE = 48;
     const WATERMARK_SIZE = 160;
-    const WATERMARK_OPACITY = 0.15;
+    const WATERMARK_OPACITY = 0.22;
+
+    // Font loading
+    const FONT_FAMILY = 'Literata';
+    const FONT_FALLBACK = 'Georgia';
+    let fontLoaded = false;
+    let fontFamily = FONT_FAMILY;
+
+    async function ensureFontLoaded() {
+        if (fontLoaded) return;
+
+        try {
+            // Try to load Literata at the canvas size
+            const fontSpec = `${CANVAS_FONT_SIZE}px "${FONT_FAMILY}"`;
+            const loadPromise = document.fonts.load(fontSpec);
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Font load timeout')), 2000)
+            );
+
+            const loadedFonts = await Promise.race([loadPromise, timeoutPromise]);
+
+            // Check if font actually loaded (empty array means it resolved without loading)
+            if (!loadedFonts || loadedFonts.length === 0) {
+                // Double-check with fonts.check()
+                if (!document.fonts.check(fontSpec)) {
+                    console.warn('[Share] Literata not available, falling back to Georgia');
+                    fontFamily = FONT_FALLBACK;
+                }
+            }
+
+            fontLoaded = true;
+        } catch (err) {
+            console.warn('[Share] Font load failed, using fallback:', err.message);
+            fontFamily = FONT_FALLBACK;
+            fontLoaded = true;
+        }
+    }
 
     // ═══════════════════════════════════════════════════════════════
     // STATE
@@ -179,10 +216,147 @@
     }
 
     // ═══════════════════════════════════════════════════════════════
+    // FIX 4: SMART FIRST-PARAGRAPH CAPTURE
+    // ═══════════════════════════════════════════════════════════════
+
+    function applySmartFirstParagraph(content) {
+        if (content.length < 2) return content;
+
+        // Find the first paragraph item (skip scene breaks)
+        let firstParagraphIndex = -1;
+        for (let i = 0; i < content.length; i++) {
+            if (content[i].type === 'paragraph') {
+                firstParagraphIndex = i;
+                break;
+            }
+        }
+
+        if (firstParagraphIndex === -1) return content;
+
+        const firstItem = content[firstParagraphIndex];
+
+        // If the paragraph has a dateline or is a scene break, keep it
+        if (firstItem.hasDateline || firstItem.isSceneBreak) {
+            return content;
+        }
+
+        // Get the DOM element for the first captured paragraph
+        const chapterBody = document.getElementById('chapterBody');
+        if (!chapterBody) return content;
+
+        const paragraphs = chapterBody.querySelectorAll('p');
+        const viewportTop = window.scrollY;
+
+        // Find the actual first visible paragraph in DOM
+        let firstVisibleParagraph = null;
+        for (const p of paragraphs) {
+            const rect = p.getBoundingClientRect();
+            const elementBottom = rect.bottom + window.scrollY;
+            if (elementBottom > viewportTop) {
+                firstVisibleParagraph = p;
+                break;
+            }
+        }
+
+        if (!firstVisibleParagraph) return content;
+
+        // Check if has-dateline or scene-break class
+        if (firstVisibleParagraph.classList.contains('has-dateline') ||
+            firstVisibleParagraph.classList.contains('scene-break')) {
+            return content;
+        }
+
+        // Get previous sibling <p> within #chapterBody
+        let prevSibling = firstVisibleParagraph.previousElementSibling;
+        while (prevSibling && prevSibling.tagName !== 'P') {
+            prevSibling = prevSibling.previousElementSibling;
+        }
+
+        // If no previous <p> sibling in #chapterBody, it's the first paragraph - keep it
+        if (!prevSibling) return content;
+
+        // Check if previous sibling is in viewport
+        const prevRect = prevSibling.getBoundingClientRect();
+        const prevBottom = prevRect.bottom + window.scrollY;
+        const viewportBottom = viewportTop + window.innerHeight;
+
+        // If previous sibling is NOT in viewport, the first captured is mid-thought - skip it
+        if (prevBottom <= viewportTop || prevRect.top + window.scrollY >= viewportBottom) {
+            // Skip the first paragraph
+            return content.slice(1);
+        }
+
+        return content;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // FIX 6 & 7: CHAPTER INFO FOR TITLE AND YEAR
+    // ═══════════════════════════════════════════════════════════════
+
+    function getCurrentChapterInfo() {
+        const info = {
+            title: null,
+            year: null,
+            showTitle: false
+        };
+
+        // Get chapter title from DOM
+        const titleEl = document.getElementById('chapterTitle');
+        if (titleEl) {
+            info.title = titleEl.textContent.trim();
+        }
+
+        // Check if near top of chapter (Fix 6)
+        const chapterBody = document.getElementById('chapterBody');
+        if (chapterBody) {
+            const rect = chapterBody.getBoundingClientRect();
+            info.showTitle = rect.top > -window.innerHeight;
+        }
+
+        // Get year from CHAPTERS array
+        const currentId = window.currentChapterId;
+        if (typeof currentId === 'number' && currentId > 0 && window.CHAPTERS) {
+            // CHAPTERS array: index 0 = title page (id -1), index 1 = TOC (id 0), index 2+ = chapters
+            // Find the chapter with matching id
+            for (const chapter of window.CHAPTERS) {
+                if (chapter.id === currentId) {
+                    info.year = chapter.year;
+                    break;
+                }
+            }
+        }
+
+        return info;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // FIX 7: DATELINE YEAR APPEND
+    // ═══════════════════════════════════════════════════════════════
+
+    function appendYearToDatelines(text, year) {
+        if (!year || typeof year !== 'number') return text;
+
+        // Regex to match: Month + space + day number + em dash
+        // Must have month name (not time-only like "10:32 A.M.—")
+        const datelineRegex = /(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+(\d{1,2})(\u2014)/g;
+
+        return text.replace(datelineRegex, (match, month, day, emDash) => {
+            // Check if there's already a year (4 digits) before the em dash
+            // This is a safety check - shouldn't happen but just in case
+            const beforeEmDash = match.slice(0, -1); // Remove em dash
+            if (/\d{4}/.test(beforeEmDash)) {
+                return match; // Already has year, don't modify
+            }
+
+            return `${month} ${day}, ${year}${emDash}`;
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════
     // CANVAS RENDERING
     // ═══════════════════════════════════════════════════════════════
 
-    function renderToCanvas(content) {
+    function renderToCanvas(content, chapterInfo = {}) {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
@@ -192,8 +366,29 @@
         const maxTextWidth = CANVAS_WIDTH - (CANVAS_PADDING * 2);
         const lineHeight = CANVAS_FONT_SIZE * CANVAS_LINE_HEIGHT;
 
+        // Fix 7: Transform content to append year to datelines
+        const { year } = chapterInfo;
+        if (year) {
+            content = content.map(item => {
+                if (item.type === 'paragraph') {
+                    return {
+                        ...item,
+                        runs: item.runs.map(run => ({
+                            ...run,
+                            text: appendYearToDatelines(run.text, year)
+                        }))
+                    };
+                }
+                return item;
+            });
+        }
+
+        // Fix 6: Check if we should show chapter title
+        const { title, showTitle } = chapterInfo;
+        const titleHeight = showTitle && title ? CANVAS_TITLE_SIZE + 40 : 0;
+
         // First pass: calculate total height needed AND cache wrapped lines
-        let totalHeight = CANVAS_PADDING; // Top padding
+        let totalHeight = CANVAS_PADDING + titleHeight; // Top padding + optional title
         const wrappedContent = [];
 
         content.forEach((item, index) => {
@@ -221,8 +416,19 @@
         ctx.fillStyle = CANVAS_BG;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        // Fix 6: Draw chapter title if near top
+        let y = CANVAS_PADDING;
+        if (showTitle && title) {
+            ctx.font = `bold ${CANVAS_TITLE_SIZE}px "Courier New", monospace`;
+            ctx.fillStyle = CANVAS_TEXT_COLOR;
+            ctx.textAlign = 'center';
+            ctx.fillText(title.toUpperCase(), CANVAS_WIDTH / 2, y + CANVAS_TITLE_SIZE);
+            ctx.textAlign = 'left';
+            y += CANVAS_TITLE_SIZE + 40; // Title height + spacing
+        }
+
         // Render text using cached wrapped lines
-        let y = CANVAS_PADDING + CANVAS_FONT_SIZE;
+        y += CANVAS_FONT_SIZE;
         const availableHeight = finalHeight - CANVAS_PADDING - 100;
         let truncated = false;
 
@@ -232,7 +438,7 @@
             if (item.type === 'scene-break') {
                 y += lineHeight * 0.5;
 
-                ctx.font = `${CANVAS_FONT_SIZE}px "Literata", Georgia, serif`;
+                ctx.font = `${CANVAS_FONT_SIZE}px "${fontFamily}", Georgia, serif`;
                 ctx.fillStyle = CANVAS_TEXT_COLOR;
                 ctx.textAlign = 'center';
                 ctx.fillText('***', CANVAS_WIDTH / 2, y);
@@ -250,7 +456,7 @@
 
                     for (const segment of line) {
                         const fontStyle = segment.italic ? 'italic' : 'normal';
-                        ctx.font = `${fontStyle} ${CANVAS_FONT_SIZE}px "Literata", Georgia, serif`;
+                        ctx.font = `${fontStyle} ${CANVAS_FONT_SIZE}px "${fontFamily}", Georgia, serif`;
                         ctx.fillStyle = CANVAS_TEXT_COLOR;
                         ctx.fillText(segment.text, x, y);
                         x += ctx.measureText(segment.text).width;
@@ -268,7 +474,7 @@
         }
 
         if (truncated) {
-            ctx.font = `${CANVAS_FONT_SIZE}px "Literata", Georgia, serif`;
+            ctx.font = `${CANVAS_FONT_SIZE}px "${fontFamily}", Georgia, serif`;
             ctx.fillStyle = CANVAS_TEXT_COLOR;
             ctx.fillText('…', CANVAS_PADDING, availableHeight);
         }
@@ -303,7 +509,7 @@
 
         for (const word of words) {
             const fontStyle = word.italic ? 'italic' : 'normal';
-            ctx.font = `${fontStyle} ${fontSize}px "Literata", Georgia, serif`;
+            ctx.font = `${fontStyle} ${fontSize}px "${fontFamily}", Georgia, serif`;
             const wordWidth = ctx.measureText(word.text).width;
 
             // Check if word fits on current line
@@ -342,7 +548,7 @@
         close: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
     };
 
-    function createOverlay() {
+    function createOverlay(isOnline = true) {
         if (overlay) {
             overlay.remove();
         }
@@ -353,6 +559,10 @@
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-modal', 'true');
         overlay.setAttribute('aria-label', 'Share passage');
+
+        // Fix 5: Offline detection - show only Copy button when offline
+        const offlineMessage = !isOnline ? '<div class="share-offline-msg">More sharing options available online</div>' : '';
+
         overlay.innerHTML = `
             <div class="share-modal">
                 <button class="share-close" aria-label="Close share dialog">${ICONS.close}</button>
@@ -360,11 +570,12 @@
                     <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
                 <div class="share-actions" role="group" aria-label="Share options">
-                    <button class="share-btn" data-action="twitter" aria-label="Share to X">${ICONS.x}</button>
-                    <button class="share-btn" data-action="email" aria-label="Email">${ICONS.email}</button>
+                    <button class="share-btn share-btn-twitter" data-action="twitter" aria-label="Share to X"${!isOnline ? ' style="display:none"' : ''}>${ICONS.x}</button>
+                    <button class="share-btn share-btn-email" data-action="email" aria-label="Email"${!isOnline ? ' style="display:none"' : ''}>${ICONS.email}</button>
                     <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">${canCopyImages ? ICONS.copy : ICONS.download}</button>
-                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share">${ICONS.share}</button>
+                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share"${!isOnline ? ' style="display:none"' : ''}>${ICONS.share}</button>
                 </div>
+                ${offlineMessage}
                 <div class="share-toast" id="share-toast" role="status" aria-live="polite"></div>
             </div>
         `;
@@ -591,7 +802,7 @@
         return !!mediaModal;
     }
 
-    function captureAndShowOverlay() {
+    async function captureAndShowOverlay() {
         // Debounce: ignore if already processing or overlay is open
         if (isProcessing || overlay) {
             return;
@@ -602,7 +813,7 @@
             return;
         }
 
-        const content = captureVisibleText();
+        let content = captureVisibleText();
 
         if (content.length === 0) {
             console.warn('[Share] No visible text to capture');
@@ -616,6 +827,12 @@
             oButton.classList.add('loading');
         }
 
+        // Fix 4: Smart first-paragraph capture
+        content = applySmartFirstParagraph(content);
+
+        // Get current chapter info for title and year
+        const chapterInfo = getCurrentChapterInfo();
+
         // Build plain text excerpt for email/tweet
         currentTextExcerpt = content.map(item => {
             if (item.type === 'scene-break') return '\n***\n';
@@ -625,10 +842,13 @@
             return '';
         }).join('\n\n').trim();
 
+        // Ensure font is loaded before rendering
+        await ensureFontLoaded();
+
         // Render to canvas (use setTimeout to allow loading animation to start)
         setTimeout(() => {
             try {
-                const canvas = renderToCanvas(content);
+                const canvas = renderToCanvas(content, chapterInfo);
 
                 // Store data URL for Firefox download fallback
                 try {
@@ -652,8 +872,8 @@
 
                     currentImageBlob = blob;
 
-                    // Create and show overlay
-                    createOverlay();
+                    // Create and show overlay (Fix 5: pass offline state)
+                    createOverlay(navigator.onLine);
 
                     // Set preview image with tracked URL for cleanup
                     const previewImg = document.getElementById('share-preview-img');
