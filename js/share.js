@@ -360,22 +360,10 @@
                     <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
                 <div class="share-actions" role="group" aria-label="Share options">
-                    <button class="share-btn" data-action="twitter" aria-label="Share to X">
-                        ${ICONS.x}
-                        <span class="share-btn-label">X</span>
-                    </button>
-                    <button class="share-btn" data-action="email" aria-label="Email">
-                        ${ICONS.email}
-                        <span class="share-btn-label">Email</span>
-                    </button>
-                    <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">
-                        ${canCopyImages ? ICONS.copy : ICONS.download}
-                        <span class="share-btn-label">${canCopyImages ? 'Copy' : 'Save'}</span>
-                    </button>
-                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share">
-                        ${ICONS.share}
-                        <span class="share-btn-label">Share</span>
-                    </button>
+                    <button class="share-btn" data-action="twitter" aria-label="Share to X">${ICONS.x}</button>
+                    <button class="share-btn" data-action="email" aria-label="Email">${ICONS.email}</button>
+                    <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">${canCopyImages ? ICONS.copy : ICONS.download}</button>
+                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share">${ICONS.share}</button>
                 </div>
                 <div class="share-toast" id="share-toast" role="status" aria-live="polite"></div>
             </div>
