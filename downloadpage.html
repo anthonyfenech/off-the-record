@@ -112,282 +112,94 @@
             margin: 0 auto;
         }
 
-        /* Section labels */
-        .section-label {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--color-text-muted);
-            margin-bottom: 12px;
-            margin-top: 40px;
+        /* ========== FORMAT MENU ========== */
+        .format-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 20px 0;
         }
 
-        .section-label:first-of-type {
-            margin-top: 0;
-        }
-
-        /* Format cards */
-        .format-card {
-            background: var(--color-bg-secondary, #f5f5f5);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 16px;
-        }
-
-        .format-title {
+        .format-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-family: 'Courier New', Courier, monospace;
             font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
-            color: var(--color-text);
-            margin: 0 0 8px 0;
-        }
-
-        .format-description {
-            font-family: 'Literata', Georgia, serif;
-            font-size: 0.95rem;
-            color: var(--color-text-secondary);
-            margin: 0 0 12px 0;
-            line-height: 1.5;
-        }
-
-        .format-detail {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 11px;
-            text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-text-muted);
-            margin: 0 0 16px 0;
-        }
-
-        .format-detail:empty {
-            display: none;
-        }
-
-        /* Buttons */
-        .format-btn {
-            display: block;
-            width: 100%;
-            min-height: 48px;
-            padding: 14px 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-            border: 1.5px solid var(--color-text);
-            border-radius: 4px;
-            background: var(--color-text);
-            color: var(--color-bg);
+            text-decoration: none;
+            color: var(--color-text, #000);
             cursor: pointer;
-            transition: opacity 0.15s ease, background 0.15s ease;
+            transition: opacity 0.15s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .format-item:hover {
+            text-decoration: underline;
+        }
+
+        .format-item:active {
+            opacity: 0.7;
+        }
+
+        .format-item .format-emoji {
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        /* Placeholder (coming soon) items */
+        .format-item.placeholder {
+            color: #999;
+            cursor: default;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .format-item.placeholder:hover {
             text-decoration: none;
         }
 
-        .format-btn:hover:not(.inactive):not(.downloading) {
-            opacity: 0.8;
+        .format-item.placeholder .format-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .format-btn:active:not(.inactive):not(.downloading) {
-            transform: scale(0.98);
-        }
-
-        .format-btn.downloading {
-            opacity: 0.6;
-            cursor: wait;
-        }
-
-        .format-btn.inactive {
-            background: var(--color-bg-secondary, #f5f5f5);
-            color: var(--color-text-muted);
-            border-color: var(--color-border);
-            opacity: 0.5;
-            cursor: default;
-            pointer-events: none;
-        }
-
-        .format-btn.error {
-            background: var(--color-bg-secondary, #f5f5f5);
-            color: var(--color-text-muted);
-            border-color: var(--color-border);
-            opacity: 0.7;
-            cursor: default;
-            pointer-events: none;
-        }
-
-        /* Dark mode adjustments */
-        [data-theme="dark"] .format-card {
-            background: var(--color-bg-secondary, #2a2a2a);
-        }
-
-        [data-theme="dark"] .format-btn {
-            background: var(--color-text);
-            color: var(--color-bg);
-        }
-
-        [data-theme="dark"] .format-btn.inactive,
-        [data-theme="dark"] .format-btn.error {
-            background: var(--color-bg-secondary, #2a2a2a);
-            color: var(--color-text-muted);
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 599px) {
-            .format-card {
-                padding: 20px;
-            }
-
-            .format-btn {
-                min-height: 48px;
-                -webkit-tap-highlight-color: transparent;
-            }
-        }
-
-        /* Small phone */
-        @media (max-width: 374px) {
-            .format-card {
-                padding: 16px;
-            }
-        }
-
-        /* ========== PDF BUTTON OPTIONS ========== */
-
-        .option-preview {
-            margin-bottom: 32px;
-        }
-
-        .option-label {
-            font-family: 'Courier New', monospace;
+        .format-item.placeholder .coming-soon {
             font-size: 10px;
-            text-transform: uppercase;
+            font-weight: normal;
             letter-spacing: 1.5px;
             color: #999;
-            margin-bottom: 12px;
-            text-align: center;
         }
 
-        /* OPTION A: Clean Text Button */
-        .pdf-btn-option-a {
-            display: block;
-            width: 100%;
-            min-height: 48px;
-            padding: 14px 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-            text-decoration: none;
-            border: 2px solid #000;
-            border-radius: 4px;
-            background: #fff;
-            color: #000;
-            cursor: pointer;
-            transition: all 0.15s ease;
+        /* Dark mode */
+        [data-theme="dark"] .format-item {
+            color: var(--color-text, #fff);
         }
 
-        .pdf-btn-option-a:hover {
-            background: #000;
-            color: #fff;
+        [data-theme="dark"] .format-item.placeholder {
+            color: #666;
         }
 
-        .pdf-btn-option-a:active {
-            transform: scale(0.98);
+        [data-theme="dark"] .format-item.placeholder .coming-soon {
+            color: #666;
         }
 
-        /* OPTION B: Styled Accent Button */
-        .pdf-btn-option-b {
-            display: block;
-            width: 100%;
-            min-height: 48px;
-            padding: 14px 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            border-radius: 4px;
-            background: #c41e3a;
-            color: #fff;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
-            transition: all 0.15s ease;
-        }
+        /* Mobile - larger tap targets */
+        @media (max-width: 599px) {
+            .format-menu {
+                gap: 28px;
+            }
 
-        .pdf-btn-option-b:hover {
-            background: #a01830;
-            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+            .format-item {
+                min-height: 44px;
+                padding: 8px 0;
+            }
         }
-
-        .pdf-btn-option-b:active {
-            transform: scale(0.98);
-        }
-
-        /* OPTION C: Emoji Card Button */
-        .pdf-btn-option-c {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 100px;
-            padding: 20px;
-            font-family: 'Courier New', monospace;
-            text-decoration: none;
-            border: 2px solid #000;
-            border-radius: 8px;
-            background: #fff;
-            color: #000;
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-
-        .pdf-btn-option-c:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .pdf-btn-option-c:active {
-            transform: scale(0.98);
-        }
-
-        .pdf-btn-option-c .pdf-emoji {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .pdf-btn-option-c .pdf-text {
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        /* Dark mode for PDF options */
-        [data-theme="dark"] .pdf-btn-option-a {
-            background: #1a1a1a;
-            color: #fff;
-            border-color: #fff;
-        }
-
-        [data-theme="dark"] .pdf-btn-option-a:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        [data-theme="dark"] .pdf-btn-option-c {
-            background: #1a1a1a;
-            color: #fff;
-            border-color: #fff;
-        }
-
-        /* ========== END PDF BUTTON OPTIONS ========== */
+        /* ========== END FORMAT MENU ========== */
     </style>
 </head>
 <body>
@@ -458,39 +270,50 @@
                 <h2 class="chapter-title" id="chapterTitle">DOWNLOAD</h2>
             </header>
             <div class="chapter-body" id="chapterBody">
-                <div id="formats-container"></div>
+                <!-- Format Menu -->
+                <nav class="format-menu">
+                    <!-- PDF - LIVE -->
+                    <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="format-item" onclick="trackPdfDownload()">
+                        <span class="format-emoji">📄</span>
+                        <span class="format-name">PDF</span>
+                    </a>
 
-                <!-- ========== PDF BUTTON OPTIONS (PICK ONE) ========== -->
-                <div id="pdf-button-options" style="margin-top: 48px; padding-top: 32px; border-top: 1px dashed #ccc;">
-                    <p style="font-family: 'Courier New', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #999; text-align: center; margin-bottom: 32px;">— PDF BUTTON OPTIONS (PICK ONE) —</p>
-
-                    <!-- OPTION A: Clean Text Button -->
-                    <div class="option-preview">
-                        <p class="option-label">OPTION A — CLEAN TEXT</p>
-                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-btn-option-a" onclick="trackPdfDownload('option_a')">
-                            DOWNLOAD PDF
-                        </a>
+                    <!-- EPUB - Coming Soon -->
+                    <div class="format-item placeholder">
+                        <div class="format-row">
+                            <span class="format-emoji">📱</span>
+                            <span class="format-name">EPUB</span>
+                        </div>
+                        <span class="coming-soon">COMING SOON</span>
                     </div>
 
-                    <!-- OPTION B: Styled Accent Button -->
-                    <div class="option-preview">
-                        <p class="option-label">OPTION B — STYLED ACCENT</p>
-                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-btn-option-b" onclick="trackPdfDownload('option_b')">
-                            GET THE PDF
-                        </a>
+                    <!-- Kindle - Coming Soon -->
+                    <div class="format-item placeholder">
+                        <div class="format-row">
+                            <span class="format-emoji">🔥</span>
+                            <span class="format-name">KINDLE</span>
+                        </div>
+                        <span class="coming-soon">COMING SOON</span>
                     </div>
 
-                    <!-- OPTION C: Emoji Button -->
-                    <div class="option-preview">
-                        <p class="option-label">OPTION C — EMOJI CARD</p>
-                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-btn-option-c" onclick="trackPdfDownload('option_c')">
-                            <span class="pdf-emoji">📄</span>
-                            <span class="pdf-text">DOWNLOAD</span>
-                        </a>
+                    <!-- Apple Books - Coming Soon -->
+                    <div class="format-item placeholder">
+                        <div class="format-row">
+                            <span class="format-emoji">📚</span>
+                            <span class="format-name">APPLE BOOKS</span>
+                        </div>
+                        <span class="coming-soon">COMING SOON</span>
                     </div>
-                </div>
-                <!-- ========== END PDF BUTTON OPTIONS ========== -->
 
+                    <!-- Google Play - Coming Soon -->
+                    <div class="format-item placeholder">
+                        <div class="format-row">
+                            <span class="format-emoji">▶️</span>
+                            <span class="format-name">GOOGLE PLAY</span>
+                        </div>
+                        <span class="coming-soon">COMING SOON</span>
+                    </div>
+                </nav>
             </div>
         </article>
     </main>
@@ -547,260 +370,6 @@
 
     <!-- Overlay for TOC -->
     <div class="overlay" id="overlay"></div>
-
-    <!-- Configuration Object -->
-    <script>
-        var GET_FORMATS = {
-            downloads: [
-                {
-                    id: 'pdf',
-                    title: 'PDF',
-                    description: 'The complete memoir — all 29 chapters. Formatted for offline reading and printing.',
-                    detail: 'Free • No email required',
-                    buttonText: 'DOWNLOAD PDF',
-                    buttonTextActive: 'DOWNLOADING...',
-                    url: './assets/downloads/off-the-record.pdf',
-                    filename: 'OFF-THE-RECORD.pdf',
-                    type: 'download',
-                    active: true,
-                    eventName: 'pdf_download'
-                },
-                {
-                    id: 'epub',
-                    title: 'EPUB',
-                    description: 'Universal ebook format. Works with Apple Books, Google Play Books, Kobo, and most ereader apps. Drag into your library.',
-                    detail: 'Free • No email required',
-                    buttonText: 'DOWNLOAD EPUB',
-                    buttonTextActive: 'DOWNLOADING...',
-                    url: './assets/downloads/off-the-record.epub',
-                    filename: 'OFF-THE-RECORD.epub',
-                    type: 'download',
-                    active: true,
-                    eventName: 'epub_download'
-                }
-            ],
-            bookstores: [
-                {
-                    id: 'apple-books',
-                    title: 'APPLE BOOKS',
-                    description: 'Read on iPhone, iPad, or Mac',
-                    detail: '',
-                    buttonText: 'GET ON APPLE BOOKS',
-                    url: '',
-                    type: 'link',
-                    active: false,
-                    eventName: 'apple_books_click'
-                },
-                {
-                    id: 'kindle',
-                    title: 'KINDLE',
-                    description: 'Read on any Kindle device or app',
-                    detail: '',
-                    buttonText: 'GET ON KINDLE',
-                    url: '',
-                    type: 'link',
-                    active: false,
-                    eventName: 'kindle_click'
-                },
-                {
-                    id: 'google-play',
-                    title: 'GOOGLE PLAY BOOKS',
-                    description: 'Read on Android, Chromebook, or web',
-                    detail: '',
-                    buttonText: 'GET ON GOOGLE PLAY',
-                    url: '',
-                    type: 'link',
-                    active: false,
-                    eventName: 'google_play_click'
-                }
-            ]
-        };
-    </script>
-
-    <!-- Render formats from config -->
-    <script>
-        (function() {
-            'use strict';
-
-            var container = document.getElementById('formats-container');
-            var downloadingFlags = {};
-
-            // Get reader identification
-            function getReaderName() {
-                return window.OTR_READER_NAME ||
-                       localStorage.getItem('otr_reader_name') ||
-                       localStorage.getItem('otr_session_id') ||
-                       'anonymous_' + Date.now();
-            }
-
-            // Get device type
-            function getDeviceType() {
-                var width = window.innerWidth;
-                if (width <= 480) return 'mobile';
-                if (width <= 1024) return 'tablet';
-                return 'desktop';
-            }
-
-            // Fire analytics event (fire and forget)
-            function fireAnalyticsEvent(format) {
-                var payload = {
-                    event_type: format.eventName,
-                    page: 'Download',
-                    format: format.id,
-                    reader_name: getReaderName(),
-                    device: getDeviceType(),
-                    timestamp: new Date().toISOString(),
-                    referrer: document.referrer || 'direct'
-                };
-
-                // Use the site's analytics if available
-                if (window.analytics && typeof window.analytics.trackEvent === 'function') {
-                    window.analytics.trackEvent(format.eventName, payload);
-                }
-
-                // Also send directly to Google Apps Script
-                var endpoint = OTR_ANALYTICS_CONFIG.readerCounterUrl;
-                // Check if tracking is enabled
-                if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
-                    try {
-                        fetch(endpoint, {
-                            method: 'POST',
-                            mode: 'no-cors',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                    } catch (e) {
-                        // Ignore errors - fire and forget
-                    }
-                } else {
-                    console.log('[OTR Analytics]', new Date().toISOString(), 'SUPPRESSED:', format.eventName, JSON.stringify(payload));
-                }
-            }
-
-            // Handle download click
-            function handleDownloadClick(format, btn) {
-                // Check if already downloading
-                if (downloadingFlags[format.id]) return;
-
-                // Set downloading flag
-                downloadingFlags[format.id] = true;
-
-                // Update button state
-                btn.textContent = format.buttonTextActive;
-                btn.classList.add('downloading');
-
-                // Fire analytics event
-                fireAnalyticsEvent(format);
-
-                // Trigger file download
-                var link = document.createElement('a');
-                link.href = format.url;
-                link.download = format.filename;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                // After 5 seconds, restore button
-                setTimeout(function() {
-                    btn.textContent = format.buttonText;
-                    btn.classList.remove('downloading');
-                    downloadingFlags[format.id] = false;
-                }, 5000);
-            }
-
-            // Handle link click
-            function handleLinkClick(format) {
-                // Fire analytics event
-                fireAnalyticsEvent(format);
-
-                // Open URL in new tab
-                window.open(format.url, '_blank', 'noopener');
-            }
-
-            // Create a format card
-            function createCard(format) {
-                var card = document.createElement('div');
-                card.className = 'format-card';
-                card.dataset.formatId = format.id;
-
-                var title = document.createElement('h3');
-                title.className = 'format-title';
-                title.textContent = format.title;
-
-                var desc = document.createElement('p');
-                desc.className = 'format-description';
-                desc.textContent = format.description;
-
-                var detail = document.createElement('p');
-                detail.className = 'format-detail';
-                detail.textContent = format.detail || '';
-
-                var btn = document.createElement('button');
-                btn.className = 'format-btn';
-                btn.type = 'button';
-
-                if (!format.active) {
-                    btn.textContent = 'COMING SOON';
-                    btn.classList.add('inactive');
-                } else {
-                    btn.textContent = format.buttonText;
-
-                    if (format.type === 'download') {
-                        btn.addEventListener('click', function() {
-                            handleDownloadClick(format, btn);
-                        });
-                    } else if (format.type === 'link') {
-                        btn.addEventListener('click', function() {
-                            handleLinkClick(format);
-                        });
-                    }
-                }
-
-                card.appendChild(title);
-                card.appendChild(desc);
-                if (format.detail) {
-                    card.appendChild(detail);
-                }
-                card.appendChild(btn);
-
-                return card;
-            }
-
-            // Create section label
-            function createSectionLabel(text) {
-                var label = document.createElement('div');
-                label.className = 'section-label';
-                label.textContent = text;
-                return label;
-            }
-
-            // Render all formats
-            function render() {
-                var fragment = document.createDocumentFragment();
-
-                // Downloads section
-                if (GET_FORMATS.downloads && GET_FORMATS.downloads.length > 0) {
-                    fragment.appendChild(createSectionLabel('FILES'));
-                    GET_FORMATS.downloads.forEach(function(format) {
-                        fragment.appendChild(createCard(format));
-                    });
-                }
-
-                // Bookstores section
-                if (GET_FORMATS.bookstores && GET_FORMATS.bookstores.length > 0) {
-                    fragment.appendChild(createSectionLabel('BOOKSTORES'));
-                    GET_FORMATS.bookstores.forEach(function(format) {
-                        fragment.appendChild(createCard(format));
-                    });
-                }
-
-                container.appendChild(fragment);
-            }
-
-            // Initialize
-            render();
-        })();
-    </script>
 
     <!-- Sidebar Navigation (builds TOC identical to navigation.js) -->
     <script type="module">
@@ -1125,18 +694,16 @@
 
     <!-- PDF Download Tracking -->
     <script>
-        function trackPdfDownload(buttonOption) {
+        function trackPdfDownload() {
             var payload = {
                 event: 'pdf_download',
                 reader_name: localStorage.getItem('otr_reader_name') || 'anonymous',
                 timestamp: new Date().toISOString(),
-                device: navigator.userAgent,
-                button_option: buttonOption
+                device: navigator.userAgent
             };
 
             // Fire and forget — do NOT block the download
             try {
-                // Check if tracking is enabled
                 if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
                     fetch(OTR_ANALYTICS_CONFIG.analyticsScriptUrl, {
                         method: 'POST',
@@ -1145,7 +712,7 @@
                         body: JSON.stringify(payload)
                     }).then(function() {
                         console.log('[OTR Analytics] PDF download tracked');
-                    }).catch(function(err) {
+                    }).catch(function() {
                         console.log('[OTR Analytics] PDF tracking failed — download proceeded');
                     });
                 } else {
