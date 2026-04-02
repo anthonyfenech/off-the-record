@@ -251,6 +251,143 @@
                 padding: 16px;
             }
         }
+
+        /* ========== PDF BUTTON OPTIONS ========== */
+
+        .option-preview {
+            margin-bottom: 32px;
+        }
+
+        .option-label {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        /* OPTION A: Clean Text Button */
+        .pdf-btn-option-a {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            padding: 14px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #000;
+            border-radius: 4px;
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .pdf-btn-option-a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .pdf-btn-option-a:active {
+            transform: scale(0.98);
+        }
+
+        /* OPTION B: Styled Accent Button */
+        .pdf-btn-option-b {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            padding: 14px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            background: #c41e3a;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+            transition: all 0.15s ease;
+        }
+
+        .pdf-btn-option-b:hover {
+            background: #a01830;
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+        }
+
+        .pdf-btn-option-b:active {
+            transform: scale(0.98);
+        }
+
+        /* OPTION C: Emoji Card Button */
+        .pdf-btn-option-c {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            text-decoration: none;
+            border: 2px solid #000;
+            border-radius: 8px;
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .pdf-btn-option-c:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pdf-btn-option-c:active {
+            transform: scale(0.98);
+        }
+
+        .pdf-btn-option-c .pdf-emoji {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .pdf-btn-option-c .pdf-text {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Dark mode for PDF options */
+        [data-theme="dark"] .pdf-btn-option-a {
+            background: #1a1a1a;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        [data-theme="dark"] .pdf-btn-option-a:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        [data-theme="dark"] .pdf-btn-option-c {
+            background: #1a1a1a;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* ========== END PDF BUTTON OPTIONS ========== */
     </style>
 </head>
 <body>
@@ -322,6 +459,38 @@
             </header>
             <div class="chapter-body" id="chapterBody">
                 <div id="formats-container"></div>
+
+                <!-- ========== PDF BUTTON OPTIONS (PICK ONE) ========== -->
+                <div id="pdf-button-options" style="margin-top: 48px; padding-top: 32px; border-top: 1px dashed #ccc;">
+                    <p style="font-family: 'Courier New', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #999; text-align: center; margin-bottom: 32px;">— PDF BUTTON OPTIONS (PICK ONE) —</p>
+
+                    <!-- OPTION A: Clean Text Button -->
+                    <div class="option-preview">
+                        <p class="option-label">OPTION A — CLEAN TEXT</p>
+                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-btn-option-a" onclick="trackPdfDownload('option_a')">
+                            DOWNLOAD PDF
+                        </a>
+                    </div>
+
+                    <!-- OPTION B: Styled Accent Button -->
+                    <div class="option-preview">
+                        <p class="option-label">OPTION B — STYLED ACCENT</p>
+                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-btn-option-b" onclick="trackPdfDownload('option_b')">
+                            GET THE PDF
+                        </a>
+                    </div>
+
+                    <!-- OPTION C: Emoji Button -->
+                    <div class="option-preview">
+                        <p class="option-label">OPTION C — EMOJI CARD</p>
+                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-btn-option-c" onclick="trackPdfDownload('option_c')">
+                            <span class="pdf-emoji">📄</span>
+                            <span class="pdf-text">DOWNLOAD</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- ========== END PDF BUTTON OPTIONS ========== -->
+
             </div>
         </article>
     </main>
@@ -950,6 +1119,43 @@
     <!-- Reader Persona & Analytics -->
     <script src="./js/reader-name.min.js?v=423"></script>
     <script src="./js/analytics.min.js?v=423"></script>
+
+    <!-- PDF Download Tracking -->
+    <script>
+        function trackPdfDownload(buttonOption) {
+            var payload = {
+                event: 'pdf_download',
+                reader_name: localStorage.getItem('otr_reader_name') || 'anonymous',
+                timestamp: new Date().toISOString(),
+                device: navigator.userAgent,
+                button_option: buttonOption
+            };
+
+            // Fire and forget — do NOT block the download
+            try {
+                // Check if tracking is enabled
+                if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
+                    fetch(OTR_ANALYTICS_CONFIG.analyticsScriptUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).then(function() {
+                        console.log('[OTR Analytics] PDF download tracked');
+                    }).catch(function(err) {
+                        console.log('[OTR Analytics] PDF tracking failed — download proceeded');
+                    });
+                } else {
+                    console.log('[OTR Analytics] PDF download tracked (suppressed — tracking disabled)', payload);
+                }
+            } catch (e) {
+                console.log('[OTR Analytics] PDF tracking failed — download proceeded');
+            }
+
+            // Return true to allow the default link action (download)
+            return true;
+        }
+    </script>
 
     <script src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
