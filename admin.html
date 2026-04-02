@@ -1042,6 +1042,8 @@
             background: #dc3545;
         }
     </style>
+    <!-- Analytics Config (required for counter fetch) -->
+    <script src="./js/analytics-config.js"></script>
 </head>
 <body>
     <header class="admin-header">
@@ -1997,6 +1999,123 @@
         // Initialize
         renderPromptsTable();
         window.updatePromptTypeFields();
+
+        // ====== READER COUNTER SYSTEM ======
+
+        /**
+         * Format number with commas for display
+         */
+        function formatCounterNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        /**
+         * Fetch and display all counter values from Google Apps Script
+         */
+        async function fetchAdminCounters() {
+            const elements = {
+                pdf: document.getElementById('pdf-count'),
+                epub: document.getElementById('epub-count'),
+                start: document.getElementById('start-count'),
+                kindle: document.getElementById('kindle-count'),
+                total: document.getElementById('total-count')
+            };
+
+            // Check if config is available
+            if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.readerCounterUrl) {
+                console.error('[OTR Admin] Analytics config not loaded');
+                Object.values(elements).forEach(el => { if (el) el.textContent = '—'; });
+                return;
+            }
+
+            try {
+                const response = await fetch(OTR_ANALYTICS_CONFIG.readerCounterUrl + '?action=getCounters');
+                const data = await response.json();
+
+                if (data.error) {
+                    console.warn('[OTR Admin] Counter API error:', data.error);
+                    Object.values(elements).forEach(el => { if (el) el.textContent = '—'; });
+                    return;
+                }
+
+                // Populate counter elements
+                if (elements.pdf) elements.pdf.textContent = formatCounterNumber(data.pdf_download || 0);
+                if (elements.epub) elements.epub.textContent = formatCounterNumber(data.epub_download || 0);
+                if (elements.start) elements.start.textContent = formatCounterNumber(data.apple_books_click || 0);
+                if (elements.kindle) elements.kindle.textContent = formatCounterNumber(data.kindle_click || 0);
+                if (elements.total) elements.total.textContent = formatCounterNumber(data.total || 0);
+
+                console.log('[OTR Admin] Counters loaded — PDF:', data.pdf_download || 0,
+                    ', EPUB:', data.epub_download || 0,
+                    ', Apple Books:', data.apple_books_click || 0,
+                    ', Kindle:', data.kindle_click || 0,
+                    ', Total:', data.total || 0);
+
+            } catch (error) {
+                console.error('[OTR Admin] Failed to fetch counters:', error);
+                Object.values(elements).forEach(el => { if (el) el.textContent = '—'; });
+            }
+        }
+
+        /**
+         * Handle SET button clicks for manual counter updates
+         */
+        function initCounterSetButtons() {
+            const setButtons = document.querySelectorAll('.counter-set-btn');
+
+            setButtons.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const type = btn.dataset.type;
+                    const input = btn.previousElementSibling;
+                    const value = parseInt(input.value, 10);
+
+                    if (isNaN(value) || value < 0) {
+                        alert('Please enter a valid number');
+                        return;
+                    }
+
+                    // Check if config is available
+                    if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.readerCounterUrl) {
+                        alert('Analytics config not loaded');
+                        return;
+                    }
+
+                    btn.textContent = '...';
+                    btn.disabled = true;
+
+                    try {
+                        await fetch(OTR_ANALYTICS_CONFIG.readerCounterUrl, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                action: 'setCounter',
+                                type: type,
+                                value: value
+                            })
+                        });
+
+                        // Refresh counters after a short delay (no-cors doesn't return response)
+                        setTimeout(() => {
+                            fetchAdminCounters();
+                            btn.textContent = 'SET';
+                            btn.disabled = false;
+                            input.value = '';
+                        }, 1000);
+
+                    } catch (error) {
+                        console.error('[OTR Admin] Failed to set counter:', error);
+                        btn.textContent = 'SET';
+                        btn.disabled = false;
+                        alert('Failed to update counter');
+                    }
+                });
+            });
+        }
+
+        // Initialize counter system
+        fetchAdminCounters();
+        initCounterSetButtons();
     </script>
 </body>
 </html>
