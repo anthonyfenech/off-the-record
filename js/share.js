@@ -32,7 +32,9 @@
     let overlay = null;
     let currentImageBlob = null;
     let currentImageDataUrl = null;
+    let currentPreviewUrl = null;
     let currentTextExcerpt = '';
+    let isProcessing = false;
 
     // Check if clipboard image copy is supported (not in Firefox)
     const canCopyImages = typeof ClipboardItem !== 'undefined';
@@ -48,7 +50,7 @@
         oButton.id = 'share-o-button';
         oButton.className = 'share-o-button';
         oButton.textContent = 'O';
-        oButton.setAttribute('aria-label', 'Share excerpt');
+        oButton.setAttribute('aria-label', 'Share this passage');
         oButton.addEventListener('click', handleOButtonClick);
 
         document.body.appendChild(oButton);
@@ -190,24 +192,26 @@
         const maxTextWidth = CANVAS_WIDTH - (CANVAS_PADDING * 2);
         const lineHeight = CANVAS_FONT_SIZE * CANVAS_LINE_HEIGHT;
 
-        // First pass: calculate total height needed
+        // First pass: calculate total height needed AND cache wrapped lines
         let totalHeight = CANVAS_PADDING; // Top padding
+        const wrappedContent = [];
 
         content.forEach((item, index) => {
             if (item.type === 'scene-break') {
-                totalHeight += lineHeight * 2; // Extra spacing for scene break
+                totalHeight += lineHeight * 2;
+                wrappedContent.push({ type: 'scene-break' });
             } else if (item.type === 'paragraph') {
                 const lines = wrapText(ctx, item.runs, maxTextWidth, CANVAS_FONT_SIZE);
                 totalHeight += lines.length * lineHeight;
+                wrappedContent.push({ type: 'paragraph', lines: lines });
 
-                // Add paragraph spacing (except for last)
                 if (index < content.length - 1) {
-                    totalHeight += 24; // Paragraph gap
+                    totalHeight += 24;
                 }
             }
         });
 
-        totalHeight += CANVAS_PADDING; // Bottom padding
+        totalHeight += CANVAS_PADDING;
 
         // Clamp height
         let finalHeight = Math.max(CANVAS_MIN_HEIGHT, Math.min(CANVAS_MAX_HEIGHT, totalHeight));
@@ -217,29 +221,26 @@
         ctx.fillStyle = CANVAS_BG;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Render text
-        let y = CANVAS_PADDING + CANVAS_FONT_SIZE; // Start position
-        const availableHeight = finalHeight - CANVAS_PADDING - 100; // Leave room for watermark
+        // Render text using cached wrapped lines
+        let y = CANVAS_PADDING + CANVAS_FONT_SIZE;
+        const availableHeight = finalHeight - CANVAS_PADDING - 100;
         let truncated = false;
 
-        for (let i = 0; i < content.length && y < availableHeight; i++) {
-            const item = content[i];
+        for (let i = 0; i < wrappedContent.length && y < availableHeight; i++) {
+            const item = wrappedContent[i];
 
             if (item.type === 'scene-break') {
-                y += lineHeight * 0.5; // Space before
+                y += lineHeight * 0.5;
 
-                // Draw centered ***
                 ctx.font = `${CANVAS_FONT_SIZE}px "Literata", Georgia, serif`;
                 ctx.fillStyle = CANVAS_TEXT_COLOR;
                 ctx.textAlign = 'center';
                 ctx.fillText('***', CANVAS_WIDTH / 2, y);
                 ctx.textAlign = 'left';
 
-                y += lineHeight * 1.5; // Space after
+                y += lineHeight * 1.5;
             } else if (item.type === 'paragraph') {
-                const lines = wrapText(ctx, item.runs, maxTextWidth, CANVAS_FONT_SIZE);
-
-                for (const line of lines) {
+                for (const line of item.lines) {
                     if (y > availableHeight) {
                         truncated = true;
                         break;
@@ -258,8 +259,7 @@
                     y += lineHeight;
                 }
 
-                // Paragraph spacing
-                if (i < content.length - 1 && !truncated) {
+                if (i < wrappedContent.length - 1 && !truncated) {
                     y += 24;
                 }
             }
@@ -267,7 +267,6 @@
             if (truncated) break;
         }
 
-        // If truncated, add ellipsis
         if (truncated) {
             ctx.font = `${CANVAS_FONT_SIZE}px "Literata", Georgia, serif`;
             ctx.fillStyle = CANVAS_TEXT_COLOR;
@@ -341,27 +340,30 @@
         overlay = document.createElement('div');
         overlay.id = 'share-overlay';
         overlay.className = 'share-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', 'Share passage');
         overlay.innerHTML = `
             <div class="share-modal">
-                <button class="share-close" aria-label="Close">&times;</button>
+                <button class="share-close" aria-label="Close share dialog">&times;</button>
                 <div class="share-preview">
-                    <img id="share-preview-img" alt="Preview" />
+                    <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
-                <div class="share-actions">
-                    <button class="share-btn share-btn-x" data-action="twitter">
+                <div class="share-actions" role="group" aria-label="Share options">
+                    <button class="share-btn share-btn-x" data-action="twitter" aria-label="Share to X (Twitter)">
                         <span class="share-btn-text">Share to X</span>
                     </button>
-                    <button class="share-btn share-btn-copy" data-action="copy">
+                    <button class="share-btn share-btn-copy" data-action="copy" aria-label="${canCopyImages ? 'Copy image to clipboard' : 'Download image'}">
                         <span class="share-btn-text">${canCopyImages ? 'Copy Image' : 'Download Image'}</span>
                     </button>
-                    <button class="share-btn share-btn-email" data-action="email">
+                    <button class="share-btn share-btn-email" data-action="email" aria-label="Share via email">
                         <span class="share-btn-text">Email</span>
                     </button>
-                    <button class="share-btn share-btn-native" data-action="native" style="display: none;">
+                    <button class="share-btn share-btn-native" data-action="native" style="display: none;" aria-label="Share using device share menu">
                         <span class="share-btn-text">Share</span>
                     </button>
                 </div>
-                <div class="share-toast" id="share-toast"></div>
+                <div class="share-toast" id="share-toast" role="status" aria-live="polite"></div>
             </div>
         `;
 
@@ -385,13 +387,39 @@
             btn.addEventListener('click', handleShareAction);
         });
 
-        // Escape key
-        document.addEventListener('keydown', handleEscapeKey);
+        // Escape key and focus trap
+        document.addEventListener('keydown', handleOverlayKeydown);
+
+        // Set initial focus to close button
+        requestAnimationFrame(() => {
+            const closeBtn = overlay.querySelector('.share-close');
+            if (closeBtn) closeBtn.focus();
+        });
     }
 
-    function handleEscapeKey(e) {
-        if (e.key === 'Escape' && overlay) {
+    function handleOverlayKeydown(e) {
+        if (!overlay) return;
+
+        if (e.key === 'Escape') {
             closeOverlay();
+            return;
+        }
+
+        // Focus trap
+        if (e.key === 'Tab') {
+            const focusableElements = overlay.querySelectorAll(
+                'button:not([style*="display: none"]):not([disabled])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
         }
     }
 
@@ -405,10 +433,23 @@
                 }
             }, 300);
         }
-        document.removeEventListener('keydown', handleEscapeKey);
+        document.removeEventListener('keydown', handleOverlayKeydown);
+
+        // Clean up object URL to prevent memory leak
+        if (currentPreviewUrl) {
+            URL.revokeObjectURL(currentPreviewUrl);
+            currentPreviewUrl = null;
+        }
+
         currentImageBlob = null;
         currentImageDataUrl = null;
         currentTextExcerpt = '';
+        isProcessing = false;
+
+        // Return focus to O button
+        if (oButton) {
+            oButton.focus();
+        }
     }
 
     function showToast(message) {
@@ -542,13 +583,31 @@
     // MAIN CAPTURE FLOW
     // ═══════════════════════════════════════════════════════════════
 
+    function isModalOpen() {
+        // Check for any conflicting modals that might be open
+        const mediaModal = document.querySelector('.media-modal-overlay.active, .lightbox-overlay.active, .photo-modal-overlay.active');
+        return !!mediaModal;
+    }
+
     function captureAndShowOverlay() {
+        // Debounce: ignore if already processing or overlay is open
+        if (isProcessing || overlay) {
+            return;
+        }
+
+        // Don't open share if another modal is active
+        if (isModalOpen()) {
+            return;
+        }
+
         const content = captureVisibleText();
 
         if (content.length === 0) {
             console.warn('[Share] No visible text to capture');
             return;
         }
+
+        isProcessing = true;
 
         // Show loading state on O button
         if (oButton) {
@@ -566,39 +625,55 @@
 
         // Render to canvas (use setTimeout to allow loading animation to start)
         setTimeout(() => {
-            const canvas = renderToCanvas(content);
+            try {
+                const canvas = renderToCanvas(content);
 
-            // Store data URL for Firefox download fallback
-            currentImageDataUrl = canvas.toDataURL('image/png');
+                // Store data URL for Firefox download fallback
+                try {
+                    currentImageDataUrl = canvas.toDataURL('image/png');
+                } catch (err) {
+                    console.error('[Share] Failed to get data URL:', err);
+                }
 
-            // Convert to blob
-            canvas.toBlob(blob => {
-                // Remove loading state
+                // Convert to blob
+                canvas.toBlob(blob => {
+                    // Remove loading state
+                    if (oButton) {
+                        oButton.classList.remove('loading');
+                    }
+
+                    if (!blob) {
+                        console.error('[Share] Failed to create image blob');
+                        isProcessing = false;
+                        return;
+                    }
+
+                    currentImageBlob = blob;
+
+                    // Create and show overlay
+                    createOverlay();
+
+                    // Set preview image with tracked URL for cleanup
+                    const previewImg = document.getElementById('share-preview-img');
+                    if (previewImg) {
+                        currentPreviewUrl = URL.createObjectURL(blob);
+                        previewImg.src = currentPreviewUrl;
+                    }
+
+                    // Show overlay with animation
+                    requestAnimationFrame(() => {
+                        if (overlay) {
+                            overlay.classList.add('visible');
+                        }
+                    });
+                }, 'image/png');
+            } catch (err) {
+                console.error('[Share] Canvas rendering failed:', err);
                 if (oButton) {
                     oButton.classList.remove('loading');
                 }
-
-                if (!blob) {
-                    console.error('[Share] Failed to create image blob');
-                    return;
-                }
-
-                currentImageBlob = blob;
-
-                // Create and show overlay
-                createOverlay();
-
-                // Set preview image
-                const previewImg = document.getElementById('share-preview-img');
-                if (previewImg) {
-                    previewImg.src = URL.createObjectURL(blob);
-                }
-
-                // Show overlay with animation
-                requestAnimationFrame(() => {
-                    overlay.classList.add('visible');
-                });
-            }, 'image/png');
+                isProcessing = false;
+            }
         }, 50);
     }
 
