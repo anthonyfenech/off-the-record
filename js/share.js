@@ -332,6 +332,16 @@
     // SHARE OVERLAY
     // ═══════════════════════════════════════════════════════════════
 
+    // SVG Icons (inline, minimal, white stroke)
+    const ICONS = {
+        x: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M4 20L20 4"/></svg>',
+        email: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6L12 13 2 6"/></svg>',
+        copy: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',
+        download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>',
+        share: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>',
+        close: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+    };
+
     function createOverlay() {
         if (overlay) {
             overlay.remove();
@@ -345,22 +355,26 @@
         overlay.setAttribute('aria-label', 'Share passage');
         overlay.innerHTML = `
             <div class="share-modal">
-                <button class="share-close" aria-label="Close share dialog">&times;</button>
+                <button class="share-close" aria-label="Close share dialog">${ICONS.close}</button>
                 <div class="share-preview">
                     <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
                 <div class="share-actions" role="group" aria-label="Share options">
-                    <button class="share-btn share-btn-x" data-action="twitter" aria-label="Share to X (Twitter)">
-                        <span class="share-btn-text">Share to X</span>
+                    <button class="share-btn" data-action="twitter" aria-label="Share to X">
+                        ${ICONS.x}
+                        <span class="share-btn-label">X</span>
                     </button>
-                    <button class="share-btn share-btn-copy" data-action="copy" aria-label="${canCopyImages ? 'Copy image to clipboard' : 'Download image'}">
-                        <span class="share-btn-text">${canCopyImages ? 'Copy Image' : 'Download Image'}</span>
+                    <button class="share-btn" data-action="email" aria-label="Email">
+                        ${ICONS.email}
+                        <span class="share-btn-label">Email</span>
                     </button>
-                    <button class="share-btn share-btn-email" data-action="email" aria-label="Share via email">
-                        <span class="share-btn-text">Email</span>
+                    <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">
+                        ${canCopyImages ? ICONS.copy : ICONS.download}
+                        <span class="share-btn-label">${canCopyImages ? 'Copy' : 'Save'}</span>
                     </button>
-                    <button class="share-btn share-btn-native" data-action="native" style="display: none;" aria-label="Share using device share menu">
-                        <span class="share-btn-text">Share</span>
+                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share">
+                        ${ICONS.share}
+                        <span class="share-btn-label">Share</span>
                     </button>
                 </div>
                 <div class="share-toast" id="share-toast" role="status" aria-live="polite"></div>
@@ -369,11 +383,11 @@
 
         document.body.appendChild(overlay);
 
-        // Check for native share support
-        if (navigator.share && navigator.canShare) {
+        // Check for native share support - hide if unavailable
+        if (!navigator.share || !navigator.canShare) {
             const nativeBtn = overlay.querySelector('.share-btn-native');
             if (nativeBtn) {
-                nativeBtn.style.display = 'flex';
+                nativeBtn.style.display = 'none';
             }
         }
 
