@@ -1264,8 +1264,9 @@
                     <div class="counter-stats-compact">
                         <p>📄 PDF Downloads: <span id="pdf-count">0</span></p>
                         <p>📚 EPUB Downloads: <span id="epub-count">0</span></p>
-                        <p>🍎 Apple Books: <span id="start-count">0</span></p>
+                        <p>🍎 Apple Books: <span id="apple-count">0</span></p>
                         <p>📱 Kindle: <span id="kindle-count">0</span></p>
+                        <p>📖 Start Reading: <span id="start-count">0</span></p>
                         <p class="counter-total-compact">👥 TOTAL: <span id="total-count">0</span></p>
                     </div>
                     <div class="toggle-row">
@@ -2016,8 +2017,9 @@
             const elements = {
                 pdf: document.getElementById('pdf-count'),
                 epub: document.getElementById('epub-count'),
-                start: document.getElementById('start-count'),
+                apple: document.getElementById('apple-count'),
                 kindle: document.getElementById('kindle-count'),
+                start: document.getElementById('start-count'),
                 total: document.getElementById('total-count')
             };
 
@@ -2041,14 +2043,16 @@
                 // Populate counter elements
                 if (elements.pdf) elements.pdf.textContent = formatCounterNumber(data.pdf_download || 0);
                 if (elements.epub) elements.epub.textContent = formatCounterNumber(data.epub_download || 0);
-                if (elements.start) elements.start.textContent = formatCounterNumber(data.start_reading || 0);
+                if (elements.apple) elements.apple.textContent = formatCounterNumber(data.apple_books_click || 0);
                 if (elements.kindle) elements.kindle.textContent = formatCounterNumber(data.kindle_click || 0);
+                if (elements.start) elements.start.textContent = formatCounterNumber(data.start_reading || 0);
                 if (elements.total) elements.total.textContent = formatCounterNumber(data.total || 0);
 
                 console.log('[OTR Admin] Counters loaded — PDF:', data.pdf_download || 0,
                     ', EPUB:', data.epub_download || 0,
-                    ', Start Reading:', data.start_reading || 0,
+                    ', Apple Books:', data.apple_books_click || 0,
                     ', Kindle:', data.kindle_click || 0,
+                    ', Start Reading:', data.start_reading || 0,
                     ', Total:', data.total || 0);
 
             } catch (error) {
