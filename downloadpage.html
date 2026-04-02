@@ -490,7 +490,7 @@
                 }
 
                 // Also send directly to Google Apps Script
-                var endpoint = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
+                var endpoint = OTR_ANALYTICS_CONFIG.readerCounterUrl;
                 // Check if tracking is enabled
                 if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
                     try {
