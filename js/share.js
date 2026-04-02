@@ -282,8 +282,14 @@
 
         // If previous sibling is NOT in viewport, the first captured is mid-thought - skip it
         if (prevBottom <= viewportTop || prevRect.top + window.scrollY >= viewportBottom) {
-            // Skip the first paragraph
-            return content.slice(1);
+            // Skip the first paragraph, but ensure at least one paragraph remains
+            const remaining = content.slice(1);
+            const hasRemainingParagraph = remaining.some(item => item.type === 'paragraph');
+            if (hasRemainingParagraph) {
+                return remaining;
+            }
+            // Mid-thought share card is better than empty one - keep original
+            return content;
         }
 
         return content;
@@ -300,21 +306,47 @@
             showTitle: false
         };
 
-        // Get chapter title from DOM
-        const titleEl = document.getElementById('chapterTitle');
-        if (titleEl) {
+        // Get chapter title from DOM - try multiple selectors for robustness
+        const titleEl = document.getElementById('chapterTitle') ||
+                        document.querySelector('.chapter-title') ||
+                        document.querySelector('.chapter-header h2');
+        if (titleEl && titleEl.textContent && titleEl.textContent.trim()) {
             info.title = titleEl.textContent.trim();
         }
 
         // Check if near top of chapter (Fix 6)
-        const chapterBody = document.getElementById('chapterBody');
-        if (chapterBody) {
-            const rect = chapterBody.getBoundingClientRect();
-            info.showTitle = rect.top > -window.innerHeight;
+        // Safety net: never show title for chapters -1 (title page) or 0 (TOC)
+        const currentId = window.currentChapterId;
+        if (currentId === -1 || currentId === 0 || currentId === '-1' || currentId === '0') {
+            info.showTitle = false;
+        } else {
+            // Fallback: get title from CHAPTERS array if DOM element was empty
+            if (!info.title && window.CHAPTERS && typeof currentId === 'number' && currentId > 0) {
+                for (const chapter of window.CHAPTERS) {
+                    if (chapter.id === currentId && chapter.title) {
+                        info.title = chapter.title;
+                        break;
+                    }
+                }
+            }
+
+            // Show title if the chapter header is visible OR we're within the first screen of content
+            const chapterHeader = document.querySelector('.chapter-header');
+            const chapterBody = document.getElementById('chapterBody');
+            if (chapterHeader && chapterBody) {
+                const headerRect = chapterHeader.getBoundingClientRect();
+                const bodyRect = chapterBody.getBoundingClientRect();
+                // Show title if: header is on screen OR body top is above screen but within one viewport height
+                const headerVisible = headerRect.bottom > 0;
+                const nearTop = bodyRect.top > -window.innerHeight;
+                info.showTitle = headerVisible || nearTop;
+            } else if (chapterBody) {
+                const rect = chapterBody.getBoundingClientRect();
+                info.showTitle = rect.top > -window.innerHeight;
+            }
         }
 
-        // Get year from CHAPTERS array
-        const currentId = window.currentChapterId;
+        // Get year from CHAPTERS array (reuse currentId from above)
         if (typeof currentId === 'number' && currentId > 0 && window.CHAPTERS) {
             // CHAPTERS array: index 0 = title page (id -1), index 1 = TOC (id 0), index 2+ = chapters
             // Find the chapter with matching id
@@ -338,14 +370,26 @@
 
         // Regex to match: Month + space + day number + em dash
         // Must have month name (not time-only like "10:32 A.M.—")
-        const datelineRegex = /(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+(\d{1,2})(\u2014)/g;
+        // Full coverage: all 12 months + common abbreviations including May
+        const datelineRegex = /(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+(\d{1,2})(\u2014)/g;
 
-        return text.replace(datelineRegex, (match, month, day, emDash) => {
+        return text.replace(datelineRegex, (match, month, day, emDash, offset) => {
             // Check if there's already a year (4 digits) before the em dash
-            // This is a safety check - shouldn't happen but just in case
             const beforeEmDash = match.slice(0, -1); // Remove em dash
             if (/\d{4}/.test(beforeEmDash)) {
                 return match; // Already has year, don't modify
+            }
+
+            // Dateline context check: only apply year if:
+            // 1. Pattern is at the very start of the text (offset 0), OR
+            // 2. Pattern is immediately preceded by ALL-CAPS city name + comma
+            const isAtStart = offset === 0;
+            const textBefore = text.slice(Math.max(0, offset - 50), offset);
+            // Match: ALL-CAPS word(s) + optional punctuation/spaces + comma + optional space at end
+            const hasCityPrefix = /[A-Z]{2,}(?:[',.\s]+[A-Z]{2,})*,\s*$/.test(textBefore);
+
+            if (!isAtStart && !hasCityPrefix) {
+                return match; // Mid-sentence, not a dateline — leave unchanged
             }
 
             return `${month} ${day}, ${year}${emDash}`;
@@ -538,9 +582,9 @@
     // SHARE OVERLAY
     // ═══════════════════════════════════════════════════════════════
 
-    // SVG Icons (inline, minimal, white stroke)
+    // SVG Icons (inline, minimal)
     const ICONS = {
-        x: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M4 20L20 4"/></svg>',
+        x: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
         email: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6L12 13 2 6"/></svg>',
         copy: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',
         download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>',
