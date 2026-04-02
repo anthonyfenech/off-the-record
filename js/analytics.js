@@ -114,21 +114,27 @@
             return false;
         }
 
-        try {
-            await fetch(GOOGLE_SHEETS_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(enrichedData)
-            });
+        // Check if tracking is enabled
+        if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
+            try {
+                await fetch(GOOGLE_SHEETS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(enrichedData)
+                });
+                return true;
+            } catch (error) {
+                // Queue failed event for retry
+                const failedQueue = loadFailedQueue();
+                failedQueue.push(enrichedData);
+                saveFailedQueue(failedQueue);
+                console.warn('[Analytics] Queued for retry:', error.message);
+                return false;
+            }
+        } else {
+            console.log('[OTR Analytics]', new Date().toISOString(), 'SUPPRESSED:', data.event || 'unknown', JSON.stringify(enrichedData));
             return true;
-        } catch (error) {
-            // Queue failed event for retry
-            const failedQueue = loadFailedQueue();
-            failedQueue.push(enrichedData);
-            saveFailedQueue(failedQueue);
-            console.warn('[Analytics] Queued for retry:', error.message);
-            return false;
         }
     }
 
@@ -467,10 +473,15 @@
                 timestamp: new Date().toISOString()
             };
 
-            try {
-                navigator.sendBeacon(GOOGLE_SHEETS_URL, JSON.stringify(data));
-            } catch (error) {
-                // Ignore beacon errors
+            // Check if tracking is enabled
+            if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
+                try {
+                    navigator.sendBeacon(GOOGLE_SHEETS_URL, JSON.stringify(data));
+                } catch (error) {
+                    // Ignore beacon errors
+                }
+            } else {
+                console.log('[OTR Analytics]', new Date().toISOString(), 'SUPPRESSED:', 'page_unload', JSON.stringify(data));
             }
         }
     }

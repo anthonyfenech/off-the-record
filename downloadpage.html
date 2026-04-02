@@ -491,15 +491,20 @@
 
                 // Also send directly to Google Apps Script
                 var endpoint = 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec';
-                try {
-                    fetch(endpoint, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                } catch (e) {
-                    // Ignore errors - fire and forget
+                // Check if tracking is enabled
+                if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
+                    try {
+                        fetch(endpoint, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                    } catch (e) {
+                        // Ignore errors - fire and forget
+                    }
+                } else {
+                    console.log('[OTR Analytics]', new Date().toISOString(), 'SUPPRESSED:', format.eventName, JSON.stringify(payload));
                 }
             }
 
@@ -938,6 +943,9 @@
 
     <!-- Overlay Failsafes -->
     <script src="./js/failsafes.js?v=423"></script>
+
+    <!-- Analytics Config (must load before analytics scripts) -->
+    <script src="./js/analytics-config.js?v=423"></script>
 
     <!-- Reader Persona & Analytics -->
     <script src="./js/reader-name.js?v=423"></script>
