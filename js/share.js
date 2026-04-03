@@ -17,13 +17,32 @@
     const CANVAS_MIN_HEIGHT = 400;
     const CANVAS_MAX_HEIGHT = 1920;
     const CANVAS_PADDING = 120;
-    const CANVAS_BG = '#1a1a1a';
-    const CANVAS_TEXT_COLOR = '#f5f5f5';
     const CANVAS_FONT_SIZE = 42;
     const CANVAS_LINE_HEIGHT = 1.6;
     const CANVAS_TITLE_SIZE = 48;
     const WATERMARK_SIZE = 160;
-    const WATERMARK_OPACITY = 0.22;
+
+    // Theme-aware colors
+    const THEME_COLORS = {
+        light: {
+            bg: '#fafafa',
+            text: '#1a1a1a',
+            watermarkOpacity: 0.18
+        },
+        dark: {
+            bg: '#1a1a1a',
+            text: '#f5f5f5',
+            watermarkOpacity: 0.22
+        }
+    };
+
+    function isDarkMode() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+
+    function getThemeColors() {
+        return isDarkMode() ? THEME_COLORS.dark : THEME_COLORS.light;
+    }
 
     // Font loading
     const FONT_FAMILY = 'Literata';
@@ -67,7 +86,8 @@
 
     let oButton = null;
     let overlay = null;
-    let currentImageBlob = null;
+    let currentImageBlob = null;      // PNG for clipboard copy
+    let currentJpegBlob = null;       // JPEG for sharing (smaller file size)
     let currentImageDataUrl = null;
     let currentPreviewUrl = null;
     let currentTextExcerpt = '';
@@ -404,6 +424,9 @@
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
+        // Get theme-aware colors
+        const colors = getThemeColors();
+
         canvas.width = CANVAS_WIDTH;
 
         // Calculate required height
@@ -457,14 +480,14 @@
         canvas.height = finalHeight;
 
         // Fill background
-        ctx.fillStyle = CANVAS_BG;
+        ctx.fillStyle = colors.bg;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Fix 6: Draw chapter title if near top
         let y = CANVAS_PADDING;
         if (showTitle && title) {
             ctx.font = `bold ${CANVAS_TITLE_SIZE}px "Courier New", monospace`;
-            ctx.fillStyle = CANVAS_TEXT_COLOR;
+            ctx.fillStyle = colors.text;
             ctx.textAlign = 'center';
             ctx.fillText(title.toUpperCase(), CANVAS_WIDTH / 2, y + CANVAS_TITLE_SIZE);
             ctx.textAlign = 'left';
@@ -483,7 +506,7 @@
                 y += lineHeight * 0.5;
 
                 ctx.font = `${CANVAS_FONT_SIZE}px "${fontFamily}", Georgia, serif`;
-                ctx.fillStyle = CANVAS_TEXT_COLOR;
+                ctx.fillStyle = colors.text;
                 ctx.textAlign = 'center';
                 ctx.fillText('***', CANVAS_WIDTH / 2, y);
                 ctx.textAlign = 'left';
@@ -501,7 +524,7 @@
                     for (const segment of line) {
                         const fontStyle = segment.italic ? 'italic' : 'normal';
                         ctx.font = `${fontStyle} ${CANVAS_FONT_SIZE}px "${fontFamily}", Georgia, serif`;
-                        ctx.fillStyle = CANVAS_TEXT_COLOR;
+                        ctx.fillStyle = colors.text;
                         ctx.fillText(segment.text, x, y);
                         x += ctx.measureText(segment.text).width;
                     }
@@ -519,14 +542,14 @@
 
         if (truncated) {
             ctx.font = `${CANVAS_FONT_SIZE}px "${fontFamily}", Georgia, serif`;
-            ctx.fillStyle = CANVAS_TEXT_COLOR;
+            ctx.fillStyle = colors.text;
             ctx.fillText('…', CANVAS_PADDING, availableHeight);
         }
 
         // Draw watermark
         ctx.font = `bold ${WATERMARK_SIZE}px "Courier New", monospace`;
         ctx.fillStyle = BRAND_RED;
-        ctx.globalAlpha = WATERMARK_OPACITY;
+        ctx.globalAlpha = colors.watermarkOpacity;
         ctx.textAlign = 'right';
         ctx.fillText('O', CANVAS_WIDTH - 60, finalHeight - 60);
         ctx.globalAlpha = 1;
@@ -699,6 +722,7 @@
         }
 
         currentImageBlob = null;
+        currentJpegBlob = null;
         currentImageDataUrl = null;
         currentTextExcerpt = '';
         isProcessing = false;
@@ -788,17 +812,22 @@
     }
 
     function downloadImage() {
-        if (!currentImageDataUrl) {
+        // Use JPEG for downloads (smaller file size)
+        const blob = currentJpegBlob || currentImageBlob;
+        if (!blob) {
             showToast('No image to download');
             return;
         }
 
+        const isJpeg = blob === currentJpegBlob;
+        const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
-        link.href = currentImageDataUrl;
-        link.download = 'off-the-record-excerpt.png';
+        link.href = url;
+        link.download = isJpeg ? 'off-the-record-excerpt.jpg' : 'off-the-record-excerpt.png';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        URL.revokeObjectURL(url);
         showToast('Image downloaded');
     }
 
@@ -809,10 +838,10 @@
     }
 
     async function nativeShare() {
-        if (!navigator.share || !currentImageBlob) return;
+        if (!navigator.share || !currentJpegBlob) return;
 
         try {
-            const file = new File([currentImageBlob], 'off-the-record-excerpt.png', { type: 'image/png' });
+            const file = new File([currentJpegBlob], 'off-the-record-excerpt.jpg', { type: 'image/jpeg' });
 
             if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 await navigator.share({
@@ -901,37 +930,43 @@
                     console.error('[Share] Failed to get data URL:', err);
                 }
 
-                // Convert to blob
-                canvas.toBlob(blob => {
-                    // Remove loading state
-                    if (oButton) {
-                        oButton.classList.remove('loading');
-                    }
-
-                    if (!blob) {
-                        console.error('[Share] Failed to create image blob');
+                // Convert to PNG blob (for clipboard copy - lossless)
+                canvas.toBlob(pngBlob => {
+                    if (!pngBlob) {
+                        console.error('[Share] Failed to create PNG blob');
+                        if (oButton) oButton.classList.remove('loading');
                         isProcessing = false;
                         return;
                     }
 
-                    currentImageBlob = blob;
+                    currentImageBlob = pngBlob;
 
-                    // Create and show overlay (Fix 5: pass offline state)
-                    createOverlay(navigator.onLine);
-
-                    // Set preview image with tracked URL for cleanup
-                    const previewImg = document.getElementById('share-preview-img');
-                    if (previewImg) {
-                        currentPreviewUrl = URL.createObjectURL(blob);
-                        previewImg.src = currentPreviewUrl;
-                    }
-
-                    // Show overlay with animation
-                    requestAnimationFrame(() => {
-                        if (overlay) {
-                            overlay.classList.add('visible');
+                    // Also create JPEG blob (for sharing - smaller file size)
+                    canvas.toBlob(jpegBlob => {
+                        // Remove loading state
+                        if (oButton) {
+                            oButton.classList.remove('loading');
                         }
-                    });
+
+                        currentJpegBlob = jpegBlob;
+
+                        // Create and show overlay (Fix 5: pass offline state)
+                        createOverlay(navigator.onLine);
+
+                        // Set preview image with tracked URL for cleanup
+                        const previewImg = document.getElementById('share-preview-img');
+                        if (previewImg) {
+                            currentPreviewUrl = URL.createObjectURL(pngBlob);
+                            previewImg.src = currentPreviewUrl;
+                        }
+
+                        // Show overlay with animation
+                        requestAnimationFrame(() => {
+                            if (overlay) {
+                                overlay.classList.add('visible');
+                            }
+                        });
+                    }, 'image/jpeg', 0.92);
                 }, 'image/png');
             } catch (err) {
                 console.error('[Share] Canvas rendering failed:', err);
