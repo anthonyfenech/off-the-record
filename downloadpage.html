@@ -410,6 +410,9 @@
             // DOWNLOAD link (current page - highlighted)
             fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html', current: true }));
 
+            // VERIFIED link
+            fragment.appendChild(createTopSection({ id: 'verified', label: 'VERIFIED', type: 'link', url: './verified.html', current: false }));
+
             // Divider
             const divider = document.createElement('div');
             divider.className = 'toc-divider';

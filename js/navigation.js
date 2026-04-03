@@ -150,7 +150,8 @@ class Navigation {
             ...(aboutEnabled ? [{ id: 'about', label: 'ABOUT', type: 'link', url: './about.html' }] : []),
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
             { id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html' },
-            { id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html' }
+            { id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html' },
+            { id: 'verified', label: 'VERIFIED', type: 'link', url: './verified.html' }
         ];
 
         topSections.forEach(section => {
