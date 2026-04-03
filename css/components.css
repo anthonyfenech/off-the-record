@@ -67,9 +67,9 @@
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
     font-weight: bold;
-    color: var(--color-background);
-    background-color: var(--color-text-primary);
-    border: 2px solid var(--color-text-primary);
+    color: var(--color-background, #fefefe);
+    background-color: var(--color-text-primary, #333);
+    border: 2px solid var(--color-text-primary, #333);
     padding: var(--space-md) var(--space-xl);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wide);
@@ -78,8 +78,8 @@
 }
 
 .start-reading-btn:hover {
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
+    background-color: var(--color-background, #fefefe);
+    color: var(--color-text-primary, #333);
 }
 
 /* Continue Reading Banner */

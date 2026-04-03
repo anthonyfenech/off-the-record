@@ -114,22 +114,6 @@ updateNav();
 // Initialize media modal
 mediaModal.init();
 
-// Initialize interactive prompts
-import('./interactivePrompts.js').then(({ InteractivePrompts }) => {
-    const adminPrompts = JSON.parse(localStorage.getItem('admin_interactivePrompts') || '[]');
-    if (adminPrompts.length > 0) {
-        new InteractivePrompts(adminPrompts);
-    } else {
-        import('../data/prompts.js').then(({ PROMPTS }) => {
-            if (PROMPTS && PROMPTS.length > 0) {
-                new InteractivePrompts(PROMPTS);
-            }
-        }).catch((error) => {
-            console.warn('[BingeMode] Failed to load prompts:', error);
-        });
-    }
-});
-
 // Attach click handlers to media emojis
 document.querySelectorAll('.media-emoji').forEach(emoji => {
     emoji.addEventListener('click', (e) => {
