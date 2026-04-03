@@ -1,27 +1,27 @@
 /**
- * OFF-THE-RECORD Rolodex/Guestbook - Google Apps Script
+ * OFF-THE-RECORD Guestbook/Guestbook - Google Apps Script
  * =====================================================
  *
- * This script handles Rolodex (guestbook) submissions from the OFF-THE-RECORD site.
- * It receives form submissions and appends them to a "Rolodex" sheet tab.
+ * This script handles Guestbook (guestbook) submissions from the OFF-THE-RECORD site.
+ * It receives form submissions and appends them to a "Guestbook" sheet tab.
  *
  * DEPLOYMENT INSTRUCTIONS:
  * ========================
  * 1. Open your existing Google Apps Script project (the one handling OTR analytics)
- * 2. Add the handleRolodexSubmit() function below to your Code.gs file
- * 3. Add the 'rolodex_submit' case to your existing doPost() function (see example below)
+ * 2. Add the handleGuestbookSubmit() function below to your Code.gs file
+ * 3. Add the 'guestbook_submit' case to your existing doPost() function (see example below)
  * 4. After adding the code:
  *    - Click "Deploy" > "Manage deployments"
  *    - Click the pencil icon to edit your existing deployment
  *    - Change "Version" to "New version"
  *    - Click "Deploy"
- * 5. The existing deployment URL will now handle action: 'rolodex_submit'
+ * 5. The existing deployment URL will now handle action: 'guestbook_submit'
  *
  * IMPORTANT: Do NOT create a new deployment - update the existing one so the URL stays the same.
  *
  * SHEET STRUCTURE:
  * ================
- * The script will create a "Rolodex" tab (if it doesn't exist) with these columns:
+ * The script will create a "Guestbook" tab (if it doesn't exist) with these columns:
  * A: Timestamp | B: Name | C: Email | D: Location | E: Comment | F: Reader Name | G: Device
  *
  * The email column is collected but not displayed publicly - for follow-up contact only.
@@ -33,8 +33,8 @@
 //
 // In your existing doPost(e) function, add this case to your switch/if statement:
 //
-//   if (action === 'rolodex_submit') {
-//     return handleRolodexSubmit(data);
+//   if (action === 'guestbook_submit') {
+//     return handleGuestbookSubmit(data);
 //   }
 //
 // Example of where to add it:
@@ -47,8 +47,8 @@
 //       if (action === 'incrementStartReading') {
 //         return handleIncrementStartReading(data);
 //       }
-//       else if (action === 'rolodex_submit') {     // <-- ADD THIS
-//         return handleRolodexSubmit(data);          // <-- ADD THIS
+//       else if (action === 'guestbook_submit') {     // <-- ADD THIS
+//         return handleGuestbookSubmit(data);          // <-- ADD THIS
 //       }                                            // <-- ADD THIS
 //       else {
 //         // existing handlers...
@@ -62,17 +62,17 @@
 
 
 /**
- * Handle Rolodex (guestbook) form submissions
+ * Handle Guestbook (guestbook) form submissions
  * @param {Object} data - The parsed JSON payload from the frontend
  * @returns {TextOutput} JSON response
  */
-function handleRolodexSubmit(data) {
+function handleGuestbookSubmit(data) {
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheetName = 'Rolodex';
+    var sheetName = 'Guestbook';
     var sheet = ss.getSheetByName(sheetName);
 
-    // Create the Rolodex sheet if it doesn't exist
+    // Create the Guestbook sheet if it doesn't exist
     if (!sheet) {
       sheet = ss.insertSheet(sheetName);
 
@@ -97,7 +97,7 @@ function handleRolodexSubmit(data) {
       // Freeze header row
       sheet.setFrozenRows(1);
 
-      Logger.log('Created new Rolodex sheet with headers');
+      Logger.log('Created new Guestbook sheet with headers');
     }
 
     // Prepare row data
@@ -114,16 +114,16 @@ function handleRolodexSubmit(data) {
     // Append the new row
     sheet.appendRow(rowData);
 
-    Logger.log('Rolodex entry added: ' + data.name);
+    Logger.log('Guestbook entry added: ' + data.name);
 
     // Return success response
     return ContentService.createTextOutput(JSON.stringify({
       status: 'success',
-      message: 'Entry added to Rolodex'
+      message: 'Entry added to Guestbook'
     })).setMimeType(ContentService.MimeType.JSON);
 
   } catch (error) {
-    Logger.log('Error in handleRolodexSubmit: ' + error.toString());
+    Logger.log('Error in handleGuestbookSubmit: ' + error.toString());
 
     return ContentService.createTextOutput(JSON.stringify({
       status: 'error',
@@ -139,9 +139,9 @@ function handleRolodexSubmit(data) {
 //
 // You can run this function manually in the Apps Script editor to test:
 //
-function testRolodexSubmit() {
+function testGuestbookSubmit() {
   var testData = {
-    action: 'rolodex_submit',
+    action: 'guestbook_submit',
     timestamp: new Date().toISOString(),
     name: 'Test User',
     email: 'test@example.com',
@@ -151,6 +151,6 @@ function testRolodexSubmit() {
     device: 'Apps Script Test'
   };
 
-  var result = handleRolodexSubmit(testData);
+  var result = handleGuestbookSubmit(testData);
   Logger.log('Test result: ' + result.getContent());
 }

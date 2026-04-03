@@ -386,7 +386,7 @@ class Navigation {
         const contactEnabled = localStorage.getItem('admin_draftContact') === 'true';
 
         const bottomSections = [
-            ...(commentsEnabled ? [{ id: 'rolodex', label: 'ROLODEX', type: 'link', url: './guestbook.html' }] : []),
+            ...(commentsEnabled ? [{ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }] : []),
             ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             ...(contactEnabled ? [{ id: 'contact', label: 'CONTACT', type: 'link', url: './contact.html' }] : [])
         ];

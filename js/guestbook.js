@@ -1,352 +1,313 @@
-// Guestbook - Press box style sign-in sheet
+/**
+ * Guestbook Form Handler - OFF-THE-RECORD
+ * =====================================
+ * Handles form submission for the standalone Guestbook/guestbook page.
+ * Submits entries to Google Sheets via Apps Script.
+ */
 
-const STORAGE_KEY = 'otr_guestbook_entries';
-const MAX_DISPLAY_ENTRIES = 20;
+(function() {
+    'use strict';
 
-class Guestbook {
-    constructor() {
-        this.entries = this.loadEntries();
-    }
+    // DOM Elements
+    var form = document.getElementById('guestbookForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var successMessage = document.getElementById('successMessage');
+    var errorMessage = document.getElementById('errorMessage');
+    var charCount = document.getElementById('charCount');
+    var commentField = document.getElementById('comment');
 
-    // Load entries from localStorage
-    loadEntries() {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            return stored ? JSON.parse(stored) : [];
-        } catch (error) {
-            console.error('Error loading guestbook entries:', error);
-            return [];
-        }
-    }
+    // Original button text
+    var originalButtonText = submitBtn ? submitBtn.textContent : 'SIGN IT';
 
-    // Save entries to localStorage
-    saveEntries() {
-        try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(this.entries));
-        } catch (error) {
-            console.error('Error saving guestbook entries:', error);
-        }
-    }
+    // Submission state
+    var isSubmitting = false;
 
-    // Add a new entry
-    addEntry(name, email, publication, message) {
-        const entry = {
-            id: Date.now(),
-            name: name.trim(),
-            email: email.trim(),
-            publication: publication ? publication.trim() : null,
-            message: message ? message.trim().substring(0, 280) : null,
-            timestamp: new Date().toISOString()
-        };
+    /**
+     * Initialize character counter
+     */
+    function initCharCounter() {
+        if (!commentField || !charCount) return;
 
-        this.entries.unshift(entry); // Add to beginning (newest first)
-        this.saveEntries();
-        return entry;
-    }
+        commentField.addEventListener('input', function() {
+            var length = commentField.value.length;
+            var maxLength = commentField.maxLength || 500;
+            charCount.textContent = length + ' / ' + maxLength;
 
-    // Get recent entries for display
-    getRecentEntries(count = MAX_DISPLAY_ENTRIES) {
-        return this.entries.slice(0, count);
-    }
-
-    // Format date for display
-    formatDate(isoString) {
-        const date = new Date(isoString);
-        const options = { month: 'short', day: 'numeric', year: 'numeric' };
-        return date.toLocaleDateString('en-US', options);
-    }
-
-    // Render the guestbook UI
-    render(container) {
-        container.innerHTML = '';
-
-        // Create main wrapper
-        const wrapper = document.createElement('div');
-        wrapper.className = 'guestbook-wrapper';
-
-        // Intro text
-        wrapper.appendChild(this.createIntro());
-
-        // Social share section
-        wrapper.appendChild(this.createShareSection());
-
-        // Sign-in form
-        wrapper.appendChild(this.createForm());
-
-        // Recent entries
-        wrapper.appendChild(this.createEntriesList());
-
-        container.appendChild(wrapper);
-    }
-
-    // Create intro section
-    createIntro() {
-        const intro = document.createElement('div');
-        intro.className = 'guestbook-intro';
-        intro.textContent = 'Sign the guestbook. Let us know you stopped by.';
-        return intro;
-    }
-
-    // Create social share section
-    createShareSection() {
-        const section = document.createElement('div');
-        section.className = 'guestbook-share';
-
-        const heading = document.createElement('div');
-        heading.className = 'guestbook-share-heading';
-        heading.textContent = 'SPREAD THE WORD';
-
-        const buttons = document.createElement('div');
-        buttons.className = 'guestbook-share-buttons';
-
-        const shareUrl = encodeURIComponent('https://anthonyfenech.com/off-the-record/');
-        const shareText = encodeURIComponent('OFF-THE-RECORD by Anthony Fenech - 15 years covering the Detroit Tigers');
-
-        // Twitter/X
-        const twitter = document.createElement('a');
-        twitter.className = 'share-btn';
-        twitter.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
-        twitter.target = '_blank';
-        twitter.rel = 'noopener noreferrer';
-        twitter.textContent = 'X / TWITTER';
-
-        // LinkedIn
-        const linkedin = document.createElement('a');
-        linkedin.className = 'share-btn';
-        linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
-        linkedin.target = '_blank';
-        linkedin.rel = 'noopener noreferrer';
-        linkedin.textContent = 'LINKEDIN';
-
-        // Facebook
-        const facebook = document.createElement('a');
-        facebook.className = 'share-btn';
-        facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-        facebook.target = '_blank';
-        facebook.rel = 'noopener noreferrer';
-        facebook.textContent = 'FACEBOOK';
-
-        buttons.appendChild(twitter);
-        buttons.appendChild(linkedin);
-        buttons.appendChild(facebook);
-
-        section.appendChild(heading);
-        section.appendChild(buttons);
-
-        return section;
-    }
-
-    // Create the sign-in form
-    createForm() {
-        const formSection = document.createElement('div');
-        formSection.className = 'guestbook-form-section';
-
-        const heading = document.createElement('div');
-        heading.className = 'guestbook-form-heading';
-        heading.textContent = 'SIGN THE GUESTBOOK';
-
-        const form = document.createElement('form');
-        form.className = 'guestbook-form';
-        form.id = 'guestbookForm';
-
-        // Name field
-        const nameGroup = this.createFormGroup('name', 'Name', 'text', true, 'Your name');
-
-        // Email field
-        const emailGroup = this.createFormGroup('email', 'Email', 'email', true, 'your@email.com');
-
-        // Publication field
-        const pubGroup = this.createFormGroup('publication', 'Publication / Outlet', 'text', false, 'ESPN, Freelance, etc.');
-
-        // Message field
-        const messageGroup = document.createElement('div');
-        messageGroup.className = 'form-group';
-
-        const messageLabel = document.createElement('label');
-        messageLabel.className = 'form-label';
-        messageLabel.htmlFor = 'message';
-        messageLabel.textContent = 'Message (280 chars max)';
-
-        const messageTextarea = document.createElement('textarea');
-        messageTextarea.className = 'form-textarea';
-        messageTextarea.id = 'message';
-        messageTextarea.name = 'message';
-        messageTextarea.maxLength = 280;
-        messageTextarea.rows = 3;
-        messageTextarea.placeholder = 'Leave a short message...';
-
-        const charCount = document.createElement('div');
-        charCount.className = 'char-count';
-        charCount.id = 'charCount';
-        charCount.textContent = '0 / 280';
-
-        messageTextarea.addEventListener('input', () => {
-            charCount.textContent = `${messageTextarea.value.length} / 280`;
+            // Add warning class when near limit
+            if (length >= maxLength - 20) {
+                charCount.classList.add('warning');
+            } else {
+                charCount.classList.remove('warning');
+            }
         });
-
-        messageGroup.appendChild(messageLabel);
-        messageGroup.appendChild(messageTextarea);
-        messageGroup.appendChild(charCount);
-
-        // Submit button
-        const submitBtn = document.createElement('button');
-        submitBtn.type = 'submit';
-        submitBtn.className = 'guestbook-submit';
-        submitBtn.textContent = 'SIGN IN';
-
-        // Success message (hidden initially)
-        const successMsg = document.createElement('div');
-        successMsg.className = 'guestbook-success';
-        successMsg.id = 'guestbookSuccess';
-        successMsg.textContent = 'Thanks for signing the guestbook!';
-        successMsg.style.display = 'none';
-
-        form.appendChild(nameGroup);
-        form.appendChild(emailGroup);
-        form.appendChild(pubGroup);
-        form.appendChild(messageGroup);
-        form.appendChild(submitBtn);
-        form.appendChild(successMsg);
-
-        // Form submission handler
-        form.addEventListener('submit', (e) => this.handleSubmit(e));
-
-        formSection.appendChild(heading);
-        formSection.appendChild(form);
-
-        return formSection;
     }
 
-    // Create a form group (label + input)
-    createFormGroup(id, labelText, type, required, placeholder) {
-        const group = document.createElement('div');
-        group.className = 'form-group';
+    /**
+     * Show inline error for a field
+     */
+    function showFieldError(fieldId, message) {
+        var field = document.getElementById(fieldId);
+        if (!field) return;
 
-        const label = document.createElement('label');
-        label.className = 'form-label';
-        label.htmlFor = id;
-        label.textContent = labelText + (required ? ' *' : '');
+        // Remove existing error
+        clearFieldError(fieldId);
 
-        const input = document.createElement('input');
-        input.type = type;
-        input.className = 'form-input';
-        input.id = id;
-        input.name = id;
-        input.required = required;
-        input.placeholder = placeholder;
+        // Create error element
+        var errorEl = document.createElement('div');
+        errorEl.className = 'field-error';
+        errorEl.id = fieldId + '-error';
+        errorEl.textContent = message;
+        errorEl.style.cssText = 'color: #DC143C; font-family: var(--font-mono); font-size: 11px; margin-top: 4px;';
 
-        group.appendChild(label);
-        group.appendChild(input);
+        // Insert after field
+        field.parentNode.insertBefore(errorEl, field.nextSibling);
 
-        return group;
+        // Add error styling to field
+        field.style.borderColor = '#DC143C';
     }
 
-    // Handle form submission
-    handleSubmit(e) {
+    /**
+     * Clear inline error for a field
+     */
+    function clearFieldError(fieldId) {
+        var errorEl = document.getElementById(fieldId + '-error');
+        if (errorEl) {
+            errorEl.remove();
+        }
+
+        var field = document.getElementById(fieldId);
+        if (field) {
+            field.style.borderColor = '';
+        }
+    }
+
+    /**
+     * Clear all field errors
+     */
+    function clearAllFieldErrors() {
+        ['name', 'email', 'location', 'comment'].forEach(function(fieldId) {
+            clearFieldError(fieldId);
+        });
+    }
+
+    /**
+     * Validate form fields
+     * @returns {boolean} True if valid
+     */
+    function validateForm() {
+        var isValid = true;
+        clearAllFieldErrors();
+
+        var nameField = document.getElementById('name');
+        var emailField = document.getElementById('email');
+        var locationField = document.getElementById('location');
+
+        // Name validation
+        if (!nameField || !nameField.value.trim()) {
+            showFieldError('name', 'Name is required');
+            isValid = false;
+        }
+
+        // Email validation
+        if (!emailField || !emailField.value.trim()) {
+            showFieldError('email', 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(emailField.value.trim())) {
+            showFieldError('email', 'Please enter a valid email');
+            isValid = false;
+        }
+
+        // Location validation
+        if (!locationField || !locationField.value.trim()) {
+            showFieldError('location', 'Location is required');
+            isValid = false;
+        }
+
+        // Comment validation
+        if (!commentField || !commentField.value.trim()) {
+            showFieldError('comment', 'Comment is required');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    /**
+     * Simple email validation
+     */
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    /**
+     * Show success message
+     */
+    function showSuccess() {
+        if (successMessage) {
+            successMessage.classList.add('visible');
+            errorMessage.classList.remove('visible');
+        }
+
+        // Hide after 5 seconds
+        setTimeout(function() {
+            if (successMessage) {
+                successMessage.classList.remove('visible');
+            }
+        }, 5000);
+    }
+
+    /**
+     * Show error message
+     */
+    function showError(message) {
+        if (errorMessage) {
+            if (message) {
+                errorMessage.textContent = message;
+            }
+            errorMessage.classList.add('visible');
+            successMessage.classList.remove('visible');
+        }
+
+        // Hide after 5 seconds
+        setTimeout(function() {
+            if (errorMessage) {
+                errorMessage.classList.remove('visible');
+            }
+        }, 5000);
+    }
+
+    /**
+     * Set button state
+     */
+    function setButtonState(disabled, text) {
+        if (submitBtn) {
+            submitBtn.disabled = disabled;
+            submitBtn.textContent = text || originalButtonText;
+        }
+    }
+
+    /**
+     * Reset form
+     */
+    function resetForm() {
+        if (form) {
+            form.reset();
+        }
+        if (charCount) {
+            charCount.textContent = '0 / 500';
+            charCount.classList.remove('warning');
+        }
+        clearAllFieldErrors();
+    }
+
+    /**
+     * Handle form submission
+     */
+    function handleSubmit(e) {
         e.preventDefault();
 
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const publication = form.publication.value;
-        const message = form.message.value;
+        // Prevent double submission
+        if (isSubmitting) {
+            return;
+        }
 
-        // Add entry
-        this.addEntry(name, email, publication, message);
+        // Validate
+        if (!validateForm()) {
+            return;
+        }
 
-        // Show success message
-        const successMsg = document.getElementById('guestbookSuccess');
-        successMsg.style.display = 'block';
+        // Build payload
+        var payload = {
+            action: 'guestbook_submit',
+            timestamp: new Date().toISOString(),
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            location: document.getElementById('location').value.trim(),
+            comment: document.getElementById('comment').value.trim(),
+            reader_name: localStorage.getItem('otr_reader_name') || 'anonymous',
+            device: navigator.userAgent
+        };
 
-        // Reset form
-        form.reset();
-        document.getElementById('charCount').textContent = '0 / 280';
+        // Set submitting state
+        isSubmitting = true;
+        setButtonState(true, 'SENDING...');
 
-        // Update entries list
-        const entriesSection = document.querySelector('.guestbook-entries');
-        if (entriesSection) {
-            const list = entriesSection.querySelector('.guestbook-entries-list');
-            if (list) {
-                list.innerHTML = '';
-                const entries = this.getRecentEntries();
-                if (entries.length === 0) {
-                    const empty = document.createElement('div');
-                    empty.className = 'guestbook-empty';
-                    empty.textContent = 'Be the first to sign the guestbook!';
-                    list.appendChild(empty);
-                } else {
-                    entries.forEach(entry => {
-                        list.appendChild(this.createEntryItem(entry));
-                    });
-                }
+        // Check if tracking is enabled
+        if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.trackingEnabled) {
+            // Tracking disabled - log and simulate success
+            console.log('[Guestbook] Tracking disabled. Payload:', JSON.stringify(payload, null, 2));
+
+            // Simulate network delay
+            setTimeout(function() {
+                isSubmitting = false;
+                setButtonState(false, originalButtonText);
+                resetForm();
+                showSuccess();
+            }, 500);
+
+            return;
+        }
+
+        // Get endpoint URL
+        var endpoint = OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl;
+
+        // Submit to Google Sheets
+        fetch(endpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(function() {
+            // With no-cors we can't read response, assume success
+            console.log('[Guestbook] Submission sent');
+            isSubmitting = false;
+            setButtonState(false, originalButtonText);
+            resetForm();
+            showSuccess();
+        })
+        .catch(function(error) {
+            console.error('[Guestbook] Submission failed:', error);
+            isSubmitting = false;
+            setButtonState(false, originalButtonText);
+            showError('Something went wrong. Please try again.');
+        });
+    }
+
+    /**
+     * Initialize
+     */
+    function init() {
+        if (!form) {
+            console.warn('[Guestbook] Form not found');
+            return;
+        }
+
+        // Initialize character counter
+        initCharCounter();
+
+        // Attach form submit handler
+        form.addEventListener('submit', handleSubmit);
+
+        // Clear field errors on input
+        ['name', 'email', 'location', 'comment'].forEach(function(fieldId) {
+            var field = document.getElementById(fieldId);
+            if (field) {
+                field.addEventListener('input', function() {
+                    clearFieldError(fieldId);
+                });
             }
-        }
+        });
 
-        // Hide success message after 3 seconds
-        setTimeout(() => {
-            successMsg.style.display = 'none';
-        }, 3000);
+        console.log('[Guestbook] Initialized');
     }
 
-    // Create the entries list
-    createEntriesList() {
-        const section = document.createElement('div');
-        section.className = 'guestbook-entries';
-
-        const heading = document.createElement('div');
-        heading.className = 'guestbook-entries-heading';
-        heading.textContent = 'RECENT SIGN-INS';
-
-        const list = document.createElement('div');
-        list.className = 'guestbook-entries-list';
-
-        const entries = this.getRecentEntries();
-
-        if (entries.length === 0) {
-            const empty = document.createElement('div');
-            empty.className = 'guestbook-empty';
-            empty.textContent = 'Be the first to sign the guestbook!';
-            list.appendChild(empty);
-        } else {
-            entries.forEach(entry => {
-                list.appendChild(this.createEntryItem(entry));
-            });
-        }
-
-        section.appendChild(heading);
-        section.appendChild(list);
-
-        return section;
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
     }
-
-    // Create a single entry item
-    createEntryItem(entry) {
-        const item = document.createElement('div');
-        item.className = 'guestbook-entry';
-
-        // Name and publication line
-        const header = document.createElement('div');
-        header.className = 'guestbook-entry-header';
-
-        let headerText = entry.name;
-        if (entry.publication) {
-            headerText += ` - ${entry.publication}`;
-        }
-        header.textContent = headerText;
-
-        item.appendChild(header);
-
-        // Message in quotes
-        if (entry.message) {
-            const message = document.createElement('div');
-            message.className = 'guestbook-entry-comment';
-            message.textContent = `"${entry.message}"`;
-            item.appendChild(message);
-        }
-
-        return item;
-    }
-}
-
-// Export singleton instance
-export const guestbook = new Guestbook();
+})();

@@ -1,9 +1,9 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v475';
-const STATIC_CACHE = 'off-the-record-static-v475';
-const CONTENT_CACHE = 'off-the-record-content-v475';
-const ANALYTICS_CACHE = 'off-the-record-analytics-v475';
+const CACHE_VERSION = 'v477';
+const STATIC_CACHE = 'off-the-record-static-v477';
+const CONTENT_CACHE = 'off-the-record-content-v477';
+const ANALYTICS_CACHE = 'off-the-record-analytics-v477';
 
 // Files to cache immediately on install
 const STATIC_ASSETS = [
@@ -34,11 +34,11 @@ const STATIC_ASSETS = [
     './js/pwa.min.js',
     './js/blog.min.js',
     './js/guestbook.min.js',
-    './js/rolodex.min.js',
     './js/reading-mode.min.js',
     './js/font-size.min.js',
     './js/search.min.js',
     './js/config.min.js',
+    './js/analytics-config.js',
     './js/otr-tier1-error-handler.min.js',
     './js/reader-name.js',
     './js/analytics.min.js',
@@ -56,7 +56,7 @@ const STATIC_ASSETS = [
     './js/overlay-cleanup.js',
     './js/binge-theme.min.js',
     './js/binge-analytics.min.js',
-    './js/pdf-stamper.js',
+    './js/pdf-stamper.min.js',
     './data/chapters.js',
     './assets/icons/icon-192.png',
     './assets/icons/icon-512.png',

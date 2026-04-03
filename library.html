@@ -492,6 +492,12 @@
             // LIBRARY link (current page)
             fragment.appendChild(createNavLink('LIBRARY', './library.html', true));
 
+            // DOWNLOAD link
+            fragment.appendChild(createNavLink('DOWNLOAD', './downloadpage.html', false));
+
+            // GUESTBOOK link
+            fragment.appendChild(createNavLink('GUESTBOOK', './guestbook.html', false));
+
             // Divider
             const divider = document.createElement('div');
             divider.className = 'toc-divider';
