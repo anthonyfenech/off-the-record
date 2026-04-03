@@ -36,7 +36,7 @@ if (container) {
 
         return `
         <article class="chapter-section${isSpecial ? ' special-page' : ''}${isLocked ? ' locked' : ''}" id="${ch.slug}" data-chapter="${i}">
-            ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${applyRedDotToTitle(ch.title)}${isLocked ? ' 🔒' : ''}</h2></header>` : ''}
+            ${!isSpecial ? `<header class="chapter-header"><h2 class="chapter-title">${ch.title}${isLocked ? ' 🔒' : ''}</h2></header>` : ''}
             <div class="chapter-body">${chapterContent}</div>
             ${showSeparator ? '<p class="scene-break">***</p>' : ''}
         </article>

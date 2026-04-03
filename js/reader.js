@@ -206,7 +206,7 @@ class Reader {
         window.currentChapterId = chapterId;
 
         // Update DOM - just the title, no subtitle or reading time
-        this.chapterTitle.innerHTML = applyRedDotToTitle(chapter.title);
+        this.chapterTitle.textContent = chapter.title;
 
         // Add data-slug for CSS targeting
         this.chapterBody.dataset.slug = chapter.slug || '';
@@ -657,7 +657,7 @@ class Reader {
 
         this.currentChapter = chapter.id;
         window.currentChapterId = chapter.id;
-        this.chapterTitle.innerHTML = applyRedDotToTitle(chapter.title);
+        this.chapterTitle.textContent = chapter.title;
 
         // Show locked placeholder
         this.chapterBody.innerHTML = `
@@ -691,7 +691,7 @@ class Reader {
         const chapter = CHAPTERS.find(c => c.id === chapterId);
         if (!chapter || !this.continueReading) return;
 
-        this.continueChapter.innerHTML = applyRedDotToTitle(chapter.title);
+        this.continueChapter.textContent = chapter.title;
         this.continueReading.style.display = 'block';
 
         this.continueReading.addEventListener('click', () => {
