@@ -166,29 +166,6 @@
             color: var(--color-text-secondary, #999);
         }
 
-        /* Verification footer - hidden on home page */
-        .verified-footer {
-            text-align: center;
-            padding: 30px 20px 20px;
-            margin-top: 40px;
-        }
-        .verified-footer a {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--color-text-secondary, #999);
-            text-decoration: none;
-            opacity: 0.6;
-            transition: opacity 0.15s ease;
-        }
-        .verified-footer a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-        .home-page .verified-footer {
-            display: none;
-        }
     </style>
 </head>
 <body class="home-page">
@@ -366,10 +343,6 @@
     <!-- Overlay for TOC -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Verification Footer (hidden on home page) -->
-    <div class="verified-footer" id="verifiedFooter">
-        <a href="./verified.html">Verified Original · 09c46e40</a>
-    </div>
 
     <!-- Scripts -->
     <script type="module" src="./js/config.min.js?v=423"></script>
