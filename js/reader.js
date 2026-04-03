@@ -8,6 +8,9 @@ import { CONFIG } from './config.js';
 import { transitions } from './transitions.js';
 import { imageLightbox } from './image-lightbox.js';
 
+// Expose CHAPTERS globally for share feature
+window.CHAPTERS = CHAPTERS;
+
 class Reader {
     constructor() {
         this.currentChapter = 1;
