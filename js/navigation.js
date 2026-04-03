@@ -251,7 +251,7 @@ class Navigation {
 
         const title = document.createElement('span');
         title.className = 'toc-chapter-title';
-        title.innerHTML = applyRedDotToTitle(chapter.title);
+        title.textContent = chapter.title;
 
         titleRow.appendChild(title);
 
