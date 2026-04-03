@@ -140,6 +140,8 @@
             gate.style.display = 'none';
             gate.classList.add('hidden');
             document.body.style.overflow = '';
+            // Remove from DOM to prevent password manager autofill icons
+            gate.remove();
         }
     }
 

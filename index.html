@@ -178,7 +178,7 @@
     <div id="passwordGate" class="password-gate" style="display: none">
         <div class="password-gate-content">
             <h1 class="password-gate-title">OFF-THE-RECORD</h1>
-            <form id="passwordForm" class="password-form">
+            <form id="passwordForm" class="password-form" autocomplete="off">
                 <label for="passwordInput" class="sr-only">Enter password</label>
                 <input
                     type="password"
@@ -186,6 +186,8 @@
                     class="password-input"
                     placeholder="Enter password"
                     autocomplete="off"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
                     autofocus
                 >
                 <div class="remember-me-wrapper">
