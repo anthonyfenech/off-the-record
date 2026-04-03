@@ -245,7 +245,7 @@
             <div class="chapter-body" id="chapterBody">
                 <!-- Format Menu -->
                 <nav class="format-menu">
-                    <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="format-item" onclick="trackPdfDownload()">
+                    <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="format-item" id="pdfDownloadBtn" onclick="return stampAndDownload(this)">
                         <span class="format-name">PDF —</span>
                         <span class="format-emoji">📄</span>
                     </a>
@@ -681,6 +681,10 @@
             return true;
         }
     </script>
+
+    <!-- PDF Stamper (serial-numbered downloads) -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="./js/pdf-stamper.js?v=461"></script>
 
     <script src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
