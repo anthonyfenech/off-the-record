@@ -327,7 +327,7 @@ export const CHAPTERS = [
 
 <p>A Houston source says if they’re in on Verlander, only the GM and owner know. Another’s so paranoid about their tech-savvy front office, he offers his personal email instead of texting on his team phone.</p>
 
-<p>DETROIT—Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
+<p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
 
 <p>I get back home after 10 on the evening of the trade deadline. Midnight approaches. We have less than three hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome home pour.</p>
 
@@ -2884,7 +2884,7 @@ export const CHAPTERS = [
 
 <p>Michael Ilitch Sr., the patriarch of one of the most powerful families in Michigan, a self-made multi-billionaire who started Little Caesars Pizza and owned two of Detroit’s storied professional sports teams, has died.</p>
 
-<p>WASHINGTON—Though the <em>Free Press</em> has reporters in other departments pulling together information, my first job is to get another independent confirmation.</p>
+<p class="has-dateline"><span class="dateline">WASHINGTON—</span>Though the <em>Free Press</em> has reporters in other departments pulling together information, my first job is to get another independent confirmation.</p>
 
 <p>I text agents who can help me reach players. No luck with most. I do talk to Scott Boras, though.</p>
 

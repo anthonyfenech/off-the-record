@@ -341,7 +341,7 @@ export const CHAPTERS = [
 
 <p>A Houston source says if they’re in on Verlander, only the GM and owner know. Another’s so paranoid about their tech-savvy front office, he offers his personal email instead of texting on his team phone.</p>
 
-<p>DETROIT—Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
+<p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
 
 <p>I get back home after 10 on the evening of the trade deadline. Midnight approaches. We have less than three hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome home pour.</p>
 
@@ -782,7 +782,7 @@ export const CHAPTERS = [
         slug: "rookie-year",
         subtitle: "",
         teaser: "First full season on the beat.",
-        content: `<p>LAKELAND, Fla., <em>February 16</em>—Walk downstairs for breakfast and see Tigers chief legal counsel John Westhoff, sipping cereal and reading a newspaper. I smile. He nods knowingly from behind his glasses.</p>
+        content: `<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 16</em>—</span>Walk downstairs for breakfast and see Tigers chief legal counsel John Westhoff, sipping cereal and reading a newspaper. I smile. He nods knowingly from behind his glasses.</p>
 
 <p>Today is the first day of school—pitchers and catchers reporting day.</p>
 
@@ -1221,7 +1221,7 @@ export const CHAPTERS = [
         slug: "trade-deadline",
         subtitle: "",
         teaser: "Dave Dombrowski's exit.",
-        content: `<p>ST. PETERSBURG, Fla., <em>July 27</em>—It’s raining when we land. I get a taxi and check into my room at a Hampton Inn, way too far from Tropicana Field.</p>
+        content: `<p class="has-dateline"><span class="dateline">ST. PETERSBURG, Fla., <em>July 27</em>—</span>It’s raining when we land. I get a taxi and check into my room at a Hampton Inn, way too far from Tropicana Field.</p>
 
 <p>Only positive of the place is they’ve got a shuttle to downtown St. Pete, where the dome is located. While waiting for the van, I scroll past a ruckus on Twitter—Tigers outfielder Rajai Davis has followed a bunch of St. Louis Cardinals accounts.</p>
 
@@ -1898,7 +1898,7 @@ export const CHAPTERS = [
         slug: "spring-training",
         subtitle: "",
         teaser: "Baseball's annual rite of renewal.",
-        content: `<p>LAKELAND, Fla., <em>February 18</em>—Pitchers and catchers report to camp today and Justin Verlander is driving his Range Rover. After Verlander battled injuries for the past two years, folks are anxious to see which pitcher pulls up in TigerTown: The one who looked past his prime in the first half of last season or the one who looked like Justin Verlander in the second half?</p>
+        content: `<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 18</em>—</span>Pitchers and catchers report to camp today and Justin Verlander is driving his Range Rover. After Verlander battled injuries for the past two years, folks are anxious to see which pitcher pulls up in TigerTown: The one who looked past his prime in the first half of last season or the one who looked like Justin Verlander in the second half?</p>
 
 <p>His latest bullpen session provides an early clue.</p>
 
@@ -2880,7 +2880,7 @@ export const CHAPTERS = [
 
 <p>Michael Ilitch Sr., the patriarch of one of the most powerful families in Michigan, a self-made multi-billionaire who started Little Caesars Pizza and owned two of Detroit’s storied professional sports teams, has died.</p>
 
-<p>WASHINGTON—Though the <em>Free Press</em> has reporters in other departments pulling together information, my first job is to get another independent confirmation.</p>
+<p class="has-dateline"><span class="dateline">WASHINGTON—</span>Though the <em>Free Press</em> has reporters in other departments pulling together information, my first job is to get another independent confirmation.</p>
 
 <p>I text agents who can help me reach players. No luck with most. I do talk to Scott Boras, though.</p>
 
@@ -2905,7 +2905,7 @@ export const CHAPTERS = [
         slug: "prime-time",
         subtitle: "",
         teaser: "The national spotlight.",
-        content: `<p>TAMPA, Fla., <em>February 12, 2017</em>—The calendar begins when I arrive to spring training. Still thinking about what Pedro Gomez said earlier, what he’s been saying for the past two years.</p>
+        content: `<p class="has-dateline"><span class="dateline">TAMPA, Fla., <em>February 12, 2017</em>—</span>The calendar begins when I arrive to spring training. Still thinking about what Pedro Gomez said earlier, what he’s been saying for the past two years.</p>
 
 <p>I texted him on the way to the airport.</p>
 
@@ -3216,7 +3216,7 @@ export const CHAPTERS = [
 
 <p>Top Scout leaves town unimpressed.</p>
 
-<p>UP NORTH, Mich., <em>July 5</em>—Although I promised not to be on my phone this holiday weekend, here I am—scrolling underneath sunsetting skies, still cursing National Guy Jon Morosi to the heavens.</p>
+<p class="has-dateline"><span class="dateline">UP NORTH, Mich., <em>July 5</em>—</span>Although I promised not to be on my phone this holiday weekend, here I am—scrolling underneath sunsetting skies, still cursing National Guy Jon Morosi to the heavens.</p>
 
 <p>Morosi is one of the nicest guys you’ll ever hate. Yesterday, he blew my cover. First, he shared my inside information on Twitter: “Cubs inquired to Tigers on availability of Justin Verlander and Alex Avila, sources say, but sides have not engaged in trade negotiations.” Then he called out my source, telling everyone that a “top Chicago scout” was at yesterday’s game.</p>
 
@@ -3967,7 +3967,7 @@ export const CHAPTERS = [
 
 <p>Inside a back room on the newsroom’s third floor, I receive my first taste of sports writing, answering phones as coaches call in to report scores and statistics. I put ‘em in a text file and send ‘em to an editor before deadline.</p>
 
-<p><em>August 31, 2007</em>—Sports writing is going great so far.</p>
+<p class="has-dateline"><span class="dateline"><em>August 31, 2007</em>—</span>Sports writing is going great so far.</p>
 
 <p>I’ve earned a bunch of “contributing” bylines for writing short game recaps. I find these stories easily when coaches call in with a close score. I gauge the game’s worthiness by asking, “Was it a good game?”</p>
 
@@ -3985,7 +3985,7 @@ export const CHAPTERS = [
 
 <p>In 2007, Freep Sports has a staff of 44, including 24 folks manning the desk and 18 sports writers covering Detroit’s pro and Big Ten teams, columnists and general assignment reporters. We’ve even got writers for outdoor sports, motorsports and prep sports.</p>
 
-<p><em>September 5, 2007</em>—Today is my first Tigers game as a member of the media. I’m official. I’ve got a credential with my name and affiliation: <em>Detroit Free Press</em>.</p>
+<p class="has-dateline"><span class="dateline"><em>September 5, 2007</em>—</span>Today is my first Tigers game as a member of the media. I’m official. I’ve got a credential with my name and affiliation: <em>Detroit Free Press</em>.</p>
 
 <p>I’m tagging along with longtime Tigers beat reporter John Lowe, who obliged when asked to shadow him at a game. I want to see what a beat writer <em>does</em>. Lowe is an institution.</p>
 
@@ -4585,7 +4585,7 @@ export const CHAPTERS = [
         slug: "awards-season",
         subtitle: "",
         teaser: "The offseason circuit.",
-        content: `<p>LAKELAND, Fla., <em>February 13</em>—The first week of pitchers and catchers isn’t short on drama. Unfortunately, it’s self-inflicted.</p>
+        content: `<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 13</em>—</span>The first week of pitchers and catchers isn’t short on drama. Unfortunately, it’s self-inflicted.</p>
 
 <p>I commit the worst crime of my career today. Trying too hard to make a joke nobody asked for, I take a potshot at Jordan Zimmermann’s injury struggles.</p>
 
@@ -6481,7 +6481,7 @@ export const CHAPTERS = [
         slug: "road-to-omaha",
         subtitle: "",
         teaser: "College World Series.",
-        content: `<p>KANSAS CITY, Mo., <em>June 12</em>—Skipping town after the second game, hitting the road for three hours. I’m driving a lime green Camaro, flipping through the radio dial on a dark construction detour after midnight. Listening to a debate on porn—healthy part of society or public health hazard?</p>
+        content: `<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>June 12</em>—</span>Skipping town after the second game, hitting the road for three hours. I’m driving a lime green Camaro, flipping through the radio dial on a dark construction detour after midnight. Listening to a debate on porn—healthy part of society or public health hazard?</p>
 
 <p>Arriving in Omaha, I settle in for my new assignment on the college baseball beat.</p>
 
@@ -8032,9 +8032,9 @@ export const CHAPTERS = [
 
 <p>This morning, another jump. Mom is terrified. “Are you in FL yet? Got your wipes? Don’t shake hands with anyone… Over 1,000 in U.S., 30 deaths.”</p>
 
-<p>ATLANTA—Two-hour layover. More people wearing masks than I’ve ever seen, including bartenders. Every TV shows red breaking news ribbons: CDC: AT LEAST 1,200+ COVID-19 CASES IN U.S.</p>
+<p class="has-dateline"><span class="dateline">ATLANTA—</span>Two-hour layover. More people wearing masks than I’ve ever seen, including bartenders. Every TV shows red breaking news ribbons: CDC: AT LEAST 1,200+ COVID-19 CASES IN U.S.</p>
 
-<p>TAMPA, Fla.—Messages when I land: “When you have a min, give me a call.”—Willie Horton. “Call if you get the chance.”—Deep Throat. “Are you in Lakeland yet?”—Mom.</p>
+<p class="has-dateline"><span class="dateline">TAMPA, Fla.—</span>Messages when I land: “When you have a min, give me a call.”—Willie Horton. “Call if you get the chance.”—Deep Throat. “Are you in Lakeland yet?”—Mom.</p>
 
 <p>I call Mr. Horton (no answer) and talk with Deep Throat for twenty minutes on the drive, then check into the hotel and head to the bar.</p>
 
