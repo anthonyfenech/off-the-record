@@ -86,8 +86,7 @@ async function getSerialNumber() {
         var data = await response.json();
 
         if (data && data.serial) {
-            // Transform OTR-XXXXX to 000-XXXXXX-10 format
-            return formatSerial(data.serial);
+            return data.serial;
         } else {
             throw new Error('Invalid response from serial endpoint');
         }
@@ -96,14 +95,6 @@ async function getSerialNumber() {
         console.error('[PDF Stamper] Serial fetch failed:', error.message);
         return generateFallbackSerial();
     }
-}
-
-// Transform raw serial (OTR-00042) to formatted serial (000-000042-10)
-function formatSerial(raw) {
-    var match = raw.match(/(\d+)/);
-    var num = match ? match[1] : '0';
-    // EEE = 000 (digital PDF edition), CCCCCC = 6-digit copy, VV = 10 (v1.0)
-    return '000-' + num.padStart(6, '0') + '-10';
 }
 
 function generateFallbackSerial() {
@@ -163,7 +154,7 @@ async function applyLibrarySeal(pdfDoc, serial) {
     // Color: dark red at 85% opacity
     var darkRed = PDFLib.rgb(139/255, 0, 0);
 
-    // Format date with timezone: M/D/YY H:MM AM/PM TZ
+    // Format date with timezone: M-D-YY H:MM AM/PM TZ
     var dateStr = formatDateWithTimezone();
 
     // Line 1: "# 000-XXXXXX-10" (14pt)
@@ -172,7 +163,7 @@ async function applyLibrarySeal(pdfDoc, serial) {
     var line1Width = font.widthOfTextAtSize(line1Text, line1Size);
     var line1Height = line1Size;
 
-    // Line 2: "4/3/26 2:31 AM EST" (10pt)
+    // Line 2: "4-3-26 2:31 AM EST" (10pt)
     var line2Text = dateStr;
     var line2Size = 10;
     var line2Width = font.widthOfTextAtSize(line2Text, line2Size);
@@ -250,7 +241,7 @@ function formatDateWithTimezone() {
         console.log('[PDF Stamper] Could not get timezone, using UTC');
     }
 
-    // Format: M/D/YY H:MM AM/PM TZ (no leading zeros)
+    // Format: M-D-YY H:MM AM/PM TZ (no leading zeros)
     var month = now.getMonth() + 1;
     var day = now.getDate();
     var year = String(now.getFullYear()).slice(-2);
