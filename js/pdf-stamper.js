@@ -70,7 +70,11 @@ async function getSerialNumber() {
         var controller = new AbortController();
         var timeoutId = setTimeout(function() { controller.abort(); }, SERIAL_TIMEOUT);
 
-        var response = await fetch(SERIAL_ENDPOINT + '?action=assign_serial', {
+        // Include reader name in serial request
+        var readerName = localStorage.getItem('otr_reader_name') || 'anonymous';
+        var serialUrl = SERIAL_ENDPOINT + '?action=assign_serial&reader_name=' + encodeURIComponent(readerName);
+
+        var response = await fetch(serialUrl, {
             method: 'GET',
             redirect: 'follow',
             signal: controller.signal
