@@ -6,7 +6,6 @@ import { isChapterComplete } from './storage.js';
 import { photoGallery } from './photoGallery.js';
 // Stub - data/photos.js removed
 const getAllGalleries = () => [];
-import { guestbook } from './guestbook.js';
 import { bookmarks } from './bookmarks.js';
 import { readingModeManager } from './reading-mode.js';
 import { fontSizeManager } from './font-size.js';
@@ -455,11 +454,6 @@ class Navigation {
             sectionContent.classList.remove('collapsed');
             sectionHeader.classList.add('expanded');
 
-            // Initialize guestbook if needed
-            if (sectionId === 'comments' && sectionContent.dataset.needsInit === 'true') {
-                guestbook.render(sectionContent);
-                delete sectionContent.dataset.needsInit;
-            }
 
             // Render settings if needed
             if (sectionId === 'settings') {
