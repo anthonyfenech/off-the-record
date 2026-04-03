@@ -14,7 +14,6 @@
 var SERIAL_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
 
 var BASE_PDF_PATH = './assets/OFF-THE-RECORD.pdf';
-var CUSTOM_FONT_PATH = './assets/fonts/SpecialElite-Regular.ttf';
 var SERIAL_TIMEOUT = 15000; // 15 seconds
 
 // ═══════════════════════════════════════════════════════════
@@ -120,26 +119,6 @@ async function loadBasePdf() {
 }
 
 // ═══════════════════════════════════════════════════════════
-// CUSTOM FONT LOADING
-// ═══════════════════════════════════════════════════════════
-
-async function loadCustomFont(pdfDoc) {
-    try {
-        var response = await fetch(CUSTOM_FONT_PATH);
-        if (!response.ok) {
-            throw new Error('Font fetch failed: ' + response.status);
-        }
-        var fontBytes = await response.arrayBuffer();
-        var font = await pdfDoc.embedFont(fontBytes);
-        console.log('[OTR] Stamp font: Special Elite loaded');
-        return font;
-    } catch (error) {
-        console.log('[OTR] Stamp font: fallback to Times-Roman');
-        return await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman);
-    }
-}
-
-// ═══════════════════════════════════════════════════════════
 // LIBRARY SEAL (Page 2)
 // ═══════════════════════════════════════════════════════════
 
@@ -148,8 +127,9 @@ async function applyLibrarySeal(pdfDoc, serial) {
     var targetPage = pages.length > 1 ? pages[1] : pages[0]; // Page 2, or page 1 if only 1 page
     var pageSize = targetPage.getSize();
 
-    // Load custom font (with fallback)
-    var font = await loadCustomFont(pdfDoc);
+    // Embed fonts: Bold for serial, Regular for date
+    var fontBold = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRomanBold);
+    var fontRegular = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman);
 
     // Color: dark red at 85% opacity
     var darkRed = PDFLib.rgb(139/255, 0, 0);
@@ -157,16 +137,16 @@ async function applyLibrarySeal(pdfDoc, serial) {
     // Format date with timezone: M-D-YY H:MM AM/PM TZ
     var dateStr = formatDateWithTimezone();
 
-    // Line 1: "# 000-XXXXXX-10" (14pt)
+    // Line 1: "# 000-XXXXXX-10" (14pt, Bold)
     var line1Text = '# ' + serial;
     var line1Size = 14;
-    var line1Width = font.widthOfTextAtSize(line1Text, line1Size);
+    var line1Width = fontBold.widthOfTextAtSize(line1Text, line1Size);
     var line1Height = line1Size;
 
-    // Line 2: "4-3-26 2:31 AM EST" (10pt)
+    // Line 2: "4-3-26 2:31 AM EST" (10pt, Regular)
     var line2Text = dateStr;
     var line2Size = 10;
-    var line2Width = font.widthOfTextAtSize(line2Text, line2Size);
+    var line2Width = fontRegular.widthOfTextAtSize(line2Text, line2Size);
     var line2Height = line2Size;
 
     // Box padding
@@ -204,22 +184,22 @@ async function applyLibrarySeal(pdfDoc, serial) {
     var line2X = boxX + (boxWidth - line2Width) / 2;
     var line2Y = boxY + paddingV;
 
-    // Draw line 1: "# 000-XXXXXX-10"
+    // Draw line 1: "# 000-XXXXXX-10" (Bold)
     targetPage.drawText(line1Text, {
         x: line1X,
         y: line1Y,
         size: line1Size,
-        font: font,
+        font: fontBold,
         color: darkRed,
         opacity: 0.85
     });
 
-    // Draw line 2: date with timezone
+    // Draw line 2: date with timezone (Regular)
     targetPage.drawText(line2Text, {
         x: line2X,
         y: line2Y,
         size: line2Size,
-        font: font,
+        font: fontRegular,
         color: darkRed,
         opacity: 0.85
     });
