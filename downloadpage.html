@@ -410,6 +410,9 @@
             // DOWNLOAD link (current page - highlighted)
             fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html', current: true }));
 
+            // GUESTBOOK link
+            fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html', current: false }));
+
             // Divider
             const divider = document.createElement('div');
             divider.className = 'toc-divider';
@@ -646,7 +649,7 @@
 
     <!-- PDF Stamper (serial-numbered downloads) -->
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-    <script src="./js/pdf-stamper.js?v=474"></script>
+    <script src="./js/pdf-stamper.min.js?v=477"></script>
 
     <script src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
