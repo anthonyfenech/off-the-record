@@ -14,6 +14,7 @@
 var SERIAL_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
 
 var BASE_PDF_PATH = './assets/OFF-THE-RECORD.pdf';
+var CUSTOM_FONT_PATH = './assets/fonts/SpecialElite-Regular.ttf';
 var SERIAL_TIMEOUT = 10000; // 10 seconds
 
 // ═══════════════════════════════════════════════════════════
@@ -147,6 +148,26 @@ async function loadBasePdf() {
 }
 
 // ═══════════════════════════════════════════════════════════
+// CUSTOM FONT LOADING
+// ═══════════════════════════════════════════════════════════
+
+async function loadCustomFont(pdfDoc) {
+    try {
+        var response = await fetch(CUSTOM_FONT_PATH);
+        if (!response.ok) {
+            throw new Error('Font fetch failed: ' + response.status);
+        }
+        var fontBytes = await response.arrayBuffer();
+        var font = await pdfDoc.embedFont(fontBytes);
+        console.log('[PDF Stamper] Custom font loaded: Special Elite');
+        return font;
+    } catch (error) {
+        console.error('[PDF Stamper] Custom font failed, falling back to Courier-Bold:', error.message);
+        return await pdfDoc.embedFont(PDFLib.StandardFonts.CourierBold);
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
 // LIBRARY SEAL (Page 2)
 // ═══════════════════════════════════════════════════════════
 
@@ -155,102 +176,91 @@ async function applyLibrarySeal(pdfDoc, serial) {
     var targetPage = pages.length > 1 ? pages[1] : pages[0]; // Page 2, or page 1 if only 1 page
     var pageSize = targetPage.getSize();
 
-    // Seal dimensions
-    var sealWidth = 200;
-    var sealHeight = 140;
-    var margin = 50;
+    // Load custom font (with fallback)
+    var font = await loadCustomFont(pdfDoc);
 
-    // Position: bottom-right, 50pt from edges
-    var sealX = pageSize.width - sealWidth - margin;
-    var sealY = margin;
-
-    // Colors
+    // Color: dark red at 85% opacity
     var darkRed = PDFLib.rgb(139/255, 0, 0);
-    var darkRedTransparent = PDFLib.rgb(139/255, 0, 0);
 
-    // Get Courier font (built into pdf-lib)
-    var font = await pdfDoc.embedFont(PDFLib.StandardFonts.Courier);
-    var fontBold = await pdfDoc.embedFont(PDFLib.StandardFonts.CourierBold);
+    // Format date with timezone: M/D/YY H:MM AM/PM TZ
+    var dateStr = formatDateWithTimezone();
 
-    // Format date
-    var now = new Date();
-    var months = ['January', 'February', 'March', 'April', 'May', 'June',
-                  'July', 'August', 'September', 'October', 'November', 'December'];
-    var dateStr = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+    // Line 1: "No. OTR-XXXXX" (14pt)
+    var line1Text = 'No. ' + serial;
+    var line1Size = 14;
+    var line1Width = font.widthOfTextAtSize(line1Text, line1Size);
 
-    // Calculate center of seal for rotation
-    var centerX = sealX + sealWidth / 2;
-    var centerY = sealY + sealHeight / 2;
+    // Line 2: "4/3/26 2:31 AM EST" (10pt)
+    var line2Text = dateStr;
+    var line2Size = 10;
+    var line2Width = font.widthOfTextAtSize(line2Text, line2Size);
 
-    // Rotation angle in radians (-2 degrees)
-    var angle = -2 * Math.PI / 180;
+    // Position: bottom-right, 50pt from edges, right-aligned
+    var margin = 50;
+    var lineSpacing = 16;
 
-    // Draw rotated rectangle border
-    // We'll draw 4 lines to form the rectangle, rotated around center
-    var corners = [
-        { x: sealX, y: sealY },
-        { x: sealX + sealWidth, y: sealY },
-        { x: sealX + sealWidth, y: sealY + sealHeight },
-        { x: sealX, y: sealY + sealHeight }
-    ];
+    // Right edge position
+    var rightEdge = pageSize.width - margin;
 
-    // Rotate corners
-    var rotatedCorners = corners.map(function(corner) {
-        return rotatePoint(corner.x, corner.y, centerX, centerY, angle);
+    // Line 2 (date) at bottom
+    var line2X = rightEdge - line2Width;
+    var line2Y = margin;
+
+    // Line 1 (serial) above line 2
+    var line1X = rightEdge - line1Width;
+    var line1Y = line2Y + line2Size + lineSpacing;
+
+    // Draw line 1: "No. OTR-XXXXX"
+    targetPage.drawText(line1Text, {
+        x: line1X,
+        y: line1Y,
+        size: line1Size,
+        font: font,
+        color: darkRed,
+        opacity: 0.85
     });
 
-    // Draw border lines
-    for (var i = 0; i < 4; i++) {
-        var start = rotatedCorners[i];
-        var end = rotatedCorners[(i + 1) % 4];
-        targetPage.drawLine({
-            start: { x: start.x, y: start.y },
-            end: { x: end.x, y: end.y },
-            thickness: 2,
-            color: darkRed,
-            opacity: 0.85
-        });
-    }
-
-    // Text content (from top to bottom within seal)
-    var textLines = [
-        { text: 'OFF-THE-RECORD', font: fontBold, size: 11, yOffset: 115 },
-        { text: 'DIGITAL EDITION', font: font, size: 8, yOffset: 98 },
-        { text: 'No. ' + serial, font: fontBold, size: 12, yOffset: 72 },
-        { text: dateStr, font: font, size: 9, yOffset: 55 },
-        { text: 'VERIFIED ORIGINAL', font: fontBold, size: 8, yOffset: 32 },
-        { text: 'anthonyfenech.com', font: font, size: 7, yOffset: 18 }
-    ];
-
-    textLines.forEach(function(line) {
-        var textWidth = line.font.widthOfTextAtSize(line.text, line.size);
-        var textX = sealX + (sealWidth - textWidth) / 2;
-        var textY = sealY + line.yOffset;
-
-        // Rotate text position
-        var rotated = rotatePoint(textX, textY, centerX, centerY, angle);
-
-        targetPage.drawText(line.text, {
-            x: rotated.x,
-            y: rotated.y,
-            size: line.size,
-            font: line.font,
-            color: darkRed,
-            opacity: 0.85,
-            rotate: PDFLib.degrees(-2)
-        });
+    // Draw line 2: date with timezone
+    targetPage.drawText(line2Text, {
+        x: line2X,
+        y: line2Y,
+        size: line2Size,
+        font: font,
+        color: darkRed,
+        opacity: 0.85
     });
 }
 
-function rotatePoint(x, y, cx, cy, angle) {
-    var cos = Math.cos(angle);
-    var sin = Math.sin(angle);
-    var dx = x - cx;
-    var dy = y - cy;
-    return {
-        x: cx + dx * cos - dy * sin,
-        y: cy + dx * sin + dy * cos
-    };
+function formatDateWithTimezone() {
+    var now = new Date();
+
+    // Get timezone abbreviation
+    var tz = 'UTC';
+    try {
+        var parts = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
+            .formatToParts(now);
+        var tzPart = parts.find(function(p) { return p.type === 'timeZoneName'; });
+        if (tzPart) {
+            tz = tzPart.value;
+        }
+    } catch (e) {
+        console.log('[PDF Stamper] Could not get timezone, using UTC');
+    }
+
+    // Format: M/D/YY H:MM AM/PM TZ (no leading zeros)
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var year = String(now.getFullYear()).slice(-2);
+
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    if (hours === 0) hours = 12;
+
+    var minuteStr = minutes < 10 ? '0' + minutes : String(minutes);
+
+    return month + '/' + day + '/' + year + ' ' + hours + ':' + minuteStr + ' ' + ampm + ' ' + tz;
 }
 
 // ═══════════════════════════════════════════════════════════
