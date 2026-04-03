@@ -435,7 +435,51 @@
 
         // Fix 7: Transform content to append year to datelines
         const { year } = chapterInfo;
-        if (year) {
+        const hasValidYear = typeof year === 'number' && !isNaN(year);
+
+        // Fix 7a: Pre-process split datelines (where <em> tag splits date from em dash)
+        if (hasValidYear) {
+            // Pattern to match month+day at end of text (possibly with trailing whitespace)
+            const monthDayEndPattern = /(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+(\d{1,2})\s*$/;
+
+            content = content.map(item => {
+                if (item.type === 'paragraph') {
+                    const runs = item.runs.map((run, i, arr) => {
+                        // Check if this run ends with month+day
+                        const match = run.text.match(monthDayEndPattern);
+                        if (!match) return run;
+
+                        // Find next non-empty run
+                        let nextRun = null;
+                        for (let j = i + 1; j < arr.length; j++) {
+                            if (arr[j].text.trim()) {
+                                nextRun = arr[j];
+                                break;
+                            }
+                        }
+
+                        // Check if next run starts with em dash
+                        if (!nextRun || !nextRun.text.startsWith('\u2014')) return run;
+
+                        // Check if year already present (4-digit number)
+                        if (/\d{4}/.test(run.text)) return run;
+
+                        // This is a split dateline - append year
+                        // Trim trailing whitespace, then add ", YEAR"
+                        return {
+                            ...run,
+                            text: run.text.trimEnd() + ', ' + year
+                        };
+                    });
+
+                    return { ...item, runs };
+                }
+                return item;
+            });
+        }
+
+        // Fix 7b: Handle non-split datelines (month+day+em-dash in single run)
+        if (hasValidYear) {
             content = content.map(item => {
                 if (item.type === 'paragraph') {
                     return {
