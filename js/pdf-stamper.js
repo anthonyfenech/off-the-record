@@ -9,9 +9,9 @@
  */
 
 // ═══════════════════════════════════════════════════════════
-// CONFIGURATION — Replace __APPS_SCRIPT_URL__ after deploying
+// CONFIGURATION — Replace https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec after deploying
 // ═══════════════════════════════════════════════════════════
-var SERIAL_ENDPOINT = '__APPS_SCRIPT_URL__';
+var SERIAL_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
 
 var BASE_PDF_PATH = './assets/OFF-THE-RECORD.pdf';
 var SERIAL_TIMEOUT = 10000; // 10 seconds
@@ -83,8 +83,8 @@ async function stampAndDownload(buttonElement) {
 // ═══════════════════════════════════════════════════════════
 
 async function getSerialNumber() {
-    // Check if endpoint is configured
-    if (SERIAL_ENDPOINT === '__APPS_SCRIPT_URL__') {
+    // Check if endpoint is configured (placeholder not replaced)
+    if (SERIAL_ENDPOINT.indexOf('__APPS_SCRIPT_URL__') !== -1) {
         console.warn('[PDF Stamper] Serial endpoint not configured, using fallback');
         return generateFallbackSerial();
     }
