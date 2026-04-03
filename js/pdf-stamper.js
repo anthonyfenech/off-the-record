@@ -192,26 +192,48 @@ async function applyLibrarySeal(pdfDoc, serial) {
     var line1Text = '# ' + serial;
     var line1Size = 14;
     var line1Width = font.widthOfTextAtSize(line1Text, line1Size);
+    var line1Height = line1Size;
 
     // Line 2: "4/3/26 2:31 AM EST" (10pt)
     var line2Text = dateStr;
     var line2Size = 10;
     var line2Width = font.widthOfTextAtSize(line2Text, line2Size);
+    var line2Height = line2Size;
 
-    // Position: bottom-right, 50pt from edges, right-aligned
+    // Box padding
+    var paddingH = 25; // horizontal
+    var paddingV = 15; // vertical
+    var lineSpacing = 8;
+
+    // Calculate box dimensions based on content
+    var contentWidth = Math.max(line1Width, line2Width);
+    var contentHeight = line1Height + lineSpacing + line2Height;
+    var boxWidth = contentWidth + (paddingH * 2);
+    var boxHeight = contentHeight + (paddingV * 2);
+
+    // Position: bottom-right of page, 50pt from edges
     var margin = 50;
-    var lineSpacing = 16;
+    var boxX = pageSize.width - boxWidth - margin;
+    var boxY = margin;
 
-    // Right edge position
-    var rightEdge = pageSize.width - margin;
+    // Draw bordered rectangle (no fill, just stroke)
+    targetPage.drawRectangle({
+        x: boxX,
+        y: boxY,
+        width: boxWidth,
+        height: boxHeight,
+        borderColor: darkRed,
+        borderWidth: 2,
+        borderOpacity: 0.85,
+        opacity: 0 // no fill
+    });
 
-    // Line 2 (date) at bottom
-    var line2X = rightEdge - line2Width;
-    var line2Y = margin;
+    // Calculate centered text positions inside box
+    var line1X = boxX + (boxWidth - line1Width) / 2;
+    var line1Y = boxY + paddingV + line2Height + lineSpacing;
 
-    // Line 1 (serial) above line 2
-    var line1X = rightEdge - line1Width;
-    var line1Y = line2Y + line2Size + lineSpacing;
+    var line2X = boxX + (boxWidth - line2Width) / 2;
+    var line2Y = boxY + paddingV;
 
     // Draw line 1: "# 000-XXXXXX-10"
     targetPage.drawText(line1Text, {
