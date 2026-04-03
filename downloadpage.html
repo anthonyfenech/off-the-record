@@ -647,44 +647,9 @@
     <script src="./js/reader-name.min.js?v=423"></script>
     <script src="./js/analytics.min.js?v=423"></script>
 
-    <!-- PDF Download Tracking -->
-    <script>
-        function trackPdfDownload() {
-            var payload = {
-                event: 'pdf_download',
-                reader_name: localStorage.getItem('otr_reader_name') || 'anonymous',
-                timestamp: new Date().toISOString(),
-                device: navigator.userAgent
-            };
-
-            // Fire and forget — do NOT block the download
-            try {
-                if (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.trackingEnabled) {
-                    fetch(OTR_ANALYTICS_CONFIG.analyticsScriptUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    }).then(function() {
-                        console.log('[OTR Analytics] PDF download tracked');
-                    }).catch(function() {
-                        console.log('[OTR Analytics] PDF tracking failed — download proceeded');
-                    });
-                } else {
-                    console.log('[OTR Analytics] PDF download tracked (suppressed — tracking disabled)', payload);
-                }
-            } catch (e) {
-                console.log('[OTR Analytics] PDF tracking failed — download proceeded');
-            }
-
-            // Return true to allow the default link action (download)
-            return true;
-        }
-    </script>
-
     <!-- PDF Stamper (serial-numbered downloads) -->
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-    <script src="./js/pdf-stamper.js?v=473"></script>
+    <script src="./js/pdf-stamper.js?v=474"></script>
 
     <script src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
