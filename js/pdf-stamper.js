@@ -131,11 +131,11 @@ async function loadCustomFont(pdfDoc) {
         }
         var fontBytes = await response.arrayBuffer();
         var font = await pdfDoc.embedFont(fontBytes);
-        console.log('[PDF Stamper] Custom font loaded: Special Elite');
+        console.log('[OTR] Stamp font: Special Elite loaded');
         return font;
     } catch (error) {
-        console.error('[PDF Stamper] Custom font failed, falling back to Courier-Bold:', error.message);
-        return await pdfDoc.embedFont(PDFLib.StandardFonts.CourierBold);
+        console.log('[OTR] Stamp font: fallback to Times-Roman');
+        return await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman);
     }
 }
 
