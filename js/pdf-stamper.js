@@ -108,7 +108,8 @@ async function getSerialNumber() {
         var data = await response.json();
 
         if (data && data.serial) {
-            return data.serial;
+            // Transform OTR-XXXXX to 000-XXXXXX-10 format
+            return formatSerial(data.serial);
         } else {
             throw new Error('Invalid response from serial endpoint');
         }
@@ -119,15 +120,17 @@ async function getSerialNumber() {
     }
 }
 
-function generateFallbackSerial() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = String(now.getMonth() + 1).padStart(2, '0');
-    var day = String(now.getDate()).padStart(2, '0');
-    var hour = String(now.getHours()).padStart(2, '0');
-    var minute = String(now.getMinutes()).padStart(2, '0');
+// Transform raw serial (OTR-00042) to formatted serial (000-000042-10)
+function formatSerial(raw) {
+    var match = raw.match(/(\d+)/);
+    var num = match ? match[1] : '0';
+    // EEE = 000 (digital PDF edition), CCCCCC = 6-digit copy, VV = 10 (v1.0)
+    return '000-' + num.padStart(6, '0') + '-10';
+}
 
-    return 'OTR-OFF-' + year + month + day + '-' + hour + minute;
+function generateFallbackSerial() {
+    // Offline fallback: 000-OFFLINE-10
+    return '000-OFFLINE-10';
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -185,8 +188,8 @@ async function applyLibrarySeal(pdfDoc, serial) {
     // Format date with timezone: M/D/YY H:MM AM/PM TZ
     var dateStr = formatDateWithTimezone();
 
-    // Line 1: "No. OTR-XXXXX" (14pt)
-    var line1Text = 'No. ' + serial;
+    // Line 1: "# 000-XXXXXX-10" (14pt)
+    var line1Text = '# ' + serial;
     var line1Size = 14;
     var line1Width = font.widthOfTextAtSize(line1Text, line1Size);
 
@@ -210,7 +213,7 @@ async function applyLibrarySeal(pdfDoc, serial) {
     var line1X = rightEdge - line1Width;
     var line1Y = line2Y + line2Size + lineSpacing;
 
-    // Draw line 1: "No. OTR-XXXXX"
+    // Draw line 1: "# 000-XXXXXX-10"
     targetPage.drawText(line1Text, {
         x: line1X,
         y: line1Y,
@@ -303,7 +306,7 @@ async function applyWatermarks(pdfDoc, serial) {
 function applyMetadata(pdfDoc, serial) {
     pdfDoc.setTitle('OFF-THE-RECORD by Anthony Fenech');
     pdfDoc.setAuthor('Anthony Fenech');
-    pdfDoc.setSubject('Digital Edition — Serial ' + serial);
+    pdfDoc.setSubject('Digital Edition — # ' + serial);
     pdfDoc.setKeywords([serial, 'anthonyfenech.com', 'verified']);
     pdfDoc.setCreator('OFF-THE-RECORD Digital Press');
     pdfDoc.setProducer('OFF-THE-RECORD Digital Press');
