@@ -4,7 +4,6 @@
  *
  * Creates unique, trackable copies with:
  * - Library seal on page 2
- * - Diagonal watermark on all interior pages
  * - Serial number in PDF metadata
  */
 
@@ -37,7 +36,6 @@ async function stampAndDownload(buttonElement) {
 
         // Step 4: Apply stamps
         await applyLibrarySeal(pdfDoc, serial);
-        await applyWatermarks(pdfDoc, serial);
         applyMetadata(pdfDoc, serial);
 
         // Step 5: Save and trigger download
@@ -239,39 +237,6 @@ function formatDateWithTimezone() {
     var minuteStr = minutes < 10 ? '0' + minutes : String(minutes);
 
     return month + '-' + day + '-' + year + ' ' + hours + ':' + minuteStr + ' ' + ampm + ' ' + tz;
-}
-
-// ═══════════════════════════════════════════════════════════
-// INTERIOR WATERMARK (All pages except page 1)
-// ═══════════════════════════════════════════════════════════
-
-async function applyWatermarks(pdfDoc, serial) {
-    var pages = pdfDoc.getPages();
-    var font = await pdfDoc.embedFont(PDFLib.StandardFonts.Courier);
-
-    // Watermark color: light gray at 8% opacity
-    var watermarkColor = PDFLib.rgb(200/255, 200/255, 200/255);
-
-    // Skip page 1 (index 0), apply to all other pages
-    for (var i = 1; i < pages.length; i++) {
-        var page = pages[i];
-        var pageSize = page.getSize();
-
-        // Calculate center position
-        var textWidth = font.widthOfTextAtSize(serial, 48);
-        var centerX = (pageSize.width - textWidth) / 2;
-        var centerY = pageSize.height / 2;
-
-        page.drawText(serial, {
-            x: centerX,
-            y: centerY,
-            size: 48,
-            font: font,
-            color: watermarkColor,
-            opacity: 0.08,
-            rotate: PDFLib.degrees(45)
-        });
-    }
 }
 
 // ═══════════════════════════════════════════════════════════
