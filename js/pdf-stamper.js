@@ -15,64 +15,41 @@ var SERIAL_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5
 
 var BASE_PDF_PATH = './assets/OFF-THE-RECORD.pdf';
 var CUSTOM_FONT_PATH = './assets/fonts/SpecialElite-Regular.ttf';
-var SERIAL_TIMEOUT = 10000; // 10 seconds
+var SERIAL_TIMEOUT = 15000; // 15 seconds
 
 // ═══════════════════════════════════════════════════════════
 // MAIN EXPORT: stampAndDownload
 // ═══════════════════════════════════════════════════════════
 
 async function stampAndDownload(buttonElement) {
-    var originalText = buttonElement.innerHTML;
-    var originalHref = buttonElement.getAttribute('href');
-
     try {
-        // Step 1: Show preparing state
-        buttonElement.innerHTML = '<span class="format-name">PREPARING YOUR COPY...</span>';
-        buttonElement.style.pointerEvents = 'none';
-        buttonElement.removeAttribute('href');
-
-        // Step 2: Get serial number (with fallback)
+        // Step 1: Get serial number (with fallback)
         var serial = await getSerialNumber();
         console.log('[PDF Stamper] Serial assigned:', serial);
 
-        // Step 3: Load base PDF
+        // Step 2: Load base PDF
         var pdfBytes = await loadBasePdf();
         if (!pdfBytes) {
             throw new Error('Failed to load base PDF');
         }
 
-        // Step 4: Load pdf-lib and stamp the PDF
+        // Step 3: Load pdf-lib and stamp the PDF
         var pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
-        // Step 5: Apply stamps
+        // Step 4: Apply stamps
         await applyLibrarySeal(pdfDoc, serial);
         await applyWatermarks(pdfDoc, serial);
         applyMetadata(pdfDoc, serial);
 
-        // Step 6: Save and trigger download
+        // Step 5: Save and trigger download
         var stampedBytes = await pdfDoc.save();
         triggerDownload(stampedBytes, serial);
 
-        // Step 7: Fire analytics
+        // Step 6: Fire analytics
         fireAnalyticsEvent(serial);
-
-        // Step 8: Reset button
-        buttonElement.innerHTML = originalText;
-        buttonElement.style.pointerEvents = '';
-        if (originalHref) buttonElement.setAttribute('href', originalHref);
 
     } catch (error) {
         console.error('[PDF Stamper] Error:', error);
-
-        // Show error state
-        buttonElement.innerHTML = '<span class="format-name">DOWNLOAD ERROR — TRY AGAIN</span>';
-
-        // Re-enable after 3 seconds
-        setTimeout(function() {
-            buttonElement.innerHTML = originalText;
-            buttonElement.style.pointerEvents = '';
-            if (originalHref) buttonElement.setAttribute('href', originalHref);
-        }, 3000);
     }
 
     // Prevent default link behavior
@@ -96,6 +73,7 @@ async function getSerialNumber() {
 
         var response = await fetch(SERIAL_ENDPOINT + '?action=assign_serial', {
             method: 'GET',
+            redirect: 'follow',
             signal: controller.signal
         });
 
@@ -344,7 +322,7 @@ function triggerDownload(pdfBytes, serial) {
 
     var link = document.createElement('a');
     link.href = url;
-    link.download = 'OFF-THE-RECORD-' + serial + '.pdf';
+    link.download = 'OFF-THE-RECORD.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
