@@ -285,7 +285,7 @@ function formatDateWithTimezone() {
 
     var minuteStr = minutes < 10 ? '0' + minutes : String(minutes);
 
-    return month + '/' + day + '/' + year + ' ' + hours + ':' + minuteStr + ' ' + ampm + ' ' + tz;
+    return month + '-' + day + '-' + year + ' ' + hours + ':' + minuteStr + ' ' + ampm + ' ' + tz;
 }
 
 // ═══════════════════════════════════════════════════════════
