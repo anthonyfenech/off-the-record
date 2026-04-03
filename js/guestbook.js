@@ -3,6 +3,7 @@
  * =====================================
  * Handles form submission for the standalone Guestbook/guestbook page.
  * Submits entries to Google Sheets via Apps Script.
+ * Loads and displays approved comments.
  */
 
 (function() {
@@ -15,9 +16,10 @@
     var errorMessage = document.getElementById('errorMessage');
     var charCount = document.getElementById('charCount');
     var commentField = document.getElementById('comment');
+    var commentsList = document.getElementById('commentsList');
 
     // Original button text
-    var originalButtonText = submitBtn ? submitBtn.textContent : 'SIGN IT';
+    var originalButtonText = submitBtn ? submitBtn.textContent : 'SIGN THE GUESTBOOK';
 
     // Submission state
     var isSubmitting = false;
@@ -144,14 +146,14 @@
      */
     function showSuccess() {
         if (successMessage) {
-            successMessage.classList.add('visible');
-            errorMessage.classList.remove('visible');
+            successMessage.style.display = 'block';
+            if (errorMessage) errorMessage.style.display = 'none';
         }
 
         // Hide after 5 seconds
         setTimeout(function() {
             if (successMessage) {
-                successMessage.classList.remove('visible');
+                successMessage.style.display = 'none';
             }
         }, 5000);
     }
@@ -164,14 +166,14 @@
             if (message) {
                 errorMessage.textContent = message;
             }
-            errorMessage.classList.add('visible');
-            successMessage.classList.remove('visible');
+            errorMessage.style.display = 'block';
+            if (successMessage) successMessage.style.display = 'none';
         }
 
         // Hide after 5 seconds
         setTimeout(function() {
             if (errorMessage) {
-                errorMessage.classList.remove('visible');
+                errorMessage.style.display = 'none';
             }
         }, 5000);
     }
@@ -198,6 +200,100 @@
             charCount.classList.remove('warning');
         }
         clearAllFieldErrors();
+    }
+
+    /**
+     * Format date for display
+     */
+    function formatDate(isoString) {
+        try {
+            var date = new Date(isoString);
+            var options = { month: 'short', day: 'numeric', year: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        } catch (e) {
+            return '';
+        }
+    }
+
+    /**
+     * Render a single comment
+     */
+    function renderComment(comment) {
+        var div = document.createElement('div');
+        div.style.cssText = 'padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border);';
+
+        var header = document.createElement('div');
+        header.style.cssText = 'font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-bottom: var(--space-xs);';
+        header.textContent = comment.name;
+        if (comment.location) {
+            header.textContent += ' \u2022 ' + comment.location;
+        }
+        if (comment.date) {
+            header.textContent += ' \u2022 ' + formatDate(comment.date);
+        }
+
+        var text = document.createElement('p');
+        text.style.cssText = 'font-family: var(--font-serif); font-size: var(--font-size-base); line-height: 1.6; margin: 0;';
+        text.textContent = comment.comment;
+
+        div.appendChild(header);
+        div.appendChild(text);
+
+        return div;
+    }
+
+    /**
+     * Load and display approved comments
+     */
+    function loadComments() {
+        if (!commentsList) {
+            console.warn('[Guestbook] Comments list container not found');
+            return;
+        }
+
+        // Check if tracking/API is available
+        if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.trackingEnabled) {
+            commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
+            return;
+        }
+
+        var endpoint = OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl;
+        if (!endpoint) {
+            commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
+            return;
+        }
+
+        // Fetch approved comments
+        fetch(endpoint + '?action=getApprovedComments', {
+            method: 'GET',
+            mode: 'cors'
+        })
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(function(data) {
+            if (!data || !data.comments || data.comments.length === 0) {
+                commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
+                return;
+            }
+
+            // Clear loading message
+            commentsList.innerHTML = '';
+
+            // Render each comment
+            data.comments.forEach(function(comment) {
+                commentsList.appendChild(renderComment(comment));
+            });
+
+            console.log('[Guestbook] Loaded ' + data.comments.length + ' comments');
+        })
+        .catch(function(error) {
+            console.warn('[Guestbook] Could not load comments:', error.message);
+            commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
+        });
     }
 
     /**
@@ -300,6 +396,9 @@
                 });
             }
         });
+
+        // Load approved comments
+        loadComments();
 
         console.log('[Guestbook] Initialized');
     }
