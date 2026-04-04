@@ -814,7 +814,7 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>February 26</em>—</span>On the back fields, I get a text message from someone at MLB Network, asking if I have time to come on television today. I've never been on TV like this, and I'm certifiably nervous—so I take swigs of apple-flavored whiskey when I get back.</p>
 
-<p>It is sweltering as I stand on camera—mid-eighties, and my right hand is sweating so much the microphone keeps slipping to the side. I stumble over words badly at least once, but overall, I survive. MLB Network… hey, now! <span class="media-emoji" data-media-id="first-on-tv">📺</span></p>
+<p>It is sweltering as I stand on camera—mid-eighties, and my right hand is sweating so much the microphone keeps slipping to the side. I stumble over words badly at least once, but overall, I survive. MLB Network… hey, now!</p>
 
 <p>I go back into the clubhouse—shirt and tie and jacket and still sweating, scrambling for quotes. I apologize to one player for staying late to answer questions—catcher Alex Avila, whose dad, Al, is Detroit's assistant general manager.</p>
 
@@ -1153,7 +1153,7 @@ export const CHAPTERS = [
 
 <p>“If you’re wondering what the crowd was reacting to—that ball went into the press box, and I believe it was Anthony Fenech from the <em>Free Press</em> on the Tigers beat who had the bad end of that ball.</p>
 
-<p>“I don’t know if he caught it or not. I don’t know if it knocked him down. He isn’t in his seat anymore—he has since left the third row. So, I guess we’ll find out soon enough.” <span class="media-emoji" data-media-id="foul-ball-fox-commentary">🎬</span></p>
+<p>“I don’t know if he caught it or not. I don’t know if it knocked him down. He isn’t in his seat anymore—he has since left the third row. So, I guess we’ll find out soon enough.”</p>
 
 <p>Dave Dombrowski passes me in the hallway.</p>
 
@@ -1175,7 +1175,7 @@ export const CHAPTERS = [
 
 <p>My jaw drops. I am on satellite radio with Mad Dog, and he just hit me with that?</p>
 
-<p>Hanging up, I realize I’ve been hood-winked. It won’t take long for Internet Stalker’s sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now. <span class="media-emoji" data-media-id="internet-stalker-prank-call">🔴</span></p>
+<p>Hanging up, I realize I’ve been hood-winked. It won’t take long for Internet Stalker’s sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now.</p>
 
 
 <p></p>
@@ -2740,7 +2740,7 @@ export const CHAPTERS = [
 
 <p>In the newsroom, Bernie asks a couple quick-hitters about the vote and then sticks me with the <em>Entertainment Tonight</em> question I feared—asking for my reaction to Upton’s tweets.</p>
 
-<p>“I’m just glad that I voted for Verlander so Kate Upton can’t come at me.” <span class="media-emoji" data-media-id="cy-young-2016-bernie">🎬</span></p>
+<p>“I’m just glad that I voted for Verlander so Kate Upton can’t come at me.”</p>
 
 
 <p></p>
@@ -3404,7 +3404,7 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>August 15</em>—</span>WHAT'S SAID IN HERE, STAYS IN HERE.</p>
 
-<p>A big banner hangs on the wall in the visitor's clubhouse here, above where Ian Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández. <span class="media-emoji" data-media-id="kinsler-angel">📷</span></p>
+<p>A big banner hangs on the wall in the visitor's clubhouse here, above where Ian Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández.</p>
 
 <p>"He's messing with baseball games. Blatantly. It's not just like a borderline call here or there… I didn't even cuss at him. I just said you need to re-evaluate your life, man… I'm just saying it's pretty obvious that he needs to stop ruining baseball games… He needs to find another job… If I get fined for saying the truth, then so be it… He's that bad. I'm not mad at him for being bad. He just has to go away."</p>
 
@@ -3919,7 +3919,7 @@ export const CHAPTERS = [
 
 <p>Inside the clubhouse, I stand feet away from guys I grew up idolizing.</p>
 
-<p>In the manager's office, Tigers skipper Jim Leyland is lying on a couch in a tank top, smoking a cigarette. He's asked about tonight's rain forecast. <span class="media-emoji" data-media-id="first-time-ever">📺</span></p>
+<p>In the manager's office, Tigers skipper Jim Leyland is lying on a couch in a tank top, smoking a cigarette. He's asked about tonight's rain forecast.</p>
 
 <p>"I had a rule in A-ball… They get on the bus, and I say, 'If you fuckers look up at the clouds, I'm fining the shit out of you.'"</p>
 
@@ -3950,7 +3950,7 @@ export const CHAPTERS = [
 
 <p>I'm at Harwell's retirement complex for his surprise 90th birthday party. One of his friends invited me, and here I am sitting with Ernie and his wife Lulu.</p>
 
-<p>Me and Ernie, shooting the breeze—my dad's gonna think this is so cool. <span class="media-emoji" data-media-id="ernie-harwell-talk">🔴</span></p>
+<p>Me and Ernie, shooting the breeze—my dad's gonna think this is so cool.</p>
 
 <p>"Who were your favorite performers?"</p>
 
@@ -5282,7 +5282,7 @@ export const CHAPTERS = [
 <p>Busy today. He's gotta go throw. Try coming back tomorrow.</p>
 
 <p></p>
-<p class="has-dateline"><span class="dateline"><em>September 12</em>—</span>Same place as yesterday. I pull the recorder from my back pocket and reintroduce the topic. <span class="media-emoji" data-media-id="verlander-injury-9-12-18">🔴</span></p>
+<p class="has-dateline"><span class="dateline"><em>September 12</em>—</span>Same place as yesterday. I pull the recorder from my back pocket and reintroduce the topic.</p>
 
 <p>Verlander has already apologized publicly for the "misdiagnosis" comments. Two days after the story was published last month, he reached out to Al Avila and trainer Kevin Rand.</p>
 
@@ -5628,13 +5628,13 @@ export const CHAPTERS = [
 
 <p>My arm feels fine in the first inning, but then I throw 60 pitches in the second, knocked for seven or eight runs by undefeated Team 1—the best team in fantasy camp. One of the real-life Tiger players gets a whiff of this and sends a couple of trainers to check it out.</p>
 
-<p>Anthony Fenech, a man with many a night perched in the cheap seats, is unable to throw a pitch over the plate in coach pitch. His arm hurts. <span class="media-emoji" data-media-id="zimmermann-tweet-vid">📺</span></p>
+<p>Anthony Fenech, a man with many a night perched in the cheap seats, is unable to throw a pitch over the plate in coach pitch. His arm hurts.</p>
 
 <p>Video of my performance circulates online, shared on Twitter by fantasy camp beat writer Jordan Zimmermann. He includes my stats: <em>@anthonyfenech line vs Tigers Fantasy Camp: 2/3 IP, 2 H, 5 BB, 5 ER, or, not very good.</em></p>
 
 <p>I sit at my locker scrolling through the ridicule, lucky the video culprits didn't stick around. I actually went back out for <em>another</em> inning and moved up five feet, like it was coach pitch.</p>
 
-<p>Everyone shacks up at the Ramada Inn, fantasy campers and coaches alike—even real-life ones. I walk past Tigers' third-base coach Ramon Santiago with an ice pack on my knee. "Now you know how it feels, <em>An-tony.</em>" <span class="media-emoji" data-media-id="fantasy-camp-scrum">🎬</span></p>
+<p>Everyone shacks up at the Ramada Inn, fantasy campers and coaches alike—even real-life ones. I walk past Tigers' third-base coach Ramon Santiago with an ice pack on my knee. "Now you know how it feels, <em>An-tony.</em>"</p>
 
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>February 12</em>—</span>Arriving at the park, I walk past Jordan Zimmermann in the parking lot.</p>
@@ -6204,7 +6204,7 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 5</em>—</span>Back home after 12 days on the road, more Tiger Beat drama.</p>
 
-<p>They're talking about the exposé on 97.1 The Ticket in Detroit and 96.1 The Game in Grand Rapids. <span class="media-emoji" data-media-id="mike-trade-deadline">🎙️</span></p>
+<p>They're talking about the exposé on 97.1 The Ticket in Detroit and 96.1 The Game in Grand Rapids.</p>
 
 <p>"I'll tell you right now, this piece that Fenech wrote today. Find me the last time someone wrote something this impactful. This thing's picked up by every outlet out there—because it says something. Because it calls Avila and this organization out for what they are. You got a beat writer putting his balls on the block."</p>
 
@@ -6278,7 +6278,7 @@ export const CHAPTERS = [
 
 <p>Ball Writers want to know how the future Hall of Famer feels about facing his former team tomorrow night.</p>
 
-<p>I was hoping this wouldn't happen. I didn't want this to happen. Forced to decide between staying here—on Bregman watch—and walking over to the Verlander crowd, your fearless <em>Free Press</em> Ball Writer decides to join the fun (of course he does). <span class="media-emoji" data-media-id="verlander-blow-off-8-20-19">🔴</span></p>
+<p>I was hoping this wouldn't happen. I didn't want this to happen. Forced to decide between staying here—on Bregman watch—and walking over to the Verlander crowd, your fearless <em>Free Press</em> Ball Writer decides to join the fun (of course he does).</p>
 
 <p>Walking slowly toward his locker, past the digital clock. Justin spots me and says:</p>
 
@@ -7278,7 +7278,7 @@ export const CHAPTERS = [
 <p></p>
 <p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>I work from my room today until the Tigers media availability at 4:30, when I decide to raise hell again.</p>
 
-<p>Al Avila sits flanked by manager Ron Gardenhire and VP of player development Dave Littlefield. They drone on about analytics and the minor leagues before I jump in. <span class="media-emoji" data-media-id="winter-meetings-12-10-19">📷</span></p>
+<p>Al Avila sits flanked by manager Ron Gardenhire and VP of player development Dave Littlefield. They drone on about analytics and the minor leagues before I jump in.</p>
 
 <p>"Four years ago, I think it was in Nashville, you said you were going to come up with the 'Tiger Way' plan. Kind of like a uniform plan for players to play the game…"</p>
 
@@ -7671,7 +7671,7 @@ export const CHAPTERS = [
 <p>“Hey bitch.”</p>
 <p>We bring it in for a handshake and he pretends to hit me upside the head with the bat. Approval.</p>
 <p>A cloth mask hangs from my ears, below my face. The others aren’t wearing masks. I’m unsure if I should put it on.</p>
-<p>Soft-tossing and going through tee work, Cabrera looks fit. Dare I say slim. He rips balls fed through a JUGS machine, smacking a shotgun echo around the cages. <span class="media-emoji" data-media-id="miguel-bp-covid">📷</span></p>
+<p>Soft-tossing and going through tee work, Cabrera looks fit. Dare I say slim. He rips balls fed through a JUGS machine, smacking a shotgun echo around the cages.</p>
 <p>They pile into the Rover and drive off. I have an exclusive—a video, some photos, behind-the-scenes access.</p>
 <p>It’ll be the closest any Ball Writer comes to Miggy all season.</p>
 <p></p>
