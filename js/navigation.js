@@ -381,11 +381,10 @@ class Navigation {
     buildBottomSections(fragment) {
         // Check draft settings
         const bookmarksEnabled = localStorage.getItem('admin_draftBookmarks') === 'true';
-        const commentsEnabled = localStorage.getItem('admin_draftComments') === 'true';
         const contactEnabled = localStorage.getItem('admin_draftContact') === 'true';
 
         const bottomSections = [
-            ...(commentsEnabled ? [{ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }] : []),
+            { id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' },
             ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             ...(contactEnabled ? [{ id: 'contact', label: 'CONTACT', type: 'link', url: './contact.html' }] : [])
         ];
