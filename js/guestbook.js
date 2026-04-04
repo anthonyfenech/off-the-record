@@ -87,7 +87,7 @@
      * Clear all field errors
      */
     function clearAllFieldErrors() {
-        ['name', 'email', 'location', 'comment'].forEach(function(fieldId) {
+        ['name', 'email', 'comment'].forEach(function(fieldId) {
             clearFieldError(fieldId);
         });
     }
@@ -102,7 +102,6 @@
 
         var nameField = document.getElementById('name');
         var emailField = document.getElementById('email');
-        var locationField = document.getElementById('location');
 
         // Name validation
         if (!nameField || !nameField.value.trim()) {
@@ -116,12 +115,6 @@
             isValid = false;
         } else if (!isValidEmail(emailField.value.trim())) {
             showFieldError('email', 'Please enter a valid email');
-            isValid = false;
-        }
-
-        // Location validation
-        if (!locationField || !locationField.value.trim()) {
-            showFieldError('location', 'Location is required');
             isValid = false;
         }
 
@@ -315,7 +308,6 @@
             timestamp: new Date().toISOString(),
             name: document.getElementById('name').value.trim(),
             email: document.getElementById('email').value.trim(),
-            location: document.getElementById('location').value.trim(),
             comment: document.getElementById('comment').value.trim(),
             reader_name: localStorage.getItem('otr_reader_name') || 'anonymous',
             device: navigator.userAgent
@@ -378,7 +370,7 @@
         form.addEventListener('submit', handleSubmit);
 
         // Clear field errors on input
-        ['name', 'email', 'location', 'comment'].forEach(function(fieldId) {
+        ['name', 'email', 'comment'].forEach(function(fieldId) {
             var field = document.getElementById(fieldId);
             if (field) {
                 field.addEventListener('input', function() {
