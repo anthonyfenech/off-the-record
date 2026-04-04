@@ -198,8 +198,7 @@
             <div class="chapter-body" id="chapterBody">
 
                 <!-- Submission Form -->
-                <section style="padding: var(--space-xl) 0; border-top: 1px solid var(--color-border);">
-                    <h3 style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); margin-bottom: var(--space-lg);">SIGN THE GUESTBOOK</h3>
+                <section style="padding: var(--space-xl) 0;">
                     <form id="guestbookForm" style="display: flex; flex-direction: column;">
                         <div style="margin-bottom: var(--space-lg);">
                             <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Name</label>
@@ -208,18 +207,10 @@
                         <div style="margin-bottom: var(--space-lg);">
                             <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Email</label>
                             <input type="email" id="email" name="email" required autocomplete="email" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); box-sizing: border-box;">
-                            <p style="font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-tertiary); font-style: italic; margin-top: var(--space-xs);">Your email will not be displayed publicly.</p>
                         </div>
                         <div style="margin-bottom: var(--space-lg);">
                             <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Comment</label>
-                            <textarea id="comment" name="comment" required maxlength="500" placeholder="Share your thoughts..." style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); resize: vertical; min-height: 120px; box-sizing: border-box;"></textarea>
-                            <div id="charCount" style="font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-tertiary); text-align: right; margin-top: var(--space-xs);">0 / 500</div>
-                        </div>
-                        <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: flex; align-items: flex-start; gap: var(--space-sm); font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-primary);">
-                                <input type="checkbox" id="consent" name="consent" required style="margin-top: 3px; flex-shrink: 0;">
-                                <span>I consent to Anthony Fenech using my comment to promote the book.</span>
-                            </label>
+                            <textarea id="comment" name="comment" required maxlength="500" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); resize: vertical; min-height: 120px; box-sizing: border-box;"></textarea>
                         </div>
                         <button type="submit" id="submitBtn" style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; color: #ffffff; background: #333333; border: 2px solid #333333; padding: var(--space-sm) var(--space-xl); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); cursor: pointer; margin-top: var(--space-sm);">SIGN THE GUESTBOOK</button>
                         <div id="successMessage" style="display: none; font-family: var(--font-mono); font-size: var(--font-size-sm); padding: var(--space-md); margin-top: var(--space-lg); text-align: center; color: #2e7d32; background: rgba(46,125,50,0.1); border: 1px solid #2e7d32;">
@@ -229,14 +220,6 @@
                             Something went wrong. Please try again.
                         </div>
                     </form>
-                </section>
-
-                <!-- Comments Display -->
-                <section style="padding: var(--space-xl) 0; border-top: 1px solid var(--color-border);">
-                    <h3 style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); margin-bottom: var(--space-lg);">WHAT PEOPLE ARE SAYING</h3>
-                    <div id="commentsList">
-                        <p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">Loading comments...</p>
-                    </div>
                 </section>
 
             </div>
