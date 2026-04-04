@@ -17,7 +17,7 @@
     <meta name="twitter:title" content="OFF-THE-RECORD">
     <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
 
-    <title>BINGE MODE</title>
+    <title>OFF-THE-RECORD</title>
 
     <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
     <script>
@@ -987,32 +987,35 @@
                 return item;
             }
 
-            // Create top section (BINGE MODE link)
+            // Create top section (BINGE MODE, DOWNLOAD, GUESTBOOK links)
             function createTopSection(section) {
                 const sectionDiv = document.createElement('div');
                 sectionDiv.className = 'toc-top-section';
                 sectionDiv.dataset.section = section.id;
 
-                const sectionHeader = document.createElement('div');
-                sectionHeader.className = 'toc-top-header toc-top-link';
+                // Use proper <a> tag for right-click, middle-click support
+                const link = document.createElement('a');
+                link.className = 'toc-top-header toc-top-link';
+                link.href = section.url;
 
-                const sectionTitle = document.createElement('h3');
-                sectionTitle.className = 'toc-top-title';
-                sectionTitle.textContent = section.label;
+                const title = document.createElement('h3');
+                title.className = 'toc-top-title';
+                title.textContent = section.label;
+                link.appendChild(title);
 
-                sectionHeader.appendChild(sectionTitle);
-
-                // Clicking BINGE MODE does nothing (already here)
+                // Current page styling
                 if (section.current) {
-                    sectionHeader.style.cursor = 'default';
+                    link.style.cursor = 'default';
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                    });
                 } else {
-                    sectionHeader.addEventListener('click', () => {
+                    link.addEventListener('click', () => {
                         closeTOC();
-                        window.location.href = section.url;
                     });
                 }
 
-                sectionDiv.appendChild(sectionHeader);
+                sectionDiv.appendChild(link);
                 return sectionDiv;
             }
 

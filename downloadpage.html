@@ -21,7 +21,7 @@
     <meta name="apple-mobile-web-app-title" content="OTR">
     <meta name="format-detection" content="telephone=no">
 
-    <title>Download - OFF-THE-RECORD</title>
+    <title>OFF-THE-RECORD</title>
 
     <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
     <script>
@@ -559,30 +559,29 @@
             sectionDiv.className = 'toc-top-section';
             sectionDiv.dataset.section = section.id;
 
-            const sectionHeader = document.createElement('div');
-            sectionHeader.className = 'toc-top-header toc-top-link';
+            // Use proper <a> tag for right-click, middle-click support
+            const link = document.createElement('a');
+            link.className = 'toc-top-header toc-top-link';
+            link.href = section.url;
+
+            const title = document.createElement('h3');
+            title.className = 'toc-top-title';
+            title.textContent = section.label;
+            link.appendChild(title);
 
             if (section.current) {
-                sectionHeader.style.background = 'var(--color-bg-hover)';
-                sectionHeader.style.fontWeight = 'bold';
-            }
-
-            const sectionTitle = document.createElement('h3');
-            sectionTitle.className = 'toc-top-title';
-            sectionTitle.textContent = section.label;
-
-            sectionHeader.appendChild(sectionTitle);
-
-            if (!section.current) {
-                sectionHeader.addEventListener('click', () => {
-                    closeTOC();
-                    window.location.href = section.url;
+                link.style.background = 'var(--color-bg-hover)';
+                link.style.cursor = 'default';
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
                 });
             } else {
-                sectionHeader.style.cursor = 'default';
+                link.addEventListener('click', () => {
+                    closeTOC();
+                });
             }
 
-            sectionDiv.appendChild(sectionHeader);
+            sectionDiv.appendChild(link);
             return sectionDiv;
         }
 

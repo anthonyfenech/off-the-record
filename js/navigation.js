@@ -149,7 +149,8 @@ class Navigation {
             ...(aboutEnabled ? [{ id: 'about', label: 'ABOUT', type: 'link', url: './about.html' }] : []),
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
             { id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html' },
-            { id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html' }
+            { id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html' },
+            { id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }
         ];
 
         topSections.forEach(section => {
@@ -305,22 +306,22 @@ class Navigation {
         }
     }
 
-    // Create a top section (BLOG, ABOUT, AUDIO, PHOTOS)
+    // Create a top section (BLOG, ABOUT, AUDIO, BINGE MODE, DOWNLOAD, GUESTBOOK)
     createTopSection(section) {
         const sectionDiv = document.createElement('div');
         sectionDiv.className = 'toc-top-section';
         sectionDiv.dataset.section = section.id;
 
-        const sectionHeader = document.createElement('div');
-        sectionHeader.className = section.type === 'dropdown' ? 'toc-top-header' : 'toc-top-header toc-top-link';
-
-        const sectionTitle = document.createElement('h3');
-        sectionTitle.className = 'toc-top-title';
-        sectionTitle.textContent = section.label;
-
-        sectionHeader.appendChild(sectionTitle);
-
         if (section.type === 'dropdown') {
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'toc-top-header';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-top-title';
+            sectionTitle.textContent = section.label;
+
+            sectionHeader.appendChild(sectionTitle);
+
             const sectionContent = document.createElement('div');
             sectionContent.className = 'toc-top-content collapsed';
             sectionContent.id = `toc-section-${section.id}`;
@@ -336,23 +337,31 @@ class Navigation {
             sectionDiv.appendChild(sectionHeader);
             sectionDiv.appendChild(sectionContent);
         } else {
-            const handleSectionLink = () => {
-                this.closeTOC();
-                if (section.url) {
-                    // Use location.href for internal links to stay within PWA
-                    if (section.url.startsWith('./') || section.url.startsWith('/')) {
-                        window.location.href = section.url;
-                    } else {
-                        window.open(section.url, '_blank', 'noopener,noreferrer');
-                    }
-                } else if (section.comingSoon) {
-                    // Placeholder for future feature - intentional
-                    alert('Coming Soon');
-                }
-            };
-            sectionHeader.addEventListener('click', handleSectionLink);
+            // Link type - use proper <a> tag for right-click, middle-click support
+            const link = document.createElement('a');
+            link.className = 'toc-top-header toc-top-link';
 
-            sectionDiv.appendChild(sectionHeader);
+            const title = document.createElement('h3');
+            title.className = 'toc-top-title';
+            title.textContent = section.label;
+            link.appendChild(title);
+
+            if (section.url) {
+                if (section.url.startsWith('./') || section.url.startsWith('/')) {
+                    link.href = section.url;
+                } else {
+                    link.href = section.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            }
+
+            // Close sidebar on click for internal links
+            link.addEventListener('click', () => {
+                this.closeTOC();
+            });
+
+            sectionDiv.appendChild(link);
         }
 
         return sectionDiv;
@@ -384,7 +393,6 @@ class Navigation {
         const contactEnabled = localStorage.getItem('admin_draftContact') === 'true';
 
         const bottomSections = [
-            { id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' },
             ...(bookmarksEnabled ? [{ id: 'bookmarks', label: 'BOOKMARKS', type: 'dropdown' }] : []),
             ...(contactEnabled ? [{ id: 'contact', label: 'CONTACT', type: 'link', url: './contact.html' }] : [])
         ];
@@ -394,23 +402,19 @@ class Navigation {
             sectionDiv.className = 'toc-content-section';
             sectionDiv.dataset.section = section.id;
 
-            const sectionHeader = document.createElement('div');
-            sectionHeader.className = section.type === 'dropdown' ? 'toc-section-header' : 'toc-section-header toc-section-link';
-
-            const sectionTitle = document.createElement('h3');
-            sectionTitle.className = 'toc-section-title';
-            sectionTitle.innerHTML = (section.icon ? section.icon + ' ' : '') + section.label;
-
-            sectionHeader.appendChild(sectionTitle);
-
             if (section.type === 'dropdown') {
+                const sectionHeader = document.createElement('div');
+                sectionHeader.className = 'toc-section-header';
+
+                const sectionTitle = document.createElement('h3');
+                sectionTitle.className = 'toc-section-title';
+                sectionTitle.innerHTML = (section.icon ? section.icon + ' ' : '') + section.label;
+
+                sectionHeader.appendChild(sectionTitle);
+
                 const sectionContent = document.createElement('div');
                 sectionContent.className = 'toc-section-content collapsed';
                 sectionContent.id = `toc-section-${section.id}`;
-
-                if (section.id === 'comments') {
-                    sectionContent.dataset.needsInit = 'true';
-                }
 
                 sectionHeader.addEventListener('click', () => {
                     this.toggleSection(section.id, sectionHeader, sectionContent);
@@ -419,23 +423,30 @@ class Navigation {
                 sectionDiv.appendChild(sectionHeader);
                 sectionDiv.appendChild(sectionContent);
             } else {
-                const handleBottomLink = () => {
-                    this.closeTOC();
-                    if (section.url) {
-                        // Use location.href for internal links to stay within PWA
-                        if (section.url.startsWith('./') || section.url.startsWith('/')) {
-                            window.location.href = section.url;
-                        } else {
-                            window.open(section.url, '_blank', 'noopener,noreferrer');
-                        }
-                    } else if (section.comingSoon) {
-                        // Placeholder for future feature - intentional
-                        alert('Coming Soon');
-                    }
-                };
-                sectionHeader.addEventListener('click', handleBottomLink);
+                // Link type - use proper <a> tag
+                const link = document.createElement('a');
+                link.className = 'toc-section-header toc-section-link';
 
-                sectionDiv.appendChild(sectionHeader);
+                const title = document.createElement('h3');
+                title.className = 'toc-section-title';
+                title.textContent = section.label;
+                link.appendChild(title);
+
+                if (section.url) {
+                    if (section.url.startsWith('./') || section.url.startsWith('/')) {
+                        link.href = section.url;
+                    } else {
+                        link.href = section.url;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                    }
+                }
+
+                link.addEventListener('click', () => {
+                    this.closeTOC();
+                });
+
+                sectionDiv.appendChild(link);
             }
 
             fragment.appendChild(sectionDiv);
