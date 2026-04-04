@@ -5,7 +5,7 @@
 // ============================================
 const OTR_ANALYTICS_CONFIG = {
   trackingEnabled: false,  // ← FLIP TO true ON LAUNCH DAY
-  analyticsScriptUrl: 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec',
-  readerCounterUrl: 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec',
-  guestbookUrl: 'https://script.google.com/macros/s/AKfycbz1raPMd46nzBkkhC48PnmixrH-m3_GHzcNLWr830hdcF2EkgE1NGl5Tesaf8XVM59i/exec'
+  analyticsScriptUrl: 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec',
+  readerCounterUrl: 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec',
+  guestbookUrl: 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec'
 };
