@@ -17,7 +17,7 @@
     var commentField = document.getElementById('comment');
 
     // Original button text
-    var originalButtonText = submitBtn ? submitBtn.textContent : 'SIGN THE GUESTBOOK';
+    var originalButtonText = submitBtn ? submitBtn.textContent : 'SUBMIT';
 
     // Submission state
     var isSubmitting = false;
