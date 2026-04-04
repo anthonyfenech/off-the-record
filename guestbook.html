@@ -197,27 +197,21 @@
             </header>
             <div class="chapter-body" id="chapterBody">
 
-                <p style="font-family: var(--font-serif); font-style: italic; color: var(--color-text-secondary); margin-bottom: var(--space-xl); line-height: 1.6;">I'm going to regret this, aren't I?</p>
-
                 <!-- Submission Form -->
                 <section style="padding: var(--space-xl) 0; border-top: 1px solid var(--color-border);">
                     <h3 style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); margin-bottom: var(--space-lg);">SIGN THE GUESTBOOK</h3>
                     <form id="guestbookForm" style="display: flex; flex-direction: column;">
                         <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Name <span style="color: #DC143C;">*</span></label>
+                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Name</label>
                             <input type="text" id="name" name="name" required autocomplete="name" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); box-sizing: border-box;">
                         </div>
                         <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Email <span style="color: #DC143C;">*</span></label>
+                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Email</label>
                             <input type="email" id="email" name="email" required autocomplete="email" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); box-sizing: border-box;">
                             <p style="font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-tertiary); font-style: italic; margin-top: var(--space-xs);">Your email will not be displayed publicly.</p>
                         </div>
                         <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Location <span style="color: #DC143C;">*</span></label>
-                            <input type="text" id="location" name="location" required placeholder="City, State" autocomplete="address-level2" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); box-sizing: border-box;">
-                        </div>
-                        <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Comment <span style="color: #DC143C;">*</span></label>
+                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Comment</label>
                             <textarea id="comment" name="comment" required maxlength="500" placeholder="Share your thoughts..." style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); resize: vertical; min-height: 120px; box-sizing: border-box;"></textarea>
                             <div id="charCount" style="font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-tertiary); text-align: right; margin-top: var(--space-xs);">0 / 500</div>
                         </div>
