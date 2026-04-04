@@ -112,7 +112,7 @@
         }
     </style>
 </head>
-<body>
+<body style="opacity: 0;">
     <a href="#reader" class="skip-link">Skip to content</a>
     <noscript>
         <div style="max-width: 640px; margin: 80px auto; padding: 20px; font-family: 'Courier New', monospace; text-align: center;">
@@ -121,6 +121,22 @@
         </div>
     </noscript>
     <script>
+        // Auth check - must run synchronously before content renders
+        (function() {
+            var session = localStorage.getItem('otr_beta_session');
+            if (session) {
+                try {
+                    var data = JSON.parse(session);
+                    if (data.authenticated && Date.now() <= data.expires) {
+                        // Inject CSS to hide gate before it renders
+                        var style = document.createElement('style');
+                        style.textContent = '#passwordGate{display:none!important}';
+                        document.head.appendChild(style);
+                    }
+                } catch (e) {}
+            }
+            document.body.style.opacity = '1';
+        })();
         // Apply body classes immediately (theme already set in <head>)
         if (localStorage.getItem('admin_showCaptions') === 'true') {
             document.body.classList.add('show-captions');
