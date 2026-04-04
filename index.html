@@ -149,23 +149,6 @@
             }
         }
 
-        /* Public reader count on homepage */
-        .public-reader-count {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.75rem;
-            font-weight: normal;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-text-secondary, #666);
-            text-align: center;
-            margin: 32px 0 0 0;
-            padding: 0;
-            text-indent: 0 !important;
-        }
-        [data-theme="dark"] .public-reader-count {
-            color: var(--color-text-secondary, #999);
-        }
-
     </style>
 </head>
 <body class="home-page">
@@ -215,11 +198,6 @@
                 <button type="submit" class="password-submit">ENTER</button>
                 <p id="passwordError" class="password-error">Incorrect password</p>
             </form>
-            <div id="reader-count" style="display: none; margin-top: 20px;">
-                <p style="font-family: 'Courier New', monospace; text-align: center; color: #888; font-size: 14px; margin: 0;">
-                    👥 <span id="count-number">0</span> readers started
-                </p>
-            </div>
         </div>
     </div>
 
@@ -378,9 +356,6 @@
 
     <!-- Auto-Bookmark & Resume -->
     <script defer src="./js/bookmark.min.js?v=423"></script>
-
-    <!-- Reader Counter System -->
-    <script defer src="./js/reader-counter.min.js?v=423"></script>
 
     <!-- Admin Access (secret password) -->
     <script defer src="./js/admin-access.min.js?v=423"></script>
