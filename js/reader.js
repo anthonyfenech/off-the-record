@@ -122,18 +122,14 @@ class Reader {
         // Button text
         const buttonText = isNewReader ? 'START READING' : 'CONTINUE READING';
 
-        // Homepage: Title + button centered, reader count, sticker lower right
+        // Homepage: Title + button centered, sticker lower right
         this.chapterBody.innerHTML = `
             <div class="home-content">
                 <h1 class="home-title">OFF-THE-RECORD</h1>
                 <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
-                <p class="public-reader-count" id="publicReaderCount" style="display: none;"></p>
                 <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="home-sticker">
             </div>
         `;
-
-        // Fetch and display public reader count
-        this.fetchPublicReaderCount();
 
         // Add click handler for start reading button
         const startBtn = document.getElementById('startReadingBtn');
@@ -147,43 +143,6 @@ class Reader {
 
         // Dispatch event
         window.dispatchEvent(new CustomEvent('homePageLoaded'));
-    }
-
-    // Fetch and display public reader count on homepage
-    async fetchPublicReaderCount() {
-        const countEl = document.getElementById('publicReaderCount');
-        if (!countEl) return;
-
-        try {
-            // This is a READ call - not gated behind trackingEnabled
-            if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.readerCounterUrl) {
-                return;
-            }
-
-            const response = await fetch(
-                OTR_ANALYTICS_CONFIG.readerCounterUrl + '?action=getReaderCount',
-                { method: 'GET' }
-            );
-
-            if (!response.ok) return;
-
-            const data = await response.json();
-            const total = parseInt(data.total, 10);
-
-            // Hide if 0 or invalid
-            if (!total || total <= 0) return;
-
-            // Round down to nearest 10
-            const rounded = Math.floor(total / 10) * 10;
-            if (rounded <= 0) return;
-
-            // Display the count
-            countEl.textContent = `MORE THAN ${rounded} READERS`;
-            countEl.style.display = '';
-        } catch (e) {
-            // Silently fail - don't show the element
-            console.log('[OTR] Reader count fetch failed:', e.message);
-        }
     }
 
     // Check if a chapter is locked
