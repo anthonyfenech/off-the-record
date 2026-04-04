@@ -450,7 +450,7 @@ p + p.has-dateline {
     font-family: var(--font-mono);
     font-size: var(--font-size-xs);
     font-weight: bold;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     margin: 0;
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-normal);
@@ -1012,11 +1012,11 @@ button:focus-visible {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-normal);
-    color: var(--color-text-tertiary);
+    color: var(--color-text-primary);
 }
 
 .toc-section-arrow {
-    color: var(--color-text-tertiary);
+    color: var(--color-text-primary);
     transition: transform 0.25s ease;
     flex-shrink: 0;
 }
