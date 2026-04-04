@@ -12,7 +12,6 @@
     // DOM Elements
     var form = document.getElementById('guestbookForm');
     var submitBtn = document.getElementById('submitBtn');
-    var successMessage = document.getElementById('successMessage');
     var errorMessage = document.getElementById('errorMessage');
     var commentField = document.getElementById('comment');
 
@@ -113,20 +112,17 @@
     }
 
     /**
-     * Show success message
+     * Show success state on button
      */
     function showSuccess() {
-        if (successMessage) {
-            successMessage.style.display = 'block';
-            if (errorMessage) errorMessage.style.display = 'none';
+        // Change button to "SENT" for 3 seconds
+        if (submitBtn) {
+            submitBtn.textContent = 'SENT';
+            setTimeout(function() {
+                submitBtn.textContent = originalButtonText;
+            }, 3000);
         }
-
-        // Hide after 5 seconds
-        setTimeout(function() {
-            if (successMessage) {
-                successMessage.style.display = 'none';
-            }
-        }, 5000);
+        if (errorMessage) errorMessage.style.display = 'none';
     }
 
     /**
@@ -138,7 +134,6 @@
                 errorMessage.textContent = message;
             }
             errorMessage.style.display = 'block';
-            if (successMessage) successMessage.style.display = 'none';
         }
 
         // Hide after 5 seconds
@@ -225,7 +220,7 @@
             // With no-cors we can't read response, assume success
             console.log('[Guestbook] Submission sent');
             isSubmitting = false;
-            setButtonState(false, originalButtonText);
+            submitBtn.disabled = false;
             resetForm();
             showSuccess();
         })
