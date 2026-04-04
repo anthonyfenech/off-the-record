@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v487';
+const CACHE_VERSION = 'v488';
 const STATIC_CACHE = 'off-the-record-static-v477';
 const CONTENT_CACHE = 'off-the-record-content-v477';
 const ANALYTICS_CACHE = 'off-the-record-analytics-v477';
@@ -11,7 +11,6 @@ const STATIC_ASSETS = [
     './index.html',
     './binge-mode.html',
     './offline.html',
-    './money-mode.html',
     './downloadpage.html',
     './guestbook.html',
     './manifest.json',
