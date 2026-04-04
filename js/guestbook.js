@@ -36,13 +36,13 @@
         errorEl.className = 'field-error';
         errorEl.id = fieldId + '-error';
         errorEl.textContent = message;
-        errorEl.style.cssText = 'color: #DC143C; font-family: var(--font-mono); font-size: 11px; margin-top: 4px;';
+        errorEl.style.cssText = 'color: var(--color-accent-red); font-family: var(--font-mono); font-size: 11px; margin-top: 4px;';
 
         // Insert after field
         field.parentNode.insertBefore(errorEl, field.nextSibling);
 
         // Add error styling to field
-        field.style.borderColor = '#DC143C';
+        field.style.borderColor = 'var(--color-accent-red)';
     }
 
     /**
