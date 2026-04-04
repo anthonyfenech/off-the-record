@@ -17,8 +17,8 @@
   left: 0;
   right: 0;
   z-index: 105;
-  background: #1a1a1a;
-  color: #ccc;
+  background: var(--color-text-primary);
+  color: var(--color-background);
   text-align: center;
   padding: 5px 0;
   font-family: 'Courier New', monospace;
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   min-height: 120px;
-  color: #999;
+  color: var(--color-text-tertiary);
   font-family: 'Courier New', monospace;
   font-size: 13px;
   font-style: normal;
@@ -59,8 +59,8 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid #ddd;
-  border-top-color: #333;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-text-primary);
   border-radius: 50%;
   animation: otr-tier1-spin 0.8s linear infinite;
   margin-left: 8px;
@@ -74,7 +74,7 @@
 .otr-tier1-error {
   text-align: center;
   padding: 32px 16px;
-  color: #666;
+  color: var(--color-text-secondary);
   font-family: 'Courier New', monospace;
   font-style: normal;
   font-weight: normal;
@@ -97,9 +97,9 @@
   font-weight: normal;
   text-indent: 0;
   padding: 6px 16px;
-  border: 1px solid #333;
+  border: 1px solid var(--color-text-primary);
   background: transparent;
-  color: #333;
+  color: var(--color-text-primary);
   cursor: pointer;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -107,8 +107,8 @@
 }
 
 .otr-tier1-retry-btn:hover {
-  background: #333;
-  color: #fff;
+  background: var(--color-text-primary);
+  color: var(--color-background);
 }
 
 /* ── Media Button States ── */
@@ -118,22 +118,22 @@
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Default state: media visible (media-active applied) - white bg */
+/* Default state: media visible (media-active applied) - light bg */
 .nav-btn.nav-media.media-active {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-text-primary);
 }
 
 .nav-btn.nav-media.media-active::after {
   display: none;
 }
 
-/* Clean read mode: media hidden (no media-active) - black bg */
+/* Clean read mode: media hidden (no media-active) - dark bg */
 .nav-btn.nav-media:not(.media-active) {
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #000000;
+  background-color: var(--color-text-primary);
+  color: var(--color-background);
+  border: 1px solid var(--color-text-primary);
 }
 
 .nav-btn.nav-media:not(.media-active)::after {

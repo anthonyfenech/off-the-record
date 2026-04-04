@@ -7,6 +7,7 @@
 
     <title>OFF-THE-RECORD</title>
     <link rel="icon" type="image/svg+xml" href="./assets/icons/tab-logo.svg">
+    <link rel="stylesheet" href="./css/variables.min.css?v=423">
     <style>
         * {
             margin: 0;
@@ -15,8 +16,8 @@
         }
         body {
             font-family: 'Literata', Georgia, serif;
-            background: #fff;
-            color: #1a1a1a;
+            background: var(--color-background);
+            color: var(--color-text-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -42,7 +43,7 @@
             line-height: 1.6;
             max-width: 400px;
             margin-bottom: 24px;
-            color: #666;
+            color: var(--color-text-secondary);
         }
         .retry-btn {
             font-family: 'SF Mono', Monaco, 'Courier New', monospace;
@@ -50,26 +51,36 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 12px 24px;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--color-text-primary);
             background: transparent;
+            color: var(--color-text-primary);
             cursor: pointer;
             transition: all 0.2s;
         }
         .retry-btn:hover {
-            background: #1a1a1a;
-            color: #fff;
+            background: var(--color-text-primary);
+            color: var(--color-background);
         }
         .home-link {
             margin-top: 16px;
             font-family: 'SF Mono', Monaco, 'Courier New', monospace;
             font-size: 12px;
-            color: #666;
+            color: var(--color-text-secondary);
             text-decoration: none;
         }
         .home-link:hover {
             text-decoration: underline;
         }
     </style>
+    <script>
+        // Inherit theme from localStorage
+        (function() {
+            var theme = localStorage.getItem('reader_theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
     <div class="offline-icon">&#128246;</div>
