@@ -251,13 +251,10 @@
             return;
         }
 
-        // Check if tracking/API is available
-        if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.trackingEnabled) {
-            commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
-            return;
-        }
-
-        var endpoint = OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl;
+        // Get guestbook endpoint
+        var endpoint = (typeof OTR_ANALYTICS_CONFIG !== 'undefined')
+            ? (OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl)
+            : null;
         if (!endpoint) {
             commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
             return;
@@ -328,24 +325,17 @@
         isSubmitting = true;
         setButtonState(true, 'SENDING...');
 
-        // Check if tracking is enabled
-        if (typeof OTR_ANALYTICS_CONFIG === 'undefined' || !OTR_ANALYTICS_CONFIG.trackingEnabled) {
-            // Tracking disabled - log and simulate success
-            console.log('[Guestbook] Tracking disabled. Payload:', JSON.stringify(payload, null, 2));
-
-            // Simulate network delay
-            setTimeout(function() {
-                isSubmitting = false;
-                setButtonState(false, originalButtonText);
-                resetForm();
-                showSuccess();
-            }, 500);
-
+        // Get guestbook endpoint
+        var endpoint = (typeof OTR_ANALYTICS_CONFIG !== 'undefined')
+            ? (OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl)
+            : null;
+        if (!endpoint) {
+            console.error('[Guestbook] No endpoint configured');
+            isSubmitting = false;
+            setButtonState(false, originalButtonText);
+            showError('Guestbook is not configured. Please try again later.');
             return;
         }
-
-        // Get endpoint URL
-        var endpoint = OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl;
 
         // Submit to Google Sheets
         fetch(endpoint, {
