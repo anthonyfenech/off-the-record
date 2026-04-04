@@ -138,11 +138,6 @@ class Navigation {
         // 1. BOOK section - contains all chapters
         fragment.appendChild(this.createBookSection());
 
-        // Divider between BOOK and links
-        const bookDivider = document.createElement('div');
-        bookDivider.className = 'toc-divider';
-        fragment.appendChild(bookDivider);
-
         // 2. Check draft settings for optional sections
         const blogEnabled = localStorage.getItem('admin_draftBlog') === 'true';
         const aboutEnabled = localStorage.getItem('admin_draftAbout') === 'true';
