@@ -852,6 +852,11 @@
                 // BOOK section
                 fragment.appendChild(createBookSection());
 
+                // Divider between BOOK and links
+                const bookDivider = document.createElement('div');
+                bookDivider.className = 'toc-divider';
+                fragment.appendChild(bookDivider);
+
                 // BINGE MODE link (current page - highlighted)
                 fragment.appendChild(createTopSection({ id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html', current: true }));
 
