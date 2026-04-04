@@ -14,35 +14,13 @@
     var submitBtn = document.getElementById('submitBtn');
     var successMessage = document.getElementById('successMessage');
     var errorMessage = document.getElementById('errorMessage');
-    var charCount = document.getElementById('charCount');
     var commentField = document.getElementById('comment');
-    var commentsList = document.getElementById('commentsList');
 
     // Original button text
     var originalButtonText = submitBtn ? submitBtn.textContent : 'SIGN THE GUESTBOOK';
 
     // Submission state
     var isSubmitting = false;
-
-    /**
-     * Initialize character counter
-     */
-    function initCharCounter() {
-        if (!commentField || !charCount) return;
-
-        commentField.addEventListener('input', function() {
-            var length = commentField.value.length;
-            var maxLength = commentField.maxLength || 500;
-            charCount.textContent = length + ' / ' + maxLength;
-
-            // Add warning class when near limit
-            if (length >= maxLength - 20) {
-                charCount.classList.add('warning');
-            } else {
-                charCount.classList.remove('warning');
-            }
-        });
-    }
 
     /**
      * Show inline error for a field
@@ -188,102 +166,7 @@
         if (form) {
             form.reset();
         }
-        if (charCount) {
-            charCount.textContent = '0 / 500';
-            charCount.classList.remove('warning');
-        }
         clearAllFieldErrors();
-    }
-
-    /**
-     * Format date for display
-     */
-    function formatDate(isoString) {
-        try {
-            var date = new Date(isoString);
-            var options = { month: 'short', day: 'numeric', year: 'numeric' };
-            return date.toLocaleDateString('en-US', options);
-        } catch (e) {
-            return '';
-        }
-    }
-
-    /**
-     * Render a single comment
-     */
-    function renderComment(comment) {
-        var div = document.createElement('div');
-        div.style.cssText = 'padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border);';
-
-        var header = document.createElement('div');
-        header.style.cssText = 'font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-bottom: var(--space-xs);';
-        header.textContent = comment.name;
-        if (comment.location) {
-            header.textContent += ' \u2022 ' + comment.location;
-        }
-        if (comment.date) {
-            header.textContent += ' \u2022 ' + formatDate(comment.date);
-        }
-
-        var text = document.createElement('p');
-        text.style.cssText = 'font-family: var(--font-serif); font-size: var(--font-size-base); line-height: 1.6; margin: 0;';
-        text.textContent = comment.comment;
-
-        div.appendChild(header);
-        div.appendChild(text);
-
-        return div;
-    }
-
-    /**
-     * Load and display approved comments
-     */
-    function loadComments() {
-        if (!commentsList) {
-            console.warn('[Guestbook] Comments list container not found');
-            return;
-        }
-
-        // Get guestbook endpoint
-        var endpoint = (typeof OTR_ANALYTICS_CONFIG !== 'undefined')
-            ? (OTR_ANALYTICS_CONFIG.guestbookUrl || OTR_ANALYTICS_CONFIG.analyticsScriptUrl)
-            : null;
-        if (!endpoint) {
-            commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
-            return;
-        }
-
-        // Fetch approved comments
-        fetch(endpoint + '?action=getApprovedComments', {
-            method: 'GET',
-            mode: 'cors'
-        })
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(function(data) {
-            if (!data || !data.comments || data.comments.length === 0) {
-                commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
-                return;
-            }
-
-            // Clear loading message
-            commentsList.innerHTML = '';
-
-            // Render each comment
-            data.comments.forEach(function(comment) {
-                commentsList.appendChild(renderComment(comment));
-            });
-
-            console.log('[Guestbook] Loaded ' + data.comments.length + ' comments');
-        })
-        .catch(function(error) {
-            console.warn('[Guestbook] Could not load comments:', error.message);
-            commentsList.innerHTML = '<p style="font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-tertiary); font-style: italic;">No comments yet. Be the first to sign the guestbook!</p>';
-        });
     }
 
     /**
@@ -363,9 +246,6 @@
             return;
         }
 
-        // Initialize character counter
-        initCharCounter();
-
         // Attach form submit handler
         form.addEventListener('submit', handleSubmit);
 
@@ -378,9 +258,6 @@
                 });
             }
         });
-
-        // Load approved comments
-        loadComments();
 
         console.log('[Guestbook] Initialized');
     }
