@@ -800,6 +800,21 @@
             </div>
         </div>
 
+        <!-- Page Locking Section -->
+        <div class="chapter-section">
+            <div class="section-header" id="pageLockHeader" style="cursor: pointer;">
+                <span class="section-title">Page Locking <span class="collapse-arrow" id="pageLockArrow">▼</span></span>
+                <div class="lock-actions">
+                    <span class="save-indicator" id="pageSaveIndicator">Saved!</span>
+                    <button class="lock-btn" id="lockAllPagesBtn">Lock All</button>
+                    <button class="lock-btn" id="unlockAllPagesBtn">Unlock All</button>
+                </div>
+            </div>
+            <div class="chapter-lock-list collapsed" id="pageLockList">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+
         <!-- Two Column Grid -->
         <div class="two-column-grid">
             <!-- LEFT COLUMN: Settings, Drafts, Legend -->
@@ -1112,6 +1127,74 @@
         });
 
         renderLockList();
+
+        // ====== PAGE LOCKING ======
+        const PAGES = [
+            { id: 'binge', title: 'Binge Mode' },
+            { id: 'money', title: 'Money Mode' },
+            { id: 'guestbook', title: 'Guestbook' },
+            { id: 'credentials', title: 'Credentials' },
+            { id: 'download', title: 'Download' }
+        ];
+
+        const pageLockList = document.getElementById('pageLockList');
+        const pageLockHeader = document.getElementById('pageLockHeader');
+        const pageLockArrow = document.getElementById('pageLockArrow');
+        const lockAllPagesBtn = document.getElementById('lockAllPagesBtn');
+        const unlockAllPagesBtn = document.getElementById('unlockAllPagesBtn');
+        const pageSaveIndicator = document.getElementById('pageSaveIndicator');
+
+        function getLockedPages() {
+            return JSON.parse(localStorage.getItem('admin_lockedPages') || '[]');
+        }
+
+        function saveLockedPages(locked) {
+            localStorage.setItem('admin_lockedPages', JSON.stringify(locked));
+            pageSaveIndicator.classList.add('show');
+            setTimeout(() => pageSaveIndicator.classList.remove('show'), 1500);
+        }
+
+        function renderPageLockList() {
+            const locked = getLockedPages();
+            pageLockList.innerHTML = PAGES.map(page => {
+                const isLocked = locked.includes(page.id);
+                return `<div class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-id="${page.id}" title="${page.title}" style="width: auto; padding: 0 8px; min-width: 50px;">
+                    <span class="chapter-num" style="font-size: 7px; text-transform: uppercase;">${page.id}</span>
+                </div>`;
+            }).join('');
+
+            pageLockList.querySelectorAll('.chapter-lock-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const id = item.dataset.id;
+                    let locked = getLockedPages();
+                    if (locked.includes(id)) {
+                        locked = locked.filter(x => x !== id);
+                    } else {
+                        locked.push(id);
+                    }
+                    saveLockedPages(locked);
+                    renderPageLockList();
+                });
+            });
+        }
+
+        lockAllPagesBtn.addEventListener('click', () => {
+            saveLockedPages(PAGES.map(p => p.id));
+            renderPageLockList();
+        });
+
+        unlockAllPagesBtn.addEventListener('click', () => {
+            saveLockedPages([]);
+            renderPageLockList();
+        });
+
+        pageLockHeader.addEventListener('click', (e) => {
+            if (e.target.closest('.lock-btn')) return;
+            pageLockList.classList.toggle('collapsed');
+            pageLockArrow.classList.toggle('rotated');
+        });
+
+        renderPageLockList();
 
         // ====== SETTINGS ======
         function loadSettings() {
