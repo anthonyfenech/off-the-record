@@ -776,6 +776,7 @@
         <a href="./analytics-dashboard.html" class="nav-analytics" title="Analytics Dashboard">Dashboard</a>
         <a href="https://docs.google.com/spreadsheets/d/1wgf9HTdj8ROQHYJ3o_8JHF6UPT0TkKkYU7afCgRhOgY/edit?gid=0#gid=0" target="_blank" title="Raw Analytics Data">Analytics</a>
         <a href="./tools/font-tester.html" title="Font Tester">Fonts</a>
+        <button id="deployBtn" class="lock-btn" style="background: #dc3545; color: #fff; border-color: #dc3545;">Deploy</button>
     </nav>
 
     <div class="main-content">
@@ -784,7 +785,9 @@
             <div class="section-header" id="chapterLockHeader" style="cursor: pointer;">
                 <span class="section-title">Chapter Locking <span class="collapse-arrow" id="chapterLockArrow">▼</span></span>
                 <div class="lock-actions">
+                    <span id="chapterUnsaved" style="color: #dc3545; font-size: 9px; font-weight: bold; display: none;">Unsaved</span>
                     <span class="save-indicator" id="saveIndicator">Saved!</span>
+                    <button class="lock-btn" id="saveChaptersBtn" disabled style="opacity: 0.5;">Save</button>
                     <button class="lock-btn" id="lockAllBtn">Lock All</button>
                     <button class="lock-btn" id="unlockAllBtn">Unlock All</button>
                     <button class="lock-btn" id="runAuditBtn">Run Audit</button>
@@ -805,7 +808,9 @@
             <div class="section-header" id="pageLockHeader" style="cursor: pointer;">
                 <span class="section-title">Page Locking <span class="collapse-arrow" id="pageLockArrow">▼</span></span>
                 <div class="lock-actions">
+                    <span id="pageUnsaved" style="color: #dc3545; font-size: 9px; font-weight: bold; display: none;">Unsaved</span>
                     <span class="save-indicator" id="pageSaveIndicator">Saved!</span>
+                    <button class="lock-btn" id="savePagesBtn" disabled style="opacity: 0.5;">Save</button>
                     <button class="lock-btn" id="lockAllPagesBtn">Lock All</button>
                     <button class="lock-btn" id="unlockAllPagesBtn">Unlock All</button>
                 </div>
@@ -1055,15 +1060,27 @@
             { id: 27, title: 'Postscript' }
         ];
 
+        // ====== SHARED UTILITY ======
+        function arraysEqual(a, b) {
+            if (a.length !== b.length) return false;
+            const sortedA = [...a].sort();
+            const sortedB = [...b].sort();
+            return sortedA.every((val, i) => val === sortedB[i]);
+        }
+
         // ====== CHAPTER LOCKING ======
         const lockList = document.getElementById('chapterLockList');
         const lockAllBtn = document.getElementById('lockAllBtn');
         const unlockAllBtn = document.getElementById('unlockAllBtn');
+        const saveChaptersBtn = document.getElementById('saveChaptersBtn');
         const saveIndicator = document.getElementById('saveIndicator');
+        const chapterUnsaved = document.getElementById('chapterUnsaved');
         const chapterLockHeader = document.getElementById('chapterLockHeader');
         const chapterLockArrow = document.getElementById('chapterLockArrow');
         const runAuditBtn = document.getElementById('runAuditBtn');
         const chapterAuditList = document.getElementById('chapterAuditList');
+
+        let pendingChapterLocks = [];
 
         function getLockedChapters() {
             return JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
@@ -1071,18 +1088,34 @@
 
         function saveLockedChapters(locked) {
             localStorage.setItem('admin_lockedChapters', JSON.stringify(locked));
-            showSaved();
+        }
+
+        function updateChapterSaveState() {
+            const saved = getLockedChapters();
+            const hasChanges = !arraysEqual(pendingChapterLocks, saved);
+
+            if (chapterUnsaved) chapterUnsaved.style.display = hasChanges ? 'inline' : 'none';
+            if (saveChaptersBtn) {
+                saveChaptersBtn.disabled = !hasChanges;
+                saveChaptersBtn.style.opacity = hasChanges ? '1' : '0.5';
+                saveChaptersBtn.style.background = hasChanges ? '#28a745' : '';
+                saveChaptersBtn.style.color = hasChanges ? '#fff' : '';
+                saveChaptersBtn.style.borderColor = hasChanges ? '#28a745' : '';
+            }
         }
 
         function showSaved() {
-            saveIndicator.classList.add('show');
-            setTimeout(() => saveIndicator.classList.remove('show'), 1500);
+            if (saveIndicator) {
+                saveIndicator.classList.add('show');
+                setTimeout(() => saveIndicator.classList.remove('show'), 1500);
+            }
         }
 
         function renderLockList() {
-            const locked = getLockedChapters();
+            if (!lockList) return;
+
             lockList.innerHTML = CHAPTERS.map(ch => {
-                const isLocked = locked.includes(ch.id);
+                const isLocked = pendingChapterLocks.includes(ch.id);
                 return `<div class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-id="${ch.id}" title="${ch.title}">
                     <span class="chapter-num">${ch.id}</span>
                 </div>`;
@@ -1091,41 +1124,63 @@
             lockList.querySelectorAll('.chapter-lock-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const id = parseInt(item.dataset.id);
-                    let locked = getLockedChapters();
-                    if (locked.includes(id)) {
-                        locked = locked.filter(x => x !== id);
+                    if (pendingChapterLocks.includes(id)) {
+                        pendingChapterLocks = pendingChapterLocks.filter(x => x !== id);
                     } else {
-                        locked.push(id);
+                        pendingChapterLocks.push(id);
                     }
-                    saveLockedChapters(locked);
                     renderLockList();
+                    updateChapterSaveState();
                 });
             });
         }
 
-        lockAllBtn.addEventListener('click', () => {
-            saveLockedChapters(CHAPTERS.map(ch => ch.id));
-            renderLockList();
-        });
+        if (saveChaptersBtn) {
+            saveChaptersBtn.addEventListener('click', () => {
+                saveLockedChapters(pendingChapterLocks);
+                updateChapterSaveState();
+                showSaved();
+            });
+        }
 
-        unlockAllBtn.addEventListener('click', () => {
-            saveLockedChapters([]);
-            renderLockList();
-        });
+        if (lockAllBtn) {
+            lockAllBtn.addEventListener('click', () => {
+                pendingChapterLocks = CHAPTERS.map(ch => ch.id);
+                renderLockList();
+                updateChapterSaveState();
+            });
+        }
 
-        chapterLockHeader.addEventListener('click', () => {
-            lockList.classList.toggle('collapsed');
-            chapterLockArrow.classList.toggle('rotated');
-        });
+        if (unlockAllBtn) {
+            unlockAllBtn.addEventListener('click', () => {
+                pendingChapterLocks = [];
+                renderLockList();
+                updateChapterSaveState();
+            });
+        }
 
-        // Run Audit functionality
-        runAuditBtn.addEventListener('click', () => {
-            chapterAuditList.classList.toggle('collapsed');
-            if (!chapterAuditList.classList.contains('collapsed')) {
-                chapterAuditList.innerHTML = '<div class="audit-summary success">Audit complete. No issues found.</div>';
-            }
-        });
+        if (chapterLockHeader) {
+            chapterLockHeader.addEventListener('click', (e) => {
+                if (e.target.closest('.lock-btn')) return;
+                if (lockList) lockList.classList.toggle('collapsed');
+                if (chapterLockArrow) chapterLockArrow.classList.toggle('rotated');
+            });
+        }
 
+        // Run Audit functionality (KEEP EXISTING)
+        if (runAuditBtn) {
+            runAuditBtn.addEventListener('click', () => {
+                if (chapterAuditList) {
+                    chapterAuditList.classList.toggle('collapsed');
+                    if (!chapterAuditList.classList.contains('collapsed')) {
+                        chapterAuditList.innerHTML = '<div class="audit-summary success">Audit complete. No issues found.</div>';
+                    }
+                }
+            });
+        }
+
+        // Initialize chapters
+        pendingChapterLocks = [...getLockedChapters()];
         renderLockList();
 
         // ====== PAGE LOCKING ======
@@ -1142,7 +1197,11 @@
         const pageLockArrow = document.getElementById('pageLockArrow');
         const lockAllPagesBtn = document.getElementById('lockAllPagesBtn');
         const unlockAllPagesBtn = document.getElementById('unlockAllPagesBtn');
+        const savePagesBtn = document.getElementById('savePagesBtn');
         const pageSaveIndicator = document.getElementById('pageSaveIndicator');
+        const pageUnsaved = document.getElementById('pageUnsaved');
+
+        let pendingPageLocks = [];
 
         function getLockedPages() {
             return JSON.parse(localStorage.getItem('admin_lockedPages') || '[]');
@@ -1150,14 +1209,34 @@
 
         function saveLockedPages(locked) {
             localStorage.setItem('admin_lockedPages', JSON.stringify(locked));
-            pageSaveIndicator.classList.add('show');
-            setTimeout(() => pageSaveIndicator.classList.remove('show'), 1500);
+        }
+
+        function updatePageSaveState() {
+            const saved = getLockedPages();
+            const hasChanges = !arraysEqual(pendingPageLocks, saved);
+
+            if (pageUnsaved) pageUnsaved.style.display = hasChanges ? 'inline' : 'none';
+            if (savePagesBtn) {
+                savePagesBtn.disabled = !hasChanges;
+                savePagesBtn.style.opacity = hasChanges ? '1' : '0.5';
+                savePagesBtn.style.background = hasChanges ? '#28a745' : '';
+                savePagesBtn.style.color = hasChanges ? '#fff' : '';
+                savePagesBtn.style.borderColor = hasChanges ? '#28a745' : '';
+            }
+        }
+
+        function showPageSaved() {
+            if (pageSaveIndicator) {
+                pageSaveIndicator.classList.add('show');
+                setTimeout(() => pageSaveIndicator.classList.remove('show'), 1500);
+            }
         }
 
         function renderPageLockList() {
-            const locked = getLockedPages();
+            if (!pageLockList) return;
+
             pageLockList.innerHTML = PAGES.map(page => {
-                const isLocked = locked.includes(page.id);
+                const isLocked = pendingPageLocks.includes(page.id);
                 return `<div class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-id="${page.id}" title="${page.title}" style="width: auto; padding: 0 8px; min-width: 50px;">
                     <span class="chapter-num" style="font-size: 7px; text-transform: uppercase;">${page.id}</span>
                 </div>`;
@@ -1166,35 +1245,82 @@
             pageLockList.querySelectorAll('.chapter-lock-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const id = item.dataset.id;
-                    let locked = getLockedPages();
-                    if (locked.includes(id)) {
-                        locked = locked.filter(x => x !== id);
+                    if (pendingPageLocks.includes(id)) {
+                        pendingPageLocks = pendingPageLocks.filter(x => x !== id);
                     } else {
-                        locked.push(id);
+                        pendingPageLocks.push(id);
                     }
-                    saveLockedPages(locked);
                     renderPageLockList();
+                    updatePageSaveState();
                 });
             });
         }
 
-        lockAllPagesBtn.addEventListener('click', () => {
-            saveLockedPages(PAGES.map(p => p.id));
-            renderPageLockList();
-        });
+        if (savePagesBtn) {
+            savePagesBtn.addEventListener('click', () => {
+                saveLockedPages(pendingPageLocks);
+                updatePageSaveState();
+                showPageSaved();
+            });
+        }
 
-        unlockAllPagesBtn.addEventListener('click', () => {
-            saveLockedPages([]);
-            renderPageLockList();
-        });
+        if (lockAllPagesBtn) {
+            lockAllPagesBtn.addEventListener('click', () => {
+                pendingPageLocks = PAGES.map(p => p.id);
+                renderPageLockList();
+                updatePageSaveState();
+            });
+        }
 
-        pageLockHeader.addEventListener('click', (e) => {
-            if (e.target.closest('.lock-btn')) return;
-            pageLockList.classList.toggle('collapsed');
-            pageLockArrow.classList.toggle('rotated');
-        });
+        if (unlockAllPagesBtn) {
+            unlockAllPagesBtn.addEventListener('click', () => {
+                pendingPageLocks = [];
+                renderPageLockList();
+                updatePageSaveState();
+            });
+        }
 
+        if (pageLockHeader) {
+            pageLockHeader.addEventListener('click', (e) => {
+                if (e.target.closest('.lock-btn')) return;
+                if (pageLockList) pageLockList.classList.toggle('collapsed');
+                if (pageLockArrow) pageLockArrow.classList.toggle('rotated');
+            });
+        }
+
+        // Initialize pages
+        pendingPageLocks = [...getLockedPages()];
         renderPageLockList();
+
+        // ====== DEPLOY BUTTON ======
+        const deployBtn = document.getElementById('deployBtn');
+        if (deployBtn) {
+            deployBtn.addEventListener('click', async () => {
+                if (!confirm('Clear cache and reload? Your changes will be visible immediately.')) return;
+
+                deployBtn.textContent = 'Deploying...';
+                deployBtn.disabled = true;
+
+                try {
+                    if ('caches' in window) {
+                        const cacheNames = await caches.keys();
+                        await Promise.all(cacheNames.map(name => caches.delete(name)));
+                    }
+
+                    if ('serviceWorker' in navigator) {
+                        const regs = await navigator.serviceWorker.getRegistrations();
+                        await Promise.all(regs.map(r => r.unregister()));
+                    }
+
+                    location.reload();
+                } catch (err) {
+                    console.error('Deploy error:', err);
+                    deployBtn.textContent = 'Deploy';
+                    deployBtn.disabled = false;
+                    alert('Deploy failed: ' + err.message);
+                }
+            });
+        }
 
         // ====== SETTINGS ======
         function loadSettings() {
