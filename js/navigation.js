@@ -150,6 +150,7 @@ class Navigation {
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
             { id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html' },
             { id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html' },
+            { id: 'credentials', label: 'CREDENTIALS', type: 'link', url: './credentials.html' },
             { id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }
         ];
 
