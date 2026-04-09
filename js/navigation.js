@@ -798,12 +798,19 @@ class Navigation {
     openTOC() {
         if (!this.tocSidebar || !this.overlay) return;
 
-        // Always collapse chapters before opening
-        this.expandedSections.delete('book');
+        // Force instant collapse before sidebar becomes visible (no transition flash)
         const bookContent = document.getElementById('toc-book-content');
         const bookSection = this.tocContent?.querySelector('[data-section="book"]');
-        if (bookContent) bookContent.classList.add('collapsed');
-        if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+        if (bookContent) {
+            bookContent.style.display = 'none';
+            bookContent.classList.add('collapsed');
+        }
+        if (bookSection) {
+            bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+        }
+        this.expandedSections.delete('book');
+        // Restore display after collapse classes applied
+        if (bookContent) bookContent.style.display = '';
 
         // Remove critical CSS overrides
         this.tocSidebar.style.visibility = 'visible';

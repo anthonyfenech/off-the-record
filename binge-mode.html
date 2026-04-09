@@ -782,12 +782,19 @@
 
             // Sidebar open/close
             function openTOC() {
-                // Always collapse chapters before opening
-                expandedSections.delete('book');
+                // Force instant collapse before sidebar becomes visible (no transition flash)
                 const bookContent = document.getElementById('toc-book-content');
                 const bookSection = tocContent.querySelector('[data-section="book"]');
-                if (bookContent) bookContent.classList.add('collapsed');
-                if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+                if (bookContent) {
+                    bookContent.style.display = 'none';
+                    bookContent.classList.add('collapsed');
+                }
+                if (bookSection) {
+                    bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+                }
+                expandedSections.delete('book');
+                // Restore display after collapse classes applied
+                if (bookContent) bookContent.style.display = '';
 
                 tocSidebar.style.visibility = 'visible';
                 tocSidebar.style.transform = '';
