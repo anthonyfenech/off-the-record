@@ -279,7 +279,7 @@ function triggerDownload(pdfBytes, serial) {
 
     var link = document.createElement('a');
     link.href = url;
-    link.download = 'OFF-THE-RECORD.pdf';
+    link.download = serial ? 'OFF-THE-RECORD-' + serial + '.pdf' : 'OFF-THE-RECORD.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
