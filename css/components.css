@@ -4016,6 +4016,45 @@ html {
 }
 
 /* ============================================
+   Odometer Digits (24px to match hero title)
+   ============================================ */
+
+#odo-housing {
+    gap: 6px !important;
+}
+
+#odo-housing > div {
+    width: 19px !important;
+    height: 29px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: transparent !important;
+    border: 2px solid #1a1a1a !important;
+    border-radius: 3px !important;
+}
+
+#odo-housing > div > div > div[data-digit] {
+    width: 19px !important;
+    height: 29px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    line-height: 1 !important;
+}
+
+[data-theme="dark"] #odo-housing > div {
+    border-color: #ffffff !important;
+}
+
+[data-theme="dark"] #odo-housing > div > div > div[data-digit] {
+    color: #ffffff !important;
+}
+
+/* ============================================
    FAILSAFE: Overlay Safety Net
    Prevents overlays from blocking when inactive
    ============================================ */
