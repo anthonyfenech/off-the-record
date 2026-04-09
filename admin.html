@@ -722,6 +722,13 @@
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Media Button</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mediaButtonEnabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="control-panel">
@@ -1101,7 +1108,8 @@
                 draftBlog: localStorage.getItem('admin_draftBlog') === 'true',
                 draftBookmarks: localStorage.getItem('admin_draftBookmarks') === 'true',
                 fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false',
-                shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false'
+                shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false',
+                mediaButtonEnabled: localStorage.getItem('admin_mediaButtonEnabled') !== 'false'
             };
         }
 
@@ -1120,12 +1128,15 @@
             document.getElementById('draftBookmarks').checked = settings.draftBookmarks;
             document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
             document.getElementById('shareButtonEnabled').checked = settings.shareButtonEnabled;
+            if (document.getElementById('mediaButtonEnabled')) {
+                document.getElementById('mediaButtonEnabled').checked = settings.mediaButtonEnabled;
+            }
 
             // Add listeners for all toggles
             const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftBookmarks',
-                           'fullBookChapterBreaks', 'shareButtonEnabled'];
+                           'fullBookChapterBreaks', 'shareButtonEnabled', 'mediaButtonEnabled'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
