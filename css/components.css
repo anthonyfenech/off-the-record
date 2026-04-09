@@ -4081,3 +4081,23 @@ body:not(.sidebar-open):not(.modal-open) {
 
 /* Note: .continue-reading uses display:none via JS, which already prevents
    interaction. No pointer-events rule needed. */
+
+/* ============================================
+   INSTANT COLLAPSE — no transition on sidebar open
+   ============================================ */
+#toc-book-content.collapsed,
+.toc-book-content.collapsed {
+    transition: none !important;
+    animation: none !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden;
+    height: 0;
+}
+
+/* Allow smooth expand ONLY when user clicks to open */
+#toc-book-content:not(.collapsed) {
+    transition: max-height 0.2s ease-out;
+    visibility: visible;
+    height: auto;
+}

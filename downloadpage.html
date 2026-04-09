@@ -359,14 +359,20 @@
             const bookSection = tocContent.querySelector('[data-section="book"]');
             if (bookContent) {
                 bookContent.style.display = 'none';
+                bookContent.style.visibility = 'hidden';
+                bookContent.style.height = '0';
                 bookContent.classList.add('collapsed');
             }
             if (bookSection) {
                 bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
             }
             expandedSections.delete('book');
-            // Restore display after collapse classes applied
-            if (bookContent) bookContent.style.display = '';
+            // Restore display after collapse classes applied (CSS handles visibility via .collapsed)
+            if (bookContent) {
+                bookContent.style.display = '';
+                bookContent.style.visibility = '';
+                bookContent.style.height = '';
+            }
 
             tocSidebar.style.visibility = 'visible';
             tocSidebar.style.transform = '';
