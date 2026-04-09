@@ -55,12 +55,15 @@
         .font-btn[data-font="Literata"] { font-family: 'Literata', serif; }
         .font-btn[data-font="Source Serif Pro"] { font-family: 'Source Serif Pro', serif; }
         .font-btn[data-font="Merriweather"] { font-family: 'Merriweather', serif; }
+        .font-btn[data-font="Georgia"] { font-family: 'Georgia', serif; }
+        .font-btn[data-font="Palatino Linotype"] { font-family: 'Palatino Linotype', 'Palatino', serif; }
+        .font-btn[data-font="Times New Roman"] { font-family: 'Times New Roman', serif; }
 
         .size-btn[data-size="small"] { font-size: 12px; }
         .size-btn[data-size="medium"] { font-size: 15px; }
         .size-btn[data-size="large"] { font-size: 18px; }
 
-        .doc { max-width: 680px; margin: 105px auto 100px; padding: 0 24px; }
+        .doc { max-width: 680px; margin: 145px auto 100px; padding: 0 24px; }
         .loading, .error { text-align: center; padding: 80px 20px; font: 14px system-ui; color: #666; }
         .error { color: #c00; }
     </style>
@@ -89,6 +92,12 @@
             <button class="size-btn" data-size="small">A</button>
             <button class="size-btn active" data-size="medium">A</button>
             <button class="size-btn" data-size="large">A</button>
+        </div>
+        <div class="toolbar-row">
+            <span class="bar-label">SYSTEM:</span>
+            <button class="font-btn" data-font="Georgia">Georgia</button>
+            <button class="font-btn" data-font="Palatino Linotype">Palatino</button>
+            <button class="font-btn" data-font="Times New Roman">Times New Roman</button>
         </div>
     </div>
 
