@@ -869,6 +869,15 @@
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
+
+                    <div class="toggle-subheader">Features</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Share Button</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="shareButtonEnabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="control-panel">
@@ -1177,6 +1186,7 @@
                 installCount: parseInt(localStorage.getItem('admin_installCount') || '0'),
                 fullBookCleanRead: localStorage.getItem('admin_fullBookCleanRead') === 'true',
                 fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false',
+                shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false',
                 datelineFormat: localStorage.getItem('admin_datelineFormat') || 'current'
             };
         }
@@ -1206,6 +1216,7 @@
             document.getElementById('installCount').textContent = settings.installCount;
             document.getElementById('fullBookCleanRead').checked = settings.fullBookCleanRead;
             document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
+            document.getElementById('shareButtonEnabled').checked = settings.shareButtonEnabled;
 
             // Load dateline format selection
             document.querySelectorAll('.dateline-icon-btn').forEach(btn => {
@@ -1217,7 +1228,7 @@
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments', 'draftContact',
                            'installPromptEnabled',
-                           'fullBookCleanRead', 'fullBookChapterBreaks'];
+                           'fullBookCleanRead', 'fullBookChapterBreaks', 'shareButtonEnabled'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
