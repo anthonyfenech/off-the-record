@@ -20,6 +20,17 @@ var SERIAL_TIMEOUT = 15000; // 15 seconds
 // ═══════════════════════════════════════════════════════════
 
 async function stampAndDownload(buttonElement) {
+    // Button state management
+    var btn = buttonElement
+              || document.getElementById('pdfDownloadBtn')
+              || document.querySelector('[data-action="download-pdf"]');
+    var originalText = btn ? btn.textContent : '';
+
+    if (btn) {
+        btn.textContent = 'PREPARING YOUR COPY...';
+        btn.disabled = true;
+    }
+
     try {
         // Step 1: Get serial number (with fallback)
         var serial = await getSerialNumber();
@@ -47,6 +58,12 @@ async function stampAndDownload(buttonElement) {
 
     } catch (error) {
         console.error('[PDF Stamper] Error:', error);
+    } finally {
+        // Reset button state
+        if (btn) {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }
     }
 
     // Prevent default link behavior
