@@ -365,53 +365,39 @@
 
     <script defer src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
-    <!-- Resume Prompt for returning readers -->
+    <!-- Resume: hijack CONTINUE READING button when bookmark exists -->
     <script>
     (function(){
-        function initResumePrompt() {
+        function initResume() {
             if (!window.bookmark) return;
             var bookmark = window.bookmark.get();
             if (!bookmark || !bookmark.chapterSlug) return;
 
-            var homeContent = document.querySelector('.home-content');
-            if (!homeContent) return;
+            var ctaBtn = document.querySelector('.start-reading-btn') || document.getElementById('startReadingBtn');
+            if (!ctaBtn) return;
 
-            // Create resume prompt element
-            var prompt = document.createElement('div');
-            prompt.id = 'resumePrompt';
-            prompt.innerHTML = '<button id="resumeBtn"></button>';
+            // Change button text to show resume chapter
+            ctaBtn.textContent = bookmark.chapterTitle
+                ? 'RESUME: ' + bookmark.chapterTitle.toUpperCase()
+                : 'RESUME';
 
-            // Insert after button
-            var btn = homeContent.querySelector('.start-reading-btn');
-            if (btn && btn.parentNode) {
-                btn.parentNode.insertBefore(prompt, btn.nextSibling);
-            } else {
-                homeContent.appendChild(prompt);
-            }
-
-            // Set button text and show
-            var resumeBtn = document.getElementById('resumeBtn');
-            if (resumeBtn) {
-                resumeBtn.textContent = bookmark.chapterTitle
-                    ? 'RESUME: ' + bookmark.chapterTitle.toUpperCase()
-                    : 'RESUME';
-                resumeBtn.addEventListener('click', function() {
-                    sessionStorage.setItem('scrollToPercent', bookmark.scrollPercent.toString());
-                    window.location.hash = bookmark.chapterSlug;
-                });
-            }
-            prompt.style.display = 'block';
+            // Override click to go to bookmarked position
+            ctaBtn.onclick = function(e) {
+                e.preventDefault();
+                sessionStorage.setItem('scrollToPercent', String(bookmark.scrollPercent));
+                window.location.hash = bookmark.chapterSlug;
+            };
         }
 
-        window.addEventListener('homePageLoaded', initResumePrompt);
+        window.addEventListener('homePageLoaded', initResume);
 
         // Also check on DOMContentLoaded in case home page is already showing
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                if (document.querySelector('.home-content')) initResumePrompt();
+                if (document.querySelector('.home-content')) initResume();
             });
         } else if (document.querySelector('.home-content')) {
-            initResumePrompt();
+            initResume();
         }
     })();
     </script>
