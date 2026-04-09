@@ -103,6 +103,9 @@
     function createOButton() {
         if (oButton) return;
 
+        // Check admin setting
+        if (localStorage.getItem('admin_shareButtonEnabled') === 'false') return;
+
         oButton = document.createElement('button');
         oButton.id = 'share-o-button';
         oButton.className = 'share-o-button';
