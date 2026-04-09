@@ -365,6 +365,59 @@
 
     <script defer src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
+    <!-- Resume Prompt for returning readers -->
+    <script>
+    (function(){
+        function initResumePrompt() {
+            if (!window.bookmark) return;
+            var bookmark = window.bookmark.get();
+            if (!bookmark || !bookmark.chapterSlug) return;
+
+            var homeContent = document.querySelector('.home-content');
+            if (!homeContent) return;
+
+            // Create resume prompt element
+            var prompt = document.createElement('div');
+            prompt.id = 'resumePrompt';
+            prompt.innerHTML = '<p>Resume: <span id="resumeTitle"></span></p>' +
+                '<button id="resumeBtn">PICK UP WHERE YOU LEFT OFF →</button>';
+
+            // Insert after button
+            var btn = homeContent.querySelector('.start-reading-btn');
+            if (btn && btn.parentNode) {
+                btn.parentNode.insertBefore(prompt, btn.nextSibling);
+            } else {
+                homeContent.appendChild(prompt);
+            }
+
+            // Set title and show
+            var title = document.getElementById('resumeTitle');
+            if (title) title.textContent = bookmark.chapterTitle || 'your chapter';
+            prompt.style.display = 'block';
+
+            // Handle click
+            var resumeBtn = document.getElementById('resumeBtn');
+            if (resumeBtn) {
+                resumeBtn.addEventListener('click', function() {
+                    sessionStorage.setItem('scrollToPercent', bookmark.scrollPercent.toString());
+                    window.location.hash = bookmark.chapterSlug;
+                });
+            }
+        }
+
+        window.addEventListener('homePageLoaded', initResumePrompt);
+
+        // Also check on DOMContentLoaded in case home page is already showing
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                if (document.querySelector('.home-content')) initResumePrompt();
+            });
+        } else if (document.querySelector('.home-content')) {
+            initResumePrompt();
+        }
+    })();
+    </script>
+
     <!-- Reader Odometer (scoreboard-style counter) -->
     <script>
     (function(){
