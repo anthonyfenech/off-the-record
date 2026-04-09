@@ -433,7 +433,8 @@
           var total = (data.total||0) + (data.manual_total||0);
           if(total>0){
             insertOdometer();
-            showTotal(total,true);
+            showTotal(total);
+            try { localStorage.setItem('otr_reader_count', total.toString()); } catch(e){}
           }
         }).catch(function(){
           if(odometerEl) odometerEl.style.display='none';
@@ -444,6 +445,13 @@
       createOdometer();
       buildReels();
       showTotal(0,false);
+
+      // Show cached count instantly (before fetch completes)
+      var cachedCount = (function(){ try { return localStorage.getItem('otr_reader_count'); } catch(e){ return null; } })();
+      if(cachedCount && document.querySelector('.home-content')){
+        insertOdometer();
+        showTotal(parseInt(cachedCount,10));
+      }
 
       // Watch for theme changes
       var observer = new MutationObserver(function(mutations){
