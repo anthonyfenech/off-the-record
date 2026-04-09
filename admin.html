@@ -899,32 +899,6 @@
 
                     <div class="draft-item">
                         <div class="draft-row">
-                            <span class="toggle-label">About</span>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="draftAbout">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="draft-meta">
-                            <span class="draft-destinations">Sidebar</span>
-                        </div>
-                    </div>
-
-                    <div class="draft-item">
-                        <div class="draft-row">
-                            <span class="toggle-label">Audio</span>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="draftAudio">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="draft-meta">
-                            <span class="draft-destinations">Sidebar</span>
-                        </div>
-                    </div>
-
-                    <div class="draft-item">
-                        <div class="draft-row">
                             <span class="toggle-label">Bookmarks</span>
                             <label class="toggle-switch">
                                 <input type="checkbox" id="draftBookmarks">
@@ -933,32 +907,6 @@
                         </div>
                         <div class="draft-meta">
                             <span class="draft-destinations">Nav bar · Sidebar</span>
-                        </div>
-                    </div>
-
-                    <div class="draft-item">
-                        <div class="draft-row">
-                            <span class="toggle-label">Guestbook</span>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="draftComments">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="draft-meta">
-                            <span class="draft-destinations">Sidebar</span>
-                        </div>
-                    </div>
-
-                    <div class="draft-item">
-                        <div class="draft-row">
-                            <span class="toggle-label">Contact</span>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="draftContact">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="draft-meta">
-                            <span class="draft-destinations">Sidebar</span>
                         </div>
                     </div>
                 </div>
@@ -1172,11 +1120,7 @@
                 showCaptions: localStorage.getItem('admin_showCaptions') === 'true',
                 allowPageMode: localStorage.getItem('admin_allowPageMode') !== 'false',
                 allowFontSize: localStorage.getItem('admin_allowFontSize') !== 'false',
-                draftComments: localStorage.getItem('admin_draftComments') === 'true',
-                draftContact: localStorage.getItem('admin_draftContact') === 'true',
                 draftBlog: localStorage.getItem('admin_draftBlog') === 'true',
-                draftAbout: localStorage.getItem('admin_draftAbout') === 'true',
-                draftAudio: localStorage.getItem('admin_draftAudio') === 'true',
                 draftBookmarks: localStorage.getItem('admin_draftBookmarks') === 'true',
                 installPromptEnabled: localStorage.getItem('admin_installPromptEnabled') === 'true',
                 installMessage: localStorage.getItem('admin_installMessage') || 'Install OFF-THE-RECORD for easy access and offline reading',
@@ -1202,11 +1146,7 @@
             document.getElementById('showCaptions').checked = settings.showCaptions;
             document.getElementById('allowPageMode').checked = settings.allowPageMode;
             document.getElementById('allowFontSize').checked = settings.allowFontSize;
-            document.getElementById('draftComments').checked = settings.draftComments;
-            document.getElementById('draftContact').checked = settings.draftContact;
             document.getElementById('draftBlog').checked = settings.draftBlog;
-            document.getElementById('draftAbout').checked = settings.draftAbout;
-            document.getElementById('draftAudio').checked = settings.draftAudio;
             document.getElementById('draftBookmarks').checked = settings.draftBookmarks;
             document.getElementById('installPromptEnabled').checked = settings.installPromptEnabled;
             document.getElementById('installMessage').value = settings.installMessage;
@@ -1226,7 +1166,7 @@
             // Add listeners for all toggles
             const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
-                           'draftBlog', 'draftAbout', 'draftAudio', 'draftBookmarks', 'draftComments', 'draftContact',
+                           'draftBlog', 'draftBookmarks',
                            'installPromptEnabled',
                            'fullBookCleanRead', 'fullBookChapterBreaks', 'shareButtonEnabled'];
 
