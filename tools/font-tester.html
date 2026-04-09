@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Tester | OTR Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Crimson+Pro:ital@0;1&family=EB+Garamond:ital@0;1&family=Libre+Baskerville:ital@0;1&family=Libre+Caslon+Text:ital@0;1&family=Literata:ital@0;1&family=Lora:ital@0;1&family=Merriweather:ital@0;1&family=Source+Serif+Pro:ital@0;1&family=Spectral:ital@0;1&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .toolbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: #111;
+        }
+        .toolbar-row {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 20px; border-bottom: 1px solid #333;
+            overflow-x: auto; white-space: nowrap;
+        }
+        .toolbar-row:last-child { border-bottom: none; }
+
+        .bar-title {
+            font: 700 11px/1 'Courier New', monospace;
+            color: #555; letter-spacing: 2px; text-transform: uppercase;
+            margin-right: 8px; flex-shrink: 0;
+        }
+        .bar-label {
+            font: 700 9px/1 'Courier New', monospace;
+            color: #555; letter-spacing: 1px; text-transform: uppercase;
+            flex-shrink: 0; margin-right: 6px;
+        }
+        .bar-divider { color: #444; margin: 0 8px; flex-shrink: 0; }
+
+        .font-btn, .size-btn {
+            padding: 8px 14px; border: 2px solid #333; border-radius: 4px;
+            background: #222; color: #ccc; cursor: pointer;
+            font-size: 14px; flex-shrink: 0; transition: all 0.1s;
+        }
+        .font-btn:hover, .size-btn:hover { background: #333; border-color: #555; }
+        .font-btn.active, .size-btn.active { background: #fff; color: #111; border-color: #fff; }
+
+        .font-btn[data-font="Lora"] { font-family: 'Lora', serif; }
+        .font-btn[data-font="Crimson Pro"] { font-family: 'Crimson Pro', serif; }
+        .font-btn[data-font="EB Garamond"] { font-family: 'EB Garamond', serif; }
+        .font-btn[data-font="Spectral"] { font-family: 'Spectral', serif; }
+        .font-btn[data-font="Libre Baskerville"] { font-family: 'Libre Baskerville', serif; }
+        .font-btn[data-font="Libre Caslon Text"] { font-family: 'Libre Caslon Text', serif; }
+        .font-btn[data-font="Cardo"] { font-family: 'Cardo', serif; }
+        .font-btn[data-font="Young Serif"] { font-family: 'Young Serif', serif; }
+        .font-btn[data-font="Literata"] { font-family: 'Literata', serif; }
+        .font-btn[data-font="Source Serif Pro"] { font-family: 'Source Serif Pro', serif; }
+        .font-btn[data-font="Merriweather"] { font-family: 'Merriweather', serif; }
+
+        .size-btn[data-size="small"] { font-size: 12px; }
+        .size-btn[data-size="medium"] { font-size: 15px; }
+        .size-btn[data-size="large"] { font-size: 18px; }
+
+        .doc { max-width: 680px; margin: 105px auto 100px; padding: 0 24px; }
+        .loading, .error { text-align: center; padding: 80px 20px; font: 14px system-ui; color: #666; }
+        .error { color: #c00; }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-row">
+            <span class="bar-title">Font Tester</span>
+            <span class="bar-label">EPUB+WEB:</span>
+            <button class="font-btn" data-font="Lora">Lora</button>
+            <button class="font-btn" data-font="Crimson Pro">Crimson Pro</button>
+            <button class="font-btn" data-font="EB Garamond">EB Garamond</button>
+            <button class="font-btn" data-font="Spectral">Spectral</button>
+            <button class="font-btn" data-font="Libre Baskerville">Libre Baskerville</button>
+            <button class="font-btn" data-font="Libre Caslon Text">Libre Caslon</button>
+            <button class="font-btn" data-font="Cardo">Cardo</button>
+            <button class="font-btn" data-font="Young Serif">Young Serif</button>
+        </div>
+        <div class="toolbar-row">
+            <span class="bar-label">WEB ONLY:</span>
+            <button class="font-btn active" data-font="Literata">Literata ✓</button>
+            <button class="font-btn" data-font="Source Serif Pro">Source Serif Pro</button>
+            <button class="font-btn" data-font="Merriweather">Merriweather</button>
+            <span class="bar-divider">|</span>
+            <span class="bar-label">SIZE:</span>
+            <button class="size-btn" data-size="small">A</button>
+            <button class="size-btn active" data-size="medium">A</button>
+            <button class="size-btn" data-size="large">A</button>
+        </div>
+    </div>
+
+    <div class="doc" id="doc"><div class="loading">Loading chapters...</div></div>
+
+    <script type="module">
+        const doc = document.getElementById('doc');
+        const fontBtns = document.querySelectorAll('.font-btn');
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        const FONT_VAR = '--font-serif';
+        const SIZE_CLASSES = ['font-small', 'font-medium', 'font-large'];
+
+        try {
+            const { CHAPTERS } = await import('../data/chapters.js');
+            const chapters = CHAPTERS.filter(c => c.section !== 'title' && c.section !== 'toc' && c.content);
+            doc.innerHTML = chapters.map(c => `
+                <article class="chapter-section">
+                    <header class="chapter-header">
+                        <h2 class="chapter-title">${c.title || ''}</h2>
+                    </header>
+                    <div class="chapter-body">${c.content}</div>
+                </article>
+            `).join('');
+        } catch (e) {
+            doc.innerHTML = `<div class="error">Failed to load: ${e.message}</div>`;
+        }
+
+        fontBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                fontBtns.forEach(b => { b.classList.remove('active'); b.textContent = b.dataset.font; });
+                btn.classList.add('active');
+                btn.textContent = btn.dataset.font + ' ✓';
+                document.documentElement.style.setProperty(FONT_VAR, `'${btn.dataset.font}', Georgia, serif`);
+            });
+        });
+
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sizeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                SIZE_CLASSES.forEach(c => document.body.classList.remove(c));
+                document.body.classList.add('font-' + btn.dataset.size);
+            });
+        });
+    </script>
+</body>
+</html>
