@@ -4100,4 +4100,5 @@ body:not(.sidebar-open):not(.modal-open) {
     transition: max-height 0.2s ease-out;
     visibility: visible;
     height: auto;
+    max-height: 5000px;
 }
