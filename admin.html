@@ -329,50 +329,6 @@
             border-top: none;
         }
 
-        /* Dateline format icons - compact */
-        .dateline-icons {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 4px;
-        }
-
-        .dateline-icon-btn {
-            width: 24px;
-            height: 20px;
-            border: 1px solid #ccc;
-            background: #fff;
-            cursor: pointer;
-            font-family: Georgia, serif;
-            font-size: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.15s;
-        }
-
-        .dateline-icon-btn:hover {
-            border-color: #333;
-        }
-
-        .dateline-icon-btn.active {
-            background: #333;
-            color: #fff;
-            border-color: #333;
-        }
-
-        .dateline-icon-btn .icon-i {
-            font-style: italic;
-        }
-
-        .dateline-icon-btn .icon-bi {
-            font-weight: bold;
-            font-style: italic;
-        }
-
-        .dateline-icon-btn .icon-b {
-            font-weight: bold;
-        }
-
         /* Drafts section - compact */
         .draft-item {
             padding: 4px 0;
@@ -852,19 +808,6 @@
                         </label>
                     </div>
 
-                    <div class="toggle-subheader">Dateline Formatting</div>
-                    <div class="dateline-icons">
-                        <button type="button" class="dateline-icon-btn active" data-format="current" title="Italic">
-                            <span class="icon-i">I</span>
-                        </button>
-                        <button type="button" class="dateline-icon-btn" data-format="bold-italic" title="Bold + Italic">
-                            <span class="icon-bi">BI</span>
-                        </button>
-                        <button type="button" class="dateline-icon-btn" data-format="bold" title="Bold Only">
-                            <span class="icon-b">B</span>
-                        </button>
-                    </div>
-
                     <div class="toggle-subheader">Media</div>
                     <div class="toggle-row">
                         <span class="toggle-label">Captions</span>
@@ -875,13 +818,6 @@
                     </div>
 
                     <div class="toggle-subheader">Full Book</div>
-                    <div class="toggle-row">
-                        <span class="toggle-label">Clean Read</span>
-                        <label class="toggle-switch">
-                            <input type="checkbox" id="fullBookCleanRead">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
                     <div class="toggle-row">
                         <span class="toggle-label">Chapter Breaks</span>
                         <label class="toggle-switch">
@@ -1337,10 +1273,8 @@
                 installDelay: parseInt(localStorage.getItem('admin_installDelay') || '1'),
                 installAutoHide: parseInt(localStorage.getItem('admin_installAutoHide') || '0'),
                 installCount: parseInt(localStorage.getItem('admin_installCount') || '0'),
-                fullBookCleanRead: localStorage.getItem('admin_fullBookCleanRead') === 'true',
                 fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false',
-                shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false',
-                datelineFormat: localStorage.getItem('admin_datelineFormat') || 'current'
+                shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false'
             };
         }
 
@@ -1363,21 +1297,15 @@
             document.getElementById('installDelay').value = settings.installDelay;
             document.getElementById('installAutoHide').value = settings.installAutoHide;
             document.getElementById('installCount').textContent = settings.installCount;
-            document.getElementById('fullBookCleanRead').checked = settings.fullBookCleanRead;
             document.getElementById('fullBookChapterBreaks').checked = settings.fullBookChapterBreaks;
             document.getElementById('shareButtonEnabled').checked = settings.shareButtonEnabled;
-
-            // Load dateline format selection
-            document.querySelectorAll('.dateline-icon-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.format === settings.datelineFormat);
-            });
 
             // Add listeners for all toggles
             const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftBookmarks',
                            'installPromptEnabled',
-                           'fullBookCleanRead', 'fullBookChapterBreaks', 'shareButtonEnabled'];
+                           'fullBookChapterBreaks', 'shareButtonEnabled'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
@@ -1396,15 +1324,6 @@
             ['installDelay', 'installAutoHide'].forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
                     saveSetting(id, e.target.value);
-                });
-            });
-
-            // Dateline format icon buttons
-            document.querySelectorAll('.dateline-icon-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.dateline-icon-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    saveSetting('datelineFormat', btn.dataset.format);
                 });
             });
 
