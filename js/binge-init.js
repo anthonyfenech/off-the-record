@@ -129,6 +129,11 @@ document.querySelectorAll('.media-emoji').forEach(emoji => {
 const mediaBtn = document.getElementById('mediaBtn');
 const mediaKey = 'reader_cleanRead';
 
+// Check admin setting - hide button if disabled
+if (mediaBtn && localStorage.getItem('admin_mediaButtonEnabled') === 'false') {
+    mediaBtn.style.display = 'none';
+}
+
 if (mediaBtn) {
     function updateMediaBtnState() {
         const isCleanRead = localStorage.getItem(mediaKey) === 'true';
