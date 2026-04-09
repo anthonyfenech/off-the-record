@@ -2,474 +2,648 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Tester | OTR Dev</title>
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/tab-logo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Crimson+Pro:ital@0;1&family=EB+Garamond:ital@0;1&family=Spectral:ital@0;1&family=Libre+Baskerville:ital@0;1&family=Libre+Caslon+Text:ital@0;1&family=Cardo:ital@0;1&family=Young+Serif&family=Literata:ital@0;1&family=Source+Serif+Pro:ital@0;1&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/typography.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/components.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="OFF-THE-RECORD - 15 years covering the Detroit Tigers">
+    <meta name="theme-color" content="#333333">
+
+    <!-- Open Graph (Facebook, iMessage, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OFF-THE-RECORD">
+    <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OFF-THE-RECORD">
+    <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OTR">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>OFF-THE-RECORD</title>
+
+    <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
+    <script>
+    (function(){
+        if(window.location.search.indexOf('reset=true')===-1)return;
+        var s=document.createElement('style');
+        s.textContent='*{pointer-events:auto!important}.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important}body{overflow:auto!important;pointer-events:auto!important}';
+        document.head.appendChild(s);
+        document.addEventListener('DOMContentLoaded',function(){
+            document.querySelectorAll('.active').forEach(function(el){el.classList.remove('active')});
+            document.querySelectorAll('.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]').forEach(function(el){
+                el.style.cssText='display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important';
+            });
+            document.body.style.overflow='auto';
+            document.body.style.pointerEvents='auto';
+            document.body.classList.remove('sidebar-open','modal-open','no-scroll','home-page');
+            console.log('NUCLEAR RESET TRIGGERED — all overlays destroyed. Remove ?reset=true from URL to restore normal behavior.');
+        });
+    })();
+    </script>
+
+    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            // Theme (dark/light)
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <!-- Critical: Hide sidebar and nav-footer before CSS loads to prevent flash -->
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0;pointer-events:none}.nav-footer{display:none}#toc-book-content{max-height:0;overflow:hidden;visibility:hidden}</style>
+
+    <!-- Emergency overlay cleanup - runs before anything else -->
+    <script>
+        (function() {
+            // Immediately clear any stuck overlay states from previous sessions
+            document.addEventListener('DOMContentLoaded', function() {
+                // Remove active class from all overlays including lightbox
+                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .media-modal-overlay, .photo-modal-overlay, [class*="overlay"], [id*="overlay"]');
+                overlays.forEach(function(el) {
+                    el.classList.remove('active');
+                    el.style.pointerEvents = 'none';
+                    el.style.display = 'none';
+                    el.style.visibility = 'hidden';
+                });
+                // Ensure body scroll is not locked
+                document.body.style.overflow = '';
+            });
+        })();
+    </script>
+
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="../fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="../css/variables.min.css?v=423" as="style">
+    <link rel="preload" href="../css/typography.min.css?v=423" as="style">
+
+    <!-- Self-hosted fonts (no external request) -->
+    <link rel="stylesheet" href="../css/fonts.min.css?v=423">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/reset.min.css?v=423">
+    <link rel="stylesheet" href="../css/variables.min.css?v=423">
+    <link rel="stylesheet" href="../css/typography.min.css?v=423">
+    <link rel="stylesheet" href="../css/layout.min.css?v=423">
+    <link rel="stylesheet" href="../css/components.min.css?v=423">
+    <!-- PROMPTS DISABLED: re-enable when prompt system is fixed -->
+    <!-- <link rel="stylesheet" href="../prompts/prompt-styles.min.css?v=423"> -->
+    <link rel="stylesheet" href="../css/otr-tier1-states.css?v=423">
+    <link rel="stylesheet" href="../css/share.min.css?v=423">
     <style>
-        /* Reset */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        /* Hide menu and theme toggle on home page only */
+        .home-page .menu-btn,
+        .home-page .theme-toggle { display: none; }
 
-        body {
-            background: var(--color-background);
-            color: var(--color-text-primary);
-            font-family: var(--font-serif, 'Literata'), Georgia, serif;
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-
-        /* Header */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: var(--color-background);
-            border-bottom: 1px solid var(--color-border);
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .hamburger {
-            width: 44px;
-            height: 44px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: default;
-            opacity: 0.5;
-        }
-        .hamburger span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: var(--color-text-primary);
-        }
-
-        .site-logo {
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-text-primary);
-            text-decoration: none;
-        }
-
-        .theme-toggle {
-            width: 44px;
-            height: 44px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Main content */
-        .main-content {
-            max-width: var(--max-width-reader, 800px);
-            margin: 80px auto 120px;
-            padding: 0 24px 0 24px;
-            margin-left: 200px;
-        }
-
-        .chapter-title {
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-align: center;
-            margin-bottom: 1em;
-            color: var(--color-text-primary);
-        }
-
-        .chapter-divider {
-            border: none;
-            border-top: 1px solid var(--color-border);
-            margin: 1.5em auto;
-            width: 60%;
-        }
-
+        /* === PARAGRAPH FORMATTING === */
         .chapter-body p {
-            margin-bottom: 1.2em;
-            text-indent: 1.5em;
-            font-size: var(--font-size-body, 17px);
-        }
-        .chapter-body p:first-child,
-        .chapter-body p.has-dateline {
-            text-indent: 0;
+            text-indent: 0.5in !important;
+            text-align: justify !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.6;
         }
 
-        .dateline {
-            font-family: 'Courier New', monospace;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .dateline em {
-            font-style: italic;
-            text-transform: none;
-            letter-spacing: 0;
+        .chapter-body p:empty {
+            height: 1em;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        .small-caps {
-            font-variant: small-caps;
-            letter-spacing: 0.05em;
+        .chapter-body p:first-child {
+            text-indent: 0 !important;
         }
 
-        /* Left Rail */
-        .left-rail {
+        .chapter-body .dateline {
+            font-weight: 500;
+        }
+
+        .chapter-body p.headline-block {
+            text-indent: 0 !important;
+        }
+
+        .chapter-body .block-quote p {
+            text-indent: 0 !important;
+            margin-left: 2em !important;
+        }
+
+        /* Mobile: smaller indent, left-aligned for readability */
+        @media (max-width: 600px) {
+            .chapter-body p {
+                text-indent: 24px !important;
+                text-align: left !important;
+            }
+        }
+
+    </style>
+
+    <!-- Font Tester: Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Crimson+Pro:ital@0;1&family=EB+Garamond:ital@0;1&family=Spectral:ital@0;1&family=Libre+Baskerville:ital@0;1&family=Libre+Caslon+Text:ital@0;1&family=Cardo:ital@0;1&family=Young+Serif&family=Literata:ital@0;1&family=Source+Serif+Pro:ital@0;1&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Font Tester: Custom Styles -->
+    <style>
+        .toc-sidebar, .hamburger, .menu-toggle { display: none !important; }
+        body { overflow-x: hidden; }
+
+        .font-rail {
             position: fixed;
-            left: 20px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
-            background: var(--color-background);
-            border: 1.5px solid var(--color-text-primary);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            padding: 12px;
-            width: 160px;
-            max-height: 80vh;
+            width: 100px;
+            max-height: 85vh;
             overflow-y: auto;
+            background: var(--color-background, #fff);
+            border: 1px solid var(--color-text-primary, #000);
+            padding: 8px;
         }
-
-        .rail-title {
-            font-family: 'Courier New', monospace;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-text-primary);
-            margin-bottom: 8px;
-        }
-
-        .rail-divider {
-            border: none;
-            border-top: 1px solid var(--color-border);
-            margin: 10px 0;
-        }
-
-        .rail-section {
+        .rail-header {
             font-family: 'Courier New', monospace;
             font-size: 9px;
-            font-weight: 700;
+            font-weight: bold;
             letter-spacing: 1px;
+            margin-bottom: 6px;
             text-transform: uppercase;
-            color: var(--color-text-secondary);
-            margin: 10px 0 6px;
-            font-variant: small-caps;
         }
-
-        .font-btn {
+        .rail-label {
+            font-size: 7px;
+            color: #888;
+            text-transform: uppercase;
+            margin: 8px 0 4px 0;
+            letter-spacing: 0.5px;
+        }
+        .font-rail button {
             display: block;
             width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            padding: 5px 0;
+            padding: 4px 6px;
+            margin: 2px 0;
+            border: 1px solid var(--color-text-primary, #000);
+            background: var(--color-background, #fff);
+            color: var(--color-text-primary, #000);
+            font-size: 9px;
             cursor: pointer;
-            font-size: 14px;
-            color: var(--color-text-primary);
-            transition: opacity 0.1s;
+            text-align: center;
         }
-        .font-btn:hover {
-            text-decoration: underline;
+        .font-rail button:hover {
+            background: var(--color-background-secondary, #f0f0f0);
         }
-        .font-btn.active {
-            font-weight: 600;
+        .font-rail button.active {
+            background: var(--color-text-primary, #000);
+            color: var(--color-background, #fff);
         }
-
-        /* Font previews */
-        .font-btn[data-font="Lora"] { font-family: 'Lora', serif; }
-        .font-btn[data-font="Crimson Pro"] { font-family: 'Crimson Pro', serif; }
-        .font-btn[data-font="EB Garamond"] { font-family: 'EB Garamond', serif; }
-        .font-btn[data-font="Spectral"] { font-family: 'Spectral', serif; }
-        .font-btn[data-font="Libre Baskerville"] { font-family: 'Libre Baskerville', serif; }
-        .font-btn[data-font="Libre Caslon"] { font-family: 'Libre Caslon Text', serif; }
-        .font-btn[data-font="Cardo"] { font-family: 'Cardo', serif; }
-        .font-btn[data-font="Young Serif"] { font-family: 'Young Serif', serif; }
-        .font-btn[data-font="Literata"] { font-family: 'Literata', serif; }
-        .font-btn[data-font="Source Serif Pro"] { font-family: 'Source Serif Pro', serif; }
-        .font-btn[data-font="Merriweather"] { font-family: 'Merriweather', serif; }
-        .font-btn[data-font="Georgia"] { font-family: Georgia, serif; }
-        .font-btn[data-font="Palatino"] { font-family: 'Palatino Linotype', Palatino, serif; }
-        .font-btn[data-font="Times New Roman"] { font-family: 'Times New Roman', serif; }
-
-        /* Size buttons */
-        .size-row {
+        .size-buttons {
             display: flex;
-            gap: 8px;
-            margin-top: 4px;
+            gap: 4px;
         }
-        .size-btn {
-            background: none;
-            border: 1px solid var(--color-border);
-            padding: 4px 10px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            color: var(--color-text-primary);
-        }
-        .size-btn:hover {
-            border-color: var(--color-text-primary);
-        }
-        .size-btn.active {
-            background: var(--color-text-primary);
-            color: var(--color-background);
-            font-weight: 700;
-        }
-        .size-btn[data-size="small"] { font-size: 12px; }
-        .size-btn[data-size="medium"] { font-size: 15px; }
-        .size-btn[data-size="large"] { font-size: 18px; }
-
-        /* Top bar (mobile fallback) */
-        .top-bar {
-            display: none;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background: var(--color-background);
-            border-bottom: 1px solid var(--color-border);
-            padding: 10px 16px;
-            overflow-x: auto;
-            white-space: nowrap;
-            gap: 8px;
-        }
-        .top-bar .font-btn {
-            display: inline-block;
-            width: auto;
-            padding: 6px 12px;
-            border: 1px solid var(--color-border);
-            margin-right: 4px;
-        }
-        .top-bar .font-btn.active {
-            background: var(--color-text-primary);
-            color: var(--color-background);
+        .size-buttons button {
+            flex: 1;
+            font-size: 11px;
         }
 
-        /* Footer nav (visual only) */
-        .nav-footer {
-            position: fixed;
-            bottom: 16px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-            background: var(--color-background);
-            border: 1.5px solid var(--color-text-primary);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: center;
-            padding: 9px 14px;
-            gap: 20px;
-            opacity: 0.5;
-            cursor: default;
-        }
-        .nav-btn {
-            font-family: 'Courier New', monospace;
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-text-primary);
-            background: none;
-            border: none;
-            cursor: default;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .left-rail {
-                display: none;
-            }
-            .top-bar {
-                display: flex;
-            }
-            .main-content {
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 130px;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1100px) {
-            .main-content {
-                margin-left: 180px;
-            }
-            .left-rail {
-                width: 140px;
-            }
-        }
-
-        /* Dark mode adjustments */
-        [data-theme="dark"] .left-rail {
-            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-        }
-        [data-theme="dark"] .nav-footer {
-            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        @media (max-width: 1000px) {
+            .font-rail { display: none; }
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <button class="hamburger" aria-label="Menu (disabled)">
-            <span></span><span></span><span></span>
-        </button>
-        <a href="../" class="site-logo">Off-the-Record</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-            <span id="themeIcon">☀️</span>
-        </button>
-    </header>
+<body class="home-page">
+    <a href="#reader" class="skip-link">Skip to content</a>
 
-    <!-- Left Rail -->
-    <aside class="left-rail">
-        <div class="rail-title">Font Test</div>
-        <hr class="rail-divider">
-
-        <div class="rail-section">EPUB + WEB</div>
-        <button class="font-btn" data-font="Lora">Lora</button>
-        <button class="font-btn" data-font="Crimson Pro">Crimson Pro</button>
-        <button class="font-btn" data-font="EB Garamond">EB Garamond</button>
-        <button class="font-btn" data-font="Spectral">Spectral</button>
-        <button class="font-btn" data-font="Libre Baskerville">Libre Baskerville</button>
-        <button class="font-btn" data-font="Libre Caslon">Libre Caslon</button>
-        <button class="font-btn" data-font="Cardo">Cardo</button>
-        <button class="font-btn" data-font="Young Serif">Young Serif</button>
-
-        <hr class="rail-divider">
-        <div class="rail-section">WEB ONLY</div>
-        <button class="font-btn active" data-font="Literata">Literata ✓</button>
-        <button class="font-btn" data-font="Source Serif Pro">Source Serif Pro</button>
-        <button class="font-btn" data-font="Merriweather">Merriweather</button>
-
-        <hr class="rail-divider">
-        <div class="rail-section">SYSTEM</div>
-        <button class="font-btn" data-font="Georgia">Georgia</button>
-        <button class="font-btn" data-font="Palatino">Palatino</button>
-        <button class="font-btn" data-font="Times New Roman">Times New Roman</button>
-
-        <hr class="rail-divider">
-        <div class="rail-section">SIZE</div>
-        <div class="size-row">
-            <button class="size-btn" data-size="small">A</button>
-            <button class="size-btn active" data-size="medium">A</button>
-            <button class="size-btn" data-size="large">A</button>
+    <!-- Font Tester Rail -->
+    <div class="font-rail">
+        <div class="rail-header">FONT TEST</div>
+        <div class="rail-section">
+            <div class="rail-label">EPUB+WEB</div>
+            <button data-font="'Lora', serif">Lora</button>
+            <button data-font="'Crimson Pro', serif">Crimson</button>
+            <button data-font="'EB Garamond', serif">EB Gar</button>
+            <button data-font="'Spectral', serif">Spectral</button>
+            <button data-font="'Libre Baskerville', serif">Lib Bask</button>
+            <button data-font="'Libre Caslon Text', serif">Lib Casl</button>
+            <button data-font="'Cardo', serif">Cardo</button>
+            <button data-font="'Young Serif', serif">Yng Serif</button>
         </div>
-    </aside>
-
-    <!-- Top Bar (mobile) -->
-    <div class="top-bar">
-        <button class="font-btn" data-font="Literata">Literata</button>
-        <button class="font-btn" data-font="Lora">Lora</button>
-        <button class="font-btn" data-font="Georgia">Georgia</button>
-        <button class="font-btn" data-font="Merriweather">Merriweather</button>
-        <button class="font-btn" data-font="EB Garamond">Garamond</button>
+        <div class="rail-section">
+            <div class="rail-label">WEB ONLY</div>
+            <button data-font="'Literata', serif" class="active">Literata</button>
+            <button data-font="'Source Serif Pro', serif">Src Serif</button>
+            <button data-font="'Merriweather', serif">Merriwthr</button>
+        </div>
+        <div class="rail-section">
+            <div class="rail-label">SYSTEM</div>
+            <button data-font="Georgia, serif">Georgia</button>
+            <button data-font="Palatino, serif">Palatino</button>
+            <button data-font="'Times New Roman', serif">TNR</button>
+        </div>
+        <div class="rail-section">
+            <div class="rail-label">SIZE</div>
+            <div class="size-buttons">
+                <button data-size="15px">A</button>
+                <button data-size="18px" class="active">A</button>
+                <button data-size="21px">A</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <article>
-            <h1 class="chapter-title">DREAM JOB</h1>
-            <hr class="chapter-divider">
+    <noscript>
+        <div style="max-width: 640px; margin: 80px auto; padding: 20px; font-family: 'Courier New', monospace; text-align: center;">
+            <h1 style="font-size: 1.4rem; margin-bottom: 16px;">OFF-THE-RECORD</h1>
+            <p>This site requires JavaScript to read chapters. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+    <script>
+        // Apply body classes immediately (theme already set in <head>)
+        if (localStorage.getItem('admin_showCaptions') === 'true') {
+            document.body.classList.add('show-captions');
+        }
+        if (localStorage.getItem('reader_cleanRead') === 'true') {
+            document.body.classList.add('clean-read');
+        }
+        // Apply dateline formatting
+        const datelineFormat = localStorage.getItem('admin_datelineFormat') || 'current';
+        if (datelineFormat === 'bold-italic') {
+            document.body.classList.add('dateline-bold-italic');
+        } else if (datelineFormat === 'bold') {
+            document.body.classList.add('dateline-bold');
+        }
+    </script>
+    <!-- Password Gate (Beta Access) - Hidden by default, shown by JS if auth needed -->
+    <div id="passwordGate" class="password-gate" style="display: none">
+        <div class="password-gate-content">
+            <h1 class="password-gate-title">OFF-THE-RECORD</h1>
+            <form id="passwordForm" class="password-form" autocomplete="off">
+                <label for="passwordInput" class="sr-only">Enter password</label>
+                <input
+                    type="password"
+                    id="passwordInput"
+                    class="password-input"
+                    placeholder="Enter password"
+                    autocomplete="off"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
+                    autofocus
+                >
+                <div class="remember-me-wrapper">
+                    <input type="checkbox" id="rememberMe" class="remember-checkbox">
+                    <label for="rememberMe" class="remember-label">Remember me for 30 days</label>
+                </div>
+                <button type="submit" class="password-submit">ENTER</button>
+                <p id="passwordError" class="password-error">Incorrect password</p>
+            </form>
+        </div>
+    </div>
 
-            <div class="chapter-body">
-                <p class="has-dateline"><span class="dateline">DETROIT, <em>October 21, 2014</em>—</span>Three years earlier.</p>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <a href="../" class="header-logo" id="homeLink"><img src="../assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
 
-                <p>I'm 27 years old and working the day shift on the <em>Free Press</em> sports desk. I'm curled in front of a computer with a wad of dipping tobacco and a half-full Styrofoam cup within reach.</p>
-
-                <p>Sitting in my cubicle in the sports department—second floor of a beautiful Albert Kahn building in downtown Detroit.</p>
-
-                <p>The building feels like home. I first walked in here seven years ago, when the bowling writer, who knew my uncle somehow, got my foot in the door. I was 19 and came through the Lafayette Street entrance carrying a full binder of clips I wrote for my high school newspaper, with far too many fanboy pictures of my favorite athletes.</p>
-
-                <p>My high school journalism teacher insisted we keep these clipbooks, for one day they might get us a job. And damned if she wasn't right: I met with the prep sports editor that day, a regal fellow who was in the market for another body to answer phones and jot down scores a few evenings a week, especially on Friday nights. I was in.</p>
-
-                <p>Although I like to think of myself as a sports writer, collecting whatever scrap assignments are sent my way, I should be honest with you: technically, I'm not. Not quite yet. My official title is sports web producer. I work the night shift usually, from 7 <span class="small-caps">P.M.</span>-3 <span class="small-caps">A.M.</span>, almost every weekend.</p>
-            </div>
+    <!-- Main Reading Area -->
+    <main class="reader" id="reader">
+        <article class="chapter" id="chapterContent">
+            <header class="chapter-header">
+                <h2 class="chapter-title" id="chapterTitle"></h2>
+            </header>
+            <div class="chapter-body" id="chapterBody"></div>
         </article>
     </main>
 
-    <!-- Footer Nav (visual only) -->
-    <nav class="nav-footer">
-        <span class="nav-btn">PREV</span>
-        <span class="nav-btn">MEDIA</span>
-        <span class="nav-btn">NEXT</span>
+    <!-- Chapter Navigation Footer -->
+    <nav class="nav-footer" id="navFooter">
+        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span>Prev</span>
+        </button>
+        <div class="nav-center">
+            <button class="nav-btn nav-media media-active" id="mediaBtn" aria-label="Toggle media">
+                <span>Media</span>
+            </button>
+        </div>
+        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
+            <span>Next</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
     </nav>
 
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <!-- Search Section -->
+        <div class="toc-section" id="searchSection">
+            <button class="toc-section-header" id="searchToggle" aria-expanded="false">
+                <span class="toc-section-title">Search</span>
+            </button>
+            <div class="toc-section-content" id="searchContent" style="display: none;">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="" autocomplete="off" aria-label="Search chapters" />
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">✕</button>
+                </div>
+                <div class="search-results" id="searchResults" style="display: none;"></div>
+            </div>
+        </div>
+        <!-- Options Section -->
+        <div class="toc-section" id="optionsSection">
+            <button class="toc-section-header" id="optionsToggle" aria-expanded="false">
+                <span class="toc-section-title">Options</span>
+            </button>
+            <div class="toc-section-content" id="optionsContent" style="display: none;">
+                <div class="toc-option">
+                    <span class="toc-option-label">Mode</span>
+                    <div class="option-btn-group" id="modeToggle">
+                        <button class="option-btn active" data-mode="scroll">Scroll</button>
+                        <button class="option-btn" data-mode="page">Pages</button>
+                    </div>
+                </div>
+                <div class="toc-option">
+                    <span class="toc-option-label">Text</span>
+                    <div class="option-btn-group" id="textSizeToggle">
+                        <button class="option-btn" data-size="small">A-</button>
+                        <button class="option-btn active" data-size="medium">A</button>
+                        <button class="option-btn" data-size="large">A+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Admin Link (hidden until password typed) -->
+        <div class="toc-section" id="adminSection" style="display: none;">
+            <a href="../otr-ctrl-2026.html" class="toc-section-header toc-section-link" style="text-decoration: none;">
+                <span class="toc-section-title">Admin</span>
+                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="toc-footer">
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- Scripts -->
+    <!-- Analytics Config (must load before any script using OTR_ANALYTICS_CONFIG) -->
+    <script defer src="../js/analytics-config.js?v=423"></script>
+    <script type="module" src="../js/config.min.js?v=423"></script>
+    <script type="module" src="../data/chapters.js?v=423"></script>
+    <script defer src="../data/media.js?v=423"></script>
+    <script type="module" src="../js/storage.min.js?v=423"></script>
+    <script type="module" src="../js/mediaModal.min.js?v=423"></script>
+    <script type="module" src="../js/photoGallery.min.js?v=423"></script>
+    <script type="module" src="../js/blog.min.js?v=423"></script>
+    <script type="module" src="../js/reading-mode.min.js?v=423"></script>
+    <script type="module" src="../js/font-size.min.js?v=423"></script>
+    <script type="module" src="../js/search.min.js?v=423"></script>
+    <script type="module" src="../js/reader.min.js?v=423"></script>
+    <script type="module" src="../js/navigation.min.js?v=423"></script>
+    <script type="module" src="../js/pwa.min.js?v=423"></script>
+    <script type="module" src="../js/theme.min.js?v=423"></script>
+    <script type="module" src="../js/app.min.js?v=423"></script>
+
+    <!-- Page Controls (media toggle, mode toggle, text size, search, options) -->
+    <script defer src="../js/page-controls.min.js?v=423"></script>
+
+    <!-- Share Feature (O button for capturing and sharing text) -->
+    <script defer src="../js/share.min.js?v=423"></script>
+
+    <!-- Overlay Failsafes -->
+    <script defer src="../js/failsafes.js?v=423"></script>
+
+    <!-- Reader Persona & Analytics -->
+    <script defer src="../js/reader-name.min.js?v=423"></script>
+    <script defer src="../js/analytics.min.js?v=423"></script>
+
+    <!-- Auto-Bookmark & Resume -->
+    <script defer src="../js/bookmark.min.js?v=423"></script>
+
+    <!-- Admin Access (secret password) -->
+    <script defer src="../js/admin-access.min.js?v=423"></script>
+
+    <!-- Install Nudge (mobile PWA prompt) -->
+    <script defer src="../js/install-nudge.min.js?v=500"></script>
+
+    <script defer src="../js/otr-tier1-error-handler.min.js?v=423"></script>
+
+    <!-- Resume: hijack CONTINUE READING button when bookmark exists -->
     <script>
-        // Theme toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const savedTheme = localStorage.getItem('theme') || 'light';
+    (function(){
+        function initResume() {
+            if (!window.bookmark) return;
+            var bookmark = window.bookmark.get();
+            if (!bookmark || !bookmark.chapterSlug) return;
 
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+            var ctaBtn = document.querySelector('.start-reading-btn') || document.getElementById('startReadingBtn');
+            if (!ctaBtn) return;
 
-        themeToggle.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            themeIcon.textContent = next === 'dark' ? '🌙' : '☀️';
+            // Change button text to show resume chapter
+            ctaBtn.textContent = bookmark.chapterTitle
+                ? 'RESUME: ' + bookmark.chapterTitle.toUpperCase()
+                : 'RESUME';
+
+            // Override click to go to bookmarked position
+            ctaBtn.onclick = function(e) {
+                e.preventDefault();
+                sessionStorage.setItem('scrollToPercent', String(bookmark.scrollPercent));
+                window.location.hash = bookmark.chapterSlug;
+            };
+        }
+
+        window.addEventListener('homePageLoaded', initResume);
+
+        // Also check on DOMContentLoaded in case home page is already showing
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                if (document.querySelector('.home-content')) initResume();
+            });
+        } else if (document.querySelector('.home-content')) {
+            initResume();
+        }
+    })();
+    </script>
+
+    <!-- Reader Odometer (scoreboard-style counter) -->
+    <script>
+    (function(){
+      var DIGITS = 7;
+      var housing = null;
+      var reels = [];
+      var odometerEl = null;
+
+      function getDigitColor(){
+        return document.documentElement.getAttribute('data-theme')==='dark' ? '#999' : '#666';
+      }
+
+      function updateDigitColors(){
+        // Colors now handled by CSS
+      }
+
+      function createOdometer(){
+        odometerEl = document.createElement('div');
+        odometerEl.id = 'reader-odometer';
+        odometerEl.style.cssText = 'display:none;text-align:center;margin-top:2em;';
+
+        housing = document.createElement('div');
+        housing.id = 'odo-housing';
+        housing.style.cssText = 'display:inline-flex;gap:1px;background:transparent;border:none;padding:0;align-items:center;';
+
+        odometerEl.appendChild(housing);
+      }
+
+      function buildReels(){
+        if(!housing) return;
+        housing.innerHTML = '';
+        reels = [];
+        for(var i=0;i<DIGITS;i++){
+          var digit = document.createElement('div');
+          digit.className = 'odo-digit';
+          digit.textContent = '0';
+          housing.appendChild(digit);
+          reels.push(digit);
+        }
+      }
+
+      function showTotal(n, animate){
+        var s=String(Math.min(Math.max(0,n),9999999)).padStart(DIGITS,'0');
+        for(var i=0;i<DIGITS;i++){
+          reels[i].textContent = s[i];
+        }
+        if(odometerEl) odometerEl.style.display='block';
+      }
+
+      function insertOdometer(){
+        var homeContent = document.querySelector('.home-content');
+        if(homeContent && odometerEl && !document.getElementById('reader-odometer')){
+          var btn = homeContent.querySelector('.start-reading-btn');
+          if(btn && btn.parentNode){
+            btn.parentNode.insertBefore(odometerEl, btn.nextSibling);
+          } else {
+            homeContent.appendChild(odometerEl);
+          }
+        }
+      }
+
+      function fetchAndShow(){
+        if(typeof OTR_ANALYTICS_CONFIG === 'undefined') return;
+        var url = OTR_ANALYTICS_CONFIG.readerCounterUrl + '?action=getReaderCount';
+        fetch(url).then(function(r){return r.json();}).then(function(data){
+          var total = (data.total||0) + (data.manual_total||0);
+          if(total>0){
+            insertOdometer();
+            showTotal(total);
+            try { localStorage.setItem('otr_reader_count', total.toString()); } catch(e){}
+          }
+        }).catch(function(){
+          if(odometerEl) odometerEl.style.display='none';
         });
+      }
 
-        // Font switching
-        const fontBtns = document.querySelectorAll('.font-btn');
-        const FONT_VAR = '--font-serif';
+      // Initialize
+      createOdometer();
+      buildReels();
+      showTotal(0,false);
 
-        fontBtns.forEach(btn => {
+      // Show cached count instantly (before fetch completes)
+      var cachedCount = (function(){ try { return localStorage.getItem('otr_reader_count'); } catch(e){ return null; } })();
+      if(cachedCount && document.querySelector('.home-content')){
+        insertOdometer();
+        showTotal(parseInt(cachedCount,10));
+      }
+
+      // Watch for theme changes
+      var observer = new MutationObserver(function(mutations){
+        for(var i=0;i<mutations.length;i++){
+          if(mutations[i].attributeName==='data-theme'){
+            updateDigitColors();
+            break;
+          }
+        }
+      });
+      observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+      if(document.querySelector('.home-content')){
+        fetchAndShow();
+      }
+
+      window.addEventListener('homePageLoaded', function(){
+        fetchAndShow();
+      });
+    })();
+    </script>
+
+    <!-- Font Tester: Force Chapter 3 -->
+    <script>
+        if (!window.location.search.includes('chapter=')) {
+            history.replaceState(null, '', '?chapter=3');
+        }
+    </script>
+
+    <!-- Font Tester: Rail Controls -->
+    <script>
+        document.querySelectorAll('.font-rail button[data-font]').forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update all buttons (rail + top bar)
-                fontBtns.forEach(b => {
-                    b.classList.remove('active');
-                    // Remove checkmark from text
-                    b.textContent = b.textContent.replace(' ✓', '');
-                });
+                document.querySelectorAll('.font-rail button[data-font]').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                // Also activate matching button in other location
-                const font = btn.dataset.font;
-                fontBtns.forEach(b => {
-                    if (b.dataset.font === font) {
-                        b.classList.add('active');
-                        if (!b.textContent.includes('✓')) {
-                            b.textContent = b.textContent + ' ✓';
-                        }
-                    }
-                });
-                // Apply font
-                const fontFamily = font === 'Libre Caslon' ? 'Libre Caslon Text' : font;
-                document.documentElement.style.setProperty(FONT_VAR, `'${fontFamily}', Georgia, serif`);
-                document.body.style.fontFamily = `'${fontFamily}', Georgia, serif`;
+                const target = document.querySelector('.chapter-body') || document.querySelector('.reader') || document.querySelector('main');
+                if (target) target.style.fontFamily = btn.dataset.font;
             });
         });
 
-        // Size switching
-        const sizeBtns = document.querySelectorAll('.size-btn');
-        const sizes = { small: '15px', medium: '17px', large: '20px' };
-
-        sizeBtns.forEach(btn => {
+        document.querySelectorAll('.font-rail button[data-size]').forEach(btn => {
             btn.addEventListener('click', () => {
-                sizeBtns.forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.size-buttons button').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                document.documentElement.style.setProperty('--font-size-body', sizes[btn.dataset.size]);
+                const target = document.querySelector('.chapter-body') || document.querySelector('.reader') || document.querySelector('main');
+                if (target) target.style.fontSize = btn.dataset.size;
             });
         });
     </script>
+
 </body>
 </html>
