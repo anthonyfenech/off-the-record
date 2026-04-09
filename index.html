@@ -309,7 +309,7 @@
         </div>
         <!-- Admin Link (hidden until password typed) -->
         <div class="toc-section" id="adminSection" style="display: none;">
-            <a href="./admin.html" class="toc-section-header toc-section-link" style="text-decoration: none;">
+            <a href="./otr-ctrl-2026.html" class="toc-section-header toc-section-link" style="text-decoration: none;">
                 <span class="toc-section-title">Admin</span>
                 <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 6 15 12 9 18"></polyline>
@@ -367,6 +367,113 @@
     <script defer src="./js/install-nudge.min.js?v=500"></script>
 
     <script defer src="./js/otr-tier1-error-handler.min.js?v=423"></script>
+
+    <!-- Reader Odometer (scoreboard-style counter) -->
+    <script>
+    (function(){
+      var DIGITS = 7;
+      var housing = null;
+      var reels = [];
+      var odometerEl = null;
+
+      function createOdometer(){
+        // Create odometer container
+        odometerEl = document.createElement('div');
+        odometerEl.id = 'reader-odometer';
+        odometerEl.style.cssText = 'display:none; text-align:center; margin-top:18px;';
+
+        housing = document.createElement('div');
+        housing.id = 'odo-housing';
+        housing.style.cssText = 'display:inline-flex; gap:3px; background:#0d0d0d; border:1.5px solid #222; border-radius:8px; padding:10px 14px; align-items:center;';
+
+        var label = document.createElement('div');
+        label.style.cssText = "font-family:'Courier New',monospace; font-size:9px; letter-spacing:0.2em; color:#555; margin-top:6px; text-transform:uppercase;";
+        label.textContent = 'readers';
+
+        odometerEl.appendChild(housing);
+        odometerEl.appendChild(label);
+      }
+
+      function buildReels(){
+        if(!housing) return;
+        housing.innerHTML = '';
+        reels = [];
+        for(var i=0;i<DIGITS;i++){
+          if(i===4){
+            var comma = document.createElement('span');
+            comma.style.cssText='font-family:"Courier New",monospace;font-size:22px;color:#444;align-self:flex-end;padding-bottom:6px;margin:0 1px;';
+            comma.textContent=',';
+            housing.appendChild(comma);
+          }
+          var wrap = document.createElement('div');
+          wrap.style.cssText='width:32px;height:50px;overflow:hidden;position:relative;background:#0a0a0a;border:1px solid #1e1e1e;border-radius:3px;';
+          var reel = document.createElement('div');
+          reel.style.cssText='display:flex;flex-direction:column;transition:none;';
+          for(var n=0;n<=9;n++){
+            var d=document.createElement('div');
+            d.style.cssText='width:32px;height:50px;display:flex;align-items:center;justify-content:center;font-family:"Courier New",monospace;font-size:26px;font-weight:700;color:#e8c84a;line-height:1;';
+            d.textContent=n;
+            reel.appendChild(d);
+          }
+          wrap.appendChild(reel);
+          housing.appendChild(wrap);
+          reels.push(reel);
+        }
+      }
+
+      function showTotal(n, animate){
+        var s=String(Math.min(Math.max(0,n),9999999)).padStart(DIGITS,'0');
+        for(var i=0;i<DIGITS;i++){
+          var offset=parseInt(s[i])*50;
+          reels[i].style.transition=animate?'transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94)':'none';
+          reels[i].style.transform='translateY(-'+offset+'px)';
+        }
+        if(odometerEl) odometerEl.style.display='block';
+      }
+
+      function insertOdometer(){
+        var homeContent = document.querySelector('.home-content');
+        if(homeContent && odometerEl && !document.getElementById('reader-odometer')){
+          // Insert after the start reading button
+          var btn = homeContent.querySelector('.start-reading-btn');
+          if(btn && btn.parentNode){
+            btn.parentNode.insertBefore(odometerEl, btn.nextSibling);
+          } else {
+            homeContent.appendChild(odometerEl);
+          }
+        }
+      }
+
+      function fetchAndShow(){
+        if(typeof OTR_ANALYTICS_CONFIG === 'undefined') return;
+        var url = OTR_ANALYTICS_CONFIG.readerCounterUrl + '?action=getReaderCount';
+        fetch(url).then(function(r){return r.json();}).then(function(data){
+          var total = (data.total||0) + (data.manual_total||0);
+          if(total>0){
+            insertOdometer();
+            showTotal(total,true);
+          }
+        }).catch(function(){
+          if(odometerEl) odometerEl.style.display='none';
+        });
+      }
+
+      // Initialize
+      createOdometer();
+      buildReels();
+      showTotal(0,false);
+
+      // Check if home page is already loaded
+      if(document.querySelector('.home-content')){
+        fetchAndShow();
+      }
+
+      // Listen for home page load event
+      window.addEventListener('homePageLoaded', function(){
+        fetchAndShow();
+      });
+    })();
+    </script>
 
 </body>
 </html>
