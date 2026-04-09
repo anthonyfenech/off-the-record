@@ -9,8 +9,12 @@
     <!-- Apply theme before CSS loads -->
     <script>
         (function() {
-            if (localStorage.getItem('reader_theme') === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
+            try {
+                if (localStorage.getItem('reader_theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {
+                // localStorage unavailable
             }
         })();
     </script>
@@ -18,107 +22,120 @@
     <link rel="stylesheet" href="./css/analytics-dashboard.css">
 </head>
 <body>
+    <noscript>
+        <div class="noscript-warning">
+            JavaScript is required to view the analytics dashboard.
+        </div>
+    </noscript>
+
+    <!-- Error Banner -->
+    <div id="error-banner" class="error-banner" role="alert" hidden>
+        <span id="error-message" class="error-message"></span>
+        <button type="button" class="error-dismiss" aria-label="Dismiss error">&times;</button>
+    </div>
+
     <!-- Authentication Screen -->
-    <div class="auth-screen">
+    <div class="auth-screen" role="group" aria-labelledby="auth-title">
         <form class="auth-box" id="auth-form">
-            <h1>Analytics Dashboard</h1>
-            <input type="password" id="auth-password" placeholder="Enter password" autocomplete="off" required>
+            <h1 id="auth-title">Analytics Dashboard</h1>
+            <label for="auth-password" class="visually-hidden">Password</label>
+            <input type="password" id="auth-password" placeholder="Enter password" autocomplete="new-password" required aria-describedby="auth-error">
             <button type="submit">Access Dashboard</button>
-            <div class="auth-error" id="auth-error"></div>
+            <div class="auth-error" id="auth-error" role="alert" aria-live="polite"></div>
         </form>
     </div>
 
     <!-- Main Dashboard -->
-    <div class="dashboard">
+    <div class="dashboard" role="main" aria-label="Analytics Dashboard">
         <!-- Header -->
         <header class="dashboard-header">
             <h1 class="dashboard-title">Off the Record Analytics</h1>
 
-            <div class="dashboard-nav">
-                <a href="./admin.html">← Admin</a>
-                <button id="theme-toggle">Theme</button>
-                <button id="refresh-btn">Refresh</button>
+            <div class="dashboard-nav" role="navigation" aria-label="Dashboard navigation">
+                <a href="./admin.html" aria-label="Return to Admin panel">← Admin</a>
+                <button type="button" id="theme-toggle" aria-label="Toggle dark mode">Theme</button>
+                <button type="button" id="refresh-btn" aria-label="Refresh data">Refresh</button>
             </div>
         </header>
 
         <!-- Time Range Selector -->
-        <div class="time-range">
-            <button data-range="24h">24 Hours</button>
-            <button data-range="7d" class="active">7 Days</button>
-            <button data-range="30d">30 Days</button>
-            <button data-range="all">All Time</button>
-            <span id="last-refresh" style="margin-left: auto; font-size: 10px; color: #999;"></span>
+        <div class="time-range" role="group" aria-label="Select time range">
+            <button type="button" data-range="24h">24 Hours</button>
+            <button type="button" data-range="7d" class="active" aria-pressed="true">7 Days</button>
+            <button type="button" data-range="30d">30 Days</button>
+            <button type="button" data-range="all">All Time</button>
+            <span id="last-refresh" class="last-refresh" aria-live="polite"></span>
         </div>
 
         <!-- Key Metrics -->
-        <div class="metrics-grid" style="margin-top: 20px;">
+        <div class="metrics-grid" role="group" aria-label="Key metrics">
             <div class="metric-card">
                 <div class="metric-label">Total Readers</div>
-                <div class="metric-value" id="metric-readers">—</div>
+                <div class="metric-value" id="metric-readers" aria-live="polite">—</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Avg Time/Chapter</div>
-                <div class="metric-value" id="metric-time">—</div>
+                <div class="metric-value" id="metric-time" aria-live="polite">—</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Completion Rate</div>
-                <div class="metric-value" id="metric-completion">—</div>
+                <div class="metric-value" id="metric-completion" aria-live="polite">—</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Return Rate</div>
-                <div class="metric-value" id="metric-return">—</div>
+                <div class="metric-value" id="metric-return" aria-live="polite">—</div>
             </div>
         </div>
 
         <!-- Engagement Heatmap -->
-        <section class="section">
+        <section class="section" aria-labelledby="heatmap-title">
             <div class="section-header">
-                <h2 class="section-title">Chapter Engagement Heatmap</h2>
+                <h2 class="section-title" id="heatmap-title">Chapter Engagement Heatmap</h2>
             </div>
             <div class="heatmap-container">
-                <div class="loading" style="display: none;">Loading data</div>
-                <div id="chapter-heatmap"></div>
+                <div class="loading" id="heatmap-loading" hidden>Loading data</div>
+                <div id="chapter-heatmap" aria-label="Chapter engagement visualization"></div>
             </div>
         </section>
 
         <!-- Two Column Layout -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="two-column-grid">
             <!-- Drop-off Funnel -->
-            <section class="section">
+            <section class="section" aria-labelledby="funnel-title">
                 <div class="section-header">
-                    <h2 class="section-title">Reader Drop-off Funnel</h2>
+                    <h2 class="section-title" id="funnel-title">Reader Drop-off Funnel</h2>
                 </div>
                 <div class="chart-container">
-                    <div class="loading" style="display: none;">Loading data</div>
-                    <div id="dropoff-funnel" class="funnel-container"></div>
+                    <div class="loading" id="funnel-loading" hidden>Loading data</div>
+                    <div id="dropoff-funnel" class="funnel-container" aria-label="Reader drop-off visualization"></div>
                 </div>
             </section>
 
             <!-- Reading Patterns -->
-            <section class="section">
+            <section class="section" aria-labelledby="patterns-title">
                 <div class="section-header">
-                    <h2 class="section-title">Reading Patterns</h2>
+                    <h2 class="section-title" id="patterns-title">Reading Patterns</h2>
                 </div>
                 <div class="heatmap-container">
-                    <div class="loading" style="display: none;">Loading data</div>
-                    <div id="reading-patterns"></div>
+                    <div class="loading" id="patterns-loading" hidden>Loading data</div>
+                    <div id="reading-patterns" aria-label="Reading patterns visualization"></div>
                 </div>
             </section>
         </div>
 
         <!-- Asset Performance -->
-        <section class="section">
+        <section class="section" aria-labelledby="assets-title">
             <div class="section-header">
-                <h2 class="section-title">Top Performing Assets</h2>
+                <h2 class="section-title" id="assets-title">Top Performing Assets</h2>
             </div>
             <div class="data-table-container">
-                <table class="data-table">
+                <table class="data-table" aria-describedby="assets-title">
                     <thead>
                         <tr>
-                            <th style="width: 50px;">Type</th>
+                            <th class="col-type">Type</th>
                             <th>Asset ID</th>
-                            <th style="width: 100px;">Clicks</th>
-                            <th style="width: 150px;">Chapters</th>
+                            <th class="col-clicks">Clicks</th>
+                            <th class="col-chapters">Chapters</th>
                         </tr>
                     </thead>
                     <tbody id="asset-table-body">
@@ -129,19 +146,21 @@
         </section>
 
         <!-- Insights Panel -->
-        <section class="section">
+        <section class="section" aria-labelledby="insights-title">
             <div class="section-header">
-                <h2 class="section-title">Insights & Recommendations</h2>
+                <h2 class="section-title" id="insights-title">Insights & Recommendations</h2>
             </div>
-            <div class="insights-panel" id="insights-panel">
-                <div class="loading" style="display: none;">Generating insights</div>
+            <div class="insights-panel" id="insights-panel" aria-live="polite">
+                <div class="loading" id="insights-loading" hidden>Generating insights</div>
+                <div class="insights-empty" id="insights-empty" hidden>No insights available yet.</div>
             </div>
         </section>
 
         <!-- Export Options -->
-        <section class="section">
+        <section class="section" aria-label="Export options">
             <div class="export-buttons">
-                <button class="export-btn" id="export-csv">Export CSV</button>
+                <button type="button" class="export-btn" id="export-csv" disabled aria-describedby="export-hint">Export CSV</button>
+                <span id="export-hint" class="export-hint">Load data first</span>
             </div>
         </section>
     </div>

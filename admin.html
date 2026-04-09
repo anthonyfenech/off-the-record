@@ -371,40 +371,6 @@
             text-decoration: underline;
         }
 
-        /* Legend - compact */
-        .quick-links {
-            margin-top: 8px;
-            padding: 6px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-
-        .legend-btn {
-            cursor: pointer;
-            font-size: 9px;
-            color: #333;
-            text-decoration: underline;
-        }
-
-        .legend-btn:hover {
-            color: #666;
-        }
-
-        .legend-dropdown {
-            display: none;
-            margin-top: 6px;
-            padding: 6px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            background: #f9f9f9;
-            font-size: 8px;
-            line-height: 1.6;
-        }
-
-        .legend-dropdown.show {
-            display: block;
-        }
-
         /* Reader Counter - compact */
         .counter-stats-compact p {
             font-family: 'Courier New', monospace;
@@ -700,7 +666,7 @@
 
         <!-- Two Column Grid -->
         <div class="two-column-grid">
-            <!-- LEFT COLUMN: Settings, Drafts, Legend -->
+            <!-- LEFT COLUMN: Settings, Drafts -->
             <div class="left-column">
                 <div class="control-panel">
                     <div class="control-panel-title">Settings</div>
@@ -787,16 +753,6 @@
                             <span class="draft-destinations">Nav bar · Sidebar</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="quick-links">
-                    <span class="legend-btn" id="legendBtn">Legend</span>
-                </div>
-
-                <div class="legend-dropdown" id="legendDropdown">
-                    <div>🟢 Live (in chapter)</div>
-                    <div>🟡 Pending (placeholder)</div>
-                    <div>🔴 Cut (unused)</div>
                 </div>
             </div>
 
@@ -1180,13 +1136,6 @@
         }
 
         init();
-
-        // Legend toggle
-        const legendBtn = document.getElementById('legendBtn');
-        const legendDropdown = document.getElementById('legendDropdown');
-        legendBtn.addEventListener('click', () => {
-            legendDropdown.classList.toggle('show');
-        });
 
         // ====== READER COUNTER SYSTEM ======
 
