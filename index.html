@@ -379,8 +379,7 @@
             // Create resume prompt element
             var prompt = document.createElement('div');
             prompt.id = 'resumePrompt';
-            prompt.innerHTML = '<p>Resume: <span id="resumeTitle"></span></p>' +
-                '<button id="resumeBtn">PICK UP WHERE YOU LEFT OFF →</button>';
+            prompt.innerHTML = '<button id="resumeBtn"></button>';
 
             // Insert after button
             var btn = homeContent.querySelector('.start-reading-btn');
@@ -390,19 +389,18 @@
                 homeContent.appendChild(prompt);
             }
 
-            // Set title and show
-            var title = document.getElementById('resumeTitle');
-            if (title) title.textContent = bookmark.chapterTitle || 'your chapter';
-            prompt.style.display = 'block';
-
-            // Handle click
+            // Set button text and show
             var resumeBtn = document.getElementById('resumeBtn');
             if (resumeBtn) {
+                resumeBtn.textContent = bookmark.chapterTitle
+                    ? 'RESUME: ' + bookmark.chapterTitle.toUpperCase()
+                    : 'RESUME';
                 resumeBtn.addEventListener('click', function() {
                     sessionStorage.setItem('scrollToPercent', bookmark.scrollPercent.toString());
                     window.location.hash = bookmark.chapterSlug;
                 });
             }
+            prompt.style.display = 'block';
         }
 
         window.addEventListener('homePageLoaded', initResumePrompt);
