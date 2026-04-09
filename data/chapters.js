@@ -3972,7 +3972,7 @@ export const CHAPTERS = [
 
 <p>One day, I hope to be mentioned in the same breath.</p>
 
-<p class="section-break">***</p>
+<p class="scene-break">***</p>
 
 <p></p>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>September 22, 2017</em>—</span>Ten years later, plans change in a hurry. It's Friday afternoon and I'm ironing my suit jacket, getting ready for a wedding when I get a text.</p>
