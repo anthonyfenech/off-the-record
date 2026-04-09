@@ -144,11 +144,7 @@ export const CHAPTERS = [
 
 <p>It’s a reflection of what I’ve seen and felt while covering baseball for a living, which has provided me with the story of a lifetime, too good not to share.</p>
 
-<p class="signature"><em>—Anthony Fenech</em></p>
-
-<p class="signature"><em>April 20, 2025</em></p>
-
-<p class="signature"><em>Portobello Flats, Malta</em></p>`,
+<p class="signature"><em>—Anthony Fenech<br>April 20, 2025<br>Portobello Flats, Malta</em></p>`,
         wordCount: 1734
     },
     {
