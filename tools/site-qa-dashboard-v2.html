@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTR Site QA Dashboard v2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red-dot: #D42B2B;
+            --bg: #FAFAF8;
+            --text: #1a1a1a;
+            --border: #1a1a1a;
+            --card-bg: #fff;
+            --pass: #2E7D32;
+            --fail: #C62828;
+            --warn: #F57C00;
+            --skip: #757575;
+            --code-bg: #f5f5f5;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Literata', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+        h1 {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .red-o { position: relative; display: inline-block; }
+        .red-o::after {
+            content: '';
+            position: absolute;
+            width: 8px; height: 8px;
+            background: var(--red-dot);
+            border-radius: 50%;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .subtitle { font-size: 0.95rem; color: #666; }
+        .config-panel {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .config-panel h2 {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .config-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .config-row label { font-weight: bold; min-width: 80px; }
+        .config-row input[type="text"] {
+            flex: 1; min-width: 300px; padding: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem; border: 1px solid var(--border);
+        }
+        .btn {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--border);
+            background: var(--card-bg);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.15s ease;
+        }
+        .btn:hover { background: var(--text); color: var(--card-bg); }
+        .btn-primary { background: var(--red-dot); color: white; border-color: var(--red-dot); }
+        .btn-primary:hover { background: #a01f1f; border-color: #a01f1f; }
+        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        .tabs {
+            display: flex; gap: 0; margin-bottom: 0;
+            border-bottom: 2px solid var(--border); flex-wrap: wrap;
+        }
+        .tab {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            padding: 0.6rem 1rem;
+            border: 2px solid var(--border);
+            border-bottom: none;
+            background: var(--bg);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: -2px;
+            transition: all 0.15s ease;
+        }
+        .tab:hover { background: var(--card-bg); }
+        .tab.active { background: var(--card-bg); font-weight: bold; }
+        .tab-content {
+            display: none;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-top: none;
+            padding: 1.5rem;
+        }
+        .tab-content.active { display: block; }
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .module-header h3 { font-family: 'Courier New', monospace; font-size: 1.1rem; }
+        .section-header {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem; font-weight: bold;
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .baseline-table {
+            width: 100%; border-collapse: collapse;
+            font-size: 0.85rem; margin: 0.5rem 0;
+        }
+        .baseline-table th, .baseline-table td {
+            padding: 0.5rem; text-align: left; border-bottom: 1px solid #eee;
+        }
+        .baseline-table th {
+            font-family: 'Courier New', monospace;
+            font-weight: bold; background: var(--code-bg);
+        }
+        .baseline-table code {
+            background: var(--code-bg); padding: 0.1rem 0.3rem; font-size: 0.8rem;
+        }
+        .checklist-item {
+            display: flex; align-items: flex-start;
+            padding: 0.4rem 0; gap: 0.75rem;
+        }
+        .checklist-item input[type="checkbox"] {
+            width: 18px; height: 18px;
+            margin-top: 0.15rem; accent-color: var(--red-dot);
+        }
+        .checklist-item label { flex: 1; cursor: pointer; font-size: 0.9rem; }
+        .checklist-item.checked label { text-decoration: line-through; color: #999; }
+        .summary-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem; margin-bottom: 1.5rem;
+        }
+        .summary-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            padding: 0.75rem; text-align: center;
+        }
+        .summary-card .number {
+            font-family: 'Courier New', monospace;
+            font-size: 1.75rem; font-weight: bold;
+        }
+        .summary-card .label {
+            font-size: 0.75rem; color: #666;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .stat-pass { color: var(--pass); }
+        .stat-fail { color: var(--fail); }
+        .code-block {
+            background: var(--code-bg);
+            border: 1px solid #ddd;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            overflow-x: auto;
+            margin: 0.5rem 0;
+            white-space: pre-wrap;
+        }
+        .log-output {
+            background: #1a1a1a; color: #0f0;
+            border: 1px solid #333; padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            max-height: 200px; overflow-y: auto;
+            margin-top: 1rem;
+        }
+        .log-line { padding: 0.15rem 0; }
+        .log-line.error { color: #ff6b6b; }
+        .log-line.success { color: #69db7c; }
+        .log-line.warn { color: #ffd43b; }
+        .log-line.info { color: #74c0fc; }
+        .css-textarea {
+            width: 100%; height: 180px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem; padding: 0.75rem;
+            border: 1px solid var(--border); resize: vertical;
+        }
+        .issue-list { list-style: none; max-height: 250px; overflow-y: auto; }
+        .issue-item {
+            padding: 0.5rem; margin: 0.25rem 0;
+            background: var(--code-bg);
+            border-left: 3px solid var(--warn);
+            font-size: 0.8rem;
+        }
+        .issue-item.critical { border-left-color: var(--fail); }
+        .issue-item.ok { border-left-color: var(--pass); }
+        .export-area {
+            margin-top: 1.5rem; padding-top: 1.5rem;
+            border-top: 2px solid var(--border);
+            display: flex; gap: 1rem; flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .tab { padding: 0.4rem 0.6rem; font-size: 0.7rem; }
+            .config-row { flex-direction: column; align-items: stretch; }
+            .config-row input[type="text"] { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="red-o">O</span>TR SITE QA DASHBOARD</h1>
+        <p class="subtitle">Launch Readiness Suite v2.0 — Manuscript Formatting + CSS Audit</p>
+    </header>
+    <div class="config-panel">
+        <h2>Configuration</h2>
+        <div class="config-row">
+            <label>Base URL:</label>
+            <input type="text" id="baseUrl" value="https://offrecordbook.com">
+            <button class="btn btn-primary" onclick="runAllTests()">RUN ALL</button>
+            <button class="btn" onclick="resetResults()">RESET</button>
+        </div>
+    </div>
+    <div class="summary-panel">
+        <div class="summary-card"><div class="number stat-pass" id="totalPass">0</div><div class="label">Passed</div></div>
+        <div class="summary-card"><div class="number stat-fail" id="totalFail">0</div><div class="label">Failed</div></div>
+        <div class="summary-card"><div class="number" id="totalManual">0/0</div><div class="label">Manual</div></div>
+        <div class="summary-card"><div class="number" id="overallScore">—</div><div class="label">Score</div></div>
+    </div>
+    <div class="tabs">
+        <div class="tab active" data-tab="manuscript">Manuscript</div>
+        <div class="tab" data-tab="css">CSS Audit</div>
+        <div class="tab" data-tab="themes">Themes</div>
+        <div class="tab" data-tab="modes">Modes</div>
+        <div class="tab" data-tab="responsive">Responsive</div>
+        <div class="tab" data-tab="interactive">Interactive</div>
+        <div class="tab" data-tab="links">Links</div>
+    </div>
+
+    <!-- MANUSCRIPT TAB -->
+    <div class="tab-content active" id="tab-manuscript">
+        <div class="module-header">
+            <h3>Manuscript Formatting</h3>
+            <button class="btn btn-sm" onclick="toggleGrep()">GREP COMMANDS</button>
+        </div>
+        <div class="section-header">Element Counts (Baseline)</div>
+        <table class="baseline-table">
+            <thead><tr><th>Element</th><th>Pattern</th><th>Expected</th></tr></thead>
+            <tbody>
+                <tr><td>Scene Breaks</td><td><code>class="scene-break"</code></td><td>~45</td></tr>
+                <tr><td>Datelines</td><td><code>class="dateline"</code></td><td>~60</td></tr>
+                <tr><td>Media Emojis</td><td><code>class="media-emoji"</code></td><td>150</td></tr>
+                <tr><td>Email Lines</td><td><code>class="email-line"</code></td><td>~20</td></tr>
+                <tr><td>Flashback Headers</td><td><code>class="flashback-header"</code></td><td>~15</td></tr>
+                <tr><td>Italics</td><td><code>&lt;em&gt;</code></td><td>500+</td></tr>
+                <tr><td>Chapter Headers</td><td><code>class="chapter-header"</code></td><td>29</td></tr>
+                <tr style="background:#fff5f5;"><td>Raw *** (BAD)</td><td>Unclassed asterisks</td><td>0</td></tr>
+            </tbody>
+        </table>
+        <div id="grep-box" style="display:none;">
+            <div class="section-header">Grep Commands</div>
+            <div class="code-block">cd ~/off-the-record
+grep -c 'class="scene-break"' data/chapters.js
+grep -c 'class="dateline"' data/chapters.js
+grep -c 'class="media-emoji"' data/chapters.js
+grep -c 'class="email-line"' data/chapters.js
+grep -c 'class="flashback-header"' data/chapters.js
+grep -o '<em>' data/chapters.js | wc -l
+grep -c 'class="chapter-header"' data/chapters.js
+# Should be 0:
+grep -c '\*\*\*' data/chapters.js</div>
+        </div>
+        <div class="section-header">Chapter Headers</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="m01" onchange="uc(this)"><label for="m01"><strong>Red-dot O:</strong> O shows red dot in center</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m02" onchange="uc(this)"><label for="m02"><strong>Courier New Bold:</strong> Correct font</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m03" onchange="uc(this)"><label for="m03"><strong>Centered:</strong> Headers centered</label></div>
+        </div>
+        <div class="section-header">Scene Breaks</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="m04" onchange="uc(this)"><label for="m04"><strong>Class not raw:</strong> Uses <code>class="scene-break"</code>, no raw ***</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m05" onchange="uc(this)"><label for="m05"><strong>Centered:</strong> *** centered with spacing</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m06" onchange="uc(this)"><label for="m06"><strong>Flanking ¶:</strong> Empty paragraphs before/after</label></div>
+        </div>
+        <div class="section-header">First-Line Indents</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="m07" onchange="uc(this)"><label for="m07"><strong>After chapter start:</strong> NO indent (flush left)</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m08" onchange="uc(this)"><label for="m08"><strong>After scene break:</strong> NO indent (flush left)</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m09" onchange="uc(this)"><label for="m09"><strong>Continuing ¶:</strong> HAS text-indent</label></div>
+        </div>
+        <div class="section-header">JUNK MAIL / AIRPLANE MODE</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="m10" onchange="uc(this)"><label for="m10"><strong>email-line class:</strong> All lines use class</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m11" onchange="uc(this)"><label for="m11"><strong>No indent:</strong> Flush left</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m12" onchange="uc(this)"><label for="m12"><strong>Tight spacing:</strong> Grouped, reduced line-height</label></div>
+        </div>
+        <div class="section-header">Author's Note</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="m13" onchange="uc(this)"><label for="m13"><strong>Date format:</strong> Dateline styling (CITY, Date—)</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m14" onchange="uc(this)"><label for="m14"><strong>Byline spacing:</strong> Author name spaced from body</label></div>
+        </div>
+        <div class="section-header">Italics / Thoughts</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="m15" onchange="uc(this)"><label for="m15"><strong>&lt;em&gt; preserved:</strong> Not stripped in migration</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m16" onchange="uc(this)"><label for="m16"><strong>Thoughts render:</strong> Internal monologue italicized</label></div>
+            <div class="checklist-item"><input type="checkbox" id="m17" onchange="uc(this)"><label for="m17"><strong>Publications:</strong> Newspaper names in italics</label></div>
+        </div>
+    </div>
+
+    <!-- CSS AUDIT TAB -->
+    <div class="tab-content" id="tab-css">
+        <div class="module-header">
+            <h3>CSS Audit</h3>
+            <button class="btn btn-sm" onclick="runCSSAudit()">RUN AUDIT</button>
+        </div>
+        <div class="section-header">Paste CSS for Analysis</div>
+        <textarea class="css-textarea" id="css-input" placeholder="Paste styles.css content here..."></textarea>
+        <div class="section-header">Audit Results</div>
+        <ul class="issue-list" id="css-issues"><li class="issue-item ok">Paste CSS and click RUN AUDIT</li></ul>
+        <div class="section-header">Before/After Diff</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div><strong style="font-family:'Courier New',monospace;font-size:0.8rem;">BEFORE</strong><textarea class="css-textarea" id="css-before" style="height:150px;"></textarea></div>
+            <div><strong style="font-family:'Courier New',monospace;font-size:0.8rem;">AFTER</strong><textarea class="css-textarea" id="css-after" style="height:150px;"></textarea></div>
+        </div>
+        <button class="btn btn-sm" onclick="diffCSS()" style="margin-top:0.5rem;">COMPARE</button>
+        <div id="diff-results" class="code-block" style="display:none;margin-top:0.5rem;"></div>
+        <div class="section-header">Manual CSS Checks</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="c01" onchange="uc(this)"><label for="c01"><strong>No !important abuse:</strong> Minimal usage</label></div>
+            <div class="checklist-item"><input type="checkbox" id="c02" onchange="uc(this)"><label for="c02"><strong>CSS vars consistent:</strong> Dark/light use same vars</label></div>
+            <div class="checklist-item"><input type="checkbox" id="c03" onchange="uc(this)"><label for="c03"><strong>No orphaned rules:</strong> All selectors match HTML</label></div>
+            <div class="checklist-item"><input type="checkbox" id="c04" onchange="uc(this)"><label for="c04"><strong>No duplicates:</strong> No repeated declarations</label></div>
+            <div class="checklist-item"><input type="checkbox" id="c05" onchange="uc(this)"><label for="c05"><strong>Media queries work:</strong> Breakpoints apply</label></div>
+        </div>
+    </div>
+
+    <!-- THEMES TAB -->
+    <div class="tab-content" id="tab-themes">
+        <div class="module-header"><h3>Theme Toggle</h3></div>
+        <div class="section-header">Light/Dark Mode</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="t01" onchange="uc(this)"><label for="t01"><strong>Initial (light):</strong> Loads in light mode</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t02" onchange="uc(this)"><label for="t02"><strong>System pref:</strong> Respects OS dark mode</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t03" onchange="uc(this)"><label for="t03"><strong>Toggle at top:</strong> No flash</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t04" onchange="uc(this)"><label for="t04"><strong>Toggle mid-chapter:</strong> Position preserved</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t05" onchange="uc(this)"><label for="t05"><strong>Toggle at bottom:</strong> No jump</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t06" onchange="uc(this)"><label for="t06"><strong>Persistence:</strong> Saved across sessions</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t07" onchange="uc(this)"><label for="t07"><strong>All pages:</strong> Applies everywhere</label></div>
+            <div class="checklist-item"><input type="checkbox" id="t08" onchange="uc(this)"><label for="t08"><strong>Red dot:</strong> Visible in both themes</label></div>
+        </div>
+    </div>
+
+    <!-- MODES TAB -->
+    <div class="tab-content" id="tab-modes">
+        <div class="module-header"><h3>Reading Modes</h3></div>
+        <div class="section-header">Scroll Mode</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="r01" onchange="uc(this)"><label for="r01"><strong>Continuous:</strong> Single scrollable page</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r02" onchange="uc(this)"><label for="r02"><strong>Position saved:</strong> Returns to spot</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r03" onchange="uc(this)"><label for="r03"><strong>Chapter links:</strong> Scroll correctly</label></div>
+        </div>
+        <div class="section-header">Page Mode</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="r04" onchange="uc(this)"><label for="r04"><strong>Discrete pages:</strong> Content paginated</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r05" onchange="uc(this)"><label for="r05"><strong>PREV/NEXT:</strong> Buttons work</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r06" onchange="uc(this)"><label for="r06"><strong>Page indicator:</strong> Accurate</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r07" onchange="uc(this)"><label for="r07"><strong>Keyboard:</strong> Arrows navigate</label></div>
+        </div>
+        <div class="section-header">Mode Switching</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="r08" onchange="uc(this)"><label for="r08"><strong>Scroll→Page (top):</strong> Correct page</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r09" onchange="uc(this)"><label for="r09"><strong>Scroll→Page (mid):</strong> Position preserved</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r10" onchange="uc(this)"><label for="r10"><strong>Page→Scroll:</strong> Mapped correctly</label></div>
+            <div class="checklist-item"><input type="checkbox" id="r11" onchange="uc(this)"><label for="r11"><strong>Persistence:</strong> Mode saved</label></div>
+        </div>
+    </div>
+
+    <!-- RESPONSIVE TAB -->
+    <div class="tab-content" id="tab-responsive">
+        <div class="module-header"><h3>Responsive Layout</h3></div>
+        <div class="section-header">Mobile (375–428px)</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="x01" onchange="uc(this)"><label for="x01"><strong>Sidebar hidden:</strong> Hamburger works</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x02" onchange="uc(this)"><label for="x02"><strong>Touch targets:</strong> ≥44px</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x03" onchange="uc(this)"><label for="x03"><strong>Readable:</strong> No zoom needed</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x04" onchange="uc(this)"><label for="x04"><strong>Footer nav:</strong> Visible</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x05" onchange="uc(this)"><label for="x05"><strong>No h-scroll:</strong> Fits width</label></div>
+        </div>
+        <div class="section-header">Tablet (768px)</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="x06" onchange="uc(this)"><label for="x06"><strong>Sidebar:</strong> Visible/collapsible</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x07" onchange="uc(this)"><label for="x07"><strong>Max-width:</strong> Constrained</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x08" onchange="uc(this)"><label for="x08"><strong>Images:</strong> Scale properly</label></div>
+        </div>
+        <div class="section-header">Desktop (1024px+)</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="x09" onchange="uc(this)"><label for="x09"><strong>Full layout:</strong> Sidebar+content</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x10" onchange="uc(this)"><label for="x10"><strong>Line length:</strong> 60–80 chars</label></div>
+            <div class="checklist-item"><input type="checkbox" id="x11" onchange="uc(this)"><label for="x11"><strong>Ultra-wide:</strong> Doesn't stretch</label></div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE TAB -->
+    <div class="tab-content" id="tab-interactive">
+        <div class="module-header"><h3>Interactive Features</h3></div>
+        <div class="section-header">Credentials Carousel</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="i01" onchange="uc(this)"><label for="i01"><strong>Auto-rotation:</strong> Cycles</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i02" onchange="uc(this)"><label for="i02"><strong>Manual:</strong> Click/swipe</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i03" onchange="uc(this)"><label for="i03"><strong>Animation:</strong> Smooth</label></div>
+        </div>
+        <div class="section-header">Guestbook</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="i04" onchange="uc(this)"><label for="i04"><strong>Form:</strong> Fields display</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i05" onchange="uc(this)"><label for="i05"><strong>Validation:</strong> Required enforced</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i06" onchange="uc(this)"><label for="i06"><strong>Submit:</strong> Posts to Sheets</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i07" onchange="uc(this)"><label for="i07"><strong>Display:</strong> Entries show</label></div>
+        </div>
+        <div class="section-header">Share Buttons</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="i08" onchange="uc(this)"><label for="i08"><strong>Twitter:</strong> Correct text+URL</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i09" onchange="uc(this)"><label for="i09"><strong>Facebook:</strong> Dialog opens</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i10" onchange="uc(this)"><label for="i10"><strong>Copy:</strong> Clipboard+feedback</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i11" onchange="uc(this)"><label for="i11"><strong>Email:</strong> Client opens</label></div>
+        </div>
+        <div class="section-header">Media Mode</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="i12" onchange="uc(this)"><label for="i12"><strong>Toggle on:</strong> Emojis visible</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i13" onchange="uc(this)"><label for="i13"><strong>Toggle off:</strong> Emojis hidden</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i14" onchange="uc(this)"><label for="i14"><strong>Click emoji:</strong> Overlay opens</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i15" onchange="uc(this)"><label for="i15"><strong>Close:</strong> X or outside</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i16" onchange="uc(this)"><label for="i16"><strong>Persistence:</strong> State saved</label></div>
+        </div>
+        <div class="section-header">Bookmarks</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="i17" onchange="uc(this)"><label for="i17"><strong>Add:</strong> Saves position</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i18" onchange="uc(this)"><label for="i18"><strong>List:</strong> Shows in sidebar</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i19" onchange="uc(this)"><label for="i19"><strong>Navigate:</strong> Goes to spot</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i20" onchange="uc(this)"><label for="i20"><strong>Delete:</strong> Removes</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i21" onchange="uc(this)"><label for="i21"><strong>Persistence:</strong> Survives reload</label></div>
+        </div>
+        <div class="section-header">PDF/ePub</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="i22" onchange="uc(this)"><label for="i22"><strong>PDF download:</strong> Initiates</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i23" onchange="uc(this)"><label for="i23"><strong>PDF valid:</strong> Opens OK</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i24" onchange="uc(this)"><label for="i24"><strong>ePub download:</strong> Initiates</label></div>
+            <div class="checklist-item"><input type="checkbox" id="i25" onchange="uc(this)"><label for="i25"><strong>ePub valid:</strong> Opens in reader</label></div>
+        </div>
+    </div>
+
+    <!-- LINKS TAB -->
+    <div class="tab-content" id="tab-links">
+        <div class="module-header"><h3>Link Validation</h3></div>
+        <div class="section-header">Pages</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="l01" onchange="uc(this)"><label for="l01"><strong>index.html:</strong> Loads</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l02" onchange="uc(this)"><label for="l02"><strong>binge-mode.html:</strong> Loads</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l03" onchange="uc(this)"><label for="l03"><strong>downloadpage.html:</strong> Loads</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l04" onchange="uc(this)"><label for="l04"><strong>guestbook.html:</strong> Loads</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l05" onchange="uc(this)"><label for="l05"><strong>admin.html:</strong> Loads</label></div>
+        </div>
+        <div class="section-header">Data Files</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="l06" onchange="uc(this)"><label for="l06"><strong>chapters.js:</strong> No error</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l07" onchange="uc(this)"><label for="l07"><strong>media.js:</strong> No error</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l08" onchange="uc(this)"><label for="l08"><strong>styles.css:</strong> No error</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l09" onchange="uc(this)"><label for="l09"><strong>sw.js:</strong> Loads</label></div>
+        </div>
+        <div class="section-header">Navigation</div>
+        <div class="checklist">
+            <div class="checklist-item"><input type="checkbox" id="l10" onchange="uc(this)"><label for="l10"><strong>29 chapters:</strong> All links work</label></div>
+            <div class="checklist-item"><input type="checkbox" id="l11" onchange="uc(this)"><label for="l11"><strong>Sidebar links:</strong> All navigate</label></div>
+        </div>
+    </div>
+
+    <div class="export-area">
+        <button class="btn btn-primary" onclick="exportReport()">EXPORT REPORT</button>
+        <button class="btn" onclick="copyReport()">COPY TO CLIPBOARD</button>
+    </div>
+    <div class="log-output" id="log"></div>
+
+<script>
+document.querySelectorAll('.tab').forEach(tab=>{tab.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));tab.classList.add('active');document.getElementById('tab-'+tab.dataset.tab).classList.add('active');}});
+function log(m,t=''){const el=document.getElementById('log');const l=document.createElement('div');l.className='log-line'+(t?' '+t:'');l.textContent=`[${new Date().toLocaleTimeString()}] ${m}`;el.appendChild(l);el.scrollTop=el.scrollHeight;}
+function uc(cb){cb.closest('.checklist-item').classList.toggle('checked',cb.checked);updateSummary();}
+function updateSummary(){const all=document.querySelectorAll('.checklist-item input[type="checkbox"]');const checked=Array.from(all).filter(c=>c.checked).length;document.getElementById('totalManual').textContent=`${checked}/${all.length}`;document.getElementById('overallScore').textContent=all.length?`${Math.round((checked/all.length)*100)}%`:'—';}
+function toggleGrep(){const el=document.getElementById('grep-box');el.style.display=el.style.display==='none'?'block':'none';}
+function runCSSAudit(){const css=document.getElementById('css-input').value;const issues=document.getElementById('css-issues');issues.innerHTML='';if(!css.trim()){issues.innerHTML='<li class="issue-item">No CSS</li>';return;}log('Running CSS audit...','info');const f=[];const ic=(css.match(/!important/g)||[]).length;if(ic>5)f.push({t:'critical',m:`!important: ${ic}x (excessive)`});else if(ic>0)f.push({t:'warn',m:`!important: ${ic}x`});else f.push({t:'ok',m:'No !important'});const vp=(css.match(/-webkit-|-moz-|-ms-/g)||[]).length;if(vp>20)f.push({t:'warn',m:`${vp} vendor prefixes`});const vu=(css.match(/var\(--/g)||[]).length;const vd=(css.match(/--[\w-]+\s*:/g)||[]).length;f.push({t:'ok',m:`CSS vars: ${vd} defined, ${vu} used`});const mq=(css.match(/@media/g)||[]).length;f.push({t:'ok',m:`${mq} media queries`});f.forEach(i=>{const li=document.createElement('li');li.className=`issue-item ${i.t}`;li.textContent=i.m;issues.appendChild(li);});log(`Audit done: ${f.length} findings`,'success');}
+function diffCSS(){const b=document.getElementById('css-before').value.trim();const a=document.getElementById('css-after').value.trim();const r=document.getElementById('diff-results');if(!b||!a){r.style.display='block';r.textContent='Paste both';return;}const bl=b.split('\n').length,al=a.split('\n').length;const d=a.length-b.length;const p=b.length?((d/b.length)*100).toFixed(1):0;r.style.display='block';r.innerHTML=`BEFORE: ${b.length} chars, ${bl} lines\nAFTER:  ${a.length} chars, ${al} lines\nDELTA:  ${d>0?'+':''}${d} (${d>0?'+':''}${p}%)`;log('Diff done','success');}
+function runAllTests(){log('Run all: check tabs, complete checklists','info');updateSummary();}
+function resetResults(){document.querySelectorAll('.checklist-item input').forEach(cb=>{cb.checked=false;cb.closest('.checklist-item').classList.remove('checked');});document.getElementById('log').innerHTML='';log('Reset','info');updateSummary();}
+function generateReport(){const ts=new Date().toISOString();const all=document.querySelectorAll('.checklist-item input');const ck=Array.from(all).filter(c=>c.checked).length;let r=`# OTR QA Report\n${ts}\nURL: ${document.getElementById('baseUrl').value}\n\n## Summary\n${ck}/${all.length} (${Math.round((ck/all.length)*100)}%)\n\n---\n`;document.querySelectorAll('.tab-content').forEach(tab=>{const h=tab.querySelector('h3')?.textContent||'Section';r+=`\n## ${h}\n`;tab.querySelectorAll('.checklist-item').forEach(item=>{const cb=item.querySelector('input');const lb=item.querySelector('label').textContent;r+=`- [${cb.checked?'x':' '}] ${lb}\n`;});});r+=`\n---\n*OTR QA v2.0*`;return r;}
+function exportReport(){const r=generateReport();const b=new Blob([r],{type:'text/markdown'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=`otr-qa-${new Date().toISOString().split('T')[0]}.md`;a.click();log('Exported','success');}
+function copyReport(){navigator.clipboard.writeText(generateReport()).then(()=>log('Copied','success'));}
+log('QA Dashboard v2.0 ready','success');updateSummary();
+</script>
+</body>
+</html>
