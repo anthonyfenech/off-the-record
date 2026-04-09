@@ -4020,25 +4020,30 @@ html {
    ============================================ */
 
 #odo-housing {
-    gap: 6px !important;
+    display: flex !important;
+    gap: 0 !important;
 }
 
 #odo-housing > div {
-    width: 19px !important;
-    height: 29px !important;
+    width: 32px !important;
+    height: 44px !important;
     overflow: hidden !important;
     position: relative !important;
     background: transparent !important;
     border: 2px solid #1a1a1a !important;
     border-radius: 3px !important;
-}
-
-#odo-housing > div > div > div[data-digit] {
-    width: 19px !important;
-    height: 29px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+}
+
+#odo-housing > div > div > div[data-digit] {
+    width: 32px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
     font-family: 'Courier New', monospace !important;
     font-size: 24px !important;
     font-weight: 700 !important;
