@@ -356,13 +356,12 @@
             if (chapterHeader && chapterBody) {
                 const headerRect = chapterHeader.getBoundingClientRect();
                 const bodyRect = chapterBody.getBoundingClientRect();
-                // Show title if: header is on screen OR body top is above screen but within one viewport height
-                const headerVisible = headerRect.bottom > 0;
-                const nearTop = bodyRect.top > -window.innerHeight;
-                info.showTitle = headerVisible || nearTop;
+                // Show title only if header is actually visible on screen
+                const headerVisible = headerRect.bottom > 0 && headerRect.top < window.innerHeight;
+                info.showTitle = headerVisible;
             } else if (chapterBody) {
                 const rect = chapterBody.getBoundingClientRect();
-                info.showTitle = rect.top > -window.innerHeight;
+                info.showTitle = rect.top > 0;
             }
         }
 
