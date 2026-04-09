@@ -12,25 +12,29 @@
     <link rel="stylesheet" href="../css/components.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--color-background, #fff); }
 
-        .bar {
+        .toolbar {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: #111; padding: 12px 20px;
+            background: #111;
+        }
+        .toolbar-row {
             display: flex; align-items: center; gap: 10px;
+            padding: 10px 20px; border-bottom: 1px solid #333;
             overflow-x: auto; white-space: nowrap;
         }
+        .toolbar-row:last-child { border-bottom: none; }
+
         .bar-title {
             font: 700 11px/1 'Courier New', monospace;
             color: #555; letter-spacing: 2px; text-transform: uppercase;
-            margin-right: 12px; flex-shrink: 0;
+            margin-right: 8px; flex-shrink: 0;
         }
-        .bar-divider { color: #444; margin: 0 8px; flex-shrink: 0; }
         .bar-label {
             font: 700 9px/1 'Courier New', monospace;
             color: #555; letter-spacing: 1px; text-transform: uppercase;
             flex-shrink: 0; margin-right: 6px;
         }
+        .bar-divider { color: #444; margin: 0 8px; flex-shrink: 0; }
 
         .font-btn, .size-btn {
             padding: 8px 14px; border: 2px solid #333; border-radius: 4px;
@@ -56,33 +60,36 @@
         .size-btn[data-size="medium"] { font-size: 15px; }
         .size-btn[data-size="large"] { font-size: 18px; }
 
-        .doc { max-width: 680px; margin: 80px auto 100px; padding: 0 24px; }
-        .chapter { margin-bottom: 64px; }
-        .loading { text-align: center; padding: 100px 20px; font: 14px system-ui; color: #666; }
-        .error { text-align: center; padding: 100px 20px; font: 14px system-ui; color: #c00; }
+        .doc { max-width: 680px; margin: 105px auto 100px; padding: 0 24px; }
+        .loading, .error { text-align: center; padding: 80px 20px; font: 14px system-ui; color: #666; }
+        .error { color: #c00; }
     </style>
 </head>
-<body class="font-small">
-    <div class="bar">
-        <span class="bar-title">Font Tester</span>
-        <span class="bar-label">EPUB+WEB:</span>
-        <button class="font-btn" data-font="Lora">Lora</button>
-        <button class="font-btn" data-font="Crimson Pro">Crimson Pro</button>
-        <button class="font-btn" data-font="EB Garamond">EB Garamond</button>
-        <button class="font-btn" data-font="Spectral">Spectral</button>
-        <button class="font-btn" data-font="Libre Baskerville">Libre Baskerville</button>
-        <button class="font-btn" data-font="Libre Caslon Text">Libre Caslon</button>
-        <button class="font-btn" data-font="Cardo">Cardo</button>
-        <button class="font-btn" data-font="Young Serif">Young Serif</button>
-        <span class="bar-divider">|</span>
-        <span class="bar-label">WEB ONLY:</span>
-        <button class="font-btn active" data-font="Literata">Literata ✓</button>
-        <button class="font-btn" data-font="Source Serif Pro">Source Serif Pro</button>
-        <button class="font-btn" data-font="Merriweather">Merriweather</button>
-        <span class="bar-divider">|</span>
-        <button class="size-btn active" data-size="small">A</button>
-        <button class="size-btn" data-size="medium">A</button>
-        <button class="size-btn" data-size="large">A</button>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-row">
+            <span class="bar-title">Font Tester</span>
+            <span class="bar-label">EPUB+WEB:</span>
+            <button class="font-btn" data-font="Lora">Lora</button>
+            <button class="font-btn" data-font="Crimson Pro">Crimson Pro</button>
+            <button class="font-btn" data-font="EB Garamond">EB Garamond</button>
+            <button class="font-btn" data-font="Spectral">Spectral</button>
+            <button class="font-btn" data-font="Libre Baskerville">Libre Baskerville</button>
+            <button class="font-btn" data-font="Libre Caslon Text">Libre Caslon</button>
+            <button class="font-btn" data-font="Cardo">Cardo</button>
+            <button class="font-btn" data-font="Young Serif">Young Serif</button>
+        </div>
+        <div class="toolbar-row">
+            <span class="bar-label">WEB ONLY:</span>
+            <button class="font-btn active" data-font="Literata">Literata ✓</button>
+            <button class="font-btn" data-font="Source Serif Pro">Source Serif Pro</button>
+            <button class="font-btn" data-font="Merriweather">Merriweather</button>
+            <span class="bar-divider">|</span>
+            <span class="bar-label">SIZE:</span>
+            <button class="size-btn" data-size="small">A</button>
+            <button class="size-btn active" data-size="medium">A</button>
+            <button class="size-btn" data-size="large">A</button>
+        </div>
     </div>
 
     <div class="doc" id="doc"><div class="loading">Loading chapters...</div></div>
@@ -91,23 +98,16 @@
         const doc = document.getElementById('doc');
         const fontBtns = document.querySelectorAll('.font-btn');
         const sizeBtns = document.querySelectorAll('.size-btn');
-
-        // Font variable from variables.css
         const FONT_VAR = '--font-serif';
-
-        // Size classes from variables.css
         const SIZE_CLASSES = ['font-small', 'font-medium', 'font-large'];
 
-        // Load chapters
         try {
             const { CHAPTERS } = await import('../data/chapters.js');
             const chapters = CHAPTERS.filter(c => c.section !== 'title' && c.section !== 'toc' && c.content);
-
             doc.innerHTML = chapters.map(c => `
-                <article class="chapter">
+                <article class="chapter-section">
                     <header class="chapter-header">
                         <h2 class="chapter-title">${c.title || ''}</h2>
-                        ${c.subtitle ? `<p class="chapter-subtitle">${c.subtitle}</p>` : ''}
                     </header>
                     <div class="chapter-body">${c.content}</div>
                 </article>
@@ -116,17 +116,15 @@
             doc.innerHTML = `<div class="error">Failed to load: ${e.message}</div>`;
         }
 
-        // Font switching
         fontBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 fontBtns.forEach(b => { b.classList.remove('active'); b.textContent = b.dataset.font; });
                 btn.classList.add('active');
-                btn.textContent = btn.dataset.font + ' \u2713';
+                btn.textContent = btn.dataset.font + ' ✓';
                 document.documentElement.style.setProperty(FONT_VAR, `'${btn.dataset.font}', Georgia, serif`);
             });
         });
 
-        // Size switching
         sizeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 sizeBtns.forEach(b => b.classList.remove('active'));
