@@ -683,369 +683,81 @@
             background: #000;
         }
 
-        /* ====== PROMPT MANAGER SECTION ====== */
-        .prompt-section {
-            max-width: 680px;
-            margin: 20px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        .prompt-manager-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .prompt-manager-title {
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .prompt-manager-count {
-            font-size: 9px;
-            color: #666;
-            margin-left: 8px;
-            font-weight: normal;
-        }
-
-        .prompt-manager-actions {
-            display: flex;
-            gap: 6px;
-        }
-
-        .prompt-export-btn,
-        .prompt-add-btn {
-            padding: 4px 10px;
-            font-family: inherit;
-            font-size: 9px;
-            border-radius: 3px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .prompt-export-btn {
-            background: #fff;
-            border: 1px solid #333;
-            color: #333;
-        }
-
-        .prompt-export-btn:hover {
-            background: #f5f5f5;
-        }
-
-        .prompt-add-btn {
-            background: #333;
-            border: 1px solid #333;
-            color: #fff;
-        }
-
-        .prompt-add-btn:hover {
-            background: #555;
-        }
-
-        .prompt-empty-state {
-            padding: 30px;
-            text-align: center;
-            color: #666;
-            font-size: 11px;
-        }
-
-        .prompt-table-container {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-
-        .prompt-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 10px;
-        }
-
-        .prompt-table th {
-            text-align: left;
-            padding: 6px 8px;
-            border-bottom: 2px solid #333;
-            font-size: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: #f5f5f5;
-            position: sticky;
-            top: 0;
-        }
-
-        .prompt-table td {
-            padding: 6px 8px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .prompt-table tr:hover {
-            background: #f9f9f9;
-        }
-
-        .prompt-table .num-cell {
-            width: 30px;
-            text-align: center;
-        }
-
-        .prompt-table .action-cell {
-            width: 80px;
-            text-align: right;
-        }
-
-        .prompt-edit-btn,
-        .prompt-delete-row-btn {
-            padding: 3px 8px;
-            font-size: 8px;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            margin-left: 4px;
-        }
-
-        .prompt-edit-btn {
-            background: #f5f5f5;
-            color: #333;
-        }
-
-        .prompt-delete-row-btn {
-            background: #dc3545;
-            color: #fff;
-        }
-
-        /* Prompt Modal */
-        .prompt-modal-overlay {
-            display: none;
+        /* ====== ADMIN PASSWORD GATE ====== */
+        .admin-gate {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .prompt-modal-overlay.active {
+            background: #fefefe;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
         }
-
-        .prompt-modal {
-            background: #fff;
-            border-radius: 6px;
-            width: 500px;
-            max-width: 90vw;
-            max-height: 90vh;
-            overflow-y: auto;
+        .admin-gate.hidden { display: none; }
+        .admin-gate-content {
+            text-align: center;
+            max-width: 300px;
             padding: 20px;
         }
-
-        .prompt-modal h3 {
-            margin: 0 0 15px;
-            font-size: 13px;
+        .admin-gate-title {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .admin-gate-form { display: flex; flex-direction: column; gap: 12px; }
+        .admin-gate-input {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            padding: 10px 12px;
+            border: 1px solid #333;
+            text-align: center;
+            background: #fff;
+        }
+        .admin-gate-input:focus { outline: none; border-color: #000; }
+        .admin-gate-submit {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        .prompt-modal .form-group {
-            margin-bottom: 12px;
-        }
-
-        .prompt-modal .form-group label {
-            display: block;
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-            color: #666;
-        }
-
-        .prompt-modal .form-group input,
-        .prompt-modal .form-group select,
-        .prompt-modal .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            font-family: inherit;
-            font-size: 11px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-
-        .prompt-modal .label-hint {
-            font-weight: normal;
-            color: #999;
-        }
-
-        .prompt-modal-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .prompt-modal-actions button {
-            flex: 1;
             padding: 10px;
-            font-family: inherit;
-            font-size: 11px;
-            border-radius: 3px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        #promptSaveBtn {
             background: #333;
             color: #fff;
             border: none;
+            cursor: pointer;
         }
-
-        #promptCancelBtn {
-            background: #fff;
-            color: #333;
-            border: 1px solid #333;
-        }
-
-        #promptDeleteBtn {
-            background: #dc3545;
-            color: #fff;
-            border: none;
-            flex: 0.5;
-        }
-
-        .answers-group {
-            margin-top: 10px;
-        }
-
-        .answers-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .answers-header label {
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #666;
-        }
-
-        .answers-hint {
-            font-size: 9px;
-            color: #999;
-        }
-
-        .answer-row {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 6px;
-            align-items: center;
-        }
-
-        .answer-text {
-            flex: 1;
-        }
-
-        .answer-text-input {
-            width: 100%;
-            padding: 6px;
+        .admin-gate-submit:hover { background: #000; }
+        .admin-gate-error {
+            color: #c00;
             font-size: 11px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            display: none;
         }
-
-        .remove-answer {
-            background: #dc3545;
-            color: #fff;
-            border: none;
-            width: 22px;
-            height: 22px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        #addAnswerBtn {
-            padding: 4px 10px;
-            font-size: 10px;
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        #addAnswerBtn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .scale-row {
-            display: flex;
-            gap: 10px;
-        }
-
-        .scale-row > div {
-            flex: 1;
-        }
-
-        .emoji-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .emoji-btn {
-            width: 32px;
-            height: 32px;
-            font-size: 18px;
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .emoji-btn.selected {
-            background: #333;
-            border-color: #333;
-        }
-
-        .prompt-notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background: #333;
-            color: #fff;
-            border-radius: 4px;
-            font-size: 11px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            z-index: 10001;
-        }
-
-        .prompt-notification.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .prompt-notification.error {
-            background: #dc3545;
-        }
+        .admin-content { display: none; }
+        .admin-content.visible { display: block; }
     </style>
     <!-- Analytics Config (required for counter fetch) -->
     <script src="./js/analytics-config.js"></script>
 </head>
 <body>
+    <!-- Admin Password Gate -->
+    <div id="adminGate" class="admin-gate">
+        <div class="admin-gate-content">
+            <h1 class="admin-gate-title">Admin Access</h1>
+            <form id="adminGateForm" class="admin-gate-form" autocomplete="off">
+                <input type="password" id="adminPassword" class="admin-gate-input" placeholder="Password" autocomplete="off" autofocus>
+                <button type="submit" class="admin-gate-submit">Enter</button>
+                <p id="adminGateError" class="admin-gate-error">Incorrect password</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Content (hidden until authenticated) -->
+    <div id="adminContent" class="admin-content">
     <header class="admin-header">
         <a href="./" title="Back to site">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1344,101 +1056,6 @@
         </div>
     </div>
 
-    <!-- Interactive Prompts Section -->
-    <div class="prompt-section">
-        <div class="prompt-manager-header">
-            <div>
-                <span class="prompt-manager-title">Interactive Prompts</span>
-                <span class="prompt-manager-count" id="promptCount">Total: 0 prompts</span>
-            </div>
-            <div class="prompt-manager-actions">
-                <a href="./driving-range.html" target="_blank" class="prompt-export-btn" style="text-decoration: none; display: inline-flex; align-items: center;">Test in Driving Range</a>
-                <button type="button" class="prompt-export-btn" id="exportPromptsBtn">Export to File</button>
-                <button type="button" class="prompt-add-btn" id="addPromptBtn">+ Add New Prompt</button>
-            </div>
-        </div>
-
-        <!-- Prompts Table -->
-        <div id="promptTableContainer">
-            <div class="prompt-empty-state" id="promptEmptyState">
-                <p>No prompts yet. Click <strong>ADD NEW PROMPT</strong> to get started.</p>
-            </div>
-            <div class="prompt-table-container" id="promptTableWrapper" style="display: none;">
-                <table class="prompt-table">
-                    <thead>
-                        <tr>
-                            <th class="num-cell">#</th>
-                            <th>Prompt ID</th>
-                            <th>Question</th>
-                            <th>Type</th>
-                            <th class="choices-cell">Details</th>
-                            <th class="action-cell">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="promptTableBody">
-                        <!-- Populated dynamically -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Prompt Add/Edit Modal -->
-    <div class="prompt-modal-overlay" id="promptModalOverlay">
-        <div class="prompt-modal">
-            <h3 id="promptModalTitle">Add New Prompt</h3>
-            <input type="hidden" id="promptEditIndex" value="-1">
-
-            <div class="form-group">
-                <label>Prompt ID <span class="label-hint">(lowercase-with-dashes, e.g., "verlander-tweet")</span></label>
-                <input type="text" id="promptIdInput" placeholder="e.g., chapter-5-decision">
-            </div>
-
-            <div class="form-group">
-                <label>Prompt Type</label>
-                <select id="promptTypeSelect" onchange="window.updatePromptTypeFields()">
-                    <option value="multiple-choice">Multiple Choice</option>
-                    <option value="yes-no">Yes / No</option>
-                    <option value="poll">Poll</option>
-                    <option value="text-input">Text Input</option>
-                    <option value="checkboxes">Checkboxes</option>
-                    <option value="scale">Scale (1-10)</option>
-                    <option value="prediction">Prediction</option>
-                    <option value="emoji-reaction">Emoji Reaction</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Question</label>
-                <textarea id="promptQuestionInput" rows="2" placeholder="The question to ask readers..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Trigger Text <span class="label-hint">(exact text match in chapter content)</span></label>
-                <input type="text" id="promptTriggerInput" placeholder="e.g., He made his decision.">
-            </div>
-
-            <div id="promptDynamicFields">
-                <div class="answers-group" id="answersGroup">
-                    <div class="answers-header">
-                        <label>Answers <span class="answers-hint" id="answersHint">(max 4)</span></label>
-                        <button type="button" id="addAnswerBtn" onclick="window.addAnswerField()">+ Add Option</button>
-                    </div>
-                    <div id="answersContainer"></div>
-                </div>
-            </div>
-
-            <div class="prompt-modal-actions">
-                <button type="button" id="promptDeleteBtn" style="display: none;">Delete</button>
-                <button type="button" id="promptCancelBtn">Cancel</button>
-                <button type="button" id="promptSaveBtn">Save Prompt</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notification Toast -->
-    <div class="prompt-notification" id="promptNotification"></div>
-
     <script>
         // ====== CHAPTER DATA ======
         const CHAPTERS = [
@@ -1659,349 +1276,6 @@
             legendDropdown.classList.toggle('show');
         });
 
-        // ====== INTERACTIVE PROMPTS MANAGER ======
-
-        const PROMPTS_STORAGE_KEY = 'admin_interactivePrompts';
-
-        // DOM Elements
-        const promptCount = document.getElementById('promptCount');
-        const promptEmptyState = document.getElementById('promptEmptyState');
-        const promptTableWrapper = document.getElementById('promptTableWrapper');
-        const promptTableBody = document.getElementById('promptTableBody');
-        const addPromptBtn = document.getElementById('addPromptBtn');
-        const exportPromptsBtn = document.getElementById('exportPromptsBtn');
-        const promptModalOverlay = document.getElementById('promptModalOverlay');
-        const promptModalTitle = document.getElementById('promptModalTitle');
-        const promptEditIndex = document.getElementById('promptEditIndex');
-        const promptIdInput = document.getElementById('promptIdInput');
-        const promptTypeSelect = document.getElementById('promptTypeSelect');
-        const promptQuestionInput = document.getElementById('promptQuestionInput');
-        const promptTriggerInput = document.getElementById('promptTriggerInput');
-        const promptDynamicFields = document.getElementById('promptDynamicFields');
-        const answersContainer = document.getElementById('answersContainer');
-        const answersGroup = document.getElementById('answersGroup');
-        const answersHint = document.getElementById('answersHint');
-        const addAnswerBtn = document.getElementById('addAnswerBtn');
-        const promptDeleteBtn = document.getElementById('promptDeleteBtn');
-        const promptCancelBtn = document.getElementById('promptCancelBtn');
-        const promptSaveBtn = document.getElementById('promptSaveBtn');
-        const promptNotification = document.getElementById('promptNotification');
-
-        // Type configuration
-        const TYPE_CONFIG = {
-            'multiple-choice': { max: 4, label: 'Answers' },
-            'yes-no': { max: 2, label: 'Answers', fixed: ['Yes', 'No'] },
-            'poll': { max: 4, label: 'Options' },
-            'text-input': { max: 0 },
-            'checkboxes': { max: 6, label: 'Options' },
-            'scale': { max: 0 },
-            'prediction': { max: 4, label: 'Options' },
-            'emoji-reaction': { max: 8 }
-        };
-        const EMOJIS = ['😡','😂','😱','😢','🔥','💀','👏','🤔','😤','🙌','💯','🤷','😅','🤯','👍','👎'];
-        let selectedEmojis = [];
-
-        // Update form fields based on type
-        window.updatePromptTypeFields = function() {
-            const type = promptTypeSelect.value;
-            const config = TYPE_CONFIG[type];
-
-            if (type === 'text-input') {
-                promptDynamicFields.innerHTML = '<div class="form-group"><label>Character Limit</label><input type="text" value="280" disabled style="width:80px;"></div>';
-            } else if (type === 'scale') {
-                promptDynamicFields.innerHTML = `<div class="form-group scale-row">
-                    <div><label>Min Label (1)</label><input type="text" id="scaleMinInput" placeholder="Bad idea"></div>
-                    <div><label>Max Label (10)</label><input type="text" id="scaleMaxInput" placeholder="Brilliant"></div>
-                </div>`;
-            } else if (type === 'emoji-reaction') {
-                selectedEmojis = [];
-                promptDynamicFields.innerHTML = `<div class="form-group"><label>Select Emojis (max 8)</label>
-                    <div class="emoji-grid">${EMOJIS.map(e => `<button type="button" class="emoji-btn" onclick="window.togglePromptEmoji(this,'${e}')">${e}</button>`).join('')}</div>
-                    <div style="font-size:11px;color:#666;margin-top:5px;">Selected: <span id="emojiCountSpan">0</span>/8</div>
-                </div>`;
-            } else {
-                // Types with choices
-                answersHint.textContent = `(max ${config.max})`;
-                answersContainer.innerHTML = '';
-                if (config.fixed) {
-                    config.fixed.forEach((text) => addAnswerField(text, true));
-                    addAnswerBtn.style.display = 'none';
-                } else {
-                    addAnswerField(); addAnswerField();
-                    addAnswerBtn.style.display = 'inline-block';
-                }
-                promptDynamicFields.innerHTML = '';
-                promptDynamicFields.appendChild(answersGroup);
-                updateAddAnswerBtn();
-            }
-        };
-
-        window.togglePromptEmoji = function(btn, emoji) {
-            const idx = selectedEmojis.indexOf(emoji);
-            if (idx > -1) { selectedEmojis.splice(idx,1); btn.classList.remove('selected'); }
-            else if (selectedEmojis.length < 8) { selectedEmojis.push(emoji); btn.classList.add('selected'); }
-            document.getElementById('emojiCountSpan').textContent = selectedEmojis.length;
-        };
-
-        window.addAnswerField = function(text = '', disabled = false) {
-            const type = promptTypeSelect.value;
-            const config = TYPE_CONFIG[type];
-            const count = answersContainer.querySelectorAll('.answer-row').length;
-            if (count >= config.max) return;
-
-            const div = document.createElement('div');
-            div.className = 'answer-row';
-            div.innerHTML = `<div class="answer-text"><input type="text" class="answer-text-input" placeholder="Option ${count+1}" value="${text}" ${disabled?'disabled':''}></div>
-                ${!disabled ? '<button type="button" class="remove-answer" onclick="this.closest(\'.answer-row\').remove();window.updateAddAnswerBtn();">✕</button>' : ''}`;
-            answersContainer.appendChild(div);
-            updateAddAnswerBtn();
-        };
-
-        window.updateAddAnswerBtn = function() {
-            const type = promptTypeSelect.value;
-            const config = TYPE_CONFIG[type];
-            const count = answersContainer.querySelectorAll('.answer-row').length;
-            addAnswerBtn.disabled = count >= config.max;
-        };
-
-
-        /**
-         * Load prompts from localStorage
-         */
-        function loadPrompts() {
-            try {
-                const stored = localStorage.getItem(PROMPTS_STORAGE_KEY);
-                return stored ? JSON.parse(stored) : [];
-            } catch (e) {
-                console.error('Error loading prompts:', e);
-                return [];
-            }
-        }
-
-        /**
-         * Save prompts to localStorage
-         */
-        function savePrompts(prompts) {
-            try {
-                localStorage.setItem(PROMPTS_STORAGE_KEY, JSON.stringify(prompts));
-                return true;
-            } catch (e) {
-                console.error('Error saving prompts:', e);
-                return false;
-            }
-        }
-
-        /**
-         * Truncate text to specified length
-         */
-        function truncate(text, maxLength) {
-            if (!text) return '';
-            if (text.length <= maxLength) return text;
-            return text.substring(0, maxLength) + '...';
-        }
-
-        /**
-         * Show notification toast
-         */
-        function showNotification(message, type = 'success') {
-            promptNotification.textContent = message;
-            promptNotification.className = 'prompt-notification ' + type;
-            promptNotification.classList.add('active');
-
-            setTimeout(() => {
-                promptNotification.classList.remove('active');
-            }, type === 'error' ? 4000 : 2000);
-        }
-
-        /**
-         * Render the prompts table
-         */
-        function renderPromptsTable() {
-            const prompts = loadPrompts();
-
-            // Update count
-            promptCount.textContent = `Total: ${prompts.length} prompt${prompts.length !== 1 ? 's' : ''}`;
-
-            // Show/hide empty state vs table
-            if (prompts.length === 0) {
-                promptEmptyState.style.display = 'block';
-                promptTableWrapper.style.display = 'none';
-                return;
-            }
-
-            promptEmptyState.style.display = 'none';
-            promptTableWrapper.style.display = 'block';
-
-            promptTableBody.innerHTML = prompts.map((p, i) => {
-                const details = p.type === 'emoji-reaction' ? (p.emojis || []).join(' ')
-                    : p.type === 'scale' ? `${p.scaleMin || '1'} → ${p.scaleMax || '10'}`
-                    : p.type === 'text-input' ? 'Free text'
-                    : (p.answers || []).slice(0, 3).join(', ') + ((p.answers || []).length > 3 ? '...' : '');
-
-                return `<tr>
-                    <td class="num-cell">${i + 1}</td>
-                    <td>${p.id || '—'}</td>
-                    <td>${truncate(p.question, 40)}</td>
-                    <td>${p.type}</td>
-                    <td>${truncate(details, 30)}</td>
-                    <td class="action-cell">
-                        <button class="prompt-edit-btn" onclick="editPrompt(${i})">Edit</button>
-                        <button class="prompt-delete-row-btn" onclick="deletePrompt(${i})">×</button>
-                    </td>
-                </tr>`;
-            }).join('');
-        }
-
-        /**
-         * Open modal for adding new prompt
-         */
-        function openAddPromptModal() {
-            promptModalTitle.textContent = 'Add New Prompt';
-            promptEditIndex.value = '-1';
-            promptIdInput.value = '';
-            promptTypeSelect.value = 'multiple-choice';
-            promptQuestionInput.value = '';
-            promptTriggerInput.value = '';
-            promptDeleteBtn.style.display = 'none';
-
-            window.updatePromptTypeFields();
-            promptModalOverlay.classList.add('active');
-        }
-
-        /**
-         * Open modal for editing existing prompt
-         */
-        window.editPrompt = function(index) {
-            const prompts = loadPrompts();
-            const p = prompts[index];
-            if (!p) return;
-
-            promptModalTitle.textContent = 'Edit Prompt';
-            promptEditIndex.value = index;
-            promptIdInput.value = p.id || '';
-            promptTypeSelect.value = p.type || 'multiple-choice';
-            promptQuestionInput.value = p.question || '';
-            promptTriggerInput.value = p.trigger || '';
-            promptDeleteBtn.style.display = 'inline-block';
-
-            window.updatePromptTypeFields();
-
-            // Populate type-specific fields
-            if (p.type === 'scale') {
-                const minInput = document.getElementById('scaleMinInput');
-                const maxInput = document.getElementById('scaleMaxInput');
-                if (minInput) minInput.value = p.scaleMin || '';
-                if (maxInput) maxInput.value = p.scaleMax || '';
-            } else if (p.type === 'emoji-reaction') {
-                selectedEmojis = p.emojis || [];
-                document.querySelectorAll('.emoji-btn').forEach(btn => {
-                    if (selectedEmojis.includes(btn.textContent)) {
-                        btn.classList.add('selected');
-                    }
-                });
-                const countSpan = document.getElementById('emojiCountSpan');
-                if (countSpan) countSpan.textContent = selectedEmojis.length;
-            } else if (p.answers && p.answers.length) {
-                answersContainer.innerHTML = '';
-                p.answers.forEach(a => addAnswerField(a, p.type === 'yes-no'));
-            }
-
-            promptModalOverlay.classList.add('active');
-        };
-
-        /**
-         * Delete a prompt
-         */
-        window.deletePrompt = function(index) {
-            if (!confirm('Delete this prompt?')) return;
-            const prompts = loadPrompts();
-            prompts.splice(index, 1);
-            savePrompts(prompts);
-            renderPromptsTable();
-            showNotification('Prompt deleted');
-        };
-
-        /**
-         * Save prompt from modal
-         */
-        function savePromptFromModal() {
-            const id = promptIdInput.value.trim();
-            const type = promptTypeSelect.value;
-            const question = promptQuestionInput.value.trim();
-            const trigger = promptTriggerInput.value.trim();
-
-            if (!id || !question) {
-                showNotification('ID and Question are required', 'error');
-                return;
-            }
-
-            const prompt = { id, type, question, trigger };
-
-            if (type === 'scale') {
-                prompt.scaleMin = document.getElementById('scaleMinInput')?.value || '';
-                prompt.scaleMax = document.getElementById('scaleMaxInput')?.value || '';
-            } else if (type === 'emoji-reaction') {
-                prompt.emojis = selectedEmojis;
-            } else if (type !== 'text-input') {
-                const answerInputs = answersContainer.querySelectorAll('.answer-text-input');
-                prompt.answers = Array.from(answerInputs).map(i => i.value.trim()).filter(v => v);
-            }
-
-            const prompts = loadPrompts();
-            const editIndex = parseInt(promptEditIndex.value);
-
-            if (editIndex >= 0) {
-                prompts[editIndex] = prompt;
-            } else {
-                prompts.push(prompt);
-            }
-
-            savePrompts(prompts);
-            promptModalOverlay.classList.remove('active');
-            renderPromptsTable();
-            showNotification(editIndex >= 0 ? 'Prompt updated' : 'Prompt added');
-        }
-
-        /**
-         * Export prompts to file
-         */
-        function exportPrompts() {
-            const prompts = loadPrompts();
-            const code = `export const PROMPTS = ${JSON.stringify(prompts, null, 2)};`;
-            const blob = new Blob([code], { type: 'application/javascript' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'prompts.js';
-            a.click();
-            URL.revokeObjectURL(url);
-            showNotification('Prompts exported');
-        }
-
-        // Event listeners
-        addPromptBtn.addEventListener('click', openAddPromptModal);
-        exportPromptsBtn.addEventListener('click', exportPrompts);
-        promptCancelBtn.addEventListener('click', () => promptModalOverlay.classList.remove('active'));
-        promptSaveBtn.addEventListener('click', savePromptFromModal);
-        promptDeleteBtn.addEventListener('click', () => {
-            const index = parseInt(promptEditIndex.value);
-            if (index >= 0) {
-                deletePrompt(index);
-                promptModalOverlay.classList.remove('active');
-            }
-        });
-
-        // Close modal on overlay click
-        promptModalOverlay.addEventListener('click', (e) => {
-            if (e.target === promptModalOverlay) {
-                promptModalOverlay.classList.remove('active');
-            }
-        });
-
-        // Initialize
-        renderPromptsTable();
-        window.updatePromptTypeFields();
-
         // ====== READER COUNTER SYSTEM ======
 
         /**
@@ -2121,6 +1395,71 @@
         // Initialize counter system
         fetchAdminCounters();
         initCounterSetButtons();
+    </script>
+    </div><!-- /admin-content -->
+
+    <!-- Admin Authentication -->
+    <script>
+    (function() {
+        const ADMIN_HASH = -1913827202; // simpleHash('DADDY')
+        const ADMIN_KEY = 'otr_admin_session';
+
+        function simpleHash(str) {
+            if (!str || typeof str !== 'string') return 0;
+            let hash = 0;
+            const salt = 'otr2024beta';
+            const salted = salt + str.toUpperCase() + salt;
+            for (let i = 0; i < salted.length; i++) {
+                const char = salted.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash;
+        }
+
+        function isAuthenticated() {
+            return sessionStorage.getItem(ADMIN_KEY) === 'true';
+        }
+
+        function showContent() {
+            document.getElementById('adminGate').classList.add('hidden');
+            document.getElementById('adminContent').classList.add('visible');
+        }
+
+        function showGate() {
+            document.getElementById('adminGate').classList.remove('hidden');
+            document.getElementById('adminContent').classList.remove('visible');
+        }
+
+        // Check auth on load
+        if (isAuthenticated()) {
+            showContent();
+        } else {
+            showGate();
+        }
+
+        // Handle form submission
+        document.getElementById('adminGateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('adminPassword');
+            const error = document.getElementById('adminGateError');
+            const password = input.value.trim();
+
+            if (simpleHash(password) === ADMIN_HASH) {
+                sessionStorage.setItem(ADMIN_KEY, 'true');
+                showContent();
+            } else {
+                error.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        });
+
+        // Clear error on input
+        document.getElementById('adminPassword').addEventListener('input', function() {
+            document.getElementById('adminGateError').style.display = 'none';
+        });
+    })();
     </script>
 </body>
 </html>
