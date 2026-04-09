@@ -204,7 +204,10 @@
             if (node.nodeType === Node.TEXT_NODE) {
                 const text = node.textContent;
                 if (text.trim()) {
-                    runs.push({ text: text, italic: isItalic });
+                    const cleanText = text.replace(/https?:\/\/[^\s]+/g, '');
+                    if (cleanText.trim()) {
+                        runs.push({ text: cleanText, italic: isItalic });
+                    }
                 }
             } else if (node.nodeType === Node.ELEMENT_NODE) {
                 // Skip emoji spans if in clean-read mode
