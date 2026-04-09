@@ -372,46 +372,49 @@
     <script>
     (function(){
       var DIGITS = 7;
+      var DIGIT_HEIGHT = 18;
       var housing = null;
       var reels = [];
       var odometerEl = null;
 
+      function getDigitColor(){
+        return document.documentElement.getAttribute('data-theme')==='dark' ? '#999' : '#666';
+      }
+
+      function updateDigitColors(){
+        var color = getDigitColor();
+        var digits = housing ? housing.querySelectorAll('[data-digit]') : [];
+        for(var i=0;i<digits.length;i++){
+          digits[i].style.color = color;
+        }
+      }
+
       function createOdometer(){
-        // Create odometer container
         odometerEl = document.createElement('div');
         odometerEl.id = 'reader-odometer';
-        odometerEl.style.cssText = 'display:none; text-align:center; margin-top:18px;';
+        odometerEl.style.cssText = 'display:none;text-align:center;margin-top:12px;';
 
         housing = document.createElement('div');
         housing.id = 'odo-housing';
-        housing.style.cssText = 'display:inline-flex; gap:3px; background:#0d0d0d; border:1.5px solid #222; border-radius:8px; padding:10px 14px; align-items:center;';
-
-        var label = document.createElement('div');
-        label.style.cssText = "font-family:'Courier New',monospace; font-size:9px; letter-spacing:0.2em; color:#555; margin-top:6px; text-transform:uppercase;";
-        label.textContent = 'readers';
+        housing.style.cssText = 'display:inline-flex;gap:1px;background:transparent;border:none;padding:0;align-items:center;';
 
         odometerEl.appendChild(housing);
-        odometerEl.appendChild(label);
       }
 
       function buildReels(){
         if(!housing) return;
         housing.innerHTML = '';
         reels = [];
+        var color = getDigitColor();
         for(var i=0;i<DIGITS;i++){
-          if(i===4){
-            var comma = document.createElement('span');
-            comma.style.cssText='font-family:"Courier New",monospace;font-size:22px;color:#444;align-self:flex-end;padding-bottom:6px;margin:0 1px;';
-            comma.textContent=',';
-            housing.appendChild(comma);
-          }
           var wrap = document.createElement('div');
-          wrap.style.cssText='width:32px;height:50px;overflow:hidden;position:relative;background:#0a0a0a;border:1px solid #1e1e1e;border-radius:3px;';
+          wrap.style.cssText='width:11px;height:18px;overflow:hidden;position:relative;background:transparent;border:none;border-radius:0;';
           var reel = document.createElement('div');
           reel.style.cssText='display:flex;flex-direction:column;transition:none;';
           for(var n=0;n<=9;n++){
             var d=document.createElement('div');
-            d.style.cssText='width:32px;height:50px;display:flex;align-items:center;justify-content:center;font-family:"Courier New",monospace;font-size:26px;font-weight:700;color:#e8c84a;line-height:1;';
+            d.setAttribute('data-digit','1');
+            d.style.cssText='width:11px;height:18px;display:flex;align-items:center;justify-content:center;font-family:"Courier New",monospace;font-size:13px;font-weight:700;color:'+color+';line-height:1;';
             d.textContent=n;
             reel.appendChild(d);
           }
@@ -424,7 +427,7 @@
       function showTotal(n, animate){
         var s=String(Math.min(Math.max(0,n),9999999)).padStart(DIGITS,'0');
         for(var i=0;i<DIGITS;i++){
-          var offset=parseInt(s[i])*50;
+          var offset=parseInt(s[i])*DIGIT_HEIGHT;
           reels[i].style.transition=animate?'transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94)':'none';
           reels[i].style.transform='translateY(-'+offset+'px)';
         }
@@ -434,7 +437,6 @@
       function insertOdometer(){
         var homeContent = document.querySelector('.home-content');
         if(homeContent && odometerEl && !document.getElementById('reader-odometer')){
-          // Insert after the start reading button
           var btn = homeContent.querySelector('.start-reading-btn');
           if(btn && btn.parentNode){
             btn.parentNode.insertBefore(odometerEl, btn.nextSibling);
@@ -463,12 +465,21 @@
       buildReels();
       showTotal(0,false);
 
-      // Check if home page is already loaded
+      // Watch for theme changes
+      var observer = new MutationObserver(function(mutations){
+        for(var i=0;i<mutations.length;i++){
+          if(mutations[i].attributeName==='data-theme'){
+            updateDigitColors();
+            break;
+          }
+        }
+      });
+      observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
       if(document.querySelector('.home-content')){
         fetchAndShow();
       }
 
-      // Listen for home page load event
       window.addEventListener('homePageLoaded', function(){
         fetchAndShow();
       });
