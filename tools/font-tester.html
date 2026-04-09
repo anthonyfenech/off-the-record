@@ -2,648 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="OFF-THE-RECORD - 15 years covering the Detroit Tigers">
-    <meta name="theme-color" content="#333333">
-
-    <!-- Open Graph (Facebook, iMessage, LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="OFF-THE-RECORD">
-    <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
-    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="OFF-THE-RECORD">
-    <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="OTR">
-    <meta name="format-detection" content="telephone=no">
-
-    <title>OFF-THE-RECORD</title>
-
-    <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
-    <script>
-    (function(){
-        if(window.location.search.indexOf('reset=true')===-1)return;
-        var s=document.createElement('style');
-        s.textContent='*{pointer-events:auto!important}.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important}body{overflow:auto!important;pointer-events:auto!important}';
-        document.head.appendChild(s);
-        document.addEventListener('DOMContentLoaded',function(){
-            document.querySelectorAll('.active').forEach(function(el){el.classList.remove('active')});
-            document.querySelectorAll('.overlay,.modal,.toc-sidebar,.lightbox-overlay,.photo-modal-overlay,#overlay,#passwordGate,.prompt-overlay,#prompt-modal,[class*="overlay"],[class*="modal"],[class*="lightbox"]').forEach(function(el){
-                el.style.cssText='display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important;z-index:-1!important';
-            });
-            document.body.style.overflow='auto';
-            document.body.style.pointerEvents='auto';
-            document.body.classList.remove('sidebar-open','modal-open','no-scroll','home-page');
-            console.log('NUCLEAR RESET TRIGGERED — all overlays destroyed. Remove ?reset=true from URL to restore normal behavior.');
-        });
-    })();
-    </script>
-
-    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
-    <script>
-        (function() {
-            // Theme (dark/light)
-            if (localStorage.getItem('reader_theme') === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
-
-    <!-- Critical: Hide sidebar and nav-footer before CSS loads to prevent flash -->
-    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0;pointer-events:none}.nav-footer{display:none}#toc-book-content{max-height:0;overflow:hidden;visibility:hidden}</style>
-
-    <!-- Emergency overlay cleanup - runs before anything else -->
-    <script>
-        (function() {
-            // Immediately clear any stuck overlay states from previous sessions
-            document.addEventListener('DOMContentLoaded', function() {
-                // Remove active class from all overlays including lightbox
-                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .media-modal-overlay, .photo-modal-overlay, [class*="overlay"], [id*="overlay"]');
-                overlays.forEach(function(el) {
-                    el.classList.remove('active');
-                    el.style.pointerEvents = 'none';
-                    el.style.display = 'none';
-                    el.style.visibility = 'hidden';
-                });
-                // Ensure body scroll is not locked
-                document.body.style.overflow = '';
-            });
-        })();
-    </script>
-
-    <link rel="manifest" href="../manifest.json">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
-
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="../fonts/literata-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/literata-italic.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Preload critical CSS -->
-    <link rel="preload" href="../css/variables.min.css?v=423" as="style">
-    <link rel="preload" href="../css/typography.min.css?v=423" as="style">
-
-    <!-- Self-hosted fonts (no external request) -->
-    <link rel="stylesheet" href="../css/fonts.min.css?v=423">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/reset.min.css?v=423">
-    <link rel="stylesheet" href="../css/variables.min.css?v=423">
-    <link rel="stylesheet" href="../css/typography.min.css?v=423">
-    <link rel="stylesheet" href="../css/layout.min.css?v=423">
-    <link rel="stylesheet" href="../css/components.min.css?v=423">
-    <!-- PROMPTS DISABLED: re-enable when prompt system is fixed -->
-    <!-- <link rel="stylesheet" href="../prompts/prompt-styles.min.css?v=423"> -->
-    <link rel="stylesheet" href="../css/otr-tier1-states.css?v=423">
-    <link rel="stylesheet" href="../css/share.min.css?v=423">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Tester | OFF-THE-RECORD</title>
     <style>
-        /* Hide menu and theme toggle on home page only */
-        .home-page .menu-btn,
-        .home-page .theme-toggle { display: none; }
-
-        /* === PARAGRAPH FORMATTING === */
-        .chapter-body p {
-            text-indent: 0.5in !important;
-            text-align: justify !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            line-height: 1.6;
-        }
-
-        .chapter-body p:empty {
-            height: 1em;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .chapter-body p:first-child {
-            text-indent: 0 !important;
-        }
-
-        .chapter-body .dateline {
-            font-weight: 500;
-        }
-
-        .chapter-body p.headline-block {
-            text-indent: 0 !important;
-        }
-
-        .chapter-body .block-quote p {
-            text-indent: 0 !important;
-            margin-left: 2em !important;
-        }
-
-        /* Mobile: smaller indent, left-aligned for readability */
-        @media (max-width: 600px) {
-            .chapter-body p {
-                text-indent: 24px !important;
-                text-align: left !important;
-            }
-        }
-
-    </style>
-
-    <!-- Font Tester: Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Crimson+Pro:ital@0;1&family=EB+Garamond:ital@0;1&family=Spectral:ital@0;1&family=Libre+Baskerville:ital@0;1&family=Libre+Caslon+Text:ital@0;1&family=Cardo:ital@0;1&family=Young+Serif&family=Literata:ital@0;1&family=Source+Serif+Pro:ital@0;1&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
-
-    <!-- Font Tester: Custom Styles -->
-    <style>
-        .toc-sidebar, .hamburger, .menu-toggle { display: none !important; }
-        body { overflow-x: hidden; }
-
-        .font-rail {
-            position: fixed;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            width: 100px;
-            max-height: 85vh;
-            overflow-y: auto;
-            background: var(--color-background, #fff);
-            border: 1px solid var(--color-text-primary, #000);
-            padding: 8px;
-        }
-        .rail-header {
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
             font-family: 'Courier New', monospace;
-            font-size: 9px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-            text-transform: uppercase;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            min-height: 100vh;
         }
-        .rail-label {
-            font-size: 7px;
-            color: #888;
+        h1 {
+            font-size: 24px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin: 8px 0 4px 0;
-            letter-spacing: 0.5px;
-        }
-        .font-rail button {
-            display: block;
-            width: 100%;
-            padding: 4px 6px;
-            margin: 2px 0;
-            border: 1px solid var(--color-text-primary, #000);
-            background: var(--color-background, #fff);
-            color: var(--color-text-primary, #000);
-            font-size: 9px;
-            cursor: pointer;
+            margin-bottom: 32px;
             text-align: center;
         }
-        .font-rail button:hover {
-            background: var(--color-background-secondary, #f0f0f0);
-        }
-        .font-rail button.active {
-            background: var(--color-text-primary, #000);
-            color: var(--color-background, #fff);
-        }
-        .size-buttons {
-            display: flex;
-            gap: 4px;
-        }
-        .size-buttons button {
-            flex: 1;
+        h2 {
             font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 12px;
+            margin-top: 24px;
         }
-
-        @media (max-width: 1000px) {
-            .font-rail { display: none; }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .font-list {
+            list-style: none;
+        }
+        .font-list li {
+            margin-bottom: 8px;
+        }
+        .font-list a {
+            display: block;
+            padding: 10px 14px;
+            background: #fff;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .font-list a:hover {
+            background: #1a1a1a;
+            color: #fff;
+            border-color: #1a1a1a;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 32px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #1a1a1a;
         }
     </style>
 </head>
-<body class="home-page">
-    <a href="#reader" class="skip-link">Skip to content</a>
+<body>
+    <div class="container">
+        <h1>Font Tester</h1>
 
-    <!-- Font Tester Rail -->
-    <div class="font-rail">
-        <div class="rail-header">FONT TEST</div>
-        <div class="rail-section">
-            <div class="rail-label">EPUB+WEB</div>
-            <button data-font="'Lora', serif">Lora</button>
-            <button data-font="'Crimson Pro', serif">Crimson</button>
-            <button data-font="'EB Garamond', serif">EB Gar</button>
-            <button data-font="'Spectral', serif">Spectral</button>
-            <button data-font="'Libre Baskerville', serif">Lib Bask</button>
-            <button data-font="'Libre Caslon Text', serif">Lib Casl</button>
-            <button data-font="'Cardo', serif">Cardo</button>
-            <button data-font="'Young Serif', serif">Yng Serif</button>
-        </div>
-        <div class="rail-section">
-            <div class="rail-label">WEB ONLY</div>
-            <button data-font="'Literata', serif" class="active">Literata</button>
-            <button data-font="'Source Serif Pro', serif">Src Serif</button>
-            <button data-font="'Merriweather', serif">Merriwthr</button>
-        </div>
-        <div class="rail-section">
-            <div class="rail-label">SYSTEM</div>
-            <button data-font="Georgia, serif">Georgia</button>
-            <button data-font="Palatino, serif">Palatino</button>
-            <button data-font="'Times New Roman', serif">TNR</button>
-        </div>
-        <div class="rail-section">
-            <div class="rail-label">SIZE</div>
-            <div class="size-buttons">
-                <button data-size="15px">A</button>
-                <button data-size="18px" class="active">A</button>
-                <button data-size="21px">A</button>
-            </div>
-        </div>
+        <h2>EPUB + WEB</h2>
+        <ul class="font-list">
+            <li><a href="font-lora.html">Lora</a></li>
+            <li><a href="font-crimson.html">Crimson Text</a></li>
+            <li><a href="font-eb-garamond.html">EB Garamond</a></li>
+            <li><a href="font-spectral.html">Spectral</a></li>
+            <li><a href="font-libre-baskerville.html">Libre Baskerville</a></li>
+            <li><a href="font-libre-caslon.html">Libre Caslon Text</a></li>
+            <li><a href="font-cardo.html">Cardo</a></li>
+        </ul>
+
+        <h2>WEB ONLY</h2>
+        <ul class="font-list">
+            <li><a href="font-young-serif.html">Young Serif</a></li>
+            <li><a href="font-literata.html">Literata</a></li>
+            <li><a href="font-source-serif.html">Source Serif 4</a></li>
+            <li><a href="font-merriweather.html">Merriweather</a></li>
+        </ul>
+
+        <h2>SYSTEM FONTS</h2>
+        <ul class="font-list">
+            <li><a href="font-georgia.html">Georgia</a></li>
+            <li><a href="font-palatino.html">Palatino</a></li>
+            <li><a href="font-tnr.html">Times New Roman</a></li>
+        </ul>
+
+        <a href="../admin.html" class="back-link">&larr; Back to Admin</a>
     </div>
-
-    <noscript>
-        <div style="max-width: 640px; margin: 80px auto; padding: 20px; font-family: 'Courier New', monospace; text-align: center;">
-            <h1 style="font-size: 1.4rem; margin-bottom: 16px;">OFF-THE-RECORD</h1>
-            <p>This site requires JavaScript to read chapters. Please enable JavaScript in your browser settings.</p>
-        </div>
-    </noscript>
-    <script>
-        // Apply body classes immediately (theme already set in <head>)
-        if (localStorage.getItem('admin_showCaptions') === 'true') {
-            document.body.classList.add('show-captions');
-        }
-        if (localStorage.getItem('reader_cleanRead') === 'true') {
-            document.body.classList.add('clean-read');
-        }
-        // Apply dateline formatting
-        const datelineFormat = localStorage.getItem('admin_datelineFormat') || 'current';
-        if (datelineFormat === 'bold-italic') {
-            document.body.classList.add('dateline-bold-italic');
-        } else if (datelineFormat === 'bold') {
-            document.body.classList.add('dateline-bold');
-        }
-    </script>
-    <!-- Password Gate (Beta Access) - Hidden by default, shown by JS if auth needed -->
-    <div id="passwordGate" class="password-gate" style="display: none">
-        <div class="password-gate-content">
-            <h1 class="password-gate-title">OFF-THE-RECORD</h1>
-            <form id="passwordForm" class="password-form" autocomplete="off">
-                <label for="passwordInput" class="sr-only">Enter password</label>
-                <input
-                    type="password"
-                    id="passwordInput"
-                    class="password-input"
-                    placeholder="Enter password"
-                    autocomplete="off"
-                    data-lpignore="true"
-                    data-1p-ignore="true"
-                    autofocus
-                >
-                <div class="remember-me-wrapper">
-                    <input type="checkbox" id="rememberMe" class="remember-checkbox">
-                    <label for="rememberMe" class="remember-label">Remember me for 30 days</label>
-                </div>
-                <button type="submit" class="password-submit">ENTER</button>
-                <p id="passwordError" class="password-error">Incorrect password</p>
-            </form>
-        </div>
-    </div>
-
-    <!-- Header Navigation -->
-    <header class="header" id="header">
-        <div class="header-content">
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            <a href="../" class="header-logo" id="homeLink"><img src="../assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img"></a>
-            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <!-- Main Reading Area -->
-    <main class="reader" id="reader">
-        <article class="chapter" id="chapterContent">
-            <header class="chapter-header">
-                <h2 class="chapter-title" id="chapterTitle"></h2>
-            </header>
-            <div class="chapter-body" id="chapterBody"></div>
-        </article>
-    </main>
-
-    <!-- Chapter Navigation Footer -->
-    <nav class="nav-footer" id="navFooter">
-        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous chapter">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-            <span>Prev</span>
-        </button>
-        <div class="nav-center">
-            <button class="nav-btn nav-media media-active" id="mediaBtn" aria-label="Toggle media">
-                <span>Media</span>
-            </button>
-        </div>
-        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">
-            <span>Next</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-    </nav>
-
-    <!-- Table of Contents Sidebar -->
-    <aside class="toc-sidebar" id="tocSidebar">
-        <div class="toc-header">
-            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <nav class="toc-content" id="tocContent">
-            <!-- Populated by JavaScript -->
-        </nav>
-        <!-- Search Section -->
-        <div class="toc-section" id="searchSection">
-            <button class="toc-section-header" id="searchToggle" aria-expanded="false">
-                <span class="toc-section-title">Search</span>
-            </button>
-            <div class="toc-section-content" id="searchContent" style="display: none;">
-                <div class="search-input-wrapper">
-                    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                    <input type="text" id="searchInput" placeholder="" autocomplete="off" aria-label="Search chapters" />
-                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">✕</button>
-                </div>
-                <div class="search-results" id="searchResults" style="display: none;"></div>
-            </div>
-        </div>
-        <!-- Options Section -->
-        <div class="toc-section" id="optionsSection">
-            <button class="toc-section-header" id="optionsToggle" aria-expanded="false">
-                <span class="toc-section-title">Options</span>
-            </button>
-            <div class="toc-section-content" id="optionsContent" style="display: none;">
-                <div class="toc-option">
-                    <span class="toc-option-label">Mode</span>
-                    <div class="option-btn-group" id="modeToggle">
-                        <button class="option-btn active" data-mode="scroll">Scroll</button>
-                        <button class="option-btn" data-mode="page">Pages</button>
-                    </div>
-                </div>
-                <div class="toc-option">
-                    <span class="toc-option-label">Text</span>
-                    <div class="option-btn-group" id="textSizeToggle">
-                        <button class="option-btn" data-size="small">A-</button>
-                        <button class="option-btn active" data-size="medium">A</button>
-                        <button class="option-btn" data-size="large">A+</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Admin Link (hidden until password typed) -->
-        <div class="toc-section" id="adminSection" style="display: none;">
-            <a href="../otr-ctrl-2026.html" class="toc-section-header toc-section-link" style="text-decoration: none;">
-                <span class="toc-section-title">Admin</span>
-                <svg class="toc-section-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 6 15 12 9 18"></polyline>
-                </svg>
-            </a>
-        </div>
-        <div class="toc-footer">
-            <button class="logout-btn" id="logoutBtn">Logout</button>
-        </div>
-    </aside>
-
-    <!-- Overlay for TOC -->
-    <div class="overlay" id="overlay"></div>
-
-
-    <!-- Scripts -->
-    <!-- Analytics Config (must load before any script using OTR_ANALYTICS_CONFIG) -->
-    <script defer src="../js/analytics-config.js?v=423"></script>
-    <script type="module" src="../js/config.min.js?v=423"></script>
-    <script type="module" src="../data/chapters.js?v=423"></script>
-    <script defer src="../data/media.js?v=423"></script>
-    <script type="module" src="../js/storage.min.js?v=423"></script>
-    <script type="module" src="../js/mediaModal.min.js?v=423"></script>
-    <script type="module" src="../js/photoGallery.min.js?v=423"></script>
-    <script type="module" src="../js/blog.min.js?v=423"></script>
-    <script type="module" src="../js/reading-mode.min.js?v=423"></script>
-    <script type="module" src="../js/font-size.min.js?v=423"></script>
-    <script type="module" src="../js/search.min.js?v=423"></script>
-    <script type="module" src="../js/reader.min.js?v=423"></script>
-    <script type="module" src="../js/navigation.min.js?v=423"></script>
-    <script type="module" src="../js/pwa.min.js?v=423"></script>
-    <script type="module" src="../js/theme.min.js?v=423"></script>
-    <script type="module" src="../js/app.min.js?v=423"></script>
-
-    <!-- Page Controls (media toggle, mode toggle, text size, search, options) -->
-    <script defer src="../js/page-controls.min.js?v=423"></script>
-
-    <!-- Share Feature (O button for capturing and sharing text) -->
-    <script defer src="../js/share.min.js?v=423"></script>
-
-    <!-- Overlay Failsafes -->
-    <script defer src="../js/failsafes.js?v=423"></script>
-
-    <!-- Reader Persona & Analytics -->
-    <script defer src="../js/reader-name.min.js?v=423"></script>
-    <script defer src="../js/analytics.min.js?v=423"></script>
-
-    <!-- Auto-Bookmark & Resume -->
-    <script defer src="../js/bookmark.min.js?v=423"></script>
-
-    <!-- Admin Access (secret password) -->
-    <script defer src="../js/admin-access.min.js?v=423"></script>
-
-    <!-- Install Nudge (mobile PWA prompt) -->
-    <script defer src="../js/install-nudge.min.js?v=500"></script>
-
-    <script defer src="../js/otr-tier1-error-handler.min.js?v=423"></script>
-
-    <!-- Resume: hijack CONTINUE READING button when bookmark exists -->
-    <script>
-    (function(){
-        function initResume() {
-            if (!window.bookmark) return;
-            var bookmark = window.bookmark.get();
-            if (!bookmark || !bookmark.chapterSlug) return;
-
-            var ctaBtn = document.querySelector('.start-reading-btn') || document.getElementById('startReadingBtn');
-            if (!ctaBtn) return;
-
-            // Change button text to show resume chapter
-            ctaBtn.textContent = bookmark.chapterTitle
-                ? 'RESUME: ' + bookmark.chapterTitle.toUpperCase()
-                : 'RESUME';
-
-            // Override click to go to bookmarked position
-            ctaBtn.onclick = function(e) {
-                e.preventDefault();
-                sessionStorage.setItem('scrollToPercent', String(bookmark.scrollPercent));
-                window.location.hash = bookmark.chapterSlug;
-            };
-        }
-
-        window.addEventListener('homePageLoaded', initResume);
-
-        // Also check on DOMContentLoaded in case home page is already showing
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                if (document.querySelector('.home-content')) initResume();
-            });
-        } else if (document.querySelector('.home-content')) {
-            initResume();
-        }
-    })();
-    </script>
-
-    <!-- Reader Odometer (scoreboard-style counter) -->
-    <script>
-    (function(){
-      var DIGITS = 7;
-      var housing = null;
-      var reels = [];
-      var odometerEl = null;
-
-      function getDigitColor(){
-        return document.documentElement.getAttribute('data-theme')==='dark' ? '#999' : '#666';
-      }
-
-      function updateDigitColors(){
-        // Colors now handled by CSS
-      }
-
-      function createOdometer(){
-        odometerEl = document.createElement('div');
-        odometerEl.id = 'reader-odometer';
-        odometerEl.style.cssText = 'display:none;text-align:center;margin-top:2em;';
-
-        housing = document.createElement('div');
-        housing.id = 'odo-housing';
-        housing.style.cssText = 'display:inline-flex;gap:1px;background:transparent;border:none;padding:0;align-items:center;';
-
-        odometerEl.appendChild(housing);
-      }
-
-      function buildReels(){
-        if(!housing) return;
-        housing.innerHTML = '';
-        reels = [];
-        for(var i=0;i<DIGITS;i++){
-          var digit = document.createElement('div');
-          digit.className = 'odo-digit';
-          digit.textContent = '0';
-          housing.appendChild(digit);
-          reels.push(digit);
-        }
-      }
-
-      function showTotal(n, animate){
-        var s=String(Math.min(Math.max(0,n),9999999)).padStart(DIGITS,'0');
-        for(var i=0;i<DIGITS;i++){
-          reels[i].textContent = s[i];
-        }
-        if(odometerEl) odometerEl.style.display='block';
-      }
-
-      function insertOdometer(){
-        var homeContent = document.querySelector('.home-content');
-        if(homeContent && odometerEl && !document.getElementById('reader-odometer')){
-          var btn = homeContent.querySelector('.start-reading-btn');
-          if(btn && btn.parentNode){
-            btn.parentNode.insertBefore(odometerEl, btn.nextSibling);
-          } else {
-            homeContent.appendChild(odometerEl);
-          }
-        }
-      }
-
-      function fetchAndShow(){
-        if(typeof OTR_ANALYTICS_CONFIG === 'undefined') return;
-        var url = OTR_ANALYTICS_CONFIG.readerCounterUrl + '?action=getReaderCount';
-        fetch(url).then(function(r){return r.json();}).then(function(data){
-          var total = (data.total||0) + (data.manual_total||0);
-          if(total>0){
-            insertOdometer();
-            showTotal(total);
-            try { localStorage.setItem('otr_reader_count', total.toString()); } catch(e){}
-          }
-        }).catch(function(){
-          if(odometerEl) odometerEl.style.display='none';
-        });
-      }
-
-      // Initialize
-      createOdometer();
-      buildReels();
-      showTotal(0,false);
-
-      // Show cached count instantly (before fetch completes)
-      var cachedCount = (function(){ try { return localStorage.getItem('otr_reader_count'); } catch(e){ return null; } })();
-      if(cachedCount && document.querySelector('.home-content')){
-        insertOdometer();
-        showTotal(parseInt(cachedCount,10));
-      }
-
-      // Watch for theme changes
-      var observer = new MutationObserver(function(mutations){
-        for(var i=0;i<mutations.length;i++){
-          if(mutations[i].attributeName==='data-theme'){
-            updateDigitColors();
-            break;
-          }
-        }
-      });
-      observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-
-      if(document.querySelector('.home-content')){
-        fetchAndShow();
-      }
-
-      window.addEventListener('homePageLoaded', function(){
-        fetchAndShow();
-      });
-    })();
-    </script>
-
-    <!-- Font Tester: Force Chapter 3 -->
-    <script>
-        if (!window.location.search.includes('chapter=')) {
-            history.replaceState(null, '', '?chapter=3');
-        }
-    </script>
-
-    <!-- Font Tester: Rail Controls -->
-    <script>
-        document.querySelectorAll('.font-rail button[data-font]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.font-rail button[data-font]').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const target = document.querySelector('.chapter-body') || document.querySelector('.reader') || document.querySelector('main');
-                if (target) target.style.fontFamily = btn.dataset.font;
-            });
-        });
-
-        document.querySelectorAll('.font-rail button[data-size]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.size-buttons button').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const target = document.querySelector('.chapter-body') || document.querySelector('.reader') || document.querySelector('main');
-                if (target) target.style.fontSize = btn.dataset.size;
-            });
-        });
-    </script>
-
 </body>
 </html>
