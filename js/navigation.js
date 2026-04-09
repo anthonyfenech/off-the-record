@@ -803,14 +803,20 @@ class Navigation {
         const bookSection = this.tocContent?.querySelector('[data-section="book"]');
         if (bookContent) {
             bookContent.style.display = 'none';
+            bookContent.style.visibility = 'hidden';
+            bookContent.style.height = '0';
             bookContent.classList.add('collapsed');
         }
         if (bookSection) {
             bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
         }
         this.expandedSections.delete('book');
-        // Restore display after collapse classes applied
-        if (bookContent) bookContent.style.display = '';
+        // Restore display after collapse classes applied (CSS handles visibility via .collapsed)
+        if (bookContent) {
+            bookContent.style.display = '';
+            bookContent.style.visibility = '';
+            bookContent.style.height = '';
+        }
 
         // Remove critical CSS overrides
         this.tocSidebar.style.visibility = 'visible';
