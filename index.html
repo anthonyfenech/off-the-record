@@ -369,7 +369,6 @@
     <script>
     (function(){
       var DIGITS = 7;
-      var DIGIT_HEIGHT = 29;
       var housing = null;
       var reels = [];
       var odometerEl = null;
@@ -379,11 +378,7 @@
       }
 
       function updateDigitColors(){
-        var color = getDigitColor();
-        var digits = housing ? housing.querySelectorAll('[data-digit]') : [];
-        for(var i=0;i<digits.length;i++){
-          digits[i].style.color = color;
-        }
+        // Colors now handled by CSS
       }
 
       function createOdometer(){
@@ -402,31 +397,19 @@
         if(!housing) return;
         housing.innerHTML = '';
         reels = [];
-        var color = getDigitColor();
         for(var i=0;i<DIGITS;i++){
-          var wrap = document.createElement('div');
-          wrap.style.cssText='width:11px;height:18px;overflow:hidden;position:relative;background:transparent;border:none;border-radius:0;';
-          var reel = document.createElement('div');
-          reel.style.cssText='display:flex;flex-direction:column;transition:none;';
-          for(var n=0;n<=9;n++){
-            var d=document.createElement('div');
-            d.setAttribute('data-digit','1');
-            d.style.cssText='width:11px;height:18px;display:flex;align-items:center;justify-content:center;font-family:"Courier New",monospace;font-size:13px;font-weight:700;color:'+color+';line-height:1;';
-            d.textContent=n;
-            reel.appendChild(d);
-          }
-          wrap.appendChild(reel);
-          housing.appendChild(wrap);
-          reels.push(reel);
+          var digit = document.createElement('div');
+          digit.className = 'odo-digit';
+          digit.textContent = '0';
+          housing.appendChild(digit);
+          reels.push(digit);
         }
       }
 
       function showTotal(n, animate){
         var s=String(Math.min(Math.max(0,n),9999999)).padStart(DIGITS,'0');
         for(var i=0;i<DIGITS;i++){
-          var offset=parseInt(s[i])*DIGIT_HEIGHT;
-          reels[i].style.transition=animate?'transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94)':'none';
-          reels[i].style.transform='translateY(-'+offset+'px)';
+          reels[i].textContent = s[i];
         }
         if(odometerEl) odometerEl.style.display='block';
       }
