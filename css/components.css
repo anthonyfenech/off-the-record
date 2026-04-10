@@ -308,8 +308,12 @@ p + p.has-dateline {
     transform: rotate(90deg);
 }
 
-/* First section (OFF-THE-RECORD) gets thicker bottom border */
+/* First section (OFF-THE-RECORD) - sticky header with border */
 .toc-top-section:first-child .toc-top-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-background);
     border-bottom: 2px solid var(--color-border);
 }
 
