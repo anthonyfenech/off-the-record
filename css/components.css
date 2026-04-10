@@ -672,11 +672,10 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
 
 .toc-link {
     display: block;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 0;
     color: var(--color-text-primary);
     text-decoration: none;
     transition: color var(--transition-fast);
