@@ -2,7 +2,6 @@
 
 import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears, getPreviousChapterId, getNextChapterId } from '../data/chapters.js';
 import { reader } from './reader.js';
-import { isChapterComplete } from './storage.js';
 import { photoGallery } from './photoGallery.js';
 // Stub - data/photos.js removed
 const getAllGalleries = () => [];
@@ -93,11 +92,6 @@ class Navigation {
         // Listen for page changes
         window.addEventListener('pageChanged', () => {
             this.updateNavigationState();
-        });
-
-        // Listen for chapter completion
-        window.addEventListener('chapterCompleted', () => {
-            this.updateTOCState();
         });
 
         // Touch gestures for swipe navigation
@@ -671,7 +665,7 @@ class Navigation {
             const chapterId = parseInt(item.dataset.chapterId);
             const indicator = item.querySelector('.chapter-indicator');
 
-            item.classList.remove('active', 'completed');
+            item.classList.remove('active');
             indicator.innerHTML = '';
 
             if (chapterId === this.currentChapterId) {
@@ -712,9 +706,6 @@ class Navigation {
                         }
                     }
                 }
-            } else if (isChapterComplete(chapterId)) {
-                item.classList.add('completed');
-                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
             }
         });
     }
