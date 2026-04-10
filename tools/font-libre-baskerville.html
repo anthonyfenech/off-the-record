@@ -598,18 +598,18 @@
         (function() {
             var session = localStorage.getItem('otr_beta_session');
             if (!session) {
-                window.location.replace('./');
+                window.location.replace('../');
                 return;
             }
             try {
                 var data = JSON.parse(session);
                 if (!data.authenticated || Date.now() > data.expires) {
                     localStorage.removeItem('otr_beta_session');
-                    window.location.replace('./');
+                    window.location.replace('../');
                     return;
                 }
             } catch (e) {
-                window.location.replace('./');
+                window.location.replace('../');
                 return;
             }
             document.body.style.opacity = '1';
@@ -765,8 +765,8 @@
 
     <!-- Sidebar Navigation (builds TOC identical to main reader) -->
     <script type="module">
-        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
-        import { isChapterComplete } from './js/storage.min.js';
+        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from '../data/chapters.js';
+        import { isChapterComplete } from '../js/storage.min.js';
 
         // Wait for binge-init to set up globals
         const waitForInit = setInterval(() => {
@@ -876,13 +876,13 @@
                 fragment.appendChild(createBookSection());
 
                 // BINGE MODE link (current page - highlighted)
-                fragment.appendChild(createTopSection({ id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html', current: true }));
+                fragment.appendChild(createTopSection({ id: 'full-book', label: 'BINGE MODE', type: 'link', url: '../binge-mode.html', current: true }));
 
                 // DOWNLOAD link
-                fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html', current: false }));
+                fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: '../downloadpage.html', current: false }));
 
                 // GUESTBOOK link
-                fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html', current: false }));
+                fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: '../guestbook.html', current: false }));
 
                 // Divider
                 const divider = document.createElement('div');
@@ -996,7 +996,7 @@
                 const handleChapterSelect = () => {
                     if (!isLocked) {
                         closeTOC();
-                        window.location.href = './?chapter=' + chapter.id;
+                        window.location.href = '../?chapter=' + chapter.id;
                     }
                 };
                 item.addEventListener('click', handleChapterSelect);
@@ -1116,7 +1116,7 @@
                 const item = e.target.closest('.search-result-item');
                 if (item && item.dataset.chapterId) {
                     closeTOC();
-                    window.location.href = './?chapter=' + item.dataset.chapterId;
+                    window.location.href = '../?chapter=' + item.dataset.chapterId;
                 }
             });
 
@@ -1159,7 +1159,7 @@
             // Logout
             document.getElementById('logoutBtn').addEventListener('click', () => {
                 localStorage.removeItem('otr_beta_session');
-                window.location.href = './';
+                window.location.href = '../';
             });
         }
     </script>
