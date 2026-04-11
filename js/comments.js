@@ -18,9 +18,9 @@
     const MAX_MESSAGE_LENGTH = 500;
     const RATE_LIMIT_MS = 30000; // 30 seconds between submissions
 
-    // Chat bubble SVG icon (monochrome, matches site aesthetic)
-    const CHAT_ICON_SVG = `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    // Chat bubble SVG icon (filled, uses currentColor for auto light/dark)
+    const CHAT_ICON_SVG = `<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
     </svg>`;
 
     // ═══════════════════════════════════════════════════════════════
@@ -139,16 +139,8 @@
         modalOverlay.innerHTML = `
             <div class="comment-modal">
                 <button class="comment-modal-close" aria-label="Close">&times;</button>
-                <h2 class="comment-modal-title">SEND A MESSAGE</h2>
+                <h2 class="comment-modal-title">QUESTIONS? COMMENTS? CONCERNS?</h2>
                 <form class="comment-form" id="commentForm">
-                    <div class="comment-field">
-                        <input type="text" id="commentName" placeholder="Name" required>
-                        <span class="comment-error"></span>
-                    </div>
-                    <div class="comment-field">
-                        <input type="email" id="commentEmail" placeholder="Email" required>
-                        <span class="comment-error"></span>
-                    </div>
                     <div class="comment-field">
                         <textarea id="commentMessage" placeholder="Message" required maxlength="${MAX_MESSAGE_LENGTH}"></textarea>
                         <div class="comment-char-counter"><span id="charCount">0</span>/${MAX_MESSAGE_LENGTH}</div>
@@ -182,7 +174,7 @@
         // Show with animation
         requestAnimationFrame(() => {
             modalOverlay.classList.add('visible');
-            document.getElementById('commentName').focus();
+            document.getElementById('commentMessage').focus();
         });
     }
 
@@ -211,8 +203,6 @@
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const nameInput = document.getElementById('commentName');
-        const emailInput = document.getElementById('commentEmail');
         const messageInput = document.getElementById('commentMessage');
         const submitBtn = document.getElementById('commentSubmit');
         const statusEl = document.getElementById('commentStatus');
@@ -221,27 +211,10 @@
         clearErrors();
 
         // Validate
-        let hasErrors = false;
-
-        if (!nameInput.value.trim()) {
-            showFieldError(nameInput, 'Name is required');
-            hasErrors = true;
-        }
-
-        if (!emailInput.value.trim()) {
-            showFieldError(emailInput, 'Email is required');
-            hasErrors = true;
-        } else if (!isValidEmail(emailInput.value)) {
-            showFieldError(emailInput, 'Please enter a valid email');
-            hasErrors = true;
-        }
-
         if (!messageInput.value.trim()) {
             showFieldError(messageInput, 'Message is required');
-            hasErrors = true;
+            return;
         }
-
-        if (hasErrors) return;
 
         // Rate limiting
         const now = Date.now();
@@ -255,8 +228,6 @@
         // Build payload
         const payload = {
             type: 'comment',
-            name: nameInput.value.trim(),
-            email: emailInput.value.trim(),
             message: messageInput.value.trim(),
             passage: getVisiblePassage(),
             chapter: getChapterTitle(),
@@ -300,10 +271,6 @@
             submitBtn.disabled = false;
             submitBtn.textContent = 'SEND';
         }
-    }
-
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     function showFieldError(input, message) {
