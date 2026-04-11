@@ -24,10 +24,7 @@ async function stampAndDownload(buttonElement) {
     var btn = buttonElement
               || document.getElementById('pdfDownloadBtn')
               || document.querySelector('[data-action="download-pdf"]');
-    var originalText = btn ? btn.textContent : '';
-
     if (btn) {
-        btn.textContent = 'PREPARING YOUR COPY...';
         btn.disabled = true;
     }
 
@@ -61,7 +58,6 @@ async function stampAndDownload(buttonElement) {
     } finally {
         // Reset button state
         if (btn) {
-            btn.textContent = originalText;
             btn.disabled = false;
         }
     }
