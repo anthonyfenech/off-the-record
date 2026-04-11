@@ -22,7 +22,6 @@ export const CHAPTERS = [
 <div class="title-page-content">
 <h1 class="title-page-title">OFF-THE-RECORD</h1>
 </div>
-<img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="parental-advisory">
 </div>`,
         wordCount: 0
     },
