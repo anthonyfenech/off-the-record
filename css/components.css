@@ -4022,6 +4022,8 @@ html {
 #odo-housing {
     display: flex !important;
     gap: 0 !important;
+    border: 2px solid var(--color-text-primary);
+    border-radius: 3px;
 }
 
 .odo-digit {
@@ -4030,14 +4032,17 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--color-text-primary);
-    border-radius: 3px;
+    border-right: 2px solid var(--color-text-primary);
     font-family: 'Courier New', monospace;
     font-size: 24px;
     font-weight: 700;
     line-height: 1;
     color: var(--color-text-primary);
     overflow: visible;
+}
+
+.odo-digit:last-child {
+    border-right: none;
 }
 
 /* ============================================
