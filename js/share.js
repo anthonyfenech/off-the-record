@@ -26,6 +26,9 @@
     const WATERMARK_LOGO_URI = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="70" fill="#1A1A1A"/><circle cx="100" cy="100" r="57" fill="#FFFFFF"/><circle cx="100" cy="100" r="36" fill="#D42B2B"/></svg>');
     let watermarkLogoImg = null;
 
+    // Likes endpoint (direct POST, not routed through analytics)
+    const LIKES_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
+
     // Theme-aware colors
     const THEME_COLORS = {
         light: {
@@ -854,18 +857,28 @@
         // 5. Log payload for testing (remove later)
         console.log('[OTR-Like]', payload);
 
-        // 6. Send to backend (fire and forget)
+        // Ensure action is set for backend routing
+        payload.action = 'like';
+
+        // Add session ID if available
         try {
-            const url = window.OTR_CONFIG?.analyticsScriptUrl ||
-                'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
-            fetch(url, {
+            payload.sessionId = window.readerAnalytics?.sessionId
+                || sessionStorage.getItem('otr_session_id')
+                || ('like_' + Date.now());
+        } catch(e) {
+            payload.sessionId = 'like_' + Date.now();
+        }
+
+        // Fire and forget — do not await
+        try {
+            fetch(LIKES_ENDPOINT, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain' },
                 body: JSON.stringify(payload)
             });
-        } catch (err) {
-            // Silently ignore - animation already happened
+        } catch (e) {
+            // Silently ignore network errors
         }
 
         // 7. Toast
