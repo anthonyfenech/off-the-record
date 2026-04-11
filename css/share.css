@@ -9,34 +9,37 @@
 
 .share-o-button {
     position: fixed;
-    bottom: calc(24px + env(safe-area-inset-bottom));
+    bottom: calc(32px + env(safe-area-inset-bottom));
     right: 24px;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     border: none;
-    background: rgba(255, 255, 255, 0.9);
-    color: #cc0000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 24px;
-    font-weight: bold;
+    background: transparent;
+    padding: 0;
     cursor: pointer;
     z-index: 95;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    transition: transform 0.15s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
 .share-o-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .share-o-button:active {
     transform: scale(0.95);
+}
+
+.share-o-logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 /* Loading state - pulse animation */
@@ -50,27 +53,19 @@
     50% { transform: scale(1.1); opacity: 0.7; }
 }
 
-/* Dark mode */
-[data-theme="dark"] .share-o-button {
-    background: rgba(40, 40, 40, 0.95);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="dark"] .share-o-button:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
+/* Dark mode - no overrides needed, logo is self-contained */
 
 /* Mobile adjustments - larger touch target area via padding */
 @media (max-width: 599px) {
     .share-o-button {
-        bottom: max(80px, calc(env(safe-area-inset-bottom) + 70px));
+        bottom: max(88px, calc(env(safe-area-inset-bottom) + 78px));
     }
 }
 
 /* Very small screens (iPhone SE) - ensure O button clears nav-footer */
 @media (max-width: 375px) {
     .share-o-button {
-        bottom: max(90px, calc(env(safe-area-inset-bottom) + 80px));
+        bottom: max(98px, calc(env(safe-area-inset-bottom) + 88px));
         right: 16px;
     }
 }

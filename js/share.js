@@ -116,7 +116,7 @@
         oButton = document.createElement('button');
         oButton.id = 'share-o-button';
         oButton.className = 'share-o-button';
-        oButton.textContent = 'O';
+        oButton.innerHTML = '<img src="./assets/icons/red-dot-o-logo.svg" alt="Share" class="share-o-logo">';
         oButton.setAttribute('aria-label', 'Share this passage');
         oButton.addEventListener('click', handleOButtonClick);
 
