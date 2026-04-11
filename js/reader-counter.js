@@ -16,6 +16,13 @@
 
     // Fetch and display count
     async function fetchCount() {
+        // Check admin toggle - skip fetch entirely if disabled
+        if (localStorage.getItem('admin_readerCounterEnabled') === 'false') {
+            var countEl = document.getElementById('reader-count');
+            if (countEl) countEl.style.display = 'none';
+            return;
+        }
+
         try {
             var response = await fetch(API_URL + '?action=getReaderCount');
             var data = await response.json();
