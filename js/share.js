@@ -22,6 +22,10 @@
     const CANVAS_TITLE_SIZE = 48;
     const WATERMARK_SIZE = 160;
 
+    // Watermark logo (data URI to avoid canvas tainting)
+    const WATERMARK_LOGO_URI = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="70" fill="#1A1A1A"/><circle cx="100" cy="100" r="57" fill="#FFFFFF"/><circle cx="100" cy="100" r="36" fill="#D42B2B"/></svg>');
+    let watermarkLogoImg = null;
+
     // Theme-aware colors
     const THEME_COLORS = {
         light: {
@@ -602,14 +606,18 @@
             ctx.fillText('…', CANVAS_PADDING, availableHeight);
         }
 
-        // Draw watermark
-        ctx.font = `bold ${WATERMARK_SIZE}px "Courier New", monospace`;
-        ctx.fillStyle = BRAND_RED;
-        ctx.globalAlpha = colors.watermarkOpacity;
-        ctx.textAlign = 'right';
-        ctx.fillText('O', CANVAS_WIDTH - 60, finalHeight - 60);
-        ctx.globalAlpha = 1;
-        ctx.textAlign = 'left';
+        // Draw watermark logo
+        if (watermarkLogoImg && watermarkLogoImg.complete) {
+            ctx.globalAlpha = colors.watermarkOpacity;
+            ctx.drawImage(
+                watermarkLogoImg,
+                CANVAS_WIDTH - 60 - WATERMARK_SIZE,  // x: right edge at CANVAS_WIDTH - 60
+                finalHeight - 60 - WATERMARK_SIZE,   // y: bottom edge at finalHeight - 60
+                WATERMARK_SIZE,
+                WATERMARK_SIZE
+            );
+            ctx.globalAlpha = 1;
+        }
 
         return canvas;
     }
@@ -1076,6 +1084,10 @@
         if (!document.getElementById('chapterBody')) {
             return;
         }
+
+        // Preload watermark logo
+        watermarkLogoImg = new Image();
+        watermarkLogoImg.src = WATERMARK_LOGO_URI;
 
         createOButton();
 
