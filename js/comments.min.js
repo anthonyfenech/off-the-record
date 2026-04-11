@@ -80,7 +80,7 @@
         if (commentButton) return;
 
         // Check admin toggle - default is OFF (feature hidden until enabled)
-        if (localStorage.getItem('admin_commentButtonEnabled') !== 'true') return;
+        if (localStorage.getItem('admin_commentButtonEnabled') === 'false') return;
 
         commentButton = document.createElement('button');
         commentButton.id = 'comment-bubble-button';

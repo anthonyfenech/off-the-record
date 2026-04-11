@@ -733,7 +733,7 @@
                     <div class="toggle-row">
                         <span class="toggle-label">Comment Button</span>
                         <label class="toggle-switch">
-                            <input type="checkbox" id="commentButtonEnabled">
+                            <input type="checkbox" id="commentButtonEnabled" checked>
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
@@ -1142,7 +1142,7 @@
                 fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false',
                 shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false',
                 mediaButtonEnabled: localStorage.getItem('admin_mediaButtonEnabled') !== 'false',
-                commentButtonEnabled: localStorage.getItem('admin_commentButtonEnabled') === 'true',
+                commentButtonEnabled: localStorage.getItem('admin_commentButtonEnabled') !== 'false',
                 readerCounterEnabled: localStorage.getItem('admin_readerCounterEnabled') !== 'false',
                 allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false'
             };
