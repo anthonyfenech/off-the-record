@@ -15,7 +15,7 @@
     const COMMENT_ENDPOINT = 'PLACEHOLDER_APPS_SCRIPT_URL';
     // TODO: Replace with actual Google Apps Script web app URL
 
-    const MAX_MESSAGE_LENGTH = 500;
+    const MAX_MESSAGE_LENGTH = 300;
     const RATE_LIMIT_MS = 30000; // 30 seconds between submissions
 
     // Chat bubble SVG icon (filled, uses currentColor for auto light/dark)
@@ -140,11 +140,7 @@
             <div class="comment-modal">
                 <button class="comment-modal-close" aria-label="Close">&times;</button>
                 <form class="comment-form" id="commentForm">
-                    <div class="comment-field">
-                        <textarea id="commentMessage" placeholder="Message" required maxlength="${MAX_MESSAGE_LENGTH}"></textarea>
-                        <div class="comment-char-counter"><span id="charCount">0</span>/${MAX_MESSAGE_LENGTH}</div>
-                        <span class="comment-error"></span>
-                    </div>
+                    <textarea id="commentMessage" placeholder="Message" required maxlength="${MAX_MESSAGE_LENGTH}"></textarea>
                     <button type="submit" class="comment-submit" id="commentSubmit">SEND</button>
                     <div class="comment-status" id="commentStatus"></div>
                 </form>
@@ -159,13 +155,6 @@
             if (e.target === modalOverlay) closeModal();
         });
         document.addEventListener('keydown', handleEscape);
-
-        // Character counter
-        const messageInput = document.getElementById('commentMessage');
-        const charCount = document.getElementById('charCount');
-        messageInput.addEventListener('input', () => {
-            charCount.textContent = messageInput.value.length;
-        });
 
         // Form submission
         document.getElementById('commentForm').addEventListener('submit', handleSubmit);
@@ -206,12 +195,14 @@
         const submitBtn = document.getElementById('commentSubmit');
         const statusEl = document.getElementById('commentStatus');
 
-        // Clear previous errors
-        clearErrors();
+        // Clear previous status
+        statusEl.textContent = '';
+        statusEl.className = 'comment-status';
 
         // Validate
         if (!messageInput.value.trim()) {
-            showFieldError(messageInput, 'Message is required');
+            statusEl.textContent = 'Message is required';
+            statusEl.className = 'comment-status error';
             return;
         }
 
@@ -270,20 +261,6 @@
             submitBtn.disabled = false;
             submitBtn.textContent = 'SEND';
         }
-    }
-
-    function showFieldError(input, message) {
-        const field = input.closest('.comment-field');
-        const errorEl = field.querySelector('.comment-error');
-        errorEl.textContent = message;
-        input.classList.add('error');
-    }
-
-    function clearErrors() {
-        const errors = document.querySelectorAll('.comment-error');
-        errors.forEach(el => el.textContent = '');
-        const inputs = document.querySelectorAll('.comment-form input, .comment-form textarea');
-        inputs.forEach(el => el.classList.remove('error'));
     }
 
     // ═══════════════════════════════════════════════════════════════
