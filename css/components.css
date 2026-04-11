@@ -535,10 +535,6 @@ p + p.has-dateline {
     color: var(--color-success);
 }
 
-.chapter-indicator.current {
-    color: var(--color-text-primary);
-}
-
 .chapter-indicator .current-chapter-logo {
     width: 18px;
     height: 18px;
