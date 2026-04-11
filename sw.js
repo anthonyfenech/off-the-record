@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v564';
+const CACHE_VERSION = 'v565';
 const STATIC_CACHE = 'off-the-record-static-v479';
 const CONTENT_CACHE = 'off-the-record-content-v479';
 const ANALYTICS_CACHE = 'off-the-record-analytics-v479';

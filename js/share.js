@@ -100,12 +100,17 @@
     let currentTextExcerpt = '';
     let isProcessing = false;
 
-    // Like feature state
-    const likedPassages = new Set();
+    // Like feature state — persisted to localStorage
+    const LIKED_PASSAGES_KEY = 'otr_liked_passages';
+    const likedPassages = new Set(JSON.parse(localStorage.getItem(LIKED_PASSAGES_KEY) || '[]'));
     let currentLikeChapterId = null;
     let currentLikeStartParagraph = null;
     let currentLikeEndParagraph = null;
     let currentLikePreview = '';
+
+    function saveLikedPassages() {
+        localStorage.setItem(LIKED_PASSAGES_KEY, JSON.stringify([...likedPassages]));
+    }
 
     // Check if clipboard image copy is supported (not in Firefox)
     const canCopyImages = typeof ClipboardItem !== 'undefined';
@@ -724,6 +729,15 @@
             }
         }
 
+        // Check if this passage is already liked — pre-apply red heart
+        const likeKey = `${currentLikeChapterId}-${currentLikeStartParagraph}-${currentLikeEndParagraph}`;
+        if (likedPassages.has(likeKey)) {
+            const likeBtn = overlay.querySelector('.share-btn-like');
+            if (likeBtn) {
+                likeBtn.classList.add('liked');
+            }
+        }
+
         // Event listeners
         overlay.querySelector('.share-close').addEventListener('click', closeOverlay);
         overlay.addEventListener('click', (e) => {
@@ -834,14 +848,19 @@
         // 1. Build dedup key from chapter + paragraph range
         const key = `${currentLikeChapterId}-${currentLikeStartParagraph}-${currentLikeEndParagraph}`;
 
-        // 2. Check module-level Set for duplicates
+        // 2. Toggle: if already liked, unlike it
         if (likedPassages.has(key)) {
-            showToast('Already loved');
+            likedPassages.delete(key);
+            saveLikedPassages();
+            btn.classList.remove('liked');
             return;
         }
-        likedPassages.add(key);
 
-        // 3. Animate: add 'liked' class to btn
+        // 3. Like: add to set and persist
+        likedPassages.add(key);
+        saveLikedPassages();
+
+        // 4. Animate: add 'liked' class to btn
         btn.classList.add('liked');
 
         // 4. Build payload
