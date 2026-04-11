@@ -93,6 +93,13 @@
     let currentTextExcerpt = '';
     let isProcessing = false;
 
+    // Like feature state
+    const likedPassages = new Set();
+    let currentLikeChapterId = null;
+    let currentLikeStartParagraph = null;
+    let currentLikeEndParagraph = null;
+    let currentLikePreview = '';
+
     // Check if clipboard image copy is supported (not in Firefox)
     const canCopyImages = typeof ClipboardItem !== 'undefined';
 
@@ -686,6 +693,7 @@
                     <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
                 <div class="share-actions" role="group" aria-label="Share options">
+                    <button class="share-btn share-btn-like" data-action="like" aria-label="Love this passage"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
                     <button class="share-btn share-btn-native" data-action="native" aria-label="Share"${!isOnline ? ' style="display:none"' : ''}>${ICONS.share}</button>
                     <button class="share-btn share-btn-email" data-action="email" aria-label="Email"${!isOnline ? ' style="display:none"' : ''}>${ICONS.email}</button>
                     <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">${canCopyImages ? ICONS.copy : ICONS.download}</button>
@@ -796,6 +804,9 @@
         const action = e.currentTarget.dataset.action;
 
         switch (action) {
+            case 'like':
+                await handleLike(e.currentTarget);
+                break;
             case 'copy':
                 await copyImageToClipboard();
                 break;
@@ -806,6 +817,51 @@
                 await nativeShare();
                 break;
         }
+    }
+
+    async function handleLike(btn) {
+        // 1. Build dedup key from chapter + paragraph range
+        const key = `${currentLikeChapterId}-${currentLikeStartParagraph}-${currentLikeEndParagraph}`;
+
+        // 2. Check module-level Set for duplicates
+        if (likedPassages.has(key)) {
+            showToast('Already loved');
+            return;
+        }
+        likedPassages.add(key);
+
+        // 3. Animate: add 'liked' class to btn
+        btn.classList.add('liked');
+
+        // 4. Build payload
+        const payload = {
+            action: 'like',
+            chapterId: currentLikeChapterId,
+            startParagraph: currentLikeStartParagraph,
+            endParagraph: currentLikeEndParagraph,
+            preview: currentLikePreview,
+            timestamp: new Date().toISOString()
+        };
+
+        // 5. Log payload for testing (remove later)
+        console.log('[OTR-Like]', payload);
+
+        // 6. Send to backend (fire and forget)
+        try {
+            const url = window.OTR_CONFIG?.analyticsScriptUrl ||
+                'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
+            fetch(url, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        } catch (err) {
+            // Silently ignore - animation already happened
+        }
+
+        // 7. Toast
+        showToast('Loved');
     }
 
     async function copyImageToClipboard(silent = false) {
@@ -941,6 +997,12 @@
             }
             return '';
         }).join('\n\n').trim();
+
+        // Set like metadata for heart button
+        currentLikeChapterId = window.currentChapterId || null;
+        currentLikeStartParagraph = 0; // TODO: calculate from captured content
+        currentLikeEndParagraph = content.filter(c => c.type === 'paragraph').length - 1;
+        currentLikePreview = currentTextExcerpt.substring(0, 100);
 
         // Ensure font is loaded before rendering
         await ensureFontLoaded();
