@@ -813,6 +813,12 @@
     }
 
     async function shareToTwitter() {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile && navigator.share && navigator.canShare) {
+            await nativeShare();
+            return;
+        }
+
         // Copy image to clipboard first (or download on Firefox)
         const copied = await copyImageToClipboard(true);
 
