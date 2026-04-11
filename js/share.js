@@ -23,7 +23,7 @@
     const WATERMARK_SIZE = 160;
 
     // Watermark logo (data URI to avoid canvas tainting)
-    const WATERMARK_LOGO_URI = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="70" fill="#1A1A1A"/><circle cx="100" cy="100" r="53" fill="#FFFFFF"/><circle cx="100" cy="100" r="33" fill="#D42B2B"/></svg>');
+    const WATERMARK_LOGO_URI = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="71" fill="#1A1A1A"/><circle cx="100" cy="100" r="53" fill="#FFFFFF"/><circle cx="100" cy="100" r="31" fill="#D42B2B"/></svg>');
     let watermarkLogoImg = null;
 
     // Likes endpoint (direct POST, not routed through analytics)
