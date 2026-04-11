@@ -157,6 +157,11 @@
             color: var(--color-text, #fff);
         }
 
+        [data-theme="dark"] .pdf-download-btn {
+            background: #f5f5f5;
+            color: #1A1A1A;
+        }
+
         /* Mobile - larger tap targets */
         @media (max-width: 599px) {
             .format-menu {
@@ -259,10 +264,11 @@
             <div class="chapter-body" id="chapterBody">
                 <!-- Format Menu -->
                 <nav class="format-menu">
-                    <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="format-item" id="pdfDownloadBtn">
+                    <div class="format-item">
                         <span class="format-name">PDF —</span>
                         <span class="format-emoji">📄</span>
-                    </a>
+                        <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-download-btn" style="padding:8px 20px;font-family:'Courier New',monospace;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;background:#1A1A1A;color:#fff;border-radius:3px;text-decoration:none;white-space:nowrap;">DOWNLOAD</a>
+                    </div>
                     <div class="format-item">
                         <span class="format-name">EPUB —</span>
                         <span class="format-emoji">📱</span>
@@ -681,7 +687,6 @@
     <script src="./js/analytics.min.js?v=423"></script>
 
     <!-- PDF Stamper (serial-numbered downloads) -->
-    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 
     <script src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
