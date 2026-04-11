@@ -901,7 +901,6 @@
         }
 
         // 7. Toast
-        showToast('Loved');
     }
 
     async function copyImageToClipboard(silent = false) {
