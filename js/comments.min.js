@@ -139,7 +139,6 @@
         modalOverlay.innerHTML = `
             <div class="comment-modal">
                 <button class="comment-modal-close" aria-label="Close">&times;</button>
-                <h2 class="comment-modal-title"></h2>
                 <form class="comment-form" id="commentForm">
                     <div class="comment-field">
                         <textarea id="commentMessage" placeholder="Message" required maxlength="${MAX_MESSAGE_LENGTH}"></textarea>
