@@ -1120,7 +1120,7 @@
                         await Promise.all(regs.map(r => r.unregister()));
                     }
 
-                    window.location.href = './admin.html';
+                    window.location.reload(true);
                 } catch (err) {
                     console.error('Deploy error:', err);
                     deployBtn.textContent = 'Deploy';
