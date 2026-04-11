@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v571';
+const CACHE_VERSION = 'v572';
 const STATIC_CACHE = 'off-the-record-static-v479';
 const CONTENT_CACHE = 'off-the-record-content-v479';
 const ANALYTICS_CACHE = 'off-the-record-analytics-v479';
@@ -58,7 +58,6 @@ const STATIC_ASSETS = [
     './js/overlay-cleanup.js',
     './js/binge-theme.min.js',
     './js/binge-analytics.min.js',
-    './js/pdf-stamper.min.js',
     './data/chapters.js',
     './data/media.js',
     './assets/icons/icon-192.png',
