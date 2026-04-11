@@ -1519,26 +1519,23 @@ body.clean-read .media-emoji {
 /* Close button - positioned over content */
 .media-modal-close {
     position: absolute;
-    top: 8px;
-    right: 8px;
-    background: var(--color-modal-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
     color: var(--color-text-primary);
     cursor: pointer;
-    padding: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-fast);
+    transition: color var(--transition-fast);
     z-index: 10;
-    width: var(--min-touch-target);
-    height: var(--min-touch-target);
 }
 
 .media-modal-close:hover {
-    background: var(--color-text-primary);
-    color: var(--color-modal-bg);
+    opacity: 0.7;
 }
 
 /* Modal Body */
@@ -2065,24 +2062,23 @@ body.show-captions .media-modal-caption {
 /* Photo Modal Close Button */
 .photo-modal-close {
     position: absolute;
-    top: var(--space-lg);
-    right: var(--space-lg);
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid var(--color-accent-light);
-    color: var(--color-background);
-    width: 48px;
-    height: 48px;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    transition: all var(--transition-fast);
+    transition: opacity var(--transition-fast);
 }
 
 .photo-modal-close:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+    opacity: 0.7;
 }
 
 /* Photo Modal Navigation */
@@ -3240,8 +3236,8 @@ body.show-captions .media-modal-caption {
     .media-modal-close {
         width: 44px;
         height: 44px;
-        top: 4px;
-        right: 4px;
+        top: 8px;
+        right: 8px;
     }
 
     /* Larger emoji touch targets */
@@ -3974,21 +3970,22 @@ html {
 /* Close button */
 .lightbox-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: var(--min-touch-target);
-    height: var(--min-touch-target);
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    padding: 0;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease;
 }
 
 .lightbox-close:hover {
-    color: var(--color-player-fill);
+    opacity: 0.7;
 }
 
 /* Image container */

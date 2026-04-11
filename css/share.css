@@ -119,31 +119,24 @@
 /* Close button - top right */
 .share-close {
     position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 32px;
-    height: 32px;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
     border: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: none;
     color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
     cursor: pointer;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: opacity 0.15s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
 .share-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
-.share-close svg {
-    width: 14px;
-    height: 14px;
+    opacity: 0.7;
 }
 
 /* Preview area - compact */
