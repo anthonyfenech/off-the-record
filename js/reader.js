@@ -122,12 +122,11 @@ class Reader {
         // Button text
         const buttonText = isNewReader ? 'START READING' : 'CONTINUE READING';
 
-        // Homepage: Title + button centered, sticker lower right
+        // Homepage: Title + button centered
         this.chapterBody.innerHTML = `
             <div class="home-content">
                 <h1 class="home-title">OFF-THE-RECORD</h1>
                 <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
-                <img src="./assets/icons/parental-advisory.svg" alt="Parental Advisory - Explicit Content" class="home-sticker">
             </div>
         `;
 
