@@ -34,12 +34,12 @@
         light: {
             bg: '#fafafa',
             text: '#1a1a1a',
-            watermarkOpacity: 0.18
+            watermarkOpacity: 1
         },
         dark: {
             bg: '#1a1a1a',
             text: '#f5f5f5',
-            watermarkOpacity: 0.22
+            watermarkOpacity: 1
         }
     };
 
