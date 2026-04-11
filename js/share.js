@@ -686,10 +686,9 @@
                     <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
                 <div class="share-actions" role="group" aria-label="Share options">
-                    <button class="share-btn share-btn-twitter" data-action="twitter" aria-label="Share to X"${!isOnline ? ' style="display:none"' : ''}>${ICONS.x}</button>
+                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share"${!isOnline ? ' style="display:none"' : ''}>${ICONS.share}</button>
                     <button class="share-btn share-btn-email" data-action="email" aria-label="Email"${!isOnline ? ' style="display:none"' : ''}>${ICONS.email}</button>
                     <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">${canCopyImages ? ICONS.copy : ICONS.download}</button>
-                    <button class="share-btn share-btn-native" data-action="native" aria-label="Share"${!isOnline ? ' style="display:none"' : ''}>${ICONS.share}</button>
                 </div>
                 ${offlineMessage}
                 <div class="share-toast" id="share-toast" role="status" aria-live="polite"></div>
@@ -797,9 +796,6 @@
         const action = e.currentTarget.dataset.action;
 
         switch (action) {
-            case 'twitter':
-                await shareToTwitter();
-                break;
             case 'copy':
                 await copyImageToClipboard();
                 break;
@@ -809,30 +805,6 @@
             case 'native':
                 await nativeShare();
                 break;
-        }
-    }
-
-    async function shareToTwitter() {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile && navigator.share && navigator.canShare) {
-            await nativeShare();
-            return;
-        }
-
-        // Copy image to clipboard first (or download on Firefox)
-        const copied = await copyImageToClipboard(true);
-
-        // Build tweet URL
-        const excerpt = currentTextExcerpt.substring(0, 200);
-        const tweetText = encodeURIComponent(`${excerpt}… — OFF-THE-RECORD`);
-        const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
-
-        window.open(tweetUrl, '_blank', 'noopener,noreferrer,width=550,height=420');
-
-        if (copied && canCopyImages) {
-            showToast('Image copied — paste into your tweet');
-        } else if (copied) {
-            showToast('Image downloaded — attach to your tweet');
         }
     }
 
@@ -901,14 +873,14 @@
             if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 await navigator.share({
                     title: 'OFF-THE-RECORD',
-                    text: currentTextExcerpt.substring(0, 200) + '…',
+                    text: "From Fenech's book lol",
                     files: [file]
                 });
             } else {
                 // Fallback: share without file
                 await navigator.share({
                     title: 'OFF-THE-RECORD',
-                    text: currentTextExcerpt.substring(0, 200) + '…',
+                    text: "From Fenech's book lol",
                     url: 'https://anthonyfenech.com/off-the-record/'
                 });
             }
