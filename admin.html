@@ -736,6 +736,13 @@
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Reader Counter</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="readerCounterEnabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="control-panel">
@@ -1127,7 +1134,8 @@
                 fullBookChapterBreaks: localStorage.getItem('admin_fullBookChapterBreaks') !== 'false',
                 shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false',
                 mediaButtonEnabled: localStorage.getItem('admin_mediaButtonEnabled') !== 'false',
-                commentButtonEnabled: localStorage.getItem('admin_commentButtonEnabled') === 'true'
+                commentButtonEnabled: localStorage.getItem('admin_commentButtonEnabled') === 'true',
+                readerCounterEnabled: localStorage.getItem('admin_readerCounterEnabled') !== 'false'
             };
         }
 
@@ -1152,13 +1160,16 @@
             if (document.getElementById('commentButtonEnabled')) {
                 document.getElementById('commentButtonEnabled').checked = settings.commentButtonEnabled;
             }
+            if (document.getElementById('readerCounterEnabled')) {
+                document.getElementById('readerCounterEnabled').checked = settings.readerCounterEnabled;
+            }
 
             // Add listeners for all toggles
             const toggles = ['showLockedPreviews', 'showCaptions',
                            'allowPageMode', 'allowFontSize',
                            'draftBlog', 'draftBookmarks',
                            'fullBookChapterBreaks', 'shareButtonEnabled', 'mediaButtonEnabled',
-                           'commentButtonEnabled'];
+                           'commentButtonEnabled', 'readerCounterEnabled'];
 
             toggles.forEach(id => {
                 document.getElementById(id).addEventListener('change', (e) => {
