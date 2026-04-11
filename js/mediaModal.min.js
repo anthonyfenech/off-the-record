@@ -102,12 +102,7 @@ class MediaModal {
         const closeBtn = document.createElement('button');
         closeBtn.className = 'media-modal-close';
         closeBtn.setAttribute('aria-label', 'Close media');
-        closeBtn.innerHTML = `
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        `;
+        closeBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>`;
         closeBtn.addEventListener('click', () => this.close());
 
         header.appendChild(headerContent);

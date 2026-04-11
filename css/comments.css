@@ -97,17 +97,19 @@
 }
 
 .comment-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
     display: flex;
-    justify-content: flex-end;
-    margin-left: auto;
-    margin-bottom: 4px;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
-    font-size: 24px;
-    line-height: 1;
     color: var(--color-text-secondary, #666);
     cursor: pointer;
-    padding: 4px 0;
+    z-index: 10;
     transition: color 0.15s ease;
 }
 
