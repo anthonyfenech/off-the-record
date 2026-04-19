@@ -213,10 +213,6 @@ body.paginated .chapter-body {
     transform: scale(1.05);
 }
 
-.nav-footer-screenshot:active {
-    transform: scale(0.95);
-}
-
 .nav-footer-screenshot img {
     width: 24px;
     height: 24px;
