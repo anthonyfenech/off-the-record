@@ -37,7 +37,9 @@
     // ═══════════════════════════════════════════════════════════════
 
     function isReadingScreen() {
-        // Check 1: Look for title-page or toc-page classes
+        // Supports main reader (#chapterBody) and binge mode (#content with .chapter-body)
+
+        // Check 1: Look for title-page or toc-page classes (main reader only)
         const chapterBody = document.getElementById('chapterBody');
         if (chapterBody) {
             const hasTitlePage = chapterBody.querySelector('.title-page');
@@ -47,15 +49,16 @@
             }
         }
 
-        // Check 2: Check chapter ID from window.currentChapterId
+        // Check 2: Check chapter ID from window.currentChapterId (main reader only)
         const currentChapterId = window.currentChapterId;
         if (currentChapterId === -1 || currentChapterId === 0 ||
             currentChapterId === '-1' || currentChapterId === '0') {
             return false;
         }
 
-        // Check 3: Verify we have actual content
-        if (!chapterBody || chapterBody.children.length === 0) {
+        // Check 3: Verify we have actual content (either mode)
+        const hasContent = document.querySelectorAll('.chapter-body p').length > 0;
+        if (!hasContent) {
             return false;
         }
 
@@ -99,10 +102,10 @@
     // ═══════════════════════════════════════════════════════════════
 
     function getVisiblePassage() {
-        const chapterBody = document.getElementById('chapterBody');
-        if (!chapterBody) return '';
+        // Use document-level selector to support both main reader and binge mode
+        const paragraphs = document.querySelectorAll('.chapter-body p');
+        if (paragraphs.length === 0) return '';
 
-        const paragraphs = chapterBody.querySelectorAll('p');
         const viewportTop = window.scrollY;
         const viewportBottom = viewportTop + window.innerHeight;
 
@@ -124,8 +127,24 @@
     }
 
     function getChapterTitle() {
+        // Try main reader DOM first
         const titleEl = document.getElementById('chapterTitle');
-        return titleEl?.textContent?.trim() || '';
+        if (titleEl?.textContent?.trim()) {
+            return titleEl.textContent.trim();
+        }
+        // Binge mode: derive from first visible paragraph's chapter-section
+        const paragraphs = document.querySelectorAll('.chapter-body p');
+        for (const p of paragraphs) {
+            const rect = p.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                const section = p.closest('.chapter-section');
+                if (section) {
+                    const header = section.querySelector('.chapter-title');
+                    return header?.textContent?.trim() || '';
+                }
+            }
+        }
+        return '';
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -294,8 +313,8 @@
     // ═══════════════════════════════════════════════════════════════
 
     function init() {
-        // Only initialize on reader pages
-        if (!document.getElementById('chapterBody')) {
+        // Only initialize on reader pages (main reader or binge mode)
+        if (!document.getElementById('chapterBody') && !document.getElementById('content')) {
             return;
         }
 
