@@ -379,10 +379,8 @@
             var ctaBtn = document.querySelector('.start-reading-btn') || document.getElementById('startReadingBtn');
             if (!ctaBtn) return;
 
-            // Change button text to show resume chapter
-            ctaBtn.textContent = bookmark.chapterTitle
-                ? 'RESUME: ' + bookmark.chapterTitle.toUpperCase()
-                : 'RESUME';
+            // Change button text to show resume
+            ctaBtn.textContent = 'RESUME';
 
             // Override click to go to bookmarked position
             ctaBtn.onclick = function(e) {
