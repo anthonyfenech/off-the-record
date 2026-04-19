@@ -4104,3 +4104,8 @@ body:not(.sidebar-open):not(.modal-open) {
     height: auto;
     max-height: 5000px;
 }
+
+/* CREDENTIALS tab hidden pre-launch — remove this rule to re-enable */
+.toc-top-section[data-section="credentials"] {
+    display: none;
+}
