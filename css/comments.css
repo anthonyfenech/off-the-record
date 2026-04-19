@@ -238,11 +238,13 @@
 @media (max-width: 599px) {
     .comment-modal-overlay {
         padding: 16px;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: center;
     }
 
     .comment-modal {
-        max-width: 100%;
+        width: 90%;
+        max-width: 360px;
         padding: 20px;
     }
 }
