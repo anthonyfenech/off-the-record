@@ -12,8 +12,7 @@
     // CONSTANTS
     // ═══════════════════════════════════════════════════════════════
 
-    const COMMENT_ENDPOINT = 'PLACEHOLDER_APPS_SCRIPT_URL';
-    // TODO: Replace with actual Google Apps Script web app URL
+    const COMMENT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
 
     const MAX_MESSAGE_LENGTH = 300;
     const RATE_LIMIT_MS = 30000; // 30 seconds between submissions
@@ -158,7 +157,7 @@
         modalOverlay.className = 'comment-modal-overlay';
         modalOverlay.innerHTML = `
             <div class="comment-modal">
-                <button class="comment-modal-close" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                <button class="comment-modal-close" aria-label="Close">×</button>
                 <form class="comment-form" id="commentForm">
                     <textarea id="commentMessage" placeholder="Message" required maxlength="${MAX_MESSAGE_LENGTH}"></textarea>
                     <button type="submit" class="comment-submit" id="commentSubmit">SEND</button>
@@ -249,9 +248,9 @@
             return;
         }
 
-        // Build payload
+        // Build payload (mirrors hearts pattern from share.js)
         const payload = {
-            type: 'comment',
+            action: 'comment',
             message: messageInput.value.trim(),
             passage: getVisiblePassage(),
             chapter: getChapterTitle(),
@@ -259,13 +258,6 @@
             url: window.location.href
         };
 
-        // Check if endpoint is placeholder
-        if (COMMENT_ENDPOINT.includes('PLACEHOLDER')) {
-            console.log('[Comments] Payload:', payload);
-            statusEl.textContent = 'Comment feature coming soon!';
-            statusEl.className = 'comment-status info';
-            return;
-        }
 
         // Disable submit
         submitBtn.disabled = true;
@@ -274,23 +266,24 @@
         statusEl.className = 'comment-status';
 
         try {
-            const response = await fetch(COMMENT_ENDPOINT, {
+            // Fire and forget — mirrors hearts pattern from share.js
+            fetch(COMMENT_ENDPOINT, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain' },
                 body: JSON.stringify(payload)
             });
 
             // With no-cors, we can't read the response, assume success
             lastSubmitTime = Date.now();
-            statusEl.textContent = 'Sent!';
+            statusEl.textContent = 'COMMENT SENT';
             statusEl.className = 'comment-status success';
 
             setTimeout(closeModal, 2000);
 
         } catch (error) {
             console.error('[Comments] Submit error:', error);
-            statusEl.textContent = 'Something went wrong. Try again.';
+            statusEl.textContent = 'SEND FAILED — TRY AGAIN';
             statusEl.className = 'comment-status error';
             submitBtn.disabled = false;
             submitBtn.textContent = 'SEND';
