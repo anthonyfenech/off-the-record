@@ -129,9 +129,6 @@ class Navigation {
 
     // Build top navigation sections (larger font)
     buildTopSections(fragment) {
-        // 0. CONTENTS link - standalone TOC page
-        fragment.appendChild(this.createTopSection({ id: 'contents', label: 'CONTENTS', type: 'link', url: './contents.html' }));
-
         // 1. BOOK section - contains all chapters
         fragment.appendChild(this.createBookSection());
 
@@ -251,7 +248,8 @@ class Navigation {
 
         const title = document.createElement('span');
         title.className = 'toc-chapter-title';
-        title.textContent = chapter.title;
+        // Override TOC chapter label to "CONTENTS"
+        title.textContent = chapter.section === 'toc' ? 'CONTENTS' : chapter.title;
 
         titleRow.appendChild(title);
 
@@ -272,7 +270,12 @@ class Navigation {
         const handleChapterSelect = () => {
             if (!isLocked) {
                 this.closeTOC();
-                reader.loadChapter(chapter.id);
+                // TOC chapter navigates to standalone contents page
+                if (chapter.section === 'toc') {
+                    window.location.href = './contents.html';
+                } else {
+                    reader.loadChapter(chapter.id);
+                }
             }
         };
         item.addEventListener('click', handleChapterSelect);
