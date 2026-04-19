@@ -284,6 +284,11 @@ body.paginated .chapter-body {
     color: #fff;
 }
 
+/* Hide footer during screenshot capture to prevent blow-up bug */
+body.capturing-screenshot .nav-footer {
+    visibility: hidden;
+}
+
 /* Table of Contents Sidebar - consolidated in components.css */
 
 .toc-header {

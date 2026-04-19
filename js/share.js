@@ -99,6 +99,7 @@
     let currentPreviewUrl = null;
     let currentTextExcerpt = '';
     let isProcessing = false;
+    let captureTimeout = null;
 
     // Like feature state — persisted to localStorage
     const LIKED_PASSAGES_KEY = 'otr_liked_passages';
@@ -1011,6 +1012,14 @@
     }
 
     async function captureAndShowOverlay() {
+        // Rapid-invocation guard: clear any stale timeout from prior
+        // capture that may still be pending
+        if (captureTimeout) {
+            clearTimeout(captureTimeout);
+            document.body.classList.remove('capturing-screenshot');
+            captureTimeout = null;
+        }
+
         // Debounce: ignore if already processing or overlay is open
         if (isProcessing || overlay) {
             return;
@@ -1029,6 +1038,13 @@
         }
 
         isProcessing = true;
+        document.body.classList.add('capturing-screenshot');
+
+        // Safety net: ensure class is removed after 10 seconds no matter what
+        captureTimeout = setTimeout(() => {
+            document.body.classList.remove('capturing-screenshot');
+            captureTimeout = null;
+        }, 10000);
 
         // Show loading state on O button
         if (screenshotBtn) {
@@ -1076,6 +1092,9 @@
                     if (!pngBlob) {
                         console.error('[Share] Failed to create PNG blob');
                         if (screenshotBtn) screenshotBtn.classList.remove('loading');
+                        clearTimeout(captureTimeout);
+                        captureTimeout = null;
+                        document.body.classList.remove('capturing-screenshot');
                         isProcessing = false;
                         return;
                     }
@@ -1106,6 +1125,10 @@
                             if (overlay) {
                                 overlay.classList.add('visible');
                             }
+                            // Cleanup: capture complete
+                            clearTimeout(captureTimeout);
+                            captureTimeout = null;
+                            document.body.classList.remove('capturing-screenshot');
                         });
                     }, 'image/jpeg', 0.92);
                 }, 'image/png');
@@ -1114,6 +1137,9 @@
                 if (screenshotBtn) {
                     screenshotBtn.classList.remove('loading');
                 }
+                clearTimeout(captureTimeout);
+                captureTimeout = null;
+                document.body.classList.remove('capturing-screenshot');
                 isProcessing = false;
             }
         }, 50);
