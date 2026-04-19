@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v590';
+const CACHE_VERSION = 'v591';
 const STATIC_CACHE = 'off-the-record-static-v483';
 const CONTENT_CACHE = 'off-the-record-content-v483';
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -23,7 +23,6 @@ const STATIC_ASSETS = [
     './css/layout.min.css',
     './css/components.min.css',
     './css/otr-tier1-states.css',
-    './css/share.min.css',
     './css/comments.min.css',
     './fonts/eb-garamond-regular.woff2',
     './fonts/eb-garamond-italic.woff2',

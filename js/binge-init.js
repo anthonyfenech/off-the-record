@@ -125,34 +125,6 @@ document.querySelectorAll('.media-emoji').forEach(emoji => {
     });
 });
 
-// Media toggle (in footer)
-const mediaBtn = document.getElementById('mediaBtn');
-const mediaKey = 'reader_cleanRead';
-
-// Check admin setting - hide button if disabled
-if (mediaBtn && localStorage.getItem('admin_mediaButtonEnabled') === 'false') {
-    mediaBtn.style.display = 'none';
-}
-
-if (mediaBtn) {
-    function updateMediaBtnState() {
-        const isCleanRead = localStorage.getItem(mediaKey) === 'true';
-        mediaBtn.classList.toggle('media-active', !isCleanRead);
-    }
-
-    if (localStorage.getItem(mediaKey) === 'true') {
-        document.body.classList.add('clean-read');
-    }
-    updateMediaBtnState();
-
-    mediaBtn.addEventListener('click', () => {
-        document.body.classList.toggle('clean-read');
-        const isCleanRead = document.body.classList.contains('clean-read');
-        localStorage.setItem(mediaKey, isCleanRead);
-        updateMediaBtnState();
-    });
-}
-
 // Expose globals for sidebar navigation
 window.CHAPTERS = CHAPTERS;
 window.chapters = chapters;

@@ -8,39 +8,6 @@
     'use strict';
 
     // ─────────────────────────────────────────────────────────────
-    // MEDIA TOGGLE (Footer Navigation)
-    // Toggles clean-read mode (hides/shows media embeds)
-    // ─────────────────────────────────────────────────────────────
-    const mediaBtn = document.getElementById('mediaBtn');
-    const mediaKey = 'reader_cleanRead';
-
-    // Check admin setting - hide button if disabled
-    if (mediaBtn && localStorage.getItem('admin_mediaButtonEnabled') === 'false') {
-        mediaBtn.style.display = 'none';
-    }
-
-    if (mediaBtn) {
-        function updateMediaBtnState() {
-            const isCleanRead = localStorage.getItem(mediaKey) === 'true';
-            mediaBtn.classList.toggle('media-active', !isCleanRead);
-        }
-
-        // Load saved state
-        if (localStorage.getItem(mediaKey) === 'true') {
-            document.body.classList.add('clean-read');
-        }
-        updateMediaBtnState();
-
-        mediaBtn.addEventListener('click', function() {
-            document.body.classList.toggle('clean-read');
-            const isCleanRead = document.body.classList.contains('clean-read');
-            localStorage.setItem(mediaKey, isCleanRead);
-            updateMediaBtnState();
-        });
-    }
-
-    // ─────────────────────────────────────────────────────────────
-    // ─────────────────────────────────────────────────────────────
     // MODE TOGGLE (Scroll/Pages)
     // Switches between scroll mode and pagination mode
     // ─────────────────────────────────────────────────────────────
