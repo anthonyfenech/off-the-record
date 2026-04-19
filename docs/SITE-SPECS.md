@@ -177,7 +177,6 @@
 | `.nav-footer` | `1.5px solid var(--color-text-primary)` | layout.css:143 |
 | `.nav-btn` | `none` | layout.css:162 |
 | `.nav-btn.nav-media` | `1.5px solid var(--color-text-primary)` | layout.css:198 |
-| `.nav-btn.nav-binge` | `1.5px solid var(--color-text-primary)` | layout.css:198 |
 | Dark mode `.nav-footer` | `border-color: var(--color-border)` | layout.css:271 |
 
 ### Header

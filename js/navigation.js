@@ -148,7 +148,6 @@ class Navigation {
             ...(blogEnabled ? [{ id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' }] : []),
             ...(aboutEnabled ? [{ id: 'about', label: 'ABOUT', type: 'link', url: './about.html' }] : []),
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
-            ...(!lockedPages.includes('binge') ? [{ id: 'full-book', label: 'BINGE MODE', type: 'link', url: './binge-mode.html' }] : []),
             ...(!lockedPages.includes('download') ? [{ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html' }] : []),
             ...(!lockedPages.includes('credentials') ? [{ id: 'credentials', label: 'CREDENTIALS', type: 'link', url: './credentials.html' }] : []),
             ...(!lockedPages.includes('guestbook') ? [{ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }] : [])
@@ -307,7 +306,7 @@ class Navigation {
         }
     }
 
-    // Create a top section (BLOG, ABOUT, AUDIO, BINGE MODE, DOWNLOAD, GUESTBOOK)
+    // Create a top section (BLOG, ABOUT, AUDIO, DOWNLOAD, GUESTBOOK)
     createTopSection(section) {
         const sectionDiv = document.createElement('div');
         sectionDiv.className = 'toc-top-section';

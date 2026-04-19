@@ -7,10 +7,10 @@
 
 | Class | Purpose | Properties | Defined In |
 |---|---|---|---|
-| `scene-break` | Centered `***` divider | `text-align: center !important; text-indent: 0 !important;` | binge-mode.html, index.html, css/typography.css, css/components.css |
-| `flashback-header` | Special section headline | `text-align: center !important; text-indent: 0 !important; font-family: 'Courier New', monospace; font-weight: bold; font-size: calc(var(--font-size-reader) + 2px); letter-spacing: 3px;` | binge-mode.html, index.html, css/components.css |
-| `email-line` | Tight-grouped content (no spacing between lines) | `text-indent: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important;` | binge-mode.html, index.html |
-| `has-dateline` | Flush left with spacing above (for datelines) | `text-indent: 0 !important; margin-top: 1em !important;` | binge-mode.html, index.html |
+| `scene-break` | Centered `***` divider | `text-align: center !important; text-indent: 0 !important;` | index.html, css/typography.css, css/components.css |
+| `flashback-header` | Special section headline | `text-align: center !important; text-indent: 0 !important; font-family: 'Courier New', monospace; font-weight: bold; font-size: calc(var(--font-size-reader) + 2px); letter-spacing: 3px;` | index.html, css/components.css |
+| `email-line` | Tight-grouped content (no spacing between lines) | `text-indent: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important;` | index.html |
+| `has-dateline` | Flush left with spacing above (for datelines) | `text-indent: 0 !important; margin-top: 1em !important;` | index.html |
 
 ---
 
