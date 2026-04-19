@@ -1346,6 +1346,11 @@ button:focus-visible {
     }
 }
 
+/* Media emoji feature retired — hide globally */
+.media-emoji {
+    display: none;
+}
+
 /* Tappable Media Emojis - using specificity instead of !important */
 .chapter-body .media-emoji {
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", emoji, sans-serif;
