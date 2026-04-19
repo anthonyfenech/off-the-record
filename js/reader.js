@@ -338,12 +338,14 @@ class Reader {
         // Null guard for DOM element and empty content
         if (!this.chapterBody || this.paragraphElements.length === 0) return;
 
-        // Get available height for content
-        const availableHeight = this.getAvailableHeight();
+        // Two different heights: page 1 (with chapter header) vs pages 2+ (without)
+        const heightWithHeader = this.getAvailableHeight(true);
+        const heightWithoutHeader = this.getAvailableHeight(false);
 
         this.pages = [];
         let currentPageParagraphs = [];
         let currentHeight = 0;
+        let isFirstPage = true;
 
         // First, show all paragraphs to measure them
         this.paragraphElements.forEach(el => {
@@ -355,12 +357,16 @@ class Reader {
             const marginBottom = parseInt(window.getComputedStyle(element).marginBottom) || 0;
             const totalElementHeight = elementHeight + marginBottom;
 
+            // Use appropriate height based on which page we're building
+            const availableHeight = isFirstPage ? heightWithHeader : heightWithoutHeader;
+
             // Check if adding this element would exceed the page height
             if (currentHeight + elementHeight > availableHeight && currentPageParagraphs.length > 0) {
                 // Start a new page
                 this.pages.push([...currentPageParagraphs]);
                 currentPageParagraphs = [index];
                 currentHeight = totalElementHeight;
+                isFirstPage = false; // Subsequent pages use the larger height
             } else {
                 currentPageParagraphs.push(index);
                 currentHeight += totalElementHeight;
@@ -381,14 +387,15 @@ class Reader {
     }
 
     // Get available height for content
-    getAvailableHeight() {
+    // @param {boolean} includeChapterHeader - whether to subtract chapter header height (true for page 1, false for pages 2+)
+    getAvailableHeight(includeChapterHeader = true) {
         const viewportHeight = window.innerHeight;
         const header = document.querySelector('.header');
         const chapterHeader = document.querySelector('.chapter-header');
         const navFooter = document.querySelector('.nav-footer');
 
         const headerHeight = header ? header.offsetHeight : 70;
-        const chapterHeaderHeight = chapterHeader ? chapterHeader.offsetHeight : 0;
+        const chapterHeaderHeight = (includeChapterHeader && chapterHeader) ? chapterHeader.offsetHeight : 0;
         const footerHeight = navFooter ? navFooter.offsetHeight : 40;
 
         // Add some padding
@@ -404,6 +411,12 @@ class Reader {
 
         this.currentPage = pageIndex;
         const pageContent = this.pages[pageIndex];
+
+        // Show chapter header only on first page (pageIndex === 0)
+        const chapterHeader = document.querySelector('.chapter-header');
+        if (chapterHeader) {
+            chapterHeader.style.display = pageIndex === 0 ? '' : 'none';
+        }
 
         // Hide all paragraphs, then show only current page's
         this.paragraphElements.forEach((el, index) => {
