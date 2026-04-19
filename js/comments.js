@@ -159,7 +159,7 @@
             <div class="comment-modal">
                 <button class="comment-modal-close" aria-label="Close">×</button>
                 <form class="comment-form" id="commentForm">
-                    <textarea id="commentMessage" placeholder="Message" required maxlength="${MAX_MESSAGE_LENGTH}"></textarea>
+                    <textarea id="commentMessage" placeholder="Message" required></textarea>
                     <button type="submit" class="comment-submit" id="commentSubmit">SEND</button>
                     <div class="comment-status" id="commentStatus"></div>
                 </form>
@@ -177,6 +177,17 @@
 
         // Form submission
         document.getElementById('commentForm').addEventListener('submit', handleSubmit);
+
+        // Clear 280-char error when user edits back under limit
+        document.getElementById('commentMessage').addEventListener('input', function() {
+            const statusEl = document.getElementById('commentStatus');
+            if (statusEl.classList.contains('error') &&
+                statusEl.textContent.includes('280') &&
+                this.value.length <= 280) {
+                statusEl.textContent = '';
+                statusEl.className = 'comment-status';
+            }
+        });
 
         // Show with animation
         requestAnimationFrame(() => {
@@ -232,9 +243,16 @@
         statusEl.textContent = '';
         statusEl.className = 'comment-status';
 
-        // Validate
+        // Validate empty
         if (!messageInput.value.trim()) {
             statusEl.textContent = 'Message is required';
+            statusEl.className = 'comment-status error';
+            return;
+        }
+
+        // Validate length (280 char limit)
+        if (messageInput.value.length > 280) {
+            statusEl.textContent = 'Comment too long. 280 characters max.';
             statusEl.className = 'comment-status error';
             return;
         }
