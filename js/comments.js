@@ -170,6 +170,12 @@
     function closeModal() {
         if (!modalOverlay) return;
 
+        // Blur any focused input before removing (fixes iOS viewport distortion)
+        const activeEl = document.activeElement;
+        if (activeEl && modalOverlay.contains(activeEl)) {
+            activeEl.blur();
+        }
+
         modalOverlay.classList.remove('visible');
         document.removeEventListener('keydown', handleEscape);
 
@@ -177,6 +183,10 @@
             if (modalOverlay) {
                 modalOverlay.remove();
                 modalOverlay = null;
+            }
+            // Return focus to comment button
+            if (commentButton) {
+                commentButton.focus();
             }
         }, 200);
     }
