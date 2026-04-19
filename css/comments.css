@@ -1,17 +1,17 @@
 /**
  * Comment Bubble Styles - OFF-THE-RECORD
  * ======================================
- * Mirrors share button positioning (left instead of right).
+ * Comment bubble positioned at bottom-right (formerly share button position).
  */
 
 /* ═══════════════════════════════════════════════════════════════
-   COMMENT BUTTON - Mirrors .share-o-button exactly (left side)
+   COMMENT BUTTON - Bottom-right corner (where .share-o-button was)
    ═══════════════════════════════════════════════════════════════ */
 
 .comment-bubble-button {
     position: fixed;
     bottom: calc(32px + env(safe-area-inset-bottom));
-    left: 24px;
+    right: 24px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -52,7 +52,7 @@
 @media (max-width: 375px) {
     .comment-bubble-button {
         bottom: max(98px, calc(env(safe-area-inset-bottom) + 88px));
-        left: 16px;
+        right: 16px;
     }
 }
 
