@@ -196,14 +196,6 @@ body.paginated .chapter-body {
     margin: 0 14px;
 }
 
-/* BINGE — boxed style */
-.nav-btn.nav-binge {
-    border: 1.5px solid var(--color-text-primary);
-    padding: 3px 12px;
-    font-size: 9px;
-    letter-spacing: 0.12em;
-}
-
 /* Screenshot button in footer nav */
 .nav-footer-screenshot {
     display: flex;
@@ -237,10 +229,6 @@ body.paginated .chapter-body {
         min-height: 44px;
         padding: 10px 0;
     }
-    .nav-btn.nav-binge {
-        min-height: 44px;
-        padding: 3px 12px;
-    }
     .nav-footer-screenshot {
         min-height: 44px;
         min-width: 44px;
@@ -258,11 +246,6 @@ body.paginated .chapter-body {
         font-size: 10px;
         min-height: 44px;
         -webkit-tap-highlight-color: transparent;
-    }
-    .nav-btn.nav-binge {
-        font-size: 9px;
-        padding: 3px 10px;
-        min-height: 44px;
     }
     .nav-center {
         gap: 10px;
@@ -284,10 +267,6 @@ body.paginated .chapter-body {
         gap: 8px;
         margin: 0 8px;
     }
-    .nav-btn.nav-binge {
-        padding: 3px 8px;
-        font-size: 8px;
-    }
 }
 
 /* Dark mode support */
@@ -307,10 +286,6 @@ body.paginated .chapter-body {
 
 [data-theme="dark"] .nav-btn:active:not(:disabled) {
     color: #fff;
-}
-
-[data-theme="dark"] .nav-btn.nav-binge {
-    border-color: var(--color-border);
 }
 
 /* Table of Contents Sidebar - consolidated in components.css */

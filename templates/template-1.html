@@ -348,7 +348,6 @@
         function buildTOC() {
             const fragment = document.createDocumentFragment();
             fragment.appendChild(createBookSection());
-            fragment.appendChild(createTopSection({ id: 'binge-mode', label: 'BINGE MODE', url: './binge-mode.html' }));
             fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', url: './downloadpage.html' }));
             const divider = document.createElement('div');
             divider.className = 'toc-divider';

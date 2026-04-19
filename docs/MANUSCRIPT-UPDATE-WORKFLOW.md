@@ -24,11 +24,7 @@
 
 All manuscript content lives in ONE file: `data/chapters.js`
 
-This file feeds both:
-- The main reader (index.html) — chapter-by-chapter reading
-- Binge mode (binge-mode.html) — continuous scroll
-
-Update chapters.js once → both readers update automatically.
+This file feeds the main reader (index.html).
 
 ### Chapter Structure in chapters.js
 
@@ -497,7 +493,6 @@ node -e "import('./data/chapters.js').then(m => m.CHAPTERS.forEach(c => { if(c.c
 3. Click 2-3 media emojis — do they trigger?
 4. Check a dateline — is it flush left?
 5. Check a special section — does it match the formatting guide?
-6. Check binge mode — same content, same formatting?
 
 ---
 

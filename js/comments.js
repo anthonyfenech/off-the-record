@@ -36,7 +36,7 @@
     // ═══════════════════════════════════════════════════════════════
 
     function isReadingScreen() {
-        // Supports main reader (#chapterBody) and binge mode (#content with .chapter-body)
+        // Supports main reader (#chapterBody)
 
         // Check 1: Look for title-page or toc-page classes (main reader only)
         const chapterBody = document.getElementById('chapterBody');
@@ -101,7 +101,7 @@
     // ═══════════════════════════════════════════════════════════════
 
     function getVisiblePassage() {
-        // Use document-level selector to support both main reader and binge mode
+        // Use document-level selector to support main reader
         const paragraphs = document.querySelectorAll('.chapter-body p');
         if (paragraphs.length === 0) return '';
 
@@ -131,7 +131,7 @@
         if (titleEl?.textContent?.trim()) {
             return titleEl.textContent.trim();
         }
-        // Binge mode: derive from first visible paragraph's chapter-section
+        // Fallback: derive from first visible paragraph's chapter-section
         const paragraphs = document.querySelectorAll('.chapter-body p');
         for (const p of paragraphs) {
             const rect = p.getBoundingClientRect();
@@ -306,7 +306,7 @@
     // ═══════════════════════════════════════════════════════════════
 
     function init() {
-        // Only initialize on reader pages (main reader or binge mode)
+        // Only initialize on reader pages
         if (!document.getElementById('chapterBody') && !document.getElementById('content')) {
             return;
         }

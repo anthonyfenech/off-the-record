@@ -140,7 +140,7 @@
 
     function isReadingScreen() {
         // Belt and suspenders: check both class and chapter ID
-        // Supports main reader (#chapterBody) and binge mode (#content with .chapter-body)
+        // Supports main reader (#chapterBody)
 
         // Check 1: Look for title-page or toc-page classes (main reader only)
         const chapterBody = document.getElementById('chapterBody');
@@ -199,7 +199,7 @@
     // ═══════════════════════════════════════════════════════════════
 
     function captureVisibleText() {
-        // Use document-level selector to support both main reader and binge mode
+        // Use document-level selector to support main reader
         const paragraphs = document.querySelectorAll('.chapter-body p');
         if (paragraphs.length === 0) return [];
         const viewportTop = window.scrollY;
@@ -1124,7 +1124,7 @@
     // ═══════════════════════════════════════════════════════════════
 
     function init() {
-        // Only initialize on reader pages (main reader or binge mode)
+        // Only initialize on reader pages
         if (!document.getElementById('chapterBody') && !document.getElementById('content')) {
             return;
         }
