@@ -865,6 +865,9 @@
                 const fragment = document.createDocumentFragment();
 
                 // BOOK section
+                // CONTENTS link
+                fragment.appendChild(createTopSection({ id: 'contents', label: 'CONTENTS', type: 'link', url: './contents.html', current: false }));
+
                 fragment.appendChild(createBookSection());
 
                 // BINGE MODE link (current page - highlighted)

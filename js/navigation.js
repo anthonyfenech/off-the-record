@@ -129,6 +129,9 @@ class Navigation {
 
     // Build top navigation sections (larger font)
     buildTopSections(fragment) {
+        // 0. CONTENTS link - standalone TOC page
+        fragment.appendChild(this.createTopSection({ id: 'contents', label: 'CONTENTS', type: 'link', url: './contents.html' }));
+
         // 1. BOOK section - contains all chapters
         fragment.appendChild(this.createBookSection());
 
