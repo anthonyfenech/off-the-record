@@ -1,74 +1,8 @@
 /**
  * Share Feature Styles - OFF-THE-RECORD
  * =====================================
+ * Screenshot/share functionality triggered from footer nav button.
  */
-
-/* ═══════════════════════════════════════════════════════════════
-   O BUTTON
-   ═══════════════════════════════════════════════════════════════ */
-
-.share-o-button {
-    position: fixed;
-    bottom: calc(32px + env(safe-area-inset-bottom));
-    right: 24px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    z-index: 95;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.15s ease;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.share-o-button:hover {
-    transform: scale(1.05);
-}
-
-.share-o-button:active {
-    transform: scale(0.95);
-}
-
-.share-o-logo {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-/* Loading state - pulse animation */
-.share-o-button.loading {
-    animation: share-pulse 0.6s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes share-pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.7; }
-}
-
-/* Dark mode - no overrides needed, logo is self-contained */
-
-/* Mobile adjustments - larger touch target area via padding */
-@media (max-width: 599px) {
-    .share-o-button {
-        bottom: max(88px, calc(env(safe-area-inset-bottom) + 78px));
-    }
-}
-
-/* Very small screens (iPhone SE) - ensure O button clears nav-footer */
-@media (max-width: 375px) {
-    .share-o-button {
-        bottom: max(98px, calc(env(safe-area-inset-bottom) + 88px));
-        right: 16px;
-    }
-}
 
 /* ═══════════════════════════════════════════════════════════════
    SHARE OVERLAY - Compact Design

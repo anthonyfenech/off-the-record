@@ -188,7 +188,7 @@ body.paginated .chapter-body {
     height: 14px;
 }
 
-/* Center button group (BINGE + MEDIA) */
+/* Center button group */
 .nav-center {
     display: flex;
     align-items: center;
@@ -196,19 +196,39 @@ body.paginated .chapter-body {
     margin: 0 14px;
 }
 
-/* BINGE and MEDIA — boxed style */
-.nav-btn.nav-binge,
-.nav-btn.nav-media {
+/* BINGE — boxed style */
+.nav-btn.nav-binge {
     border: 1.5px solid var(--color-text-primary);
     padding: 3px 12px;
     font-size: 9px;
     letter-spacing: 0.12em;
 }
 
-/* MEDIA active state (when media is showing) */
-.nav-btn.nav-media.media-active {
-    background: var(--color-text-primary);
-    color: var(--color-background);
+/* Screenshot button in footer nav */
+.nav-footer-screenshot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.15s ease;
+}
+
+.nav-footer-screenshot:hover {
+    transform: scale(1.05);
+}
+
+.nav-footer-screenshot:active {
+    transform: scale(0.95);
+}
+
+.nav-footer-screenshot img {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 /* Touch devices - larger tap targets */
@@ -217,10 +237,13 @@ body.paginated .chapter-body {
         min-height: 44px;
         padding: 10px 0;
     }
-    .nav-btn.nav-binge,
-    .nav-btn.nav-media {
+    .nav-btn.nav-binge {
         min-height: 44px;
         padding: 3px 12px;
+    }
+    .nav-footer-screenshot {
+        min-height: 44px;
+        min-width: 44px;
     }
 }
 
@@ -236,8 +259,7 @@ body.paginated .chapter-body {
         min-height: 44px;
         -webkit-tap-highlight-color: transparent;
     }
-    .nav-btn.nav-binge,
-    .nav-btn.nav-media {
+    .nav-btn.nav-binge {
         font-size: 9px;
         padding: 3px 10px;
         min-height: 44px;
@@ -262,8 +284,7 @@ body.paginated .chapter-body {
         gap: 8px;
         margin: 0 8px;
     }
-    .nav-btn.nav-binge,
-    .nav-btn.nav-media {
+    .nav-btn.nav-binge {
         padding: 3px 8px;
         font-size: 8px;
     }
@@ -288,14 +309,8 @@ body.paginated .chapter-body {
     color: #fff;
 }
 
-[data-theme="dark"] .nav-btn.nav-binge,
-[data-theme="dark"] .nav-btn.nav-media {
+[data-theme="dark"] .nav-btn.nav-binge {
     border-color: var(--color-border);
-}
-
-[data-theme="dark"] .nav-btn.nav-media.media-active {
-    background: var(--color-text-primary);
-    color: var(--color-background);
 }
 
 /* Table of Contents Sidebar - consolidated in components.css */

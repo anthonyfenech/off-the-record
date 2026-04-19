@@ -297,18 +297,31 @@
             margin: 0 14px;
         }
 
-        /* MEDIA — boxed style */
-        .nav-btn.nav-media {
-            border: 1.5px solid #1a1a1a;
-            padding: 3px 12px;
-            font-size: 9px;
-            letter-spacing: 0.12em;
+        /* Screenshot button in footer nav */
+        .nav-footer-screenshot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            padding: 4px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform 0.15s ease;
         }
 
-        /* MEDIA active state */
-        .nav-btn.nav-media.media-active {
-            background: #1a1a1a;
-            color: #ffffff;
+        .nav-footer-screenshot:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-footer-screenshot:active {
+            transform: scale(0.95);
+        }
+
+        .nav-footer-screenshot img {
+            width: 24px;
+            height: 24px;
+            display: block;
         }
 
         /* Dark mode */
@@ -320,15 +333,6 @@
 
         [data-theme="dark"] .nav-btn {
             color: #e5e5e5;
-        }
-
-        [data-theme="dark"] .nav-btn.nav-media {
-            border-color: #555;
-        }
-
-        [data-theme="dark"] .nav-btn.nav-media.media-active {
-            background: #e5e5e5;
-            color: #1a1a1a;
         }
 
         .chapter-indicator {
@@ -481,10 +485,9 @@
                 user-select: none;
             }
 
-            .nav-btn.nav-media {
-                font-size: 9px;
-                padding: 3px 10px;
+            .nav-footer-screenshot {
                 min-height: 44px;
+                min-width: 44px;
             }
 
             .nav-center {
@@ -667,8 +670,8 @@
             <span>Prev</span>
         </button>
         <div class="nav-center">
-            <button type="button" class="nav-btn nav-media media-active" id="mediaBtn" aria-label="Toggle media">
-                <span>Media</span>
+            <button type="button" class="nav-footer-screenshot" id="screenshotBtn" aria-label="Take screenshot">
+                <img src="./assets/icons/red-dot-o-logo.svg" alt="Screenshot" width="24" height="24">
             </button>
         </div>
         <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Next chapter">

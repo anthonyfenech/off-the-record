@@ -91,7 +91,7 @@
     // STATE
     // ═══════════════════════════════════════════════════════════════
 
-    let oButton = null;
+    let screenshotBtn = null;
     let overlay = null;
     let currentImageBlob = null;      // PNG for clipboard copy
     let currentJpegBlob = null;       // JPEG for sharing (smaller file size)
@@ -116,31 +116,26 @@
     const canCopyImages = typeof ClipboardItem !== 'undefined';
 
     // ═══════════════════════════════════════════════════════════════
-    // O BUTTON
+    // SCREENSHOT BUTTON (in footer nav)
     // ═══════════════════════════════════════════════════════════════
 
-    function createOButton() {
-        if (oButton) return;
+    function bindScreenshotButton() {
+        screenshotBtn = document.getElementById('screenshotBtn');
+        if (!screenshotBtn) return;
 
         // Check admin setting
-        if (localStorage.getItem('admin_shareButtonEnabled') === 'false') return;
+        if (localStorage.getItem('admin_shareButtonEnabled') === 'false') {
+            screenshotBtn.style.display = 'none';
+            return;
+        }
 
-        oButton = document.createElement('button');
-        oButton.id = 'share-o-button';
-        oButton.className = 'share-o-button';
-        oButton.innerHTML = '<img src="./assets/icons/red-dot-o-logo.svg" alt="Share" class="share-o-logo">';
-        oButton.setAttribute('aria-label', 'Share this passage');
-        oButton.addEventListener('click', handleOButtonClick);
-
-        document.body.appendChild(oButton);
-        updateOButtonVisibility();
+        screenshotBtn.addEventListener('click', handleScreenshotClick);
     }
 
-    function updateOButtonVisibility() {
-        if (!oButton) return;
-
-        const shouldShow = isReadingScreen();
-        oButton.style.display = shouldShow ? 'flex' : 'none';
+    function handleScreenshotClick() {
+        // Only capture if on a reading screen
+        if (!isReadingScreen()) return;
+        captureAndShowOverlay();
     }
 
     function isReadingScreen() {
@@ -197,10 +192,6 @@
         }
         // Fallback: main reader mode
         return window.currentChapterId ?? null;
-    }
-
-    function handleOButtonClick() {
-        captureAndShowOverlay();
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -830,9 +821,9 @@
         currentTextExcerpt = '';
         isProcessing = false;
 
-        // Return focus to O button
-        if (oButton) {
-            oButton.focus();
+        // Return focus to screenshot button
+        if (screenshotBtn) {
+            screenshotBtn.focus();
         }
     }
 
@@ -1040,8 +1031,8 @@
         isProcessing = true;
 
         // Show loading state on O button
-        if (oButton) {
-            oButton.classList.add('loading');
+        if (screenshotBtn) {
+            screenshotBtn.classList.add('loading');
         }
 
         // Fix 4: Smart first-paragraph capture
@@ -1084,7 +1075,7 @@
                 canvas.toBlob(pngBlob => {
                     if (!pngBlob) {
                         console.error('[Share] Failed to create PNG blob');
-                        if (oButton) oButton.classList.remove('loading');
+                        if (screenshotBtn) screenshotBtn.classList.remove('loading');
                         isProcessing = false;
                         return;
                     }
@@ -1094,8 +1085,8 @@
                     // Also create JPEG blob (for sharing - smaller file size)
                     canvas.toBlob(jpegBlob => {
                         // Remove loading state
-                        if (oButton) {
-                            oButton.classList.remove('loading');
+                        if (screenshotBtn) {
+                            screenshotBtn.classList.remove('loading');
                         }
 
                         currentJpegBlob = jpegBlob;
@@ -1120,8 +1111,8 @@
                 }, 'image/png');
             } catch (err) {
                 console.error('[Share] Canvas rendering failed:', err);
-                if (oButton) {
-                    oButton.classList.remove('loading');
+                if (screenshotBtn) {
+                    screenshotBtn.classList.remove('loading');
                 }
                 isProcessing = false;
             }
@@ -1142,14 +1133,8 @@
         watermarkLogoImg = new Image();
         watermarkLogoImg.src = WATERMARK_LOGO_URI;
 
-        createOButton();
-
-        // Listen for chapter changes
-        window.addEventListener('chapterLoaded', updateOButtonVisibility);
-        window.addEventListener('hashchange', updateOButtonVisibility);
-
-        // Periodic check for visibility (in case of dynamic content)
-        setInterval(updateOButtonVisibility, 1000);
+        // Bind the screenshot button in footer nav
+        bindScreenshotButton();
 
         console.log('[Share] Initialized');
     }
