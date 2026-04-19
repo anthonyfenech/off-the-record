@@ -145,8 +145,9 @@
 
     function isReadingScreen() {
         // Belt and suspenders: check both class and chapter ID
+        // Supports main reader (#chapterBody) and binge mode (#content with .chapter-body)
 
-        // Check 1: Look for title-page or toc-page classes
+        // Check 1: Look for title-page or toc-page classes (main reader only)
         const chapterBody = document.getElementById('chapterBody');
         if (chapterBody) {
             const hasTitlePage = chapterBody.querySelector('.title-page');
@@ -156,15 +157,16 @@
             }
         }
 
-        // Check 2: Check chapter ID from window.currentChapterId or reader
+        // Check 2: Check chapter ID from window.currentChapterId or reader (main reader only)
         const currentChapterId = window.currentChapterId;
         if (currentChapterId === -1 || currentChapterId === 0 ||
             currentChapterId === '-1' || currentChapterId === '0') {
             return false;
         }
 
-        // Check 3: Verify we have actual content
-        if (!chapterBody || chapterBody.children.length === 0) {
+        // Check 3: Verify we have actual content (either mode)
+        const hasContent = document.querySelectorAll('.chapter-body p').length > 0;
+        if (!hasContent) {
             return false;
         }
 
@@ -176,6 +178,27 @@
         return true;
     }
 
+    function getChapterIdFromViewport() {
+        const paragraphs = document.querySelectorAll('.chapter-body p');
+        for (const p of paragraphs) {
+            const rect = p.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                // Found first visible paragraph — derive chapter from ancestor
+                const section = p.closest('.chapter-section');
+                if (section && section.dataset.chapter !== undefined && window.CHAPTERS) {
+                    const index = parseInt(section.dataset.chapter, 10);
+                    const chapter = window.CHAPTERS[index];
+                    if (chapter?.id !== undefined) {
+                        return chapter.id;
+                    }
+                }
+                break;
+            }
+        }
+        // Fallback: main reader mode
+        return window.currentChapterId ?? null;
+    }
+
     function handleOButtonClick() {
         captureAndShowOverlay();
     }
@@ -185,10 +208,9 @@
     // ═══════════════════════════════════════════════════════════════
 
     function captureVisibleText() {
-        const chapterBody = document.getElementById('chapterBody');
-        if (!chapterBody) return [];
-
-        const paragraphs = chapterBody.querySelectorAll('p');
+        // Use document-level selector to support both main reader and binge mode
+        const paragraphs = document.querySelectorAll('.chapter-body p');
+        if (paragraphs.length === 0) return [];
         const viewportTop = window.scrollY;
         const viewportBottom = viewportTop + window.innerHeight;
         const isCleanRead = document.body.classList.contains('clean-read');
@@ -377,7 +399,7 @@
 
             // Show title if the chapter header is visible OR we're within the first screen of content
             const chapterHeader = document.querySelector('.chapter-header');
-            const chapterBody = document.getElementById('chapterBody');
+            const chapterBody = document.getElementById('chapterBody') || document.getElementById('content');
             if (chapterHeader && chapterBody) {
                 const headerRect = chapterHeader.getBoundingClientRect();
                 const bodyRect = chapterBody.getBoundingClientRect();
@@ -1038,7 +1060,7 @@
         }).join('\n\n').trim();
 
         // Set like metadata for heart button
-        currentLikeChapterId = window.currentChapterId || null;
+        currentLikeChapterId = getChapterIdFromViewport();
         currentLikeStartParagraph = 0; // TODO: calculate from captured content
         currentLikeEndParagraph = content.filter(c => c.type === 'paragraph').length - 1;
         currentLikePreview = currentTextExcerpt.substring(0, 100);
@@ -1111,8 +1133,8 @@
     // ═══════════════════════════════════════════════════════════════
 
     function init() {
-        // Only initialize on main reader page (index.html)
-        if (!document.getElementById('chapterBody')) {
+        // Only initialize on reader pages (main reader or binge mode)
+        if (!document.getElementById('chapterBody') && !document.getElementById('content')) {
             return;
         }
 
