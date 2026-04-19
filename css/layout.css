@@ -166,11 +166,15 @@ body.paginated .chapter-body {
     gap: 4px;
     padding: 0;
     white-space: nowrap;
-    transition: opacity 0.15s ease;
+    transition: color 0.15s ease;
 }
 
 .nav-btn:hover:not(:disabled) {
-    opacity: 0.6;
+    color: #1A1A1A;
+}
+
+.nav-btn:active:not(:disabled) {
+    color: #000;
 }
 
 .nav-btn:disabled {
@@ -243,7 +247,7 @@ body.paginated .chapter-body {
         margin: 0 10px;
     }
     .nav-btn:active:not(:disabled) {
-        opacity: 0.5;
+        color: #000;
         transform: scale(0.95);
     }
 }
@@ -274,6 +278,14 @@ body.paginated .chapter-body {
 
 [data-theme="dark"] .nav-btn {
     color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .nav-btn:hover:not(:disabled) {
+    color: #fff;
+}
+
+[data-theme="dark"] .nav-btn:active:not(:disabled) {
+    color: #fff;
 }
 
 [data-theme="dark"] .nav-btn.nav-binge,
