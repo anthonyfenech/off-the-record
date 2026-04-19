@@ -184,6 +184,10 @@
                 modalOverlay.remove();
                 modalOverlay = null;
             }
+            // Reset iOS visual viewport shift caused by keyboard
+            // Known: visualViewport.width stays at 328 after keyboard dismissal on iOS.
+            // Not visually affecting UI. Revisit if width-related layout bugs surface.
+            window.scrollTo(0, window.scrollY);
             // Return focus to comment button
             if (commentButton) {
                 commentButton.focus();
