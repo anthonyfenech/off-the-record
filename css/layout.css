@@ -289,6 +289,11 @@ body.capturing-screenshot .nav-footer {
     visibility: hidden;
 }
 
+/* Hide footer while share overlay is visible */
+body.share-overlay-open .nav-footer {
+    visibility: hidden;
+}
+
 /* Table of Contents Sidebar - consolidated in components.css */
 
 .toc-header {

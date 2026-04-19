@@ -799,6 +799,7 @@
     }
 
     function closeOverlay() {
+        document.body.classList.remove('share-overlay-open');
         if (overlay) {
             overlay.classList.remove('visible');
             setTimeout(() => {
@@ -1124,6 +1125,7 @@
                         requestAnimationFrame(() => {
                             if (overlay) {
                                 overlay.classList.add('visible');
+                                document.body.classList.add('share-overlay-open');
                             }
                             // Cleanup: capture complete
                             clearTimeout(captureTimeout);
