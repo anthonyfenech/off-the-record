@@ -467,7 +467,7 @@
       }
 
       function fetchAndShow(){
-        if(localStorage.getItem('admin_readerCounterEnabled') === 'false') return;
+        if(localStorage.getItem('admin_readerCounterEnabled') !== 'true') return;
         if(typeof OTR_ANALYTICS_CONFIG === 'undefined') return;
         var url = OTR_ANALYTICS_CONFIG.readerCounterUrl + '?action=getReaderCount';
         fetch(url).then(function(r){return r.json();}).then(function(data){

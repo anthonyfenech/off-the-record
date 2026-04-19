@@ -728,7 +728,7 @@
                     <div class="toggle-row">
                         <span class="toggle-label">Readometer</span>
                         <label class="toggle-switch">
-                            <input type="checkbox" id="readerCounterEnabled" checked>
+                            <input type="checkbox" id="readerCounterEnabled">
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
@@ -1131,7 +1131,7 @@
                 shareButtonEnabled: localStorage.getItem('admin_shareButtonEnabled') !== 'false',
                 mediaButtonEnabled: localStorage.getItem('admin_mediaButtonEnabled') !== 'false',
                 commentButtonEnabled: localStorage.getItem('admin_commentButtonEnabled') !== 'false',
-                readerCounterEnabled: localStorage.getItem('admin_readerCounterEnabled') !== 'false',
+                readerCounterEnabled: localStorage.getItem('admin_readerCounterEnabled') === 'true',
                 allowBookmarks: localStorage.getItem('admin_allowBookmarks') !== 'false'
             };
         }
