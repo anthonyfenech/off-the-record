@@ -1346,9 +1346,18 @@ button:focus-visible {
     }
 }
 
-/* Media emoji feature retired — hide globally */
+/* Media emoji feature retired — aggressive hide to defeat capture libraries */
 .media-emoji {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    position: absolute !important;
+    left: -99999px !important;
+    pointer-events: none !important;
 }
 
 /* Tappable Media Emojis - using specificity instead of !important */
