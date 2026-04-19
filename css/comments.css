@@ -17,6 +17,7 @@
     border-radius: 50%;
     border: none;
     background: transparent;
+    color: #1A1A1A;
     padding: 0;
     cursor: pointer;
     z-index: 95;
@@ -224,6 +225,10 @@
     background: var(--color-background, #1a1a1a);
     border-color: var(--color-border, #333);
     color: var(--color-text-primary, #f5f5f5);
+}
+
+[data-theme="dark"] .comment-bubble-button {
+    color: #f5f5f5;
 }
 
 /* ═══════════════════════════════════════════════════════════════
