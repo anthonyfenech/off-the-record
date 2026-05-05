@@ -11,27 +11,24 @@ Operational notes and known issues to address after launch.
   load-bearing files: `variables.css`, `typography.css`,
   `components.css`, `layout.css`, `fonts.css`.
 
-## Item #6 — Hidden page breaks (deferred)
+## Item #6 — Hidden page breaks (REJECTED)
 
-Original spec: POST-MIGRATION-PUNCH-LIST-ITEM-6-HIDDEN-PAGE-BREAKS.md
-(stored in user's local files, not in repo).
+**Status:** Evaluated May 5, 2026. Rejected.
 
-Goal: Make 8 special sections (JUNK MAIL ×2, AIRPLANE MODE,
-EMBARRASSING FLASHBACK, TWO YEARS EARLIER, Malta ×3) feel
-like fresh pages.
+**Original spec:** POST-MIGRATION-PUNCH-LIST-ITEM-6-HIDDEN-PAGE-BREAKS.md (in user's local files, not in repo).
 
-May 5, 2026: Tried forced paginator pages via class
-`page-break-before` on marker paragraphs. Approach assumed
-page mode but the reader's default is scroll mode (body class
-`scrolling`) — forced breaks were invisible to readers.
-Reverted in commits `4478283` and `ab0791b`.
+**What was proposed:** Make 8 special sections (EMBARRASSING FLASHBACK, JUNK MAIL ×2, AIRPLANE MODE, TWO YEARS EARLIER, Malta italics ×3) function as forced paginator pages instead of being separated by *** scene-breaks.
 
-Future approaches to consider:
-1. CSS-only: extra top/bottom margin on the special sections,
-   applied via class on existing paragraphs (not `<div>`
-   wrapping which the loader can't parse). Works in both
-   modes via spacing.
-2. Mode-conditional: detect reading mode and apply different
-   treatment for page mode vs scroll mode.
-3. Accept current behavior: the `***` scene-breaks already
-   mark transitions for readers. Item may not need fixing.
+**Why rejected:**
+
+1. The reader defaults to scroll mode. Forced page breaks only render in page mode (minority use case). Scroll mode users would see no difference.
+
+2. *** is a universally recognized literary convention for section transitions. Replacing it with a non-standard interaction (tap "next" to continue) wouldn't improve the reading experience for any user.
+
+3. Malta passages are reflective italic meditations. They earn their atmosphere through the *** pause + contrast with surrounding prose. A "tap next" interruption would break that flow at exactly the wrong moment.
+
+4. Forced page breaks introduce mobile edge cases (Malta passages are giant single paragraphs that overflow forced page boundaries) and accessibility complexity (screen readers, keyboard navigation) for no real gain.
+
+**Conclusion:** The current *** scene-break design is correct for the medium (web memoir reading). The hidden-page-break idea was solving a print-book problem that doesn't apply here.
+
+**Closed permanently.** Do not revisit unless reader-mode usage data post-launch shows a strong shift to page mode AND user feedback specifically requests this treatment.
