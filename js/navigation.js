@@ -1,7 +1,6 @@
 // Navigation - Chapter navigation and Table of Contents
 
 import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears, getPreviousChapterId, getNextChapterId } from '../data/chapters.js';
-import { applyRedDotToTitle } from './red-dot.js';
 import { reader } from './reader.js';
 import { photoGallery } from './photoGallery.js';
 // Stub - data/photos.js removed
@@ -250,11 +249,7 @@ class Navigation {
         const title = document.createElement('span');
         title.className = 'toc-chapter-title';
         // Override TOC chapter label to "CONTENTS"
-        if (chapter.section === 'toc') {
-            title.textContent = 'CONTENTS';
-        } else {
-            title.innerHTML = applyRedDotToTitle(chapter.title);
-        }
+        title.textContent = chapter.section === 'toc' ? 'CONTENTS' : chapter.title;
 
         titleRow.appendChild(title);
 
