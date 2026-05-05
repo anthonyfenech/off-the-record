@@ -4122,3 +4122,32 @@ body:not(.sidebar-open):not(.modal-open) {
 .toc-top-section[data-section="credentials"] {
     display: none;
 }
+
+/* ============================================
+   CHAPTER TITLE IMAGES
+   For chapters with custom red-dot title PNGs
+   ============================================ */
+.chapter-title-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  /* Sized to match the rendered text height it replaces */
+  max-height: 1.2em;
+  /* Crisp rendering */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* When inside a chapter title h2, scale to match font-size */
+.chapter-title .chapter-title-img,
+.chapter-title-img {
+  max-height: 1.5em;
+}
+
+/* TOC sidebar — smaller */
+.toc-link .chapter-title-img,
+.toc-entry .chapter-title-img {
+  max-height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
