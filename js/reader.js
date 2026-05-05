@@ -7,6 +7,7 @@ import { readingModeManager } from './reading-mode.js';
 import { CONFIG } from './config.js';
 import { transitions } from './transitions.js';
 import { imageLightbox } from './image-lightbox.js';
+import { applyRedDotToTitle } from './red-dot.js';
 
 // Expose CHAPTERS globally for share feature
 window.CHAPTERS = CHAPTERS;
@@ -208,7 +209,7 @@ class Reader {
         window.currentChapterId = chapterId;
 
         // Update DOM - just the title, no subtitle or reading time
-        this.chapterTitle.textContent = chapter.title;
+        this.chapterTitle.innerHTML = applyRedDotToTitle(chapter.title);
 
         // Add data-slug for CSS targeting
         this.chapterBody.dataset.slug = chapter.slug || '';
@@ -673,7 +674,7 @@ class Reader {
 
         this.currentChapter = chapter.id;
         window.currentChapterId = chapter.id;
-        this.chapterTitle.textContent = chapter.title;
+        this.chapterTitle.innerHTML = applyRedDotToTitle(chapter.title);
 
         // Show locked placeholder
         this.chapterBody.innerHTML = `
@@ -707,7 +708,7 @@ class Reader {
         const chapter = CHAPTERS.find(c => c.id === chapterId);
         if (!chapter || !this.continueReading) return;
 
-        this.continueChapter.textContent = chapter.title;
+        this.continueChapter.innerHTML = applyRedDotToTitle(chapter.title);
         this.continueReading.style.display = 'block';
 
         this.continueReading.addEventListener('click', () => {
