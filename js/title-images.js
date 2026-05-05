@@ -16,7 +16,9 @@ const TITLE_IMAGE_MAP = {
   "ROAD TO OMAHA":          "title-road-to-omaha.png",
   "A LETTER TO THE EDITOR": "title-a-letter-to-the-editor.png",
   "BOTTOM NINE":            "title-bottom-nine.png",
-  "DEDICATION":             "title-dedication.png"
+  "DEDICATION":             "title-dedication.png",
+  "TABLE OF CONTENTS":      "title-table-of-contents.png",
+  "OFF-THE-RECORD":         "title-off-the-record.png"
 };
 
 const TITLE_IMAGE_BASE_PATH = "./assets/chapter-titles/";
