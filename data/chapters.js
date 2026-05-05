@@ -500,6 +500,8 @@ export const CHAPTERS = [
 
 <p>Tomorrow, I receive a flood of congratulations from my colleagues. I am finally a sports writer, unchained from the web desk—a <em>Ball Writer,</em> the Tigers’ beat writer, can you believe it?</p>
 
+<p></p>
+
 <p class="email-line"><strong>From:</strong> Myers, Gene <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">PM</span></p>
 
 <p class="email-line"><strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
