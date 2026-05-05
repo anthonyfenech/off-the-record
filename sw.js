@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v625';
+const CACHE_VERSION = 'v626';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -28,6 +28,21 @@ const STATIC_ASSETS = [
     './js/app.min.js',
     './js/reader.min.js',
     './js/navigation.min.js',
+    './js/title-images.js',
+    './assets/chapter-titles/title-authors-note.png',
+    './assets/chapter-titles/title-dream-job.png',
+    './assets/chapter-titles/title-opening-day.png',
+    './assets/chapter-titles/title-hot-seat.png',
+    './assets/chapter-titles/title-fireworks.png',
+    './assets/chapter-titles/title-world-series.png',
+    './assets/chapter-titles/title-awards-season.png',
+    './assets/chapter-titles/title-cooperstown.png',
+    './assets/chapter-titles/title-burn-out.png',
+    './assets/chapter-titles/title-globetrotting.png',
+    './assets/chapter-titles/title-road-to-omaha.png',
+    './assets/chapter-titles/title-a-letter-to-the-editor.png',
+    './assets/chapter-titles/title-bottom-nine.png',
+    './assets/chapter-titles/title-dedication.png',
     './js/storage.min.js',
     './js/pwa.min.js',
     './js/blog.min.js',
