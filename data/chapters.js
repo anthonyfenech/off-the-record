@@ -21,7 +21,7 @@ export const CHAPTERS = [
         teaser: "",
         content: `<div class="title-page">
 <div class="title-page-content">
-<h1 class="title-page-title"><picture class="chapter-title-picture"><img src="./assets/chapter-titles/title-off-the-record.png" alt="OFF-THE-RECORD" class="chapter-title-img chapter-title-img--light"><img src="./assets/chapter-titles/title-off-the-record-dark.png" alt="" aria-hidden="true" class="chapter-title-img chapter-title-img--dark"></picture></h1>
+<h1 class="title-page-title">OFF-THE-RECORD</h1>
 </div>
 </div>`,
         wordCount: 0
