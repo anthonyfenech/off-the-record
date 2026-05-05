@@ -7169,7 +7169,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p><em>Tuesday, December 19, 2017</em>—Woke up to a flurry of alerts. I'm in the tabloids again.</p>
+<p class="has-dateline"><span class="dateline"><em>Tuesday, December 19, 2017</em>—</span>Woke up to a flurry of alerts. I'm in the tabloids again.</p>
 
 <p>&quot;You see he did another fine piece, lol,&quot; a friend says. &quot;Guy is obsessed with you.&quot;</p>
 
