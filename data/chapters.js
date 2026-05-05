@@ -4214,7 +4214,7 @@ export const CHAPTERS = [
 
 <p>I consider calling Brad after the game but figure he’s all talked out. My column goes live:</p>
 
-<p>TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE</p>
+<p><strong>TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE</strong></p>
 
 <p></p>
 
