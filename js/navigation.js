@@ -270,12 +270,7 @@ class Navigation {
         const handleChapterSelect = () => {
             if (!isLocked) {
                 this.closeTOC();
-                // TOC chapter navigates to standalone contents page
-                if (chapter.section === 'toc') {
-                    window.location.href = './contents.html';
-                } else {
-                    reader.loadChapter(chapter.id);
-                }
+                reader.loadChapter(chapter.id);
             }
         };
         item.addEventListener('click', handleChapterSelect);
