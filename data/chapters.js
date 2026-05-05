@@ -7165,7 +7165,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p><strong>TWO YEARS EARLIER</strong></p>
+<p class="flashback-header"><strong>TWO YEARS EARLIER</strong></p>
 
 <p></p>
 
