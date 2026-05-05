@@ -129,7 +129,7 @@ export const CHAPTERS = [
 
 <p>I arrived in Malta in fall 2020, ahead of the second wave of COVID-19, and hunkered down inside a converted boat house along the sea. When I discovered the nearby bus stop was named <em>Anthony,</em> I took it as a sign I was in the right place.</p>
 
-<p><em>OFF-THE-RECORD </em>is my reporter’s spiral notebook of what I’ve learned and observed over the years, rather than a reasoned analysis of the state of sports journalism or Major League Baseball as it’s played these days. I wrote this book for the players I admired, the sources who trusted me, and especially for my sports writing superheroes, longing to experience their golden age … for if I couldn’t live vicariously through theirs, I’d want them to live through mine, a wild west on steroids where tweets matter more than words. For the TV talking heads, former wordsmiths who once spoke in deadline columns filed from press boxes of stadiums that no longer exist. For sports writers who never got the chance—those who’ve thought about going off-the-record and those who wouldn’t dare—and especially, those who think they’re better.</p>
+<p><em>OFF-THE-RECORD</em> is my reporter’s spiral notebook of what I’ve learned and observed over the years, rather than a reasoned analysis of the state of sports journalism or Major League Baseball as it’s played these days. I wrote this book for the players I admired, the sources who trusted me, and especially for my sports writing superheroes, longing to experience their golden age … for if I couldn’t live vicariously through theirs, I’d want them to live through mine, a wild west on steroids where tweets matter more than words. For the TV talking heads, former wordsmiths who once spoke in deadline columns filed from press boxes of stadiums that no longer exist. For sports writers who never got the chance—those who’ve thought about going off-the-record and those who wouldn’t dare—and especially, those who think they’re better.</p>
 
 <p>There are two problems with that type of all-in, lottery-winning approach. The most obvious but least serious is that even the people I considered friends in the business have at times treated me like a walking Wuhan lab.</p>
 
@@ -168,8 +168,6 @@ export const CHAPTERS = [
 <p>So, what follows then is not so much a book about me as it is a love letter to sports writing, a tribute to sports writers, one man’s lesson on the craft.</p>
 
 <p>It’s a reflection of what I’ve seen and felt while covering baseball for a living, which has provided me with the story of a lifetime, too good not to share.</p>
-
-<p></p>
 
 <p class="signature"><em>—Anthony Fenech<br>April 20, 2025<br>Portobello Flats, Malta</em></p>`,
         wordCount: 1695
