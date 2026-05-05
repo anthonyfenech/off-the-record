@@ -25,3 +25,6 @@ _working/
 eng.traineddata
 package.json
 package-lock.json
+
+# Migration safety backups (preserved in git history)
+*.BACKUP_*
