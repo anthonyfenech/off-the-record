@@ -12,7 +12,6 @@ const STATIC_ASSETS = [
     './offline.html',
     './downloadpage.html',
     './guestbook.html',
-    './contents.html',
     './credentials.html',
     './manifest.json',
     './css/fonts.min.css',
