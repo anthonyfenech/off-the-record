@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v629';
+const CACHE_VERSION = 'v630';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -57,6 +57,10 @@ const STATIC_ASSETS = [
     './assets/chapter-titles/title-a-letter-to-the-editor-dark.png',
     './assets/chapter-titles/title-bottom-nine-dark.png',
     './assets/chapter-titles/title-dedication-dark.png',
+    './assets/chapter-titles/title-table-of-contents.png',
+    './assets/chapter-titles/title-table-of-contents-dark.png',
+    './assets/chapter-titles/title-off-the-record.png',
+    './assets/chapter-titles/title-off-the-record-dark.png',
     './js/storage.min.js',
     './js/pwa.min.js',
     './js/blog.min.js',
