@@ -4151,3 +4151,34 @@ body:not(.sidebar-open):not(.modal-open) {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* ============================================
+   DARK MODE — Chapter title image swap
+   ============================================ */
+.chapter-title-img--dark {
+  display: none;
+}
+
+[data-theme="dark"] .chapter-title-img--light {
+  display: none;
+}
+
+[data-theme="dark"] .chapter-title-img--dark {
+  display: block;
+}
+
+/* ============================================
+   DARK MODE — OFF-THE-RECORD header swap
+   .header-logo-img is the existing wordmark class
+   ============================================ */
+.header-logo-img--dark {
+  display: none;
+}
+
+[data-theme="dark"] .header-logo-img--light {
+  display: none;
+}
+
+[data-theme="dark"] .header-logo-img--dark {
+  display: inline-block;
+}

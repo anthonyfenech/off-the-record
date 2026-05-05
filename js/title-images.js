@@ -32,9 +32,16 @@ function renderChapterTitle(title) {
   const filename = TITLE_IMAGE_MAP[upper];
 
   if (filename) {
-    return `<img src="${TITLE_IMAGE_BASE_PATH}${filename}" ` +
-           `alt="${escapeHtml(title)}" ` +
-           `class="chapter-title-img">`;
+    const lightSrc = TITLE_IMAGE_BASE_PATH + filename;
+    const darkSrc = TITLE_IMAGE_BASE_PATH +
+      filename.replace('.png', '-dark.png');
+    const altText = escapeHtml(title);
+    return `<picture class="chapter-title-picture">` +
+      `<img src="${lightSrc}" alt="${altText}" ` +
+      `class="chapter-title-img chapter-title-img--light">` +
+      `<img src="${darkSrc}" alt="" aria-hidden="true" ` +
+      `class="chapter-title-img chapter-title-img--dark">` +
+      `</picture>`;
   }
 
   // No image — return escaped text

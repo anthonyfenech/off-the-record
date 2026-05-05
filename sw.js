@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v627';
+const CACHE_VERSION = 'v628';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -43,6 +43,20 @@ const STATIC_ASSETS = [
     './assets/chapter-titles/title-a-letter-to-the-editor.png',
     './assets/chapter-titles/title-bottom-nine.png',
     './assets/chapter-titles/title-dedication.png',
+    './assets/chapter-titles/title-authors-note-dark.png',
+    './assets/chapter-titles/title-dream-job-dark.png',
+    './assets/chapter-titles/title-opening-day-dark.png',
+    './assets/chapter-titles/title-hot-seat-dark.png',
+    './assets/chapter-titles/title-fireworks-dark.png',
+    './assets/chapter-titles/title-world-series-dark.png',
+    './assets/chapter-titles/title-awards-season-dark.png',
+    './assets/chapter-titles/title-cooperstown-dark.png',
+    './assets/chapter-titles/title-burn-out-dark.png',
+    './assets/chapter-titles/title-globetrotting-dark.png',
+    './assets/chapter-titles/title-road-to-omaha-dark.png',
+    './assets/chapter-titles/title-a-letter-to-the-editor-dark.png',
+    './assets/chapter-titles/title-bottom-nine-dark.png',
+    './assets/chapter-titles/title-dedication-dark.png',
     './js/storage.min.js',
     './js/pwa.min.js',
     './js/blog.min.js',
@@ -72,6 +86,7 @@ const STATIC_ASSETS = [
     './assets/icons/icon-192.png',
     './assets/icons/icon-512.png',
     './assets/icons/OTR-header.png',
+    './assets/icons/OTR-header-dark.png',
     './assets/icons/tab-logo.svg'
 ];
 
