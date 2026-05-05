@@ -26,6 +26,7 @@ export const CHAPTERS = [
         wordCount: 0
     },
     {
+        id: 'toc',
         year: null,
         section: 'toc',
         title: "TABLE OF CONTENTS",
