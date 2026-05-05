@@ -673,6 +673,7 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
     letter-spacing: 0;
     color: var(--color-text-primary);
     text-decoration: none;
+    text-transform: uppercase;
     transition: color var(--transition-fast);
 }
 

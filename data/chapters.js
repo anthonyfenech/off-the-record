@@ -33,64 +33,61 @@ export const CHAPTERS = [
         slug: "table-of-contents",
         subtitle: "",
         teaser: "",
-        content: `<div class="toc-page">
-<h2 class="toc-page-title">TABLE OF CONTENTS</h2>
-<p class="toc-entry"><a href="#authors-note" class="toc-link">Author's Note</a></p>
+        content: `<p class="toc-entry"><a href="#authors-note" class="toc-link">AUTHOR'S NOTE</a></p>
 
-<p class="toc-entry"><a href="#summer-2017-prologue" class="toc-link">Summer 2017</a></p>
+<p class="toc-entry"><a href="#summer-2017-prologue" class="toc-link">SUMMER 2017</a></p>
 
-<p class="toc-entry"><a href="#dream-job" class="toc-link">Dream Job</a></p>
+<p class="toc-entry"><a href="#dream-job" class="toc-link">DREAM JOB</a></p>
 
-<p class="toc-entry"><a href="#scandal" class="toc-link">Scandal!</a></p>
+<p class="toc-entry"><a href="#scandal" class="toc-link">SCANDAL!</a></p>
 
-<p class="toc-entry"><a href="#rookie-year" class="toc-link">Rookie Year</a></p>
+<p class="toc-entry"><a href="#rookie-year" class="toc-link">ROOKIE YEAR</a></p>
 
-<p class="toc-entry"><a href="#opening-day" class="toc-link">Opening Day</a></p>
+<p class="toc-entry"><a href="#opening-day" class="toc-link">OPENING DAY</a></p>
 
-<p class="toc-entry"><a href="#trade-deadline" class="toc-link">Trade Deadline</a></p>
+<p class="toc-entry"><a href="#trade-deadline" class="toc-link">TRADE DEADLINE</a></p>
 
-<p class="toc-entry"><a href="#fire-drill" class="toc-link">Fire Drill</a></p>
+<p class="toc-entry"><a href="#fire-drill" class="toc-link">FIRE DRILL</a></p>
 
-<p class="toc-entry"><a href="#spring-training" class="toc-link">Spring Training</a></p>
+<p class="toc-entry"><a href="#spring-training" class="toc-link">SPRING TRAINING</a></p>
 
-<p class="toc-entry"><a href="#hot-seat" class="toc-link">Hot Seat</a></p>
+<p class="toc-entry"><a href="#hot-seat" class="toc-link">HOT SEAT</a></p>
 
-<p class="toc-entry"><a href="#wake-up-call" class="toc-link">Wake-Up Call</a></p>
+<p class="toc-entry"><a href="#wake-up-call" class="toc-link">WAKE-UP CALL</a></p>
 
-<p class="toc-entry"><a href="#prime-time" class="toc-link">Prime-Time</a></p>
+<p class="toc-entry"><a href="#prime-time" class="toc-link">PRIME-TIME</a></p>
 
-<p class="toc-entry"><a href="#fireworks" class="toc-link">Fireworks</a></p>
+<p class="toc-entry"><a href="#fireworks" class="toc-link">FIREWORKS</a></p>
 
-<p class="toc-entry"><a href="#summer-2017" class="toc-link">Summer 2017</a></p>
+<p class="toc-entry"><a href="#summer-2017" class="toc-link">SUMMER 2017</a></p>
 
-<p class="toc-entry"><a href="#world-series" class="toc-link">World Series</a></p>
+<p class="toc-entry"><a href="#world-series" class="toc-link">WORLD SERIES</a></p>
 
-<p class="toc-entry"><a href="#awards-season" class="toc-link">Awards Season</a></p>
+<p class="toc-entry"><a href="#awards-season" class="toc-link">AWARDS SEASON</a></p>
 
-<p class="toc-entry"><a href="#draft-day" class="toc-link">Draft Day</a></p>
+<p class="toc-entry"><a href="#draft-day" class="toc-link">DRAFT DAY</a></p>
 
-<p class="toc-entry"><a href="#cooperstown" class="toc-link">Cooperstown</a></p>
+<p class="toc-entry"><a href="#cooperstown" class="toc-link">COOPERSTOWN</a></p>
 
-<p class="toc-entry"><a href="#burn-out" class="toc-link">Burn Out</a></p>
+<p class="toc-entry"><a href="#burn-out" class="toc-link">BURN OUT</a></p>
 
-<p class="toc-entry"><a href="#viva-las-vegas" class="toc-link">Viva Las Vegas</a></p>
+<p class="toc-entry"><a href="#viva-las-vegas" class="toc-link">VIVA LAS VEGAS</a></p>
 
-<p class="toc-entry"><a href="#globetrotting" class="toc-link">Globetrotting</a></p>
+<p class="toc-entry"><a href="#globetrotting" class="toc-link">GLOBETROTTING</a></p>
 
-<p class="toc-entry"><a href="#road-to-omaha" class="toc-link">Road to Omaha</a></p>
+<p class="toc-entry"><a href="#road-to-omaha" class="toc-link">ROAD TO OMAHA</a></p>
 
-<p class="toc-entry"><a href="#letter-to-the-editor" class="toc-link">A Letter to the Editor</a></p>
+<p class="toc-entry"><a href="#letter-to-the-editor" class="toc-link">A LETTER TO THE EDITOR</a></p>
 
-<p class="toc-entry"><a href="#unethical" class="toc-link">Unethical</a></p>
+<p class="toc-entry"><a href="#unethical" class="toc-link">UNETHICAL</a></p>
 
-<p class="toc-entry"><a href="#bottom-nine" class="toc-link">Bottom Nine</a></p>
+<p class="toc-entry"><a href="#bottom-nine" class="toc-link">BOTTOM NINE</a></p>
 
-<p class="toc-entry"><a href="#the-pandemic" class="toc-link">The Pandemic</a></p>
+<p class="toc-entry"><a href="#the-pandemic" class="toc-link">THE PANDEMIC</a></p>
 
-<p class="toc-entry"><a href="#dedication" class="toc-link">Dedication</a></p>
+<p class="toc-entry"><a href="#dedication" class="toc-link">DEDICATION</a></p>
 
-<p class="toc-entry"><a href="./go-off.html" class="toc-link">Go Off</a></p>
-</div>`,
+<p class="toc-entry"><a href="./go-off.html" class="toc-link">GO OFF</a></p>`,
         wordCount: 0
     },
     {
