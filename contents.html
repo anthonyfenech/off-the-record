@@ -105,9 +105,13 @@
     <style>
         /* Contents page specific styles */
         .contents-page .chapter-body {
-            max-width: 520px;
+            max-width: 650px;
             margin: 0 auto;
             padding: 0 var(--padding-mobile);
+        }
+
+        .contents-page .chapter-header {
+            border-bottom: none;
         }
 
         .contents-header {
@@ -128,13 +132,13 @@
         }
 
         .contents-chapter {
-            padding: var(--space-sm) 0;
+            padding: 0;
         }
 
         .contents-chapter-link {
             font-family: var(--font-serif);
             font-size: var(--font-size-reader);
-            line-height: 1.4;
+            line-height: 1.5;
             color: var(--color-text-primary);
             text-decoration: none;
             text-transform: uppercase;
@@ -230,7 +234,7 @@
     <main class="reader" id="reader">
         <article class="chapter" id="chapterContent">
             <header class="chapter-header">
-                <h2 class="toc-top-title" id="chapterTitle">TABLE OF CONTENTS</h2>
+                <h2 class="chapter-title" id="chapterTitle">TABLE OF CONTENTS</h2>
             </header>
             <div class="chapter-body" id="chapterBody">
                 <!-- Chapter list populated by JavaScript -->
