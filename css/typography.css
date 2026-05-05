@@ -142,6 +142,13 @@ body {
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wide);
     text-align: center;
+
+    /* Locks bar position even when title image scales down
+       due to width-capping at narrow viewports */
+    min-height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .chapter-subtitle {
