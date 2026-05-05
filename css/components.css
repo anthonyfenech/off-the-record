@@ -665,6 +665,16 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
     line-height: 1.4;
 }
 
+/* Force uniform indentation for all TOC entries regardless of position */
+.toc-entry,
+.chapter-body .toc-entry,
+.chapter-body p.toc-entry:first-child,
+.chapter-body p.toc-entry {
+    text-indent: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
 .toc-link {
     display: block;
     font-family: var(--font-serif);

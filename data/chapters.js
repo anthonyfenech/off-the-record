@@ -12,6 +12,7 @@ This is placeholder text that will be replaced with the actual content.`.repeat(
 
 export const CHAPTERS = [
     {
+        id: 'title',
         year: null,
         section: 'title',
         title: "TITLE PAGE",
