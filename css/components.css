@@ -665,6 +665,12 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
     line-height: 1.4;
 }
 
+/* Forced-break markers — invisible structural hooks for the paginator.
+   Their presence in chapters.js triggers a forced page break at that location. */
+p.page-break-before {
+    display: none;
+}
+
 /* Force uniform indentation for all TOC entries regardless of position */
 .toc-entry,
 .chapter-body .toc-entry,
