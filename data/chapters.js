@@ -7183,7 +7183,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p><em>On Dec. 19, 2017, sports content coach Christopher Thomas phoned and immediately asked if I had sex with a former employee, identifying her by name. Taken aback, I indicated I didn't hear what he said. &quot;What?&quot; Thomas asked again: Did I have sex with (former employee)? I said I wasn't comfortable speaking about this. He asked if I could come in and meet with executive editor Peter Bhatia, who asked what my relationship was like with (former employee) and if we ever engaged in sexual activity in the parking garage. I said we became close friends and could not remember. No union rep was present.</em> </p>
+<p class="no-indent"><em>On Dec. 19, 2017, sports content coach Christopher Thomas phoned and immediately asked if I had sex with a former employee, identifying her by name. Taken aback, I indicated I didn't hear what he said. &quot;What?&quot; Thomas asked again: Did I have sex with (former employee)? I said I wasn't comfortable speaking about this. He asked if I could come in and meet with executive editor Peter Bhatia, who asked what my relationship was like with (former employee) and if we ever engaged in sexual activity in the parking garage. I said we became close friends and could not remember. No union rep was present.</em> </p>
 
 <p></p>
 
