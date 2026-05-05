@@ -360,11 +360,8 @@ class Reader {
             // Use appropriate height based on which page we're building
             const availableHeight = isFirstPage ? heightWithHeader : heightWithoutHeader;
 
-            // Forced page break: paragraphs with this class start a new page regardless of remaining space
-            const forceBreak = element.classList && element.classList.contains('page-break-before');
-
-            // Start a new page if forced OR if adding this element would exceed the page height
-            if ((forceBreak || currentHeight + elementHeight > availableHeight) && currentPageParagraphs.length > 0) {
+            // Check if adding this element would exceed the page height
+            if (currentHeight + elementHeight > availableHeight && currentPageParagraphs.length > 0) {
                 // Start a new page
                 this.pages.push([...currentPageParagraphs]);
                 currentPageParagraphs = [index];

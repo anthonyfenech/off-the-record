@@ -6928,7 +6928,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="page-break-before"></p>
+<p class="scene-break">***</p>
 
 <p></p>
 
@@ -6968,7 +6968,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="page-break-before"></p>
+<p class="scene-break">***</p>
 
 <p></p>
 
