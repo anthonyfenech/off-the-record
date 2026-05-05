@@ -18,7 +18,19 @@ const TITLE_IMAGE_MAP = {
   "BOTTOM NINE":            "title-bottom-nine.png",
   "DEDICATION":             "title-dedication.png",
   "TABLE OF CONTENTS":      "title-table-of-contents.png",
-  "OFF-THE-RECORD":         "title-off-the-record.png"
+  "OFF-THE-RECORD":         "title-off-the-record.png",
+  "SUMMER 2017":            "title-summer-2017.png",
+  "SCANDAL!":               "title-scandal.png",
+  "ROOKIE YEAR":            "title-rookie-year.png",
+  "TRADE DEADLINE":         "title-trade-deadline.png",
+  "FIRE DRILL":             "title-fire-drill.png",
+  "SPRING TRAINING":        "title-spring-training.png",
+  "WAKE-UP CALL":           "title-wake-up-call.png",
+  "PRIME-TIME":             "title-prime-time.png",
+  "DRAFT DAY":              "title-draft-day.png",
+  "VIVA LAS VEGAS":         "title-viva-las-vegas.png",
+  "UNETHICAL":              "title-unethical.png",
+  "THE PANDEMIC":           "title-the-pandemic.png"
 };
 
 const TITLE_IMAGE_BASE_PATH = "./assets/chapter-titles/";

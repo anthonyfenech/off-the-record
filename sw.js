@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v631';
+const CACHE_VERSION = 'v632';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -61,6 +61,30 @@ const STATIC_ASSETS = [
     './assets/chapter-titles/title-table-of-contents-dark.png',
     './assets/chapter-titles/title-off-the-record.png',
     './assets/chapter-titles/title-off-the-record-dark.png',
+    './assets/chapter-titles/title-summer-2017.png',
+    './assets/chapter-titles/title-summer-2017-dark.png',
+    './assets/chapter-titles/title-scandal.png',
+    './assets/chapter-titles/title-scandal-dark.png',
+    './assets/chapter-titles/title-rookie-year.png',
+    './assets/chapter-titles/title-rookie-year-dark.png',
+    './assets/chapter-titles/title-trade-deadline.png',
+    './assets/chapter-titles/title-trade-deadline-dark.png',
+    './assets/chapter-titles/title-fire-drill.png',
+    './assets/chapter-titles/title-fire-drill-dark.png',
+    './assets/chapter-titles/title-spring-training.png',
+    './assets/chapter-titles/title-spring-training-dark.png',
+    './assets/chapter-titles/title-wake-up-call.png',
+    './assets/chapter-titles/title-wake-up-call-dark.png',
+    './assets/chapter-titles/title-prime-time.png',
+    './assets/chapter-titles/title-prime-time-dark.png',
+    './assets/chapter-titles/title-draft-day.png',
+    './assets/chapter-titles/title-draft-day-dark.png',
+    './assets/chapter-titles/title-viva-las-vegas.png',
+    './assets/chapter-titles/title-viva-las-vegas-dark.png',
+    './assets/chapter-titles/title-unethical.png',
+    './assets/chapter-titles/title-unethical-dark.png',
+    './assets/chapter-titles/title-the-pandemic.png',
+    './assets/chapter-titles/title-the-pandemic-dark.png',
     './js/storage.min.js',
     './js/pwa.min.js',
     './js/blog.min.js',
