@@ -84,11 +84,7 @@ export const CHAPTERS = [
 
 <p class="toc-entry"><a href="#bottom-nine" class="toc-link">BOTTOM NINE</a></p>
 
-<p class="toc-entry"><a href="#the-pandemic" class="toc-link">THE PANDEMIC</a></p>
-
-<p class="toc-entry"><a href="#dedication" class="toc-link">DEDICATION</a></p>
-
-<p class="toc-entry"><a href="./go-off.html" class="toc-link">GO OFF</a></p>`,
+<p class="toc-entry"><a href="#the-pandemic" class="toc-link">THE PANDEMIC</a></p>`,
         wordCount: 0
     },
     {
@@ -8365,6 +8361,7 @@ export const CHAPTERS = [
         id: 29,
         year: null,
         section: 'postscript',
+        hideFromToc: true,
         title: "DEDICATION",
         slug: "dedication",
         subtitle: "",
@@ -8492,7 +8489,7 @@ export const getIntroChapters = () => {
 
 // Get postscript chapters (nested under POSTSCRIPT dropdown)
 export const getPostscriptChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'postscript');
+    return CHAPTERS.filter(c => c.section === 'postscript' && !c.hideFromToc);
 };
 
 // Get chapters grouped by year (only year-section chapters)
