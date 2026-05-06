@@ -1,7 +1,7 @@
 /**
  * Auto-Bookmark System
  * Saves reading position for chapter progress tracking
- * Note: Visual resume prompt removed - tracking remains for sidebar indicators
+ * Note: Visual continue reading prompt removed - tracking remains for sidebar indicators
  */
 
 (function() {
