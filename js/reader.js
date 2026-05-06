@@ -213,6 +213,7 @@ class Reader {
 
         // Add data-slug for CSS targeting
         this.chapterBody.dataset.slug = chapter.slug || '';
+        this.chapterBody.parentElement.dataset.slug = chapter.slug || '';
 
         // Check if chapter is preloaded for instant loading
         const preloaded = transitions.getPreloaded(chapterId);
