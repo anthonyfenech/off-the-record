@@ -134,7 +134,7 @@ body {
 
 .chapter-title {
     font-family: var(--font-mono);
-    font-size: 1.875rem;
+    font-size: 28px;
     line-height: 1.2;
     font-weight: bold;
     color: var(--color-text-primary);
@@ -316,7 +316,7 @@ body {
     }
 
     .chapter-title {
-        font-size: 1.5rem;
+        font-size: 26px;
     }
 
     .chapter-body h2 {
@@ -331,7 +331,7 @@ body {
 /* Tablet and up */
 @media (min-width: 600px) {
     .chapter-title {
-        font-size: var(--font-size-2xl);
+        font-size: 32px;
     }
 }
 
