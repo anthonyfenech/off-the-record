@@ -361,7 +361,7 @@
     <script defer src="./js/reader-name.min.js?v=423"></script>
     <script defer src="./js/analytics.min.js?v=423"></script>
 
-    <!-- Auto-Bookmark & Resume -->
+    <!-- Auto-Bookmark & Continue Reading -->
     <script defer src="./js/bookmark.min.js?v=423"></script>
 
     <!-- Admin Access (secret password) -->
@@ -371,10 +371,10 @@
 
     <script defer src="./js/otr-tier1-error-handler.min.js?v=423"></script>
 
-    <!-- Resume: hijack CONTINUE READING button when bookmark exists -->
+    <!-- Continue Reading CTA: hijack CONTINUE READING button when bookmark exists -->
     <script>
     (function(){
-        function initResume() {
+        function initContinueReadingCTA() {
             if (!window.bookmark) return;
             var bookmark = window.bookmark.get();
             if (!bookmark || !bookmark.chapterSlug) return;
@@ -382,7 +382,7 @@
             var ctaBtn = document.querySelector('.start-reading-btn') || document.getElementById('startReadingBtn');
             if (!ctaBtn) return;
 
-            // Change button text to show resume
+            // Change button text to show continue reading
             ctaBtn.textContent = 'CONTINUE READING';
 
             // Override click to go to bookmarked position
@@ -393,15 +393,15 @@
             };
         }
 
-        window.addEventListener('homePageLoaded', initResume);
+        window.addEventListener('homePageLoaded', initContinueReadingCTA);
 
         // Also check on DOMContentLoaded in case home page is already showing
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                if (document.querySelector('.home-content')) initResume();
+                if (document.querySelector('.home-content')) initContinueReadingCTA();
             });
         } else if (document.querySelector('.home-content')) {
-            initResume();
+            initContinueReadingCTA();
         }
     })();
     </script>
