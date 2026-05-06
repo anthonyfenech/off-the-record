@@ -52,7 +52,7 @@
     }
 
     // Font loading
-    const FONT_FAMILY = 'Literata';
+    const FONT_FAMILY = 'EB Garamond';
     const FONT_FALLBACK = 'Georgia';
     let fontLoaded = false;
     let fontFamily = FONT_FAMILY;
@@ -61,7 +61,7 @@
         if (fontLoaded) return;
 
         try {
-            // Try to load Literata at the canvas size
+            // Try to load EB Garamond at the canvas size
             const fontSpec = `${CANVAS_FONT_SIZE}px "${FONT_FAMILY}"`;
             const loadPromise = document.fonts.load(fontSpec);
             const timeoutPromise = new Promise((_, reject) =>
@@ -74,7 +74,7 @@
             if (!loadedFonts || loadedFonts.length === 0) {
                 // Double-check with fonts.check()
                 if (!document.fonts.check(fontSpec)) {
-                    console.warn('[Share] Literata not available, falling back to Georgia');
+                    console.warn('[Share] EB Garamond not available, falling back to Georgia');
                     fontFamily = FONT_FALLBACK;
                 }
             }
