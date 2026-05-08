@@ -6733,7 +6733,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p>9:27 <span class="small-caps">P.M.</span>—Trying to get social media attention, the <em>Freep</em> Twitter account sends a cute breaking news tweet, extra-cheeky and factually incorrect, linking to my game story:</p>
+<p class="has-dateline"><span class="dateline">9:27 <span class="small-caps">P.M.</span>—</span>Trying to get social media attention, the <em>Freep</em> Twitter account sends a cute breaking news tweet, extra-cheeky and factually incorrect, linking to my game story:</p>
 
 <p><em>#BREAKING: Justin Verlander once again pitches Detroit Tigers to victory, 2-1 in Houston.</em></p>
 
@@ -6741,7 +6741,7 @@ export const CHAPTERS = [
 
 <p>Ya think?</p>
 
-<p>9:30 <span class="small-caps">P.M.</span>—Gene Dias: “I’m going to speak with Justin again to see if he’ll talk to the media with you present, but I don’t expect anything has changed.”</p>
+<p class="has-dateline"><span class="dateline">9:30 <span class="small-caps">P.M.</span>—</span>Gene Dias: “I’m going to speak with Justin again to see if he’ll talk to the media with you present, but I don’t expect anything has changed.”</p>
 
 <p>I reiterate the party line: I’m a BBWAA member—I get the same access as everyone else.</p>
 
@@ -6749,15 +6749,15 @@ export const CHAPTERS = [
 
 <p>“What? My job?”</p>
 
-<p>9:33 <span class="small-caps">P.M.</span>—He’s back.</p>
+<p class="has-dateline"><span class="dateline">9:33 <span class="small-caps">P.M.</span>—</span>He’s back.</p>
 
 <p>“Justin said he is not talking with you there. You’ll come in when I get you.”</p>
 
-<p>9:35 <span class="small-caps">P.M.</span>—Doors open. The line snakes into the clubhouse. A super-sized security guard stands in my way. “You can’t go in right now.”</p>
+<p class="has-dateline"><span class="dateline">9:35 <span class="small-caps">P.M.</span>—</span>Doors open. The line snakes into the clubhouse. A super-sized security guard stands in my way. “You can’t go in right now.”</p>
 
 <p>I think about juking, but there’s backup—two others stand nearby.</p>
 
-<p>9:36 <span class="small-caps">P.M.</span>—I text MLB PR Mike Teevan: “Just got stopped by security… Verlander is not talking with me there and Gene has said I can’t come in with the others, until he gets me.”</p>
+<p class="has-dateline"><span class="dateline">9:36 <span class="small-caps">P.M.</span>—</span>I text MLB PR Mike Teevan: “Just got stopped by security… Verlander is not talking with me there and Gene has said I can’t come in with the others, until he gets me.”</p>
 
 <p>I call Teevan. No answer.</p>
 
@@ -6773,9 +6773,9 @@ export const CHAPTERS = [
 
 <p>The guy has a clean-shaven head. He wears khaki pants and a team-issued employee ID badge hanging from a belt loop. I take a few steps back and snap the cover shot of my career—three security guards, standing side by side by side in front of the Astros clubhouse.</p>
 
-<p>9:39 <span class="small-caps">P.M.</span>—Teevan, four minutes later: “I reached out to Gene and he said he’ll be getting you shortly.”</p>
+<p class="has-dateline"><span class="dateline">9:39 <span class="small-caps">P.M.</span>—</span>Teevan, four minutes later: “I reached out to Gene and he said he’ll be getting you shortly.”</p>
 
-<p>9:41 <span class="small-caps">P.M.</span>—Dias waves me in—six minutes late.</p>
+<p class="has-dateline"><span class="dateline">9:41 <span class="small-caps">P.M.</span>—</span>Dias waves me in—six minutes late.</p>
 
 <p>As I enter the room, the media scrum slowly dissipates from Justin’s locker. Cameras are down and reporters have retreated. While I was kept outside, Verlander talked about the loss.</p>
 
@@ -6805,17 +6805,17 @@ export const CHAPTERS = [
 
 <p>“Ver is an egomaniac,” someone shrugs. “Everyone knows that.”</p>
 
-<p>9:44 <span class="small-caps">P.M.</span>—Leaving the clubhouse, I call my boss.</p>
+<p class="has-dateline"><span class="dateline">9:44 <span class="small-caps">P.M.</span>—</span>Leaving the clubhouse, I call my boss.</p>
 
 <p>“You know we’re going to have to write about this, right?”</p>
 
 <p>The mad dash begins. It’s a five-alarm fire—and this one has my name in it. I exhaust my contacts, going all the way up to MLB’s top-ranking PR official, chief communications coordinator Pat Courtney, the commissioner’s right-hand man. I try to track down the BBWAA president and reach out to association secretary Jack O’Connell. I reach Crunk, who comes through in the clutch, sending a copy of the collective bargaining agreement.</p>
 
-<p>9:46 <span class="small-caps">P.M.</span>—I leave Gene Dias a voicemail, letting him know we’re writing a story.</p>
+<p class="has-dateline"><span class="dateline">9:46 <span class="small-caps">P.M.</span>—</span>I leave Gene Dias a voicemail, letting him know we’re writing a story.</p>
 
 <p>Returning to the press box, Dias is leaving. The door shuts behind him.</p>
 
-<p>10:30 <span class="small-caps">P.M.</span>—I head to the Four Seasons team hotel, find a second-floor table with a nearby electrical outlet and post up there. I’ve got one more story to write.</p>
+<p class="has-dateline"><span class="dateline">10:30 <span class="small-caps">P.M.</span>—</span>I head to the Four Seasons team hotel, find a second-floor table with a nearby electrical outlet and post up there. I’ve got one more story to write.</p>
 
 <p>The loud music of the lobby bar tries to lure me. I’ve been off the sauce for seven days and pass up the temptation with one concession—the Jack Daniel’s mini I keep in my work bag in case of emergency.</p>
 
@@ -6823,7 +6823,7 @@ export const CHAPTERS = [
 
 <p>The story goes live just before two in the morning.</p>
 
-<p>3:04 <span class="small-caps">A.M.</span>—I leave the Four Seasons so late, the Astros’ next opponents have already arrived for their upcoming series—a puddle of Angels luggage takes up half the valet line when I grab a cab.</p>
+<p class="has-dateline"><span class="dateline">3:04 <span class="small-caps">A.M.</span>—</span>I leave the Four Seasons so late, the Astros’ next opponents have already arrived for their upcoming series—a puddle of Angels luggage takes up half the valet line when I grab a cab.</p>
 
 <p>Could text Brad Ausmus but no—the Angels arrive having lost back-to-back walk-offs against the Rangers.</p>
 
