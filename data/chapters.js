@@ -157,7 +157,7 @@ export const CHAPTERS = [
 
 <p><em>OFF-THE-RECORD</em> is an authentic look at the life of a sports writer from online to print to Twitter to TV. The greatest job on Earth. As close to the bone as it gets, for better or worse.</p>
 
-<p>Whatever I wrote in all those hotel rooms and press boxes and hospitality lounges, whoever I texted and called and bribed for scoops back then, is no different in these pages than it was when I covered baseball like my life depended on it.</p>
+<p>Whatever I wrote in all those hotel rooms and press boxes and hospitality lounges, whoever I texted and called and bribed for scoops back then, is no different in these pages than it was during the wonder years when I covered baseball like my life depended on it.</p>
 
 <p>I haven’t enjoyed everything about sports writing. I’ve felt like an outcast at times and misunderstood at others. Yet, sitting here awash in the fatigue and excitement of surviving a marathon thrill ride, I know there’s been far more good than bad. I went from the rawest rookie to breaking stories and winning awards and building life-long relationships in baseball. I wouldn’t trade those years, or the years it took to write this book, for anything. If you doubt me, feel the early onset carpal tunnel in my wrists.</p>
 
