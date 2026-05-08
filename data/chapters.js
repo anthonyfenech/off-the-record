@@ -3078,7 +3078,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 13</em>—</span>Nothing much is happening in TigerTown, 24 hours before pitchers and catchers officially report.</p>
 
-<p>I was in-and-out by noon, bringing to mind something Pittsburgh writer Bill Brink once said: “I would love to see the look on our editors’ faces if they found out what we do early in spring training.”</p>
+<p>I was in-and-out by noon, bringing to mind something a Pittsburgh writer once said: “I would love to see the look on our editors’ faces if they found out what we do early in spring training.”</p>
 
 <p>The routine is always the same early in spring training. Arrive at 8 <span class="small-caps">A.M.</span> and gather ‘round the Tigers’ infield practice area. Watch pitchers and catchers play catch. Half throw bullpen sessions, then they go back into the clubhouse. We follow ‘em, get 15 minutes of clubhouse time and file out half past noon.</p>
 
