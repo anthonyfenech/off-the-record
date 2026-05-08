@@ -1520,7 +1520,7 @@ export const CHAPTERS = [
 
 <p>It’s a baseball-free night. When I check it next, there is a list of missed messages:</p>
 
-<p class="has-dateline"><span class="dateline">11:08 <span class="small-caps">P.M.</span>—</span>“Is Al on the trip?… Did you see the assistant sports editor’s email? A person at Channel 4 thinks Ilitch might have told Bernie about Ausmus being done at the end of the year… You watching???”</p>
+<p>11:08 <span class="small-caps">P.M.</span>— “Is Al on the trip?… Did you see the assistant sports editor’s email? A person at Channel 4 thinks Ilitch might have told Bernie about Ausmus being done at the end of the year… You watching???”</p>
 
 <p>Apparently, while I wasn’t, Bernie Smilovitz promoted an exclusive report during the break. “A major change is on the way for the Tigers. Tune into <em>Local 4 News</em> after the game.”</p>
 
@@ -1528,13 +1528,13 @@ export const CHAPTERS = [
 
 <p>Code green is now bright red—a five-alarm fire.</p>
 
-<p class="has-dateline"><span class="dateline">11:27 <span class="small-caps">P.M.</span>—</span>Someone passes along the phone number for a well-connected source. It’s a guy who’s In The Room, but nobody really knows what he does. I’ve never met him, so I call Ausmus instead.</p>
+<p>11:27 <span class="small-caps">P.M.</span>—Someone passes along the phone number for a well-connected source. It’s a guy who’s In The Room, but nobody really knows what he does. I’ve never met him, so I call Ausmus instead.</p>
 
 <p>I text PR and Dodgers beat writer Dylan Hernández, who says he’ll call back—he’s putting his kids to sleep.</p>
 
 <p>“What do I do?”</p>
 
-<p class="has-dateline"><span class="dateline">11:52 <span class="small-caps">P.M.</span>—</span>I call Brad. No answer.</p>
+<p>11:52 <span class="small-caps">P.M.</span>—I call Brad. No answer.</p>
 
 <p>“I hate to reach out about this. Have you been told anything about this report?”</p>
 
@@ -1550,7 +1550,7 @@ export const CHAPTERS = [
 
 <p>I relay the denial to the desk, but the source is already approved. A story is posted, matching Bernie’s report. According to the two largest news sites in Michigan, Ausmus is out.</p>
 
-<p class="has-dateline"><span class="dateline">12:38 <span class="small-caps">A.M.</span>—</span>Dylan Hernández suggests I call Scott Boras, because “Boras knows everything that’s going on.” It’s not even 10 <span class="small-caps">P.M.</span> out west. Boras tells me he hasn’t heard anything, but it certainly wouldn’t surprise him.</p>
+<p>12:38 <span class="small-caps">A.M.</span>—Dylan Hernández suggests I call Scott Boras, because “Boras knows everything that’s going on.” It’s not even 10 <span class="small-caps">P.M.</span> out west. Boras tells me he hasn’t heard anything, but it certainly wouldn’t surprise him.</p>
 
 <p>I’m assigned a next-day story—who’s up next? It’s on Freep.com by last call. FENECH—AUSMUS OUT, SO TIGERS SHOULD LOOK AT GARDENHIRE.</p>
 
@@ -2394,7 +2394,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">CHICAGO, <em>July 25</em>—</span>At the <em>Free Press,</em> we’re all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, after a weekend series against the White Sox, I’m staying another day in Chicago, where Big Ten football media day is being held at the convention center.</p>
+<p>CHICAGO<em>, July 25</em>—At the <em>Free Press,</em> we’re all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, after a weekend series against the White Sox, I’m staying another day in Chicago, where Big Ten football media day is being held at the convention center.</p>
 
 <p>I am on Harbaugh Watch, following him around all day for a feature story.</p>
 
@@ -4171,7 +4171,7 @@ export const CHAPTERS = [
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>September 22, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
 
-<p class="has-dateline"><span class="dateline">3:33 <span class="small-caps">P.M.</span>—</span>&quot;What’s going to happen at Comerica today?”</p>
+<p>3:33 <span class="small-caps">P.M.</span>—&quot;What’s going to happen at Comerica today?”</p>
 
 <p>Nothing that concerns me. The Tigers host the Twins—but I’m off.</p>
 
@@ -4457,7 +4457,7 @@ export const CHAPTERS = [
 
 <p>He answers. “Get back with ya here soon, buddy.”</p>
 
-<p class="has-dateline"><span class="dateline">6:59 <span class="small-caps">P.M.</span>—</span>Ken Rosenthal reports the Angels are in serious discussions to acquire Kinsler. A few minutes later, Rosenthal goes all the way. “Kinsler to Angels.”</p>
+<p>6:59 <span class="small-caps">P.M.</span>—Ken Rosenthal reports the Angels are in serious discussions to acquire Kinsler. A few minutes later, Rosenthal goes all the way. “Kinsler to Angels.”</p>
 
 <p>In The Room sources tell me no deal is imminent. The truth between what those sources say and what Rosenthal reported is semantics.</p>
 
@@ -4469,13 +4469,13 @@ export const CHAPTERS = [
 
 <p>Meanwhile, I haven’t heard back from Jay Franklin. “Soon, buddy” was an hour ago.</p>
 
-<p class="has-dateline"><span class="dateline">8:47 <span class="small-caps">P.M.</span>—</span>I get confirmation from an L.A. scout, but I can’t go with only a scout. I use it to confirm the deal, then quickly report the players Detroit receives in return.</p>
+<p>8:47 <span class="small-caps">P.M.</span>—I get confirmation from an L.A. scout, but I can’t go with only a scout. I use it to confirm the deal, then quickly report the players Detroit receives in return.</p>
 
 <p>Soon after, the feeling is downright funereal inside the Tigers’ suite. Team execs arrived envisioning a sweepstakes for Kinsler. Four teams were interested initially. Then Kinsler unplugged the game, and Detroit had to settle for what little the Angels offered.</p>
 
 <p>“It’s very frustrating,” Al Avila says.</p>
 
-<p class="has-dateline"><span class="dateline">11:44 <span class="small-caps">P.M.</span>—</span>At the lobby bar, I see a couple guys from the agency that represents Justin Upton. Reuniting with Upton weighed heavily on Kinsler’s decision.</p>
+<p>11:44 <span class="small-caps">P.M.</span>—At the lobby bar, I see a couple guys from the agency that represents Justin Upton. Reuniting with Upton weighed heavily on Kinsler’s decision.</p>
 
 <p>The trade took time because Avila held out false hope that Kinsler would budge. Kinsler phoned Avila with the bad news.</p>
 
@@ -5116,7 +5116,7 @@ export const CHAPTERS = [
 
 <p>“Lmfaoo bro I’m in the middle of a game and you’re texting me about a trade.”</p>
 
-<p class="has-dateline"><span class="dateline">11:32 <span class="small-caps">P.M.</span>—</span>As I sweat out the scoop, feeling it slipping away—I’ve had it for an hour now—I see a saving grace.</p>
+<p>11:32 <span class="small-caps">P.M.</span>—As I sweat out the scoop, feeling it slipping away—I’ve had it for an hour now—I see a saving grace.</p>
 
 <p>Kinsler’s agent Jay Franklin calls.</p>
 
@@ -5128,7 +5128,7 @@ export const CHAPTERS = [
 
 <p>“I’ll call you back.”</p>
 
-<p class="has-dateline"><span class="dateline">11:33 <span class="small-caps">P.M.</span>—</span>Seconds later, a tweet from Ken Rosenthal. “Red Sox get Kinsler.”</p>
+<p>11:33 <span class="small-caps">P.M.</span>—Seconds later, a tweet from Ken Rosenthal. “Red Sox get Kinsler.”</p>
 
 <p>Ball Writing: Where you can do everything right. You can get the scoop. You can have the contacts. You can pick up right away. And still, the agent could be trying to call Rosenthal, not you. The guy could hang up and immediately call him with the scoop.</p>
 
@@ -6874,7 +6874,7 @@ export const CHAPTERS = [
 
 <p>This is when it hits me: I am now the subject of the story.</p>
 
-<p class="has-dateline"><span class="dateline">10:32 <span class="small-caps">A.M.</span>—</span>Breakfast at the Sam Houston Hotel.</p>
+<p>10:32 <span class="small-caps">A.M.</span>—Breakfast at the Sam Houston Hotel.</p>
 
 <p>After placing my order, I call Evan, catching him up on the past five seasons of Fenech-Verlander sagas. About solar eclipse tweets, clubhouse freeze-outs and the Kate Upton Saved My Life story.</p>
 
@@ -6900,23 +6900,23 @@ export const CHAPTERS = [
 
 <p>He unfollowed me early in the 2017 season. Asked why, he said, “Too much sarcasm. I couldn’t take it anymore.”</p>
 
-<p class="has-dateline"><span class="dateline">10:57 <span class="small-caps">A.M.</span>—</span>The sports editor responds to Verlander from his personal Twitter account: “I would like to know who you have contacted @freep about telling your side of the story. My reporter has not heard from you directly, nor have I. My email is listed on the article we published last night—I am more than happy to speak with you about it.”</p>
+<p>10:57 <span class="small-caps">A.M.</span>—The sports editor responds to Verlander from his personal Twitter account: “I would like to know who you have contacted @freep about telling your side of the story. My reporter has not heard from you directly, nor have I. My email is listed on the article we published last night—I am more than happy to speak with you about it.”</p>
 
 <p>ISE Baseball CEO Mark Pieper called his work number and left a voicemail, but Thomas didn’t check until just now. Both Pieper and fellow ISE agent Mike Milchin has my number. Just saying.</p>
 
-<p class="has-dateline"><span class="dateline">11:03 <span class="small-caps">A.M.</span>—</span>The midday show on MLB Network Radio SiriusXM 89 weighs in with an interview of former Mets GM Jim Duquette. His take? “There must’ve been some critical articles of him (Verlander) in the past.”</p>
+<p>11:03 <span class="small-caps">A.M.</span>—The midday show on MLB Network Radio SiriusXM 89 weighs in with an interview of former Mets GM Jim Duquette. His take? “There must’ve been some critical articles of him (Verlander) in the past.”</p>
 
 <p>Duquette is asked if Verlander should have “let bygones be bygones and let everyone in—or just single out one person in particular?”</p>
 
 <p>“It’s definitely not a good look.”</p>
 
-<p class="has-dateline"><span class="dateline">11:27 <span class="small-caps">A.M.</span>—</span>I’m trending on Twitter. By noon, someone turns the feud into a meme, comparing a ’Tale of the Tape’ between the contestants. Every half hour, the feud is mentioned on The Ticket’s sports radio update. The meme gives my mustache the edge over his.</p>
+<p>11:27 <span class="small-caps">A.M.</span>—I’m trending on Twitter. By noon, someone turns the feud into a meme, comparing a ’Tale of the Tape’ between the contestants. Every half hour, the feud is mentioned on The Ticket’s sports radio update. The meme gives my mustache the edge over his.</p>
 
 <p><em>Deadspin</em>’s story has been up since mid-morning—ASTROS BAR REPORTER FROM POSTGAME PRESSER AT JUSTIN VERLANDER’S REQUEST. The reporter messages that she’s “writing about you being barred from the Astros postgame presser last night. What was their reason for keeping you out? Did you or your bosses lodge a complaint? Also happy to hop on the phone if you have a few minutes. Thanks.”</p>
 
 <p>I ignore her, like the rest of reporters who fill my text messages, direct messages, Facebook messages and email. There are already stories in the <em>New York Post, Sports Illustrated,</em> and <em>The Big Lead. Awful Announcing</em> and ESPN.com. Radio shows and TV stations are asking, even a blogger from <em>Barstool Sports.</em></p>
 
-<p class="has-dateline"><span class="dateline">1:05 <span class="small-caps">P.M.</span>—</span>MLB releases a statement: “Per our Club-Media Regulations, the reporter should have been allowed to enter the clubhouse postgame at the same time as the other members of the media. We have communicated this to the Astros.”</p>
+<p>1:05 <span class="small-caps">P.M.</span>—MLB releases a statement: “Per our Club-Media Regulations, the reporter should have been allowed to enter the clubhouse postgame at the same time as the other members of the media. We have communicated this to the Astros.”</p>
 
 <p>Messages arrive from everywhere. “You’re Big News on the radio,” a local radio host says. “People backing you.”</p>
 
@@ -6968,7 +6968,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">2:44 <span class="small-caps">P.M.</span>—</span>The barrage of messages continues when I return to reality.</p>
+<p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
 
 <p>Dylan Hernández: “Guessing everyone’s been bothering you today, but out of curiosity, why is Verlander so pissed at you?… Are you going back at him today? I think that’s what you have to think about.”</p>
 
@@ -6976,11 +6976,11 @@ export const CHAPTERS = [
 
 <p>“Was in airplane mode. As of right now, no. I would LOVE to write about it, though.”</p>
 
-<p class="has-dateline"><span class="dateline">3:17 <span class="small-caps">P.M.</span>—</span>Taking the hotel shuttle bus to the stadium, reading the Astros statement: “Reporter Anthony Fenech was delayed temporarily from entering the Astros clubhouse following last night’s game. This course of action was taken after taking into consideration the past history between Fenech and one of our players, Justin Verlander, Verlander’s legitimate concerns about past interactions with Fenech, and the best interests of the other media members working the game. We chose to prioritize these factors when making this decision. Fenech was allowed access to the clubhouse shortly after other media members and had the opportunity to approach Verlander or any player he needed. We believe that our course of action in this isolated case was appropriate.”</p>
+<p>3:17 <span class="small-caps">P.M.</span>—Taking the hotel shuttle bus to the stadium, reading the Astros statement: “Reporter Anthony Fenech was delayed temporarily from entering the Astros clubhouse following last night’s game. This course of action was taken after taking into consideration the past history between Fenech and one of our players, Justin Verlander, Verlander’s legitimate concerns about past interactions with Fenech, and the best interests of the other media members working the game. We chose to prioritize these factors when making this decision. Fenech was allowed access to the clubhouse shortly after other media members and had the opportunity to approach Verlander or any player he needed. We believe that our course of action in this isolated case was appropriate.”</p>
 
 <p>“Keep copious notes in this entire chapter of your life,” Pedro says. “Everything. Who’s contacted you. What they’ve said. Who you’ve contacted… Down the road, you never know.”</p>
 
-<p class="has-dateline"><span class="dateline">3:46 <span class="small-caps">P.M.</span>—</span>No security guard triple-team today. The Bad Boy of Ball Writing is back. My every move is watched inside the Astros’ clubhouse. <em>Of course,</em> I needed to off my phone. Nothing good to see there at the moment: <em>Y’all are nothing but leeches… You are a true dipshit… Fenech is garbage. Good for JV.</em></p>
+<p>3:46 <span class="small-caps">P.M.</span>—No security guard triple-team today. The Bad Boy of Ball Writing is back. My every move is watched inside the Astros’ clubhouse. <em>Of course,</em> I needed to off my phone. Nothing good to see there at the moment: <em>Y’all are nothing but leeches… You are a true dipshit… Fenech is garbage. Good for JV.</em></p>
 
 <p>I stand in the middle of the clubhouse like nothing’s wrong. Head up, eyes forward, no phone.</p>
 
@@ -6998,17 +6998,17 @@ export const CHAPTERS = [
 
 <p>I return 111 years later to enemy territory in the name of Jackson, my <em>Freep</em> forefather who once covered notoriously nasty Tigers outfielder Ty Cobb, a Hall of Fame player who slid with his metal spikes up. Jackson nicknamed Cobb the “Georgia Peach” in a <em>Free Press</em> column. He paved the path to where I stand in the Astros clubhouse today.</p>
 
-<p class="has-dateline"><span class="dateline">3:49 <span class="small-caps">P.M.</span>—</span>I take notes on everything and nothing at all. Mostly, the scene:</p>
+<p>3:49 <span class="small-caps">P.M.</span>—I take notes on everything and nothing at all. Mostly, the scene:</p>
 
 <p>Not many players in the clubhouse. Most are holding iPhones and iPads. Three guys playing Fortnite online—veteran outfielders Michael Brantley, George Springer and pitcher Wade Miley. Reporters talk to a rookie outfielder.</p>
 
 <p>Jose Altuve looks knowingly across the room. The Astros’ superstar second baseman sits at his locker, speaking in Spanish to a teammate who turns around to look at me.</p>
 
-<p class="has-dateline"><span class="dateline">3:53 <span class="small-caps">P.M.</span>—</span>David Barron introduces himself from the <em>Houston Chronicle.</em> Says he’s working on a story about the flap with Old Pal and asks, “Do you have anything to say about it?… Or is the paper speaking for you?”</p>
+<p>3:53 <span class="small-caps">P.M.</span>—David Barron introduces himself from the <em>Houston Chronicle.</em> Says he’s working on a story about the flap with Old Pal and asks, “Do you have anything to say about it?… Or is the paper speaking for you?”</p>
 
 <p>I have a lot to say about it, believe me. But I defer.</p>
 
-<p class="has-dateline"><span class="dateline">4:09 <span class="small-caps">P.M.</span>—</span>Back in the friendly confines of the Detroit clubhouse, the visitors are still buzzing after last night’s win. Nineties R&amp;B slaps from a slim boombox as I arrive in Gardy’s office pregame. Kci &amp; JoJo, I think it was.</p>
+<p>4:09 <span class="small-caps">P.M.</span>—Back in the friendly confines of the Detroit clubhouse, the visitors are still buzzing after last night’s win. Nineties R&amp;B slaps from a slim boombox as I arrive in Gardy’s office pregame. Kci &amp; JoJo, I think it was.</p>
 
 <p>“They let you in here?”</p>
 
@@ -7020,7 +7020,7 @@ export const CHAPTERS = [
 
 <p>And here I am, gobbling up the headlines for feuding with a player on the <em>losing</em> team. I’m supposed to ask for comment, but I’m being asked for comment. I cover the Tigers, but I went to the Astros clubhouse after the game yesterday—and again today.</p>
 
-<p class="has-dateline"><span class="dateline">4:28 <span class="small-caps">P.M.</span>—</span>Standing in the Detroit clubhouse, I’m alerted. “Call me please.”</p>
+<p>4:28 <span class="small-caps">P.M.</span>—Standing in the Detroit clubhouse, I’m alerted. “Call me please.”</p>
 
 <p>They want me to provide a statement. We don’t consult on what to say. I call a friend who knows a friend in PR crisis management, who advises strongly against the first ditty I scribbled down.</p>
 
@@ -7028,11 +7028,11 @@ export const CHAPTERS = [
 
 <p>My statement: “I’m extremely disappointed with the Astros’ inexplicable decision to limit my BBWAA-credentialed clubhouse access. In my time as the Tigers beat writer, my foremost goal has been fair and ethical coverage. I am confident that goal has been clearly and consistently achieved in my body of work and with the personal and professional way I build relationships across baseball.”</p>
 
-<p class="has-dateline"><span class="dateline">7:28 <span class="small-caps">P.M.</span>—</span><em>Chronicle</em> reporter David Barron sits in the front row as tonight’s game begins—I don’t know Barron beyond earlier, but he did strike me as a reporter who knows what to do with background information. Purely on that hunch, I walk down to his workspace and lean into his ear: “I know I can’t talk about this, but you can put on background if you want that I was in the Astros’ clubhouse. I’m just letting you know.”</p>
+<p>7:28 <span class="small-caps">P.M.</span>—<em>Chronicle</em> reporter David Barron sits in the front row as tonight’s game begins—I don’t know Barron beyond earlier, but he did strike me as a reporter who knows what to do with background information. Purely on that hunch, I walk down to his workspace and lean into his ear: “I know I can’t talk about this, but you can put on background if you want that I was in the Astros’ clubhouse. I’m just letting you know.”</p>
 
 <p>His story tomorrow includes this graf: “Verlander was not available in the Astros’ clubhouse during the 50-minute period that it was open to reporters. Fenech was present in the mostly unpopulated clubhouse for at least 20 minutes.”</p>
 
-<p class="has-dateline"><span class="dateline">12:08 <span class="small-caps">A.M.</span>—</span>Stepping onto the hotel elevator exhausted, I press for the wrong floor twice. It feels good to be home—even if it’s a hotel room.</p>
+<p>12:08 <span class="small-caps">A.M.</span>—Stepping onto the hotel elevator exhausted, I press for the wrong floor twice. It feels good to be home—even if it’s a hotel room.</p>
 
 <p>Kristie Ackert: “Text me tonight just to let me know you are ok. We are concerned.”</p>
 
@@ -7699,7 +7699,7 @@ export const CHAPTERS = [
 
 <p>Gardy doesn’t know not to joke with me like that—I have PTSD from being all over the Internet for five years. Furiously scrolling through Twitter, I can’t find anything. I think he’s pulling my leg—but clearly, Tiger Guys have been talking in the suite.</p>
 
-<p class="has-dateline"><span class="dateline">4:50 <span class="small-caps">P.M.</span>—</span>PR sends an alert ten minutes before today’s media session: “We are pushing Al’s session back. Please be on standby.”</p>
+<p>4:50 <span class="small-caps">P.M.</span>—PR sends an alert ten minutes before today’s media session: “We are pushing Al’s session back. Please be on standby.”</p>
 
 <p>I bug Deep Throat again during his vacation. He’s been my safety net for years, but I’m wondering if he’s turned on me, too. “Have you heard the length of Al’s contract?” Deep Throat: “Will be happy to talk after vacation is done.”</p>
 
@@ -7745,9 +7745,9 @@ export const CHAPTERS = [
 
 <p>Flight home, I write about the Romine signing. Two years ago, he caught for the Yankees, helping ignite a brawl with Miguel Cabrera. Now he’s a Tiger. Baseball’s funny like that.</p>
 
-<p class="has-dateline"><span class="dateline">4:02 <span class="small-caps">P.M.</span>—</span>After filing my column, I’m slapped in the face. An email lists three open jobs—mine among them. Reading it makes me sick with embarrassment.</p>
+<p>4:02 <span class="small-caps">P.M.</span>—After filing my column, I’m slapped in the face. An email lists three open jobs—mine among them. Reading it makes me sick with embarrassment.</p>
 
-<p class="has-dateline"><span class="dateline">8:21 <span class="small-caps">P.M.</span>—</span>Ron Colangelo texts a link about Pistons center Andre Drummond being a game-time decision due to an allergic reaction to an avocado.</p>
+<p>8:21 <span class="small-caps">P.M.</span>—Ron Colangelo texts a link about Pistons center Andre Drummond being a game-time decision due to an allergic reaction to an avocado.</p>
 
 <p>“See what awaits you…”</p>
 
