@@ -4067,7 +4067,11 @@ export const CHAPTERS = [
         slug: "world-series",
         subtitle: "",
         teaser: "October baseball returns.",
-        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It’s my first week at the <em>Free Press.</em></p>
+        content: `<p class="flashback-header"><strong>FLASHBACK</strong></p>
+
+<p></p>
+
+<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It’s my first week at the <em>Free Press.</em></p>
 
 <p>I’m nineteen and finishing my second year at community college. I didn’t really apply myself in high school and got a 2.8 GPA. The plan was to get good grades and transfer to a big journalism school, but school has never been my thing.</p>
 
