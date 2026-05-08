@@ -495,7 +495,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Myers, Gene <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> Myers, Gene <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
 
@@ -1850,7 +1850,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers, Aviles</p>
 
@@ -1858,7 +1858,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> VAUGHN HOOGASIAN <strong>Sent:</strong> Monday, December 21, 2015 11:05 <span class="small-caps">AM</span></p>
+<p class="email-line"><strong>From:</strong> VAUGHN HOOGASIAN <strong>Sent:</strong> Monday, December 21, 2015 11:05 AM</p>
 
 <p class="email-line"><strong>Subject:</strong> BOO BOO</p>
 
@@ -1868,7 +1868,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> kurt ralston <strong>Sent:</strong> Monday, December 27, 2015 11:28 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> kurt ralston <strong>Sent:</strong> Monday, December 27, 2015 11:28 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Idea</p>
 
@@ -2410,7 +2410,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers …</p>
 
@@ -2418,7 +2418,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Fenech, Anthony <strong>Sent:</strong> Saturday, July 30, 2016 9:26 <span class="small-caps">AM</span></p>
+<p class="email-line"><strong>From:</strong> Fenech, Anthony <strong>Sent:</strong> Saturday, July 30, 2016 9:26 AM</p>
 
 <p class="email-line"><strong>Subject:</strong> Re: Tigers …</p>
 
@@ -2426,7 +2426,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Maxwell, Charlie <strong>Sent:</strong> Monday, August 1, 2016 4:48 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> Maxwell, Charlie <strong>Sent:</strong> Monday, August 1, 2016 4:48 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Hey Dumbass….</p>
 
@@ -2434,7 +2434,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Bull, Kevin <strong>Sent:</strong> Friday, August 5, 2016 10:52 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> Bull, Kevin <strong>Sent:</strong> Friday, August 5, 2016 10:52 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Next week 1A story</p>
 
@@ -6527,7 +6527,7 @@ export const CHAPTERS = [
         slug: "letter-to-the-editor",
         subtitle: "",
         teaser: "Houston calling.",
-        content: `<p class="email-line"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 12:15 <span class="small-caps">PM</span></p>
+        content: `<p class="email-line"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 12:15 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers today</p>
 
@@ -6535,7 +6535,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>To:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>To:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> RE: Tigers today</p>
 
@@ -6545,7 +6545,7 @@ export const CHAPTERS = [
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 <span class="small-caps">PM</span></p>
+<p class="email-line"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> RE: Tigers today</p>
 
