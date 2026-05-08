@@ -1854,7 +1854,7 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> Tigers, Aviles</p>
 
-<p>In case you didn’t see it yet, Buster Olney is reporting the Tigers signed Mike Aviles.</p>
+<p class="email-line"><em>In case you didn’t see it yet, Buster Olney is reporting the Tigers signed Mike Aviles.</em></p>
 
 <p></p>
 
@@ -1862,9 +1862,9 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> BOO BOO</p>
 
-<p><em>Dear Anthony: I am surprised that you don't know the difference between inquisition and ACQUISITION!!! Has the</em> FREE PRESS <em>done away with copy editors in an effort to save a few bucks? Check your column of Dec. 17. I suggest you buy a dictionary AND USE IT or at least check it for boo boo's when in doubt. There is a vast world of difference between these two words as you will discover, I hope.</em></p>
+<p class="email-line"><em>Dear Anthony: I am surprised that you don't know the difference between inquisition and ACQUISITION!!! Has the</em> FREE PRESS <em>done away with copy editors in an effort to save a few bucks? Check your column of Dec. 17. I suggest you buy a dictionary AND USE IT or at least check it for boo boo's when in doubt. There is a vast world of difference between these two words as you will discover, I hope.</em></p>
 
-<p>VAUGHN HOOGASIAN (ONE TIME JOURNALISM AND ENGLISH TEACHER)</p>
+<p class="email-line"><em>VAUGHN HOOGASIAN (ONE TIME JOURNALISM AND ENGLISH TEACHER)</em></p>
 
 <p></p>
 
@@ -1872,9 +1872,9 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> Idea</p>
 
-<p>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</p>
+<p class="email-line"><em>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</em></p>
 
-<p>Congratulations on year one. I look forward to year number two.</p>
+<p class="email-line"><em>Congratulations on year one. I look forward to year number two.</em></p>
 
 <p></p>
 
@@ -2414,7 +2414,7 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> Tigers …</p>
 
-<p>… you out there, buddy?</p>
+<p class="email-line"><em>… you out there, buddy?</em></p>
 
 <p></p>
 
@@ -2422,7 +2422,7 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> Re: Tigers …</p>
 
-<p>I'm sorry. Should have emailed you. Probably shouldn't have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</p>
+<p class="email-line"><em>I'm sorry. Should have emailed you. Probably shouldn't have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</em></p>
 
 <p></p>
 
@@ -2430,7 +2430,7 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> Hey Dumbass….</p>
 
-<p>You're late to your FP chats, a smart ass who doesn't know any more about the game than your readers and look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</p>
+<p class="email-line"><em>You're late to your FP chats, a smart ass who doesn't know any more about the game than your readers and look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>
 
 <p></p>
 
@@ -2438,7 +2438,7 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> Next week 1A story</p>
 
-<p>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</p>
+<p class="email-line"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
 
 <p></p>
 
