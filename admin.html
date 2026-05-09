@@ -852,7 +852,7 @@
             { id: 26, title: 'UNETHICAL' },
             { id: 27, title: 'BOTTOM NINE' },
             { id: 28, title: 'THE PANDEMIC' },
-            { id: 29, title: 'DEDICATION' }
+            { id: 29, title: 'DEDICATION', display: 'D' }
         ];
 
         // ====== SHARED UTILITY ======
@@ -912,7 +912,7 @@
             lockList.innerHTML = CHAPTERS.map(ch => {
                 const isLocked = pendingChapterLocks.includes(ch.id);
                 return `<div class="chapter-lock-item ${isLocked ? 'locked' : ''}" data-id="${ch.id}" title="${ch.title}">
-                    <span class="chapter-num">${ch.id}</span>
+                    <span class="chapter-num">${ch.display || ch.id}</span>
                 </div>`;
             }).join('');
 
