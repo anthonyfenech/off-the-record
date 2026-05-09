@@ -50,8 +50,7 @@
 
         // Check 2: Check chapter ID from window.currentChapterId (main reader only)
         const currentChapterId = window.currentChapterId;
-        if (currentChapterId === -1 || currentChapterId === 0 ||
-            currentChapterId === '-1' || currentChapterId === '0') {
+        if (currentChapterId === 'title' || currentChapterId === 'toc') {
             return false;
         }
 

@@ -116,7 +116,7 @@ class Reader {
 
         // Get saved progress
         const progress = getProgress();
-        const savedChapter = progress.currentChapter || -1; // Default to title page
+        const savedChapter = progress.currentChapter || 'title'; // Default to title page
         const savedPage = progress.currentPage || 0;
         const isNewReader = !progress.lastUpdated;
 
