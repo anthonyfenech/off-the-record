@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "version": 1,
+  "_comment": "Toggle 'enabled' to disable Service Worker globally without code changes. Increment 'version' to force all clients to invalidate their cache and re-fetch. This file is read by pwa.js on every page load."
+}

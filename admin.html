@@ -821,6 +821,40 @@
                 <a href="./tests/share-stress-test/generator.html" class="lock-btn" style="text-decoration: none; text-align: center;">Share Card Stress Test</a>
             </div>
         </div>
+
+        <!-- PWA / Service Worker Controls Section -->
+        <div class="control-panel" id="pwa-controls" style="margin-top: 20px;">
+            <div class="control-panel-title">PWA / Service Worker Controls</div>
+            <p style="font-size: 9px; color: #666; margin-bottom: 10px;">
+                Toggling commits a change to /pwa-config.json on the repo. Changes propagate to all users within ~60 sec after GitHub Pages redeploys.
+            </p>
+
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 11px;">
+                    <input type="checkbox" id="pwa-enabled-toggle" />
+                    <span>Service Worker Enabled</span>
+                </label>
+            </div>
+
+            <div style="font-size: 11px; margin-bottom: 10px;">
+                <strong>Current state:</strong>
+                <span id="pwa-current-state">Loading…</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;">
+                <button id="pwa-force-update-btn" class="lock-btn">Force Cache Refresh (bump version)</button>
+                <button id="pwa-clear-local-btn" class="lock-btn">Clear My Local Cache</button>
+                <button id="pwa-rotate-pat-btn" class="lock-btn">Rotate / Clear PAT</button>
+            </div>
+
+            <div id="pwa-pat-row" hidden style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px;">
+                <p style="font-size: 10px; margin-bottom: 6px;"><strong>GitHub Personal Access Token required</strong> to modify /pwa-config.json. Token stored in browser localStorage only; sent to api.github.com only.</p>
+                <input type="password" id="pwa-pat-input" placeholder="ghp_..." autocomplete="off" style="width: 100%; padding: 4px; font-family: monospace; font-size: 10px; margin-bottom: 6px; box-sizing: border-box;" />
+                <button id="pwa-pat-save-btn" class="lock-btn">Save Token</button>
+            </div>
+
+            <div id="pwa-result-row" style="font-size: 10px; margin-top: 10px; min-height: 14px;"></div>
+        </div>
     </div>
 
     <script>
@@ -1364,5 +1398,7 @@
         });
     })();
     </script>
+
+    <script src="./js/admin-pwa.js" defer></script>
 </body>
 </html>
