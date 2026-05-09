@@ -35,8 +35,13 @@
         }
 
         function initMode() {
-            // Always start in scroll mode (no localStorage persistence)
-            setMode('scroll');
+            // Sync UI from reading-mode manager (single source of truth)
+            var currentMode = window.readingModeManager ?
+                window.readingModeManager.getMode() :
+                (localStorage.getItem('otr_readingMode') || 'scroll');
+            modeToggle.querySelectorAll('.option-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.dataset.mode === currentMode);
+            });
         }
 
         initMode();
