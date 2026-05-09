@@ -155,8 +155,7 @@
 
         // Check 2: Check chapter ID from window.currentChapterId or reader (main reader only)
         const currentChapterId = window.currentChapterId;
-        if (currentChapterId === -1 || currentChapterId === 0 ||
-            currentChapterId === '-1' || currentChapterId === '0') {
+        if (currentChapterId === 'title' || currentChapterId === 'toc') {
             return false;
         }
 
@@ -374,9 +373,9 @@
         }
 
         // Check if near top of chapter (Fix 6)
-        // Safety net: never show title for chapters -1 (title page) or 0 (TOC)
+        // Safety net: never show title for title page or TOC
         const currentId = window.currentChapterId;
-        if (currentId === -1 || currentId === 0 || currentId === '-1' || currentId === '0') {
+        if (currentId === 'title' || currentId === 'toc') {
             info.showTitle = false;
         } else {
             // Fallback: get title from CHAPTERS array if DOM element was empty
