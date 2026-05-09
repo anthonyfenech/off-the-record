@@ -218,7 +218,6 @@
         })
         .then(function() {
             // With no-cors we can't read response, assume success
-            console.log('[Guestbook] Submission sent');
             isSubmitting = false;
             submitBtn.disabled = false;
             resetForm();
@@ -254,7 +253,6 @@
             }
         });
 
-        console.log('[Guestbook] Initialized');
     }
 
     // Run on DOM ready

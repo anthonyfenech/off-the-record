@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v650';
+const CACHE_VERSION = 'v651';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -64,16 +64,13 @@ const STATIC_ASSETS = [
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
-    console.log('Service Worker: Installing...');
 
     event.waitUntil(
         caches.open(STATIC_CACHE)
             .then((cache) => {
-                console.log('Service Worker: Caching static assets');
                 return cache.addAll(STATIC_ASSETS);
             })
             .then(() => {
-                console.log('Service Worker: Installation complete');
                 return self.skipWaiting();
             })
             .catch((error) => {
@@ -84,7 +81,6 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-    console.log('Service Worker: Activating...');
 
     event.waitUntil(
         caches.keys()
@@ -96,13 +92,11 @@ self.addEventListener('activate', (event) => {
                             return cacheName !== STATIC_CACHE && cacheName !== CONTENT_CACHE;
                         })
                         .map((cacheName) => {
-                            console.log('Service Worker: Deleting old cache:', cacheName);
                             return caches.delete(cacheName);
                         })
                 );
             })
             .then(() => {
-                console.log('Service Worker: Activation complete');
                 return self.clients.claim();
             })
     );

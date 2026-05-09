@@ -22,7 +22,6 @@
             document.body.classList.remove(cls);
         });
         if (source) {
-            console.log('[OTR Failsafe] Overlays closed via: ' + source);
         }
     }
 
@@ -122,7 +121,6 @@
         BODY_CLASSES.forEach(function(cls) {
             document.body.classList.remove(cls);
         });
-        console.log('All overlays force-closed');
         return 'Done — all overlays cleared. Reload page to restore normal behavior.';
     };
 

@@ -156,7 +156,6 @@
         isInitialized = true;
 
         if (!isStorageAvailable()) {
-            console.log('[Bookmark] localStorage not available');
             return;
         }
 
