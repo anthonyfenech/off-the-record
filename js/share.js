@@ -888,7 +888,6 @@
         };
 
         // 5. Log payload for testing (remove later)
-        console.log('[OTR-Like]', payload);
 
         // Ensure action is set for backend routing
         payload.action = 'like';
@@ -1163,7 +1162,6 @@
         // Bind the screenshot button in footer nav
         bindScreenshotButton();
 
-        console.log('[Share] Initialized');
     }
 
     // Run on DOM ready

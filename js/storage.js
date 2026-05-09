@@ -37,7 +37,6 @@ const logger = {
 
     log(message) {
         if (!this.isDebugMode()) return;
-        console.log(`[OTR Storage] ${message}`);
     }
 };
 
@@ -48,13 +47,11 @@ if (typeof window !== 'undefined') {
             const current = localStorage.getItem(STORAGE_KEYS.DEBUG) === 'true';
             const newValue = !current;
             localStorage.setItem(STORAGE_KEYS.DEBUG, newValue.toString());
-            console.log(`Debug mode: ${newValue ? 'ON' : 'OFF'}`);
             if (newValue) {
                 console.log('Storage errors will now be logged. Run toggleDebugMode() again to disable.');
             }
             return newValue;
         } catch (e) {
-            console.log('Could not toggle debug mode:', e.message);
             return false;
         }
     };

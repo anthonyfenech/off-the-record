@@ -337,7 +337,6 @@
         // Periodic check for visibility
         setInterval(updateButtonVisibility, 1000);
 
-        console.log('[Comments] Initialized');
     }
 
     // Run on DOM ready

@@ -69,6 +69,5 @@
     window.OTR_RESET_READER_NAME = resetReaderName;
 
     // Log for debugging
-    console.log('[OTR] Reader persona:', readerName);
 
 })();
