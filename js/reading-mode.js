@@ -5,6 +5,7 @@ import { CONFIG } from './config.js';
 
 class ReadingModeManager {
     constructor() {
+        console.log('[DEBUG-PERSIST] constructor:', localStorage.getItem('otr_readingMode')); // DEBUG-PERSIST
         this.currentMode = this.loadMode();
         this.lastModeSwitch = 0;
         this.modeSwitchDebounce = 300; // ms
@@ -38,6 +39,7 @@ class ReadingModeManager {
     }
 
     loadMode() {
+        console.log('[DEBUG-PERSIST] loadMode read:', localStorage.getItem('otr_readingMode')); // DEBUG-PERSIST
         // Load saved preference from localStorage
         const saved = localStorage.getItem('otr_readingMode');
         // Default to scroll if no preference saved
@@ -45,10 +47,13 @@ class ReadingModeManager {
     }
 
     saveMode(mode) {
+        console.log('[DEBUG-PERSIST] saveMode write:', mode); // DEBUG-PERSIST
+        console.trace('[DEBUG-PERSIST] saveMode trace'); // DEBUG-PERSIST
         localStorage.setItem('otr_readingMode', mode);
     }
 
     switchMode(newMode) {
+        console.log('[DEBUG-PERSIST] switchMode:', newMode); // DEBUG-PERSIST
         // Debounce rapid toggling
         const now = Date.now();
         if (now - this.lastModeSwitch < this.modeSwitchDebounce) return;
@@ -114,6 +119,7 @@ class ReadingModeManager {
     }
 
     applyMode(mode, isSwitch = false) {
+        console.log('[DEBUG-PERSIST] applyMode:', mode); // DEBUG-PERSIST
         const body = document.body;
 
         if (mode === 'page') {
