@@ -8,6 +8,7 @@ class ReadingModeManager {
         this.currentMode = this.loadMode();
         this.lastModeSwitch = 0;
         this.modeSwitchDebounce = 300; // ms
+        this.init();
     }
 
     init() {
@@ -37,8 +38,14 @@ class ReadingModeManager {
     }
 
     loadMode() {
-        // Always start in scroll mode (no localStorage persistence)
-        return 'scroll';
+        // Load saved preference from localStorage
+        const saved = localStorage.getItem('otr_readingMode');
+        // Default to scroll if no preference saved
+        return saved || 'scroll';
+    }
+
+    saveMode(mode) {
+        localStorage.setItem('otr_readingMode', mode);
     }
 
     switchMode(newMode) {
@@ -70,6 +77,7 @@ class ReadingModeManager {
 
         // Update mode
         this.currentMode = newMode;
+        this.saveMode(newMode);
         this.applyMode(newMode, true);
         this.updateToggleUI();
 
