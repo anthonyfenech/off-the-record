@@ -2401,18 +2401,19 @@ export const CHAPTERS = [
 
 <p>I am on Harbaugh Watch, following him around all day for a feature story.</p>
 
-<p>Apparently, Harbaugh has taken a liking to me after the satellite camp story. I’ve kept up with his brother-in-law. Supposed to see him when we’re in K.C. next.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>JUNK MAIL</strong></p>
-
-<p></p>
-
+<p>Apparently, Harbaugh has taken a liking to me after the satellite camp story. I’ve kept up with his brother-in-law. Supposed to see him when we’re in K.C. next.</p>`,
+        wordCount: 2070
+    },
+    {
+        id: 11.1,
+        year: 2016,
+        section: 'year',
+        hidden: true,
+        title: "JUNK MAIL",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">JUNK MAIL</h2>
 <p class="email-line"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers …</p>
@@ -2442,14 +2443,18 @@ export const CHAPTERS = [
 <p class="email-line"><strong>Subject:</strong> Next week 1A story</p>
 
 <p class="email-line"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
+</div>`,
+        wordCount: 217
+    },
+    {
+        id: 11.2,
+        year: 2016,
+        section: 'year',
+        hidden: true,
+        title: "HOT SEAT",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
 <p>The Tigers did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in the story about how they saved their season. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>
 
@@ -2540,7 +2545,7 @@ export const CHAPTERS = [
 <p>When my phone flashes back to life after six hours hiking, I brace for a flurry of messages. When I put in my PIN, I see missed messages and an unidentified number not in my contacts, maybe from one of Deep Throat’s burner phones.</p>
 
 <p>+1248XXX44XX: <em>Call me.</em></p>`,
-        wordCount: 3175
+        wordCount: 845
     },
     {
         id: 12,
