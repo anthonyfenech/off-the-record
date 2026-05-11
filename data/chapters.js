@@ -1841,18 +1841,19 @@ export const CHAPTERS = [
 
 <p>Once again, a friend helps. This time, it’s ESPN.com’s Marly Rivera who helps piece together that the Tigers have been pursuing lefty reliever Justin Wilson, according to her source.</p>
 
-<p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it’s Villarreal again: “Come now to suite.”</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>JUNK MAIL</strong></p>
-
-<p></p>
-
+<p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it’s Villarreal again: “Come now to suite.”</p>`,
+        wordCount: 3418
+    },
+    {
+        id: 9.1,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "JUNK MAIL",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">JUNK MAIL</h2>
 <p class="email-line"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers, Aviles</p>
@@ -1878,14 +1879,18 @@ export const CHAPTERS = [
 <p class="email-line"><em>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</em></p>
 
 <p class="email-line"><em>Congratulations on year one. I look forward to year number two.</em></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. I’m re-learning a hard lesson today: Don’t travel on arbitration day.</p>
+</div>`,
+        wordCount: 211
+    },
+    {
+        id: 9.2,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "FIRE DRILL",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. I’m re-learning a hard lesson today: Don’t travel on arbitration day.</p>
 
 <p>This year, I’m on the highway, 1½ hours outside Las Vegas, foolishly driving a rental car with one hand. My other hand is texting sources, checking Twitter and searching for the next exit. I’ve been beaten twice. According to Jon Heyman, the National Guy who breaks arbitration deals with superhuman ease, <em>two</em> deals are happening.</p>
 
@@ -1978,7 +1983,7 @@ export const CHAPTERS = [
 <p>By the time I leave the studio, my phone is blowing up with those people.</p>
 
 <p>The producer asks if I want to be a regular correspondent. They’ll pay me. For up-and-down Ball Writer Anthony Fenech, this is definitely up.</p>`,
-        wordCount: 4853
+        wordCount: 1220
     },
     {
         id: 10,
