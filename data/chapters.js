@@ -5736,16 +5736,21 @@ export const CHAPTERS = [
 
 <p>“Noticed your phone was off (or died?) This week: have season grades done by Wednesday morning. You can work on them tomorrow. Beyond that, plan to look at Tigers free agency. Could be a listicle. I also think a postseason prospect ranking would be good to have over the next week or so… and maybe set the early odds on who the Tigers will pick in next year’s draft in another post?”</p>
 
-<p>No word yet on a day off.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. I headed for the village, past an old man selling veggies at the side of the road. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>`,
-        wordCount: 3658
+<p>No word yet on a day off.</p>`,
+        wordCount: 3237
+    },
+    {
+        id: 21.1,
+        year: 2018,
+        section: 'year',
+        hidden: true,
+        title: "MALTA",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. I headed for the village, past an old man selling veggies at the side of the road. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>
+</div>`,
+        wordCount: 421
     },
     {
         id: 22,
