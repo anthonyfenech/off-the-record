@@ -7482,19 +7482,31 @@ export const CHAPTERS = [
 
 <p>My next steps are clear. I book a flight to Malta and scribble more words about the book that’s quickly coming into focus.</p>
 
-<p>The working title is <em>OFF-THE-RECORD.</em></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
+<p>The working title is <em>OFF-THE-RECORD.</em></p>`,
+        wordCount: 3671
+    },
+    {
+        id: 26.5,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "MALTA",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
 <p class="no-indent"><em>Fell into a comfortable routine—gym, beach, receipts. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Bought a used Kindle for €10, case included. The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A</em> Sports Illustrated <em>reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series. Went to the sports bar to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 <span class="small-caps">A.M.</span> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. Bought a notebook from the bazaar and kept a journal. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. Talked to people who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. Two years ago, corrupt government influences killed the country’s top investigative reporter—the mob laced her engine with a bomb and let the ignition do the rest. Went to church every week, washed my face with holy water. One day it rained and I saw my name online. It rained all day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back.</em></p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">LONDON, <em>November 14</em>—</span>After more than a month away, I’m heading home when an email arrives: LAYOFFS LOOMING</p>
+</div>`,
+        wordCount: 406
+    },
+    {
+        id: 26.6,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "UNETHICAL",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">LONDON, <em>November 14</em>—</span>After more than a month away, I’m heading home when an email arrives: LAYOFFS LOOMING</p>
 
 <p>The <em>Free Press</em> needs to cut three reporters and a photographer. Seven years of seniority should put me in the clear. A good thing?</p>
 
@@ -7567,7 +7579,7 @@ export const CHAPTERS = [
 <p>After nearly two hours, he passes over a folder of hitting strategies and an email report he sent directly to the Highest Source In The Land. Before I go, I’m introduced to one of his daughters.</p>
 
 <p>I message my closest work confidante: “On the day they told me they didn’t want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house.”</p>`,
-        wordCount: 4915
+        wordCount: 837
     },
     {
         id: 27,
