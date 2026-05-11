@@ -6937,18 +6937,19 @@ export const CHAPTERS = [
 
 <p>Messages arrive from everywhere. “You’re Big News on the radio,” a local radio host says. “People backing you.”</p>
 
-<p>I’m jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>AIRPLANE MODE</strong></p>
-
-<p></p>
-
+<p>I’m jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>`,
+        wordCount: 1186
+    },
+    {
+        id: 26.1,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "AIRPLANE MODE",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">AIRPLANE MODE</h2>
 <p class="email-line"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>
 
 <p class="email-line"><strong>Verlander’s Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>
@@ -6978,14 +6979,18 @@ export const CHAPTERS = [
 <p class="email-line"><strong>Top Scout:</strong> Just read your name in ESPN. That’s great. Getting your name out there!</p>
 
 <p class="email-line"><strong>Mom:</strong> Omg. Call when you can.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
+</div>`,
+        wordCount: 231
+    },
+    {
+        id: 26.2,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "UNETHICAL",
+        subtitle: "",
+        teaser: "",
+        content: `<p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
 
 <p>Dylan Hernández: “Guessing everyone’s been bothering you today, but out of curiosity, why is Verlander so pissed at you?… Are you going back at him today? I think that’s what you have to think about.”</p>
 
@@ -7173,18 +7178,19 @@ export const CHAPTERS = [
 
 <p>Embarrassed and angry, even after cooling off, I message HSITL: “Hey, taking a step back. Been a long week for me personally and professionally. I understand our relationship has changed and I am not going to scorch Earth every time you don’t help me.”</p>
 
-<p>I consider reaching out to my new competitor for advice: I’d like to become Not Anthony Fenech. Any ideas?</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>TWO YEARS EARLIER</strong></p>
-
-<p></p>
-
+<p>I consider reaching out to my new competitor for advice: I’d like to become Not Anthony Fenech. Any ideas?</p>`,
+        wordCount: 2683
+    },
+    {
+        id: 26.3,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "TWO YEARS EARLIER",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">TWO YEARS EARLIER</h2>
 <p class="has-dateline"><span class="dateline"><em>Tuesday, December 19, 2017</em>—</span>Woke up to a flurry of alerts. I'm in the tabloids again.</p>
 
 <p>&quot;You see he did another fine piece, lol,&quot; a friend says. &quot;Guy is obsessed with you.&quot;</p>
@@ -7204,14 +7210,18 @@ export const CHAPTERS = [
 <p></p>
 
 <p>If they can ask me these questions, what can't they ask me?</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline"><em>August 29, 2019</em>—</span>So there was that. I did nothing. And today, after 12 years in journalism, I have been asked to write a feature story about a PR person. Not a player or coach or fan—a PR person.</p>
+</div>`,
+        wordCount: 299
+    },
+    {
+        id: 26.4,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "UNETHICAL",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline"><em>August 29, 2019</em>—</span>So there was that. I did nothing. And today, after 12 years in journalism, I have been asked to write a feature story about a PR person. Not a player or coach or fan—a PR person.</p>
 
 <p>Coach Content emails about a story on Ron Colangelo—his connection to Arizona State football coach Herm Edwards, whose Sun Devils play Michigan State next month.</p>
 
@@ -7552,7 +7562,7 @@ export const CHAPTERS = [
 <p>After nearly two hours, he passes over a folder of hitting strategies and an email report he sent directly to the Highest Source In The Land. Before I go, I’m introduced to one of his daughters.</p>
 
 <p>I message my closest work confidante: “On the day they told me they didn’t want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house.”</p>`,
-        wordCount: 9321
+        wordCount: 4915
     },
     {
         id: 27,
