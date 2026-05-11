@@ -1,6 +1,6 @@
 // Reader - Core reading interface logic with pagination
 
-import { CHAPTERS, getChapterBySlug, getChapterSlug } from '../data/chapters.js';
+import { CHAPTERS, getChapterBySlug, getChapterSlug, getChapterCount } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager } from './reading-mode.js';
@@ -581,8 +581,8 @@ class Reader {
 
     // Calculate overall book progress
     calculateBookProgress() {
-        const completed = CHAPTERS.filter(c => isChapterComplete(c.id)).length;
-        return Math.round((completed / CHAPTERS.length) * 100);
+        const completed = CHAPTERS.filter(c => !c.hidden && isChapterComplete(c.id)).length;
+        return Math.round((completed / getChapterCount()) * 100);
     }
 
     // Get chapter ID from URL hash (supports slug-based URLs)

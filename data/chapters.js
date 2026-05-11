@@ -952,9 +952,9 @@ export const CHAPTERS = [
         id: 6,
         year: 2015,
         section: 'year',
-        title: "OPENING DAY",
         slug: "opening-day",
-        subtitle: "",
+        title: "OPENING DAY",
+        subtitle: "Detroit, Pittsburgh",
         teaser: "The best day on the calendar.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time.</p>
 
@@ -996,20 +996,19 @@ export const CHAPTERS = [
 
 <p>“Won’t hear about this again until next year.”</p>
 
-<p>He’s not wrong.</p>
-
-<p></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>EMBARRASSING FLASHBACK</strong></p>
-
-<p></p>
-
+<p>He’s not wrong.</p>`,
+        wordCount: 340
+    },
+    {
+        id: 6.1,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "EMBARRASSING FLASHBACK",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">EMBARRASSING FLASHBACK</h2>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a member of the Baseball Writers’ Association of America. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>
 
 <p>The New York media surrounds lefty reliever Boone Logan. Poking a tape recorder into a pack of reporters, the Taylor Swift Pandora on my phone goes off.</p>
@@ -1029,14 +1028,18 @@ export const CHAPTERS = [
 <p>“My nine-year-old daughter listens to that, man.”</p>
 
 <p>Players laugh. Reporters, too. It’s my first game as a Ball Writer—I don’t know how I’ll recover from this.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
+</div>`,
+        wordCount: 144
+    },
+    {
+        id: 6.2,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "OPENING DAY",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
 
 <p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only 10 pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>
 
@@ -1259,7 +1262,7 @@ export const CHAPTERS = [
 <p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn.</p>
 
 <p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>`,
-        wordCount: 2679
+        wordCount: 2156
     },
     {
         id: 8,
@@ -1838,18 +1841,19 @@ export const CHAPTERS = [
 
 <p>Once again, a friend helps. This time, it’s ESPN.com’s Marly Rivera who helps piece together that the Tigers have been pursuing lefty reliever Justin Wilson, according to her source.</p>
 
-<p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it’s Villarreal again: “Come now to suite.”</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>JUNK MAIL</strong></p>
-
-<p></p>
-
+<p>That’s as close as I come to the scoop. An hour later, the trade is broken by FOX 2 television reporter Jennifer Hammond, who isn’t even on the scene—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, it’s Villarreal again: “Come now to suite.”</p>`,
+        wordCount: 3418
+    },
+    {
+        id: 9.1,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "JUNK MAIL",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">JUNK MAIL</h2>
 <p class="email-line"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers, Aviles</p>
@@ -1875,14 +1879,18 @@ export const CHAPTERS = [
 <p class="email-line"><em>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</em></p>
 
 <p class="email-line"><em>Congratulations on year one. I look forward to year number two.</em></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. I’m re-learning a hard lesson today: Don’t travel on arbitration day.</p>
+</div>`,
+        wordCount: 211
+    },
+    {
+        id: 9.2,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "FIRE DRILL",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. I’m re-learning a hard lesson today: Don’t travel on arbitration day.</p>
 
 <p>This year, I’m on the highway, 1½ hours outside Las Vegas, foolishly driving a rental car with one hand. My other hand is texting sources, checking Twitter and searching for the next exit. I’ve been beaten twice. According to Jon Heyman, the National Guy who breaks arbitration deals with superhuman ease, <em>two</em> deals are happening.</p>
 
@@ -1975,7 +1983,7 @@ export const CHAPTERS = [
 <p>By the time I leave the studio, my phone is blowing up with those people.</p>
 
 <p>The producer asks if I want to be a regular correspondent. They’ll pay me. For up-and-down Ball Writer Anthony Fenech, this is definitely up.</p>`,
-        wordCount: 4853
+        wordCount: 1220
     },
     {
         id: 10,
@@ -2398,18 +2406,19 @@ export const CHAPTERS = [
 
 <p>I am on Harbaugh Watch, following him around all day for a feature story.</p>
 
-<p>Apparently, Harbaugh has taken a liking to me after the satellite camp story. I’ve kept up with his brother-in-law. Supposed to see him when we’re in K.C. next.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>JUNK MAIL</strong></p>
-
-<p></p>
-
+<p>Apparently, Harbaugh has taken a liking to me after the satellite camp story. I’ve kept up with his brother-in-law. Supposed to see him when we’re in K.C. next.</p>`,
+        wordCount: 2070
+    },
+    {
+        id: 11.1,
+        year: 2016,
+        section: 'year',
+        hidden: true,
+        title: "JUNK MAIL",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">JUNK MAIL</h2>
 <p class="email-line"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>
 
 <p class="email-line"><strong>Subject:</strong> Tigers …</p>
@@ -2439,14 +2448,18 @@ export const CHAPTERS = [
 <p class="email-line"><strong>Subject:</strong> Next week 1A story</p>
 
 <p class="email-line"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
+</div>`,
+        wordCount: 217
+    },
+    {
+        id: 11.2,
+        year: 2016,
+        section: 'year',
+        hidden: true,
+        title: "HOT SEAT",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
 <p>The Tigers did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in the story about how they saved their season. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>
 
@@ -2537,7 +2550,7 @@ export const CHAPTERS = [
 <p>When my phone flashes back to life after six hours hiking, I brace for a flurry of messages. When I put in my PIN, I see missed messages and an unidentified number not in my contacts, maybe from one of Deep Throat’s burner phones.</p>
 
 <p>+1248XXX44XX: <em>Call me.</em></p>`,
-        wordCount: 3175
+        wordCount: 845
     },
     {
         id: 12,
@@ -5723,16 +5736,21 @@ export const CHAPTERS = [
 
 <p>“Noticed your phone was off (or died?) This week: have season grades done by Wednesday morning. You can work on them tomorrow. Beyond that, plan to look at Tigers free agency. Could be a listicle. I also think a postseason prospect ranking would be good to have over the next week or so… and maybe set the early odds on who the Tigers will pick in next year’s draft in another post?”</p>
 
-<p>No word yet on a day off.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. I headed for the village, past an old man selling veggies at the side of the road. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>`,
-        wordCount: 3658
+<p>No word yet on a day off.</p>`,
+        wordCount: 3237
+    },
+    {
+        id: 21.1,
+        year: 2018,
+        section: 'year',
+        hidden: true,
+        title: "MALTA",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. I headed for the village, past an old man selling veggies at the side of the road. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>
+</div>`,
+        wordCount: 421
     },
     {
         id: 22,
@@ -6924,18 +6942,19 @@ export const CHAPTERS = [
 
 <p>Messages arrive from everywhere. “You’re Big News on the radio,” a local radio host says. “People backing you.”</p>
 
-<p>I’m jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>AIRPLANE MODE</strong></p>
-
-<p></p>
-
+<p>I’m jacked up, bouncing off the walls again, buzzing from extra-leaded coffee—and angry, absolutely. Too much adrenaline for a hotel room, I go down to the third-floor workout room. The TV in the corner scrolls the global news (…$16.3 TRILLION CLIMATE PLAN • AMAZON FIRE STARTED BY HUMANS • NEW POLL PUTS TRUMP APPROVAL RATING AT…) while I spend an hour on airplane mode, insulated from the chaos on my phone.</p>`,
+        wordCount: 1186
+    },
+    {
+        id: 26.1,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "AIRPLANE MODE",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">AIRPLANE MODE</h2>
 <p class="email-line"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>
 
 <p class="email-line"><strong>Verlander’s Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>
@@ -6965,14 +6984,18 @@ export const CHAPTERS = [
 <p class="email-line"><strong>Top Scout:</strong> Just read your name in ESPN. That’s great. Getting your name out there!</p>
 
 <p class="email-line"><strong>Mom:</strong> Omg. Call when you can.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
+</div>`,
+        wordCount: 231
+    },
+    {
+        id: 26.2,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "UNETHICAL",
+        subtitle: "",
+        teaser: "",
+        content: `<p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
 
 <p>Dylan Hernández: “Guessing everyone’s been bothering you today, but out of curiosity, why is Verlander so pissed at you?… Are you going back at him today? I think that’s what you have to think about.”</p>
 
@@ -7160,18 +7183,19 @@ export const CHAPTERS = [
 
 <p>Embarrassed and angry, even after cooling off, I message HSITL: “Hey, taking a step back. Been a long week for me personally and professionally. I understand our relationship has changed and I am not going to scorch Earth every time you don’t help me.”</p>
 
-<p>I consider reaching out to my new competitor for advice: I’d like to become Not Anthony Fenech. Any ideas?</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>TWO YEARS EARLIER</strong></p>
-
-<p></p>
-
+<p>I consider reaching out to my new competitor for advice: I’d like to become Not Anthony Fenech. Any ideas?</p>`,
+        wordCount: 2683
+    },
+    {
+        id: 26.3,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "TWO YEARS EARLIER",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">TWO YEARS EARLIER</h2>
 <p class="has-dateline"><span class="dateline"><em>Tuesday, December 19, 2017</em>—</span>Woke up to a flurry of alerts. I'm in the tabloids again.</p>
 
 <p>&quot;You see he did another fine piece, lol,&quot; a friend says. &quot;Guy is obsessed with you.&quot;</p>
@@ -7191,14 +7215,18 @@ export const CHAPTERS = [
 <p></p>
 
 <p>If they can ask me these questions, what can't they ask me?</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline"><em>August 29, 2019</em>—</span>So there was that. I did nothing. And today, after 12 years in journalism, I have been asked to write a feature story about a PR person. Not a player or coach or fan—a PR person.</p>
+</div>`,
+        wordCount: 299
+    },
+    {
+        id: 26.4,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "UNETHICAL",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline"><em>August 29, 2019</em>—</span>So there was that. I did nothing. And today, after 12 years in journalism, I have been asked to write a feature story about a PR person. Not a player or coach or fan—a PR person.</p>
 
 <p>Coach Content emails about a story on Ron Colangelo—his connection to Arizona State football coach Herm Edwards, whose Sun Devils play Michigan State next month.</p>
 
@@ -7454,19 +7482,31 @@ export const CHAPTERS = [
 
 <p>My next steps are clear. I book a flight to Malta and scribble more words about the book that’s quickly coming into focus.</p>
 
-<p>The working title is <em>OFF-THE-RECORD.</em></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
+<p>The working title is <em>OFF-THE-RECORD.</em></p>`,
+        wordCount: 3671
+    },
+    {
+        id: 26.5,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "MALTA",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
 <p class="no-indent"><em>Fell into a comfortable routine—gym, beach, receipts. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Bought a used Kindle for €10, case included. The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A</em> Sports Illustrated <em>reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series. Went to the sports bar to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 <span class="small-caps">A.M.</span> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. Bought a notebook from the bazaar and kept a journal. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. Talked to people who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. Two years ago, corrupt government influences killed the country’s top investigative reporter—the mob laced her engine with a bomb and let the ignition do the rest. Went to church every week, washed my face with holy water. One day it rained and I saw my name online. It rained all day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back.</em></p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">LONDON, <em>November 14</em>—</span>After more than a month away, I’m heading home when an email arrives: LAYOFFS LOOMING</p>
+</div>`,
+        wordCount: 406
+    },
+    {
+        id: 26.6,
+        year: 2019,
+        section: 'year',
+        hidden: true,
+        title: "UNETHICAL",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">LONDON, <em>November 14</em>—</span>After more than a month away, I’m heading home when an email arrives: LAYOFFS LOOMING</p>
 
 <p>The <em>Free Press</em> needs to cut three reporters and a photographer. Seven years of seniority should put me in the clear. A good thing?</p>
 
@@ -7539,7 +7579,7 @@ export const CHAPTERS = [
 <p>After nearly two hours, he passes over a folder of hitting strategies and an email report he sent directly to the Highest Source In The Land. Before I go, I’m introduced to one of his daughters.</p>
 
 <p>I message my closest work confidante: “On the day they told me they didn’t want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house.”</p>`,
-        wordCount: 9321
+        wordCount: 837
     },
     {
         id: 27,
@@ -8443,7 +8483,7 @@ export const getTotalWordCount = () => {
 };
 
 // Export chapter count
-export const getChapterCount = () => CHAPTERS.length;
+export const getChapterCount = () => CHAPTERS.filter(c => !c.hidden).length;
 
 // Get first chapter ID (skips chapters without IDs like title/TOC)
 export const getFirstChapterId = () => {
@@ -8488,19 +8528,19 @@ export const calculateReadingTime = (wordCount) => {
 
 // Get intro chapters (nested under INTRO dropdown)
 export const getIntroChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'intro');
+    return CHAPTERS.filter(c => c.section === 'intro' && !c.hidden);
 };
 
 // Get postscript chapters (nested under POSTSCRIPT dropdown)
 export const getPostscriptChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'postscript' && !c.hideFromToc);
+    return CHAPTERS.filter(c => c.section === 'postscript' && !c.hideFromToc && !c.hidden);
 };
 
 // Get chapters grouped by year (only year-section chapters)
 export const getChaptersByYear = () => {
     const yearMap = {};
 
-    CHAPTERS.filter(c => c.section === 'year').forEach(chapter => {
+    CHAPTERS.filter(c => c.section === 'year' && !c.hidden).forEach(chapter => {
         const yearKey = chapter.year;
         if (!yearMap[yearKey]) {
             yearMap[yearKey] = [];
