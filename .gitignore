@@ -19,6 +19,7 @@ node_modules/
 _drafts-backup/
 _source/
 _working/
+_diff_workspace/
 *.bak
 
 # Build artifacts
