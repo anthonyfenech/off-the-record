@@ -952,9 +952,9 @@ export const CHAPTERS = [
         id: 6,
         year: 2015,
         section: 'year',
-        title: "OPENING DAY",
         slug: "opening-day",
-        subtitle: "",
+        title: "OPENING DAY",
+        subtitle: "Detroit, Pittsburgh",
         teaser: "The best day on the calendar.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time.</p>
 
@@ -996,20 +996,19 @@ export const CHAPTERS = [
 
 <p>“Won’t hear about this again until next year.”</p>
 
-<p>He’s not wrong.</p>
-
-<p></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="flashback-header"><strong>EMBARRASSING FLASHBACK</strong></p>
-
-<p></p>
-
+<p>He’s not wrong.</p>`,
+        wordCount: 340
+    },
+    {
+        id: 6.1,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "EMBARRASSING FLASHBACK",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">EMBARRASSING FLASHBACK</h2>
 <p class="has-dateline"><span class="dateline">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a member of the Baseball Writers’ Association of America. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>
 
 <p>The New York media surrounds lefty reliever Boone Logan. Poking a tape recorder into a pack of reporters, the Taylor Swift Pandora on my phone goes off.</p>
@@ -1029,14 +1028,18 @@ export const CHAPTERS = [
 <p>“My nine-year-old daughter listens to that, man.”</p>
 
 <p>Players laugh. Reporters, too. It’s my first game as a Ball Writer—I don’t know how I’ll recover from this.</p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
+</div>`,
+        wordCount: 144
+    },
+    {
+        id: 6.2,
+        year: 2015,
+        section: 'year',
+        hidden: true,
+        title: "OPENING DAY",
+        subtitle: "",
+        teaser: "",
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
 
 <p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only 10 pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>
 
@@ -1259,7 +1262,7 @@ export const CHAPTERS = [
 <p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn.</p>
 
 <p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>`,
-        wordCount: 2679
+        wordCount: 2156
     },
     {
         id: 8,
@@ -8443,7 +8446,7 @@ export const getTotalWordCount = () => {
 };
 
 // Export chapter count
-export const getChapterCount = () => CHAPTERS.length;
+export const getChapterCount = () => CHAPTERS.filter(c => !c.hidden).length;
 
 // Get first chapter ID (skips chapters without IDs like title/TOC)
 export const getFirstChapterId = () => {
@@ -8488,19 +8491,19 @@ export const calculateReadingTime = (wordCount) => {
 
 // Get intro chapters (nested under INTRO dropdown)
 export const getIntroChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'intro');
+    return CHAPTERS.filter(c => c.section === 'intro' && !c.hidden);
 };
 
 // Get postscript chapters (nested under POSTSCRIPT dropdown)
 export const getPostscriptChapters = () => {
-    return CHAPTERS.filter(c => c.section === 'postscript' && !c.hideFromToc);
+    return CHAPTERS.filter(c => c.section === 'postscript' && !c.hideFromToc && !c.hidden);
 };
 
 // Get chapters grouped by year (only year-section chapters)
 export const getChaptersByYear = () => {
     const yearMap = {};
 
-    CHAPTERS.filter(c => c.section === 'year').forEach(chapter => {
+    CHAPTERS.filter(c => c.section === 'year' && !c.hidden).forEach(chapter => {
         const yearKey = chapter.year;
         if (!yearMap[yearKey]) {
             yearMap[yearKey] = [];
