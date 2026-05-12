@@ -135,6 +135,9 @@
 
 /* Like/Heart button */
 .share-btn-like svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
     transition: all 0.3s ease;
 }
 
