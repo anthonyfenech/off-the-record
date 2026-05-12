@@ -8442,7 +8442,7 @@ export const getPreviousChapterId = (currentId) => {
     if (currentIndex <= 0) return null;
     // Find the previous chapter that has an ID
     for (let i = currentIndex - 1; i >= 0; i--) {
-        if (CHAPTERS[i].id !== undefined) {
+        if (CHAPTERS[i].id !== undefined && !CHAPTERS[i].hidden) {
             return CHAPTERS[i].id;
         }
     }
@@ -8455,7 +8455,7 @@ export const getNextChapterId = (currentId) => {
     if (currentIndex < 0 || currentIndex >= CHAPTERS.length - 1) return null;
     // Find the next chapter that has an ID
     for (let i = currentIndex + 1; i < CHAPTERS.length; i++) {
-        if (CHAPTERS[i].id !== undefined) {
+        if (CHAPTERS[i].id !== undefined && !CHAPTERS[i].hidden) {
             return CHAPTERS[i].id;
         }
     }
