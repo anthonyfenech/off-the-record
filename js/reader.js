@@ -313,7 +313,10 @@ class Reader {
                     }
                     element.innerHTML = pMatch[2];
                 } else {
-                    element = document.createElement('p');
+                    // Block-level chunk (e.g., chunks containing <div class="toc-page">
+                    // or a stray </div> glued to a <p>). Use a <div> wrapper to avoid
+                    // HTML5's destructive <p>-as-parent fragment parsing.
+                    element = document.createElement('div');
                     element.innerHTML = item.content;
                 }
             }
