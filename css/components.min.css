@@ -3145,3 +3145,5 @@ body:not(.sidebar-open):not(.modal-open) {
 .chapter[data-slug="dedication"] .chapter-header {
   display: none;
 }
+
+#searchSection{display:none!important}body.reader-app #searchSection{display:block!important}
