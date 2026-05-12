@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v668';
+const CACHE_VERSION = 'v669';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -178,7 +178,11 @@ async function networkFirst(request) {
             return caches.match('./offline.html');
         }
 
-        throw error;
+        // Return a synthetic network error response instead of re-throwing.
+        // Prevents an uncaught promise rejection in DevTools when fetch was
+        // aborted (e.g., same-page hash navigations the browser cancels
+        // mid-flight). The page sees the same network-error result either way.
+        return Response.error();
     }
 }
 
