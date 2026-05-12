@@ -41,19 +41,30 @@ class SearchManager {
     }
 
     // Build searchable index from CHAPTERS (lazy)
+    // Each indexed item:
+    //   subtitle: chapter.subtitle || ''  (weighted +6 in calculateRelevance)
+    //   teaser:   chapter.teaser   || ''  (weighted +4 in calculateRelevance)
     getIndex() {
         if (!this.searchIndex) {
             this.searchIndex = CHAPTERS
                 .filter(ch => ch.id > 0)
-                .map(chapter => ({
-                    id: chapter.id,
-                    title: chapter.title,
-                    year: chapter.year,
-                    section: chapter.section,
-                    searchableText: this.stripHTML(chapter.content).toLowerCase(),
-                    rawText: this.stripHTML(chapter.content),
-                    wordCount: chapter.wordCount || 0
-                }));
+                .map(chapter => {
+                    const subtitle = chapter.subtitle || '';
+                    const teaser = chapter.teaser || '';
+                    const stripped = this.stripHTML(chapter.content);
+                    const combined = (subtitle + ' ' + teaser + ' ' + stripped).trim();
+                    return {
+                        id: chapter.id,
+                        title: chapter.title,
+                        year: chapter.year,
+                        section: chapter.section,
+                        searchableText: combined.toLowerCase(),
+                        rawText: combined,
+                        subtitle: subtitle,
+                        teaser: teaser,
+                        wordCount: chapter.wordCount || 0
+                    };
+                });
         }
         return this.searchIndex;
     }
@@ -326,6 +337,16 @@ class SearchManager {
             score += 8;
         }
 
+        // B2: structural surface boosts (in priority order below title)
+        //   subtitle: +6
+        //   teaser:   +4
+        if (item.subtitle && item.subtitle.toLowerCase().includes(queryLower)) {
+            score += 6;
+        }
+        if (item.teaser && item.teaser.toLowerCase().includes(queryLower)) {
+            score += 4;
+        }
+
         // All words present
         if (words.length > 1) {
             const allWordsPresent = words.every(word => item.searchableText.includes(word));
@@ -389,6 +410,12 @@ class SearchManager {
 
     // Show no results message
     showNoResults(query) {
+        try {
+            const key = 'otr_search_zero';
+            const log = JSON.parse(localStorage.getItem(key) || '[]');
+            log.push({ q: query, t: Date.now() });
+            localStorage.setItem(key, JSON.stringify(log.slice(-200)));
+        } catch (e) { /* localStorage unavailable — silently skip */ }
         if (!this.searchResults) return;
         this.searchResults.innerHTML = `
             <div class="search-no-results">
