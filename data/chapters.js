@@ -34,7 +34,9 @@ export const CHAPTERS = [
         slug: "table-of-contents",
         subtitle: "",
         teaser: "",
-        content: `<p class="toc-entry"><a href="#authors-note" class="toc-link">AUTHOR'S NOTE</a></p>
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">TABLE OF CONTENTS</h2>
+<p class="toc-entry"><a href="#authors-note" class="toc-link">AUTHOR'S NOTE</a></p>
 
 <p class="toc-entry"><a href="#summer-2017-prologue" class="toc-link">SUMMER 2017</a></p>
 
@@ -84,7 +86,8 @@ export const CHAPTERS = [
 
 <p class="toc-entry"><a href="#bottom-nine" class="toc-link">BOTTOM NINE</a></p>
 
-<p class="toc-entry"><a href="#the-pandemic" class="toc-link">THE PANDEMIC</a></p>`,
+<p class="toc-entry"><a href="#the-pandemic" class="toc-link">THE PANDEMIC</a></p>
+</div>`,
         wordCount: 0
     },
     {
@@ -8410,10 +8413,8 @@ export const CHAPTERS = [
         slug: "dedication",
         subtitle: "",
         teaser: "",
-        content: `<p></p>
-
-<p></p>
-
+        content: `<div class="toc-page">
+<h2 class="toc-page-title">DEDICATION</h2>
 <p>This book is dedicated to Pedro Gomez.</p>
 
 <p>Pedro was an ESPN television reporter since 2003 and one of the country’s foremost baseball journalists when he died unexpectedly at age 58 from a heart attack on February 7, 2021. He died watching Super Bowl LV with friends in his Scottsdale, Arizona home.</p>
@@ -8473,7 +8474,7 @@ export const CHAPTERS = [
 <p>To support Pedro’s Hall of Fame legacy in sports journalism, consider connecting with the Pedro Gomez Foundation. It’s a non-profit created in 2021 to further students’ aspirations in baseball, journalism and beyond with endowed scholarships at Arizona State University and the University of Arizona. The foundation also offers a ten-week paid student internship at the <em>Arizona Republic</em> newspaper, partnering with the National Association of Hispanic Journalists.</p>
 
 <p>To donate to the Pedro Gomez Foundation, visit the website at https://www.pedrogomezfoundation.org/. For more information, email the foundation at info@pedrogomezfoundation.org.</p>
-`,
+</div>`,
         wordCount: 1394
     }
 ];
