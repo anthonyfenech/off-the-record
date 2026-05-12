@@ -34,60 +34,7 @@ export const CHAPTERS = [
         slug: "table-of-contents",
         subtitle: "",
         teaser: "",
-        content: `<div class="toc-page">
-<h2 class="toc-page-title">TABLE OF CONTENTS</h2>
-<p class="toc-entry"><a href="#authors-note" class="toc-link">AUTHOR'S NOTE</a></p>
-
-<p class="toc-entry"><a href="#summer-2017-prologue" class="toc-link">SUMMER 2017</a></p>
-
-<p class="toc-entry"><a href="#dream-job" class="toc-link">DREAM JOB</a></p>
-
-<p class="toc-entry"><a href="#scandal" class="toc-link">SCANDAL!</a></p>
-
-<p class="toc-entry"><a href="#rookie-year" class="toc-link">ROOKIE YEAR</a></p>
-
-<p class="toc-entry"><a href="#opening-day" class="toc-link">OPENING DAY</a></p>
-
-<p class="toc-entry"><a href="#trade-deadline" class="toc-link">TRADE DEADLINE</a></p>
-
-<p class="toc-entry"><a href="#fire-drill" class="toc-link">FIRE DRILL</a></p>
-
-<p class="toc-entry"><a href="#spring-training" class="toc-link">SPRING TRAINING</a></p>
-
-<p class="toc-entry"><a href="#hot-seat" class="toc-link">HOT SEAT</a></p>
-
-<p class="toc-entry"><a href="#wake-up-call" class="toc-link">WAKE-UP CALL</a></p>
-
-<p class="toc-entry"><a href="#prime-time" class="toc-link">PRIME-TIME</a></p>
-
-<p class="toc-entry"><a href="#fireworks" class="toc-link">FIREWORKS</a></p>
-
-<p class="toc-entry"><a href="#summer-2017" class="toc-link">SUMMER 2017</a></p>
-
-<p class="toc-entry"><a href="#world-series" class="toc-link">WORLD SERIES</a></p>
-
-<p class="toc-entry"><a href="#awards-season" class="toc-link">AWARDS SEASON</a></p>
-
-<p class="toc-entry"><a href="#draft-day" class="toc-link">DRAFT DAY</a></p>
-
-<p class="toc-entry"><a href="#cooperstown" class="toc-link">COOPERSTOWN</a></p>
-
-<p class="toc-entry"><a href="#burn-out" class="toc-link">BURN OUT</a></p>
-
-<p class="toc-entry"><a href="#viva-las-vegas" class="toc-link">VIVA LAS VEGAS</a></p>
-
-<p class="toc-entry"><a href="#globetrotting" class="toc-link">GLOBETROTTING</a></p>
-
-<p class="toc-entry"><a href="#road-to-omaha" class="toc-link">ROAD TO OMAHA</a></p>
-
-<p class="toc-entry"><a href="#letter-to-the-editor" class="toc-link">A LETTER TO THE EDITOR</a></p>
-
-<p class="toc-entry"><a href="#unethical" class="toc-link">UNETHICAL</a></p>
-
-<p class="toc-entry"><a href="#bottom-nine" class="toc-link">BOTTOM NINE</a></p>
-
-<p class="toc-entry"><a href="#the-pandemic" class="toc-link">THE PANDEMIC</a></p>
-</div>`,
+        content: '',
         wordCount: 0
     },
     {
@@ -8576,3 +8523,22 @@ export const getChapterSlug = (id) => {
     const chapter = CHAPTERS.find(c => c.id === id);
     return chapter?.slug || null;
 };
+
+// Build the in-content Table of Contents dynamically from CHAPTERS so future
+// additions auto-appear. Same helpers/filters as the sidebar TOC.
+(() => {
+    const tocChapter = CHAPTERS.find(c => c.section === 'toc');
+    if (!tocChapter) return;
+    const entries = [
+        ...getIntroChapters(),
+        ...getSortedYears().flatMap(y => getChaptersByYear()[y] || []),
+        ...getPostscriptChapters()
+    ];
+    const entryHTML = entries
+        .map(c => `<p class="toc-entry"><a href="#${c.slug}" class="toc-link">${c.title}</a></p>`)
+        .join('\n\n');
+    tocChapter.content = `<div class="toc-page">
+<h2 class="toc-page-title">TABLE OF CONTENTS</h2>
+${entryHTML}
+</div>`;
+})();
