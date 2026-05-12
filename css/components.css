@@ -3172,3 +3172,15 @@ body:not(.sidebar-open):not(.modal-open) {
     0%   { background-color: var(--color-accent-light); }
     100% { background-color: transparent; }
 }
+
+/* ─── Hide search section on non-reader pages ─── */
+/* Search functions only on index.html (reader DOM required).
+   Other pages don't have #chapterContent etc., so search would
+   produce no results. Hidden by default; shown only when body
+   has .reader-app class (added only to index.html). */
+#searchSection {
+  display: none !important;
+}
+body.reader-app #searchSection {
+  display: block !important;
+}
