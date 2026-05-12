@@ -110,6 +110,45 @@ class SearchManager {
         });
     }
 
+    loadFuse() {
+        return new Promise((resolve) => {
+            if (window.Fuse) return resolve(window.Fuse);
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js';
+            const timeout = setTimeout(() => {
+                script.remove();
+                resolve(null);
+            }, 5000);
+            script.onload = () => { clearTimeout(timeout); resolve(window.Fuse); };
+            script.onerror = () => { clearTimeout(timeout); resolve(null); };
+            document.head.appendChild(script);
+        });
+    }
+
+    async tryFuzzy(query) {
+        try {
+            if (!this.fuse) {
+                const Fuse = await this.loadFuse();
+                if (!Fuse) return null;
+                const corpus = [...new Set(
+                    CHAPTERS
+                        .filter(c => c.id > 0)
+                        .flatMap(c => [
+                            ...(c.title || '').split(/\s+/),
+                            ...(c.subtitle || '').split(/\s+/)
+                        ])
+                        .filter(w => w.length > 3)
+                )];
+                this.fuse = new Fuse(corpus, { threshold: 0.4, includeScore: true });
+            }
+            const results = this.fuse.search(query);
+            if (results.length > 0 && results[0].score < 0.4) {
+                return results[0].item;
+            }
+        } catch (e) {}
+        return null;
+    }
+
     // Strip HTML tags
     stripHTML(html) {
         const tmp = document.createElement('div');
@@ -456,13 +495,39 @@ class SearchManager {
     }
 
     // Show no results message
-    showNoResults(query) {
+    async showNoResults(query) {
         try {
             const key = 'otr_search_zero';
             const log = JSON.parse(localStorage.getItem(key) || '[]');
             log.push({ q: query, t: Date.now() });
             localStorage.setItem(key, JSON.stringify(log.slice(-200)));
         } catch (e) { /* localStorage unavailable — silently skip */ }
+
+        const suggestion = await this.tryFuzzy(query);
+        if (suggestion) {
+            const resultsEl = document.getElementById('searchResults');
+            if (resultsEl) {
+                const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                                 .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                resultsEl.innerHTML =
+                    '<div class="search-no-results">No results for "' + esc(query) + '"' +
+                    '<br><br>Did you mean: <a href="#" class="search-suggestion" ' +
+                    'data-suggest="' + esc(suggestion) + '">' + esc(suggestion) + '</a>?</div>';
+                resultsEl.style.display = 'block';
+                const link = resultsEl.querySelector('.search-suggestion');
+                if (link) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const q = link.dataset.suggest;
+                        const input = document.getElementById('searchInput');
+                        if (input) input.value = q;
+                        this.performSearch(q);
+                    });
+                }
+                return;
+            }
+        }
+
         if (!this.searchResults) return;
         this.searchResults.innerHTML = `
             <div class="search-no-results">
