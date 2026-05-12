@@ -7449,17 +7449,6 @@ export const CHAPTERS = [
         wordCount: 406
     },
     {
-        id: 26.6,
-        year: 2019,
-        section: 'year',
-        hidden: true,
-        title: "UNETHICAL",
-        subtitle: "",
-        teaser: "",
-        content: ``,
-        wordCount: 837
-    },
-    {
         id: 27,
         year: 2019,
         section: 'year',
