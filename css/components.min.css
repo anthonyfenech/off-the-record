@@ -82,27 +82,6 @@
     color: var(--color-text-primary, #333);
 }
 
-.continue-reading-content {
-    max-width: var(--max-width-reader);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-}
-
-.continue-reading-label {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-normal);
-}
-
-.continue-reading-chapter {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
-}
-
 /* Scene Break */
 .scene-break {
     text-align: center !important;
@@ -243,13 +222,6 @@ p + p.has-dateline {
     text-align: right !important;
     text-indent: 0 !important;
     margin-top: 1.5em !important;
-}
-
-/* Scene/section breaks (for major transitions) */
-.section-break {
-    margin: var(--space-2xl) 0;
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--color-border);
 }
 
 /* ============================================
@@ -728,66 +700,10 @@ body:has(.toc-page) .clean-toggle {
     color: var(--color-text-secondary);
 }
 
-/* Install prompt (PWA) */
-.install-prompt {
-    position: fixed;
-    bottom: 80px;
-    left: var(--padding-mobile);
-    right: var(--padding-mobile);
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
-    padding: var(--space-lg);
-    border: 2px solid var(--color-accent);
-    box-shadow: var(--shadow-md);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-md);
-    z-index: 80;
-    opacity: 0;
-    transform: translateY(20px);
-    visibility: hidden;
-    transition: all var(--transition-normal);
-}
-
-.install-prompt.show {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-}
-
-.install-prompt-text {
-    flex: 1;
-    font-size: var(--font-size-sm);
-}
-
-.install-btn {
-    background-color: var(--color-accent);
-    color: var(--color-background);
-    padding: var(--space-sm) var(--space-lg);
-    border: 1px solid var(--color-accent);
-    font-weight: bold;
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-tight);
-    transition: all var(--transition-fast);
-}
-
-.install-btn:hover {
-    background-color: var(--color-background);
-    color: var(--color-accent);
-}
-
-.dismiss-install {
-    color: var(--color-text-secondary);
-    padding: var(--space-sm);
-}
-
 /* Touch feedback */
 @media (hover: none) {
     .nav-btn:active,
-    .toc-chapter:active,
-    .install-btn:active {
+    .toc-chapter:active {
         transform: scale(0.98);
     }
 }
@@ -2366,18 +2282,6 @@ body.show-captions .media-modal-caption {
     padding: var(--space-xl);
 }
 
-/* Bookmarks Section in Navigation */
-.bookmarks-section {
-    background-color: var(--color-accent-light);
-}
-
-.bookmarks-count {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    color: var(--color-text-secondary);
-    margin-left: var(--space-sm);
-}
-
 /* Bookmarks List */
 .bookmarks-list {
     display: flex;
@@ -2459,17 +2363,6 @@ body.show-captions .media-modal-caption {
 
 /* Tablet and up */
 @media (min-width: 600px) {
-    .install-prompt {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%) translateY(20px);
-        max-width: var(--max-width-reader);
-    }
-
-    .install-prompt.show {
-        transform: translateX(-50%) translateY(0);
-    }
-
     .media-modal-overlay {
         padding: var(--padding-tablet);
     }
@@ -3907,12 +3800,6 @@ body:not(.sidebar-open):not(.modal-open) {
 .lightbox-overlay:not(.active) {
     z-index: -1 !important;
     display: none !important;
-}
-
-/* Fixed elements must not capture events when hidden */
-/* .install-prompt uses .show class toggle - :not(.show) is correct */
-.install-prompt:not(.show) {
-    pointer-events: none !important;
 }
 
 /* ============================================
