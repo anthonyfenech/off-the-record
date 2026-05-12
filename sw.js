@@ -52,6 +52,7 @@ const STATIC_ASSETS = [
     './js/admin-access.js',
     './js/auth-standalone.js',
     './js/failsafes.js',
+    './js/failsafe-reset.js',
     './js/overlay-cleanup.js',
     './data/chapters.js',
     './data/media.js',
