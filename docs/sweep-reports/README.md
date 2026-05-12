@@ -29,6 +29,21 @@ docs/sweep-reports/
    notes for next sweep.
 6. **Commit the report:** `git add docs/sweep-reports/NNN-*.md && git commit`
 
+### Modes
+
+- `--snapshot` — print current metrics to stdout (one-shot).
+- `--pre` — capture current metrics to `.pre-snapshot.md` (silent;
+  only a confirmation message goes to stdout).
+- `--post` — capture current metrics, print them, then append a
+  unified diff vs. `.pre-snapshot.md`. Deletes the pre-snapshot
+  when done.
+
+Typical sweep workflow:
+
+    bash docs/sweep-reports/METRICS-COLLECTOR.sh --pre
+    # ... perform maintenance work ...
+    bash docs/sweep-reports/METRICS-COLLECTOR.sh --post > docs/sweep-reports/sweep-NNN.md
+
 ## Why this exists
 
 Without a structured historical record, sweeps are point-in-time exercises

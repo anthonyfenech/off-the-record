@@ -29,3 +29,6 @@ package-lock.json
 
 # Migration safety backups (preserved in git history)
 *.BACKUP_*
+
+# Sweep reports — transient pre/post diff state
+docs/sweep-reports/.pre-snapshot.md
