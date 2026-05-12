@@ -8391,18 +8391,21 @@ export const CHAPTERS = [
 
 <p>Pour a drink. Roll one up. Free Bird on repeat.</p>
 
-<p>And I sit there and think about how, if I live to write that sports writing book, this is how it would end, with the phone ringing and everything else a beautiful blur—a ride so real, I couldn’t have made it up.</p>
-
-<p></p>
-
-<p></p>
-
-<p class="scene-break">***</p>
-
-<p></p>
-
-<p class="no-indent"><em>London was a mess. Spent fourteen days quarantining at an airport hotel. On the third day, called MetLife. When the lady on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. “From America, writing a book.” Everyone asked about the book, so I changed my bio to just an American flag and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. Told a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house smoking cigarettes along the sea. Got a tip, a message on my phone. Amber Alert back home. WHERE IN THE WORLD IS ANTHONY FENECH?It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for it. When the</em> Free Press <em>found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat. Corporate called, Coach Content was leaving, was I coming back to work? Got laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. Got here on my birthday. Next day, everything closed. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate hostel in the south. Got a text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called. “The story begins in the back of your SUV,” I said. Visited the village where my grandparents lived. Relapsed the hardest when I found out he died. The Super Bowl started at midnight and there were drugs and new friends and a cab to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, crying on a bench. The sun came up. I wondered if he ever thought about me. I googled my name. “One of these days,” the story said, “we will find out what happened between Anthony Fenech and life.” Every day, I thought of that day. I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went—</em></p>`,
-        wordCount: 3399
+<p>And I sit there and think about how, if I live to write that sports writing book, this is how it would end, with the phone ringing and everything else a beautiful blur—a ride so real, I couldn’t have made it up.</p>`,
+        wordCount: 2981
+    },
+    {
+        id: 28.1,
+        year: 2020,
+        section: 'year',
+        hidden: true,
+        title: "LONDON",
+        subtitle: "",
+        teaser: "",
+        content: `<div class="toc-page">
+<p class="no-indent"><em>London was a mess. Spent fourteen days quarantining at an airport hotel. On the third day, called MetLife. When the lady on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. “From America, writing a book.” Everyone asked about the book, so I changed my bio to just an American flag and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. Told a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house smoking cigarettes along the sea. Got a tip, a message on my phone. Amber Alert back home. WHERE IN THE WORLD IS ANTHONY FENECH?It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for it. When the</em> Free Press <em>found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat. Corporate called, Coach Content was leaving, was I coming back to work? Got laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. Got here on my birthday. Next day, everything closed. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate hostel in the south. Got a text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called. “The story begins in the back of your SUV,” I said. Visited the village where my grandparents lived. Relapsed the hardest when I found out he died. The Super Bowl started at midnight and there were drugs and new friends and a cab to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, crying on a bench. The sun came up. I wondered if he ever thought about me. I googled my name. “One of these days,” the story said, “we will find out what happened between Anthony Fenech and life.” Every day, I thought of that day. I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went—</em></p>
+</div>`,
+        wordCount: 417
     },
     {
         id: 29,
