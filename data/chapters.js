@@ -7456,6 +7456,17 @@ export const CHAPTERS = [
         title: "UNETHICAL",
         subtitle: "",
         teaser: "",
+        content: ``,
+        wordCount: 837
+    },
+    {
+        id: 27,
+        year: 2019,
+        section: 'year',
+        title: "BOTTOM NINE",
+        slug: "bottom-nine",
+        subtitle: "",
+        teaser: "Final innings.",
         content: `<p class="has-dateline"><span class="dateline">LONDON, <em>November 14</em>—</span>After more than a month away, I’m heading home when an email arrives: LAYOFFS LOOMING</p>
 
 <p>The <em>Free Press</em> needs to cut three reporters and a photographer. Seven years of seniority should put me in the clear. A good thing?</p>
@@ -7528,18 +7539,9 @@ export const CHAPTERS = [
 
 <p>After nearly two hours, he passes over a folder of hitting strategies and an email report he sent directly to the Highest Source In The Land. Before I go, I’m introduced to one of his daughters.</p>
 
-<p>I message my closest work confidante: “On the day they told me they didn’t want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house.”</p>`,
-        wordCount: 837
-    },
-    {
-        id: 27,
-        year: 2019,
-        section: 'year',
-        title: "BOTTOM NINE",
-        slug: "bottom-nine",
-        subtitle: "",
-        teaser: "Final innings.",
-        content: `<p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>The Winter Meetings again. Perhaps, for me, the final one—a scary thought I cannot shake. It is raining as I arrive at the Manchester Grand Hyatt Resort.</p>
+<p>I message my closest work confidante: “On the day they told me they didn’t want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house.”</p>
+
+<p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>The Winter Meetings again. Perhaps, for me, the final one—a scary thought I cannot shake. It is raining as I arrive at the Manchester Grand Hyatt Resort.</p>
 
 <p>I can still see my first day ever at the Ball Writing carnival. I remember pulling out my wallet to make sure I had at least five business cards packed into the outside flap.</p>
 
