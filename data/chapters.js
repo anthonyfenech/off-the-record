@@ -8037,7 +8037,7 @@ export const CHAPTERS = [
 <p>I continue to sit in the Joker Marchant Stadium press box, trying to imagine what the stadium looked like before. When there weren’t seats in right, no Margaritaville porch, just a few tall palm trees and green netting to catch homers and protect reporters and others outside the clubhouse from getting blistered with foul balls.</p>
 
 <p>I strain to see it. Back when there were black chain-link picnic tables out there, the kind you could stick your fingers into, where I once interviewed my favorite baseball player growing up and got razzed by Jim Leyland and spent the doe-eyed days of my cub reporting youth. A place far in the fantasy of the past, so far away from the reality of now, where I’m afraid to leave the press box because I don’t think I’ll ever be back.</p>`,
-        wordCount: 5856
+        wordCount: 6693
     },
     {
         id: 28,
