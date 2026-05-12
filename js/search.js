@@ -12,7 +12,7 @@ const CONFIG = {
     maxDisplayedResults: 8,
     snippetLength: 100,
     debounceDelay: 300,
-    highlightDuration: 4000, // ms before highlight fades
+    highlightDuration: 0, // 0 = persistent; reader dismisses manually
 };
 
 class SearchManager {
@@ -655,10 +655,12 @@ class SearchManager {
             this.scrollToMatch(0);
         }
 
-        // Schedule highlight removal
-        setTimeout(() => {
-            this.fadeOutHighlights();
-        }, CONFIG.highlightDuration);
+        // Schedule highlight removal (only if a finite duration is configured)
+        if (CONFIG.highlightDuration > 0) {
+            setTimeout(() => {
+                this.fadeOutHighlights();
+            }, CONFIG.highlightDuration);
+        }
     }
 
     // Scroll to specific match
@@ -737,11 +739,10 @@ class SearchManager {
         if (!this.matchCounter) return;
 
         if (this.inPageMatches.length > 0) {
-            // Show in-page match position
+            // Show in-chapter match position; prev/next wrap so both stay enabled
             this.matchCounter.textContent = `${this.inPageMatchIndex + 1}/${this.inPageMatches.length}`;
-            this.prevMatchBtn.disabled = this.inPageMatchIndex === 0 && this.currentMatchIndex === 0;
-            this.nextMatchBtn.disabled = this.inPageMatchIndex === this.inPageMatches.length - 1 &&
-                                          this.currentMatchIndex === this.currentMatches.length - 1;
+            this.prevMatchBtn.disabled = false;
+            this.nextMatchBtn.disabled = false;
         } else if (this.currentMatches.length > 0) {
             // Show chapter match position
             this.matchCounter.textContent = `${this.currentMatchIndex + 1}/${this.currentMatches.length}`;
@@ -750,30 +751,45 @@ class SearchManager {
         }
     }
 
-    // Navigate to next match
-    nextMatch() {
-        if (this.inPageMatches.length > 0 && this.inPageMatchIndex < this.inPageMatches.length - 1) {
-            // Next match in current page
-            this.scrollToMatch(this.inPageMatchIndex + 1);
-        } else if (this.currentMatches.length > 0 && this.currentMatchIndex < this.currentMatches.length - 1) {
-            // Next chapter
-            this.currentMatchIndex++;
-            const match = this.currentMatches[this.currentMatchIndex];
-            this.navigateToChapter(match.id, this.currentQuery);
+    // Refresh inPageMatches from the live DOM (in document order)
+    refreshInPageMatches() {
+        const contentEl = document.getElementById('content') || document.querySelector('.chapter-content');
+        if (!contentEl) {
+            this.inPageMatches = [];
+            return;
         }
+        this.inPageMatches = Array.from(contentEl.querySelectorAll('.search-highlight'));
     }
 
-    // Navigate to previous match
+    // Flash the floating nav strip to signal a chapter-boundary wrap
+    flashNavEnd() {
+        if (!this.matchNav) return;
+        this.matchNav.classList.add('search-match-nav-end');
+        setTimeout(() => {
+            if (this.matchNav) this.matchNav.classList.remove('search-match-nav-end');
+        }, 600);
+    }
+
+    // Navigate to next match in CURRENT chapter (wraps; stays in-chapter)
+    nextMatch() {
+        this.refreshInPageMatches();
+        if (this.inPageMatches.length === 0) return;
+
+        const atEnd = this.inPageMatchIndex >= this.inPageMatches.length - 1;
+        const nextIdx = atEnd ? 0 : this.inPageMatchIndex + 1;
+        this.scrollToMatch(nextIdx);
+        if (atEnd) this.flashNavEnd();
+    }
+
+    // Navigate to previous match in CURRENT chapter (wraps; stays in-chapter)
     previousMatch() {
-        if (this.inPageMatches.length > 0 && this.inPageMatchIndex > 0) {
-            // Previous match in current page
-            this.scrollToMatch(this.inPageMatchIndex - 1);
-        } else if (this.currentMatches.length > 0 && this.currentMatchIndex > 0) {
-            // Previous chapter
-            this.currentMatchIndex--;
-            const match = this.currentMatches[this.currentMatchIndex];
-            this.navigateToChapter(match.id, this.currentQuery);
-        }
+        this.refreshInPageMatches();
+        if (this.inPageMatches.length === 0) return;
+
+        const atStart = this.inPageMatchIndex <= 0;
+        const prevIdx = atStart ? this.inPageMatches.length - 1 : this.inPageMatchIndex - 1;
+        this.scrollToMatch(prevIdx);
+        if (atStart) this.flashNavEnd();
     }
 
     // Clear search
