@@ -660,6 +660,11 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
     border: none;
 }
 
+/* First body element after a toc-page title: loose 37px gap (20px h2 mb + 1em first-p mt) */
+.chapter-body .toc-page-title + p {
+    margin-top: 1em !important;
+}
+
 @media (max-width: 599px) {
     .chapter-body .toc-page-title {
         font-size: 1.25rem;
@@ -4164,9 +4169,9 @@ body:not(.sidebar-open):not(.modal-open) {
   padding: 1em 0;
 }
 
+/* Dedication and TOC render their titles inside .chapter-body via .toc-page-title;
+   hide the duplicate that JS still writes into .chapter-header */
 .chapter[data-slug="table-of-contents"] .chapter-header,
 .chapter[data-slug="dedication"] .chapter-header {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 1em;
+  display: none;
 }
