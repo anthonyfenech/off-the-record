@@ -1,0 +1,275 @@
+#!/usr/bin/env bash
+# METRICS-COLLECTOR.sh — produces metrics block for sweep reports
+#
+# Usage:
+#   bash docs/sweep-reports/METRICS-COLLECTOR.sh --pre    # before sweep
+#   bash docs/sweep-reports/METRICS-COLLECTOR.sh --post   # after Phase 2 fixes
+#   bash docs/sweep-reports/METRICS-COLLECTOR.sh          # raw snapshot, no label
+#
+# Output goes to stdout. Pipe to a file or copy/paste into the sweep report.
+# Designed to be IDEMPOTENT and READ-ONLY — runs against current working tree.
+
+set -euo pipefail
+
+# ─────────────────────────────────────────────
+# CONFIGURATION
+# ─────────────────────────────────────────────
+
+LABEL="${1:-snapshot}"
+LABEL="${LABEL#--}"  # strip leading --
+
+cd "$(git rev-parse --show-toplevel)" 2>/dev/null || {
+  echo "ERROR: not in a git repository"
+  exit 1
+}
+
+# ─────────────────────────────────────────────
+# HEADER
+# ─────────────────────────────────────────────
+
+echo "## METRICS — $(echo $LABEL | tr '[:lower:]' '[:upper:]') ($(date -u '+%Y-%m-%d %H:%M:%SZ'))"
+echo ""
+echo "**Git state:**"
+echo "- Branch: $(git branch --show-current)"
+echo "- HEAD SHA: $(git rev-parse HEAD)"
+echo "- Working tree clean: $(if [ -z "$(git status --short)" ]; then echo "yes"; else echo "no"; fi)"
+echo ""
+
+# ─────────────────────────────────────────────
+# CODE VOLUME (source lines, excluding minified)
+# ─────────────────────────────────────────────
+
+echo "### Code volume"
+echo ""
+
+js_lines=$(find js -type f -name "*.js" ! -name "*.min.js" -exec cat {} \; 2>/dev/null | wc -l | tr -d ' ')
+css_lines=$(find css -type f -name "*.css" ! -name "*.min.css" -exec cat {} \; 2>/dev/null | wc -l | tr -d ' ')
+html_lines=$(find . -maxdepth 1 -type f -name "*.html" -exec cat {} \; 2>/dev/null | wc -l | tr -d ' ')
+data_lines=$(find data -type f -name "*.js" -exec cat {} \; 2>/dev/null | wc -l | tr -d ' ')
+
+echo "| Type | Lines |"
+echo "|------|------:|"
+echo "| JS (source, non-minified) | $js_lines |"
+echo "| CSS (source, non-minified) | $css_lines |"
+echo "| HTML (root pages) | $html_lines |"
+echo "| Data files (chapters.js, media.js, etc.) | $data_lines |"
+echo "| **Total source lines** | **$((js_lines + css_lines + html_lines + data_lines))** |"
+echo ""
+
+# File counts
+js_files=$(find js -type f -name "*.js" ! -name "*.min.js" 2>/dev/null | wc -l | tr -d ' ')
+css_files=$(find css -type f -name "*.css" ! -name "*.min.css" 2>/dev/null | wc -l | tr -d ' ')
+html_files=$(find . -maxdepth 1 -type f -name "*.html" 2>/dev/null | wc -l | tr -d ' ')
+
+echo "**File counts:**"
+echo "- JS source files: $js_files"
+echo "- CSS source files: $css_files"
+echo "- HTML root pages: $html_files"
+echo ""
+
+# ─────────────────────────────────────────────
+# CODE QUALITY INDICATORS
+# ─────────────────────────────────────────────
+
+echo "### Code quality indicators"
+echo ""
+
+# These are the metrics the sweep specifically targets
+console_count=$(grep -rcn "console\." js/*.js 2>/dev/null | grep -v '\.min\.' | awk -F: '{s+=$2} END {print s+0}')
+debugger_count=$(grep -rcn "debugger" js/*.js 2>/dev/null | grep -v '\.min\.' | awk -F: '{s+=$2} END {print s+0}')
+empty_catches=$(grep -rnE 'catch\s*\([^)]*\)\s*\{\s*\}' js/*.js 2>/dev/null | grep -v '\.min\.' | wc -l | tr -d ' ')
+alert_count=$(grep -rcn 'alert(' js/*.js 2>/dev/null | grep -v '\.min\.' | awk -F: '{s+=$2} END {print s+0}')
+todo_count=$(grep -rcEn 'TODO|FIXME|HACK|XXX' js/*.js css/*.css 2>/dev/null | grep -v '\.min\.' | awk -F: '{s+=$2} END {print s+0}')
+important_count=$(grep -c '!important' css/*.css 2>/dev/null | grep -v '\.min\.' | awk -F: '{s+=$2} END {print s+0}')
+loose_eq=$(grep -rcEn '[^=!]==[^=]' js/*.js 2>/dev/null | grep -v '\.min\.' | awk -F: '{s+=$2} END {print s+0}')
+
+echo "| Indicator | Count | Severity |"
+echo "|-----------|------:|----------|"
+echo "| console.* statements | $console_count | P2 |"
+echo "| debugger statements | $debugger_count | P1 if >0 |"
+echo "| Empty catch blocks | $empty_catches | P2 |"
+echo "| alert() calls | $alert_count | P2 |"
+echo "| TODO/FIXME/HACK/XXX | $todo_count | P3 |"
+echo "| CSS !important usages | $important_count | P2 trend |"
+echo "| Loose equality (==) | $loose_eq | P3 |"
+echo ""
+
+# ─────────────────────────────────────────────
+# MANUSCRIPT INTEGRITY (sacred — must be stable)
+# ─────────────────────────────────────────────
+
+echo "### Manuscript integrity (sacred — must remain stable across sweeps)"
+echo ""
+
+if [ -f data/chapters.js ]; then
+  chapters_md5=$(md5sum data/chapters.js | cut -d' ' -f1)
+  echo "**chapters.js MD5:** \`$chapters_md5\`"
+  echo ""
+
+  italics=$(grep -c '<em>' data/chapters.js)
+  datelines=$(grep -c 'has-dateline' data/chapters.js)
+  scene_breaks=$(grep -c 'scene-break' data/chapters.js)
+  flashbacks=$(grep -c 'flashback-header' data/chapters.js)
+  email_lines=$(grep -c 'email-line' data/chapters.js)
+  small_caps=$(grep -c 'small-caps' data/chapters.js)
+  empty_p=$(grep -c '<p></p>' data/chapters.js)
+
+  echo "| Element | Count |"
+  echo "|---------|------:|"
+  echo "| Italic runs (<em>) | $italics |"
+  echo "| Datelines | $datelines |"
+  echo "| Scene breaks | $scene_breaks |"
+  echo "| Flashback headers | $flashbacks |"
+  echo "| Email lines | $email_lines |"
+  echo "| Small caps | $small_caps |"
+  echo "| Empty `<p></p>` tags | $empty_p |"
+  echo ""
+fi
+
+# ─────────────────────────────────────────────
+# CSS HEALTH
+# ─────────────────────────────────────────────
+
+echo "### CSS health"
+echo ""
+
+# Hardcoded colors outside variables.css
+hardcoded_colors=$(grep -rEn '#[0-9a-fA-F]{3,8}' css/*.css 2>/dev/null | grep -v 'variables.css' | grep -v '\.min\.' | grep -v '/\*' | wc -l | tr -d ' ')
+
+# Empty rules
+empty_rules=$(grep -P '{\s*}' css/*.css 2>/dev/null | grep -v '\.min\.' | wc -l | tr -d ' ')
+
+# Dark-mode override count
+dark_mode_blocks=$(grep -rEn '\[data-theme=.dark.\]' css/*.css 2>/dev/null | grep -v '\.min\.' | wc -l | tr -d ' ')
+
+echo "| Metric | Count |"
+echo "|--------|------:|"
+echo "| Hardcoded colors outside variables.css | $hardcoded_colors |"
+echo "| Empty rules ({}) | $empty_rules |"
+echo "| Dark-mode override blocks | $dark_mode_blocks |"
+echo ""
+
+# ─────────────────────────────────────────────
+# SERVICE WORKER STATE
+# ─────────────────────────────────────────────
+
+echo "### Service worker"
+echo ""
+
+if [ -f sw.js ]; then
+  cache_version=$(grep -oP 'CACHE_VERSION.*v\K[0-9]+' sw.js | head -1)
+  min_js_refs=$(grep -c '\.min\.js' sw.js 2>/dev/null || echo 0)
+  cached_files=$(grep -oP "'[^']+'" sw.js | tr -d "'" | grep -cE '\.(html|css|js|json|woff2?|png|svg|ico)$' | tr -d ' ')
+
+  echo "- Cache version: **v$cache_version**"
+  echo "- .min.js references (regression target: 0): **$min_js_refs**"
+  echo "- Static assets in cache list: **$cached_files**"
+  echo ""
+fi
+
+# ─────────────────────────────────────────────
+# GIT HEALTH
+# ─────────────────────────────────────────────
+
+echo "### Git health"
+echo ""
+
+local_branches=$(git for-each-ref refs/heads/ --format='%(refname:short)' | wc -l | tr -d ' ')
+remote_branches=$(git for-each-ref refs/remotes/origin/ --format='%(refname:short)' 2>/dev/null | wc -l | tr -d ' ')
+stale_threshold=$(date -d '14 days ago' +%Y-%m-%d 2>/dev/null || date -v-14d +%Y-%m-%d)
+stale_local=$(git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' | awk -v c="$stale_threshold" '$1 < c {n++} END {print n+0}')
+
+echo "| Metric | Count |"
+echo "|--------|------:|"
+echo "| Local branches | $local_branches |"
+echo "| Remote branches | $remote_branches |"
+echo "| Local branches stale (>14 days) | $stale_local |"
+echo ""
+
+# Recent commit cadence (last 7 days)
+recent_commits=$(git log --since='7 days ago' --oneline | wc -l | tr -d ' ')
+echo "**Commit cadence:** $recent_commits commits in last 7 days"
+echo ""
+
+# ─────────────────────────────────────────────
+# DEAD CODE INDICATORS
+# ─────────────────────────────────────────────
+
+echo "### Dead-code indicators"
+echo ""
+
+# Files with no inbound references (rough heuristic — full check is in Suite 4B)
+echo "*Full orphan analysis runs in Suite 4B (HTML pages) and Suite 13E*"
+echo "*(dead CSS selectors) of the sweep itself. This block reports rough counts only.*"
+echo ""
+
+# Untracked files
+untracked=$(git status --short | grep '^??' | wc -l | tr -d ' ')
+echo "- Untracked files: $untracked"
+
+# Backup/temp files
+backup_files=$(find . -not -path "./.git/*" -not -path "./node_modules/*" \
+  \( -name "*.bak" -o -name "*~" -o -name "*.orig" -o -name "*.BACKUP*" -o -name "*.backup" -o -name "*.tmp" \) 2>/dev/null | wc -l | tr -d ' ')
+echo "- Backup/temp files in tree: $backup_files"
+
+# Large files
+large_files=$(find . -type f -size +500k -not -path "./.git/*" -not -path "./node_modules/*" 2>/dev/null | wc -l | tr -d ' ')
+echo "- Files >500KB: $large_files"
+
+echo ""
+
+# ─────────────────────────────────────────────
+# COMPOSITE SCORE (rough — full scoring happens in sweep itself)
+# ─────────────────────────────────────────────
+
+echo "### Composite indicators (rough)"
+echo ""
+
+# Build a rough score from individual metrics. Higher = healthier.
+# Each metric scaled to 0-10, then averaged. Sweep suite scores are
+# more rigorous; these are just trend indicators.
+
+# Console count: 0 = 10, >50 = 0
+console_score=$(awk -v c="$console_count" 'BEGIN { s=10-(c/5); if (s<0) s=0; if (s>10) s=10; print s }')
+
+# Empty catches: 0 = 10, >5 = 0
+catch_score=$(awk -v c="$empty_catches" 'BEGIN { s=10-(c*2); if (s<0) s=0; if (s>10) s=10; print s }')
+
+# debugger: any = 0, else 10
+debugger_score=$(awk -v c="$debugger_count" 'BEGIN { print (c==0 ? 10 : 0) }')
+
+# .min.js refs in sw.js: 0 = 10, >0 = 0
+sw_min_score=$(awk -v c="$min_js_refs" 'BEGIN { print (c==0 ? 10 : 0) }')
+
+# Stale branches: 0 = 10, >5 = 0
+branch_score=$(awk -v c="$stale_local" 'BEGIN { s=10-(c*2); if (s<0) s=0; if (s>10) s=10; print s }')
+
+# Untracked files: 0 = 10, >10 = 0
+untracked_score=$(awk -v c="$untracked" 'BEGIN { s=10-c; if (s<0) s=0; if (s>10) s=10; print s }')
+
+avg=$(awk -v a="$console_score" -v b="$catch_score" -v c="$debugger_score" -v d="$sw_min_score" -v e="$branch_score" -v f="$untracked_score" \
+  'BEGIN { printf "%.2f", (a+b+c+d+e+f)/6 }')
+
+echo "| Component | Score / 10 |"
+echo "|-----------|----------:|"
+echo "| Console hygiene | $console_score |"
+echo "| Error handling | $catch_score |"
+echo "| Debug artifacts | $debugger_score |"
+echo "| SW .min.js fix preserved | $sw_min_score |"
+echo "| Branch hygiene | $branch_score |"
+echo "| Working tree cleanliness | $untracked_score |"
+echo "| **Composite (rough)** | **$avg** |"
+echo ""
+
+echo "*Note: This is a rough composite. The full sweep produces per-suite*"
+echo "*scores in Phase 1 report which should be considered authoritative.*"
+echo ""
+
+# ─────────────────────────────────────────────
+# FOOTER
+# ─────────────────────────────────────────────
+
+echo "---"
+echo ""
+echo "*Generated by METRICS-COLLECTOR.sh on $(date -u '+%Y-%m-%d %H:%M:%SZ')*"
+echo "*Working tree: $(if [ -z "$(git status --short)" ]; then echo "clean"; else echo "DIRTY — metrics may not reflect committed state"; fi)*"
