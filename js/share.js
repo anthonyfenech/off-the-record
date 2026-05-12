@@ -722,7 +722,7 @@
                     <img id="share-preview-img" alt="Preview of passage to share" />
                 </div>
                 <div class="share-actions" role="group" aria-label="Share options">
-                    <button class="share-btn share-btn-like" data-action="like" aria-label="Love this passage"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+                    <button class="share-btn share-btn-like" data-action="like" aria-label="Love this passage"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
                     <button class="share-btn share-btn-native" data-action="native" aria-label="Share"${!isOnline ? ' style="display:none"' : ''}>${ICONS.share}</button>
                     <button class="share-btn share-btn-email" data-action="email" aria-label="Email"${!isOnline ? ' style="display:none"' : ''}>${ICONS.email}</button>
                     <button class="share-btn" data-action="copy" aria-label="${canCopyImages ? 'Copy' : 'Save'}">${canCopyImages ? ICONS.copy : ICONS.download}</button>
