@@ -619,66 +619,6 @@ const MEDIA_DATA = {
   // EXTERNAL LINKS (Articles, Tweets, etc.)
   // ========================================
 
-  'joe-nathan-story': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Joe Nathan Story - Detroit Free Press',
-    src: 'https://www.freep.com/story/sports/mlb/tigers/2015/02/17/joe-nathan-detroit-tigers/23556289/',
-    date: '2015-02-17',
-    publication: 'Detroit Free Press',
-    chapter: 4
-  },
-
-  'crasnick-column': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Jerry Crasnick Column',
-    src: 'https://www.espn.com/mlb/story/_/id/22873239/opposite-ends-mlb-manager-spectrum-succeed',
-    date: '2015-07-01',
-    publication: 'ESPN',
-    chapter: 7
-  },
-
-  'verlander-diva-nypost': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Verlander Bars Reporter - NY Post',
-    src: 'https://nypost.com/2019/08/22/justin-verlander-orders-astros-to-bar-detroit-reporter-over-grudge/',
-    date: '2019-08-22',
-    publication: 'NY Post',
-    chapter: 26
-  },
-
-  'harkins-settlement-latimes': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Harkins Settlement - LA Times',
-    src: 'https://www.latimes.com/sports/angels/story/2023-07-31/bubba-harkins-defamation-lawsuit-angels-mlb-settled',
-    date: '2019-01-01',
-    publication: 'LA Times',
-    chapter: 22
-  },
-
-  'sticky-stuff-si': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Sticky Stuff Investigation - Sports Illustrated',
-    src: 'https://www.si.com/mlb/2021/06/14/sticky-stuff-bubba-harkins-speaking-out-daily-cover',
-    date: '2021-06-01',
-    publication: 'Sports Illustrated',
-    chapter: 28
-  },
-
-  'verlander-poppy-freep': {
-    type: 'link',
-    emoji: '🔗',
-    title: 'Verlander Poppy Story - Free Press',
-    src: 'https://www.freep.com/story/sports/mlb/tigers/2017/05/28/detroit-tigers-memorial-day-justin-verlander-remembers-veterans-poppy-flower/352657001/',
-    date: '2017-05-01',
-    publication: 'Detroit Free Press',
-    chapter: 14
-  },
-
   'k-rod-stats': {
     type: 'screenshot',
     emoji: '📷',
