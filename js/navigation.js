@@ -668,7 +668,7 @@ class Navigation {
             item.classList.remove('active');
             indicator.innerHTML = '';
 
-            if (chapterId === this.currentChapterId) {
+            if (chapterId === Math.floor(this.currentChapterId)) {
                 item.classList.add('active');
                 indicator.classList.add('current');
                 indicator.innerHTML = '<svg viewBox="0 0 200 200" class="current-chapter-logo"><circle cx="100" cy="100" r="71" fill="#1A1A1A"/><circle cx="100" cy="100" r="53" fill="#FFFFFF"/><circle cx="100" cy="100" r="31" fill="#D42B2B"/></svg>';
