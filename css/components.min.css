@@ -648,15 +648,22 @@ body.bookmarks-enabled .toc-content-section[data-section="bookmarks"] {
     padding: 0;
 }
 
-.toc-page-title {
+.chapter-body .toc-page-title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
     margin: 0 0 var(--space-lg) 0;
     padding: 0;
     border: none;
+}
+
+@media (max-width: 599px) {
+    .chapter-body .toc-page-title {
+        font-size: 1.25rem;
+    }
 }
 
 .toc-entry {
