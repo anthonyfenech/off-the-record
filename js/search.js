@@ -69,6 +69,47 @@ class SearchManager {
         return this.searchIndex;
     }
 
+    saveRecentSearch(query) {
+        if (!query || query.length < 2) return;
+        try {
+            const key = 'otr_search_recent';
+            let recent = JSON.parse(localStorage.getItem(key) || '[]');
+            recent = recent.filter(q => q.toLowerCase() !== query.toLowerCase());
+            recent.unshift(query);
+            recent = recent.slice(0, 5);
+            localStorage.setItem(key, JSON.stringify(recent));
+        } catch (e) {}
+    }
+
+    getRecentSearches() {
+        try {
+            return JSON.parse(localStorage.getItem('otr_search_recent') || '[]');
+        } catch (e) { return []; }
+    }
+
+    showRecents() {
+        const recent = this.getRecentSearches();
+        if (recent.length === 0) return;
+        const resultsEl = document.getElementById('searchResults');
+        if (!resultsEl) return;
+        const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                         .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        const html = '<div class="search-recents-header">Recent</div>' +
+            recent.map(q =>
+                `<div class="search-recent-item" data-query="${esc(q)}">${esc(q)}</div>`
+            ).join('');
+        resultsEl.innerHTML = html;
+        resultsEl.style.display = 'block';
+        resultsEl.querySelectorAll('.search-recent-item').forEach(el => {
+            el.addEventListener('click', () => {
+                const q = el.dataset.query;
+                const input = document.getElementById('searchInput');
+                if (input) input.value = q;
+                this.performSearch(q);
+            });
+        });
+    }
+
     // Strip HTML tags
     stripHTML(html) {
         const tmp = document.createElement('div');
@@ -96,6 +137,9 @@ class SearchManager {
         this.searchInput.addEventListener('focus', () => {
             if (this.searchInput.value.trim().length >= CONFIG.minSearchLength) {
                 this.performSearch(this.searchInput.value.trim());
+            }
+            if (!this.searchInput.value || this.searchInput.value.trim() === '') {
+                this.showRecents();
             }
         });
 
@@ -282,6 +326,9 @@ class SearchManager {
 
         this.currentMatches = results;
         this.displayResults(results, query);
+        if (results.length > 0) {
+            this.saveRecentSearch(query);
+        }
     }
 
     // Perform search and navigate to first result
