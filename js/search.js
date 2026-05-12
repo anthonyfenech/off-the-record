@@ -731,7 +731,7 @@ class SearchManager {
         // Remove existing highlights
         this.removeHighlights();
 
-        const contentEl = document.getElementById('content') || document.querySelector('.chapter-content');
+        const contentEl = document.getElementById('chapterContent');
         if (!contentEl) return;
 
         const regex = new RegExp(`(${this.escapeRegex(query)})`, 'gi');
@@ -892,7 +892,7 @@ class SearchManager {
 
     // Refresh inPageMatches from the live DOM (in document order)
     refreshInPageMatches() {
-        const contentEl = document.getElementById('content') || document.querySelector('.chapter-content');
+        const contentEl = document.getElementById('chapterContent');
         if (!contentEl) {
             this.inPageMatches = [];
             return;
