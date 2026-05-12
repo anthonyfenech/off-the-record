@@ -194,6 +194,27 @@
         return window.currentChapterId ?? null;
     }
 
+    function getVisibleParagraphRange() {
+        const paragraphs = document.querySelectorAll('.chapter-body p[data-paragraph-index]');
+        const viewportTop = window.scrollY;
+        const viewportBottom = viewportTop + window.innerHeight;
+        let start = null;
+        let end = null;
+        for (const p of paragraphs) {
+            const rect = p.getBoundingClientRect();
+            const top = rect.top + window.scrollY;
+            const bottom = rect.bottom + window.scrollY;
+            if (bottom > viewportTop && top < viewportBottom) {
+                const idx = parseInt(p.dataset.paragraphIndex, 10);
+                if (!Number.isNaN(idx)) {
+                    if (start === null) start = idx;
+                    end = idx;
+                }
+            }
+        }
+        return { start, end };
+    }
+
     // ═══════════════════════════════════════════════════════════════
     // TEXT CAPTURE
     // ═══════════════════════════════════════════════════════════════
@@ -891,6 +912,7 @@
 
         // Ensure action is set for backend routing
         payload.action = 'like';
+        payload.readerName = localStorage.getItem('otr_reader_name') || 'Anonymous';
 
         // Add session ID if available
         try {
@@ -1067,8 +1089,9 @@
 
         // Set like metadata for heart button
         currentLikeChapterId = getChapterIdFromViewport();
-        currentLikeStartParagraph = 0; // TODO: calculate from captured content
-        currentLikeEndParagraph = content.filter(c => c.type === 'paragraph').length - 1;
+        const paragraphRange = getVisibleParagraphRange();
+        currentLikeStartParagraph = paragraphRange.start ?? 0;
+        currentLikeEndParagraph = paragraphRange.end ?? 0;
         currentLikePreview = currentTextExcerpt.substring(0, 100);
 
         // Ensure font is loaded before rendering
