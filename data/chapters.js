@@ -4130,11 +4130,9 @@ export const CHAPTERS = [
 
 <p>One day, I hope to be mentioned in the same breath.</p>
 
-<p></p>
 
 <p class="scene-break">***</p>
 
-<p></p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>September 22, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
 
@@ -6523,11 +6521,9 @@ export const CHAPTERS = [
 
 <p class="email-line"><em><span style="display:inline-block;background-color:#000;color:#000;height:1.1em;width:180px;vertical-align:middle;">&nbsp;</span>Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
 
-<p></p>
 
 <p class="scene-break">***</p>
 
-<p></p>
 
 <p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I’m about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and Coach Content caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
 
