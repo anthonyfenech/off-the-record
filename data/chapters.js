@@ -6521,7 +6521,7 @@ export const CHAPTERS = [
 
 <p class="email-line"><strong>Subject:</strong> RE: Tigers today</p>
 
-<p class="email-line"><em>Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
+<p class="email-line"><em><span style="display:inline-block;background-color:#000;color:#000;height:1.1em;width:180px;vertical-align:middle;">&nbsp;</span>Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
 
 <p></p>
 
