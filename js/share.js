@@ -143,16 +143,6 @@
         // Belt and suspenders: check both class and chapter ID
         // Supports main reader (#chapterBody)
 
-        // Check 1: Look for title-page or toc-page classes (main reader only)
-        const chapterBody = document.getElementById('chapterBody');
-        if (chapterBody) {
-            const hasTitlePage = chapterBody.querySelector('.title-page');
-            const hasTocPage = chapterBody.querySelector('.toc-page');
-            if (hasTitlePage || hasTocPage) {
-                return false;
-            }
-        }
-
         // Check 2: Check chapter ID from window.currentChapterId or reader (main reader only)
         const currentChapterId = window.currentChapterId;
         if (currentChapterId === 'title' || currentChapterId === 'toc') {
