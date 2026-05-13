@@ -209,7 +209,11 @@ class Reader {
         window.currentChapterId = chapterId;
 
         // Update DOM - just the title, no subtitle or reading time
-        this.chapterTitle.innerHTML = renderChapterTitle(chapter.title);
+        if (chapter.section === 'copyright') {
+            this.chapterTitle.innerHTML = '';
+        } else {
+            this.chapterTitle.innerHTML = renderChapterTitle(chapter.title);
+        }
 
         // Add data-slug for CSS targeting
         this.chapterBody.dataset.slug = chapter.slug || '';
