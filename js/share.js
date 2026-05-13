@@ -374,50 +374,11 @@
             year: null,
             showTitle: false
         };
-
-        // Get chapter title from DOM - try multiple selectors for robustness
-        const titleEl = document.getElementById('chapterTitle') ||
-                        document.querySelector('.chapter-title') ||
-                        document.querySelector('.chapter-header h2');
-        if (titleEl && titleEl.textContent && titleEl.textContent.trim()) {
-            info.title = titleEl.textContent.trim();
-        }
-
-        // Check if near top of chapter (Fix 6)
-        // Safety net: never show title for title page or TOC
         const currentId = window.currentChapterId;
-        if (currentId === 'title' || currentId === 'toc') {
-            info.showTitle = false;
-        } else {
-            // Fallback: get title from CHAPTERS array if DOM element was empty
-            if (!info.title && window.CHAPTERS && typeof currentId === 'number' && currentId > 0) {
-                for (const chapter of window.CHAPTERS) {
-                    if (chapter.id === currentId && chapter.title) {
-                        info.title = chapter.title;
-                        break;
-                    }
-                }
-            }
 
-            // Show title if the chapter header is visible OR we're within the first screen of content
-            const chapterHeader = document.querySelector('.chapter-header');
-            const chapterBody = document.getElementById('chapterBody') || document.getElementById('content');
-            if (chapterHeader && chapterBody) {
-                const headerRect = chapterHeader.getBoundingClientRect();
-                const bodyRect = chapterBody.getBoundingClientRect();
-                // Show title only if header is actually visible on screen
-                const headerVisible = headerRect.bottom > 0 && headerRect.top < window.innerHeight;
-                info.showTitle = headerVisible;
-            } else if (chapterBody) {
-                const rect = chapterBody.getBoundingClientRect();
-                info.showTitle = rect.top > 0;
-            }
-        }
-
-        // Get year from CHAPTERS array (reuse currentId from above)
+        // Year extraction (hoisted so every return path inherits it)
+        // CHAPTERS array: index 0 = title page (id -1), index 1 = TOC (id 0), index 2+ = chapters
         if (typeof currentId === 'number' && currentId > 0 && window.CHAPTERS) {
-            // CHAPTERS array: index 0 = title page (id -1), index 1 = TOC (id 0), index 2+ = chapters
-            // Find the chapter with matching id
             for (const chapter of window.CHAPTERS) {
                 if (chapter.id === currentId) {
                     info.year = chapter.year;
@@ -426,6 +387,40 @@
             }
         }
 
+        // Safety net: never show title for title page or TOC
+        if (currentId === 'title' || currentId === 'toc') {
+            return info;
+        }
+
+        // Paths A & B — chapter wrapped in .toc-page
+        const tocPage = document.querySelector('#chapterBody .toc-page');
+        if (tocPage) {
+            const tocPageTitle = document.querySelector('#chapterBody .toc-page-title');
+            if (tocPageTitle && tocPageTitle.textContent && tocPageTitle.textContent.trim()) {
+                // Path A — has <h2 class="toc-page-title">
+                info.title = tocPageTitle.textContent.trim();
+                info.showTitle = true;
+            }
+            // Path B — no .toc-page-title: info.title stays null, showTitle stays false
+            return info;
+        }
+
+        // Path C — regular chapter
+        const titleEl = document.getElementById('chapterTitle') ||
+                        document.querySelector('.chapter-title') ||
+                        document.querySelector('.chapter-header h2');
+        if (titleEl && titleEl.textContent && titleEl.textContent.trim()) {
+            info.title = titleEl.textContent.trim();
+        }
+        if (!info.title && window.CHAPTERS && typeof currentId === 'number' && currentId > 0) {
+            for (const chapter of window.CHAPTERS) {
+                if (chapter.id === currentId && chapter.title) {
+                    info.title = chapter.title;
+                    break;
+                }
+            }
+        }
+        info.showTitle = !!info.title;
         return info;
     }
 
