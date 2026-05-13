@@ -35,24 +35,30 @@ export const CHAPTERS = [
         title: "COPYRIGHT",
         subtitle: "",
         teaser: "",
-        content: `<div class="title-page copyright-page">
-<div class="title-page-content copyright-content">
-<p>Copyright © 2026 by Anthony Fenech</p>
-<p>All rights reserved under International and Pan-American Copyright Conventions.</p>
+        content: `<p>Copyright © 2026 by Anthony Fenech<br>
+All rights reserved under International and Pan-American Copyright Conventions.</p>
+
 <p>Cover design by Anthony Fenech</p>
+
 <p>First Edition: May 2026</p>
+
 <p>Published by Red Dot Press | reddotbooks.com</p>
-<p>&nbsp;</p>
-<p>Names: Fenech, Anthony, author.</p>
-<p>Title: Off-the-record / Anthony Fenech.</p>
-<p>Description: Detroit, MI: Red Dot Press, 2026</p>
-<p>Identifiers: LCCN: 2026909148 | ISBN: 979-8-9956304-0-1 (print) | 979-8-9956304-1-8 (eBook)</p>
-<p>Subjects: LCSH Fenech, Anthony. | Sportswriters--United States--Biography. | Journalists--Biography. | Sports journalism. | Detroit free press--History. | Detroit Tigers (Baseball team) | Newspapers--Sections, columns, etc.--Sports. | BISAC BIOGRAPHY &amp; AUTOBIOGRAPHY / Editors, Journalists, Publishers | BIOGRAPHY &amp; AUTOBIOGRAPHY / Sports | SPORTS &amp; RECREATION / Baseball / General</p>
-<p>Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
+
+<p>Names: Fenech, Anthony, author.<br>
+Title: Off-the-record / Anthony Fenech.<br>
+Description: Detroit, MI: Red Dot Press, 2026<br>
+Identifiers: LCCN: 2026909148 | ISBN: 979-8-9956304-0-1 (print) | 979-8-9956304-1-8 (eBook)</p>
+
+<p>Subjects: LCSH Fenech, Anthony. | Sportswriters--United States--Biography. | Journalists--Biography.</p>
+
+<p>Sports journalism. | Detroit free press--History. | Detroit Tigers (Baseball team) | Newspapers--Sections, columns, etc.--Sports. | BISAC BIOGRAPHY &amp; AUTOBIOGRAPHY / Editors, Journalists, Publishers</p>
+
+<p>BIOGRAPHY &amp; AUTOBIOGRAPHY / Sports | SPORTS &amp; RECREATION / Baseball / General<br>
+Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
+
 <p>Library of Congress Control Number: 2026909148</p>
-<p>ISBNs: 979-8-9956304-0-1 (print); 979-8-9956304-1-8 (eBook)</p>
-</div>
-</div>`,
+
+<p>ISBNs: 979-8-9956304-0-1 (print); 979-8-9956304-1-8 (eBook)</p>`,
         wordCount: 0
     },
     {
