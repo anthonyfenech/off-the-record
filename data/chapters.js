@@ -330,7 +330,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
 
-<p>I get back home after 10 on the evening of the trade deadline. Midnight approaches. We have less than three hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome home pour.</p>
+<p>I get back home on the evening of the trade deadline. Midnight approaches. We have less than three hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome home pour.</p>
 
 <p>I check with a Tigers guy. Nothing.</p>
 
@@ -359,7 +359,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>I feel many things, not one of them good. More confused than angry. Helpless, humiliated, embarrassed—all those. It can be borderline erotic, this feeling of utter failure, being beaten this badly and not knowing how. Is this really happening? Why? Why is nobody getting back to me? IS THERE SOMETHING WRONG WITH MY PHONE? I text the Highest Source In The Land:</p>
 
 <p>“Is this true?”</p>`,
-        wordCount: 2793
+        wordCount: 2791
     },
     {
         id: 3,
@@ -540,7 +540,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He’s got a loyal army of followers who are tweeting at me, too. He’s emailing me and my sports editor and tweeting at the sports department’s Twitter account—this is not good.</p>
 
-<p>“<em>I am contacting you to find out why you chose Anthony Fenech on the Tigers beat. My sources have told me that Mr. Fenech has at least one DUI conviction. I am told there was another incident that I am still trying to dig up.</em> </p>
+<p>“<em>I am contacting you to find out why you chose Anthony Fenech on the Tigers beat. My sources have told me that Mr. Fenech has at least one DUI conviction.</em> </p>
 
 <p>“<em>My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writer’s job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made.</em>”</p>
 
@@ -757,7 +757,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>“Did you read the story?”</p>
 
 <p>“Yeah,” over his back shoulder. “It was shit.”</p>`,
-        wordCount: 2818
+        wordCount: 2803
     },
     {
         id: 5,
@@ -1219,7 +1219,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I heard J.D. was upset with you.”</p>
 
-<p>I try and fail at lobbying Martinez to buy me a new laptop.</p>
+<p>After the game, I try and fail at lobbying J.D. to buy me a new laptop.</p>
 
 <p>“That’s what you get, bro.”</p>
 
@@ -1244,7 +1244,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn.</p>
 
 <p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>`,
-        wordCount: 2156
+        wordCount: 2186
     },
     {
         id: 8,
@@ -1821,7 +1821,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I know nothing of the sort. Those who do aren’t responding.</p>
 
-<p>Once again, a friend helps. This time, it’s ESPN.com’s Marly Rivera who helps piece together that the Tigers have been pursuing lefty reliever Justin Wilson, according to her source.</p>
+<p>Once again, a friend helps. ESPN.com’s Marly Rivera helps me piece together the rumor du jour of the hour: Detroit is pursuing reliever Justin Wilson, according to her source.</p>
 
 <p>That’s as close as I come to the scoop. An hour later, the trade is broken by a television reporter back home, who isn’t even at the meetings—Wilson to the Tigers, two prospect pitchers to the Yankees. At 6 <span class="small-caps">P.M.</span>, another alert from PR: “Come now to suite.”</p>`,
         wordCount: 3418
@@ -2081,7 +2081,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>March 13</em>—</span>Although Opening Day is three weeks away, the deadline for our season preview section is fast approaching. I still don’t have a subject for my big feature when I’m forwarded this email from the <em>Free Press</em>’entertainment reporter.</p>
+<p class="has-dateline"><span class="dateline"><em>March 13</em>—</span>Although Opening Day is three weeks away, the deadline for our season preview section is fast approaching. I still don’t have a subject for my big feature when I’m forwarded this email from the <em>Free Press</em>’ entertainment reporter.</p>
 
 <p>KATE UPTON – GRAND SLAM ADOPTION EVENT</p>
 
@@ -2176,7 +2176,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>“I don’t. You know that.”</p>
 
 <p>I hang up under new rules—I’ll contact the Highest Source In The Land whenever I damn well please.</p>`,
-        wordCount: 1815
+        wordCount: 1816
     },
     {
         id: 11,
@@ -3121,7 +3121,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>And that was that.</p>
 
-<p>While we’re walking out of the clubhouse, a local TV reporter looks at me and says, “Why the hell would you do that?”</p>
+<p>Walking out of the clubhouse, someone looks at me and says, “Why the hell would you do that?”</p>
 
 <p>I know how sensitive Verlander is about his on-camera image, which is why I called him out on-camera. One time, Verlander had barbecue sauce on his bottom lip—nobody told him about it —and for a while, he wouldn’t talk to the media.</p>
 
@@ -3334,7 +3334,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>“You think that’s mop-up? I can’t pitch in close games?”</p>
 
 <p>Before I can explain to K-Rod the difference between what I wrote and what the manager said, he shakes his head and walks away.</p>`,
-        wordCount: 2609
+        wordCount: 2604
     },
     {
         id: 15,
@@ -3825,13 +3825,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He texts again: “I’m in Cooperstown watching Víctor’s son play. Just giving you a heads up that I am with Víctor’s wife, and I need to let her know what is coming. I’m sure her phone will explode tomorrow.”</p>
 
-<p>If we publish the story. Ron Colangelo has been in touch with the new sports content coach. He and another Gannett editor fret until print deadline passed. But we can still publish online.</p>
+<p>If we publish the story. Ron Colangelo has been in touch with a new desk guy who was hired in the spring as sports content coach. He and another Gannett editor fret until print deadline passes. But we can still publish online.</p>
 
-<p>“This is going to drop tomorrow,” Thomas says.</p>
+<p>“This is going to drop tomorrow,” Coach Content says.</p>
 
 <p>“So, what are we waiting for?”</p>
 
-<p>Postgame, I’m in and out.</p>
+<p>Postgame, I’m in and out of the clubhouse.</p>
 
 <p>Packing up my stuff, Ian Kinsler texts me.</p>
 
@@ -3839,9 +3839,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Maybe. But I knew I hadn’t lost Kinsler.</p>
 
-<p>Despite any previous pessimism, we iron out the final few wrinkles. Very Serious Story is in the hopper by 11 <span class="small-caps">P.M.</span>, ready to go live online at 1 <span class="small-caps">A.M.</span> local time—the plan is to run it in the following day’s print edition.</p>
+<p>Despite any previous pessimism, we iron out the final few wrinkles. The Very Serious Story is in the hopper by 11 <span class="small-caps">P.M.</span>, ready to go live online at 1 <span class="small-caps">A.M.</span> local time—the plan is to run it in the following day’s print edition.</p>
 
-<p>Nearing midnight, I receive a most unnerving text message.</p>
+<p>But nearing midnight, I receive a most unnerving text message.</p>
 
 <p>“U might want to hold off on ur story.”</p>
 
@@ -4052,7 +4052,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>The Tigers put pressure on him by leaking that he blocked it. Minutes before midnight, Verlander waived his no-trade rights.</p>
 
 <p>When the deal was done, I was the first reporter to know. I sat on the news for nearly ten minutes, holding out for a second source. I got that first, too—breaking the Big News about my favorite player growing up.</p>`,
-        wordCount: 2819
+        wordCount: 2834
     },
     {
         id: 17,
@@ -5729,9 +5729,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
-<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. I headed for the village, past an old man selling veggies at the side of the road. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>
+<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>
 </div>`,
-        wordCount: 421
+        wordCount: 404
     },
     {
         id: 22,
@@ -6552,7 +6552,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Subject:</strong> RE: Tigers today</p>
 
-<p class="email-line"><em><span style="display:inline-block;background-color:#000;color:#000;height:1.1em;width:180px;vertical-align:middle;">&nbsp;</span>Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
+<p class="email-line"><em><span style="display:inline-block;background-color:#000;color:#000;height:1.1em;width:180px;vertical-align:middle;">&nbsp;</span>Time to investigate J.V.’s steroid use, eh? Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
 
 <p></p>
 
@@ -6834,7 +6834,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>I text my friend: “Gonna wake up tomorrow to a ‘Justin Verlander Hates Anthony Fenech’s Guts’ story on <em>Deadspin.</em>”</p>
 
 <p>I guess it could be worse. I could be the guy who bet $63,250 on tonight’s game and lost.</p>`,
-        wordCount: 3302
+        wordCount: 3309
     },
     {
         id: 26,
@@ -7196,17 +7196,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>&quot;Why is a well-respected, award-winning journalist like Henderson out at the <em>Freep</em> while Anthony Fenech is still gainfully employed as the paper's Tigers beat writer?&quot; Internet Stalker writes. &quot;Fenech allegedly was involved in a workplace affair with (another employee) when she was at the <em>Free Press</em>. Apparently, they didn't know that it was 'frowned upon' to have sexual relations in the parking garage at work.”</p>
 
-<p>By the time I get out of bed, Coach Content is calling. &quot;Can you come into the office and talk to Peter today?</p>
+<p>By the time I get out of bed, my boss is calling. He doesn’t say hello, or even good morning—it’s half past nine—he says this: “Did you</p>
+
+<p>“Can you come into the office and talk to Peter today?</p>
 
 <p></p>
 
-<p class="no-indent"><em>On Dec. 19, 2017, sports content coach Christopher Thomas phoned and immediately asked if I had sex with a former employee, identifying her by name. Taken aback, I indicated I didn't hear what he said. &quot;What?&quot; Thomas asked again: Did I have sex with (former employee)? I said I wasn't comfortable speaking about this. He asked if I could come in and meet with executive editor Peter Bhatia, who asked what my relationship was like with (former employee) and if we ever engaged in sexual activity in the parking garage. I said we became close friends and could not remember. No union rep was present.</em> </p>
+<p class="no-indent"><em>On Dec. 19, 2017, sports content coach Chris Thomas phoned and immediately asked if I had sex with a former employee, identifying her by name. Taken aback, I indicated I didn't hear what he said. &quot;What?&quot; Thomas asked again: Did I have sex with (former employee)? I said I wasn't comfortable speaking about this. He asked if I could come in and meet with executive editor Peter Bhatia, who asked what my relationship was like with (former employee) and if we ever engaged in sexual activity in the parking garage. I said we became close friends and could not remember. No union rep was present.</em> </p>
 
 <p></p>
 
 <p>If they can ask me these questions, what can't they ask me?</p>
 </div>`,
-        wordCount: 299
+        wordCount: 317
     },
     {
         id: 26.4,
@@ -8271,7 +8273,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>But not even that is enough. Not even a main story, a sidebar, instant observations and a video. Driving home, I get an email asking for <em>more.</em></p>
 
-<p>CC: “Hey, man. Is anything coming on them facing off? Would be good to have a headline on it, please.”</p>
+<p>“Hey, man. Is anything coming on them facing off? Would be good to have a headline on it, please.”</p>
 
 <p>My reply while sitting outside the liquor store.</p>
 
@@ -8311,7 +8313,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I have been giving the PR department a rough go of things, with frustration and finality snowballing into the summer months. Frustration over the investigative story, because I can't seem to find that fearless source to get it past the goal line. Finality, because I know time to get someone on the record is running out.</p>
 
-<p>So, I’m not shocked when Coach Content flashes my phone. But I’ll admit to being surprised when I saw the reason why.</p>
+<p>So, I’m not shocked when my boss texts me. But I’ll admit to being surprised when I saw the reason why.</p>
 
 <p>“Tigers are freaking out because this makes it look like MLB’s COVID protocol is being busted in the media room.”</p>
 
@@ -8370,7 +8372,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>Pour a drink. Roll one up. Free Bird on repeat.</p>
 
 <p>And I sit there and think about how, if I live to write that sports writing book, this is how it would end, with the phone ringing and everything else a beautiful blur—a ride so real, I couldn’t have made it up.</p>`,
-        wordCount: 2980
+        wordCount: 2978
     },
     {
         id: 28.1,
@@ -8381,9 +8383,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
-<p class="no-indent"><em>London was a mess. Spent fourteen days quarantining at an airport hotel. On the third day, called MetLife. When the lady on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. “From America, writing a book.” Everyone asked about the book, so I changed my bio to just an American flag and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. Told a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house smoking cigarettes along the sea. Got a tip, a message on my phone. Amber Alert back home. WHERE IN THE WORLD IS ANTHONY FENECH?It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for it. When the</em> Free Press <em>found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat. Corporate called, Coach Content was leaving, was I coming back to work? Got laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. Got here on my birthday. Next day, everything closed. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate hostel in the south. Got a text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called. “The story begins in the back of your SUV,” I said. Visited the village where my grandparents lived. Relapsed the hardest when I found out he died. The Super Bowl started at midnight and there were drugs and new friends and a cab to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, crying on a bench. The sun came up. I wondered if he ever thought about me. I googled my name. “One of these days,” the story said, “we will find out what happened between Anthony Fenech and life.” Every day, I thought of that day. I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went—</em></p>
+<p class="no-indent"><em>London was a mess. Spent fourteen days quarantining at an airport hotel. On the third day, called MetLife. When the lady on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. “From America, writing a book.” Everyone asked about the book, so I changed my bio to just an American flag and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. Told a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house smoking cigarettes along the sea. Got a tip, a message on my phone. Amber Alert back home. WHERE IN THE WORLD IS ANTHONY FENECH?It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for it. When the</em> Free Press <em>found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat. Corporate called, Coach Content was leaving, was I coming back to work? Got laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. Got here on my birthday. Next day, everything closed. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate hostel in the south. Got a text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called. “The story begins in the back of your SUV,” I said. Relapsed the hardest when I found out he died. The Super Bowl started at midnight and there were drugs and new friends and a cab to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, crying on a bench. The sun came up. I wondered if he ever thought about me. I googled my name. “One of these days,” the story said, “we will find out what happened between Anthony Fenech and life.” Every day, I thought of that day. I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went—</em></p>
 </div>`,
-        wordCount: 417
+        wordCount: 410
     },
     {
         id: 29,
