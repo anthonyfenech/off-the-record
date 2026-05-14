@@ -3147,6 +3147,15 @@ body:not(.sidebar-open):not(.modal-open) {
   display: none;
 }
 
+/* Copyright page: hide chapter-header (removes gray bar) and pull body up
+   to align with toc-page entries (e.g., the Malta journal page). */
+.chapter[data-slug="copyright"] .chapter-header {
+  display: none;
+}
+.chapter-body[data-slug="copyright"] {
+  margin-top: -60px;
+}
+
 /* B3: Recent searches dropdown */
 .search-recents-header {
     padding: 8px 12px;
