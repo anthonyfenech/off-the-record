@@ -35,10 +35,7 @@ export const CHAPTERS = [
         title: "COPYRIGHT",
         subtitle: "",
         teaser: "",
-        content: `<p class="no-indent">Copyright © 2026 by Anthony Fenech<br>
-All rights reserved under International and Pan-American Copyright Conventions.</p>
-
-<p class="no-indent">Cover design by Anthony Fenech</p>
+        content: `<p class="no-indent">Copyright © 2026 by Anthony Fenech. All rights reserved.</p>
 
 <p class="no-indent">First Edition: May 2026</p>
 
