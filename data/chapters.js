@@ -7882,7 +7882,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>February 25</em>—</span></em>Today, I’m in the newsroom to present my findings of the investigation story I’ve been working on since last July, when I sent Ron Colangelo to voicemail during one of Gardy’s pregame media sessions in Kansas City.</p>
+<p class="has-dateline"><span class="dateline"><em>February 25</em>—</span>Today, I’m in the newsroom to present my findings of the investigation story I’ve been working on since last July, when I sent Ron Colangelo to voicemail during one of Gardy’s pregame media sessions in Kansas City.</p>
 
 <p>“Call when you can,” he texted me.</p>
 
@@ -8165,7 +8165,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>June 18</em>—</span></em>In February, I stood in front of folks in a <em>Free Press</em> conference room and laid out everything I had about the investigative story. Good start, they said. Keep digging.</p>
+<p class="has-dateline"><span class="dateline"><em>June 18</em>—</span>In February, I stood in front of folks in a <em>Free Press</em> conference room and laid out everything I had about the investigative story. Good start, they said. Keep digging.</p>
 
 <p>It’s been nearly a year working on this story solo; I’ve crossed everybody in the ticket department who’s answered off the list.</p>
 
@@ -8221,7 +8221,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>July 1</em>—</span></em>With baseball season still up in the air—players and owners continue to bicker over schedule, payment, rules and player safety protocols—I break Ball Writing quarantine. I drive to a nondescript warehouse in suburban Detroit.</p>
+<p class="has-dateline"><span class="dateline"><em>July 1</em>—</span>With baseball season still up in the air—players and owners continue to bicker over schedule, payment, rules and player safety protocols—I break Ball Writing quarantine. I drive to a nondescript warehouse in suburban Detroit.</p>
 
 <p>I’ve been invited. Sort of. I know a guy who knows a guy who runs a local travel baseball program.</p>
 
@@ -8265,7 +8265,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>July 14</em>—</span></em>During this morning’s summer camp activities at Comerica Park, two of the Tigers’ top prospects go head-to-head in live BP. Righty starter Casey Mize throws against this year’s top pick, Spencer Torkelson.</p>
+<p class="has-dateline"><span class="dateline"><em>July 14</em>—</span>During this morning’s summer camp activities at Comerica Park, two of the Tigers’ top prospects go head-to-head in live BP. Righty starter Casey Mize throws against this year’s top pick, Spencer Torkelson.</p>
 
 <p>I shoot video. I process it, upload it, send it in.</p>
 
