@@ -3156,10 +3156,11 @@ body:not(.sidebar-open):not(.modal-open) {
   margin-top: -60px;
 }
 
-/* Copyright page: ~1 line-height gap between paragraph blocks; <br>-separated
-   lines within a block keep the default line-height (no extra per-line gap). */
+/* Copyright page: visible blank-line gap between paragraph blocks. Must exceed
+   the 1.6 line-height so between-block spacing reads as a clear break versus
+   the within-block <br>-separated lines. */
 .chapter-body[data-slug="copyright"] p {
-  margin-bottom: 1.6em;
+  margin-bottom: 2.5em;
 }
 
 /* B3: Recent searches dropdown */
