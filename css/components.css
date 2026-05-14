@@ -3156,6 +3156,12 @@ body:not(.sidebar-open):not(.modal-open) {
   margin-top: -60px;
 }
 
+/* Copyright page: ~1 line-height gap between paragraph blocks; <br>-separated
+   lines within a block keep the default line-height (no extra per-line gap). */
+.chapter-body[data-slug="copyright"] p {
+  margin-bottom: 1.6em;
+}
+
 /* B3: Recent searches dropdown */
 .search-recents-header {
     padding: 8px 12px;
