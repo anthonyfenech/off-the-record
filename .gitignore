@@ -32,3 +32,9 @@ package-lock.json
 
 # Sweep reports — transient pre/post diff state
 docs/sweep-reports/.pre-snapshot.md
+
+# Inspection-only recovery of deleted files — never commit
+_recovered/
+_private/
+_inbox/
+_processed/
