@@ -77,7 +77,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         slug: "authors-note",
         subtitle: "St. Paul's Bay, Malta",
         teaser: "A love letter to sports writing, a lesson on craft, and a story full of intense, fascinating characters.",
-        content: `<p>ST. PAUL’S BAY, Malta—Dawn is coming up over the Mediterranean now. 7:12 <span class="small-caps">A.M.</span> I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived.</p>
+        content: `<p class="has-dateline"><span class="dateline">ST. PAUL’S BAY, Malta—</span>Dawn is coming up over the Mediterranean now. 7:12 <span class="small-caps">A.M.</span> I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived.</p>
 
 <p>From my desk, I can see the hazy light of a new day. A man casts a fishing line from a dock while his dog lies patiently on the pavement. The neighborhood shopkeeper brooms the steps of his bodega.</p>
 
@@ -107,7 +107,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I arrived in Malta in fall 2020, ahead of the second wave of COVID-19, and hunkered down inside a converted boat house along the sea. When I discovered the nearby bus stop was named <em>Anthony,</em> I took it as a sign I was in the right place.</p>
 
-<p><em>OFF-THE-RECORD</em> is my reporter’s spiral notebook of what I’ve learned and observed over the years, rather than a reasoned analysis of the state of sports journalism or Major League Baseball as it’s played these days. I wrote this book for the players I admired, the sources who trusted me, and especially for my sports writing superheroes, longing to experience their golden age … for if I couldn’t live vicariously through theirs, I’d want them to live through mine, a wild west on steroids where tweets matter more than words. For the TV talking heads, former wordsmiths who once spoke in deadline columns filed from press boxes of stadiums that no longer exist. For sports writers who never got the chance—those who’ve thought about going off-the-record and those who wouldn’t dare—and especially, those who think they’re better.</p>
+<p><em>OFF-THE-RECORD </em>is my reporter’s spiral notebook of what I’ve learned and observed over the years, rather than a reasoned analysis of the state of sports journalism or Major League Baseball as it’s played these days. I wrote this book for the players I admired, the sources who trusted me, and especially for my sports writing superheroes, longing to experience their golden age … for if I couldn’t live vicariously through theirs, I’d want them to live through mine, a wild west on steroids where tweets matter more than words. For the TV talking heads, former wordsmiths who once spoke in deadline columns filed from press boxes of stadiums that no longer exist. For sports writers who never got the chance—those who’ve thought about going off-the-record and those who wouldn’t dare—and especially, those who think they’re better.</p>
 
 <p>There are two problems with that type of all-in, lottery-winning approach. The most obvious but least serious is that even the people I considered friends in the business have at times treated me like a walking Wuhan lab.</p>
 
@@ -143,11 +143,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I haven’t enjoyed everything about sports writing. I’ve felt like an outcast at times and misunderstood at others. Yet, sitting here awash in the fatigue and excitement of surviving a marathon thrill ride, I know there’s been far more good than bad. I went from the rawest rookie to breaking stories and winning awards and building life-long relationships in baseball. I wouldn’t trade those years, or the years it took to write this book, for anything. If you doubt me, feel the early onset carpal tunnel in my wrists.</p>
 
-<p>So, what follows then is not so much a book about me as it is a love letter to sports writing, a tribute to sports writers, one man’s lesson on the craft.</p>
+<p>So, what follows then is not so much a book about me as it is a love letter to sports writing, a tribute to sports writers, one man’s lesson on the craft. </p>
 
 <p>It’s a reflection of what I’ve seen and felt while covering baseball for a living, which has provided me with the story of a lifetime, too good not to share.</p>
 
-<p class="signature"><em>—Anthony Fenech<br>April 20, 2025<br>Portobello Flats, Malta</em></p>`,
+<p></p>
+
+<p class="signature"><em>—Anthony Fenech<br>April 20, 2025<br>Portobello Flats</em></p>`,
         wordCount: 1695
     },
     {
@@ -158,7 +160,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         slug: "summer-2017-prologue",
         subtitle: "Where our story begins",
         teaser: "Where our story begins.",
-        content: `<p class="has-dateline"><span class="dateline">CHICAGO, <em>August 27</em>—</span>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man’s bald head. The last scene before the elevator door closes.</p>
+        content: `<p class="has-dateline"><span class="dateline">CHICAGO, <em>August 27</em>—</span>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man’s bald head. The last scene before the elevator door closes. </p>
 
 <p>I am on the South Side at U.S. Cellular Field, home of the Chicago White Sox, and we are slowly descending from the third floor. The skyline is covered in gray. Walls are gray. Everything is gray.</p>
 
@@ -176,7 +178,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Andrew, my Chicago driver who also shuttles players and umpires, talks in his New York tongue—conversation I’m not interested in at the moment.</p>
 
-<p>I lean my head on the door panel. Close my eyes and try to forget about the weekend that was, the wreckage still to sift through.</p>
+<p>I lean my head on the door panel. Close my eyes and try to forget about the weekend that was, the wreckage still to sift through. </p>
 
 <p>I open them to receive a text message from the Tigers’ top PR official. He is apologizing for yesterday, when he tried intimidating me by suggesting I could not continue my baseball writing job if I went through with the Very Serious Story.</p>
 
@@ -184,7 +186,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I don’t think that’s an appropriate question.”</p>
 
-<p>“I am trying to help you do your job.”</p>
+<p>“I am trying to help you do your job.” </p>
 
 <p>He’s a veteran PR chief. Worked with him for years—normally a straight shooter who helps me do my job. But he definitely was not trying to help me do my job this weekend, when I had a flaming arrow pointed at the heart of the team.</p>
 
@@ -194,7 +196,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The Very Serious Story threatens the harmony of the clubhouse and exposes the bad behavior of a highly paid, highly respected veteran player. A story PR does not want to be published.</p>
 
-<p>I am holding the ‘L’ as we speak. The biggest of my career. I broke through the brick wall on the Very Serious Story almost a year ago—I had to wait until the time came, if ever it did.</p>
+<p>I am holding the ‘L’ as we speak. The biggest of my career. I broke through the brick wall on the Very Serious Story almost a year ago—I had to wait until the time came, if ever it did. </p>
 
 <p>There was a fight in the clubhouse last season. It fractured the team and the player who sparked it had become an even bigger problem this year—but I couldn’t put it out there unprompted. I have enough sourcing to go with the Very Serious Story, but I’ve had to wait—it’s bad form to drop a bomb unprompted, and nothing’s happened recently to warrant such a move.</p>
 
@@ -206,7 +208,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Yet here I sit—16 hours later—and the Very Serious Story has not been published. I still don’t want to talk about it—I successfully silenced Andrew a few minutes ago. Said I was tired and wanted to close my eyes for a bit.</p>
 
-<p>The day was bad. I was hungover enough from whiskey and stress and threw out the burnt crackers the cafeteria was passing off as French toast.</p>
+<p>The day was bad. I was hungover enough from whiskey and stress and threw out the burnt crackers the cafeteria was passing off as French toast. </p>
 
 <p>I sat next to the Tigers’ traveling PR guy and he told me Justin Verlander (the star starting pitcher) wasn’t going to be talking to me anymore. Still mad over something I tweeted about him watching the solar eclipse earlier in the month (seriously), or the way I pushed back in the last postgame interview (he walked out), or maybe in protest of the Very Serious Story I was writing (everyone knows).</p>
 
@@ -234,7 +236,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">DENVER, <em>August 29</em>—</span>I stay downtown after tonight’s game and go to this guy’s apartment.</p>
 
-<p>I met the guy a couple of weeks ago at a wedding in Cancún, and here we are, sitting outside on his seventh-floor patio with another couple. I’m wearing shirt-tie-jacket and a work bag, an easy way to introduce myself—hi, I’m Anthony Fenech—I’m a sports writer, I cover the Detroit Tigers for the <em>Detroit Free Press.</em> </p>
+<p>I met the guy a couple of weeks ago at a wedding in Cancún, and here we are, sitting outside on his seventh-floor patio with another couple. I’m wearing shirt-tie-jacket and a work bag, an easy way to introduce myself—hi, I’m Anthony Fenech—I’m a sports writer, I cover the Detroit Tigers for the <em>Detroit</em> <em>Free Press. </em></p>
 
 <p>Basically, I fly around the country nine months every year writing about baseball. The job is never-ending, like a machine you can’t beat. How, sitting here thinking about it, it’s rather ridiculous that I’m writing and tweeting about these millionaires playing baseball. A game.</p>
 
@@ -260,7 +262,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>After the game, I asked what happened with his teammate the previous day.</p>
 
-<p>“What happened?”</p>
+<p>“What happened?” </p>
 
 <p>“The argument with…”</p>
 
@@ -318,7 +320,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I touch base with his agent before boarding: “You think anything’s going to happen?”</p>
 
-<p>“I don’t think so but predicting others’ decisions is not something I’m usually comfortable with.”</p>
+<p>“I don’t think so but predicting others’ decisions is not something I’m usually comfortable with.” </p>
 
 <p>When I mention being on the plane while news is breaking, he reassures me: “Don’t sweat it, you’re really good at what you do and sometimes you can’t control timing and info.”</p>
 
@@ -328,7 +330,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
+<p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season. </p>
 
 <p>I get back home on the evening of the trade deadline. Midnight approaches. We have less than three hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome home pour.</p>
 
@@ -340,19 +342,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Forty minutes until the trade deadline, there’s a tipster on Line 2. He may or may not be In The Room tonight. Still talking about the Very Serious Story that won’t ever be.</p>
 
-<p>“I’m still curious how accurate you were.”</p>
+<p>“I’m still curious how accurate you were.” </p>
 
 <p>“How accurate do you think I was?”</p>
 
 <p>“Most of what u told me was accurate. Couple things were off base.”</p>
 
-<p>Tipster wants to read it.</p>
+<p>Tipster wants to read it. </p>
 
 <p>“I’ll let you,” I say. “Wait until the end of the season.” I’m guessing he’ll get fired and forget about it anyways.</p>
 
 <p>Sitting in a lawn chair on my porch with a scout on speaker phone when I see a text from my buddy, sharing a tweet that sounds a five-alarm fire. It knocks me off the call and out of the chair.</p>
 
-<p>“Oh, shit… Oh, shit. Gotta go.”</p>
+<p>“Oh, shit… Oh, shit. Gotta go.” </p>
 
 <p>I hang up and hurry into the kitchen. I’m extra careful about fake accounts these days, so I pull up Twitter on my computer just in case. “Tigers and Astros very close to finalizing a deal for Justin Verlander,” according to my main rival, a Ball Writer for the other paper in town. The pit of my stomach falls.</p>
 
@@ -371,7 +373,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         teaser: "Landing the position of a lifetime.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>October 21, 2014</em>—</span>Three years earlier.</p>
 
-<p>I’m 27 years old and working the day shift on the <em>Free Press</em> sports desk. I’m curled in front of a computer with a wad of dipping tobacco and a half-full Styrofoam cup within reach.</p>
+<p>I’m 27 years old and working the day shift on the <em>Free Press</em> sports desk. I’m curled in front of a computer with a wad of dipping tobacco and a half-full Styrofoam cup within reach. </p>
 
 <p>Sitting in my cubicle in the sports department—second floor of a beautiful Albert Kahn building in downtown Detroit.</p>
 
@@ -393,9 +395,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The newsroom is as empty as ever. A few years ago, the sports department was moved here—out in the open, occupying two rows of cubes, surrounded by many more empties.</p>
 
-<p>The open desks serve as a sobering reminder of where our business currently stands: Since I got here, the newspaper has shrunk steadily as parent company Gannett bleeds money.</p>
+<p>The open desks serve as a sobering reminder of where our business currently stands: Since I got here, the newspaper has shrunk steadily as parent company Gannett bleeds money. </p>
 
-<p>Gannett is no different from any other media company. Every corner of the journalism industry has been affected by cuts and consolidations since the turn of the decade. As the Internet continues to shift the sand beneath legacy media like newspapers, the foundation only becomes shakier.</p>
+<p>Gannett is no different from any other media company. Every corner of the journalism industry has been affected by cuts and consolidations since the turn of the decade. As the Internet continues to shift the sand beneath legacy media like newspapers, the foundation only becomes shakier. </p>
 
 <p>Gannett has owned the <em>Free Press</em> since 2005, when they bought the 174-year-old newspaper from Knight-Ridder for $262 million. One company was liquidating its media properties, the other expanding its portfolio—the direction has been downhill ever since.</p>
 
@@ -453,7 +455,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 31</em>—</span>I get a text late this morning from Suarez, who says the Tigers are picking up Soria’s option. I seriously consider following <em>Freep</em> protocol and getting my source approved first but remember I need this scoop. So instead, I tweet it out first (11:33 <span class="small-caps">A.M.</span>) then message my source to the web editor on duty.</p>
 
-<p>I decided Soria’s agent was trustworthy enough and didn’t need clearance—he’s In The Room. I couldn’t risk him texting a National Guy, who doesn’t have to clear sources and could swoop in for the scoop. I was fearful of looking a fool, but equally aware of how wins are tallied these days: whoever tweets the scoop first.</p>
+<p>I decided Soria’s agent was trustworthy enough and didn’t need clearance—he’s In The Room. I couldn’t risk him texting a National Guy, who doesn’t have to clear sources and could swoop in for the scoop. I was fearful of looking a fool, but equally aware of how wins are tallied these days: whoever tweets the scoop first. </p>
 
 <p>After the source is quickly cleared, so, too, is my reporting conscience—free of the improperly sourced breaking news floating around with my name on it.</p>
 
@@ -469,23 +471,21 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Dramatic pause.</p>
 
-<p>“The good news is you’re our next Tigers beat writer. Congratulations.”</p>
+<p>“The good news is you’re our next Tigers beat writer. Congratulations.” </p>
 
 <p>He says not to tell anyone, an announcement is coming tomorrow, but I can tell my mom.</p>
 
 <p>Tomorrow, I receive a flood of congratulations from my colleagues. I am finally a sports writer, unchained from the web desk—a <em>Ball Writer,</em> the Tigers’ beat writer, can you believe it?</p>
 
-<p></p>
+<p>From: Myers, Gene Sent: Wednesday, November 12, 2014 7:45 PM</p>
 
-<p class="email-line"><strong>From:</strong> Myers, Gene <strong>Sent:</strong> Wednesday, November 12, 2014 7:45 PM</p>
+<p>Subject: ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
 
-<p class="email-line"><strong>Subject:</strong> ANTHONY WILL TAKE OVER THE TIGERS BEAT</p>
+<p>“<em>After more than seven years, in essence, in the </em>Free Press’<em> farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
 
-<p>“<em>After more than seven years, in essence, in the</em> Free Press’ <em>farm system, Anthony Fenech has earned his big-league call-up. He will assume the reins of the Tigers beat.</em></p>
+<p>“<em>This has been Anthony’s path to The Show: He started on the Prep Crew and</em><em> he</em><em> did </em><em>stringing</em><em> work while at Central Michigan. He blogged countless games for Freep.com while interning in Las Vegas, Pittsburgh and Phoenix. He became a </em>Freep<em> intern and officially hired. Since then, he usually has staffed </em><em>the overnight sports web shift but covered enough baseball to earn his Baseball Writers’ Association of America card before the 2013 season. When it arrived, it was one of the happiest days of his life.</em></p>
 
-<p>“<em>This has been Anthony’s path to The Show: He started on the Prep Crew and he did stringing work while at Central Michigan. He blogged countless games for Freep.com while interning in Las Vegas, Pittsburgh and Phoenix. He became a</em> Freep <em>intern and officially hired. Since then, he usually has staffed the overnight sports web shift but covered enough baseball to earn his Baseball Writers’ Association of America card before the 2013 season. When it arrived, it was one of the happiest days of his life.</em></p>
-
-<p>“<em>John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: ‘A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call ‘interrupted a nap in my car.’</em>”</p>
+<p>“<em>John Lowe proudly embraced a phrase for sports writers who devote their careers to baseball: Seamhead. For years, John has schooled Anthony on the ways of the Seamhead, including how, like a ballplayer, to stay strong and focused through a 162-game grind. He even sent this email last year: </em><em>‘</em><em>A bit concerned about young Anthony here—might need a better health or eating plan to handle these variant hours. He had a tweet that a home-run call ‘interrupted a nap in my car.</em><em>’</em>”</p>
 
 <p></p>
 
@@ -503,7 +503,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Dave Dombrowski is the Tigers’ GM—the head front office honcho, a longtime baseball executive with a pearl-sparkling smile who carries himself like a politician. Dombrowski, 59, has been the GM of multiple teams for more than two decades—he is respected, known for winning and saying nothing to the media—or, perhaps more accurately, saying many things that amount to nothing.</p>
 
-<p>I figure he won’t respond to an email about Martínez’s reported signing, so instead, I try his right-hand man—longtime assistant general manager Al Avila.</p>
+<p>I figure he won’t respond to an email about Martínez’s reported signing, so instead, I try his right-hand man—assistant general manager Al Avila.</p>
 
 <p>“Al, reports swirling that you guys and Víctor are close on a four-year deal. Can you confirm this? And can you keep me in the loop and let me know when it’s official? I will not use your name.”</p>
 
@@ -513,7 +513,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I get a chance to redeem myself later that night. Instead? More shame. Past ten, I get a text from PR, notifying me about a trade. I’m late and a loser again.</p>
 
-<p>I message my friend Dylan Hernández, who covers the Dodgers for the <em>Los Angeles Times—</em>we met one summer in Arizona. I tell him about how I got smoked. He gives me an important introduction to the beat. There are two things I need to know: 1) The phone number of a woman named Rebecca, and 2) Get a Marriott Rewards number.</p>
+<p>I message my friend Dylan Hernández, who covers the Dodgers for the <em>Los Angeles</em><em> Times—</em>we met one summer in Arizona. I tell him about how I got smoked. He gives me an important introduction to the beat. There are two things I need to know: 1) The phone number of a woman named Rebecca, and 2) Get a Marriott Rewards number.</p>
 
 <p>Soon, I’m calling Rebecca every day, asking for agents’ numbers.</p>
 
@@ -540,11 +540,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He’s got a loyal army of followers who are tweeting at me, too. He’s emailing me and my sports editor and tweeting at the sports department’s Twitter account—this is not good.</p>
 
-<p>“<em>I am contacting you to find out why you chose Anthony Fenech on the Tigers beat. My sources have told me that Mr. Fenech has at least one DUI conviction.</em> </p>
+<p>“<em>I am contacting you to find out why you chose Anthony Fenech on the Tigers </em><em>beat.</em><em> My sources have told me that Mr. Fenech has at least one DUI conviction.</em></p>
 
-<p>“<em>My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writer’s job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made.</em>”</p>
+<p>“<em>My sources also tell me that Mr. Fenech doesn't have a college degree. Is that a prerequisite for a beat writer</em><em>’</em><em>s job at your paper? It would seem that Mr. Fenech leap frogged others for this promotion. Please advise why this decision was made.</em>”</p>
 
-<p>Internet Stalker has written a few articles about me, including one titled <span class="small-caps">ANTHONY FENECH IS A FUCKING MORON</span>. So let me come clean: Months away from my 21st birthday, I got a DUI after flipping my PT Cruiser on the freeway. I changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
+<p>Internet Stalker has written a few articles about me, including one titled ANTHONY FENECH IS A FUCKING MORON. So let me come clean: Months away from my 21st birthday, I got a DUI after flipping my PT Cruiser on the freeway. I changed lanes at high speed, and went airborne. My mom picked me up from the hospital.</p>
 
 <p>Almost forgotten until now, when it’s currently online. Twelve RTs and counting.</p>
 
@@ -556,9 +556,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I started praying again, which seems to have worked. Still employed, I arrive at the airport for my first road trip—the winter meetings are this week.</p>
 
-<p>At the gate, I cannot stop making inadvertent eye contact with this older gentleman on the same flight—gray hair parted to the side, glasses, looks like Stephen King in a slightly more friendly way.</p>
+<p>At the gate, I cannot stop making inadvertent eye contact with this older gentleman on the same flight—gray hair parted to the side, glasses, looks like Stephen King in a slightly more friendly way. Like he knows me.</p>
 
-<p>Has he read Internet Stalker’s stuff? I feel like I’m living my own horror story.</p>
+<p>Has he read Internet Stalker’s stuff?</p>
 
 <p></p>
 
@@ -574,17 +574,17 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers’ suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout.</p>
+<p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>Back at the lobby bar, I re-introduce myself to a tall, tan man with big shoulders who I recognize from the Tigers’ suite—Dave Littlefield, formerly the Pittsburgh Pirates GM, was recently hired as a pro scout. </p>
 
-<p>Embarrassingly, I don’t remember our conversation from last night. We talk a bit more.</p>
+<p>Embarrassingly, I don’t remember our conversation from last night. We talk a bit more. </p>
 
-<p>I meet Detroit’s young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans’ trust. I suggest I could visit Nathan while training for the season. Pepe buys in.</p>
+<p>I meet Detroit’s young analytics guy, Sam Menzin, and another fellow, Matt Something, who works for San Diego. I make a point of meeting agent Dave Pepe in the flesh, a former adjunct professor at Rutgers who represents veteran closer Joe Nathan. I reached out to Pepe this offseason, had a nice conversation, and I want to pitch an offseason feature story on Nathan, the aging former All-Star who is looking to regain both his fastball and the fans’ trust. I suggest I could visit Nathan while training for the season. Pepe buys in. </p>
 
 <p>While it wasn’t explicitly stated as such, the story I was pitching to Nathan’s agent was a fluff piece. By allowing a certain kind of access, it’s almost certain the resulting story will be favorable for the subject.</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>December 11</em>—</span>My mouth is dry when I wake up.</p>
+<p class="has-dateline"><span class="dateline"><em>December 11</em>—</span>My mouth is dry when I wake up. </p>
 
 <p>I get a glass of water and check Twitter. Calamity! My team is close to a trade, reportedly sending a prospect shortstop to the Cincinnati Reds for righty starter Alfredo Simon.</p>
 
@@ -652,7 +652,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Sorry, man—you must have the right number, but I’m not biting.</p>
 
-<p>Then I receive a text message from a 949 number.</p>
+<p>Then I receive a text message from a 949 number. </p>
 
 <p>“Anthony, this is Scott Boras. Give me a call.”</p>
 
@@ -660,15 +660,15 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I ask one of my buddies to smack me. I scream each time and call Boras back.</p>
 
-<p>He got my number from Dylan.</p>
+<p>He got my number from Dylan. </p>
 
-<p>“Dylan Hernández,” Boras says. “A man of mystery.”</p>
+<p>“Dylan Hernández,” Boras says. “A man of mystery.” </p>
 
 <p>Boras is calling to chat about client Max Scherzer—five seasons with the Tigers, now a free agent. He’s greasing my wheels, working his angles.</p>
 
 <p>Scherzer, 30, won the Cy Young Award two years ago and became one of baseball’s best pitchers in Detroit, a workhorse who logs 200-plus innings yearly. Still stunned I’m talking to Scott Boras; my early objective becomes clear—keep him on the phone as long as I can.</p>
 
-<p>We talk for 26 minutes. I call Ball Writer Dylan Hernández for translation—Boras wants me to write something about the Tigers pursuing him, to stir up the market.</p>
+<p>We talk for 26 minutes. I call Ball Writer Dylan Hernández for translation—Boras wants me to write something about the Tigers pursuing him, to stir up the market. </p>
 
 <p>A couple days later, I write a column about how they should be aggressive in pursuing Scherzer. I push Boras’ agenda under the guise of my opinion. I’m being used. It feels good.</p>
 
@@ -678,7 +678,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“If you’re any good at your job, you would have gotten the number by now.”</p>
 
-<p>I’m covering the Red Wings game. Ilitch, a multi-billionaire, owns the local National Hockey League team, too—an Original Six franchise. I stop in the newsroom for expenses and stroll a few blocks to Joe Louis Arena for the game.</p>
+<p>I’m covering the Red Wings game. Ilitch, a multi-billionaire, owns the local National Hockey League team, too—an Original Six franchise. I stop in the newsroom for expenses and stroll a few blocks to Joe Louis Arena for the game. </p>
 
 <p>In the media dining room, I spot longtime Red Wings general manager Ken Holland at a nearby table. Holland has been in charge since 1998.</p>
 
@@ -688,7 +688,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 31</em>—</span>Today is my Mitch Albom Birthday. I am 27 years, 2 months and 12 days old today—exactly how old Albom was on August 5, 1985, the day he debuted as a sports columnist. We measure our careers in Mitch Time around here: From the moment you walk into the <em>Free Press</em> sports department, you are measured by the cardboard cutout of Mitch in the corner, holding up one finger, <em>Voted #1 sports columnist in the country—again!</em></p>
 
-<p>I am five years behind Mitch Time, but I remain undeterred. When I landed in Detroit after the winter meetings, I ran into University of Michigan football coach Jim Harbaugh at baggage claim and introduced myself as Anthony Fenech, future <em>Free Press</em> columnist.</p>
+<p>I am five years behind Mitch Time, but I remain undeterred. When I landed in Detroit after the winter meetings, I ran into University of Michigan football coach Jim Harbaugh at baggage claim and introduced myself as Anthony Fenech, future <em>Free Press</em> columnist. </p>
 
 <p>Which leads to my latest big idea: In an effort to make up some time, what if I wrote a behind-the-scenes book of my rookie year on the beat? I could write about almost getting canceled by an Internet Stalker and getting blasted at the winter meetings and running into Scott Boras in the valet line.</p>
 
@@ -708,11 +708,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">WASHINGTON, <em>January 18, 2015</em>—</span>Working from a standing desk inside Reagan Airport when news breaks of Max Scherzer’s impending signing. It’s a National Guy with the scoop—Scherzer to the Washington Nationals for seven years and $210 million. In the past couple years, the term “mystery team” has been popularized—national insiders floating out unnamed teams to further a player’s market value as a favor to the agent.</p>
+<p class="has-dateline"><span class="dateline">WASHINGTON, <em>January 18</em><em>, 2015</em>—</span>Working from a standing desk inside Reagan Airport when news breaks of Max Scherzer’s impending signing. It’s a National Guy with the scoop—Scherzer to the Washington Nationals for seven years and $210 million. In the past couple years, the term “mystery team” has been popularized—national insiders floating out unnamed teams to further a player’s market value as a favor to the agent.</p>
 
-<p>So, I chase down the mystery team—despite Dombrowski’s insistence all winter, the Tigers were not a serious player to re-sign Scherzer.</p>
+<p>So, I chase down the mystery team—despite Dombrowski’s insistence all winter, the Tigers were not a serious player to re-sign Scherzer. </p>
 
-<p>I treat this two-alarm fire like a four. I text Dombrowski after I fasten my seatbelt on the plane, asking indirectly if they were the mystery team: “Was the team engaged in talks with Scherzer at the end?” He gets back to me while we taxi the runway—“No”—and I tweet it out while we hit the air.</p>
+<p>I treat this two-alarm fire like a four. I text Dombrowski after I fasten my seatbelt on the plane, asking indirectly if they were the mystery team: “Was the team engaged in talks with Scherzer at the end?” He gets back to me while we taxi the runway—“No”—and I tweet it out while we hit the air. </p>
 
 <p>The extra effort pays off: When I get onto Wi-Fi, I see that Ken Rosenthal retweeted me.</p>
 
@@ -752,7 +752,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Today, I can properly receive my due credit for writing that killer feature on Víctor Martínez and his American family last year—I haven’t seen Víctor since the story came out.</p>
 
-<p>At TigerFest, an elevator door opens, and Víctor walks out. I say hi but Martínez pays no attention. He chuckles, continuing, and I can’t believe this.</p>
+<p>At TigerFest, an elevator door opens, and Víctor walks out. I say hi but Martínez pays no attention. He chuckles, continuing, and I can’t believe this. </p>
 
 <p>“Did you read the story?”</p>
 
@@ -787,7 +787,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Do you know anything about this Joba signing?”</p>
 
-<p>“No.”</p>
+<p>“No.” </p>
 
 <p>During Chamberlain’s return, as I offer my recorder into the scrum, I look past the player and lock onto a guy standing near the clubhouse entrance. The guy is talking to a pitcher I can’t quite recognize. Backwards hat, baggy clothes and beams like a guy I should know—a guy who might know a thing or two.</p>
 
@@ -805,7 +805,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Ausmus was viewed as a managing wunderkind when Detroit hired him to succeed Jim Leyland after the 2013 season. Last year’s successes are considered the baseline around TigerTown. Time is ticking. The Tigers have big names with big contracts—Cabrera, Verlander, Price, J.D. and Víctor Martínez.</p>
 
-<p>Team owner Mike Ilitch turned 85 last week. His dying wish is for his beloved baseball team to win the World Series.</p>
+<p>Mike Ilitch is 85. His dying wish is for his beloved baseball team to win the World Series.</p>
 
 <p>Ausmus’s daily briefings drip with dry wit. Lots of sarcasm and laughter.</p>
 
@@ -819,7 +819,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>February 26</em>—</span>On the back fields, I get a text message from someone at MLB Network, asking if I have time to come on television today. I’ve never been on TV like this, and I’m certifiably nervous—so I take swigs of apple-flavored whiskey when I get back.</p>
+<p class="has-dateline"><span class="dateline"><em>February 26</em>—</span>On the back fields, I get a text message from someone at MLB Network, asking if I have time to come on television today. I’ve never been on TV like this, and I’m certifiably nervous—so I take swigs of apple-flavored whiskey when I get back. </p>
 
 <p>It is sweltering as I stand on camera—mid-eighties, and my right hand is sweating so much the microphone keeps slipping to the side. I stumble over words badly at least once, but overall, I survive. MLB Network… hey, now!</p>
 
@@ -839,9 +839,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I ask about some of baseball's top prospects. For my fantasy draft, I say. He clams up.</p>
 
-<p>&quot;Why not? They're not even on your team.&quot;</p>
+<p>"Why not? They're not even on your team."</p>
 
-<p>&quot;Anthony, I can't,&quot; he says, and walks away.</p>
+<p>"Anthony, I can't," he says, and walks away.</p>
 
 <p></p>
 
@@ -853,15 +853,15 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Hey Frenchy. Looks like it’s time for some new undies… whaddaya say, Frenchy?”</p>
 
-<p>Even at 70, from that faraway view, can’t get nothing past the ol’ skipper. Leyland can spot the big hole in the back of my boxers.</p>
+<p>Even at 70, from that faraway view, can’t get nothing past the ol’ skipper. He can spot the big hole in the back of my boxers.</p>
 
-<p>After the session, Leyland comes down to join us before today’s workouts begin. Soon, the Most Popular Boy of Perrysburg, Ohio’s 1962 senior class is holding court again.</p>
+<p>After the session, Leyland comes down to join us before today’s workouts begin. Soon, the Most Popular Boy of Perrysburg, Ohio’s 1962 senior class is holding court again. </p>
 
 <p></p>
 
 <p class="has-dateline"><span class="dateline"><em>March 20</em>—</span>The Opening Day starter is revealed.</p>
 
-<p>Ausmus tabs David Price—not longtime franchise ace Justin Verlander, snapping his seven-year streak of Opening Day starts</p>
+<p>Ausmus tabs David Price—not Verlander, snapping his seven-year streak of Opening Day starts</p>
 
 <p>Given his stellar 2014 and exemplary clubhouse leadership, Price is a worthy choice.</p>
 
@@ -869,7 +869,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>They've gotten on so well, I’ve tried coaxing them into co-starring for the season preview story.</p>
 
-<p>I try Justin first.</p>
+<p>I try Justin first. </p>
 
 <p>He’s non-committal.</p>
 
@@ -889,7 +889,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DUNEDIN, Fla., <em>March 27</em>—</span>Panic at the ballpark when Justin Verlander leaves the game.</p>
+<p class="has-dateline"><span class="dateline">DUNEDIN, Fla., <em>March 27</em>—</span>Panic at the ballpark when Justin Verlander leaves the game. </p>
 
 <p>The team announces right triceps discomfort. Expected to make next start. Afterwards, he chalks it up as no biggie and wonders if it wasn’t the coffee he drank before.</p>
 
@@ -913,7 +913,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>When a player is coming into the clubhouse, especially if they’re dealing with an injury, don’t walk up to them right away with questions about it.</p>
 
-<p>I just knew a potential injury was a big deal, and I didn’t want to get beat on it.</p>
+<p>I just knew a potential injury was a big deal, and I didn’t want to get beat on it. </p>
 
 <p>“I’m not trying to be mean about it. I’m just looking out for you.”</p>
 
@@ -934,8 +934,8 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 6,
         year: 2015,
         section: 'year',
-        slug: "opening-day",
         title: "OPENING DAY",
+        slug: "opening-day",
         subtitle: "Detroit, Pittsburgh",
         teaser: "The best day on the calendar.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time.</p>
@@ -944,7 +944,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>It’s Opening Day—a local holiday—and not too bad. Forty-two degrees and cloudy. Dressed dangerously, wearing a navy-blue jacket with a baby blue shirt. Gray slacks and brown wingtips.</p>
 
-<p>Standing in the clubhouse before the game, Justin Verlander walks by. I ask if he was driving a fast black car this morning. He was, indeed. What kind? An Aston Martin. “I think you passed me on the freeway.”</p>
+<p>Standing in the clubhouse before the game, Justin Verlander walks by. I ask if he was driving a fast black car this morning. He was, indeed. What kind? An Aston Martin. “I think you passed me on the freeway.” </p>
 
 <p>“Probably.”</p>
 
@@ -985,7 +985,6 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 6.1,
         year: 2015,
         section: 'year',
-        hidden: true,
         title: "EMBARRASSING FLASHBACK",
         subtitle: "",
         teaser: "",
@@ -1001,9 +1000,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Clawing furiously at my pocket, trying to pull my phone out, to silence it. To stop this nightmare.</p>
 
-<p><em>A few mistakes ago…</em></p>
+<p><em>A few mistakes ago</em><em>…</em></p>
 
-<p>Pressing power, squeezing the phone, turning red as a light.</p>
+<p>Pressing power, squeezing the phone, turning red as a light. </p>
 
 <p>Afterwards, veteran outfielder Vernon Wells lets me know.</p>
 
@@ -1011,16 +1010,17 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Players laugh. Reporters, too. It’s my first game as a Ball Writer—I don’t know how I’ll recover from this.</p>
 </div>`,
-        wordCount: 144
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 6.2,
         year: 2015,
         section: 'year',
-        hidden: true,
         title: "OPENING DAY",
-        subtitle: "",
-        teaser: "",
+        slug: "opening-day",
+        subtitle: "Detroit, Pittsburgh",
+        teaser: "The best day on the calendar.",
         content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>
 
 <p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only 10 pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>
@@ -1051,7 +1051,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Director of baseball operations Mike Smith puts a stop to further inquiries: “I’m never going to be able to confirm or deny rumors like this for you, sorry.”</p>
 
-<p>The other source—assistant general manager Al Avila—hasn’t responded.</p>
+<p>The other source—Al Avila—hasn’t responded.</p>
 
 <p>Back in the press box, I write three stories: A game story, a sidebar on Nathan’s injury and an opinion piece about why it would be wise to pursue Soriano—a favor for Scott Boras.</p>
 
@@ -1067,11 +1067,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He’s standing at his locker when the door opens.</p>
 
-<p>After the game, I meet visiting New York writers for a drink, including George King of the <em>New York Post.</em> John Lowe regales stories of King on the beat.</p>
+<p>After the game, I meet visiting New York writers for a drink, including George King of the <em>New York Post.</em> John Lowe regales stories of King on the beat. </p>
 
-<p>“One year, the Yankees played in the Boston Marathon game (traditionally played at 11 <span class="small-caps">A.M.</span>) on Patriots’ Day Monday. But, of course, ESPN wants <em>Sunday Night Baseball</em> the night before. So, it’s Red Sox-Yankees at 8 <span class="small-caps">P.M.</span> on Sunday night, so that means the Yankees open at 7:30 Monday morning. And Joe Torre got there at 7:25 and George is standing there, waiting for the clubhouse to open at 7:30, and Torre says, ‘What are you doing here this early?’ And George says, ‘My job is to be here when that door opens.’”</p>
+<p> “One year, the Yankees played in the Boston Marathon game (traditionally played at 11 <span class="small-caps">A.M.</span>) on Patriots’ Day Monday. But, of course, ESPN wants <em>Sunday Night Baseball</em> the night before. So, it’s Red Sox-Yankees at 8 <span class="small-caps">P.M.</span> on Sunday night, so that means the Yankees open at 7:30 Monday morning. And Joe Torre got there at 7:25 and George is standing there, waiting for the clubhouse to open at 7:30, and Torre says, ‘What are you doing here this early?’ And George says, ‘My job is to be here when that door opens.’”</p>
 
-<p>He spends at least three hours on the phone every day. No, George King is actually <em>on the phone,</em> talking to people.</p>
+<p>He spends at least three hours on the phone every day. No, George King is actually <em>on the phone,</em> talking to people. </p>
 
 <p>Ball Writing rules to live by.</p>
 
@@ -1095,7 +1095,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Waiting to hear back, I am beaten by a blogger. The news blindsides Gator, triggering a flurry of texts: Reliever Joba Chamberlain is being sent out.</p>
 
-<p>Gator is on Line 1. A different player just called, and yep, Joba Chamberlain is gone. Tom Gorzelanny, too.</p>
+<p>Gator is on Line 1. A different player just called, and yep, Joba Chamberlain is gone. Tom Gorzelanny, too. </p>
 
 <p>It was a better day for the beat writer. I got four-of-six roster moves. But my scoops amount to second-hand rumors—if I don’t find some real sources, I’m bound to get burned.</p>
 
@@ -1137,9 +1137,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>J.D. says he doesn’t want to say anything about him until he gets paid and doesn’t want to rub his hitting coaches the wrong way by potentially giving someone else credit for his success.</p>
 
-<p>He didn’t explicitly say do not talk to this guy.</p>
+<p>He didn’t explicitly say do not talk to this guy. </p>
 
-<p>I am equal parts inexperienced and undeterred. Before taking off in Seattle, I ask one of Boras’ guys about the Mysterious Hitting Guru.</p>
+<p>I am equal parts inexperienced and undeterred. Before taking off in Seattle, I ask one of Boras’ guys about the Mysterious Hitting Guru. </p>
 
 <p>“Ask Scott… see if he’s got any ideas.”</p>
 
@@ -1177,7 +1177,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>July 10</em>—</span>Tigers lead Twins, 6-1. Bottom of the ninth.</p>
 
-<p>Forty-eight hours until the All-Star break and the Tigers still don’t know who they are. A winning team? Contender? Third place? They have struggled to stay above .500 all season. Flaws are obvious—unathletic roster, one-dimensional offense, subpar defense—but the team’s biggest hole remains in the bullpen.</p>
+<p>Forty-eight hours until the All-Star break and the Tigers still don’t know who they are. A winning team? Contender? Third place? They have struggled to stay above .500 all season. Flaws are obvious—unathletic roster, one-dimensional offense, subpar defense—but the team’s biggest hole remains in the bullpen. </p>
 
 <p>As the Royals showed last year, riding a three-headed monster of late-inning relievers within a win of the World Series, baseball has begun prioritizing bullpen usage.</p>
 
@@ -1197,7 +1197,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I leave the press box past 11. As if the drama and the game and the postgame signing wasn’t enough fun, I still have the feature story I haven’t started.</p>
 
-<p>I meet up with scouts at the bar instead. A drink turns into three and I end up doing it the old-fashioned way, staying up all bloody night on coffee and tobacco.</p>
+<p> I meet up with scouts at the bar instead. A drink turns into three and I end up doing it the old-fashioned way, staying up all bloody night on coffee and tobacco. </p>
 
 <p>The sun comes up. Day game today.</p>
 
@@ -1215,11 +1215,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I don’t know if he caught it or not. I don’t know if it knocked him down. He isn’t in his seat anymore—he has since left the third row. So, I guess we’ll find out soon enough.”</p>
 
-<p>Dave Dombrowski passes me in the hallway.</p>
+<p>Dave Dombrowski passes me in the hallway. </p>
 
 <p>“I heard J.D. was upset with you.”</p>
 
-<p>After the game, I try and fail at lobbying J.D. to buy me a new laptop.</p>
+<p>After the game, I try and fail at lobbying J.D. to buy me a new laptop. </p>
 
 <p>“That’s what you get, bro.”</p>
 
@@ -1239,12 +1239,12 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>July 19</em>—</span>Redemption is mine. A week after I got punk’d by Internet Stalker, I get an email from an ESPN producer, inviting me onto <em>SportsCenter</em> today.</p>
+<p class="has-dateline"><span class="dateline"><em>July 19</em>—</span>Redemption is mine. A week after I got punk’d by Internet Stalker, I get an email from an ESPN producer, inviting me onto <em>SportsCenter</em> today. </p>
 
-<p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn.</p>
+<p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn. </p>
 
 <p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>`,
-        wordCount: 2186
+        wordCount: 340
     },
     {
         id: 8,
@@ -1262,7 +1262,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I treat this Internet Rumor like any dogged reporter would. I chase it down, emailing the Cardinals GM: “There is some buzz about Rajai Davis—he apparently followed a few Cardinals-related accounts. If there is anything to this, let me know.”</p>
 
-<p>When the clubhouse opens today, reporters quickly approach Davis’ locker. With his back turned, Davis can’t keep it together—he starts laughing and so do teammates nearby.</p>
+<p>When the clubhouse opens today, reporters quickly approach Davis’ locker. With his back turned, he can’t keep it together—he starts laughing and so do teammates nearby.</p>
 
 <p>Well, they got me bad. I never followed up with Mozeliak after that. My fate was sealed as the guy who fell for the Rajai Davis Internet Rumor.</p>
 
@@ -1304,7 +1304,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I wouldn’t use the word ‘fun.’ It’s a situation where you never want to be in a spot where you’re doing what we’re doing. I would much rather be acquiring than I would be trading. But it’s just where we are at this point.”</p>
 
-<p>Across the harbor at the ballpark, David Price is packing up his stuff. Price, 29, has posted stellar numbers once again this season (9-4, 2.53 ERA). After Tampa Bay traded him, this time isn’t nearly as tough.</p>
+<p>Across the harbor at the ballpark, David Price is packing up his stuff. Price, 29, has posted stellar numbers once again this season (9-4, 2.53 ERA). After Tampa Bay traded him, this time isn’t nearly as tough. </p>
 
 <p>“I think everybody kind of envisions themselves playing for one team their entire career. That’s not the way it happens.”</p>
 
@@ -1316,11 +1316,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>July 31</em>—</span>It’s the trade deadline. Detroit still has one player they’d like to move: Yoenis Céspedes.</p>
+<p class="has-dateline"><span class="dateline"><em>July 31</em>—</span>It’s the trade deadline. Detroit still has one player they’d like to move: Yoenis Céspedes. </p>
 
 <p>I shared one meaningful moment with Cespedes, running into him at Bonefish Grill in spring training. I nodded and he had no idea who I was.</p>
 
-<p>When the clubhouse opens, the trade deadline clock ticks down to 4. Rumors swirl. They have been posting the lineup card outside the locker room, in the tunnel heading to the dugout.</p>
+<p>When the clubhouse opens, the trade deadline clock ticks down to 4. Rumors swirl. They have been posting the lineup card outside the locker room, in the tunnel heading to the dugout. </p>
 
 <p>Knowing my target and sensing nobody else does, I disappear into the tunnel and find the lineup card.</p>
 
@@ -1342,7 +1342,8 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">WASHINGTON, <em>August 3</em>—</span>I take the train from Baltimore after today’s series finale to see my little brother in D.C. for the day.</p>
 
-<p>I’m writing a column for tomorrow’s paper, saying Dave Dombrowski should receive a contract extension. It expires at year’s end. My argument: You can’t find a better general manager than Dombrowski, and he’s already made trades with an eye for the future. I feel a pull to phone Dombrowski, but I don’t. I don’t want to bug him.</p>
+<p>I’m writing a column for tomorrow’s paper, saying Dave Dombrowski should receive a contract extension. It expires at year’s end. My argument: You can’t find a better general manager than Dombrowski, and he’s already made trades with an eye for the future.
+I feel a pull to phone Dombrowski, but I don’t. I don’t want to bug him.</p>
 
 <p></p>
 
@@ -1390,7 +1391,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The news isn’t as good for me. Avila has answered exactly none of seven messages since we exchanged numbers in spring training. What else would you expect from a guy who has worked under Dave Dombrowski for the past quarter-century.</p>
 
-<p>We’re standing in line together, shoulder-to-shoulder for the last pork chops in the pan.</p>
+<p>We’re standing in line together, shoulder-to-shoulder for the last pork chops in the pan. </p>
 
 <p>I congratulate him on the new job.</p>
 
@@ -1440,11 +1441,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>At the park, I introduce myself to Matt Boyd, one of the pitchers received in return for David Price, and I pick marijuana as common ground. I break the ice talking about my favorite place—Uncle Ike’s Pot Shop.</p>
 
-<p>Boyd doesn’t give much of a reaction, but later he tells Tigers PR.</p>
+<p>Boyd doesn’t give much of a reaction, but later he tells Tigers PR. </p>
 
 <p>I don’t find this out until the offseason.</p>
 
-<p>Apparently, it made Boyd uncomfortable.</p>
+<p>Apparently, it made Boyd uncomfortable. </p>
 
 <p>In retrospect, it was an unnecessary icebreaker. But I am who I am, and Matthew Boyd is who he is—someone I’ll come to learn has never smoked weed in his life.</p>
 
@@ -1460,7 +1461,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 1</em>—</span>Introducing the Tiger Beat—the handful of reporters who cover the team daily. There’s Rival Cohort Chris McCosky (<em>Detroit News</em>), Jason Beck from MLB.com, James Schmehl from MLive.com and most recently, Katie Strang from ESPN.com.</p>
+<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>September 1</em>—</span>Introducing the Tiger Beat—the handful of reporters who cover the team daily. There’s Rival Cohort Chris McCosky (<em>Detroit News</em>), Jason Beck from MLB.com, James Schmehl from MLive.com and most recently, Katie Strang from ESPN.com. </p>
 
 <p>Beck, in his 12th year covering the team, is a soft speaker who is very punctual. I get along particularly well with Schmehl, who is closest in age.</p>
 
@@ -1474,7 +1475,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Early in the year, I bugged Martínez to introduce me to catcher Salvador Perez—one of my favorite players. One day, I saw them on the field talking, hovering closer and closer until Víctor had to introduce me.</p>
 
-<p>After talking with Salvy, I re-introduce myself to veteran outfielder Jonny Gomes.</p>
+<p>After talking with Salvy, I re-introduce myself to veteran outfielder Jonny Gomes. </p>
 
 <p>“I got a story for you…”</p>
 
@@ -1486,7 +1487,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Split seconds before barfing on the dugout steps in front of everyone, I jumped out of my seat, grabbed a cup off the Gatorade cart and spit as controlled as I could into the cup. I plucked the rest of the chew from my mouth and flicked it into the trash. Couldn’t find a napkin to wipe my fingers, so I wiped them on my pants instead.</p>
 
-<p>“I was literally about to puke out there.”</p>
+<p>“I was literally about to puke out there.” </p>
 
 <p>Gomes is laughing.</p>`,
         wordCount: 2500
@@ -1505,7 +1506,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>It’s a baseball-free night. When I check it next, there is a list of missed messages:</p>
 
-<p>11:08 <span class="small-caps">P.M.</span>— “Is Al on the trip?… Did you see the assistant sports editor’s email? A person at Channel 4 thinks Ilitch might have told Bernie about Ausmus being done at the end of the year… You watching???”</p>
+<p class="has-dateline"><span class="dateline">11:08 <span class="small-caps">P.M.</span>—</span> “Is Al on the trip?… Did you see the assistant sports editor’s email? A person at Channel 4 thinks Ilitch might have told Bernie about Ausmus being done at the end of the year… You watching???”</p>
 
 <p>Apparently, while I wasn’t, Bernie Smilovitz promoted an exclusive report during the break. “A major change is on the way for the Tigers. Tune into <em>Local 4 News</em> after the game.”</p>
 
@@ -1513,13 +1514,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Code green is now bright red—a five-alarm fire.</p>
 
-<p>11:27 <span class="small-caps">P.M.</span>—Someone passes along the phone number for a well-connected source. It’s a guy who’s In The Room, but nobody really knows what he does. I’ve never met him, so I call Ausmus instead.</p>
+<p class="has-dateline"><span class="dateline">11:27 <span class="small-caps">P.M.</span>—</span>Someone passes along the phone number for a well-connected source. It’s a guy who’s In The Room, but nobody really knows what he does. I’ve never met him, so I call Ausmus instead.</p>
 
 <p>I text PR and Dodgers beat writer Dylan Hernández, who says he’ll call back—he’s putting his kids to sleep.</p>
 
 <p>“What do I do?”</p>
 
-<p>11:52 <span class="small-caps">P.M.</span>—I call Brad. No answer.</p>
+<p class="has-dateline"><span class="dateline">11:52 <span class="small-caps">P.M.</span>—</span>I call Brad. No answer.</p>
 
 <p>“I hate to reach out about this. Have you been told anything about this report?”</p>
 
@@ -1535,19 +1536,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I relay the denial to the desk, but the source is already approved. A story is posted, matching Bernie’s report. According to the two largest news sites in Michigan, Ausmus is out.</p>
 
-<p>12:38 <span class="small-caps">A.M.</span>—Dylan Hernández suggests I call Scott Boras, because “Boras knows everything that’s going on.” It’s not even 10 <span class="small-caps">P.M.</span> out west. Boras tells me he hasn’t heard anything, but it certainly wouldn’t surprise him.</p>
+<p class="has-dateline"><span class="dateline">12:38 <span class="small-caps">A.M.</span>—</span>Dylan Hernández suggests I call Scott Boras, because “Boras knows everything that’s going on.” It’s not even 10 <span class="small-caps">P.M.</span> out west. Boras tells me he hasn’t heard anything, but it certainly wouldn’t surprise him.</p>
 
 <p>I’m assigned a next-day story—who’s up next? It’s on Freep.com by last call. FENECH—AUSMUS OUT, SO TIGERS SHOULD LOOK AT GARDENHIRE.</p>
 
 <p>Yup, Ausmus is out. Or is he?</p>
 
-<p>Myers tells me to cancel my weekend plans: “I need you to be in Cleveland tomorrow.”</p>
+<p>Myers tells me to cancel my weekend plans: “I need you to be in Cleveland tomorrow.” 
 
-<p class="has-dateline"><span class="dateline">CLEVELAND, <em>September 11</em>—</span>At Progressive Field the next day in time for Ausmus’ pregame media session. Ausmus isn’t out: He’s being peppered with questions from reporters.</p>
+CLEVELAND, <em>September 11</em>—At Progressive Field the next day in time for Ausmus’ pregame media session. Ausmus isn’t out: He’s being peppered with questions from reporters.</p>
 
-<p><em>Did that report sting you? Did it surprise you that it came out… angry even?</em></p>
+<p><em>Did that report sting you? Did it surprise you that it came out</em><em>…</em><em> angry even?</em></p>
 
-<p>“Not really.”</p>
+<p>“Not really.” </p>
 
 <p><em>Is it awkward?</em></p>
 
@@ -1571,11 +1572,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The story about Alex is a positive piece—about his lifetime ties to the organization, from son of the assistant GM to starting catcher. We talked last weekend. He reached out afterward, asking if he could read the story before it goes out.</p>
 
-<p>This is a big no-no—against the Journalism Ethics we live by. But the world we live in is nothing if not gray…</p>
+<p>This is a big no-no—against the Journalism Ethics we live by. But the world we live in is nothing if not gray… </p>
 
 <p>“I really shouldn’t.”</p>
 
-<p>But I do.</p>
+<p>But I do. </p>
 
 <p>He doesn’t take any editing liberties. He thanks me for writing it.</p>
 
@@ -1583,9 +1584,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 29</em>—</span>I’m issued the final challenge of my rookie year.</p>
 
-<p>It comes from Nick Cotsonika, temporarily a <em>Free Press</em> editor between stops in his sports writing career. I grew up reading Cotsonika in the sports section—he covered the Lions, Red Wings, <em>and</em> Michigan football beats.</p>
+<p>It comes from Nick Cotsonika, temporarily a <em>Free Press</em><em> </em>editor between stops in his sports writing career. I grew up reading Cotsonika in the sports section—he covered the Lions, Red Wings, <em>and</em> Michigan football beats.</p>
 
-<p>He calls to suggest a story on Justin Verlander’s rebirth.</p>
+<p>He calls to suggest a story on Justin Verlander’s rebirth. </p>
 
 <p>“See if he’ll talk.”</p>
 
@@ -1635,7 +1636,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p><em>What if I don’t want you to get ahold of me?</em></p>
 
-<p>Time is of the essence—the clubhouse will only be open for so long. And when it’s closed, it doesn’t open again until spring training. I quickly make my way around. A couple veteran players cough up their number easily. In busy-bee mode, I walk up to J.D. Martinez, failing to anticipate the towel he’s just dropped.</p>
+<p>Time is of the essence—the clubhouse will only be open for so long. And when it’s closed, it doesn’t open again until spring training. I quickly make my way around. A couple veteran players cough up their number easily. In busy-bee mode, I walk up to J.D. Martinez, failing to anticipate the towel he’s just dropped. </p>
 
 <p>“What the hell, man? Right now? Really?”</p>
 
@@ -1659,7 +1660,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>With nearly everyone checked off my list, I try to find Víctor Martínez. Even as he struggled this year, Martínez’s locker space was always open, a safe haven for a rookie Ball Writer. Martínez hit a career-low .245 with a shell of yesteryear’s power.</p>
 
-<p>With Big Víctor nowhere to be seen, I ask Little Victor.</p>
+<p>With Big Víctor nowhere to be seen, I ask Little Victor. </p>
 
 <p>“He’s in the back. He’s not feeling good.”</p>
 
@@ -1701,7 +1702,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>November 18</em>—</span>Pulling double-duty, covering basketball practice when the top National Guy rears his ugly head again: They’re closing in on a trade with the Brewers for All-Star closer Francisco Rodríguez, according to Ken Rosenthal.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>November 18</em>—</span>Pulling double-duty, covering basketball practice when the top National Guy rears his ugly head again: They’re closing in on a trade with the Brewers for All-Star closer Francisco Rodríguez, according to Ken Rosenthal. </p>
 
 <p>Nothing back from the Milwaukee guy I met last week. Neither do my other so-called sources. Soon, the team announces the trade, and nothing is left to confirm. Meanwhile, I’m trying to cover two sports at the same time—dialed into a baseball conference call as basketballs rap around the Pistons’ practice facility during coach Stan Van Gundy’s post-practice scrum.</p>
 
@@ -1741,35 +1742,35 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He bought the Tigers in 1992, months after typing this return letter to a local youngster, who at four years old already had his future planned out. With help from my dad, I wrote in crayon to Ilitch that I wanted to be a hockey player.</p>
 
-<p><em>Dear Anthony:</em> </p>
+<p><em>Dear Anthony: </em></p>
 
-<p><em>I have read your letter and must tell you what a good printer you are. You can start getting ready to be a hockey player (Red Wing) by</em> </p>
+<p><em>I have read your letter and must tell you what a good printer you are. You can start getting ready to be a hockey player (Red Wing) </em><em>by</em><em> </em></p>
 
-<p><em>1. Eat good food, get exercise, and a lot of sleep, because hockey players have to be healthy.</em> </p>
+<p><em>1. Eat good food, get exercise, and a lot of sleep, because hockey players have to be healthy. </em></p>
 
-<p><em>2. Listen to mom and dad, because hockey players need discipline.</em> </p>
+<p><em>2. Listen to mom and dad, because hockey players need discipline. </em></p>
 
-<p><em>3. Study hard when you go to school, because hockey players have to be smart.</em> </p>
+<p><em>3. Study hard when you go to school, because hockey players have to be smart. </em></p>
 
 <p><em>4. Learn to skate and practice a lot, because hockey players need to be excellent skaters.</em></p>
 
-<p><em>You do all of the things I listed above and then write me another letter and let me know how you’re doing when you start playing with a Mites or Squirt team.</em> </p>
+<p><em>You do all of the things I listed above and then write me another letter and let me know how you’re doing when you start playing with a Mites or Squirt team. </em></p>
 
-<p><em>Thank you for your letter.</em> </p>
+<p><em>Thank you for your letter. </em></p>
 
-<p><em>Sincerely yours,</em> </p>
+<p><em>Sincerely yours, </em></p>
 
 <p><em>Michael Ilitch.</em></p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">NASHVILLE, <em>December 6</em>—</span>This year’s winter meetings are at the Gaylord Opryland Resort, a sprawling indoor city 20 minutes from the honky-tonk of downtown. When I arrive, I see Bob Nightengale and stick to him.</p>
+<p class="has-dateline"><span class="dateline">NASHVILLE, <em>December 6</em>—</span>This year’s winter meetings are at the Gaylord Opryland Resort, a sprawling indoor city 20 minutes from the honky-tonk of downtown. When I arrive, I see Bob Nightengale and stick to him. </p>
 
-<p>Nightengale is <em>USA TODAY</em>’s National Guy. We become pals after beers last year.</p>
+<p>Nightengale is <em>USA TODAY</em>’s National Guy. We become pals after beers last year. </p>
 
 <p>When I grow up, I want to become the Bob Nightengale of National Guys. Bob is skin-tight with scouts, in touch with owners and has deep relationships in the game.</p>
 
-<p>Me? Not so much. By midnight, I’m scooped again. My team is “closing in” on reliever Mark Lowe, according to Seamhead Jerry Crasnick. I run into him after having a cigarette with a couple of New York writers and ask the ESPN.com senior writer if he’s got a contact for Lowe’s agent, former player Jeff Frye. For whatever reason, Crasnick shares it. Frye doesn’t answer.</p>
+<p>Me? Not so much. By midnight, I’m scooped again. My team is “closing in” on reliever Mark Lowe, according to Seamhead Jerry Crasnick. I run into him after having a cigarette with a couple of New York writers and ask the ESPN.com senior writer if he’s got a contact for Lowe’s agent, former player Jeff Frye. For whatever reason, Crasnick shares it. Frye doesn’t answer. </p>
 
 <p>I wallow away in my room, writing up another breaking story I can’t confirm.</p>
 
@@ -1807,7 +1808,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>But today is a big day for the BBWAA. Results of a recent vote are revealed and MLB.com writers are now eligible for membership. Previously, MLB.com writers were barred to ensure the BBWAA’s journalistic integrity—MLB.com writers are employed by MLB Advanced Media and operate as an arm of the league. That can create conflicts of interest.</p>
 
-<p>A newspaper story about a player’s domestic violence accusations probably won’t make it onto the website. Team turmoil and selling tickets don’t go together. The sites are there to make money—and negative stories don’t help.</p>
+<p>A newspaper story about a player’s domestic violence accusations probably won’t make it onto the website. Team turmoil and selling tickets don’t go together. The sites are there to make money—and negative stories don’t help. </p>
 
 <p>This isn’t to say my MLB.com cohorts can’t be trusted. But the arrangement is awkward, as evidenced by the disagreements. People turning on the people they sit next to 120 days a year.</p>
 
@@ -1817,7 +1818,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 9</em>—</span>ALERT!</p>
 
-<p>Al Avila’s afternoon media session has been pushed back, according to Aileen. This usually means a trade is near.</p>
+<p>Avila’s afternoon media session has been pushed back, according to Aileen. This usually means a trade is near.</p>
 
 <p>I know nothing of the sort. Those who do aren’t responding.</p>
 
@@ -1830,7 +1831,6 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 9.1,
         year: 2015,
         section: 'year',
-        hidden: true,
         title: "JUNK MAIL",
         subtitle: "",
         teaser: "",
@@ -1848,7 +1848,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Subject:</strong> BOO BOO</p>
 
-<p class="email-line"><em>Dear Anthony: I am surprised that you don't know the difference between inquisition and ACQUISITION!!! Has the</em> FREE PRESS <em>done away with copy editors in an effort to save a few bucks? Check your column of Dec. 17. I suggest you buy a dictionary AND USE IT or at least check it for boo boo's when in doubt. There is a vast world of difference between these two words as you will discover, I hope.</em></p>
+<p class="email-line"><em>Dear Anthony: I am surprised that you don't know the difference between inquisition and ACQUISITION!!! Has the </em>FREE PRESS<em> done away with copy editors in an effort to save a few bucks? Check your column of Dec. 17. I suggest you buy a dictionary AND USE IT or at least check it for boo boo's when in doubt. There is a vast world of difference between these two words as you will discover, I hope.</em></p>
 
 <p class="email-line"><em>VAUGHN HOOGASIAN (ONE TIME JOURNALISM AND ENGLISH TEACHER)</em></p>
 
@@ -1858,21 +1858,22 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Subject:</strong> Idea</p>
 
-<p class="email-line"><em>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</em></p>
+<p class="email-line">Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</p>
 
-<p class="email-line"><em>Congratulations on year one. I look forward to year number two.</em></p>
+<p class="email-line">Congratulations on year one. I look forward to year number two.</p>
 </div>`,
-        wordCount: 211
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 9.2,
         year: 2015,
         section: 'year',
-        hidden: true,
         title: "FIRE DRILL",
+        slug: "fire-drill",
         subtitle: "",
-        teaser: "",
-        content: `<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15, 2016</em>—</span>I learned many things my rookie year on the beat. I’m re-learning a hard lesson today: Don’t travel on arbitration day.</p>
+        teaser: "A season falls apart.",
+        content: `<p class="has-dateline"><span class="dateline">ZZYZX, Calif., <em>January 15</em><em>, 2016</em>—</span>I learned many things my rookie year on the beat. I’m re-learning a hard lesson today: Don’t travel on arbitration day.</p>
 
 <p>This year, I’m on the highway, 1½ hours outside Las Vegas, foolishly driving a rental car with one hand. My other hand is texting sources, checking Twitter and searching for the next exit. I’ve been beaten twice. According to Jon Heyman, the National Guy who breaks arbitration deals with superhuman ease, <em>two</em> deals are happening.</p>
 
@@ -1882,7 +1883,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Angry, because I’ve painstakingly contacted the agents for these arbitration players. I called Jose Iglesias’ agent a week ago—we talked for 12 minutes. Angry at Al Avila—I thought we made real progress in the offseason. Last week, he said, “Text or call me whenever you need anything.” Angry at Jon Heyman—<em>how</em> is he doing this?</p>
 
-<p>After breaking 79 arbitration deals last year, Heyman will up the record to 84 this year. To outsiders, this is what a baseball insider looks like—well-connected, probably cooped up in an office working the phones like a coked-out penny stockbroker. But to an insider, Heyman’s reporting is beyond the realm. Inexplicable, how he churns a running scroll of scoops like that—minute-by-minute, exact figures, star players and small. When the 4 o’clock deadline passes for teams and players to exchange figures, The Heymachine spits out numbers: <em>Tigers file at $6M, J.D. Martinez at $8M.</em></p>
+<p>After breaking 79 arbitration deals last year, Heyman will up the record to 84 this year. To outsiders, this is what a baseball insider looks like—well-connected, probably cooped up in an office working the phones like a coked-out penny stockbroker. But to an insider, his reporting is beyond the realm. Inexplicable, how he churns a running scroll of scoops like that—minute-by-minute, exact figures, star players and small. When the 4 o’clock deadline passes for teams and players to exchange figures, The Heymachine spits out numbers: <em>Tigers file at $6M, J.D. Martinez at $8M.</em></p>
 
 <p></p>
 
@@ -1902,7 +1903,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>If only he knew. But Ron knows more than most—enough to take precautions.</p>
 
-<p>A few years back, Internet Stalker (same one) snuck into a Comerica Park press conference as a reporter for the fictitious <em>Jewish News.</em></p>
+<p>A few years back, Internet Stalker (same one) snuck into a Comerica Park press conference as a reporter for the fictitious <em>Jewish News.</em> </p>
 
 <p>In December 2013, they dealt Doug Fister to the Washington Nationals for Robbie Ray, Ian Krol and Steve Lombardozzi.</p>
 
@@ -1920,7 +1921,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>January 21</em>—</span>The boys are back in town. I head to the Veterans Affairs medical center in Ann Arbor for the ribbon-cutting of a new wing personally financed by Justin Verlander.</p>
+<p class="has-dateline"><span class="dateline"><em>January 21</em>—</span>The boys are back in town. I head to the Veterans Affairs medical center in Ann Arbor for the ribbon-cutting of a new wing personally financed by Justin Verlander. </p>
 
 <p>I chose this winter caravan stop carefully. I’d throw the franchise player a bone—writing about his charitable endeavors—and get a couple minutes one-on-one.</p>
 
@@ -1965,7 +1966,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>By the time I leave the studio, my phone is blowing up with those people.</p>
 
 <p>The producer asks if I want to be a regular correspondent. They’ll pay me. For up-and-down Ball Writer Anthony Fenech, this is definitely up.</p>`,
-        wordCount: 1220
+        wordCount: 3418
     },
     {
         id: 10,
@@ -1979,7 +1980,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Not only that, but he remembers my name.</p>
 
-<p>Walking out of Starbucks with my head in my phone, someone held the door.</p>
+<p>Walking out of Starbucks with my head in my phone and still unsure what day of the week it is, someone holds the door.</p>
 
 <p>“Good morning, Anthony.”</p>
 
@@ -2005,13 +2006,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The sound becomes more familiar the closer I get—Víctor Martínez is in the batting cage.</p>
 
-<p>Martínez walks out afterward: Towel on shoulder, bats in hand, sweat-soaked face. Walks straight by me. No eye contact. Something is wrong. Martínez becomes a barking dog.</p>
+<p>Martínez walks out afterward: Towel on shoulder, bats in hand, sweat-soaked face. Walks straight by me. No eye contact. Something is wrong. He becomes a barking dog.</p>
 
 <p>“Go away! Go! Go!”</p>
 
 <p>With his foot speed diminished—Martínez ranked as the slowest player in baseball last season, at 23.2 feet per second—I keep up with ease.</p>
 
-<p>“I saw what you were saying on TV. No power, nothing this, nothing that. Always talking shit.”</p>
+<p> “I saw what you were saying on TV. No power, nothing this, nothing that. Always talking shit.”</p>
 
 <p>Over the winter, I went on MLB Network and was asked whether the Tigers could count on his power swing returning after he hit only 11 home runs last season. “No, they can’t,” I said. “Víctor is about to be 37, and he’s shown signs of decline. While they can count on Víctor hitting for a high average, I’m not sure the power will return.”</p>
 
@@ -2023,7 +2024,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>This is the year. They’re gonna win the World Series, I tell my buddy, and I’ll write a book about it. Working title: <em>Roar Restored—Inside the Jungle with the Detroit Tigers.</em></p>
 
-<p>On a turf field named after Ty Cobb, manager Brad Ausmus addresses the players.</p>
+<p>On a turf field named after Ty Cobb, Brad Ausmus addresses the players. </p>
 
 <p>Before batting practice, Kirk Gibson reacquaints himself with Justin Upton. Miguel Cabrera swings a heavy bat. Mr. Tiger Al Kaline is standing behind the cage.</p>
 
@@ -2035,19 +2036,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 23</em>—</span>There is a lighter feel in Lakeland this spring. Under Dave Dombrowski, the front-office staff was buttoned up—working diligently but not without fear. He was the boss, not a friend, and club-media relations were separated by a thick black line.</p>
 
-<p>Al Avila is different. Tonight, the general manager invites the Tiger Beat to a barbeque. We arrive at a huge house and find out the living room is a basketball court. Wood floors, painted lines and a professional-grade hoop suspended from the ceiling. The court opens into the kitchen, where there are plenty of finger foods, drinks of all kinds, and a huge party sub from Publix.</p>
+<p>Al Avila is different. Tonight, the general manager invites the Tiger Beat to a barbeque. We arrive at a huge house and find out the living room is a basketball court. Wood floors, painted lines and a professional-grade hoop suspended from the ceiling. The court opens into the kitchen, where there are plenty of finger foods, drinks of all kinds, and a huge party sub from Publix. </p>
 
 <p>Ball Writers, front office folks and PR. Breaking bread, boozing and playing basketball under the same roof. A three-on-three game begins. I’m not playing. I treat this experiment the way I treat all social gatherings and general moments of awkwardness: With a beer.</p>
 
 <p>I grab a beer. Soon, I’m explaining the auction mechanisms of my fantasy league to the real-life baseball folks. I seek scouting opinions on my players. The basketball game is still going. People are sweating when I see Avila step outside.</p>
 
-<p>The mansion backs up to a man-made lake. It’s outlined with palm trees inside a gated community with a golf course, country club and million-dollar houses. The Tigers’ team travel guy is renting the house for the spring.</p>
+<p>The mansion backs up to a man-made lake. It’s outlined with palm trees inside a gated community with a golf course, country club and million-dollar houses. The Tigers’ team travel guy is renting the house for the spring. </p>
 
 <p>“You could get used to a view like this,” I say.</p>
 
 <p>Al is out having a smoke. He offers me a cigar. Never smoked one.</p>
 
-<p>He shows me how to cut it. As I struggle, he brings out a pocket-size blowtorch and lights it himself. As I cough, he tries to explain how to smoke it without inhaling.</p>
+<p>He shows me how to cut it. As I struggle, he brings out a pocket-size blowtorch and lights it himself. As I cough, he tries to explain how to smoke it without inhaling. </p>
 
 <p>“Stop smoking it like a joint.”</p>
 
@@ -2057,7 +2058,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>February 29</em>—</span>More royalty in camp. Peter Gammons moves slowly through the clubhouse.</p>
 
-<p>The ping-pong game stops. Alan Trammell wants to shake his hand. Players and coaches young and old address him by first name. Gammons is invited into the coaches’ room by Kirk Gibson and pokes his head into the trainer’s room.</p>
+<p>The ping-pong game stops. Alan Trammell wants to shake his hand. Players and coaches young and old address him by first name. Gammons is invited into the coaches’ room by Kirk Gibson and pokes his head into the trainer’s room. </p>
 
 <p>Catcher Jarrod Saltalamacchia walks out of the clubhouse.</p>
 
@@ -2081,7 +2082,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>March 13</em>—</span>Although Opening Day is three weeks away, the deadline for our season preview section is fast approaching. I still don’t have a subject for my big feature when I’m forwarded this email from the <em>Free Press</em>’ entertainment reporter.</p>
+<p class="has-dateline"><span class="dateline"><em>March 13</em>—</span>Although Opening Day is three weeks away, the deadline for our season preview section is fast approaching. I still don’t have a subject for my big feature when I’m forwarded this email from the <em>Free Press</em>’<em> </em>entertainment reporter.</p>
 
 <p>KATE UPTON – GRAND SLAM ADOPTION EVENT</p>
 
@@ -2121,7 +2122,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I don’t do that kind of stuff.”</p>
 
-<p>I want to saythere’s a first time for everything, but I don’t.</p>
+<p>I want to say<em> </em>there’s a first time for everything, but I don’t.</p>
 
 <p></p>
 
@@ -2218,7 +2219,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>May 11</em>—</span>Caught in a downpour walking to the ballpark. Absolutely soaked. Víctor Martínez does me a solid, offering a spray of fine cologne.</p>
+<p class="has-dateline"><span class="dateline"><em>May 11</em>—</span>Caught in a downpour walking to the ballpark. Absolutely soaked. Víctor Martínez does me a solid, offering a spray of fine cologne. </p>
 
 <p>Tonight, the Tigers face Max Scherzer.</p>
 
@@ -2244,7 +2245,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I don’t know what she means at first. Kinsler answered questions short and serious. When asked about Ausmus’ job status, he said, “I don’t think about that. I don’t care about that. I don’t care about anything except getting a win.”</p>
 
-<p>That’s Katie’s point. Kinsler could’ve given Ausmus a <em>vote of confidence,</em> put the blame on the players or said it’s not the manager’s fault.</p>
+<p>That’s Katie’s point. Kinsler could’ve given Ausmus a <em>vote of confidence,</em> put the blame on the players or said it’s not the manager’s fault. </p>
 
 <p>“He said nothing.”</p>
 
@@ -2260,7 +2261,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I sit as far back as possible. I’m next to an In The Room source—John Westhoff. He shares a story tip, pointing at the friends and family seating section. “Over there is Warwick Saupold’s mom.”</p>
 
-<p>Saupold is a rookie reliever from Australia. His mom mad-dashed here to see his debut—27 hours from Perth to Baltimore.</p>
+<p>Saupold is a rookie reliever from Australia. His mom mad-dashed here to see his debut—27 hours from Perth to Baltimore. </p>
 
 <p>“Now that’s a great story,” Westhoff says.</p>
 
@@ -2294,7 +2295,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Today when I’m in front of Miggy, our roles are reversed. He is the interviewer. We have a small audience—reliever Francisco “K-Rod” Rodríguez is a few lockers to the left, Víctor Martínez is to the right and Jarrod Saltalamacchia is somewhere in between.</p>
 
-<p>Miggy asks something so inappropriate that it stops the conversation cold.</p>
+<p>He asks something so inappropriate that it stops the conversation cold.</p>
 
 <p>“No,” I say immediately.</p>
 
@@ -2324,7 +2325,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">CLEVELAND, <em>July 6</em>—</span>My final game of the first half is today in Cleveland. I’m skipping the upcoming Toronto series—I’m still not legally permitted into Canada, eight years into a 10-year ban for misdemeanor DUI. Apparently, the news of my DUI (via Internet Stalker) has made its rounds inside the clubhouse.</p>
 
-<p>“I heard you couldn’t get into Toronto,” outfielder J.D. Martinez says.</p>
+<p>“I heard you couldn’t get into Toronto,” J.D. Martinez says.</p>
 
 <p>I tell him what happened.</p>
 
@@ -2358,7 +2359,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>We go for dinner in the Gaslamp District.</p>
 
-<p>Miguel Cabrera’s appearance is the reason the company spent thousands of dollars in travel to send me here.</p>
+<p>Miguel Cabrera’s appearance is the reason the company spent thousands of dollars in travel to send me here. </p>
 
 <p>He welcomes my presence inside the American League clubhouse before the game.</p>
 
@@ -2374,7 +2375,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>July 15</em>—</span>The Tigers are in the thick of things when the season restarts.</p>
 
-<p>Brad Ausmus never got fired—the day after the Tigers hit back-to-back homers to beat Baltimore in mid-May, Ausmus was ejected for an uncharacteristic temper tantrum that he punctuated by throwing his hoodie on home plate. The team went on a run, winning eight of nine games to get back into the race.</p>
+<p>Brad Ausmus never got fired—the day after the Tigers hit back-to-back homers to beat Baltimore in mid-May, Ausmus was ejected for an uncharacteristic temper tantrum that he punctuated by throwing his hoodie on home plate. The team went on a run, winning eight of nine games to get back into the race. </p>
 
 <p>Michael Fulmer, acquired from the Mets last year, has skyrocketed in value, becoming the midseason favorite for Rookie of the Year. Fulmer entered the break on a heater—he’s 7-1 with a 0.63 ERA in his last nine starts.</p>
 
@@ -2384,7 +2385,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p>CHICAGO<em>, July 25</em>—At the <em>Free Press,</em> we’re all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, after a weekend series against the White Sox, I’m staying another day in Chicago, where Big Ten football media day is being held at the convention center.</p>
+<p class="has-dateline"><span class="dateline">CHICAGO<em>, </em><em>July 25</em>—</span>At the <em>Free Press,</em> we’re all Jim Harbaugh, all the time. Harbaugh gets the clicks. So, after a weekend series against the White Sox, I’m staying another day in Chicago, where Big Ten football media day is being held at the convention center.</p>
 
 <p>I am on Harbaugh Watch, following him around all day for a feature story.</p>
 
@@ -2395,7 +2396,6 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 11.1,
         year: 2016,
         section: 'year',
-        hidden: true,
         title: "JUNK MAIL",
         subtitle: "",
         teaser: "",
@@ -2421,7 +2421,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Subject:</strong> Hey Dumbass….</p>
 
-<p class="email-line"><em>You're late to your FP chats, a smart ass who doesn't know any more about the game than your readers and look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>
+<p class="email-line"><em>You're late to your FP chats, a smart ass who doesn't know any more about the game than your </em><em>readers and</em><em> look like Frankenstein talking through that nose in the game wrap-ups. Don't imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>
 
 <p></p>
 
@@ -2429,18 +2429,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Subject:</strong> Next week 1A story</p>
 
-<p class="email-line"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
+<p class="email-line"><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes the</em><em>y </em><em>are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>
 </div>`,
-        wordCount: 217
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 11.2,
         year: 2016,
         section: 'year',
-        hidden: true,
         title: "HOT SEAT",
+        slug: "hot-seat",
         subtitle: "",
-        teaser: "",
+        teaser: "The pressure mounts.",
         content: `<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 12</em>—</span>You can never assume anything in Ball Writing—as sports editor Kevin Bull now understands.</p>
 
 <p>The Tigers did get swept and the editors of Page 1A—the front of the newspaper—are no longer interested in the story about how they saved their season. But Detroit is still seven games above .500 and well within reach—1 ½ games behind the wild-card.</p>
@@ -2503,7 +2504,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I get what you’re saying, but I wasn’t trying to be like that.”</p>
 
-<p>“But you were like that.”</p>
+<p>“But you were like that.” </p>
 
 <p>“I feel you.”</p>
 
@@ -2525,14 +2526,14 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 27</em>—</span>Nine hundred miles away from my vacation, the headlines say four ejected in tonight’s 3-2 loss to the Angels, including Brad Ausmus and hitting coach Wally Joyner.</p>
 
-<p>In the third inning, Víctor Martínez was ejected for arguing balls and strikes. In the fifth, Ausmus and Joyner were kicked out after Ian Kinsler struck out looking. The next inning, home plate umpire Mike Everitt threw out J.D. Martinez, too.</p>
+<p>In the third inning, Víctor Martínez was ejected for arguing balls and strikes. In the fifth, Ausmus and Joyner were kicked out after Kinsler struck out looking. The next inning, home plate umpire Mike Everitt threw out J.D. Martinez, too.</p>
 
 <p>Even though I feel as close to being on a real vacation as I’ve ever been, Ball Writers never truly take a vacation.</p>
 
 <p>When my phone flashes back to life after six hours hiking, I brace for a flurry of messages. When I put in my PIN, I see missed messages and an unidentified number not in my contacts, maybe from one of Deep Throat’s burner phones.</p>
 
 <p>+1248XXX44XX: <em>Call me.</em></p>`,
-        wordCount: 845
+        wordCount: 2070
     },
     {
         id: 12,
@@ -2560,7 +2561,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Tim Kawakami?”</p>
 
-<p>“Yeah.&quot;</p>
+<p>“Yeah."</p>
 
 <p>“Seriously?”</p>
 
@@ -2578,7 +2579,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">MINNEAPOLIS, <em>September 20</em>—</span>Justin Verlander seeks a buyer for his car. Inside the visitor’s clubhouse, Tigers TV broadcaster Rod Allen walks by.</p>
 
-<p>“Hey Rod. You wanna buy my Aston Martin?”</p>
+<p>“Hey Rod. You wanna buy my Aston Martin?” </p>
 
 <p>“Too pricey for me.”</p>
 
@@ -2596,7 +2597,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>September 21</em>—</span>Per usual, Verlander speaks with reporters the day before his start.</p>
+<p class="has-dateline"><span class="dateline"><em>September 21</em>—</span>Per usual, Verlander speaks with reporters the day before his start. </p>
 
 <p>Afterwards, I tell him, “You really know how to fill up the notebook.” He’s not fluent in newspaper-speak. I explain what a “notebook” is—its old journalism slang for side-car story that touches on multiple topics.</p>
 
@@ -2608,7 +2609,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Víctor doesn’t believe it. I tell them how they used to be friends but maintained professional boundaries—traveling together, drinking together, intertwined in harmony. Peter Gammons even used to shag flies with Red Sox players.</p>
 
-<p>The amicable relationship dates back to long train rides in the forties, generations before social media, when certain things couldn’t be written about. The writers observed the code because they cherished their jobs and considered themselves immensely privileged.</p>
+<p>The amicable relationship dates back to long train rides in the forties, generations before social media, when certain things couldn’t be written about. The writers observed the code because they cherished their jobs and considered themselves immensely privileged. </p>
 
 <p>I mean, how could you not?</p>
 
@@ -2640,7 +2641,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>October 1</em>—</span>Tigers won last night. Half a game out, two to go, and I’ve got my postseason travel booked.</p>
 
-<p>After swatting away his prank attempt yesterday, I come to Justin Verlander’s locker bearing gifts today.</p>
+<p>After swatting away his prank attempt yesterday, I come to Verlander’s locker bearing gifts today.</p>
 
 <p>Verlander is starting the season finale tomorrow. After a late surge, he’s once again considered a top Cy Young candidate—he’s 16-8 with a 3.10 ERA and 246 strikeouts in 220⅔ innings.</p>
 
@@ -2648,7 +2649,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>His eyes light up: “Good to know.”</p>
 
-<p>Against my protest, I’m asked for column on manager Brad Ausmus’ status next year.</p>
+<p>Against my protest, I’m asked for column on Brad Ausmus’ status next year.</p>
 
 <p>Ian Kinsler sits at his locker, unbothered before I walk up and mention this story. Do you think Brad should be back next year?</p>
 
@@ -2802,11 +2803,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“You know what you wrote.”</p>
 
-<p>I’m genuinely confused. I wrote today: “<em>Al Avila arrived late at the GM meetings, his flight from Detroit delayed an hour or so. The delay wasn’t his fault… But it’s a problem Avila contributed to with wild spending last winter that couldn’t deliver enough wins.</em>”</p>
+<p>I’m genuinely confused. I wrote today: “<em>Al Avila arrived late at the GM meetings, his flight from Detroit delayed an hour or so. The delay wasn’t his fault</em><em>…</em><em> But it’s a problem Avila contributed to with wild spending last winter that couldn’t deliver enough wins.</em>”</p>
 
-<p>I stay huddled next to Al Avila from start-to-finish, asking every question there is to ask about the Tigers’ off-season plans.</p>
+<p>I stay huddled next to Avila from start-to-finish, asking every question there is to ask about the Tigers’ off-season plans.</p>
 
-<p>Avila is an open book. During the half-hour, he frequently flips between on and off-the-record, rambling about this or that. He’s my kind of guy—a Ball Writer’s kind of guy.</p>
+<p>He is an open book. During the half-hour, he frequently flips between on and off-the-record, rambling about this or that. He’s my kind of guy—a Ball Writer’s kind of guy.</p>
 
 <p>It’s almost dark when I walk to the lobby bar tonight. When I squeeze to the front for a beer, someone with a phone exclaims, “We got Michigan!”</p>
 
@@ -2890,7 +2891,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I would rather write my obituary.</p>
 
-<p>I’m an official BBWAA card-carrying citizen who voted Justin Verlander for Cy Young. I didn’t think it was close, and my reporting shows that. Kate Upton obviously agrees.</p>
+<p>I’m an official BBWAA card-carrying citizen who voted Verlander for Cy Young. I didn’t think it was close, and my reporting shows that. Kate Upton obviously agrees.</p>
 
 <p>Channel 4’s Bernie Smilovitz calls, wondering if I can come into the studio for a quick hit. I smoked earlier and really should say no, but Bernie is my mom’s favorite sportscaster.</p>
 
@@ -2932,7 +2933,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The host of this year’s shindig is a resort along the Potomac River and dressed in glass scaffolding reminiscent of modern stadiums.</p>
 
-<p>Between two giant banks of luxury hotel rooms, each 19 floors high, the main floor transforms this week into a baseball-themed winter wonderland. Snowflakes stream from the ceiling, and a large Christmas tree overlooks the water. Criss-crossing the indoor city beneath the glass, baseball executives, scouts, agents, plenty of media and sometimes even the players themselves make their way through the constant hum of industry chatter.</p>
+<p>Between two giant banks of luxury hotel rooms, each 19 floors high, the main floor transforms this week into a baseball-themed winter wonderland. Snowflakes stream from the ceiling, and a large Christmas tree overlooks the water. Criss-crossing the indoor city beneath the glass, baseball executives, scouts, agents, plenty of media and sometimes even the players themselves make their way through the constant hum of industry chatter. </p>
 
 <p>Throughout the week, I use the lobby bar to take my relationship with newly minted sources to the next level. In October, I sent out a 150-person sourcing round—adding five new people per team to the ScoopSheet. I followed up in November before the GM meetings.</p>
 
@@ -2956,7 +2957,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I ask him: “Verlander not pitching—is that true?”</p>
 
-<p>“Probably not pitching… Great talk with him today.”</p>
+<p>“Probably not pitching… Great talk with him today.” </p>
 
 <p>The skipper is trying to protect his former player. He’s getting in front of the story.</p>
 
@@ -2982,7 +2983,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>A news desert is making the Tiger Beat desperate for crumbs of information. Every time I ask a question I feel like Oliver, pleading for more porridge.</p>
 
-<p>I look hard for things not meant to be seen. Sitting close to Al Avila’s table during tonight’s media session, I see his phone flash. I text a Houston source:</p>
+<p>I look hard for things not meant to be seen. Sitting close to Avila’s table during tonight’s media session, I see his phone flash. I text a Houston source:</p>
 
 <p>“(Astros GM) Jeff Luhnow just called Avila.”</p>
 
@@ -3000,13 +3001,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>January 27, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed “<em>Freep</em> Forward,” top editors introduce new Gannett gobbledygook.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>January 27</em><em>, 2017</em>—</span>The <em>Free Press</em> drops its latest reorganization today. In a 21-page PDF dubbed “<em>Freep</em> Forward,” top editors introduce new Gannett gobbledygook.</p>
 
 <p>My job hasn’t changed, but others have—general assignment reporters are now “storytelling writers,” editors are “directors,” and assistant editors are “planners.” The photo/video desk is now the “consumer product team.”</p>
 
-<p>Every department has a mission statement, except two of them: The copy desk and print team mission statements say only, <em>Need mission statement…</em></p>
+<p>Every department has a mission statement, except two of them: The copy desk and print team mission statements say only, <em>Need mission statement</em><em>…</em></p>
 
-<p>According to the document, we still have a (whoops!) music &amp; entertainmnet reporter and a (whoops!) restaurnts reporter. So much for the copy desk.</p>
+<p>According to the document, we still have a (whoops!) <em>music &amp;</em> <em>entertainmnet</em> reporter and a (whoops!) <em>restaurnts</em> reporter. So much for the copy desk.</p>
 
 <p>In Sports, my boss (sports editor) Kevin Bull is now “senior planner/digital.” There’s also an “OPEN POSITION” for “sports content coach.”</p>
 
@@ -3040,9 +3041,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I text agents who can help me reach players. No luck with most. I do talk to Scott Boras, though.</p>
 
-<p>Boras made a lot of money off Ilitch—over $350 million in contracts since 2004, when he first got Ilitch’s ear by convincing him to sign All-Star catcher Pudge Rodriguez.</p>
+<p>He made a lot of money off Ilitch—over $350 million in contracts since 2004, when he first got Ilitch’s ear by convincing him to sign All-Star catcher Pudge Rodriguez.</p>
 
-<p>Boras sold Ilitch on a bigger dream by explaining baseball's big-spending reality. He convinced him that Detroit was a below-the-radar baseball hotbed. Boras knew what Ilitch wanted more than anything: a World Series title. “The best way to get it,” Boras told him, “is to buy the best players.” What Ilitch bought was damn near the dream Boras sold him: The Tigers went on a 10-year run, winning divisions and making deep postseason runs.</p>
+<p>Boras sold Ilitch on a bigger dream by explaining baseball's big-spending reality. He convinced him that Detroit was a below-the-radar baseball hotbed. He knew what Ilitch wanted more than anything: a World Series title. “The best way to get it,” Boras told him, “is to buy the best players.” What Ilitch bought was damn near the dream Boras sold him: The Tigers went on a 10-year run, winning divisions and making deep postseason runs.</p>
 
 <p>Scott sounds unusually emotional. “In the end, what made Mike Ilitch a winner was his passion. Because he really, really studied the game. These weren’t business decisions. This was something very close to his heart.”</p>`,
         wordCount: 4513
@@ -3055,7 +3056,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         slug: "prime-time",
         subtitle: "",
         teaser: "The national spotlight.",
-        content: `<p class="has-dateline"><span class="dateline">TAMPA, Fla., <em>February 12, 2017</em>—</span>The calendar begins when I arrive to spring training.</p>
+        content: `<p class="has-dateline"><span class="dateline">TAMPA, Fla., <em>February 12</em><em>, 2017</em>—</span>The calendar begins when I arrive to spring training.</p>
 
 <p>I text Pedro Gomez on the way to the airport.</p>
 
@@ -3065,7 +3066,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I land in Tampa feeling like it. My third year begins with the first apparent death threat I’ve received. I come across it while strolling through my Twitter mentions in the rental car line.</p>
 
-<p>Courtesy of one Twitter troll: user @d159program: “I hope next headline is ‘FL bound plane crashes, Fenech burns’… I don’t think we’ll need dental records but maybe, because I think Fenech is all burnt up.”</p>
+<p>Courtesy of one Twitter troll: user @d159program: “I hope next headline is ‘FL bound plane crashes, Fenech burns’… I don’t think we’ll need dental records but maybe, because I think Fenech is all burnt up.” </p>
 
 <p>I feel only mildly creeped out. Not quite a death threat but impressed nonetheless by garnering that kind of hatred in the first place. I am a <em>Ball Writer</em>—I write about <em>baseball.</em></p>
 
@@ -3117,13 +3118,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Well, I was sitting out there.”</p>
 
-<p>“Well, I had things to do.”</p>
+<p>“Well, I had things to do.” </p>
 
 <p>And that was that.</p>
 
 <p>Walking out of the clubhouse, someone looks at me and says, “Why the hell would you do that?”</p>
 
-<p>I know how sensitive Verlander is about his on-camera image, which is why I called him out on-camera. One time, Verlander had barbecue sauce on his bottom lip—nobody told him about it —and for a while, he wouldn’t talk to the media.</p>
+<p>I know how sensitive Justin is about his on-camera image, which is why I called him out on-camera. One time, he had barbecue sauce on his bottom lip—nobody told him about it —and for a while, he wouldn’t talk to the media.</p>
 
 <p>“I don’t know,” I laugh. “I really don’t know.”</p>
 
@@ -3145,7 +3146,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Avila’s place is a second-story flat. David Chadd and longtime Tigers executive Mike Healy is watching the WBC semifinals—Venezuela against Team USA in San Diego.</p>
 
-<p>They don’t seem to bat an eye when I arrive, like it’s the most normal thing in the world that the beat writer is here drinking with the GM. But I’m harangued when I choose a coffee mug from the cabinet to drink a cocktail.</p>
+<p>They don’t seem to bat an eye when I arrive, like it’s the most normal thing in the world that the beat writer is here drinking with the GM. But I’m harangued when I choose a coffee mug from the cabinet to drink a cocktail. </p>
 
 <p>Avila’s drink of choice is Grey Goose with just a splash of tonic. He pours two of them. We get some space and head outside for cigars. He puts the music on.</p>
 
@@ -3181,7 +3182,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Before he walks out, the clubhouse closes.</p>
 
-<p>“Let me know.”</p>
+<p>“Let me know.” </p>
 
 <p>“I was right,” Mato responds.</p>
 
@@ -3209,7 +3210,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>As I stand in the clubhouse pregame, seeking out any strays I’d missed, closer Shane Greene shouts to me from his seat along the wall. I’ve grown increasingly comfortable with Greene over the past year.</p>
 
-<p>“Hey Anthony. Come here.”</p>
+<p>“Hey Anthony. Come here.” </p>
 
 <p>Greene thumbs through his phone.</p>
 
@@ -3219,7 +3220,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Outside in the dugout, there’s an industrial-strength propane heater at one end, blowing fire. I sit mostly by my lonesome, on the top seat where the manager would.</p>
 
-<p>I’m wearing a red knit winter hat. Wind bounces around the stadium, which is silent but for the symphonic melody of the grounds crew’s equipment tinkering with the tundra. A pair of bundled-up pitchers walk onto the field and out toward the bullpen. As I start to follow their trail, I feel a hand on my left shoulder.</p>
+<p>I’m wearing a red knit winter hat. Wind bounces around the stadium, which is silent but for the symphonic melody of the grounds crew’s equipment tinkering with the tundra. A pair of bundled-up pitchers walk onto the field and out toward the bullpen. As I start to follow their trail, I feel a hand on my left shoulder. </p>
 
 <p>Al Avila has come to receive his good-luck handshake. We bring it in for a warm hug instead.</p>
 
@@ -3257,9 +3258,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Yeah, they are. Thanks for noticing that. I got nine different shirts for this road trip, and you call me out on the pants. Tough crowd.”</p>
 
-<p>Ausmus is more interested in his tablet than the Tiger Beat gathering round. He’s asked if Nick Castellanos is going through a little bit of a slump right now: “Not really. He’s actually hitting the shit out of the ball.”</p>
+<p>Ausmus is more interested in his tablet than the Tiger Beat gathering round. He’s asked if Nick Castellanos is going through a little bit of a slump right now: “Not really. He’s actually hitting the shit out of the ball.” </p>
 
-<p>Ausmus is following the real-time GameCast data of Class A Lakeland’s matinee. Now batting J.D. Martinez, the Tigers’ rehabilitating slugger who could return within the week—Martinez has been out with a foot strain since stumbling over a sprinkler in the spring.</p>
+<p>He’s following the real-time GameCast data of a Class A minor-league game. Now batting J.D. Martinez, the Tigers’ rehabilitating slugger who could return within the week—Martinez has been out with a foot strain since stumbling over a sprinkler in the spring.</p>
 
 <p>“What did J.D. just do?” Ausmus waits for the screen to load. “He hit a home run.”</p>
 
@@ -3295,7 +3296,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>May 27</em>—</span>I write a column decoding Morosi’s reporting for the readers.</p>
 
-<p>“<em>Within that message was a message from the front office to the team. That message was clear: You guys need to start playing better, and soon.</em>”</p>
+<p>“<em>Within that message</em><em> </em><em>was a message from the front office to the team. That message was clear: You guys need to start playing better, and soon.</em>”</p>
 
 <p>The words drive Avila berserk—he’s booming through my phone between the doubleheader, taking exception to the notion he’d be communicating through the press.</p>
 
@@ -3303,7 +3304,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>May 29</em>—</span>Avila accepts my apology, messaging early Memorial Day: “I read your stuff. Now we can kiss and make up.”</p>
 
-<p>I arrive early to the stadium and hop on MLB Network in a suit while Brad Ausmus completes his workout routine around the field. I sweat through my suit in only five minutes on the field. Afterwards, I squat in front of an industrial fan inside the visitor’s dugout to dry off.</p>
+<p>I arrive early to the stadium and hop on MLB Network in a suit while Ausmus completes his workout routine around the field. I sweat through my suit in only five minutes on the field. Afterwards, I squat in front of an industrial fan inside the visitor’s dugout to dry off.</p>
 
 <p>Standing alongside Jason Beck in the clubhouse, I scan the large throwback baseball cards displayed above players’ lockers, easily identifying the stadiums the photos were taken in. I acquired this talent rummaging through boxes of my dad’s baseball cards in the basement.</p>
 
@@ -3426,11 +3427,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Inside the clubhouse, players admit to hearing their names.</p>
 
-<p>“It’s definitely getting down to it and you’re hearing it a lot more,” outfielder J.D. Martinez says before the series opener against the Royals. “Every time you look at the TV, MLB Network or whatever, you’re constantly seeing it. But I think it’s more for a guy like Justin (Wilson) than me, right now.”</p>
+<p>“It’s definitely getting down to it and you’re hearing it a lot more,” J.D. Martinez says before the series opener against the Royals. “Every time you look at the TV, MLB Network or whatever, you’re constantly seeing it. But I think it’s more for a guy like Justin (Wilson) than me, right now.”</p>
 
 <p>Martinez and Wilson are two of the Tigers’ popular trade pieces. Detroit’s front office has decided to break up the band.</p>
 
-<p>Martinez is a month shy of his thirtieth birthday and will be a free agent after this season.</p>
+<p>He is a month shy of his thirtieth birthday and will be a free agent after this season.</p>
 
 <p>Facing a roster reset, Avila is all but certain to trade Martinez soon—so suspicions arise when he’s pulled late in the opener against the Royals. The Tigers are ahead by seven runs and Martinez doesn’t return to the field for the sixth. Injury? Trade? Playing it safe? Someone online says Víctor Robles, a top prospect center fielder in the Washington Nationals system, has been removed from his game. Related?</p>
 
@@ -3488,7 +3489,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Hey, there’s the guy that said we were a beatable team. Who’s beatable now?”</p>
 
-<p><em>When did I say that?</em> A month ago, I went on MLB Network and said time was ripe for the Tigers to make a move: “Beginning with the Royals, they have some winnable games coming up.”</p>
+<p><em>When did I say that? </em>A month ago, I went on MLB Network and said time was ripe for the Tigers to make a move: “Beginning with the Royals, they have some winnable games coming up.”</p>
 
 <p>Kansas City puts ‘em in the casket: The Tigers are swept, outscored 24-6 in the series and fully humiliated at home—utilityman Andrew Romine recorded more outs than malcontent Bruce Rondon, who was ejected for throwing beanballs in the 16-2 loss.</p>
 
@@ -3506,7 +3507,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I know my angle and what I’m going to write. Today, I don’t see either Miguel Cabrera or Víctor Martínez—some players tend to hide when things aren’t going well.</p>
 
-<p>I stay late and wait for second baseman Ian Kinsler.</p>
+<p>I stay late and wait for Ian Kinsler.</p>
 
 <p>“Leadership… Is there anything this team is lacking besides players? Who are the lead–”</p>
 
@@ -3560,7 +3561,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 14</em>—</span>On my first day back on the beat after attending a wedding in Cancún, I head to Ian Kinsler’s corner. His locker is closest to the showers with an empty stall next door—respect shown to a veteran and former Texas Ranger.</p>
+<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 14</em>—</span>On my first day back on the beat after attending a wedding in Cancún, I head to Ian Kinsler’s corner. His locker is closest to the showers with an empty stall next door—respect shown to a veteran and former Texas Ranger. </p>
 
 <p>I mention how tired I am from traveling—Cancún to Chicago to Fort Worth.</p>
 
@@ -3574,7 +3575,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>August 15</em>—</span>WHAT’S SAID IN HERE, STAYS IN HERE.</p>
 
-<p>A big banner hangs on the wall in the visitor’s clubhouse here, above where Ian Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández.</p>
+<p>A big banner hangs on the wall in the visitor’s clubhouse here, above where Kinsler is sitting back in a scrum of reporters, sounding off on veteran umpire Angel Hernández.</p>
 
 <p>“He’s messing with baseball games. Blatantly. It’s not just like a borderline call here or there… I didn’t even cuss at him. I just said you need to re-evaluate your life, man… I’m just saying it’s pretty obvious that he needs to stop ruining baseball games… He needs to find another job… If I get fined for saying the truth, then so be it… He’s that bad. I’m not mad at him for being bad. He just has to go away.”</p>
 
@@ -3608,7 +3609,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>August 22</em>—</span>The commissioner is on the scene.</p>
 
-<p>Making his annual trip around the circuit, Rob Manfred is at Comerica Park. With the coast clear and the Commish in town, I have an easy excuse for conversation with Justin Verlander.</p>
+<p>Making his annual trip around the circuit, Rob Manfred is at Comerica Park. With the coast clear and the Commish in town, I have an easy excuse for conversation with Justin.</p>
 
 <p>I stroll up. “So, Manfred is here today…”</p>
 
@@ -3624,7 +3625,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Exactly. He’ll get passed by guys nowadays—because of these baseballs—guys who couldn’t hold his jock strap.”</p>
 
-<p>In divine intervention, Kaline walks this way. Justin turns back at me, as if to say—<em>We were just talking about him.</em> Verlander and Kaline stop to chat, and I join them. They’re talking about the solar eclipse. Apparently, Verlander flew to Nashville to watch the eclipse from inside the path of totality.</p>
+<p>In divine intervention, Kaline walks this way. Justin turns back at me, as if to say—<em>We were just talking about him.</em> Verlander and Kaline stop to chat, and I join them. They’re talking about the solar eclipse. Apparently, Verlander flew to Nashville to watch the eclipse from inside the path of totality. </p>
 
 <p>He describes how the sky went completely dark—so dark the streetlights went on. How everybody screamed, and some cried.</p>
 
@@ -3642,11 +3643,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I walk down the tunnel to the dugout and send two tweets:</p>
 
-<p><em>Justin Verlander watched the solar eclipse from the Path of Totality. “It was the most beautiful thing I’ve seen in my life.”</em></p>
+<p><em>Justin Verlander watched the solar eclipse from the Path of Totality. “It was the most beautiful thing I’ve seen in my life</em><em>.”</em></p>
 
-<p><em>Verlander, an admitted astronomy enthusiast, traveled to Nashville to watch the eclipse in its fullest totality.</em></p>
+<p><em>Verlander, an admitted astronomy enthusiast, traveled to Nashville to watch the eclipse in its fullest totality</em><em>.</em></p>
 
-<p>I was trying to humanize the guy. Instead, Verlander is inflamed. A team PR official comes up to me during dinner in the press box and says, “JV didn’t like your tweets. He said he was in a private conversation with Al Kaline.”</p>
+<p>I was trying to humanize the guy. Instead, he’s inflamed. A team PR official comes up to me during dinner in the press box and says, “JV didn’t like your tweets. He said he was in a private conversation with Al Kaline.”</p>
 
 <p>Verlander isn’t at his locker postgame.</p>
 
@@ -3693,7 +3694,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 16,
         year: 2017,
         section: 'year',
-        title: "SUMMER 2017",
+        title: "VERY SERIOUS STORY",
         slug: "summer-2017",
         subtitle: "Part II",
         teaser: "The Very Serious Story.",
@@ -3712,6 +3713,8 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>“For real.”</p>
 
 <p>I ask Al: “I’m about to lose the clubhouse for good, aren’t I?… Sorry, just thinking out loud. I strive to build players’ trust, and this might kill it all.”</p>
+
+<p>The Very Serious Story is eating me alive.</p>
 
 <p>Soon, he is shouting through the phone, saying how he wishes Victor would just retire, for crying out loud. If he voluntarily retires, he’d forfeit the remainder of his salary.</p>
 
@@ -4047,7 +4050,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Everything changed with a phone call at 10:30 <span class="small-caps">P.M.</span>—Astros general manager Jeff Luhnow to Al Avila.</p>
 
-<p>Ninety minutes later, the two sides came together. Two Tiger officials made the 10-minute drive from Al Avila’s house to Verlander’s apartment with simple instructions: “Wait.”</p>
+<p>Ninety minutes later, the two sides came together. Two Tiger officials made the 10-minute drive from Avila’s house to Verlander’s apartment with simple instructions: “Wait.”</p>
 
 <p>The Tigers put pressure on him by leaking that he blocked it. Minutes before midnight, Verlander waived his no-trade rights.</p>
 
@@ -4062,11 +4065,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         slug: "world-series",
         subtitle: "",
         teaser: "October baseball returns.",
-        content: `<p class="flashback-header"><strong>FLASHBACK</strong></p>
-
-<p></p>
-
-<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It’s my first week at the <em>Free Press.</em></p>
+        content: `<p class="has-dateline"><span class="dateline">DETROIT, <em>May 22, 2007</em>—</span>It’s my first week at the <em>Free Press.</em></p>
 
 <p>I’m nineteen and finishing my second year at community college. I didn’t really apply myself in high school and got a 2.8 GPA. The plan was to get good grades and transfer to a big journalism school, but school has never been my thing.</p>
 
@@ -4164,12 +4163,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="scene-break">***</p>
+<p>***</p>
 
+<p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>September 22, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>September 2</em><em>2</em><em>, 2017</em>—</span>Ten years later, plans change in a hurry. It’s Friday afternoon and I’m ironing my suit jacket, getting ready for a wedding when I get a text. </p>
 
-<p>3:33 <span class="small-caps">P.M.</span>—&quot;What’s going to happen at Comerica today?”</p>
+<p class="has-dateline"><span class="dateline">3:33 <span class="small-caps">P.M.</span>—</span>"What’s going to happen at Comerica today?”</p>
 
 <p>Nothing that concerns me. The Tigers host the Twins—but I’m off.</p>
 
@@ -4205,7 +4205,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I consider calling Brad after the game but figure he’s all talked out. My column goes live:</p>
 
-<p><strong>TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE</strong></p>
+<p>TIGERS PARTED WAYS WITH AUSMUS 2 YEARS TOO LATE</p>
 
 <p></p>
 
@@ -4295,7 +4295,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Last year, starting pitcher Daniel Norris revealed he’d been diagnosed with thyroid cancer. This year, the Tigers have hired a manager. In no surprise, Avila has opted for a veteran—Ron Gardenhire, longtime Minnesota Twins skipper.</p>
 
-<p>To my chagrin, I’m caught off-guard by the news, broken by Katie Strang, now with the <em>Athletic.</em> I’m furious with Gardenhire’s agent, John Boggs.</p>
+<p>To my chagrin, I’m caught off-guard by the news, broken by Katie Strang, now with the <em>Athletic</em><em>.</em> I’m furious with Gardenhire’s agent, John Boggs.</p>
 
 <p>I was so out of touch with the Tigers’ search that I was texting players earlier about support for hitting coach Lloyd McClendon, who was promised an interview.</p>
 
@@ -4333,7 +4333,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Oh, Anthony… Hey.”</p>
 
-<p>He says it friendly, like, ‘<em>Hello, Old Pal!</em>’</p>
+<p>He says it friendly, like, ‘<em>Hello, Old Pal</em><em>!</em>’</p>
 
 <p>“Where was I? Oh, yes…”</p>
 
@@ -4359,7 +4359,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Inside the clubhouse after the Astros win the World Series, I awkwardly hover with my tape recorder stretched behind a cameraman while Ken Rosenthal interviews him on FOX.</p>
 
-<p>I’m not the only reporter stalking him when he leaves the TV interview. A pair of entertainment reporters charge his way. I cozy up alongside as a small scrum starts to form. Opposite is a woman from <em>E! News,</em> who wastes no time asking about the reported wedding.</p>
+<p>I’m not the only reporter stalking him when he leaves the TV interview. A pair of entertainment reporters charge his way. I cozy up alongside as a small scrum starts to form. Opposite is a woman from<em> E! News,</em> who wastes no time asking about the reported wedding.</p>
 
 <p>“Is it true that you and Kate Upton are getting married on Saturday?”</p>
 
@@ -4373,27 +4373,27 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Asked if he has a message for his fans back in Detroit, Verlander says, “Thank you for everything over the years, thank you for recognizing all the hard work that I put in, thank you for recognizing how hard of a decision this was for me. Thank you from the bottom of my heart.”</p>
 
-<p>We shake hands—Old Pals once again.</p>
+<p>We shake hands—Old Pals once again. </p>
 
 <p>Leaving the clubhouse, I walk past his family on their way in.</p>
 
 <p>I write the stuffing out of that story until the sun comes up:</p>
 
-<p>“<em>Verlander wore an Astros shirt. A backwards hat and accomplishment in his eyes.</em></p>
+<p>“<em>Verlander wore an Astros shirt. A backwards hat </em><em>and</em><em> accomplishment in his eyes.</em></p>
 
-<p>“‘<em>I can’t even put it into words; This experience is everything I dreamed it would be.’</em></p>
+<p>“‘<em>I can’t even put it into </em><em>words;</em><em> This experience is everything I dreamed it would be.’</em></p>
 
-<p>“<em>But for so long, his dream came true in Detroit. And damned if he didn’t try.</em> </p>
+<p>“<em>But for so long, his dream came true in Detroit. And damned if he didn’t try. </em></p>
 
-<p>“<em>He felt the support of the city this postseason. ‘I absolutely did.’</em></p>
+<p>“<em>He </em><em>felt the support of the city this postseason</em><em>. </em><em>‘I absolutely did.’</em></p>
 
-<p>“‘<em>I’m never going to forget my time in Detroit… It’s a special place for me.’</em></p>
+<p>“‘<em>I’m never going to forget my time in Detroit</em><em>…</em><em> It’s a special place for me.’</em></p>
 
 <p>“<em>After a few hugs and a kiss from a teammate, eyes still burning and Budweiser in hand, Verlander reached for his cell phone. It was sitting on a toiletry bag in his locker.</em></p>
 
 <p>“<em>The bag had the Olde English ‘D’ on it.</em>”</p>
 
-<p>I hear from Mr. Verlander, who shares the story on his Facebook page. I even get a message from John Westhoff, who never texts me.</p>
+<p>I hear from Mr. Verlander, who shares the story on his Facebook page. I even get a message from John Westhoff, who never texts me. </p>
 
 <p>“Nice article about J.V.”</p>
 
@@ -4427,7 +4427,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>After the scrum, I rush up to the room. I upload the video from Trammell’s interview and send it to the web desk. I text with Deep Throat. I phone Kirk Gibson: “About time.”</p>
 
-<p>General manager Al Avila shares a video from dinner at Shula’s Steak House.</p>
+<p>Al Avila shares a video from dinner at Shula’s Steak House.</p>
 
 <p>“We gave Tram a standing ovation. Toasted him. Jack is not here yet.”</p>
 
@@ -4455,7 +4455,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He answers. “Get back with ya here soon, buddy.”</p>
 
-<p>6:59 <span class="small-caps">P.M.</span>—Ken Rosenthal reports the Angels are in serious discussions to acquire Kinsler. A few minutes later, Rosenthal goes all the way. “Kinsler to Angels.”</p>
+<p class="has-dateline"><span class="dateline">6:59 <span class="small-caps">P.M.</span>—</span>Ken Rosenthal reports the Angels are in serious discussions to acquire Kinsler. A few minutes later, Rosenthal goes all the way. “Kinsler to Angels.”</p>
 
 <p>In The Room sources tell me no deal is imminent. The truth between what those sources say and what Rosenthal reported is semantics.</p>
 
@@ -4467,13 +4467,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Meanwhile, I haven’t heard back from Jay Franklin. “Soon, buddy” was an hour ago.</p>
 
-<p>8:47 <span class="small-caps">P.M.</span>—I get confirmation from an L.A. scout, but I can’t go with only a scout. I use it to confirm the deal, then quickly report the players Detroit receives in return.</p>
+<p class="has-dateline"><span class="dateline">8:47 <span class="small-caps">P.M.</span>—</span>I get confirmation from an L.A. scout, but I can’t go with only a scout. I use it to confirm the deal, then quickly report the players Detroit receives in return.</p>
 
-<p>Soon after, the feeling is downright funereal inside the Tigers’ suite. Team execs arrived envisioning a sweepstakes for Kinsler. Four teams were interested initially. Then Kinsler unplugged the game, and Detroit had to settle for what little the Angels offered.</p>
+<p>Soon after, the feeling is downright funereal inside the Tigers’ suite. Team execs arrived envisioning a sweepstakes for Kinsler. Four teams were interested initially. Then he unplugged the game, and Detroit had to settle for what little the Angels offered.</p>
 
 <p>“It’s very frustrating,” Al Avila says.</p>
 
-<p>11:44 <span class="small-caps">P.M.</span>—At the lobby bar, I see a couple guys from the agency that represents Justin Upton. Reuniting with Upton weighed heavily on Kinsler’s decision.</p>
+<p class="has-dateline"><span class="dateline">11:44 <span class="small-caps">P.M.</span>—</span>At the lobby bar, I see a couple guys from the agency that represents Justin Upton. Reuniting with Upton weighed heavily on Kinsler’s decision.</p>
 
 <p>The trade took time because Avila held out false hope that Kinsler would budge. Kinsler phoned Avila with the bad news.</p>
 
@@ -4481,7 +4481,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>January 8, 2018</em>—</span>Nothing to report. It’s a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents are still on the market, including J.D. Martinez.</p>
+<p class="has-dateline"><span class="dateline">DETROIT,<em> </em><em>January 8</em><em>, 2018</em>—</span>Nothing to report. It’s a slow offseason for Major League Baseball and Ball Writers alike. Several top free agents are still on the market, including J.D. Martinez.</p>
 
 <p>Meanwhile, I’m not getting many scoops. The Tigers are entering the first year of a tear-it-down rebuild. They did sign veteran righty Mike Fiers (my scoop), but otherwise, just minor-league signings.</p>
 
@@ -4503,7 +4503,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>February 1</em>—</span>In TigerTown early to report on top prospects.</p>
 
-<p>At night, I search for front office guys to go out with. It comes as no surprise that I spot Al Avila at Chili’s for happy hour.</p>
+<p>At night, I search for front office guys to go out with. It comes as no surprise that Al is at Chili’s for happy hour.</p>
 
 <p>We decide on Fish City Grill, smack dab in the center of a nearby outdoor mall.</p>
 
@@ -4527,7 +4527,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>February 6</em>—</span>Things are going so well, the Tigers let me throw luggage onto their 18-wheeler of baseball equipment, training supplies and other cargo soon headed to Florida for spring training. I’ll realize later that this is a convenience afforded to everyone on the Tiger Beat—I’m not that special.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>February 6</em>—</span>Things are going so well, the Tigers let me throw luggage onto their 18-wheeler of baseball equipment, training supplies and other cargo soon headed to Florida for spring training. I’ll realize later that this is a convenience afforded to everyone on the Tiger Beat—I’m not that special. </p>
 
 <p>I park my car in the garage back home, where it’ll stay for the next six weeks, and give Mom a big hug at departures—it’s off to spring training once again.</p>
 
@@ -4650,7 +4650,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Anthony Fenech, Detroit Free Press</p>
 
-<p><u>https://www.freep.com/story/sports/mlb/tigers/2018/02/12/detroit-tigers-spring-training/328555002/</u></p>
+<p>https://www.freep.com/story/sports/mlb/tigers/2018/02/12/detroit-tigers-spring-training/328555002/</p>
 
 <p></p>
 
@@ -4724,7 +4724,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">WEST PALM BEACH, Fla., <em>March 4</em>—</span>The Tigers begin a two-game road trip on Florida’s East Coast—today against the Nationals at The Ballpark of the Palm Beaches, which the Nationals share with the Astros.</p>
 
-<p>I ask a Houston PR flack for directions to Justin Verlander’s locker. When Justin arrives, I wait half a minute and walk his way. I ask him about a <em>Sports Illustrated</em> story documenting his ace resurgence in his mid-thirties. In the article, Verlander credits Houston’s analytical advancements.</p>
+<p>I ask a Houston PR flack for directions to Verlander’s locker. When Justin arrives, I wait half a minute and walk his way. I ask him about a <em>Sports Illustrated</em> story documenting his ace resurgence in his mid-thirties. In the article, Verlander credits Houston’s analytical advancements.</p>
 
 <p>“Was it really that big of a factor? I mean, you were basically back to yourself, dominating while you were still with the Tigers, right?”</p>
 
@@ -4766,7 +4766,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>April 22</em>—</span>After staying out too late with a few visiting scouts last night, I’m back at Comerica Park bright and early.</p>
 
-<p>Gene Lamont arrives for the game and sits in Suite 118—the visiting GM suite. I stop in and say hi. The longtime Tigers’ coach retired last year and still talks to Leyland every morning on the phone over coffee.</p>
+<p>Gene Lamont arrives for the game and sits in Suite 118—the visiting GM suite. I stop in and say hi. The longtime Tigers’ coach retired last year and still talks to Leyland every morning on the phone over coffee. </p>
 
 <p>Last year, when Verlander exploded on me in the dugout after my solar eclipse tweets, Lamont was sitting off to my right.</p>
 
@@ -4893,7 +4893,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>June 26</em>—</span>Lounging on an off night, I feel my skin tingle. With the postgame show muted in the background—TIGERS LOSE SEVENTH STRAIGHT—I hear from Deep Throat.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>June 26</em>—</span>Lounging on an off night, I feel my skin tingle. With the postgame show muted in the background—TIGERS LOSE SEVENTH STRAIGHT—I hear from Deep Throat. </p>
 
 <p>“Something’s up. Not a roster move. I can’t say any more.”</p>
 
@@ -4909,7 +4909,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Luckily for me, nobody else can, either. Media are quickly ushered into Gardy’s office, where Al Avila is waiting. He reads a team announcement, relieving pitching coach Chris Bosio for bad behavior. Avila declines specifics.</p>
 
-<p>“Word on my end is that Bosio used inappropriate language,” a scout says. “Someone brought him decaf instead of regular,” Daniel Norris says.</p>
+<p> “Word on my end is that Bosio used inappropriate language,” a scout says. “Someone brought him decaf instead of regular,” Daniel Norris says.</p>
 
 <p>One of his teammates gives a more serious answer to my text.</p>
 
@@ -5037,7 +5037,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo., <em>July 25</em>—</span>After today’s matinee, the front office will fly to Detroit on the team’s private plane and then to Cooperstown for Baseball Hall of Fame induction weekend.</p>
+<p class="has-dateline"><span class="dateline">KANSAS CITY, Mo.,<em> </em><em>July 25</em>—</span>After today’s matinee, the front office will fly to Detroit on the team’s private plane and then to Cooperstown for Baseball Hall of Fame induction weekend.</p>
 
 <p>I’ll fly commercial to Albany, about 1½ hours’ drive time from Cooperstown. I don’t even know where I’m staying. Everything within a 30-mile radius is booked—“Has been for months,” a front desk worker told me last week. And since I don’t know where I’m staying, I don’t know if I should get a rental car.</p>
 
@@ -5114,7 +5114,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Lmfaoo bro I’m in the middle of a game and you’re texting me about a trade.”</p>
 
-<p>11:32 <span class="small-caps">P.M.</span>—As I sweat out the scoop, feeling it slipping away—I’ve had it for an hour now—I see a saving grace.</p>
+<p class="has-dateline"><span class="dateline">11:32 <span class="small-caps">P.M.</span>—</span>As I sweat out the scoop, feeling it slipping away—I’ve had it for an hour now—I see a saving grace.</p>
 
 <p>Kinsler’s agent Jay Franklin calls.</p>
 
@@ -5126,7 +5126,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I’ll call you back.”</p>
 
-<p>11:33 <span class="small-caps">P.M.</span>—Seconds later, a tweet from Ken Rosenthal. “Red Sox get Kinsler.”</p>
+<p class="has-dateline"><span class="dateline">11:33 <span class="small-caps">P.M.</span>—</span>Seconds later, a tweet from Ken Rosenthal. “Red Sox get Kinsler.”</p>
 
 <p>Ball Writing: Where you can do everything right. You can get the scoop. You can have the contacts. You can pick up right away. And still, the agent could be trying to call Rosenthal, not you. The guy could hang up and immediately call him with the scoop.</p>
 
@@ -5212,7 +5212,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The top of the hour passes and Fiers isn’t traded. Before joining other media inside the dugout for a post-trade deadline presser, I call Avila from a service-level stairwell.</p>
 
-<p>“You’re going to have to throw me under the bus. Whatever miscommunication that was, I’m going to have to eat it. When I ask, just say the report wasn’t true.”</p>
+<p> “You’re going to have to throw me under the bus. Whatever miscommunication that was, I’m going to have to eat it. When I ask, just say the report wasn’t true.”</p>
 
 <p>During the presser, I ask him: “How close were you guys to trading Fiers to the Athletics?”</p>
 
@@ -5224,7 +5224,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Well, no, that’s not what he said privately. I take it like a man—on the chin on Twitter.</p>
 
-<p>“My reporting that the Tigers and Athletics were close on a Mike Fiers deal and his contract was an obstacle, was incorrect.”</p>
+<p> “My reporting that the Tigers and Athletics were close on a Mike Fiers deal and his contract was an obstacle, was incorrect.”</p>
 
 <p>Furious with myself. Yesterday, my gut told me yes—that my Boston guy was in the know on the Kinsler trade, but I didn’t go with it. Today, my gut says Tigers GM is using me to create leverage for Fiers, and I do go with it.</p>
 
@@ -5336,7 +5336,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">SALT LAKE CITY, <em>August 9</em>—</span>On the flight home, I’m alerted by the sports desk about a story posted by <em>Bleacher Report</em> about HOW KATE UPTON SAVED JUSTIN VERLANDER’S CAREER.</p>
+<p class="has-dateline"><span class="dateline">SALT LAKE CITY, <em>August 9</em>—</span>On the flight home, I’m alerted by the sports desk about a story posted by <em>Bleacher Report</em><em> </em>about HOW KATE UPTON SAVED JUSTIN VERLANDER’S CAREER.</p>
 
 <p>It’s a headline-grabbing love story, with Justin crediting his wife for maybe saving his life, finding him a physical therapist who remade his body, and generally inspiring his return to glory.</p>
 
@@ -5352,7 +5352,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Astronomical web traffic is there for the taking. The Freep Sports desk acts fast. JUSTIN VERLANDER SAYS KATE UPTON SAVED HIS LIFE FROM DEPRESSION is the leading story on the <em>Freep</em>’s mobile app.</p>
 
-<p>I know enough to know this won’t be the end of it. Houston visits next month.</p>
+<p>I know enough to know this won’t be the end of it. Houston visits next month. </p>
 
 <p></p>
 
@@ -5368,7 +5368,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Ron Colangelo returns my call and carefully feeds me details of Verlander’s apology. Ron says it centered on the word “misdiagnose.”</p>
 
-<p>I’ve already reached out to Verlander’s agent.</p>
+<p>I’ve already reached out to his agent.</p>
 
 <p>“Does Verlander have any comment on this misdiagnosis quote?”</p>
 
@@ -5497,7 +5497,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>September 11</em>—</span>Coach Content had the date circled for weeks.</p>
+<p class="has-dateline"><span class="dateline"><em>September 1</em><em>1</em>—</span>Coach Content had the date circled for weeks.</p>
 
 <p>“We’ll need to ask Verlander about the misdiagnosis quote when he gets to town. I’m sure it will come up in the scrum, but if not, let’s make sure it does.”</p>
 
@@ -5621,7 +5621,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I text the Highest Source In The Land: “I want to have a cigar with Gardy and Steve Liddle. We have two nights left. Make it happen.”</p>
 
-<p>From the outside, Miller Park looks like a spaceship. But at field level, with the retractable roof closed and the lights dim, the 18-year-old stadium feels homey.</p>
+<p>From the outside, Miller Park looks like a spaceship. But at field level, with the retractable roof closed and the lights dim, it feels homey.</p>
 
 <p>It’s the final weekend of the season. The Tigers clubhouse is open.</p>
 
@@ -5647,7 +5647,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He doesn’t even look my way. Down the steps and into the clubhouse.</p>
 
-<p>I’m not surprised. Don’t necessarily blame him. If the shoe was on the other foot, I might act the same way. Just wanted to say thanks. Víctor Martínez had as much impact on me as any player I’ve covered—he was the first guy to make me feel comfortable in the clubhouse.</p>
+<p>I’m not surprised. Don’t necessarily blame him. If the shoe was on the other foot, I might act the same way. Just wanted to say thanks. Víctor had as much impact on me as any player I’ve covered—he was the first guy to make me feel comfortable in the clubhouse.</p>
 
 <p></p>
 
@@ -5693,7 +5693,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I wait for Nick Castellanos out of respect for the player-reporter relationship we’d built this season.</p>
 
-<p>Castellanos stayed in the dugout long after the last out, watching the sold-out stadium send the Brewers off to the postseason with a standing ovation. Castellanos watched it all. He was a rookie when the Tigers last made the postseason. Naively, he thought champagne celebrations would be a yearly occurrence. Four years later, the championship contender he came up with is rebuilding—and Castellanos figures to hear his name in trade rumors this winter.</p>
+<p>Castellanos stayed in the dugout long after the last out, watching the sold-out stadium send the Brewers off to the postseason with a standing ovation. He watched it all. He was a rookie when the Tigers last made the postseason. Naively, he thought champagne celebrations would be a yearly occurrence. Four years later, the championship contender he came up with is rebuilding—and Nick figures to hear his name in trade rumors this winter.</p>
 
 <p>“We’re not on that side. We don’t have a tomorrow. You’re frustrated when you’re on this side. It’s the last game of the season and music’s not playing, everything is quiet, so it’s not an environment that I’m happy in. But it’s reality.”</p>
 
@@ -5724,14 +5724,14 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 21.1,
         year: 2018,
         section: 'year',
-        hidden: true,
         title: "MALTA",
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
-<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. Stayed in my second-cousin’s villa. Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. Read books, read for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay.</em> Ball Four <em>by Bouton and</em> Hell’s Angels <em>by Thompson and</em> All The President’s Men <em>by Bernstein and Woodward. Met family, went to church. Received communion, couldn’t understand anything else. Googled “where to watch NFL football in Malta” and found a sports bar, where I watched the Lions lose. Threw shots back with a guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the Vikings or something. Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries. Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. Hallucinated on the ripples of the water, the waves. By nightfall I had hiked halfway across the island. Played bocce, shot at rabbits in the country, smoked cigarettes, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called Żebbuġ or Żurreiq or Żejtun. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dropped a towel next to a Dutch girl wearing a black tank top that said</em> BALI<em>, hitched a ride back with her. She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home. It was sublime.</em></p>
+<p class="no-indent"><em>Got a day off. First trip to Malta, last person in my family to visit. </em><em>Stayed in my second-cousin’s villa.</em><em> </em><em>Wrote someone an email I never sent. Looked for speed, but they don’t prescribe it here. </em><em>Read books,</em><em> </em><em>r</em><em>ead for days. On buses to Golden Bay, on rocks at Anchor Bay, with mojitos at Paradise Bay. </em>Ball Four<em> by Bouton and </em>Hell’s Angels<em> by Thompson and </em>All The President’s Men<em> by Bernstein and Woodward. </em><em>Met family,</em><em> went to church. Received communion, couldn’t understand anything else</em><em>. </em><em>Googled “where to watch NFL football in </em><em>Malta” and found a sports bar, where I watched the Lions lose.</em><em> </em><em>Threw</em><em> shots </em><em>back with a </em><em>guy from Chicago or Atlanta who claimed he was an extra in Gladiator. He took me to ancient ruins where Julius Caesar fought off the </em><em>Vikings</em><em> or something</em><em>.</em><em> </em><em>Heard from Top Scout, who was in the Dominican Republic watching a prospect. “Playing damn good here! Bat and glove both.” Walked past the place my Nana and Nanu lived before coming over on the boat, took a pic. Smoked weed out of something called a volcano and kept my nose clean until I met my third cousins. Did a lot of coke in St. Julian’s, lost my baggie in some cathedral. The cathedrals were cool. Lots of them and the one in Valletta was intense. Ate a lot of pastries.</em><em> </em><em>Cheese pastries, meat pastries, sweet pastries. Stuck mushrooms into pastries. </em><em>Hallucinated on the ripples of the </em><em>water, the waves. By nightfall I had hiked halfway across the islan</em><em>d, </em><em>past an old man selling veggies at the side of the road. Played bocce, shot at rabbits in the country, smoked cig</em><em>arette</em><em>s, probably a pack a day. That’s all I did some days, was read. Saw a lot of horses. Didn’t shoot at any but did eat horse meat in a village called </em><em>Żebbuġ</em><em> or </em><em>Żurreiq</em><em> or </em><em>Żejtun</em><em>. Ran out of books, bought more. Got a 787-page Tom Wolfe novel for 2 Euro, read it in three days. Read about New Journalism. Dro</em><em>p</em><em>ped a towel next to a Dutch girl wearing a black tank top that said </em>BALI<em>, hitched a ride back with her</em><em>.</em><em> </em><em>She invited me to watch the phases of the moon, but I passed. Sent congratulations to Red Sox players for winning the World Series. Took a call from Deep Throat while hiking Comino island, went drinking with my cousins until the next day, when I didn’t have aspirin for the flight home.</em><em> </em><em>It was sublime.</em></p>
 </div>`,
-        wordCount: 404
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 22,
@@ -5831,19 +5831,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>January 4, 2019</em>—</span>Ringing in the new year at a swanky cigar bar in suburban Detroit.</p>
+<p class="has-dateline"><span class="dateline">DETROIT, <em>January 4, 2019</em>—</span>Ringing in the new year at a swanky cigar bar in suburban Detroit. </p>
 
 <p>The Highest Source In The Land is wearing a burgundy turtleneck and reading glasses that he flips on when checking his phone. Al Avila is drinking the usual tonight. I’m drinking wine.</p>
 
-<p>The meeting is status quo: Steak dinner, cigar, a few drinks—HSITL gets the cigars, <em>Free Press</em> gets the rest. Avila tells me who’s been chosen as the team’s new TV announcer; I swear not to share.</p>
+<p>The meeting is status quo: Steak dinner, cigar, a few drinks—HSITL gets the cigars, <em>Free Press</em> gets the rest. Avila tells me who’s been chosen as the team’s new TV announcer; I swear not to share. </p>
 
-<p>Our relationship blurs between sources and friends. We barely talk about baseball. We talk about him trying to see his grandkids more and how I want a job at the <em>Washington Post.</em> About NFL football (he’s a Miami Dolphins fan), attending a Catholic school growing up (I went to church every other day), and even social media (he recently started an Instagram account).</p>
+<p>Our relationship blurs between sources and friends. We barely talk about baseball. We talk about him trying to see his grandkids more and how I want a job at the <em>Washington Post.</em> About NFL football (he’s a Miami Dolphins fan), attending a Catholic school growing up (I went to church every other day), and even social media (he recently started an Instagram account). </p>
 
 <p>The relaxed moments are fleeting. I’m entering my fifth year on the beat, and this could very well be my last. Although I’d love to spend my entire career here, I’m resigned to the reality that time at the <em>Freep</em> may be running out—for better or worse.</p>
 
 <p>I’ve already aced the Tigers beat and I’m still getting paid less than $50,000. I’m craving a new challenge and begging for more development. I barely made it out alive last year when George Sipple left midseason.</p>
 
-<p>I don’t have support from my own front office. I’ve soured on my dream job, and it’s starting to take its toll.</p>
+<p>I don’t have support from my own front office. I’ve soured on my dream job, and it’s starting to take its toll. </p>
 
 <p>My New Year’s resolution is to Make Ball Writing Fun Again. I want to tell fun stories and have fun writing them and live every day this year on the beat as if it’s my last.</p>
 
@@ -5901,7 +5901,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I sit at my locker scrolling through the ridicule, lucky the video culprits didn’t stick around. I actually went back out for <em>another</em> inning and moved up five feet, like it was coach pitch.</p>
 
-<p>Everyone shacks up at the Ramada Inn, fantasy campers and coaches alike—even real-life ones. I walk past Tigers’ third-base coach Ramon Santiago with an ice pack on my knee. “Now you know how it feels, <em>An-tony.</em>”</p>
+<p>Everyone shacks up at the Ramada Inn, fantasy campers and coaches alike—even real-life ones. I walk past Tigers’ third-base coach Ramon Santiago with an ice pack on my knee. “Now you know how it feels, <em>An-tony.</em>” </p>
 
 <p></p>
 
@@ -5923,9 +5923,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“That’s it?” Tram asks. “That’s it for the day? Are you kidding me?”</p>
 
-<p>It’s nearly 5 <span class="small-caps">P.M.</span> Tram has been on campus since 7 <span class="small-caps">A.M.</span> After drills conclude, walking toward the mess halls, Tram spots stray baseballs beyond the outfield fence.</p>
+<p>It’s nearly 5 <span class="small-caps">P.M.</span> Tram has been on campus since 7 <span class="small-caps">A.M.</span> After drills conclude, walking toward the mess halls, Tram spots stray baseballs beyond the outfield fence. </p>
 
-<p>He stops, picks up one ball. Then another. And another. Soon, he’s walking behind center field, throwing each ball back over the fence. A couple of clubhouse attendants see this and speed over on a John Deere. They pick up Tram, whooshing past me.</p>
+<p>He stops, picks up one ball. Then another. And another. Soon, he’s walking behind center field, throwing each ball back over the fence. A couple of clubhouse attendants see this and speed over on a John Deere. They pick up Tram, whooshing past me. </p>
 
 <p>“Hello, Anthony!”</p>
 
@@ -5935,7 +5935,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 1</em>—</span>Today in the parking lot, Miguel Cabrera vrooms around the corner in a car so exotic I couldn’t tell you what it was.</p>
+<p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 1</em>—</span>Today in the parking lot, Miguel Cabrera vrooms around the corner in a car so exotic I couldn’t tell you what it was. </p>
 
 <p>Miggy drives at me. He hits the gas, and I stick out my leg.</p>
 
@@ -5973,13 +5973,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">LAKELAND, Fla., <em>March 7</em>—</span>I’m at breakfast with Craig Monroe at Cracker Barrel when I get a call from a scout, who says the front office is freaking out because earlier I’d texted some provocative questions to the Highest Source In The Land.</p>
 
-<p>Buzzed from a quad-espresso coffee, unable to hold the hot potato any longer, I tip my hand. I text Al Avila, letting him in on the secrets I know.</p>
+<p>Buzzed from a quad-espresso coffee, unable to hold the hot potato any longer, I tip my hand. I text Al, letting him in on the secrets I know.</p>
 
 <p>“If I report the Astros have maintained contact about Nick Castellanos, would that be accurate?… And that you guys turned down (Alex) Bregman for (Michael) Fulmer two years ago!”</p>
 
 <p>Bregman is Houston’s young superstar at third base, an RBI and home-run machine.</p>
 
-<p>These questions trigger a flash five-alarm meeting in TigerTown. Al Avila calls the front office into a meeting room and threatens to fire anyone found to be the source of the mortifying media leak. I get a message from Sam Menzin.</p>
+<p>These questions trigger a flash five-alarm meeting in TigerTown. Avila calls the front office into a meeting room and threatens to fire anyone found to be the source of the mortifying media leak. I get a message from Sam Menzin.</p>
 
 <p>“I have to cancel our dinner. Sorry, stuff came up.”</p>
 
@@ -6031,7 +6031,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>March 8</em>—</span>This afternoon in TigerTown, I’m waiting around to watch Miguel Cabrera field ground balls. No other reporters. Earlier, I noticed the bench coach replacing the agenda taped to the clubhouse door: CABRERA—GROUND BALLS —FIELD #3, 1:30 <span class="small-caps">P.M.</span></p>
 
-<p>I could have shared this half-baked exclusive on Twitter—<em>Miggy To Field Ground Balls!</em> —but then I’d have blown my cover. I still need to get him all to myself. I’m going to pull off a mega Miggy story for the 2019 season preview. But Cabrera sees me coming. He holds up his hands, laughing uproariously.</p>
+<p>I could have shared this half-baked exclusive on Twitter—<em>Miggy To Field Ground Balls!</em> —but then I’d have blown my cover. I still need to get him all to myself. I’m going to pull off a mega Miggy story for the 2019 season preview. But Cabrera sees me coming. He holds up his hands, laughing uproariously. </p>
 
 <p>“No comment! No comment!”</p>
 
@@ -6043,7 +6043,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>According to scouts’ radar gun readings, Fulmer’s fastball registered 88-92 mph today—still short of the mid-90s he typically sits. He’s tired of answering questions about velocity—especially from the guy with a 32.80 fantasy camp ERA.</p>
 
-<p>Fulmer’s body is much older than the 26<sup>th</sup> birthday he celebrates next week. After rehabilitating from another knee surgery this winter, the big righty hasn’t passed the eye test this spring. Among the most laid back in the clubhouse, Fulmer looks over this scene—he stands silent, in surrender almost, while reporters prod.</p>
+<p>Fulmer’s body is much older than the 26th birthday he celebrates next week. After rehabilitating from another knee surgery this winter, the big righty hasn’t passed the eye test this spring. Among the most laid back in the clubhouse, Fulmer looks over this scene—he stands silent, in surrender almost, while reporters prod.</p>
 
 <p>I tell him what I’m writing—that he doesn’t look the same. Am I wrong?</p>
 
@@ -6067,7 +6067,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“What are you doing down here?” the guy asks.</p>
 
-<p>“I came here to see him.”</p>
+<p>“I came here to see him.” </p>
 
 <p>I can’t recall ever seeing or hearing Pedro nervous—probably a product of his Cuban heritage. Waiting for Rio to walk out, Pedro is quiet. I want him to have that moment by himself. You never know how many there will be with people you love. Make that call. Take that drive. Tell someone you love them.</p>
 
@@ -6089,15 +6089,15 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Tommy John.”</p>
 
-<p>Four alarms. Immediately, I call and text Al Avila. I text Sam Menzin in hopes that after our last conversation, he’ll become a useful source.</p>
+<p>Four alarms. Immediately, I call and text Al. I text Sam Menzin in hopes that after our last conversation, he’ll become a useful source. </p>
 
 <p>Deep Throat tells me not to run with it right this second.</p>
 
 <p>“It’ll be easy to trace back to me.”</p>
 
-<p>I miss my flight. No reply from Al Avila or the agent. On the tram to the next flight, I message Deep Throat: “Al is gonna screw me.”</p>
+<p>I miss my flight. No reply from Al or the agent. On the tram to the next flight, I message Deep Throat: “Al is gonna screw me.” </p>
 
-<p>Tigers PR announces the news before I step off.</p>
+<p>Tigers PR announces the news before I step off. </p>
 
 <p>All that for no scoop.</p>`,
         wordCount: 3698
@@ -6120,9 +6120,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>March 29</em>—</span>I walk to the dome for Opening Day: Tigers-Blue Jays.</p>
+<p class="has-dateline"><span class="dateline"><em>March 29</em>—</span>I walk to the dome for Opening Day: Tigers-Blue Jays. </p>
 
-<p>Nick Castellanos’ outfield glove sits on the railing of the dugout. ‘Go Get It’ is embroidered in dark leather.</p>
+<p>Nick Castellanos’ outfield glove sits on the railing of the dugout. ‘Go Get It’ is embroidered in dark leather. </p>
 
 <p>An hour before first pitch, I send my application to the <em>Boston Globe.</em></p>
 
@@ -6164,9 +6164,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>On the page is the greatest lede in Ball Writing history, penned by Peter Gammons:</p>
 
-<p>“<em>And all of a sudden the ball was there, like the Mystic River Bridge, suspended out in the black of the morning.</em></p>
+<p>“<em>And all of a </em><em>sudden</em><em> the ball was there, like the Mystic River Bridge, suspended out in the black of the morning.</em></p>
 
-<p>“<em>At 12:34 <span class="small-caps">A.M.</span>, in the 12th inning, Fisk’s histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series.</em>”</p>
+<p>“<em>At 12:34 </em><em><span class="small-caps">A.M.</span></em><em>, in the 12th inning, Fisk’s histrionic home run brought a 7-6 end to a game that will be the pride of historians in the year 2525, a game won and lost what seemed like a dozen times, and a game that brings back summertime one more day. For the seventh game of the World Series.</em>”</p>
 
 <p>Today’s game gets rained out. Doubleheader tomorrow—bad news for anyone who has an interview at the <em>Boston Globe.</em></p>
 
@@ -6176,7 +6176,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I snap a selfie in the back of a taxi to the newsroom. Ron Colangelo checks in, looking for a scoop.</p>
 
-<p>“How did yesterday go?”</p>
+<p>“How did yesterday go?” </p>
 
 <p>“Heading there now… Let’s get it.”</p>
 
@@ -6184,7 +6184,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>When I get checked in, sports editor Matt Pepin gives me a newsroom tour. It’s everything. People. Vibrancy. Windows etched in the design of historic Boston events. Big, but not too big, like the <em>Washington Post</em> was.</p>
 
-<p>Mr. Sports Editor throws a curve—I’m meeting with the <em>Globe</em>'s top editor in 15 minutes, not this afternoon, like the itinerary says. It’s been a car wash of interviews since then.</p>
+<p>Mr. Sports Editor throws a curve—I’m meeting with the <em>Globe</em>'s top editor in 15 minutes, not this afternoon, like the itinerary says. It’s been a car wash of interviews since then. </p>
 
 <p>What would you bring to the beat? “Creativity. I really like to let my personality show.”</p>
 
@@ -6301,7 +6301,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>June 17</em>—</span>After Michigan’s tournament-opening win over Texas Tech two days ago, I met up with a trio of player dads. They celebrated the win; I celebrated covering it. Before tonight’s game, I stop for <em>another</em> beer with the dads.</p>
 
-<p>I’m having so much fun in Omaha; I don’t even mind the goofy stories the desk shamelessly throws my way.</p>
+<p>I’m having so much fun in Omaha; I don’t even mind the goofy stories the desk shamelessly throws my way. </p>
 
 <p>Even here, I keep my ear to the pavement.</p>
 
@@ -6327,7 +6327,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Corbin gave Michigan head coach Erik Bakich his big break in 2002, hiring him as a volunteer assistant at Vandy, which is now considered the nation’s top program. Corbin has led the Commodores to Omaha twice, winning the national title in 2014 and finishing runner-up the following season.</p>
 
-<p>Now, 17 years later, Corbin and Bakich will square off for the national championship.</p>
+<p>Now, 17 years later, Corbin and Bakich will square off for the national championship. </p>
 
 <p>“I never would have believed it,” Corbin says.</p>
 
@@ -6413,7 +6413,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Menzin says Avila has warned the front office about being tight-lipped. But he also says, “I can’t guarantee anything,” which leaves the door open. He outs himself as being in touch with <em>another</em> National Guy. “I’ve even told Buster (Olney) about needing to be quiet right now.”</p>
 
-<p>But I’m not going to be patient. The trade deadline is coming.</p>
+<p>But I’m not going to be patient. The trade deadline is coming. </p>
 
 <p></p>
 
@@ -6435,7 +6435,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>An hour before the game, Greene is reportedly traded to Atlanta. “Close,” one insider says. “Done,” another echoes. Six minutes before the game, I’m still in the dugout. The national anthem plays. Last I saw, Nick Castellanos was in the on-deck circle, but I’ve lost him. Playing Telephone while taking the stairs—texting or tweeting or talking on Facebook Messenger.</p>
 
-<p>I hear from a third-hand source that Castellanos has been traded to the Cubs. They share a screenshot of a conversation with a second-hand source who works in the clubhouse. I text Al Avila once more and Scott Boras again. “No news.” So, I give him some news: “Cubs I think. He left the dugout.”</p>
+<p>I hear from a third-hand source that Castellanos has been traded to the Cubs. They share a screenshot of a conversation with a second-hand source who works in the clubhouse. I text Avila once more and Scott Boras again. “No news.” So, I give him some news: “Cubs I think. He left the dugout.”</p>
 
 <p>It’s true.</p>
 
@@ -6453,7 +6453,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 3</em>—</span>Since I arrived here for the final leg of the three-city trip, I’ve been putting together the Trade Deadline Exposé—unearthing moves Al Avila should’ve made, analyzing his below-average return on players and questioning why he keeps making similar mistakes.</p>
+<p class="has-dateline"><span class="dateline">ARLINGTON, Texas, <em>August 3</em>—</span>Since I arrived here for the final leg of the three-city trip, I’ve been putting together the Trade Deadline Exposé—unearthing moves Al Avila should’ve made, analyzing his below-average return on players and questioning why he keeps making similar mistakes. </p>
 
 <p>Two years ago, teams were hot for righty starter Michael Fulmer: The Cubs offered shortstop Javier Báez as the centerpiece in talks, plus a pair of prospects; Houston offered third baseman Alex Bregman as the centerpiece in talks for Fulmer and lefty reliever Justin Wilson.</p>
 
@@ -6473,7 +6473,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>And emotion aside, the Tigers and their fans deserve better from the GM. At midnight, the story goes live on Freep.com, detailing Avila’s past and present failings.</p>
 
-<p>Avila didn’t do Castellanos’ trade value any favors in the winter, responding to the outfielder’s preference for a preseason trade, “Quite frankly, there has been no interest at this point.” And he closed up shop early on Boyd’s bustling market, telling the lefty a week before the trade deadline that he was unlikely to be traded.</p>
+<p>Avila didn’t do Castellanos’ trade value any favors in the winter, responding to the outfielder’s preference for a preseason trade, “Quite frankly, there has been no interest at this point.” And he closed up shop early on Boyd’s bustling market, telling the lefty a week before the trade deadline that he was unlikely to be traded. </p>
 
 <p>In the Trade Deadline Exposé, rival executives speak out, calling the Tigers’ price on Boyd “borderline comical” and the team’s rigid negotiation stances “impossible to deal with.”</p>
 
@@ -6530,36 +6530,37 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         slug: "letter-to-the-editor",
         subtitle: "",
         teaser: "Houston calling.",
-        content: `<p class="email-line"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 12:15 PM</p>
+        content: `<p>From: Thomas, Christopher Sent: Tuesday, August 20, 2019 12:15 PM</p>
 
-<p class="email-line"><strong>Subject:</strong> Tigers today</p>
+<p>Subject: Tigers today</p>
 
-<p class="email-line"><em>Might be worth asking J.V. about if Bregman had been traded to Detroit, would things have been different. If he’s got access. Would tie in nicely if we end up getting Bregman.</em></p>
-
-<p></p>
-
-<p class="email-line"><strong>To:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 1:28 PM</p>
-
-<p class="email-line"><strong>Subject:</strong> RE: Tigers today</p>
-
-<p class="email-line"><em>I apologize if I’m coming off a certain way, but I just need to make a couple points here: There is a very minimal chance I will be asking Justin Verlander anything. Why? Because I was the only person to ask him last year—at my editor’s request—about his injury misdiagnosis claims. I understood then that it would harm my future relations with him, but I did it anyways.</em></p>
-
-<p class="email-line"><em>So, if I’m in the Astros clubhouse looking for Bregman and a scrum appears, sure, I’ll go over there, once again putting myself in a situation that will almost assuredly result in Verlander ignoring my questions or taking the opportunity to publicly bully me.</em></p>
+<p><em>Might be worth asking J.V. about if Bregman had been traded to Detroit, would things have been different. If he’s got access. Would tie in nicely if we end up getting Bregman.</em></p>
 
 <p></p>
 
-<p class="email-line"><strong>From:</strong> Thomas, Christopher <strong>Sent:</strong> Tuesday, August 20, 2019 2:05 PM</p>
+<p>To: Thomas, Christopher Sent: Tuesday, August 20, 2019 1:28 PM</p>
 
-<p class="email-line"><strong>Subject:</strong> RE: Tigers today</p>
+<p>Subject: RE: Tigers today</p>
 
-<p class="email-line"><em><span style="display:inline-block;background-color:#000;color:#000;height:1.1em;width:180px;vertical-align:middle;">&nbsp;</span>Time to investigate J.V.’s steroid use, eh? Seriously, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
+<p><em>I apologize if I’m coming off a certain way, but I just need to make a couple points here: There is a very minimal chance I will be asking Justin Verlander anything. Why? Because I was the only person to ask him last year—at my editor’s request—about his injury misdiagnosis claims. I understood then that it would harm my future relations with him, but I did it anyways.</em></p>
+
+<p><em>So, if I’m in the Astros clubhouse looking for Bregman and a scrum appears, sure, I’ll go over there, once again putting myself in a situation that will almost assuredly result in Verlander ignoring my questions or taking the opportunity to publicly bully me.</em></p>
 
 <p></p>
 
-<p class="scene-break">***</p>
+<p>From: Thomas, Christopher Sent: Tuesday, August 20, 2019 2:05 PM</p>
 
+<p>Subject: RE: Tigers today</p>
 
-<p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I’m about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
+<p><em>Time to investigate J.V.’s steroid use, eh? </em><em>Seriously</em><em>, man, if his stance is that a reporter from Detroit can’t ask him about a very serious claim that he made about his time in Detroit, I don’t know what to tell him. You did your job. I think you’ve been fair in your scrutiny of the franchise, and the questions are deﬁnitely worth asking. It’s not as much about pageviews as much as holding the franchise accountable for their decision-making during this process. I think you’ve done a nice job ﬁnding things to talk about during a time when there isn’t much to talk about. It isn’t easy, and I recognize that. Thanks for doing it.</em></p>
+
+<p></p>
+
+<p>***</p>
+
+<p></p>
+
+<p class="has-dateline"><span class="dateline">HOUSTON, <em>August 20</em>—</span>The mess I’m about to step into was created last week. I stopped by the <em>Free Press</em> newsroom to check my mail, and Chris Thomas caught me flat-footed. I was catching up with another editor when he said, “Let’s have you follow-up with Bregman while you’re in Houston to get his thoughts.”</p>
 
 <p>Still basking in the afterglow of a clicks bonanza from the Trade Deadline Exposé, he wanted more juice—the lowly Tigers aren’t bringing eyes to the site these days.</p>
 
@@ -6575,11 +6576,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Ball Writers want to know how the future Hall of Famer feels about facing his former team tomorrow night.</p>
 
-<p>I was hoping this wouldn’t happen. I didn’t want this to happen. Forced to decide between staying here—on Bregman watch—and walking over to the Verlander crowd, your fearless <em>Free Press</em> Ball Writer decides to join the fun (of course he does).</p>
+<p>I was hoping this wouldn’t happen. I didn’t want this to happen. Forced to decide between staying here—on Bregman watch—and walking over to the Verlander crowd, your fearless <em>Free Press</em> Ball Writer decides to join the fun (of course he does). </p>
 
-<p>Walking slowly toward his locker, past the digital clock. Justin spots me and says:</p>
+<p>Walking slowly toward his locker, past the digital clock. Justin spots me and says: </p>
 
-<p>“I told you guys…”</p>
+<p>“I told you guys…” </p>
 
 <p>His eyes dart from side to side. We make eye contact at least once.</p>
 
@@ -6617,7 +6618,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Standing right there.”</p>
 
-<p>A player shoots a quick glance. Others take turns looking the Idiot Reporter’s way. I stay in the clubhouse for 12 more minutes, according to the digital clock. After Justin blew me off, I couldn’t just flee the scene. Now I’m just lingering to prove a point.</p>
+<p>A player shoots a quick glance. Others take turns looking the Idiot Reporter’s way. I stay in the clubhouse for 12 more minutes, according to the digital clock. After Justin blew me off, I couldn’t just flee the scene. Now I’m just lingering to prove a point. </p>
 
 <p>Later, I discover the laughs on me. Verlander met up with Rival Cohort for a one-on-one interview—arranged by the Astros—before returning to his gossip and cards.</p>
 
@@ -6653,7 +6654,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>August 21</em>—</span>Standing next to an Astros PR guy at the urinal.</p>
+<p class="has-dateline"><span class="dateline"><em>August 21</em>—</span>Standing next to an Astros PR guy at the urinal. </p>
 
 <p>“You think Gene (Dias) is going to be pissed when I go ask Verlander questions after the game?”</p>
 
@@ -6683,7 +6684,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I call our guy in charge. Chris Thomas. Once again, I express caution. I suggest skipping the Astros clubhouse after the game, barring a no-hitter or something.</p>
 
-<p>He’s not having it.</p>
+<p>He’s not having it. </p>
 
 <p>“You need to go over there, no-hitter or not… Verlander is the local story, which is why we have you in Houston right now.”</p>
 
@@ -6695,7 +6696,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Pedro will be in my ear all night. He’s been there as a Ball Writer—reporting on problem children like Curt Schilling, Barry Bonds, and many more.</p>
 
-<p>Continue volleying texts with Gene Dias.</p>
+<p>Continue volleying texts with Gene Dias. </p>
 
 <p>“Hey Gene, it’s Anthony, just circling back: For our Detroit readers, I’m going to your clubhouse after the game to listen to Verlander and ask questions about his performance tonight.”</p>
 
@@ -6709,7 +6710,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Pedro Gomez is fired up.</p>
 
-<p>“The Astros don’t get to dictate your story. Do your job. Stand your ground. Don’t leave the Astros clubhouse until it closes. Make your point. If that means he doesn’t speak at all, then so be it. This makes me incensed, but I’m guessing you can tell. My Cuban blood is boiling.”</p>
+<p> “The Astros don’t get to dictate your story. Do your job. Stand your ground. Don’t leave the Astros clubhouse until it closes. Make your point. If that means he doesn’t speak at all, then so be it. This makes me incensed, but I’m guessing you can tell. My Cuban blood is boiling.”</p>
 
 <p>So is mine. I send Astros PR <em>another</em> message.</p>
 
@@ -6723,11 +6724,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Verlander dominated in a complete game, striking out 11 with no walks. He allowed two hits. Ronny Rodriguez hit a solo shot in the fifth inning, and John Hicks did it again in the ninth. Stepping in against big brother’s childhood buddy, Hicks retained hometown bragging rights: He homered, his second off Verlander in as many years, and the Tigers pulled off the biggest single-game upset in baseball history, 2-1.</p>
 
-<p>“Win of the Year!” Ron Colangelo with a massive understatement.</p>
+<p>“Win of the Year!” Ron Colangelo with a massive understatement. </p>
 
 <p>But instead of beelining to the visitor’s locker room and interviewing Rodríguez, Hicks and pitchers Buck Farmer, Daniel Norris and Tyler Alexander—who combined to silence the Astros—I head the other way as assigned.</p>
 
-<p>“What a win for them… and my boss wants me to go to the other side. I’ll hustle back.”</p>
+<p> “What a win for them… and my boss wants me to go to the other side. I’ll hustle back.”</p>
 
 <p>I end up standing near the end of a long line of media waiting to gain entry to the Astros’ clubhouse, anxiously scrolling through my phone. I know what’s going to happen next.</p>
 
@@ -6735,7 +6736,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p>9:27 <span class="small-caps">P.M.</span>—Trying to get social media attention, the <em>Freep</em> Twitter account sends a cute breaking news tweet, extra-cheeky and factually incorrect, linking to my game story:</p>
+<p class="has-dateline"><span class="dateline">9:27 <span class="small-caps">P.M.</span>—</span>Trying to get social media attention, the <em>Freep</em> Twitter account sends a cute breaking news tweet, extra-cheeky and factually incorrect, linking to my game story:</p>
 
 <p><em>#BREAKING: Justin Verlander once again pitches Detroit Tigers to victory, 2-1 in Houston.</em></p>
 
@@ -6743,7 +6744,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Ya think?</p>
 
-<p>9:30 <span class="small-caps">P.M.</span>—Gene Dias: “I’m going to speak with Justin again to see if he’ll talk to the media with you present, but I don’t expect anything has changed.”</p>
+<p class="has-dateline"><span class="dateline">9:30 <span class="small-caps">P.M.</span>—</span>Gene Dias: “I’m going to speak with Justin again to see if he’ll talk to the media with you present, but I don’t expect anything has changed.”</p>
 
 <p>I reiterate the party line: I’m a BBWAA member—I get the same access as everyone else.</p>
 
@@ -6751,15 +6752,15 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“What? My job?”</p>
 
-<p>9:33 <span class="small-caps">P.M.</span>—He’s back.</p>
+<p class="has-dateline"><span class="dateline">9:33 <span class="small-caps">P.M.</span>—</span>He’s back.</p>
 
 <p>“Justin said he is not talking with you there. You’ll come in when I get you.”</p>
 
-<p>9:35 <span class="small-caps">P.M.</span>—Doors open. The line snakes into the clubhouse. A super-sized security guard stands in my way. “You can’t go in right now.”</p>
+<p class="has-dateline"><span class="dateline">9:35 <span class="small-caps">P.M.</span>—</span>Doors open. The line snakes into the clubhouse. A super-sized security guard stands in my way. “You can’t go in right now.” </p>
 
 <p>I think about juking, but there’s backup—two others stand nearby.</p>
 
-<p>9:36 <span class="small-caps">P.M.</span>—I text MLB PR Mike Teevan: “Just got stopped by security… Verlander is not talking with me there and Gene has said I can’t come in with the others, until he gets me.”</p>
+<p class="has-dateline"><span class="dateline">9:36 <span class="small-caps">P.M.</span>—</span>I text MLB PR Mike Teevan: “Just got stopped by security… Verlander is not talking with me there and Gene has said I can’t come in with the others, until he gets me.”</p>
 
 <p>I call Teevan. No answer.</p>
 
@@ -6775,9 +6776,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The guy has a clean-shaven head. He wears khaki pants and a team-issued employee ID badge hanging from a belt loop. I take a few steps back and snap the cover shot of my career—three security guards, standing side by side by side in front of the Astros clubhouse.</p>
 
-<p>9:39 <span class="small-caps">P.M.</span>—Teevan, four minutes later: “I reached out to Gene and he said he’ll be getting you shortly.”</p>
+<p class="has-dateline"><span class="dateline">9:39 <span class="small-caps">P.M.</span>—</span>Teevan, four minutes later: “I reached out to Gene and he said he’ll be getting you shortly.”</p>
 
-<p>9:41 <span class="small-caps">P.M.</span>—Dias waves me in—six minutes late.</p>
+<p class="has-dateline"><span class="dateline">9:41 <span class="small-caps">P.M.</span>—</span>Dias waves me in—six minutes late.</p>
 
 <p>As I enter the room, the media scrum slowly dissipates from Justin’s locker. Cameras are down and reporters have retreated. While I was kept outside, Verlander talked about the loss.</p>
 
@@ -6787,11 +6788,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I’m not answering your questions.”</p>
 
-<p>On the winners’ side, media relations manager Chad Crunk turns the music down as reporters make their way around the victorious clubhouse, sans one. The worst team in baseball just beat arguably the best team in baseball and Justin Verlander, who will <em>finally</em> win his second Cy Young Award this year.</p>
+<p>On the winners’ side, media relations manager Chad Crunk turns the music down as reporters make their way around the victorious clubhouse, sans one. The worst team in baseball just beat arguably the best team in baseball and Verlander, who will <em>finally</em> win his second Cy Young Award this year.</p>
 
-<p>Too late for Ron Gardenhire’s postgame session, I join the clubhouse mix. Tonight’s hero draws a crowd. Hicks was claimed off waivers last year. Technically, he’s the second player from Goochland to homer off Verlander: In 2016, Verlander’s little brother Ben (then a Tigers’ farmhand) took him deep on the back fields in spring training.</p>
+<p>Too late for Ron Gardenhire’s postgame session, I join the clubhouse mix. Tonight’s hero draws a crowd. Hicks was claimed off waivers last year.</p>
 
-<p>I stick my recorder into the scrum around Hicks.</p>
+<p>I stick my recorder into the scrum around Hicks. </p>
 
 <p>“It’s surreal, for sure. I’ve kept track of him his whole career and it was a special moment getting to catch him (with the Tigers). And then getting to hit against him… I mean, he’s got me plenty of times. But I’ve gotten him twice.”</p>
 
@@ -6807,17 +6808,17 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Ver is an egomaniac,” someone shrugs. “Everyone knows that.”</p>
 
-<p>9:44 <span class="small-caps">P.M.</span>—Leaving the clubhouse, I call my boss.</p>
+<p class="has-dateline"><span class="dateline">9:44 <span class="small-caps">P.M.</span>—</span>Leaving the clubhouse, I call my boss.</p>
 
 <p>“You know we’re going to have to write about this, right?”</p>
 
 <p>The mad dash begins. It’s a five-alarm fire—and this one has my name in it. I exhaust my contacts, going all the way up to MLB’s top-ranking PR official, chief communications coordinator Pat Courtney, the commissioner’s right-hand man. I try to track down the BBWAA president and reach out to association secretary Jack O’Connell. I reach Crunk, who comes through in the clutch, sending a copy of the collective bargaining agreement.</p>
 
-<p>9:46 <span class="small-caps">P.M.</span>—I leave Gene Dias a voicemail, letting him know we’re writing a story.</p>
+<p class="has-dateline"><span class="dateline">9:46 <span class="small-caps">P.M.</span>—</span>I leave Gene Dias a voicemail, letting him know we’re writing a story.</p>
 
 <p>Returning to the press box, Dias is leaving. The door shuts behind him.</p>
 
-<p>10:30 <span class="small-caps">P.M.</span>—I head to the Four Seasons team hotel, find a second-floor table with a nearby electrical outlet and post up there. I’ve got one more story to write.</p>
+<p class="has-dateline"><span class="dateline">10:30 <span class="small-caps">P.M.</span>—</span>I head to the Four Seasons team hotel, find a second-floor table with a nearby electrical outlet and post up there. I’ve got one more story to write. </p>
 
 <p>The loud music of the lobby bar tries to lure me. I’ve been off the sauce for seven days and pass up the temptation with one concession—the Jack Daniel’s mini I keep in my work bag in case of emergency.</p>
 
@@ -6825,7 +6826,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The story goes live just before two in the morning.</p>
 
-<p>3:04 <span class="small-caps">A.M.</span>—I leave the Four Seasons so late, the Astros’ next opponents have already arrived for their upcoming series—a puddle of Angels luggage takes up half the valet line when I grab a cab.</p>
+<p class="has-dateline"><span class="dateline">3:04 <span class="small-caps">A.M.</span>—</span>I leave the Four Seasons so late, the Astros’ next opponents have already arrived for their upcoming series—a puddle of Angels luggage takes up half the valet line when I grab a cab.</p>
 
 <p>Could text Brad Ausmus but no—the Angels arrive having lost back-to-back walk-offs against the Rangers.</p>
 
@@ -6862,13 +6863,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Soon, it will be—with friends, family, colleagues, sources and randoms wishing me well.</p>
 
-<p>I ignore all but a select few. I’ve been keeping a tally of phone calls since last night: <em>Nightengale</em>… <em>Pedro Gomez</em>… <em>BBWAA president</em>… <em>MLB PR</em>…</p>
+<p>I ignore all but a select few. I’ve been keeping a tally of phone calls since last night: <em>Nightengale</em>… <em>Pedro Gomez</em>… <em>BBWAA president</em>… <em>MLB PR</em>… </p>
 
 <p>Evan Drellich texts me: “Gene Dias, ladies and gentlemen!”</p>
 
 <p>Drellich is a longtime colleague. He was the Astros’ beat writer until 2016 and knows more than most about dealing with them. He tweets: “A fun ‘did you know’ from half a decade ago. The Astros held a meeting with the top two editors at the <em>Houston Chronicle</em> when I was there in an attempt to get me fired. Why? Because I asked about and wrote critical things.”</p>
 
-<p>“Off-the-record,” Evan asks, “What happened? Like why is he mad?”</p>
+<p> “Off-the-record,” Evan asks, “What happened? Like why is he mad?”</p>
 
 <p>A reader emails: “Was it simply because Verlander took a blow to his sizable ego after getting beaten by an epically bad team and didn’t want to face questions he found humiliating? Is he really that sensitive and petty?”</p>
 
@@ -6876,7 +6877,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>This is when it hits me: I am now the subject of the story.</p>
 
-<p>10:32 <span class="small-caps">A.M.</span>—Breakfast at the Sam Houston Hotel.</p>
+<p class="has-dateline"><span class="dateline">10:32 <span class="small-caps">A.M.</span>—</span>Breakfast at the Sam Houston Hotel.</p>
 
 <p>After placing my order, I call Evan, catching him up on the past five seasons of Fenech-Verlander sagas. About solar eclipse tweets, clubhouse freeze-outs and the Kate Upton Saved My Life story.</p>
 
@@ -6902,23 +6903,23 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He unfollowed me early in the 2017 season. Asked why, he said, “Too much sarcasm. I couldn’t take it anymore.”</p>
 
-<p>10:57 <span class="small-caps">A.M.</span>—The sports editor responds to Verlander from his personal Twitter account: “I would like to know who you have contacted @freep about telling your side of the story. My reporter has not heard from you directly, nor have I. My email is listed on the article we published last night—I am more than happy to speak with you about it.”</p>
+<p class="has-dateline"><span class="dateline">10:57 <span class="small-caps">A.M.</span>—</span>The sports editor responds to Verlander from his personal Twitter account: “I would like to know who you have contacted @freep about telling your side of the story. My reporter has not heard from you directly, nor have I. My email is listed on the article we published last night—I am more than happy to speak with you about it.”</p>
 
 <p>ISE Baseball CEO Mark Pieper called his work number and left a voicemail, but Thomas didn’t check until just now. Both Pieper and fellow ISE agent Mike Milchin has my number. Just saying.</p>
 
-<p>11:03 <span class="small-caps">A.M.</span>—The midday show on MLB Network Radio SiriusXM 89 weighs in with an interview of former Mets GM Jim Duquette. His take? “There must’ve been some critical articles of him (Verlander) in the past.”</p>
+<p class="has-dateline"><span class="dateline">11:03 <span class="small-caps">A.M.</span>—</span>The midday show on MLB Network Radio SiriusXM 89 weighs in with an interview of former Mets GM Jim Duquette. His take? “There must’ve been some critical articles of him (Verlander) in the past.”</p>
 
 <p>Duquette is asked if Verlander should have “let bygones be bygones and let everyone in—or just single out one person in particular?”</p>
 
 <p>“It’s definitely not a good look.”</p>
 
-<p>11:27 <span class="small-caps">A.M.</span>—I’m trending on Twitter. By noon, someone turns the feud into a meme, comparing a ’Tale of the Tape’ between the contestants. Every half hour, the feud is mentioned on The Ticket’s sports radio update. The meme gives my mustache the edge over his.</p>
+<p class="has-dateline"><span class="dateline">11:27 <span class="small-caps">A.M.</span>—</span>I’m trending on Twitter. By noon, someone turns the feud into a meme, comparing a ’Tale of the Tape’ between the contestants. Every half hour, the feud is mentioned on The Ticket’s sports radio update. The meme gives my mustache the edge over his.</p>
 
 <p><em>Deadspin</em>’s story has been up since mid-morning—ASTROS BAR REPORTER FROM POSTGAME PRESSER AT JUSTIN VERLANDER’S REQUEST. The reporter messages that she’s “writing about you being barred from the Astros postgame presser last night. What was their reason for keeping you out? Did you or your bosses lodge a complaint? Also happy to hop on the phone if you have a few minutes. Thanks.”</p>
 
-<p>I ignore her, like the rest of reporters who fill my text messages, direct messages, Facebook messages and email. There are already stories in the <em>New York Post, Sports Illustrated,</em> and <em>The Big Lead. Awful Announcing</em> and ESPN.com. Radio shows and TV stations are asking, even a blogger from <em>Barstool Sports.</em></p>
+<p>I ignore her, like the rest of reporters who fill my text messages, direct messages, Facebook messages and email. There are already stories in the <em>New York Post,</em> <em>Sports Illustrated,</em> and <em>The Big Lead.</em> <em>Awful Announcing</em> and ESPN.com. Radio shows and TV stations are asking, even a blogger from <em>Barstool Sports.</em></p>
 
-<p>1:05 <span class="small-caps">P.M.</span>—MLB releases a statement: “Per our Club-Media Regulations, the reporter should have been allowed to enter the clubhouse postgame at the same time as the other members of the media. We have communicated this to the Astros.”</p>
+<p class="has-dateline"><span class="dateline">1:05 <span class="small-caps">P.M.</span>—</span>MLB releases a statement: “Per our Club-Media Regulations, the reporter should have been allowed to enter the clubhouse postgame at the same time as the other members of the media. We have communicated this to the Astros.”</p>
 
 <p>Messages arrive from everywhere. “You’re Big News on the radio,” a local radio host says. “People backing you.”</p>
 
@@ -6929,7 +6930,6 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 26.1,
         year: 2019,
         section: 'year',
-        hidden: true,
         title: "AIRPLANE MODE",
         subtitle: "",
         teaser: "",
@@ -6943,13 +6943,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Gator:</strong> He’s not talking about you is he? Lol</p>
 
-<p class="email-line"><strong>Drug Dealer:</strong> Lmk if anyone tries to mess with you.</p>
+<p class="email-line"><strong>Drug Dealer</strong><strong>:</strong> Lmk if anyone tries to mess with you.</p>
 
-<p class="email-line"><strong>No Clue:</strong> verlander beefin with you? whats up man?</p>
+<p class="email-line"><strong>No Clue</strong><strong>:</strong> verlander beefin with you? whats up man?</p>
 
 <p class="email-line"><strong>Radio Host:</strong> Hey bro, long time … any chance you can come on about the Verlander thing?</p>
 
-<p class="email-line"><strong>National Guy:</strong> Anthony, don’t let the creeps get you down. Astros PR? Worst PR guy in my experience, which probably covers 100-plus PR guys</p>
+<p class="email-line"><strong>National Guy: </strong>Anthony, don’t let the creeps get you down. Astros PR? Worst PR guy in my experience, which probably covers 100-plus PR guys</p>
 
 <p class="email-line"><strong>Pedro:</strong> This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You’re not wrong here. Remember that.</p>
 
@@ -6965,27 +6965,28 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="email-line"><strong>Deep Throat:</strong> I'd say you're the most popular sports writer in America today.</p>
 
-<p class="email-line"><strong>Rob Parker:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>
+<p class="email-line"><strong>Rob Parker</strong><strong>:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>
 
 <p class="email-line"><strong>National TV Reporter</strong>: Crazy you’re on his mind so much. You should be flattered.</p>
 
-<p class="email-line"><strong>Copy Editor:</strong> Did you ask about the eclipse again?</p>
+<p class="email-line"><strong>Copy Editor: </strong>Did you ask about the eclipse again?</p>
 
 <p class="email-line"><strong>Top Scout:</strong> Just read your name in ESPN. That’s great. Getting your name out there!</p>
 
 <p class="email-line"><strong>Mom:</strong> Omg. Call when you can.</p>
 </div>`,
-        wordCount: 334
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 26.2,
         year: 2019,
         section: 'year',
-        hidden: true,
         title: "UNETHICAL",
+        slug: "unethical",
         subtitle: "",
-        teaser: "",
-        content: `<p>2:44 <span class="small-caps">P.M.</span>—The barrage of messages continues when I return to reality.</p>
+        teaser: "The incident.",
+        content: `<p class="has-dateline"><span class="dateline">2:44 <span class="small-caps">P.M.</span>—</span>The barrage of messages continues when I return to reality.</p>
 
 <p>Dylan Hernández: “Guessing everyone’s been bothering you today, but out of curiosity, why is Verlander so pissed at you?… Are you going back at him today? I think that’s what you have to think about.”</p>
 
@@ -6993,11 +6994,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Was in airplane mode. As of right now, no. I would LOVE to write about it, though.”</p>
 
-<p>3:17 <span class="small-caps">P.M.</span>—Taking the hotel shuttle bus to the stadium, reading the Astros statement: “Reporter Anthony Fenech was delayed temporarily from entering the Astros clubhouse following last night’s game. This course of action was taken after taking into consideration the past history between Fenech and one of our players, Justin Verlander, Verlander’s legitimate concerns about past interactions with Fenech, and the best interests of the other media members working the game. We chose to prioritize these factors when making this decision. Fenech was allowed access to the clubhouse shortly after other media members and had the opportunity to approach Verlander or any player he needed. We believe that our course of action in this isolated case was appropriate.”</p>
+<p class="has-dateline"><span class="dateline">3:17 <span class="small-caps">P.M.</span>—</span>Taking the hotel shuttle bus to the stadium, reading the Astros statement: “Reporter Anthony Fenech was delayed temporarily from entering the Astros clubhouse following last night’s game. This course of action was taken after taking into consideration the past history between Fenech and one of our players, Justin Verlander, Verlander’s legitimate concerns about past interactions with Fenech, and the best interests of the other media members working the game. We chose to prioritize these factors when making this decision. Fenech was allowed access to the clubhouse shortly after other media members and had the opportunity to approach Verlander or any player he needed. We believe that our course of action in this isolated case was appropriate.”</p>
 
 <p>“Keep copious notes in this entire chapter of your life,” Pedro says. “Everything. Who’s contacted you. What they’ve said. Who you’ve contacted… Down the road, you never know.”</p>
 
-<p>3:46 <span class="small-caps">P.M.</span>—No security guard triple-team today. The Bad Boy of Ball Writing is back. My every move is watched inside the Astros’ clubhouse. <em>Of course,</em> I needed to off my phone. Nothing good to see there at the moment: <em>Y’all are nothing but leeches… You are a true dipshit… Fenech is garbage. Good for JV.</em></p>
+<p class="has-dateline"><span class="dateline">3:46 <span class="small-caps">P.M.</span>—</span>No security guard triple-team today. The Bad Boy of Ball Writing is back. My every move is watched inside the Astros’ clubhouse. <em>Of course, </em>I needed to off my phone. Nothing good to see there at the moment: <em>Y’all are nothing but leeches</em><em>…</em><em> You are a true dipshit</em><em>…</em><em> Fenech is garbage. Good for JV.</em> </p>
 
 <p>I stand in the middle of the clubhouse like nothing’s wrong. Head up, eyes forward, no phone.</p>
 
@@ -7013,19 +7014,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>A constitution was established, an agreement of decency formed with the league, and writers were never again banished to stadium rooftops—or, at least in theory, banned from locker rooms.</p>
 
-<p>I return 111 years later to enemy territory in the name of Jackson, my <em>Freep</em> forefather who once covered notoriously nasty Tigers outfielder Ty Cobb, a Hall of Fame player who slid with his metal spikes up. Jackson nicknamed Cobb the “Georgia Peach” in a <em>Free Press</em> column. He paved the path to where I stand in the Astros clubhouse today.</p>
+<p>I return 111 years later to enemy territory in the name of Jackson, my <em>Freep</em> forefather who once covered notoriously nasty Tigers outfielder Ty Cobb, a Hall of Fame player who slid with his metal spikes up. Jackson nicknamed Cobb the “Georgia Peach” in a <em>Free Press</em> column. He paved the path to where I stand in the Astros clubhouse today. </p>
 
-<p>3:49 <span class="small-caps">P.M.</span>—I take notes on everything and nothing at all. Mostly, the scene:</p>
+<p class="has-dateline"><span class="dateline">3:49 <span class="small-caps">P.M.</span>—</span>I take notes on everything and nothing at all. Mostly, the scene:</p>
 
 <p>Not many players in the clubhouse. Most are holding iPhones and iPads. Three guys playing Fortnite online—veteran outfielders Michael Brantley, George Springer and pitcher Wade Miley. Reporters talk to a rookie outfielder.</p>
 
 <p>Jose Altuve looks knowingly across the room. The Astros’ superstar second baseman sits at his locker, speaking in Spanish to a teammate who turns around to look at me.</p>
 
-<p>3:53 <span class="small-caps">P.M.</span>—David Barron introduces himself from the <em>Houston Chronicle.</em> Says he’s working on a story about the flap with Old Pal and asks, “Do you have anything to say about it?… Or is the paper speaking for you?”</p>
+<p class="has-dateline"><span class="dateline">3:53 <span class="small-caps">P.M.</span>—</span>David Barron introduces himself from the <em>Houston Chronicle.</em> Says he’s working on a story about the flap with Old Pal and asks, “Do you have anything to say about it?… Or is the paper speaking for you?”</p>
 
 <p>I have a lot to say about it, believe me. But I defer.</p>
 
-<p>4:09 <span class="small-caps">P.M.</span>—Back in the friendly confines of the Detroit clubhouse, the visitors are still buzzing after last night’s win. Nineties R&amp;B slaps from a slim boombox as I arrive in Gardy’s office pregame. Kci &amp; JoJo, I think it was.</p>
+<p class="has-dateline"><span class="dateline">4:09 <span class="small-caps">P.M.</span>—</span>Back in the friendly confines of the Detroit clubhouse, the visitors are still buzzing after last night’s win. Nineties R&amp;B slaps from a slim boombox as I arrive in Gardy’s office pregame. Kci &amp; JoJo, I think it was.</p>
 
 <p>“They let you in here?”</p>
 
@@ -7037,7 +7038,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>And here I am, gobbling up the headlines for feuding with a player on the <em>losing</em> team. I’m supposed to ask for comment, but I’m being asked for comment. I cover the Tigers, but I went to the Astros clubhouse after the game yesterday—and again today.</p>
 
-<p>4:28 <span class="small-caps">P.M.</span>—Standing in the Detroit clubhouse, I’m alerted. “Call me please.”</p>
+<p class="has-dateline"><span class="dateline">4:28 <span class="small-caps">P.M.</span>—</span>Standing in the Detroit clubhouse, I’m alerted. “Call me please.”</p>
 
 <p>They want me to provide a statement. We don’t consult on what to say. I call a friend who knows a friend in PR crisis management, who advises strongly against the first ditty I scribbled down.</p>
 
@@ -7045,11 +7046,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>My statement: “I’m extremely disappointed with the Astros’ inexplicable decision to limit my BBWAA-credentialed clubhouse access. In my time as the Tigers beat writer, my foremost goal has been fair and ethical coverage. I am confident that goal has been clearly and consistently achieved in my body of work and with the personal and professional way I build relationships across baseball.”</p>
 
-<p>7:28 <span class="small-caps">P.M.</span>—<em>Chronicle</em> reporter David Barron sits in the front row as tonight’s game begins—I don’t know Barron beyond earlier, but he did strike me as a reporter who knows what to do with background information. Purely on that hunch, I walk down to his workspace and lean into his ear: “I know I can’t talk about this, but you can put on background if you want that I was in the Astros’ clubhouse. I’m just letting you know.”</p>
+<p class="has-dateline"><span class="dateline">7:28 <span class="small-caps">P.M.</span>—</span><em>Chronicle</em> reporter David Barron sits in the front row as tonight’s game begins—I don’t know Barron beyond earlier, but he did strike me as a reporter who knows what to do with background information. Purely on that hunch, I walk down to his workspace and lean into his ear: “I know I can’t talk about this, but you can put on background if you want that I was in the Astros’ clubhouse. I’m just letting you know.”</p>
 
 <p>His story tomorrow includes this graf: “Verlander was not available in the Astros’ clubhouse during the 50-minute period that it was open to reporters. Fenech was present in the mostly unpopulated clubhouse for at least 20 minutes.”</p>
 
-<p>12:08 <span class="small-caps">A.M.</span>—Stepping onto the hotel elevator exhausted, I press for the wrong floor twice. It feels good to be home—even if it’s a hotel room.</p>
+<p class="has-dateline"><span class="dateline">12:08 <span class="small-caps">A.M.</span>—</span>Stepping onto the hotel elevator exhausted, I press for the wrong floor twice. It feels good to be home—even if it’s a hotel room.</p>
 
 <p>Kristie Ackert: “Text me tonight just to let me know you are ok. We are concerned.”</p>
 
@@ -7061,7 +7062,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p><em>SportsCenter</em> plays in the background. World champion fighter Conor McGregor appears to be screaming during an interview. The TV is muted.</p>
 
-<p>My name scrolls by on ESPN’s BottomLine: <em>Verlander calls</em> Detroit Free Press <em>reporter ‘unethical</em>’—<em>Reporter kept from Astros clubhouse after Wednesday’s game.</em></p>
+<p>My name scrolls by on ESPN’s BottomLine: <em>Verlander calls </em>Detroit Free Press<em> reporter ‘unethical</em>’—<em>Reporter kept from Astros clubhouse after Wednesday’s game.</em></p>
 
 <p>I watch it over and over, like I’m in a trance. Like I’m hypnotizing myself into accepting my new name. Is that who I am now? An Unethical Reporter?</p>
 
@@ -7075,11 +7076,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Scanning through while snacking on a breakfast bagel at the gate, I can’t help but notice who <em>didn’t</em> reach out. Al Avila must’ve sent a front office edict after the Trade Deadline Exposé—no talking to Fenech… or else.</p>
 
-<p>Many of the unread messages asked: What did you do to Verlander? Why does he hate you so much? What’s the beef?</p>
+<p>Many of the unread messages asked: What did you do to Verlander? Why does he hate you so much? What’s the beef? </p>
 
 <p>In retrospect, our relationship was probably doomed from the start—by no fault of our own. I’ve mentioned that Justin was my favorite player growing up. I think subconsciously that was hard to shake—maybe I tried too hard to make him the person I wanted him to be. The guy I thought he was as a fan—a down-to-earth dude you could grab a burger and beer and chill with.</p>
 
-<p>Justin is not that guy. Maybe he used to be. Now, he’s a famous professional athlete, an alpha dog and the most sensitive kid in class. His critical flaw is ego—same as mine.</p>
+<p>Justin is not that guy. Maybe he used to be. Now, he’s a famous professional athlete, an alpha dog and the most sensitive kid in class. His critical flaw is ego—same as mine. </p>
 
 <p>I knew I was getting under his skin to the point of no return. I knew something like this was possible—“putting myself in a situation that will almost assuredly result in Verlander ignoring my questions or taking the opportunity to publicly bully me.”</p>
 
@@ -7101,7 +7102,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I’m actually kind of in the middle of something right now. Can we do this later?”</p>
 
-<p>“He’s wrapping on it soon. Can you do it i–”</p>
+<p>“He’s wrapping on it soon. Can you do it i–” </p>
 
 <p>ABORT ABORT ABORT</p>
 
@@ -7137,7 +7138,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Last night, I talked with colleague Evan Drellich, whose advice was let things lie. “Once the weekend hits, nobody will care.”</p>
 
-<p>Put another way: Justin Verlander could have knocked me upside the head with a baseball bat, and some folks would still blame me for standing in the clubhouse.</p>
+<p>Put another way: Verlander could have knocked me upside the head with a baseball bat, and some folks would still blame me for standing in the clubhouse.</p>
 
 <p>Thomas’s column—ASTROS, VERLANDER, AND FREE PRESS: HERE’S WHAT HAPPENED—will post on Freep.com tomorrow as a defense of my rights as a reporter.</p>
 
@@ -7167,20 +7168,19 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The call-up stirs excitement from starved fans and sends me up the wall. Freshly wounded from the week, still stonewalled by team sources—and maybe a little hurt I hadn’t heard from some of ‘em—I lash out at the Highest Source In The Land.</p>
 
-<p>“Another one you told PR to announce so I couldn’t break it.”</p>
+<p>“Another one you told PR to announce so I couldn’t break it.” </p>
 
 <p>I’m confused and grasping for straws. Three weeks after putting Avila’s decision-making in the crosshairs, this Sunday’s sports front is dedicated to mine. I hurl the remote into the cushion, only serves to inflame me—I want to break something. I’m an unethically stained Ball Writer with no sources, now giving credit to parody accounts: “@NotIanKinsler was first to report the Castro promotion.”</p>
 
 <p>Embarrassed and angry, even after cooling off, I message HSITL: “Hey, taking a step back. Been a long week for me personally and professionally. I understand our relationship has changed and I am not going to scorch Earth every time you don’t help me.”</p>
 
 <p>I consider reaching out to my new competitor for advice: I’d like to become Not Anthony Fenech. Any ideas?</p>`,
-        wordCount: 2683
+        wordCount: 1186
     },
     {
         id: 26.3,
         year: 2019,
         section: 'year',
-        hidden: true,
         title: "TWO YEARS EARLIER",
         subtitle: "",
         teaser: "",
@@ -7188,37 +7188,38 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <h2 class="toc-page-title">TWO YEARS EARLIER</h2>
 <p class="has-dateline"><span class="dateline"><em>Tuesday, December 19, 2017</em>—</span>Woke up to a flurry of alerts. I'm in the tabloids again.</p>
 
-<p>&quot;You see he did another fine piece, lol,&quot; a friend says. &quot;Guy is obsessed with you.&quot;</p>
+<p>"You see he did another fine piece, lol," a friend says. "Guy is obsessed with you."</p>
 
-<p>Yesterday, <em>Free Press</em> executive editor Peter Bhatia announced the newspaper had fired Pulitzer Prize-winning columnist and editorial page figurehead Stephen Henderson after an internal investigation found examples of &quot;inappropriate behavior by Henderson toward female colleagues stretching back several years.&quot;</p>
+<p>Yesterday, <em>Free Press</em> executive editor Peter Bhatia announced the newspaper had fired Pulitzer Prize-winning columnist and editorial page figurehead Stephen Henderson after an internal investigation found examples of "inappropriate behavior by Henderson toward female colleagues stretching back several years."</p>
 
-<p>Today, I've been lumped into the mess—&quot;Why hasn't the #metoo movement hit Anthony Fenech?&quot; is making its rounds on the Internet.</p>
+<p>Today, I've been lumped into the mess—"Why hasn't the #metoo movement hit Anthony Fenech?" is making its rounds on the Internet.</p>
 
-<p>&quot;Why is a well-respected, award-winning journalist like Henderson out at the <em>Freep</em> while Anthony Fenech is still gainfully employed as the paper's Tigers beat writer?&quot; Internet Stalker writes. &quot;Fenech allegedly was involved in a workplace affair with (another employee) when she was at the <em>Free Press</em>. Apparently, they didn't know that it was 'frowned upon' to have sexual relations in the parking garage at work.”</p>
+<p>"Why is a well-respected, award-winning journalist like Henderson out at the <em>Freep</em> while Anthony Fenech is still gainfully employed as the paper's Tigers beat writer?" Internet Stalker writes. "Fenech allegedly was involved in a workplace affair with (another employee) when she was at the <em>Free Press</em>. Apparently, they didn't know that it was 'frowned upon' to have sexual relations in the parking garage at work.”</p>
 
 <p>By the time I get out of bed, my boss is calling. He doesn’t say hello, or even good morning—it’s half past nine—he says this: “Did you</p>
 
-<p>“Can you come into the office and talk to Peter today?</p>
+<p>"Can you come into the office and talk to Peter today?</p>
 
 <p></p>
 
-<p class="no-indent"><em>On Dec. 19, 2017, sports content coach Chris Thomas phoned and immediately asked if I had sex with a former employee, identifying her by name. Taken aback, I indicated I didn't hear what he said. &quot;What?&quot; Thomas asked again: Did I have sex with (former employee)? I said I wasn't comfortable speaking about this. He asked if I could come in and meet with executive editor Peter Bhatia, who asked what my relationship was like with (former employee) and if we ever engaged in sexual activity in the parking garage. I said we became close friends and could not remember. No union rep was present.</em> </p>
+<p><em>On Dec. 19, 2017, </em><em>sports content coach</em><em> Chris Thomas phoned and immediately asked if I had sex with a former employee, identifying her by name. </em><em>Taken aback,</em><em> I indicated I didn't hear what he said. "What?"</em><em> </em><em>Thomas </em><em>asked again:</em><em> </em><em>Did I</em><em> have sex with (former employee)? I said I wasn't comfortable speaking about this. He asked if I could come in and meet with executive editor Peter Bhatia, who asked </em><em>what my relationship was like with (former employee) and if we ever engaged in sexual activity in the parking garage. I said we became close friends and could not remember. No union rep was present.</em><em> </em></p>
 
 <p></p>
 
 <p>If they can ask me these questions, what can't they ask me?</p>
 </div>`,
-        wordCount: 317
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 26.4,
         year: 2019,
         section: 'year',
-        hidden: true,
         title: "UNETHICAL",
+        slug: "unethical",
         subtitle: "",
-        teaser: "",
-        content: `<p class="has-dateline"><span class="dateline"><em>August 29, 2019</em>—</span>So there was that. I did nothing. And today, after 12 years in journalism, I have been asked to write a feature story about a PR person. Not a player or coach or fan—a PR person.</p>
+        teaser: "The incident.",
+        content: `<p class="has-dateline"><span class="dateline"><em>August 29</em><em>, 2019</em>—</span>So there was that. I did nothing. And today, after 12 years in journalism, I have been asked to write a feature story about a PR person. Not a player or coach or fan—a PR person.</p>
 
 <p>My boss emails about a story on Ron Colangelo and his connection to Arizona State football coach Herm Edwards, whose Sun Devils play Michigan State next month.</p>
 
@@ -7242,7 +7243,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Last month, I talked with a ticket-department employee who cried describing the work environment—alleging a sexist culture and employee mistreatment under recently installed upper management. She passed along a number to speak with a former employee.</p>
 
-<p>When I called, the former employee said, sorry, but she just got a new job and doesn’t want to talk about that. A few minutes later, she called back.</p>
+<p>When I called, the former employee said, sorry, but she just got a new job and doesn’t want to talk about that. A few minutes later, she called back. </p>
 
 <p>“Hey. I just wanted to call and let you know that… You know if you write this story, you’re not going to have a job, right?”</p>
 
@@ -7252,7 +7253,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Once an annual postseason tune-up month for the perennial-contending Tigers, recent Septembers have been more taxi squad tryout camp than pennant race. It’s easy to forget that just five years ago, Detroit won its fourth straight American League Central title.</p>
 
-<p>Then Anthony Fenech took over the beat, and everything went to hell. The Tigers have gone 331-460 since, finishing in last place three out of five years.</p>
+<p>Then Anthony Fenech took over the beat, and everything went to hell. The Tigers have gone 331-460 since, finishing in last place three out of five years. </p>
 
 <p>Alas! The buzz, festivities, meaningful baseball—yes.</p>
 
@@ -7262,9 +7263,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>It figures to be a busy night at the ballpark. Today is Picture Day and Friday Night Fireworks <em>and</em> we’ve got special guests: the Michigan Baseball Team 153 Wolverines, who will be honored pregame.</p>
 
-<p>After Tiger players pose for the 2019 class photo in center field, team chairman and CEO Christopher Ilitch takes questions from the media, which for months has been egged on by an impatient fanbase.</p>
+<p>After Tiger players pose for the 2019 class photo in center field, team chairman and CEO Christopher Ilitch takes questions from the media, which for months has been egged on by an impatient fanbase. </p>
 
-<p>Ilitch isn’t available often, but when he is, Tigers PR makes sure he’s marinated with talking points.</p>
+<p>He isn’t available often, but when he is, Tigers PR makes sure he’s marinated with talking points.</p>
 
 <p>Case in point: Ilitch begins today’s presser with a PR-coached announcement of “clarity” on manager Ron Gardenhire’s status for next season—but he doesn’t confirm what exactly that clarity is. Ilitch says Avila is “on the same page,” but won’t say more.</p>
 
@@ -7284,7 +7285,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Not long from now, I’ll find this sentence in an old notebook, written when I was hanging out with Seamhead John Lowe back in the day: “Don’t let your ego take over.”</p>
 
-<p>Mine probably has, for better and worse: Do you know how much confidence is required to work a big-league clubhouse of millionaire Adonises, some of whom make more money in tonight’s game than you made last year? The Teflon shield you must burn into your psyche to endure loss after loss, battling National Guys, Rival Cohorts, Old Pals and Internet Stalkers?</p>
+<p>Mine probably has, for better and worse: Do you know how much confidence is required to work a big-league clubhouse of millionaire Adonises, some of whom make more money in tonight’s game than you made last year? The Teflon shield you must burn into your psyche to endure loss after loss, battling National Guys, Rival Cohorts, Old Pals and Internet Stalkers? </p>
 
 <p>The unnatural machismo you must at times exude, trying to survive in a testosterone-charged room of pro athletes as a punk reporter for the Podunk Press. Some of these guys, you grew up rooting for. Many, you have little in common with. All of ‘em, you’d probably trade spots with—who among us grew up dreaming of being the Ball Writer?</p>
 
@@ -7298,7 +7299,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Coach, last homestand… any message to the fans?”</p>
 
-<p>“Well, yeah… that’s a good start.”</p>
+<p>“Well, yeah… that’s a good start.” </p>
 
 <p>Gardy must’ve actually read <em>Ego Is The Enemy,</em> which has been on his shelf for the past two years. I’ve seen managers flip their lid for being called “coach.” It takes much more to fluster a manager who’s lost 108 games this season… and counting.</p>
 
@@ -7322,7 +7323,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>September 25</em>—</span>Normal day at the ballpark.</p>
 
-<p>Tigers lose their 111th game of the season to the Twins, who wait an hour and 18 minutes for Cleveland to lose in Chicago before popping champagne in the visitor’s clubhouse—Minnesota is the American League Central champion.</p>
+<p>Tigers lose their 111th game of the season to the Twins, who wait an hour and 18 minutes for Cleveland to lose in Chicago before popping champagne in the visitor’s clubhouse—Minnesota is the American League Central champion. </p>
 
 <p>Across the hallway, the home team cleared out long ago. There was no similar celebration after clinching the worst record in baseball—even if it results in the top draft pick, widely projected to be Spencer Torkelson, a slugging sophomore who broke Barry Bonds’ freshman home run record at Arizona State.</p>
 
@@ -7332,9 +7333,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I approach his locker while he slips on sneakers. Jeans are on. No shirt, but gold chains.</p>
 
-<p>“My editor wants me to do a story on you. Can I talk to you this weekend for–” Cabrera cuts me off with the same wildly inappropriate question he asked me in Anaheim three years ago.</p>
+<p>“My editor wants me to do a story on you. Can I talk to you this weekend for–” Cabrera cuts me off with the same wildly inappropriate question he asked me in Anaheim three years ago. </p>
 
-<p>This time, it doesn’t stop the conversation cold. I’m shocked he hasn’t grown up—our relationship has—but I’ve seen this absurdity before.</p>
+<p>This time, it doesn’t stop the conversation cold. I’m shocked he hasn’t grown up—our relationship has—but I’ve seen this absurdity before. </p>
 
 <p>Immediately and matter-of-factly, I say, “No.”</p>
 
@@ -7342,7 +7343,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">CHICAGO, <em>September 27</em>—</span>In my worst nightmare, I wake up in a chilly hotel room in the South Loop and stare outside. Clouds cover the lake. It is rainy, windy and gray. Take a taxi to the ugliest baseball stadium ever built. In this nightmare, I am stuck in traffic and heading to U.S. Cellular Field to cover not one game between the Tigers (46-112) and White Sox, but two. A doubleheader.</p>
+<p class="has-dateline"><span class="dateline">CHICAGO, <em>September 27</em>—</span>In my worst nightmare, I wake up in a chilly hotel room in the South Loop and stare outside. Clouds cover the lake. It is rainy, windy and gray. Take a taxi to the ugliest baseball stadium ever built. In this nightmare, I am stuck in traffic and heading to U.S. Cellular Field to cover not one game between the Tigers (46-112) and White Sox, but two. A doubleheader. </p>
 
 <p>This is not surprising. It’s always raining in Chicago and in my head. It was raining when Andrew’s Navigator picked me up from O’Hare yesterday evening, while walking to the party store for a Red Bull this morning, and now arriving at my personal house of horrors.</p>
 
@@ -7358,7 +7359,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I think I know you.”</p>
 
-<p>Visiting team officials usually sit in a neighboring suite and often walk over to use the espresso machine—the only remotely redeeming quality about the entire place.</p>
+<p>Visiting team officials usually sit in a neighboring suite and often walk over to use the espresso machine—the only remotely redeeming quality about the entire place. </p>
 
 <p>This chance interaction came years before I agreed to the Three Commandments, before I even got Deep Throat’s number. We’d only traded emails, but he responded warmly that day.</p>
 
@@ -7370,9 +7371,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“You gotta be ready for it.”</p>
 
-<p>Many young Latin players have come through Detroit in recent years. But few have hung with Miguel Cabrera the way Hittin’ Harold has this year—and Miggy only hangs with guys who hit. Young sports writers: Pay attention to who hangs out with who in the locker room.</p>
+<p>Many young Latin players have come through Detroit in recent years. But few have hung with Cabrera the way Hittin’ Harold has this year—and Miggy only hangs with guys who hit. Young sports writers: Pay attention to who hangs out with who in the locker room.</p>
 
-<p>After Castro’s single, Cabrera drives him in with a blooper. He is all smiles at first base.</p>
+<p>After Castro’s single, Cabrera drives him in with a blooper. He is all smiles at first base. </p>
 
 <p>Cabrera was chatty earlier. With the team’s Spanish-speaking translator nearby, Miggy gave a season-ending address—talking in English about the Tigers’ losing season (“Frustrating”), his health (“Surgery is off the table”), and how he viewed his individual performance in 2019.</p>
 
@@ -7392,7 +7393,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“We did it.”</p>
 
-<p>That’s one way to put it. Feeling dangerous, I answer some questions on Twitter while commuting to work. Someone asks if I can finally take some time off. “No. The baseball news cycle has long since become year-round.” Another person asks for my favorite moment of the season.</p>
+<p>That’s one way to put it. Feeling dangerous, I answer some questions on Twitter while commuting to work. Someone asks if I can finally take some time off. “No. The baseball news cycle has long since become year-round.” Another person asks for my favorite moment of the season. </p>
 
 <p>“John Hicks catching the first pitch from his mom.”</p>
 
@@ -7402,7 +7403,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p><em>Game 161: Finally.</em></p>
 
-<p>Reporters pack into the visiting manager’s office—which, like most amenities here, are among the worst in the big leagues.</p>
+<p>Reporters pack into the visiting manager’s office—which, like most amenities here, are among the worst in the big leagues. </p>
 
 <p>Ron Gardenhire begins his final pregame media session of the year.</p>
 
@@ -7410,7 +7411,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Gardenhire’s 16th season in the dugout was a struggle, to say the least. Standing closest to Gardenhire, he speaks for the both of us.</p>
 
-<p>Reporter: <em>Ron, what’s held this group together despite everything from the outside?</em></p>
+<p>Reporter: <em>Ron, what’s held this group together </em><em>despite</em><em> everything from the outside?</em></p>
 
 <p>“Vodka.”</p>
 
@@ -7422,7 +7423,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“Water… A lot of water. It’s hot down there… I sound like I drink all the time, but not really. I normally wait until after 10 in the morning.”</p>
 
-<p>Today’s Freep Sports cover boy goes deep. Miguel Cabrera’s homer comes despite playing on a bad knee that’s moved him off first base. For the 114th and final time, Tigers lose.</p>
+<p>Today’s <em>Freep Sports</em> cover boy goes deep. Miggy’s homer comes despite playing on a bad knee that’s moved him off first base. For the 114th and final time, Tigers lose.</p>
 
 <p>Rookie Travis Demeritte strikes out to end the season—fittingly, it’s a team record.</p>
 
@@ -7446,9 +7447,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I am all but emotionless entering the dressing room for this season’s final reporting scene. A roster of relative no-names bid farewell. Many won’t be back, instead recycled elsewhere during another rebuilding winter. Some of the guys I don’t even know.</p>
 
-<p>Five years after adrenaline-rushing this same clubhouse, asking veteran players for phone numbers as the final task of my rookie year—players who I’d worked hard to build trust with… I barely know the nameplates now.</p>
+<p>Five years after adrenaline-rushing this same clubhouse, asking veteran players for phone numbers as the final task of my rookie year—players who I’d worked hard to build trust with… I barely know the nameplates now. </p>
 
-<p>Without a contact list of players or agents to get (I haven’t updated ScoopSheet in months), I don’t stay for long. I say goodbye to the usual suspects—veterans, coaches, trainers, Miguel Cabrera and the team translator.</p>
+<p>Without a contact list of players or agents to get (I haven’t updated ScoopSheet in months), I don’t stay for long. I say goodbye to the usual suspects—veterans, coaches, trainers, Miggy and the team translator.</p>
 
 <p>Walking out of the clubhouse, I wonder if I’ll be back—or if I want to be.</p>
 
@@ -7456,15 +7457,15 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline">DETROIT, <em>October 4</em>—</span>After spending the past month in an emotional spin cycle, I’m holed up with enough supply to fend off even the most intrusive self-loathing thoughts.</p>
 
-<p>I won’t sleep for days, burrowing into cardboard boxes, notebooks and old tape recorders. Receipts rubber-banded and piled by month and year. Receipts everywhere. Hundreds, maybe a thousand. Organized by time and date, work and personal. Finding much more than items and purchases—it’s like my Ball Writing life is unfolding in front of my eyes.</p>
+<p>I won’t sleep for days, burrowing into cardboard boxes, notebooks and old tape recorders. Receipts rubber-banded and piled by month and year. Receipts everywhere. Hundreds, maybe a thousand. Organized by time and date, work and personal. Finding much more than items and purchases—it’s like my Ball Writing life is unfolding in front of my eyes. </p>
 
-<p>The deeper into the memories, the less pain I feel, the more I want to keep going. Exhilarating and out-of-control, but onto something.</p>
+<p>The deeper into the memories, the less pain I feel, the more I want to keep going. Exhilarating and out-of-control, but onto something. </p>
 
 <p>Message Mom on bingo night, asking if she can stop by after. She brings food, which is good, because I haven’t eaten in quite some time.</p>
 
 <p>“Don’t freak out. I’m in a good place now, the best place in months.”</p>
 
-<p>But I can’t fool Mom. She can see I haven’t been eating or sleeping. I explain what the drugs are, what they do, why I started taking them (work) and why I think I’m taking more than ever (coping mechanism/addiction).</p>
+<p>But I can’t fool Mom. She can see I haven’t been eating or sleeping. I explain what the drugs are, what they do, why I started taking them (work) and why I think I’m taking more than ever (coping mechanism/addiction). </p>
 
 <p>She’s horrified. Asks me why. Am I trying to hurt myself? I don’t really know—but no, I don’t think so. It’s emotional. We yell and scream and cry and get into cold, hard truths. How things have really spiraled after the incident with Old Pal.</p>
 
@@ -7475,20 +7476,20 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>My next steps are clear. I book a flight to Malta and scribble more words about the book that’s quickly coming into focus.</p>
 
 <p>The working title is <em>OFF-THE-RECORD.</em></p>`,
-        wordCount: 3678
+        wordCount: 1186
     },
     {
         id: 26.5,
         year: 2019,
         section: 'year',
-        hidden: true,
         title: "MALTA",
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
-<p class="no-indent"><em>Fell into a comfortable routine—gym, beach, receipts. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Bought a used Kindle for €10, case included. The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A</em> Sports Illustrated <em>reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series. Went to the sports bar to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 <span class="small-caps">A.M.</span> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. Bought a notebook from the bazaar and kept a journal. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. Talked to people who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. Two years ago, corrupt government influences killed the country’s top investigative reporter—the mob laced her engine with a bomb and let the ignition do the rest. Went to church every week, washed my face with holy water. One day it rained and I saw my name online. It rained all day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back.</em></p>
+<p class="no-indent"><em>Fell</em><em> into a comfortable routine</em><em>—</em><em>gym, beach, receipts. Hogged the copy machine at a corner store across from a religious dome spared during World War II, when a bomb dropped but never detonated as people sheltered inside. Gym, beach, receipts. Bought a used Kindle for €10, case </em><em>included.</em><em> </em><em>The Astros were at it again. While celebrating their win over the Yankees, a front office flak allegedly berated a female Ball Writer in the clubhouse for her public disapproval of the team trading for Roberto Osuna, a former All-Star reliever who served a 75-game suspension last year for violating MLB’s domestic violence policy. A </em>Sports Illustrated<em> reporter wrote about the flak’s diatribe, Astros PR called the reporter a liar and the next day the Astros had to apologize. Sat one night at a noisy club with an American day-trader who picked up a parakeet fetish while living in Thailand when I got a text that Old Pal coughed up the lead in the World Series</em><em>.</em><em> Went to the </em><em>sports bar</em><em> to watch Game 7, rooted for the Nationals to win, and they did. I left around 5 </em><em><span class="small-caps">A.M.</span></em><em> and the cabbie talked the whole way home, an Indian man with friends in America who are working whenever he calls. “America, it’s a work country. Here, if you work 10-15 hours, you can live still. In America, if you don’t work 40 hours, you can’t live.” He makes €1,500 per month and can still pay his rent, eat a little bit and maybe save one or two-hundred Euros. </em><em>Bought a notebook from the bazaar and </em><em>kept a journal</em><em>. Ten pages, twenty pages, inside a teal green notebook until my hand cramped. </em><em>Talked to people</em><em> who don’t watch baseball, don’t care. They don’t have dryers in Malta. No central A/C or heat and snails come out when it rains. Two years ago, corrupt government influences killed the country’s top investigative reporter</em><em>—</em><em>the mob laced her engine with a bomb and let the ignition do the re</em><em>st. </em><em>Went to church every week, washed my face with holy water. One day it rained and I saw my name online.</em><em> </em><em>It rained all day, when I walked through the village without an umbrella and went out of my way to step on every snail I could find. I stayed 35 days, including my birthday, drinking alone on the promenade, watching happy people, wondering where my twenties went and how I can get them back</em><em>.</em></p>
 </div>`,
-        wordCount: 406
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 27,
@@ -7518,7 +7519,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>November 25</em>—</span>Heading into the newsroom, I cover my bases with sources before beeping into the building.</p>
 
-<p>To GM Al Avila: “Are you going to make any news in the next two hours? Heading into a meeting with my bosses, don’t want to be caught off-guard.”</p>
+<p>To Al Avila: “Are you going to make any news in the next two hours? Heading into a meeting with my bosses, don’t want to be caught off-guard.”</p>
 
 <p>When I get to the <em>Freep,</em> I meet Thomas at his workstation. We walk into Peter Bhatia’s office together; Thomas takes one side of the small round table; I take the other. Bhatia sits behind his desk.</p>
 
@@ -7558,7 +7559,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>He says Ellis took the buyout over the weekend, giving them flexibility to make the move. Now, it’s my decision: Slide into Ellis’ spot covering the Detroit Pistons and NBA or take the final buyout remaining. If there aren’t enough volunteers, then one photographer or web editor will be laid off based on seniority.</p>
 
-<p>I’ve got seven years under my belt, so I’m safe. Bhatia can’t force me to take the buyout. But his message about my future at the <em>Detroit Free Press</em> is clear.</p>
+<p>I’ve got seven years under my belt, so I’m safe. Bhatia can’t force me to take the buyout. But his message about my future at the <em>Detroit</em> <em>Free Press</em> is clear.</p>
 
 <p>I stand up and numbly shake hands all around. My face is flushing as I stumble out of the newsroom, feeling like I’ve been hit with a flash-bang grenade.</p>
 
@@ -7572,15 +7573,17 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I message my closest work confidante: “On the day they told me they didn’t want me covering the Tigers anymore, I broke a trade and received a call from Willie Horton, inviting me to his house.”</p>
 
+<p></p>
+
 <p class="has-dateline"><span class="dateline">SAN DIEGO, <em>December 8</em>—</span>The Winter Meetings again. Perhaps, for me, the final one—a scary thought I cannot shake. It is raining as I arrive at the Manchester Grand Hyatt Resort.</p>
 
-<p>I can still see my first day ever at the Ball Writing carnival. I remember pulling out my wallet to make sure I had at least five business cards packed into the outside flap.</p>
+<p>I can still see my first day ever at the Ball Writing carnival. I remember pulling out my wallet to make sure I had at least five business cards packed into the outside flap. </p>
 
 <p>Today, I have none. I don’t even have a back pocket. I’m wearing sweats. Waiting for the elevator, I run into an Arizona reporter. When we return from lunch, Kristie Ackert is at the sports bar. Dylan Hernández is here somewhere. The whole gang.</p>
 
 <p>There’s no Tigers-oriented celebration this year. Second baseman Lou Whitaker is not elected to the Hall of Fame by the veterans’ committee, as double-play partner Alan Trammell was last year. Sweet Lou was selected on 6 of 16 ballots, falling short of the 12 required for election. I didn’t even bother to pre-write a story—Whitaker’s been getting screwed for years.</p>
 
-<p>I’m here as a lame duck, a hawk whose wings have been clipped. Only a select few know how my career hangs by a thread, but everyone knows who I am—the unethical guy who Justin Verlander doesn’t like.</p>
+<p>I’m here as a lame duck, a hawk whose wings have been clipped. Only a select few know how my career hangs by a thread, but everyone knows who I am—the unethical guy who Justin Verlander doesn’t like. </p>
 
 <p>Five years ago, this was still a dream. I hadn’t the earthliest clue of how to get scoops. A simpler time. Just happy to be here, closing the lobby bar each night, meeting new people all the time.</p>
 
@@ -7588,9 +7591,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>December 9</em>—</span>The last thing I want to do is linger at the lobby bar for familiar faces. As expected, everybody asks about the Verlander thing. It’s frustrating because it’s not something I can explain in one standing conversation. Not something I particularly want to explain.</p>
+<p class="has-dateline"><span class="dateline"><em>December 9</em>—</span>The last thing I want to do is linger at the lobby bar for familiar faces. As expected, everybody asks about the Verlander thing. It’s frustrating because it’s not something I can explain in one standing conversation. Not something I particularly want to explain. </p>
 
-<p>Reporting-wise, I’m in a tight spot. Aware of my impending assignment change, Al Avila and other officers have no incentive to help me. The last thing they want is the <em>Free Press</em> getting cold feet about re-assigning me. I’ve become an annoying, truth-telling pest.</p>
+<p>Reporting-wise, I’m in a tight spot. Aware of my impending assignment change, Al Avila and other officers have no incentive to help me. The last thing they want is the <em>Free Press</em> getting cold feet about re-assigning me. I’ve become an annoying, truth-telling pest. </p>
 
 <p>Not only that, but Deep Throat isn’t here this year. Vacationing somewhere tropical. Might not even be in the country, I can’t remember.</p>
 
@@ -7616,11 +7619,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Leyland will eventually be canonized in Cooperstown himself. As with all managers and executives, Leyland was voted in by the veterans’ committee and inducted in July 2024.</p>
 
-<p>The waitress asks about Leyland’s shiny ring—he’s wearing his 2012 American League championship ring.</p>
+<p>The waitress asks about Leyland’s shiny ring—he’s wearing his 2012 American League championship ring. </p>
 
 <p>“I never wear any of them, but when I come to the meetings, sometimes people like to see ‘em. So, I just picked this one.”</p>
 
-<p>Leyland says he’s won 12-to-14 rings between the minors and majors.</p>
+<p>He says he’s won 12-to-14 rings between the minors and majors.</p>
 
 <p>“You can have it if you want it.”</p>
 
@@ -7632,7 +7635,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“He’s a good manager,” Leyland says of Snitker. “He paid his price.”</p>
 
-<p>Snitker’s minor-league tour of duty makes Leyland’s 11 years seem short—Snitker, 64, managed 20 minor-league seasons before debuting in the majors in 2016.</p>
+<p>Snitker’s minor-league tour of duty makes Leyland’s 11 years seem short—Snitker, 64, managed 20 minor-league seasons before debuting in the majors in 2016. </p>
 
 <p>Over a quick snack, I ask Leyland about managing and the benefit of minor-league experience.</p>
 
@@ -7644,7 +7647,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Lunch is quick. I got a pasta starter and a glass of white wine. He got a sandwich, no wine. Despite pleas that the <em>Free Press</em> can afford it, Leyland picks up the tab. I don’t know if he knows what’s going on with me, or if we just happened to bump into each other in the right place at the right time.</p>
 
-<p>Walking back to the hotel, we run into a couple of Tigers Guys and stop to say hello. Leyland points at me.</p>
+<p>Walking back to the hotel, we run into a couple of Tigers Guys and stop to say hello. Leyland points at me. </p>
 
 <p>“He’s ripping somebody today. You know that.”</p>
 
@@ -7658,7 +7661,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I write a column critical of the approach, calling out the Propaganda Police:</p>
 
-<p>“The Tigers wanted Avila to deliver optimism—they sense fans’ frustration reaching a boil. They know confidence is at an all-time low.</p>
+<p>“The Tigers wanted Avila to deliver optimism—they sense fans’ frustration reaching a boil. They know confidence is at an all-time low. </p>
 
 <p>“Instead, he offered words he can’t back up: The message of a team ready to turn the page, of having money to spend, inching ever closer, and excitement—a message that sounds like the start of the process. Back then, it was a ’retool,’ not a ’rebuild.’</p>
 
@@ -7666,7 +7669,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>I work from my room today until the Tigers media availability at 4:30, when I decide to raise hell again.</p>
+<p class="has-dateline"><span class="dateline"><em>December 10</em>—</span>I work from my room today until the Tigers media availability at 4:30, when I decide to raise hell again. </p>
 
 <p>Al Avila sits flanked by manager Ron Gardenhire and VP of player development Dave Littlefield. They drone on about analytics and the minor leagues before I jump in.</p>
 
@@ -7676,11 +7679,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I’ve been poking around about this Tiger Way thing, and guys across the minors haven’t even heard of it. I ask Al to describe it.</p>
 
-<p>“Well, there’s a lot to that, to just make a comment. And you can fill in the blanks a lot of different ways, but we want our players, obviously, to play the game the right way. Obviously, we want the hustle, we want the fundamentals, things of that nature. So, when you look at the Tiger Way, it’s running the bases, defensive situations, knowing where to set up, where to hit the cut-off man, things of that nature. It’s no different than the Dodger Way when I grew up. It showed you where you’re supposed to be set up on almost every play defensively and how you’re supposed to approach certain situations.</p>
+<p>“Well, there’s a lot to that, to just make a comment. And you can fill in the blanks a lot of different ways, but we want our players, obviously, to play the game the right way. Obviously, we want the hustle, we want the fundamentals, things of that nature. So, when you look at the Tiger Way, it’s running the bases, defensive situations, knowing where to set up, where to hit the cut-off man, things of that nature. It’s no different than the Dodger Way when I grew up. It showed you where you’re supposed to be set up on almost every play defensively and how you’re supposed to approach certain situations. </p>
 
 <p>“So, it’s a step-by-step manual for the player, but also the coaches as a guideline. That’s the best way I can explain it.”</p>
 
-<p>Avila chuckles.</p>
+<p>Avila chuckles. </p>
 
 <p>“It’s not like a quote or a phrase or anything like that, you know? If that’s what you’re asking.”</p>
 
@@ -7706,7 +7709,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>The manager laughs. “Because it doesn’t exist!”</p>
 
-<p>Five years earlier, I proudly introduced myself to Ken Rosenthal in this lobby. Met Scott Boras here. Back then, I wanted my phone to flash 24/7/365 with “important people,” influential dealmakers and the ilk.</p>
+<p>Five years earlier, I proudly introduced myself to Ken Rosenthal in this lobby. Met Scott Boras here. Back then, I wanted my phone to flash 24/7/365 with “important people,” influential dealmakers and the ilk. </p>
 
 <p>Now, I just want Rosenthal to walk up to me like he did a couple years ago in K.C., coming over to say hello, shaking my hand in the clubhouse and complimenting me on the “heck of a story” I wrote the previous weekend about the Tigers’ collapse.</p>
 
@@ -7718,7 +7721,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>American League skippers crowd into a ballroom, sip coffee with the local Ball Writers and take a class yearbook-style photo.</p>
 
-<p>At our table, it’s Ron Gardenhire, the Tiger Beat and Tiger PR (Ron Colangelo, media relations director Chad Crunk and another staffer). There’s an empty seat between Gardenhire and me. He leans over and asks, “I thought you were moving to the Pistons?”</p>
+<p>At our table, it’s Ron Gardenhire, the Tiger Beat and Tiger PR (Ron Colangelo, media relations director Chad Crunk and another staffer). There’s an empty seat between Gardenhire and me. He leans over and asks, “I thought you were moving to the Pistons?” </p>
 
 <p>“Where did you hear that?”</p>
 
@@ -7726,7 +7729,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Gardy doesn’t know not to joke with me like that—I have PTSD from being all over the Internet for five years. Furiously scrolling through Twitter, I can’t find anything. I think he’s pulling my leg—but clearly, Tiger Guys have been talking in the suite.</p>
 
-<p>4:50 <span class="small-caps">P.M.</span>—PR sends an alert ten minutes before today’s media session: “We are pushing Al’s session back. Please be on standby.”</p>
+<p class="has-dateline"><span class="dateline">4:50 <span class="small-caps">P.M.</span>—</span>PR sends an alert ten minutes before today’s media session: “We are pushing Al’s session back. Please be on standby.”</p>
 
 <p>I bug Deep Throat again during his vacation. He’s been my safety net for years, but I’m wondering if he’s turned on me, too. “Have you heard the length of Al’s contract?” Deep Throat: “Will be happy to talk after vacation is done.”</p>
 
@@ -7736,11 +7739,11 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>A day after pressing Avila on the Tiger Way, I contemplate more wartime reporting.</p>
 
-<p>Surveying more sources, I ask if it’s fair game to ask about (and report on) the length of the contract extension Avila signed last summer.</p>
+<p>Surveying more sources, I ask if it’s fair game to ask about (and report on) the length of the contract extension Avila signed last summer. </p>
 
 <p>Pedro Gomez says so: “If I’m a fan, that’s something I’d like to know. Why the secret?”</p>
 
-<p>I decide to let things lie for the night. I poke out a story in my room and head down to the Seaport Ballroom, where the Professional Baseball Scouts’ Foundation banquet is being held. Kristie Ackert is there.</p>
+<p>I decide to let things lie for the night. I poke out a story in my room and head down to the Seaport Ballroom, where the Professional Baseball Scouts’ Foundation banquet is being held. Kristie Ackert is there. </p>
 
 <p>“Free drinks.”</p>
 
@@ -7748,7 +7751,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>It’s waiting when I get there. Dinner program is under way. I sneak into an open seat at a front-row table. Kristie’s boyfriend asks about the book. “Is it a bridge-burning book?”</p>
 
-<p>Poking my head into the lobby bar after the scouts’ banquet, I still can’t escape the Astros and Old Pal. Industry scuttlebutt remains fixated on an unfolding cheating scandal involving Houston’s 2017 World Series team—sign-stealing using cameras and trash can banging to tip off hitters.</p>
+<p>Poking my head into the lobby bar after the scouts’ banquet, I still can’t escape the Astros and Old Pal. Industry scuttlebutt remains fixated on an unfolding cheating scandal involving Houston’s 2017 World Series team—sign-stealing using cameras and trash can banging to tip off hitters. </p>
 
 <p>The irony isn’t lost on me: while I’m being called “unethical” by Justin Verlander, his team was cheating their way to a championship. Within weeks, MLB’s investigation will cost three managers their jobs, including Houston’s A.J. Hinch.</p>
 
@@ -7772,9 +7775,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Flight home, I write about the Romine signing. Two years ago, he caught for the Yankees, helping ignite a brawl with Miguel Cabrera. Now he’s a Tiger. Baseball’s funny like that.</p>
 
-<p>4:02 <span class="small-caps">P.M.</span>—After filing my column, I’m slapped in the face. An email lists three open jobs—mine among them. Reading it makes me sick with embarrassment.</p>
+<p class="has-dateline"><span class="dateline">4:02 <span class="small-caps">P.M.</span>—</span>After filing my column, I’m slapped in the face. An email lists three open jobs—mine among them. Reading it makes me sick with embarrassment.</p>
 
-<p>8:21 <span class="small-caps">P.M.</span>—Ron Colangelo texts a link about Pistons center Andre Drummond being a game-time decision due to an allergic reaction to an avocado.</p>
+<p class="has-dateline"><span class="dateline">8:21 <span class="small-caps">P.M.</span>—</span>Ron Colangelo texts a link about Pistons center Andre Drummond being a game-time decision due to an allergic reaction to an avocado.</p>
 
 <p>“See what awaits you…”</p>
 
@@ -7818,7 +7821,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p class="has-dateline"><span class="dateline"><em>December 25</em>—</span>Merry Christmas!</p>
 
-<p>I receive a text from a local media friend, wondering what’s going on. He shares a bulletin from the Michigan State University sports journalism department, advertising my job: <em>The</em> Detroit Free Press <em>is looking for a Tigers beat reporter.</em></p>
+<p>I receive a text from a local media friend, wondering what’s going on. He shares a bulletin from the Michigan State University sports journalism department, advertising my job: <em>The </em>Detroit Free Press<em> is looking for a Tigers beat reporter.</em></p>
 
 <p>“Everything ok with you?”</p>
 
@@ -7868,11 +7871,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>January 24</em>—</span>Covering TigerFest as a lame duck came less than 48 hours after I sat in a newsroom conference room with the first candidate to interview for my job: Ball Writing BFF Kristie Ackert. Yep. Of all the sports writers in the world, Coach Content landed on her.</p>
+<p class="has-dateline"><span class="dateline"><em>January 24</em>—</span>Covering TigerFest as a lame duck came less than 48 hours after I sat in a newsroom conference room with the first candidate to interview for my job: Ball Writing BFF Kristie Ackert.</p>
+
+<p>Yep. Of all the sports writers in the world, Coach Content landed on her.</p>
 
 <p>I have a “serious” question scribbled on my notepad—“I heard you like to steal M&amp;Ms from the freezer, is that true?”—and give a serious answer when she asks: “Would you support me if I did end up taking the job?” “Absolutely,” I say. “100 percent. You’re one of my best friends and I’d want to do nothing but help you to succeed and I would love to work with you… but I’m going to be honest and I’ve told you this. I’m trying to get out of here. I’ve been trying to get out of here for a year, so I don’t want you to take the job thinking that I’m going to be here. Because I probably won’t be.”</p>
 
-<p>The <em>Daily News</em> ended up offering Kristie more money to stay and our sports editor was having trouble finding someone. One of the people he contacted, a direct competitor, got in touch and wondered what was going on. “It surprised me,” he said. “I think you’re one of the best in the country.”</p>
+<p>The<em> Daily News</em> ended up offering Kristie more money to stay and our sports editor was having trouble finding someone. One of the people he contacted, a direct competitor, got in touch and wondered what was going on. “It surprised me,” he said. “I think you’re one of the best in the country.”</p>
 
 <p>So, I called Coach Content, that’s how serious I was, and I set up a meeting, determined to fall on the sword. I psyched him out with buzz words: Content. Engagement. Clicks.</p>
 
@@ -7884,17 +7889,17 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>February 25</em>—</span>Today, I’m in the newsroom to present my findings of the investigation story I’ve been working on since last July, when I sent Ron Colangelo to voicemail during one of Gardy’s pregame media sessions in Kansas City.</p>
+<p class="has-dateline"><span class="dateline"><em>February 25—</em></span>Today, I’m in the newsroom to present my findings of the investigation story I’ve been working on since last July, when I sent Ron Colangelo to voicemail during one of Gardy’s pregame media sessions in Kansas City.</p>
 
 <p>“Call when you can,” he texted me.</p>
 
-<p>That was the first tell.</p>
+<p>That was the first tell. </p>
 
 <p>I had texted him minutes earlier: a business-side scoop designed to ruin his day: “Do you have any background or a quote for when I write that two of the top ticket guys got fired?” That he responded so quickly, with a call, then a text, was unusual.</p>
 
-<p>As the Tigers struggled through another terrible season, my reporting eye strayed elsewhere in the organization. That morning, I heard those two executives, both closely tied to ownership, were recently dismissed.</p>
+<p>As the Tigers struggled through another terrible season, my reporting eye strayed elsewhere in the organization. That morning, I heard those two executives, both closely tied to ownership, were recently dismissed. </p>
 
-<p>Colangelo’s top priority is protecting ownership’s brand. He called again later, saying in so many words that there was nothing to see there. I believed him, and called the source who tipped me off, and talked to them for hours about how the people have been leaving in droves since new management was installed, and here’s why.</p>
+<p>Colangelo’s top priority is protecting ownership’s brand. He called again later, saying in so many words that there was nothing to see there. I believed him, and called the source who tipped me off, and talked to them for hours about how the people have been leaving in droves since new management was installed, and here’s why. </p>
 
 <p>I called people while on holiday in Malta and went to get a pizza with two Tigers folks immediately after the flight back, right around the time I started turning up the volume—two weeks before I was taken off the beat in November.</p>
 
@@ -7902,13 +7907,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>In the meeting, I break down what I have:</p>
 
-<p>“<em>Last June, a veteran Tigers VP of ticket sales hosted a barbeque at his house to reward the ticket department for hitting their goal. The goal was met despite working under a young VP hired in February, whose leadership style has driven a mass exodus of employees. The week after the barbeque, the two veteran VPs were fired.</em></p>
+<p>“<em>Last June, a veteran Tigers VP of ticket sales hosted a barbe</em><em>q</em><em>ue at his house to reward the ticket department for hitting their goal. The goal was met despite working under a young VP hired in February, whose leadership style has </em><em>driven a mass exodus of employees</em><em>. The week after the barbe</em><em>q</em><em>ue, the </em><em>two veteran </em><em>VP</em><em>s</em><em> </em><em>were fired.</em></p>
 
-<p>“<em>The firings were the Tigers' latest effort to distance the business side from an old guard of employees who worked under Mike Ilitch. Since he died, employees lost their company pension in 2017; ticket employees work under uncertain commission pay, which has spurred legal action by one former employee; and work culture has cratered.</em></p>
+<p>“<em>The firings were the Tigers' </em><em>latest effort to distance the business side from a</em><em>n old guard of employees who worked under </em><em>Mike Ilitch</em><em>. </em><em>Since he died</em><em>, employees lost their company pension in 2017; ticket employees work under uncertain commission pay, which has spurred legal action by one former employee; and work culture has cratered.</em></p>
 
-<p>“<em>Ownership’s recent executive hires have contributed. One major hire was arrested for twice exposing himself in public and subsequently fired. And the latest VP hire has driven the ticket department into the ground. Among claims levied: The new ticket VP has allegedly asked a female employee to change into a dress before a prospective client gathering.</em></p>
+<p>“<em>Ownership’s</em><em> </em><em>recent executive hires have </em><em>contributed</em><em>. </em><em>One </em><em>major hire was arrested for twice exposing himself in public and subsequently fired. </em><em>And the latest</em><em> </em><em>VP </em><em>hire has driven the ticket department into the ground. Among claims levied: The </em><em>new ticket</em><em> VP</em><em> has</em><em> allegedly asked a female employee to change into a dress before a prospective client gathering.</em></p>
 
-<p>“<em>In total, over 70 people have left the business side over the past two seasons. Employees describe a non-diverse organization that does not value its workers.</em>”</p>
+<p>“<em>In total, over 70 people have left the business side over the past two seasons. </em><em>Employees describe a non-diverse organization</em><em> that does not value its workers.</em>”</p>
 
 <p>They asked questions; I gave what answers I could.</p>
 
@@ -7968,7 +7973,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Me? I’m just happy to be back, even if it’s in a mask.</p>
 
-<p>I arrive for my sixth spring training the same day as the coronavirus. I hit the ground running—there is other important news besides impending doomsday. This week was the Tigers’ open tryout, one of the few remaining in baseball.</p>
+<p>I arrive for my sixth spring training the same day as the coronavirus. I hit the ground running—there is other important news besides impending doomsday. This week was the Tigers’ open tryout, one of the few remaining in baseball. </p>
 
 <p>I check with a source. Nobody was signed.</p>
 
@@ -7990,13 +7995,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I climb over the short fence next to the dugout, where Miguel Cabrera welcomes me to camp the only way he can—he gives me the finger.</p>
 
-<p>Miggy loosens up behind the cage, readying for batting practice. I smile and wave back.</p>
+<p>Miggy loosens up behind the cage, readying for batting practice. I smile and wave back. </p>
 
 <p>Teams begin pulling their scouts from the road.</p>
 
 <p>Rival Exec: “Multiple teams are pulling scouts: Red Sox, Angels, Cardinals, and others.”</p>
 
-<p>Adjacent to the media dining tent, former Tiger reliever Shane Greene stands outside the visitor’s clubhouse. Greene is still with Atlanta after last season’s trade. He’s as surprised as anybody that they’re playing today.</p>
+<p>Adjacent to the media dining tent, former Tiger reliever Shane Greene stands outside the visitor’s clubhouse. Greene is still with Atlanta after last season’s trade. He’s as surprised as anybody that they’re playing today. </p>
 
 <p>“We touch the ball on every pitch,” Greene says, spinning a ball off his fingers in slow-motion. “By just throwing the ball, players could be at risk.”</p>
 
@@ -8024,7 +8029,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Tigers lead Braves, 2-1, bottom of the sixth.</p>
 
-<p>Shane Greene finishes a scoreless inning by striking out Miguel Cabrera swinging. In midseason form, Miggy appeals the checked swing to the first base umpire, who upholds strike three. Looking fresh at age 37, Cabrera hit .375 this spring.</p>
+<p>Shane Greene finishes a scoreless inning by striking out Cabrera swinging. In midseason form, Miggy appeals the checked swing to the first base umpire, who upholds strike three.</p>
 
 <p>MLB announces it is suspending spring training and pushing back the start of the regular season by at least two weeks.</p>
 
@@ -8032,7 +8037,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>This game continues. Down three runs in the ninth, Hittin’ Harold Castro smacks an RBI single, and Detroit brings the tying run to the plate. With dark coronavirus clouds moving in and spring training already doomed, the crowd stirs for the last time in who knows how long.</p>
 
-<p>The rally falls short. Tigers lose.</p>
+<p>The rally falls short. Tigers lose. </p>
 
 <p>Postgame, Boyd addresses reporters again. Privy to private Players’ Association discussions, Boyd shares what he can about the immediate future.</p>
 
@@ -8060,7 +8065,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>After years of filing quickly to meet print deadlines and feed the web and promptly leave the park, I can’t bring myself to do anything but sit here and think about the good ol’ days. Sometimes, I smile.</p>
 
-<p>I think about my first time here, a problem child for PR even back then. Left unattended at spring training in 2014 as an emergency fill-in for Seamhead John Lowe, I took a picture of a gag posted in the clubhouse—a picture of backup catcher Bryan Holaday in a stars-and-stripes women’s one-piece photoshopped into a mock <em>Sports Illustrated</em> swimsuit cover.</p>
+<p>I think about my first time here, a problem child for PR even back then. Left unattended at spring training in 2014 as an emergency fill-in for Seamhead John Lowe, I took a picture of a gag posted in the clubhouse—a picture of backup catcher Bryan Holaday in a stars-and-stripes women’s one-piece photoshopped into a mock <em>Sports Illustrated</em> swimsuit cover. </p>
 
 <p>Of course I tweeted it, before Crunk pulled me outside and asked me to delete it—and the picture from my phone.</p>
 
@@ -8123,7 +8128,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline">DETROIT, <em>April 6</em>—</span>Sometimes, sports writing means making tough calls. Three weeks after the pandemic hit, the <em>Free Press</em> received a tip. Al Kaline had died.</p>
+<p class="has-dateline"><span class="dateline">DETROIT,<em> </em><em>April 6</em>—</span>Sometimes, sports writing means making tough calls. Three weeks after the pandemic hit, the <em>Free Press</em> received a tip. Al Kaline had died.</p>
 
 <p>A connected freelancer called in, and within minutes, the desk reached out with a phone number for Mr. Kaline’s oldest son, Mark. My first job was to text him.</p>
 
@@ -8133,9 +8138,9 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Willie Horton, Al’s teammate and dear friend of 50-plus years, was next on my call list. He once saved Kaline’s life when, in 1970, Kaline collided with another outfielder, swallowed his tongue and crumpled to the ground unable to breathe. Horton rushed to his side and cleared Al’s airway.</p>
 
-<p>As I called Mr. Horton, it was sunny and springtime. At 77, he was gardening outside his home. I didn’t want to be the one to tell him if he didn’t already know, so I asked a circumspect question about hearing anything about Al Kaline. He said no, nothing new, just saw Al last week.</p>
+<p>As I called Mr. Horton, it was sunny and springtime. At 77, he was gardening outside his home. I didn’t want to be the one to tell him if he didn’t already know, so I asked a circumspect question about hearing anything about Al Kaline. He said no, nothing new, just saw Al last week. </p>
 
-<p>Calling back minutes later, Willie was crying, wailing upon learning the news. It took him nine days to put the loss into words.</p>
+<p>Calling back minutes later, Willie was crying, wailing upon learning the news. It took him nine days to put the loss into words. </p>
 
 <p>“It’s my whole life. That’s all of Willie Horton’s life as a professional.”</p>
 
@@ -8147,7 +8152,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>I came over with a printed two-page dossier. I am quitting my job to write a book.</p>
 
-<p>The document is titled <span class="small-caps">FENECH 2.0</span>.</p>
+<p>The document is titled FENECH 2.0.</p>
 
 <p>Half an hour later, Scott Boras calls again.</p>
 
@@ -8167,7 +8172,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>June 18</em>—</span>In February, I stood in front of folks in a <em>Free Press</em> conference room and laid out everything I had about the investigative story. Good start, they said. Keep digging.</p>
+<p class="has-dateline"><span class="dateline"><em>June 18—</em></span>In February, I stood in front of folks in a <em>Free Press</em> conference room and laid out everything I had about the investigative story. Good start, they said. Keep digging.</p>
 
 <p>It’s been nearly a year working on this story solo; I’ve crossed everybody in the ticket department who’s answered off the list.</p>
 
@@ -8223,17 +8228,17 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>July 1</em>—</span>With baseball season still up in the air—players and owners continue to bicker over schedule, payment, rules and player safety protocols—I break Ball Writing quarantine. I drive to a nondescript warehouse in suburban Detroit.</p>
+<p class="has-dateline"><span class="dateline"><em>July 1—</em></span>With baseball season still up in the air—players and owners continue to bicker over schedule, payment, rules and player safety protocols—I break Ball Writing quarantine. I drive to a nondescript warehouse in suburban Detroit.</p>
 
 <p>I’ve been invited. Sort of. I know a guy who knows a guy who runs a local travel baseball program.</p>
 
 <p>The guy tells the guy who tells me that Miguel Cabrera has been using their facilities for the past three days. He says Miggy flew up from South Florida over the weekend and wanted somewhere to hit, so his guys made a couple calls.</p>
 
-<p><em>“That was somebody from the Tigers,</em>” the guy said. “<em>They’re coming up here to hit.”</em></p>
+<p><em>“That was somebody from the Tigers</em><em>,</em>” the guy said. “<em>They’re coming up here to hit.”</em></p>
 
 <p>When they arrived in an all-black Range Rover, the guy’s jaw dropped. Waving them to the side door, men jumped out holding baseball bats.</p>
 
-<p>“Emerging from behind is Miguel Cabrera with a mask on. I’m like, ‘No way.’ I’m like, ‘That’s not <em>a</em> Tiger, that might be the greatest righty hitter of all-time.’”</p>
+<p>“Emerging from behind is Miguel Cabrera with a mask on. I’m like, ‘No way.’ I’m like, ‘That’s not <em>a </em>Tiger, that might be the greatest righty hitter of all-time.’”</p>
 
 <p>Cabrera is tuning up for the start of summer camp. Workouts begin two days from now at Comerica Park.</p>
 
@@ -8257,7 +8262,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>We bring it in for a handshake and he pretends to hit me upside the head with the bat. Approval.</p>
 
-<p>A cloth mask hangs from my ears, below my face. The others aren’t wearing masks. I’m unsure if I should put it on.</p>
+<p>A cloth mask hangs from my ears, below my face. The others aren’t wearing masks. I’m unsure if I should put it on. </p>
 
 <p>Soft-tossing and going through tee work, Cabrera looks fit. Dare I say slim. He rips balls fed through a JUGS machine, smacking a shotgun echo around the cages.</p>
 
@@ -8267,21 +8272,21 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p></p>
 
-<p class="has-dateline"><span class="dateline"><em>July 14</em>—</span>During this morning’s summer camp activities at Comerica Park, two of the Tigers’ top prospects go head-to-head in live BP. Righty starter Casey Mize throws against this year’s top pick, Spencer Torkelson.</p>
+<p class="has-dateline"><span class="dateline"><em>July 14—</em></span>During this morning’s summer camp activities at Comerica Park, two of the Tigers’ top prospects go head-to-head in live BP. Righty starter Casey Mize throws against this year’s top pick, Spencer Torkelson. </p>
 
 <p>I shoot video. I process it, upload it, send it in.</p>
 
 <p>But not even that is enough. Not even a main story, a sidebar, instant observations and a video. Driving home, I get an email asking for <em>more.</em></p>
 
-<p>“Hey, man. Is anything coming on them facing off? Would be good to have a headline on it, please.”</p>
+<p> “Hey, man. Is anything coming on them facing off? Would be good to have a headline on it, please.”</p>
 
-<p>My reply while sitting outside the liquor store.</p>
+<p>My reply while sitting outside the liquor store. </p>
 
 <p>“Yeah, I can give you a few grafs. Give me like 15 minutes.”</p>
 
 <p>At home, I chug from a pint of tequila. Cobble together a few grafs at the kitchen table. Chug. Format the story shell with three inline links, SEO and meta title, Google search keywords and at least one video embedded. Chug. Hit send, chug again.</p>
 
-<p>Luxor Liquor has become a postgame stop, day or night. Today, it’s not even 4 <span class="small-caps">P.M.</span> I got a fifth instead of a pint after seeing another email.</p>
+<p>Luxor Liquor has become a postgame stop, day or night. Today, it’s not even 4 <span class="small-caps">P.M.</span> I got a fifth instead of a pint after seeing <em>another</em> email.</p>
 
 <p>But today, unlike any previous days waging silent wars against myself, today I collapse my head onto the keyboard and cry. Today, for the very first time, I surrender. I told myself the last time that I’d never cry over this job again.</p>
 
@@ -8378,14 +8383,14 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
         id: 28.1,
         year: 2020,
         section: 'year',
-        hidden: true,
         title: "LONDON",
         subtitle: "",
         teaser: "",
         content: `<div class="toc-page">
-<p class="no-indent"><em>London was a mess. Spent fourteen days quarantining at an airport hotel. On the third day, called MetLife. When the lady on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. “From America, writing a book.” Everyone asked about the book, so I changed my bio to just an American flag and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. Told a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house smoking cigarettes along the sea. Got a tip, a message on my phone. Amber Alert back home. WHERE IN THE WORLD IS ANTHONY FENECH?It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for it. When the</em> Free Press <em>found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat. Corporate called, Coach Content was leaving, was I coming back to work? Got laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. Got here on my birthday. Next day, everything closed. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate hostel in the south. Got a text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called. “The story begins in the back of your SUV,” I said. Relapsed the hardest when I found out he died. The Super Bowl started at midnight and there were drugs and new friends and a cab to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, crying on a bench. The sun came up. I wondered if he ever thought about me. I googled my name. “One of these days,” the story said, “we will find out what happened between Anthony Fenech and life.” Every day, I thought of that day. I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went—</em></p>
+<p class="no-indent"><em>London was a mess. </em><em>Spent fourteen days quarantining at an airport hotel. On the third day</em><em>, </em><em>called MetLife. </em><em>When the </em><em>lady</em><em> on the line asked what I was filing for—mental health or substance abuse—I said both. That job was going to kill me, I said, and downloaded Tinder. </em><em>“</em><em>From America, writing a book</em><em>.”</em><em> Everyone asked about the book, so I </em><em>changed my bio to </em><em>just an American flag</em><em> and made up a new story every time. I’m a software tech dual-citizen who used to work for Microsoft. </em><em>Told</em><em> a woman named Francesca that I was a sock model. Spent the new year many months sober, sitting on the porch step of a converted boat house </em><em>smoking cigarettes </em><em>along the sea. Got a tip, a message on my phone. Amber Alert back home. </em><em>WHERE IN THE WORLD IS ANTHONY FENECH? </em><em>It wasn’t always fun, it was lonely, we were in lockdown, and some days I found myself longing for </em><em>it</em><em>. When the </em>Free Press<em> found me, I thought they’d gotten me again. They offered each employee complimentary election day pizza, and I sent mine to Deep Throat.</em><em> </em><em>Corporate called, Coach Content was leaving, was I coming back to work? </em><em>G</em><em>ot laid off on a Zoom call, citing something in the bargaining agreement, didn’t bother to look. </em><em>Got here on my birthday</em><em>. </em><em>Next day, everything closed</em><em>. Masks everywhere—even outside, even at the beach. Rode the bus, left my phone, chased it around for hours, to a half-rate </em><em>hostel</em><em> in the south</em><em>. Got </em><em>a </em><em>text from Andrew the Chicago cab driver. Where had I gone, why hadn’t I called</em><em>. </em><em>“The story begins in the back of your SUV,” I said. </em><em>R</em><em>elapsed the hardest when I found out he died. The Super Bowl started at midnight and </em><em>there </em><em>were drugs</em><em> and </em><em>new friends and</em><em> </em><em>a </em><em>cab</em><em> to the easternmost point of the island, to a fishing town I couldn’t pronounce. Keys, credit cards, </em><em>crying</em><em> on a bench. The sun came up. I wondered if </em><em>h</em><em>e ever thought about me. I </em><em>googled my </em><em>name.</em><em> “</em><em>One</em><em> of these days,” the story said, “we will find out what happened between Anthony Fenech and life.”</em><em> Every day, I thought of that day. </em><em>I went through a lot of days of just picking up my pen and holding it. And I picked it up every day and one day, after many months, I picked it up. I was sitting there, and I looked at it real hard and I went</em><em>—</em></p>
 </div>`,
-        wordCount: 410
+        hidden: true,
+        wordCount: 0
     },
     {
         id: 29,
@@ -8402,13 +8407,13 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Pedro was an ESPN television reporter since 2003 and one of the country’s foremost baseball journalists when he died unexpectedly at age 58 from a heart attack on February 7, 2021. He died watching Super Bowl LV with friends in his Scottsdale, Arizona home.</p>
 
-<p>Pedro was the son of Cuban refugees, born 20 days after his parents arrived in America. He grew up in Miami and spent 35 years covering baseball—America’s national sport and Cuba’s, too—at the <em>Miami News, San Diego Union-Tribune, San Jose Mercury News, Miami Herald and Sacramento Bee.</em> In 1997, he became a columnist and national baseball writer at the <em>Arizona Republic.</em></p>
+<p>Pedro was the son of Cuban refugees, born 20 days after his parents arrived in America. He grew up in Miami and spent 35 years covering baseball—America’s national sport and Cuba’s, too—at the <em>Miami News, San Diego Union-Tribune, San Jose Mercury News, Miami Herald and Sacramento Bee.</em> In 1997, he became a columnist and national baseball writer at the <em>Arizona Republic.</em> </p>
 
 <p>I loved Pedro Gomez the way I love my father. Our connection began in November 2014, within weeks after I took over the Tigers beat at the <em>Detroit Free Press.</em> We met not in a dugout or baseball press box, but at the Detroit Lions’ football practice facility as the Buffalo Bills and New York Jets were conducting workouts. A snowstorm had forced the Jets-Bills game indoors at Detroit’s Ford Field.</p>
 
 <p>Pedro was covering the practice for ESPN. I was a newly minted Ball Writer. When I introduced myself, his eyes lit up. Our first phone conversation lasted an hour. Little did I know that would be the rule—not an exception.</p>
 
-<p>Pedro supported me unfailingly, many times at a moment’s notice, and stood by my side during the most stressful moments of my career. When I last talked to him, texting him in the heart of the pandemic summer in 2020, he did not know of my internal turmoil. He didn’t know about <em>OFF-THE-RECORD.</em> “I pulled the plug.”</p>
+<p>Pedro supported me unfailingly, many times at a moment’s notice, and stood by my side during the most stressful moments of my career. When I last talked to him, texting him in the heart of the pandemic summer in 2020, he did not know of my internal turmoil. He didn’t know about <em>OFF-THE-RECORD</em><em>.</em> “I pulled the plug.”</p>
 
 <p>As Pedro always did, he immediately called back. He did not mince disappointment with the boneheaded pizza delivery plan I carried out. It was audible in his voice, the exasperation of his words, and the seriousness with which he said, “Anthony, you committed career suicide.”</p>
 
@@ -8420,7 +8425,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“I am very confident in my ability, and I feel very strongly that this move will put me in a better position to make the kind of impact I desired to make in this industry. I’m looking forward to sharing these thoughts with you.</p>
 
-<p>“Again, I really appreciate the honesty. Though, yes, it was pizza—it is embarrassing, and I am not looking forward to others who I respect like you receiving this information. I know it’s not easy to tell me that I committed ’career suicide’ and I know you’re not being mean, but this is why I trust you so much—because it’s not BS.</p>
+<p>“Again, I really appreciate the honesty. Though, yes, it was pizza—it is embarrassing, and I am not looking forward to others who I respect like you receiving this information. I know it’s not easy to tell me that I committed ’career suicide’ and I know you’re not being mean, but this is why I trust you so much—because it’s not BS. </p>
 
 <p>“You’re one of the most important people in my career and I’m indebted for your help. I’ll get at you early next week with an update. Appreciate you.”</p>
 
@@ -8440,7 +8445,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>“We both knew that anybody could decide to take a shot at him. From somebody just airing him out to somebody actually taking a swing, somebody throwing something—you had no idea. You just knew people were really angry.</p>
 
-<p>“He was just there so that if anybody wanted to take a shot, had anything to say, he was there to take it.… And we’re standing there and (veteran lefty reliever) Greg Swindell is coming off the field, he’d been shagging. And he saw Pedro and all of a sudden, changed directions, went straight to him, never said a word, held out his hand, shook it, and nodded. And then he let go of his hand and went inside. And he never said a word.</p>
+<p>“He was just there so that if anybody wanted to take a shot, had anything to say, he was there to take it.… And we’re standing there and (veteran lefty reliever) Greg Swindell is coming off the field, he’d been shagging. And he saw Pedro and all of a sudden, changed directions, went straight to him, never said a word, held out his hand, shook it, and nodded. And then he let go of his hand and went inside. And he never said a word. </p>
 
 <p>“It’s one of the bravest things in the business. It’s really easy to take shots when you’re not walking down there on that field or in that clubhouse but he made sure he was and what you saw from Swindell, and what he got from a lot of players afterward was recognition, that not only was he brave, and not only was he correct, but he handled it the right way. And I know that meant more to him than anything.”</p>
 
@@ -8450,7 +8455,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 
 <p>Although Pedro was most widely known for his television reporting on ESPN, he was a Ball Writer at heart, born and bred from an undying love of the game. After his death, close friend Steve Kettmann edited a book on Pedro’s life, a collection of essays from a Who’s Who of baseball luminaries—from famous reporters to star players to legendary managers.</p>
 
-<p>The book, <em><em>Remember Who You Are: What Pedro Gomez Showed Us About Baseball and Life</em>,</em> is a touching tribute to a man who is a Hall of Famer in every sense of the word. As a father to sons Rio and Dante and daughter Sierra. As a husband to Sandi Gomez, president of the Pedro Gomez Foundation. As a reporter. As a person.</p>
+<p>The book, <em>Remember Who You Are: What Pedro Gomez Showed Us About Baseball and Life,</em> is a touching tribute to a man who is a Hall of Famer in every sense of the word. As a father to sons Rio and Dante and daughter Sierra. As a husband to Sandi Gomez, president of the Pedro Gomez Foundation. As a reporter. As a person.</p>
 
 <p>My hope is that someday his legacy is honored in Cooperstown with the Baseball Writers’ Association of America’s Career Excellence Award. There is not a Ball Writing Hall of Fame that’s complete without Pedro Gomez in it.</p>
 
@@ -8459,7 +8464,7 @@ Classification: LCC GV742.4 .F46 2026 | DDC 070.449796092--dc23</p>
 <p>To donate to the Pedro Gomez Foundation, visit the website at https://www.pedrogomezfoundation.org/. For more information, email the foundation at info@pedrogomezfoundation.org.</p>
 </div>`,
         wordCount: 1394
-    }
+    },
 ];
 // Export total word count for progress calculations
 export const getTotalWordCount = () => {
