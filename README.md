@@ -236,3 +236,4 @@ For technical issues or questions, please contact the developer.
 Built with vanilla JavaScript, HTML, and CSS. No frameworks, no dependencies, just web standards.
 
 Designed for baseball fans who appreciate great storytelling.
+
