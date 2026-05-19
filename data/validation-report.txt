@@ -162,6 +162,10 @@ book_full.json MD5 (all dirs): c1a7544ee281b109d4b967dcd93caa08
 book_full.js   MD5 (all dirs): 436f0da38d06410d9753924fe5f2b9e5
 MD5 verification (dual-output identity): PASS
 
+ROUND-TRIP EQUALITY
+-------------------
+Round-trip equality:    PASS (26 chapters compared, 0 divergences)
+
 SAMPLE
 ------
 First paragraph of chapter 1 (text):
