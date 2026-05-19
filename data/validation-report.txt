@@ -1,8 +1,8 @@
 OFF-THE-RECORD CONVERSION REPORT
 ================================
 Source file:        OFF-THE-RECORD.docx
-Source size:        473986 bytes
-Source modified:    2026-05-19T05:34:01-04:00
+Source size:        459880 bytes
+Source modified:    2026-05-19T12:19:57-04:00
 
 CHAPTER DETECTION
 -----------------
@@ -15,12 +15,12 @@ CHAPTERS
 --------
  1. AUTHOR’S NOTE                        38 paragraphs   1629 words   pp.1-6
  2. SUMMER 2017                          97 paragraphs   2781 words   pp.7-16
- 3. DREAM JOB                            73 paragraphs   2860 words   pp.17-27
+ 3. DREAM JOB                            73 paragraphs   2857 words   pp.17-27
  4. SCANDAL!                            102 paragraphs   2767 words   pp.28-37
  5. ROOKIE YEAR                          70 paragraphs   1219 words   pp.38-42
  6. OPENING DAY                           8 paragraphs    152 words   pp.43-43
  7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.44-52
- 8. FIRE DRILL                          150 paragraphs   3381 words   pp.53-64
+ 8. FIRE DRILL                          151 paragraphs   3381 words   pp.53-64
  9. SPRING TRAINING                      92 paragraphs   1803 words   pp.65-71
 10. HOT SEAT                             90 paragraphs   2068 words   pp.72-79
 11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.80-95
@@ -34,8 +34,8 @@ CHAPTERS
 19. BURN OUT                            153 paragraphs   3620 words   pp.170-181
 20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.182-194
 21. GLOBETROTTING                        69 paragraphs   1647 words   pp.195-201
-22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.202-212
-23. A LETTER TO THE EDITOR              146 paragraphs   3321 words   pp.213-224
+22. ROAD TO OMAHA                       114 paragraphs   3119 words   pp.202-212
+23. A LETTER TO THE EDITOR              146 paragraphs   3305 words   pp.213-224
 24. UNETHICAL                            40 paragraphs   1174 words   pp.225-229
 25. BOTTOM NINE                         273 paragraphs   6638 words   pp.230-252
 26. THE PANDEMIC                        166 paragraphs   4756 words   pp.253-269
@@ -80,26 +80,26 @@ DOCX FLASHBACK marker check: not found  PASS
 
 CONTENT STATS
 -------------
-Total paragraphs:   3242
-Total words:        87491
+Total paragraphs:   3243
+Total words:        87471
 Italic runs:        541
-Bold runs:          3
+Bold runs:          15
 Page breaks:        269
 Estimated reading:  437 minutes
 
 SEMANTIC MARKUP
 ---------------
-Datelines detected:     237  (expected 100-400)  PASS
+Datelines detected:     296  (expected 100-400)  PASS
   Pattern A (LOC—):              4
-  Pattern B (LOC, date—):        82
-  Pattern C (date—):             141
-  Pattern D (LOC, date+yr—):     10
-Scene breaks (*** only): 2  (expected 0-10)    PASS
+  Pattern B (LOC, date—):        138
+  Pattern C (date—):             142
+  Pattern D (LOC, date+yr—):     12
+Scene breaks (*** only): 4  (expected 0-10)    PASS
 Small-caps spans:       88  (expected 50-200)   PASS
   A.M. instances:                30
   P.M. instances:                56
   Stylistic phrases:             2
-Email lines:            34  (expected 30-100)   PASS
+Email lines:            42  (expected 30-100)   PASS
   note: detector broadened (Phase 4b) to match chat-style name prefixes
   (<strong>Mom:</strong>, <strong>Pedro:</strong>, ...) in addition to From:/Subject: headers.
 
@@ -109,7 +109,7 @@ Dateline A (LOC—): <p class="has-dateline"><span class="dateline">DETROIT—</
 Dateline B (LOC, date—): <p class="has-dateline"><span class="dateline">CHICAGO, <em>August 27</em>—</span>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man’s bald head. The last scene before the elevator door closes.</p>
 Dateline C (date—): <p class="has-dateline"><span class="dateline"><em>August 30</em>—</span>Getaway Day comes fast. Clubhouse opens at 9:30 for day games. Justin Verlander is pitching. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, 34, wants no part of the long rebuild in store for the Tigers next season.</p>
 Dateline D (LOC, date+yr—): <p class="has-dateline"><span class="dateline">DETROIT, <em>October 21, 2014</em>—</span>Three years earlier.</p>
-Email line: <p class="email-line"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>
+Email line: <p class="email-line"><strong>From:</strong> Myers, Gene <strong>Sent:</strong> 11/12/2014, 7:45 PM</p>
 
 CHAPTER METADATA (section_type / year)
 --------------------------------------
@@ -147,7 +147,7 @@ ANOMALIES
 OUTPUT FILES
 ------------
 dist/book_summary.json    44.4 KB
-dist/book_full.json       1836.5 KB
+dist/book_full.json       1840.7 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -158,8 +158,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 60331de4919b19040931d8dc2f243128
-book_full.js   MD5 (all dirs): 672c652a567897d58fbe8a9ed28763c0
+book_full.json MD5 (all dirs): 4c092ee51912e8c9ba4b5cccf9fae1b5
+book_full.js   MD5 (all dirs): 42c2ff1d3930eb65fbb20d3455061720
 MD5 verification (dual-output identity): PASS
 
 ROUND-TRIP EQUALITY
@@ -168,12 +168,12 @@ Round-trip equality:    PASS (26 chapters compared, 0 divergences)
 
 WORD COUNT & SLUG STABILITY
 ---------------------------
-Word count drift:       PASS (baseline up to date, 39 sections, 0 drift)  [unchanged]
+Word count drift:       PASS (baseline up to date, 39 sections, 0 drift)  [baseline updated]
 Slug stability:         PASS (39 slugs, 0 removed)  [unchanged]
 
 DATELINE SEPARATORS
 -------------------
-Dateline separators:    PASS (218 separators before non-first datelines; 237 has-dateline paragraphs total)
+Dateline separators:    PASS (266 separators before non-first datelines; 296 has-dateline paragraphs total)
 
 SAMPLE
 ------
