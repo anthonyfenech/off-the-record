@@ -38,3 +38,6 @@ _recovered/
 _private/
 _inbox/
 _processed/
+
+# Easter egg source — lives outside repo at /Users/fenech/MASTER OFF-THE-RECORD/
+data/chapters.js.deprecated
