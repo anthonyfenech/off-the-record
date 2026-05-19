@@ -1,8 +1,8 @@
 OFF-THE-RECORD CONVERSION REPORT
 ================================
 Source file:        OFF-THE-RECORD.docx
-Source size:        474056 bytes
-Source modified:    2026-05-19T04:58:52-04:00
+Source size:        473986 bytes
+Source modified:    2026-05-19T05:34:01-04:00
 
 CHAPTER DETECTION
 -----------------
@@ -18,34 +18,34 @@ CHAPTERS
  3. DREAM JOB                            73 paragraphs   2860 words   pp.17-27
  4. SCANDAL!                            102 paragraphs   2767 words   pp.28-37
  5. ROOKIE YEAR                          70 paragraphs   1219 words   pp.38-42
- 6. OPENING DAY                          19 paragraphs    339 words   pp.43-44
- 7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.45-53
- 8. FIRE DRILL                          150 paragraphs   3381 words   pp.54-66
- 9. SPRING TRAINING                      92 paragraphs   1803 words   pp.67-73
-10. HOT SEAT                             90 paragraphs   2068 words   pp.74-80
-11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.81-95
-12. PRIME-TIME                          126 paragraphs   2568 words   pp.96-105
-13. FIREWORKS                           158 paragraphs   3234 words   pp.106-117
-14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.118-127
-15. WORLD SERIES                        240 paragraphs   4543 words   pp.128-143
-16. AWARDS SEASON                        92 paragraphs   1733 words   pp.144-150
-17. DRAFT DAY                           113 paragraphs   2510 words   pp.151-159
-18. COOPERSTOWN                         155 paragraphs   3011 words   pp.160-170
-19. BURN OUT                            153 paragraphs   3620 words   pp.171-181
+ 6. OPENING DAY                           8 paragraphs    152 words   pp.43-43
+ 7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.44-52
+ 8. FIRE DRILL                          150 paragraphs   3381 words   pp.53-64
+ 9. SPRING TRAINING                      92 paragraphs   1803 words   pp.65-71
+10. HOT SEAT                             90 paragraphs   2068 words   pp.72-79
+11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.80-95
+12. PRIME-TIME                          126 paragraphs   2568 words   pp.96-104
+13. FIREWORKS                           158 paragraphs   3234 words   pp.105-116
+14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.117-126
+15. WORLD SERIES                        240 paragraphs   4543 words   pp.127-142
+16. AWARDS SEASON                        92 paragraphs   1733 words   pp.143-148
+17. DRAFT DAY                           113 paragraphs   2510 words   pp.149-158
+18. COOPERSTOWN                         155 paragraphs   3011 words   pp.159-169
+19. BURN OUT                            153 paragraphs   3620 words   pp.170-181
 20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.182-194
-21. GLOBETROTTING                        69 paragraphs   1647 words   pp.195-200
-22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.201-212
+21. GLOBETROTTING                        69 paragraphs   1647 words   pp.195-201
+22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.202-212
 23. A LETTER TO THE EDITOR              146 paragraphs   3321 words   pp.213-224
-24. UNETHICAL                            40 paragraphs   1174 words   pp.225-228
-25. BOTTOM NINE                         273 paragraphs   6638 words   pp.229-251
-26. THE PANDEMIC                        166 paragraphs   4756 words   pp.252-268
+24. UNETHICAL                            40 paragraphs   1174 words   pp.225-229
+25. BOTTOM NINE                         273 paragraphs   6638 words   pp.230-252
+26. THE PANDEMIC                        166 paragraphs   4756 words   pp.253-269
 
 SEGMENTS (multi-segment chapters; first segment is visible)
 ----------------------------------------------------------
 ch06 OPENING DAY  (chapter 6)
-  ch06      OPENING DAY              parent_first   slug=opening-day            parent=-       words=339
+  ch06      OPENING DAY              parent_first   slug=opening-day            parent=-       words=152
   ch06_fb1  EMBARRASSING FLASHBACK   docx_flashback slug=embarrassing-flashback parent=ch06    words=144
-  ch06b     OPENING DAY              parent_resume  slug=opening-day-resume-1   parent=ch06    words=2159
+  ch06b     OPENING DAY              parent_resume  slug=opening-day-resume-1   parent=ch06    words=2343
 
 ch08 FIRE DRILL  (chapter 8)
   ch08      FIRE DRILL               parent_first   slug=fire-drill             parent=-       words=3381
@@ -80,11 +80,11 @@ DOCX FLASHBACK marker check: not found  PASS
 
 CONTENT STATS
 -------------
-Total paragraphs:   3253
-Total words:        87494
-Italic runs:        544
+Total paragraphs:   3242
+Total words:        87491
+Italic runs:        541
 Bold runs:          3
-Page breaks:        268
+Page breaks:        269
 Estimated reading:  437 minutes
 
 SEMANTIC MARKUP
@@ -146,8 +146,8 @@ ANOMALIES
 
 OUTPUT FILES
 ------------
-dist/book_summary.json    44.3 KB
-dist/book_full.json       1836.8 KB
+dist/book_summary.json    44.4 KB
+dist/book_full.json       1833.9 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -158,8 +158,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 4087a6d5d306dd6490d2bc99f8d9de33
-book_full.js   MD5 (all dirs): 4b06e945a494932207c01c39088fd5c0
+book_full.json MD5 (all dirs): b2b4bcd2b8fcc6ed56471d02db66a767
+book_full.js   MD5 (all dirs): db686b33008d4983b211fbd54c96824a
 MD5 verification (dual-output identity): PASS
 
 SAMPLE
