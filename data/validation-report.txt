@@ -147,7 +147,7 @@ ANOMALIES
 OUTPUT FILES
 ------------
 dist/book_summary.json    44.4 KB
-dist/book_full.json       1834.1 KB
+dist/book_full.json       1836.5 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -158,8 +158,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): c1a7544ee281b109d4b967dcd93caa08
-book_full.js   MD5 (all dirs): 436f0da38d06410d9753924fe5f2b9e5
+book_full.json MD5 (all dirs): 60331de4919b19040931d8dc2f243128
+book_full.js   MD5 (all dirs): 672c652a567897d58fbe8a9ed28763c0
 MD5 verification (dual-output identity): PASS
 
 ROUND-TRIP EQUALITY
@@ -170,6 +170,10 @@ WORD COUNT & SLUG STABILITY
 ---------------------------
 Word count drift:       PASS (baseline up to date, 39 sections, 0 drift)
 Slug stability:         PASS (39 slugs, 0 removed)
+
+DATELINE SEPARATORS
+-------------------
+Dateline separators:    PASS (218 separators before non-first datelines; 237 has-dateline paragraphs total)
 
 SAMPLE
 ------
