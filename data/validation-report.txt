@@ -8,8 +8,8 @@ CHAPTER DETECTION
 -----------------
 Method:             Word 'Heading1' paragraph style (real DOCX; spec's Markdown '# ' rule N/A)
 Chapters expected:  26
-Chapters found:     39
-Match:              FAIL
+Chapters found:     26  (DOCX Heading1 count, expected 26)    PASS
+Sections built:     39  (parent + flashback + resume, expected 39)  PASS
 
 CHAPTERS
 --------
@@ -168,8 +168,8 @@ Round-trip equality:    PASS (26 chapters compared, 0 divergences)
 
 WORD COUNT & SLUG STABILITY
 ---------------------------
-Word count drift:       PASS (baseline up to date, 39 sections, 0 drift)
-Slug stability:         PASS (39 slugs, 0 removed)
+Word count drift:       PASS (baseline up to date, 39 sections, 0 drift)  [unchanged]
+Slug stability:         PASS (39 slugs, 0 removed)  [unchanged]
 
 DATELINE SEPARATORS
 -------------------
