@@ -7,8 +7,8 @@
   },
   "stats": {
     "section_count": 26,
-    "total_paragraphs": 3724,
-    "total_words": 86243,
+    "total_paragraphs": 3722,
+    "total_words": 86241,
     "estimated_reading_time_minutes": 431,
     "first_page": 1,
     "last_page": 310,
@@ -20,6 +20,10 @@
       "sequential_number": 1,
       "title": "AUTHOR’S NOTE",
       "slug": "authors-note",
+      "section_type": "intro",
+      "year": null,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 1,
       "last_page": 6,
       "page_breaks": [
@@ -62,6 +66,10 @@
       "sequential_number": 2,
       "title": "SUMMER 2017",
       "slug": "summer-2017",
+      "section_type": "intro",
+      "year": null,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 7,
       "last_page": 16,
       "page_breaks": [
@@ -124,6 +132,10 @@
       "sequential_number": 3,
       "title": "DREAM JOB",
       "slug": "dream-job",
+      "section_type": "intro",
+      "year": null,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 17,
       "last_page": 27,
       "page_breaks": [
@@ -191,6 +203,10 @@
       "sequential_number": 4,
       "title": "SCANDAL!",
       "slug": "scandal",
+      "section_type": "intro",
+      "year": null,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 28,
       "last_page": 37,
       "page_breaks": [
@@ -253,6 +269,10 @@
       "sequential_number": 5,
       "title": "ROOKIE YEAR",
       "slug": "rookie-year",
+      "section_type": "year",
+      "year": 2015,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 38,
       "last_page": 42,
       "page_breaks": [
@@ -290,6 +310,10 @@
       "sequential_number": 6,
       "title": "OPENING DAY",
       "slug": "opening-day",
+      "section_type": "year",
+      "year": 2015,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 43,
       "last_page": 52,
       "page_breaks": [
@@ -352,6 +376,10 @@
       "sequential_number": 7,
       "title": "TRADE DEADLINE",
       "slug": "trade-deadline",
+      "section_type": "year",
+      "year": 2015,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 53,
       "last_page": 61,
       "page_breaks": [
@@ -409,6 +437,10 @@
       "sequential_number": 8,
       "title": "FIRE DRILL",
       "slug": "fire-drill",
+      "section_type": "year",
+      "year": 2015,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 62,
       "last_page": 78,
       "page_breaks": [
@@ -506,6 +538,10 @@
       "sequential_number": 9,
       "title": "SPRING TRAINING",
       "slug": "spring-training",
+      "section_type": "year",
+      "year": 2016,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 79,
       "last_page": 85,
       "page_breaks": [
@@ -553,6 +589,10 @@
       "sequential_number": 10,
       "title": "HOT SEAT",
       "slug": "hot-seat",
+      "section_type": "year",
+      "year": 2016,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 86,
       "last_page": 97,
       "page_breaks": [
@@ -625,6 +665,10 @@
       "sequential_number": 11,
       "title": "WAKE-UP CALL",
       "slug": "wake-up-call",
+      "section_type": "year",
+      "year": 2016,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 98,
       "last_page": 112,
       "page_breaks": [
@@ -712,6 +756,10 @@
       "sequential_number": 12,
       "title": "PRIME-TIME",
       "slug": "prime-time",
+      "section_type": "year",
+      "year": 2017,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 113,
       "last_page": 122,
       "page_breaks": [
@@ -774,6 +822,10 @@
       "sequential_number": 13,
       "title": "FIREWORKS",
       "slug": "fireworks",
+      "section_type": "year",
+      "year": 2017,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 123,
       "last_page": 134,
       "page_breaks": [
@@ -846,6 +898,10 @@
       "sequential_number": 14,
       "title": "VERY SERIOUS STORY",
       "slug": "very-serious-story",
+      "section_type": "year",
+      "year": 2017,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 135,
       "last_page": 144,
       "page_breaks": [
@@ -908,6 +964,10 @@
       "sequential_number": 15,
       "title": "WORLD SERIES",
       "slug": "world-series",
+      "section_type": "year",
+      "year": 2017,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 145,
       "last_page": 160,
       "page_breaks": [
@@ -933,57 +993,57 @@
         },
         {
           "page": 149,
-          "paragraph_id": "p_ch15_052",
+          "paragraph_id": "p_ch15_051",
           "anchor": "page149"
         },
         {
           "page": 150,
-          "paragraph_id": "p_ch15_069",
+          "paragraph_id": "p_ch15_068",
           "anchor": "page150"
         },
         {
           "page": 151,
-          "paragraph_id": "p_ch15_093",
+          "paragraph_id": "p_ch15_092",
           "anchor": "page151"
         },
         {
           "page": 152,
-          "paragraph_id": "p_ch15_114",
+          "paragraph_id": "p_ch15_113",
           "anchor": "page152"
         },
         {
           "page": 153,
-          "paragraph_id": "p_ch15_136",
+          "paragraph_id": "p_ch15_135",
           "anchor": "page153"
         },
         {
           "page": 154,
-          "paragraph_id": "p_ch15_152",
+          "paragraph_id": "p_ch15_151",
           "anchor": "page154"
         },
         {
           "page": 155,
-          "paragraph_id": "p_ch15_167",
+          "paragraph_id": "p_ch15_166",
           "anchor": "page155"
         },
         {
           "page": 156,
-          "paragraph_id": "p_ch15_185",
+          "paragraph_id": "p_ch15_184",
           "anchor": "page156"
         },
         {
           "page": 157,
-          "paragraph_id": "p_ch15_198",
+          "paragraph_id": "p_ch15_197",
           "anchor": "page157"
         },
         {
           "page": 158,
-          "paragraph_id": "p_ch15_210",
+          "paragraph_id": "p_ch15_209",
           "anchor": "page158"
         },
         {
           "page": 159,
-          "paragraph_id": "p_ch15_221",
+          "paragraph_id": "p_ch15_220",
           "anchor": "page159"
         },
         {
@@ -992,14 +1052,18 @@
           "anchor": "page160"
         }
       ],
-      "paragraph_count": 241,
-      "word_count": 4544
+      "paragraph_count": 240,
+      "word_count": 4543
     },
     {
       "id": "ch16",
       "sequential_number": 16,
       "title": "AWARDS SEASON",
       "slug": "awards-season",
+      "section_type": "year",
+      "year": 2018,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 161,
       "last_page": 167,
       "page_breaks": [
@@ -1047,6 +1111,10 @@
       "sequential_number": 17,
       "title": "DRAFT DAY",
       "slug": "draft-day",
+      "section_type": "year",
+      "year": 2018,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 168,
       "last_page": 176,
       "page_breaks": [
@@ -1104,6 +1172,10 @@
       "sequential_number": 18,
       "title": "COOPERSTOWN",
       "slug": "cooperstown",
+      "section_type": "year",
+      "year": 2018,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 177,
       "last_page": 187,
       "page_breaks": [
@@ -1171,6 +1243,10 @@
       "sequential_number": 19,
       "title": "BURN OUT",
       "slug": "burn-out",
+      "section_type": "year",
+      "year": 2018,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 188,
       "last_page": 199,
       "page_breaks": [
@@ -1206,7 +1282,7 @@
         },
         {
           "page": 194,
-          "paragraph_id": "p_ch19_085",
+          "paragraph_id": "p_ch19_086",
           "anchor": "page194"
         },
         {
@@ -1243,6 +1319,10 @@
       "sequential_number": 20,
       "title": "VIVA LAS VEGAS",
       "slug": "viva-las-vegas",
+      "section_type": "year",
+      "year": 2019,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 200,
       "last_page": 212,
       "page_breaks": [
@@ -1320,6 +1400,10 @@
       "sequential_number": 21,
       "title": "GLOBETROTTING",
       "slug": "globetrotting",
+      "section_type": "year",
+      "year": 2019,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 213,
       "last_page": 218,
       "page_breaks": [
@@ -1362,6 +1446,10 @@
       "sequential_number": 22,
       "title": "ROAD TO OMAHA",
       "slug": "road-to-omaha",
+      "section_type": "year",
+      "year": 2019,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 219,
       "last_page": 230,
       "page_breaks": [
@@ -1434,6 +1522,10 @@
       "sequential_number": 23,
       "title": "A LETTER TO THE EDITOR",
       "slug": "a-letter-to-the-editor",
+      "section_type": "year",
+      "year": 2019,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 231,
       "last_page": 242,
       "page_breaks": [
@@ -1449,63 +1541,67 @@
         },
         {
           "page": 233,
-          "paragraph_id": "p_ch23_017",
+          "paragraph_id": "p_ch23_016",
           "anchor": "page233"
         },
         {
           "page": 234,
-          "paragraph_id": "p_ch23_038",
+          "paragraph_id": "p_ch23_037",
           "anchor": "page234"
         },
         {
           "page": 235,
-          "paragraph_id": "p_ch23_051",
+          "paragraph_id": "p_ch23_050",
           "anchor": "page235"
         },
         {
           "page": 236,
-          "paragraph_id": "p_ch23_063",
+          "paragraph_id": "p_ch23_062",
           "anchor": "page236"
         },
         {
           "page": 237,
-          "paragraph_id": "p_ch23_078",
+          "paragraph_id": "p_ch23_077",
           "anchor": "page237"
         },
         {
           "page": 238,
-          "paragraph_id": "p_ch23_091",
+          "paragraph_id": "p_ch23_090",
           "anchor": "page238"
         },
         {
           "page": 239,
-          "paragraph_id": "p_ch23_101",
+          "paragraph_id": "p_ch23_100",
           "anchor": "page239"
         },
         {
           "page": 240,
-          "paragraph_id": "p_ch23_120",
+          "paragraph_id": "p_ch23_119",
           "anchor": "page240"
         },
         {
           "page": 241,
-          "paragraph_id": "p_ch23_134",
+          "paragraph_id": "p_ch23_133",
           "anchor": "page241"
         },
         {
           "page": 242,
-          "paragraph_id": "p_ch23_146",
+          "paragraph_id": "p_ch23_145",
           "anchor": "page242"
         }
       ],
-      "paragraph_count": 147,
-      "word_count": 3322
+      "paragraph_count": 146,
+      "word_count": 3321
     },
     {
       "id": "ch24",
       "sequential_number": 24,
       "title": "UNETHICAL",
       "slug": "unethical",
+      "section_type": "year",
+      "year": 2019,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 243,
       "last_page": 270,
       "page_breaks": [
@@ -1516,7 +1612,7 @@
         },
         {
           "page": 244,
-          "paragraph_id": "p_ch24_011",
+          "paragraph_id": "p_ch24_012",
           "anchor": "page244"
         },
         {
@@ -1576,7 +1672,7 @@
         },
         {
           "page": 256,
-          "paragraph_id": "p_ch24_143",
+          "paragraph_id": "p_ch24_144",
           "anchor": "page256"
         },
         {
@@ -1596,7 +1692,7 @@
         },
         {
           "page": 260,
-          "paragraph_id": "p_ch24_184",
+          "paragraph_id": "p_ch24_185",
           "anchor": "page260"
         },
         {
@@ -1606,7 +1702,7 @@
         },
         {
           "page": 262,
-          "paragraph_id": "p_ch24_202",
+          "paragraph_id": "p_ch24_203",
           "anchor": "page262"
         },
         {
@@ -1658,6 +1754,10 @@
       "sequential_number": 25,
       "title": "BOTTOM NINE",
       "slug": "bottom-nine",
+      "section_type": "year",
+      "year": 2019,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 271,
       "last_page": 293,
       "page_breaks": [
@@ -1748,7 +1848,7 @@
         },
         {
           "page": 288,
-          "paragraph_id": "p_ch25_204",
+          "paragraph_id": "p_ch25_205",
           "anchor": "page288"
         },
         {
@@ -1785,6 +1885,10 @@
       "sequential_number": 26,
       "title": "THE PANDEMIC",
       "slug": "the-pandemic",
+      "section_type": "year",
+      "year": 2020,
+      "subtitle": "",
+      "teaser": "",
       "first_page": 294,
       "last_page": 310,
       "page_breaks": [

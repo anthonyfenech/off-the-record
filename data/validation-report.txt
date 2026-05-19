@@ -27,7 +27,7 @@ CHAPTERS
 12. PRIME-TIME                          126 paragraphs   2568 words   pp.113-122
 13. FIREWORKS                           158 paragraphs   3234 words   pp.123-134
 14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.135-144
-15. WORLD SERIES                        241 paragraphs   4544 words   pp.145-160
+15. WORLD SERIES                        240 paragraphs   4543 words   pp.145-160
 16. AWARDS SEASON                        92 paragraphs   1733 words   pp.161-167
 17. DRAFT DAY                           113 paragraphs   2510 words   pp.168-176
 18. COOPERSTOWN                         155 paragraphs   3011 words   pp.177-187
@@ -35,28 +35,66 @@ CHAPTERS
 20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.200-212
 21. GLOBETROTTING                        69 paragraphs   1647 words   pp.213-218
 22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.219-230
-23. A LETTER TO THE EDITOR              147 paragraphs   3322 words   pp.231-242
+23. A LETTER TO THE EDITOR              146 paragraphs   3321 words   pp.231-242
 24. UNETHICAL                           287 paragraphs   8491 words   pp.243-270
 25. BOTTOM NINE                         273 paragraphs   6638 words   pp.271-293
 26. THE PANDEMIC                        166 paragraphs   4756 words   pp.294-310
 
 CONTENT STATS
 -------------
-Total paragraphs:   3724
-Total words:        86243
+Total paragraphs:   3722
+Total words:        86241
 Italic runs:        640
 Bold runs:          49
 Page breaks:        310
 Estimated reading:  431 minutes
 
+SEMANTIC MARKUP
+---------------
+Datelines detected:     0 (threshold 540)
+  Chapters with >20 datelines: none
+Scene breaks preserved: 304 (threshold 150; WARN)
+Small-caps spans:       0 (threshold 50)
+Media-emoji paragraphs: 0
+
+CHAPTER METADATA (section_type / year)
+--------------------------------------
+ch01 AUTHOR’S NOTE                -> intro     / null
+ch02 SUMMER 2017                  -> intro     / null
+ch03 DREAM JOB                    -> intro     / null
+ch04 SCANDAL!                     -> intro     / null
+ch05 ROOKIE YEAR                  -> year      / 2015
+ch06 OPENING DAY                  -> year      / 2015
+ch07 TRADE DEADLINE               -> year      / 2015
+ch08 FIRE DRILL                   -> year      / 2015
+ch09 SPRING TRAINING              -> year      / 2016
+ch10 HOT SEAT                     -> year      / 2016
+ch11 WAKE-UP CALL                 -> year      / 2016
+ch12 PRIME-TIME                   -> year      / 2017
+ch13 FIREWORKS                    -> year      / 2017
+ch14 VERY SERIOUS STORY           -> year      / 2017
+ch15 WORLD SERIES                 -> year      / 2017
+ch16 AWARDS SEASON                -> year      / 2018
+ch17 DRAFT DAY                    -> year      / 2018
+ch18 COOPERSTOWN                  -> year      / 2018
+ch19 BURN OUT                     -> year      / 2018
+ch20 VIVA LAS VEGAS               -> year      / 2019
+ch21 GLOBETROTTING                -> year      / 2019
+ch22 ROAD TO OMAHA                -> year      / 2019
+ch23 A LETTER TO THE EDITOR       -> year      / 2019
+ch24 UNETHICAL                    -> year      / 2019
+ch25 BOTTOM NINE                  -> year      / 2019
+ch26 THE PANDEMIC                 -> year      / 2020
+
 ANOMALIES
 ---------
 - Spec expected 27 chapters; this manuscript (real DOCX) has 26. The EPUB-era 'OFF-THE-RECORD' chapter is absent from this revision. Built with 26 per user decision.
+- Detector WARNING: 304 scene breaks detected (> threshold 150); continuing per spec (not halting).
 
 OUTPUT FILES
 ------------
-dist/book_summary.json    41.2 KB
-dist/book_full.json       1469.0 KB
+dist/book_summary.json    43.6 KB
+dist/book_full.json       2017.6 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -67,7 +105,7 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data
-book_full.json MD5 (all dirs): 5cbd93109e071c5dd4d0e8d8023ebea7
+book_full.json MD5 (all dirs): 85771f1a35f8f85f67c3d74f3fa572c0
 MD5 verification (dual-output identity): PASS
 
 SAMPLE
