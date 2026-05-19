@@ -8,8 +8,8 @@ CHAPTER DETECTION
 -----------------
 Method:             Word 'Heading1' paragraph style (real DOCX; spec's Markdown '# ' rule N/A)
 Chapters expected:  26
-Chapters found:     26
-Match:              PASS
+Chapters found:     34
+Match:              FAIL
 
 CHAPTERS
 --------
@@ -18,36 +18,51 @@ CHAPTERS
  3. DREAM JOB                            73 paragraphs   2860 words   pp.17-27
  4. SCANDAL!                            102 paragraphs   2767 words   pp.28-37
  5. ROOKIE YEAR                          70 paragraphs   1219 words   pp.38-42
- 6. OPENING DAY                         131 paragraphs   2644 words   pp.43-52
- 7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.53-61
- 8. FIRE DRILL                          205 paragraphs   4801 words   pp.62-78
- 9. SPRING TRAINING                      92 paragraphs   1803 words   pp.79-85
-10. HOT SEAT                            145 paragraphs   3129 words   pp.86-97
-11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.98-112
-12. PRIME-TIME                          126 paragraphs   2568 words   pp.113-122
-13. FIREWORKS                           158 paragraphs   3234 words   pp.123-134
-14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.135-144
-15. WORLD SERIES                        240 paragraphs   4543 words   pp.145-160
-16. AWARDS SEASON                        92 paragraphs   1733 words   pp.161-167
-17. DRAFT DAY                           113 paragraphs   2510 words   pp.168-176
-18. COOPERSTOWN                         155 paragraphs   3011 words   pp.177-187
-19. BURN OUT                            153 paragraphs   3620 words   pp.188-199
-20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.200-212
-21. GLOBETROTTING                        69 paragraphs   1647 words   pp.213-218
-22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.219-230
-23. A LETTER TO THE EDITOR              146 paragraphs   3321 words   pp.231-242
-24. UNETHICAL                           287 paragraphs   8491 words   pp.243-270
-25. BOTTOM NINE                         273 paragraphs   6638 words   pp.271-293
-26. THE PANDEMIC                        166 paragraphs   4756 words   pp.294-310
+ 6. OPENING DAY                          19 paragraphs    339 words   pp.43-44
+ 7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.45-53
+ 8. FIRE DRILL                          150 paragraphs   3381 words   pp.54-66
+ 9. SPRING TRAINING                      92 paragraphs   1803 words   pp.67-73
+10. HOT SEAT                             90 paragraphs   2068 words   pp.74-80
+11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.81-95
+12. PRIME-TIME                          126 paragraphs   2568 words   pp.96-105
+13. FIREWORKS                           158 paragraphs   3234 words   pp.106-117
+14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.118-127
+15. WORLD SERIES                        240 paragraphs   4543 words   pp.128-143
+16. AWARDS SEASON                        92 paragraphs   1733 words   pp.144-150
+17. DRAFT DAY                           113 paragraphs   2510 words   pp.151-159
+18. COOPERSTOWN                         155 paragraphs   3011 words   pp.160-170
+19. BURN OUT                            153 paragraphs   3620 words   pp.171-181
+20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.182-194
+21. GLOBETROTTING                        69 paragraphs   1647 words   pp.195-200
+22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.201-212
+23. A LETTER TO THE EDITOR              146 paragraphs   3321 words   pp.213-224
+24. UNETHICAL                            40 paragraphs   1174 words   pp.225-228
+25. BOTTOM NINE                         273 paragraphs   6638 words   pp.229-251
+26. THE PANDEMIC                        166 paragraphs   4756 words   pp.252-268
+
+FLASHBACKS
+----------
+ch06_fb1  EMBARRASSING FLASHBACK   parent=OPENING DAY     source=docx_subhead           words=2303
+ch08_fb1  JUNK MAIL                parent=FIRE DRILL      source=docx_subhead           words=1418
+ch10_fb1  JUNK MAIL                parent=HOT SEAT        source=docx_subhead           words=1059
+ch19_fb1  MALTA                    parent=BURN OUT        source=deprecated_easter_egg  words=426
+ch24_fb1  AIRPLANE MODE            parent=UNETHICAL       source=docx_subhead           words=2996
+ch24_fb2  TWO YEARS EARLIER        parent=UNETHICAL       source=docx_subhead           words=4316
+ch24_fb3  MALTA II                 parent=UNETHICAL       source=deprecated_easter_egg  words=414
+ch26_fb1  MALTA III                parent=THE PANDEMIC    source=deprecated_easter_egg  words=424
+
+Total flashbacks: 8 (expected 8)  PASS
+Slug collisions: 0 (junk-mail vs junk-mail-2 differ as expected)  PASS
+DOCX FLASHBACK marker check: not found  PASS
 
 CONTENT STATS
 -------------
-Total paragraphs:   3722
-Total words:        86241
-Italic runs:        640
-Bold runs:          49
-Page breaks:        310
-Estimated reading:  431 minutes
+Total paragraphs:   3253
+Total words:        87494
+Italic runs:        544
+Bold runs:          3
+Page breaks:        268
+Estimated reading:  437 minutes
 
 SEMANTIC MARKUP
 ---------------
@@ -56,7 +71,7 @@ Datelines detected:     3 (detector v2, plain-text; gated == 3)
   [2] <p class="has-dateline"><span class="dateline">WASHINGTON—</span>My first job is to get another independent confirmation.</p>
   [3] <p class="has-dateline"><span class="dateline">DETROIT—</span>I get home after ten. Less than two hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome back pour.</p>
   Chapters with >20 datelines: none
-Scene breaks preserved: 304 (no threshold; expected for this beat-reporter manuscript)
+Scene breaks preserved: 259 (no threshold; expected for this beat-reporter manuscript)
 Small-caps spans:       0 (threshold 50)
 Media-emoji paragraphs: 0
 
@@ -95,8 +110,8 @@ ANOMALIES
 
 OUTPUT FILES
 ------------
-dist/book_summary.json    43.6 KB
-dist/book_full.json       2017.7 KB
+dist/book_summary.json    42.5 KB
+dist/book_full.json       1829.2 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -107,8 +122,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 59f20c66439a6e317be4e0546c65672b
-book_full.js   MD5 (all dirs): 5ac94e324eee7334ecbd6ed173ea4e3d
+book_full.json MD5 (all dirs): 691fd70526addd4d2dd3d2e47f2b2688
+book_full.js   MD5 (all dirs): 0bc74251a10e2b6129c9a56e74ad646b
 MD5 verification (dual-output identity): PASS
 
 SAMPLE
