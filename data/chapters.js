@@ -8,7 +8,7 @@
 // and are carried here as verbatim constants. Do not hand-edit generated
 // chapter bodies; re-run the converter instead.
 
-import bookData from './book_full.json' with { type: 'json' };
+import bookData from './book_full.js';
 
 // Front matter — extracted verbatim from chapters.js.deprecated 2026-05-19, edit here to update
 const titlePage = {

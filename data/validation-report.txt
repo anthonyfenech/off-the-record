@@ -51,9 +51,12 @@ Estimated reading:  431 minutes
 
 SEMANTIC MARKUP
 ---------------
-Datelines detected:     0 (threshold 540)
+Datelines detected:     3 (detector v2, plain-text; gated == 3)
+  [1] <p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
+  [2] <p class="has-dateline"><span class="dateline">WASHINGTON—</span>My first job is to get another independent confirmation.</p>
+  [3] <p class="has-dateline"><span class="dateline">DETROIT—</span>I get home after ten. Less than two hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome back pour.</p>
   Chapters with >20 datelines: none
-Scene breaks preserved: 304 (threshold 150; WARN)
+Scene breaks preserved: 304 (no threshold; expected for this beat-reporter manuscript)
 Small-caps spans:       0 (threshold 50)
 Media-emoji paragraphs: 0
 
@@ -89,12 +92,11 @@ ch26 THE PANDEMIC                 -> year      / 2020
 ANOMALIES
 ---------
 - Spec expected 27 chapters; this manuscript (real DOCX) has 26. The EPUB-era 'OFF-THE-RECORD' chapter is absent from this revision. Built with 26 per user decision.
-- Detector WARNING: 304 scene breaks detected (> threshold 150); continuing per spec (not halting).
 
 OUTPUT FILES
 ------------
 dist/book_summary.json    43.6 KB
-dist/book_full.json       2017.6 KB
+dist/book_full.json       2017.7 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -103,9 +105,10 @@ IDEMPOTENT: PASS
 
 DUAL OUTPUT
 -----------
-Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist
-Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data
-book_full.json MD5 (all dirs): 85771f1a35f8f85f67c3d74f3fa572c0
+Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
+Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
+book_full.json MD5 (all dirs): 59f20c66439a6e317be4e0546c65672b
+book_full.js   MD5 (all dirs): 5ac94e324eee7334ecbd6ed173ea4e3d
 MD5 verification (dual-output identity): PASS
 
 SAMPLE
