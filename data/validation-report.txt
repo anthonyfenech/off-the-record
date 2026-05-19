@@ -1,14 +1,14 @@
 OFF-THE-RECORD CONVERSION REPORT
 ================================
 Source file:        OFF-THE-RECORD.docx
-Source size:        473772 bytes
-Source modified:    2026-05-18T12:26:23-04:00
+Source size:        474056 bytes
+Source modified:    2026-05-19T04:58:52-04:00
 
 CHAPTER DETECTION
 -----------------
 Method:             Word 'Heading1' paragraph style (real DOCX; spec's Markdown '# ' rule N/A)
 Chapters expected:  26
-Chapters found:     34
+Chapters found:     39
 Match:              FAIL
 
 CHAPTERS
@@ -40,18 +40,41 @@ CHAPTERS
 25. BOTTOM NINE                         273 paragraphs   6638 words   pp.229-251
 26. THE PANDEMIC                        166 paragraphs   4756 words   pp.252-268
 
-FLASHBACKS
-----------
-ch06_fb1  EMBARRASSING FLASHBACK   parent=OPENING DAY     source=docx_subhead           words=2303
-ch08_fb1  JUNK MAIL                parent=FIRE DRILL      source=docx_subhead           words=1418
-ch10_fb1  JUNK MAIL                parent=HOT SEAT        source=docx_subhead           words=1059
-ch19_fb1  MALTA                    parent=BURN OUT        source=deprecated_easter_egg  words=426
-ch24_fb1  AIRPLANE MODE            parent=UNETHICAL       source=docx_subhead           words=2996
-ch24_fb2  TWO YEARS EARLIER        parent=UNETHICAL       source=docx_subhead           words=4316
-ch24_fb3  MALTA II                 parent=UNETHICAL       source=deprecated_easter_egg  words=414
-ch26_fb1  MALTA III                parent=THE PANDEMIC    source=deprecated_easter_egg  words=424
+SEGMENTS (multi-segment chapters; first segment is visible)
+----------------------------------------------------------
+ch06 OPENING DAY  (chapter 6)
+  ch06      OPENING DAY              parent_first   slug=opening-day            parent=-       words=339
+  ch06_fb1  EMBARRASSING FLASHBACK   docx_flashback slug=embarrassing-flashback parent=ch06    words=144
+  ch06b     OPENING DAY              parent_resume  slug=opening-day-resume-1   parent=ch06    words=2159
 
-Total flashbacks: 8 (expected 8)  PASS
+ch08 FIRE DRILL  (chapter 8)
+  ch08      FIRE DRILL               parent_first   slug=fire-drill             parent=-       words=3381
+  ch08_fb1  JUNK MAIL                docx_flashback slug=junk-mail              parent=ch08    words=211
+  ch08b     FIRE DRILL               parent_resume  slug=fire-drill-resume-1    parent=ch08    words=1207
+
+ch10 HOT SEAT  (chapter 10)
+  ch10      HOT SEAT                 parent_first   slug=hot-seat               parent=-       words=2068
+  ch10_fb1  JUNK MAIL                docx_flashback slug=junk-mail-2            parent=ch10    words=217
+  ch10b     HOT SEAT                 parent_resume  slug=hot-seat-resume-1      parent=ch10    words=842
+
+ch19 BURN OUT  (chapter 19)
+  ch19      BURN OUT                 parent_first   slug=burn-out               parent=-       words=3620
+  ch19_fb1  MALTA                    easter_egg     slug=malta                  parent=ch19    words=426
+
+ch24 UNETHICAL  (chapter 24)
+  ch24      UNETHICAL                parent_first   slug=unethical              parent=-       words=1174
+  ch24_fb1  AIRPLANE MODE            docx_flashback slug=airplane-mode          parent=ch24    words=331
+  ch24b     UNETHICAL                parent_resume  slug=unethical-resume-1     parent=ch24    words=2665
+  ch24_fb2  TWO YEARS EARLIER        docx_flashback slug=two-years-earlier      parent=ch24    words=255
+  ch24c     UNETHICAL                parent_resume  slug=unethical-resume-2     parent=ch24    words=4061
+  ch24_fb3  MALTA II                 easter_egg     slug=malta-ii               parent=ch24    words=414
+
+ch26 THE PANDEMIC  (chapter 26)
+  ch26      THE PANDEMIC             parent_first   slug=the-pandemic           parent=-       words=4756
+  ch26_fb1  MALTA III                easter_egg     slug=malta-iii              parent=ch26    words=424
+
+Total sections: 39 (expected 39)  PASS
+Hidden segments: 13 (expected 13; 5 parent-resume + 8 flashback)  PASS
 Slug collisions: 0 (junk-mail vs junk-mail-2 differ as expected)  PASS
 DOCX FLASHBACK marker check: not found  PASS
 
@@ -123,8 +146,8 @@ ANOMALIES
 
 OUTPUT FILES
 ------------
-dist/book_summary.json    42.5 KB
-dist/book_full.json       1834.8 KB
+dist/book_summary.json    44.3 KB
+dist/book_full.json       1836.8 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -135,8 +158,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 29b8056f8464c6447b3776be74e4e695
-book_full.js   MD5 (all dirs): 5a4b0a21f32396aa64d947dc3cc5419a
+book_full.json MD5 (all dirs): 4087a6d5d306dd6490d2bc99f8d9de33
+book_full.js   MD5 (all dirs): 4b06e945a494932207c01c39088fd5c0
 MD5 verification (dual-output identity): PASS
 
 SAMPLE

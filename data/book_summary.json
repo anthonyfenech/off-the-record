@@ -6,7 +6,7 @@
     "language": "en"
   },
   "stats": {
-    "section_count": 34,
+    "section_count": 39,
     "total_paragraphs": 3253,
     "total_words": 87494,
     "estimated_reading_time_minutes": 437,
@@ -351,7 +351,23 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 2303
+      "word_count": 144
+    },
+    {
+      "id": "ch06b",
+      "sequential_number": null,
+      "title": "OPENING DAY",
+      "slug": "opening-day-resume-1",
+      "section_type": "year",
+      "year": 2015,
+      "parent_id": "ch06",
+      "subtitle": "",
+      "teaser": "",
+      "first_page": null,
+      "last_page": null,
+      "page_breaks": [],
+      "paragraph_count": 0,
+      "word_count": 2159
     },
     {
       "id": "ch07",
@@ -511,7 +527,23 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 1418
+      "word_count": 211
+    },
+    {
+      "id": "ch08b",
+      "sequential_number": null,
+      "title": "FIRE DRILL",
+      "slug": "fire-drill-resume-1",
+      "section_type": "year",
+      "year": 2015,
+      "parent_id": "ch08",
+      "subtitle": "",
+      "teaser": "",
+      "first_page": null,
+      "last_page": null,
+      "page_breaks": [],
+      "paragraph_count": 0,
+      "word_count": 1207
     },
     {
       "id": "ch09",
@@ -631,7 +663,23 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 1059
+      "word_count": 217
+    },
+    {
+      "id": "ch10b",
+      "sequential_number": null,
+      "title": "HOT SEAT",
+      "slug": "hot-seat-resume-1",
+      "section_type": "year",
+      "year": 2016,
+      "parent_id": "ch10",
+      "subtitle": "",
+      "teaser": "",
+      "first_page": null,
+      "last_page": null,
+      "page_breaks": [],
+      "paragraph_count": 0,
+      "word_count": 842
     },
     {
       "id": "ch11",
@@ -1641,7 +1689,23 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 2996
+      "word_count": 331
+    },
+    {
+      "id": "ch24b",
+      "sequential_number": null,
+      "title": "UNETHICAL",
+      "slug": "unethical-resume-1",
+      "section_type": "year",
+      "year": 2019,
+      "parent_id": "ch24",
+      "subtitle": "",
+      "teaser": "",
+      "first_page": null,
+      "last_page": null,
+      "page_breaks": [],
+      "paragraph_count": 0,
+      "word_count": 2665
     },
     {
       "id": "ch24_fb2",
@@ -1657,7 +1721,23 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 4316
+      "word_count": 255
+    },
+    {
+      "id": "ch24c",
+      "sequential_number": null,
+      "title": "UNETHICAL",
+      "slug": "unethical-resume-2",
+      "section_type": "year",
+      "year": 2019,
+      "parent_id": "ch24",
+      "subtitle": "",
+      "teaser": "",
+      "first_page": null,
+      "last_page": null,
+      "page_breaks": [],
+      "paragraph_count": 0,
+      "word_count": 4061
     },
     {
       "id": "ch24_fb3",

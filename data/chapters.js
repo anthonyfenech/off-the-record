@@ -218,9 +218,11 @@ export const getChapterSlug = (id) => {
     return chapter?.slug || null;
 };
 
-// Phase 3: flashbacks belonging to a parent chapter, in CHAPTERS order.
-// Used by the progressive-reveal UX to find a chapter's hidden subsections.
-export const getFlashbacksForParent = (parentId) => {
+// Phase 3 (segment model): every hidden segment belonging to a parent
+// chapter — flashbacks AND parent-resume segments — in CHAPTERS order
+// (document order from book_full.json). Used by the progressive-reveal UX
+// to walk a chapter's segments.
+export const getSegmentsForParent = (parentId) => {
     return CHAPTERS.filter(c => c.parent_id === parentId);
 };
 
