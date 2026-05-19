@@ -166,6 +166,11 @@ ROUND-TRIP EQUALITY
 -------------------
 Round-trip equality:    PASS (26 chapters compared, 0 divergences)
 
+WORD COUNT & SLUG STABILITY
+---------------------------
+Word count drift:       PASS (baseline up to date, 39 sections, 0 drift)
+Slug stability:         PASS (39 slugs, 0 removed)
+
 SAMPLE
 ------
 First paragraph of chapter 1 (text):
