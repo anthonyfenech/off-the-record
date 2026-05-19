@@ -76,9 +76,9 @@ Small-caps spans:       88  (expected 50-200)   PASS
   A.M. instances:                30
   P.M. instances:                56
   Stylistic phrases:             2
-Email lines:            14  (expected 10-100)   PASS
-  note: old chapters.js had 50 hand-authored splits; DOCX has 14 coarser header
-  paragraphs containing inline Sent:/To:/Date: tokens.
+Email lines:            34  (expected 30-100)   PASS
+  note: detector broadened (Phase 4b) to match chat-style name prefixes
+  (<strong>Mom:</strong>, <strong>Pedro:</strong>, ...) in addition to From:/Subject: headers.
 
 SEMANTIC SAMPLES
 ----------------
@@ -124,7 +124,7 @@ ANOMALIES
 OUTPUT FILES
 ------------
 dist/book_summary.json    42.5 KB
-dist/book_full.json       1834.3 KB
+dist/book_full.json       1834.8 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -135,8 +135,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 9b3ea90e71389d5b1bc4fe62af3b8978
-book_full.js   MD5 (all dirs): 479d54f7964fd49f8ba7532ee265f883
+book_full.json MD5 (all dirs): 29b8056f8464c6447b3776be74e4e695
+book_full.js   MD5 (all dirs): 5a4b0a21f32396aa64d947dc3cc5419a
 MD5 verification (dual-output identity): PASS
 
 SAMPLE
