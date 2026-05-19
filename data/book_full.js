@@ -10,12 +10,12 @@ export default
   },
   "stats": {
     "section_count": 39,
-    "total_paragraphs": 3253,
-    "total_words": 87494,
+    "total_paragraphs": 3242,
+    "total_words": 87491,
     "estimated_reading_time_minutes": 437,
     "first_page": 1,
-    "last_page": 268,
-    "total_pages": 268
+    "last_page": 269,
+    "total_pages": 269
   },
   "sections": [
     {
@@ -2619,22 +2619,17 @@ export default
       "subtitle": "",
       "teaser": "",
       "first_page": 43,
-      "last_page": 44,
+      "last_page": 43,
       "page_breaks": [
         {
           "page": 43,
           "paragraph_id": "p_ch06_001",
           "anchor": "page43"
-        },
-        {
-          "page": 44,
-          "paragraph_id": "p_ch06_009",
-          "anchor": "page44"
         }
       ],
-      "paragraph_count": 19,
-      "word_count": 339,
-      "content": "<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time.</p>\n\n<p>Driving to the ballpark in the fast lane, a car speeds up from behind—black, fancy and fast. I move over and let the car pass.</p>\n\n<p>It’s Opening Day—a local holiday—and not too bad. Forty-two degrees and cloudy. Dressed dangerously, wearing a navy-blue jacket with a baby blue shirt. Gray slacks and brown wingtips.</p>\n\n<p>Standing in the clubhouse before the game, Justin Verlander walks by. I ask if he was driving a fast black car this morning. He was, indeed. What kind? An Aston Martin. “I think you passed me on the freeway.”</p>\n\n<p>“Probably.”</p>\n\n<p>He asks what kind of car I drive.</p>\n\n<p>My tongue twists. I say I drive a Ford Focus.</p>\n\n<p>Miguel Cabrera sits at his locker in the clubhouse, eyeing me pregame. He looks at Ron Colangelo, points at me, “I like this guy. Look at him, he dresses nice.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">PITTSBURGH, <em>April 13</em>—</span>First away series and I’m road tripping with my buddy on the Ohio Turnpike. We’re staying at the team hotel.</p>\n\n<p>Sports editor says it’s fine to stay there, but not at the team rate. He doesn’t want the <em>Freep</em> taking favors from the team.</p>\n\n<p>The first night, we go to dinner at Hyde Park. The Tigers’ coaching staff is in the back room having dinner.</p>\n\n<p>Brad Ausmus is first.</p>\n\n<p>“How ya doing, Anthony?” A pat on the back. Buddy is impressed.</p>\n\n<p>We go up to Mt. Washington for a couple of beers. We’re still that high when we get back to the team hotel and run into players waiting at the elevator bank.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>April 15</em>—</span>At the park early today, where Justin Verlander is throwing a simulated game—he’s even simulating the national anthem, standing with his hat over his heart.</p>\n\n<p>Today is also Jackie Robinson Day.</p>\n\n<p>We talk to David Price about the dwindling number of black players in MLB. Price believes we’re only here talking to him about it because it’s Jackie Robinson Day.</p>\n\n<p>“Won’t hear about this again until next year.”</p>\n\n<p>He’s not wrong.</p>",
+      "paragraph_count": 8,
+      "word_count": 152,
+      "content": "<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>April 6</em>—</span>You only cover your first Opening Day one time.</p>\n\n<p>Driving to the ballpark in the fast lane, a car speeds up from behind—black, fancy and fast. I move over and let the car pass.</p>\n\n<p>It’s Opening Day—a local holiday—and not too bad. Forty-two degrees and cloudy. Dressed dangerously, wearing a navy-blue jacket with a baby blue shirt. Gray slacks and brown wingtips.</p>\n\n<p>Standing in the clubhouse before the game, Justin Verlander walks by. I ask if he was driving a fast black car this morning. He was, indeed. What kind? An Aston Martin. “I think you passed me on the freeway.”</p>\n\n<p>“Probably.”</p>\n\n<p>He asks what kind of car I drive.</p>\n\n<p>My tongue twists. I say I drive a Ford Focus.</p>\n\n<p>Miguel Cabrera sits at his locker in the clubhouse, eyeing me pregame. He looks at Ron Colangelo, points at me, “I like this guy. Look at him, he dresses nice.”</p>",
       "paragraphs": [
         {
           "id": "p_ch06_001",
@@ -2683,72 +2678,6 @@ export default
           "text": "Miguel Cabrera sits at his locker in the clubhouse, eyeing me pregame. He looks at Ron Colangelo, points at me, “I like this guy. Look at him, he dresses nice.”",
           "html": "Miguel Cabrera sits at his locker in the clubhouse, eyeing me pregame. He looks at Ron Colangelo, points at me, “I like this guy. Look at him, he dresses nice.”",
           "word_count": 30
-        },
-        {
-          "id": "p_ch06_009",
-          "text": "PITTSBURGH, April 13—First away series and I’m road tripping with my buddy on the Ohio Turnpike. We’re staying at the team hotel.",
-          "html": "PITTSBURGH, <em>April 13</em>—First away series and I’m road tripping with my buddy on the Ohio Turnpike. We’re staying at the team hotel.",
-          "word_count": 22
-        },
-        {
-          "id": "p_ch06_010",
-          "text": "Sports editor says it’s fine to stay there, but not at the team rate. He doesn’t want the Freep taking favors from the team.",
-          "html": "Sports editor says it’s fine to stay there, but not at the team rate. He doesn’t want the <em>Freep</em> taking favors from the team.",
-          "word_count": 24
-        },
-        {
-          "id": "p_ch06_011",
-          "text": "The first night, we go to dinner at Hyde Park. The Tigers’ coaching staff is in the back room having dinner.",
-          "html": "The first night, we go to dinner at Hyde Park. The Tigers’ coaching staff is in the back room having dinner.",
-          "word_count": 21
-        },
-        {
-          "id": "p_ch06_012",
-          "text": "Brad Ausmus is first.",
-          "html": "Brad Ausmus is first.",
-          "word_count": 4
-        },
-        {
-          "id": "p_ch06_013",
-          "text": "“How ya doing, Anthony?” A pat on the back. Buddy is impressed.",
-          "html": "“How ya doing, Anthony?” A pat on the back. Buddy is impressed.",
-          "word_count": 12
-        },
-        {
-          "id": "p_ch06_014",
-          "text": "We go up to Mt. Washington for a couple of beers. We’re still that high when we get back to the team hotel and run into players waiting at the elevator bank.",
-          "html": "We go up to Mt. Washington for a couple of beers. We’re still that high when we get back to the team hotel and run into players waiting at the elevator bank.",
-          "word_count": 32
-        },
-        {
-          "id": "p_ch06_015",
-          "text": "April 15—At the park early today, where Justin Verlander is throwing a simulated game—he’s even simulating the national anthem, standing with his hat over his heart.",
-          "html": "<em>April 15</em>—At the park early today, where Justin Verlander is throwing a simulated game—he’s even simulating the national anthem, standing with his hat over his heart.",
-          "word_count": 26
-        },
-        {
-          "id": "p_ch06_016",
-          "text": "Today is also Jackie Robinson Day.",
-          "html": "Today is also Jackie Robinson Day.",
-          "word_count": 6
-        },
-        {
-          "id": "p_ch06_017",
-          "text": "We talk to David Price about the dwindling number of black players in MLB. Price believes we’re only here talking to him about it because it’s Jackie Robinson Day.",
-          "html": "We talk to David Price about the dwindling number of black players in MLB. Price believes we’re only here talking to him about it because it’s Jackie Robinson Day.",
-          "word_count": 29
-        },
-        {
-          "id": "p_ch06_018",
-          "text": "“Won’t hear about this again until next year.”",
-          "html": "“Won’t hear about this again until next year.”",
-          "word_count": 8
-        },
-        {
-          "id": "p_ch06_019",
-          "text": "He’s not wrong.",
-          "html": "He’s not wrong.",
-          "word_count": 3
         }
       ]
     },
@@ -2767,7 +2696,7 @@ export default
       "page_breaks": [],
       "paragraph_count": 0,
       "word_count": 144,
-      "content": "<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a member of the Baseball Writers’ Association of America. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>\n\n<p>The New York media surrounds lefty reliever Boone Logan. Poking a tape recorder into a pack of reporters, the Taylor Swift Pandora on my phone goes off.</p>\n\n<p>It’s the pop-guitar riff from her latest hit song “I thought you were trouble.”</p>\n\n<p><em>Once upon a time</em>…</p>\n\n<p>Clawing furiously at my pocket, trying to pull my phone out, to silence it. To stop this nightmare.</p>\n\n<p><em>A few mistakes ago…</em></p>\n\n<p>Pressing power, squeezing the phone, turning red as a light.</p>\n\n<p>Afterwards, veteran outfielder Vernon Wells lets me know.</p>\n\n<p>“My nine-year-old daughter listens to that, man.”</p>\n\n<p>Players laugh. Reporters, too. It’s my first game as a Ball Writer—I don’t know how I’ll recover from this.</p>",
+      "content": "<div class=\"toc-page\">\n<h2 class=\"toc-page-title\">EMBARRASSING FLASHBACK</h2>\n<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>April 5, 2013</em>—</span>Opening Day, my first game as a member of the Baseball Writers’ Association of America. After the Tigers beat the Yankees, I head to the visitor’s clubhouse—the quiet, losing side.</p>\n\n<p>The New York media surrounds lefty reliever Boone Logan. Poking a tape recorder into a pack of reporters, the Taylor Swift Pandora on my phone goes off.</p>\n\n<p>It’s the pop-guitar riff from her latest hit song “I thought you were trouble.”</p>\n\n<p><em>Once upon a time</em>…</p>\n\n<p>Clawing furiously at my pocket, trying to pull my phone out, to silence it. To stop this nightmare.</p>\n\n<p><em>A few mistakes ago…</em></p>\n\n<p>Pressing power, squeezing the phone, turning red as a light.</p>\n\n<p>Afterwards, veteran outfielder Vernon Wells lets me know.</p>\n\n<p>“My nine-year-old daughter listens to that, man.”</p>\n\n<p>Players laugh. Reporters, too. It’s my first game as a Ball Writer—I don’t know how I’ll recover from this.</p>\n</div>",
       "paragraphs": []
     },
     {
@@ -2784,8 +2713,8 @@ export default
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 2159,
-      "content": "<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>April 22, 2015</em>—</span>Two weeks later, Joe Nathan is injured again.</p>\n\n<p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only 10 pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>\n\n<p>Ever the rookie, I ask another stupid question.</p>\n\n<p>“Can I text him asking, ‘What happened?’ or is that like, insensitive to the situation?”</p>\n\n<p>Marly Rivera explains: “No, the opposite—text him and ask him how he is feeling. It’s not insensitive—you ask like you do care. Be open about it, something like, ‘Heard you had to leave your rehab start’—then ask him how he feels.”</p>\n\n<p>Nathan doesn’t respond.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>April 23</em>—</span>Nathan’s season is over—he’s set to undergo elbow ligament reconstruction. Speaking red-eyed in front of reporters, Nathan describes the elbow “pop” he felt on his final pitch last night and defiantly declares he’ll be back.</p>\n\n<p>“This won’t be easy. It’s gonna be a long road. I’ve always enjoyed the work…”</p>\n\n<p>His voice cracks.</p>\n\n<p>“I will rehab and do everything I’m supposed to as if I’m coming back to be a major league pitcher. That is my goal—to come back and pitch again.”</p>\n\n<p>Back in the press box, I receive a call from Scott Boras. I step outside to call back. He wants to talk about Rafael Soriano. Boras is calling by way of Nathan’s injury, with a scoop: Detroit has interest in Soriano.</p>\n\n<p>Get something from the team—in case Boras is using me again.</p>\n\n<p>“I heard you guys are talking with Soriano, is that true?”</p>\n\n<p>Director of baseball operations Mike Smith puts a stop to further inquiries: “I’m never going to be able to confirm or deny rumors like this for you, sorry.”</p>\n\n<p>The other source—Al Avila—hasn’t responded.</p>\n\n<p>Back in the press box, I write three stories: A game story, a sidebar on Nathan’s injury and an opinion piece about why it would be wise to pursue Soriano—a favor for Scott Boras.</p>\n\n<p>OAKLAND, Calif., <em>May 27</em>—The best part about Gator’s friendship is his bead on the room.</p>\n\n<p>About one player. “He’s soft. Got a Charley horse on his thigh and he’s been out for a week. A lot of guys have been upset with him.”</p>\n\n<p>He says the Tigers might go with a spot starter. Probable pitcher Kyle Ryan remains in transit.</p>\n\n<p>Gator again. “I heard Ryan just showed up.”</p>\n\n<p>He’s standing at his locker when the door opens.</p>\n\n<p>After the game, I meet visiting New York writers for a drink, including George King of the <em>New York Post.</em> John Lowe regales stories of King on the beat.</p>\n\n<p>“One year, the Yankees played in the Boston Marathon game (traditionally played at 11 <span class=\"small-caps\">A.M.</span>) on Patriots’ Day Monday. But, of course, ESPN wants <em>Sunday Night Baseball</em> the night before. So, it’s Red Sox-Yankees at 8 <span class=\"small-caps\">P.M.</span> on Sunday night, so that means the Yankees open at 7:30 Monday morning. And Joe Torre got there at 7:25 and George is standing there, waiting for the clubhouse to open at 7:30, and Torre says, ‘What are you doing here this early?’ And George says, ‘My job is to be here when that door opens.’”</p>\n\n<p>He spends at least three hours on the phone every day. No, George King is actually <em>on the phone,</em> talking to people.</p>\n\n<p>Ball Writing rules to live by.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>July 2</em>—</span>Halfway through my rookie year, my best source isn’t in the front office, the clubhouse or the press box. I have yet to figure out what Gator does for a living or why he hangs out with baseball players—but I don’t particularly care.</p>\n\n<p>He’s at his friend’s place drinking beers today, asking about the vibe in the room.</p>\n\n<p>Gator is my best source. With the team at .500 (39-39) and slipping in the standings, roster moves are afoot. Ausmus gives reporters a hint—a reliever is coming up.</p>\n\n<p>My source network is finally paying off.</p>\n\n<p>Last month, I started squeezing information out of Ángel Nesbitt, a young Venezuelan reliever.</p>\n\n<p>I kept in touch, and soon, he was tipping me off with roster moves.</p>\n\n<p>Gator and I work as a tag team: I text my guy and Gator texts his guys.</p>\n\n<p>Neither of my two tries—assistant GM Al Avila and the farm director—get back to me. Soon, the clubhouse will open to the media, and the remaining roster moves in question officially announced.</p>\n\n<p>Waiting to hear back, I am beaten by a blogger. The news blindsides Gator, triggering a flurry of texts: Reliever Joba Chamberlain is being sent out.</p>\n\n<p>Gator is on Line 1. A different player just called, and yep, Joba Chamberlain is gone. Tom Gorzelanny, too.</p>\n\n<p>It was a better day for the beat writer. I got four-of-six roster moves. But my scoops amount to second-hand rumors—if I don’t find some real sources, I’m bound to get burned.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">SEATTLE, <em>July 6</em>—</span>Standing in the dugout hours before the game, I see Lloyd McClendon sitting alone in the home dugout.</p>\n\n<p>I walk over and introduce myself.</p>\n\n<p>McClendon is the Mariners manager. He was hired in 2014 after spending the previous seven years on the Tigers’ coaching staff. McClendon was on the short list to succeed Jim Leyland, before Brad Ausmus blew the front office away with his interview.</p>\n\n<p>Lloyd came here instead, and last season led the Mariners to an 87-75 record, within two games of their first postseason appearance in 13 years. This year, the M’s are injured and below .500.</p>\n\n<p>Taking my temperature, I sense he’s open to talking.</p>\n\n<p>I catch his attention by offering an unsolicited opinion on the Tigers’ clubhouse leadership.</p>\n\n<p>McClendon chuckles. Shakes his head. He hears about it. Anyone could’ve seen this coming.</p>\n\n<p>“Those guys need a man in there,” he says. “Víctor, Miggy… those guys are not easy to deal with.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 7</em>—</span>Ian Kinsler is talking about the time he met Seamhead.</p>\n\n<p>It was after the 15-inning All-Star Game in 2008, the final year at Old Yankee Stadium. After all that, John Lowe came up to him in the clubhouse and pointed out something of historical significance about the game.</p>\n\n<p>“John’s cool as hell, man,” Kinsler says. “I just listen to him, really… John’s intelligent—he knows a lot about baseball.”</p>\n\n<p>John was a Detroit writer, Kinsler a Texas second baseman—the two teams played each other twice each year.</p>\n\n<p>But in those years, with maybe just one chat a year, they built a rapport that paid big dividends when Kinsler was acquired by the Tigers in 2014. I was working on the web desk that night and I remember Mr. Sports Editor walking out of his office not 20 minutes after Seamhead broke the news: “John got Kinsler! John got Kinsler!”</p>\n\n<p>Kinsler was on vacation in Hawaii. He just found out he got traded from Texas, where he was viewed as a franchise player. He spoke with John Lowe.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 8</em>—</span>I sit in the dugout today with J.D. Martinez for a feature story to chronicle his breakout year. I’ll call him the Mysterious Hitting Guru.</p>\n\n<p>J.D. says he doesn’t want to say anything about him until he gets paid and doesn’t want to rub his hitting coaches the wrong way by potentially giving someone else credit for his success.</p>\n\n<p>He didn’t explicitly say do not talk to this guy.</p>\n\n<p>I am equal parts inexperienced and undeterred. Before taking off in Seattle, I ask one of Boras’ guys about the Mysterious Hitting Guru.</p>\n\n<p>“Ask Scott… see if he’s got any ideas.”</p>\n\n<p>By the time I land in Minneapolis, the search is over.</p>\n\n<p>“Scott said try Craig Wallenbrock.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">MINNEAPOLIS, <em>July 9</em>—</span>I got through to Wallenbrock and gave him the spiel. Feature story on J.D. l’ll conceal your identity—the Mysterious Hitting Guru.</p>\n\n<p>He gives no promises, but says he’ll talk to Martinez. Up to him. I was actually feeling pretty good about it until I got to the stadium and was summoned for a chat with Tigers PR.</p>\n\n<p>Now I’ve got a disgruntled subject, and the story is up in the air.</p>\n\n<p>“J.D. doesn’t want to talk to you,” media relations manager Aileen Villarreal said. “He told you not to talk to that guy.”</p>\n\n<p>Yes, I understand. But I’m a journalist: talking to people who others don’t want us talking to is part of the job.</p>\n\n<p>Martinez sits down to finish the interview but doesn’t change his tune.</p>\n\n<p>“I still think it’s bullshit.”</p>\n\n<p>We agree to disagree.</p>\n\n<p>Back inside the clubhouse, more beef. This time, it’s David Price—a team leader—who corners me in front of the doors to the dressing room, asking what I did to Tigers PR. Why the argument? What did I say?</p>\n\n<p>Price towers over me, pointing a finger at my chest.</p>\n\n<p>“What did you say to her?”</p>\n\n<p>“Honestly, man, that’s none of your business. It’s between me and her.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 10</em>—</span>Tigers lead Twins, 6-1. Bottom of the ninth.</p>\n\n<p>Forty-eight hours until the All-Star break and the Tigers still don’t know who they are. A winning team? Contender? Third place? They have struggled to stay above .500 all season. Flaws are obvious—unathletic roster, one-dimensional offense, subpar defense—but the team’s biggest hole remains in the bullpen.</p>\n\n<p>As the Royals showed last year, riding a three-headed monster of late-inning relievers within a win of the World Series, baseball has begun prioritizing bullpen usage.</p>\n\n<p>Tonight, they’re up five runs with three outs to go.</p>\n\n<p>By the time they get the first, activity in the press box: Writers clawing at keyboards. Two men on. A hit. Pitching change. Walk. Another hit. Typetypetypetype</p>\n\n<p>What seemed excessive mere minutes ago—rewriting the lede, reworking the game story, reading bottom-to-top for stray mentions of the wrong score—is now necessary.</p>\n\n<p>Now, as the final pitch is hit into the left field seats, the stories we’re scrambling to rewrite are very different. Somehow, the Tigers lose.</p>\n\n<p>Back in the press box, the TV is on mute.</p>\n\n<p>Martinez says on TBS that Detroit is signing veteran reliever Neftali Feliz.</p>\n\n<p>One colleague has had enough: “Fuck this job.”</p>\n\n<p>I leave the press box past 11. As if the drama and the game and the postgame signing wasn’t enough fun, I still have the feature story I haven’t started.</p>\n\n<p>I meet up with scouts at the bar instead. A drink turns into three and I end up doing it the old-fashioned way, staying up all bloody night on coffee and tobacco.</p>\n\n<p>The sun comes up. Day game today.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 11</em>—</span>In the first inning, straight out of the You Couldn’t Make This Up If You Tried files, disaster is coming.</p>\n\n<p>J.D. Martinez just fouled off a pitch.</p>\n\n<p>It is fast approaching, upwards of 85 mph, spinning like a programmed missile. It is a sneak attack, a foul ball I never see coming, not until it—<em>SMACK!</em> —makes a direct hit, causing a first-row explosion of Mountain Dew and popcorn.</p>\n\n<p>The crowd gasps. Pop everywhere, popcorn all over the carpet. My computer is a casualty, screen spider-webbed, currently sitting in a box of rice.</p>\n\n<p>On FOX Sports 1: “If you’re wondering what the crowd was reacting to—that ball went into the press box, and I believe it was Anthony Fenech from the <em>Free Press</em> on the Tigers beat who had the bad end of that ball.</p>\n\n<p>“I don’t know if he caught it or not. I don’t know if it knocked him down. He isn’t in his seat anymore—he has since left the third row. So, I guess we’ll find out soon enough.”</p>\n\n<p>Dave Dombrowski passes me in the hallway.</p>\n\n<p>“I heard J.D. was upset with you.”</p>\n\n<p>After the game, I try and fail at lobbying J.D. to buy me a new laptop.</p>\n\n<p>“That’s what you get, bro.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>July 17</em>—</span>Back from the All-Star break, I get an email from a guy with the Christopher “Mad Dog” Russo radio show, asking for availability to talk Tigers.</p>\n\n<p>Soon, I’ll be on SiriusXM Channel 144 with the Mad Dog—one of the most notorious loudmouths on the national sports talk scene.</p>\n\n<p>But as the interview wears on, things get weird.</p>\n\n<p>“I’m also reading that you got drunk and ran your car into another, into a PT Cruiser, is that correct, and flipped it over. I mean, how do you flip—Anthony, how do you flip a PT Cruiser? Is that true?”</p>\n\n<p>My jaw drops. I am on satellite radio with Mad Dog, and he just hit me with that?</p>\n\n<p>Hanging up, I realize I’ve been hood-winked. It won’t take long for Internet Stalker’s sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 19</em>—</span>Redemption is mine. A week after I got punk’d by Internet Stalker, I get an email from an ESPN producer, inviting me onto <em>SportsCenter</em> today.</p>\n\n<p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn.</p>\n\n<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>",
+      "word_count": 2343,
+      "content": "<p class=\"has-dateline\"><span class=\"dateline\">PITTSBURGH, <em>April 13, 2015</em>—</span>First away series and I’m road tripping with my buddy on the Ohio Turnpike. We’re staying at the team hotel.</p>\n\n<p>Sports editor says it’s fine to stay there, but not at the team rate. He doesn’t want the <em>Freep</em> taking favors from the team.</p>\n\n<p>The first night, we go to dinner at Hyde Park. The Tigers’ coaching staff is in the back room having dinner.</p>\n\n<p>Brad Ausmus is first.</p>\n\n<p>“How ya doing, Anthony?” A pat on the back. Buddy is impressed.</p>\n\n<p>We go up to Mt. Washington for a couple of beers. We’re still that high when we get back to the team hotel and run into players waiting at the elevator bank.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>April 15</em>—</span>At the park early today, where Justin Verlander is throwing a simulated game—he’s even simulating the national anthem, standing with his hat over his heart.</p>\n\n<p>Today is also Jackie Robinson Day.</p>\n\n<p>We talk to David Price about the dwindling number of black players in MLB. Price believes we’re only here talking to him about it because it’s Jackie Robinson Day.</p>\n\n<p>“Won’t hear about this again until next year.”</p>\n\n<p>He’s not wrong.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>April 22</em>—</span>Joe Nathan is injured again.</p>\n\n<p>Pitching an injury rehab outing at Triple-A tonight, Nathan throws only 10 pitches before exiting the game. The team holds off on providing an update until tomorrow—never a good sign.</p>\n\n<p>Ever the rookie, I ask another stupid question.</p>\n\n<p>“Can I text him asking, ‘What happened?’ or is that like, insensitive to the situation?”</p>\n\n<p>Marly Rivera explains: “No, the opposite—text him and ask him how he is feeling. It’s not insensitive—you ask like you do care. Be open about it, something like, ‘Heard you had to leave your rehab start’—then ask him how he feels.”</p>\n\n<p>Nathan doesn’t respond.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>April 23</em>—</span>Nathan’s season is over—he’s set to undergo elbow ligament reconstruction. Speaking red-eyed in front of reporters, Nathan describes the elbow “pop” he felt on his final pitch last night and defiantly declares he’ll be back.</p>\n\n<p>“This won’t be easy. It’s gonna be a long road. I’ve always enjoyed the work…”</p>\n\n<p>His voice cracks.</p>\n\n<p>“I will rehab and do everything I’m supposed to as if I’m coming back to be a major league pitcher. That is my goal—to come back and pitch again.”</p>\n\n<p>Back in the press box, I receive a call from Scott Boras. I step outside to call back. He wants to talk about Rafael Soriano. Boras is calling by way of Nathan’s injury, with a scoop: Detroit has interest in Soriano.</p>\n\n<p>Get something from the team—in case Boras is using me again.</p>\n\n<p>“I heard you guys are talking with Soriano, is that true?”</p>\n\n<p>Director of baseball operations Mike Smith puts a stop to further inquiries: “I’m never going to be able to confirm or deny rumors like this for you, sorry.”</p>\n\n<p>The other source—Al Avila—hasn’t responded.</p>\n\n<p>Back in the press box, I write three stories: A game story, a sidebar on Nathan’s injury and an opinion piece about why it would be wise to pursue Soriano—a favor for Scott Boras.</p>\n\n<p>OAKLAND, Calif., <em>May 27</em>—The best part about Gator’s friendship is his bead on the room.</p>\n\n<p>About one player. “He’s soft. Got a Charley horse on his thigh and he’s been out for a week. A lot of guys have been upset with him.”</p>\n\n<p>He says the Tigers might go with a spot starter. Probable pitcher Kyle Ryan remains in transit.</p>\n\n<p>Gator again. “I heard Ryan just showed up.”</p>\n\n<p>He’s standing at his locker when the door opens.</p>\n\n<p>After the game, I meet visiting New York writers for a drink, including George King of the <em>New York Post.</em> John Lowe regales stories of King on the beat.</p>\n\n<p>“One year, the Yankees played in the Boston Marathon game (traditionally played at 11 <span class=\"small-caps\">A.M.</span>) on Patriots’ Day Monday. But, of course, ESPN wants <em>Sunday Night Baseball</em> the night before. So, it’s Red Sox-Yankees at 8 <span class=\"small-caps\">P.M.</span> on Sunday night, so that means the Yankees open at 7:30 Monday morning. And Joe Torre got there at 7:25 and George is standing there, waiting for the clubhouse to open at 7:30, and Torre says, ‘What are you doing here this early?’ And George says, ‘My job is to be here when that door opens.’”</p>\n\n<p>He spends at least three hours on the phone every day. No, George King is actually <em>on the phone,</em> talking to people.</p>\n\n<p>Ball Writing rules to live by.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>July 2</em>—</span>Halfway through my rookie year, my best source isn’t in the front office, the clubhouse or the press box. I have yet to figure out what Gator does for a living or why he hangs out with baseball players—but I don’t particularly care.</p>\n\n<p>He’s at his friend’s place drinking beers today, asking about the vibe in the room.</p>\n\n<p>Gator is my best source. With the team at .500 (39-39) and slipping in the standings, roster moves are afoot. Ausmus gives reporters a hint—a reliever is coming up.</p>\n\n<p>My source network is finally paying off.</p>\n\n<p>Last month, I started squeezing information out of Ángel Nesbitt, a young Venezuelan reliever.</p>\n\n<p>I kept in touch, and soon, he was tipping me off with roster moves.</p>\n\n<p>Gator and I work as a tag team: I text my guy and Gator texts his guys.</p>\n\n<p>Neither of my two tries—assistant GM Al Avila and the farm director—get back to me. Soon, the clubhouse will open to the media, and the remaining roster moves in question officially announced.</p>\n\n<p>Waiting to hear back, I am beaten by a blogger. The news blindsides Gator, triggering a flurry of texts: Reliever Joba Chamberlain is being sent out.</p>\n\n<p>Gator is on Line 1. A different player just called, and yep, Joba Chamberlain is gone. Tom Gorzelanny, too.</p>\n\n<p>It was a better day for the beat writer. I got four-of-six roster moves. But my scoops amount to second-hand rumors—if I don’t find some real sources, I’m bound to get burned.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">SEATTLE, <em>July 6</em>—</span>Standing in the dugout hours before the game, I see Lloyd McClendon sitting alone in the home dugout.</p>\n\n<p>I walk over and introduce myself.</p>\n\n<p>McClendon is the Mariners manager. He was hired in 2014 after spending the previous seven years on the Tigers’ coaching staff. McClendon was on the short list to succeed Jim Leyland, before Brad Ausmus blew the front office away with his interview.</p>\n\n<p>Lloyd came here instead, and last season led the Mariners to an 87-75 record, within two games of their first postseason appearance in 13 years. This year, the M’s are injured and below .500.</p>\n\n<p>Taking my temperature, I sense he’s open to talking.</p>\n\n<p>I catch his attention by offering an unsolicited opinion on the Tigers’ clubhouse leadership.</p>\n\n<p>McClendon chuckles. Shakes his head. He hears about it. Anyone could’ve seen this coming.</p>\n\n<p>“Those guys need a man in there,” he says. “Víctor, Miggy… those guys are not easy to deal with.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 7</em>—</span>Ian Kinsler is talking about the time he met Seamhead.</p>\n\n<p>It was after the 15-inning All-Star Game in 2008, the final year at Old Yankee Stadium. After all that, John Lowe came up to him in the clubhouse and pointed out something of historical significance about the game.</p>\n\n<p>“John’s cool as hell, man,” Kinsler says. “I just listen to him, really… John’s intelligent—he knows a lot about baseball.”</p>\n\n<p>John was a Detroit writer, Kinsler a Texas second baseman—the two teams played each other twice each year.</p>\n\n<p>But in those years, with maybe just one chat a year, they built a rapport that paid big dividends when Kinsler was acquired by the Tigers in 2014. I was working on the web desk that night and I remember Mr. Sports Editor walking out of his office not 20 minutes after Seamhead broke the news: “John got Kinsler! John got Kinsler!”</p>\n\n<p>Kinsler was on vacation in Hawaii. He just found out he got traded from Texas, where he was viewed as a franchise player. He spoke with John Lowe.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 8</em>—</span>I sit in the dugout today with J.D. Martinez for a feature story to chronicle his breakout year. I’ll call him the Mysterious Hitting Guru.</p>\n\n<p>J.D. says he doesn’t want to say anything about him until he gets paid and doesn’t want to rub his hitting coaches the wrong way by potentially giving someone else credit for his success.</p>\n\n<p>He didn’t explicitly say do not talk to this guy.</p>\n\n<p>I am equal parts inexperienced and undeterred. Before taking off in Seattle, I ask one of Boras’ guys about the Mysterious Hitting Guru.</p>\n\n<p>“Ask Scott… see if he’s got any ideas.”</p>\n\n<p>By the time I land in Minneapolis, the search is over.</p>\n\n<p>“Scott said try Craig Wallenbrock.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">MINNEAPOLIS, <em>July 9</em>—</span>I got through to Wallenbrock and gave him the spiel. Feature story on J.D. l’ll conceal your identity—the Mysterious Hitting Guru.</p>\n\n<p>He gives no promises, but says he’ll talk to Martinez. Up to him. I was actually feeling pretty good about it until I got to the stadium and was summoned for a chat with Tigers PR.</p>\n\n<p>Now I’ve got a disgruntled subject, and the story is up in the air.</p>\n\n<p>“J.D. doesn’t want to talk to you,” media relations manager Aileen Villarreal said. “He told you not to talk to that guy.”</p>\n\n<p>Yes, I understand. But I’m a journalist: talking to people who others don’t want us talking to is part of the job.</p>\n\n<p>Martinez sits down to finish the interview but doesn’t change his tune.</p>\n\n<p>“I still think it’s bullshit.”</p>\n\n<p>We agree to disagree.</p>\n\n<p>Back inside the clubhouse, more beef. This time, it’s David Price—a team leader—who corners me in front of the doors to the dressing room, asking what I did to Tigers PR. Why the argument? What did I say?</p>\n\n<p>Price towers over me, pointing a finger at my chest.</p>\n\n<p>“What did you say to her?”</p>\n\n<p>“Honestly, man, that’s none of your business. It’s between me and her.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 10</em>—</span>Tigers lead Twins, 6-1. Bottom of the ninth.</p>\n\n<p>Forty-eight hours until the All-Star break and the Tigers still don’t know who they are. A winning team? Contender? Third place? They have struggled to stay above .500 all season. Flaws are obvious—unathletic roster, one-dimensional offense, subpar defense—but the team’s biggest hole remains in the bullpen.</p>\n\n<p>As the Royals showed last year, riding a three-headed monster of late-inning relievers within a win of the World Series, baseball has begun prioritizing bullpen usage.</p>\n\n<p>Tonight, they’re up five runs with three outs to go.</p>\n\n<p>By the time they get the first, activity in the press box: Writers clawing at keyboards. Two men on. A hit. Pitching change. Walk. Another hit. Typetypetypetype</p>\n\n<p>What seemed excessive mere minutes ago—rewriting the lede, reworking the game story, reading bottom-to-top for stray mentions of the wrong score—is now necessary.</p>\n\n<p>Now, as the final pitch is hit into the left field seats, the stories we’re scrambling to rewrite are very different. Somehow, the Tigers lose.</p>\n\n<p>Back in the press box, the TV is on mute.</p>\n\n<p>Martinez says on TBS that Detroit is signing veteran reliever Neftali Feliz.</p>\n\n<p>One colleague has had enough: “Fuck this job.”</p>\n\n<p>I leave the press box past 11. As if the drama and the game and the postgame signing wasn’t enough fun, I still have the feature story I haven’t started.</p>\n\n<p>I meet up with scouts at the bar instead. A drink turns into three and I end up doing it the old-fashioned way, staying up all bloody night on coffee and tobacco.</p>\n\n<p>The sun comes up. Day game today.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 11</em>—</span>In the first inning, straight out of the You Couldn’t Make This Up If You Tried files, disaster is coming.</p>\n\n<p>J.D. Martinez just fouled off a pitch.</p>\n\n<p>It is fast approaching, upwards of 85 mph, spinning like a programmed missile. It is a sneak attack, a foul ball I never see coming, not until it—<em>SMACK!</em> —makes a direct hit, causing a first-row explosion of Mountain Dew and popcorn.</p>\n\n<p>The crowd gasps. Pop everywhere, popcorn all over the carpet. My computer is a casualty, screen spider-webbed, currently sitting in a box of rice.</p>\n\n<p>On FOX Sports 1: “If you’re wondering what the crowd was reacting to—that ball went into the press box, and I believe it was Anthony Fenech from the <em>Free Press</em> on the Tigers beat who had the bad end of that ball.</p>\n\n<p>“I don’t know if he caught it or not. I don’t know if it knocked him down. He isn’t in his seat anymore—he has since left the third row. So, I guess we’ll find out soon enough.”</p>\n\n<p>Dave Dombrowski passes me in the hallway.</p>\n\n<p>“I heard J.D. was upset with you.”</p>\n\n<p>After the game, I try and fail at lobbying J.D. to buy me a new laptop.</p>\n\n<p>“That’s what you get, bro.”</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\">DETROIT, <em>July 17</em>—</span>Back from the All-Star break, I get an email from a guy with the Christopher “Mad Dog” Russo radio show, asking for availability to talk Tigers.</p>\n\n<p>Soon, I’ll be on SiriusXM Channel 144 with the Mad Dog—one of the most notorious loudmouths on the national sports talk scene.</p>\n\n<p>But as the interview wears on, things get weird.</p>\n\n<p>“I’m also reading that you got drunk and ran your car into another, into a PT Cruiser, is that correct, and flipped it over. I mean, how do you flip—Anthony, how do you flip a PT Cruiser? Is that true?”</p>\n\n<p>My jaw drops. I am on satellite radio with Mad Dog, and he just hit me with that?</p>\n\n<p>Hanging up, I realize I’ve been hood-winked. It won’t take long for Internet Stalker’s sports media terrorist group to claim responsibility. Apparently, I was speaking with someone named Sour Shoes from the Howard Stern Show. The prank call is on the Internet now.</p>\n\n<p class=\"has-dateline\"><span class=\"dateline\"><em>July 19</em>—</span>Redemption is mine. A week after I got punk’d by Internet Stalker, I get an email from an ESPN producer, inviting me onto <em>SportsCenter</em> today.</p>\n\n<p>No, it’s not another prank. Email address checked out; I found the producer on LinkedIn.</p>\n\n<p>At a studio downtown, I sit in front of a color canvas of the Detroit skyline. I have the producer snap a picture so I can show my grandkids one day. <em>SportsCenter</em>!</p>",
       "paragraphs": []
     },
     {
@@ -2798,53 +2727,53 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 45,
-      "last_page": 53,
+      "first_page": 44,
+      "last_page": 52,
       "page_breaks": [
         {
-          "page": 45,
+          "page": 44,
           "paragraph_id": "p_ch07_001",
+          "anchor": "page44"
+        },
+        {
+          "page": 45,
+          "paragraph_id": "p_ch07_009",
           "anchor": "page45"
         },
         {
           "page": 46,
-          "paragraph_id": "p_ch07_005",
+          "paragraph_id": "p_ch07_024",
           "anchor": "page46"
         },
         {
           "page": 47,
-          "paragraph_id": "p_ch07_018",
+          "paragraph_id": "p_ch07_035",
           "anchor": "page47"
         },
         {
           "page": 48,
-          "paragraph_id": "p_ch07_028",
+          "paragraph_id": "p_ch07_048",
           "anchor": "page48"
         },
         {
           "page": 49,
-          "paragraph_id": "p_ch07_042",
+          "paragraph_id": "p_ch07_063",
           "anchor": "page49"
         },
         {
           "page": 50,
-          "paragraph_id": "p_ch07_055",
+          "paragraph_id": "p_ch07_083",
           "anchor": "page50"
         },
         {
           "page": 51,
-          "paragraph_id": "p_ch07_071",
+          "paragraph_id": "p_ch07_096",
           "anchor": "page51"
         },
         {
           "page": 52,
-          "paragraph_id": "p_ch07_090",
+          "paragraph_id": "p_ch07_106",
           "anchor": "page52"
-        },
-        {
-          "page": 53,
-          "paragraph_id": "p_ch07_101",
-          "anchor": "page53"
         }
       ],
       "paragraph_count": 108,
@@ -3511,73 +3440,68 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 54,
-      "last_page": 66,
+      "first_page": 53,
+      "last_page": 64,
       "page_breaks": [
         {
-          "page": 54,
+          "page": 53,
           "paragraph_id": "p_ch08_001",
+          "anchor": "page53"
+        },
+        {
+          "page": 54,
+          "paragraph_id": "p_ch08_009",
           "anchor": "page54"
         },
         {
           "page": 55,
-          "paragraph_id": "p_ch08_002",
+          "paragraph_id": "p_ch08_031",
           "anchor": "page55"
         },
         {
           "page": 56,
-          "paragraph_id": "p_ch08_017",
+          "paragraph_id": "p_ch08_051",
           "anchor": "page56"
         },
         {
           "page": 57,
-          "paragraph_id": "p_ch08_040",
+          "paragraph_id": "p_ch08_071",
           "anchor": "page57"
         },
         {
           "page": 58,
-          "paragraph_id": "p_ch08_061",
+          "paragraph_id": "p_ch08_083",
           "anchor": "page58"
         },
         {
           "page": 59,
-          "paragraph_id": "p_ch08_074",
+          "paragraph_id": "p_ch08_092",
           "anchor": "page59"
         },
         {
           "page": 60,
-          "paragraph_id": "p_ch08_087",
+          "paragraph_id": "p_ch08_101",
           "anchor": "page60"
         },
         {
           "page": 61,
-          "paragraph_id": "p_ch08_095",
+          "paragraph_id": "p_ch08_111",
           "anchor": "page61"
         },
         {
           "page": 62,
-          "paragraph_id": "p_ch08_104",
+          "paragraph_id": "p_ch08_127",
           "anchor": "page62"
         },
         {
           "page": 63,
-          "paragraph_id": "p_ch08_115",
+          "paragraph_id": "p_ch08_134",
           "anchor": "page63"
         },
         {
           "page": 64,
-          "paragraph_id": "p_ch08_129",
+          "paragraph_id": "p_ch08_144",
           "anchor": "page64"
-        },
-        {
-          "page": 65,
-          "paragraph_id": "p_ch08_139",
-          "anchor": "page65"
-        },
-        {
-          "page": 66,
-          "paragraph_id": "p_ch08_150",
-          "anchor": "page66"
         }
       ],
       "paragraph_count": 150,
@@ -4501,7 +4425,7 @@ export default
       "page_breaks": [],
       "paragraph_count": 0,
       "word_count": 211,
-      "content": "<p class=\"email-line\"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Tigers, Aviles</p>\n\n<p><em>In case you didn’t see it yet, Buster Olney is reporting the Tigers signed Mike Aviles.</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> VAUGHN HOOGASIAN <strong>Sent:</strong> Monday, December 21, 2015 11:05 AM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> BOO BOO</p>\n\n<p><em>Dear Anthony: I am surprised that you don’t know the difference between inquisition and ACQUISITION!!! Has the </em>FREE PRESS<em> done away with copy editors in an effort to save a few bucks? Check your column of Dec. 17. I suggest you buy a dictionary AND USE IT or at least check it for boo boo’s when in doubt. There is a vast world of difference between these two words as you will discover, I hope.</em></p>\n\n<p><em>VAUGHN HOOGASIAN (ONE TIME JOURNALISM AND ENGLISH TEACHER)</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> kurt ralston <strong>Sent:</strong> Monday, December 27, 2015 11:28 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Idea</p>\n\n<p>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</p>\n\n<p>Congratulations on year one. I look forward to year number two.</p>",
+      "content": "<div class=\"toc-page\">\n<h2 class=\"toc-page-title\">JUNK MAIL</h2>\n<p class=\"email-line\"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Tigers, Aviles</p>\n\n<p><em>In case you didn’t see it yet, Buster Olney is reporting the Tigers signed Mike Aviles.</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> VAUGHN HOOGASIAN <strong>Sent:</strong> Monday, December 21, 2015 11:05 AM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> BOO BOO</p>\n\n<p><em>Dear Anthony: I am surprised that you don’t know the difference between inquisition and ACQUISITION!!! Has the </em>FREE PRESS<em> done away with copy editors in an effort to save a few bucks? Check your column of Dec. 17. I suggest you buy a dictionary AND USE IT or at least check it for boo boo’s when in doubt. There is a vast world of difference between these two words as you will discover, I hope.</em></p>\n\n<p><em>VAUGHN HOOGASIAN (ONE TIME JOURNALISM AND ENGLISH TEACHER)</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> kurt ralston <strong>Sent:</strong> Monday, December 27, 2015 11:28 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Idea</p>\n\n<p>Fans might like to read about your first year as a beat writer. Players, coaches, ballparks, press boxes, cities, restaurants, plane trips … Who was the easiest/hardest to interview? Was there anything unusual, any surprises, any special places/events? Take us through a typical day on the road. What were the hilites and lowlights? Any physical or mental fatigue occur during the nine months?</p>\n\n<p>Congratulations on year one. I look forward to year number two.</p>\n</div>",
       "paragraphs": []
     },
     {
@@ -4532,43 +4456,43 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 67,
-      "last_page": 73,
+      "first_page": 65,
+      "last_page": 71,
       "page_breaks": [
         {
-          "page": 67,
+          "page": 65,
           "paragraph_id": "p_ch09_001",
+          "anchor": "page65"
+        },
+        {
+          "page": 66,
+          "paragraph_id": "p_ch09_013",
+          "anchor": "page66"
+        },
+        {
+          "page": 67,
+          "paragraph_id": "p_ch09_027",
           "anchor": "page67"
         },
         {
           "page": 68,
-          "paragraph_id": "p_ch09_019",
+          "paragraph_id": "p_ch09_037",
           "anchor": "page68"
         },
         {
           "page": 69,
-          "paragraph_id": "p_ch09_030",
+          "paragraph_id": "p_ch09_050",
           "anchor": "page69"
         },
         {
           "page": 70,
-          "paragraph_id": "p_ch09_040",
+          "paragraph_id": "p_ch09_069",
           "anchor": "page70"
         },
         {
           "page": 71,
-          "paragraph_id": "p_ch09_056",
+          "paragraph_id": "p_ch09_083",
           "anchor": "page71"
-        },
-        {
-          "page": 72,
-          "paragraph_id": "p_ch09_076",
-          "anchor": "page72"
-        },
-        {
-          "page": 73,
-          "paragraph_id": "p_ch09_088",
-          "anchor": "page73"
         }
       ],
       "paragraph_count": 92,
@@ -5139,43 +5063,48 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 74,
-      "last_page": 80,
+      "first_page": 72,
+      "last_page": 79,
       "page_breaks": [
         {
-          "page": 74,
+          "page": 72,
           "paragraph_id": "p_ch10_001",
+          "anchor": "page72"
+        },
+        {
+          "page": 73,
+          "paragraph_id": "p_ch10_006",
+          "anchor": "page73"
+        },
+        {
+          "page": 74,
+          "paragraph_id": "p_ch10_022",
           "anchor": "page74"
         },
         {
           "page": 75,
-          "paragraph_id": "p_ch10_013",
+          "paragraph_id": "p_ch10_032",
           "anchor": "page75"
         },
         {
           "page": 76,
-          "paragraph_id": "p_ch10_026",
+          "paragraph_id": "p_ch10_044",
           "anchor": "page76"
         },
         {
           "page": 77,
-          "paragraph_id": "p_ch10_037",
+          "paragraph_id": "p_ch10_056",
           "anchor": "page77"
         },
         {
           "page": 78,
-          "paragraph_id": "p_ch10_047",
+          "paragraph_id": "p_ch10_071",
           "anchor": "page78"
         },
         {
           "page": 79,
-          "paragraph_id": "p_ch10_061",
+          "paragraph_id": "p_ch10_086",
           "anchor": "page79"
-        },
-        {
-          "page": 80,
-          "paragraph_id": "p_ch10_076",
-          "anchor": "page80"
         }
       ],
       "paragraph_count": 90,
@@ -5739,7 +5668,7 @@ export default
       "page_breaks": [],
       "paragraph_count": 0,
       "word_count": 217,
-      "content": "<p class=\"email-line\"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Tigers …</p>\n\n<p><em>… you out there, buddy?</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> Fenech, Anthony <strong>Sent:</strong> Saturday, July 30, 2016 9:26 AM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Re: Tigers …</p>\n\n<p><em>I’m sorry. Should have emailed you. Probably shouldn’t have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> Maxwell, Charlie <strong>Sent:</strong> Monday, August 1, 2016 4:48 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Hey Dumbass…</p>\n\n<p><em>You’re late to your FP chats, a smart ass who doesn’t know any more about the game than your readers and look like Frankenstein talking through that nose in the game wrap-ups. Don’t imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> Bull, Kevin <strong>Sent:</strong> Friday, August 5, 2016 10:52 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Next week 1A story</p>\n\n<p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>",
+      "content": "<div class=\"toc-page\">\n<h2 class=\"toc-page-title\">JUNK MAIL</h2>\n<p class=\"email-line\"><strong>From:</strong> Crawford, Kirkland <strong>Sent:</strong> Friday, July 29, 2016 11:58 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Tigers …</p>\n\n<p><em>… you out there, buddy?</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> Fenech, Anthony <strong>Sent:</strong> Saturday, July 30, 2016 9:26 AM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Re: Tigers …</p>\n\n<p><em>I’m sorry. Should have emailed you. Probably shouldn’t have gone to the game but I was playing hero, spent Thurs night in ER with heat stroke or food poisoning or something. Was feeling terrible by the end and fell asleep right when I got home.</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> Maxwell, Charlie <strong>Sent:</strong> Monday, August 1, 2016 4:48 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Hey Dumbass…</p>\n\n<p><em>You’re late to your FP chats, a smart ass who doesn’t know any more about the game than your readers and look like Frankenstein talking through that nose in the game wrap-ups. Don’t imagine the FP can afford real reporters these days so they hire the likes of you.</em></p>\n\n<p class=\"email-line\"><strong>From:</strong> Bull, Kevin <strong>Sent:</strong> Friday, August 5, 2016 10:52 PM</p>\n\n<p class=\"email-line\"><strong>Subject:</strong> Next week 1A story</p>\n\n<p><em>Anthony: 1A is interested in a story about How The Tigers Saved Their Season. I would say for next Friday. This assumes they are still doing well and don’t get swept in Seattle. I think it’s something you can start reporting now. Can deﬁnitely take us back to that road trip in Baltimore where we thought Ausmus was close to being ﬁred. Cool?</em></p>\n</div>",
       "paragraphs": []
     },
     {
@@ -5770,82 +5699,87 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 81,
+      "first_page": 80,
       "last_page": 95,
       "page_breaks": [
         {
-          "page": 81,
+          "page": 80,
           "paragraph_id": "p_ch11_001",
+          "anchor": "page80"
+        },
+        {
+          "page": 81,
+          "paragraph_id": "p_ch11_008",
           "anchor": "page81"
         },
         {
           "page": 82,
-          "paragraph_id": "p_ch11_017",
+          "paragraph_id": "p_ch11_032",
           "anchor": "page82"
         },
         {
           "page": 83,
-          "paragraph_id": "p_ch11_039",
+          "paragraph_id": "p_ch11_048",
           "anchor": "page83"
         },
         {
           "page": 84,
-          "paragraph_id": "p_ch11_056",
+          "paragraph_id": "p_ch11_066",
           "anchor": "page84"
         },
         {
           "page": 85,
-          "paragraph_id": "p_ch11_070",
+          "paragraph_id": "p_ch11_081",
           "anchor": "page85"
         },
         {
           "page": 86,
-          "paragraph_id": "p_ch11_086",
+          "paragraph_id": "p_ch11_096",
           "anchor": "page86"
         },
         {
           "page": 87,
-          "paragraph_id": "p_ch11_099",
+          "paragraph_id": "p_ch11_106",
           "anchor": "page87"
         },
         {
           "page": 88,
-          "paragraph_id": "p_ch11_111",
+          "paragraph_id": "p_ch11_122",
           "anchor": "page88"
         },
         {
           "page": 89,
-          "paragraph_id": "p_ch11_127",
+          "paragraph_id": "p_ch11_141",
           "anchor": "page89"
         },
         {
           "page": 90,
-          "paragraph_id": "p_ch11_149",
+          "paragraph_id": "p_ch11_160",
           "anchor": "page90"
         },
         {
           "page": 91,
-          "paragraph_id": "p_ch11_166",
+          "paragraph_id": "p_ch11_173",
           "anchor": "page91"
         },
         {
           "page": 92,
-          "paragraph_id": "p_ch11_181",
+          "paragraph_id": "p_ch11_186",
           "anchor": "page92"
         },
         {
           "page": 93,
-          "paragraph_id": "p_ch11_195",
+          "paragraph_id": "p_ch11_203",
           "anchor": "page93"
         },
         {
           "page": 94,
-          "paragraph_id": "p_ch11_206",
+          "paragraph_id": "p_ch11_217",
           "anchor": "page94"
         },
         {
           "page": 95,
-          "paragraph_id": "p_ch11_224",
+          "paragraph_id": "p_ch11_233",
           "anchor": "page95"
         }
       ],
@@ -7264,7 +7198,7 @@ export default
       "subtitle": "",
       "teaser": "",
       "first_page": 96,
-      "last_page": 105,
+      "last_page": 104,
       "page_breaks": [
         {
           "page": 96,
@@ -7273,48 +7207,43 @@ export default
         },
         {
           "page": 97,
-          "paragraph_id": "p_ch12_003",
+          "paragraph_id": "p_ch12_011",
           "anchor": "page97"
         },
         {
           "page": 98,
-          "paragraph_id": "p_ch12_019",
+          "paragraph_id": "p_ch12_027",
           "anchor": "page98"
         },
         {
           "page": 99,
-          "paragraph_id": "p_ch12_034",
+          "paragraph_id": "p_ch12_043",
           "anchor": "page99"
         },
         {
           "page": 100,
-          "paragraph_id": "p_ch12_049",
+          "paragraph_id": "p_ch12_058",
           "anchor": "page100"
         },
         {
           "page": 101,
-          "paragraph_id": "p_ch12_071",
+          "paragraph_id": "p_ch12_078",
           "anchor": "page101"
         },
         {
           "page": 102,
-          "paragraph_id": "p_ch12_084",
+          "paragraph_id": "p_ch12_088",
           "anchor": "page102"
         },
         {
           "page": 103,
-          "paragraph_id": "p_ch12_093",
+          "paragraph_id": "p_ch12_099",
           "anchor": "page103"
         },
         {
           "page": 104,
-          "paragraph_id": "p_ch12_105",
+          "paragraph_id": "p_ch12_113",
           "anchor": "page104"
-        },
-        {
-          "page": 105,
-          "paragraph_id": "p_ch12_120",
-          "anchor": "page105"
         }
       ],
       "paragraph_count": 126,
@@ -8089,68 +8018,68 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 106,
-      "last_page": 117,
+      "first_page": 105,
+      "last_page": 116,
       "page_breaks": [
         {
-          "page": 106,
+          "page": 105,
           "paragraph_id": "p_ch13_001",
+          "anchor": "page105"
+        },
+        {
+          "page": 106,
+          "paragraph_id": "p_ch13_004",
           "anchor": "page106"
         },
         {
           "page": 107,
-          "paragraph_id": "p_ch13_011",
+          "paragraph_id": "p_ch13_017",
           "anchor": "page107"
         },
         {
           "page": 108,
-          "paragraph_id": "p_ch13_022",
+          "paragraph_id": "p_ch13_025",
           "anchor": "page108"
         },
         {
           "page": 109,
-          "paragraph_id": "p_ch13_028",
+          "paragraph_id": "p_ch13_036",
           "anchor": "page109"
         },
         {
           "page": 110,
-          "paragraph_id": "p_ch13_041",
+          "paragraph_id": "p_ch13_047",
           "anchor": "page110"
         },
         {
           "page": 111,
-          "paragraph_id": "p_ch13_050",
+          "paragraph_id": "p_ch13_061",
           "anchor": "page111"
         },
         {
           "page": 112,
-          "paragraph_id": "p_ch13_068",
+          "paragraph_id": "p_ch13_080",
           "anchor": "page112"
         },
         {
           "page": 113,
-          "paragraph_id": "p_ch13_086",
+          "paragraph_id": "p_ch13_101",
           "anchor": "page113"
         },
         {
           "page": 114,
-          "paragraph_id": "p_ch13_105",
+          "paragraph_id": "p_ch13_113",
           "anchor": "page114"
         },
         {
           "page": 115,
-          "paragraph_id": "p_ch13_117",
+          "paragraph_id": "p_ch13_130",
           "anchor": "page115"
         },
         {
           "page": 116,
-          "paragraph_id": "p_ch13_137",
+          "paragraph_id": "p_ch13_148",
           "anchor": "page116"
-        },
-        {
-          "page": 117,
-          "paragraph_id": "p_ch13_156",
-          "anchor": "page117"
         }
       ],
       "paragraph_count": 158,
@@ -9117,58 +9046,58 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 118,
-      "last_page": 127,
+      "first_page": 117,
+      "last_page": 126,
       "page_breaks": [
         {
-          "page": 118,
+          "page": 117,
           "paragraph_id": "p_ch14_001",
+          "anchor": "page117"
+        },
+        {
+          "page": 118,
+          "paragraph_id": "p_ch14_006",
           "anchor": "page118"
         },
         {
           "page": 119,
-          "paragraph_id": "p_ch14_013",
+          "paragraph_id": "p_ch14_020",
           "anchor": "page119"
         },
         {
           "page": 120,
-          "paragraph_id": "p_ch14_028",
+          "paragraph_id": "p_ch14_041",
           "anchor": "page120"
         },
         {
           "page": 121,
-          "paragraph_id": "p_ch14_046",
+          "paragraph_id": "p_ch14_060",
           "anchor": "page121"
         },
         {
           "page": 122,
-          "paragraph_id": "p_ch14_064",
+          "paragraph_id": "p_ch14_079",
           "anchor": "page122"
         },
         {
           "page": 123,
-          "paragraph_id": "p_ch14_089",
+          "paragraph_id": "p_ch14_099",
           "anchor": "page123"
         },
         {
           "page": 124,
-          "paragraph_id": "p_ch14_104",
+          "paragraph_id": "p_ch14_111",
           "anchor": "page124"
         },
         {
           "page": 125,
-          "paragraph_id": "p_ch14_115",
+          "paragraph_id": "p_ch14_129",
           "anchor": "page125"
         },
         {
           "page": 126,
-          "paragraph_id": "p_ch14_139",
+          "paragraph_id": "p_ch14_153",
           "anchor": "page126"
-        },
-        {
-          "page": 127,
-          "paragraph_id": "p_ch14_163",
-          "anchor": "page127"
         }
       ],
       "paragraph_count": 172,
@@ -10219,88 +10148,88 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 128,
-      "last_page": 143,
+      "first_page": 127,
+      "last_page": 142,
       "page_breaks": [
         {
-          "page": 128,
+          "page": 127,
           "paragraph_id": "p_ch15_001",
+          "anchor": "page127"
+        },
+        {
+          "page": 128,
+          "paragraph_id": "p_ch15_011",
           "anchor": "page128"
         },
         {
           "page": 129,
-          "paragraph_id": "p_ch15_005",
+          "paragraph_id": "p_ch15_024",
           "anchor": "page129"
         },
         {
           "page": 130,
-          "paragraph_id": "p_ch15_014",
+          "paragraph_id": "p_ch15_041",
           "anchor": "page130"
         },
         {
           "page": 131,
-          "paragraph_id": "p_ch15_029",
+          "paragraph_id": "p_ch15_062",
           "anchor": "page131"
         },
         {
           "page": 132,
-          "paragraph_id": "p_ch15_050",
+          "paragraph_id": "p_ch15_081",
           "anchor": "page132"
         },
         {
           "page": 133,
-          "paragraph_id": "p_ch15_067",
+          "paragraph_id": "p_ch15_106",
           "anchor": "page133"
         },
         {
           "page": 134,
-          "paragraph_id": "p_ch15_091",
+          "paragraph_id": "p_ch15_121",
           "anchor": "page134"
         },
         {
           "page": 135,
-          "paragraph_id": "p_ch15_112",
+          "paragraph_id": "p_ch15_144",
           "anchor": "page135"
         },
         {
           "page": 136,
-          "paragraph_id": "p_ch15_134",
+          "paragraph_id": "p_ch15_160",
           "anchor": "page136"
         },
         {
           "page": 137,
-          "paragraph_id": "p_ch15_150",
+          "paragraph_id": "p_ch15_175",
           "anchor": "page137"
         },
         {
           "page": 138,
-          "paragraph_id": "p_ch15_166",
+          "paragraph_id": "p_ch15_192",
           "anchor": "page138"
         },
         {
           "page": 139,
-          "paragraph_id": "p_ch15_184",
+          "paragraph_id": "p_ch15_204",
           "anchor": "page139"
         },
         {
           "page": 140,
-          "paragraph_id": "p_ch15_196",
+          "paragraph_id": "p_ch15_215",
           "anchor": "page140"
         },
         {
           "page": 141,
-          "paragraph_id": "p_ch15_209",
+          "paragraph_id": "p_ch15_226",
           "anchor": "page141"
         },
         {
           "page": 142,
-          "paragraph_id": "p_ch15_219",
+          "paragraph_id": "p_ch15_236",
           "anchor": "page142"
-        },
-        {
-          "page": 143,
-          "paragraph_id": "p_ch15_230",
-          "anchor": "page143"
         }
       ],
       "paragraph_count": 240,
@@ -11759,43 +11688,38 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 144,
-      "last_page": 150,
+      "first_page": 143,
+      "last_page": 148,
       "page_breaks": [
         {
-          "page": 144,
+          "page": 143,
           "paragraph_id": "p_ch16_001",
+          "anchor": "page143"
+        },
+        {
+          "page": 144,
+          "paragraph_id": "p_ch16_011",
           "anchor": "page144"
         },
         {
           "page": 145,
-          "paragraph_id": "p_ch16_004",
+          "paragraph_id": "p_ch16_025",
           "anchor": "page145"
         },
         {
           "page": 146,
-          "paragraph_id": "p_ch16_017",
+          "paragraph_id": "p_ch16_045",
           "anchor": "page146"
         },
         {
           "page": 147,
-          "paragraph_id": "p_ch16_035",
+          "paragraph_id": "p_ch16_062",
           "anchor": "page147"
         },
         {
           "page": 148,
-          "paragraph_id": "p_ch16_053",
+          "paragraph_id": "p_ch16_076",
           "anchor": "page148"
-        },
-        {
-          "page": 149,
-          "paragraph_id": "p_ch16_066",
-          "anchor": "page149"
-        },
-        {
-          "page": 150,
-          "paragraph_id": "p_ch16_081",
-          "anchor": "page150"
         }
       ],
       "paragraph_count": 92,
@@ -12366,53 +12290,58 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 151,
-      "last_page": 159,
+      "first_page": 149,
+      "last_page": 158,
       "page_breaks": [
         {
-          "page": 151,
+          "page": 149,
           "paragraph_id": "p_ch17_001",
+          "anchor": "page149"
+        },
+        {
+          "page": 150,
+          "paragraph_id": "p_ch17_002",
+          "anchor": "page150"
+        },
+        {
+          "page": 151,
+          "paragraph_id": "p_ch17_013",
           "anchor": "page151"
         },
         {
           "page": 152,
-          "paragraph_id": "p_ch17_005",
+          "paragraph_id": "p_ch17_027",
           "anchor": "page152"
         },
         {
           "page": 153,
-          "paragraph_id": "p_ch17_017",
+          "paragraph_id": "p_ch17_044",
           "anchor": "page153"
         },
         {
           "page": 154,
-          "paragraph_id": "p_ch17_038",
+          "paragraph_id": "p_ch17_057",
           "anchor": "page154"
         },
         {
           "page": 155,
-          "paragraph_id": "p_ch17_050",
+          "paragraph_id": "p_ch17_074",
           "anchor": "page155"
         },
         {
           "page": 156,
-          "paragraph_id": "p_ch17_066",
+          "paragraph_id": "p_ch17_094",
           "anchor": "page156"
         },
         {
           "page": 157,
-          "paragraph_id": "p_ch17_085",
+          "paragraph_id": "p_ch17_103",
           "anchor": "page157"
         },
         {
           "page": 158,
-          "paragraph_id": "p_ch17_096",
+          "paragraph_id": "p_ch17_112",
           "anchor": "page158"
-        },
-        {
-          "page": 159,
-          "paragraph_id": "p_ch17_106",
-          "anchor": "page159"
         }
       ],
       "paragraph_count": 113,
@@ -13109,63 +13038,63 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 160,
-      "last_page": 170,
+      "first_page": 159,
+      "last_page": 169,
       "page_breaks": [
         {
-          "page": 160,
+          "page": 159,
           "paragraph_id": "p_ch18_001",
+          "anchor": "page159"
+        },
+        {
+          "page": 160,
+          "paragraph_id": "p_ch18_008",
           "anchor": "page160"
         },
         {
           "page": 161,
-          "paragraph_id": "p_ch18_002",
+          "paragraph_id": "p_ch18_024",
           "anchor": "page161"
         },
         {
           "page": 162,
-          "paragraph_id": "p_ch18_015",
+          "paragraph_id": "p_ch18_044",
           "anchor": "page162"
         },
         {
           "page": 163,
-          "paragraph_id": "p_ch18_034",
+          "paragraph_id": "p_ch18_052",
           "anchor": "page163"
         },
         {
           "page": 164,
-          "paragraph_id": "p_ch18_045",
+          "paragraph_id": "p_ch18_069",
           "anchor": "page164"
         },
         {
           "page": 165,
-          "paragraph_id": "p_ch18_056",
+          "paragraph_id": "p_ch18_085",
           "anchor": "page165"
         },
         {
           "page": 166,
-          "paragraph_id": "p_ch18_076",
+          "paragraph_id": "p_ch18_097",
           "anchor": "page166"
         },
         {
           "page": 167,
-          "paragraph_id": "p_ch18_090",
+          "paragraph_id": "p_ch18_123",
           "anchor": "page167"
         },
         {
           "page": 168,
-          "paragraph_id": "p_ch18_107",
+          "paragraph_id": "p_ch18_136",
           "anchor": "page168"
         },
         {
           "page": 169,
-          "paragraph_id": "p_ch18_128",
+          "paragraph_id": "p_ch18_151",
           "anchor": "page169"
-        },
-        {
-          "page": 170,
-          "paragraph_id": "p_ch18_141",
-          "anchor": "page170"
         }
       ],
       "paragraph_count": 155,
@@ -14114,62 +14043,67 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 171,
+      "first_page": 170,
       "last_page": 181,
       "page_breaks": [
         {
-          "page": 171,
+          "page": 170,
           "paragraph_id": "p_ch19_001",
+          "anchor": "page170"
+        },
+        {
+          "page": 171,
+          "paragraph_id": "p_ch19_009",
           "anchor": "page171"
         },
         {
           "page": 172,
-          "paragraph_id": "p_ch19_018",
+          "paragraph_id": "p_ch19_029",
           "anchor": "page172"
         },
         {
           "page": 173,
-          "paragraph_id": "p_ch19_033",
+          "paragraph_id": "p_ch19_045",
           "anchor": "page173"
         },
         {
           "page": 174,
-          "paragraph_id": "p_ch19_047",
+          "paragraph_id": "p_ch19_060",
           "anchor": "page174"
         },
         {
           "page": 175,
-          "paragraph_id": "p_ch19_069",
+          "paragraph_id": "p_ch19_077",
           "anchor": "page175"
         },
         {
           "page": 176,
-          "paragraph_id": "p_ch19_085",
+          "paragraph_id": "p_ch19_091",
           "anchor": "page176"
         },
         {
           "page": 177,
-          "paragraph_id": "p_ch19_099",
+          "paragraph_id": "p_ch19_111",
           "anchor": "page177"
         },
         {
           "page": 178,
-          "paragraph_id": "p_ch19_114",
+          "paragraph_id": "p_ch19_123",
           "anchor": "page178"
         },
         {
           "page": 179,
-          "paragraph_id": "p_ch19_127",
+          "paragraph_id": "p_ch19_133",
           "anchor": "page179"
         },
         {
           "page": 180,
-          "paragraph_id": "p_ch19_138",
+          "paragraph_id": "p_ch19_143",
           "anchor": "page180"
         },
         {
           "page": 181,
-          "paragraph_id": "p_ch19_148",
+          "paragraph_id": "p_ch19_152",
           "anchor": "page181"
         }
       ],
@@ -15135,62 +15069,62 @@ export default
         },
         {
           "page": 183,
-          "paragraph_id": "p_ch20_012",
+          "paragraph_id": "p_ch20_007",
           "anchor": "page183"
         },
         {
           "page": 184,
-          "paragraph_id": "p_ch20_027",
+          "paragraph_id": "p_ch20_022",
           "anchor": "page184"
         },
         {
           "page": 185,
-          "paragraph_id": "p_ch20_046",
+          "paragraph_id": "p_ch20_042",
           "anchor": "page185"
         },
         {
           "page": 186,
-          "paragraph_id": "p_ch20_056",
+          "paragraph_id": "p_ch20_051",
           "anchor": "page186"
         },
         {
           "page": 187,
-          "paragraph_id": "p_ch20_068",
+          "paragraph_id": "p_ch20_065",
           "anchor": "page187"
         },
         {
           "page": 188,
-          "paragraph_id": "p_ch20_076",
+          "paragraph_id": "p_ch20_073",
           "anchor": "page188"
         },
         {
           "page": 189,
-          "paragraph_id": "p_ch20_092",
+          "paragraph_id": "p_ch20_086",
           "anchor": "page189"
         },
         {
           "page": 190,
-          "paragraph_id": "p_ch20_105",
+          "paragraph_id": "p_ch20_099",
           "anchor": "page190"
         },
         {
           "page": 191,
-          "paragraph_id": "p_ch20_120",
+          "paragraph_id": "p_ch20_113",
           "anchor": "page191"
         },
         {
           "page": 192,
-          "paragraph_id": "p_ch20_134",
+          "paragraph_id": "p_ch20_130",
           "anchor": "page192"
         },
         {
           "page": 193,
-          "paragraph_id": "p_ch20_145",
+          "paragraph_id": "p_ch20_141",
           "anchor": "page193"
         },
         {
           "page": 194,
-          "paragraph_id": "p_ch20_160",
+          "paragraph_id": "p_ch20_151",
           "anchor": "page194"
         }
       ],
@@ -16195,7 +16129,7 @@ export default
       "subtitle": "",
       "teaser": "",
       "first_page": 195,
-      "last_page": 200,
+      "last_page": 201,
       "page_breaks": [
         {
           "page": 195,
@@ -16204,28 +16138,33 @@ export default
         },
         {
           "page": 196,
-          "paragraph_id": "p_ch21_010",
+          "paragraph_id": "p_ch21_005",
           "anchor": "page196"
         },
         {
           "page": 197,
-          "paragraph_id": "p_ch21_021",
+          "paragraph_id": "p_ch21_015",
           "anchor": "page197"
         },
         {
           "page": 198,
-          "paragraph_id": "p_ch21_031",
+          "paragraph_id": "p_ch21_026",
           "anchor": "page198"
         },
         {
           "page": 199,
-          "paragraph_id": "p_ch21_047",
+          "paragraph_id": "p_ch21_041",
           "anchor": "page199"
         },
         {
           "page": 200,
-          "paragraph_id": "p_ch21_063",
+          "paragraph_id": "p_ch21_056",
           "anchor": "page200"
+        },
+        {
+          "page": 201,
+          "paragraph_id": "p_ch21_068",
+          "anchor": "page201"
         }
       ],
       "paragraph_count": 69,
@@ -16658,67 +16597,62 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 201,
+      "first_page": 202,
       "last_page": 212,
       "page_breaks": [
         {
-          "page": 201,
-          "paragraph_id": "p_ch22_001",
-          "anchor": "page201"
-        },
-        {
           "page": 202,
-          "paragraph_id": "p_ch22_004",
+          "paragraph_id": "p_ch22_001",
           "anchor": "page202"
         },
         {
           "page": 203,
-          "paragraph_id": "p_ch22_011",
+          "paragraph_id": "p_ch22_009",
           "anchor": "page203"
         },
         {
           "page": 204,
-          "paragraph_id": "p_ch22_021",
+          "paragraph_id": "p_ch22_019",
           "anchor": "page204"
         },
         {
           "page": 205,
-          "paragraph_id": "p_ch22_029",
+          "paragraph_id": "p_ch22_025",
           "anchor": "page205"
         },
         {
           "page": 206,
-          "paragraph_id": "p_ch22_045",
+          "paragraph_id": "p_ch22_040",
           "anchor": "page206"
         },
         {
           "page": 207,
-          "paragraph_id": "p_ch22_057",
+          "paragraph_id": "p_ch22_051",
           "anchor": "page207"
         },
         {
           "page": 208,
-          "paragraph_id": "p_ch22_067",
+          "paragraph_id": "p_ch22_064",
           "anchor": "page208"
         },
         {
           "page": 209,
-          "paragraph_id": "p_ch22_081",
+          "paragraph_id": "p_ch22_075",
           "anchor": "page209"
         },
         {
           "page": 210,
-          "paragraph_id": "p_ch22_090",
+          "paragraph_id": "p_ch22_086",
           "anchor": "page210"
         },
         {
           "page": 211,
-          "paragraph_id": "p_ch22_099",
+          "paragraph_id": "p_ch22_095",
           "anchor": "page211"
         },
         {
           "page": 212,
-          "paragraph_id": "p_ch22_114",
+          "paragraph_id": "p_ch22_108",
           "anchor": "page212"
         }
       ],
@@ -17432,57 +17366,57 @@ export default
         },
         {
           "page": 214,
-          "paragraph_id": "p_ch23_011",
+          "paragraph_id": "p_ch23_007",
           "anchor": "page214"
         },
         {
           "page": 215,
-          "paragraph_id": "p_ch23_016",
+          "paragraph_id": "p_ch23_013",
           "anchor": "page215"
         },
         {
           "page": 216,
-          "paragraph_id": "p_ch23_035",
+          "paragraph_id": "p_ch23_023",
           "anchor": "page216"
         },
         {
           "page": 217,
-          "paragraph_id": "p_ch23_049",
+          "paragraph_id": "p_ch23_044",
           "anchor": "page217"
         },
         {
           "page": 218,
-          "paragraph_id": "p_ch23_061",
+          "paragraph_id": "p_ch23_056",
           "anchor": "page218"
         },
         {
           "page": 219,
-          "paragraph_id": "p_ch23_077",
+          "paragraph_id": "p_ch23_072",
           "anchor": "page219"
         },
         {
           "page": 220,
-          "paragraph_id": "p_ch23_088",
+          "paragraph_id": "p_ch23_083",
           "anchor": "page220"
         },
         {
           "page": 221,
-          "paragraph_id": "p_ch23_099",
+          "paragraph_id": "p_ch23_094",
           "anchor": "page221"
         },
         {
           "page": 222,
-          "paragraph_id": "p_ch23_118",
+          "paragraph_id": "p_ch23_113",
           "anchor": "page222"
         },
         {
           "page": 223,
-          "paragraph_id": "p_ch23_132",
+          "paragraph_id": "p_ch23_127",
           "anchor": "page223"
         },
         {
           "page": 224,
-          "paragraph_id": "p_ch23_145",
+          "paragraph_id": "p_ch23_140",
           "anchor": "page224"
         }
       ],
@@ -18379,7 +18313,7 @@ export default
       "subtitle": "",
       "teaser": "",
       "first_page": 225,
-      "last_page": 228,
+      "last_page": 229,
       "page_breaks": [
         {
           "page": 225,
@@ -18388,18 +18322,23 @@ export default
         },
         {
           "page": 226,
-          "paragraph_id": "p_ch24_011",
+          "paragraph_id": "p_ch24_007",
           "anchor": "page226"
         },
         {
           "page": 227,
-          "paragraph_id": "p_ch24_023",
+          "paragraph_id": "p_ch24_019",
           "anchor": "page227"
         },
         {
           "page": 228,
-          "paragraph_id": "p_ch24_033",
+          "paragraph_id": "p_ch24_030",
           "anchor": "page228"
+        },
+        {
+          "page": 229,
+          "paragraph_id": "p_ch24_038",
+          "anchor": "page229"
         }
       ],
       "paragraph_count": 40,
@@ -18663,7 +18602,7 @@ export default
       "page_breaks": [],
       "paragraph_count": 0,
       "word_count": 331,
-      "content": "<p class=\"email-line\"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>\n\n<p class=\"email-line\"><strong>Verlander’s Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>\n\n<p class=\"email-line\"><strong>Unknown (313) Number:</strong> Any comment on the locker-room incident?</p>\n\n<p class=\"email-line\"><strong>Gator:</strong> He’s not talking about you is he? Lol</p>\n\n<p class=\"email-line\"><strong>Drug Dealer:</strong> Lmk if anyone tries to mess with you.</p>\n\n<p class=\"email-line\"><strong>No Clue:</strong> verlander beefin with you? whats up man?</p>\n\n<p class=\"email-line\"><strong>Radio Host:</strong> Hey bro, long time … any chance you can come on about the Verlander thing?</p>\n\n<p class=\"email-line\"><strong>National Guy: </strong>Anthony, don’t let the creeps get you down. Astros PR? Worst PR guy in my experience, which probably covers 100-plus PR guys</p>\n\n<p class=\"email-line\"><strong>Pedro:</strong> This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You’re not wrong here. Remember that.</p>\n\n<p class=\"email-line\"><strong>MLB PR:</strong> Hi Anthony, I just tried calling you. Here is a statement that we wanted you to have first. We have gotten some other requests from reporters and we will send this to them as well. But we wanted you to have it first.</p>\n\n<p class=\"email-line\"><strong>BBWAA President:</strong> Anthony, I’m sorry for missing your calls. My phone was charging downstairs overnight and I didn’t hear it ringing.</p>\n\n<p class=\"email-line\"><strong>Another Former Teammate:</strong> Yooo what’s Verlander’s deal?</p>\n\n<p class=\"email-line\"><strong>Ex-Girlfriend’s Roommate:</strong> Thought the reporters weren’t supposed to be the news? Wasn’t expecting to see you the topic of the little red ribbon at the top of the Freep.</p>\n\n<p class=\"email-line\"><strong>High School Classmate:</strong> Why is Justin Verlander trashing u on Twitter hahah?</p>\n\n<p class=\"email-line\"><strong>Deep Throat:</strong> I’d say you’re the most popular sports writer in America today.</p>\n\n<p class=\"email-line\"><strong>Rob Parker:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>\n\n<p class=\"email-line\"><strong>National TV Reporter</strong>: Crazy you’re on his mind so much. You should be flattered.</p>\n\n<p class=\"email-line\"><strong>Copy Editor: </strong>Did you ask about the eclipse again?</p>\n\n<p class=\"email-line\"><strong>Top Scout:</strong> Just read your name in ESPN. That’s great. Getting your name out there!</p>\n\n<p class=\"email-line\"><strong>Mom:</strong> Omg. Call when you can.</p>",
+      "content": "<div class=\"toc-page\">\n<h2 class=\"toc-page-title\">AIRPLANE MODE</h2>\n<p class=\"email-line\"><strong>Mom:</strong> Woohoo best game Tigers could win—against Houston!!!!</p>\n\n<p class=\"email-line\"><strong>Verlander’s Former Teammate:</strong> Fenech-Verlander beef is exactly what I needed in my life.</p>\n\n<p class=\"email-line\"><strong>Unknown (313) Number:</strong> Any comment on the locker-room incident?</p>\n\n<p class=\"email-line\"><strong>Gator:</strong> He’s not talking about you is he? Lol</p>\n\n<p class=\"email-line\"><strong>Drug Dealer:</strong> Lmk if anyone tries to mess with you.</p>\n\n<p class=\"email-line\"><strong>No Clue:</strong> verlander beefin with you? whats up man?</p>\n\n<p class=\"email-line\"><strong>Radio Host:</strong> Hey bro, long time … any chance you can come on about the Verlander thing?</p>\n\n<p class=\"email-line\"><strong>National Guy: </strong>Anthony, don’t let the creeps get you down. Astros PR? Worst PR guy in my experience, which probably covers 100-plus PR guys</p>\n\n<p class=\"email-line\"><strong>Pedro:</strong> This is such a scary moment. It allows every club to say they can keep whoever they want out of their clubhouse. This is why this is an important matter. You’re not wrong here. Remember that.</p>\n\n<p class=\"email-line\"><strong>MLB PR:</strong> Hi Anthony, I just tried calling you. Here is a statement that we wanted you to have first. We have gotten some other requests from reporters and we will send this to them as well. But we wanted you to have it first.</p>\n\n<p class=\"email-line\"><strong>BBWAA President:</strong> Anthony, I’m sorry for missing your calls. My phone was charging downstairs overnight and I didn’t hear it ringing.</p>\n\n<p class=\"email-line\"><strong>Another Former Teammate:</strong> Yooo what’s Verlander’s deal?</p>\n\n<p class=\"email-line\"><strong>Ex-Girlfriend’s Roommate:</strong> Thought the reporters weren’t supposed to be the news? Wasn’t expecting to see you the topic of the little red ribbon at the top of the Freep.</p>\n\n<p class=\"email-line\"><strong>High School Classmate:</strong> Why is Justin Verlander trashing u on Twitter hahah?</p>\n\n<p class=\"email-line\"><strong>Deep Throat:</strong> I’d say you’re the most popular sports writer in America today.</p>\n\n<p class=\"email-line\"><strong>Rob Parker:</strong> Anthony, that was so lame by Verlander. Hope ur OK. U wanna come on my radio show for a few minutes tonight?</p>\n\n<p class=\"email-line\"><strong>National TV Reporter</strong>: Crazy you’re on his mind so much. You should be flattered.</p>\n\n<p class=\"email-line\"><strong>Copy Editor: </strong>Did you ask about the eclipse again?</p>\n\n<p class=\"email-line\"><strong>Top Scout:</strong> Just read your name in ESPN. That’s great. Getting your name out there!</p>\n\n<p class=\"email-line\"><strong>Mom:</strong> Omg. Call when you can.</p>\n</div>",
       "paragraphs": []
     },
     {
@@ -18699,7 +18638,7 @@ export default
       "page_breaks": [],
       "paragraph_count": 0,
       "word_count": 255,
-      "content": "<p class=\"has-dateline\"><span class=\"dateline\"><em>Tuesday, December 19, 2017</em>—</span>Woke up to a flurry of alerts. I’m in the tabloids again.</p>\n\n<p>“You see he did another fine piece, lol,” a friend says. “Guy is obsessed with you.”</p>\n\n<p>Yesterday, the <em>Free Press</em> announced they had fired a Pulitzer Prize-winning columnist and editorial page figurehead after an internal investigation found examples of “inappropriate behavior toward female colleagues stretching back several years.”</p>\n\n<p>Today, I’ve been lumped into the mess.</p>\n\n<p>“Why is a well-respected, award-winning journalist like (redacted) out at the <em>Freep</em> while Anthony Fenech is still gainfully employed as the paper’s Tigers beat writer? Fenech allegedly was involved in a workplace affair with (another employee) when she was at the <em>Free Press</em>. Apparently, they didn’t know that it was ‘frowned upon’ to have sexual relations in the parking garage at work.”</p>\n\n<p>By the time I get out of bed, Coach Content is calling. He doesn’t say hello or even why he’s calling at half past nine on a weekday. No, he says this: “Did you have sex with (redacted)?”</p>\n\n<p>When I say, “What?” he asks again.</p>\n\n<p>“I’m not comfortable speaking about that.”</p>\n\n<p>He asks if I can come into the newsroom to talk with the boss, who asks what my relationship was like and if we ever engaged in sexual activity in the parking garage.</p>\n\n<p>I tell him we became close friends and I could not remember. It’s weird walking out. A co-worker tells me to contact HR and I can’t stop thinking: If they can ask me that, what <em>can’t</em> they ask me?</p>",
+      "content": "<div class=\"toc-page\">\n<h2 class=\"toc-page-title\">TWO YEARS EARLIER</h2>\n<p class=\"has-dateline\"><span class=\"dateline\"><em>Tuesday, December 19, 2017</em>—</span>Woke up to a flurry of alerts. I’m in the tabloids again.</p>\n\n<p>“You see he did another fine piece, lol,” a friend says. “Guy is obsessed with you.”</p>\n\n<p>Yesterday, the <em>Free Press</em> announced they had fired a Pulitzer Prize-winning columnist and editorial page figurehead after an internal investigation found examples of “inappropriate behavior toward female colleagues stretching back several years.”</p>\n\n<p>Today, I’ve been lumped into the mess.</p>\n\n<p>“Why is a well-respected, award-winning journalist like (redacted) out at the <em>Freep</em> while Anthony Fenech is still gainfully employed as the paper’s Tigers beat writer? Fenech allegedly was involved in a workplace affair with (another employee) when she was at the <em>Free Press</em>. Apparently, they didn’t know that it was ‘frowned upon’ to have sexual relations in the parking garage at work.”</p>\n\n<p>By the time I get out of bed, Coach Content is calling. He doesn’t say hello or even why he’s calling at half past nine on a weekday. No, he says this: “Did you have sex with (redacted)?”</p>\n\n<p>When I say, “What?” he asks again.</p>\n\n<p>“I’m not comfortable speaking about that.”</p>\n\n<p>He asks if I can come into the newsroom to talk with the boss, who asks what my relationship was like and if we ever engaged in sexual activity in the parking garage.</p>\n\n<p>I tell him we became close friends and I could not remember. It’s weird walking out. A co-worker tells me to contact HR and I can’t stop thinking: If they can ask me that, what <em>can’t</em> they ask me?</p>\n</div>",
       "paragraphs": []
     },
     {
@@ -18748,123 +18687,123 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 229,
-      "last_page": 251,
+      "first_page": 230,
+      "last_page": 252,
       "page_breaks": [
         {
-          "page": 229,
-          "paragraph_id": "p_ch25_001",
-          "anchor": "page229"
-        },
-        {
           "page": 230,
-          "paragraph_id": "p_ch25_012",
+          "paragraph_id": "p_ch25_001",
           "anchor": "page230"
         },
         {
           "page": 231,
-          "paragraph_id": "p_ch25_028",
+          "paragraph_id": "p_ch25_007",
           "anchor": "page231"
         },
         {
           "page": 232,
-          "paragraph_id": "p_ch25_037",
+          "paragraph_id": "p_ch25_021",
           "anchor": "page232"
         },
         {
           "page": 233,
-          "paragraph_id": "p_ch25_045",
+          "paragraph_id": "p_ch25_034",
           "anchor": "page233"
         },
         {
           "page": 234,
-          "paragraph_id": "p_ch25_060",
+          "paragraph_id": "p_ch25_042",
           "anchor": "page234"
         },
         {
           "page": 235,
-          "paragraph_id": "p_ch25_076",
+          "paragraph_id": "p_ch25_052",
           "anchor": "page235"
         },
         {
           "page": 236,
-          "paragraph_id": "p_ch25_087",
+          "paragraph_id": "p_ch25_071",
           "anchor": "page236"
         },
         {
           "page": 237,
-          "paragraph_id": "p_ch25_103",
+          "paragraph_id": "p_ch25_085",
           "anchor": "page237"
         },
         {
           "page": 238,
-          "paragraph_id": "p_ch25_114",
+          "paragraph_id": "p_ch25_095",
           "anchor": "page238"
         },
         {
           "page": 239,
-          "paragraph_id": "p_ch25_125",
+          "paragraph_id": "p_ch25_110",
           "anchor": "page239"
         },
         {
           "page": 240,
-          "paragraph_id": "p_ch25_137",
+          "paragraph_id": "p_ch25_122",
           "anchor": "page240"
         },
         {
           "page": 241,
-          "paragraph_id": "p_ch25_149",
+          "paragraph_id": "p_ch25_131",
           "anchor": "page241"
         },
         {
           "page": 242,
-          "paragraph_id": "p_ch25_165",
+          "paragraph_id": "p_ch25_146",
           "anchor": "page242"
         },
         {
           "page": 243,
-          "paragraph_id": "p_ch25_176",
+          "paragraph_id": "p_ch25_162",
           "anchor": "page243"
         },
         {
           "page": 244,
-          "paragraph_id": "p_ch25_186",
+          "paragraph_id": "p_ch25_175",
           "anchor": "page244"
         },
         {
           "page": 245,
-          "paragraph_id": "p_ch25_194",
+          "paragraph_id": "p_ch25_184",
           "anchor": "page245"
         },
         {
           "page": 246,
-          "paragraph_id": "p_ch25_208",
+          "paragraph_id": "p_ch25_191",
           "anchor": "page246"
         },
         {
           "page": 247,
-          "paragraph_id": "p_ch25_220",
+          "paragraph_id": "p_ch25_202",
           "anchor": "page247"
         },
         {
           "page": 248,
-          "paragraph_id": "p_ch25_233",
+          "paragraph_id": "p_ch25_216",
           "anchor": "page248"
         },
         {
           "page": 249,
-          "paragraph_id": "p_ch25_250",
+          "paragraph_id": "p_ch25_226",
           "anchor": "page249"
         },
         {
           "page": 250,
-          "paragraph_id": "p_ch25_265",
+          "paragraph_id": "p_ch25_244",
           "anchor": "page250"
         },
         {
           "page": 251,
-          "paragraph_id": "p_ch25_273",
+          "paragraph_id": "p_ch25_261",
           "anchor": "page251"
+        },
+        {
+          "page": 252,
+          "paragraph_id": "p_ch25_272",
+          "anchor": "page252"
         }
       ],
       "paragraph_count": 273,
@@ -20521,93 +20460,93 @@ export default
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 252,
-      "last_page": 268,
+      "first_page": 253,
+      "last_page": 269,
       "page_breaks": [
         {
-          "page": 252,
-          "paragraph_id": "p_ch26_001",
-          "anchor": "page252"
-        },
-        {
           "page": 253,
-          "paragraph_id": "p_ch26_012",
+          "paragraph_id": "p_ch26_001",
           "anchor": "page253"
         },
         {
           "page": 254,
-          "paragraph_id": "p_ch26_023",
+          "paragraph_id": "p_ch26_008",
           "anchor": "page254"
         },
         {
           "page": 255,
-          "paragraph_id": "p_ch26_042",
+          "paragraph_id": "p_ch26_020",
           "anchor": "page255"
         },
         {
           "page": 256,
-          "paragraph_id": "p_ch26_055",
+          "paragraph_id": "p_ch26_038",
           "anchor": "page256"
         },
         {
           "page": 257,
-          "paragraph_id": "p_ch26_067",
+          "paragraph_id": "p_ch26_050",
           "anchor": "page257"
         },
         {
           "page": 258,
-          "paragraph_id": "p_ch26_082",
+          "paragraph_id": "p_ch26_063",
           "anchor": "page258"
         },
         {
           "page": 259,
-          "paragraph_id": "p_ch26_097",
+          "paragraph_id": "p_ch26_076",
           "anchor": "page259"
         },
         {
           "page": 260,
-          "paragraph_id": "p_ch26_106",
+          "paragraph_id": "p_ch26_091",
           "anchor": "page260"
         },
         {
           "page": 261,
-          "paragraph_id": "p_ch26_120",
+          "paragraph_id": "p_ch26_103",
           "anchor": "page261"
         },
         {
           "page": 262,
-          "paragraph_id": "p_ch26_135",
+          "paragraph_id": "p_ch26_116",
           "anchor": "page262"
         },
         {
           "page": 263,
-          "paragraph_id": "p_ch26_136",
+          "paragraph_id": "p_ch26_127",
           "anchor": "page263"
         },
         {
           "page": 264,
-          "paragraph_id": "p_ch26_141",
+          "paragraph_id": "p_ch26_136",
           "anchor": "page264"
         },
         {
           "page": 265,
-          "paragraph_id": "p_ch26_147",
+          "paragraph_id": "p_ch26_139",
           "anchor": "page265"
         },
         {
           "page": 266,
-          "paragraph_id": "p_ch26_154",
+          "paragraph_id": "p_ch26_145",
           "anchor": "page266"
         },
         {
           "page": 267,
-          "paragraph_id": "p_ch26_160",
+          "paragraph_id": "p_ch26_151",
           "anchor": "page267"
         },
         {
           "page": 268,
-          "paragraph_id": "p_ch26_166",
+          "paragraph_id": "p_ch26_159",
           "anchor": "page268"
+        },
+        {
+          "page": 269,
+          "paragraph_id": "p_ch26_164",
+          "anchor": "page269"
         }
       ],
       "paragraph_count": 166,
