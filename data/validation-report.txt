@@ -1,0 +1,82 @@
+OFF-THE-RECORD CONVERSION REPORT
+================================
+Source file:        OFF-THE-RECORD.docx
+Source size:        473772 bytes
+Source modified:    2026-05-18T12:26:23-04:00
+
+CHAPTER DETECTION
+-----------------
+Method:             Word 'Heading1' paragraph style (real DOCX; spec's Markdown '# ' rule N/A)
+Chapters expected:  26
+Chapters found:     26
+Match:              PASS
+
+CHAPTERS
+--------
+ 1. AUTHOR’S NOTE                        38 paragraphs   1629 words   pp.1-6
+ 2. SUMMER 2017                          97 paragraphs   2781 words   pp.7-16
+ 3. DREAM JOB                            73 paragraphs   2860 words   pp.17-27
+ 4. SCANDAL!                            102 paragraphs   2767 words   pp.28-37
+ 5. ROOKIE YEAR                          70 paragraphs   1219 words   pp.38-42
+ 6. OPENING DAY                         131 paragraphs   2644 words   pp.43-52
+ 7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.53-61
+ 8. FIRE DRILL                          205 paragraphs   4801 words   pp.62-78
+ 9. SPRING TRAINING                      92 paragraphs   1803 words   pp.79-85
+10. HOT SEAT                            145 paragraphs   3129 words   pp.86-97
+11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.98-112
+12. PRIME-TIME                          126 paragraphs   2568 words   pp.113-122
+13. FIREWORKS                           158 paragraphs   3234 words   pp.123-134
+14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.135-144
+15. WORLD SERIES                        241 paragraphs   4544 words   pp.145-160
+16. AWARDS SEASON                        92 paragraphs   1733 words   pp.161-167
+17. DRAFT DAY                           113 paragraphs   2510 words   pp.168-176
+18. COOPERSTOWN                         155 paragraphs   3011 words   pp.177-187
+19. BURN OUT                            153 paragraphs   3620 words   pp.188-199
+20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.200-212
+21. GLOBETROTTING                        69 paragraphs   1647 words   pp.213-218
+22. ROAD TO OMAHA                       114 paragraphs   3120 words   pp.219-230
+23. A LETTER TO THE EDITOR              147 paragraphs   3322 words   pp.231-242
+24. UNETHICAL                           287 paragraphs   8491 words   pp.243-270
+25. BOTTOM NINE                         273 paragraphs   6638 words   pp.271-293
+26. THE PANDEMIC                        166 paragraphs   4756 words   pp.294-310
+
+CONTENT STATS
+-------------
+Total paragraphs:   3724
+Total words:        86243
+Italic runs:        640
+Bold runs:          49
+Page breaks:        310
+Estimated reading:  431 minutes
+
+ANOMALIES
+---------
+- Spec expected 27 chapters; this manuscript (real DOCX) has 26. The EPUB-era 'OFF-THE-RECORD' chapter is absent from this revision. Built with 26 per user decision.
+
+OUTPUT FILES
+------------
+dist/book_summary.json    41.2 KB
+dist/book_full.json       1469.0 KB
+
+IDEMPOTENCY CHECK
+-----------------
+Second run produces identical output:    PASS
+IDEMPOTENT: PASS
+
+DUAL OUTPUT
+-----------
+Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist
+Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data
+book_full.json MD5 (all dirs): 5cbd93109e071c5dd4d0e8d8023ebea7
+MD5 verification (dual-output identity): PASS
+
+SAMPLE
+------
+First paragraph of chapter 1 (text):
+  "ST. PAUL’S BAY, Malta—Dawn is coming up over the Mediterranean now. 7:12 A.M. I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived."
+
+First paragraph of chapter 1 (html):
+  "ST. PAUL’S BAY, Malta—Dawn is coming up over the Mediterranean now. 7:12 A.M. I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived."
+
+Last paragraph of last chapter (text):
+  "To donate to the Pedro Gomez Foundation, visit the website at https://www.pedrogomezfoundation.org/. For more information, email the foundation at info@pedrogomezfoundation.org."
