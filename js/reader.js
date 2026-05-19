@@ -1,6 +1,6 @@
 // Reader - Core reading interface logic with pagination
 
-import { CHAPTERS, getChapterBySlug, getChapterSlug, getChapterCount } from '../data/chapters.js';
+import { CHAPTERS, getChapterBySlug, getChapterSlug, getChapterCount, getFirstChapterId } from '../data/chapters.js';
 import { getProgress, saveProgress, markChapterComplete, isChapterComplete } from './storage.js';
 import { mediaModal } from './mediaModal.js';
 import { readingModeManager } from './reading-mode.js';
@@ -14,7 +14,7 @@ window.CHAPTERS = CHAPTERS;
 
 class Reader {
     constructor() {
-        this.currentChapter = 1;
+        this.currentChapter = null;
         this.currentPage = 0;
         this.totalPages = 0;
         this.pages = []; // Array of paragraph indices for each page
@@ -52,7 +52,7 @@ class Reader {
 
         // Load saved progress
         const progress = getProgress();
-        this.currentChapter = progress.currentChapter || 1;
+        this.currentChapter = progress.currentChapter || getFirstChapterId();
         this.currentPage = progress.currentPage || 0;
 
         // Check if we should show home page or a chapter
@@ -116,7 +116,7 @@ class Reader {
 
         // Get saved progress
         const progress = getProgress();
-        const savedChapter = progress.currentChapter || 'title'; // Default to title page
+        const savedChapter = progress.currentChapter || getFirstChapterId(); // Default to first section
         const savedPage = progress.currentPage || 0;
         const isNewReader = !progress.lastUpdated;
 

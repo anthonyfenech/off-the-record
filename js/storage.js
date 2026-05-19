@@ -1,5 +1,7 @@
 // localStorage wrapper for reading progress tracking
 
+import { CHAPTERS, getFirstChapterId } from '../data/chapters.js';
+
 const STORAGE_KEYS = {
     PROGRESS: 'off_the_record_progress',
     COMPLETION: 'off_the_record_completion',
@@ -77,7 +79,7 @@ function isLocalStorageAvailable() {
 export function getProgress() {
     if (!isLocalStorageAvailable()) {
         return {
-            currentChapter: 1,
+            currentChapter: getFirstChapterId(),
             currentPage: 0,
             lastUpdated: null,
             completionPercentage: 0
@@ -88,7 +90,7 @@ export function getProgress() {
         const data = localStorage.getItem(STORAGE_KEYS.PROGRESS);
         if (!data) {
             return {
-                currentChapter: 1,
+                currentChapter: getFirstChapterId(),
                 currentPage: 0,
                 lastUpdated: null,
                 completionPercentage: 0
@@ -99,11 +101,21 @@ export function getProgress() {
         if (parsed.scrollPosition !== undefined && parsed.currentPage === undefined) {
             parsed.currentPage = 0;
         }
+        // Post-migration sanitizer (Commit 17): chapter IDs are now strings
+        // (ch01, ch06_fb1, …). Legacy numeric/fractional values (1, 6.1) or
+        // any unknown value → treat as a fresh reader at the first section.
+        const validIds = new Set(CHAPTERS.map(c => c.id));
+        const validSlugs = new Set(CHAPTERS.map(c => c.slug));
+        if (typeof parsed.currentChapter !== 'string'
+            || (!validIds.has(parsed.currentChapter)
+                && !validSlugs.has(parsed.currentChapter))) {
+            parsed.currentChapter = getFirstChapterId();
+        }
         return parsed;
     } catch (error) {
         logger.error('Error reading progress:', error);
         return {
-            currentChapter: 1,
+            currentChapter: getFirstChapterId(),
             currentPage: 0,
             lastUpdated: null,
             completionPercentage: 0
