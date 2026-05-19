@@ -66,14 +66,27 @@ Estimated reading:  437 minutes
 
 SEMANTIC MARKUP
 ---------------
-Datelines detected:     3 (detector v2, plain-text; gated == 3)
-  [1] <p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
-  [2] <p class="has-dateline"><span class="dateline">WASHINGTON—</span>My first job is to get another independent confirmation.</p>
-  [3] <p class="has-dateline"><span class="dateline">DETROIT—</span>I get home after ten. Less than two hours to go, and conditions appear calm on the Verlander trade front, comfortable enough for a welcome back pour.</p>
-  Chapters with >20 datelines: none
-Scene breaks preserved: 259 (no threshold; expected for this beat-reporter manuscript)
-Small-caps spans:       0 (threshold 50)
-Media-emoji paragraphs: 0
+Datelines detected:     237  (expected 100-400)  PASS
+  Pattern A (LOC—):              4
+  Pattern B (LOC, date—):        82
+  Pattern C (date—):             141
+  Pattern D (LOC, date+yr—):     10
+Scene breaks (*** only): 2  (expected 0-10)    PASS
+Small-caps spans:       88  (expected 50-200)   PASS
+  A.M. instances:                30
+  P.M. instances:                56
+  Stylistic phrases:             2
+Email lines:            14  (expected 10-100)   PASS
+  note: old chapters.js had 50 hand-authored splits; DOCX has 14 coarser header
+  paragraphs containing inline Sent:/To:/Date: tokens.
+
+SEMANTIC SAMPLES
+----------------
+Dateline A (LOC—): <p class="has-dateline"><span class="dateline">DETROIT—</span>Per tradition, my mom picks me up from the airport. It gives me time to see her for a bit during the six-month grind of the baseball season.</p>
+Dateline B (LOC, date—): <p class="has-dateline"><span class="dateline">CHICAGO, <em>August 27</em>—</span>A storm is coming. Dark clouds approaching the Sears Tower, raindrops streaking against a window and the back of a man’s bald head. The last scene before the elevator door closes.</p>
+Dateline C (date—): <p class="has-dateline"><span class="dateline"><em>August 30</em>—</span>Getaway Day comes fast. Clubhouse opens at 9:30 for day games. Justin Verlander is pitching. Tomorrow is the trade deadline. For the past two months, his name has been circulating in rumors. To the trained eye, his preference is clear: Verlander, 34, wants no part of the long rebuild in store for the Tigers next season.</p>
+Dateline D (LOC, date+yr—): <p class="has-dateline"><span class="dateline">DETROIT, <em>October 21, 2014</em>—</span>Three years earlier.</p>
+Email line: <p class="email-line"><strong>From:</strong> Web Desk <strong>Sent:</strong> Wednesday, December 16, 2015 3:10 PM</p>
 
 CHAPTER METADATA (section_type / year)
 --------------------------------------
@@ -111,7 +124,7 @@ ANOMALIES
 OUTPUT FILES
 ------------
 dist/book_summary.json    42.5 KB
-dist/book_full.json       1829.2 KB
+dist/book_full.json       1834.3 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -122,8 +135,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 691fd70526addd4d2dd3d2e47f2b2688
-book_full.js   MD5 (all dirs): 0bc74251a10e2b6129c9a56e74ad646b
+book_full.json MD5 (all dirs): 9b3ea90e71389d5b1bc4fe62af3b8978
+book_full.js   MD5 (all dirs): 479d54f7964fd49f8ba7532ee265f883
 MD5 verification (dual-output identity): PASS
 
 SAMPLE
