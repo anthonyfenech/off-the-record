@@ -1,8 +1,8 @@
 OFF-THE-RECORD CONVERSION REPORT
 ================================
 Source file:        OFF-THE-RECORD.docx
-Source size:        459880 bytes
-Source modified:    2026-05-19T12:19:57-04:00
+Source size:        1135995 bytes
+Source modified:    2026-05-26T22:29:13+02:00
 
 CHAPTER DETECTION
 -----------------
@@ -13,39 +13,39 @@ Sections built:     39  (parent + flashback + resume, expected 39)  PASS
 
 CHAPTERS
 --------
- 1. AUTHOR’S NOTE                        38 paragraphs   1629 words   pp.1-6
+ 1. AUTHOR’S NOTE                        37 paragraphs   1551 words   pp.1-6
  2. SUMMER 2017                          97 paragraphs   2781 words   pp.7-16
- 3. DREAM JOB                            73 paragraphs   2857 words   pp.17-27
- 4. SCANDAL!                            102 paragraphs   2767 words   pp.28-37
- 5. ROOKIE YEAR                          70 paragraphs   1219 words   pp.38-42
+ 3. DREAM JOB                            73 paragraphs   2857 words   pp.17-26
+ 4. SCANDAL!                            102 paragraphs   2767 words   pp.27-37
+ 5. ROOKIE YEAR                          70 paragraphs   1199 words   pp.38-42
  6. OPENING DAY                           8 paragraphs    152 words   pp.43-43
- 7. TRADE DEADLINE                      108 paragraphs   2477 words   pp.44-52
+ 7. TRADE DEADLINE                      107 paragraphs   2437 words   pp.44-52
  8. FIRE DRILL                          151 paragraphs   3381 words   pp.53-64
- 9. SPRING TRAINING                      92 paragraphs   1803 words   pp.65-71
-10. HOT SEAT                             90 paragraphs   2068 words   pp.72-79
-11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.80-95
-12. PRIME-TIME                          126 paragraphs   2568 words   pp.96-104
-13. FIREWORKS                           158 paragraphs   3234 words   pp.105-116
-14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.117-126
-15. WORLD SERIES                        240 paragraphs   4543 words   pp.127-142
-16. AWARDS SEASON                        92 paragraphs   1733 words   pp.143-148
-17. DRAFT DAY                           113 paragraphs   2510 words   pp.149-158
-18. COOPERSTOWN                         155 paragraphs   3011 words   pp.159-169
-19. BURN OUT                            153 paragraphs   3620 words   pp.170-181
-20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.182-194
-21. GLOBETROTTING                        69 paragraphs   1647 words   pp.195-201
-22. ROAD TO OMAHA                       114 paragraphs   3119 words   pp.202-212
-23. A LETTER TO THE EDITOR              146 paragraphs   3305 words   pp.213-224
-24. UNETHICAL                            40 paragraphs   1174 words   pp.225-229
-25. BOTTOM NINE                         273 paragraphs   6638 words   pp.230-252
-26. THE PANDEMIC                        166 paragraphs   4756 words   pp.253-269
+ 9. SPRING TRAINING                      89 paragraphs   1755 words   pp.65-70
+10. HOT SEAT                             90 paragraphs   2068 words   pp.71-78
+11. WAKE-UP CALL                        233 paragraphs   4460 words   pp.79-94
+12. PRIME-TIME                          126 paragraphs   2568 words   pp.95-104
+13. FIREWORKS                           158 paragraphs   3236 words   pp.105-115
+14. VERY SERIOUS STORY                  172 paragraphs   2824 words   pp.116-125
+15. WORLD SERIES                        240 paragraphs   4543 words   pp.126-141
+16. AWARDS SEASON                        91 paragraphs   1695 words   pp.142-148
+17. DRAFT DAY                           113 paragraphs   2510 words   pp.149-157
+18. COOPERSTOWN                         155 paragraphs   3011 words   pp.158-168
+19. BURN OUT                            153 paragraphs   3615 words   pp.169-180
+20. VIVA LAS VEGAS                      164 paragraphs   3655 words   pp.181-193
+21. GLOBETROTTING                        69 paragraphs   1647 words   pp.194-200
+22. ROAD TO OMAHA                       114 paragraphs   3119 words   pp.201-211
+23. A LETTER TO THE EDITOR              146 paragraphs   3305 words   pp.212-223
+24. UNETHICAL                            40 paragraphs   1174 words   pp.224-228
+25. BOTTOM NINE                         273 paragraphs   6638 words   pp.229-251
+26. THE PANDEMIC                        145 paragraphs   3689 words   pp.252-264
 
 SEGMENTS (multi-segment chapters; first segment is visible)
 ----------------------------------------------------------
 ch06 OPENING DAY  (chapter 6)
   ch06      OPENING DAY              parent_first   slug=opening-day            parent=-       words=152
   ch06_fb1  EMBARRASSING FLASHBACK   docx_flashback slug=embarrassing-flashback parent=ch06    words=144
-  ch06b     OPENING DAY              parent_resume  slug=opening-day-resume-1   parent=ch06    words=2343
+  ch06b     OPENING DAY              parent_resume  slug=opening-day-resume-1   parent=ch06    words=2319
 
 ch08 FIRE DRILL  (chapter 8)
   ch08      FIRE DRILL               parent_first   slug=fire-drill             parent=-       words=3381
@@ -55,22 +55,22 @@ ch08 FIRE DRILL  (chapter 8)
 ch10 HOT SEAT  (chapter 10)
   ch10      HOT SEAT                 parent_first   slug=hot-seat               parent=-       words=2068
   ch10_fb1  JUNK MAIL                docx_flashback slug=junk-mail-2            parent=ch10    words=217
-  ch10b     HOT SEAT                 parent_resume  slug=hot-seat-resume-1      parent=ch10    words=842
+  ch10b     HOT SEAT                 parent_resume  slug=hot-seat-resume-1      parent=ch10    words=840
 
 ch19 BURN OUT  (chapter 19)
-  ch19      BURN OUT                 parent_first   slug=burn-out               parent=-       words=3620
+  ch19      BURN OUT                 parent_first   slug=burn-out               parent=-       words=3615
   ch19_fb1  MALTA                    easter_egg     slug=malta                  parent=ch19    words=426
 
 ch24 UNETHICAL  (chapter 24)
   ch24      UNETHICAL                parent_first   slug=unethical              parent=-       words=1174
-  ch24_fb1  AIRPLANE MODE            docx_flashback slug=airplane-mode          parent=ch24    words=331
-  ch24b     UNETHICAL                parent_resume  slug=unethical-resume-1     parent=ch24    words=2665
+  ch24_fb1  AIRPLANE MODE            docx_flashback slug=airplane-mode          parent=ch24    words=333
+  ch24b     UNETHICAL                parent_resume  slug=unethical-resume-1     parent=ch24    words=2638
   ch24_fb2  TWO YEARS EARLIER        docx_flashback slug=two-years-earlier      parent=ch24    words=255
-  ch24c     UNETHICAL                parent_resume  slug=unethical-resume-2     parent=ch24    words=4061
+  ch24c     UNETHICAL                parent_resume  slug=unethical-resume-2     parent=ch24    words=4056
   ch24_fb3  MALTA II                 easter_egg     slug=malta-ii               parent=ch24    words=414
 
 ch26 THE PANDEMIC  (chapter 26)
-  ch26      THE PANDEMIC             parent_first   slug=the-pandemic           parent=-       words=4756
+  ch26      THE PANDEMIC             parent_first   slug=the-pandemic           parent=-       words=3689
   ch26_fb1  MALTA III                easter_egg     slug=malta-iii              parent=ch26    words=424
 
 Total sections: 39 (expected 39)  PASS
@@ -80,12 +80,12 @@ DOCX FLASHBACK marker check: not found  PASS
 
 CONTENT STATS
 -------------
-Total paragraphs:   3243
-Total words:        87471
-Italic runs:        541
+Total paragraphs:   3216
+Total words:        86121
+Italic runs:        529
 Bold runs:          15
-Page breaks:        269
-Estimated reading:  437 minutes
+Page breaks:        264
+Estimated reading:  431 minutes
 
 SEMANTIC MARKUP
 ---------------
@@ -146,8 +146,8 @@ ANOMALIES
 
 OUTPUT FILES
 ------------
-dist/book_summary.json    44.4 KB
-dist/book_full.json       1840.7 KB
+dist/book_summary.json    43.9 KB
+dist/book_full.json       1814.1 KB
 
 IDEMPOTENCY CHECK
 -----------------
@@ -158,8 +158,8 @@ DUAL OUTPUT
 -----------
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/dist  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
 Wrote: /Users/fenech/MASTER OFF-THE-RECORD/off-the-record/data  (book_full.json, book_full.js, book_summary.json, validation-report.txt)
-book_full.json MD5 (all dirs): 4c092ee51912e8c9ba4b5cccf9fae1b5
-book_full.js   MD5 (all dirs): 42c2ff1d3930eb65fbb20d3455061720
+book_full.json MD5 (all dirs): 2d65a3c064171b9d3bcc2612f548406f
+book_full.js   MD5 (all dirs): fb4378bbdfad02d00880f078ae0f5365
 MD5 verification (dual-output identity): PASS
 
 ROUND-TRIP EQUALITY
@@ -184,4 +184,4 @@ First paragraph of chapter 1 (html):
   "ST. PAUL’S BAY, Malta—Dawn is coming up over the Mediterranean now. 7:12 A.M. I can hear the whining of early morning buses and smell the saltwater splashing underneath my balcony, out here at the far end of the island—this is the end of the line for buses, beaches and the life I once lived."
 
 Last paragraph of last chapter (text):
-  "To donate to the Pedro Gomez Foundation, visit the website at https://www.pedrogomezfoundation.org/. For more information, email the foundation at info@pedrogomezfoundation.org."
+  "To support the Pedro Gomez Foundation, visit pedrogomezfoundation.org."
