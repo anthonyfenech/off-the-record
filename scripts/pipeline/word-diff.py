@@ -76,42 +76,70 @@ def extract_docx(path):
 
 
 def extract_js(path):
+    """Extract paragraph text from a converter book_full.js file.
+
+    New schema (post-May-19 converter):
+      export default {
+        sections: [
+          { id, parent_id, title, content, paragraphs: [{text}, ...] },
+          ...
+        ]
+      }
+
+    Returns {chapter_title: [paragraph_text, ...]}. Hidden segments
+    (parent_id non-null) are folded into their parent's bucket so the
+    comparison vs. .docx (which has chapters as one unit) stays valid.
+    """
+    # Convert path to file:// URL. Resolve to absolute first (matches the
+    # prior extract_js convention; file:// URLs require absolute paths).
+    # Percent-encode for safety since the absolute path may contain spaces
+    # (e.g., "/Users/fenech/MASTER OFF-THE-RECORD/...").
+    from urllib.parse import quote
     abs_path = str(Path(path).resolve())
+    file_url = "file://" + quote(abs_path, safe="/:")
+
     code = (
-        f"import('file://{abs_path}').then(m => "
-        f"process.stdout.write(JSON.stringify(m.CHAPTERS))).catch(e => {{ "
-        f"console.error(e); process.exit(1); }})"
+        "import('" + file_url + "').then(m => "
+        "process.stdout.write(JSON.stringify(m.default.sections)))"
     )
     proc = subprocess.run(
-        ["node", "--no-warnings", "-e", code],
-        check=True, capture_output=True, text=True,
+        ["node", "--input-type=module", "-e", code],
+        capture_output=True, text=True, check=True
     )
-    chapters_raw = json.loads(proc.stdout)
+    sections = json.loads(proc.stdout)
 
-    result = {}
-    last_non_hidden_title = None
-    for c in chapters_raw:
-        if c.get("section") in ("title", "copyright", "toc"):
-            continue
-        content = c.get("content", "") or ""
-        stripped = TAG_RE.sub("", content)
-        paras = [normalize(p) for p in re.split(r"\n\s*\n", stripped)]
-        paras = [p for p in paras if p]
-        if c.get("hidden"):
-            target = last_non_hidden_title
-            if target is None:
-                target = (c.get("title") or "").strip() or "__HIDDEN_ORPHAN__"
-            if target in result:
-                result[target].extend(paras)
-            else:
-                result[target] = paras
+    # Build id -> title lookup so we can resolve parent_id back to a title
+    id_to_title = {
+        s["id"]: (s.get("title") or "").strip()
+        for s in sections
+    }
+
+    result = {}  # chapter_title -> [paragraph_text, ...]
+
+    for s in sections:
+        parent_id = s.get("parent_id")
+        if parent_id:
+            bucket_title = id_to_title.get(parent_id) or "__ORPHAN__"
         else:
-            title = (c.get("title") or "").strip()
-            last_non_hidden_title = title
-            if title in result:
-                result[title].extend(paras)
-            else:
-                result[title] = paras
+            bucket_title = (s.get("title") or "").strip()
+
+        # Top-level chapters: paragraphs[].text is populated by converter.
+        # Hidden segments: paragraphs.length == 0, fall back to HTML strip.
+        paragraphs = s.get("paragraphs") or []
+        if paragraphs and all(
+            isinstance(p, dict) and isinstance(p.get("text"), str)
+            for p in paragraphs
+        ):
+            paras = [normalize(p["text"]) for p in paragraphs]
+            paras = [p for p in paras if p]
+        else:
+            content = s.get("content") or ""
+            stripped = TAG_RE.sub("", content)
+            paras = [normalize(p) for p in re.split(r"\n\s*\n", stripped)]
+            paras = [p for p in paras if p]
+
+        result.setdefault(bucket_title, []).extend(paras)
+
     return result
 
 
