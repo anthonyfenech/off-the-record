@@ -51,12 +51,22 @@
         }
     }
 
+    // Adapter merged the ch06 cluster: rewrite dead chapterIds defensively
+    // even though today's only consumer uses chapterSlug (covered by
+    // SLUG_ALIASES in data/chapters.js).
+    const ID_MIGRATIONS = { 'ch06_fb1': 'ch06', 'ch06b': 'ch06' };
+
     function getBookmark() {
         if (!isStorageAvailable()) return null;
 
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
-            return stored ? JSON.parse(stored) : null;
+            if (!stored) return null;
+            const bookmark = JSON.parse(stored);
+            if (bookmark && ID_MIGRATIONS[bookmark.chapterId]) {
+                bookmark.chapterId = ID_MIGRATIONS[bookmark.chapterId];
+            }
+            return bookmark;
         } catch (e) {
             console.warn('[OTR] Bookmark read error:', e);
             return null;
