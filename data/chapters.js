@@ -10,6 +10,38 @@
 
 import bookData from './book_full.js';
 
+// ─── Adapter-side merges (runtime) ──────────────────────────────────────
+// The converter emits ch06 / ch06_fb1 / ch06b as three segments (parent
+// + flashback + parent-resume). At runtime we collapse them into a single
+// visible OPENING DAY chapter with the EMBARRASSING FLASHBACK folded in
+// between the first scene break and the resume body. The converter,
+// book_full.json / book_full.js, and all validation pipelines stay
+// untouched — this collapse is adapter-only.
+(() => {
+    const secs   = bookData.sections;
+    const od     = secs.find(s => s.id === 'ch06');
+    const fb     = secs.find(s => s.id === 'ch06_fb1');
+    const resume = secs.find(s => s.id === 'ch06b');
+    if (!od || !fb || !resume) return; // converter shape changed; bail safely
+    // Unwrap the flashback's toc-page wrapper and convert the centered
+    // <h2 class="toc-page-title">EMBARRASSING FLASHBACK</h2> into an inline
+    // <p class="flashback-header"> subhead. The .flashback-header rule in
+    // css/components.css is the design-system pattern for in-body labels.
+    const fbInner = fb.content
+        .replace(/^\s*<div class="toc-page">\s*/, '')
+        .replace(/\s*<\/div>\s*$/, '')
+        .replace(/<h2 class="toc-page-title">EMBARRASSING FLASHBACK<\/h2>\s*/,
+                 '<p class="flashback-header">EMBARRASSING FLASHBACK</p>\n\n');
+    // od ends with <p class="scene-break">***</p>  (BREAK-A — kept).
+    // fbInner ends with <p class="scene-break">***</p>  (BREAK-B — kept).
+    // resume opens clean with the PITTSBURGH dateline.
+    od.content    = od.content + '\n\n' + fbInner + '\n\n' + resume.content;
+    od.word_count = (od.word_count || 0) + (fb.word_count || 0)
+                  + (resume.word_count || 0);
+    bookData.sections = secs.filter(s => s.id !== 'ch06_fb1'
+                                      && s.id !== 'ch06b');
+})();
+
 // Front matter — extracted verbatim from chapters.js.deprecated 2026-05-19, edit here to update
 const titlePage = {
     id: 'title',
@@ -111,6 +143,9 @@ export const CHAPTERS = [
 const SLUG_ALIASES = {
     'summer-2017-prologue': 'summer-2017',
     'letter-to-the-editor': 'a-letter-to-the-editor',
+    // Adapter merged ch06 cluster into a single OPENING DAY chapter:
+    'embarrassing-flashback': 'opening-day',
+    'opening-day-resume-1':   'opening-day',
 };
 
 // Export total word count for progress calculations
