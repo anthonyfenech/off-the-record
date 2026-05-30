@@ -141,6 +141,9 @@
         [data-theme="dark"] .pdf-download-btn {
             background: #f5f5f5;
             color: #1A1A1A;
+            border: 1px solid #fff !important;  /* matches rendered white text;
+                !important needed to beat the inline style — do NOT remove the
+                inline style or this revives a dormant light-bg invert */
         }
 
         /* Mobile - larger tap targets */
