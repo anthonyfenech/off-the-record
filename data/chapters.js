@@ -128,13 +128,15 @@ const transformedChapters = bookData.sections.map(s => ({
     hideFromToc: false,
 }));
 
-// Original order: 3 front matter, 26 chapters (ch01..ch26), 1 postscript.
+// Order: 2 front matter (title, toc), chapters from book_full (with the
+// ch06 cluster collapsed by the adapter merge above), dedication, then
+// copyright as the absolute last page.
 export const CHAPTERS = [
     titlePage,
-    copyright,
     toc,
     ...transformedChapters,
     dedication,
+    copyright,
 ];
 
 // Backward-compatible slug aliases (old slug -> new canonical slug). The old
