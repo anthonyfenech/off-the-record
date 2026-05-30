@@ -376,9 +376,11 @@
         };
         const currentId = window.currentChapterId;
 
-        // Year extraction (hoisted so every return path inherits it)
-        // CHAPTERS array: index 0 = title page (id -1), index 1 = TOC (id 0), index 2+ = chapters
-        if (typeof currentId === 'number' && currentId > 0 && window.CHAPTERS) {
+        // Year extraction (hoisted so every return path inherits it).
+        // Chapter ids are strings ("title", "toc", "ch01"…"ch26", "dedication",
+        // "copyright"); title/toc/dedication/copyright have year: null, which
+        // is fine — hasValidYear in renderToCanvas gates the dateline passes.
+        if (currentId != null && window.CHAPTERS) {
             for (const chapter of window.CHAPTERS) {
                 if (chapter.id === currentId) {
                     info.year = chapter.year;
@@ -412,7 +414,7 @@
         if (titleEl && titleEl.textContent && titleEl.textContent.trim()) {
             info.title = titleEl.textContent.trim();
         }
-        if (!info.title && window.CHAPTERS && typeof currentId === 'number' && currentId > 0) {
+        if (!info.title && window.CHAPTERS && currentId != null) {
             for (const chapter of window.CHAPTERS) {
                 if (chapter.id === currentId && chapter.title) {
                     info.title = chapter.title;
