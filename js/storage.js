@@ -101,6 +101,14 @@ export function getProgress() {
         if (parsed.scrollPosition !== undefined && parsed.currentPage === undefined) {
             parsed.currentPage = 0;
         }
+        // Adapter merged the ch06 cluster: rewrite dead segment ids to the
+        // surviving parent BEFORE the sanitizer rejects them as unknown
+        // (without this, returning readers would be silently bounced to
+        // the first chapter instead of landing on merged OPENING DAY).
+        const ID_MIGRATIONS = { 'ch06_fb1': 'ch06', 'ch06b': 'ch06' };
+        if (ID_MIGRATIONS[parsed.currentChapter]) {
+            parsed.currentChapter = ID_MIGRATIONS[parsed.currentChapter];
+        }
         // Post-migration sanitizer (Commit 17): chapter IDs are now strings
         // (ch01, ch06_fb1, …). Legacy numeric/fractional values (1, 6.1) or
         // any unknown value → treat as a fresh reader at the first section.
