@@ -123,11 +123,13 @@ class Reader {
         // Button text
         const buttonText = isNewReader ? 'START READING' : 'CONTINUE READING';
 
-        // Homepage: Title + button centered
+        // Homepage: cover hero (button wraps the cover image so the existing
+        // click handler + initContinueReadingCTA hijack continue to apply).
         this.chapterBody.innerHTML = `
             <div class="home-content">
-                <h1 class="home-title">OFF-THE-RECORD</h1>
-                <button class="start-reading-btn" id="startReadingBtn">${buttonText}</button>
+                <button class="start-reading-btn" id="startReadingBtn" aria-label="${buttonText}">
+                    <img src="./assets/cover-web.jpg" alt="OFF-THE-RECORD" class="home-cover-img">
+                </button>
             </div>
         `;
 

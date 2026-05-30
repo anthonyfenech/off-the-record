@@ -61,7 +61,8 @@ const STATIC_ASSETS = [
     './assets/icons/icon-512.png',
     './assets/icons/OTR-header.png',
     './assets/icons/OTR-header-dark.png',
-    './assets/icons/tab-logo.svg'
+    './assets/icons/tab-logo.svg',
+    './assets/cover-web.jpg'
 ];
 
 // Install event - cache static assets
