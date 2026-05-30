@@ -76,12 +76,16 @@
 }
 
 /* Scene Break */
-.scene-break {
+/* Rescoped from .scene-break (0,1,0) to .chapter-body .scene-break (0,2,0)
+   so the rule wins over index.html's inline `.chapter-body p {margin:0 !important}`
+   (0,1,1) for both <p class="scene-break"> and any <div class="scene-break">.
+   Uniform spacing for all scene breaks regardless of neighbor. */
+.chapter-body .scene-break {
     text-align: center !important;
     text-indent: 0 !important;
     font-size: 1.3em;
     letter-spacing: 0.5em;
-    margin: 2em 0;
+    margin: 2.5em 0 !important;
 }
 
 
@@ -159,12 +163,14 @@ p + p.has-dateline {
 }
 
 /* Scene breaks in chapter content */
+/* !important on margin beats index.html inline .chapter-body p{margin:0 !important};
+   uniform 2.5em above + below for all scene breaks. */
 .chapter-body p.scene-break {
     text-align: center !important;
     text-indent: 0 !important;
     font-size: 1.3em;
     letter-spacing: 0.5em;
-    margin: 2em 0;
+    margin: 2.5em 0 !important;
 }
 
 /* Flashback headers in chapter content */
