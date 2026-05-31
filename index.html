@@ -169,6 +169,12 @@
             .home-content:has(.home-cover-img) {
                 padding-top: calc(var(--space-2xl) + 4vh);
             }
+            /* End-of-book cover: drop the desktop nudge so the cover isn't
+               pushed down inside the chapter viewport. Reuse .home-cover-img
+               sizing untouched. */
+            .home-content.cover-back {
+                padding-top: 0;
+            }
         }
         /* Mobile: width-fit (fills viewport width, aspect-ratio preserved). */
         @media (max-width: 600px) {
@@ -176,6 +182,11 @@
                 max-height: none;
                 width: 100%;
             }
+        }
+        /* End-of-book cover image: not a button → no pointer cursor. */
+        .cover-back-img {
+            cursor: default !important;   /* beats the inherited .home-cover-img pointer */
+            pointer-events: none;          /* clicks never fire → lightbox handler can't open */
         }
 
     </style>
@@ -358,7 +369,7 @@
     <!-- Analytics Config (must load before any script using OTR_ANALYTICS_CONFIG) -->
     <script defer src="./js/analytics-config.js?v=423"></script>
     <script type="module" src="./js/config.js?v=580"></script>
-    <script type="module" src="./data/chapters.js?v=501"></script>
+    <script type="module" src="./data/chapters.js?v=502"></script>
     <script defer src="./data/media.js?v=424"></script>
     <script type="module" src="./js/storage.js?v=581"></script>
     <script type="module" src="./js/mediaModal.js?v=580"></script>
