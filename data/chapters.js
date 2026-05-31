@@ -74,6 +74,24 @@ const copyright = {
     hideFromToc: false,
 };
 
+// End-of-book cover page — inert clone of the landing hero (no button, no
+// click handler, no shared id). Unique section value keeps it out of every
+// TOC builder; reachable via prev/next + slug only.
+const coverBack = {
+    id: 'cover-back',
+    year: null,
+    section: 'cover-back',
+    title: "",
+    slug: "cover-back",
+    subtitle: "",
+    teaser: "",
+    content: '<div class="home-content cover-back"><img src="./assets/cover-web.jpg" alt="OFF-THE-RECORD" class="home-cover-img cover-back-img"></div>',
+    wordCount: 0,
+    parent_id: null,
+    hidden: false,
+    hideFromToc: false,
+};
+
 // Front matter — extracted verbatim from chapters.js.deprecated 2026-05-19, edit here to update
 // content is '' verbatim from source; the IIFE below regenerates it at
 // module load from the new CHAPTERS (same behavior as the deprecated file).
@@ -129,14 +147,15 @@ const transformedChapters = bookData.sections.map(s => ({
 }));
 
 // Order: 2 front matter (title, toc), chapters from book_full (with the
-// ch06 cluster collapsed by the adapter merge above), dedication, then
-// copyright as the absolute last page.
+// ch06 cluster collapsed by the adapter merge above), dedication, copyright,
+// then the end-of-book cover as the absolute last page.
 export const CHAPTERS = [
     titlePage,
     toc,
     ...transformedChapters,
     dedication,
     copyright,
+    coverBack,
 ];
 
 // Backward-compatible slug aliases (old slug -> new canonical slug). The old
