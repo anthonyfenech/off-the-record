@@ -132,21 +132,6 @@
             }
         }
 
-        /* === LANDING COVER HERO ===
-           start-reading-btn now wraps the cover <img>. Strip the dark pill
-           styling when it's hosting an image so the cover shows as itself. */
-        .start-reading-btn:has(.home-cover-img) {
-            background: transparent !important;
-            border: none !important;
-            padding: 0 !important;
-            margin: 0;
-            cursor: pointer !important;   /* beats .chapter-body img:not(...){cursor:zoom-in} (0,3,1) */
-            display: block;
-        }
-        .start-reading-btn:has(.home-cover-img):hover {
-            background: transparent !important;
-            color: inherit !important;
-        }
         .home-cover-img {
             display: block;
             width: auto;
@@ -378,7 +363,7 @@
     <script type="module" src="./js/reading-mode.js?v=580"></script>
     <script type="module" src="./js/font-size.js?v=580"></script>
     <script type="module" src="./js/search.js?v=582"></script>
-    <script type="module" src="./js/reader.js?v=581"></script>
+    <script type="module" src="./js/reader.js?v=582"></script>
     <script type="module" src="./js/navigation.js?v=580"></script>
     <script type="module" src="./js/pwa.js?v=580"></script>
     <script type="module" src="./js/theme.js?v=580"></script>
@@ -421,15 +406,8 @@
             var ctaBtn = document.querySelector('.start-reading-btn') || document.getElementById('startReadingBtn');
             if (!ctaBtn) return;
 
-            // Change button text to show continue reading — UNLESS the button
-            // hosts the cover <img> hero (textContent would wipe the image).
-            // In that case, only update aria-label so screen readers learn the
-            // new action; visual "continue" affordance is the cover itself.
-            if (ctaBtn.querySelector('img')) {
-                ctaBtn.setAttribute('aria-label', 'CONTINUE READING');
-            } else {
-                ctaBtn.textContent = 'CONTINUE READING';
-            }
+            // Change button text to show continue reading
+            ctaBtn.textContent = 'CONTINUE READING';
 
             // Override click to go to bookmarked position
             ctaBtn.onclick = function(e) {
