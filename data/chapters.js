@@ -67,7 +67,17 @@ const copyright = {
     slug: "copyright",
     subtitle: "",
     teaser: "",
-    content: "<p class=\"no-indent\">Copyright © 2026 by Anthony Fenech. All rights reserved.</p>\n\n<p class=\"no-indent\">First Edition: May 2026</p>\n\n<p class=\"no-indent\">Cover Design: Jay Tuohey</p>\n\n<p class=\"no-indent\">Published by Red Dot Press | reddotbooks.com</p>\n\n<p class=\"no-indent\">Library of Congress Control Number: 2026909148</p>\n\n<p class=\"no-indent\">ISBNs: 979-8-9956304-0-1 (print); 979-8-9956304-1-8 (eBook)</p>",
+    content: `<div class="toc-page">
+<h2 class="toc-page-title">COPYRIGHT</h2>
+<p>Copyright © 2026 by Anthony Fenech</p>
+<p>Cover design by Jay Tuohey. Cover copyright © 2026 by Red Dot Press.</p>
+<p>Red Dot Press supports the right to free expression and the value of copyright. The purpose of copyright is to encourage writers and artists to produce the creative works that enrich our culture.</p>
+<p>The scanning, uploading, and distribution of this book without permission is a theft of the author's intellectual property. If you would like permission to use material from the book (other than for review purposes), please contact permissions@reddotbooks.com. Thank you for your support of the author's rights.</p>
+<p>Red Dot Press | reddotbooks.com</p>
+<p>First Edition: May 2026</p>
+<p>Library of Congress Control Number: 2026909148</p>
+<p>ISBNs: 9798995630401 (print) | ISBN 9798995630418 (ebook)</p>
+</div>`,
     wordCount: 0,
     parent_id: null,
     hidden: false,
