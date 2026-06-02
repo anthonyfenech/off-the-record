@@ -7,12 +7,12 @@
   },
   "stats": {
     "section_count": 39,
-    "total_paragraphs": 3216,
-    "total_words": 86121,
-    "estimated_reading_time_minutes": 431,
+    "total_paragraphs": 3211,
+    "total_words": 85962,
+    "estimated_reading_time_minutes": 430,
     "first_page": 1,
-    "last_page": 264,
-    "total_pages": 264
+    "last_page": 268,
+    "total_pages": 268
   },
   "sections": [
     {
@@ -60,7 +60,7 @@
         }
       ],
       "paragraph_count": 37,
-      "word_count": 1551
+      "word_count": 1558
     },
     {
       "id": "ch02",
@@ -107,7 +107,7 @@
         },
         {
           "page": 13,
-          "paragraph_id": "p_ch02_060",
+          "paragraph_id": "p_ch02_058",
           "anchor": "page13"
         },
         {
@@ -117,7 +117,7 @@
         },
         {
           "page": 15,
-          "paragraph_id": "p_ch02_084",
+          "paragraph_id": "p_ch02_083",
           "anchor": "page15"
         },
         {
@@ -194,7 +194,7 @@
         }
       ],
       "paragraph_count": 73,
-      "word_count": 2857
+      "word_count": 2853
     },
     {
       "id": "ch04",
@@ -226,7 +226,7 @@
         },
         {
           "page": 30,
-          "paragraph_id": "p_ch04_022",
+          "paragraph_id": "p_ch04_021",
           "anchor": "page30"
         },
         {
@@ -266,7 +266,7 @@
         }
       ],
       "paragraph_count": 102,
-      "word_count": 2767
+      "word_count": 2766
     },
     {
       "id": "ch05",
@@ -298,7 +298,7 @@
         },
         {
           "page": 41,
-          "paragraph_id": "p_ch05_044",
+          "paragraph_id": "p_ch05_043",
           "anchor": "page41"
         },
         {
@@ -384,7 +384,7 @@
         },
         {
           "page": 45,
-          "paragraph_id": "p_ch07_005",
+          "paragraph_id": "p_ch07_004",
           "anchor": "page45"
         },
         {
@@ -409,12 +409,12 @@
         },
         {
           "page": 50,
-          "paragraph_id": "p_ch07_070",
+          "paragraph_id": "p_ch07_069",
           "anchor": "page50"
         },
         {
           "page": 51,
-          "paragraph_id": "p_ch07_089",
+          "paragraph_id": "p_ch07_088",
           "anchor": "page51"
         },
         {
@@ -423,8 +423,8 @@
           "anchor": "page52"
         }
       ],
-      "paragraph_count": 107,
-      "word_count": 2437
+      "paragraph_count": 108,
+      "word_count": 2467
     },
     {
       "id": "ch08",
@@ -437,7 +437,7 @@
       "subtitle": "",
       "teaser": "",
       "first_page": 53,
-      "last_page": 64,
+      "last_page": 65,
       "page_breaks": [
         {
           "page": 53,
@@ -446,27 +446,27 @@
         },
         {
           "page": 54,
-          "paragraph_id": "p_ch08_003",
+          "paragraph_id": "p_ch08_002",
           "anchor": "page54"
         },
         {
           "page": 55,
-          "paragraph_id": "p_ch08_019",
+          "paragraph_id": "p_ch08_017",
           "anchor": "page55"
         },
         {
           "page": 56,
-          "paragraph_id": "p_ch08_042",
+          "paragraph_id": "p_ch08_040",
           "anchor": "page56"
         },
         {
           "page": 57,
-          "paragraph_id": "p_ch08_063",
+          "paragraph_id": "p_ch08_062",
           "anchor": "page57"
         },
         {
           "page": 58,
-          "paragraph_id": "p_ch08_077",
+          "paragraph_id": "p_ch08_075",
           "anchor": "page58"
         },
         {
@@ -476,7 +476,7 @@
         },
         {
           "page": 60,
-          "paragraph_id": "p_ch08_098",
+          "paragraph_id": "p_ch08_096",
           "anchor": "page60"
         },
         {
@@ -486,22 +486,27 @@
         },
         {
           "page": 62,
-          "paragraph_id": "p_ch08_118",
+          "paragraph_id": "p_ch08_116",
           "anchor": "page62"
         },
         {
           "page": 63,
-          "paragraph_id": "p_ch08_131",
+          "paragraph_id": "p_ch08_130",
           "anchor": "page63"
         },
         {
           "page": 64,
-          "paragraph_id": "p_ch08_141",
+          "paragraph_id": "p_ch08_139",
           "anchor": "page64"
+        },
+        {
+          "page": 65,
+          "paragraph_id": "p_ch08_151",
+          "anchor": "page65"
         }
       ],
       "paragraph_count": 151,
-      "word_count": 3381
+      "word_count": 3380
     },
     {
       "id": "ch08_fb1",
@@ -517,7 +522,7 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 211
+      "word_count": 210
     },
     {
       "id": "ch08b",
@@ -545,42 +550,42 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 65,
-      "last_page": 70,
+      "first_page": 66,
+      "last_page": 71,
       "page_breaks": [
         {
-          "page": 65,
-          "paragraph_id": "p_ch09_001",
-          "anchor": "page65"
-        },
-        {
           "page": 66,
-          "paragraph_id": "p_ch09_020",
+          "paragraph_id": "p_ch09_001",
           "anchor": "page66"
         },
         {
           "page": 67,
-          "paragraph_id": "p_ch09_030",
+          "paragraph_id": "p_ch09_019",
           "anchor": "page67"
         },
         {
           "page": 68,
-          "paragraph_id": "p_ch09_043",
+          "paragraph_id": "p_ch09_029",
           "anchor": "page68"
         },
         {
           "page": 69,
-          "paragraph_id": "p_ch09_059",
+          "paragraph_id": "p_ch09_040",
           "anchor": "page69"
         },
         {
           "page": 70,
-          "paragraph_id": "p_ch09_078",
+          "paragraph_id": "p_ch09_057",
           "anchor": "page70"
+        },
+        {
+          "page": 71,
+          "paragraph_id": "p_ch09_075",
+          "anchor": "page71"
         }
       ],
       "paragraph_count": 89,
-      "word_count": 1755
+      "word_count": 1756
     },
     {
       "id": "ch10",
@@ -592,22 +597,17 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 71,
+      "first_page": 72,
       "last_page": 78,
       "page_breaks": [
         {
-          "page": 71,
-          "paragraph_id": "p_ch10_001",
-          "anchor": "page71"
-        },
-        {
           "page": 72,
-          "paragraph_id": "p_ch10_003",
+          "paragraph_id": "p_ch10_001",
           "anchor": "page72"
         },
         {
           "page": 73,
-          "paragraph_id": "p_ch10_019",
+          "paragraph_id": "p_ch10_016",
           "anchor": "page73"
         },
         {
@@ -617,22 +617,22 @@
         },
         {
           "page": 75,
-          "paragraph_id": "p_ch10_039",
+          "paragraph_id": "p_ch10_038",
           "anchor": "page75"
         },
         {
           "page": 76,
-          "paragraph_id": "p_ch10_049",
+          "paragraph_id": "p_ch10_048",
           "anchor": "page76"
         },
         {
           "page": 77,
-          "paragraph_id": "p_ch10_066",
+          "paragraph_id": "p_ch10_063",
           "anchor": "page77"
         },
         {
           "page": 78,
-          "paragraph_id": "p_ch10_081",
+          "paragraph_id": "p_ch10_079",
           "anchor": "page78"
         }
       ],
@@ -669,7 +669,7 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 840
+      "word_count": 827
     },
     {
       "id": "ch11",
@@ -691,32 +691,32 @@
         },
         {
           "page": 80,
-          "paragraph_id": "p_ch11_004",
+          "paragraph_id": "p_ch11_003",
           "anchor": "page80"
         },
         {
           "page": 81,
-          "paragraph_id": "p_ch11_027",
+          "paragraph_id": "p_ch11_026",
           "anchor": "page81"
         },
         {
           "page": 82,
-          "paragraph_id": "p_ch11_042",
+          "paragraph_id": "p_ch11_041",
           "anchor": "page82"
         },
         {
           "page": 83,
-          "paragraph_id": "p_ch11_061",
+          "paragraph_id": "p_ch11_059",
           "anchor": "page83"
         },
         {
           "page": 84,
-          "paragraph_id": "p_ch11_075",
+          "paragraph_id": "p_ch11_073",
           "anchor": "page84"
         },
         {
           "page": 85,
-          "paragraph_id": "p_ch11_092",
+          "paragraph_id": "p_ch11_089",
           "anchor": "page85"
         },
         {
@@ -726,22 +726,22 @@
         },
         {
           "page": 87,
-          "paragraph_id": "p_ch11_115",
+          "paragraph_id": "p_ch11_114",
           "anchor": "page87"
         },
         {
           "page": 88,
-          "paragraph_id": "p_ch11_131",
+          "paragraph_id": "p_ch11_130",
           "anchor": "page88"
         },
         {
           "page": 89,
-          "paragraph_id": "p_ch11_155",
+          "paragraph_id": "p_ch11_153",
           "anchor": "page89"
         },
         {
           "page": 90,
-          "paragraph_id": "p_ch11_169",
+          "paragraph_id": "p_ch11_168",
           "anchor": "page90"
         },
         {
@@ -756,17 +756,17 @@
         },
         {
           "page": 93,
-          "paragraph_id": "p_ch11_211",
+          "paragraph_id": "p_ch11_210",
           "anchor": "page93"
         },
         {
           "page": 94,
-          "paragraph_id": "p_ch11_227",
+          "paragraph_id": "p_ch11_225",
           "anchor": "page94"
         }
       ],
       "paragraph_count": 233,
-      "word_count": 4460
+      "word_count": 4461
     },
     {
       "id": "ch12",
@@ -788,12 +788,12 @@
         },
         {
           "page": 96,
-          "paragraph_id": "p_ch12_007",
+          "paragraph_id": "p_ch12_006",
           "anchor": "page96"
         },
         {
           "page": 97,
-          "paragraph_id": "p_ch12_022",
+          "paragraph_id": "p_ch12_021",
           "anchor": "page97"
         },
         {
@@ -803,12 +803,12 @@
         },
         {
           "page": 99,
-          "paragraph_id": "p_ch12_051",
+          "paragraph_id": "p_ch12_049",
           "anchor": "page99"
         },
         {
           "page": 100,
-          "paragraph_id": "p_ch12_075",
+          "paragraph_id": "p_ch12_072",
           "anchor": "page100"
         },
         {
@@ -818,22 +818,22 @@
         },
         {
           "page": 102,
-          "paragraph_id": "p_ch12_095",
+          "paragraph_id": "p_ch12_094",
           "anchor": "page102"
         },
         {
           "page": 103,
-          "paragraph_id": "p_ch12_110",
+          "paragraph_id": "p_ch12_107",
           "anchor": "page103"
         },
         {
           "page": 104,
-          "paragraph_id": "p_ch12_123",
+          "paragraph_id": "p_ch12_122",
           "anchor": "page104"
         }
       ],
       "paragraph_count": 126,
-      "word_count": 2568
+      "word_count": 2569
     },
     {
       "id": "ch13",
@@ -846,7 +846,7 @@
       "subtitle": "",
       "teaser": "",
       "first_page": 105,
-      "last_page": 115,
+      "last_page": 116,
       "page_breaks": [
         {
           "page": 105,
@@ -860,12 +860,12 @@
         },
         {
           "page": 107,
-          "paragraph_id": "p_ch13_023",
+          "paragraph_id": "p_ch13_022",
           "anchor": "page107"
         },
         {
           "page": 108,
-          "paragraph_id": "p_ch13_032",
+          "paragraph_id": "p_ch13_031",
           "anchor": "page108"
         },
         {
@@ -875,17 +875,17 @@
         },
         {
           "page": 110,
-          "paragraph_id": "p_ch13_054",
+          "paragraph_id": "p_ch13_053",
           "anchor": "page110"
         },
         {
           "page": 111,
-          "paragraph_id": "p_ch13_073",
+          "paragraph_id": "p_ch13_069",
           "anchor": "page111"
         },
         {
           "page": 112,
-          "paragraph_id": "p_ch13_095",
+          "paragraph_id": "p_ch13_089",
           "anchor": "page112"
         },
         {
@@ -895,17 +895,22 @@
         },
         {
           "page": 114,
-          "paragraph_id": "p_ch13_122",
+          "paragraph_id": "p_ch13_120",
           "anchor": "page114"
         },
         {
           "page": 115,
-          "paragraph_id": "p_ch13_141",
+          "paragraph_id": "p_ch13_140",
           "anchor": "page115"
+        },
+        {
+          "page": 116,
+          "paragraph_id": "p_ch13_157",
+          "anchor": "page116"
         }
       ],
       "paragraph_count": 158,
-      "word_count": 3236
+      "word_count": 3231
     },
     {
       "id": "ch14",
@@ -917,62 +922,62 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 116,
-      "last_page": 125,
+      "first_page": 117,
+      "last_page": 126,
       "page_breaks": [
         {
-          "page": 116,
-          "paragraph_id": "p_ch14_001",
-          "anchor": "page116"
-        },
-        {
           "page": 117,
-          "paragraph_id": "p_ch14_016",
+          "paragraph_id": "p_ch14_001",
           "anchor": "page117"
         },
         {
           "page": 118,
-          "paragraph_id": "p_ch14_032",
+          "paragraph_id": "p_ch14_015",
           "anchor": "page118"
         },
         {
           "page": 119,
-          "paragraph_id": "p_ch14_050",
+          "paragraph_id": "p_ch14_031",
           "anchor": "page119"
         },
         {
           "page": 120,
-          "paragraph_id": "p_ch14_069",
+          "paragraph_id": "p_ch14_049",
           "anchor": "page120"
         },
         {
           "page": 121,
-          "paragraph_id": "p_ch14_094",
+          "paragraph_id": "p_ch14_067",
           "anchor": "page121"
         },
         {
           "page": 122,
-          "paragraph_id": "p_ch14_108",
+          "paragraph_id": "p_ch14_092",
           "anchor": "page122"
         },
         {
           "page": 123,
-          "paragraph_id": "p_ch14_119",
+          "paragraph_id": "p_ch14_106",
           "anchor": "page123"
         },
         {
           "page": 124,
-          "paragraph_id": "p_ch14_144",
+          "paragraph_id": "p_ch14_117",
           "anchor": "page124"
         },
         {
           "page": 125,
-          "paragraph_id": "p_ch14_168",
+          "paragraph_id": "p_ch14_143",
           "anchor": "page125"
+        },
+        {
+          "page": 126,
+          "paragraph_id": "p_ch14_166",
+          "anchor": "page126"
         }
       ],
-      "paragraph_count": 172,
-      "word_count": 2824
+      "paragraph_count": 171,
+      "word_count": 2803
     },
     {
       "id": "ch15",
@@ -984,92 +989,92 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 126,
-      "last_page": 141,
+      "first_page": 127,
+      "last_page": 142,
       "page_breaks": [
         {
-          "page": 126,
-          "paragraph_id": "p_ch15_001",
-          "anchor": "page126"
-        },
-        {
           "page": 127,
-          "paragraph_id": "p_ch15_007",
+          "paragraph_id": "p_ch15_001",
           "anchor": "page127"
         },
         {
           "page": 128,
-          "paragraph_id": "p_ch15_017",
+          "paragraph_id": "p_ch15_007",
           "anchor": "page128"
         },
         {
           "page": 129,
-          "paragraph_id": "p_ch15_033",
+          "paragraph_id": "p_ch15_017",
           "anchor": "page129"
         },
         {
           "page": 130,
-          "paragraph_id": "p_ch15_055",
+          "paragraph_id": "p_ch15_033",
           "anchor": "page130"
         },
         {
           "page": 131,
-          "paragraph_id": "p_ch15_074",
+          "paragraph_id": "p_ch15_054",
           "anchor": "page131"
         },
         {
           "page": 132,
-          "paragraph_id": "p_ch15_095",
+          "paragraph_id": "p_ch15_073",
           "anchor": "page132"
         },
         {
           "page": 133,
-          "paragraph_id": "p_ch15_116",
+          "paragraph_id": "p_ch15_094",
           "anchor": "page133"
         },
         {
           "page": 134,
-          "paragraph_id": "p_ch15_137",
+          "paragraph_id": "p_ch15_115",
           "anchor": "page134"
         },
         {
           "page": 135,
-          "paragraph_id": "p_ch15_154",
+          "paragraph_id": "p_ch15_137",
           "anchor": "page135"
         },
         {
           "page": 136,
-          "paragraph_id": "p_ch15_169",
+          "paragraph_id": "p_ch15_153",
           "anchor": "page136"
         },
         {
           "page": 137,
-          "paragraph_id": "p_ch15_187",
+          "paragraph_id": "p_ch15_169",
           "anchor": "page137"
         },
         {
           "page": 138,
-          "paragraph_id": "p_ch15_200",
+          "paragraph_id": "p_ch15_187",
           "anchor": "page138"
         },
         {
           "page": 139,
-          "paragraph_id": "p_ch15_212",
+          "paragraph_id": "p_ch15_199",
           "anchor": "page139"
         },
         {
           "page": 140,
-          "paragraph_id": "p_ch15_222",
+          "paragraph_id": "p_ch15_211",
           "anchor": "page140"
         },
         {
           "page": 141,
-          "paragraph_id": "p_ch15_233",
+          "paragraph_id": "p_ch15_222",
           "anchor": "page141"
+        },
+        {
+          "page": 142,
+          "paragraph_id": "p_ch15_233",
+          "anchor": "page142"
         }
       ],
-      "paragraph_count": 240,
-      "word_count": 4543
+      "paragraph_count": 239,
+      "word_count": 4516
     },
     {
       "id": "ch16",
@@ -1081,43 +1086,43 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 142,
-      "last_page": 148,
+      "first_page": 143,
+      "last_page": 149,
       "page_breaks": [
         {
-          "page": 142,
-          "paragraph_id": "p_ch16_001",
-          "anchor": "page142"
-        },
-        {
           "page": 143,
-          "paragraph_id": "p_ch16_007",
+          "paragraph_id": "p_ch16_001",
           "anchor": "page143"
         },
         {
           "page": 144,
-          "paragraph_id": "p_ch16_021",
+          "paragraph_id": "p_ch16_007",
           "anchor": "page144"
         },
         {
           "page": 145,
-          "paragraph_id": "p_ch16_037",
+          "paragraph_id": "p_ch16_022",
           "anchor": "page145"
         },
         {
           "page": 146,
-          "paragraph_id": "p_ch16_057",
+          "paragraph_id": "p_ch16_039",
           "anchor": "page146"
         },
         {
           "page": 147,
-          "paragraph_id": "p_ch16_071",
+          "paragraph_id": "p_ch16_058",
           "anchor": "page147"
         },
         {
           "page": 148,
-          "paragraph_id": "p_ch16_088",
+          "paragraph_id": "p_ch16_072",
           "anchor": "page148"
+        },
+        {
+          "page": 149,
+          "paragraph_id": "p_ch16_090",
+          "anchor": "page149"
         }
       ],
       "paragraph_count": 91,
@@ -1133,53 +1138,53 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 149,
-      "last_page": 157,
+      "first_page": 150,
+      "last_page": 158,
       "page_breaks": [
         {
-          "page": 149,
-          "paragraph_id": "p_ch17_001",
-          "anchor": "page149"
-        },
-        {
           "page": 150,
-          "paragraph_id": "p_ch17_011",
+          "paragraph_id": "p_ch17_001",
           "anchor": "page150"
         },
         {
           "page": 151,
-          "paragraph_id": "p_ch17_023",
+          "paragraph_id": "p_ch17_011",
           "anchor": "page151"
         },
         {
           "page": 152,
-          "paragraph_id": "p_ch17_042",
+          "paragraph_id": "p_ch17_024",
           "anchor": "page152"
         },
         {
           "page": 153,
-          "paragraph_id": "p_ch17_055",
+          "paragraph_id": "p_ch17_043",
           "anchor": "page153"
         },
         {
           "page": 154,
-          "paragraph_id": "p_ch17_072",
+          "paragraph_id": "p_ch17_056",
           "anchor": "page154"
         },
         {
           "page": 155,
-          "paragraph_id": "p_ch17_091",
+          "paragraph_id": "p_ch17_072",
           "anchor": "page155"
         },
         {
           "page": 156,
-          "paragraph_id": "p_ch17_099",
+          "paragraph_id": "p_ch17_092",
           "anchor": "page156"
         },
         {
           "page": 157,
-          "paragraph_id": "p_ch17_109",
+          "paragraph_id": "p_ch17_099",
           "anchor": "page157"
+        },
+        {
+          "page": 158,
+          "paragraph_id": "p_ch17_109",
+          "anchor": "page158"
         }
       ],
       "paragraph_count": 113,
@@ -1195,67 +1200,67 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 158,
-      "last_page": 168,
+      "first_page": 159,
+      "last_page": 169,
       "page_breaks": [
         {
-          "page": 158,
-          "paragraph_id": "p_ch18_001",
-          "anchor": "page158"
-        },
-        {
           "page": 159,
-          "paragraph_id": "p_ch18_006",
+          "paragraph_id": "p_ch18_001",
           "anchor": "page159"
         },
         {
           "page": 160,
-          "paragraph_id": "p_ch18_020",
+          "paragraph_id": "p_ch18_007",
           "anchor": "page160"
         },
         {
           "page": 161,
-          "paragraph_id": "p_ch18_041",
+          "paragraph_id": "p_ch18_021",
           "anchor": "page161"
         },
         {
           "page": 162,
-          "paragraph_id": "p_ch18_049",
+          "paragraph_id": "p_ch18_042",
           "anchor": "page162"
         },
         {
           "page": 163,
-          "paragraph_id": "p_ch18_062",
+          "paragraph_id": "p_ch18_049",
           "anchor": "page163"
         },
         {
           "page": 164,
-          "paragraph_id": "p_ch18_082",
+          "paragraph_id": "p_ch18_064",
           "anchor": "page164"
         },
         {
           "page": 165,
-          "paragraph_id": "p_ch18_095",
+          "paragraph_id": "p_ch18_082",
           "anchor": "page165"
         },
         {
           "page": 166,
-          "paragraph_id": "p_ch18_118",
+          "paragraph_id": "p_ch18_095",
           "anchor": "page166"
         },
         {
           "page": 167,
-          "paragraph_id": "p_ch18_134",
+          "paragraph_id": "p_ch18_118",
           "anchor": "page167"
         },
         {
           "page": 168,
-          "paragraph_id": "p_ch18_147",
+          "paragraph_id": "p_ch18_134",
           "anchor": "page168"
+        },
+        {
+          "page": 169,
+          "paragraph_id": "p_ch18_147",
+          "anchor": "page169"
         }
       ],
       "paragraph_count": 155,
-      "word_count": 3011
+      "word_count": 3008
     },
     {
       "id": "ch19",
@@ -1267,68 +1272,68 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 169,
-      "last_page": 180,
+      "first_page": 170,
+      "last_page": 181,
       "page_breaks": [
         {
-          "page": 169,
-          "paragraph_id": "p_ch19_001",
-          "anchor": "page169"
-        },
-        {
           "page": 170,
-          "paragraph_id": "p_ch19_004",
+          "paragraph_id": "p_ch19_001",
           "anchor": "page170"
         },
         {
           "page": 171,
-          "paragraph_id": "p_ch19_026",
+          "paragraph_id": "p_ch19_005",
           "anchor": "page171"
         },
         {
           "page": 172,
-          "paragraph_id": "p_ch19_042",
+          "paragraph_id": "p_ch19_027",
           "anchor": "page172"
         },
         {
           "page": 173,
-          "paragraph_id": "p_ch19_053",
+          "paragraph_id": "p_ch19_042",
           "anchor": "page173"
         },
         {
           "page": 174,
-          "paragraph_id": "p_ch19_072",
+          "paragraph_id": "p_ch19_055",
           "anchor": "page174"
         },
         {
           "page": 175,
-          "paragraph_id": "p_ch19_087",
+          "paragraph_id": "p_ch19_074",
           "anchor": "page175"
         },
         {
           "page": 176,
-          "paragraph_id": "p_ch19_109",
+          "paragraph_id": "p_ch19_089",
           "anchor": "page176"
         },
         {
           "page": 177,
-          "paragraph_id": "p_ch19_121",
+          "paragraph_id": "p_ch19_111",
           "anchor": "page177"
         },
         {
           "page": 178,
-          "paragraph_id": "p_ch19_131",
+          "paragraph_id": "p_ch19_121",
           "anchor": "page178"
         },
         {
           "page": 179,
-          "paragraph_id": "p_ch19_142",
+          "paragraph_id": "p_ch19_133",
           "anchor": "page179"
         },
         {
           "page": 180,
-          "paragraph_id": "p_ch19_151",
+          "paragraph_id": "p_ch19_142",
           "anchor": "page180"
+        },
+        {
+          "page": 181,
+          "paragraph_id": "p_ch19_152",
+          "anchor": "page181"
         }
       ],
       "paragraph_count": 153,
@@ -1360,73 +1365,73 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 181,
-      "last_page": 193,
+      "first_page": 182,
+      "last_page": 194,
       "page_breaks": [
         {
-          "page": 181,
-          "paragraph_id": "p_ch20_001",
-          "anchor": "page181"
-        },
-        {
           "page": 182,
-          "paragraph_id": "p_ch20_005",
+          "paragraph_id": "p_ch20_001",
           "anchor": "page182"
         },
         {
           "page": 183,
-          "paragraph_id": "p_ch20_016",
+          "paragraph_id": "p_ch20_005",
           "anchor": "page183"
         },
         {
           "page": 184,
-          "paragraph_id": "p_ch20_038",
+          "paragraph_id": "p_ch20_018",
           "anchor": "page184"
         },
         {
           "page": 185,
-          "paragraph_id": "p_ch20_049",
+          "paragraph_id": "p_ch20_040",
           "anchor": "page185"
         },
         {
           "page": 186,
-          "paragraph_id": "p_ch20_063",
+          "paragraph_id": "p_ch20_049",
           "anchor": "page186"
         },
         {
           "page": 187,
-          "paragraph_id": "p_ch20_072",
+          "paragraph_id": "p_ch20_064",
           "anchor": "page187"
         },
         {
           "page": 188,
-          "paragraph_id": "p_ch20_085",
+          "paragraph_id": "p_ch20_072",
           "anchor": "page188"
         },
         {
           "page": 189,
-          "paragraph_id": "p_ch20_097",
+          "paragraph_id": "p_ch20_085",
           "anchor": "page189"
         },
         {
           "page": 190,
-          "paragraph_id": "p_ch20_109",
+          "paragraph_id": "p_ch20_097",
           "anchor": "page190"
         },
         {
           "page": 191,
-          "paragraph_id": "p_ch20_125",
+          "paragraph_id": "p_ch20_110",
           "anchor": "page191"
         },
         {
           "page": 192,
-          "paragraph_id": "p_ch20_139",
+          "paragraph_id": "p_ch20_127",
           "anchor": "page192"
         },
         {
           "page": 193,
-          "paragraph_id": "p_ch20_148",
+          "paragraph_id": "p_ch20_140",
           "anchor": "page193"
+        },
+        {
+          "page": 194,
+          "paragraph_id": "p_ch20_151",
+          "anchor": "page194"
         }
       ],
       "paragraph_count": 164,
@@ -1442,47 +1447,42 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 194,
+      "first_page": 195,
       "last_page": 200,
       "page_breaks": [
         {
-          "page": 194,
-          "paragraph_id": "p_ch21_001",
-          "anchor": "page194"
-        },
-        {
           "page": 195,
-          "paragraph_id": "p_ch21_003",
+          "paragraph_id": "p_ch21_001",
           "anchor": "page195"
         },
         {
           "page": 196,
-          "paragraph_id": "p_ch21_014",
+          "paragraph_id": "p_ch21_003",
           "anchor": "page196"
         },
         {
           "page": 197,
-          "paragraph_id": "p_ch21_023",
+          "paragraph_id": "p_ch21_014",
           "anchor": "page197"
         },
         {
           "page": 198,
-          "paragraph_id": "p_ch21_037",
+          "paragraph_id": "p_ch21_023",
           "anchor": "page198"
         },
         {
           "page": 199,
-          "paragraph_id": "p_ch21_050",
+          "paragraph_id": "p_ch21_041",
           "anchor": "page199"
         },
         {
           "page": 200,
-          "paragraph_id": "p_ch21_067",
+          "paragraph_id": "p_ch21_056",
           "anchor": "page200"
         }
       ],
-      "paragraph_count": 69,
-      "word_count": 1647
+      "paragraph_count": 66,
+      "word_count": 1552
     },
     {
       "id": "ch22",
@@ -1495,7 +1495,7 @@
       "subtitle": "",
       "teaser": "",
       "first_page": 201,
-      "last_page": 211,
+      "last_page": 212,
       "page_breaks": [
         {
           "page": 201,
@@ -1504,57 +1504,62 @@
         },
         {
           "page": 202,
-          "paragraph_id": "p_ch22_006",
+          "paragraph_id": "p_ch22_002",
           "anchor": "page202"
         },
         {
           "page": 203,
-          "paragraph_id": "p_ch22_018",
+          "paragraph_id": "p_ch22_009",
           "anchor": "page203"
         },
         {
           "page": 204,
-          "paragraph_id": "p_ch22_024",
+          "paragraph_id": "p_ch22_020",
           "anchor": "page204"
         },
         {
           "page": 205,
-          "paragraph_id": "p_ch22_034",
+          "paragraph_id": "p_ch22_028",
           "anchor": "page205"
         },
         {
           "page": 206,
-          "paragraph_id": "p_ch22_049",
+          "paragraph_id": "p_ch22_041",
           "anchor": "page206"
         },
         {
           "page": 207,
-          "paragraph_id": "p_ch22_062",
+          "paragraph_id": "p_ch22_053",
           "anchor": "page207"
         },
         {
           "page": 208,
-          "paragraph_id": "p_ch22_074",
+          "paragraph_id": "p_ch22_066",
           "anchor": "page208"
         },
         {
           "page": 209,
-          "paragraph_id": "p_ch22_084",
+          "paragraph_id": "p_ch22_079",
           "anchor": "page209"
         },
         {
           "page": 210,
-          "paragraph_id": "p_ch22_093",
+          "paragraph_id": "p_ch22_087",
           "anchor": "page210"
         },
         {
           "page": 211,
-          "paragraph_id": "p_ch22_105",
+          "paragraph_id": "p_ch22_096",
           "anchor": "page211"
+        },
+        {
+          "page": 212,
+          "paragraph_id": "p_ch22_110",
+          "anchor": "page212"
         }
       ],
       "paragraph_count": 114,
-      "word_count": 3119
+      "word_count": 3118
     },
     {
       "id": "ch23",
@@ -1566,72 +1571,72 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 212,
-      "last_page": 223,
+      "first_page": 213,
+      "last_page": 224,
       "page_breaks": [
         {
-          "page": 212,
-          "paragraph_id": "p_ch23_001",
-          "anchor": "page212"
-        },
-        {
           "page": 213,
-          "paragraph_id": "p_ch23_007",
+          "paragraph_id": "p_ch23_001",
           "anchor": "page213"
         },
         {
           "page": 214,
-          "paragraph_id": "p_ch23_012",
+          "paragraph_id": "p_ch23_008",
           "anchor": "page214"
         },
         {
           "page": 215,
-          "paragraph_id": "p_ch23_020",
+          "paragraph_id": "p_ch23_015",
           "anchor": "page215"
         },
         {
           "page": 216,
-          "paragraph_id": "p_ch23_042",
+          "paragraph_id": "p_ch23_030",
           "anchor": "page216"
         },
         {
           "page": 217,
-          "paragraph_id": "p_ch23_056",
+          "paragraph_id": "p_ch23_048",
           "anchor": "page217"
         },
         {
           "page": 218,
-          "paragraph_id": "p_ch23_070",
+          "paragraph_id": "p_ch23_060",
           "anchor": "page218"
         },
         {
           "page": 219,
-          "paragraph_id": "p_ch23_082",
+          "paragraph_id": "p_ch23_075",
           "anchor": "page219"
         },
         {
           "page": 220,
-          "paragraph_id": "p_ch23_092",
+          "paragraph_id": "p_ch23_086",
           "anchor": "page220"
         },
         {
           "page": 221,
-          "paragraph_id": "p_ch23_110",
+          "paragraph_id": "p_ch23_097",
           "anchor": "page221"
         },
         {
           "page": 222,
-          "paragraph_id": "p_ch23_124",
+          "paragraph_id": "p_ch23_117",
           "anchor": "page222"
         },
         {
           "page": 223,
-          "paragraph_id": "p_ch23_139",
+          "paragraph_id": "p_ch23_129",
           "anchor": "page223"
+        },
+        {
+          "page": 224,
+          "paragraph_id": "p_ch23_143",
+          "anchor": "page224"
         }
       ],
       "paragraph_count": 146,
-      "word_count": 3305
+      "word_count": 3304
     },
     {
       "id": "ch24",
@@ -1643,37 +1648,37 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 224,
-      "last_page": 228,
+      "first_page": 225,
+      "last_page": 229,
       "page_breaks": [
         {
-          "page": 224,
-          "paragraph_id": "p_ch24_001",
-          "anchor": "page224"
-        },
-        {
           "page": 225,
-          "paragraph_id": "p_ch24_005",
+          "paragraph_id": "p_ch24_001",
           "anchor": "page225"
         },
         {
           "page": 226,
-          "paragraph_id": "p_ch24_015",
+          "paragraph_id": "p_ch24_008",
           "anchor": "page226"
         },
         {
           "page": 227,
-          "paragraph_id": "p_ch24_028",
+          "paragraph_id": "p_ch24_021",
           "anchor": "page227"
         },
         {
           "page": 228,
-          "paragraph_id": "p_ch24_037",
+          "paragraph_id": "p_ch24_031",
           "anchor": "page228"
+        },
+        {
+          "page": 229,
+          "paragraph_id": "p_ch24_039",
+          "anchor": "page229"
         }
       ],
       "paragraph_count": 40,
-      "word_count": 1174
+      "word_count": 1173
     },
     {
       "id": "ch24_fb1",
@@ -1689,7 +1694,7 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 333
+      "word_count": 332
     },
     {
       "id": "ch24b",
@@ -1721,7 +1726,7 @@
       "last_page": null,
       "page_breaks": [],
       "paragraph_count": 0,
-      "word_count": 255
+      "word_count": 242
     },
     {
       "id": "ch24c",
@@ -1765,127 +1770,127 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 229,
-      "last_page": 251,
+      "first_page": 230,
+      "last_page": 252,
       "page_breaks": [
         {
-          "page": 229,
-          "paragraph_id": "p_ch25_001",
-          "anchor": "page229"
-        },
-        {
           "page": 230,
-          "paragraph_id": "p_ch25_006",
+          "paragraph_id": "p_ch25_001",
           "anchor": "page230"
         },
         {
           "page": 231,
-          "paragraph_id": "p_ch25_016",
+          "paragraph_id": "p_ch25_011",
           "anchor": "page231"
         },
         {
           "page": 232,
-          "paragraph_id": "p_ch25_032",
+          "paragraph_id": "p_ch25_025",
           "anchor": "page232"
         },
         {
           "page": 233,
-          "paragraph_id": "p_ch25_040",
+          "paragraph_id": "p_ch25_036",
           "anchor": "page233"
         },
         {
           "page": 234,
-          "paragraph_id": "p_ch25_051",
+          "paragraph_id": "p_ch25_044",
           "anchor": "page234"
         },
         {
           "page": 235,
-          "paragraph_id": "p_ch25_070",
+          "paragraph_id": "p_ch25_057",
           "anchor": "page235"
         },
         {
           "page": 236,
-          "paragraph_id": "p_ch25_083",
+          "paragraph_id": "p_ch25_074",
           "anchor": "page236"
         },
         {
           "page": 237,
-          "paragraph_id": "p_ch25_093",
+          "paragraph_id": "p_ch25_087",
           "anchor": "page237"
         },
         {
           "page": 238,
-          "paragraph_id": "p_ch25_107",
+          "paragraph_id": "p_ch25_101",
           "anchor": "page238"
         },
         {
           "page": 239,
-          "paragraph_id": "p_ch25_121",
+          "paragraph_id": "p_ch25_112",
           "anchor": "page239"
         },
         {
           "page": 240,
-          "paragraph_id": "p_ch25_129",
+          "paragraph_id": "p_ch25_124",
           "anchor": "page240"
         },
         {
           "page": 241,
-          "paragraph_id": "p_ch25_144",
+          "paragraph_id": "p_ch25_133",
           "anchor": "page241"
         },
         {
           "page": 242,
-          "paragraph_id": "p_ch25_159",
+          "paragraph_id": "p_ch25_148",
           "anchor": "page242"
         },
         {
           "page": 243,
-          "paragraph_id": "p_ch25_173",
+          "paragraph_id": "p_ch25_164",
           "anchor": "page243"
         },
         {
           "page": 244,
-          "paragraph_id": "p_ch25_181",
+          "paragraph_id": "p_ch25_175",
           "anchor": "page244"
         },
         {
           "page": 245,
-          "paragraph_id": "p_ch25_190",
+          "paragraph_id": "p_ch25_185",
           "anchor": "page245"
         },
         {
           "page": 246,
-          "paragraph_id": "p_ch25_199",
+          "paragraph_id": "p_ch25_192",
           "anchor": "page246"
         },
         {
           "page": 247,
-          "paragraph_id": "p_ch25_213",
+          "paragraph_id": "p_ch25_207",
           "anchor": "page247"
         },
         {
           "page": 248,
-          "paragraph_id": "p_ch25_224",
+          "paragraph_id": "p_ch25_218",
           "anchor": "page248"
         },
         {
           "page": 249,
-          "paragraph_id": "p_ch25_242",
+          "paragraph_id": "p_ch25_230",
           "anchor": "page249"
         },
         {
           "page": 250,
-          "paragraph_id": "p_ch25_258",
+          "paragraph_id": "p_ch25_248",
           "anchor": "page250"
         },
         {
           "page": 251,
-          "paragraph_id": "p_ch25_269",
+          "paragraph_id": "p_ch25_264",
           "anchor": "page251"
+        },
+        {
+          "page": 252,
+          "paragraph_id": "p_ch25_273",
+          "anchor": "page252"
         }
       ],
       "paragraph_count": 273,
-      "word_count": 6638
+      "word_count": 6639
     },
     {
       "id": "ch26",
@@ -1897,77 +1902,92 @@
       "parent_id": null,
       "subtitle": "",
       "teaser": "",
-      "first_page": 252,
-      "last_page": 264,
+      "first_page": 253,
+      "last_page": 268,
       "page_breaks": [
         {
-          "page": 252,
-          "paragraph_id": "p_ch26_001",
-          "anchor": "page252"
-        },
-        {
           "page": 253,
-          "paragraph_id": "p_ch26_004",
+          "paragraph_id": "p_ch26_001",
           "anchor": "page253"
         },
         {
           "page": 254,
-          "paragraph_id": "p_ch26_019",
+          "paragraph_id": "p_ch26_011",
           "anchor": "page254"
         },
         {
           "page": 255,
-          "paragraph_id": "p_ch26_034",
+          "paragraph_id": "p_ch26_023",
           "anchor": "page255"
         },
         {
           "page": 256,
-          "paragraph_id": "p_ch26_047",
+          "paragraph_id": "p_ch26_041",
           "anchor": "page256"
         },
         {
           "page": 257,
-          "paragraph_id": "p_ch26_062",
+          "paragraph_id": "p_ch26_054",
           "anchor": "page257"
         },
         {
           "page": 258,
-          "paragraph_id": "p_ch26_074",
+          "paragraph_id": "p_ch26_066",
           "anchor": "page258"
         },
         {
           "page": 259,
-          "paragraph_id": "p_ch26_089",
+          "paragraph_id": "p_ch26_080",
           "anchor": "page259"
         },
         {
           "page": 260,
-          "paragraph_id": "p_ch26_101",
+          "paragraph_id": "p_ch26_093",
           "anchor": "page260"
         },
         {
           "page": 261,
-          "paragraph_id": "p_ch26_113",
+          "paragraph_id": "p_ch26_104",
           "anchor": "page261"
         },
         {
           "page": 262,
-          "paragraph_id": "p_ch26_124",
+          "paragraph_id": "p_ch26_118",
           "anchor": "page262"
         },
         {
           "page": 263,
-          "paragraph_id": "p_ch26_136",
+          "paragraph_id": "p_ch26_128",
           "anchor": "page263"
         },
         {
           "page": 264,
-          "paragraph_id": "p_ch26_145",
+          "paragraph_id": "p_ch26_135",
           "anchor": "page264"
+        },
+        {
+          "page": 265,
+          "paragraph_id": "p_ch26_140",
+          "anchor": "page265"
+        },
+        {
+          "page": 266,
+          "paragraph_id": "p_ch26_150",
+          "anchor": "page266"
+        },
+        {
+          "page": 267,
+          "paragraph_id": "p_ch26_156",
+          "anchor": "page267"
+        },
+        {
+          "page": 268,
+          "paragraph_id": "p_ch26_168",
+          "anchor": "page268"
         }
       ],
-      "paragraph_count": 145,
-      "word_count": 3689
+      "paragraph_count": 144,
+      "word_count": 3677
     },
     {
       "id": "ch26_fb1",
