@@ -3212,3 +3212,20 @@ body:not(.sidebar-open):not(.modal-open) {
 body.reader-app #searchSection {
   display: block !important;
 }
+
+/* ─── Index page — letter-header separators + tight name list ─── */
+/* Scoped to .toc-page.index-page so dedication / acknowledgments
+   (.toc-page without .index-page) keep their existing layout. */
+.toc-page.index-page .index-letter {
+    margin: 1.4em 0 0.4em;
+    font-size: 1.1em;
+    letter-spacing: 0.04em;
+    font-weight: bold;
+}
+.toc-page.index-page .index-letter:first-of-type {
+    margin-top: 0;
+}
+.toc-page.index-page .index-name {
+    margin: 0.15em 0;
+    text-indent: 0;
+}
