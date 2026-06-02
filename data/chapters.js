@@ -126,6 +126,39 @@ const dedication = {
     hidden: false,
 };
 
+// Front matter — verbatim from official manuscript (OFF-THE-RECORD.docx ACKNOWLEDGMENTS
+// section). Stripped from ch26 body in commit 2eccbf5; rendered here as a dedication-style
+// front-matter literal (postscript section, hideFromToc:true, reachable via prev/next + slug).
+const acknowledgments = {
+    id: 'acknowledgments',
+    year: null,
+    section: 'postscript',
+    hideFromToc: true,
+    title: "ACKNOWLEDGMENTS",
+    slug: "acknowledgments",
+    subtitle: "",
+    teaser: "",
+    content: `<div class="toc-page">
+<h2 class="toc-page-title">ACKNOWLEDGMENTS</h2>
+<p>My eighth grade English teacher is the first person who comes to mind.</p>
+<p>She kept me after class and said that my essay made her laugh; that I had a gift. I'd been searching for her when she emailed the address below my story about Al Kaline. We talked for more than three hours; it was COVID and I told her about my career crossroads and this crazy idea I'd been working on.</p>
+<p>"Anthony," she said, "You're better than them. You're better than all of them."</p>
+<p>When I couldn't disagree, that's when I knew I had it bad.</p>
+<p>Dad called me "Champion" growing up, and Mom read to me every night as a child.</p>
+<p>The fingerprints of the <em>Detroit Free Press</em> are all over these pages: The most raw, incomplete version of this book was read by a veteran copy editor who read it twice more after that. It wasn't much of a book until I found the correct email of an esteemed editor from years past. We connected through James Jahnke's annual bowl pool. When he read some pages and said, "Anthony, I think you've got a book here," I knew I had my man.</p>
+<p>Mr. Sports Editor went through every word by hand. He printed 'em out, marked 'em up, and screenshotted 'em back. A year later, he had officially wrangled my wild horse writing into a working manuscript. The <em>Free Press</em>' influence goes beyond the newsroom, to the many readers who found my personal email address over the years. Corresponding with Tigers fans made me feel normal again.</p>
+<p>I have been fortunate to work with personable editors who have afforded me the freedom to choose which shape I wanted to be in this cookie-cutter industry. The guy in Las Vegas who bet on Tony Gold. A pair of editors in Pittsburgh nurtured my confidence while working the city desk for free.</p>
+<p>Thank you to those who trusted me with this project, especially those who may have found themselves part of the story through no fault of their own. The respect and understanding with which you've treated me under most unusual circumstances won't be forgotten.</p>
+<p>A brigade of beta readers made this book better, beginning with a classmate from high school journalism class. My best friend has read <em>OFF-THE-RECORD</em> twice, one of only two known to scale the first full draft. (690 pages.)</p>
+<p>The other owns an American sports bar and never knew me when I was an American sports somebody. My Malta friends allowed me to be myself again.</p>
+<p>This book doesn't exist without my aunt, who believed in me more than I believed in myself at times. The girl I once met in the college newsroom never gave up on me, even when I made it difficult.</p>
+<p>I generally find these missives to be gross public displays of name-dropping, networking and navel-gazing in an industry that is already a few notches too incestuous, but if I didn't thank anybody, they'd be calling me a jerk.</p>
+</div>`,
+    wordCount: 499,
+    parent_id: null,
+    hidden: false,
+};
+
 // Transform each book_full.json section into a chapters.js-shaped entry.
 // A section with a truthy parent_id is a hidden flashback (Phase 3); it
 // inherits section_type/year from its parent (already set in book_full.json)
@@ -154,6 +187,7 @@ export const CHAPTERS = [
     toc,
     ...transformedChapters,
     dedication,
+    acknowledgments,
     copyright,
     coverBack,
 ];
