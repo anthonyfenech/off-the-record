@@ -41,3 +41,8 @@ _processed/
 
 # Easter egg source — lives outside repo at /Users/fenech/MASTER OFF-THE-RECORD/
 data/chapters.js.deprecated
+
+# Admin tooling — local only, not deployed
+/admin.html
+/js/admin-pwa.js
+/js/admin-access.js
