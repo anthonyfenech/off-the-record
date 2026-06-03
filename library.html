@@ -287,28 +287,6 @@
     </style>
 </head>
 <body>
-    <!-- Auth check -->
-    <script>
-        (function() {
-            var session = localStorage.getItem('otr_beta_session');
-            if (!session) {
-                window.location.replace('./');
-                return;
-            }
-            try {
-                var data = JSON.parse(session);
-                if (!data.authenticated || Date.now() > data.expires) {
-                    localStorage.removeItem('otr_beta_session');
-                    window.location.replace('./');
-                    return;
-                }
-            } catch (e) {
-                window.location.replace('./');
-                return;
-            }
-            document.body.style.opacity = '1';
-        })();
-    </script>
     <script>
         // Apply theme
         if (localStorage.getItem('reader_theme') === 'dark') {
@@ -394,9 +372,6 @@
                 </div>
             </div>
         </div>
-        <div class="toc-footer">
-            <button class="logout-btn" id="logoutBtn">Logout</button>
-        </div>
     </aside>
 
     <!-- Overlay for TOC -->
@@ -415,7 +390,6 @@
         const themeToggle = document.getElementById('themeToggle');
         const optionsToggle = document.getElementById('optionsToggle');
         const optionsContent = document.getElementById('optionsContent');
-        const logoutBtn = document.getElementById('logoutBtn');
 
         // Build TOC
         buildTOC();
@@ -471,12 +445,6 @@
             const isExpanded = optionsToggle.getAttribute('aria-expanded') === 'true';
             optionsToggle.setAttribute('aria-expanded', !isExpanded);
             optionsContent.style.display = isExpanded ? 'none' : 'block';
-        });
-
-        // Logout
-        logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('otr_beta_session');
-            window.location.href = './';
         });
 
         // Build TOC structure

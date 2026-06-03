@@ -5,7 +5,6 @@ import { navigation } from './navigation.js';
 import { pwa } from './pwa.js';
 import { photoGallery } from './photoGallery.js';
 import { bookmarks } from './bookmarks.js';
-import { auth } from './auth.js';
 import { mobileOptimizer } from './mobile-optimizer.js';
 import { CHAPTERS } from '../data/chapters.js';
 
@@ -20,23 +19,9 @@ class App {
     init() {
         // Wait for DOM to be ready
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.checkAuth());
+            document.addEventListener('DOMContentLoaded', () => this.start());
         } else {
-            this.checkAuth();
-        }
-    }
-
-    // Check authentication before starting
-    checkAuth() {
-        // Initialize auth gate
-        const isAuthenticated = auth.init();
-
-        if (isAuthenticated) {
-            // Already authenticated, start the app
             this.start();
-        } else {
-            // Wait for successful authentication
-            window.addEventListener('authSuccess', () => this.start(), { once: true });
         }
     }
 

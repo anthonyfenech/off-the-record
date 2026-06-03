@@ -1,6 +1,6 @@
 // Service Worker for OFF-THE-RECORD
 
-const CACHE_VERSION = 'v714';
+const CACHE_VERSION = 'v715';
 const STATIC_CACHE = `off-the-record-static-${CACHE_VERSION}`;
 const CONTENT_CACHE = `off-the-record-content-${CACHE_VERSION}`;
 const ANALYTICS_CACHE = 'off-the-record-analytics-v480';
@@ -49,7 +49,6 @@ const STATIC_ASSETS = [
     './js/share.js',
     './js/comments.js',
     './js/reader-counter.js',
-    './js/auth-standalone.js',
     './js/failsafes.js',
     './js/failsafe-reset.js',
     './js/overlay-cleanup.js',
