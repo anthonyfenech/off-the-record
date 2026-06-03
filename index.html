@@ -200,32 +200,6 @@
             document.body.classList.add('dateline-bold');
         }
     </script>
-    <!-- Password Gate (Beta Access) - Hidden by default, shown by JS if auth needed -->
-    <div id="passwordGate" class="password-gate" style="display: none">
-        <div class="password-gate-content">
-            <h1 class="password-gate-title">OFF-THE-RECORD</h1>
-            <form id="passwordForm" class="password-form" autocomplete="off">
-                <label for="passwordInput" class="sr-only">Enter password</label>
-                <input
-                    type="password"
-                    id="passwordInput"
-                    class="password-input"
-                    placeholder="Enter password"
-                    autocomplete="off"
-                    data-lpignore="true"
-                    data-1p-ignore="true"
-                    autofocus
-                >
-                <div class="remember-me-wrapper">
-                    <input type="checkbox" id="rememberMe" class="remember-checkbox">
-                    <label for="rememberMe" class="remember-label">Remember me for 30 days</label>
-                </div>
-                <button type="submit" class="password-submit">ENTER</button>
-                <p id="passwordError" class="password-error">Incorrect password</p>
-            </form>
-        </div>
-    </div>
-
     <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="header-content">
@@ -332,9 +306,6 @@
                 </div>
             </div>
         </div>
-        <div class="toc-footer">
-            <button class="logout-btn" id="logoutBtn">Logout</button>
-        </div>
     </aside>
 
     <!-- Overlay for TOC -->
@@ -358,7 +329,7 @@
     <script type="module" src="./js/navigation.js?v=580"></script>
     <script type="module" src="./js/pwa.js?v=580"></script>
     <script type="module" src="./js/theme.js?v=580"></script>
-    <script type="module" src="./js/app.js?v=580"></script>
+    <script type="module" src="./js/app.js?v=581"></script>
 
     <!-- Page Controls (media toggle, mode toggle, text size, search, options) -->
     <script defer src="./js/page-controls.js?v=580"></script>

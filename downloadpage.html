@@ -182,22 +182,7 @@
         </div>
     </noscript>
     <script>
-        // Auth check - must run synchronously before content renders
-        (function() {
-            var session = localStorage.getItem('otr_beta_session');
-            if (session) {
-                try {
-                    var data = JSON.parse(session);
-                    if (data.authenticated && Date.now() <= data.expires) {
-                        // Inject CSS to hide gate before it renders
-                        var style = document.createElement('style');
-                        style.textContent = '#passwordGate{display:none!important}';
-                        document.head.appendChild(style);
-                    }
-                } catch (e) {}
-            }
-            document.body.style.opacity = '1';
-        })();
+        document.body.style.opacity = '1';
         // Apply body classes immediately (theme already set in <head>)
         if (localStorage.getItem('admin_showCaptions') === 'true') {
             document.body.classList.add('show-captions');
@@ -206,32 +191,6 @@
             document.body.classList.add('clean-read');
         }
     </script>
-
-    <!-- Password Gate (Beta Access) -->
-    <div id="passwordGate" class="password-gate">
-        <div class="password-gate-content">
-            <h1 class="password-gate-title">OFF-THE-RECORD</h1>
-            <form id="passwordForm" class="password-form" autocomplete="off">
-                <label for="passwordInput" class="sr-only">Enter password</label>
-                <input
-                    type="password"
-                    id="passwordInput"
-                    class="password-input"
-                    placeholder="Enter password"
-                    autocomplete="off"
-                    data-lpignore="true"
-                    data-1p-ignore="true"
-                    autofocus
-                >
-                <div class="remember-me-wrapper">
-                    <input type="checkbox" id="rememberMe" class="remember-checkbox">
-                    <label for="rememberMe" class="remember-label">Remember me for 30 days</label>
-                </div>
-                <button type="submit" class="password-submit">ENTER</button>
-                <p id="passwordError" class="password-error">Incorrect password</p>
-            </form>
-        </div>
-    </div>
 
     <!-- Header Navigation -->
     <header class="header" id="header">
@@ -329,9 +288,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="toc-footer">
-            <button class="logout-btn" id="logoutBtn">Logout</button>
         </div>
     </aside>
 
@@ -608,12 +564,6 @@
             }
         }
 
-        // Logout
-        document.getElementById('logoutBtn').addEventListener('click', () => {
-            localStorage.removeItem('otr_beta_session');
-            window.location.href = './';
-        });
-
         // Options toggle
         const optionsToggle = document.getElementById('optionsToggle');
         const optionsContent = document.getElementById('optionsContent');
@@ -667,9 +617,6 @@
 
     <!-- Overlay Failsafes -->
     <script src="./js/failsafes.js?v=423"></script>
-
-    <!-- Standalone Auth (password gate validation) -->
-    <script src="./js/auth-standalone.js?v=580"></script>
 
     <!-- Analytics Config (must load before analytics scripts) -->
     <script src="./js/analytics-config.js?v=423"></script>

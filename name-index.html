@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Index of names — OFF-THE-RECORD">
+    <meta name="theme-color" content="#333333">
+
+    <!-- Open Graph (Facebook, iMessage, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Download - OFF-THE-RECORD">
+    <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/name-index.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Download - OFF-THE-RECORD">
+    <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OTR">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>INDEX — OFF-THE-RECORD</title>
+
+    <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
+    <script src="./js/failsafe-reset.js"></script>
+
+    <!-- CRITICAL: Apply theme BEFORE CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            // Theme (dark/light)
+            if (localStorage.getItem('reader_theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <!-- Critical: Hide sidebar and nav-footer before CSS loads to prevent flash -->
+    <style>.toc-sidebar{visibility:hidden;transform:translateX(-100%)}.overlay{visibility:hidden;opacity:0;pointer-events:none}.nav-footer{display:none}</style>
+
+    <!-- Emergency overlay cleanup - runs before anything else -->
+    <script>
+        (function() {
+            // Immediately clear any stuck overlay states from previous sessions
+            document.addEventListener('DOMContentLoaded', function() {
+                // Remove active class from all overlays including lightbox
+                var overlays = document.querySelectorAll('.overlay, .lightbox-overlay, .media-modal-overlay, .photo-modal-overlay, [class*="overlay"], [id*="overlay"]');
+                overlays.forEach(function(el) {
+                    el.classList.remove('active');
+                    el.style.pointerEvents = 'none';
+                    el.style.display = 'none';
+                    el.style.visibility = 'hidden';
+                });
+                // Ensure body scroll is not locked
+                document.body.style.overflow = '';
+            });
+        })();
+    </script>
+
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="./css/variables.min.css?v=423" as="style">
+    <link rel="preload" href="./css/typography.min.css?v=423" as="style">
+
+    <!-- Self-hosted fonts (no external request) -->
+    <link rel="stylesheet" href="./css/fonts.min.css?v=423">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/reset.min.css?v=423">
+    <link rel="stylesheet" href="./css/variables.min.css?v=423">
+    <link rel="stylesheet" href="./css/typography.min.css?v=423">
+    <link rel="stylesheet" href="./css/layout.min.css?v=423">
+    <link rel="stylesheet" href="./css/components.min.css?v=425">
+    <!-- PROMPTS DISABLED: re-enable when prompt system is fixed -->
+    <!-- <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=423"> -->
+    <link rel="stylesheet" href="./css/otr-tier1-states.css?v=423">
+    <style>
+        /* Download page specific styles */
+        .chapter-body {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ========== FORMAT MENU ========== */
+        .format-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            margin: 0 auto;
+            gap: 24px;
+            padding: 20px 0;
+        }
+
+        .format-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--color-text, #000);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .format-item .format-emoji {
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        /* Active/clickable items only */
+        a.format-item {
+            cursor: pointer;
+            transition: opacity 0.15s ease;
+        }
+
+        a.format-item:hover {
+            text-decoration: underline;
+        }
+
+        a.format-item:active {
+            opacity: 0.7;
+        }
+
+        /* Dark mode */
+        [data-theme="dark"] .format-item {
+            color: var(--color-text, #fff);
+        }
+
+        [data-theme="dark"] .pdf-download-btn {
+            background: #f5f5f5;
+            color: #1A1A1A;
+        }
+
+        /* Mobile - larger tap targets */
+        @media (max-width: 599px) {
+            .format-menu {
+                gap: 28px;
+            }
+
+            a.format-item {
+                min-height: 44px;
+                padding: 8px 0;
+            }
+        }
+        /* ========== END FORMAT MENU ========== */
+    </style>
+    <style>
+        /* Index page — letter heads mirror the .chapter-title typewriter look
+           (font-mono, bold, uppercase, wide spacing), bumped down to a
+           section-header size so 26 of them on one page read as section
+           markers rather than 26 page titles. */
+        .index-jump-bar {
+            max-width: 640px;
+            margin: 0 auto var(--space-2xl);
+            padding: var(--space-md) 0;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: var(--font-size-base);
+            line-height: 2;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .index-jump-link {
+            display: inline-block;
+            padding: 0 var(--space-xs);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-wide);
+            font-weight: bold;
+        }
+        .index-jump-link--dim {
+            color: var(--color-text-tertiary);
+            opacity: 0.4;
+            cursor: default;
+            pointer-events: none;
+        }
+        .index-jump-sep {
+            color: var(--color-text-tertiary);
+            opacity: 0.6;
+            padding: 0 2px;
+            user-select: none;
+        }
+        .index-letter-section {
+            margin: 0 auto var(--space-2xl);
+            max-width: 640px;
+        }
+        .index-letter-head {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            line-height: 1.2;
+            font-weight: bold;
+            color: var(--color-text-primary);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-wide);
+            text-align: center;
+            margin: var(--space-xl) 0 var(--space-lg);
+            padding-top: var(--space-md);
+            scroll-margin-top: 80px;
+        }
+        .index-name-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-mono);
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            text-align: center;
+        }
+        .index-name {
+            padding: 2px 0;
+        }
+    </style>
+</head>
+<body style="opacity: 0;">
+    <a href="#reader" class="skip-link">Skip to content</a>
+    <noscript>
+        <div style="max-width: 640px; margin: 80px auto; padding: 20px; font-family: 'Courier New', monospace; text-align: center;">
+            <h1 style="font-size: 1.4rem; margin-bottom: 16px;">OFF-THE-RECORD</h1>
+            <p>This site requires JavaScript to read chapters. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+    <script>
+        document.body.style.opacity = '1';
+        // Apply body classes immediately (theme already set in <head>)
+        if (localStorage.getItem('admin_showCaptions') === 'true') {
+            document.body.classList.add('show-captions');
+        }
+        if (localStorage.getItem('reader_cleanRead') === 'true') {
+            document.body.classList.add('clean-read');
+        }
+    </script>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <a href="./" class="header-logo" id="homeLink"><picture>
+  <img src="./assets/icons/OTR-header.png" alt="OFF-THE-RECORD" class="header-logo-img header-logo-img--light">
+  <img src="./assets/icons/OTR-header-dark.png" alt="" aria-hidden="true" class="header-logo-img header-logo-img--dark">
+</picture></a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Reading Area -->
+    <main class="reader" id="reader">
+        <article class="chapter" id="chapterContent">
+            <header class="chapter-header">
+                <h2 class="chapter-title" id="chapterTitle">INDEX</h2>
+            </header>
+            <div class="chapter-body" id="chapterBody">
+<nav class="index-jump-bar" aria-label="Jump to letter">
+        <a class="index-jump-link" href="#sec-A">A</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-B">B</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-C">C</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-D">D</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-E">E</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-F">F</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-G">G</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-H">H</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-I">I</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-J">J</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-K">K</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-L">L</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-M">M</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-N">N</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-O">O</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-P">P</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <span class="index-jump-link index-jump-link--dim" aria-disabled="true">Q</span>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-R">R</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-S">S</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-T">T</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-U">U</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-V">V</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-W">W</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <span class="index-jump-link index-jump-link--dim" aria-disabled="true">X</span>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <span class="index-jump-link index-jump-link--dim" aria-disabled="true">Y</span>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-Z">Z</a>
+        <span class="index-jump-sep" aria-hidden="true">|</span>
+        <a class="index-jump-link" href="#sec-pseudonyms">Pseudonyms</a>
+    </nav>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-A">A</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Abreu, José</li>
+        <li class="index-name">Ackert, Kristie</li>
+        <li class="index-name">Albom, Mitch</li>
+        <li class="index-name">Alexander, Tyler</li>
+        <li class="index-name">Allen, Rod</li>
+        <li class="index-name">Allyson</li>
+        <li class="index-name">Almora, Albert</li>
+        <li class="index-name">Altuve, Jose</li>
+        <li class="index-name">Anderson, Brett</li>
+        <li class="index-name">Anderson, Rick</li>
+        <li class="index-name">Anderson, Sparky</li>
+        <li class="index-name">Andrew</li>
+        <li class="index-name">Arias, Oliver</li>
+        <li class="index-name">Ausmus, Brad</li>
+        <li class="index-name">Avila, Al</li>
+        <li class="index-name">Avila, Alan</li>
+        <li class="index-name">Avila, Alex</li>
+        <li class="index-name">Aviles, Mike</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-B">B</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Báez, Javier</li>
+        <li class="index-name">Bakich, Erik</li>
+        <li class="index-name">Balelo, Nez</li>
+        <li class="index-name">Baratta, Tim</li>
+        <li class="index-name">Barron, David</li>
+        <li class="index-name">Beck, Jason</li>
+        <li class="index-name">Ben</li>
+        <li class="index-name">Bernstein</li>
+        <li class="index-name">Bhatia, Peter</li>
+        <li class="index-name">Billmeyer, Mick</li>
+        <li class="index-name">Bixler, Bob</li>
+        <li class="index-name">Boggs, John</li>
+        <li class="index-name">Bonds, Barry</li>
+        <li class="index-name">Boras, Scott</li>
+        <li class="index-name">Bosio, Chris</li>
+        <li class="index-name">Bouton, Jim</li>
+        <li class="index-name">Boyd, Matthew</li>
+        <li class="index-name">Brantley, Michael</li>
+        <li class="index-name">Braun, Scott</li>
+        <li class="index-name">Bream, Scott</li>
+        <li class="index-name">Bregman, Alex</li>
+        <li class="index-name">Breslow, Craig</li>
+        <li class="index-name">Britten, Brian</li>
+        <li class="index-name">Brookens, Tom</li>
+        <li class="index-name">Bull, Kevin</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-C">C</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Cabrera, Miguel</li>
+        <li class="index-name">Candelario, Jeimer</li>
+        <li class="index-name">Caratini, Víctor</li>
+        <li class="index-name">Carol</li>
+        <li class="index-name">Cash, Johnny</li>
+        <li class="index-name">Castellanos, Nick</li>
+        <li class="index-name">Castro, Harold</li>
+        <li class="index-name">Castro, Willi</li>
+        <li class="index-name">Céspedes, Yoenis</li>
+        <li class="index-name">Chadd, David</li>
+        <li class="index-name">Chamberlain, Joba</li>
+        <li class="index-name">Chanock, Nick</li>
+        <li class="index-name">Charles, Fran</li>
+        <li class="index-name">Charlie</li>
+        <li class="index-name">Close, Casey</li>
+        <li class="index-name">Cobb, Ty</li>
+        <li class="index-name">Colangelo, Ron</li>
+        <li class="index-name">Collins, Terry</li>
+        <li class="index-name">Corbin, Tim</li>
+        <li class="index-name">Corey</li>
+        <li class="index-name">Cotillo, Chris</li>
+        <li class="index-name">Cotsonika, Nick</li>
+        <li class="index-name">Courtney, Pat</li>
+        <li class="index-name">Crasnick, Jerry</li>
+        <li class="index-name">Cron, C.J.</li>
+        <li class="index-name">Crosby, Bing</li>
+        <li class="index-name">Crunk, Chad</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-D">D</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Davis, Rajai</li>
+        <li class="index-name">Demeritte, Travis</li>
+        <li class="index-name">Dias, Gene</li>
+        <li class="index-name">Dombrowski, Dave</li>
+        <li class="index-name">Downey, Mike</li>
+        <li class="index-name">Drellich, Evan</li>
+        <li class="index-name">Drummond, Andre</li>
+        <li class="index-name">Duquette, Jim</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-E">E</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Edwards, Herm</li>
+        <li class="index-name">Ellis, Vince</li>
+        <li class="index-name">Everitt, Mike</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-F">F</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Falls, Joe</li>
+        <li class="index-name">Farmer, Buck</li>
+        <li class="index-name">Feliz, Neftali</li>
+        <li class="index-name">Fenech, Anthony</li>
+        <li class="index-name">Fetter, Chris</li>
+        <li class="index-name">Feuerborn, John</li>
+        <li class="index-name">Fiers, Mike</li>
+        <li class="index-name">Fisk, Carlton</li>
+        <li class="index-name">Fister, Doug</li>
+        <li class="index-name">Franklin, Jay</li>
+        <li class="index-name">Frye, Jeff</li>
+        <li class="index-name">Fulmer, Michael</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-G">G</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Galli, Brad</li>
+        <li class="index-name">Gammons, Peter</li>
+        <li class="index-name">García, Rony</li>
+        <li class="index-name">Gardenhire, Ron</li>
+        <li class="index-name">Gibson, Kirk</li>
+        <li class="index-name">Gobert, Rudy</li>
+        <li class="index-name">Gomes, Jonny</li>
+        <li class="index-name">Gomez, Pedro</li>
+        <li class="index-name">Gomez, Rio</li>
+        <li class="index-name">González, Fredi</li>
+        <li class="index-name">Goodrum, Niko</li>
+        <li class="index-name">Gordon, Alex</li>
+        <li class="index-name">Gorzelanny, Tom</li>
+        <li class="index-name">Grande, Steve</li>
+        <li class="index-name">Greene, Shane</li>
+        <li class="index-name">Guillén, Ozzie</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-H">H</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Harbaugh, Jim</li>
+        <li class="index-name">Hardy</li>
+        <li class="index-name">Harper, Bryce</li>
+        <li class="index-name">Harwell, Ernie</li>
+        <li class="index-name">Henning, Lynn</li>
+        <li class="index-name">Hernández, Ángel</li>
+        <li class="index-name">Hernández, Dylan</li>
+        <li class="index-name">Heyman, Jon</li>
+        <li class="index-name">Hicks, John</li>
+        <li class="index-name">Hinch, A.J.</li>
+        <li class="index-name">Holaday, Bryan</li>
+        <li class="index-name">Holland, Ken</li>
+        <li class="index-name">Horton, Willie</li>
+        <li class="index-name">Hunter, Torii</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-I">I</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Iglesias, Jose</li>
+        <li class="index-name">Ilitch, Christopher</li>
+        <li class="index-name">Ilitch, Mike</li>
+        <li class="index-name">Impemba, Mario</li>
+        <li class="index-name">Izzo, Tom</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-J">J</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Jackson, Joe S.</li>
+        <li class="index-name">James</li>
+        <li class="index-name">Jess</li>
+        <li class="index-name">Jeter, Derek</li>
+        <li class="index-name">Jones, Jeff</li>
+        <li class="index-name">Jones, Lynn</li>
+        <li class="index-name">Joyner, Wally</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-K">K</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Kaline, Al</li>
+        <li class="index-name">Karen</li>
+        <li class="index-name">Kawakami, Tim</li>
+        <li class="index-name">Kelly, Don</li>
+        <li class="index-name">Kerr, Jimmy</li>
+        <li class="index-name">King, George</li>
+        <li class="index-name">King, Stephen</li>
+        <li class="index-name">Kinsler, Ian</li>
+        <li class="index-name">Krol, Ian</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-L">L</h2>
+        <ul class="index-name-list">
+        <li class="index-name">LaCanfora, Jason</li>
+        <li class="index-name">Lamont, Gene</li>
+        <li class="index-name">Larry</li>
+        <li class="index-name">Le Batard, Dan</li>
+        <li class="index-name">Leinenkugel, Dick</li>
+        <li class="index-name">Lewis, Jerry</li>
+        <li class="index-name">Leyland, Jim</li>
+        <li class="index-name">Liddle, Steve</li>
+        <li class="index-name">Littlefield, Dave</li>
+        <li class="index-name">Lombardozzi, Steve</li>
+        <li class="index-name">Lowe, John</li>
+        <li class="index-name">Lowe, Mark</li>
+        <li class="index-name">Luhnow, Jeff</li>
+        <li class="index-name">Lulu</li>
+        <li class="index-name">Lynn</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-M">M</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Machota, Jon</li>
+        <li class="index-name">Manfred, Rob</li>
+        <li class="index-name">Manuel, Warde</li>
+        <li class="index-name">Martín, Leonys</li>
+        <li class="index-name">Martin, Matt</li>
+        <li class="index-name">Martinez, J.D.</li>
+        <li class="index-name">Martínez, Víctor</li>
+        <li class="index-name">Martínez, Víctor Jose</li>
+        <li class="index-name">Mato, Gene</li>
+        <li class="index-name">Matt</li>
+        <li class="index-name">Maybin, Cameron</li>
+        <li class="index-name">McCann, James</li>
+        <li class="index-name">McClendon, Lloyd</li>
+        <li class="index-name">McCosky, Chris</li>
+        <li class="index-name">McGregor, Conor</li>
+        <li class="index-name">Menzin, Sam</li>
+        <li class="index-name">Mercer, Jordy</li>
+        <li class="index-name">Miech, Rob</li>
+        <li class="index-name">Milchin, Mike</li>
+        <li class="index-name">Miley, Wade</li>
+        <li class="index-name">Mintz, Jake</li>
+        <li class="index-name">Mize, Casey</li>
+        <li class="index-name">Monroe, Craig</li>
+        <li class="index-name">Montas, Frankie</li>
+        <li class="index-name">Morosi, Jon</li>
+        <li class="index-name">Morris, Jack</li>
+        <li class="index-name">Moustakas, Mike</li>
+        <li class="index-name">Mozeliak</li>
+        <li class="index-name">Murray, Robert</li>
+        <li class="index-name">Myers, Gene</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-N">N</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Nathan, Joe</li>
+        <li class="index-name">Nesbitt, Ángel</li>
+        <li class="index-name">Neuse, Sheldon</li>
+        <li class="index-name">Nightengale, Bob</li>
+        <li class="index-name">Norris, Daniel</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-O">O</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Obama, Barack</li>
+        <li class="index-name">O'Connell, Jack</li>
+        <li class="index-name">Ohtani, Shohei</li>
+        <li class="index-name">Olney, Buster</li>
+        <li class="index-name">Ortiz, David</li>
+        <li class="index-name">Osuna, Roberto</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-P">P</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Parker, Rob</li>
+        <li class="index-name">Passan, Jeff</li>
+        <li class="index-name">Pepe, Dave</li>
+        <li class="index-name">Pepin, Matt</li>
+        <li class="index-name">Pérez, Salvador</li>
+        <li class="index-name">Pieper, Mark</li>
+        <li class="index-name">Porcello, Rick</li>
+        <li class="index-name">Price, David</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-R">R</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Rand, Kevin</li>
+        <li class="index-name">Ray, Robbie</li>
+        <li class="index-name">Rebecca</li>
+        <li class="index-name">Reyes, Víctor</li>
+        <li class="index-name">Reynolds, Harold</li>
+        <li class="index-name">Robertson, Nate</li>
+        <li class="index-name">Robles, Víctor</li>
+        <li class="index-name">Rodríguez, Francisco</li>
+        <li class="index-name">Rodríguez, Pudge</li>
+        <li class="index-name">Rodríguez, Ronny</li>
+        <li class="index-name">Rogers, Jake</li>
+        <li class="index-name">Rogers, Kenny</li>
+        <li class="index-name">Romine, Andrew</li>
+        <li class="index-name">Romine, Austin</li>
+        <li class="index-name">Rondon, Bruce</li>
+        <li class="index-name">Rosenberg, Michael</li>
+        <li class="index-name">Rosenthal, Ken</li>
+        <li class="index-name">Rozema, Dave</li>
+        <li class="index-name">Russell, Mike</li>
+        <li class="index-name">Russo, Christopher</li>
+        <li class="index-name">Ryan, Kyle</li>
+        <li class="index-name">Ryan, Sam</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-S">S</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Saltalamacchia, Jarrod</li>
+        <li class="index-name">Sánchez, Aníbal</li>
+        <li class="index-name">Sánchez, Gary</li>
+        <li class="index-name">Sanders, Barry</li>
+        <li class="index-name">Santiago, Ramon</li>
+        <li class="index-name">Saupold, Warwick</li>
+        <li class="index-name">Scherzer, Max</li>
+        <li class="index-name">Schilling, Curt</li>
+        <li class="index-name">Schmakel, Jim</li>
+        <li class="index-name">Schmehl, James</li>
+        <li class="index-name">Schoop, Jonathan</li>
+        <li class="index-name">Schuerholz, John</li>
+        <li class="index-name">Schuerholz, Jonathan</li>
+        <li class="index-name">Shaer, Tom</li>
+        <li class="index-name">Sharp, Drew</li>
+        <li class="index-name">Showalter, Buck</li>
+        <li class="index-name">Shusterman, Jordan</li>
+        <li class="index-name">Simon, Alfredo</li>
+        <li class="index-name">Sinatra, Frank</li>
+        <li class="index-name">Sipple, George</li>
+        <li class="index-name">Smilovitz, Bernie</li>
+        <li class="index-name">Smith, Mike</li>
+        <li class="index-name">Smith, Steve</li>
+        <li class="index-name">Snitker, Brian</li>
+        <li class="index-name">Snyder, Mark</li>
+        <li class="index-name">Soria, Joakim</li>
+        <li class="index-name">Soriano, Rafael</li>
+        <li class="index-name">Springer, George</li>
+        <li class="index-name">Strang, Katie</li>
+        <li class="index-name">Suarez, Oscar</li>
+        <li class="index-name">Swanson, Dansby</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-T">T</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Teevan, Mike</li>
+        <li class="index-name">Terrin</li>
+        <li class="index-name">Thomas, B.J.</li>
+        <li class="index-name">Thomas, Chris</li>
+        <li class="index-name">Thompson, Hunter S.</li>
+        <li class="index-name">Thorn, John</li>
+        <li class="index-name">Torkelson, Spencer</li>
+        <li class="index-name">Torre, Joe</li>
+        <li class="index-name">Trammell, Alan</li>
+        <li class="index-name">Trump, Donald</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-U">U</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Upton, Justin</li>
+        <li class="index-name">Upton, Kate</li>
+        <li class="index-name">Upton, Manny</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-V">V</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Van Gundy, Stan</li>
+        <li class="index-name">Vavra, Joe</li>
+        <li class="index-name">Verlander, Justin</li>
+        <li class="index-name">Verlander, Peggy</li>
+        <li class="index-name">Verlander, Richard</li>
+        <li class="index-name">Verlander, Rick</li>
+        <li class="index-name">Villarreal, Aileen</li>
+        <li class="index-name">Vincent, Charlie</li>
+        <li class="index-name">Vizquel, Omar</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-W">W</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Wallenbrock, Craig</li>
+        <li class="index-name">Welch, Bob</li>
+        <li class="index-name">Wells, Vernon</li>
+        <li class="index-name">Westhoff, John</li>
+        <li class="index-name">Wheeler, Zack</li>
+        <li class="index-name">Whitaker, Lou</li>
+        <li class="index-name">Wilson, Justin</li>
+        <li class="index-name">Wolfe, Tom</li>
+        <li class="index-name">Woodward</li>
+        <li class="index-name">Wysocki, Michele</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section">
+        <h2 class="index-letter-head" id="sec-Z">Z</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Zimmermann, Jordan</li>
+        <li class="index-name">Zumaya, Joel</li>
+        </ul>
+    </section>
+
+    <section class="index-letter-section index-pseudonyms-section">
+        <h2 class="index-letter-head" id="sec-pseudonyms">PSEUDONYMS</h2>
+        <ul class="index-name-list">
+        <li class="index-name">Boss</li>
+        <li class="index-name">Buddy</li>
+        <li class="index-name">Coach Nate</li>
+        <li class="index-name">Deep Throat</li>
+        <li class="index-name">Highest Source In The Land</li>
+        <li class="index-name">Internet Stalker</li>
+        <li class="index-name">Mr. Sports Editor</li>
+        <li class="index-name">Mr. Unethical</li>
+        <li class="index-name">Old Pal</li>
+        <li class="index-name">Rival Cohort</li>
+        <li class="index-name">Rival Exec</li>
+        <li class="index-name">Scuttlebutt</li>
+        <li class="index-name">Sour Shoes</li>
+        <li class="index-name">Tipster</li>
+        <li class="index-name">Top Scout</li>
+        <li class="index-name">Twitter Guy</li>
+        <li class="index-name">Union Rep</li>
+        </ul>
+    </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <button class="close-btn" id="closeTocBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="toc-content" id="tocContent">
+            <!-- Populated by JavaScript -->
+        </nav>
+        <!-- Search Section -->
+        <div class="toc-section" id="searchSection">
+            <button class="toc-section-header" id="searchToggle" aria-expanded="false">
+                <span class="toc-section-title">Search</span>
+            </button>
+            <div class="toc-section-content" id="searchContent" style="display: none;">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="" autocomplete="off" aria-label="Search chapters" />
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">&#10005;</button>
+                </div>
+                <div class="search-results" id="searchResults" style="display: none;"></div>
+            </div>
+        </div>
+        <!-- Options Section -->
+        <div class="toc-section" id="optionsSection">
+            <button class="toc-section-header" id="optionsToggle" aria-expanded="false">
+                <span class="toc-section-title">Options</span>
+            </button>
+            <div class="toc-section-content" id="optionsContent" style="display: none;">
+                <div class="toc-option">
+                    <span class="toc-option-label">Theme</span>
+                    <div class="option-btn-group" id="themeToggleGroup">
+                        <button class="option-btn" data-theme="light">Light</button>
+                        <button class="option-btn" data-theme="dark">Dark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Overlay for TOC -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar Navigation (builds TOC identical to navigation.js) -->
+    <script type="module">
+        import { CHAPTERS, getChaptersByYear, getIntroChapters, getPostscriptChapters, getSortedYears } from './data/chapters.js';
+        import { isChapterComplete } from './js/storage.js?v=580';
+
+        const menuBtn = document.getElementById('menuBtn');
+        const closeTocBtn = document.getElementById('closeTocBtn');
+        const tocSidebar = document.getElementById('tocSidebar');
+        const overlay = document.getElementById('overlay');
+        const tocContent = document.getElementById('tocContent');
+
+        // Build TOC
+        buildTOC();
+
+        const expandedSections = new Set();
+
+        function openTOC() {
+            // Force instant collapse before sidebar becomes visible (no transition flash)
+            const bookContent = document.getElementById('toc-book-content');
+            const bookSection = tocContent.querySelector('[data-section="book"]');
+            if (bookContent) {
+                bookContent.style.display = 'none';
+                bookContent.style.visibility = 'hidden';
+                bookContent.style.height = '0';
+                bookContent.classList.add('collapsed');
+            }
+            if (bookSection) {
+                bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+            }
+            expandedSections.delete('book');
+            // Restore display after collapse classes applied (CSS handles visibility via .collapsed)
+            if (bookContent) {
+                bookContent.style.display = '';
+                bookContent.style.visibility = '';
+                bookContent.style.height = '';
+            }
+
+            tocSidebar.style.visibility = 'visible';
+            tocSidebar.style.transform = '';
+            overlay.style.visibility = 'visible';
+            overlay.style.opacity = '';
+            tocSidebar.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTOC() {
+            tocSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (!tocSidebar.classList.contains('open')) {
+                    tocSidebar.style.visibility = 'hidden';
+                    overlay.style.visibility = 'hidden';
+                    // Collapse book section while sidebar is hidden (no visible animation)
+                    expandedSections.delete('book');
+                    const bookContent = document.getElementById('toc-book-content');
+                    const bookSection = tocContent.querySelector('[data-section="book"]');
+                    if (bookContent) bookContent.classList.add('collapsed');
+                    if (bookSection) bookSection.querySelector('.toc-top-header')?.classList.remove('expanded');
+                }
+            }, 310);
+        }
+
+        menuBtn.addEventListener('click', openTOC);
+        closeTocBtn.addEventListener('click', closeTOC);
+        overlay.addEventListener('click', closeTOC);
+
+        // Touch support for iOS - use touchend with scroll detection
+        let closeBtnTouchMoved = false;
+        closeTocBtn.addEventListener('touchstart', () => { closeBtnTouchMoved = false; }, { passive: true });
+        closeTocBtn.addEventListener('touchmove', () => { closeBtnTouchMoved = true; }, { passive: true });
+        closeTocBtn.addEventListener('touchend', (e) => {
+            if (!closeBtnTouchMoved) {
+                e.preventDefault();
+                closeTOC();
+            }
+        });
+
+        let overlayTouchMoved = false;
+        overlay.addEventListener('touchstart', () => { overlayTouchMoved = false; }, { passive: true });
+        overlay.addEventListener('touchmove', () => { overlayTouchMoved = true; }, { passive: true });
+        overlay.addEventListener('touchend', (e) => {
+            if (!overlayTouchMoved) {
+                e.preventDefault();
+                closeTOC();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && tocSidebar.classList.contains('open')) {
+                closeTOC();
+            }
+        });
+
+        function buildTOC() {
+            const fragment = document.createDocumentFragment();
+
+            // BOOK section
+            fragment.appendChild(createBookSection());
+
+            // INDEX link (current page - highlighted)
+            fragment.appendChild(createTopSection({ id: 'index', label: 'INDEX', type: 'link', url: './name-index.html', current: true }));
+
+            // DOWNLOAD link
+            fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html', current: false }));
+
+            // GUESTBOOK link
+            fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html', current: false }));
+
+            // Divider
+            const divider = document.createElement('div');
+            divider.className = 'toc-divider';
+            fragment.appendChild(divider);
+
+            tocContent.appendChild(fragment);
+        }
+
+        function createBookSection() {
+            const section = document.createElement('div');
+            section.className = 'toc-top-section';
+            section.dataset.section = 'book';
+
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'toc-top-header';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = 'toc-top-title';
+            sectionTitle.textContent = 'OFF-THE-RECORD';
+
+            sectionHeader.appendChild(sectionTitle);
+
+            const bookContent = document.createElement('div');
+            bookContent.className = 'toc-book-content collapsed';
+            bookContent.id = 'toc-book-content';
+
+            buildBookContent(bookContent);
+
+            sectionHeader.addEventListener('click', () => {
+                toggleTopSection('book', sectionHeader, bookContent);
+            });
+
+            section.appendChild(sectionHeader);
+            section.appendChild(bookContent);
+
+            return section;
+        }
+
+        function buildBookContent(container) {
+            const frontMatter = CHAPTERS.filter(c => c.section === 'title' || c.section === 'toc');
+            const introChapters = getIntroChapters();
+            const chaptersByYear = getChaptersByYear();
+            const years = getSortedYears();
+            const postscriptChapters = getPostscriptChapters();
+
+            frontMatter.forEach(chapter => {
+                container.appendChild(createChapterItem(chapter));
+            });
+
+            introChapters.forEach(chapter => {
+                container.appendChild(createChapterItem(chapter));
+            });
+
+            years.forEach(year => {
+                const chapters = chaptersByYear[year] || [];
+                chapters.forEach(chapter => {
+                    container.appendChild(createChapterItem(chapter));
+                });
+            });
+
+            postscriptChapters.forEach(chapter => {
+                container.appendChild(createChapterItem(chapter));
+            });
+        }
+
+        function createChapterItem(chapter) {
+            const item = document.createElement('div');
+            item.className = 'toc-chapter';
+            item.dataset.chapterId = chapter.id;
+
+            const lockedChapters = JSON.parse(localStorage.getItem('admin_lockedChapters') || '[]');
+            const isLocked = lockedChapters.includes(chapter.id);
+
+            if (isLocked) {
+                item.classList.add('toc-chapter-locked');
+            }
+
+            const indicator = document.createElement('div');
+            indicator.className = 'chapter-indicator';
+
+            const info = document.createElement('div');
+            info.className = 'toc-chapter-info';
+
+            const titleRow = document.createElement('div');
+            titleRow.className = 'toc-chapter-title-row';
+
+            const title = document.createElement('span');
+            title.className = 'toc-chapter-title';
+            title.textContent = chapter.title;
+
+            titleRow.appendChild(title);
+
+            if (isLocked) {
+                const lockIcon = document.createElement('span');
+                lockIcon.className = 'toc-lock-icon';
+                lockIcon.textContent = '🔒';
+                titleRow.appendChild(lockIcon);
+            }
+
+            info.appendChild(titleRow);
+
+            item.appendChild(indicator);
+            item.appendChild(info);
+
+            const handleChapterSelect = () => {
+                if (!isLocked) {
+                    closeTOC();
+                    window.location.href = './#chapter-' + chapter.id;
+                }
+            };
+            item.addEventListener('click', handleChapterSelect);
+
+            if (isChapterComplete(chapter.id)) {
+                item.classList.add('completed');
+                indicator.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+            }
+
+            return item;
+        }
+
+        function createTopSection(section) {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'toc-top-section';
+            sectionDiv.dataset.section = section.id;
+
+            // Use proper <a> tag for right-click, middle-click support
+            const link = document.createElement('a');
+            link.className = 'toc-top-header toc-top-link';
+            link.href = section.url;
+
+            const title = document.createElement('h3');
+            title.className = 'toc-top-title';
+            title.textContent = section.label;
+            link.appendChild(title);
+
+            if (section.current) {
+                link.style.background = 'var(--color-bg-hover)';
+                link.style.cursor = 'default';
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                });
+            } else {
+                link.addEventListener('click', () => {
+                    closeTOC();
+                });
+            }
+
+            sectionDiv.appendChild(link);
+            return sectionDiv;
+        }
+
+        function toggleTopSection(sectionId, sectionHeader, sectionContent) {
+            if (expandedSections.has(sectionId)) {
+                expandedSections.delete(sectionId);
+                sectionContent.classList.add('collapsed');
+                sectionHeader.classList.remove('expanded');
+            } else {
+                expandedSections.add(sectionId);
+                sectionContent.classList.remove('collapsed');
+                sectionHeader.classList.add('expanded');
+            }
+        }
+
+        // Options toggle
+        const optionsToggle = document.getElementById('optionsToggle');
+        const optionsContent = document.getElementById('optionsContent');
+        if (optionsToggle && optionsContent) {
+            optionsToggle.addEventListener('click', () => {
+                const isExpanded = optionsToggle.getAttribute('aria-expanded') === 'true';
+                optionsToggle.setAttribute('aria-expanded', !isExpanded);
+                optionsContent.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+
+        // Theme toggle in options
+        const themeToggleGroup = document.getElementById('themeToggleGroup');
+        if (themeToggleGroup) {
+            const buttons = themeToggleGroup.querySelectorAll('.option-btn');
+            const updateThemeButtons = () => {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                buttons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.theme === (isDark ? 'dark' : 'light'));
+                });
+            };
+            updateThemeButtons();
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.dataset.theme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('reader_theme', 'dark');
+                    } else {
+                        document.documentElement.removeAttribute('data-theme');
+                        localStorage.setItem('reader_theme', 'light');
+                    }
+                    updateThemeButtons();
+                });
+            });
+        }
+
+        // Search toggle (placeholder - search not functional on this page)
+        const searchToggle = document.getElementById('searchToggle');
+        const searchContent = document.getElementById('searchContent');
+        if (searchToggle && searchContent) {
+            searchToggle.addEventListener('click', () => {
+                const isExpanded = searchToggle.getAttribute('aria-expanded') === 'true';
+                searchToggle.setAttribute('aria-expanded', !isExpanded);
+                searchContent.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+    </script>
+
+    <!-- Theme Toggle (header button) -->
+    <script type="module" src="./js/theme.js?v=580"></script>
+
+    <!-- Overlay Failsafes -->
+    <script src="./js/failsafes.js?v=423"></script>
+
+    <!-- Analytics Config (must load before analytics scripts) -->
+    <script src="./js/analytics-config.js?v=423"></script>
+
+    <!-- Reader Persona & Analytics -->
+    <script src="./js/reader-name.js?v=580"></script>
+    <script src="./js/analytics.js?v=580"></script>
+
+    <script src="./js/otr-tier1-error-handler.js?v=580"></script>
+
+</body>
+</html>
