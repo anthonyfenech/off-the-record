@@ -1,11 +1,11 @@
 # OFF-THE-RECORD: A Baseball Memoir
 
-A mobile-first Progressive Web App for reading a baseball memoir covering 15 years as Detroit Tigers beat writer.
+A mobile-first Progressive Web App for reading a baseball memoir covering five years as Detroit Tigers beat writer.
 
 ## Features
 
 - **Clean Reading Interface**: Optimized for phones with serif typography and generous spacing
-- **18 Chapters**: Approximately 90,000 words covering 15 years of Detroit Tigers baseball
+- **18 Chapters**: Approximately 90,000 words covering five years of Detroit Tigers baseball
 - **Progress Tracking**: Automatically saves your reading position and chapter completion
 - **Offline Reading**: Install to your phone's home screen and read offline
 - **Mobile-First Design**: Beautiful, responsive design that works on any device
