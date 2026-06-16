@@ -46,3 +46,6 @@ data/chapters.js.deprecated
 /admin.html
 /js/admin-pwa.js
 /js/admin-access.js
+
+# Fact-check research artifacts — local only, never publish
+fact-check/
