@@ -91,19 +91,19 @@
 
         /* ========== FORMAT MENU ========== */
         .format-menu {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            column-gap: 12px;
+            row-gap: 24px;
+            justify-content: center;
+            align-items: center;
             width: fit-content;
             margin: 0 auto;
-            gap: 24px;
             padding: 20px 0;
         }
 
         .format-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            display: contents;
             font-family: 'Courier New', Courier, monospace;
             font-size: 1rem;
             font-weight: bold;
@@ -113,6 +113,10 @@
             color: var(--color-text, #000);
             -webkit-tap-highlight-color: transparent;
         }
+
+        .format-name { text-align: right; }
+        .format-dash { text-align: center; }
+        .format-menu .pdf-download-btn { justify-self: start; }
 
         .format-item .format-emoji {
             font-size: 1.2em;
@@ -162,7 +166,7 @@
         /* Mobile - larger tap targets */
         @media (max-width: 599px) {
             .format-menu {
-                gap: 28px;
+                row-gap: 28px;
             }
 
             a.format-item {
@@ -224,19 +228,23 @@
                 <!-- Format Menu -->
                 <nav class="format-menu">
                     <div class="format-item">
-                        <span class="format-name">AMAZON —</span>
+                        <span class="format-name">AMAZON</span>
+                        <span class="format-dash">—</span>
                         <a href="https://www.amazon.com/dp/B0H3QQYNWQ" target="_blank" rel="noopener noreferrer" class="pdf-download-btn">KINDLE</a>
                     </div>
                     <div class="format-item">
-                        <span class="format-name">APPLE BOOKS —</span>
+                        <span class="format-name">APPLE BOOKS</span>
+                        <span class="format-dash">—</span>
                         <a href="https://books.apple.com/us/book/off-the-record/id6780296109?ls=1" target="_blank" rel="noopener noreferrer" class="pdf-download-btn">APPLE</a>
                     </div>
                     <div class="format-item">
-                        <span class="format-name">GOOGLE PLAY —</span>
+                        <span class="format-name">GOOGLE PLAY</span>
+                        <span class="format-dash">—</span>
                         <button class="pdf-download-btn" disabled>SOON</button>
                     </div>
                     <div class="format-item">
-                        <span class="format-name">PDF —</span>
+                        <span class="format-name">PDF</span>
+                        <span class="format-dash">—</span>
                         <a href="./assets/OFF-THE-RECORD.pdf" download="OFF-THE-RECORD.pdf" class="pdf-download-btn">DOWNLOAD</a>
                     </div>
                 </nav>
