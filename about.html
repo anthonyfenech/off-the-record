@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Guestbook - OFF-THE-RECORD">
+    <meta name="description" content="About Anthony Fenech, author of OFF-THE-RECORD and former Detroit Tigers beat writer for the Detroit Free Press.">
     <meta name="theme-color" content="#333333">
 
     <!-- Open Graph (Facebook, iMessage, LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="GUESTBOOK - OFF-THE-RECORD">
-    <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
-    <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/guestbook.html">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Fenech — OFF-THE-RECORD">
+    <meta property="og:image" content="https://offrecordbook.com/assets/anthony-fenech.jpg">
+    <meta property="og:url" content="https://offrecordbook.com/about.html">
+    <meta property="og:description" content="About Anthony Fenech, author of OFF-THE-RECORD and former Detroit Tigers beat writer for the Detroit Free Press.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="GUESTBOOK - OFF-THE-RECORD">
-    <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
+    <meta name="twitter:title" content="Fenech — OFF-THE-RECORD">
+    <meta name="twitter:image" content="https://offrecordbook.com/assets/anthony-fenech.jpg">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="OTR">
     <meta name="format-detection" content="telephone=no">
 
-    <title>OFF-THE-RECORD</title>
+    <title>Fenech — OFF-THE-RECORD</title>
+    <link rel="canonical" href="https://offrecordbook.com/about.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anthony Fenech",
+      "url": "https://anthonyfenech.com",
+      "image": "https://offrecordbook.com/assets/anthony-fenech.jpg",
+      "jobTitle": "Sportswriter",
+      "sameAs": [
+        "https://anthonyfenech.com",
+        "https://x.com/anthonyfenech",
+        "https://www.freep.com/staff/2648482001/anthony-fenech/",
+        "https://reddotbooks.com/anthony-fenech/"
+      ]
+    }
+    </script>
 
     <!-- FAILSAFE: URL kill switch — add ?reset=true to URL to nuke all overlays -->
     <script src="./js/failsafe-reset.js"></script>
@@ -83,10 +102,98 @@
     <!-- <link rel="stylesheet" href="./prompts/prompt-styles.min.css?v=423"> -->
     <link rel="stylesheet" href="./css/otr-tier1-states.css?v=423">
     <style>
+        /* Download page specific styles */
         .chapter-body {
-            max-width: 640px;
+            max-width: 520px;
             margin: 0 auto;
         }
+
+        /* ========== FORMAT MENU ========== */
+        .format-menu {
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            column-gap: 12px;
+            row-gap: 24px;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .format-item {
+            display: contents;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--color-text, #000);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .format-name { text-align: right; }
+        .format-dash { text-align: center; }
+        .format-menu .pdf-download-btn { justify-self: start; }
+
+        .format-item .format-emoji {
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        /* Active/clickable items only */
+        a.format-item {
+            cursor: pointer;
+            transition: opacity 0.15s ease;
+        }
+
+        a.format-item:hover {
+            text-decoration: underline;
+        }
+
+        a.format-item:active {
+            opacity: 0.7;
+        }
+
+        /* Dark mode */
+        [data-theme="dark"] .format-item {
+            color: var(--color-text, #fff);
+        }
+
+        .pdf-download-btn {
+            padding: 8px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: #1A1A1A;
+            color: #fff;
+            border: 1px solid #1A1A1A;
+            border-radius: 3px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        [data-theme="dark"] .pdf-download-btn {
+            background: #242424;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        /* Mobile - larger tap targets */
+        @media (max-width: 599px) {
+            .format-menu {
+                row-gap: 28px;
+            }
+
+            a.format-item {
+                min-height: 44px;
+                padding: 8px 0;
+            }
+        }
+        /* ========== END FORMAT MENU ========== */
     </style>
 </head>
 <body style="opacity: 0;">
@@ -134,32 +241,20 @@
     <main class="reader" id="reader">
         <article class="chapter" id="chapterContent">
             <header class="chapter-header">
-                <h2 class="chapter-title" id="chapterTitle">GUESTBOOK</h2>
+                <h2 class="chapter-title" id="chapterTitle">FENECH</h2>
             </header>
             <div class="chapter-body" id="chapterBody">
-
-                <!-- Submission Form -->
-                <section style="padding: var(--space-xl) 0;">
-                    <form id="guestbookForm" style="display: flex; flex-direction: column;">
-                        <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Name</label>
-                            <input type="text" id="name" name="name" required autocomplete="name" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); box-sizing: border-box;">
-                        </div>
-                        <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Email</label>
-                            <input type="email" id="email" name="email" required autocomplete="email" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); box-sizing: border-box;">
-                        </div>
-                        <div style="margin-bottom: var(--space-lg);">
-                            <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Comment</label>
-                            <textarea id="comment" name="comment" required maxlength="500" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); resize: vertical; min-height: 120px; box-sizing: border-box;"></textarea>
-                        </div>
-                        <button type="submit" id="submitBtn" style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; color: var(--color-background); background: var(--color-text-primary); border: 2px solid var(--color-text-primary); padding: var(--space-sm) var(--space-xl); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); cursor: pointer; margin-top: var(--space-sm);">SUBMIT</button>
-                        <div id="errorMessage" style="display: none; font-family: var(--font-mono); font-size: var(--font-size-sm); padding: var(--space-md); margin-top: var(--space-lg); text-align: center; color: var(--color-error-text); background: var(--color-error-bg); border: 1px solid var(--color-error-border);">
-                            Something went wrong. Please try again.
-                        </div>
-                    </form>
-                </section>
-
+                <div class="media-image-container">
+                    <img src="./assets/anthony-fenech.jpg" alt="Anthony Fenech" class="media-image">
+                </div>
+                <p>Anthony Fenech covered the Detroit Tigers as a beat writer for the Detroit Free Press from 2015 through 2020, five seasons that spanned the team's transition from a contending club into a full rebuild, ending with the pandemic shutdown that closed his beat.</p>
+                <p>His work has been recognized by the Associated Press Sports Editors, where he was a top-10 finalist in Class A for beat writing in 2017 and for best digital package in 2020.</p>
+                <p>Fenech began at the Free Press in 2007 and worked internships at the Las Vegas Sun, Pittsburgh Post-Gazette and MLB.com. He is a member of the Baseball Writers' Association of America.</p>
+                <p>OFF-THE-RECORD is his first book.</p>
+                <p class="chapter-meta"><a href="https://www.freep.com/staff/2648482001/anthony-fenech/" target="_blank" rel="noopener noreferrer">My work at the Detroit Free Press</a></p>
+                <p class="chapter-meta"><a href="https://x.com/anthonyfenech" target="_blank" rel="noopener noreferrer">X</a></p>
+                <p class="chapter-meta"><a href="https://anthonyfenech.com" target="_blank" rel="noopener noreferrer">Official site</a></p>
+                <p class="chapter-meta"><a href="https://reddotbooks.com/off-the-record/" target="_blank" rel="noopener noreferrer">Published by Red Dot Press</a></p>
             </div>
         </article>
     </main>
@@ -315,14 +410,14 @@
             // BOOK section
             fragment.appendChild(createBookSection());
 
-            // DOWNLOAD link
+            // GET THE BOOK link
             fragment.appendChild(createTopSection({ id: 'download', label: 'GET THE BOOK', type: 'link', url: './downloadpage.html', current: false }));
 
-            // FENECH link
-            fragment.appendChild(createTopSection({ id: 'about', label: 'FENECH', type: 'link', url: './about.html', current: false }));
+            // FENECH link (current page - highlighted)
+            fragment.appendChild(createTopSection({ id: 'about', label: 'FENECH', type: 'link', url: './about.html', current: true }));
 
-            // GUESTBOOK link (current page - highlighted)
-            fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html', current: true }));
+            // GUESTBOOK link
+            fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html', current: false }));
 
             // Divider
             const divider = document.createElement('div');
@@ -548,8 +643,7 @@
     <script src="./js/reader-name.js?v=580"></script>
     <script src="./js/analytics.js?v=580"></script>
 
-    <!-- Guestbook Form Handler -->
-    <script src="./js/guestbook.js?v=580"></script>
+    <!-- PDF Stamper (serial-numbered downloads) -->
 
     <script src="./js/otr-tier1-error-handler.js?v=580"></script>
 
