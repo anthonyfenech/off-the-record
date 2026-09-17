@@ -134,7 +134,6 @@ class Navigation {
 
         // 2. Check draft settings for optional sections
         const blogEnabled = localStorage.getItem('admin_draftBlog') === 'true';
-        const aboutEnabled = localStorage.getItem('admin_draftAbout') === 'true';
         const audioEnabled = localStorage.getItem('admin_draftAudio') === 'true';
 
         // 2b. Check locked pages
