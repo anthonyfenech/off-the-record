@@ -27,7 +27,9 @@
     let watermarkLogoImg = null;
 
     // Likes endpoint (direct POST, not routed through analytics)
-    const LIKES_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
+    const LIKES_ENDPOINT = (typeof OTR_ANALYTICS_CONFIG !== 'undefined' && OTR_ANALYTICS_CONFIG.analyticsScriptUrl)
+        ? OTR_ANALYTICS_CONFIG.analyticsScriptUrl
+        : 'https://script.google.com/macros/s/AKfycbzxbj0xjFmjzDA6L5MNG4IqZKuiI0mb9SAOOXhJY_UeQmeTWE7ldaas1fFC6xqUzHn0/exec';
 
     // Theme-aware colors
     const THEME_COLORS = {
