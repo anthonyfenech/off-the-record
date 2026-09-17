@@ -143,9 +143,9 @@ class Navigation {
         // 3. Build sections based on draft settings and page locks
         const topSections = [
             ...(blogEnabled ? [{ id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' }] : []),
-            ...(aboutEnabled ? [{ id: 'about', label: 'ABOUT', type: 'link', url: './about.html' }] : []),
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
             ...(!lockedPages.includes('download') ? [{ id: 'download', label: 'GET THE BOOK', type: 'link', url: './downloadpage.html' }] : []),
+            ...(!lockedPages.includes('about') ? [{ id: 'about', label: 'FENECH', type: 'link', url: './about.html' }] : []),
             ...(!lockedPages.includes('credentials') ? [{ id: 'credentials', label: 'CREDENTIALS', type: 'link', url: './credentials.html' }] : []),
             ...(!lockedPages.includes('guestbook') ? [{ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }] : [])
         ];
