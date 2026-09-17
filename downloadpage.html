@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Download OFF-THE-RECORD - Available as PDF, EPUB, and more">
+    <meta name="description" content="Get OFF-THE-RECORD: paperback, Kindle, Apple Books, Google Play and free PDF.">
     <meta name="theme-color" content="#333333">
 
     <!-- Open Graph (Facebook, iMessage, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Download - OFF-THE-RECORD">
+    <meta property="og:title" content="Get the Book - OFF-THE-RECORD">
     <meta property="og:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
     <meta property="og:url" content="https://anthonyfenech.github.io/off-the-record/downloadpage.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Download - OFF-THE-RECORD">
+    <meta name="twitter:title" content="Get the Book - OFF-THE-RECORD">
     <meta name="twitter:image" content="https://anthonyfenech.github.io/off-the-record/assets/icons/icon-512.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -222,11 +222,16 @@
     <main class="reader" id="reader">
         <article class="chapter" id="chapterContent">
             <header class="chapter-header">
-                <h2 class="chapter-title" id="chapterTitle">DOWNLOAD</h2>
+                <h2 class="chapter-title" id="chapterTitle">GET THE BOOK</h2>
             </header>
             <div class="chapter-body" id="chapterBody">
                 <!-- Format Menu -->
                 <nav class="format-menu">
+                    <div class="format-item">
+                        <span class="format-name">PAPERBACK</span>
+                        <span class="format-dash">—</span>
+                        <a href="https://www.amazon.com/OFF-RECORD-Anthony-Fenech/dp/B0HJW85Y4J/" target="_blank" rel="noopener noreferrer" class="pdf-download-btn">BUY NOW</a>
+                    </div>
                     <div class="format-item">
                         <span class="format-name">AMAZON</span>
                         <span class="format-dash">—</span>
@@ -404,7 +409,7 @@
             fragment.appendChild(createBookSection());
 
             // DOWNLOAD link (current page - highlighted)
-            fragment.appendChild(createTopSection({ id: 'download', label: 'DOWNLOAD', type: 'link', url: './downloadpage.html', current: true }));
+            fragment.appendChild(createTopSection({ id: 'download', label: 'GET THE BOOK', type: 'link', url: './downloadpage.html', current: true }));
 
             // GUESTBOOK link
             fragment.appendChild(createTopSection({ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html', current: false }));
