@@ -534,5 +534,48 @@
         }
     };
 
+    // ── Page tracking ──────────────────────
+    // Restores callers lost when analytics-tracking.js
+    // was removed in c24a6f9 (2026-02-04).
+    var _lastPageId = null;
+
+    function _trackPage(name, id) {
+        if (!name) return;
+        var key = String(id == null ? name : id);
+        if (key === _lastPageId) return;
+        try {
+            trackPageView(name, id || null, name);
+            _lastPageId = key;          // only on success
+            console.log('[OTR Analytics] pageview:', name, '| id:', id);
+        } catch (err) {
+            console.warn('[OTR Analytics] trackPageView failed:', err);
+        }
+    }
+
+    window.addEventListener('chapterLoaded', function (e) {
+        var d = e && e.detail;
+        if (!d || !d.chapter || !d.chapter.title) return;
+        // reading-mode.js re-loads the SAME chapter on
+        // a mode toggle. Same id = skip.
+        _trackPage(d.chapter.title, d.chapterId);
+    });
+
+    window.addEventListener('homePageLoaded', function () {
+        _trackPage('Home', 'home');
+    });
+
+    // Static pages dispatch no events. index.html is
+    // the only page loading js/reader.js, so its
+    // absence identifies a static page. The DOM is
+    // parsed before deferred scripts run.
+    if (!document.querySelector('script[src*="js/reader.js"]')) {
+        var t = (document.title || '')
+            .replace(/\s*\u2014\s*OFF-THE-RECORD\s*$/i, '')
+            .trim();
+        if (t && t !== 'OFF-THE-RECORD') {
+            _trackPage(t, null);
+        }
+    }
+
     // Initialize
 })();
