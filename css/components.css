@@ -3229,3 +3229,25 @@ body.reader-app #searchSection {
     margin: 0.15em 0;
     text-indent: 0;
 }
+
+/* about page — square headshot escapes the 4/3 box */
+.media-image.about-headshot {
+    aspect-ratio: auto;
+    background-color: transparent;
+    width: auto;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* about page — meta links must look like links */
+.chapter-meta a {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.chapter-meta a:hover {
+    color: var(--color-link);
+}
