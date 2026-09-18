@@ -49,3 +49,7 @@ data/chapters.js.deprecated
 
 # Fact-check research artifacts — local only, never publish
 fact-check/
+
+# Free Press article bodies — Gannett-owned, never serve.
+# Metadata lives in data/articles-manifest.json; bodies archived outside the repo.
+/articles/
