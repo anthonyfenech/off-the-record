@@ -144,7 +144,6 @@ class Navigation {
             ...(blogEnabled ? [{ id: 'blog', label: 'BLOG', type: 'link', url: 'https://anthonyfenech.substack.com' }] : []),
             ...(audioEnabled ? [{ id: 'audio', label: 'AUDIO', type: 'link', url: './audio.html' }] : []),
             ...(!lockedPages.includes('download') ? [{ id: 'download', label: 'GET THE BOOK', type: 'link', url: './downloadpage.html' }] : []),
-            ...(!lockedPages.includes('index') ? [{ id: 'index', label: 'INDEX', type: 'link', url: './name-index.html' }] : []),
             ...(!lockedPages.includes('about') ? [{ id: 'about', label: 'ANTHONY FENECH', type: 'link', url: './about.html' }] : []),
             ...(!lockedPages.includes('credentials') ? [{ id: 'credentials', label: 'CREDENTIALS', type: 'link', url: './credentials.html' }] : []),
             ...(!lockedPages.includes('guestbook') ? [{ id: 'guestbook', label: 'GUESTBOOK', type: 'link', url: './guestbook.html' }] : [])
