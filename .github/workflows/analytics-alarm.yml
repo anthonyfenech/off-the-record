@@ -1,0 +1,147 @@
+name: Analytics alarm
+
+# Fails loudly if page tracking breaks. Three historical failures are
+# covered:
+#   Feb 4  - the page-tracking code was lost in a refactor.
+#   Apr 3  - the live trackingEnabled flag was left false.
+#   July   - anonymous writes to the Apps Script endpoint broke.
+#
+# The "contract" job is offline and runs on every push. The "live" job
+# touches the network and only runs on the schedule or by hand, so
+# ordinary edits never write heartbeat rows.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # 11:13 UTC daily. Not on the hour: GitHub delays jobs queued at the
+    # top of the hour, sometimes by a lot.
+    - cron: '13 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    name: Code contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the analytics contract
+        run: bash .github/scripts/check-analytics-contract.sh
+
+      - name: Check the workflow's own shell
+        run: |
+          set -euo pipefail
+
+          # YAML parsing does not check the shell inside run: blocks.
+          # An unbalanced if/fi would parse fine and then fail at runtime.
+          # Extract every run: block and syntax-check it.
+          WF=.github/workflows/analytics-alarm.yml
+          OUT=$(mktemp -d)
+
+          ruby -ryaml -e '
+            y = YAML.load_file(ARGV[0])
+            out = ARGV[1]
+            y["jobs"].each do |job, spec|
+              spec["steps"].each_with_index do |s, i|
+                next unless s["run"]
+                File.write("#{out}/step-#{job}-#{i}.sh", s["run"])
+              end
+            end' "$WF" "$OUT"
+
+          count=0
+          failed=0
+          for f in "$OUT"/step-*.sh; do
+            count=$((count + 1))
+            if bash -n "$f"; then
+              echo "PASS  shell syntax: $(basename "$f")"
+            else
+              echo "FAIL  shell syntax: $(basename "$f")"
+              failed=$((failed + 1))
+            fi
+          done
+
+          rm -rf "$OUT"
+
+          if [ "$count" -eq 0 ]; then
+            echo "FAIL  no run: blocks were extracted - the check is not working"
+            exit 1
+          fi
+
+          if [ "$failed" -ne 0 ]; then
+            echo "FAIL  $failed of $count run: blocks have invalid shell"
+            exit 1
+          fi
+
+          echo "PASS  all $count run: blocks are valid shell"
+
+  live:
+    name: Live endpoint
+    runs-on: ubuntu-latest
+    # Only on the schedule or a manual run. Never on push or PR.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Check the live trackingEnabled flag
+        run: |
+          set -euo pipefail
+          echo "Fetching live analytics-config.js"
+          curl -sS --fail --max-time 30 \
+            -o live-config.js \
+            "https://offrecordbook.com/js/analytics-config.js?cb=${GITHUB_RUN_ID}"
+
+          if grep -qE '^[[:space:]]*trackingEnabled:[[:space:]]*true[[:space:]]*(,|$)' live-config.js; then
+            echo "PASS  live trackingEnabled is true"
+          else
+            echo "FAIL  live trackingEnabled is not true"
+            grep -E '^[[:space:]]*trackingEnabled:' live-config.js || echo "       (no trackingEnabled line at all)"
+            exit 1
+          fi
+
+      - name: Send a heartbeat and verify the write
+        run: |
+          set -euo pipefail
+
+          # Read the endpoint from the LIVE config, not a hardcoded copy,
+          # so a changed deployment is tested rather than silently missed.
+          URL=$(grep -E '^[[:space:]]*analyticsScriptUrl:' live-config.js \
+                | grep -oE 'https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec' \
+                | head -1)
+
+          if [ -z "$URL" ]; then
+            echo "FAIL  could not read analyticsScriptUrl from the live config"
+            exit 1
+          fi
+          echo "Endpoint read from live config (length ${#URL})"
+
+          # No -X POST. -d makes curl POST, then follow the 302 with a GET,
+          # exactly as a browser does. Forcing POST across the redirect
+          # makes Apps Script return an error page even on a successful write.
+          STATUS=$(curl -sS -L \
+            -o heartbeat-body.txt \
+            -w '%{http_code}' \
+            --max-time 60 \
+            -H 'Content-Type: application/json' \
+            -d '{"event":"heartbeat","page":"HEARTBEAT","sessionId":"heartbeat-gha"}' \
+            "$URL")
+
+          echo "HTTP status: $STATUS"
+          echo "Response body:"
+          cat heartbeat-body.txt
+          echo
+
+          if [ "$STATUS" != "200" ]; then
+            echo "FAIL  expected HTTP 200, got $STATUS"
+            exit 1
+          fi
+
+          if ! grep -q '"status":"success"' heartbeat-body.txt; then
+            echo 'FAIL  response did not contain {"status":"success"}'
+            exit 1
+          fi
+
+          echo "PASS  heartbeat written, endpoint accepted an anonymous write"
