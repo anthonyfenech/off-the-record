@@ -114,6 +114,42 @@
     /**
      * Show success state on button
      */
+    /**
+     * One line inviting a rating, shown once after a successful send.
+     * Built with createElement/textContent/setAttribute only — no HTML-string
+     * assignment, and no reader-typed text goes anywhere near it.
+     */
+    function addRatePrompt() {
+        if (!form || !form.parentNode) return;
+        if (document.getElementById('ratePrompt')) return;
+
+        var line = document.createElement('p');
+        line.id = 'ratePrompt';
+        line.className = 'chapter-meta';
+        line.style.marginTop = 'var(--space-lg)';
+        line.style.textAlign = 'center';
+
+        function rateLink(href, text, label) {
+            var a = document.createElement('a');
+            a.setAttribute('href', href);
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+            a.setAttribute('aria-label', label);
+            a.textContent = text;
+            return a;
+        }
+
+        line.appendChild(document.createTextNode("If you'd like, rate it on "));
+        line.appendChild(rateLink('https://www.goodreads.com/review/edit/252999523',
+            'Goodreads', 'Rate OFF-THE-RECORD on Goodreads'));
+        line.appendChild(document.createTextNode(' or '));
+        line.appendChild(rateLink('https://www.amazon.com/review/create-review?asin=B0HJW85Y4J',
+            'Amazon', 'Rate OFF-THE-RECORD on Amazon'));
+        line.appendChild(document.createTextNode('.'));
+
+        form.parentNode.insertBefore(line, form.nextSibling);
+    }
+
     function showSuccess() {
         // Change button to "SENT" for 3 seconds
         if (submitBtn) {
@@ -123,6 +159,7 @@
             }, 3000);
         }
         if (errorMessage) errorMessage.style.display = 'none';
+        addRatePrompt();
     }
 
     /**
