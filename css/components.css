@@ -3253,13 +3253,36 @@ body.reader-app #searchSection {
 }
 
 /* ── Site footer (standalone pages only — not the reader) ──────────── */
+/* GAP-TUNE START — footer top spacing, halved per page (see PR) */
 .site-footer {
-    margin-top: var(--space-3xl);
-    padding-top: var(--space-xl);
+    margin-top: 16px;
+    padding-top: 0;
     /* clear the fixed .nav-footer box floating at bottom: 16px */
     padding-bottom: var(--space-3xl);
     text-align: center;
 }
+
+/* Per-page top spacing, keyed on that page's highlighted footer link, so the
+   footer HTML stays identical on all five pages. credentials.html has no
+   highlighted link and takes the base rule above. */
+
+.site-footer:has(a[aria-current="page"][href="./about.html"]) {
+    margin-top: 7px;
+}
+
+.site-footer:has(a[aria-current="page"][href="./downloadpage.html"]) {
+    margin-top: 6px;
+}
+
+.site-footer:has(a[aria-current="page"][href="./guestbook.html"]) {
+    margin-top: 0;
+}
+
+.site-footer:has(a[aria-current="page"][href="./name-index.html"]) {
+    margin-top: -4px;
+}
+
+/* GAP-TUNE END */
 
 .site-footer::before {
     content: "";
