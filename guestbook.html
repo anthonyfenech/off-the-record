@@ -88,6 +88,100 @@
             max-width: 640px;
             margin: 0 auto;
         }
+
+        /* ===== RATE THE BOOK row — same spec as the buy rows on downloadpage.html ===== */
+        .format-menu {
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            column-gap: 12px;
+            row-gap: 24px;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .format-item {
+            display: contents;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--color-text, #000);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .format-name { text-align: right; }
+        .format-dash { text-align: center; }
+
+        [data-theme="dark"] .format-item {
+            color: var(--color-text, #fff);
+        }
+
+        .pdf-download-btn {
+            padding: 8px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: #1A1A1A;
+            color: #fff;
+            border: 1px solid #1A1A1A;
+            border-radius: 3px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        [data-theme="dark"] .pdf-download-btn {
+            background: #242424;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        /* Submit button: exactly the same colours as the rate buttons.
+           Size, width, letter-spacing and text are untouched. */
+        #submitBtn {
+            background: #1A1A1A;
+            color: #fff;
+            border: 2px solid #1A1A1A;
+            cursor: pointer;
+        }
+
+        [data-theme="dark"] #submitBtn {
+            background: #242424;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* mid-send state: guestbook.js only swaps the label, so dim it too */
+        #submitBtn:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        /* one spacing step of breathing room below the Submit button */
+        .rate-the-book {
+            margin-top: var(--space-lg);
+        }
+
+        /* the two buttons sit side by side, and wrap to stacked-and-aligned when narrow */
+        .rate-the-book-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-self: start;
+        }
+
+        @media (max-width: 599px) {
+            .format-menu {
+                row-gap: 28px;
+            }
+        }
+        /* ===== END RATE THE BOOK ===== */
     </style>
 </head>
 <body style="opacity: 0;">
@@ -154,11 +248,23 @@
                             <label style="display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-xs);">Comment</label>
                             <textarea id="comment" name="comment" required maxlength="500" style="width: 100%; font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); background: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-sm) var(--space-md); resize: vertical; min-height: 120px; box-sizing: border-box;"></textarea>
                         </div>
-                        <button type="submit" id="submitBtn" style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; color: var(--color-background); background: var(--color-text-primary); border: 2px solid var(--color-text-primary); padding: var(--space-sm) var(--space-xl); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); cursor: pointer; margin-top: var(--space-sm);">SUBMIT</button>
+                        <button type="submit" id="submitBtn" style="font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: bold; padding: var(--space-sm) var(--space-xl); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); margin-top: var(--space-sm);">SUBMIT</button>
                         <div id="errorMessage" style="display: none; font-family: var(--font-mono); font-size: var(--font-size-sm); padding: var(--space-md); margin-top: var(--space-lg); text-align: center; color: var(--color-error-text); background: var(--color-error-bg); border: 1px solid var(--color-error-border);">
                             Something went wrong. Please try again.
                         </div>
                     </form>
+
+                    <!-- Rate the book — same row format as the buy rows on downloadpage.html -->
+                    <nav class="format-menu rate-the-book">
+                        <div class="format-item">
+                            <span class="format-name">RATE IT</span>
+                            <span class="format-dash">&mdash;</span>
+                            <span class="rate-the-book-btns">
+                                <a href="https://www.goodreads.com/review/edit/252999523" target="_blank" rel="noopener noreferrer" class="pdf-download-btn" aria-label="Rate OFF-THE-RECORD on Goodreads">GOODREADS</a>
+                                <a href="https://www.amazon.com/review/create-review?asin=B0HJW85Y4J" target="_blank" rel="noopener noreferrer" class="pdf-download-btn" aria-label="Rate OFF-THE-RECORD on Amazon">AMAZON</a>
+                            </span>
+                        </div>
+                    </nav>
                 </section>
 
             </div>
@@ -570,7 +676,7 @@
     <script src="./js/analytics.js?v=598"></script>
 
     <!-- Guestbook Form Handler -->
-    <script src="./js/guestbook.js?v=580"></script>
+    <script src="./js/guestbook.js?v=601"></script>
 
     <script src="./js/otr-tier1-error-handler.js?v=580"></script>
 
