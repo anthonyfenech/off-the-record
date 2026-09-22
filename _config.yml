@@ -5,3 +5,6 @@ exclude:
   - tests/
   - "Process Assets.command"
   - assets/photos/README.md
+  - content-map.html
+  - media-catalog.html
+  - compare.html
