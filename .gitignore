@@ -30,8 +30,6 @@ package-lock.json
 # Migration safety backups (preserved in git history)
 *.BACKUP_*
 
-# Sweep reports — transient pre/post diff state
-
 # Inspection-only recovery of deleted files — never commit
 _recovered/
 _private/
