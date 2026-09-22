@@ -1170,5 +1170,68 @@
 
     <script src="./js/otr-tier1-error-handler.js?v=580"></script>
 
+    <script>
+    /* Index letter bar — hide only dividers stranded at the start or end of a
+       wrapped line. Letters and dividers are styled differently (inline-block
+       vs inline), so their box tops never match exactly; compare vertical
+       CENTRES instead. */
+    (function () {
+        var bar = document.querySelector('.index-jump-bar');
+        if (!bar) return;
+        var seps = Array.prototype.slice.call(bar.querySelectorAll('.index-jump-sep'));
+        if (!seps.length) return;
+
+        function sameLine(a, b) {
+            var ra = a.getBoundingClientRect();
+            var rb = b.getBoundingClientRect();
+            var centreA = ra.top + ra.height / 2;
+            var centreB = rb.top + rb.height / 2;
+            return Math.abs(centreA - centreB) < Math.max(ra.height, rb.height) / 2;
+        }
+
+        function neighbour(sep, forward) {
+            var el = forward ? sep.nextElementSibling : sep.previousElementSibling;
+            while (el && el.style.display === 'none') {
+                el = forward ? el.nextElementSibling : el.previousElementSibling;
+            }
+            return el;
+        }
+
+        function tidy() {
+            var i, sep;
+            for (i = 0; i < seps.length; i++) seps[i].style.display = '';
+            for (var pass = 0; pass < 4; pass++) {
+                var changed = false;
+                for (i = 0; i < seps.length; i++) {
+                    sep = seps[i];
+                    if (sep.style.display === 'none') continue;
+                    var prev = neighbour(sep, false);
+                    var next = neighbour(sep, true);
+                    if (!prev || !next || !sameLine(sep, prev) || !sameLine(sep, next)) {
+                        sep.style.display = 'none';
+                        changed = true;
+                    }
+                }
+                if (!changed) break;
+            }
+        }
+
+        var pending = false;
+        function onResize() {
+            if (pending) return;
+            pending = true;
+            requestAnimationFrame(function () {
+                pending = false;
+                tidy();
+            });
+        }
+
+        if (document.readyState === 'complete') tidy();
+        else window.addEventListener('load', tidy);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(tidy);
+        window.addEventListener('resize', onResize);
+    })();
+    </script>
+
 </body>
 </html>
