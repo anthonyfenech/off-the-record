@@ -1,0 +1,7 @@
+exclude:
+  - README.md
+  - templates/
+  - scripts/
+  - tests/
+  - "Process Assets.command"
+  - assets/photos/README.md
