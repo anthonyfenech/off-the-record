@@ -95,16 +95,17 @@
     font-weight: bold;
 }
 
-.site-footer-links a + a::before,
-.site-footer-out a + a::before {
+.site-footer-links a:not(:last-child)::after,
+.site-footer-out a:not(:last-child)::after {
     content: "\00B7";
+    content: "\00B7" / "";
     margin: 0 0.6em;
     color: var(--color-text-tertiary);
     letter-spacing: 0;
 }
 
-.site-footer-links a:hover::before,
-.site-footer-out a:hover::before {
+.site-footer-links a:hover::after,
+.site-footer-out a:hover::after {
     color: var(--color-text-tertiary);
 }
 
