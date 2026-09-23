@@ -174,10 +174,12 @@
             justify-self: start;
         }
 
-        /* Measured: the row needs 342px of content, so it overflows at 341px and
-           below. There, the RATE IT label takes its own centred line and the two
-           buttons sit centred on the row beneath it. */
-        @media (max-width: 341px) {
+        /* Measured: the label-plus-buttons row is 333.86px wide and starts at the
+           28px body padding, so its right edge needs a 362px viewport. At 361px
+           and below it runs past the edge (the shared CSS clips it, so AMAZON is
+           cut off rather than scrollable). There, the RATE IT label takes its own
+           centred line and the two buttons sit centred on the row beneath it. */
+        @media (max-width: 361px) {
             .rate-the-book.format-menu {
                 display: flex;
                 flex-wrap: wrap;
