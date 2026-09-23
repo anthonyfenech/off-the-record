@@ -96,22 +96,22 @@
         }
 
         .library-title {
-            font-family: var(--font-body);
+            font-family: var(--font-serif);
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 12px;
-            color: var(--color-text);
+            color: var(--color-text-primary);
         }
 
         .library-subtitle {
-            font-family: var(--font-body);
+            font-family: var(--font-serif);
             font-size: 0.95rem;
             color: var(--color-text-secondary);
             font-style: italic;
         }
 
         .library-count {
-            font-family: 'Courier New', monospace;
+            font-family: var(--font-mono);
             font-size: 0.8rem;
             color: var(--color-text-secondary);
             margin-top: 16px;
@@ -130,41 +130,82 @@
 
         .search-input {
             flex: 1;
+            min-width: 0;
             padding: 14px 18px;
             font-size: 16px;
-            font-family: var(--font-body);
+            font-family: var(--font-serif);
             border: 1.5px solid var(--color-border);
-            background: var(--color-bg);
-            color: var(--color-text);
+            background: var(--color-background);
+            color: var(--color-text-primary);
             border-radius: 0;
             transition: border-color 0.2s;
         }
 
+        .search-input:focus-visible,
         .search-input:focus {
-            outline: none;
-            border-color: var(--color-text);
+            outline: 2px solid var(--color-text-primary);
+            outline-offset: 2px;
+            border-color: var(--color-text-primary);
         }
 
         .search-input::placeholder {
             color: var(--color-text-secondary);
         }
 
+        .search-input:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
+
         .search-button {
             padding: 14px 28px;
-            font-family: 'Courier New', monospace;
+            font-family: var(--font-mono);
             font-size: 12px;
             font-weight: bold;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--color-bg);
-            background: var(--color-text);
-            border: 1.5px solid var(--color-text);
+            color: var(--color-background);
+            background: var(--color-text-primary);
+            border: 1.5px solid var(--color-text-primary);
             cursor: pointer;
             transition: opacity 0.2s;
         }
 
         .search-button:hover {
             opacity: 0.8;
+        }
+
+        .search-button:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .search-button:focus-visible {
+            outline: 2px solid var(--color-text-primary);
+            outline-offset: 2px;
+        }
+
+        /* Status states (loading / unavailable / data error / no results) */
+        .library-status {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            text-align: center;
+            padding: 22px 16px;
+            margin-bottom: 30px;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            background: var(--color-background-secondary);
+        }
+
+        .library-status[hidden] {
+            display: none;
+        }
+
+        .library-status.status-error {
+            border-color: var(--color-error-border);
+            background: var(--color-error-bg);
+            color: var(--color-error-text);
         }
 
         /* Results */
@@ -177,6 +218,7 @@
         }
 
         .results-count {
+            font-family: var(--font-mono);
             font-size: 0.85rem;
             color: var(--color-text-secondary);
             margin-bottom: 20px;
@@ -184,89 +226,165 @@
             border-bottom: 1px solid var(--color-border);
         }
 
-        .result-item {
+        .result-card {
             padding: 20px 0;
             border-bottom: 1px solid var(--color-border);
         }
 
-        .result-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
+        .result-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
         }
 
-        .result-title a {
-            color: #0000EE;
+        .result-meta-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+        }
+
+        .result-classification {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 6px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .result-classification.unredacted { background: #d4edda; color: #155724; }
+        .result-classification.partially-redacted { background: #fff3cd; color: #856404; }
+        .result-classification.heavily-redacted { background: #f8d7da; color: #721c24; }
+        .result-classification.classified { background: #333; color: #fff; }
+        .result-classification.neutral {
+            background: var(--color-background-tertiary);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border);
+        }
+
+        [data-theme="dark"] .result-classification.unredacted { background: #1e4620; color: #a3d9a5; }
+        [data-theme="dark"] .result-classification.partially-redacted { background: #5c4813; color: #f5d67a; }
+        [data-theme="dark"] .result-classification.heavily-redacted { background: #5c1a1a; color: #f5a3a3; }
+        [data-theme="dark"] .result-classification.classified { background: #111; color: #888; }
+
+        .result-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 4px;
+            color: var(--color-text-primary);
+        }
+
+        .result-id {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+
+        .result-participants {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .result-snippet {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            margin-bottom: 12px;
+            overflow-wrap: break-word;
+        }
+
+        .result-snippet mark {
+            background: #ffeb3b;
+            color: #000;
+            padding: 0 2px;
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .result-snippet mark {
+            background: #806d00;
+            color: #fff;
+        }
+
+        .result-link {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-link);
             text-decoration: underline;
         }
 
-        .result-title a:hover {
-            color: #551A8B;
-        }
+        .result-link:hover { color: var(--color-link-hover); }
 
-        [data-theme="dark"] .result-title a {
-            color: #6B9FFF;
-        }
-
-        [data-theme="dark"] .result-title a:hover {
-            color: #99BBFF;
-        }
-
-        .result-dataset {
-            color: var(--color-text-secondary);
-            font-size: 0.85rem;
-        }
-
-        .result-preview {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--color-text-secondary);
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .highlight {
-            background-color: #FFFF00;
-            color: #000;
-            padding: 0 2px;
-        }
-
-        [data-theme="dark"] .highlight {
-            background-color: #665500;
-            color: #fff;
+        .result-link:focus-visible {
+            outline: 2px solid var(--color-text-primary);
+            outline-offset: 2px;
         }
 
         /* Pagination */
         .library-pagination {
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 8px;
             margin-top: 30px;
             padding-top: 20px;
         }
 
         .page-link {
-            font-family: 'Courier New', monospace;
+            font-family: var(--font-mono);
             font-size: 14px;
             font-weight: bold;
             padding: 8px 12px;
-            color: var(--color-text);
+            color: var(--color-text-primary);
             text-decoration: underline;
             cursor: pointer;
             background: none;
             border: none;
         }
 
-        .page-link:hover {
-            opacity: 0.7;
+        .page-link:hover { opacity: 0.7; }
+
+        .page-link:focus-visible {
+            outline: 2px solid var(--color-text-primary);
+            outline-offset: 2px;
         }
 
         .page-link.active {
             text-decoration: none;
             cursor: default;
+        }
+
+        .page-gap {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            padding: 8px 2px;
+        }
+
+        .toc-top-header:focus-visible,
+        .toc-chapter:focus-visible,
+        .option-btn:focus-visible,
+        .menu-btn:focus-visible,
+        .theme-toggle:focus-visible,
+        .close-btn:focus-visible {
+            outline: 2px solid var(--color-text-primary);
+            outline-offset: 2px;
         }
 
         @media (max-width: 599px) {
@@ -315,27 +433,31 @@
     <main class="library-container">
         <div class="library-header">
             <h1 class="library-title">Search Full Fenech Library</h1>
-            <p class="library-subtitle">Documents from five years on the Detroit Tigers beat</p>
+            <p class="library-subtitle">Documents from five seasons on the Detroit Tigers beat</p>
             <p class="library-count" id="libraryCount"></p>
         </div>
 
         <div class="library-search">
-            <form class="search-form" id="librarySearchForm" onsubmit="return false;">
-                <input type="text" class="search-input" id="librarySearchInput" placeholder="Search documents, names, topics..." autocomplete="off">
-                <button type="submit" class="search-button" id="librarySearchBtn">Search</button>
+            <form class="search-form" id="librarySearchForm" onsubmit="return false;" role="search">
+                <label class="sr-only" for="librarySearchInput">Search the library</label>
+                <input type="text" class="search-input" id="librarySearchInput"
+                       placeholder="Search documents, names, topics..." autocomplete="off" disabled>
+                <button type="submit" class="search-button" id="librarySearchBtn" disabled>Search</button>
             </form>
         </div>
 
+        <p class="library-status" id="libraryStatus" role="status" aria-live="polite">Loading the library&hellip;</p>
+
         <div class="library-results" id="libraryResults">
-            <p class="results-count">Showing <span id="resultsStart">1</span> to <span id="resultsEnd">10</span> of <span id="resultsTotal">0</span> Results.</p>
+            <p class="results-count" id="resultsInfo" aria-live="polite"></p>
 
             <div id="resultsList">
                 <!-- Results populated by JS -->
             </div>
 
-            <div class="library-pagination" id="libraryPagination">
+            <nav class="library-pagination" id="libraryPagination" aria-label="Search result pages">
                 <!-- Pagination populated by JS -->
-            </div>
+            </nav>
         </div>
     </main>
 
@@ -388,6 +510,7 @@
         const themeToggle = document.getElementById('themeToggle');
         const optionsToggle = document.getElementById('optionsToggle');
         const optionsContent = document.getElementById('optionsContent');
+        const themeToggleGroup = document.getElementById('themeToggleGroup');
 
         // Build TOC
         buildTOC();
@@ -426,17 +549,55 @@
             }
         });
 
-        // Theme toggle
-        themeToggle.addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            if (isDark) {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('reader_theme', 'light');
-            } else {
+        // ── Theme: header toggle + Options buttons, both on reader_theme, kept in sync
+        const THEME_KEY = 'reader_theme';
+
+        function currentTheme() {
+            return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        }
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('reader_theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem(THEME_KEY, theme);
+            syncThemeUI();
+        }
+
+        function syncThemeUI() {
+            const theme = currentTheme();
+            themeToggleGroup.querySelectorAll('.option-btn').forEach(btn => {
+                const isActive = btn.dataset.theme === theme;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+            themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+        });
+
+        themeToggleGroup.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
+        });
+
+        // Reflect a theme change made in another tab
+        window.addEventListener('storage', (e) => {
+            if (e.key === THEME_KEY) {
+                const theme = e.newValue === 'dark' ? 'dark' : 'light';
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                syncThemeUI();
             }
         });
+
+        syncThemeUI();
 
         // Options toggle
         optionsToggle.addEventListener('click', () => {
@@ -452,8 +613,11 @@
             // BOOK section
             fragment.appendChild(createBookSection());
 
-            // BINGE MODE link
-            fragment.appendChild(createNavLink('BINGE MODE', './binge-mode.html', false));
+            // Site nav — same items, labels and order as guestbook.html / downloadpage.html
+            fragment.appendChild(createNavLink('GET THE BOOK', './downloadpage.html', false));
+            fragment.appendChild(createNavLink('INDEX', './name-index.html', false));
+            fragment.appendChild(createNavLink('ANTHONY FENECH', './about.html', false));
+            fragment.appendChild(createNavLink('GUESTBOOK', './guestbook.html', false));
 
             // LIBRARY link (current page)
             fragment.appendChild(createNavLink('LIBRARY', './library.html', true));
@@ -477,6 +641,7 @@
             link.style.textDecoration = 'none';
             if (isCurrent) {
                 link.style.fontWeight = 'bold';
+                link.setAttribute('aria-current', 'page');
             }
 
             const title = document.createElement('h3');
@@ -491,7 +656,9 @@
             arrow.setAttribute('fill', 'none');
             arrow.setAttribute('stroke', 'currentColor');
             arrow.setAttribute('stroke-width', '2');
-            arrow.innerHTML = '<polyline points="9 6 15 12 9 18"></polyline>';
+            const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+            poly.setAttribute('points', '9 6 15 12 9 18');
+            arrow.appendChild(poly);
 
             link.appendChild(title);
             link.appendChild(arrow);
@@ -509,22 +676,46 @@
             const sectionHeader = document.createElement('div');
             sectionHeader.className = 'toc-top-header';
             sectionHeader.style.cursor = 'pointer';
+            sectionHeader.setAttribute('role', 'button');
+            sectionHeader.setAttribute('tabindex', '0');
+            sectionHeader.setAttribute('aria-expanded', 'false');
 
             const sectionTitle = document.createElement('h3');
             sectionTitle.className = 'toc-top-title';
             sectionTitle.textContent = 'OFF-THE-RECORD';
 
+            const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            arrow.setAttribute('class', 'toc-section-arrow');
+            arrow.setAttribute('width', '12');
+            arrow.setAttribute('height', '12');
+            arrow.setAttribute('viewBox', '0 0 24 24');
+            arrow.setAttribute('fill', 'none');
+            arrow.setAttribute('stroke', 'currentColor');
+            arrow.setAttribute('stroke-width', '2');
+            const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+            poly.setAttribute('points', '6 9 12 15 18 9');
+            arrow.appendChild(poly);
+
             sectionHeader.appendChild(sectionTitle);
+            sectionHeader.appendChild(arrow);
 
             const bookContent = document.createElement('div');
             bookContent.className = 'toc-book-content collapsed';
             bookContent.id = 'toc-book-content';
 
-            // Build chapter list
             buildBookContent(bookContent);
 
-            sectionHeader.addEventListener('click', () => {
-                bookContent.classList.toggle('collapsed');
+            function toggleBook() {
+                const collapsed = bookContent.classList.toggle('collapsed');
+                sectionHeader.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            }
+
+            sectionHeader.addEventListener('click', toggleBook);
+            sectionHeader.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleBook();
+                }
             });
 
             section.appendChild(sectionHeader);
@@ -533,37 +724,33 @@
             return section;
         }
 
-        // Build chapter items
+        // Build the chapter list — same grouping as guestbook.html / downloadpage.html
         function buildBookContent(container) {
+            const frontMatter = CHAPTERS.filter(c => c.section === 'title' || c.section === 'toc');
             const introChapters = getIntroChapters();
             const chaptersByYear = getChaptersByYear();
-            const postscriptChapters = getPostscriptChapters();
             const years = getSortedYears();
+            const postscriptChapters = getPostscriptChapters();
 
-            // Intro chapters
-            introChapters.forEach(ch => {
-                container.appendChild(createChapterLink(ch));
-            });
-
-            // Year chapters
+            frontMatter.forEach(chapter => container.appendChild(createChapterLink(chapter)));
+            introChapters.forEach(chapter => container.appendChild(createChapterLink(chapter)));
             years.forEach(year => {
-                const yearChapters = chaptersByYear[year] || [];
-                yearChapters.forEach(ch => {
-                    container.appendChild(createChapterLink(ch));
+                (chaptersByYear[year] || []).forEach(chapter => {
+                    container.appendChild(createChapterLink(chapter));
                 });
             });
-
-            // Postscript
-            postscriptChapters.forEach(ch => {
-                container.appendChild(createChapterLink(ch));
-            });
+            postscriptChapters.forEach(chapter => container.appendChild(createChapterLink(chapter)));
         }
 
+        // Chapter links use the slug hash format — the only one the reader resolves.
+        // js/reader.js getChapterFromHash() looks the slug up via getChapterBySlug();
+        // its legacy "#chapter-N" branch parseInt()s the id, which is NaN for the
+        // string ids ("ch02") this book uses, so that format no longer opens anything.
         function createChapterLink(chapter) {
             const link = document.createElement('a');
-            link.href = `./?chapter=${chapter.id}`;
+            link.href = chapter.slug ? './#' + encodeURIComponent(chapter.slug) : './';
             link.className = 'toc-chapter-link';
-            link.textContent = chapter.navTitle || chapter.title;
+            link.textContent = chapter.title || chapter.id || 'Untitled';
             return link;
         }
     </script>
@@ -571,171 +758,632 @@
     <!-- Library Search -->
     <script>
     (function() {
-        let libraryData = [];
-        let currentResults = [];
-        let currentPage = 1;
-        const resultsPerPage = 10;
+        'use strict';
 
-        // DOM elements
+        // ═══════════════════════════════════════════════════════════════
+        // DATA SCHEMA — ./library-data.json
+        //
+        // A JSON array of document objects. Any field may be missing.
+        //
+        //   id              string   required; records without one are skipped
+        //   title           string
+        //   type            string   e.g. "email", "memo", "transcript"
+        //   date            string   YYYY-MM-DD (any other value is shown raw)
+        //   from            string
+        //   to              string
+        //   participants    string[]
+        //   subjects        string[]
+        //   tags            string[]
+        //   classification  string   unredacted | partially redacted |
+        //                            heavily redacted | classified
+        //                            (any other value renders as a neutral badge)
+        //   featured        boolean
+        //   searchText      string   indexed text
+        //   contextNote     string   indexed text
+        //   content         string   indexed text, shown in full on the
+        //                            document page
+        //
+        // The file is fetched as JSON and never imported or executed. It is not
+        // in the repo: until it is added after the redaction pass, both library
+        // pages show "The library isn't available yet."
+        // ═══════════════════════════════════════════════════════════════
+
+        const PER_PAGE = 25;
+        const DATA_URL = './library-data.json';
+
+        let documents = [];      // records that have an id
+        let index = new Map();   // token -> Map(docIndex -> per-word score weight)
+        let results = [];
+        let currentPage = 1;
+        let currentWords = [];
+        let currentQuery = '';
+        let dataReady = false;
+
         const searchInput = document.getElementById('librarySearchInput');
         const searchBtn = document.getElementById('librarySearchBtn');
+        const searchForm = document.getElementById('librarySearchForm');
+        const statusEl = document.getElementById('libraryStatus');
         const resultsSection = document.getElementById('libraryResults');
         const resultsList = document.getElementById('resultsList');
+        const resultsInfo = document.getElementById('resultsInfo');
         const pagination = document.getElementById('libraryPagination');
-        const resultsStart = document.getElementById('resultsStart');
-        const resultsEnd = document.getElementById('resultsEnd');
-        const resultsTotal = document.getElementById('resultsTotal');
         const libraryCount = document.getElementById('libraryCount');
 
-        // Load library data
-        fetch('./library-data.json')
-            .then(res => res.json())
-            .then(data => {
-                libraryData = data;
-                libraryCount.textContent = data.length.toLocaleString() + ' DOCUMENTS IN THE LIBRARY';
-            })
-            .catch(err => {
-                console.error('Failed to load library data:', err);
-                libraryCount.textContent = 'Error loading library';
-            });
+        // ─────────────────────────────────────────────────────────────
+        // Text helpers
+        // ─────────────────────────────────────────────────────────────
 
-        // Search handler
-        function performSearch() {
-            const query = searchInput.value.trim().toLowerCase();
-            if (!query) return;
-
-            currentResults = libraryData.filter(record => {
-                const titleMatch = record.title.toLowerCase().includes(query);
-                const textMatch = record.text.toLowerCase().includes(query);
-                return titleMatch || textMatch;
-            });
-
-            currentPage = 1;
-            displayResults(query);
+        // Lowercase + strip accents, so "Martinez" finds "Martínez".
+        function normalize(text) {
+            return String(text).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         }
 
-        // Display results
-        function displayResults(query) {
-            const total = currentResults.length;
-            const start = (currentPage - 1) * resultsPerPage;
-            const end = Math.min(start + resultsPerPage, total);
-            const pageResults = currentResults.slice(start, end);
+        // Split on anything that is not a letter or digit in any language.
+        const SPLIT_RE = /[^\p{L}\p{N}]+/u;
 
-            resultsStart.textContent = total > 0 ? start + 1 : 0;
-            resultsEnd.textContent = end;
-            resultsTotal.textContent = total.toLocaleString();
+        function toWords(text) {
+            if (text === null || text === undefined) return [];
+            return normalize(text).split(SPLIT_RE).filter(w => w.length > 1);
+        }
 
-            resultsList.innerHTML = '';
+        // Accent-stripped copy plus a map from each normalized index back to the
+        // source index, so snippet offsets stay aligned with the original text.
+        function normalizeWithMap(text) {
+            const src = String(text);
+            let norm = '';
+            const map = [];
+            for (let i = 0; i < src.length; i++) {
+                const piece = src[i].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                for (let j = 0; j < piece.length; j++) {
+                    norm += piece[j];
+                    map.push(i);
+                }
+            }
+            map.push(src.length);
+            return { norm: norm, map: map };
+        }
 
-            if (total === 0) {
-                resultsList.innerHTML = '<p style="color: var(--color-text-secondary); padding: 20px 0;">No results found.</p>';
-            } else {
-                pageResults.forEach(record => {
-                    const item = document.createElement('div');
-                    item.className = 'result-item';
+        function isWordChar(ch) {
+            return ch !== undefined && !SPLIT_RE.test(ch);
+        }
 
-                    const title = document.createElement('p');
-                    title.className = 'result-title';
-                    const titleLink = document.createElement('a');
-                    titleLink.href = record.url || '#';
-                    titleLink.textContent = record.title;
-                    title.appendChild(titleLink);
+        // First whole-word occurrence of `word` in an already-normalized string.
+        function findWord(norm, word, from) {
+            let at = norm.indexOf(word, from || 0);
+            while (at !== -1) {
+                const before = at === 0 ? undefined : norm[at - 1];
+                const after = norm[at + word.length];
+                if (!isWordChar(before) && !isWordChar(after)) return at;
+                at = norm.indexOf(word, at + 1);
+            }
+            return -1;
+        }
 
-                    const meta = document.createElement('span');
-                    meta.className = 'result-dataset';
-                    meta.textContent = ' - ' + record.dataset + ' - ' + formatDate(record.date);
-                    title.appendChild(meta);
+        function textOf(doc) {
+            return [doc.searchText, doc.content, doc.contextNote]
+                .filter(v => typeof v === 'string' && v).join(' ');
+        }
 
-                    const preview = document.createElement('p');
-                    preview.className = 'result-preview';
-                    preview.innerHTML = highlightText(record.text, query);
+        function asArray(v) {
+            return Array.isArray(v) ? v : [];
+        }
 
-                    item.appendChild(title);
-                    item.appendChild(preview);
-                    resultsList.appendChild(item);
+        // ─────────────────────────────────────────────────────────────
+        // Index — built once after load
+        // ─────────────────────────────────────────────────────────────
+
+        // Each posting stores the score a single query word earns in that
+        // document: title +10, each subject +5, from +5, to +5, each tag +3,
+        // each participant +3, text +1.
+        function addWeights(docIndex, text, weight, bucket) {
+            const seen = new Set();
+            toWords(text).forEach(w => {
+                if (seen.has(w)) return;   // one field, one hit
+                seen.add(w);
+                bucket.set(w, (bucket.get(w) || 0) + weight);
+            });
+        }
+
+        function buildIndex() {
+            index = new Map();
+            documents.forEach((doc, docIndex) => {
+                const bucket = new Map();
+
+                addWeights(docIndex, doc.title, 10, bucket);
+                asArray(doc.subjects).forEach(s => addWeights(docIndex, s, 5, bucket));
+                addWeights(docIndex, doc.from, 5, bucket);
+                addWeights(docIndex, doc.to, 5, bucket);
+                asArray(doc.tags).forEach(t => addWeights(docIndex, t, 3, bucket));
+                asArray(doc.participants).forEach(p => addWeights(docIndex, p, 3, bucket));
+                addWeights(docIndex, textOf(doc), 1, bucket);
+
+                // Indexed but unscored, so they are still findable.
+                [doc.id, doc.slug].forEach(v => {
+                    toWords(v).forEach(w => {
+                        if (!bucket.has(w)) bucket.set(w, 0);
+                    });
                 });
+
+                bucket.forEach((weight, word) => {
+                    let posting = index.get(word);
+                    if (!posting) {
+                        posting = new Map();
+                        index.set(word, posting);
+                    }
+                    posting.set(docIndex, weight);
+                });
+            });
+        }
+
+        // ─────────────────────────────────────────────────────────────
+        // Search
+        // ─────────────────────────────────────────────────────────────
+
+        function dateKey(doc) {
+            const d = String(doc.date || '');
+            return /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : '';
+        }
+
+        function performSearch(query) {
+            currentQuery = String(query).trim();
+            currentWords = toWords(currentQuery);
+
+            if (currentWords.length === 0) {
+                results = [];
+                return;
             }
 
-            renderPagination(total);
+            // Documents containing ALL query words, in any order.
+            let candidates = null;
+            for (const word of currentWords) {
+                const posting = index.get(word);
+                if (!posting) { candidates = null; break; }
+                if (candidates === null) {
+                    candidates = new Set(posting.keys());
+                } else {
+                    const next = new Set();
+                    candidates.forEach(i => { if (posting.has(i)) next.add(i); });
+                    candidates = next;
+                }
+                if (candidates.size === 0) break;
+            }
+
+            if (!candidates || candidates.size === 0) {
+                results = [];
+                return;
+            }
+
+            const queryNorm = normalize(currentQuery);
+            const isPhrase = currentWords.length > 1;
+            const scored = [];
+
+            candidates.forEach(docIndex => {
+                const doc = documents[docIndex];
+                let score = 0;
+
+                for (const word of currentWords) {
+                    const posting = index.get(word);
+                    score += (posting && posting.get(docIndex)) || 0;
+                }
+
+                if (doc.featured === true) score += 2;
+                if (doc.id && normalize(doc.id) === queryNorm) score += 15;
+
+                if (isPhrase) {
+                    const inTitle = findWord(normalize(doc.title || ''), queryNorm, 0) !== -1;
+                    const inText = inTitle ? false : findWord(normalize(textOf(doc)), queryNorm, 0) !== -1;
+                    if (inTitle || inText) score += 5;
+                }
+
+                scored.push({ doc: doc, score: score });
+            });
+
+            // Score desc, then newest first, then documents with no date last.
+            scored.sort((a, b) => {
+                if (b.score !== a.score) return b.score - a.score;
+                const da = dateKey(a.doc);
+                const db = dateKey(b.doc);
+                if (da && db) {
+                    if (da !== db) return db.localeCompare(da);
+                } else if (da !== db) {
+                    return da ? -1 : 1;
+                }
+                return 0;
+            });
+
+            results = scored.map(s => s.doc);
+        }
+
+        // ─────────────────────────────────────────────────────────────
+        // Rendering — every field goes in via textContent or DOM methods
+        // ─────────────────────────────────────────────────────────────
+
+        function formatDate(value) {
+            if (value === null || value === undefined || value === '') return '';
+            const raw = String(value);
+            const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw);
+            if (!m) return raw;
+            const y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]);
+            const local = new Date(y, mo - 1, d);   // local date, no UTC shift
+            if (local.getFullYear() !== y || local.getMonth() !== mo - 1 || local.getDate() !== d) {
+                return raw;                          // e.g. 2019-13-45
+            }
+            return local.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        function classificationClass(value) {
+            const c = normalize(value).replace(/\s+/g, '-');
+            if (c.indexOf('unredacted') !== -1) return 'unredacted';
+            if (c.indexOf('partially') !== -1) return 'partially-redacted';
+            if (c.indexOf('heavily') !== -1) return 'heavily-redacted';
+            if (c.indexOf('classified') !== -1) return 'classified';
+            return 'neutral';
+        }
+
+        // Snippet centred on the first matched word, with every query word marked.
+        function buildSnippet(doc, maxLength) {
+            const source = textOf(doc) || String(doc.title || '');
+            if (!source) return null;
+
+            const limit = maxLength || 220;
+            const mapped = normalizeWithMap(source);
+
+            let firstAt = -1;
+            for (const word of currentWords) {
+                const at = findWord(mapped.norm, word, 0);
+                if (at !== -1 && (firstAt === -1 || at < firstAt)) firstAt = at;
+            }
+
+            let startNorm, endNorm;
+            if (firstAt === -1) {
+                startNorm = 0;
+                endNorm = Math.min(mapped.norm.length, limit);
+            } else {
+                startNorm = Math.max(0, firstAt - 60);
+                endNorm = Math.min(mapped.norm.length, startNorm + limit);
+            }
+
+            const startSrc = mapped.map[startNorm];
+            const endSrc = mapped.map[endNorm];
+
+            // Highlight ranges, in source coordinates.
+            const ranges = [];
+            for (const word of currentWords) {
+                let at = findWord(mapped.norm, word, startNorm);
+                while (at !== -1 && at < endNorm) {
+                    ranges.push([mapped.map[at], mapped.map[at + word.length]]);
+                    at = findWord(mapped.norm, word, at + word.length);
+                }
+            }
+            ranges.sort((a, b) => a[0] - b[0]);
+
+            const merged = [];
+            ranges.forEach(r => {
+                const last = merged[merged.length - 1];
+                if (last && r[0] <= last[1]) {
+                    last[1] = Math.max(last[1], r[1]);
+                } else {
+                    merged.push([r[0], r[1]]);
+                }
+            });
+
+            const el = document.createElement('div');
+            el.className = 'result-snippet';
+
+            if (startSrc > 0) el.appendChild(document.createTextNode('…'));
+
+            let cursor = startSrc;
+            merged.forEach(r => {
+                if (r[0] > cursor) {
+                    el.appendChild(document.createTextNode(source.slice(cursor, r[0])));
+                }
+                const mark = document.createElement('mark');
+                mark.textContent = source.slice(r[0], r[1]);
+                el.appendChild(mark);
+                cursor = r[1];
+            });
+
+            if (cursor < endSrc) el.appendChild(document.createTextNode(source.slice(cursor, endSrc)));
+            if (endSrc < source.length) el.appendChild(document.createTextNode('…'));
+
+            return el;
+        }
+
+        function createCard(doc) {
+            const card = document.createElement('div');
+            card.className = 'result-card';
+
+            // Header: type + date on the left, redaction badge on the right
+            const header = document.createElement('div');
+            header.className = 'result-header';
+
+            const metaLeft = document.createElement('div');
+            metaLeft.className = 'result-meta-left';
+
+            const typeEl = document.createElement('span');
+            typeEl.className = 'result-type';
+            typeEl.textContent = doc.type ? String(doc.type) : 'Document';
+            metaLeft.appendChild(typeEl);
+
+            const dateText = formatDate(doc.date);
+            if (dateText) {
+                const dateEl = document.createElement('span');
+                dateEl.className = 'result-date';
+                dateEl.textContent = dateText;
+                metaLeft.appendChild(dateEl);
+            }
+            header.appendChild(metaLeft);
+
+            if (doc.classification !== null && doc.classification !== undefined && String(doc.classification) !== '') {
+                const badge = document.createElement('span');
+                badge.className = 'result-classification ' + classificationClass(doc.classification);
+                badge.textContent = String(doc.classification);
+                header.appendChild(badge);
+            }
+            card.appendChild(header);
+
+            const title = document.createElement('div');
+            title.className = 'result-title';
+            title.textContent = doc.title ? String(doc.title) : String(doc.id);
+            card.appendChild(title);
+
+            const idEl = document.createElement('div');
+            idEl.className = 'result-id';
+            idEl.textContent = String(doc.id);
+            card.appendChild(idEl);
+
+            const parts = [];
+            if (doc.from) parts.push('From: ' + String(doc.from));
+            if (doc.to) parts.push('To: ' + String(doc.to));
+            if (parts.length) {
+                const p = document.createElement('div');
+                p.className = 'result-participants';
+                p.textContent = parts.join(' • ');
+                card.appendChild(p);
+            }
+
+            const snippet = buildSnippet(doc);
+            if (snippet) card.appendChild(snippet);
+
+            const link = document.createElement('a');
+            link.className = 'result-link';
+            let href = './library-document.html?id=' + encodeURIComponent(String(doc.id));
+            if (currentQuery) {
+                href += '&q=' + encodeURIComponent(currentQuery) + '&page=' + encodeURIComponent(String(currentPage));
+            }
+            link.href = href;
+            link.textContent = 'View Document →';
+            card.appendChild(link);
+
+            return card;
+        }
+
+        function clear(el) {
+            while (el.firstChild) el.removeChild(el.firstChild);
+        }
+
+        // Windowed pagination: first … nearby … last
+        function pageWindow(total, current) {
+            const pages = new Set([1, total]);
+            for (let p = current - 2; p <= current + 2; p++) {
+                if (p >= 1 && p <= total) pages.add(p);
+            }
+            const sorted = Array.from(pages).sort((a, b) => a - b);
+            const out = [];
+            let prev = 0;
+            sorted.forEach(p => {
+                if (prev && p - prev > 1) out.push('gap');
+                out.push(p);
+                prev = p;
+            });
+            return out;
+        }
+
+        function renderPagination(totalPages) {
+            clear(pagination);
+            if (totalPages <= 1) return;
+
+            pageWindow(totalPages, currentPage).forEach(entry => {
+                if (entry === 'gap') {
+                    const gap = document.createElement('span');
+                    gap.className = 'page-gap';
+                    gap.textContent = '…';
+                    pagination.appendChild(gap);
+                    return;
+                }
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'page-link' + (entry === currentPage ? ' active' : '');
+                btn.textContent = String(entry);
+                btn.setAttribute('aria-label', 'Page ' + entry);
+                if (entry === currentPage) {
+                    btn.setAttribute('aria-current', 'page');
+                    btn.disabled = true;
+                } else {
+                    btn.addEventListener('click', () => {
+                        currentPage = entry;
+                        renderResults();
+                        updateUrl();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+                pagination.appendChild(btn);
+            });
+        }
+
+        function renderResults() {
+            clear(resultsList);
+
+            if (!currentQuery) {
+                resultsSection.classList.remove('visible');
+                clear(pagination);
+                resultsInfo.textContent = '';
+                return;
+            }
+
+            if (results.length === 0) {
+                resultsSection.classList.add('visible');
+                resultsInfo.textContent = 'No documents match that search.';
+                clear(pagination);
+                return;
+            }
+
+            const totalPages = Math.max(1, Math.ceil(results.length / PER_PAGE));
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+
+            const start = (currentPage - 1) * PER_PAGE;
+            const end = Math.min(start + PER_PAGE, results.length);
+
+            resultsInfo.textContent = 'Showing ' + (start + 1) + ' to ' + end +
+                ' of ' + results.length.toLocaleString() +
+                (results.length === 1 ? ' result.' : ' results.');
+
+            const frag = document.createDocumentFragment();
+            for (let i = start; i < end; i++) {
+                frag.appendChild(createCard(results[i]));
+            }
+            resultsList.appendChild(frag);
+
+            renderPagination(totalPages);
             resultsSection.classList.add('visible');
         }
 
-        // Highlight search term
-        function highlightText(text, query) {
-            const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp('(' + escaped + ')', 'gi');
-            return text.replace(regex, '<span class="highlight">$1</span>');
+        // ─────────────────────────────────────────────────────────────
+        // URL state
+        // ─────────────────────────────────────────────────────────────
+
+        function updateUrl() {
+            const url = new URL(window.location.href);
+            if (currentQuery) {
+                url.searchParams.set('q', currentQuery);
+                url.searchParams.set('page', String(currentPage));
+            } else {
+                url.searchParams.delete('q');
+                url.searchParams.delete('page');
+            }
+            history.replaceState(null, '', url.toString());
         }
 
-        // Format date
-        function formatDate(dateStr) {
-            if (!dateStr) return '';
-            const d = new Date(dateStr);
-            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        function runSearch(query, page) {
+            performSearch(query);
+            const totalPages = Math.max(1, Math.ceil(results.length / PER_PAGE));
+            // An invalid or out-of-range page falls back to the nearest valid one.
+            let p = parseInt(page, 10);
+            if (!isFinite(p) || isNaN(p) || p < 1) p = 1;
+            if (p > totalPages) p = totalPages;
+            currentPage = p;
+            renderResults();
+            updateUrl();
         }
 
-        // Render pagination
-        function renderPagination(total) {
-            pagination.innerHTML = '';
-            const totalPages = Math.ceil(total / resultsPerPage);
-            if (totalPages <= 1) return;
-
-            const maxVisible = 5;
-            let startPage = Math.max(1, currentPage - 2);
-            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
-            if (endPage - startPage < maxVisible - 1) {
-                startPage = Math.max(1, endPage - maxVisible + 1);
-            }
-
-            // First page
-            if (startPage > 1) {
-                pagination.appendChild(createPageBtn(1));
-                if (startPage > 2) {
-                    const ellipsis = document.createElement('span');
-                    ellipsis.textContent = '...';
-                    ellipsis.style.color = 'var(--color-text-secondary)';
-                    pagination.appendChild(ellipsis);
-                }
-            }
-
-            // Page numbers
-            for (let i = startPage; i <= endPage; i++) {
-                pagination.appendChild(createPageBtn(i));
-            }
-
-            // Last page
-            if (endPage < totalPages) {
-                if (endPage < totalPages - 1) {
-                    const ellipsis = document.createElement('span');
-                    ellipsis.textContent = '...';
-                    ellipsis.style.color = 'var(--color-text-secondary)';
-                    pagination.appendChild(ellipsis);
-                }
-                pagination.appendChild(createPageBtn(totalPages));
+        function restoreFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const q = params.get('q');
+            if (q && q.trim()) {
+                searchInput.value = q;
+                runSearch(q, params.get('page'));
             }
         }
 
-        function createPageBtn(page) {
-            const btn = document.createElement('button');
-            btn.className = 'page-link' + (page === currentPage ? ' active' : '');
-            btn.textContent = page;
-            btn.addEventListener('click', () => {
-                if (page !== currentPage) {
-                    currentPage = page;
-                    displayResults(searchInput.value.trim().toLowerCase());
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+        // ─────────────────────────────────────────────────────────────
+        // States
+        // ─────────────────────────────────────────────────────────────
+
+        function showStatus(message, isError) {
+            statusEl.textContent = message;
+            statusEl.classList.toggle('status-error', !!isError);
+            statusEl.hidden = false;
+        }
+
+        function hideStatus() {
+            statusEl.hidden = true;
+            statusEl.classList.remove('status-error');
+        }
+
+        function enableSearch() {
+            dataReady = true;
+            searchInput.disabled = false;
+            searchBtn.disabled = false;
+        }
+
+        // ─────────────────────────────────────────────────────────────
+        // Load — fetched as JSON, never imported or executed
+        // ─────────────────────────────────────────────────────────────
+
+        showStatus('Loading the library…', false);
+
+        fetch(DATA_URL, { credentials: 'omit' })
+            .then(res => {
+                if (res.status === 404) {
+                    const e = new Error('missing');
+                    e.kind = 'missing';
+                    throw e;
                 }
+                if (!res.ok) {
+                    const e = new Error('http ' + res.status);
+                    e.kind = 'error';
+                    throw e;
+                }
+                return res.text();
+            })
+            .then(text => {
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (parseErr) {
+                    const e = new Error('unparseable');
+                    e.kind = 'error';
+                    throw e;
+                }
+                if (!Array.isArray(data)) {
+                    const e = new Error('not an array');
+                    e.kind = 'error';
+                    throw e;
+                }
+
+                const skipped = data.length - data.filter(isUsable).length;
+                documents = data.filter(isUsable);
+                if (skipped > 0) {
+                    console.warn('[Library] Skipped ' + skipped + ' record(s) with no id.');
+                }
+
+                buildIndex();
+                hideStatus();
+                libraryCount.textContent = documents.length.toLocaleString() +
+                    (documents.length === 1 ? ' DOCUMENT IN THE LIBRARY' : ' DOCUMENTS IN THE LIBRARY');
+                enableSearch();
+                restoreFromUrl();
+            })
+            .catch(err => {
+                if (err && err.kind === 'missing') {
+                    showStatus("The library isn't available yet.", false);
+                } else {
+                    showStatus('The library index could not be read.', true);
+                }
+                libraryCount.textContent = '';
+                searchInput.disabled = true;
+                searchBtn.disabled = true;
             });
-            return btn;
+
+        function isUsable(record) {
+            return record && typeof record === 'object' && !Array.isArray(record) &&
+                   record.id !== null && record.id !== undefined && String(record.id) !== '';
         }
 
-        // Event listeners
-        searchBtn.addEventListener('click', performSearch);
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                performSearch();
-            }
+        // ─────────────────────────────────────────────────────────────
+        // Events
+        // ─────────────────────────────────────────────────────────────
+
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!dataReady) return;
+            runSearch(searchInput.value, 1);
+        });
+
+        searchBtn.addEventListener('click', () => {
+            if (!dataReady) return;
+            runSearch(searchInput.value, 1);
         });
     })();
     </script>
