@@ -174,6 +174,26 @@
             justify-self: start;
         }
 
+        /* Measured: the row needs 342px of content, so it overflows at 341px and
+           below. There, the RATE IT label takes its own centred line and the two
+           buttons sit centred on the row beneath it. */
+        @media (max-width: 341px) {
+            .rate-the-book.format-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                row-gap: 12px;
+            }
+
+            .rate-the-book .format-name,
+            .rate-the-book .format-dash { text-align: center; }
+
+            .rate-the-book .rate-the-book-btns {
+                flex-basis: 100%;
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 599px) {
             .format-menu {
                 row-gap: 28px;
