@@ -91,7 +91,7 @@
         }
     }
 
-    async function sendToGoogleSheets(data, isRetry = false) {
+    async function sendToGoogleSheets(data, isRetry = false, keepalive = false) {
         const enrichedData = {
             ...data,
             readerName: window.OTR_READER_NAME || 'Unknown Reader',
@@ -120,6 +120,7 @@
                 await fetch(GOOGLE_SHEETS_URL, {
                     method: 'POST',
                     mode: 'no-cors',
+                    keepalive: keepalive,
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(enrichedData)
                 });
@@ -592,6 +593,42 @@
                 .trim();
         if (t && t !== 'OFF-THE-RECORD') {
             _trackPage(t, null);
+        }
+
+        // Store and download clicks on Get the Book and About. Sent
+        // at once rather than queued, with keepalive so the request
+        // still finishes if a phone switches to the store's app. The
+        // link is never delayed or blocked.
+        if (t === 'Get the Book' || t === 'Anthony Fenech') {
+            var storeType = function (href) {
+                if (/amazon\.com\/.*B0HJW85Y4J/i.test(href)) return 'paperback';
+                if (/amazon\.com\/.*B0H3QQYNWQ/i.test(href)) return 'kindle';
+                if (/^https:\/\/books\.apple\.com\//i.test(href)) return 'apple';
+                if (/^https:\/\/play\.google\.com\/store\/books\//i.test(href)) return 'google';
+                if (/\/assets\/OFF-THE-RECORD\.pdf$/i.test(href)) return 'pdf';
+                return null;
+            };
+            var onStoreClick = function (e) {
+                try {
+                    // auxclick also fires for right-click; count only
+                    // the middle button.
+                    if (e.type === 'auxclick' && e.button !== 1) return;
+                    var a = e.target && e.target.closest && e.target.closest('a[href]');
+                    var type = a && storeType(a.href);
+                    if (!type) return;
+                    sendToGoogleSheets({
+                        event: 'store_click',
+                        page: t,
+                        assetType: type,
+                        assetId: t
+                    }, false, true).catch(function () {});
+                    console.log('[OTR Analytics] store_click:', type, '| page:', t);
+                } catch (err) {
+                    console.warn('[OTR Analytics] store_click failed:', err);
+                }
+            };
+            document.addEventListener('click', onStoreClick, true);
+            document.addEventListener('auxclick', onStoreClick, true);
         }
     } else {
         // reader.js is a module script that runs before this deferred
