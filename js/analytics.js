@@ -569,9 +569,27 @@
     // absence identifies a static page. The DOM is
     // parsed before deferred scripts run.
     if (!document.querySelector('script[src*="js/reader.js"]')) {
-        var t = (document.title || '')
-            .replace(/\s*\u2014\s*OFF-THE-RECORD\s*$/i, '')
-            .trim();
+        // Fixed names, so a <title> change can't rename a page in
+        // By Page. Keyed by file name, so /about, /about/ and
+        // /about.html all match. Any page not listed falls back to
+        // its title.
+        var STATIC_PAGE_NAMES = {
+            'about': 'Anthony Fenech',
+            'credentials': 'Credentials',
+            'downloadpage': 'Get the Book',
+            'guestbook': 'Guestbook',
+            'name-index': 'Index'
+        };
+        var file = (window.location.pathname || '')
+            .replace(/\/+$/, '')
+            .split('/').pop()
+            .replace(/\.html$/i, '')
+            .toLowerCase();
+        var t = Object.prototype.hasOwnProperty.call(STATIC_PAGE_NAMES, file)
+            ? STATIC_PAGE_NAMES[file]
+            : (document.title || '')
+                .replace(/\s*\u2014\s*OFF-THE-RECORD\s*$/i, '')
+                .trim();
         if (t && t !== 'OFF-THE-RECORD') {
             _trackPage(t, null);
         }
