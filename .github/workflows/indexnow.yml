@@ -54,7 +54,7 @@ jobs:
               cp all.txt urls.txt
             else
               : > urls.txt
-              printf '%s\n' "$changed" | grep -E '^[^/]+\.html$' | while read -r f; do
+              printf '%s\n' "$changed" | { grep -E '^[^/]+\.html$' || true; } | while read -r f; do
                 if [ "$f" = index.html ]; then u="https://$host/"; else u="https://$host/$f"; fi
                 grep -qxF "$u" all.txt && echo "$u" >> urls.txt || true
               done
