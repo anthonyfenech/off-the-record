@@ -9,6 +9,12 @@ name: Analytics alarm
 # The "contract" job is offline and runs on every push. The "live" job
 # touches the network and only runs on the schedule or by hand, so
 # ordinary edits never write heartbeat rows.
+#
+# The "synthetic-visit" job opens offrecordbook.com in a headless browser
+# so the site's own tracking code sends real pageviews. Every row it
+# causes carries Session ID "synthetic-gha"; the OTR Watchdog emails if
+# none arrives, and the sheet's views leave those rows out. It is a
+# separate job so a failure there never stops the heartbeat.
 
 on:
   push:
@@ -27,7 +33,8 @@ permissions:
 jobs:
   contract:
     name: Code contract
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moves to Ubuntu 26 on 2026-10-19.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
@@ -82,7 +89,8 @@ jobs:
 
   live:
     name: Live endpoint
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moves to Ubuntu 26 on 2026-10-19.
+    runs-on: ubuntu-24.04
     # Only on the schedule or a manual run. Never on push or PR.
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
@@ -145,3 +153,80 @@ jobs:
           fi
 
           echo "PASS  heartbeat written, endpoint accepted an anonymous write"
+
+  synthetic-visit:
+    name: Synthetic visit
+    # Pinned: Playwright's Chromium dependencies need a supported Ubuntu.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    # Only on the schedule or a manual run, like the heartbeat.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/synthetic"
+          cd "$RUNNER_TEMP/synthetic"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.63.0
+          npx playwright install --with-deps chromium
+
+      - name: Visit the home page and one chapter like a reader
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/synthetic"
+          cat > visit.mjs <<'JS'
+          import { chromium } from 'playwright';
+
+          // The marker. The site reuses an existing session ID, so every
+          // row this visit causes lands with Session ID "synthetic-gha".
+          const SESSION_ID = 'synthetic-gha';
+          const REFERER = 'https://synthetic-check.invalid/';
+          const SITE = 'https://offrecordbook.com/';
+
+          const browser = await chromium.launch();
+          const context = await browser.newContext();
+          await context.addInitScript(id => {
+            if (location.hostname === 'offrecordbook.com') {
+              sessionStorage.setItem('analytics_session_id', id);
+            }
+          }, SESSION_ID);
+          const page = await context.newPage();
+
+          // The site logs each pageview it tracks; collect only those lines.
+          const pageviews = [];
+          page.on('console', m => {
+            if (m.text().startsWith('[OTR Analytics] pageview:')) pageviews.push(m.text());
+          });
+
+          await page.goto(SITE, { referer: REFERER, waitUntil: 'load' });
+          await page.waitForTimeout(5000);
+          await page.goto(SITE + '#hot-seat', { referer: REFERER, waitUntil: 'load' });
+          // Give the tracking code time to send.
+          await page.waitForTimeout(15000);
+
+          const state = await page.evaluate(() => ({
+            session: sessionStorage.getItem('analytics_session_id'),
+            referrer: document.referrer,
+          }));
+          await browser.close();
+
+          console.log('Session ID: ' + state.session);
+          console.log('document.referrer: ' + state.referrer);
+          pageviews.forEach(p => console.log(p));
+
+          if (state.session !== SESSION_ID) {
+            console.log('FAIL  the site did not keep the synthetic session ID');
+            process.exit(1);
+          }
+          if (pageviews.length === 0) {
+            console.log('FAIL  the site tracked no pageview - its tracking code may be broken');
+            process.exit(1);
+          }
+          console.log('PASS  ' + pageviews.length + ' pageview(s) tracked; the OTR Watchdog confirms they reached the sheet');
+          JS
+          node visit.mjs
