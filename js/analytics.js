@@ -575,6 +575,29 @@
         if (t && t !== 'OFF-THE-RECORD') {
             _trackPage(t, null);
         }
+    } else {
+        // reader.js is a module script that runs before this deferred
+        // file, so its first homePageLoaded/chapterLoaded can fire
+        // before the listeners above exist. Record the page it already
+        // shows, with the same ids those events use, so if the reader
+        // is slower its own event is skipped as a repeat.
+        try {
+            // Same home test as reader.js. <body> starts with home-page
+            // in the HTML, so the class alone can't rule out a direct
+            // chapter link.
+            var h = window.location.hash;
+            var isHome = !h || h === '#' || h === '#home';
+            if (isHome && document.body.classList.contains('home-page')) {
+                _trackPage('Home', 'home');
+            } else if (!isHome && window.currentChapterId && Array.isArray(window.CHAPTERS)) {
+                var c = window.CHAPTERS.find(function (ch) {
+                    return ch && ch.id === window.currentChapterId;
+                });
+                if (c && c.title) _trackPage(c.title, c.id);
+            }
+        } catch (err) {
+            console.warn('[OTR Analytics] first-page check failed:', err);
+        }
     }
 
     // Initialize
