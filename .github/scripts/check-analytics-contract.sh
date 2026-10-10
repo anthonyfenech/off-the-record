@@ -28,7 +28,7 @@ READER="$ROOT/js/reader.js"
 # Native DOM events analytics.js legitimately listens for. Anything it
 # listens for that is NOT in this list is a custom event and must be
 # dispatched by reader.js.
-NATIVE_EVENTS="beforeunload online offline pagehide pageshow scroll resize load unload visibilitychange DOMContentLoaded focus blur"
+NATIVE_EVENTS="beforeunload online offline pagehide pageshow scroll resize load unload visibilitychange DOMContentLoaded focus blur click auxclick"
 
 pass_count=0
 fail_count=0
